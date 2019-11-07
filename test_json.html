@@ -1,45 +1,31 @@
+<!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-
-<script>
-
-    $(function() {
-
-
-   var people = [];
-
-   $.getJSON('people.json', function(data) {
-       $.each(data.person, function(i, f) {
-          var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
-           "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
-           $(tblRow).appendTo("#userdata tbody");
-     });
-
-   });
-
-});
-</script>
-</head>
-
 <body>
 
-<div class="wrapper">
-<div class="profile">
-   <table id= "userdata" border="2">
-  <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Address</th>
-            <th>City</th>
-        </thead>
-      <tbody>
+<h2>Make a drop down list based on JSON data.</h2>
 
-       </tbody>
-   </table>
+<p id="demo"></p>
 
-</div>
-</div>
+<script>
+var obj, dbParam, xmlhttp, myObj, x, txt = "";
+obj = { table: "customers", limit: 20 };
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+    txt += "<select>"
+    for (x in myObj) {
+      txt += "<option>" + myObj[x].name;
+    }
+    txt += "</select>"
+    document.getElementById("demo").innerHTML = txt;
+  }
+};
+xmlhttp.open("POST", "json_demo_db_post.php", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+</script>
 
 </body>
 </html>
