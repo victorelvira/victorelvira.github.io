@@ -1,23 +1,42 @@
-script src="jquery-1.10.2.min.js"></script>
-
-<script type="text/javascript">
-
-</script>
-
-
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+	<script>
+		function onLoad(){
+			var url='jsondata.json';
+			$.getJSON(url, function(json){
+				var table = $('<table>');
+				table.attr('border','1');
+				var tr = $('<tr>');
+				var td = $('<td>');
+				td.html("ID");
+				tr.append(td);
+				td = $('<td>');
+				td.html('Name');
+				tr.append(td);
+				td = $('<td>');
+				td.html('IDNumber');
+				tr.append(td);
+				table.append(tr);
+				for( var i=0; i<json.length;i++){
+					var tr = $('<tr>');
+					var td = $('<td>');
+					td.html(json[i].ID);
+					tr.append(td);
+					td = $('<td>');
+					td.html(json[i].Name);
+					tr.append(td);
+					td = $('<td>');
+					td.html(json[i].IDNumber);
+					tr.append(td);
+					table.append(tr);
+				}
+				$('body').append(table);
+			});
+		}
+	</script>
 </head>
-<body>
-<h1>A JavaScript Test</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>ID Number</th>
-    </tr>
-</table>
-<p>
-
-<button>Load Data</button>
+<body  önload ="onLoad();">
+</body>
+</html>
