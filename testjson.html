@@ -1,44 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>JSON Demo</title>
+script src="jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+
+
+
+
 </head>
 <body>
-  <div><p><?php include('text_file.txt'); ?></p></div>
-  <ul id="users"></ul>
-  <script>
-    let contacts = {
-      name: "Timothy",
-      age: 35,
-      address: {
-        street: "1 Main St",
-        city: "Montreal" 
-      },
-      interests: ["cooking", "biking"]
-    }
-    // let s = JSON.stringify(contacts);
-    // let s = JSON.parse(contacts);
-    let users = [
-      {
-        name: "Timothy",
-        age: 35
-      },
-      { 
-        name: "Georgette",
-        age: 29 
-      },
-      {
-        name: "Craig",
-        age: 54
-      }
-    ];
-    let output = '';
-    for (var i = 0; i < users.length; i++) {
-      // console.log(users[i].name); 
-      output += '<li>'+users[i].name+'</li>';
-    }
-    document.getElementById('users').innerHTML = output;
-  </script>
-</body>
-</html>
+<h1>A JavaScript Test</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ID Number</th>
+    </tr>
+</table>
+<p>
+
+<button>Load Data</button>
