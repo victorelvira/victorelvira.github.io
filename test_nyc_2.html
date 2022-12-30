@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Map</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        let text = '{ "employees" : [' +
+        '{ "firstName":"John" , "lastName":"Doe" },' +
+        '{ "firstName":"Anna" , "lastName":"Smith" },' +
+        '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+        const empls = JSON.parse(text);
+        
+        let cond_json = '{ "conductors" : [' +
+        '{ "name":"Riccardo Muti" },' +
+        '{ "name":"Daniel Barenboim" } ]}';
+        const cond = JSON.parse(cond_json);
+        var selected_year = 0;
+    </script>
+    
+    <style>
+        ul {
+            margin-left: 20px;
+            color: blue;
+        }
+        li {
+            cursor: default;
+        }
+        span {
+            color: red;
+        }
+        
+        .btn-group button {
+            background-color: #04AA6D; /* Green background */
+            border: 1px solid green; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+        
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: #3e8e41;
+        }
+        .btn-group button:focus {
+            background-color: #3e3f8e;
+        }
+        
+        
+        /* radio buttons */
+
+        .radio-toolbar {
+            margin: 0px;
+        }
+                
+        .radio-toolbar input[type="radio"] {
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+        
+        .radio-toolbar label {
+            /* display: inline-block;
+            background-color: #ddd;
+            padding: 2px 20px;
+            font-family: sans-serif, Arial;
+            font-size: 16px;
+            border: 2px solid #444;
+            border-radius: 4px;
+             */
+             background-color: rgb(186,160, 112);; /* Green background */
+             /* background-color: rgb(163,128, 55);; Green background */
+            border: 1px solid rgb(0, 0, 0); /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+        
+        .radio-toolbar label:hover {
+            background-color: #dfd;
+        }
+        
+        /* .radio-toolbar input[type="radio"]:focus + label {
+            border: 2px dashed;
+        } */
+        
+        .radio-toolbar input[type="radio"]:checked + label {
+            /* background-color: #bfb; */
+            background-color: rgb(163,128, 55);
+            border-color:rgb(0, 0, 0)
+            border: 3px solid;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- <canvas></canvas> -->
+    <!-- <div class="btn-group">
+        <button>Apple</button>
+        <button>Samsung</button>
+        <button>Sony</button>
+    </div> -->
+    
+    <div class="radio-toolbar">
+        <input type="radio" id="radioApple" name="radioFruit" value="2022" onclick="onYear(2022)" checked>
+        <label for="radioApple">2022</label>
+        
+        <input type="radio" id="radioBanana" name="radioFruit" value="2021" onclick="onYear(2021)">
+        <label for="radioBanana">2021</label>
+        
+        <input type="radio" id="radioOrange" name="radioFruit" value="2020" value="2020"onclick="onYear(2020)">
+        <label for="radioOrange">2020</label> 
+        <script>
+        for (let i = 2019; i > 1939; i--) { 
+            
+        //     <input type="radio" id="radioOrange" name="radioFruit" value="2020" value="2020"onclick="onYear(2020)">
+        // <label for="radioOrange">2020</label> 
+        }
+        </script>
+    </div>
+    <p>&nbsp;</p>
+    
+<!--     
+    <button onclick="onYear(0)"> 2022  </button>
+    <button onclick="onYear(1)"> 2021  </button> -->
+<div style="margin-top:2cm;">
+    <p id="concert">
+        NEW YEAR'S CONCERT 2022
+    </p>
+    <p id="conductor_title">
+        CONDUCTOR
+    </p>
+    <p id="conductor">
+        &#8205
+    </p>
+    <p id="program_title">
+        PROGRAM
+    </p>
+    <p id="program">      
+        <ol id="myList"></ol>  
+    </p>
+</div>
+    
+    <script>
+        function onYear(year){
+            selected_year = year;
+            // document.getElementById("test").innerHTML = "Program"
+            console.log("funciona!");
+            // document.getElementById("conductor").innerHTML =
+            // empls.employees[year].firstName + " " + empls.employees[year].lastName;
+            document.getElementById("conductor").innerHTML =
+            cond.conductors[year-2021].name;
+            document.getElementById("concert").innerHTML =
+            "NEW YEAR'S CONCERT " + selected_year;
+            
+            
+            
+            let pieces_year_x = ["Phönix-Marsch, op. 105","Phönix-Schwingen. Walzer, op. 125","Die Sirene. Polka mazur, op. 248","Kleiner Anzeiger, Galop op. 4","Morgenblätter. Walzer, op. 279","Kleine Chronik. Polka schnell, op. 128","Ouvertüre zur Operette \"Die Fledermaus\"","Champagner-Polka. Musikalischer Scherz, op. 211","Nachtschwärmer. Walzer, op. 466","Persischer Marsch, op. 289","Tausend und eine Nacht. Walzer, op. 346","Gruß an Prag. Polka française, op. 144","Heinzelmännchen","Nymphen-Polka, op. 50","Sphärenklänge (Music of the Spheres). Walzer, op. 235"];
+            let composers_year_x = ["Josef Strauß","Johann Strauß II.","Josef Strauß","Josef Hellmesberger (Sohn)","Johann Strauß II.","Eduard Strauß","Johann Strauß II.","Johann Strauß II.","Carl Michael Ziehrer","Johann Strauß II.","Johann Strauß II.","Eduard Strauß","Josef Hellmesberger (Sohn)","Josef Strauß","Josef Strauß"];          
+            let list = document.getElementById("myList");    
+            list.innerHTML = '';        
+            for (let i = 0; i < pieces_year_x.length; i++) {
+                let li = document.createElement("li");
+                // li.innerText = empls.employees[0].firstName +  empls.employees[1].lastName;
+                var bla1 = pieces_year_x[i];
+                var bla2 = composers_year_x[i];
+                
+                li.innerHTML +=  '<em class="piece_printed">' + bla1 + "</em>" + " (" + '<a class="composer_printed">' + bla2 + "</a>" + ")" ; 
+                console.log(i)
+                
+                // item + selected_year;
+                // li.setAttribute("onclick", "test_Func_2()'");
+                // li.onclick = function() {test_Func_2();}; 
+                
+                
+                
+                
+                
+                list.appendChild(li);
+                
+                
+            };
+            elementos_piece_printed = document.getElementsByClassName("piece_printed");
+            elementos_composer_printed = document.getElementsByClassName("composer_printed");
+            console.log(elementos_composer_printed)
+            for (let j = 0; j < elementos_piece_printed.length; j++) {
+                // 👇️ Change text color on mouseover (piece_printed)
+                
+                elementos_piece_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                    this.style.color = 'blue';
+                });
+                // 👇️ Change text color back on mouseout (piece_printed)
+                
+                elementos_piece_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                    this.style.color = 'black';
+                });
+                
+                // 👇️ Change text color on mouseover (composer_printed)
+                
+                elementos_composer_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                    this.style.color = 'red';
+                });
+                // 👇️ Change text color back on mouseout (composer_printed)
+                
+                elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                    this.style.color = 'black';
+                });
+            }
+        }
+        
+        // function test_Func_2(){
+            //     console.log("sobre el p tambien funciona!!!");
+            // }
+            
+            
+        </script>
+        
+        
+        
+    </body>
+    </html>
