@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Year's Concert - Vienna Philharmonic </title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        var selected_year = 0;
+        var this_year_conductor = 0;
+    </script>
+    
+    <script type="text/javascript" src="data.js"></script> 
+    
+    <style>
+        ul {
+            margin-left: 20px;
+            color: blue;
+        }
+        li {
+            cursor: default;
+        }
+        span {
+            color: red;
+        }
+        
+        .btn-group button {
+            background-color: #044caa; /* Green background */
+            border: 1px solid green; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+        
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: #362ca2;
+        }
+        .btn-group button:focus {
+            background-color: #3e3f8e;
+        }
+        
+        
+        /* radio buttons */
+        
+        .radio-toolbar {
+            margin: 0px;
+        }
+        
+        .radio-toolbar input[type="radio"] {
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+        
+        .radio-toolbar label {
+            /* display: inline-block;
+            background-color: #ddd;
+            padding: 2px 20px;
+            font-family: sans-serif, Arial;
+            font-size: 16px;
+            border: 2px solid #444;
+            border-radius: 4px;
+            */
+            background-color: rgb(186,160, 112); /* Green background */
+            /* background-color: rgb(163,128, 55);; Green background */
+            border: 1px solid rgb(0, 0, 0); /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+        
+        .radio-toolbar label:hover {
+            background-color: rgb(163,128, 55);
+        }
+        
+        /* .radio-toolbar input[type="radio"]:focus + label {
+            border: 2px dashed;
+        } */
+        
+        .radio-toolbar input[type="radio"]:checked + label {
+            /* background-color: #bfb; */
+            /* background-color: rgb(163,128, 55); */
+            background-color: rgb(28, 26, 130);
+            border-color:rgb(0, 0, 0)
+            border: 3px solid;
+        }
+        
+        
+    </style>
+</head>
+<body>
+   
+    
+    <!-- <div class="radio-toolbar">
+        <input type="radio" id="2022" name="radio_years" onclick="onYear(2022)" checked>
+        <label for="2022">2022</label>
+        
+        <input type="radio" id="2021" name="radio_years"  onclick="onYear(2021)">
+        <label for="2021">2021</label>
+        
+        <input type="radio" id="2020" name="radio_years"  onclick="onYear(2020)">
+        <label for="2020">2020</label>  -->
+        
+    </div>
+    <div id="demo" class="radio-toolbar" ></div>
+    <script>
+        let text23 = "";
+        for (let i = 2022; i > 1940; i--) { 
+            //  text23 +=  "<button>" + i + "</button>";
+            text23 +=  '<input type="radio" id="' + i + '" name="radio_years" onclick="onYear(' + i + ')"><label for="' + i + '">' + i + '</label>'; 
+            // console.log(text23)
+            //     <input type="radio" id="radioOrange" name="radioFruit" value="2020" value="2020"onclick="onYear(2020)">
+            // <label for="radioOrange">2020</label> 
+        }
+        i = 1939; // 1940 is skipped
+        text23 +=  '<input type="radio" id="' + i + '" name="radio_years" onclick="onYear(' + i + ')"><label for="' + i + '">' + i + '</label>'; 
+        document.getElementById("demo").innerHTML = text23;
+    </script>
+    <p>&nbsp;</p>
+    
+    <!--     
+        <button onclick="onYear(0)"> 2022  </button>
+        <button onclick="onYear(1)"> 2021  </button> -->
+        <div style="margin-top:8cm;">
+            <h2 id="concert">
+                New Year's Concert 
+            </h2>
+            <p id="conductor_title">
+                <strong></u><u>Conductor:</u></strong> <a id="conductor" style="cursor: pointer;">
+                    &#8205
+                </a>
+            </p>
+            
+            <p id="program_title">
+                <strong></u><u>Program:</u></strong>
+            </p>
+            <p id="program">      
+                <ol id="myList"></ol>  
+            </p>
+        </div>
+        
+        <script>
+            function getConcertByYear(code) {
+                return data.filter(
+                function(data) {
+                    return data.year == code
+                }
+                );
+            }
+            
+            function getConcertByConductor(code) {
+                return data.filter(
+                function(data) {
+                    return data.conductor == code
+                }
+                );
+            }
+            
+            function onYear(year){
+                selected_year = year;
+                var found_by_year = getConcertByYear(selected_year);
+                console.log(found_by_year[0].year)
+                // find which years this conductors was present
+                this_year_conductor = found_by_year[0].conductor;
+                
+                
+                
+                document.getElementById("conductor").innerHTML = this_year_conductor;
+                document.getElementById("conductor").addEventListener('mouseover', function handleMouseOver() {
+                    this.style.color = 'green';
+                    var years_of_this_conductor = getConcertByConductor(this_year_conductor);
+                    console.log(years_of_this_conductor.length) 
+                    for (let i = 0; i < years_of_this_conductor.length; i++) {
+                        let year_ii = years_of_this_conductor[i].year;
+                        console.log(year_ii)
+                        
+                        // const box = document.getElementById('program_title');
+                        // box.style.backgroundColor = 'coral';
+                        // box.style.color = 'green';
+
+                        // style="color:white"
+                    }
+                });                
+                document.getElementById("conductor").addEventListener('mouseout', function handleMouseOut() {
+                    this.style.color = 'black';
+                });
+                
+                
+                document.getElementById("concert").innerHTML =
+                "New Year's Concert " + selected_year;
+                let pieces_year_x = found_by_year[0].program.piece;
+                let composers_year_x = found_by_year[0].program.composer;
+                
+                
+                let list = document.getElementById("myList");    
+                list.innerHTML = '';        
+                for (let i = 0; i < pieces_year_x.length; i++) {
+                    let li = document.createElement("li");
+                    var piece_i = pieces_year_x[i];
+                    var composer_i = composers_year_x[i];
+                    li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<a class="composer_printed">' + composer_i + "</a>" + ")" ; 
+                    list.appendChild(li);
+                };
+                elemento_conductor_printed = document.getElementsByClassName("piece_printed");
+                elementos_piece_printed = document.getElementsByClassName("piece_printed");
+                elementos_composer_printed = document.getElementsByClassName("composer_printed");
+                // console.log(elementos_composer_printed)
+                for (let j = 0; j < elementos_piece_printed.length; j++) {
+                    
+                    
+                    // 👇️ Change text color on mouseover (piece_printed)
+                    
+                    elementos_piece_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                        this.style.color = 'blue';
+                    });
+                    // 👇️ Change text color back on mouseout (piece_printed)
+                    
+                    elementos_piece_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                        this.style.color = 'black';
+                    });
+                    
+                    // 👇️ Change text color on mouseover (composer_printed)
+                    
+                    elementos_composer_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                        this.style.color = 'red';
+                    });
+                    // 👇️ Change text color back on mouseout (composer_printed)
+                    
+                    elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                        this.style.color = 'black';
+                    });
+                }
+            }
+            
+            // function test_Func_2(){
+                //     console.log("sobre el p tambien funciona!!!");
+                // }
+                
+                
+            </script>
+            
+            
+            
+        </body>
+        </html>
