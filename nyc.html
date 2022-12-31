@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Year's Concert - Vienna Philharmonic </title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        var selected_year = 0;
+        var this_year_conductor = 0;
+    </script>
+    
+    <script type="text/javascript" src="data.js"></script> 
+    
+    <style>
+        ul {
+            margin-left: 20px;
+            color: blue;
+        }
+        li {
+            cursor: default;
+        }
+        span {
+            color: red;
+        }
+        
+        .btn-group button {
+            background-color: #044caa; /* Green background */
+            border: 1px solid green; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+        
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: #362ca2;
+        }
+        .btn-group button:focus {
+            background-color: #3e3f8e;
+        }
+        
+        
+        /* radio buttons */
+        
+        .radio-toolbar {
+            margin: 0px;
+        }
+        
+        .radio-toolbar input[type="radio"] {
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+        
+        .radio-toolbar label {
+            /* display: inline-block;
+            background-color: #ddd;
+            padding: 2px 20px;
+            font-family: sans-serif, Arial;
+            font-size: 16px;
+            border: 2px solid #444;
+            border-radius: 4px;
+            */
+            background-color: rgb(186,160, 112); /* Green background */
+            /* background-color: rgb(163,128, 55);; Green background */
+            border: 1px solid rgb(0, 0, 0); /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+        
+        .radio-toolbar label:hover {
+            background-color: rgb(163,128, 55);
+        }
+        
+        /* .radio-toolbar input[type="radio"]:focus + label {
+            border: 2px dashed;
+        } */
+        
+        .radio-toolbar input[type="radio"]:checked + label {
+            /* background-color: #bfb; */
+            /* background-color: rgb(163,128, 55); */
+            background-color: rgb(28, 26, 130);
+            border-color:rgb(0, 0, 0)
+            border: 3px solid;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    
+    <!-- <div class="radio-toolbar">
+        <input type="radio" id="2022" name="radio_years" onclick="clickOnYear(2022)" checked>
+        <label for="2022">2022</label>
+        
+        <input type="radio" id="2021" name="radio_years"  onclick="clickOnYear(2021)">
+        <label for="2021">2021</label>
+        
+        <input type="radio" id="2020" name="radio_years"  onclick="clickOnYear(2020)">
+        <label for="2020">2020</label>  -->
+        
+    </div>
+    <div id="demo" class="radio-toolbar" ></div>
+    <script>
+        let last_year = 2023;
+        let allRadioButtons = "";
+        for (let i = last_year; i > 1940; i--) { 
+            //  text23 +=  "<button>" + i + "</button>";
+            allRadioButtons +=  '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>'; 
+            // console.log(text23)
+            //     <input type="radio" id="radioOrange" name="radioFruit" value="2020" value="2020"onclick="onYear(2020)">
+            // <label for="radioOrange">2020</label> 
+        }
+        i = 1939; // 1940 is skipped
+        allRadioButtons +=  '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>'; 
+        document.getElementById("demo").innerHTML = allRadioButtons;
+    </script>
+    <p>&nbsp;</p>
+    
+    <!--     
+        <button onclick="onYear(0)"> 2022  </button>
+        <button onclick="onYear(1)"> 2021  </button> -->
+        <div style="margin-top:8cm;">
+            <h2 id="concert">
+                New Year's Concert 
+            </h2>
+            <p id="conductor_title">
+                <strong></u><u>Conductor:</u></strong> <a id="conductor" style="cursor: pointer;">
+                    &#8205
+                </a>
+            </p>
+            
+            <p id="program_title">
+                <strong></u><u>Program:</u></strong>
+            </p>
+            <p id="program">      
+                <ol id="myList"></ol>  
+            </p>
+            
+            <p id="other_info_title">
+                <strong></u><u>Other info:</u></strong> <a id="other_info" style="cursor: pointer;">
+                    &#8205
+                </a>
+            </p>
+        </div>
+        
+        <script>
+            function getConcertByYear(code) {
+                return data.filter(
+                function(data) {
+                    return data.year == code
+                }
+                );
+            }
+            
+            function getConcertByConductor(code) {
+                return data.filter(
+                function(data) {
+                    return data.conductor == code
+                }
+                );
+            }
+            
+            function getConcertByPiece(code) {
+                return data.filter(
+                function(data) {
+                    return data.program.piece.includes(code)
+                }
+                );
+            }
+            
+            function getConcertByComposer(code) {
+                return data.filter(
+                function(data) {
+                    return data.program.composer.includes(code)
+                }
+                );
+            }
+            
+            
+            function clickOnYear(year){
+                selected_year = year;
+                var found_by_year = getConcertByYear(selected_year);
+                console.log(found_by_year[0].year)
+                // find which years this conductors was present
+                this_year_conductor = found_by_year[0].conductor;
+                
+                
+                
+                document.getElementById("conductor").innerHTML = this_year_conductor;
+                document.getElementById("program_title").innerHTML = "<strong></u><u>Program:</u></strong>";
+                
+                document.getElementById("conductor").addEventListener('mouseover', function handleMouseOver() {
+                    this.style.color = 'green';
+                    var years_of_this_conductor = getConcertByConductor(this_year_conductor);
+                    console.log(years_of_this_conductor.length) 
+                    if (years_of_this_conductor.length == 1){
+                            var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert only in" + '<a style="color:green">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                        } else if (years_of_this_conductor.length == 2){
+                            var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in" + '<a style="color:green">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                        }  
+                        else {
+                            var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in "; 
+                            
+                            for (let i = 0; i < years_of_this_conductor.length-1; i++) {
+                                let year_ii = years_of_this_conductor[i].year;
+                                text_other += '<a style="color:green">' + year_ii + '</a>, '
+                            }
+                            text_other += ' and ' + '<a style="color:green">' + years_of_this_conductor[years_of_this_conductor.length-1].year + '</a>.';
+                        }
+                        document.getElementById("other_info").innerHTML = text_other;
+                    });     
+                document.getElementById("conductor").addEventListener('mouseout', function handleMouseOut() {
+                    this.style.color = 'black';
+                });
+                
+                
+                document.getElementById("concert").innerHTML =
+                "New Year's Concert " + selected_year;
+                let pieces_year_x = found_by_year[0].program.piece;
+                let composers_year_x = found_by_year[0].program.composer;
+                
+                
+                let list = document.getElementById("myList");    
+                list.innerHTML = '';        
+                for (let i = 0; i < pieces_year_x.length; i++) {
+                    let li = document.createElement("li");
+                    var piece_i = pieces_year_x[i];
+                    var composer_i = composers_year_x[i];
+                    li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<a class="composer_printed">' + composer_i + "</a>" + ")" ; 
+                    list.appendChild(li);
+                };
+                elemento_conductor_printed = document.getElementsByClassName("piece_printed");
+                elementos_piece_printed = document.getElementsByClassName("piece_printed");
+                elementos_composer_printed = document.getElementsByClassName("composer_printed");
+                // console.log(elementos_composer_printed)
+                for (let j = 0; j < elementos_piece_printed.length; j++) {
+                    
+                    
+                    // 👇️ Change text color on mouseover (piece_printed)
+                    // other_info when mouse on piece
+                    elementos_piece_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                        this.style.color = 'blue';
+                        var years_of_this_piece = getConcertByPiece(this.innerHTML);
+                        //console.log(working.length)
+                        if (years_of_this_piece.length == 1){
+                            var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was only played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                        } else if (years_of_this_piece.length == 2){
+                            var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                        }  
+                        else {
+                            var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in '; 
+                            
+                            for (let i = 0; i < years_of_this_piece.length-1; i++) {
+                                let year_ii = years_of_this_piece[i].year;
+                                text_other += '<a style="color:blue">' + year_ii + '</a>, '
+                            }
+                            text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
+                        }
+                        document.getElementById("other_info").innerHTML = text_other;
+                    });
+                    // 👇️ Change text color back on mouseout (piece_printed)
+                    
+                    elementos_piece_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                        this.style.color = 'black';
+                    });
+                    
+                    // 👇️ Change text color on mouseover (composer_printed)
+                    
+                    elementos_composer_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                        this.style.color = 'red';
+                        var years_of_this_composer = getConcertByComposer(this.innerHTML);
+                        //console.log(working.length)
+                        if (years_of_this_composer.length == 1){
+                            var text_other = 'The piece <em style="color:red">' + this.innerHTML + '</em> was only played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                        } else if (years_of_this_composer.length == 2){
+                            var text_other = 'The piece <em style="color:red">' + this.innerHTML + '</em> was played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                        }  
+                        else {
+                            var text_other = 'The piece <em style="color:red">' + this.innerHTML + '</em> was played in '; 
+                            
+                            for (let i = 0; i < years_of_this_composer.length-1; i++) {
+                                let year_ii = years_of_this_composer[i].year;
+                                text_other += '<a style="color:red">' + year_ii + '</a>, '
+                            }
+                            text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
+                        }
+                        document.getElementById("other_info").innerHTML = text_other;
+                    });
+                    // 👇️ Change text color back on mouseout (composer_printed)
+                    
+                    elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                        this.style.color = 'black';
+                    });
+                }
+            }
+            
+            // function test_Func_2(){
+                //     console.log("sobre el p tambien funciona!!!");
+                // }
+                
+                
+                
+                clickOnYear(last_year); // click in the current year
+            </script>
+            
+            
+            
+        </body>
+        </html>

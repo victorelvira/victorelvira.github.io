@@ -3815,5 +3815,48 @@ var data = [
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235"
             ]
         }
+    },
+    {
+        "year": 2023,
+        "conductor": "Franz Welser-Moest",
+        "program":
+        {
+            "composer":
+            [
+                "Eduard Strauß",
+                "Josef Strauß",
+                "Johann Strauß II.",
+                "Carl Michael Ziehrer",
+                "Johann Strauß II.",
+                "Franz von Suppè",
+                "Josef Strauß",
+                "Josef Strauß",
+                "Eduard Strauß",
+                "Josef Strauß",
+                "Josef Strauß",
+                "Josef Strauß",
+                "Josef Hellmesberger (Sohn)",
+                "Josef Strauß",
+                "Josef Strauß"
+            ],
+            "piece":
+            [
+                "Wer tanzt mit? Polka schnell, op. 251",
+                "Heldengedichte. Walzer, op. 87",
+                "Zigeunerbaron-Quadrille, op. 422",
+                "In lauschiger Nacht. Walzer, op. 488",
+                "Frisch heran! Polka schnell, op. 386",
+                "Ouvertüre zur Operette ÿIsabellaÿ",
+                "Perlen der Liebe. Walzer, op. 39",
+                "Angelica-Polka. Polka française, op. 123",
+                "Auf und davon. Polka schnell, op. 73",
+                "Heiterer Muth. Polka française, op. 281",
+                "For ever. Polka schnell, op. 193",
+                "Zeisserln. Walzer, op. 114",
+                "Glocken-Polka mit Galopp aus dem Ballett Excelsior",
+                "Allegro fantastique. Orchesterfantasie, Anh. 26b",
+                "Aquarellen. Walzer, op. 258"
+            ]
+        }
     }
 ];
