@@ -6,15 +6,25 @@
     
     <title>New Year's Concert - Vienna Philharmonic </title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
     <script>
-        var selected_year = 0;
+        var selected_year = 2023;
         var this_year_conductor = 0;
+        const years_highlighted=  [];
+        var years_of_this_conductor = [];
+        var years_of_this_piece = [];
+        var years_of_this_composer = [];
     </script>
     
     <script type="text/javascript" src="data.js"></script> 
     
     <style>
-        
+        :root{
+            --gold_box: rgb(186,160, 112);
+            --gold_box_hoover: rgb(163,128, 55);
+            --clicked_year_color: rgb(28, 26, 130);
+        }
         .left_panel {
             background-color: white;
             padding: 20px;
@@ -85,7 +95,7 @@
             margin: 0px;
         }
         
-        .radio-toolbar input[type="radio"] {
+        .radio-toolbar input[type="radio"] {  /* esconde el circulito*/
             opacity: 0;
             position: fixed;
             width: 0;
@@ -105,9 +115,8 @@
             height: 2vw;
             text-align: center;
             margin: auto;
-            background-color: rgb(186,160, 112); /* Green background */
-            /* background-color: rgb(163,128, 55);; Green background */
-            border: 1px solid rgb(0, 0, 0); /* Green border */
+            background-color: var(--gold_box); /* standard */
+            border: 1px solid rgb(0, 0, 0);  
             color: white; /* White text */
             padding: 1vw 2vw; /* Some padding */
             cursor: pointer; /* Pointer/hand icon */
@@ -115,17 +124,14 @@
         }
         
         .radio-toolbar label:hover {
-            background-color: rgb(163,128, 55);
+            background-color: var(--gold_box_hoover); 
         }
         
-        /* .radio-toolbar input[type="radio"]:focus + label {
-            border: 2px dashed;
-        } */
         
         .radio-toolbar input[type="radio"]:checked + label {
             /* background-color: #bfb; */
             /* background-color: rgb(163,128, 55); */
-            background-color: rgb(28, 26, 130);
+            background-color: var(--clicked_year_color);
             border-color:rgb(0, 0, 0)
             border: 3px solid;
         }
@@ -138,6 +144,10 @@
             }
         }
     </style>
+    
+    <!-- <script>
+        var styleCSS = getComputedStyle(document.body);
+    </script> -->
 </head>
 <body>
     
@@ -186,10 +196,15 @@
             <!-- <div style="margin-top:8cm;"> -->
                 <div class="main_panel">
                     <div>
+                        
+                        
+                        
+                        
+                        
                         <h2 id="concert">
                             New Year's Concert 
                         </h2>
-        
+                        
                         <p id="conductor_title">
                             <strong></u><u>Conductor:</u></strong> <a id="conductor" style="cursor: pointer;">
                                 &#8205
@@ -253,8 +268,19 @@
                     
                     
                     function clickOnYear(year){
+                        previous_year = selected_year;
                         selected_year = year;
                         var found_by_year = getConcertByYear(selected_year);
+                        
+                        // this code below should not be here (does not work). But otherwise, some never get back.
+                        var styleCSS = getComputedStyle(document.body);
+                        clicked_year_color = styleCSS.getPropertyValue('--clicked_year_color');   
+                        gold_box = styleCSS.getPropertyValue('--gold_box');   
+                        console.log("Saved variable length" + years_of_this_conductor.length) 
+                        $("label[for='" + previous_year + "']").css("background-color", gold_box);
+                        $("label[for='" + selected_year + "']").css("background-color", clicked_year_color);
+                        
+                        
                         console.log(found_by_year[0].year)
                         // find which years this conductors was present
                         this_year_conductor = found_by_year[0].conductor;
@@ -264,28 +290,73 @@
                         document.getElementById("conductor").innerHTML = this_year_conductor;
                         document.getElementById("program_title").innerHTML = "<strong></u><u>Program:</u></strong>";
                         
+                        
+                        // Mouse OVER on conductor
                         document.getElementById("conductor").addEventListener('mouseover', function handleMouseOver() {
                             this.style.color = 'green';
-                            var years_of_this_conductor = getConcertByConductor(this_year_conductor);
-                            console.log(years_of_this_conductor.length) 
+                            years_of_this_conductor = getConcertByConductor(this_year_conductor);
+                            console.log("Saved variable length ON conductor: " + years_of_this_conductor.length) 
+                            
+                            // var r = document.querySelector(':root');
+                            // console.log(r.style.getProperty('--gold_box'));
+                            
+                            
+                            
+                            
+                            for (let i = 0; i < years_of_this_conductor.length; i++) { 
+                                year_ii = years_of_this_conductor[i].year;
+                                console.log(year_ii)
+                                if (year_ii != selected_year){
+                                    $("label[for='" + year_ii  + "']").css("background-color", "green");
+                                }
+                            }
+                            
+                            // var styleCSS = getComputedStyle(document.body);
+                            // gold_box = styleCSS.getPropertyValue('--gold_box');   
+                            
+                            
                             if (years_of_this_conductor.length == 1){
-                                var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert only in" + '<a style="color:green">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert only in " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>.'; 
                             } else if (years_of_this_conductor.length == 2){
-                                var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in" + '<a style="color:green">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>' + ' and ' + '<a style="color:green">' + years_of_this_conductor[1].year + '</a>.'; 
                             }  
                             else {
                                 var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in "; 
                                 
                                 for (let i = 0; i < years_of_this_conductor.length-1; i++) {
+                                    
                                     let year_ii = years_of_this_conductor[i].year;
+                                    years_highlighted[i] = year_ii;
+                                    console.log(years_highlighted[i])
                                     text_other += '<a style="color:green">' + year_ii + '</a>, '
                                 }
                                 text_other += ' and ' + '<a style="color:green">' + years_of_this_conductor[years_of_this_conductor.length-1].year + '</a>.';
                             }
                             document.getElementById("other_info").innerHTML = text_other;
                         });     
+                        
+                        
+                        
+                        
+                        
+                        
+                        // Mouse OUT on conductor
+                        
                         document.getElementById("conductor").addEventListener('mouseout', function handleMouseOut() {
+                            // conductor to black
                             this.style.color = 'black';
+                            // colors of boxes back to gold
+                            
+                            // var styleCSS = getComputedStyle(document.body);
+                            gold_box = styleCSS.getPropertyValue('--gold_box');   
+                            console.log("Saved variable length" + years_of_this_conductor.length) 
+                            for (let i = 0; i < years_of_this_conductor.length; i++) { 
+                                year_ii = years_of_this_conductor[i].year;
+                                if (year_ii != selected_year){
+                                    $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                }
+                            }
+                            
                         });
                         
                         
@@ -311,12 +382,20 @@
                         for (let j = 0; j < elementos_piece_printed.length; j++) {
                             
                             
-                            // 👇️ Change text color on mouseover (piece_printed)
-                            // other_info when mouse on piece
+                            // Mouse OVER on PIECE
                             elementos_piece_printed[j].addEventListener('mouseover', function handleMouseOver() {
                                 this.style.color = 'blue';
-                                var years_of_this_piece = getConcertByPiece(this.innerHTML);
-                                //console.log(working.length)
+                                years_of_this_piece = getConcertByPiece(this.innerHTML);
+                                
+                                for (let i = 0; i < years_of_this_piece.length; i++) { 
+                                year_ii = years_of_this_piece[i].year;
+                                console.log(year_ii)
+                                if (year_ii != selected_year){
+                                    $("label[for='" + year_ii  + "']").css("background-color", "blue");
+                                }
+                            }
+
+
                                 if (years_of_this_piece.length == 1){
                                     var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                 } else if (years_of_this_piece.length == 2){
@@ -335,15 +414,36 @@
                             });
                             // 👇️ Change text color back on mouseout (piece_printed)
                             
+
+
                             elementos_piece_printed[j].addEventListener('mouseout', function handleMouseOut() {
                                 this.style.color = 'black';
+
+                                for (let i = 0; i < years_of_this_piece.length; i++) { 
+                                year_ii = years_of_this_piece[i].year;
+                                if (year_ii != selected_year){
+                                    $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                }
+                            }
+
                             });
                             
                             // 👇️ Change text color on mouseover (composer_printed)
                             
                             elementos_composer_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                                
+                                
                                 this.style.color = 'red';
-                                var years_of_this_composer = getConcertByComposer(this.innerHTML);
+                                years_of_this_composer = getConcertByComposer(this.innerHTML);
+
+                                for (let i = 0; i < years_of_this_composer.length; i++) { 
+                                year_ii = years_of_this_composer[i].year;
+                                console.log(year_ii)
+                                if (year_ii != selected_year){
+                                    $("label[for='" + year_ii  + "']").css("background-color", "red");
+                                }
+                            }
+
                                 //console.log(working.length)
                                 if (years_of_this_composer.length == 1){
                                     var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
@@ -365,6 +465,13 @@
                             
                             elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
                                 this.style.color = 'black';
+
+                                for (let i = 0; i < years_of_this_composer.length; i++) { 
+                                year_ii = years_of_this_composer[i].year;
+                                if (year_ii != selected_year){
+                                    $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                }
+                            }
                             });
                         }
                     }
