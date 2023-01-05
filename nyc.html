@@ -118,6 +118,15 @@
             color: white; /* White text */
             cursor: pointer; /* Pointer/hand icon */
             float: left; /* Float the buttons side by side */
+            
+            /* justification */
+            display: flex;
+            /* place items in column */
+            flex-direction: column;
+            /* center flex items horizontally */
+            align-items: center;
+            /* center all content vertically */
+            justify-content: center;
         }
         
         .radio-toolbar label:hover {
@@ -189,8 +198,8 @@
             <h1 id="title">
                 Interactive database of the New Year's Concert by the Vienna Philharmonic
                 <!-- <img src="mv.jpg" style="width:100%;"> -->
-                <p sylte = "font-size : 2vw"> (*More information is displayed below when clicking on the conductor's name, pieces, and composers.) </p>
             </h1>
+            <p> (*More information is displayed below when clicking on the conductor's name, pieces, and composers.) </p>
         </div>
         <div class="left_panel">
             <div id="demo" class="radio-toolbar" ></div>
