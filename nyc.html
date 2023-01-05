@@ -27,34 +27,33 @@
         }
         .left_panel {
             background-color: white;
-            padding: 20px;
+            padding: 2%;
             float: left;
-            width: 40%; /* The width is 20%, by default */
+            width: 30%; /* The width is 20%, by default */
         }
         
         .main_panel {
             background-color: white;
             padding: 20px;
             float: left;
-            width: 40%; /* The width is 60%, by default */
+            width: 38%; /* The width is 60%, by default */
+            padding: 2%;
         }
         
         .right_panel {
             background-color: white;
-            padding: 20px;
+            /* padding: 20px; */
+            padding: 2%;
             float: left;
             width: 20%; /* The width is 20%, by default */
         }
         
         h1{
-            font-size : 4vw;
         }
         h2{
-            font-size : 3vw;
         }
         p {
             margin-left: 10px;
-            font-size : 2vw;
         }
         ol {
             /* margin-left: 5vw; */
@@ -62,7 +61,6 @@
         }
         li {
             cursor: default;
-            font-size : 2vw;
         }
         span {
             color: red;
@@ -110,15 +108,14 @@
             border: 2px solid #444;
             border-radius: 4px;
             */
-            /* font-size: 2vw; */
-            width: 3vw;
-            height: 2vw;
+            font-size: 22px;
+            width: 80px;
+            height: 40px; 
             text-align: center;
             margin: auto;
             background-color: var(--gold_box); /* standard */
             border: 1px solid rgb(0, 0, 0);  
             color: white; /* White text */
-            padding: 1vw 2vw; /* Some padding */
             cursor: pointer; /* Pointer/hand icon */
             float: left; /* Float the buttons side by side */
         }
@@ -133,7 +130,7 @@
             /* background-color: rgb(163,128, 55); */
             background-color: var(--clicked_year_color);
             border-color:rgb(0, 0, 0)
-            border: 3px solid;
+            /* border: 3px solid; */
         }
         
         
@@ -142,6 +139,32 @@
             .left_panel, .main_panel, .right_panel {
                 width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
             }
+            h1{
+                font-size : 4vw;
+            }
+            h2{
+                font-size : 3vw;
+            }
+            p {
+                font-size : 3vw;
+            }
+            ol {
+                /* margin-left: 5vw; */
+                /* font-size : 1vw; */
+            }
+            li {
+                font-size : 3vw;
+            }
+
+            .radio-toolbar label {
+                padding: 200vw;
+            font-size: 2vw;
+            width: 3vw;
+            height: 2vw;
+            padding: 1vw 2vw; /* Some padding */
+        }
+        
+
         }
     </style>
     
@@ -177,14 +200,17 @@
                 for (let i = last_year; i > 1940; i--) { 
                     //  text23 +=  "<button>" + i + "</button>";
                     if(i==last_year){
-                        allRadioButtons +=  '<input type="radio"  id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')" checked><label for="' + i + '" style="font-size:2vw">' + i + '</label>'; 
+                        // allRadioButtons +=  '<input type="radio"  id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')" checked><label for="' + i + '" style="font-size:2vw">' + i + '</label>'; 
+                        allRadioButtons +=  '<input type="radio"  id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')" checked><label for="' + i + '">' + i + '</label>'; 
+
                     }
                     else{
-                        allRadioButtons +=  '<input type="radio" style="font-size:10px" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '" style="font-size:2vw">' + i + '</label>'; 
+                        // allRadioButtons +=  '<input type="radio" style="font-size:10px" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '" style="font-size:2vw">' + i + '</label>'; 
+                        allRadioButtons +=  '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>'; 
                     }
                 }
                 i = 1939; // 1940 is skipped
-                allRadioButtons +=  '<input type="radio" style="font-size:10px" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '" style="font-size:2vw" >' + i + '</label>'; 
+                allRadioButtons +=  '<input type="radio" style="font-size:10px" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>'; 
                 document.getElementById("demo").innerHTML = allRadioButtons;
             </script>
         </div>
@@ -388,14 +414,14 @@
                                 years_of_this_piece = getConcertByPiece(this.innerHTML);
                                 
                                 for (let i = 0; i < years_of_this_piece.length; i++) { 
-                                year_ii = years_of_this_piece[i].year;
-                                console.log(year_ii)
-                                if (year_ii != selected_year){
-                                    $("label[for='" + year_ii  + "']").css("background-color", "blue");
+                                    year_ii = years_of_this_piece[i].year;
+                                    console.log(year_ii)
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii  + "']").css("background-color", "blue");
+                                    }
                                 }
-                            }
-
-
+                                
+                                
                                 if (years_of_this_piece.length == 1){
                                     var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                 } else if (years_of_this_piece.length == 2){
@@ -414,18 +440,18 @@
                             });
                             // 👇️ Change text color back on mouseout (piece_printed)
                             
-
-
+                            
+                            
                             elementos_piece_printed[j].addEventListener('mouseout', function handleMouseOut() {
                                 this.style.color = 'black';
-
+                                
                                 for (let i = 0; i < years_of_this_piece.length; i++) { 
-                                year_ii = years_of_this_piece[i].year;
-                                if (year_ii != selected_year){
-                                    $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                    year_ii = years_of_this_piece[i].year;
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                    }
                                 }
-                            }
-
+                                
                             });
                             
                             // 👇️ Change text color on mouseover (composer_printed)
@@ -435,15 +461,15 @@
                                 
                                 this.style.color = 'red';
                                 years_of_this_composer = getConcertByComposer(this.innerHTML);
-
+                                
                                 for (let i = 0; i < years_of_this_composer.length; i++) { 
-                                year_ii = years_of_this_composer[i].year;
-                                console.log(year_ii)
-                                if (year_ii != selected_year){
-                                    $("label[for='" + year_ii  + "']").css("background-color", "red");
+                                    year_ii = years_of_this_composer[i].year;
+                                    console.log(year_ii)
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii  + "']").css("background-color", "red");
+                                    }
                                 }
-                            }
-
+                                
                                 //console.log(working.length)
                                 if (years_of_this_composer.length == 1){
                                     var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
@@ -465,13 +491,13 @@
                             
                             elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
                                 this.style.color = 'black';
-
+                                
                                 for (let i = 0; i < years_of_this_composer.length; i++) { 
-                                year_ii = years_of_this_composer[i].year;
-                                if (year_ii != selected_year){
-                                    $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                    year_ii = years_of_this_composer[i].year;
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                    }
                                 }
-                            }
                             });
                         }
                     }
