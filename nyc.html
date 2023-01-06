@@ -27,9 +27,12 @@
         }
         .left_panel {
             background-color: white;
-            padding: 2%;
+            /* padding-top: 200px; */
+            padding: 1%;
             float: left;
             width: 30%; /* The width is 20%, by default */
+            background-color:#dadada;
+            padding-top:0;
         }
         
         .main_panel {
@@ -37,20 +40,26 @@
             padding: 20px;
             float: left;
             width: 38%; /* The width is 60%, by default */
-            padding: 2%;
+            padding: 1%;
+            padding-top:0;
         }
         
         .right_panel {
-            background-color: white;
+            background-color:#dadada;
             /* padding: 20px; */
-            padding: 2%;
+            padding: 1%;
             float: left;
-            width: 20%; /* The width is 20%, by default */
+            width: 26%; /* The width is 20%, by default */
+            padding-top:0;
         }
         
         h1{
+            padding: 2%;
+            /* background-color:#e5e5e5 */
+            background-color:#dadada
         }
         h2{
+            /* padding-top: 5px */
         }
         p {
             margin-left: 10px;
@@ -199,9 +208,11 @@
                 Interactive database of the New Year's Concert by the Vienna Philharmonic
                 <!-- <img src="mv.jpg" style="width:100%;"> -->
             </h1>
-            <p> (*More information is displayed below when clicking on the conductor's name, pieces, and composers.) </p>
         </div>
         <div class="left_panel">
+            <h2>
+                Select a year
+            </h2>
             <div id="demo" class="radio-toolbar" ></div>
             <script>
                 let last_year = 2023;
@@ -240,6 +251,8 @@
                             New Year's Concert 
                         </h2>
                         
+                        <p> (*More information is displayed below when clicking on the conductor's <a style="color:green">name</a>, <a style="color:blue">pieces</a>, and <a style="color:red">name</a>.) </p>
+
                         <p id="conductor_title">
                             <strong></u><u>Conductor:</u></strong> <a id="conductor" style="cursor: pointer;">
                                 &#8205
@@ -260,8 +273,12 @@
                 
                 
                 <div class="right_panel">
+
+                    <h2 id="concert">
+                        Information
+                    </h2>
                     <p id="other_info_title">
-                        <strong></u><u>Other info:</u></strong> <a id="other_info" style="cursor: pointer;">
+                        <strong></u><u>Appearances:</u></strong> <a id="other_info" style="cursor: pointer;">
                             &#8205
                         </a>
                     </p>
