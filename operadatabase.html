@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #myTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    }
+
+    #myTable th,
+    #myTable td {
+      text-align: left;
+      padding: 12px;
+    }
+
+    #myTable tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #myTable tr.header,
+    #myTable tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+     
+  <script type="text/javascript" src="opera_catalogue.js"></script> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+// NEXT IS: if field is an array, do something else (append all singers...). SI LO HAGO MUY GENERICO PUEDE SER UN LIO. SI LO HAGO MUY PARTICULAR, SOLO SERVIRIA PARA OPERA.
+// NEXT IS: sortable
+// NEXT IS: un poco mas flexibilidad en los vectores debajo
+
+var myListColumnHeaders = ["opera", "compositor", "label", "type","date","place"];
+var n_cols = myListColumnHeaders.length;
+var properties_vector = ["composer.full", "name.full", "label", "type","date.year","place.country"];  // will go in the same order as above
+
+function find_nested_prop_in_JSON(obj, prop, defval){ // allows to go deeper in nested JSONs
+    if (typeof defval == 'undefined') defval = null;
+    prop = prop.split('.');
+    for (var i = 0; i < prop.length; i++) {
+        if(typeof obj[prop[i]] == 'undefined')
+            return defval;
+        obj = obj[prop[i]];
+
+    }
+    return obj;
+}
+
+function create_2D_object(obj, props, myListColumnHeaders){ // creates 2D object to be filled later in a table
+    // var object_2D_internal = Array(obj.length).fill(Array(props.length)); // new Array(obj.length,props.length).fill(null);
+    // var object_2D_internal = Array(obj.length);
+    //     // Loop to initialize 2D array elements.
+    // for (var i = 0; i < obj.length; i++) {
+    //     for (var j = 0; j < props.length; j++) {
+    //       object_2D_internal[i][j] = null;
+    //     }
+    // }
+    var object_2D_internal =  new Array(obj.length).fill(0).map(() => new Array(props.length).fill(0));
+
+    console.log(obj.length)
+    console.log(props.length)
+    for (var ii = 0; ii < obj.length; ii++) {
+      for (var jj= 0; jj < props.length; jj++) {
+        // console.log(obj[i])
+        // console.log(props[j])
+        element_i_j = find_nested_prop_in_JSON(obj[ii], props[jj],""); // use column string instead of j-position;
+        object_2D_internal[ii][jj] = element_i_j;
+        // object_2D_internal[ii][jj] = ii + jj;
+        // console.log("ii is " + ii)
+        // console.log("jj is " + jj)
+        // console.log(element_i_j)
+        // console.log("size is " + object_2D_internal.length)
+      }
+    }
+    return object_2D_internal;
+
+}
+
+
+var object_2D = create_2D_object(opera_catalogue, properties_vector, myListColumnHeaders)
+
+
+
+// find_nested_prop_in_JSON(opera_catalogue[0], props,"")
+
+
+// var data = {"id":1,
+// "name":"abc",
+// "address":{"streetName":{full:"cde"},"streetId":2}
+// };
+
+// var props = 'label';
+// console.log('The value of ' + props + ' is ' + find_nested_prop_in_JSON(opera_catalogue[0], props,""));
+
+
+
+// table_input is a version of the JSON file in a 2D table tyle (excel), just with the info that is equired above
+
+  // var table_input = opera_catalogue; 
+
+  // const aaa = JSON.parse(table_input[1]);
+
+
+// var keys = Object.keys(table_input);
+
+  // console.log(typeof(table_input[0]["artists.name"]));
+  // console.log(table_input[0]["artists"][1].name);
+
+  // var mylist = opera_catalogue;
+//   var myList = [
+//   { "name": "abc", "age": 50 },
+//   { "age": "25", "hobby": "swimming" },
+//   { "name": "xyz", "hobby": "programming" , "age": 75, "bla": 75}
+// ];
+
+  // var myListColumnHeaders = ["name", "age", "hobby"];
+
+  
+ 
+
+  function buildHtmlTable(selector,table_input) { // table_input is a JSON variable. Problem: only will check if fields in the first level are = columns
+  // var columns = addAllColumnHeaders(myList, selector);
+  var columns = addAllColumnHeadersFixed(myListColumnHeaders, selector);
+  // myList = opera_catalogue;
+  console.log(table_input.length)
+  for (var i = 0; i < table_input.length; i++) {
+    var row$ = $('<tr/>');
+    for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) { // for each column
+      var cellValue = table_input[i][colIndex]; // value of the cell
+      if (cellValue == null) {
+          cellValue = ""; // empty if not
+      }
+      row$.append($('<td/>').html(cellValue));
+    }
+    $(selector).append(row$);
+  }
+}
+
+
+// Builds the HTML Table out of JSON myList (object, but only with one level)
+function buildHtmlTable_from_JSON(selector,table_input) { // table_input is a JSON variable. Problem: only will check if fields in the first level are = columns
+  // var columns = addAllColumnHeaders(myList, selector);
+  var columns = addAllColumnHeadersFixed(myListColumnHeaders, selector);
+  // myList = opera_catalogue;
+  console.log(table_input.length)
+  for (var i = 0; i < opera_catalogue.length; i++) {
+    var row$ = $('<tr/>');
+    for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+      var cellValue = table_input[i][columns[colIndex]]; // value of the cell
+      if (cellValue == null) {
+          cellValue = ""; // empty if not
+      }
+      row$.append($('<td/>').html(cellValue));
+    }
+    $(selector).append(row$);
+  }
+}
+
+// Adds a header row to the table and returns the set of columns.
+// Need to do union of keys from all records as some records may not contain
+// all records.
+function addAllColumnHeaders(myList, selector) { // so far not used
+  var columnSet = [];
+  var headerTr$ = $('<tr/>');
+
+  for (var i = 0; i < myList.length; i++) {
+    var rowHash = myList[i];
+    for (var key in rowHash) {
+      if ($.inArray(key, columnSet) == -1) {
+        columnSet.push(key);
+        headerTr$.append($('<th/>').html(key));
+      }
+    }
+  }
+
+  $(selector).append(headerTr$);
+  // <tr class="header">
+  //     <th style="width:20%;">Name</th>
+  //     <th style="width:20%;">Country</th>
+  //   </tr>
+  return columnSet;
+}
+
+
+// Adds a header row to the table and returns the set of columns.
+// Simply extracter from a list
+function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
+  var columnSet = [];
+  var headerTr$ = $('<tr/>');
+
+  for (var i = 0; i < myListColumnHeaders.length; i++) {
+    key = myListColumnHeaders[i];
+    // for (var key in rowHash) {
+      // if ($.inArray(key, columnSet) == -1) {
+        columnSet.push(key);
+        headerTr$.append($('<th/>').html(key));
+      // }
+    // }
+  }
+
+  $(selector).append(headerTr$);
+
+  return columnSet;
+}
+
+
+</script>
+
+
+</head>
+
+<body onLoad="buildHtmlTable('#myTable',object_2D)">
+
+
+  <h2>Opera recordings</h2>
+
+  <input type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type">
+
+    <table id="myTable"  class=”sortable” border="1">
+    </table>
+   
+  
+  <script>
+    function function_on_key_up() {     // when a key is released
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      console.log(tr.length)
+
+      filter_vec = filter.split(" "); // all substrings
+
+      // queda eliminar el substring vacio, MEJOR HACERLO AQUI
+      const index_space = filter_vec.indexOf(" ");
+      if (index_space > -1) { // only splice array when item is found
+        filter_vec.splice(index_space);  
+      }
+
+      console.log(filter_vec.length)
+
+      for (i = 0; i < tr.length; i++) {
+        // flag_i = false; // hidden by default
+        var flag_i_vec = new Array(filter_vec.length).fill(false);  // size of number of sub_strings. We will need that all substrings to be true
+         
+        for (col = 0; col < n_cols; col++) { // for each column
+          td = tr[i].getElementsByTagName("td")[col];
+          if (td) { // if there is something in td
+            // txtValue = td.textContent || td.innerText; //  textContent is more efficient than innerText
+            txtValue = td.textContent; //  textContent is more efficient than innerText
+            for (k = 0; k < filter_vec.length; k++) { // for all substrings in the filter
+            if (txtValue.toUpperCase().indexOf(filter_vec[k]) > -1) { // if filter is a sub-string of txtValue
+              // console.log(txtValue.toUpperCase().indexOf(filter) > -1)
+                // flag_i = txtValue.toUpperCase().indexOf(filter_vec[k]) > -1 || flag_i
+                flag_i_vec[k] = txtValue.toUpperCase().indexOf(filter_vec[k]) > -1 || flag_i_vec[k]
+              }
+            }
+          }
+        }
+        // if (flag_i) { // if filter is a sub-string of txtValue
+          if (flag_i_vec.every(v => v === true)){ // true if all elements of the vector are true
+              tr[i].style.display = ""; // displayed
+            } else {
+              tr[i].style.display = "none";  // hidden
+            }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
