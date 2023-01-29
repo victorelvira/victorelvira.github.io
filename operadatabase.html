@@ -49,10 +49,11 @@
 // NEXT IS: if field is an array, do something else (append all singers...). SI LO HAGO MUY GENERICO PUEDE SER UN LIO. SI LO HAGO MUY PARTICULAR, SOLO SERVIRIA PARA OPERA.
 // NEXT IS: sortable
 // NEXT IS: un poco mas flexibilidad en los vectores debajo
+// NEXT IS: headers are not headers, but instead a normal filtrable row
 
-var myListColumnHeaders = ["opera", "compositor", "label", "type","date","place"];
+var myListColumnHeaders = ["opera", "conductor","place", "type","year"];
 var n_cols = myListColumnHeaders.length;
-var properties_vector = ["composer.full", "name.full", "label", "type","date.year","place.country"];  // will go in the same order as above
+var properties_vector = ["name.full", "composer.last", "place.opera_house","type","date.year"];  // will go in the same order as above
 
 function find_nested_prop_in_JSON(obj, prop, defval){ // allows to go deeper in nested JSONs
     if (typeof defval == 'undefined') defval = null;
@@ -214,10 +215,11 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
       // if ($.inArray(key, columnSet) == -1) {
         columnSet.push(key);
         headerTr$.append($('<th/>').html(key));
+        console.log($('<th/>').html(key))
       // }
     // }
   }
-
+  console.log(headerTr$)
   $(selector).append(headerTr$);
 
   return columnSet;
@@ -259,7 +261,7 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
 
       console.log(filter_vec.length)
 
-      for (i = 0; i < tr.length; i++) {
+      for (i = 1; i < tr.length; i++) { // NEVER MAKE DISAPPEAR THE FIRST ONE
         // flag_i = false; // hidden by default
         var flag_i_vec = new Array(filter_vec.length).fill(false);  // size of number of sub_strings. We will need that all substrings to be true
          
