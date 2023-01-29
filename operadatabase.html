@@ -236,8 +236,8 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
 
   <h2>Opera recordings</h2>
 
-  <input type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type">
-
+  <input type="text" id="myInput"   width="20px" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="200px">
+   <a id="n_elements">   </a>
     <table id="myTable"  class=”sortable” border="1">
     </table>
    
@@ -260,7 +260,7 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
       }
 
       console.log(filter_vec.length)
-
+      count_visible = 0; // appearing elements
       for (i = 1; i < tr.length; i++) { // NEVER MAKE DISAPPEAR THE FIRST ONE
         // flag_i = false; // hidden by default
         var flag_i_vec = new Array(filter_vec.length).fill(false);  // size of number of sub_strings. We will need that all substrings to be true
@@ -282,10 +282,13 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
         // if (flag_i) { // if filter is a sub-string of txtValue
           if (flag_i_vec.every(v => v === true)){ // true if all elements of the vector are true
               tr[i].style.display = ""; // displayed
+              count_visible = count_visible + 1;
             } else {
               tr[i].style.display = "none";  // hidden
             }
       }
+      document.getElementById("n_elements").innerHTML = count_visible + " elements";
+
     }
   </script>
 
