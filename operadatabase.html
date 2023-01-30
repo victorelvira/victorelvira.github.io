@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <title>Opera Database </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     * {
@@ -51,9 +52,9 @@
 // NEXT IS: un poco mas flexibilidad en los vectores debajo
 // NEXT IS: headers are not headers, but instead a normal filtrable row
 
-var myListColumnHeaders = ["opera", "composer","place", "type","year"];
+var myListColumnHeaders = ["opera", "composer","place","year","label", "type"];
 var n_cols = myListColumnHeaders.length;
-var properties_vector = ["name.full", "composer.last", "place.opera_house","type","date.year"];  // will go in the same order as above
+var properties_vector = ["name.full", "composer.last", "place.opera_house","date.year","label","type"];  // will go in the same order as above
 
 function find_nested_prop_in_JSON(obj, prop, defval){ // allows to go deeper in nested JSONs
     if (typeof defval == 'undefined') defval = null;
@@ -238,7 +239,7 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
 
   <input type="text" id="myInput"   width="20px" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="200px">
    <a id="n_elements">   </a>
-    <table id="myTable"  class=”sortable” border="1">
+    <table id="myTable"  class=”sortable” border="1" style="width:100%">
     </table>
    
   
