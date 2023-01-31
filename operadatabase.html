@@ -40,6 +40,7 @@
     #myTable tr.header,
     #myTable tr:hover {
       background-color: #f1f1f1;
+
     }
   </style>
      
@@ -52,9 +53,24 @@
 // NEXT IS: un poco mas flexibilidad en los vectores debajo
 // NEXT IS: headers are not headers, but instead a normal filtrable row
 
-var myListColumnHeaders = ["opera", "composer","place","year","label", "type"];
+var myListColumnHeaders = ["opera", "composer","place","artists","year","label", "type"];
 var n_cols = myListColumnHeaders.length;
 var properties_vector = ["name.full", "composer.last", "place.opera_house","date.year","label","type"];  // will go in the same order as above
+
+var object_2D = create_2D_object(opera_catalogue, properties_vector, myListColumnHeaders)
+
+ind_artists = myListColumnHeaders.indexOf("artists");
+if (ind_artists > -1){ // artists will be displayed
+  var column_artists = artists_2_string(opera_catalogue);
+
+  for (var i = 0; i < object_2D.length; i++) {
+    console.log(i)
+    art_ii = column_artists[i];
+    object_2D[i].splice(ind_artists, 0, art_ii); // insert artist
+    console.log(object_2D[i][ind_artists])
+  }
+}
+
 
 function find_nested_prop_in_JSON(obj, prop, defval){ // allows to go deeper in nested JSONs
     if (typeof defval == 'undefined') defval = null;
@@ -97,10 +113,6 @@ function create_2D_object(obj, props, myListColumnHeaders){ // creates 2D object
     return object_2D_internal;
 
 }
-
-
-var object_2D = create_2D_object(opera_catalogue, properties_vector, myListColumnHeaders)
-
 
 
 // find_nested_prop_in_JSON(opera_catalogue[0], props,"")
@@ -159,7 +171,41 @@ var object_2D = create_2D_object(opera_catalogue, properties_vector, myListColum
 }
 
 
-// Builds the HTML Table out of JSON myList (object, but only with one level)
+function artists_2_string(obj){ // unique function for the opera database. Concatenates the artists in a very specific order
+
+var string_artists =  new Array(obj.length).fill(null);
+
+var bla = obj[0]["artists"][1]["sort"]; // value of the cell
+console.log(bla)
+// console.log(props.length)
+for (var ii = 0; ii < obj.length; ii++) {
+  artists_ii = obj[ii]["artists"];
+  artists_ii_string = "";
+  for (var jj = 0; jj < artists_ii.length; jj++) {
+    art_ii_jj = artists_ii[jj]["sort"];
+    if (typeof art_ii_jj !== 'undefined'){
+      if (artists_ii_string == ""){ // first artist about to be inserted
+        artists_ii_string = art_ii_jj;
+      }
+      else{
+        artists_ii_string = artists_ii_string + ", " +  art_ii_jj;
+      }
+      if (artists_ii[jj]["role"] == "Conductor"){
+        artists_ii_string = artists_ii_string + " (conductor)"
+      }
+        
+    }
+    // console.log(artists_ii[jj]["sort"]);
+    // console.log(jj)
+  }
+  console.log(artists_ii_string)
+  string_artists[ii] = artists_ii_string; 
+}
+return string_artists
+}
+
+
+// Builds the HTML Table out of JSON myList (object, but only with one level). SO FAR NOT USED!
 function buildHtmlTable_from_JSON(selector,table_input) { // table_input is a JSON variable. Problem: only will check if fields in the first level are = columns
   // var columns = addAllColumnHeaders(myList, selector);
   var columns = addAllColumnHeadersFixed(myListColumnHeaders, selector);
@@ -235,16 +281,30 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
 <body onLoad="buildHtmlTable('#myTable',object_2D)">
 
 
+
   <h2>Opera recordings</h2>
 
   <input type="text" id="myInput"   width="20px" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="200px">
    <a id="n_elements">   </a>
+
+   
+
+
     <table id="myTable"  class=”sortable” border="1" style="width:100%">
     </table>
    
   
   <script>
+
+//     $(document).ready(function(){ 
+
+// });
+
+
+
     function function_on_key_up() {     // when a key is released
+
+      
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("myInput");
       filter = input.value.toUpperCase();
