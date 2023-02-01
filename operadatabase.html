@@ -9,11 +9,31 @@
       box-sizing: border-box;
     }
 
+    .float-parent-element { 
+    width: 100%; 
+} 
+.float-child-element_left { 
+    float: left; 
+    width: 90%; 
+    height: 80px;
+}
+.float-child-element_right{ 
+    float: left; 
+    width: 10%; 
+    height: 80px;
+} 
+.left_div { 
+    margin-left: 10px; 
+} 
+.right_div { 
+    margin-left: 0px; 
+}
+
     #myInput {
       background-image: url('/css/searchicon.png');
       background-position: 10px 10px;
       background-repeat: no-repeat;
-      width: 100%;
+      width: 90%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
@@ -42,6 +62,14 @@
       background-color: #f1f1f1;
 
     }
+
+
+    th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
   </style>
      
   <script type="text/javascript" src="opera_catalogue.js"></script> 
@@ -164,10 +192,12 @@ function create_2D_object(obj, props, myListColumnHeaders){ // creates 2D object
       if (cellValue == null) {
           cellValue = ""; // empty if not
       }
-      row$.append($('<td/>').html(cellValue));
+      // row$.append($('<td/>').html("<a href='file:////Volumes/ext_4TB_3/operas'>" + cellValue + "</a>"));
+      row$.append($('<td/>').html("<a>" + cellValue + "</a>"));
     }
     $(selector).append(row$);
   }
+  function_on_key_up() // this function is called to account for the initialization of checks and filters
 }
 
 
@@ -284,13 +314,29 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
 
   <h2>Opera recordings</h2>
 
-  <input type="text" id="myInput"   width="20px" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="200px">
-   <a id="n_elements">   </a>
-
    
 
+  <div class="float-parent-element">
+    <div class="float-child-element_left">
+      <input class="left_div" type="text" id="myInput"  onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
+    </div>
+    <div class="float-child-element_right">
+      <form class="right_div">
+        <input type="checkbox" id="videos_check"  onclick="function_on_key_up()"  checked>
+        <label for="videos"> videos</label><br>
+        <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
+        <label for="audios"> audios</label><br>
+      </form>
+    
+    </div>
+  </div>
 
-    <table id="myTable"  class=”sortable” border="1" style="width:100%">
+<div>
+   <a float="right" id="n_elements">   </a>
+  </div>
+   
+ 
+    <table id="myTable"  class=”sortable” border="1" style="width:100%;text-align:left;border-collapse:collapse;">
     </table>
    
   
@@ -340,15 +386,36 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
             }
           }
         }
+        ind_type = myListColumnHeaders.indexOf("type");
+        if (ind_type > -1){ // type exists
+          
+          td_type = tr[i].getElementsByTagName("td")[ind_type];
+          console.log(td_type.textContent )
+          if(td_type.textContent  == "video" ){
+            element_ii_is_video = true;
+          }
+          else{
+            element_ii_is_video = false;
+          }
+          if( td_type.textContent == "audio" ){
+            element_ii_is_audio = true;
+          }
+        else{
+          element_ii_is_audio = false;
+          }
+
+        }
+
+
         // if (flag_i) { // if filter is a sub-string of txtValue
-          if (flag_i_vec.every(v => v === true)){ // true if all elements of the vector are true
+          if ( (flag_i_vec.every(v => v === true) &&  ( ( videos_check.checked === true && element_ii_is_video) || ( audios_check.checked === true && element_ii_is_audio)  ))){ // true if all elements of the vector are true
               tr[i].style.display = ""; // displayed
               count_visible = count_visible + 1;
             } else {
               tr[i].style.display = "none";  // hidden
             }
       }
-      document.getElementById("n_elements").innerHTML = count_visible + " elements";
+      document.getElementById("n_elements").innerHTML = count_visible + " displayed elements";
 
     }
   </script>
