@@ -180,6 +180,7 @@ function create_links(obj, props, myListColumnHeaders){ // creates 2D object to 
     // $(selector).append(row$);
   }
   function_on_key_up() // this function is called to account for the initialization of checks and filters
+ 
 }
 
 
@@ -208,6 +209,7 @@ function create_links(obj, props, myListColumnHeaders){ // creates 2D object to 
     $(selector).append(row$);
   }
   function_on_key_up() // this function is called to account for the initialization of checks and filters
+  makeAllSortable() // makes all tables sortable
 }
 
 
@@ -308,23 +310,29 @@ function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
   }
 
 
-// make the table sortable  
-const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+// // make the table sortable  
+// const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+// const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+//     v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+//     )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+// // do the sortable work...
+// document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+//     const table = th.closest('table');
+//    bla = Array.from(table.querySelectorAll('tr:nth-child(n+1)')); // aqui si que esta Adriana de Cilea
+//    bla2 =  bla.splice(1, 1);
+//    bla2.sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+//         .forEach(tr => table.appendChild(tr) );
+//     // Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+//         // .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+//         // .forEach(tr => table.appendChild(tr) );
+//         tr = table.getElementsByTagName("tr");
+//       alternate_colors(tr);  // alternate colors in rows
+    
+// })));
 
-const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 
-// do the sortable work...
-document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr) );
-        tr = table.getElementsByTagName("tr");
-      alternate_colors(tr);  // alternate colors in rows
-  
-})));
+
+
 
       
   return columnSet;
@@ -347,53 +355,44 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
 // }
 
 
+function sortTable(table, col, reverse) {
+    var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
+        tr = Array.prototype.slice.call(tb.rows, 0), // put rows into array
+        i;
+    reverse = -((+reverse) || -1);
+    tr = tr.sort(function (a, b) { // sort rows
+        return reverse // `-1 *` if want opposite order
+            * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+                .localeCompare(b.cells[col].textContent.trim())
+               );
+    });
+    for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+    alternate_colors(tr) // alternate colors after sorting
+}
+
+function makeSortable(table) {
+    var th = table.tHead, i;
+    th && (th = th.rows[0]) && (th = th.cells);
+    if (th) i = th.length;
+    else return; // if no `<thead>` then do nothing
+    while (--i >= 0) (function (i) {
+        var dir = 1;
+        th[i].addEventListener('click', function () {sortTable(table, i, (dir = 1 - dir))});
+    }(i));
+}
+
+function makeAllSortable(parent) {
+    parent = parent || document.body;
+    var t = parent.getElementsByTagName('table'), i = t.length;
+    while (--i >= 0) makeSortable(t[i]);
+}
 
 </script>
 
 
+<script>
 
-
-
-</head>
-
-<body onLoad="buildHtmlTable('#myTable',object_2D,links)">
-  <!-- <body onLoad="buildHtmlTable_simpler('#myTable',object_2D)"> -->
-
-
-  <h2>Opera recordings</h2>
-
-   
-
-  <div class="float-parent-element">
-    <div class="float-child-element_left">
-      <input class="left_div" type="text" id="myInput"  onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
-    </div>
-    <div class="float-child-element_right">
-      <form class="right_div">
-        <input type="checkbox" id="videos_check"  onclick="function_on_key_up()"  checked>
-        <label for="videos"> videos</label><br>
-        <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
-        <label for="audios"> audios</label><br>
-      </form>
-    
-    </div>
-  </div>
-
-<div>
-   <a float="right" id="n_elements">   </a>
-  </div>
-   
  
-    <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;">
-    </table>
-   
-  
-  <script>
-
-//     $(document).ready(function(){ 
-
-// });
-
 
 
     function function_on_key_up() {     // when a key is released
@@ -481,6 +480,46 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
 
 
   </script>
+
+
+
+
+
+</head>
+
+<body onLoad="buildHtmlTable('#myTable',object_2D,links)">
+  <!-- <body onLoad="buildHtmlTable_simpler('#myTable',object_2D)"> -->
+
+
+  <h2>Opera recordings</h2>
+
+   
+
+  <div class="float-parent-element">
+    <div class="float-child-element_left">
+      <input class="left_div" type="text" id="myInput"  onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
+    </div>
+    <div class="float-child-element_right">
+      <form class="right_div">
+        <input type="checkbox" id="videos_check"  onclick="function_on_key_up()"  checked>
+        <label for="videos"> videos</label><br>
+        <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
+        <label for="audios"> audios</label><br>
+      </form>
+    
+    </div>
+  </div>
+
+<div>
+   <a float="right" id="n_elements">   </a>
+  </div>
+   
+ 
+    <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;">
+    </table>
+   
+  
+  
 
   
 
