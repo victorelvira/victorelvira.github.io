@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <script>
-        var selected_year = 2023;
+        var selected_year = 2024;
         var this_year_conductor = 0;
         const years_highlighted=  [];
         var years_of_this_conductor = [];
@@ -215,7 +215,7 @@
             </h2>
             <div id="demo" class="radio-toolbar" ></div>
             <script>
-                let last_year = 2023;
+                let last_year = 2024;
                 let allRadioButtons = "";
                 for (let i = last_year; i > 1940; i--) { 
                     //  text23 +=  "<button>" + i + "</button>";
@@ -251,7 +251,7 @@
                             New Year's Concert 
                         </h2>
                         
-                        <p> (*More information is displayed below when clicking on the conductor's <a style="color:green">name</a>, <a style="color:blue">pieces</a>, and <a style="color:red">name</a>.) </p>
+                        <p> (*More information is displayed below when clicking on the <a style="color:green">conductor's name</a>, <a style="color:blue">pieces</a>, and <a style="color:red">composer's name</a>.) </p>
 
                         <p id="conductor_title">
                             <strong></u><u>Conductor:</u></strong> <a id="conductor" style="cursor: pointer;">
@@ -328,12 +328,12 @@
                         var styleCSS = getComputedStyle(document.body);
                         clicked_year_color = styleCSS.getPropertyValue('--clicked_year_color');   
                         gold_box = styleCSS.getPropertyValue('--gold_box');   
-                        console.log("Saved variable length" + years_of_this_conductor.length) 
+                        // console.log("Saved variable length" + years_of_this_conductor.length) 
                         $("label[for='" + previous_year + "']").css("background-color", gold_box);
                         $("label[for='" + selected_year + "']").css("background-color", clicked_year_color);
                         
                         
-                        console.log(found_by_year[0].year)
+                        // console.log(found_by_year[0].year)
                         // find which years this conductors was present
                         this_year_conductor = found_by_year[0].conductor;
                         
@@ -357,7 +357,7 @@
                             
                             for (let i = 0; i < years_of_this_conductor.length; i++) { 
                                 year_ii = years_of_this_conductor[i].year;
-                                console.log(year_ii)
+                                // console.log(year_ii)
                                 if (year_ii != selected_year){
                                     $("label[for='" + year_ii  + "']").css("background-color", "green");
                                 }
@@ -401,7 +401,7 @@
                             
                             // var styleCSS = getComputedStyle(document.body);
                             gold_box = styleCSS.getPropertyValue('--gold_box');   
-                            console.log("Saved variable length" + years_of_this_conductor.length) 
+                            // console.log("Saved variable length" + years_of_this_conductor.length) 
                             for (let i = 0; i < years_of_this_conductor.length; i++) { 
                                 year_ii = years_of_this_conductor[i].year;
                                 if (year_ii != selected_year){
@@ -441,7 +441,7 @@
                                 
                                 for (let i = 0; i < years_of_this_piece.length; i++) { 
                                     year_ii = years_of_this_piece[i].year;
-                                    console.log(year_ii)
+                                    // console.log(year_ii)
                                     if (year_ii != selected_year){
                                         $("label[for='" + year_ii  + "']").css("background-color", "blue");
                                     }
@@ -464,12 +464,16 @@
                                 }
                                 document.getElementById("other_info").innerHTML = text_other;
                             });
-                            // 👇️ Change text color back on mouseout (piece_printed)
+                            // COMPOSER: Change text color back on mouseout (piece_printed)
                             
                             
                             
                             elementos_piece_printed[j].addEventListener('mouseout', function handleMouseOut() {
-                                this.style.color = 'black';
+                                this.style.color = 'black';// turn back to black 
+
+                           
+
+                                 // turn back to original color the year  boxes
                                 
                                 for (let i = 0; i < years_of_this_piece.length; i++) { 
                                     year_ii = years_of_this_piece[i].year;
@@ -480,17 +484,31 @@
                                 
                             });
                             
-                            // 👇️ Change text color on mouseover (composer_printed)
+                            // COMPOSER: Change text color on mouseover (composer_printed)
                             
                             elementos_composer_printed[j].addEventListener('mouseover', function handleMouseOver() {
                                 
                                 
-                                this.style.color = 'red';
+                                this.style.color = 'red'; // turn red the composer where you are
+                                
+                                // turn red the same composer appearing in the program
+                                let list = document.getElementById("myList");    
+                                var list_elements = list.getElementsByTagName("li");
+                                
+                                for (let i = 0; i < pieces_year_x.length; i++) {
+                                    var compositor_ii = list_elements[i].getElementsByTagName("a"); 
+                                    if(compositor_ii[0].innerHTML == this.innerHTML){
+                                        compositor_ii[0].style.color = "red";
+                                    }
+                                };
+
+                                
+                                // turn year boxes in red for years where the composer appeared
                                 years_of_this_composer = getConcertByComposer(this.innerHTML);
                                 
                                 for (let i = 0; i < years_of_this_composer.length; i++) { 
                                     year_ii = years_of_this_composer[i].year;
-                                    console.log(year_ii)
+                                    // console.log(year_ii)
                                     if (year_ii != selected_year){
                                         $("label[for='" + year_ii  + "']").css("background-color", "red");
                                     }
@@ -513,10 +531,24 @@
                                 }
                                 document.getElementById("other_info").innerHTML = text_other;
                             });
-                            // 👇️ Change text color back on mouseout (composer_printed)
+                            // COMPOSER Change text color back on mouseout (composer_printed)
                             
                             elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
-                                this.style.color = 'black';
+                                this.style.color = 'black'; // back to black
+                                
+                                    
+                                // turn black the same composer appearing in the program
+                                let list = document.getElementById("myList");    
+                                var list_elements = list.getElementsByTagName("li");
+                                
+                                for (let i = 0; i < pieces_year_x.length; i++) {
+                                    var compositor_ii = list_elements[i].getElementsByTagName("a"); 
+                                    if(compositor_ii[0].innerHTML == this.innerHTML){
+                                        compositor_ii[0].style.color = "black";
+                                    }
+                                };
+
+                                // back to normal colors in year boxes
                                 
                                 for (let i = 0; i < years_of_this_composer.length; i++) { 
                                     year_ii = years_of_this_composer[i].year;

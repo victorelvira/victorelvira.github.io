@@ -3858,5 +3858,48 @@ var data = [
                 "Aquarellen. Walzer, op. 258"
             ]
         }
+    },
+    {
+        "year": 2024,
+        "conductor": "Christian Thielemann",
+        "program":
+        {
+            "composer":
+            [
+                "Karl Komzák",
+                "Johann Strauß II.",
+                "Johann Strauß II.",
+                "Josef Hellmesberger (Sohn)",
+                "Eduard Strauß",
+                "Johann Strauß II.",
+                "Johann Strauß II.",
+                "Johann Strauß II.",
+                "Eduard Strauß",
+                "Johann Strauß II.",
+                "Josef Hellmesberger (Sohn)",
+                "Carl Michael Ziehrer",
+                "Anton Bruckner",
+                "Hans Christian Lumbye",
+                "Josef Strauß"
+            ],
+            "piece":
+            [
+                "Erzherzog Albrecht-Marsch, op. 136",
+                "Wiener Bonbons. Walzer, op. 307",
+                "Figaro-Polka. Polka française, op. 320",
+                "Für die ganze Welt. Walzer",
+                "Ohne Bremse. Polka schnell, op. 238",
+                "Overture to the Operetta \"Waldmeister\"",
+                "Ischler Walzer. Nachgelassener Walzer Nr. 2",
+                "Nachtigall-Polka, op. 222",
+                "Die Hochquelle. Polka mazur, op. 114",
+                "Neue Pizzicato-Polka. op. 449",
+                "Estudiantina-Polka aus dem Ballett \"Die Perle von Iberien\"",
+                "Wiener Bürger. Walzer, op. 419",
+                "Quadrille, WAB 121 (Orchestr. W. Dörner)",
+                "Glædeligt Nytaar! Galopp",
+                "Delirien (Deliriums), Waltz, op. 212"
+            ]
+        }
     }
 ];
