@@ -28,8 +28,15 @@ var data = [
                 "Tales from the Vienna Woods, Waltz, op. 325",
                 "Pizzicato-Polka",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
-                "Ouvertüre zur Operette \"Die Fledermaus\""
+                "Overture to the operetta \"Die Fledermaus\""
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -60,13 +67,20 @@ var data = [
                 "Wiener Blut (Viennese Blood), Waltz, op. 354",
                 "Demolirer-Polka. op. 269",
                 "Éljen a Magyár! Schnell-Polka. op. 332",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Russischer Marsch, op. 426",
                 "I Tipferl-Polka française. op. 377",
                 "Rosen aus dem Süden (Roses from the South), Waltz, op. 388",
                 "Pizzicato-Polka",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -96,7 +110,7 @@ var data = [
                 "Unter Donner und Blitz. Polka schnell, op. 324",
                 "Csárdás aus \"Ritter Pásmán\", op. 441",
                 "S' gibt nur a Kaiserstadt,s' gibt nur a Wien. Polka, op. 291",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Entrance March from the Operetta \"The Gypsy Baron\"",
                 "Éljen a Magyár! Schnell-Polka. op. 332",
                 "Emperor Waltz, op. 437",
@@ -104,6 +118,13 @@ var data = [
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -134,13 +155,20 @@ var data = [
                 "Lagunen-Walzer. op. 411",
                 "Louischen-Polka française, op. 339",
                 "Freikugeln (Magic Bullets), Fast Polka, op. 326",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Egyptischer Marsch (Egyptian March), op. 335",
                 "Frühlingsstimmen (Voices of Spring), Waltz, op. 410",
                 "Pizzicato-Polka",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
                 "Emperor Waltz, op. 437"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -180,6 +208,13 @@ var data = [
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -206,7 +241,7 @@ var data = [
             ],
             "piece":
             [
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Klangfiguren. Walzer, op. 251",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Éljen a Magyár! Schnell-Polka. op. 332",
@@ -221,6 +256,13 @@ var data = [
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -252,7 +294,7 @@ var data = [
             ],
             "piece":
             [
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Accelerationen. Walzer, op.234",
                 "I Tipferl-Polka française. op. 377",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
@@ -262,7 +304,7 @@ var data = [
                 "Verliebte Augen. Polka française, op. 185",
                 "Unter Donner und Blitz. Polka schnell, op. 324",
                 "Unter Donner und Blitz. Polka schnell, op. 324",
-                "Ouvertüre \"Cagliostro in Wien\"",
+                "Overture to \"Cagliostro in Wien\"",
                 "Delirien (Deliriums), Waltz, op. 212",
                 "Jokey-Polka (schnell), op. 278",
                 "Pizzicato-Polka",
@@ -272,6 +314,13 @@ var data = [
                 "Radetzky March, op. 228",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -299,22 +348,29 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre zu \"Der lustige Krieg\"",
+                "Overture to the \"Der lustige Krieg\"",
                 "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "Annen-Polka, op. 117",
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240",
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "Extempore. Polka française, op. 241",
                 "Banditen-Galopp. op. 378",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Freuet euch des Lebens (Enjoy Life), Waltz, op.340",
                 "Piefke und Pufke. Polka, op. 235",
                 "Emperor Waltz, op. 437",
                 "Pizzicato-Polka",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -356,6 +412,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -395,6 +458,13 @@ var data = [
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -428,7 +498,7 @@ var data = [
                 "Telegramme. Walzer, op. 318",
                 "Aurora-Polka, op. 165",
                 "Auf der Jagd. Polka schnell, op. 373",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "In the Krapfenwaldl, Polka française, op. 336",
                 "Vergnügungszug. Polka (schnell), op. 281",
                 "Seid umschlungen, Millionen (Be Embraced, You Millions), Waltz, op. 443",
@@ -436,6 +506,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -479,6 +556,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -522,6 +606,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -557,7 +648,7 @@ var data = [
                 "L'Enfantillage. Polka française (Zäpperl-Polka), op. 202",
                 "Csárdás aus \"Ritter Pásmán\", op. 441",
                 "Banditen-Galopp. op. 378",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Pizzicato-Polka",
                 "Vergnügungszug. Polka (schnell), op. 281",
                 "Tales from the Vienna Woods, Waltz, op. 325",
@@ -565,6 +656,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -610,6 +708,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -644,7 +749,7 @@ var data = [
                 "S' gibt nur a Kaiserstadt,s' gibt nur a Wien. Polka, op. 291",
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Banditen-Galopp. op. 378",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Die Emancipirte. Polka mazur, op. 282",
                 "Persischer Marsch, op. 289",
                 "Wiener Bonbons. Walzer op. 307",
@@ -653,6 +758,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -682,14 +794,21 @@ var data = [
                 "Neue Pizzicato-Polka. op. 449",
                 "Egyptischer Marsch (Egyptian March), op. 335",
                 "I Tipferl-Polka française. op. 377",
-                "Dorfschwalben a. Österreich arr. v. J. Lehnert",
+                "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "Jokey-Polka (schnell), op. 278",
                 "Transactionen (Transactions). Walzer, op.184",
                 "Plappermäulchen. Polka schnell,op. 245",
                 "Csárdás aus \"Ritter Pásmán\", op. 441",
                 "Unter Donner und Blitz. Polka schnell, op. 324",
-                "Ouvertüre zur Operette \"Die Fledermaus\""
+                "Overture to the operetta \"Die Fledermaus\""
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -721,12 +840,19 @@ var data = [
                 "Frauenherz. Polka mazur, op.166",
                 "Frühlingsstimmen (Voices of Spring), Waltz, op. 410",
                 "Éljen a Magyár! Schnell-Polka. op. 332",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Pizzicato-Polka",
                 "Tales from the Vienna Woods, Waltz, op. 325",
                 "Auf der Jagd. Polka schnell, op. 373",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -760,7 +886,7 @@ var data = [
                 "Wiener Bonbons. Walzer op. 307",
                 "Die Schwätzerin. Polka Mazur, op. 144",
                 "Éljen a Magyár! Schnell-Polka. op. 332",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Wiener Blut (Viennese Blood), Waltz, op. 354",
                 "Neue Pizzicato-Polka. op. 449",
                 "Liebeslieder-Walzer. op. 114",
@@ -770,6 +896,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -802,7 +935,7 @@ var data = [
                 "Banditen-Galopp. op. 378",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Die Libelle. Polka mazur, op. 204",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Mein Lebenslauf ist Lieb' und Lust. Walzer, op. 263",
                 "Annen-Polka, op. 117",
                 "Jokey-Polka (schnell), op. 278",
@@ -813,6 +946,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -843,7 +983,7 @@ var data = [
                 "Delirien (Deliriums), Waltz, op. 212",
                 "L'Enfantillage. Polka française (Zäpperl-Polka), op. 202",
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Transactionen (Transactions). Walzer, op.184",
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271",
                 "Neue Pizzicato-Polka. op. 449",
@@ -852,6 +992,13 @@ var data = [
                 "Csárdás aus \"Ritter Pásmán\", op. 441",
                 "Auf der Jagd. Polka schnell, op. 373"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -880,7 +1027,7 @@ var data = [
             "piece":
             [
                 "Aquarellen. Walzer, op. 258",
-                "Ouv. Das Spitzentuch der Königin",
+                "Overture \"Das Spitzentuch der Königin\"",
                 "Piefke und Pufke. Polka, op. 235",
                 "Hofballtänze. Walzer, op. 161",
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240",
@@ -895,6 +1042,13 @@ var data = [
                 "Emperor Waltz, op. 437",
                 "Unter Donner und Blitz. Polka schnell, op. 324"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -938,6 +1092,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -975,7 +1136,7 @@ var data = [
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240",
                 "The Romantics, Waltz, op. 167",
                 "Aus der Ferne. Polka Mazur, op. 270",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "I Tipferl-Polka française. op. 377",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
@@ -989,6 +1150,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1038,6 +1206,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1073,7 +1248,7 @@ var data = [
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
                 "Arm in Arm. Polka Mazur, op. 215",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Delirien (Deliriums), Waltz, op. 212",
                 "Pizzicato-Polka",
                 "Loreley-Rheinklänge. Walzer op. 154",
@@ -1085,6 +1260,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1110,20 +1292,20 @@ var data = [
                 "Johann Strauß II.",
                 "Johann Strauß II.",
                 "Johann Strauß II.",
-                "Johann Strauß II.",
+                "Josef Strauß",
                 "Johann Strauß II.",
                 "Johann Strauß I."
             ],
             "piece":
             [
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Carnevals-Botschafter. Walzer, op. 270",
                 "In the Krapfenwaldl, Polka française, op. 336",
                 "Banditen-Galopp. op. 378",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Jokey-Polka (schnell), op. 278",
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
-                "Ouv. Das Spitzentuch der Königin",
+                "Overture \"Das Spitzentuch der Königin\"",
                 "Aquarellen. Walzer, op. 258",
                 "Annen-Polka, op. 117",
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271",
@@ -1132,10 +1314,17 @@ var data = [
                 "Vergnügungszug. Polka (schnell), op. 281",
                 "Neue Pizzicato-Polka. op. 449",
                 "Unter Donner und Blitz. Polka schnell, op. 324",
-                "Auf Ferienreisen, Polka schnell",
+                "Auf Ferienreisen. Polka schnell, op. 133",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1166,7 +1355,7 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre \"Cagliostro in Wien\"",
+                "Overture to \"Cagliostro in Wien\"",
                 "Verliebte Augen. Polka française, op. 185",
                 "Aus der Ferne. Polka Mazur, op. 270",
                 "Dynamiden, Waltz, op. 173",
@@ -1185,6 +1374,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1214,14 +1410,14 @@ var data = [
             ],
             "piece":
             [
-                "Ouv. Prinz Methusalem",
+                "Overture to \"Prinz Methusalem\"",
                 "Bei uns z'Haus. Walzer (f. Männerchor u. Orch. ) , op. 361",
                 "Beliebte Annen-Polka, op. 137",
                 "Frauenherz. Polka mazur, op.166",
                 "Freikugeln (Magic Bullets), Fast Polka, op. 326",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Champagner-Polka. Musikalischer Scherz, op. 211",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Mein Lebenslauf ist Lieb' und Lust. Walzer, op. 263",
                 "Explosions-Polka. Polka schnell, op. 43",
                 "Brennende Liebe. Polka Mazur, op. 129",
@@ -1232,6 +1428,13 @@ var data = [
                 "Feuerfest! Polka française, op. 269",
                 "Éljen a Magyár! Schnell-Polka. op. 332"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1260,13 +1463,13 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "I Tipferl-Polka française. op. 377",
                 "Fesche Geister. Walzer, op. 75",
                 "Die Emancipirte. Polka mazur, op. 282",
                 "Banditen-Galopp. op. 378",
                 "Accelerationen. Walzer, op.234",
-                "Ouvertüre \"Cagliostro in Wien\"",
+                "Overture to \"Cagliostro in Wien\"",
                 "Rosen aus dem Süden (Roses from the South), Waltz, op. 388",
                 "So ängstlich sind wir nicht! Schnell-Polka, op. 413",
                 "Neue Pizzicato-Polka. op. 449",
@@ -1277,6 +1480,13 @@ var data = [
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "Entrance March from the Operetta \"The Gypsy Baron\""
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1309,14 +1519,14 @@ var data = [
             ],
             "piece":
             [
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Aquarellen. Walzer, op. 258",
                 "Extempore. Polka française, op. 241",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Plappermäulchen. Polka schnell,op. 245",
                 "The Romantics, Waltz, op. 167",
                 "Die Fledermaus, \"Klänge der Heimat\", Csárdás",
-                "Ouv. Prinz Methusalem",
+                "Overture to \"Prinz Methusalem\"",
                 "Tausend und eine Nacht. Walzer, op. 346",
                 "Heiterer Muth. Polka française, op. 281",
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271",
@@ -1330,6 +1540,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1360,13 +1577,13 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Transactionen (Transactions). Walzer, op.184",
                 "Augensprache. Polka française, op. 119",
                 "Tempestuous in Love and Dance, Fast Polka, op. 393",
                 "Lagunen-Walzer. op. 411",
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240",
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Wiener Blut (Viennese Blood), Waltz, op. 354",
                 "Beliebte Annen-Polka, op. 137",
                 "Plappermäulchen. Polka schnell,op. 245",
@@ -1379,6 +1596,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1414,9 +1638,9 @@ var data = [
                 "Aus der Ferne. Polka Mazur, op. 270",
                 "Nordseebilder (North Sea Pictures). Walzer, op. 390",
                 "Explosions-Polka. Polka schnell, op. 43",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Bitte schön! Polka française, op. 372",
-                "Wiener Bürger, Walzer. op. 419",
+                "Wiener Bürger. Walzer, op. 419",
                 "Russischer Marsch, op. 426",
                 "Pizzicato-Polka",
                 "Jokey-Polka (schnell), op. 278",
@@ -1424,6 +1648,13 @@ var data = [
                 "Arm in Arm. Polka Mazur, op. 215",
                 "Tempestuous in Love and Dance, Fast Polka, op. 393"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1452,23 +1683,30 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Piefke und Pufke. Polka, op. 235",
                 "Luftig und duftig. Polka schnell, op. 206",
                 "Liebeslieder-Walzer. op. 114",
                 "Spanischer Marsch. op. 433",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
-                "Ouvertüre \"Carneval in Rom\"",
+                "Overture to \"Carneval in Rom\"",
                 "Herzenskönigin. Polka française, op. 445",
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Lob der Frauen (In Praise of Women). Polka mazur, op. 315",
                 "Freikugeln (Magic Bullets), Fast Polka, op. 326",
                 "In the Krapfenwaldl, Polka française, op. 336",
-                "Ohne Bremse. Polka schnell. , op. 238",
+                "Ohne Bremse. Polka schnell, op. 238",
                 "Delirien (Deliriums), Waltz, op. 212",
                 "Auf Ferienreisen. Polka schnell, op. 133"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1500,7 +1738,7 @@ var data = [
             ],
             "piece":
             [
-                "Ouv. Das Spitzentuch der Königin",
+                "Overture \"Das Spitzentuch der Königin\"",
                 "Aquarellen. Walzer, op. 258",
                 "Die Emancipirte. Polka mazur, op. 282",
                 "Bei uns z'Haus. Walzer (f. Männerchor u. Orch. ) , op. 361",
@@ -1520,6 +1758,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1550,13 +1795,13 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Bei uns z'Haus. Walzer (f. Männerchor u. Orch. ) , op. 361",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "So ängstlich sind wir nicht! Schnell-Polka, op. 413",
                 "Liebeslieder-Walzer. op. 114",
                 "Explosions-Polka. Polka schnell, op. 43",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Sinngedichte. Walzer op. 1",
                 "Annen-Polka, op. 117",
                 "Leichtes Blut (Light of Heart), Fast Polka, op. 319",
@@ -1569,6 +1814,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1597,12 +1849,12 @@ var data = [
             ],
             "piece":
             [
-                "Ouv. Prinz Methusalem",
+                "Overture to \"Prinz Methusalem\"",
                 "Transactionen (Transactions). Walzer, op.184",
                 "Fata morgana. Polka Mazurka, op.330",
                 "Leichtes Blut (Light of Heart), Fast Polka, op. 319",
                 "Accelerationen. Walzer, op.234",
-                "Ouvertüre \"Die Blindekuh\"",
+                "Overture to \"Die Blindekuh\"",
                 "Schatz-Walzer. op. 418",
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240",
                 "Die Libelle. Polka mazur, op. 204",
@@ -1614,6 +1866,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1641,7 +1900,7 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre \"Cagliostro in Wien\"",
+                "Overture to \"Cagliostro in Wien\"",
                 "The Romantics, Waltz, op. 167",
                 "Wettrennen-Galopp, op. 29",
                 "Persischer Marsch, op. 289",
@@ -1657,6 +1916,13 @@ var data = [
                 "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "Jokey-Polka (schnell), op. 278"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1683,12 +1949,12 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Künstler-Gruß. Polka française, op. 274",
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240",
                 "Wiener Bonbons. Walzer op. 307",
-                "Ouvertüre in C-Dur, op post. 170, D 591, (\"im italienischen Stil\")",
+                "Overture in C-Dur, op post. 170, D 591, (\"im italienischen Stil\")",
                 "Die Schönbrunner. Walzer, op. 200",
                 "Sperl-Polka, op. 133",
                 "S' gibt nur a Kaiserstadt,s' gibt nur a Wien. Polka, op. 291",
@@ -1698,6 +1964,13 @@ var data = [
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Unter Donner und Blitz. Polka schnell, op. 324"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1729,22 +2002,29 @@ var data = [
             [
                 "Loreley-Rheinklänge. Walzer op. 154",
                 "Bitte schön! Polka française, op. 372",
-                "Ohne Bremse. Polka schnell. , op. 238",
+                "Ohne Bremse. Polka schnell, op. 238",
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "Die Emancipirte. Polka mazur, op. 282",
                 "Hereinspaziert! Walzer aus der Operette \"Der Schätzmeister\", op. 518",
-                "Ouvertüre \"Die schöne Galathée\"",
+                "Overture to \"Die schöne Galathée\"",
                 "Bei uns z'Haus. Walzer (f. Männerchor u. Orch. ) , op. 361",
                 "Moulinet-Polka. Polka française, op. 57",
                 "Tik-Tak. Polka schnell, op. 365",
                 "Pizzicato-Polka",
-                "Rudolfsheimer-Polka. op. 152",
+                "Rudolfsheimer-Polka, op. 152",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Auf der Jagd. Polka schnell, op. 373",
                 "Leichtes Blut (Light of Heart), Fast Polka, op. 319",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1773,12 +2053,12 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Neue Pizzicato-Polka. op. 449",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
                 "Wiener Blut (Viennese Blood), Waltz, op. 354",
-                "Ouvertüre zu \"Orpheus in der Unterwelt\"",
+                "Overture to the opera \"Orpheus in der Unterwelt\"",
                 "Morgenblätter. Walzer, op. 279",
                 "Fata morgana. Polka Mazurka, op.330",
                 "Banditen-Galopp. op. 378",
@@ -1790,6 +2070,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1825,7 +2112,7 @@ var data = [
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271",
                 "Transactionen (Transactions). Walzer, op.184",
                 "Tempestuous in Love and Dance, Fast Polka, op. 393",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Frauenherz. Polka mazur, op.166",
                 "Egyptischer Marsch (Egyptian March), op. 335",
                 "Rosen aus dem Süden (Roses from the South), Waltz, op. 388",
@@ -1837,6 +2124,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1870,11 +2164,11 @@ var data = [
                 "Mit Extrapost (Special Delivery). Polka schnell, op. 259",
                 "Seid umschlungen, Millionen (Be Embraced, You Millions), Waltz, op. 443",
                 "Electrofor-Polka schnell. op. 297",
-                "Overture to the Opera Die lustigen Weiber von Windsor (The Merry Wives of Windsor)",
+                "Overture to the opera \"Die lustigen Weiber von Windsor\" (\"The Merry Wives of Windsor\")",
                 "Die Emancipirte. Polka mazur, op. 282",
                 "Delirien (Deliriums), Waltz, op. 212",
-                "Bitte schön! Polka française, op. 372, Bearbeitung H. Froschauer",
-                "Feuerfest! Polka française, op. 269, Bearbeitung H. Froschauer",
+                "Bitte schön! Polka française, op. 372",
+                "Feuerfest! Polka française, op. 269",
                 "Emperor Waltz, op. 437",
                 "Cachucha - Galopp, op. 97",
                 "Vergnügungszug. Polka (schnell), op. 281",
@@ -1882,6 +2176,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1910,12 +2211,12 @@ var data = [
             ],
             "piece":
             [
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Freuden-Grüsse. Walzer, op. 128",
                 "Die Libelle. Polka mazur, op. 204",
                 "Vélocipède. Schnellpolka, op. 259",
                 "Wiener Bonbons. Walzer op. 307",
-                "Ouvertüre zu \"Eine Nacht in Venedig\"",
+                "Overture to the \"Eine Nacht in Venedig\"",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
                 "S' gibt nur a Kaiserstadt,s' gibt nur a Wien. Polka, op. 291",
@@ -1927,6 +2228,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -1955,12 +2263,12 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Beliebte Annen-Polka, op. 137",
                 "Nordseebilder (North Sea Pictures). Walzer, op. 390",
                 "Heiterer Muth. Polka française, op. 281",
                 "Allerlei. Polka schnell, op. 219",
-                "Overture to the Comedy \"Dichter und Bauer\" (\"Poet and Peasant\")",
+                "Overture to the operetta \"Dichter und Bauer\" (\"Poet and Peasant\")",
                 "Brennende Liebe. Polka Mazur, op. 129",
                 "Auf Ferienreisen. Polka schnell, op. 133",
                 "Liebeslieder-Walzer. op. 114",
@@ -1972,6 +2280,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2001,7 +2316,7 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Die Schwätzerin. Polka Mazur, op. 144",
                 "Bahn frei! (Clear the Track!), Polka (fast), op. 45",
                 "Mein Lebenslauf ist Lieb' und Lust. Walzer, op. 263",
@@ -2019,6 +2334,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2047,12 +2369,12 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Sperl-Galopp, op. 42",
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "So ängstlich sind wir nicht! Schnell-Polka, op. 413",
-                "Ouvertüre \"Die schöne Galathée\"",
+                "Overture to \"Die schöne Galathée\"",
                 "Die Libelle. Polka mazur, op. 204",
                 "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "Plappermäulchen. Polka schnell,op. 245",
@@ -2064,6 +2386,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2091,11 +2420,11 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Annen-Polka, op. 117",
                 "Delirien (Deliriums), Waltz, op. 212",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Beliebte Annen-Polka, op. 137",
                 "Vergnügungszug. Polka (schnell), op. 281",
                 "Emperor Waltz, op. 437",
@@ -2107,6 +2436,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2136,12 +2472,12 @@ var data = [
             ],
             "piece":
             [
-                "Ouv. Donna Diana",
+                "Overture \"Donna Diana\"",
                 "Brennende Liebe. Polka Mazur, op. 129",
                 "Auf Ferienreisen. Polka schnell, op. 133",
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
                 "Auf der Jagd. Polka schnell, op. 373",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Neue Pizzicato-Polka. op. 449",
                 "Freuet euch des Lebens (Enjoy Life), Waltz, op.340",
                 "Un ballo in maschera (Masked Ball), Quadrille, op. 272",
@@ -2154,6 +2490,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2186,7 +2529,7 @@ var data = [
                 "Bauern-Polka. Polka française, op. 276",
                 "Bei uns z'Haus. Walzer (f. Männerchor u. Orch. ) , op. 361",
                 "Die Libelle. Polka mazur, op. 204",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Moulinet-Polka. Polka française, op. 57",
                 "Éljen a Magyár! Schnell-Polka. op. 332",
@@ -2199,6 +2542,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2232,7 +2582,7 @@ var data = [
                 "Indianer-Galopp. op. 111",
                 "Donauweibchen. Walzer, op. 427",
                 "Sport-Polka (schnell), op. 170",
-                "Ouv. Ein Morgen, ein Mittag, ein Abend in Wien",
+                "Overture to \"Ein Morgen, ein Mittag, ein Abend in Wien\"",
                 "Sympathie. Polka mazur, op. 73",
                 "Wiener Blut (Viennese Blood), Waltz, op. 354",
                 "Demolirer-Polka. op. 269",
@@ -2244,6 +2594,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2273,12 +2630,12 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre zu \"La gazza ladra\"",
+                "Overture to the \"La gazza ladra\"",
                 "Die tanzende Muse. Polka Mazur, op. 266",
                 "Galopp und 8 Ecossaises aus op.49, D735",
                 "Die Werber. Walzer, op. 103",
                 "Seufzer-Galopp, op. 9",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Kontretänze KV 609, Nr. 1 und Nr. 3",
                 "Deutscher Tanz C-Dur, KV 605 Nr. 3, \"Die Schlittenfahrt\"",
                 "Aquarellen. Walzer, op. 258",
@@ -2291,6 +2648,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2318,12 +2682,12 @@ var data = [
             ],
             "piece":
             [
-                "Overture to the Opera Die lustigen Weiber von Windsor (The Merry Wives of Windsor)",
+                "Overture to the opera \"Die lustigen Weiber von Windsor\" (\"The Merry Wives of Windsor\")",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "Feuerfest! Polka française, op. 269",
                 "Vergnügungszug. Polka (schnell), op. 281",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Tausend und eine Nacht. Walzer, op. 346",
                 "Neue Pizzicato-Polka. op. 449",
                 "Persischer Marsch, op. 289",
@@ -2334,6 +2698,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2369,7 +2740,7 @@ var data = [
                 "Etwas Kleines. Polka française, op. 190",
                 "Steyrische Tänze (Styrian Dances), op. 165",
                 "Sperl-Galopp, op. 42",
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
                 "Hans-Jörgel-Polka, op. 141",
                 "Klipp-Klapp, Gallop, op. 466",
@@ -2381,6 +2752,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2415,7 +2793,7 @@ var data = [
                 "Feuerfest! Polka française, op. 269",
                 "Lieder-Quadrille. op. 275",
                 "Mit Chic. Polka schnell, op. 221",
-                "Ouvertüre zu \"Eine Nacht in Venedig\"",
+                "Overture to the \"Eine Nacht in Venedig\"",
                 "Die Schönbrunner. Walzer, op. 200",
                 "L'Enfantillage. Polka française (Zäpperl-Polka), op. 202",
                 "Ein Herz, ein Sinn. Polka Mazurka, op. 323",
@@ -2426,6 +2804,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2462,7 +2847,7 @@ var data = [
                 "Favorit-Polka. op. 201",
                 "Morgenblätter. Walzer, op. 279",
                 "Process-Polka (schnell). op. 294",
-                "Ouvertüre \"Banditenstreiche\"",
+                "Overture to \"Banditenstreiche\"",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
                 "Mephistos Höllenrufe. Walzer, op. 101",
                 "Thalia.Polka Mazur, op. 195",
@@ -2475,6 +2860,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2504,15 +2896,15 @@ var data = [
             "piece":
             [
                 "Fest-Marsch (Festival March), op. 452",
-                "Wiener Bürger, Walzer. op. 419",
+                "Wiener Bürger. Walzer, op. 419",
                 "Die Nasswalderin. Polka mazur,op. 267",
                 "Blumenfest (Flower Festival) Polka. op. 111",
                 "Lagunen-Walzer. op. 411",
                 "Mit Vergnügen. Polka schnell, op. 228",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Phönix-Schwingen. Walzer, op. 125",
                 "Die tanzende Muse. Polka Mazur, op. 266",
-                "Ouv. Die Göttin der Vernunft",
+                "Overture \"Die Göttin der Vernunft\"",
                 "Secunden-Polka (française). op. 258",
                 "Emperor Waltz, op. 437",
                 "Jokey-Polka (schnell), op. 278",
@@ -2520,6 +2912,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2571,6 +2970,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2609,7 +3015,7 @@ var data = [
                 "Jocus-Polka (schnell), op. 216",
                 "Nordseebilder (North Sea Pictures). Walzer, op. 390",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
-                "Ouv. Prinz Methusalem",
+                "Overture to \"Prinz Methusalem\"",
                 "Wiener Bonbons. Walzer op. 307",
                 "Marianka- Polka, op. 173",
                 "In der Heimath. Polka Mazur, op. 231",
@@ -2622,6 +3028,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2673,6 +3086,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2709,7 +3129,7 @@ var data = [
                 "Liebeslieder-Walzer. op. 114",
                 "Csárdás aus \"Ritter Pásmán\", op. 441",
                 "Mit Extrapost (Special Delivery). Polka schnell, op. 259",
-                "Ouv. Ein Morgen, ein Mittag, ein Abend in Wien",
+                "Overture to \"Ein Morgen, ein Mittag, ein Abend in Wien\"",
                 "Gruß an Prag. Polka française, op. 144",
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "Persischer Marsch, op. 289",
@@ -2722,6 +3142,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2751,13 +3178,13 @@ var data = [
             ],
             "piece":
             [
-                "Radetzky March, op. 228, 1st Version",
+                "Radetzky March, op. 228",
                 "Die Schönbrunner. Walzer, op. 200",
                 "Jägers Lust, Jagd-Galoppe, op. 82",
                 "Morgenblätter. Walzer, op. 279",
                 "Elektro-magnetische Polka, op. 110",
                 "Electrofor-Polka schnell. op. 297",
-                "Ouvertüre zu \"Eine Nacht in Venedig\"",
+                "Overture to the \"Eine Nacht in Venedig\"",
                 "Harlekin-Polka, op. 48",
                 "Dorfschwalben aus Österreich. Walzer, op. 164",
                 "Steyrische Tänze (Styrian Dances), op. 165",
@@ -2769,6 +3196,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2806,7 +3240,7 @@ var data = [
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Beliebte Annen-Polka, op. 137",
                 "Vorwärts! Schnell-Polka, op. 127",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Arm in Arm. Polka Mazur, op. 215",
                 "Aquarellen. Walzer, op. 258",
                 "Die Libelle. Polka mazur, op. 204",
@@ -2820,6 +3254,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2871,6 +3312,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2911,7 +3359,7 @@ var data = [
                 "Cachucha - Galopp, op. 97",
                 "Hofballtänze. Walzer, op. 161",
                 "Tarantel-Galopp, op. 125",
-                "Ouv. Das Spitzentuch der Königin",
+                "Overture \"Das Spitzentuch der Königin\"",
                 "Zigeuner-Quadrille. op. 24",
                 "Accelerationen. Walzer, op.234",
                 "Satanella-Polka. op. 124",
@@ -2926,6 +3374,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -2966,7 +3421,7 @@ var data = [
                 "Die Emancipirte. Polka mazur, op. 282",
                 "Tausend und eine Nacht. Walzer, op. 346",
                 "Die Bajadere (The Bayadere). Polka schnell, op. 351",
-                "Ouvertüre \"Die schöne Galathée\"",
+                "Overture to \"Die schöne Galathée\"",
                 "Klipp-Klapp, Gallop, op. 466",
                 "Nordseebilder (North Sea Pictures). Walzer, op. 390",
                 "Bauern-Polka. Polka française, op. 276",
@@ -2981,6 +3436,13 @@ var data = [
                 "Auf der Jagd. Polka schnell, op. 373",
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3024,7 +3486,7 @@ var data = [
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271",
                 "Entrance March from the Operetta \"The Gypsy Baron\"",
-                "Ouv. Le Nozze di Figaro KV 492",
+                "Overture to the opera \"Le Nozze di Figaro\" KV 492",
                 "Die Mozartisten. Walzer, op.196",
                 "Liebesbotschaft. Galopp o. op.",
                 "Neue Pizzicato-Polka. op. 449",
@@ -3040,6 +3502,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3076,10 +3545,10 @@ var data = [
                 "Elfenreigen (Dance of the Elves), o. op.",
                 "Delirien (Deliriums), Waltz, op. 212",
                 "Einzugs-Galopp, op. 35",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Irenen-Polka, op. 113",
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
-                "Ohne Bremse. Polka schnell. , op. 238",
+                "Ohne Bremse. Polka schnell, op. 238",
                 "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
                 "Matrosen-Polka, op. 52",
                 "Dynamiden, Waltz, op. 173",
@@ -3089,6 +3558,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3129,7 +3605,7 @@ var data = [
                 "Versailler Galopp. op. 107",
                 "Orpheus-Quadrille, op. 236",
                 "Kleiner Anzeiger, Galop op. 4",
-                "Overtüre to the Operetta \"Indigo and the Forty Thieves\"",
+                "Overture to the operetta \"Indigo and the Forty Thieves\"",
                 "Freuet euch des Lebens (Enjoy Life), Waltz, op.340",
                 "Bluette, Polka française, op.271",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
@@ -3144,6 +3620,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3175,13 +3658,13 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre zu Eine Nacht in Venedig (Berliner Fassung)",
+                "Overture to the opera \"Eine Nacht in Venedig\" (Berliner Fassung)",
                 "Märchen aus dem Orient. Walzer, op. 444",
                 "Annen-Polka, op. 117",
                 "Schnellpost-Polka. Polka schnell, op. 159",
                 "Rosen aus dem Süden (Roses from the South), Waltz, op. 388",
                 "Freikugeln (Magic Bullets), Fast Polka, op. 326",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Entrance March from the Operetta \"The Gypsy Baron\"",
                 "Schatz-Walzer. op. 418",
                 "Valse espagnole",
@@ -3195,6 +3678,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3225,18 +3715,18 @@ var data = [
             ],
             "piece":
             [
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Frauenherz. Polka mazur, op.166",
                 "In the Krapfenwaldl, Polka française, op. 336",
                 "Tempestuous in Love and Dance, Fast Polka, op. 393",
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "Perpetuum mobile. Musikalischer Scherz, op. 257",
-                "Overture to the Opera Die lustigen Weiber von Windsor (The Merry Wives of Windsor)",
+                "Overture to the opera \"Die lustigen Weiber von Windsor\" (\"The Merry Wives of Windsor\")",
                 "Wiener Bonbons. Walzer op. 307",
                 "Champagner-Polka. Musikalischer Scherz, op. 211",
                 "Ein Herz, ein Sinn. Polka Mazurka, op. 323",
                 "Der Carneval in Paris. Galopp, op. 100",
-                "Ouvertüre \"Die Rheinnixen\"",
+                "Overture to \"Die Rheinnixen\"",
                 "Helena Quadrille, op. 14",
                 "Morgenblätter. Walzer, op. 279",
                 "Champagner-Galopp, op. 14",
@@ -3244,6 +3734,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3293,6 +3790,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3332,8 +3836,8 @@ var data = [
                 "Vaterländischer Marsch, o. op.",
                 "Rathhaus-Ball-Tänze, Walzer, op. 438",
                 "Entweder - oder!, Polka schnell, op. 403",
-                "Tritsch-Tratsch, Polka, op. 214, Bearb. G. Wirth",
-                "Wiener Bürger, Walzer. op. 419",
+                "Tritsch-Tratsch, Fast Polka, op. 214",
+                "Wiener Bürger. Walzer, op. 419",
                 "Albion-Polka. op. 102",
                 "Jokey-Polka (schnell), op. 278",
                 "Danse diabolique",
@@ -3341,7 +3845,7 @@ var data = [
                 "Freuet euch des Lebens (Enjoy Life), Waltz, op.340",
                 "Sperl-Galopp, op. 42",
                 "København Jernbane Damp Galop",
-                "Feuerfest! Polka française, op. 269, Bearb. G. Wirth",
+                "Feuerfest! Polka française, op. 269",
                 "Carmen-Quadrille, op. 134",
                 "Panorama aus dem Ballett \"Dornröschen\", op. 66",
                 "Walzer aus dem Ballett \"Dornröschen\", op. 66a",
@@ -3354,6 +3858,13 @@ var data = [
                 "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
                 "Radetzky March, op. 228"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [],
+            "composer":
+            []
         }
     },
     {
@@ -3399,6 +3910,19 @@ var data = [
                 "Wo die Citronen blüh'n (Where the Lemons Blossom), Waltz, op. 364",
                 "Erinnerungen an Ernst oder: Der Carneval in Venedig, Fantasie, op. 126"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
+            ]
         }
     },
     {
@@ -3435,7 +3959,7 @@ var data = [
                 "Egyptischer Marsch (Egyptian March), op. 335",
                 "Seid umschlungen, Millionen (Be Embraced, You Millions), Waltz, op. 443",
                 "Tempestuous in Love and Dance, Fast Polka, op. 393",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Klipp-Klapp, Gallop, op. 466",
                 "Tales from the Vienna Woods, Waltz, op. 325",
                 "Vielliebchen, Polka française, op. 1",
@@ -3447,6 +3971,19 @@ var data = [
                 "Variation dansée (Pizzicati) from the Ballet “Sylvia”",
                 "Dynamiden, Waltz, op. 173",
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3477,7 +4014,7 @@ var data = [
             ],
             "piece":
             [
-                "Ouv. Ein Morgen, ein Mittag, ein Abend in Wien",
+                "Overture to \"Ein Morgen, ein Mittag, ein Abend in Wien\"",
                 "Märchen aus dem Orient. Walzer, op. 444",
                 "Wiener Leben. Polka française, op. 218",
                 "Wo man lacht und lebt. Polka schnell, op. 108",
@@ -3494,6 +4031,19 @@ var data = [
                 "Annen-Polka, op. 117",
                 "Wein, Weib und Gesang. Walzer, op. 333",
                 "Mit Chic. Polka schnell, op. 221"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3531,7 +4081,7 @@ var data = [
                 "Vergnügungszug. Polka (schnell), op. 281",
                 "Weaner Madl'n. Walzer op. 388",
                 "Mit Extrapost (Special Delivery). Polka schnell, op. 259",
-                "Ouvertüre zu Eine Nacht in Venedig (Wiener Fassung)",
+                "Overture to the opera \"Eine Nacht in Venedig\" (Wiener Fassung)",
                 "Ausser Rand und Band. Polka schnell, op. 168",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
                 "Sängerslust. Polka française, op. 328",
@@ -3543,6 +4093,19 @@ var data = [
                 "Die Libelle. Polka mazur, op. 204",
                 "Emperor Waltz, op. 437",
                 "Auf der Jagd. Polka schnell, op. 373"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3579,7 +4142,7 @@ var data = [
                 "Winterlust. Polka (schnell), op. 121",
                 "Mephistos Höllenrufe. Walzer, op. 101",
                 "So ängstlich sind wir nicht! Schnell-Polka, op. 413",
-                "Ouvertüre zu Pique Dame",
+                "Overture to the opera \"Pique Dame\" (\"The Queen of Spades\")",
                 "Hereinspaziert! Walzer aus der Operette \"Der Schätzmeister\", op. 518",
                 "Die lustigen Weiber von Windsor (The Merry Wives of Windsor), Moon Choir",
                 "Pepita-Polka, op. 138",
@@ -3590,6 +4153,19 @@ var data = [
                 "Auf zum Tanze! Polka schnell, op. 436",
                 "Tausend und eine Nacht. Walzer, op. 346",
                 "Tik-Tak. Polka schnell, op. 365"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3636,6 +4212,19 @@ var data = [
                 "Rosen aus dem Süden (Roses from the South), Waltz, op. 388",
                 "Eingesendet (Letters to the Editor), Fast Polka, op. 240"
             ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
+            ]
         }
     },
     {
@@ -3671,7 +4260,7 @@ var data = [
                 "Express. Polka schnell, op. 311",
                 "Nordseebilder (North Sea Pictures). Walzer, op. 390",
                 "Mit Extrapost (Special Delivery). Polka schnell, op. 259",
-                "Overture to the Operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+                "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
                 "Die Tänzerin (The Dancer). Polka française, op. 227",
                 "Künstlerleben (An Artist’s Life). Walzer, op. 316",
                 "Die Bajadere (The Bayadere). Polka schnell, op. 351",
@@ -3682,6 +4271,19 @@ var data = [
                 "Entr'acte Valse",
                 "Lob der Frauen (In Praise of Women). Polka mazur, op. 315",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3711,7 +4313,7 @@ var data = [
             ],
             "piece":
             [
-                "Overture to \"Die Landstreicher (The Vagabonds)\"",
+                "Overture to \"Die Landstreicher\" (\"The Vagabonds\")",
                 "Liebesgrüße (Greetings of Love) Waltz, op. 56",
                 "Liechtenstein March, op. 36",
                 "Blumenfest (Flower Festival) Polka. op. 111",
@@ -3727,6 +4329,19 @@ var data = [
                 "Freuet euch des Lebens (Enjoy Life), Waltz, op.340",
                 "Tritsch-Tratsch, Fast Polka, op. 214",
                 "Dynamiden, Waltz, op. 173"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3761,7 +4376,7 @@ var data = [
                 "Ohne Sorgen (Without a Care), Fast Polka, op. 271",
                 "Grubenlichter (Davy Lamps), Waltz",
                 "In Saus und Braus (Living It Up), Galop",
-                "Overture to \"Poet and Peasant\"",
+                "Overture to the Comedy \"Dichter und Bauer\" (\"Poet and Peasant\")",
                 "Bad’ner Mad’ln (Girls of Baden), Waltz, op. 257",
                 "Margherita Polka, op. 244",
                 "Venetian Galop, op. 74",
@@ -3770,6 +4385,19 @@ var data = [
                 "New Melodies Quadrille. op. 254",
                 "Emperor Waltz, op. 437",
                 "Tempestuous in Love and Dance, Fast Polka, op. 393"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3804,7 +4432,7 @@ var data = [
                 "Kleiner Anzeiger, Galop op. 4",
                 "Morgenblätter. Walzer, op. 279",
                 "Kleine Chronik. Polka schnell, op. 128",
-                "Ouvertüre zur Operette \"Die Fledermaus\"",
+                "Overture to the operetta \"Die Fledermaus\"",
                 "Champagner-Polka. Musikalischer Scherz, op. 211",
                 "Nachtschwärmer. Walzer, op. 466",
                 "Persischer Marsch, op. 289",
@@ -3813,6 +4441,19 @@ var data = [
                 "Heinzelmännchen",
                 "Nymphen-Polka, op. 50",
                 "Sphärenklänge (Music of the Spheres). Walzer, op. 235"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3846,7 +4487,7 @@ var data = [
                 "Zigeunerbaron-Quadrille, op. 422",
                 "In lauschiger Nacht. Walzer, op. 488",
                 "Frisch heran! Polka schnell, op. 386",
-                "Ouvertüre zur Operette \"Isabella\"",
+                "Overture to the operette \"Isabella\"",
                 "Perlen der Liebe. Walzer, op. 39",
                 "Angelica-Polka. Polka française, op. 123",
                 "Auf und davon. Polka schnell, op. 73",
@@ -3856,6 +4497,19 @@ var data = [
                 "Glocken-Polka mit Galopp aus dem Ballett Excelsior",
                 "Allegro fantastique. Orchesterfantasie, Anh. 26b",
                 "Aquarellen. Walzer, op. 258"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     },
@@ -3885,11 +4539,11 @@ var data = [
             "piece":
             [
                 "Erzherzog Albrecht-Marsch, op. 136",
-                "Wiener Bonbons. Walzer, op. 307",
+                "Wiener Bonbons. Walzer op. 307",
                 "Figaro-Polka. Polka française, op. 320",
                 "Für die ganze Welt. Walzer",
                 "Ohne Bremse. Polka schnell, op. 238",
-                "Overture to the Operetta \"Waldmeister\"",
+                "Overture to the operetta \"Waldmeister\"",
                 "Ischler Walzer. Nachgelassener Walzer Nr. 2",
                 "Nachtigall-Polka, op. 222",
                 "Die Hochquelle. Polka mazur, op. 114",
@@ -3899,6 +4553,19 @@ var data = [
                 "Quadrille, WAB 121 (Orchestr. W. Dörner)",
                 "Glædeligt Nytaar! Galopp",
                 "Delirien (Deliriums), Waltz, op. 212"
+            ]
+        },
+        "encores":
+        {
+            "piece":
+            [
+                "An der schönen blauen Donau (The Blue Danube), Waltz, op. 314",
+                "Radetzky March, op. 228"
+            ],
+            "composer":
+            [
+                "Johann Strauß II.",
+                "Johann Strauß I."
             ]
         }
     }

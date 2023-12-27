@@ -266,6 +266,13 @@
                             <ol id="myList"></ol>  
                         </p>
                         
+
+                        <p id="encore_title">
+                            <strong></u><u>Encores:</u></strong>
+                        </p>
+                        <p id="encore">      
+                            <ol id="myList_encore"></ol>  
+                        </p>
                         
                         
                     </div>
@@ -309,6 +316,14 @@
                         }
                         );
                     }
+
+                    function getConcertByPieceEncore(code) {
+                        return data.filter(
+                        function(data) {
+                            return data.encores.piece.includes(code)
+                        }
+                        );
+                    }
                     
                     function getConcertByComposer(code) {
                         return data.filter(
@@ -318,7 +333,14 @@
                         );
                     }
                     
-                    
+                    function getConcertByComposerEncore(code) {
+                        return data.filter(
+                        function(data) {
+                            return data.encores.composer.includes(code)
+                        }
+                        );
+                    }
+
                     function clickOnYear(year){
                         previous_year = selected_year;
                         selected_year = year;
@@ -354,7 +376,7 @@
                             
                             
                             
-                            
+                            // all years with this conductor -> green
                             for (let i = 0; i < years_of_this_conductor.length; i++) { 
                                 year_ii = years_of_this_conductor[i].year;
                                 // console.log(year_ii)
@@ -384,6 +406,7 @@
                                 }
                                 text_other += ' and ' + '<a style="color:green">' + years_of_this_conductor[years_of_this_conductor.length-1].year + '</a>.';
                             }
+                            text_other += ' Biography in the Wikpedia <a href='+ 'https://en.wikipedia.org/wiki/Gustavo_Dudamel' +'>link.</a>'
                             document.getElementById("other_info").innerHTML = text_other;
                         });     
                         
@@ -411,12 +434,26 @@
                             
                         });
                         
-                        
+                        // print program
                         document.getElementById("concert").innerHTML =
                         "New Year's Concert " + selected_year;
                         let pieces_year_x = found_by_year[0].program.piece;
                         let composers_year_x = found_by_year[0].program.composer;
+                        console.log(found_by_year[0].hasOwnProperty("encores"))
+                        if(found_by_year[0].hasOwnProperty("encores")) // if there are encores
+                        {
+                            var encores_year_x = found_by_year[0].encores.piece;
+                            var composers_encores_year_x = found_by_year[0].encores.composer;
+                            var N_encores = encores_year_x.length;
+                        }
+                        else
+                        {
+                            var N_encores = 0;
+                        }
+                        console.log(N_encores)
                         
+
+                        // print program
                         
                         let list = document.getElementById("myList");    
                         list.innerHTML = '';        
@@ -430,15 +467,44 @@
                         elemento_conductor_printed = document.getElementsByClassName("piece_printed");
                         elementos_piece_printed = document.getElementsByClassName("piece_printed");
                         elementos_composer_printed = document.getElementsByClassName("composer_printed");
+                        
+                        // print encores
+                        console.log(N_encores)
+                        let list_encores = document.getElementById("myList_encore");    
+                        list_encores.innerHTML = '';        
+                        for (let i = 0; i < N_encores; i++) {
+                            let li = document.createElement("li");
+                            var encore_i = encores_year_x[i];
+                            var composer_encore_i = composers_encores_year_x[i];
+                            li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + '<a class="composer_encore_printed">' + composer_encore_i + "</a>" + ")" ; 
+                            list_encores.appendChild(li);
+                        };
+                        if(N_encores>0)
+                        {
+                            elementos_encore_printed = document.getElementsByClassName("encore_printed");
+                            elementos_composer_encore_printed = document.getElementsByClassName("composer_encore_printed");
+                        }
+
+
+
+
+                        
+                        
+                        ////////////////////////////////////
+                        //////////////////////////////////// 
                         // console.log(elementos_composer_printed)
                         for (let j = 0; j < elementos_piece_printed.length; j++) {
-                            
                             
                             // Mouse OVER on PIECE
                             elementos_piece_printed[j].addEventListener('mouseover', function handleMouseOver() {
                                 this.style.color = 'blue';
                                 years_of_this_piece = getConcertByPiece(this.innerHTML);
-                                
+                                years_of_this_piece_encores = getConcertByPieceEncore(this.innerHTML);
+
+                                console.log(years_of_this_piece)
+                                console.log(years_of_this_piece_encores)
+
+
                                 for (let i = 0; i < years_of_this_piece.length; i++) { 
                                     year_ii = years_of_this_piece[i].year;
                                     // console.log(year_ii)
@@ -558,6 +624,156 @@
                                 }
                             });
                         }
+                        // end actions on the regular program
+                        ////////////////////////////////////
+                        //////////////////////////////////// 
+
+
+
+
+
+
+
+                        ////////////////////////////////////
+                        ////////////////////////////////////    
+                        // actions on the  encores
+                         if(N_encores>0)
+                        {
+                        for (let j = 0; j < elementos_encore_printed.length; j++) {
+                            
+                            // Mouse OVER on PIECE
+                            elementos_encore_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                                this.style.color = 'blue';
+                                years_of_this_piece = getConcertByPiece(this.innerHTML);
+                                
+                                for (let i = 0; i < years_of_this_piece.length; i++) { 
+                                    year_ii = years_of_this_piece[i].year;
+                                    // console.log(year_ii)
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii  + "']").css("background-color", "blue");
+                                    }
+                                }
+                                
+                                
+                                if (years_of_this_piece.length == 1){
+                                    var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                } else if (years_of_this_piece.length == 2){
+                                    var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                }  
+                                else {
+                                    var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in '; 
+                                    
+                                    for (let i = 0; i < years_of_this_piece.length-1; i++) {
+                                        let year_ii = years_of_this_piece[i].year;
+                                        text_other += '<a style="color:blue">' + year_ii + '</a>, '
+                                    }
+                                    text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
+                                }
+                                document.getElementById("other_info").innerHTML = text_other;
+                            });
+                            // COMPOSER: Change text color back on mouseout (piece_printed)
+                            
+                            
+                            
+                            elementos_encore_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                                this.style.color = 'black';// turn back to black 
+
+                           
+
+                                 // turn back to original color the year  boxes
+                                
+                                for (let i = 0; i < years_of_this_piece.length; i++) { 
+                                    year_ii = years_of_this_piece[i].year;
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                    }
+                                }
+                                
+                            });
+                            
+                            // COMPOSER: Change text color on mouseover (composer_printed)
+                            
+                            elementos_composer_encore_printed[j].addEventListener('mouseover', function handleMouseOver() {
+                                
+                                
+                                this.style.color = 'red'; // turn red the composer where you are
+                                
+                                // turn red the same composer appearing in the program
+                                let list = document.getElementById("myList");    
+                                var list_elements = list.getElementsByTagName("li");
+                                
+                                for (let i = 0; i < pieces_year_x.length; i++) {
+                                    var compositor_ii = list_elements[i].getElementsByTagName("a"); 
+                                    if(compositor_ii[0].innerHTML == this.innerHTML){
+                                        compositor_ii[0].style.color = "red";
+                                    }
+                                };
+
+                                
+                                // turn year boxes in red for years where the composer appeared
+                                years_of_this_composer = getConcertByComposer(this.innerHTML);
+                                
+                                for (let i = 0; i < years_of_this_composer.length; i++) { 
+                                    year_ii = years_of_this_composer[i].year;
+                                    // console.log(year_ii)
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii  + "']").css("background-color", "red");
+                                    }
+                                }
+                                
+                                //console.log(working.length)
+                                if (years_of_this_composer.length == 1){
+                                    var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                } else if (years_of_this_composer.length == 2){
+                                    var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                }  
+                                else {
+                                    var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in '; 
+                                    
+                                    for (let i = 0; i < years_of_this_composer.length-1; i++) {
+                                        let year_ii = years_of_this_composer[i].year;
+                                        text_other += '<a style="color:red">' + year_ii + '</a>, '
+                                    }
+                                    text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
+                                }
+                                document.getElementById("other_info").innerHTML = text_other;
+                            });
+                            // COMPOSER Change text color back on mouseout (composer_printed)
+                            
+                            elementos_composer_encore_printed[j].addEventListener('mouseout', function handleMouseOut() {
+                                this.style.color = 'black'; // back to black
+                                
+                                    
+                                // turn black the same composer appearing in the program
+                                let list = document.getElementById("myList");    
+                                var list_elements = list.getElementsByTagName("li");
+                                
+                                for (let i = 0; i < pieces_year_x.length; i++) {
+                                    var compositor_ii = list_elements[i].getElementsByTagName("a"); 
+                                    if(compositor_ii[0].innerHTML == this.innerHTML){
+                                        compositor_ii[0].style.color = "black";
+                                    }
+                                };
+
+                                // back to normal colors in year boxes
+                                
+                                for (let i = 0; i < years_of_this_composer.length; i++) { 
+                                    year_ii = years_of_this_composer[i].year;
+                                    if (year_ii != selected_year){
+                                        $("label[for='" + year_ii + "']").css("background-color", gold_box);
+                                    }
+                                }
+                            });
+                        }
+                    }
+
+                        // end actions over encore itmes
+                        ////////////////////////////////////
+                        ////////////////////////////////////    
+                           
+
+
+
                     }
                     
                     // function test_Func_2(){
@@ -570,34 +786,6 @@
                     </script>
                     
                     
-                        <!-- Start of StatCounter Code for Default Guide -->
-  <script type="text/javascript">
-  var sc_project=10228206; 
-  var sc_invisible=1; 
-  var sc_security="026cc11b"; 
-  var scJsHost = (("https:" == document.location.protocol) ?
-  "https://secure." : "http://www.");
-  document.write("<sc"+"ript type='text/javascript' src='" +
-  scJsHost+
-  "statcounter.com/counter/counter.js'></"+"script>");
-  </script>
-  <!-- Default Statcounter code for Github personal
-  https://victorelvira.github.io/index.html -->
-  <script type="text/javascript">
-  var sc_project=11157426; 
-  var sc_invisible=1; 
-  var sc_security="c4968ba5"; 
-  </script>
-  <script type="text/javascript"
-  src="https://www.statcounter.com/counter/counter.js"
-  async></script>
-  <noscript><div class="statcounter"><a title="Web Analytics
-  Made Easy - StatCounter" href="http://statcounter.com/"
-  target="_blank"><img class="statcounter"
-  src="//c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web
-  Analytics Made Easy - StatCounter"></a></div></noscript>
-  <!-- End of Statcounter Code -->
-  
                     
                 </body>
                 </html>
