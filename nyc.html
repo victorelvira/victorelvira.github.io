@@ -18,7 +18,8 @@
     </script>
     
     <script type="text/javascript" src="data.js"></script> 
-    
+    <script type="text/javascript" src="wiki_links.js"></script> 
+
     <style>
         :root{
             --gold_box: rgb(186,160, 112);
@@ -293,6 +294,10 @@
                 
                 
                 <script>
+
+                    
+
+
                     function getConcertByYear(code) {
                         return data.filter(
                         function(data) {
@@ -300,6 +305,18 @@
                         }
                         );
                     }
+
+
+
+                     // finds links in the look-up-table wiki_links json variable
+                     function getWikiLinkByItem(code) { 
+                        return wiki_links.filter(
+                        function(wiki_links) {
+                            return wiki_links.item == code
+                        }
+                        );
+                    }
+                    
                     
                     function getConcertByConductor(code) {
                         return data.filter(
@@ -340,6 +357,8 @@
                         }
                         );
                     }
+
+
 
                     function clickOnYear(year){
                         previous_year = selected_year;
@@ -406,7 +425,23 @@
                                 }
                                 text_other += ' and ' + '<a style="color:green">' + years_of_this_conductor[years_of_this_conductor.length-1].year + '</a>.';
                             }
-                            text_other += ' Biography in the Wikpedia <a href='+ 'https://en.wikipedia.org/wiki/Gustavo_Dudamel' +'>link.</a>'
+                             
+                            found_by_item = getWikiLinkByItem(this.innerHTML);                           
+                             
+                            if (found_by_item.length>0) // it was found
+                            {
+                                wiki_link_composer = found_by_item[0].link;
+                            }
+                            else
+                            {
+                                wiki_link_composer = '';
+                            }
+                            if(wiki_link_composer.length > 0 ) // non-empty link
+                            {
+                            console.log(this.innerHTML)
+                            console.log(wiki_link_composer)
+                                text_other += '<br><br> Biography in the Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+                            }
                             document.getElementById("other_info").innerHTML = text_other;
                         });     
                         
