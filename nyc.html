@@ -430,17 +430,17 @@
                              
                             if (found_by_item.length>0) // it was found
                             {
-                                wiki_link_composer = found_by_item[0].link;
+                                wiki_link_conductor = found_by_item[0].link;
                             }
                             else
                             {
-                                wiki_link_composer = '';
+                                wiki_link_conductor = '';
                             }
-                            if(wiki_link_composer.length > 0 ) // non-empty link
+                            if(wiki_link_conductor.length > 0 ) // non-empty link
                             {
                             console.log(this.innerHTML)
-                            console.log(wiki_link_composer)
-                                text_other += '<br><br> Biography in the Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+                            console.log(wiki_link_conductor)
+                                text_other += '<br><br> Biography of <a style="color:green">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_conductor +'  target="_blank" >link.</a>'
                             }
                             document.getElementById("other_info").innerHTML = text_other;
                         });     
@@ -619,7 +619,7 @@
                                 if (years_of_this_composer.length == 1){
                                     var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                 } else if (years_of_this_composer.length == 2){
-                                    var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                    var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                 }  
                                 else {
                                     var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in '; 
@@ -630,7 +630,32 @@
                                     }
                                     text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
                                 }
+                                
+                                found_by_item = getWikiLinkByItem(this.innerHTML);                           
+                             
+                            if (found_by_item.length>0) // it was found
+                            {
+                                wiki_link_composer = found_by_item[0].link;
+                            }
+                            else 
+                            {
+                                wiki_link_composer = '';
+                            }
+                            if(wiki_link_composer.length > 0 ) // non-empty link
+                            {
+                            console.log(this.innerHTML)
+                            console.log(wiki_link_composer)
+                                text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+                            }
+                                
+                                
+                                
+                                
                                 document.getElementById("other_info").innerHTML = text_other;
+
+                                    
+
+
                             });
                             // COMPOSER Change text color back on mouseout (composer_printed)
                             
