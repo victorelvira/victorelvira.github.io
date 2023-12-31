@@ -17,7 +17,7 @@
         var years_of_this_composer = [];
     </script>
     
-    <script type="text/javascript" src="data_in.js"></script> 
+    <script type="text/javascript" src="concerts.js"></script> 
      <script type="text/javascript" src="catalogue.js"></script> 
     <script type="text/javascript" src="conductors.js"></script> 
     <script type="text/javascript" src="wiki_links.js"></script> 
@@ -302,9 +302,9 @@
 
 
                     function getConcertByYear(code) {
-                        return data.filter(
-                        function(data) {
-                            return data.year == code
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.year == code
                         }
                         );
                     }
@@ -314,35 +314,35 @@
                     
                     
                     function getConcertByConductor(code) {
-                        return data.filter(
-                        function(data) {
-                            return data.conductor == code
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.conductor == code
                         }
                         );
                     }
                     
                     function getConcertByPiece(code) {
-                        return data.filter(
-                        function(data) {
-                            return data.program.piece.includes(code)
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.program.piece.includes(code)
                         }
                         );
                     }
 
                     function getConcertByPieceId(code) {
                         console.log(code)
-                        return data.filter(
-                        function(data) {
-                            return data.program.piece_id.includes(code)
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.program.piece_id.includes(code)
                         }
                         );
                     }
 
                     function getConcertByConductorId(code) {  // to be tested
                         console.log(code)
-                        return data.filter(
-                        function(data) {
-                            return data.conductor_id == code
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.conductor_id == code
                         }
                         );
                     }
@@ -351,17 +351,17 @@
                       
                     
                     function getConcertByComposer(code) {
-                        return data.filter(
-                        function(data) {
-                            return data.program.composer.includes(code)
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.program.composer.includes(code)
                         }
                         );
                     }
 
                     function getConcertByComposerId(code) {
-                        return data.filter(
-                        function(data) {
-                            return data.program.composer_id.includes(code)
+                        return concerts.filter(
+                        function(concerts) {
+                            return concerts.program.composer_id.includes(code)
                         }
                         );
                     }
