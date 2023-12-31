@@ -14,7 +14,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -32,7 +33,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -50,7 +52,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -68,7 +71,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -86,7 +90,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -104,7 +109,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -122,7 +128,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -140,7 +147,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -158,7 +166,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -169,14 +178,15 @@ var catalogue = [
         {
             "wiki":
             {
-                "en": "",
+                "en": "https://en.wikipedia.org/wiki/The_Blue_Danube",
                 "de": ""
             },
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/6mAbVEc5-Pc"
+            },
+            "imslp": "https://imslp.org/wiki/An_der_sch%C3%B6nen_blauen_Donau%2C_Op.314_(Strauss_Jr.%2C_Johann)"
         }
     },
     {
@@ -194,7 +204,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -212,7 +223,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -230,7 +242,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -248,7 +261,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -266,7 +280,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -284,7 +299,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -302,7 +318,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -320,7 +337,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -338,7 +356,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -356,7 +375,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -374,7 +394,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -392,7 +413,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -410,7 +432,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -428,7 +451,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -446,7 +470,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -464,7 +489,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -482,7 +508,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -500,7 +527,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -518,7 +546,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -536,7 +565,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -554,7 +584,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -572,7 +603,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -590,7 +622,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -608,7 +641,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -626,7 +660,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -644,7 +679,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -662,7 +698,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -680,7 +717,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -698,7 +736,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -716,7 +755,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -734,7 +774,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -752,7 +793,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -770,7 +812,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -788,7 +831,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -806,7 +850,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -824,7 +869,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -842,7 +888,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -860,7 +907,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -878,7 +926,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -896,7 +945,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -914,7 +964,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -932,7 +983,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -950,7 +1002,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -967,8 +1020,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/FnzwNUOX25I"
+            },
+            "imslp": "https://imslp.org/wiki/Deliren,_Op.212_(Strauss,_Josef)"
         }
     },
     {
@@ -986,7 +1040,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1004,7 +1059,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1022,7 +1078,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1040,7 +1097,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1058,7 +1116,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1076,7 +1135,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1094,7 +1154,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1112,7 +1173,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1130,7 +1192,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1147,8 +1210,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/jGDwB68WCv0"
+            },
+            "imslp": "https://imslp.org/wiki/Die_Hochquelle%2C_Op.114_(Strauss%2C_Eduard)"
         }
     },
     {
@@ -1166,7 +1230,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1184,7 +1249,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1202,7 +1268,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1220,7 +1287,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1238,7 +1306,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1256,7 +1325,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1274,7 +1344,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1292,7 +1363,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1310,7 +1382,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1328,7 +1401,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1346,7 +1420,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1364,7 +1439,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1382,7 +1458,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1400,7 +1477,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1418,7 +1496,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1436,7 +1515,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1454,7 +1534,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1472,7 +1553,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1490,7 +1572,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1508,7 +1591,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1526,7 +1610,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1544,7 +1629,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1562,7 +1648,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1580,7 +1667,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1598,7 +1686,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1616,7 +1705,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1634,7 +1724,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1652,7 +1743,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1670,7 +1762,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1688,7 +1781,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1706,7 +1800,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1724,7 +1819,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1742,7 +1838,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1760,7 +1857,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1778,7 +1876,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1796,7 +1895,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1814,7 +1914,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1832,7 +1933,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1850,7 +1952,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1868,7 +1971,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": "https://www.youtube.com/embed/lIWMq4F0aX4"
-            }
+            },
+            "imslp": "https://imslp.org/wiki/Erzherzog_Albrecht-Marsch,_Op.136_(Komz%C3%A1k_II,_Karel)"
         }
     },
     {
@@ -1886,7 +1990,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1904,7 +2009,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1921,8 +2027,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/Jm4zD8dRh-o"
+            },
+            "imslp": "https://imslp.org/wiki/Die_Perle_von_Iberien_(Hellmesberger_Jr.%2C_Joseph)"
         }
     },
     {
@@ -1940,7 +2047,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1958,7 +2066,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1976,7 +2085,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -1994,7 +2104,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2012,7 +2123,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2030,7 +2142,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2048,7 +2161,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2066,7 +2180,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2084,7 +2199,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2102,7 +2218,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2120,7 +2237,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2138,7 +2256,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2149,14 +2268,15 @@ var catalogue = [
         {
             "wiki":
             {
-                "en": "",
+                "en": "https://en.wikipedia.org/wiki/Figaro-Polka",
                 "de": ""
             },
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/cpDM64PgfR8"
+            },
+            "imslp": "https://imslp.org/wiki/Figaro-Polka%2C_Op.320_(Strauss_Jr.%2C_Johann)"
         }
     },
     {
@@ -2174,7 +2294,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2192,7 +2313,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2210,7 +2332,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2228,7 +2351,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2246,7 +2370,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2264,7 +2389,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2282,7 +2408,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2300,7 +2427,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2318,7 +2446,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2336,7 +2465,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2354,7 +2484,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2365,14 +2496,15 @@ var catalogue = [
         {
             "wiki":
             {
-                "en": "",
+                "en": "https://en.wikipedia.org/wiki/Fr%C3%BChlingsstimmen",
                 "de": ""
             },
             "you":
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": "https://imslp.org/wiki/Fr%C3%BChlingsstimmen%2C_Op.410_(Strauss_Jr.%2C_Johann)"
         }
     },
     {
@@ -2390,7 +2522,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2408,7 +2541,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2425,8 +2559,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/XKyFyiao6hU"
+            },
+            "imslp": ""
         }
     },
     {
@@ -2444,7 +2579,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2462,7 +2598,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2480,7 +2617,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2498,7 +2636,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2516,7 +2655,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2534,7 +2674,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2552,7 +2693,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2569,8 +2711,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/timQCAoAWQI"
+            },
+            "imslp": "https://imslp.org/wiki/Juul_og_Nytaar%2C_Bal-Bouquet_(Lumbye%2C_Hans_Christian)"
         }
     },
     {
@@ -2588,7 +2731,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2606,7 +2750,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2624,7 +2769,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2642,7 +2788,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2660,7 +2807,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2678,7 +2826,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2696,7 +2845,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2714,7 +2864,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2732,7 +2883,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2750,7 +2902,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2768,7 +2921,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2786,7 +2940,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2804,7 +2959,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2822,7 +2978,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2840,7 +2997,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2858,7 +3016,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2876,7 +3035,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2894,7 +3054,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2912,7 +3073,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2930,7 +3092,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2948,7 +3111,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2966,7 +3130,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -2984,7 +3149,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3002,7 +3168,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3020,7 +3187,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3038,7 +3206,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3055,8 +3224,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/C6lVLvu2tjs"
+            },
+            "imslp": "https://imslp.org/wiki/Ischler_Walzer_(Strauss_Jr.,_Johann)"
         }
     },
     {
@@ -3074,7 +3244,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3092,7 +3263,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3110,7 +3282,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3128,7 +3301,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3146,7 +3320,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3164,7 +3339,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3182,7 +3358,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3200,7 +3377,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3218,7 +3396,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3236,7 +3415,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3254,7 +3434,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3272,7 +3453,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3290,7 +3472,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3308,7 +3491,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3326,7 +3510,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3344,7 +3529,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3362,7 +3548,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3380,7 +3567,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3398,7 +3586,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3416,7 +3605,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3434,7 +3624,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3452,7 +3643,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3470,7 +3662,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3488,7 +3681,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3506,7 +3700,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3524,7 +3719,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3542,7 +3738,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3560,7 +3757,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3578,7 +3776,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3596,7 +3795,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3614,7 +3814,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3632,7 +3833,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3650,7 +3852,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3668,7 +3871,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3686,7 +3890,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3704,7 +3909,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3722,7 +3928,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3740,7 +3947,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3758,7 +3966,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3776,7 +3985,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3794,7 +4004,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3812,7 +4023,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3830,7 +4042,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3848,7 +4061,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3866,7 +4080,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3884,7 +4099,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3902,7 +4118,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3920,7 +4137,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3938,7 +4156,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3956,7 +4175,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3974,7 +4194,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -3992,7 +4213,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4010,7 +4232,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4028,7 +4251,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4046,7 +4270,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4064,7 +4289,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4082,7 +4308,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4100,7 +4327,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4118,7 +4346,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4136,7 +4365,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4148,13 +4378,14 @@ var catalogue = [
             "wiki":
             {
                 "en": "",
-                "de": ""
+                "de": "https://de.wikipedia.org/wiki/Nachtigall-Polka"
             },
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/opUqKOQJGUc"
+            },
+            "imslp": "https://imslp.org/wiki/Nachtigall-Polka,_Op.222_(Strauss_Jr.,_Johann)"
         }
     },
     {
@@ -4172,7 +4403,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4190,7 +4422,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4208,7 +4441,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4226,7 +4460,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4237,14 +4472,15 @@ var catalogue = [
         {
             "wiki":
             {
-                "en": "",
+                "en": "https://en.wikipedia.org/wiki/Neue_Pizzicato_Polka",
                 "de": ""
             },
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/QahEpoaH-H4"
+            },
+            "imslp": "https://imslp.org/wiki/Neue_Pizzicato-Polka%2C_Op.449_(Strauss_Jr.%2C_Johann)"
         }
     },
     {
@@ -4262,7 +4498,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4280,7 +4517,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4298,7 +4536,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4316,7 +4555,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4334,7 +4574,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4352,7 +4593,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4370,7 +4612,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4387,8 +4630,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/ySI9oiHDRXI"
+            },
+            "imslp": "https://imslp.org/wiki/Ohne_Bremse%2C_Op.238_(Strauss%2C_Eduard)"
         }
     },
     {
@@ -4406,7 +4650,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4424,7 +4669,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4442,7 +4688,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4460,7 +4707,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4478,7 +4726,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4496,7 +4745,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4514,7 +4764,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4532,7 +4783,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4550,7 +4802,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4568,7 +4821,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4586,7 +4840,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4604,7 +4859,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4622,7 +4878,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4640,7 +4897,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4658,7 +4916,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4676,7 +4935,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4694,7 +4954,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4712,7 +4973,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4730,7 +4992,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4748,7 +5011,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4766,7 +5030,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4784,7 +5049,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4802,7 +5068,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4820,7 +5087,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4838,7 +5106,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4856,7 +5125,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4874,7 +5144,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4892,7 +5163,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4910,7 +5182,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4928,7 +5201,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4946,7 +5220,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4964,7 +5239,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -4975,14 +5251,15 @@ var catalogue = [
         {
             "wiki":
             {
-                "en": "",
+                "en": "https://en.wikipedia.org/wiki/Waldmeister",
                 "de": ""
             },
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/7pUFoyIR3lE"
+            },
+            "imslp": "https://imslp.org/wiki/Waldmeister_(Strauss_Jr.,_Johann)"
         }
     },
     {
@@ -5000,7 +5277,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5018,7 +5296,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5036,7 +5315,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5054,7 +5334,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5072,7 +5353,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5090,7 +5372,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5108,7 +5391,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5126,7 +5410,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": "https://imslp.org/wiki/Ischler_Walzer_(Strauss_Jr.,_Johann)"
         }
     },
     {
@@ -5144,7 +5429,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5162,7 +5448,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5180,7 +5467,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5198,7 +5486,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5216,7 +5505,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5234,7 +5524,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5252,7 +5543,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5270,7 +5562,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5288,7 +5581,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5306,7 +5600,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5324,7 +5619,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5341,8 +5637,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/m_nqal3kB4E"
+            },
+            "imslp": "https://imslp.org/wiki/Quadrille,_WAB_121_(Bruckner,_Anton)"
         }
     },
     {
@@ -5353,14 +5650,15 @@ var catalogue = [
         {
             "wiki":
             {
-                "en": "",
+                "en": "https://en.wikipedia.org/wiki/Radetzky_March",
                 "de": ""
             },
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/8_2oDRiLYlc"
+            },
+            "imslp": "https://imslp.org/wiki/Radetzky-Marsch%2C_Op.228_(Strauss_Sr.%2C_Johann)"
         }
     },
     {
@@ -5378,7 +5676,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5396,7 +5695,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5414,7 +5714,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5432,7 +5733,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5450,7 +5752,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5468,7 +5771,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5486,7 +5790,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5504,7 +5809,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5522,7 +5828,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5540,7 +5847,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5558,7 +5866,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5576,7 +5885,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5594,7 +5904,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5612,7 +5923,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5630,7 +5942,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5648,7 +5961,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5666,7 +5980,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5684,7 +5999,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5702,7 +6018,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5720,7 +6037,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5738,7 +6056,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5756,7 +6075,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5774,7 +6094,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5792,7 +6113,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5810,7 +6132,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5828,7 +6151,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5846,7 +6170,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5864,7 +6189,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5882,7 +6208,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5900,7 +6227,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5918,7 +6246,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5936,7 +6265,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5954,7 +6284,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5972,7 +6303,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -5990,7 +6322,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6008,7 +6341,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6026,7 +6360,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6044,7 +6379,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6062,7 +6398,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6080,7 +6417,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6098,7 +6436,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6116,7 +6455,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6134,7 +6474,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6152,7 +6493,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6170,7 +6512,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6188,7 +6531,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6206,7 +6550,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6224,7 +6569,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6242,7 +6588,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6260,7 +6607,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6278,7 +6626,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6296,7 +6645,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6314,7 +6664,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6332,7 +6683,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6350,7 +6702,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6368,7 +6721,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6386,7 +6740,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6404,7 +6759,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6422,7 +6778,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6440,7 +6797,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6458,7 +6816,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6476,7 +6835,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6494,7 +6854,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6512,7 +6873,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6530,7 +6892,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6548,7 +6911,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6566,7 +6930,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6584,7 +6949,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6602,7 +6968,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6620,7 +6987,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6638,7 +7006,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6656,7 +7025,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6674,7 +7044,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6692,7 +7063,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6710,7 +7082,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6728,7 +7101,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6746,7 +7120,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6764,7 +7139,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": "https://www.youtube.com/embed/9LvI-rACo_A"
-            }
+            },
+            "imslp": "https://imslp.org/wiki/Wiener_Bonbons_Walzer%2C_Op.307_(Strauss_Jr.%2C_Johann)"
         }
     },
     {
@@ -6781,8 +7157,9 @@ var catalogue = [
             "you":
             {
                 "this": "",
-                "other": ""
-            }
+                "other": "https://www.youtube.com/embed/QRiepwenDV8"
+            },
+            "imslp": "https://imslp.org/wiki/Wiener_B%C3%BCrger%2C_Op.419_(Ziehrer%2C_Karl_Michael)"
         }
     },
     {
@@ -6800,7 +7177,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6818,7 +7196,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6836,7 +7215,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6854,7 +7234,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6872,7 +7253,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6890,7 +7272,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6908,7 +7291,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6926,7 +7310,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6944,7 +7329,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6962,7 +7348,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6980,7 +7367,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -6998,7 +7386,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -7016,7 +7405,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     },
     {
@@ -7034,7 +7424,8 @@ var catalogue = [
             {
                 "this": "",
                 "other": ""
-            }
+            },
+            "imslp": ""
         }
     }
 ]

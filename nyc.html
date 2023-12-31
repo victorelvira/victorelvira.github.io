@@ -612,11 +612,18 @@
                     { 
                         text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
                     }
+                    imslp_link_piece = item_filtered[0].links.imslp
+                    console.log(imslp_link_piece)
+                    if (imslp_link_piece.length>0) // there is link
+                    {
+                        text_other += '<br><br> Music score in this IMSLP <a href='+ imslp_link_piece +'  target="_blank" >link.</a>'
+                    }
+
                     you_link_piece = item_filtered[0].links.you.other
                     console.log(you_link_piece)
                     if (you_link_piece.length>0) // there is link
                     {
-                        text_other += '<br><br> <iframe width="420" height="315" src="' + you_link_piece + '"> </iframe>'
+                        text_other += '<br><br> YouTube link below: <br>  <iframe width="420" height="315" src="' + you_link_piece + '"> </iframe>'
                     }
 
                     
@@ -809,8 +816,34 @@
                                     }
                                     text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
                                 }
+
+
+                                wiki_link_piece = item_filtered[0].links.wiki.en
+                    
+                    if (wiki_link_piece.length>0) // there is link
+                    { 
+                        text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                    }
+                    imslp_link_piece = item_filtered[0].links.imslp
+                    console.log(imslp_link_piece)
+                    if (imslp_link_piece.length>0) // there is link
+                    {
+                        text_other += '<br><br> Music score in this IMSLP <a href='+ imslp_link_piece +'  target="_blank" >link.</a>'
+                    }
+
+                    you_link_piece = item_filtered[0].links.you.other
+                    console.log(you_link_piece)
+                    if (you_link_piece.length>0) // there is link
+                    {
+                        text_other += '<br><br> YouTube link below: <br>  <iframe width="420" height="315" src="' + you_link_piece + '"> </iframe>'
+                    }
+
                                 document.getElementById("other_info").innerHTML = text_other;
                             });
+
+
+
+                            
 
 
                              // 6. Mouse OUT on PIECE on ENCORES
@@ -860,8 +893,8 @@
                                 // turn red year boxes in red for years where the composer appeared
                                 composer_highlighted = this.innerHTML;
                                 console.log(this.innerHTML)
-                                item_filtered = getIdByComposer(composer_highlighted);
-                                composer_highlighted_id = item_filtered[0].id;
+                                composer_highlighted_item = getIdByComposer(composer_highlighted);
+                                composer_highlighted_id = composer_highlighted_item[0].id;
 
                                 years_of_this_composer = getConcertByComposerId(composer_highlighted_id);
                                 
@@ -890,23 +923,21 @@
                                     text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
                                 }
                                 
-                                found_by_item = getWikiLinkByItem(this.innerHTML);                           
-                             
-                            if (found_by_item.length>0) // it was found
-                            {
-                                wiki_link_composer = found_by_item[0].link;
-                            }
-                            else 
-                            {
-                                wiki_link_composer = '';
-                            }
-                            if(wiki_link_composer.length > 0 ) // non-empty link
-                            {
 
-                                text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
-                            }
-                                
-                                
+
+                            wiki_link_composer = composer_highlighted_item[0].links.wiki.en;
+
+
+                   
+if (wiki_link_composer.length>0) // non-empty link
+{
+
+    text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+}
+    
+    
+
+ 
                                 
                                 
                                 document.getElementById("other_info").innerHTML = text_other;
