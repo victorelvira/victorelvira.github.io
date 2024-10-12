@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Opera Database </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+thead {background-color:  #898989;
+  cursor: pointer; 
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .float-parent-element { 
+    width: 100%; 
+} 
+.float-child-element_left { 
+    float: left; 
+    width: 90%; 
+    height: 80px;
+}
+.float-child-element_right{ 
+    float: left; 
+    width: 10%; 
+    height: 80px;
+} 
+.left_div { 
+    margin-left: 10px; 
+} 
+.right_div { 
+    margin-left: 0px; 
+}
+
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 10px;
+      /* background-repeat: no-repeat; */
+      width: 90%;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #myTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    }
+
+    #myTable th,
+    #myTable td {
+      text-align: left;
+      padding: 12px;
+    }
+
+    #myTable tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+ 
+
+    th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+ 
+
+  </style>
+     
+  <script type="text/javascript" src="operadatabase/opera_catalogue.js"></script> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  
+var myListColumnHeaders = ["opera", "composer","place","artists","year","label", "type"];
+var n_cols = myListColumnHeaders.length;
+var properties_vector = ["name.full", "composer.last", "place.opera_house","date.year","label","type"];  // will go in the same order as above
+
+var object_2D = create_2D_object(opera_catalogue, properties_vector, myListColumnHeaders)
+var links = create_links(opera_catalogue, properties_vector, myListColumnHeaders)
+
+ind_artists = myListColumnHeaders.indexOf("artists");
+if (ind_artists > -1){ // artists will be displayed
+  var column_artists = artists_2_string(opera_catalogue);
+
+  for (var i = 0; i < object_2D.length; i++) {
+    // console.log(i)
+    art_ii = column_artists[i];
+    object_2D[i].splice(ind_artists, 0, art_ii); // insert artist
+    // console.log(object_2D[i][ind_artists])
+  }
+}
+
+
+function find_nested_prop_in_JSON(obj, prop, defval){ // allows to go deeper in nested JSONs
+    if (typeof defval == 'undefined') defval = null;
+    prop = prop.split('.');
+    for (var i = 0; i < prop.length; i++) {
+        if(typeof obj[prop[i]] == 'undefined')
+            return defval;
+        obj = obj[prop[i]];
+
+    }
+    return obj;
+}
+
+function create_2D_object(obj, props, myListColumnHeaders){ // creates 2D object to be filled later in a table
+ 
+    var object_2D_internal =  new Array(obj.length).fill(0).map(() => new Array(props.length).fill(0));
+
+    // console.log(obj.length)
+    // console.log(props.length)
+    for (var ii = 0; ii < obj.length; ii++) {
+      for (var jj= 0; jj < props.length; jj++) {
+        element_i_j = find_nested_prop_in_JSON(obj[ii], props[jj],""); // use column string instead of j-position;
+        object_2D_internal[ii][jj] = element_i_j;
+      }
+    }
+    return object_2D_internal;
+
+}
+
+
+function create_links(obj, props, myListColumnHeaders){ // creates 2D object to be filled later in a table
+  var links = new Array(obj.length);
+
+ for (var ii = 0; ii < obj.length; ii++) {
+  link_ii = "";
+  element_i_j = find_nested_prop_in_JSON(obj[ii], "composer.last",""); // use column string instead of j-position;
+     link_ii = element_i_j + "/" +link_ii + "[" + element_i_j + "] ";
+     element_i_j = find_nested_prop_in_JSON(obj[ii], "name.full",""); // use column string instead of j-position;
+     link_ii = link_ii + element_i_j + " ";
+     element_i_j = find_nested_prop_in_JSON(obj[ii], "place.opera_house",""); // use column string instead of j-position;
+     link_ii = link_ii + "(" + element_i_j + ", ";
+     element_i_j = find_nested_prop_in_JSON(obj[ii], "date.year",""); // use column string instead of j-position;
+
+     link_ii = link_ii + element_i_j + ")";
+   links[ii] = link_ii;     
+   console.log(links[ii])
+ }
+ return links;
+
+}
+
+
+
+ 
+
+
+  function buildHtmlTable_simpler(selector,table_input) { // table_input is a JSON variable. Problem: only will check if fields in the first level are = columns
+  // var columns = addAllColumnHeaders(myList, selector);
+  var columns = addAllColumnHeadersFixed(myListColumnHeaders, selector);
+  var table = document.getElementById("myTable");
+  // myList = opera_catalogue;
+  // console.log(table_input.length)
+  for (var i = 0; i < table_input.length; i++) {
+    // var row$ = $('<tr/>');
+    
+    var row = table.insertRow(i);
+    for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) { // for each column
+      var cellValue = table_input[i][colIndex]; // value of the cell
+      if (cellValue == null) {
+          cellValue = ""; // empty if not
+      }
+      // row$.append($('<td/>').html("<a href='file:////Volumes/ext_4TB_3/operas'>" + cellValue + "</a>"));
+      // row$.append($('<td/>').html("<a>" + cellValue + "</a>"));
+
+  
+  var cellbla = row.insertCell(colIndex);
+    cellbla.innerHTML = cellValue;
+    cellbla.textContent = cellValue;
+
+    }
+    // $(selector).append(row$);
+  }
+  function_on_key_up() // this function is called to account for the initialization of checks and filters
+ 
+}
+
+
+
+  function buildHtmlTable(selector,table_input,links) { // table_input is a JSON variable. Problem: only will check if fields in the first level are = columns
+  // var columns = addAllColumnHeaders(myList, selector);
+  var columns = addAllColumnHeadersFixed(myListColumnHeaders, selector);
+  // myList = opera_catalogue;
+  // console.log(table_input.length)
+  for (var i = 0; i < table_input.length; i++) {
+    var row$ = $('<tr/>');
+    for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) { // for each column
+      var cellValue = table_input[i][colIndex]; // value of the cell
+      if (cellValue == null) {
+          cellValue = ""; // empty if not
+      }
+      if(colIndex === 0){ // link solo en la primera columna
+        // row$.append($('<td/>').html("<a style='text-decoration: none' href='/Volumes/ext_4TB_3/operas/" + links[i] + "'>" + cellValue + "</a>"));
+        row$.append($('<td/>').html("<a>" + cellValue + "</a>"));
+      }
+      else{
+        row$.append($('<td/>').html("<a>" + cellValue + "</a>"));
+      }
+      
+    }
+    $(selector).append(row$);
+  }
+  function_on_key_up() // this function is called to account for the initialization of checks and filters
+  makeAllSortable() // makes all tables sortable
+}
+
+
+function artists_2_string(obj){ // unique function for the opera database. Concatenates the artists in a very specific order
+
+var string_artists =  new Array(obj.length).fill(null);
+
+var bla = obj[0]["artists"][1]["sort"]; // value of the cell
+console.log(bla)
+// console.log(props.length)
+for (var ii = 0; ii < obj.length; ii++) {
+  artists_ii = obj[ii]["artists"];
+  artists_ii_string = "";
+  for (var jj = 0; jj < artists_ii.length; jj++) {
+    art_ii_jj = artists_ii[jj]["sort"];
+    if (typeof art_ii_jj !== 'undefined'){
+      if (artists_ii_string == ""){ // first artist about to be inserted
+        artists_ii_string = art_ii_jj;
+      }
+      else{
+        artists_ii_string = artists_ii_string + ", " +  art_ii_jj;
+      }
+      if (artists_ii[jj]["role"] == "Conductor"){
+        artists_ii_string = artists_ii_string + " (conductor)"
+      }
+        
+    }
+    // console.log(artists_ii[jj]["sort"]);
+    // console.log(jj)
+  }
+  // console.log(artists_ii_stri/ng)
+  string_artists[ii] = artists_ii_string; 
+}
+return string_artists
+}
+
+
+// Builds the HTML Table out of JSON myList (object, but only with one level). SO FAR NOT USED!
+function buildHtmlTable_from_JSON(selector,table_input) { // table_input is a JSON variable. Problem: only will check if fields in the first level are = columns
+  // var columns = addAllColumnHeaders(myList, selector);
+  var columns = addAllColumnHeadersFixed(myListColumnHeaders, selector);
+  // myList = opera_catalogue;
+  console.log(table_input.length)
+  for (var i = 0; i < opera_catalogue.length; i++) {
+    var row$ = $('<tr/>');
+    for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+      var cellValue = table_input[i][columns[colIndex]]; // value of the cell
+      if (cellValue == null) {
+          cellValue = ""; // empty if not
+      }
+      row$.append($('<td/>').html(cellValue));
+    }
+    $(selector).append(row$);
+  }
+}
+
+// Adds a header row to the table and returns the set of columns.
+// Need to do union of keys from all records as some records may not contain
+// all records.
+function addAllColumnHeaders(myList, selector) { // so far not used
+  var columnSet = [];
+  var headerTr$ = $('<tr/>');
+
+  for (var i = 0; i < myList.length; i++) {
+    var rowHash = myList[i];
+    for (var key in rowHash) {
+      if ($.inArray(key, columnSet) == -1) {
+        columnSet.push(key);
+        headerTr$.append($('<th/>').html(key));
+      }
+    }
+  }
+
+
+  $(selector).append(headerTr$);
+
+  return columnSet;
+}
+
+
+// Adds a header row to the table and returns the set of columns.
+// Simply extracter from a list
+function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
+  var columnSet = [];
+  // var headerTr = $('<tr/>');
+  var table = document.getElementById("myTable");
+  var header = table.createTHead();
+  
+  var row = header.insertRow(0);
+  
+  for (var i = 0; i < myListColumnHeaders.length; i++) {
+    key = myListColumnHeaders[i];
+        columnSet.push(key);
+        //  headerTr.append($('<th/>').html(key));
+        var cell = row.insertCell(i);
+        cell.outerHTML = "<th><b>" + key + "</th></b>";
+
+  }
+
+
+// // make the table sortable  
+// const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+// const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+//     v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+//     )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+// // do the sortable work...
+// document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+//     const table = th.closest('table');
+//    bla = Array.from(table.querySelectorAll('tr:nth-child(n+1)')); // aqui si que esta Adriana de Cilea
+//    bla2 =  bla.splice(1, 1);
+//    bla2.sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+//         .forEach(tr => table.appendChild(tr) );
+//     // Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+//         // .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+//         // .forEach(tr => table.appendChild(tr) );
+//         tr = table.getElementsByTagName("tr");
+//       alternate_colors(tr);  // alternate colors in rows
+    
+// })));
+
+
+
+
+
+      
+  return columnSet;
+}
+
+
+// BEFORE MAJOR CHANGE ON 05-02-23
+// function addAllColumnHeadersFixed(myListColumnHeaders, selector) {
+//   var columnSet = [];
+//   var headerTr = $('<tr/>');
+
+//   for (var i = 0; i < myListColumnHeaders.length; i++) {
+//     key = myListColumnHeaders[i];
+//         columnSet.push(key);
+//          headerTr.append($('<th/>').html(key));
+//   }
+//    $(selector).append(headerTr);
+
+//   return columnSet;
+// }
+
+
+function sortTable(table, col, reverse) {
+    var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
+        tr = Array.prototype.slice.call(tb.rows, 0), // put rows into array
+        i;
+    reverse = -((+reverse) || -1);
+    tr = tr.sort(function (a, b) { // sort rows
+        return reverse // `-1 *` if want opposite order
+            * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+                .localeCompare(b.cells[col].textContent.trim())
+               );
+    });
+    for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+    alternate_colors(tr) // alternate colors after sorting
+}
+
+function makeSortable(table) {
+    var th = table.tHead, i;
+    th && (th = th.rows[0]) && (th = th.cells);
+    if (th) i = th.length;
+    else return; // if no `<thead>` then do nothing
+    while (--i >= 0) (function (i) {
+        var dir = 1;
+        th[i].addEventListener('click', function () {sortTable(table, i, (dir = 1 - dir))});
+    }(i));
+}
+
+function makeAllSortable(parent) {
+    parent = parent || document.body;
+    var t = parent.getElementsByTagName('table'), i = t.length;
+    while (--i >= 0) makeSortable(t[i]);
+}
+
+</script>
+
+
+<script>
+
+ 
+
+
+    function function_on_key_up() {     // when a key is released
+
+      
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      // console.log(tr.length)
+
+      filter_vec = filter.split(" "); // all substrings
+
+      // queda eliminar el substring vacio, MEJOR HACERLO AQUI
+      const index_space = filter_vec.indexOf(" ");
+      if (index_space > -1) { // only splice array when item is found
+        filter_vec.splice(index_space);  
+      }
+
+      // console.log(filter_vec.length)
+      count_visible = 0; // appearing elements
+      for (i = 1; i < tr.length; i++) { // NEVER MAKE DISAPPEAR THE FIRST ONE
+         var flag_i_vec = new Array(filter_vec.length).fill(false);  // size of number of sub_strings. We will need that all substrings to be true
+         
+        for (col = 0; col < n_cols; col++) { // for each column
+          td = tr[i].getElementsByTagName("td")[col];
+          if (td) { // if there is something in td
+             txtValue = td.textContent; //  textContent is more efficient than innerText
+            for (k = 0; k < filter_vec.length; k++) { // for all substrings in the filter
+            if (txtValue.toUpperCase().indexOf(filter_vec[k]) > -1) { // if filter is a sub-string of txtValue
+ 
+                flag_i_vec[k] = txtValue.toUpperCase().indexOf(filter_vec[k]) > -1 || flag_i_vec[k]
+              }
+            }
+          }
+        }
+        ind_type = myListColumnHeaders.indexOf("type");
+        if (ind_type > -1){ // type exists
+          
+          td_type = tr[i].getElementsByTagName("td")[ind_type];
+          // console.log(td_type.textContent )
+          if(td_type.textContent  == "video" ){
+            element_ii_is_video = true;
+          }
+          else{
+            element_ii_is_video = false;
+          }
+          if( td_type.textContent == "audio" ){
+            element_ii_is_audio = true;
+          }
+        else{
+          element_ii_is_audio = false;
+          }
+
+        }
+
+
+           if ( (flag_i_vec.every(v => v === true) &&  ( ( videos_check.checked === true && element_ii_is_video) || ( audios_check.checked === true && element_ii_is_audio)  ))){ // true if all elements of the vector are true
+              tr[i].style.display = ""; // displayed
+              count_visible = count_visible + 1;
+              
+              $(tr[i]).css("background-color", ( count_visible % 2 == 0 ? "#DEDFDE" : "#EEECEE" ));
+            } else {
+              tr[i].style.display = "none";  // hidden
+            }
+      }
+      document.getElementById("n_elements").innerHTML = count_visible + " displayed elements";
+ 
+      alternate_colors(tr);  // alternate colors in rows
+
+    }
+ 
+    function alternate_colors(tr) {  
+      count_visible = 0;
+      for (i = 1; i < tr.length; i++) {
+        if (tr[i].style.display === ""){ // row it is displayed
+              count_visible = count_visible + 1;
+              $(tr[i]).css("background-color", ( count_visible % 2 == 0 ? "#DEDFDE" : "#EEECEE" ));
+        }
+    }
+  }
+              
+
+
+
+  </script>
+
+
+
+
+
+</head>
+
+<body onLoad="buildHtmlTable('#myTable',object_2D,links)">
+  <!-- <body onLoad="buildHtmlTable_simpler('#myTable',object_2D)"> -->
+
+
+  <h2>Opera recordings</h2>
+
+   
+
+  <div class="float-parent-element">
+    <div class="float-child-element_left">
+      <input class="left_div" type="text" id="myInput"  onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
+    </div>
+    <div class="float-child-element_right">
+      <form class="right_div">
+        <input type="checkbox" id="videos_check"  onclick="function_on_key_up()"  checked>
+        <label for="videos"> videos</label><br>
+        <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
+        <label for="audios"> audios</label><br>
+      </form>
+    
+    </div>
+  </div>
+
+<div>
+   <a float="right" id="n_elements">   </a>
+  </div>
+   
+ 
+    <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;">
+    </table>
+   
+  
+  
+
+  
+
+</body>
+
+</html>
