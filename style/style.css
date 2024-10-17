@@ -100,7 +100,7 @@ ol li
   margin-bottom: 30px;}
 
 #logo
-{ width: 878px;
+{ width: 730px;
   position: relative;
   height: 134px;
   background: #3A332D url(logo.png) no-repeat;}
@@ -132,11 +132,11 @@ ol li
 
 #menubar
 { height: 44px;
-  width: 940px;
+  width: 730px;
   margin: 1px auto 0 auto;} 
 
 ul#menu
-{ float: right;}
+{ float: left;}
 
 ul#menu li
 { float: left;
@@ -172,7 +172,7 @@ ul#menu li a:hover
 { color: #ECEF01;}
 
 #content_header, #content_footer
-{ width: 940px;
+{ width: 730px;
   background: url(content_header.png) no-repeat;
   height: 14px;}
 
@@ -180,14 +180,14 @@ ul#menu li a:hover
 { background: url(content_footer.png) no-repeat;}
 
 #site_content
-{ width: 878px;
+{ width: 670px;
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 0 20px 20px 40px;
   background: #FFF;
   border-left: 1px solid #ECECE0;
   border-right: 1px solid #ECECE0;} 
-
+/*
 .sidebar
 { float: right;
   width: 250px;
@@ -209,7 +209,7 @@ ul#menu li a:hover
 
 .sidebar li a.selected
 { color: #444;
-  text-decoration: none;} 
+  text-decoration: none;} */
 
 #content
 { text-align: left;
