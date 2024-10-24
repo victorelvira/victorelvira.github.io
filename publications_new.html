@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Víctor Elvira's webpage</title>
+
+
+      <!-- CSS -->
+      <link href="assets/css/styles.css" rel="stylesheet">       <!-- Custom CSS -->
+      <!-- Bootstrap 5 CSS -->
+      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+      <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+
+
+      <!-- JS -->
+      <script src="assets/js/scripts.js"></script> <!-- Custom JS (scripts.js to load the navbar and footer) -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery (Required for bibtex_js) -->
+      <script type="text/javascript" src="assets/js/bibtex_js.js"></script> <!-- Load bibtex-js -->
+
+</head>
+<body>
+
+<!-- Load Navbar from nav.html -->
+<div id="navbar-placeholder"></div>
+
+<!-- Publications Section -->
+<div class="container py-5">
+    <h2>Publications</h2>
+    
+    <!-- Filter buttons -->
+    <div id="filter-buttons" class="mb-3">
+        <button class="btn btn-primary filter-btn" data-filter="all">All Papers</button>
+        <!-- Year buttons will be dynamically added here -->
+    </div>
+
+    <!-- Reverse ordered list for publications -->
+    <ol reversed id="bibtex_display">
+        <!-- The BibTeX entries will be dynamically added here -->
+    </ol>
+
+    <!-- Hidden BibTeX data -->
+    <textarea id="bibtex_input" style="display:none;">
+        @article{chenma24,
+          author    = {Chen Ma and Huayi Li and Junjun Jiang and C{\'e}sar Aybar and Jiaqi Yao and Gustau Camps-Valls},
+          title     = {Dynamics of Masked Image Modeling in Hyperspectral Image Classification},
+          journal   = {Some Journal},
+          year      = {2024},
+          doi       = {10.1000/exampledoi}
+        }
+        @article{Pelucchi24inn,
+          title        = {Invertible Neural Networks for Aerosol Optical Depth Retrievals},
+          author       = {Pelucchi, P. and Vicent, J. and Camps-Valls, G.},
+          year         = {2024},
+          arxiv        = {https://arxiv.org/abs/1234.56789}
+        }
+        @article{chouzenoux2024sparse,
+          title        = {Sparse graphical linear dynamical systems},
+          author       = {Chouzenoux, Emilie and Elvira, V{\'i}ctor},
+          year         = {2024}
+        }
+        % C61
+        @inproceedings{dahiya2021would,
+          title={Would your tweet invoke hate on the fly? forecasting hate intensity of reply threads on twitter},
+          author={Dahiya, Snehil and Sharma, Shalini and Sahnan, Dhruv and Goel, Vasu and Chouzenoux, Emilie and Elvira, V{\'\i}ctor and Majumdar, Angshul and Bandhakavi, Anil and Chakraborty, Tanmoy},
+          booktitle={Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery \& Data Mining},
+          pages={2732--2742},
+          year={2021}
+        }
+
+        % C60
+        @inproceedings{branchini2021optimized,
+          title={Optimized auxiliary particle filters: adapting mixture proposals via convex optimization},
+          author={Branchini, Nicola and Elvira, V{\'\i}ctor},
+          booktitle={Uncertainty in Artificial Intelligence},
+          pages={1289--1299},
+          year={2021},
+          organization={PMLR}
+        }
+    </textarea>
+</div>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- BibTeX Display and Filtering Script -->
+<script>
+function bibtex_js_draw(filterYear = "all", filterType = "all") {
+    console.log("Starting to parse BibTeX data");
+
+    var bibtexDisplay = $("#bibtex_display");
+    var bibtexInput = $("#bibtex_input").val();
+    var bibtexParser = new BibtexParser();
+    
+    // Clear the existing content before parsing
+    bibtexDisplay.empty();
+
+    // Parse BibTeX input
+    try {
+        bibtexParser.setInput(bibtexInput);
+        bibtexParser.bibtex();
+        var entries = bibtexParser.getEntries();
+        var years = new Set(); // Store unique years for filtering
+
+        // Iterate over each entry and append it to the reversed ordered list
+        $.each(entries, function (key, entry) {
+            var title = entry['TITLE'] || 'Untitled';
+            var author = entry['AUTHOR'] || 'Unknown';
+            var year = entry['YEAR'] ? entry['YEAR'].trim() : 'No year'; // Trim whitespace to ensure correct parsing
+
+            years.add(year); // Collect years for filter buttons
+
+            // Filter by year and type if necessary
+            if (filterYear !== "all" && filterYear !== year) {
+                return; // Skip this entry if it doesn't match the filter
+            }
+            if (filterType !== "all" && entry['ENTRYTYPE'] !== filterType) {
+                return; // Skip if the entry type doesn't match the filter
+            }
+
+            // Create the list item with title, author, year
+            var listItem = `<li>
+                <strong>${title}</strong><br>
+                <em>${author}</em><br>
+                <small>${year}</small><br>`;
+
+            // Add additional buttons (DOI, arXiv, BibTeX) if available
+            if (entry['DOI']) {
+                listItem += `<a href="${entry['DOI']}" class="btn btn-xs btn-warning">DOI</a> `;
+            }
+            if (entry['ARXIV']) {
+                listItem += `<a href="${entry['ARXIV']}" class="btn btn-xs btn-danger">arXiv</a> `;
+            }
+            listItem += `<button class="btn btn-xs btn-success bibtex_but">BibTeX</button>`;
+
+            listItem += `</li>`;
+            bibtexDisplay.append(listItem);
+        });
+
+        // Update year buttons dynamically
+        updateYearButtons(years);
+    } catch (e) {
+        console.error("Error parsing BibTeX data: ", e);
+    }
+}
+
+// Function to dynamically update year filter buttons
+function updateYearButtons(years) {
+    var filterButtons = $("#filter-buttons");
+    
+    // Clear existing year buttons
+    filterButtons.find(".year-btn").remove();
+
+    // Add a button for each unique year
+    years.forEach(function (year) {
+        filterButtons.append(`<button class="btn btn-secondary year-btn" data-filter="${year}">${year}</button> `);
+    });
+}
+
+$(document).ready(function () {
+    // Draw all publications by default
+    bibtex_js_draw();
+
+    // Handle filter button clicks for year and type
+    $("#filter-buttons").on("click", "button", function () {
+        var filterValue = $(this).data("filter");
+        var filterType = $(this).data("type");
+        
+        if (filterType) {
+            bibtex_js_draw("all", filterType);
+        } else {
+            bibtex_js_draw(filterValue);
+        }
+    });
+
+    // Add buttons for filtering by article or conference
+    $('#filter-buttons').append(`
+        <button class="btn btn-secondary filter-btn" data-type="article">Journal Papers</button>
+        <button class="btn btn-secondary filter-btn" data-type="inproceedings">Conference Papers</button>
+    `);
+});
+</script>
+
+</body>
+</html>
