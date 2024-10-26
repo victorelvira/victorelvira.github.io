@@ -4,7 +4,7 @@
 // Load the navbar from nav.html into the placeholder
 function loadNavbar() {
     console.log("Attempting to fetch the navbar...");
-    fetch('nav.html')
+    fetch('/nav.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -26,7 +26,7 @@ window.onload = loadNavbar;
 
 // Load the footer from footer.html into the placeholder
 function loadFooter() {
-    fetch('footer.html')
+    fetch('/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
