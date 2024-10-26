@@ -85,3 +85,25 @@ footer p {
     color: #FFFFFF;                  /* Change color on hover (Bootstrap primary color) */
     transform: scale(1.3);           /* Increase icon size by 20% on hover */
 }
+
+/* Dropdown Background and Font */
+.navbar .dropdown-menu {
+    background-color: #f8f9fa; /* Flatly light gray */
+    color: #212529; /* Dark text for better contrast */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove rounded corners */
+    font-family: inherit; /* Inherit font from the navbar */
+    min-width: auto; /* Adjust width to fit content */
+}
+
+/* Hover Effect on Dropdown Items */
+.navbar .dropdown-item:hover {
+    background-color: #e9ecef; /* Slightly darker gray on hover */
+    color: #212529;
+}
+
+/* Adjust Padding for Tighter Fit */
+.navbar .dropdown-item {
+    padding: 8px 16px; /* Smaller padding for compact look */
+    font-size: 0.9rem; /* Slightly smaller font */
+}
