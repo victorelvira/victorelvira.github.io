@@ -16,25 +16,15 @@
 
 
 /* CSS for hover shadow effect */
- .hover-effect-1:hover {
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    transform: scale(1.01);
-    transition: 0.3s ease;
-}
-
+ 
 /* Hover Effect 2: Background Darkening */
-.hover-effect-2:hover {
+.hover-effect:hover {
     background-color: #f0f0f0;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.01);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
-
-/* Hover Effect 3: Scale and Shadow */
-.hover-effect-3:hover {
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
-    transform: scale(1.03);
-    transition: 0.3s ease;
-}
+ 
 /* Hero Section */
 header {
     background-color: #007bff;
