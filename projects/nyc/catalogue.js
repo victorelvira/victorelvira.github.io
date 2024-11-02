@@ -7818,5 +7818,64 @@ var catalogue = [
             "imslp": ""
         },
         "composer_id": 20
+    },
+    {
+        "piece": "Fidele Brüder. Marsch aus der Operette \"Das Veilchenmädchen\"",
+        "composer": "Joseph Hellmesberger Jr.",
+        "piece_id": 392,
+        "links":
+        {
+            "wiki":
+            {
+                "en": "",
+                "de": ""
+            },
+            "you":
+            {
+                "this": "",
+            },
+            "imslp": ""
+        },
+        "composer_id": 26
+    },
+    {
+        "piece": "Ferdinandus-Walzer, op. 10 [Arr. W. Dörner]",
+        "composer": "Constanze Geiger",
+        "piece_id": 393,
+        "links":
+        {
+            "wiki":
+            {
+                "en": "",
+                "de": ""
+            },
+            "you":
+            {
+                "this": "",
+                "other": ""
+            },
+            "imslp": ""
+        },
+        "composer_id": 38
     }
+    // {
+    //     "piece": "",
+    //     "composer": "",
+    //     "piece_id": 392,
+    //     "links":
+    //     {
+    //         "wiki":
+    //         {
+    //             "en": "",
+    //             "de": ""
+    //         },
+    //         "you":
+    //         {
+    //             "this": "",
+    //             "other": ""
+    //         },
+    //         "imslp": ""
+    //     },
+    //     "composer_id": 
+    // }
 ]

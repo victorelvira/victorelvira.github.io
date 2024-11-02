@@ -2354,5 +2354,32 @@ var concerts = [
             ] 
         },
         "n_program": 15
+    },
+    {
+        "year": 2025,
+        "conductor_id": 15,
+        "program":
+        {
+            "piece_id":
+            [
+                127,
+                83,
+                55,
+                189,
+                206,
+                273,
+                2,
+                392, // Fidele Brüder. Marsch aus der Operette "Das Veilchenmädchen" (new ones)
+                393, // Ferdinandus-Walzer, op. 10 [Arr. W. Dörner] (new ones)
+                102,
+                348,
+                12,
+                349,
+                372,
+                10,
+                298
+            ] 
+        },
+        "n_program": 14
     }
 ]

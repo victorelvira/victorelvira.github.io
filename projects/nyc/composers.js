@@ -416,5 +416,16 @@ var composers = [
                 "en": "https://en.wikipedia.org/wiki/%C3%89mile_Waldteufel"
             }
         }
+    },
+    {
+        "name": "Constanze Geiger",
+        "id": 39,
+        "links":
+        {
+            "wiki":
+            {
+                "en": "https://en.wikipedia.org/wiki/Constanze_Geiger"
+            }
+        }
     }
 ]
