@@ -15,6 +15,16 @@
 }
 
 
+.keywords {
+    text-align: justify;
+    text-align-last: left;  /* Ensures the last line aligns to the left */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: 0.5px;  /* Optional: Adjusts letter spacing */
+    line-height: 1.5;  /* Adjust line height if needed */
+}
+
+
 /* CSS for hover shadow effect */
  
 /* Hover Effect 2: Background Darkening */
