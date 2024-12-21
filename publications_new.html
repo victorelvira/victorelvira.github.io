@@ -106,12 +106,60 @@ function bibtex_js_draw(filterYear = "all", filterType = "all") {
         bibtexParser.bibtex();
         var entries = bibtexParser.getEntries();
         var years = new Set(); // Store unique years for filtering
+        console.log(entries);
 
         // Iterate over each entry and append it to the reversed ordered list
         $.each(entries, function (key, entry) {
             var title = entry['TITLE'] || 'Untitled';
             var author = entry['AUTHOR'] || 'Unknown';
             var year = entry['YEAR'] ? entry['YEAR'].trim() : 'No year'; // Trim whitespace to ensure correct parsing
+            console.log(author);
+
+ // // // // WORK IN PROGRESS BELOW
+ // Function to parse and format the author string correctly
+function formatAuthors(authorString) {
+    // Helper function to decode LaTeX accents
+    function decodeAccents(text) {
+        return text
+            .replace(/{|}/g, '') // Remove braces
+            .replace(/\\'\\i/g, 'í') // Handle \'\i (for í)
+            .replace(/\\'e/g, 'é') // Handle \'e (for é)
+            .replace(/\\'a/g, 'á') // Handle \'a (for á)
+            .replace(/\\'o/g, 'ó') // Handle \'o (for ó)
+            .replace(/\\'u/g, 'ú') // Handle \'u (for ú)
+            .replace(/\\\"u/g, 'ü') // Handle \"u (for ü)
+            .replace(/\\c{c}/g, 'ç'); // Handle \c{c} (for ç)
+    }
+ 
+    // Split the string by ' and ' if multiple authors are joined that way
+    let authors = authorString.split(/\s+and\s+/);
+
+    // Clean up and decode each author name
+    authors = authors.map(author => {
+        author = decodeAccents(author);
+
+        // If the author name is in "Last, First" format, reverse it
+        if (author.includes(',')) {
+            const parts = author.split(',').map(part => part.trim());
+            return `${parts[1]} ${parts[0]}`;
+        }
+
+        // Return the cleaned author name
+        return author;
+    });
+
+    // Join the authors with ' and ' for better formatting
+    return authors.join(' and ');
+}
+
+// Example usage:
+const authorString = "Branchini, Nicola and Elvira, V{\\'\\i}ctor";
+const formattedAuthors = formatAuthors(authorString);
+// Example output
+console.log("formatted below"); 
+console.log(formattedAuthors); 
+
+ // // // // // // // // // WORK IN PROGRESS UNTIL HERE
 
             years.add(year); // Collect years for filter buttons
 
