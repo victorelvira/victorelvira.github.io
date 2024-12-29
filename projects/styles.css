@@ -2,7 +2,17 @@
             --gold_box: rgb(186,160, 112);
             --gold_box_hoover: rgb(163,128, 55);
             --clicked_year_color: #1c1a82;
+            --light_gray: #dadada; /* Add your gray color here */
+            --lighter_gray: #f8f9fa; /* Optionally define a lighter gray */
         }
+
+        .light_gray_panel {
+    background-color: var(--light_gray); /* Use the light gray variable */
+    color: #000; /* Optional: ensure text color has good contrast */
+    padding: 15px; /* Optional: adjust padding */
+    border-radius: 5px; /* Optional: match the rounded class */
+}
+
         .left_panel {
             background-color: white;
             /* padding-top: 200px; */
@@ -29,6 +39,31 @@
             float: left;
             width: 26%; /* The width is 20%, by default */
             padding-top:0;
+        }
+
+        .year-box {
+            display: inline-block;
+            text-align: center;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-width: 60px; /* Prevent buttons from shrinking too much */
+            max-width: 100px; /* Ensure buttons don’t get too wide */
+            white-space: nowrap; /* Prevent wrapping */
+        }
+
+        .d-flex.flex-wrap {
+            gap: 5px; /* Adjust the spacing between buttons */
+        }
+
+        input[type="radio"] {
+            display: none; /* Hide radio buttons (only labels visible) */
+        }
+
+        label.year-box:hover {
+            background-color: #f0f0f0; /* Optional: Highlight on hover */
+            cursor: pointer;
         }
         
         h1{

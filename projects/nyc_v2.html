@@ -26,7 +26,7 @@
     <div class="container my-3">
         <div class="row">
         <!-- Title Section -->
-            <div class="text-center p-3 bg-light rounded">
+            <div class="text-center p-3 light_gray_panel rounded">
                 <h2 id="title">Interactive database of the New Year's Concert by the Vienna Philharmonic</h1>
             </div>
         </div>
@@ -38,16 +38,24 @@
                 <div id="demo" class="radio-toolbar"></div>
                 <script>
                     let last_year = 2025;
-                    let allRadioButtons = "";
+                    let allRadioButtons = '<div class="d-flex flex-wrap justify-content-center gap-2">'; // Use Bootstrap flex utilities
+
                     for (let i = last_year; i > 1940; i--) {
-                        // if (i == last_year) {
-                        //     allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')" checked><label for="' + i + '">' + i + '</label>';
-                        // } else {
-                            allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>';
-                        }
-                    // }
+                        allRadioButtons += `
+                            <div>
+                                <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
+                                <label for="${i}" class="year-box">${i}</label>
+                            </div>`;
+                    }
+
+                    // Add the 1939 year as well
                     i = 1939;
-                    allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>';
+                    allRadioButtons += `
+                        <div>
+                            <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
+                            <label for="${i}" class="year-box">${i}</label>
+                        </div>`;
+                    allRadioButtons += '</div>'; // Close the flex container
                     document.getElementById("demo").innerHTML = allRadioButtons;
                 </script>
             </div>
