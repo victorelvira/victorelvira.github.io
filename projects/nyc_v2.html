@@ -38,11 +38,11 @@
                 <div id="demo" class="radio-toolbar"></div>
                 <script>
                     let last_year = 2025;
-                    let allRadioButtons = '<div class="d-flex flex-wrap justify-content-center gap-2">'; // Use Bootstrap flex utilities
+                    let allRadioButtons = '<div class="row row-cols-auto justify-content-center g-1">'; // Bootstrap grid with auto columns and gap
 
                     for (let i = last_year; i > 1940; i--) {
                         allRadioButtons += `
-                            <div>
+                            <div class="col">
                                 <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
                                 <label for="${i}" class="year-box">${i}</label>
                             </div>`;
@@ -51,11 +51,12 @@
                     // Add the 1939 year as well
                     i = 1939;
                     allRadioButtons += `
-                        <div>
+                        <div class="col">
                             <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
                             <label for="${i}" class="year-box">${i}</label>
                         </div>`;
-                    allRadioButtons += '</div>'; // Close the flex container
+
+                    allRadioButtons += '</div>'; // Close the Bootstrap grid
                     document.getElementById("demo").innerHTML = allRadioButtons;
                 </script>
             </div>
