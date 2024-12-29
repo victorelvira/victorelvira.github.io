@@ -81,10 +81,27 @@
             </div>
         </div>
     </div>
-
+ 
     <script>
         // clickOnYear(last_year);
         clickOnYear(2024);
     </script>
 </body>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; <span id="currentYear"></span> Víctor Elvira. All rights reserved.</p>
+        <p>Last updated: <span id="lastUpdated"></span></p>
+    </div>
+    <script>
+        // Set the current year dynamically
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        // Get the last modified date of the current file
+        const lastModified = new Date(document.lastModified);
+        document.getElementById("lastUpdated").textContent = 
+            lastModified.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' });
+    </script>
+</footer>
+
 </html>
