@@ -773,7 +773,15 @@
                          
                             
                             
-                            
+                    // Add 'clickable' class to all elements with a 'click' event listener (so later we can change cursor when on them)
+const originalAddEventListener = EventTarget.prototype.addEventListener;
+
+EventTarget.prototype.addEventListener = function (type, listener, options) {
+    if (type === 'click') {
+        this.classList?.add('clickable');
+    }
+    originalAddEventListener.call(this, type, listener, options);
+};        
 
 
 

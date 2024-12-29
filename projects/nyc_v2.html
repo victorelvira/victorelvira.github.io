@@ -23,7 +23,7 @@
     <script type="text/javascript" src="functions.js"></script>
 </head>  
 <body>
-    <div class="container my-3">
+    <div class="container-fluid my-3">
         <div class="row">
         <!-- Title Section -->
             <div class="text-center p-3 light_gray_panel rounded">
@@ -31,41 +31,42 @@
             </div>
         </div>
  
-        <div class="row">
-            <!-- Left Panel -->
-            <div class="col-md-12 p-3 rounded mb-3">
-                <h2>Select a year</h2>
-                <div id="demo" class="radio-toolbar"></div>
-                <script>
-                    let last_year = 2025;
-                    let allRadioButtons = '<div class="row row-cols-auto justify-content-center g-1">'; // Bootstrap grid with auto columns and gap
 
-                    for (let i = last_year; i > 1940; i--) {
+        <!-- Main Content Section -->
+        <div class="row my-4">
+
+            <!-- <div class="row"> -->
+                <!-- Left Panel -->
+                <div class="col-md-3 p-3 rounded mb-3">
+                    <h2>Select a year</h2>
+                    <div id="demo" class="radio-toolbar"></div>
+                    <script>
+                        let last_year = 2025;
+                        let allRadioButtons = '<div class="row row-cols-auto justify-content-center g-1">'; // Bootstrap grid with auto columns and gap
+
+                        for (let i = last_year; i > 1940; i--) {
+                            allRadioButtons += `
+                                <div class="col">
+                                    <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
+                                    <label for="${i}" class="year-box">${i}</label>
+                                </div>`;
+                        }
+
+                        // Add the 1939 year as well
+                        i = 1939;
                         allRadioButtons += `
                             <div class="col">
                                 <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
                                 <label for="${i}" class="year-box">${i}</label>
                             </div>`;
-                    }
 
-                    // Add the 1939 year as well
-                    i = 1939;
-                    allRadioButtons += `
-                        <div class="col">
-                            <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
-                            <label for="${i}" class="year-box">${i}</label>
-                        </div>`;
-
-                    allRadioButtons += '</div>'; // Close the Bootstrap grid
-                    document.getElementById("demo").innerHTML = allRadioButtons;
-                </script>
-            </div>
-        </div>
-        <!-- Main Content Section -->
-        <div class="row my-4">
-
+                        allRadioButtons += '</div>'; // Close the Bootstrap grid
+                        document.getElementById("demo").innerHTML = allRadioButtons;
+                    </script>
+                </div>
+            <!-- </div> -->
             <!-- Main Panel -->
-            <div class="col-md-6  p-3 rounded mb-3">
+            <div class="col-md-5  p-3 rounded mb-3">
                 <h2 id="concert">New Year's Concert</h2>
                 <p>(*More information is displayed below when clicking on the <a class="text-success">conductor's name</a>, <a class="text-primary">pieces</a>, and <a class="text-danger">composer's name</a>.)</p>
                 <p id="conductor_title"><strong><u>Conductor:</u></strong> <a id="conductor" class="text-decoration-none" style="cursor: pointer;">&#8205</a></p>
@@ -76,7 +77,7 @@
             </div>
 
             <!-- Right Panel -->
-            <div class="col-md-6 rounded mb-3">
+            <div class="col-md-4 rounded mb-3">
                 <h2 id="concert">Information</h2>
                 <p id="other_info_title"><strong><u>Appearances:</u></strong> <a id="other_info" class="text-decoration-none" style="cursor: pointer;">&#8205</a></p>
             </div>
@@ -90,7 +91,7 @@
 </body>
 
 <footer class="bg-dark text-white py-4">
-    <div class="container text-center">
+    <div class="container-fluid text-center">
         <p>&copy; <span id="currentYear"></span> Víctor Elvira. All rights reserved.</p>
         <p>Last updated: <span id="lastUpdated"></span></p>
     </div>
