@@ -40,12 +40,12 @@
                     let last_year = 2025;
                     let allRadioButtons = "";
                     for (let i = last_year; i > 1940; i--) {
-                        if (i == last_year) {
-                            allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')" checked><label for="' + i + '">' + i + '</label>';
-                        } else {
+                        // if (i == last_year) {
+                        //     allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')" checked><label for="' + i + '">' + i + '</label>';
+                        // } else {
                             allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>';
                         }
-                    }
+                    // }
                     i = 1939;
                     allRadioButtons += '<input type="radio" id="' + i + '" name="radio_years" onclick="clickOnYear(' + i + ')"><label for="' + i + '">' + i + '</label>';
                     document.getElementById("demo").innerHTML = allRadioButtons;
@@ -75,7 +75,8 @@
     </div>
 
     <script>
-        clickOnYear(last_year);
+        // clickOnYear(last_year);
+        clickOnYear(2024);
     </script>
 </body>
 </html>
