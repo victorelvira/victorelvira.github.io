@@ -47,9 +47,9 @@
             padding: 8px 12px;       /* Controls button padding */
             font-size: 14px;         /* Adjust font size for readability */
             border: 1px solid #ddd; /* Subtle border */
-            border-radius: 5px;      /* Rounded corners */
-            min-width: 60px;         /* Prevent buttons from shrinking too much */
-            max-width: 100px;        /* Keep buttons from growing too large */
+            border-radius: 10px;      /* Rounded corners */
+            min-width: 40px;         /* Prevent buttons from shrinking too much */
+            max-width: 70px;        /* Keep buttons from growing too large */
             white-space: nowrap;     /* Prevent text from wrapping */
             background-color: var(--gold_box); /* Use gold color */
             color: white;            /* Ensure text contrast */
