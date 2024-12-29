@@ -90,10 +90,10 @@ html, body {
     background-color: var(--clicked_year_color);
 }
 
-/* Responsiveness */
+/* Responsiveness for small screens */
 @media (max-width: 800px) {
     .radio-toolbar label {
-        font-size: 12px;
+        font-size: 11px;
         width: 50px; /* Smaller fixed width for mobile */
         height: 20px; /* Smaller fixed height for mobile */
     }
