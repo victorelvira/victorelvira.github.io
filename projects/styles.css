@@ -18,6 +18,13 @@ h4 {
     padding-right: 0.5rem; /* Equivalent to px-2 in Bootstrap */
 }
 
+.column-style {
+    padding-left: 0.5rem; /* Same as px-2 */
+    padding-right: 0.5rem; /* Same as px-2 */
+    border-radius: 0.25rem; /* Same as rounded */
+    margin-bottom: 1rem; /* Same as mb-3 */
+}
+
 .clickable {
     cursor: pointer;
 }
