@@ -120,34 +120,20 @@
         }
         
         .radio-toolbar label {
-            /* display: inline-block;
-            background-color: #ddd;
-            padding: 2px 20px;
-            font-family: sans-serif, Arial;
-            
-            border: 2px solid #444;
-            border-radius: 4px;
-            */
-            font-size: 22px;
-            width: 80px;
-            height: 40px; 
-            text-align: center;
-            margin: auto;
-            background-color: var(--gold_box); /* standard */
-            border: 1px solid rgb(0, 0, 0);  
-            color: white; /* White text */
-            cursor: pointer; /* Pointer/hand icon */
-            float: left; /* Float the buttons side by side */
-            
-            /* justification */
+            /* Default styles */
+            font-size: 16px; /* Set a fixed or relative font size */
+            width: auto; /* Let the width adjust dynamically */
+            min-width: 60px; /* Prevent shrinking below this size */
+            padding: 8px 12px; /* Add consistent padding */
+
+            /* Ensure buttons are vertically and horizontally aligned */
             display: flex;
-            /* place items in column */
-            flex-direction: column;
-            /* center flex items horizontally */
-            align-items: center;
-            /* center all content vertically */
             justify-content: center;
+            align-items: center;
+            text-align: center;
         }
+
+
         
         .radio-toolbar label:hover {
             background-color: var(--gold_box_hoover); 
@@ -162,35 +148,13 @@
             /* border: 3px solid; */
         }
         
-        
-        /* Use a media query to add a break point at 800px: */
-        @media screen and (max-width: 800px) {
-            .left_panel, .main_panel, .right_panel {
-                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-            }
-            h1{
-                font-size : 4vw;
-            }
-            h2{
-                font-size : 3vw;
-            }
-            p {
-                font-size : 3vw;
-            }
-            ol {
-                /* margin-left: 5vw; */
-                /* font-size : 1vw; */
-            }
-            li {
-                font-size : 3vw;
-            }
-
+        /* Media Query for Small Screens */
+        @media (max-width: 800px) {
             .radio-toolbar label {
-                padding: 200vw;
-            font-size: 2vw;
-            width: 3vw;
-            height: 2vw;
-            padding: 1vw 2vw; /* Some padding */
+                font-size: 14px; /* Slightly smaller font size */
+                padding: 6px 10px; /* Adjust padding for smaller screens */
+                min-width: 50px; /* Prevent excessive shrinking */
+            }
         }
         
 
