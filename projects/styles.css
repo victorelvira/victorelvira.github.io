@@ -6,24 +6,22 @@
     --lighter_gray: #f8f9fa; /* Secondary lighter gray */
 }
 
-
-
 html, body {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    width: 100%; /* Full width */
-    overflow-x: hidden; /* Prevent horizontal scrolling due to small overflows */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .clickable {
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
 }
 
-.container-fluid { /* Instead of container, this will fille wide screens with all the space */
-    margin: 1vw; /* Remove container margin */
-    padding: 0; /* Remove container padding */
-    width: 100%; /* Make sure it spans full width */
-    max-width: 100%; /* Prevent any Bootstrap or custom limits */
+.container-fluid {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Panels */
@@ -33,7 +31,6 @@ html, body {
     padding: 15px;
     border-radius: 5px;
 }
-
 
 .left_panel,
 .main_panel,
@@ -46,13 +43,11 @@ html, body {
 .year-box {
     display: inline-block;
     text-align: center;
-    padding: 8px 12px;
+    width: 80px; /* Fixed width */
+    height: 40px; /* Fixed height */
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    min-width: 60px;
-    max-width: 80px;
-    white-space: nowrap;
     background-color: var(--gold_box);
     color: white;
     cursor: pointer;
@@ -65,22 +60,22 @@ html, body {
 .radio-toolbar {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    gap: 5px; /* Consistent spacing */
+    justify-content: center; /* Center alignment */
 }
 
 .radio-toolbar input[type="radio"] {
-    display: none; /* Hide radio buttons */
+    display: none; /* Hide actual radio buttons */
 }
 
 .radio-toolbar label {
-    font-size: 16px;
-    min-width: 60px;
-    padding: 8px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 80px; /* Match year-box width */
+    height: 40px; /* Match year-box height */
+    font-size: 14px;
     background-color: var(--gold_box);
     border: 1px solid rgb(0, 0, 0);
     color: white;
@@ -99,8 +94,7 @@ html, body {
 @media (max-width: 800px) {
     .radio-toolbar label {
         font-size: 12px;
-        padding: 8px 10px;
-        min-width: 30px;
-        max-width: 50px;
+        width: 60px; /* Smaller fixed width for mobile */
+        height: 35px; /* Smaller fixed height for mobile */
     }
 }
