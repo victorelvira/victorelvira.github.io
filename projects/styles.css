@@ -1,8 +1,8 @@
 /* Define root-level custom properties (CSS variables) */
 :root {
-    --gold_box: rgb(186, 160, 112); /* Gold color for year buttons */
-    --gold_box_hoover: rgb(163, 128, 55); /* Hover state for year buttons */
-    --clicked_year_color: #1c1a82; /* Selected year button color */
+    --gold_box: rgb(143, 109, 45); /* Gold color for year buttons */
+    --gold_box_hoover: rgb(143, 109, 45); /* Hover state for year buttons */
+    --clicked_year_color: #442A14; /* Selected year button color */
     --light_gray: #dadada; /* Primary light gray */
     --lighter_gray: #f8f9fa; /* Secondary lighter gray */
 }
