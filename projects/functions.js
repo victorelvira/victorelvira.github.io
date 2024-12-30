@@ -617,7 +617,7 @@
                         console.log(you_link_piece)
                         if (you_link_piece.length>0) // there is link
                         {
-                            text_other += '<br><br> YouTube link below: <br>  <iframe width="420" height="315" src="' + you_link_piece + '"> </iframe>'
+                            text_other += '<br><br> YouTube link below: <br>  <iframe width: 100%; aspect-ratio: 16 / 9; src="' + you_link_piece + '"> </iframe>'
                         }
 
                                     document.getElementById("other_info").innerHTML = text_other;
