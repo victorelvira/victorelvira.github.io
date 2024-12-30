@@ -8,9 +8,9 @@
 }
 
 /* General settings for the entire page */
-html, body {
-    padding-left: 0.2rem; /* Consistent margin */
-    padding-right: 0.2rem; /* Consistent margin */
+body {
+    padding-left: 0.4rem; /* Consistent margin */
+    padding-right: 0.4rem; /* Consistent margin */
     width: 100%;
 }
 
@@ -24,9 +24,9 @@ h5 {
 
 /* Add padding to ordered lists for spacing */
 ol {
-    padding-left: 1rem; /* Space on the left */
-    margin-left: 0.5rem; /* Consistent margin */
-    margin-right: 0.5rem; /* Consistent margin */
+    padding-left: 0.1rem; /* Space on the left */
+    margin-left: 0.1rem; /* Consistent margin */
+    margin-right: 0.2rem; /* Consistent margin */
 }
 
 /* Ensure list items wrap text properly */
