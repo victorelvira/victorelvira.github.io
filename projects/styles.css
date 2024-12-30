@@ -120,9 +120,51 @@ ol li {
 
 /* Responsiveness for small screens */
 @media (max-width: 800px) {
+    /* Adjust font sizes for headings */
+    h1 {
+        font-size: 1.8rem; /* Smaller than default */
+    }
+
+    h2 {
+        font-size: 1.6rem; /* Adjust for smaller screens */
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust font sizes for paragraph text */
+    body, p {
+        font-size: 0.9rem; /* Smaller text for better readability */
+    }
+
+    /* Adjust font sizes for lists */
+    ol, ul, li {
+        font-size: 0.85rem; /* Reduced size for list items */
+    }
+
+    /* Adjust year button font sizes */
+    .year-box {
+        font-size: 0.8rem; /* Ensure readability */
+        width: 60px; /* Adjust size to fit text */
+        height: 30px;
+    }
+
     .radio-toolbar label {
-        font-size: 11px; /* Smaller font for mobile */
-        width: 50px; /* Reduced width */
-        height: 20px; /* Reduced height */
+        font-size: 0.5rem;
+        width: 30px;
+        height: 18px;
     }
 }
