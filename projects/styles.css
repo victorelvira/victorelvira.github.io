@@ -1,46 +1,51 @@
+/* Define root-level custom properties (CSS variables) */
 :root {
-    --gold_box: rgb(186, 160, 112);
-    --gold_box_hoover: rgb(163, 128, 55);
-    --clicked_year_color: #1c1a82;
+    --gold_box: rgb(186, 160, 112); /* Gold color for year buttons */
+    --gold_box_hoover: rgb(163, 128, 55); /* Hover state for year buttons */
+    --clicked_year_color: #1c1a82; /* Selected year button color */
     --light_gray: #dadada; /* Primary light gray */
     --lighter_gray: #f8f9fa; /* Secondary lighter gray */
 }
 
+/* General settings for the entire page */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Adjust all h4 elements globally */
 h4 {
-    padding-left: 0.5rem; /* Equivalent to px-2 in Bootstrap */
-    padding-right: 0.5rem; /* Equivalent to px-2 in Bootstrap */
+    padding-left: 0.5rem; /* Adds left padding */
+    padding-right: 0.5rem; /* Adds right padding */
 }
 
-/* Add padding to the ordered list for better spacing on small screens */
+/* Add padding to ordered lists for spacing */
 ol {
-    padding-left: 1rem; /* Adds space on the left */
-    margin-left: 1rem; /* Ensures consistent margin */
+    padding-left: 1rem; /* Space on the left */
+    margin-left: 1rem; /* Consistent margin */
 }
 
-/* Ensure list items are properly spaced */
+/* Ensure list items wrap text properly */
 ol li {
     padding-left: 0.5rem; /* Adds minor internal spacing */
-    word-wrap: break-word; /* Ensures long text wraps properly */
+    word-wrap: break-word; /* Ensures long text wraps */
 }
 
+/* Reusable column style (adjustable for various layouts) */
 .column-style {
-    padding-left: 0.9rem; /* Same as px-2 */
-    padding-right: 0.5rem; /* Same as px-2 */
-    border-radius: 0.25rem; /* Same as rounded */
-/*    margin-bottom: 1rem; /* Same as mb-3 */*/
+    padding-left: 0.9rem; /* Equivalent to Bootstrap px-2 */
+    padding-right: 0.5rem; /* Equivalent to Bootstrap px-2 */
+    border-radius: 0.25rem; /* Rounded corners */
 }
 
+/* Applies a pointer cursor to clickable elements */
 .clickable {
     cursor: pointer;
 }
 
+/* Ensure the container uses full width */
 .container-fluid {
     margin: 0 auto;
     padding: 0;
@@ -48,15 +53,15 @@ ol li {
     max-width: 100%;
 }
 
-/* Panels */
+/* Panels (general style for grouped elements) */
 .light_gray_panel {
     background-color: var(--light_gray);
-    color: #000;
-    padding: 15px;
-    border-radius: 5px;
+    color: #000; /* Text in panels is black */
+    padding: 15px; /* Internal padding */
+    border-radius: 5px; /* Rounded corners */
 }
 
-/* Year Buttons */
+/* Style for year buttons */
 .year-box {
     display: inline-block;
     text-align: center;
@@ -65,44 +70,50 @@ ol li {
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 12px;
-    background-color: var(--gold_box);
-    color: white;
-    cursor: pointer;
+    background-color: var(--gold_box); /* Default color */
+    color: white; /* Text color */
+    cursor: pointer; /* Show pointer on hover */
 }
 
+/* Hover state for year buttons */
 .year-box:hover {
     background-color: var(--gold_box_hoover);
 }
 
+/* Radio buttons container */
 .radio-toolbar {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow buttons to wrap */
     gap: 5px; /* Consistent spacing */
-    justify-content: center; /* Center alignment */
+    justify-content: center; /* Center the buttons */
 }
 
+/* Hide the actual radio buttons */
 .radio-toolbar input[type="radio"] {
-    display: none; /* Hide actual radio buttons */
+    display: none;
 }
 
+/* Style for the labels of radio buttons */
 .radio-toolbar label {
-    display: flex;
+    display: flex; /* Flex for centering */
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 50px; /* Match year-box width */
     height: 30px; /* Match year-box height */
     font-size: 14px;
-    background-color: var(--gold_box);
+    background-color: var(--gold_box); /* Default color */
     border: 1px solid rgb(0, 0, 0);
     color: white;
-    cursor: pointer;
+    cursor: pointer; /* Pointer for clickability */
 }
 
+/* Hover state for radio button labels */
 .radio-toolbar label:hover {
     background-color: var(--gold_box_hoover);
 }
 
+/* Selected radio button label */
 .radio-toolbar input[type="radio"]:checked + label {
     background-color: var(--clicked_year_color);
 }
@@ -110,8 +121,8 @@ ol li {
 /* Responsiveness for small screens */
 @media (max-width: 800px) {
     .radio-toolbar label {
-        font-size: 11px;
-        width: 50px; /* Smaller fixed width for mobile */
-        height: 20px; /* Smaller fixed height for mobile */
+        font-size: 11px; /* Smaller font for mobile */
+        width: 50px; /* Reduced width */
+        height: 20px; /* Reduced height */
     }
 }
