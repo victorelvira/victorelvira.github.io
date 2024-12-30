@@ -13,7 +13,16 @@ body {
     padding-right: 0.4rem; /* Consistent margin */
     width: 100%;
 }
+    p {
+/*        padding-top: 0px;*/
+/*        padding-bottom: 0px;*/
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
 
+    ol, ul, li {
+            margin-bottom: 0px;
+        }
 /* Adjust all h4 elements globally */
 h4 {
     text-align: center;
@@ -38,15 +47,18 @@ ol {
 .left-panel {
     padding-left: 1.5rem; /* Consistent margin */
     padding-right: 1.5rem; /* Consistent margin */
+    padding-top: 15px;
 }
 .central-panel {
     padding-left: 1.5rem; /* Consistent margin */
     padding-right: 1.5rem; /* Consistent margin */
+    padding-top: 15px;
     background-color: var(--light_gray);
 }
 .right-panel {
  padding-left: 1.5rem; /* Consistent margin */
  padding-right: 1.5rem; /* Consistent margin */
+ padding-top: 15px;
 }
 
 
@@ -66,7 +78,6 @@ ol {
     background-color: var(--light_gray);
     color: #000; /* Text in panels is black */
     padding: 15px; /* Internal padding */
-    border-radius: 5px; /* Rounded corners */
 }
 
 /* Style for year buttons */
@@ -166,7 +177,6 @@ ol {
 /*        padding-top: 0px;*/
 /*        padding-bottom: 0px;*/
         margin-top: 1px;
-        margin-bottom: 0px;
     }
 
 
@@ -199,7 +209,9 @@ ol {
         width: 60px; /* Adjust size to fit text */
         height: 30px;
     }
-
+    .light_gray_panel{
+        padding: 5px; /* Internal padding */
+    }
     .radio-toolbar label {
         font-size: 0.5rem;
         width: 30px;
