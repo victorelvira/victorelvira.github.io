@@ -9,36 +9,46 @@
 
 /* General settings for the entire page */
 html, body {
-    margin: 0;
-    padding: 0;
+    padding-left: 0.2rem; /* Consistent margin */
+    padding-right: 0.2rem; /* Consistent margin */
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Adjust all h4 elements globally */
 h4 {
-    padding-left: 0.5rem; /* Adds left padding */
-    padding-right: 0.5rem; /* Adds right padding */
+    text-align: center;
+}
+h5 {
+    text-align: center;
 }
 
 /* Add padding to ordered lists for spacing */
 ol {
     padding-left: 1rem; /* Space on the left */
-    margin-left: 1rem; /* Consistent margin */
+    margin-left: 0.5rem; /* Consistent margin */
+    margin-right: 0.5rem; /* Consistent margin */
 }
 
 /* Ensure list items wrap text properly */
-ol li {
-    padding-left: 0.5rem; /* Adds minor internal spacing */
+/*ol li {
     word-wrap: break-word; /* Ensures long text wraps */
-}
+}*/
 
 /* Reusable column style (adjustable for various layouts) */
-.column-style {
-    padding-left: 0.9rem; /* Equivalent to Bootstrap px-2 */
-    padding-right: 0.5rem; /* Equivalent to Bootstrap px-2 */
-    border-radius: 0.25rem; /* Rounded corners */
+.left-panel {
+    padding-left: 1.5rem; /* Consistent margin */
+    padding-right: 1.5rem; /* Consistent margin */
 }
+.central-panel {
+    padding-left: 1.5rem; /* Consistent margin */
+    padding-right: 1.5rem; /* Consistent margin */
+    background-color: var(--light_gray);
+}
+.right-panel {
+ padding-left: 1.5rem; /* Consistent margin */
+ padding-right: 1.5rem; /* Consistent margin */
+}
+
 
 /* Applies a pointer cursor to clickable elements */
 .clickable {
@@ -49,8 +59,6 @@ ol li {
 .container-fluid {
     margin: 0 auto;
     padding: 0;
-    width: 100%;
-    max-width: 100%;
 }
 
 /* Panels (general style for grouped elements) */
@@ -135,11 +143,13 @@ ol li {
 
     h4 {
         font-size: 1.1rem;
-        margin-bottom: 0px; /* Minimal space between sections */
+        margin-bottom: 0.5px; /* Minimal space between sections */
+        text-align: center;
     }
 
     h5 {
-        font-size: 0.7rem;
+        font-size: 1.1rem;
+        text-align: center;
     }
 
     h6 {
@@ -156,6 +166,18 @@ ol li {
         font-size: 0.85rem; /* Reduced size for list items */
     }
 
+    /* Reusable column style (adjustable for various layouts) */
+    .left-panel {
+        padding-left: 0.5rem; /* Consistent margin */
+        padding-right: 0.5rem; /* Consistent margin */
+    }
+    .central-panel {
+        margin-top: 1rem;
+    }
+    .right-panel {
+        padding-left: 0.5rem; /* Consistent margin */
+        padding-right: 0.5rem; /* Consistent margin */
+    }
     /* Adjust year button font sizes */
     .year-box {
         font-size: 0.8rem; /* Ensure readability */
@@ -167,17 +189,6 @@ ol li {
         font-size: 0.5rem;
         width: 30px;
         height: 18px;
-    }
-    /* Reusable column style (adjustable for various layouts) */
-    .column-style {
-        padding-left: 0.9rem; /* Equivalent to Bootstrap px-2 */
-        padding-right: 0.5rem; /* Equivalent to Bootstrap px-2 */
-        border-radius: 0.25rem; /* Rounded corners */
-        margin-top: 0;    /* Remove any top margin */
-        margin-bottom: 0px; /* Minimal space between sections */
-        padding-top: 0;   /* Remove padding above content */
-        padding-bottom: 0; /* Remove padding below content */
-
     }
     .text-center{
         margin-top: 1px;    /* Remove any top margin */
