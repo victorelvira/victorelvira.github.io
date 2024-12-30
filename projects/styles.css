@@ -47,18 +47,19 @@ ol {
 .left-panel {
     padding-left: 1.5rem; /* Consistent margin */
     padding-right: 1.5rem; /* Consistent margin */
-    padding-top: 15px;
+    padding-top: 2px;
 }
 .central-panel {
     padding-left: 1.5rem; /* Consistent margin */
     padding-right: 1.5rem; /* Consistent margin */
-    padding-top: 15px;
+    padding-top: 2px;
     background-color: var(--light_gray);
 }
 .right-panel {
  padding-left: 1.5rem; /* Consistent margin */
  padding-right: 1.5rem; /* Consistent margin */
- padding-top: 15px;
+ padding-top: 2px;
+ padding-bottom: 12px;
 }
 
 
