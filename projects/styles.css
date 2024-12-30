@@ -174,7 +174,11 @@ ol {
         font-size: 0.8rem; /* Smaller text for better readability */
         margin-bottom: 0px;
     }
- 
+    
+    a {
+        color: inherit; /* Inherit color from parent */
+        text-decoration: none; /* Remove underline */
+    }
 
     /* Reusable column style (adjustable for various layouts) */
     .left-panel {
