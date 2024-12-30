@@ -143,28 +143,38 @@ ol {
 
     h4 {
         font-size: 1.1rem;
-        margin-bottom: 0.5px; /* Minimal space between sections */
+        padding-bottom: 0px; /* Minimal space between sections */
+        padding-top: 0px; /* Minimal space between sections */
+        margin-bottom: 0px; /* Minimal space between sections */
+        margin-bottom: 0px; /* Minimal space between sections */
         text-align: center;
     }
 
     h5 {
         font-size: 1.1rem;
         text-align: center;
+        padding-top: 5px; /* Minimal space between sections */
+        margin-bottom: 3px; /* Minimal space between sections */
     }
 
     h6 {
         font-size: 0.6rem;
     }
 
-    /* Adjust font sizes for paragraph text */
-    body, p {
-        font-size: 0.9rem; /* Smaller text for better readability */
+    p {
+/*        padding-top: 0px;*/
+/*        padding-bottom: 0px;*/
+        margin-top: 1px;
+        margin-bottom: 0px;
     }
 
-    /* Adjust font sizes for lists */
-    ol, ul, li {
-        font-size: 0.85rem; /* Reduced size for list items */
+
+    /* Adjust font sizes for paragraph text */
+    body, p, ol, ul, li {
+        font-size: 0.8rem; /* Smaller text for better readability */
+        margin-bottom: 0px;
     }
+ 
 
     /* Reusable column style (adjustable for various layouts) */
     .left-panel {
