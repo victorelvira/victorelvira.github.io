@@ -219,7 +219,7 @@
                                 let li = document.createElement("li");
                                 var piece_i = pieces_year_x[i];
                                 var composer_i = composers_year_x[i];
-                                li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<a class="composer_printed">' + composer_i + "</a>" + ")" ; 
+                                li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
                                 list.appendChild(li);
                             };
 
@@ -237,7 +237,7 @@
                                 let li = document.createElement("li");
                                 var encore_i = pieces_year_x[i];
                                 var composer_encore_i = composers_year_x[i];
-                                li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + '<a class="composer_encore_printed">' + composer_encore_i + "</a>" + ")" ; 
+                                li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + '<span class="composer_encore_printed">' + composer_encore_i + "</span>" + ")" ; 
                                 list_encores.appendChild(li);
                             };
                             
@@ -276,21 +276,21 @@
                                 
                                 
                                 if (years_of_this_conductor.length == 1){
-                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert only in " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>.'; 
+                                    var text_other = '<span style="color:green">' + this.innerHTML + "</span> conducted the Vienna New Year's Concert only in " + '<span style="color:green">' + years_of_this_conductor[0].year + '</span>.'; 
                                 } else if (years_of_this_conductor.length == 2){
-                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>' + ' and ' + '<a style="color:green">' + years_of_this_conductor[1].year + '</a>.'; 
+                                    var text_other = '<span style="color:green">' + this.innerHTML + "</span> conducted the Vienna New Year's Concert in " + '<span style="color:green">' + years_of_this_conductor[0].year + '</span>' + ' and ' + '<span style="color:green">' + years_of_this_conductor[1].year + '</span>.'; 
                                 }  
                                 else {
-                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in "; 
+                                    var text_other = '<span style="color:green">' + this.innerHTML + "</span> conducted the Vienna New Year's Concert in "; 
                                     
                                     for (let i = 0; i < years_of_this_conductor.length-1; i++) {
                                         
                                         let year_ii = years_of_this_conductor[i].year;
                                         years_highlighted[i] = year_ii;
                                         console.log(years_highlighted[i])
-                                        text_other += '<a style="color:green">' + year_ii + '</a>, '
+                                        text_other += '<span style="color:green">' + year_ii + '</span>, '
                                     }
-                                    text_other += ' and ' + '<a style="color:green">' + years_of_this_conductor[years_of_this_conductor.length-1].year + '</a>.';
+                                    text_other += ' and ' + '<span style="color:green">' + years_of_this_conductor[years_of_this_conductor.length-1].year + '</span>.';
                                 }
                                  
                                 
@@ -299,7 +299,7 @@
                         
                                 if (wiki_link_conductor.length>0) // there is link
                                 { 
-                                    text_other += '<br><br> Biography of <a style="color:green">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_conductor +'  target="_blank" >link.</a>'
+                                    text_other += '<br><br> Biography of <span style="color:green">' + this.innerHTML + '</span> in this Wikpedia <span href='+ wiki_link_conductor +'  target="_blank" >link.</span>'
                                 }
                                 document.getElementById("other_info").innerHTML = text_other;
                             });     
@@ -364,32 +364,32 @@
                                     
                                     
                                     if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<span style="color:blue">' + years_of_this_piece[0].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_piece.length == 2){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<span style="color:blue">' + years_of_this_piece[0].year + '</span>' + ' and ' + '<span style="color:blue">' + years_of_this_piece[1].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
                                         var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in '; 
                                         
                                         for (let i = 0; i < years_of_this_piece.length-1; i++) {
                                             let year_ii = years_of_this_piece[i].year;
-                                            text_other += '<a style="color:blue">' + year_ii + '</a>, '
+                                            text_other += '<span style="color:blue">' + year_ii + '</span>, '
                                         }
-                                        text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
+                                        text_other += ' and ' + '<span style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</span>.';
                                     }
 
                                     wiki_link_piece = item_filtered[0].links.wiki.en
                         
                         if (wiki_link_piece.length>0) // there is link
                         { 
-                            //text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> More information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            //text_other += '<br><br> More information about the piece <span style="color:blue">' + this.innerHTML + '</span> in this Wikpedia <span href='+ wiki_link_piece +'  target="_blank" >link.</span>'
+                            text_other += '<br><br> More information about the piece in this Wikpedia <span href='+ wiki_link_piece +'  target="_blank" >link.</span>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
                         if (imslp_link_piece.length>0) // there is link
                         {
-                            text_other += '<br><br> Music score in this IMSLP <a href='+ imslp_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Music score in this IMSLP <span href='+ imslp_link_piece +'  target="_blank" >link.</span>'
                         }
 
                         you_link_piece = item_filtered[0].links.you.other
@@ -474,18 +474,18 @@
                                     
                                     
                                      if (years_of_this_composer.length == 1){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<span style="color:red">' + years_of_this_composer[0].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_composer.length == 2){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<span style="color:red">' + years_of_this_composer[0].year + '</span>' + ' and ' + '<span style="color:red">' + years_of_this_composer[1].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in '; 
                                         
                                         for (let i = 0; i < years_of_this_composer.length-1; i++) {
                                             let year_ii = years_of_this_composer[i].year;
-                                            text_other += '<a style="color:red">' + year_ii + '</a>, '
+                                            text_other += '<span style="color:red">' + year_ii + '</span>, '
                                         }
-                                        text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
+                                        text_other += ' and ' + '<span style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</span>.';
                                     }
                                     
                                 // found_by_item = getWikiLinkByItem(this.innerHTML);                           
@@ -499,7 +499,7 @@
                                 if (wiki_link_composer.length>0) // non-empty link
                                 {
 
-                                    text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+                                    text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <span href='+ wiki_link_composer +'  target="_blank" >link.</span>'
                                 }
                                     
                                     
@@ -584,18 +584,18 @@
                                     
                                     
                                     if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<span style="color:blue">' + years_of_this_piece[0].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_piece.length == 2){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<span style="color:blue">' + years_of_this_piece[0].year + '</span>' + ' and ' + '<span style="color:blue">' + years_of_this_piece[1].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
                                         var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in '; 
                                         
                                         for (let i = 0; i < years_of_this_piece.length-1; i++) {
                                             let year_ii = years_of_this_piece[i].year;
-                                            text_other += '<a style="color:blue">' + year_ii + '</a>, '
+                                            text_other += '<span style="color:blue">' + year_ii + '</span>, '
                                         }
-                                        text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
+                                        text_other += ' and ' + '<span style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</span>.';
                                     }
 
 
@@ -603,14 +603,14 @@
                         
                         if (wiki_link_piece.length>0) // there is link
                         { 
-                            // text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> More information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            // text_other += '<br><br> More information about the piece <span style="color:blue">' + this.innerHTML + '</span> in this Wikpedia <span href='+ wiki_link_piece +'  target="_blank" >link.</span>'
+                            text_other += '<br><br> More information about the piece in this Wikpedia <span href='+ wiki_link_piece +'  target="_blank" >link.</span>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
                         if (imslp_link_piece.length>0) // there is link
                         {
-                            text_other += '<br><br> Music score in this IMSLP <a href='+ imslp_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Music score in this IMSLP <span href='+ imslp_link_piece +'  target="_blank" >link.</span>'
                         }
 
                         you_link_piece = item_filtered[0].links.you.other
@@ -692,18 +692,18 @@
                                     
                                     
                                      if (years_of_this_composer.length == 1){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<span style="color:red">' + years_of_this_composer[0].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_composer.length == 2){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<span style="color:red">' + years_of_this_composer[0].year + '</span>' + ' and ' + '<span style="color:red">' + years_of_this_composer[1].year + '</span>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in '; 
                                         
                                         for (let i = 0; i < years_of_this_composer.length-1; i++) {
                                             let year_ii = years_of_this_composer[i].year;
-                                            text_other += '<a style="color:red">' + year_ii + '</a>, '
+                                            text_other += '<span style="color:red">' + year_ii + '</span>, '
                                         }
-                                        text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
+                                        text_other += ' and ' + '<span style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</span>.';
                                     }
                                     
 
@@ -715,7 +715,7 @@
     if (wiki_link_composer.length>0) // non-empty link
     {
 
-        text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+        text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <span href='+ wiki_link_composer +'  target="_blank" >link.</span>'
     }
         
         
