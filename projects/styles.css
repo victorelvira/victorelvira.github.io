@@ -135,6 +135,7 @@ ol li {
 
     h4 {
         font-size: 1.1rem;
+        margin-bottom: 0px; /* Minimal space between sections */
     }
 
     h5 {
@@ -166,5 +167,20 @@ ol li {
         font-size: 0.5rem;
         width: 30px;
         height: 18px;
+    }
+    /* Reusable column style (adjustable for various layouts) */
+    .column-style {
+        padding-left: 0.9rem; /* Equivalent to Bootstrap px-2 */
+        padding-right: 0.5rem; /* Equivalent to Bootstrap px-2 */
+        border-radius: 0.25rem; /* Rounded corners */
+        margin-top: 0;    /* Remove any top margin */
+        margin-bottom: 0px; /* Minimal space between sections */
+        padding-top: 0;   /* Remove padding above content */
+        padding-bottom: 0; /* Remove padding below content */
+
+    }
+    .text-center{
+        margin-top: 1px;    /* Remove any top margin */
+        margin-bottom: 0px; /* Minimal space between sections */
     }
 }
