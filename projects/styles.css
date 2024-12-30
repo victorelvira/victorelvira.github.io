@@ -123,7 +123,7 @@ ol {
     height: 30px; /* Match year-box height */
     font-size: 14px;
     background-color: var(--gold_box); /* Default color */
-    border: 1px solid rgb(0, 0, 0);
+/*    border: 1px solid rgb(0, 0, 0);*/
     color: white;
     cursor: pointer; /* Pointer for clickability */
 }
@@ -137,23 +137,6 @@ ol {
 .radio-toolbar input[type="radio"]:checked + label {
     background-color: var(--clicked_year_color);
 }
-
-
-
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 
 /* Responsiveness for small screens */
 @media (max-width: 800px) {
