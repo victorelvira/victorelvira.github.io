@@ -459,7 +459,7 @@
                                     composer_highlighted = this.innerHTML;
                                     console.log(this.innerHTML)
                                     composer_highlighted_item = getIdByComposer(composer_highlighted);
-                                    composer_highlighted_id = composer_highlighted_item[0].id;
+                                    composer_highlighted_id = composer_highlighted_item[0].id;  
 
                                     years_of_this_composer = getConcertByComposerId(composer_highlighted_id);
                                     
