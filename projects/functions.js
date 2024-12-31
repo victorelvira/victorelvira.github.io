@@ -784,3 +784,9 @@ EventTarget.prototype.addEventListener = function (type, listener, options) {
 
 
 
+
+
+// STATISTICS
+
+
+
