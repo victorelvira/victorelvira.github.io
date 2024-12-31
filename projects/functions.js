@@ -276,12 +276,12 @@
                                 
                                 
                                 if (years_of_this_conductor.length == 1){
-                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert only in " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>.'; 
+                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert <strong>only once</strong>: " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>.'; 
                                 } else if (years_of_this_conductor.length == 2){
-                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>' + ' and ' + '<a style="color:green">' + years_of_this_conductor[1].year + '</a>.'; 
+                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert <strong>twice</strong>: " + '<a style="color:green">' + years_of_this_conductor[0].year + '</a>' + ' and ' + '<a style="color:green">' + years_of_this_conductor[1].year + '</a>.'; 
                                 }  
                                 else {
-                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert in "; 
+                                    var text_other = '<a style="color:green">' + this.innerHTML + "</a> conducted the Vienna New Year's Concert  <strong>" + years_of_this_conductor.length + " times</strong>: "; 
                                     
                                     for (let i = 0; i < years_of_this_conductor.length-1; i++) {
                                         
@@ -362,21 +362,20 @@
                                         }
                                     }
                                     
-                                    
                                     if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>only once</strong> ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_piece.length == 2){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>twice</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in '; 
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>' + years_of_this_piece.length + ' times</strong>: '; 
                                         
                                         for (let i = 0; i < years_of_this_piece.length-1; i++) {
                                             let year_ii = years_of_this_piece[i].year;
                                             text_other += '<a style="color:blue">' + year_ii + '</a>, '
                                         }
                                         text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
-                                    }
+                                    } 
 
                                     wiki_link_piece = item_filtered[0].links.wiki.en
                         
@@ -474,12 +473,12 @@
                                     
                                     
                                      if (years_of_this_composer.length == 1){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_composer.length == 2){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>twice</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in '; 
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>' + years_of_this_composer.length + ' times</strong>: ';
                                         
                                         for (let i = 0; i < years_of_this_composer.length-1; i++) {
                                             let year_ii = years_of_this_composer[i].year;
@@ -584,12 +583,12 @@
                                     
                                     
                                     if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played only in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>only once</strong> ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_piece.length == 2){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>twice</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played in '; 
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>' + years_of_this_piece.length + ' times</strong>: '; 
                                         
                                         for (let i = 0; i < years_of_this_piece.length-1; i++) {
                                             let year_ii = years_of_this_piece[i].year;
@@ -691,13 +690,13 @@
 
                                     
                                     
-                                     if (years_of_this_composer.length == 1){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played only in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    } else if (years_of_this_composer.length == 2){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    }  
-                                    else {
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in '; 
+                                      if (years_of_this_composer.length == 1){
+                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                     } else if (years_of_this_composer.length == 2){
+                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>twice</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                     }  
+                                     else {
+                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>' + years_of_this_composer.length + ' times</strong>: ';
                                         
                                         for (let i = 0; i < years_of_this_composer.length-1; i++) {
                                             let year_ii = years_of_this_composer[i].year;

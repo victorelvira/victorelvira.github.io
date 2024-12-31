@@ -1,6 +1,6 @@
 var catalogue = [
     {
-        "piece": "Abschieds-Rufe. Walzer, op. 179",
+        "piece": "Abschieds-Rufe, Waltz, op. 179",
         "composer": "Johann Strauß II.",
         "piece_id": 1,
         "links":
@@ -20,7 +20,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Accelerationen. Walzer, op. 234",
+        "piece": "Accelerationen, Waltz, op. 234",
         "composer": "Johann Strauß II.",
         "piece_id": 2,
         "links":
@@ -40,7 +40,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Albion-Polka. op. 102",
+        "piece": "Albion-Polka, Polka, op. 102",
         "composer": "Johann Strauß II.",
         "piece_id": 3,
         "links":
@@ -60,7 +60,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Alexandrinen-Polka, op. 198",
+        "piece": "Alexandrinen-Polka, Polka, op. 198",
         "composer": "Johann Strauß II.",
         "piece_id": 4,
         "links":
@@ -80,7 +80,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Alice-Polka. op. 238",
+        "piece": "Alice-Polka, Polka, op. 238",
         "composer": "Johann Strauß I.",
         "piece_id": 5,
         "links":
@@ -120,7 +120,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Allerlei. Polka schnell, op. 219",
+        "piece": "Allerlei, Polka schnell, op. 219",
         "composer": "Josef Strauß",
         "piece_id": 7,
         "links":
@@ -140,7 +140,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Amazonen-Polka, op. 9",
+        "piece": "Amazonen-Polka, Polka, op. 9",
         "composer": "Johann Strauß II.",
         "piece_id": 8,
         "links":
@@ -160,7 +160,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "An der Elbe. Walzer, op. 477",
+        "piece": "An der Elbe, Waltz, op. 477",
         "composer": "Johann Strauß II.",
         "piece_id": 9,
         "links":
@@ -200,7 +200,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Angelica-Polka. Polka française, op. 123",
+        "piece": "Angelica-Polka, Polka française, op. 123",
         "composer": "Josef Strauß",
         "piece_id": 11,
         "links":
@@ -220,7 +220,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Annen-Polka, op. 117",
+        "piece": "Annen-Polka, Polka, op. 117",
         "composer": "Johann Strauß II.",
         "piece_id": 12,
         "links":
@@ -240,7 +240,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Aquarellen. Walzer, op. 258",
+        "piece": "Aquarellen, Waltz, op. 258",
         "composer": "Josef Strauß",
         "piece_id": 13,
         "links":
@@ -260,7 +260,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Arm in Arm. Polka Mazur, op. 215",
+        "piece": "Arm in Arm, Polka mazurka, op. 215",
         "composer": "Josef Strauß",
         "piece_id": 14,
         "links":
@@ -280,7 +280,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Auf Ferienreisen. Polka schnell, op. 133",
+        "piece": "Auf Ferienreisen, Polka schnell, op. 133",
         "composer": "Josef Strauß",
         "piece_id": 15,
         "links":
@@ -300,7 +300,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Auf der Jagd. Polka schnell, op. 373",
+        "piece": "Auf der Jagd, Polka schnell, op. 373",
         "composer": "Johann Strauß II.",
         "piece_id": 16,
         "links":
@@ -320,7 +320,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Auf und davon. Polka schnell, op. 73",
+        "piece": "Auf und davon, Polka schnell, op. 73",
         "composer": "Eduard Strauß",
         "piece_id": 17,
         "links":
@@ -360,7 +360,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Auf's Korn! Bundes-Schützenmarsch op. 478",
+        "piece": "Auf's Korn! Bundes-Schützenmarsch,  March, op. 478",
         "composer": "Johann Strauß II.",
         "piece_id": 19,
         "links":
@@ -400,7 +400,7 @@ var catalogue = [
         "composer_id": 3
     },
     {
-        "piece": "Augensprache. Polka française, op. 119",
+        "piece": "Augensprache, Polka française, op. 119",
         "composer": "Eduard Strauß",
         "piece_id": 21,
         "links":
@@ -420,7 +420,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Aurora-Polka, op. 165",
+        "piece": "Aurora-Polka, Polka, op. 165",
         "composer": "Johann Strauß II.",
         "piece_id": 22,
         "links":
@@ -440,7 +440,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Aus Wiener Art. Polka française",
+        "piece": "Aus Wiener Art, Polka française",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 23,
         "links":
@@ -460,7 +460,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Aus den Bergen, Walzer, op. 292",
+        "piece": "Aus den Bergen, Waltz, op. 292",
         "composer": "Johann Strauß II.",
         "piece_id": 24,
         "links":
@@ -480,7 +480,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Aus der Ferne. Polka Mazur, op. 270",
+        "piece": "Aus der Ferne, Polka mazurka, op. 270",
         "composer": "Josef Strauß",
         "piece_id": 25,
         "links":
@@ -500,7 +500,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Ausser Rand und Band. Polka schnell, op. 168",
+        "piece": "Ausser Rand und Band, Polka schnell, op. 168",
         "composer": "Eduard Strauß",
         "piece_id": 26,
         "links":
@@ -580,7 +580,7 @@ var catalogue = [
         "composer_id": 27
     },
     {
-        "piece": "Banditen-Galopp. op. 378",
+        "piece": "Banditen-Galopp, Galop, op. 378",
         "composer": "Johann Strauß II.",
         "piece_id": 30,
         "links":
@@ -600,7 +600,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Bauern-Polka. Polka française, op. 276",
+        "piece": "Bauern-Polka, Polka française, op. 276",
         "composer": "Johann Strauß II.",
         "piece_id": 31,
         "links":
@@ -620,7 +620,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Bei uns z'Haus. Walzer (f. Männerchor u. Orch. ) , op. 361",
+        "piece": "Bei uns z'Haus, Waltz (f. Männerchor u. Orch. ) , op. 361",
         "composer": "Johann Strauß II.",
         "piece_id": 32,
         "links":
@@ -640,7 +640,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Beliebte Annen-Polka, op. 137",
+        "piece": "Beliebte Annen-Polka, Polka, op. 137",
         "composer": "Johann Strauß I.",
         "piece_id": 33,
         "links":
@@ -700,7 +700,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Blumenfest (Flower Festival) Polka. op. 111",
+        "piece": "Blumenfest (Flower Festival) Polka, op. 111",
         "composer": "Johann Strauß II.",
         "piece_id": 36,
         "links":
@@ -760,7 +760,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Brennende Liebe. Polka Mazur, op. 129",
+        "piece": "Brennende Liebe, Polka mazurka, op. 129",
         "composer": "Josef Strauß",
         "piece_id": 39,
         "links":
@@ -800,7 +800,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Cachucha - Galopp, op. 97",
+        "piece": "Cachucha - Galopp, Galop, op. 97",
         "composer": "Johann Strauß I.",
         "piece_id": 41,
         "links":
@@ -840,7 +840,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Carnevals-Botschafter. Walzer, op. 270",
+        "piece": "Carnevals-Botschafter, Waltz, op. 270",
         "composer": "Johann Strauß II.",
         "piece_id": 43,
         "links":
@@ -860,7 +860,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Caroline Gallop, op. 21",
+        "piece": "Caroline Gallop, Galop, op. 21",
         "composer": "Johann Strauß I.",
         "piece_id": 44,
         "links":
@@ -880,7 +880,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Caroussel-Marsch. op. 133",
+        "piece": "Caroussel-Marsch,  March, op. 133",
         "composer": "Johann Strauß II.",
         "piece_id": 45,
         "links":
@@ -900,7 +900,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Carrière. Polka schnell, op. 200",
+        "piece": "Carrière, Polka schnell, op. 200",
         "composer": "Josef Strauß",
         "piece_id": 46,
         "links":
@@ -920,7 +920,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Champagner-Galopp, op. 14",
+        "piece": "Champagner-Galopp, Galop, op. 14",
         "composer": "Hans Christian Lumbye",
         "piece_id": 47,
         "links":
@@ -940,7 +940,7 @@ var catalogue = [
         "composer_id": 16
     },
     {
-        "piece": "Champagner-Polka. Musikalischer Scherz, op. 211",
+        "piece": "Champagner-Polka, Musikalischer Scherz, op. 211",
         "composer": "Johann Strauß II.",
         "piece_id": 48,
         "links":
@@ -960,7 +960,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Chineser-Galopp, op. 20",
+        "piece": "Chineser-Galopp, Galop, op. 20",
         "composer": "Johann Strauß I.",
         "piece_id": 49,
         "links":
@@ -1080,7 +1080,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Demolirer-Polka. op. 269",
+        "piece": "Demolirer-Polka, Polka, op. 269",
         "composer": "Johann Strauß II.",
         "piece_id": 55,
         "links":
@@ -1100,7 +1100,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Der Carneval in Paris. Galopp, op. 100",
+        "piece": "Der Carneval in Paris, Galop, op. 100",
         "composer": "Johann Strauß I.",
         "piece_id": 56,
         "links":
@@ -1120,7 +1120,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Der Kobold. Polka Mazur, op. 226",
+        "piece": "Der Kobold, Polka mazurka, op. 226",
         "composer": "Johann Strauß II.",
         "piece_id": 57,
         "links":
@@ -1140,7 +1140,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Deutsche Grüsse. Walzer, op. 191",
+        "piece": "Deutsche Grüsse, Waltz, op. 191",
         "composer": "Josef Strauß",
         "piece_id": 58,
         "links":
@@ -1180,7 +1180,7 @@ var catalogue = [
         "composer_id": 37
     },
     {
-        "piece": "Die Bajadere (The Bayadere). Polka schnell, op. 351",
+        "piece": "Die Bajadere (The Bayadere), Polka schnell, op. 351",
         "composer": "Johann Strauß II.",
         "piece_id": 60,
         "links":
@@ -1200,7 +1200,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Die Emancipirte. Polka mazur, op. 282",
+        "piece": "Die Emancipirte, Polka mazurka, op. 282",
         "composer": "Josef Strauß",
         "piece_id": 61,
         "links":
@@ -1220,7 +1220,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Extravaganten. Walzer, op. 205",
+        "piece": "Die Extravaganten, Waltz, op. 205",
         "composer": "Johann Strauß II.",
         "piece_id": 62,
         "links":
@@ -1260,7 +1260,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Die Hochquelle. Polka mazur, op. 114",
+        "piece": "Die Hochquelle, Polka mazurka, op. 114",
         "composer": "Eduard Strauß",
         "piece_id": 64,
         "links":
@@ -1280,7 +1280,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Die Libelle. Polka mazur, op. 204",
+        "piece": "Die Libelle, Polka mazurka, op. 204",
         "composer": "Josef Strauß",
         "piece_id": 65,
         "links":
@@ -1300,7 +1300,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Mozartisten. Walzer, op.196",
+        "piece": "Die Mozartisten, Waltz, op.196",
         "composer": "Joseph Lanner",
         "piece_id": 66,
         "links":
@@ -1320,7 +1320,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Die Nasswalderin. Polka mazur, op. 267",
+        "piece": "Die Nasswalderin, Polka mazurka, op. 267",
         "composer": "Josef Strauß",
         "piece_id": 67,
         "links":
@@ -1340,7 +1340,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Pariserin. Polka française, op. 238",
+        "piece": "Die Pariserin, Polka française, op. 238",
         "composer": "Johann Strauß II.",
         "piece_id": 68,
         "links":
@@ -1380,7 +1380,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Die Publizisten. Walzer, op. 321",
+        "piece": "Die Publizisten, Waltz, op. 321",
         "composer": "Johann Strauß II.",
         "piece_id": 70,
         "links":
@@ -1400,7 +1400,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Die Schwebende. Polka Mazur, op. 110",
+        "piece": "Die Schwebende, Polka mazurka, op. 110",
         "composer": "Josef Strauß",
         "piece_id": 71,
         "links":
@@ -1420,7 +1420,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Schwätzerin. Polka Mazur, op. 144",
+        "piece": "Die Schwätzerin, Polka mazurka, op. 144",
         "composer": "Josef Strauß",
         "piece_id": 72,
         "links":
@@ -1440,7 +1440,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Schönbrunner. Walzer, op. 200",
+        "piece": "Die Schönbrunner, Waltz, op. 200",
         "composer": "Joseph Lanner",
         "piece_id": 73,
         "links":
@@ -1460,7 +1460,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Die Sirene. Polka mazur, op. 248",
+        "piece": "Die Sirene, Polka mazurka, op. 248",
         "composer": "Josef Strauß",
         "piece_id": 74,
         "links":
@@ -1500,7 +1500,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Spinnerin. Polka française, op. 192",
+        "piece": "Die Spinnerin, Polka française, op. 192",
         "composer": "Josef Strauß",
         "piece_id": 76,
         "links":
@@ -1520,7 +1520,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Tänzerin (The Dancer). Polka française, op. 227",
+        "piece": "Die Tänzerin (The Dancer), Polka française, op. 227",
         "composer": "Josef Strauß",
         "piece_id": 77,
         "links":
@@ -1540,7 +1540,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Die Werber. Walzer, op. 103",
+        "piece": "Die Werber, Waltz, op. 103",
         "composer": "Joseph Lanner",
         "piece_id": 78,
         "links":
@@ -1580,7 +1580,7 @@ var catalogue = [
         "composer_id": 32
     },
     {
-        "piece": "Die tanzende Muse. Polka Mazur, op. 266",
+        "piece": "Die tanzende Muse, Polka mazurka, op. 266",
         "composer": "Josef Strauß",
         "piece_id": 80,
         "links":
@@ -1600,7 +1600,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Diplomaten-Polka. op. 448",
+        "piece": "Diplomaten-Polka, Polka, op. 448",
         "composer": "Johann Strauß II.",
         "piece_id": 81,
         "links":
@@ -1620,7 +1620,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Donauweibchen. Walzer, op. 427",
+        "piece": "Donauweibchen, Waltz, op. 427",
         "composer": "Johann Strauß II.",
         "piece_id": 82,
         "links":
@@ -1640,7 +1640,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Dorfschwalben aus Österreich. Walzer, op. 164",
+        "piece": "Dorfschwalben aus Österreich (Village Swallows from Austria), Waltz, op. 164",
         "composer": "Josef Strauß",
         "piece_id": 83,
         "links":
@@ -1660,7 +1660,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Du und Du. Walzer, op. 367",
+        "piece": "Du und Du, Waltz, op. 367",
         "composer": "Johann Strauß II.",
         "piece_id": 84,
         "links":
@@ -1700,7 +1700,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Egyptischer Marsch (Egyptian March), op. 335",
+        "piece": "Egyptischer Marsch (Egyptian March),  March, op. 335",
         "composer": "Johann Strauß II.",
         "piece_id": 86,
         "links":
@@ -1720,7 +1720,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Ein Herz, ein Sinn. Polka Mazurka, op. 323",
+        "piece": "Ein Herz, ein Sinn, Polka mazurka, op. 323",
         "composer": "Johann Strauß II.",
         "piece_id": 87,
         "links":
@@ -1780,7 +1780,7 @@ var catalogue = [
         "composer_id": 35
     },
     {
-        "piece": "Einzugs-Galopp, op. 35",
+        "piece": "Einzugs-Galopp, Galop, op. 35",
         "composer": "Johann Strauß I.",
         "piece_id": 90,
         "links":
@@ -1820,7 +1820,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Eislauf-Polka, op. 261",
+        "piece": "Eislauf-Polka, Polka, op. 261",
         "composer": "Johann Strauß I.",
         "piece_id": 92,
         "links":
@@ -1840,7 +1840,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Eislauf. Polka schnell, op. 261",
+        "piece": "Eislauf, Polka schnell, op. 261",
         "composer": "Josef Strauß",
         "piece_id": 93,
         "links":
@@ -1880,7 +1880,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Electrofor-Polka schnell. op. 297",
+        "piece": "Electrofor-Polka schnell, op. 297",
         "composer": "Johann Strauß II.",
         "piece_id": 95,
         "links":
@@ -1940,7 +1940,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Elisen-Polka française. op. 151",
+        "piece": "Elisen-Polka, Polka française, op. 151",
         "composer": "Johann Strauß II.",
         "piece_id": 98,
         "links":
@@ -1980,7 +1980,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Entr'acte Valse",
+        "piece": "Entr'acte Valse, Waltz",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 100,
         "links":
@@ -2060,7 +2060,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Erzherzog Albrecht-Marsch, op. 136",
+        "piece": "Erzherzog Albrecht-Marsch,  March, op. 136",
         "composer": "Karl Komzák",
         "piece_id": 104,
         "links":
@@ -2080,7 +2080,7 @@ var catalogue = [
         "composer_id": 29
     },
     {
-        "piece": "Es war so wunderschön. Marsch, op. 467",
+        "piece": "Es war so wunderschön, March, op. 467",
         "composer": "Johann Strauß II.",
         "piece_id": 105,
         "links":
@@ -2100,7 +2100,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Espana. Walzer, op. 236",
+        "piece": "Espana, Waltz, op. 236",
         "composer": "Émile Waldteufel",
         "piece_id": 106,
         "links":
@@ -2140,7 +2140,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Etwas Kleines. Polka française, op. 190",
+        "piece": "Etwas Kleines, Polka française, op. 190",
         "composer": "Johann Strauß II.",
         "piece_id": 108,
         "links":
@@ -2180,7 +2180,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Explosions-Polka. Polka schnell, op. 43",
+        "piece": "Explosions-Polka, Polka schnell, op. 43",
         "composer": "Johann Strauß II.",
         "piece_id": 110,
         "links":
@@ -2200,7 +2200,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Express. Polka schnell, op. 311",
+        "piece": "Express, Polka schnell, op. 311",
         "composer": "Johann Strauß II.",
         "piece_id": 111,
         "links":
@@ -2220,7 +2220,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Extempore. Polka française, op. 241",
+        "piece": "Extempore, Polka française, op. 241",
         "composer": "Josef Strauß",
         "piece_id": 112,
         "links":
@@ -2240,7 +2240,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Faschingskinder. Walzer, op. 382",
+        "piece": "Faschingskinder, Waltz, op. 382",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 113,
         "links":
@@ -2260,7 +2260,7 @@ var catalogue = [
         "composer_id": 4
     },
     {
-        "piece": "Fata morgana. Polka Mazurka, op.330",
+        "piece": "Fata morgana, Polka mazurka, op.330",
         "composer": "Johann Strauß II.",
         "piece_id": 114,
         "links":
@@ -2300,7 +2300,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Favorit-Polka. op. 201",
+        "piece": "Favorit-Polka, Polka, op. 201",
         "composer": "Joseph Lanner",
         "piece_id": 116,
         "links":
@@ -2320,7 +2320,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Fesche Geister. Walzer, op. 75",
+        "piece": "Fesche Geister, Waltz, op. 75",
         "composer": "Eduard Strauß",
         "piece_id": 117,
         "links":
@@ -2340,7 +2340,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Fest-Marsch (Festival March), op. 452",
+        "piece": "Fest-Marsch (Festival March),  March, op. 452",
         "composer": "Johann Strauß II.",
         "piece_id": 118,
         "links":
@@ -2360,7 +2360,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Feuerfest! Polka française, op. 269",
+        "piece": "Feuerfest!, Polka française, op. 269",
         "composer": "Josef Strauß",
         "piece_id": 119,
         "links":
@@ -2380,7 +2380,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Figaro-Polka. Polka française, op. 320",
+        "piece": "Figaro-Polka, Polka française, op. 320",
         "composer": "Johann Strauß II.",
         "piece_id": 120,
         "links":
@@ -2400,7 +2400,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Flattergeister. Walzer, op. 62",
+        "piece": "Flattergeister, Waltz, op. 62",
         "composer": "Josef Strauß",
         "piece_id": 121,
         "links":
@@ -2420,7 +2420,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Fledermaus-Quadrille. op. 363",
+        "piece": "Fledermaus-Quadrille, op. 363",
         "composer": "Johann Strauß II.",
         "piece_id": 122,
         "links":
@@ -2440,7 +2440,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "For ever. Polka schnell, op. 193",
+        "piece": "For ever, Polka schnell, op. 193",
         "composer": "Josef Strauß",
         "piece_id": 123,
         "links":
@@ -2460,7 +2460,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Frauenherz. Polka mazur, op.166",
+        "piece": "Frauenherz, Polka mazurka, op.166",
         "composer": "Josef Strauß",
         "piece_id": 124,
         "links":
@@ -2480,7 +2480,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Frauenwürde. Walzer, op. 277",
+        "piece": "Frauenwürde, Waltz, op. 277",
         "composer": "Josef Strauß",
         "piece_id": 125,
         "links":
@@ -2500,7 +2500,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Frederica-Polka, op. 239",
+        "piece": "Frederica-Polka, Polka, op. 239",
         "composer": "Johann Strauß I.",
         "piece_id": 126,
         "links":
@@ -2520,7 +2520,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Freiheits-Marsch, op. 226",
+        "piece": "Freiheits-Marsch,  March, op. 226",
         "composer": "Johann Strauß I.",
         "piece_id": 127,
         "links":
@@ -2560,7 +2560,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Freuden-Grüsse. Walzer, op. 128",
+        "piece": "Freuden-Grüsse, Waltz, op. 128",
         "composer": "Josef Strauß",
         "piece_id": 129,
         "links":
@@ -2660,7 +2660,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Furioso-Galopp nach Liszts Motiven, op. 114",
+        "piece": "Furioso-Galopp nach Liszts Motiven, Galop, op. 114",
         "composer": "Johann Strauß I.",
         "piece_id": 134,
         "links":
@@ -2680,7 +2680,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Für die ganze Welt. Walzer",
+        "piece": "Für die ganze Welt, Waltz",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 135,
         "links":
@@ -2720,7 +2720,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Galopp und 8 Ecossaises aus op. 49, D735",
+        "piece": "Galopp und 8 Ecossaises aus op. 49, D735, Galop",
         "composer": "Franz Schubert",
         "piece_id": 137,
         "links":
@@ -2780,7 +2780,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Gedankenflug. Walzer, op. 215",
+        "piece": "Gedankenflug, Waltz, op. 215",
         "composer": "Johann Strauß II.",
         "piece_id": 140,
         "links":
@@ -2800,7 +2800,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Gitana-Galopp, op. 108, instr. v. Max Schönherr",
+        "piece": "Gitana-Galopp, Galop, op. 108, instr. v. Max Schönherr",
         "composer": "Johann Strauß I.",
         "piece_id": 141,
         "links":
@@ -2820,7 +2820,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Glocken-Polka mit Galopp aus dem Ballett Excelsior",
+        "piece": "Glocken-Polka mit Galopp aus dem Ballett Excelsior, Polka",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 142,
         "links":
@@ -2840,7 +2840,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Glædeligt Nytaar! Galopp",
+        "piece": "Glædeligt Nytaar! Galopp, Galop",
         "composer": "Hans Christian Lumbye",
         "piece_id": 143,
         "links":
@@ -2880,7 +2880,7 @@ var catalogue = [
         "composer_id": 6
     },
     {
-        "piece": "Gruß an Prag. Polka française, op. 144",
+        "piece": "Gruß an Prag, Polka française, op. 144",
         "composer": "Eduard Strauß",
         "piece_id": 145,
         "links":
@@ -2900,7 +2900,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Hans-Jörgel-Polka, op. 141",
+        "piece": "Hans-Jörgel-Polka, Polka, op. 141",
         "composer": "Joseph Lanner",
         "piece_id": 146,
         "links":
@@ -2920,7 +2920,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Harlekin-Polka, op. 48",
+        "piece": "Harlekin-Polka, Polka, op. 48",
         "composer": "Josef Strauß",
         "piece_id": 147,
         "links":
@@ -2940,7 +2940,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Haute-volée-Polka. op. 155",
+        "piece": "Haute-volée-Polka, Polka, op. 155",
         "composer": "Johann Strauß II.",
         "piece_id": 148,
         "links":
@@ -2980,7 +2980,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Heiterer Muth. Polka française, op. 281",
+        "piece": "Heiterer Muth, Polka française, op. 281",
         "composer": "Josef Strauß",
         "piece_id": 150,
         "links":
@@ -3000,7 +3000,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Heldengedichte. Walzer, op. 87",
+        "piece": "Heldengedichte, Waltz, op. 87",
         "composer": "Josef Strauß",
         "piece_id": 151,
         "links":
@@ -3040,7 +3040,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Hellenen-Polka (schnell). op. 203",
+        "piece": "Hellenen-Polka, Polka schnell, op. 203",
         "composer": "Johann Strauß II.",
         "piece_id": 153,
         "links":
@@ -3060,7 +3060,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Hereinspaziert! Walzer aus der Operette \"Der Schätzmeister\", op. 518",
+        "piece": "Hereinspaziert! Walzer aus der Operette \"Der Schätzmeister\", Waltz, op. 518",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 154,
         "links":
@@ -3080,7 +3080,7 @@ var catalogue = [
         "composer_id": 4
     },
     {
-        "piece": "Herzenskönigin. Polka française, op. 445",
+        "piece": "Herzenskönigin, Polka française, op. 445",
         "composer": "Johann Strauß II.",
         "piece_id": 155,
         "links":
@@ -3100,7 +3100,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Hesperusbahnen. Walzer, op. 279",
+        "piece": "Hesperusbahnen, Waltz, op. 279",
         "composer": "Josef Strauß",
         "piece_id": 156,
         "links":
@@ -3120,7 +3120,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Hofball-Tänze, Walzer, op. 298",
+        "piece": "Hofball-Tänze, Waltz, op. 298",
         "composer": "Johann Strauß II.",
         "piece_id": 157,
         "links":
@@ -3140,7 +3140,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Hofballtänze. Walzer, op. 161",
+        "piece": "Hofballtänze, Waltz, op. 161",
         "composer": "Joseph Lanner",
         "piece_id": 158,
         "links":
@@ -3180,7 +3180,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "I Tipferl-Polka française. op. 377",
+        "piece": "I Tipferl-Polka française, op. 377",
         "composer": "Johann Strauß II.",
         "piece_id": 160,
         "links":
@@ -3220,7 +3220,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Im Sturmschritt. Polka schnell, op. 348",
+        "piece": "Im Sturmschritt, Polka schnell, op. 348",
         "composer": "Johann Strauß II.",
         "piece_id": 162,
         "links":
@@ -3260,7 +3260,7 @@ var catalogue = [
         "composer_id": 5
     },
     {
-        "piece": "In der Heimath. Polka Mazur, op. 231",
+        "piece": "In der Heimath, Polka mazurka, op. 231",
         "composer": "Josef Strauß",
         "piece_id": 164,
         "links":
@@ -3280,7 +3280,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "In lauschiger Nacht. Walzer, op. 488",
+        "piece": "In lauschiger Nacht, Waltz, op. 488",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 165,
         "links":
@@ -3320,7 +3320,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Indgio-Marsch. op. 349",
+        "piece": "Indgio-Marsch, March, op. 349",
         "composer": "Johann Strauß II.",
         "piece_id": 167,
         "links":
@@ -3340,7 +3340,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Indianer-Galopp. op. 111",
+        "piece": "Indianer-Galopp, Galop, op. 111",
         "composer": "Johann Strauß I.",
         "piece_id": 168,
         "links":
@@ -3360,7 +3360,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Irenen-Polka, op. 113",
+        "piece": "Irenen-Polka, Polka, op. 113",
         "composer": "Josef Strauß",
         "piece_id": 169,
         "links":
@@ -3380,7 +3380,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Ischler Walzer. Nachgelassener Walzer Nr. 2",
+        "piece": "Ischler Walzer (Posthumous Walz Nr. 2), Waltz",
         "composer": "Johann Strauß II.",
         "piece_id": 170,
         "links":
@@ -3400,7 +3400,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Jocus-Polka (schnell), op. 216",
+        "piece": "Jocus-Polka, Polka schnell, op. 216",
         "composer": "Josef Strauß",
         "piece_id": 171,
         "links":
@@ -3420,7 +3420,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Jokey-Polka (schnell), op. 278",
+        "piece": "Jokey-Polka, Polka schnell, op. 278",
         "composer": "Josef Strauß",
         "piece_id": 172,
         "links":
@@ -3440,7 +3440,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Jägers Lust, Jagd-Galoppe, op. 82",
+        "piece": "Jägers Lust, Jagd-Galoppe, Galop, op. 82",
         "composer": "Joseph Lanner",
         "piece_id": 173,
         "links":
@@ -3460,7 +3460,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Kaiser Franz Joseph I. Rettungs-Jubel-Marsch. op. 126",
+        "piece": "Kaiser Franz Joseph I. Rettungs-Jubel-Marsch, March, op. 126",
         "composer": "Johann Strauß II.",
         "piece_id": 174,
         "links":
@@ -3480,7 +3480,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Kaiser Franz Joseph Marsch. op. 67, instr. v. Max Schönherr",
+        "piece": "Kaiser Franz Joseph Marsch,  March, op. 67, instr. v. Max Schönherr",
         "composer": "Johann Strauß II.",
         "piece_id": 175,
         "links":
@@ -3500,7 +3500,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Klangfiguren. Walzer, op. 251",
+        "piece": "Klangfiguren, Waltz, op. 251",
         "composer": "Johann Strauß II.",
         "piece_id": 176,
         "links":
@@ -3520,7 +3520,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Kleine Chronik. Polka schnell, op. 128",
+        "piece": "Kleine Chronik, Polka schnell, op. 128",
         "composer": "Eduard Strauß",
         "piece_id": 177,
         "links":
@@ -3540,7 +3540,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Kleiner Anzeiger, Galop op. 4",
+        "piece": "Kleiner Anzeiger, Galop, op. 4",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 178,
         "links":
@@ -3560,7 +3560,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Klipp-Klapp, Gallop, op. 466",
+        "piece": "Klipp-Klapp, Galop, op. 466",
         "composer": "Johann Strauß II.",
         "piece_id": 179,
         "links":
@@ -3620,7 +3620,7 @@ var catalogue = [
         "composer_id": 37
     },
     {
-        "piece": "Krönungslieder. Walzer, op. 184",
+        "piece": "Krönungslieder, Waltz, op. 184",
         "composer": "Johann Strauß II.",
         "piece_id": 182,
         "links":
@@ -3640,7 +3640,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Kuss-Walzer, op. 400",
+        "piece": "Kuss-Walzer, Waltz, op. 400",
         "composer": "Johann Strauß II.",
         "piece_id": 183,
         "links":
@@ -3660,7 +3660,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "København Jernbane Damp Galop",
+        "piece": "København Jernbane Damp Galop, Galop",
         "composer": "Hans Christian Lumbye",
         "piece_id": 184,
         "links":
@@ -3680,7 +3680,7 @@ var catalogue = [
         "composer_id": 16
     },
     {
-        "piece": "Künstler-Gruß. Polka française, op. 274",
+        "piece": "Künstler-Gruß, Polka française, op. 274",
         "composer": "Josef Strauß",
         "piece_id": 185,
         "links":
@@ -3700,7 +3700,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Künstler-Quadrille. op. 201",
+        "piece": "Künstler-Quadrille, op. 201",
         "composer": "Johann Strauß II.",
         "piece_id": 186,
         "links":
@@ -3720,7 +3720,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Künstlerleben (An Artist’s Life). Walzer, op. 316",
+        "piece": "Künstlerleben (An Artist’s Life), Waltz, op. 316",
         "composer": "Johann Strauß II.",
         "piece_id": 187,
         "links":
@@ -3740,7 +3740,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "L'Enfantillage. Polka française (Zäpperl-Polka), op. 202",
+        "piece": "L'Enfantillage, Polka française (Zäpperl-Polka), op. 202",
         "composer": "Johann Strauß II.",
         "piece_id": 188,
         "links":
@@ -3760,7 +3760,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Lagunen-Walzer. op. 411",
+        "piece": "Lagunen-Walzer, Waltz, op. 411",
         "composer": "Johann Strauß II.",
         "piece_id": 189,
         "links":
@@ -3800,7 +3800,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Le carnaval romain. Ouvertüre caractéristique, op. 9",
+        "piece": "Le carnaval romain. Ouvertüre caractéristique, Overture, op. 9",
         "composer": "Hector Berlioz",
         "piece_id": 191,
         "links":
@@ -3860,7 +3860,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Les Patineurs. Walzer, op. 183",
+        "piece": "Les Patineurs, Waltz, op. 183",
         "composer": "Émile Waldteufel",
         "piece_id": 194,
         "links":
@@ -3880,7 +3880,7 @@ var catalogue = [
         "composer_id": 38
     },
     {
-        "piece": "Liebesbotschaft. Galopp",
+        "piece": "Liebesbotschaft, Galop",
         "composer": "Johann Strauß II.",
         "piece_id": 195,
         "links":
@@ -3920,7 +3920,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Liebeslieder-Walzer. op. 114",
+        "piece": "Liebeslieder-Walzer, Waltz, op. 114",
         "composer": "Johann Strauß II.",
         "piece_id": 197,
         "links":
@@ -3960,7 +3960,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Lieder-Quadrille. op. 275",
+        "piece": "Lieder-Quadrille, op. 275",
         "composer": "Johann Strauß II.",
         "piece_id": 199,
         "links":
@@ -3980,7 +3980,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Light Cavalry Overture",
+        "piece": "Light Cavalry Overture, Overture",
         "composer": "Franz von Suppè",
         "piece_id": 200,
         "links":
@@ -4000,7 +4000,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Lob der Frauen (In Praise of Women). Polka mazur, op. 315",
+        "piece": "Lob der Frauen (In Praise of Women), Polka mazurka, op. 315",
         "composer": "Johann Strauß II.",
         "piece_id": 201,
         "links":
@@ -4020,7 +4020,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Loreley-Rheinklänge. Walzer op. 154",
+        "piece": "Loreley-Rheinklänge, Waltz op. 154",
         "composer": "Johann Strauß I.",
         "piece_id": 202,
         "links":
@@ -4080,7 +4080,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Lucifer-Polka (schnell). op. 266",
+        "piece": "Lucifer-Polka, Polka schnell, op. 266",
         "composer": "Johann Strauß II.",
         "piece_id": 205,
         "links":
@@ -4100,7 +4100,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Luftig und duftig. Polka schnell, op. 206",
+        "piece": "Luftig und duftig, Polka schnell, op. 206",
         "composer": "Eduard Strauß",
         "piece_id": 206,
         "links":
@@ -4120,7 +4120,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Lust-Lager-Polka, op. 19",
+        "piece": "Lust-Lager-Polka, Polka, op. 19",
         "composer": "Josef Strauß",
         "piece_id": 207,
         "links":
@@ -4140,7 +4140,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Lustschwärmer. Walzer, op. 91",
+        "piece": "Lustschwärmer, Waltz, op. 91",
         "composer": "Josef Strauß",
         "piece_id": 208,
         "links":
@@ -4160,7 +4160,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Mailust. Polka française, op. 182",
+        "piece": "Mailust, Polka française, op. 182",
         "composer": "Josef Strauß",
         "piece_id": 209,
         "links":
@@ -4220,7 +4220,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Marien-Klänge. Walzer, op. 214",
+        "piece": "Marien-Klänge, Waltz, op. 214",
         "composer": "Josef Strauß",
         "piece_id": 212,
         "links":
@@ -4260,7 +4260,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Matrosen-Polka, op. 52",
+        "piece": "Matrosen-Polka, Polka, op. 52",
         "composer": "Josef Strauß",
         "piece_id": 214,
         "links":
@@ -4280,7 +4280,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Mein Lebenslauf ist Lieb' und Lust. Walzer, op. 263",
+        "piece": "Mein Lebenslauf ist Lieb' und Lust, Waltz, op. 263",
         "composer": "Josef Strauß",
         "piece_id": 215,
         "links":
@@ -4340,7 +4340,7 @@ var catalogue = [
         "composer_id": 11
     },
     {
-        "piece": "Mephistos Höllenrufe. Walzer, op. 101",
+        "piece": "Mephistos Höllenrufe, Waltz, op. 101",
         "composer": "Johann Strauß II.",
         "piece_id": 218,
         "links":
@@ -4360,7 +4360,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Mit Chic. Polka schnell, op. 221",
+        "piece": "Mit Chic, Polka schnell, op. 221",
         "composer": "Eduard Strauß",
         "piece_id": 219,
         "links":
@@ -4380,7 +4380,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Mit Dampf. Polka schnell, op. 70",
+        "piece": "Mit Dampf, Polka schnell, op. 70",
         "composer": "Eduard Strauß",
         "piece_id": 220,
         "links":
@@ -4400,7 +4400,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Mit Extrapost (Special Delivery). Polka schnell, op. 259",
+        "piece": "Mit Extrapost (Special Delivery), Polka schnell, op. 259",
         "composer": "Eduard Strauß",
         "piece_id": 221,
         "links":
@@ -4420,7 +4420,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Mit Vergnügen. Polka schnell, op. 228",
+        "piece": "Mit Vergnügen, Polka schnell, op. 228",
         "composer": "Eduard Strauß",
         "piece_id": 222,
         "links":
@@ -4460,7 +4460,7 @@ var catalogue = [
         "composer_id": 34
     },
     {
-        "piece": "Morgenblätter. Walzer, op. 279",
+        "piece": "Morgenblätter, Waltz, op. 279",
         "composer": "Johann Strauß II.",
         "piece_id": 224,
         "links":
@@ -4480,7 +4480,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Motoren. Walzer, op.265",
+        "piece": "Motoren, Waltz, op.265",
         "composer": "Johann Strauß II.",
         "piece_id": 225,
         "links":
@@ -4500,7 +4500,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Moulinet-Polka. Polka française, op. 57",
+        "piece": "Moulinet-Polka, Polka française, op. 57",
         "composer": "Josef Strauß",
         "piece_id": 226,
         "links":
@@ -4560,7 +4560,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Märchen aus dem Orient. Walzer, op. 444",
+        "piece": "Märchen aus dem Orient, Waltz, op. 444",
         "composer": "Johann Strauß II.",
         "piece_id": 229,
         "links":
@@ -4580,7 +4580,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Nachtfalter. Walzer, op. 157",
+        "piece": "Nachtfalter, Waltz, op. 157",
         "composer": "Johann Strauß II.",
         "piece_id": 230,
         "links":
@@ -4600,7 +4600,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Nachtigall-Polka, op. 222",
+        "piece": "Nachtigall-Polka, Polka, op. 222",
         "composer": "Johann Strauß II.",
         "piece_id": 231,
         "links":
@@ -4620,7 +4620,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Nachtschwärmer. Walzer, op. 466",
+        "piece": "Nachtschwärmer, Waltz, op. 466",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 232,
         "links":
@@ -4640,7 +4640,7 @@ var catalogue = [
         "composer_id": 4
     },
     {
-        "piece": "Napoleon. Marsch, op. 156",
+        "piece": "Napoleon, March, op. 156",
         "composer": "Johann Strauß II.",
         "piece_id": 233,
         "links":
@@ -4660,7 +4660,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Nechledil Marsch aus der Operette Wiener Frauen",
+        "piece": "Nechledil Marsch aus der Operette Wiener Frauen, March",
         "composer": "Franz Lehár",
         "piece_id": 234,
         "links":
@@ -4680,7 +4680,7 @@ var catalogue = [
         "composer_id": 10
     },
     {
-        "piece": "Neu-Wien. Walzer f. Männerchor u. Orch. , op. 342",
+        "piece": "Neu-Wien, Waltz f. Männerchor u. Orch. , op. 342",
         "composer": "Johann Strauß II.",
         "piece_id": 235,
         "links":
@@ -4700,7 +4700,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Neue Pizzicato-Polka. op. 449",
+        "piece": "Neue Pizzicato-Polka, Polka, op. 449",
         "composer": "Johann Strauß II.",
         "piece_id": 236,
         "links":
@@ -4720,7 +4720,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "New Melodies Quadrille. op. 254",
+        "piece": "New Melodies Quadrille, op. 254",
         "composer": "Johann Strauß II.",
         "piece_id": 237,
         "links":
@@ -4760,7 +4760,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Nordseebilder (North Sea Pictures). Walzer, op. 390",
+        "piece": "Nordseebilder (North Sea Pictures), Waltz, op. 390",
         "composer": "Johann Strauß II.",
         "piece_id": 239,
         "links":
@@ -4800,7 +4800,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Nymphen-Polka, op. 50",
+        "piece": "Nymphen-Polka, Polka, op. 50",
         "composer": "Josef Strauß",
         "piece_id": 241,
         "links":
@@ -4820,7 +4820,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "O schöner Mai. Walzer aus \"Prinz Methusalem\", op. 375",
+        "piece": "O schöner Mai, Waltz aus \"Prinz Methusalem\", op. 375",
         "composer": "Johann Strauß II.",
         "piece_id": 242,
         "links":
@@ -4840,7 +4840,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Ohne Aufenthalt. Polka schnell, op. 112",
+        "piece": "Ohne Aufenthalt, Polka schnell, op. 112",
         "composer": "Eduard Strauß",
         "piece_id": 243,
         "links":
@@ -4860,7 +4860,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Ohne Bremse. Polka schnell, op. 238",
+        "piece": "Ohne Bremse, Polka schnell, op. 238",
         "composer": "Eduard Strauß",
         "piece_id": 244,
         "links":
@@ -4920,7 +4920,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Opern-Soiree (Opera Soirée). Polka française, op. 162",
+        "piece": "Opern-Soiree (Opera Soirée), Polka française, op. 162",
         "composer": "Eduard Strauß",
         "piece_id": 247,
         "links":
@@ -4960,7 +4960,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture \"Das Spitzentuch der Königin\"",
+        "piece": "Overture \"Das Spitzentuch der Königin\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 249,
         "links":
@@ -4980,7 +4980,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture \"Die Göttin der Vernunft\"",
+        "piece": "Overture \"Die Göttin der Vernunft\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 250,
         "links":
@@ -5000,7 +5000,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture \"Donna Diana\"",
+        "piece": "Overture \"Donna Diana\", Overture",
         "composer": "Emil Nikolaus von Reznicek",
         "piece_id": 251,
         "links":
@@ -5020,7 +5020,7 @@ var catalogue = [
         "composer_id": 9
     },
     {
-        "piece": "Overture in C-Dur, op post. 170, D 591, (\"im italienischen Stil\")",
+        "piece": "Overture in C-Dur, op post. 170, D 591, (\"im italienischen Stil\"), Overture",
         "composer": "Franz Schubert",
         "piece_id": 252,
         "links":
@@ -5040,7 +5040,7 @@ var catalogue = [
         "composer_id": 12
     },
     {
-        "piece": "Overture to \"Banditenstreiche\"",
+        "piece": "Overture to \"Banditenstreiche\", Overture",
         "composer": "Franz von Suppè",
         "piece_id": 253,
         "links":
@@ -5060,7 +5060,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to \"Boccaccio\"",
+        "piece": "Overture to \"Boccaccio\", Overture",
         "composer": "Franz von Suppè",
         "piece_id": 254,
         "links":
@@ -5080,7 +5080,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to \"Cagliostro in Wien\"",
+        "piece": "Overture to \"Cagliostro in Wien\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 255,
         "links":
@@ -5100,7 +5100,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to \"Carneval in Rom\"",
+        "piece": "Overture to \"Carneval in Rom\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 256,
         "links":
@@ -5120,7 +5120,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to \"Die Blindekuh\"",
+        "piece": "Overture to \"Die Blindekuh\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 257,
         "links":
@@ -5140,7 +5140,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to \"Die Landstreicher\" (\"The Vagabonds\")",
+        "piece": "Overture to \"Die Landstreicher\" (\"The Vagabonds\"), Overture",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 258,
         "links":
@@ -5160,7 +5160,7 @@ var catalogue = [
         "composer_id": 4
     },
     {
-        "piece": "Overture to \"Die Rheinnixen\"",
+        "piece": "Overture to \"Die Rheinnixen\", Overture",
         "composer": "Jacques Offenbach",
         "piece_id": 259,
         "links":
@@ -5180,7 +5180,7 @@ var catalogue = [
         "composer_id": 18
     },
     {
-        "piece": "Overture to \"Die schöne Galathée\"",
+        "piece": "Overture to \"Die schöne Galathée\", Overture",
         "composer": "Franz von Suppè",
         "piece_id": 260,
         "links":
@@ -5200,7 +5200,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to \"Ein Morgen, ein Mittag, ein Abend in Wien\"",
+        "piece": "Overture to \"Ein Morgen, ein Mittag, ein Abend in Wien\", Overture",
         "composer": "Franz von Suppè",
         "piece_id": 261,
         "links":
@@ -5220,7 +5220,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to \"Prinz Methusalem\"",
+        "piece": "Overture to \"Prinz Methusalem\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 262,
         "links":
@@ -5240,7 +5240,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the \"Der lustige Krieg\"",
+        "piece": "Overture to the \"Der lustige Krieg\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 263,
         "links":
@@ -5260,7 +5260,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the \"Eine Nacht in Venedig\"",
+        "piece": "Overture to the \"Eine Nacht in Venedig\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 264,
         "links":
@@ -5280,7 +5280,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the \"La gazza ladra\"",
+        "piece": "Overture to the \"La gazza ladra\", Overture",
         "composer": "Gioachino Rossini",
         "piece_id": 265,
         "links":
@@ -5300,7 +5300,7 @@ var catalogue = [
         "composer_id": 14
     },
     {
-        "piece": "Overture to the Comedy \"Dichter und Bauer\" (\"Poet and Peasant\")",
+        "piece": "Overture to the Comedy \"Dichter und Bauer\" (\"Poet and Peasant\"), Overture",
         "composer": "Franz von Suppè",
         "piece_id": 266,
         "links":
@@ -5320,7 +5320,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to the opera \"Die lustigen Weiber von Windsor\" (\"The Merry Wives of Windsor\")",
+        "piece": "Overture to the opera \"Die lustigen Weiber von Windsor\" (\"The Merry Wives of Windsor\"), Overture",
         "composer": "Otto Nicolai",
         "piece_id": 267,
         "links":
@@ -5340,7 +5340,7 @@ var catalogue = [
         "composer_id": 32
     },
     {
-        "piece": "Overture to the opera \"Eine Nacht in Venedig\" (Berliner Fassung)",
+        "piece": "Overture to the opera \"Eine Nacht in Venedig\" (Berliner Fassung), Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 268,
         "links":
@@ -5360,7 +5360,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the opera \"Eine Nacht in Venedig\" (Wiener Fassung)",
+        "piece": "Overture to the opera \"Eine Nacht in Venedig\" (Wiener Fassung), Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 269,
         "links":
@@ -5380,7 +5380,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the opera \"Le Nozze di Figaro\" KV 492",
+        "piece": "Overture to the opera \"Le Nozze di Figaro\" KV 492, Overture",
         "composer": "Wolfgang Amadeus Mozart",
         "piece_id": 270,
         "links":
@@ -5400,7 +5400,7 @@ var catalogue = [
         "composer_id": 37
     },
     {
-        "piece": "Overture to the opera \"Orpheus in der Unterwelt\"",
+        "piece": "Overture to the opera \"Orpheus in der Unterwelt\", Overture",
         "composer": "Jacques Offenbach",
         "piece_id": 271,
         "links":
@@ -5420,7 +5420,7 @@ var catalogue = [
         "composer_id": 18
     },
     {
-        "piece": "Overture to the opera \"Pique Dame\" (\"The Queen of Spades\")",
+        "piece": "Overture to the opera \"Pique Dame\" (\"The Queen of Spades\"), Overture",
         "composer": "Franz von Suppè",
         "piece_id": 272,
         "links":
@@ -5440,7 +5440,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\"",
+        "piece": "Overture to the operetta \"Der Zigeunerbaron (The Gypsy Baron)\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 273,
         "links":
@@ -5460,7 +5460,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the operetta \"Dichter und Bauer\" (\"Poet and Peasant\")",
+        "piece": "Overture to the operetta \"Dichter und Bauer\" (\"Poet and Peasant\"), Overture",
         "composer": "Franz von Suppè",
         "piece_id": 274,
         "links":
@@ -5480,7 +5480,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Overture to the operetta \"Die Fledermaus\"",
+        "piece": "Overture to the operetta \"Die Fledermaus\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 275,
         "links":
@@ -5500,7 +5500,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the operetta \"Indigo and the Forty Thieves\"",
+        "piece": "Overture to the operetta \"Indigo and the Forty Thieves\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 276,
         "links":
@@ -5520,7 +5520,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the operetta \"Waldmeister\"",
+        "piece": "Overture to the operetta \"Waldmeister\", Overture",
         "composer": "Johann Strauß II.",
         "piece_id": 277,
         "links":
@@ -5540,7 +5540,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Overture to the operette \"Isabella\"",
+        "piece": "Overture to the operette \"Isabella\", Overture",
         "composer": "Franz von Suppè",
         "piece_id": 278,
         "links":
@@ -5560,7 +5560,7 @@ var catalogue = [
         "composer_id": 13
     },
     {
-        "piece": "Panorama aus dem Ballett \"Dornröschen\", op. 66",
+        "piece": "Panorama aus dem Ballett \"Dornröschen\", Ballet excerpt, op. 66",
         "composer": "Peter Iljitsch Tschaikowsky",
         "piece_id": 279,
         "links":
@@ -5600,7 +5600,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Paris. Walzer, op. 101",
+        "piece": "Paris, Waltz, op. 101",
         "composer": "Johann Strauß I.",
         "piece_id": 281,
         "links":
@@ -5620,7 +5620,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Patronessen-Polka (française), op. 286",
+        "piece": "Patronessen-Polka, Polka française, op. 286",
         "composer": "Johann Strauß II.",
         "piece_id": 282,
         "links":
@@ -5640,7 +5640,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Pepita-Polka, op. 138",
+        "piece": "Pepita-Polka, Polka, op. 138",
         "composer": "Johann Strauß II.",
         "piece_id": 283,
         "links":
@@ -5660,7 +5660,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Perlen der Liebe. Walzer, op. 39",
+        "piece": "Perlen der Liebe (Pearls of Love), Waltz, op. 39",
         "composer": "Josef Strauß",
         "piece_id": 284,
         "links":
@@ -5700,7 +5700,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Persischer Marsch, op. 289",
+        "piece": "Persischer Marsch, March, op. 289",
         "composer": "Johann Strauß II.",
         "piece_id": 286,
         "links":
@@ -5720,7 +5720,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Philomenen-Walzer, op. 82",
+        "piece": "Philomenen-Walzer, Waltz, op. 82",
         "composer": "Johann Strauß I.",
         "piece_id": 287,
         "links":
@@ -5740,7 +5740,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Phönix-Marsch, op. 105",
+        "piece": "Phönix-Marsch, March, op. 105",
         "composer": "Josef Strauß",
         "piece_id": 288,
         "links":
@@ -5760,7 +5760,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Phönix-Schwingen. Walzer, op. 125",
+        "piece": "Phönix-Schwingen, Waltz, op. 125",
         "composer": "Johann Strauß II.",
         "piece_id": 289,
         "links":
@@ -5780,7 +5780,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Piefke und Pufke. Polka, op. 235",
+        "piece": "Piefke und Pufke, Polka, op. 235",
         "composer": "Johann Strauß I.",
         "piece_id": 290,
         "links":
@@ -5820,7 +5820,7 @@ var catalogue = [
         "composer_id": 21
     },
     {
-        "piece": "Plappermäulchen. Polka schnell,op. 245",
+        "piece": "Plappermäulchen, Polka schnell, op. 245",
         "composer": "Josef Strauß",
         "piece_id": 292,
         "links":
@@ -5840,7 +5840,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Postillon Galop, op. 16/2 (Arr. W. Dörner)",
+        "piece": "Postillon Galop, Galop, op. 16/2 (Arr. W. Dörner)",
         "composer": "Hans Christian Lumbye",
         "piece_id": 293,
         "links":
@@ -5880,7 +5880,7 @@ var catalogue = [
         "composer_id": 15
     },
     {
-        "piece": "Process-Polka (schnell). op. 294",
+        "piece": "Process-Polka, Polka schnell, op. 294",
         "composer": "Johann Strauß II.",
         "piece_id": 295,
         "links":
@@ -5900,7 +5900,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Pêle-mêle-Polka (schnell), op. 161",
+        "piece": "Pêle-mêle-Polka, Polka schnell, op. 161",
         "composer": "Josef Strauß",
         "piece_id": 296,
         "links":
@@ -5960,7 +5960,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Rasch in der That. Polka schnell, op. 409",
+        "piece": "Rasch in der That, Polka schnell, op. 409",
         "composer": "Johann Strauß II.",
         "piece_id": 299,
         "links":
@@ -5980,7 +5980,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Rathhaus-Ball-Tänze, Walzer, op. 438",
+        "piece": "Rathhaus-Ball-Tänze, Waltz, op. 438",
         "composer": "Johann Strauß II.",
         "piece_id": 300,
         "links":
@@ -6000,7 +6000,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Reitermarsch. op. 428",
+        "piece": "Reitermarsch, March, op. 428",
         "composer": "Johann Strauß II.",
         "piece_id": 301,
         "links":
@@ -6060,7 +6060,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Rudolfsheimer-Polka, op. 152",
+        "piece": "Rudolfsheimer-Polka, Polka, op. 152",
         "composer": "Josef Strauß",
         "piece_id": 304,
         "links":
@@ -6080,7 +6080,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Russische Marsch-Fantasie. op. 353",
+        "piece": "Russische Marsch-Fantasie, March, op. 353",
         "composer": "Johann Strauß II.",
         "piece_id": 305,
         "links":
@@ -6100,7 +6100,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Russischer Marsch, op. 426",
+        "piece": "Russischer Marsch, March, op. 426",
         "composer": "Johann Strauß II.",
         "piece_id": 306,
         "links":
@@ -6120,7 +6120,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "S' gibt nur a Kaiserstadt,s' gibt nur a Wien. Polka, op. 291",
+        "piece": "S' gibt nur a Kaiserstadt,s' gibt nur a Wien, Polka, op. 291",
         "composer": "Johann Strauß II.",
         "piece_id": 307,
         "links":
@@ -6140,7 +6140,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Satanella-Polka. op. 124",
+        "piece": "Satanella-Polka, Polka, op. 124",
         "composer": "Johann Strauß II.",
         "piece_id": 308,
         "links":
@@ -6180,7 +6180,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Schatz-Walzer. op. 418",
+        "piece": "Schatz-Walzer, Waltz, op. 418",
         "composer": "Johann Strauß II.",
         "piece_id": 310,
         "links":
@@ -6200,7 +6200,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Scherz- Polka. op. 72",
+        "piece": "Scherz- Polka, op. 72",
         "composer": "Johann Strauß II.",
         "piece_id": 311,
         "links":
@@ -6220,7 +6220,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Schnellpost-Polka. Polka schnell, op. 159",
+        "piece": "Schnellpost-Polka, Polka schnell, op. 159",
         "composer": "Johann Strauß II.",
         "piece_id": 312,
         "links":
@@ -6240,7 +6240,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Schwert und Leyer. Walzer, op. 71",
+        "piece": "Schwert und Leyer, Waltz, op. 71",
         "composer": "Josef Strauß",
         "piece_id": 313,
         "links":
@@ -6300,7 +6300,7 @@ var catalogue = [
         "composer_id": 8
     },
     {
-        "piece": "Secunden-Polka (française). op. 258",
+        "piece": "Secunden-Polka, Polka française, op. 258",
         "composer": "Johann Strauß II.",
         "piece_id": 316,
         "links":
@@ -6340,7 +6340,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Seufzer-Galopp, op. 9",
+        "piece": "Seufzer-Galopp, Galop, op. 9",
         "composer": "Johann Strauß I.",
         "piece_id": 318,
         "links":
@@ -6380,7 +6380,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Sinngedichte. Walzer op. 1",
+        "piece": "Sinngedichte, Waltz op. 1",
         "composer": "Johann Strauß II.",
         "piece_id": 320,
         "links":
@@ -6400,7 +6400,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "So ängstlich sind wir nicht! Schnell-Polka, op. 413",
+        "piece": "So ängstlich sind wir nicht!, Polka schnell, op. 413",
         "composer": "Johann Strauß II.",
         "piece_id": 321,
         "links":
@@ -6420,7 +6420,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Spanischer Marsch. op. 433",
+        "piece": "Spanischer Marsch, March, op. 433",
         "composer": "Johann Strauß II.",
         "piece_id": 322,
         "links":
@@ -6440,7 +6440,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Sperl-Galopp, op. 42",
+        "piece": "Sperl-Galopp, Galop, op. 42",
         "composer": "Johann Strauß I.",
         "piece_id": 323,
         "links":
@@ -6460,7 +6460,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Sperl-Polka, op. 133",
+        "piece": "Sperl-Polka, Polka, op. 133",
         "composer": "Johann Strauß I.",
         "piece_id": 324,
         "links":
@@ -6480,7 +6480,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Sphärenklänge (Music of the Spheres). Walzer, op. 235",
+        "piece": "Sphärenklänge (Music of the Spheres), Waltz, op. 235",
         "composer": "Josef Strauß",
         "piece_id": 325,
         "links":
@@ -6500,7 +6500,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Spleen. Polka Mazur, op. 197",
+        "piece": "Spleen, Polka mazurka, op. 197",
         "composer": "Johann Strauß II.",
         "piece_id": 326,
         "links":
@@ -6520,7 +6520,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Sport-Polka (schnell), op. 170",
+        "piece": "Sport-Polka, Polka schnell, op. 170",
         "composer": "Josef Strauß",
         "piece_id": 327,
         "links":
@@ -6540,7 +6540,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Stadt und Land (Town and Country), Polka Mazurka, op. 322",
+        "piece": "Stadt und Land (Town and Country), Polka mazurka, op. 322",
         "composer": "Johann Strauß II.",
         "piece_id": 328,
         "links":
@@ -6600,7 +6600,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Stiefmütterchen. Polka mazur, op. 183",
+        "piece": "Stiefmütterchen, Polka mazurka, op. 183",
         "composer": "Josef Strauß",
         "piece_id": 331,
         "links":
@@ -6620,7 +6620,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Studenten-Polka. Polka française, op. 263",
+        "piece": "Studenten-Polka, Polka française, op. 263",
         "composer": "Johann Strauß II.",
         "piece_id": 332,
         "links":
@@ -6640,7 +6640,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Sympathie. Polka mazur, op. 73",
+        "piece": "Sympathie, Polka mazurka, op. 73",
         "composer": "Josef Strauß",
         "piece_id": 333,
         "links":
@@ -6680,7 +6680,7 @@ var catalogue = [
         "composer_id": 25
     },
     {
-        "piece": "Sängerslust. Polka française, op. 328",
+        "piece": "Sängerslust, Polka française, op. 328",
         "composer": "Johann Strauß II.",
         "piece_id": 335,
         "links":
@@ -6700,7 +6700,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Tag und Nacht. Polka, op. 93",
+        "piece": "Tag und Nacht, Polka, op. 93",
         "composer": "Josef Strauß",
         "piece_id": 336,
         "links":
@@ -6740,7 +6740,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Tarantel-Galopp, op. 125",
+        "piece": "Tarantel-Galopp, Galop, op. 125",
         "composer": "Joseph Lanner",
         "piece_id": 338,
         "links":
@@ -6760,7 +6760,7 @@ var catalogue = [
         "composer_id": 28
     },
     {
-        "piece": "Tausend und eine Nacht. Walzer, op. 346",
+        "piece": "Tausend und eine Nacht, Waltz, op. 346",
         "composer": "Johann Strauß II.",
         "piece_id": 339,
         "links":
@@ -6780,7 +6780,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Teasing, Polka mazur, op. 262",
+        "piece": "Teasing, Polka mazurka, op. 262",
         "composer": "Josef Strauß",
         "piece_id": 340,
         "links":
@@ -6800,7 +6800,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Telegramme. Walzer, op. 318",
+        "piece": "Telegramme, Waltz, op. 318",
         "composer": "Johann Strauß II.",
         "piece_id": 341,
         "links":
@@ -6820,7 +6820,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Telephon. Polka française, op. 165",
+        "piece": "Telephon, Polka française, op. 165",
         "composer": "Eduard Strauß",
         "piece_id": 342,
         "links":
@@ -6860,7 +6860,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Thalia.Polka Mazur, op. 195",
+        "piece": "Thalia.Polka mazurka, op. 195",
         "composer": "Josef Strauß",
         "piece_id": 344,
         "links":
@@ -6920,7 +6920,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Tik-Tak. Polka schnell, op. 365",
+        "piece": "Tik-Tak, Polka schnell, op. 365",
         "composer": "Johann Strauß II.",
         "piece_id": 347,
         "links":
@@ -6940,7 +6940,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Transactionen (Transactions). Walzer, op.184",
+        "piece": "Transactionen (Transactions), Waltz, op.184",
         "composer": "Josef Strauß",
         "piece_id": 348,
         "links":
@@ -7040,7 +7040,7 @@ var catalogue = [
         "composer_id": 22
     },
     {
-        "piece": "Uno-Marsch",
+        "piece": "Uno-Marsch, March",
         "composer": "Robert Stolz",
         "piece_id": 353,
         "links":
@@ -7060,7 +7060,7 @@ var catalogue = [
         "composer_id": 36
     },
     {
-        "piece": "Unter Donner und Blitz. Polka schnell, op. 324",
+        "piece": "Unter Donner und Blitz, Polka schnell, op. 324",
         "composer": "Johann Strauß II.",
         "piece_id": 354,
         "links":
@@ -7100,7 +7100,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Valse espagnole",
+        "piece": "Valse espagnole, Waltz",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 356,
         "links":
@@ -7120,7 +7120,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Variation dansée (Pizzicati) from the Ballet “Sylvia”",
+        "piece": "Variation dansée (Pizzicati) from the Ballet “Sylvia”, Ballet excerpt",
         "composer": "Leo Delibes",
         "piece_id": 357,
         "links":
@@ -7140,7 +7140,7 @@ var catalogue = [
         "composer_id": 30
     },
     {
-        "piece": "Vaterländischer Marsch",
+        "piece": "Vaterländischer Marsch, March",
         "composer": "Josef Strauß, Johann Strauß II.",
         "piece_id": 358,
         "links":
@@ -7160,7 +7160,7 @@ var catalogue = [
         "composer_id": 24
     },
     {
-        "piece": "Veilchen- Polka. op. 132",
+        "piece": "Veilchen- Polka, op. 132",
         "composer": "Johann Strauß II.",
         "piece_id": 359,
         "links":
@@ -7180,7 +7180,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Venetian Galop, op. 74",
+        "piece": "Venetian Galop, Galop, op. 74",
         "composer": "Johann Strauß I.",
         "piece_id": 360,
         "links":
@@ -7200,7 +7200,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Vergnügungszug. Polka (schnell), op. 281",
+        "piece": "Vergnügungszug, Polka schnell, op. 281",
         "composer": "Johann Strauß II.",
         "piece_id": 361,
         "links":
@@ -7220,7 +7220,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Verliebte Augen. Polka française, op. 185",
+        "piece": "Verliebte Augen, Polka française, op. 185",
         "composer": "Josef Strauß",
         "piece_id": 362,
         "links":
@@ -7240,7 +7240,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Versailler Galopp. op. 107",
+        "piece": "Versailler Galopp, Galop, op. 107",
         "composer": "Johann Strauß I.",
         "piece_id": 363,
         "links":
@@ -7280,7 +7280,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Violetta. Polka française, op. 404",
+        "piece": "Violetta, Polka française, op. 404",
         "composer": "Johann Strauß II.",
         "piece_id": 365,
         "links":
@@ -7300,7 +7300,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Vom Donaustrande. Polka schnell, op. 356",
+        "piece": "Vom Donaustrande, Polka schnell, op. 356",
         "composer": "Johann Strauß II.",
         "piece_id": 366,
         "links":
@@ -7320,7 +7320,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Vorwärts! Schnell-Polka, op. 127",
+        "piece": "Vorwärts!, Polka schnell, op. 127",
         "composer": "Josef Strauß",
         "piece_id": 367,
         "links":
@@ -7340,7 +7340,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Vélocipède. Schnellpolka, op. 259",
+        "piece": "Vélocipède, Polka schnell, op. 259",
         "composer": "Josef Strauß",
         "piece_id": 368,
         "links":
@@ -7360,7 +7360,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Walzer aus dem Ballett \"Dornröschen\", op. 66a",
+        "piece": "Walzer aus dem Ballett \"Dornröschen\", Waltz, op. 66a",
         "composer": "Peter Iljitsch Tschaikowsky",
         "piece_id": 369,
         "links":
@@ -7400,7 +7400,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Weaner Madl'n. Walzer op. 388",
+        "piece": "Weaner Madl'n, Waltz op. 388",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 371,
         "links":
@@ -7420,7 +7420,7 @@ var catalogue = [
         "composer_id": 4
     },
     {
-        "piece": "Wein, Weib und Gesang. Walzer, op. 333",
+        "piece": "Wein, Weib und Gesang, Waltz, op. 333",
         "composer": "Johann Strauß II.",
         "piece_id": 372,
         "links":
@@ -7460,7 +7460,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Wettrennen-Galopp, op. 29",
+        "piece": "Wettrennen-Galopp, Galop, op. 29",
         "composer": "Johann Strauß I.",
         "piece_id": 374,
         "links":
@@ -7500,7 +7500,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Wiener Bonbons. Walzer op. 307",
+        "piece": "Wiener Bonbons, Waltz op. 307",
         "composer": "Johann Strauß II.",
         "piece_id": 376,
         "links":
@@ -7520,7 +7520,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Wiener Bürger. Walzer, op. 419",
+        "piece": "Wiener Bürger, Waltz, op. 419",
         "composer": "Carl Michael Ziehrer",
         "piece_id": 377,
         "links":
@@ -7560,7 +7560,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Wiener Kinder, Walzer. op. 61",
+        "piece": "Wiener Kinder, Waltz, op. 61",
         "composer": "Josef Strauß",
         "piece_id": 379,
         "links":
@@ -7580,7 +7580,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Wiener Leben. Polka française, op. 218",
+        "piece": "Wiener Leben, Polka française, op. 218",
         "composer": "Josef Strauß",
         "piece_id": 380,
         "links":
@@ -7600,7 +7600,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "William Tell Galop, op. 29b",
+        "piece": "William Tell Galop, Galop, op. 29b",
         "composer": "Johann Strauß I.",
         "piece_id": 381,
         "links":
@@ -7620,7 +7620,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Winterlust. Polka (schnell), op. 121",
+        "piece": "Winterlust, Polka schnell, op. 121",
         "composer": "Josef Strauß",
         "piece_id": 382,
         "links":
@@ -7660,7 +7660,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Wo man lacht und lebt. Polka schnell, op. 108",
+        "piece": "Wo man lacht und lebt, Polka schnell, op. 108",
         "composer": "Eduard Strauß",
         "piece_id": 384,
         "links":
@@ -7680,7 +7680,7 @@ var catalogue = [
         "composer_id": 7
     },
     {
-        "piece": "Wo uns're Fahne weht. Marsch op. 473",
+        "piece": "Wo uns're Fahne weht, March op. 473",
         "composer": "Johann Strauß II.",
         "piece_id": 385,
         "links":
@@ -7700,7 +7700,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Zampa Galopp, op. 62",
+        "piece": "Zampa Galopp, Galop, op. 62",
         "composer": "Johann Strauß I.",
         "piece_id": 386,
         "links":
@@ -7720,7 +7720,7 @@ var catalogue = [
         "composer_id": 19
     },
     {
-        "piece": "Zeisserln. Walzer, op. 114",
+        "piece": "Zeisserln, Waltz, op. 114",
         "composer": "Josef Strauß",
         "piece_id": 387,
         "links":
@@ -7740,7 +7740,7 @@ var catalogue = [
         "composer_id": 23
     },
     {
-        "piece": "Zigeuner-Quadrille. op. 24",
+        "piece": "Zigeuner-Quadrille, op. 24",
         "composer": "Johann Strauß II.",
         "piece_id": 388,
         "links":
@@ -7780,7 +7780,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Zivio! Marsch, op. 456",
+        "piece": "Zivio! Marsch,  March, op. 456",
         "composer": "Johann Strauß II.",
         "piece_id": 390,
         "links":
@@ -7800,7 +7800,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Éljen a Magyár! Schnell-Polka. op. 332",
+        "piece": "Éljen a Magyár!, Polka schnell, op. 332",
         "composer": "Johann Strauß II.",
         "piece_id": 391,
         "links":
@@ -7820,7 +7820,7 @@ var catalogue = [
         "composer_id": 20
     },
     {
-        "piece": "Fidele Brüder. Marsch aus der Operette \"Das Veilchenmädchen\"",
+        "piece": "Fidele Brüder, March aus der Operette \"Das Veilchenmädchen\"",
         "composer": "Joseph Hellmesberger Jr.",
         "piece_id": 392,
         "links":
@@ -7839,7 +7839,7 @@ var catalogue = [
         "composer_id": 26
     },
     {
-        "piece": "Ferdinandus-Walzer, op. 10 [Arr. W. Dörner]",
+        "piece": "Ferdinandus-Walzer, Waltz, op. 10 [Arr. W. Dörner]",
         "composer": "Constanze Geiger",
         "piece_id": 393,
         "links":
@@ -7858,24 +7858,4 @@ var catalogue = [
         },
         "composer_id": 38
     }
-    // {
-    //     "piece": "",
-    //     "composer": "",
-    //     "piece_id": 392,
-    //     "links":
-    //     {
-    //         "wiki":
-    //         {
-    //             "en": "",
-    //             "de": ""
-    //         },
-    //         "you":
-    //         {
-    //             "this": "",
-    //             "other": ""
-    //         },
-    //         "imslp": ""
-    //     },
-    //     "composer_id": 
-    // }
 ]
