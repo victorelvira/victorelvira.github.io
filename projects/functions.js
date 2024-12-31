@@ -174,7 +174,7 @@
                             var styleCSS = getComputedStyle(document.body);
                             clicked_year_color = styleCSS.getPropertyValue('--clicked_year_color');   
                             gold_box = styleCSS.getPropertyValue('--gold_box');   
-                            // console.log("Saved variable length" + years_of_this_conductor.length) 
+                            
                             $("label[for='" + previous_year + "']").css("background-color", gold_box);
                             $("label[for='" + selected_year + "']").css("background-color", clicked_year_color);
                             
@@ -192,7 +192,7 @@
 
 
                             
-                            // print program
+                            // get info
                             document.getElementById("concert").innerHTML =
                             "New Year's Concert " + selected_year;
                             let pieces_id_year_x = found_by_year[0].program.piece_id; 
@@ -246,8 +246,48 @@
                                 elementos_encore_printed = document.getElementsByClassName("encore_printed");
                                 elementos_composer_encore_printed = document.getElementsByClassName("composer_encore_printed");
                             }
+                            // print information
 
+                            if (selected_year === 1939) {
+                                edition = 1;
+                            } else {
+                                edition = selected_year - 1939;
+                            }
+
+                            totalPieces = pieces_year_x.length;
+                            total_encores = totalPieces - n_program;
+
+                            const uniqueComposers = [...new Set(composers_year_x)];
+
+                            number_unique_composers = uniqueComposers.length;
+                            conductorName = this_year_conductor_name;
+
+                            years_of_this_conductor = getConcertByConductorId(this_year_conductor_id);
+                            conductorCount = years_of_this_conductor.length;
+
+                            // const concert = getConcertByYear(selected_year)[0];
+ 
+                            // // Unique composers
+                            // const uniqueComposerIDs = [...new Set(concert.program.composer_id)];
+                            // const uniqueComposers = uniqueComposerIDs.length;
+
+                            // // Conductor details
+                            // const conductorID = concert.conductor_id;
+                            // const conductor = getConductorById(conductorID)[0];
+                            // const conductorName = conductor.name;
+                            // const conductorCount = getConcertByConductorId(conductorID).length;
+
+                            // Text for the right panel
+                             let text_other = 
+                                "The New Year's Concert " + selected_year + " was the " + getOrdinal(edition) + " edition of the event. " +
+                                "It featured a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
+                                "The concert was conducted by " + conductorName + ", marking his " + getOrdinal(conductorCount) + " appearance. " ;
+
+
+                            // Update the right panel
+                            document.getElementById("info_text").innerHTML = text_other;
                             
+
 
                             ////////////////////////////////////////
                             //////// LISTENERS BELOW
@@ -299,9 +339,9 @@
                         
                                 if (wiki_link_conductor.length>0) // there is link
                                 { 
-                                    text_other += '<br><br> Biography of <a style="color:green">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_conductor +'  target="_blank" >link.</a>'
+                                    text_other += '<br><br> Find the biography of <a style="color:green">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_conductor +'  target="_blank" >link.</a>'
                                 }
-                                document.getElementById("other_info").innerHTML = text_other;
+                                document.getElementById("info_text").innerHTML = text_other;
                             });     
                             
                             
@@ -382,7 +422,7 @@
                         if (wiki_link_piece.length>0) // there is link
                         { 
                             //text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> More information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Find more information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
@@ -401,7 +441,7 @@
                         
      
 
-                                    document.getElementById("other_info").innerHTML = text_other;
+                                    document.getElementById("info_text").innerHTML = text_other;
                                 });
 
 
@@ -498,13 +538,13 @@
                                 if (wiki_link_composer.length>0) // non-empty link
                                 {
 
-                                    text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+                                    text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
                                 }
                                     
                                     
                                     
                                     
-                                    document.getElementById("other_info").innerHTML = text_other;
+                                    document.getElementById("info_text").innerHTML = text_other;
 
                                         
 
@@ -603,7 +643,7 @@
                         if (wiki_link_piece.length>0) // there is link
                         { 
                             // text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> More information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Find more information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
@@ -619,7 +659,7 @@
                             text_other += '<br><br> YouTube link below: <br>  <iframe width="420" height="315" src="' + you_link_piece + '"> </iframe>'
                         }
 
-                                    document.getElementById("other_info").innerHTML = text_other;
+                                    document.getElementById("info_text").innerHTML = text_other;
                                 });
 
 
@@ -714,7 +754,7 @@
     if (wiki_link_composer.length>0) // non-empty link
     {
 
-        text_other += '<br><br> Biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+        text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
     }
         
         
@@ -722,7 +762,7 @@
      
                                     
                                     
-                                    document.getElementById("other_info").innerHTML = text_other;
+                                    document.getElementById("info_text").innerHTML = text_other;
 
                                         
 
@@ -784,9 +824,114 @@ EventTarget.prototype.addEventListener = function (type, listener, options) {
 
 
 
+// SUPPORT
 
+function getOrdinal(number) {
+    const j = number % 10,
+          k = number % 100;
+
+    if (j === 1 && k !== 11) {
+        return `${number}st`;
+    }
+    if (j === 2 && k !== 12) {
+        return `${number}nd`;
+    }
+    if (j === 3 && k !== 13) {
+        return `${number}rd`;
+    }
+    return `${number}th`;
+}
 
 // STATISTICS
 
+// Populate the dropdown with year options
+function populateYearDropdown(concerts) {
+    const dropdown = document.getElementById('yearDropdown');
+    dropdown.innerHTML = ''; // Clear existing options
+
+    // Add "All Years" option
+    const allYearsOption = document.createElement('option');
+    allYearsOption.value = 'all';
+    allYearsOption.text = 'All Years';
+    dropdown.appendChild(allYearsOption);
+
+    // Add year options from the concerts data
+    const years = [...new Set(concerts.map(concert => concert.year))].sort((a, b) => b - a);
+    years.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.text = year;
+        dropdown.appendChild(option);
+    });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed.');
+});
+
+// Generate Bar Chart
+function generateBarChart(filteredConcerts) {
+    const chartContainer = document.getElementById('barChartContainer');
+    chartContainer.innerHTML = ''; // Clear previous chart
+
+    const compositionCounts = {};
+
+    filteredConcerts.forEach(concert => {
+        if (concert.program && Array.isArray(concert.program.piece_id)) {
+            concert.program.piece_id.forEach(pieceId => {
+                compositionCounts[pieceId] = (compositionCounts[pieceId] || 0) + 1;
+            });
+        } else {
+            console.warn('Invalid program or piece_id in concert:', concert);
+        }
+    });
+
+    const labels = Object.keys(compositionCounts); // These are piece IDs
+    const data = Object.values(compositionCounts);
+
+    console.log('Bar chart data:', labels, data);
+
+    // Placeholder for bar chart drawing
+    chartContainer.textContent = 'Bar chart will be displayed here.';
+}
+
+// Generate Pie Chart
+function generatePieChart(filteredConcerts) {
+    const chartContainer = document.getElementById('pieChartContainer');
+    chartContainer.innerHTML = '<canvas id="pieChart"></canvas>'; // Add canvas for Chart.js
+
+    const composerCounts = {};
+    filteredConcerts.forEach(concert => {
+        concert.program.composer.forEach(composer => {
+            composerCounts[composer] = (composerCounts[composer] || 0) + 1;
+        });
+    });
+
+    const labels = Object.keys(composerCounts);
+    const data = Object.values(composerCounts);
+
+    // Create Pie Chart
+    const ctx = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: data,
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9966FF', '#FF9F40'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                title: { display: true, text: 'Composer Distribution' }
+            }
+        }
+    });
+}
+ 
 
 
