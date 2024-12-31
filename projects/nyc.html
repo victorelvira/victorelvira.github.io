@@ -10,7 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
-        var selected_year = 2024;
+        var last_year = 2025;
+        var selected_year = last_year;
         var this_year_conductor = 0;
         const years_highlighted = [];  
         var years_of_this_conductor = [];
@@ -69,7 +70,6 @@
                     <h5>Select a year</h5>
                     <div id="demo" class="radio-toolbar"></div>
                     <script>
-                        let last_year = 2025;
                         let allRadioButtons = '<div class="row row-cols-auto justify-content-center g-1">'; // Bootstrap grid with auto columns and gap
 
                         for (let i = last_year; i > 1940; i--) {
@@ -96,7 +96,7 @@
             <!-- Main Panel -->
             <div class="col-md-5 central-panel">
                 <h5 id="concert">New Year's Concert</h5>
-                <p  style="font-size: 0.9em; color: gray; font-style: italic;">(*Click on <span class="text-success">conductor</span>, <span class="text-primary">pieces</span>, and <span class="text-danger">composers</span>.)</p>
+                <p  style="font-size: 0.9em; color: gray; font-style: italic;">(*Click on <span style="color: green;">conductor</span>, <span style="color: blue;">pieces</span>, <span style="color: orange;">types</span>, and <span style="color: red;">composers</span>.)</p>
                 <p id="conductor_title"><strong><u>Conductor:</u></strong> <span id="conductor" class="text-decoration-none" style="cursor: pointer;">&#8205</span></p>
                 <p id="program_title"><strong><u>Program:</u></strong></p>
                 <ol id="list_pieces_program" class="ps-3"></ol>
@@ -115,14 +115,13 @@
 
 
 <!-- Add a new section below the existing row -->
-<div class="row my-0 my-sm-3">
+<!-- <div class="row my-0 my-sm-3">
     <div class="col-md-12">
         <h5 class="text-center">Statistics and Visualizations</h5>
         <p class="text-center">Explore the distribution of compositions, conductors, and other key details about the New Year's Concerts.</p>
         <div class="text-center">
             <select id="yearDropdown" class="form-select w-auto d-inline-block mb-3">
                 <option value="all">All Years</option>
-                <!-- Year options will be dynamically added here -->
             </select>
             <button id="viewStatsButton" class="btn btn-primary">View Stats</button>
         </div>
@@ -137,7 +136,7 @@
         <h6>Pie Chart</h6>
         <div id="pieChartContainer" class="border rounded bg-light" style="height: 400px;"></div>
     </div>
-</div>
+</div> -->
 
 
 
