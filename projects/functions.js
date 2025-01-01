@@ -763,6 +763,22 @@
                                         };
                                         text_other = "TBD"
                                         document.getElementById("info_text").innerHTML = text_other;
+
+                                        // turn ORANGE year boxes in red for years where the composer appeared: TBD (adapted from the composer). Then, do the same with the TYPE OF ENCORES
+
+                                        // composer_highlighted = this.innerHTML;
+                                        // console.log(this.innerHTML)
+                                        // composer_highlighted_item = getIdByComposer(composer_highlighted);
+                                        // composer_highlighted_id = composer_highlighted_item[0].id;
+
+                                        // years_of_this_composer = getConcertByComposerId(composer_highlighted_id);
+                                        
+                                        // for (let i = 0; i < years_of_this_composer.length; i++) { 
+                                        //     year_ii = years_of_this_composer[i].year;
+                                        //      if (year_ii != selected_year){
+                                        //         $("label[for='" + year_ii  + "']").css("background-color", "red");
+                                        //     }
+                                        // }
                                     });
 
                                 
@@ -778,7 +794,8 @@
                                     var list_elements = list.getElementsByTagName("li");
                                     
                                     for (let i = 0; i < n_program; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_encore"); 
+                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_printed"); 
+                                        console.log(list_elements[i])
                                         if(compositor_ii[0].innerHTML == this.innerHTML){
                                             compositor_ii[0].style.color = "red";
                                         }
