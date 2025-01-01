@@ -230,13 +230,15 @@
                                 var piece_i = pieces_year_x[i];
                                 var composer_i = composers_year_x[i];
                                 var type_i = types_year_x[i];
-
+                                // li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
+            
                                 if(type_i == "Unknown"){
                                     li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
                                 }
                                 else{
                                     li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + ', <span class="type_printed">' + type_i + "</span>, (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
                                 }
+
                                 list.appendChild(li);
                             };
 

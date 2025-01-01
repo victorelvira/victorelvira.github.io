@@ -306,7 +306,7 @@ var catalogue = [
     "type": "Polka schnell"
   },
   {
-    "piece": "Auf zum Tanze! Polka schnell, op. 436",
+    "piece": "Auf zum Tanze!, op. 436",
     "composer": "Johann Strauß II.",
     "piece_id": 18,
     "links": {
@@ -1692,7 +1692,7 @@ var catalogue = [
     "type": "Polka schnell"
   },
   {
-    "piece": "Electrofor-Polka schnell, op. 297",
+    "piece": "Electrofor, op. 297",
     "composer": "Johann Strauß II.",
     "piece_id": 95,
     "links": {
@@ -2340,7 +2340,7 @@ var catalogue = [
     "type": "Waltz"
   },
   {
-    "piece": "Frisch heran! Polka schnell, op. 386",
+    "piece": "Frisch heran!, op. 386",
     "composer": "Johann Strauß II.",
     "piece_id": 131,
     "links": {
@@ -3636,7 +3636,7 @@ var catalogue = [
     "type": "Waltz"
   },
   {
-    "piece": "Loslassen! Polka schnell, op. 386",
+    "piece": "Loslassen!, op. 386",
     "composer": "Carl Michael Ziehrer",
     "piece_id": 203,
     "links": {
@@ -4068,7 +4068,7 @@ var catalogue = [
     "type": "Polka française"
   },
   {
-    "piece": "Muthig voran! Polka schnell, op. 432",
+    "piece": "Muthig voran!, op. 432",
     "composer": "Johann Strauß II.",
     "piece_id": 227,
     "links": {
@@ -4302,7 +4302,7 @@ var catalogue = [
     "type": "Waltz"
   },
   {
-    "piece": "Nur fort! Polka schnell, op. 383",
+    "piece": "Nur fort!, op. 383",
     "composer": "Johann Strauß II.",
     "piece_id": 240,
     "links": {
@@ -5022,7 +5022,7 @@ var catalogue = [
     "type": "Ballet excerpt"
   },
   {
-    "piece": "Par force! Polka schnell, op. 308",
+    "piece": "Par force!, op. 308",
     "composer": "Johann Strauß II.",
     "piece_id": 280,
     "links": {
@@ -6696,7 +6696,7 @@ var catalogue = [
     "type": "Waltz"
   },
   {
-    "piece": "Wer tanzt mit? Polka schnell, op. 251",
+    "piece": "Wer tanzt mit?, op. 251",
     "composer": "Eduard Strauß",
     "piece_id": 373,
     "links": {
@@ -6750,7 +6750,7 @@ var catalogue = [
     "type": "Waltz"
   },
   {
-    "piece": "Wiener Bonbons op. 307",
+    "piece": "Wiener Bonbons, op. 307",
     "composer": "Johann Strauß II.",
     "piece_id": 376,
     "links": {
