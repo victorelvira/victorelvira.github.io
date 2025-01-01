@@ -1,18 +1,13 @@
      
-        // maybe these functions can be moved to head
+        // functions to filter in the database
 
-       function getConcertByYear(code) {
+                        function getConcertByYear(code) {
                             return concerts.filter(
                             function(concerts) {
                                 return concerts.year == code
                             }
                             );
                         }
-
-
-     
-                        
-                        
                         function getConcertByConductor(code) {
                             return concerts.filter(
                             function(concerts) {
@@ -47,9 +42,6 @@
                             );
                         }
 
-
-                          
-                        
                         function getConcertByComposer(code) {
                             return concerts.filter(
                             function(concerts) {
@@ -100,8 +92,6 @@
                             }
                             );
                         }
-       
-
 
         // to avoid redundance in the source files, the composers of each piece are added here to the concerts variable (goal: filter by composers)
 
@@ -117,6 +107,7 @@
         }
 
 
+        // reset colors when clicking in something 
         function resetColors() {
             // Reset year buttons to gold_box except for selected_year
             let styleCSS = getComputedStyle(document.body);
@@ -168,6 +159,17 @@
                 conductorElement.style.color = "black"; // Reset conductor to black
             }
         }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -431,7 +433,7 @@
                                     }
                                     
                                     if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>only once</strong> ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>only once</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_piece.length == 2){
                                         var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>twice</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     }  
@@ -520,12 +522,6 @@
                                     document.getElementById("info_text").innerHTML = text_other;
                                 });
 
-
-
-
-
-
-
                                 
                                  // 3. Mouse CLICK on COMPOSER on PROGRAM
                                 
@@ -581,12 +577,12 @@
                                     }
                                     
                                      if (years_of_this_composer.length == 1){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'A piece composed by <em style="color:red">' + this.innerHTML + '</em> was played in only <strong>one concert</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     } else if (years_of_this_composer.length == 2){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>twice</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in <strong>two concerts</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                     }  
                                     else {
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>' + years_of_this_composer.length + ' times</strong>: ';
+                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in <strong>' + years_of_this_composer.length + ' concerts</strong>: ';
                                         
                                         for (let i = 0; i < years_of_this_composer.length-1; i++) {
                                             let year_ii = years_of_this_composer[i].year;

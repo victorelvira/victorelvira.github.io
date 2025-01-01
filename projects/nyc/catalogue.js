@@ -972,7 +972,7 @@ var catalogue = [
     "type": "Waltz"
   },
   {
-    "piece": "Demolirer-Polka, op. 269",
+    "piece": "Demolirer-Polka (Demolition Men's Polka), op. 269",
     "composer": "Johann Strauß II.",
     "piece_id": 55,
     "links": {
@@ -7038,7 +7038,7 @@ var catalogue = [
     "type": "Polka schnell"
   },
   {
-    "piece": "Fidele Brüder, Marsch aus der Operette \"Das Veilchenmädchen\"",
+    "piece": "Fidele Brüder (Merry Brothers), Marsch aus der Operette \"Das Veilchenmädchen (The Violet Girl)\"",
     "composer": "Joseph Hellmesberger Jr.",
     "piece_id": 392,
     "links": {
