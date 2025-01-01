@@ -291,33 +291,24 @@
                             conductorName = this_year_conductor_name;
 
                             years_of_this_conductor = getConcertByConductorId(this_year_conductor_id);
-                            conductorCount = years_of_this_conductor.length;
+                            conductor_total_number_appearances = years_of_this_conductor.length;
 
-                            // const concert = getConcertByYear(selected_year)[0];
- 
-                            // // Unique composers
-                            // const uniqueComposerIDs = [...new Set(concert.program.composer_id)];
-                            // const uniqueComposers = uniqueComposerIDs.length;
+                            let all_years_this_conductor = years_of_this_conductor.map(obj => obj.year);
+                             let position_conductor = all_years_this_conductor.indexOf(selected_year) + 1; // Add 1 for 1-based index
 
-                            // // Conductor details
-                            // const conductorID = concert.conductor_id;
-                            // const conductor = getConductorById(conductorID)[0];
-                            // const conductorName = conductor.name;
-                            // const conductorCount = getConcertByConductorId(conductorID).length;
-
-                            // Text for the right panel
+                             // Text for the right panel
 
                             if(selected_year == last_year){
                             text_other = 
                                 "The New Year's Concert " + selected_year + " is the " + getOrdinal(edition) + " edition of the event. " +
                                 "It features a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
-                                "The concert is conducted by " + conductorName + ", marking his " + getOrdinal(conductorCount) + " appearance. " ;
+                                "The concert is conducted by " + conductorName + ", marking his " + getOrdinal(conductor_total_number_appearances) + " appearance. " ;
                                 }
                             else{
-                            text_other = 
-                               "The New Year's Concert " + selected_year + " was the " + getOrdinal(edition) + " edition of the event. " +
-                               "It featured a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
-                               "The concert was conducted by " + conductorName + ", marking his " + getOrdinal(conductorCount) + " appearance. " ;        
+                                text_other = 
+                                   "The New Year's Concert " + selected_year + " was the " + getOrdinal(edition) + " edition of the event. " +
+                                   "It featured a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
+                                   "The concert was conducted by " + conductorName + ", marking his " + getOrdinal(conductor_total_number_appearances) + " appearance (out of " + position_conductor + " appearances). " ;           
                                 }
 
 
@@ -553,7 +544,8 @@
                                     var list_elements = list.getElementsByTagName("li");
                                     
                                     for (let i = 0; i < n_program; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByTagName("span"); 
+                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_printed"); 
+                                        console.log(compositor_ii)
                                         if(compositor_ii[0].innerHTML == this.innerHTML){
                                             compositor_ii[0].style.color = "red";
                                         }
@@ -564,8 +556,11 @@
                                     var list_elements = list_enc.getElementsByTagName("li");
                                     
                                     for (let i = 0; i < n_encores; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByTagName("span"); 
+                                        console.log(list_elements[i])
+                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_encore_printed"); 
+                                        console.log(compositor_ii)
                                         if(compositor_ii[0].innerHTML == this.innerHTML){
+                                            console.log(compositor_ii)
                                             compositor_ii[0].style.color = "red";
                                         }
                                     };
@@ -717,7 +712,11 @@
                         console.log(you_link_piece)
                         if (you_link_piece.length>0) // there is link
                         {
-                            text_other += '<br><br> YouTube link below: <br>  <iframe width="420" height="315" src="' + you_link_piece + '"> </iframe>'
+                            text_other += `
+                                                            <br><br> YouTube link below: <br>  
+                                                            <div class="iframe-container">
+                                                                <iframe src="${you_link_piece}" frameborder="0" allowfullscreen></iframe>
+                                                            </div>`;
                         }
 
                                     document.getElementById("info_text").innerHTML = text_other;
@@ -783,7 +782,7 @@
                                     var list_elements = list.getElementsByTagName("li");
                                     
                                     for (let i = 0; i < n_program; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByTagName("span"); 
+                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_encore"); 
                                         if(compositor_ii[0].innerHTML == this.innerHTML){
                                             compositor_ii[0].style.color = "red";
                                         }
@@ -794,7 +793,7 @@
                                     var list_elements = list_enc.getElementsByTagName("li");
                                     
                                     for (let i = 0; i < n_encores; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByTagName("span"); 
+                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_encore_printed"); 
                                         if(compositor_ii[0].innerHTML == this.innerHTML){
                                             compositor_ii[0].style.color = "red";
                                         }
@@ -819,12 +818,12 @@
                                     
                                     
                                       if (years_of_this_composer.length == 1){
-                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in<strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                      } else if (years_of_this_composer.length == 2){
                                          var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>twice</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                      }  
                                      else {
-                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>' + years_of_this_composer.length + ' times</strong>: ';
+                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in <strong>' + years_of_this_composer.length + ' concerts</strong>: ';
                                         
                                         for (let i = 0; i < years_of_this_composer.length-1; i++) {
                                             let year_ii = years_of_this_composer[i].year;
