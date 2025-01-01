@@ -58,6 +58,14 @@
                             );
                         }
 
+                        // function getConcertByType(code) {
+                        //     return concerts.filter(
+                        //     function(concerts) {
+                        //         return concerts.program.type.includes(code)
+                        //     }
+                        //     );
+                        // }
+
      
      
                         function getPieceByIdFromCatalogue(code) {
@@ -310,7 +318,7 @@
                                 text_other = 
                                    "The New Year's Concert " + selected_year + " was the " + getOrdinal(edition) + " edition of the event. " +
                                    "It featured a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
-                                   "The concert was conducted by " + conductorName + ", marking his " + getOrdinal(conductor_total_number_appearances) + " appearance (out of " + position_conductor + " appearances). " ;           
+                                   "The concert was conducted by " + conductorName + ", marking his " + getOrdinal(position_conductor) + " appearance (out of " + conductor_total_number_appearances + " appearances). " ;           
                                 }
 
 
@@ -766,17 +774,14 @@
 
                                         // turn ORANGE year boxes in red for years where the composer appeared: TBD (adapted from the composer). Then, do the same with the TYPE OF ENCORES
 
-                                        // composer_highlighted = this.innerHTML;
+                                        // type_highlighted = this.innerHTML;
                                         // console.log(this.innerHTML)
-                                        // composer_highlighted_item = getIdByComposer(composer_highlighted);
-                                        // composer_highlighted_id = composer_highlighted_item[0].id;
-
-                                        // years_of_this_composer = getConcertByComposerId(composer_highlighted_id);
+                                        // years_of_this_type = getConcertByType(type_highlighted);
                                         
                                         // for (let i = 0; i < years_of_this_composer.length; i++) { 
-                                        //     year_ii = years_of_this_composer[i].year;
+                                        //     year_ii = years_of_this_type[i].year;
                                         //      if (year_ii != selected_year){
-                                        //         $("label[for='" + year_ii  + "']").css("background-color", "red");
+                                        //         $("label[for='" + year_ii  + "']").css("background-color", "orange");
                                         //     }
                                         // }
                                     });
