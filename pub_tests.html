@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Víctor Elvira's webpage</title>
+
+
+
+      <!-- Bootstrap 5 CSS -->
+      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+      <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+      <!-- CSS -->
+      <link href="assets/css/styles.css" rel="stylesheet">       <!-- Custom CSS -->
+
+      <!-- JS -->
+      <script src="assets/js/scripts.js"></script> <!-- Custom JS (scripts.js to load the navbar and footer) -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery (Required for bibtex_js) -->
+      <script type="text/javascript" src="assets/js/bibtex_js.js"></script> <!-- Load bibtex-js -->
+
+</head>
+<body>
+
+<!-- Load Navbar from nav.html -->
+<div id="navbar-placeholder"></div>
+
+<!-- Publications Section -->
+<div class="container py-5">
+    <h2>Publications</h2>
+    
+    <!-- Filter buttons -->
+    <div id="filter-buttons" class="mb-3">
+        <button class="btn btn-primary filter-btn" data-filter="all">All Papers</button>
+        <!-- Year buttons will be dynamically added here -->
+    </div>
+
+    <!-- Reverse ordered list for publications -->
+    <ol reversed id="bibtex_display">
+        <!-- The BibTeX entries will be dynamically added here -->
+    </ol>
+
+    <!-- Hidden BibTeX data -->
+<!--     <textarea id="bibtex_input" style="display:none;">
+        @article{chenma24,
+          author    = {Chen Ma and Huayi Li and Junjun Jiang and C{\'e}sar Aybar and Jiaqi Yao and Gustau Camps-Valls},
+          title     = {Dynamics of Masked Image Modeling in Hyperspectral Image Classification},
+          journal   = {Some Journal},
+          year      = {2024},
+          doi       = {10.1000/exampledoi}
+        }
+        @article{Pelucchi24inn,
+          title        = {Invertible Neural Networks for Aerosol Optical Depth Retrievals},
+          author       = {Pelucchi, P. and Vicent, J. and Camps-Valls, G.},
+          year         = {2024},
+          arxiv        = {https://arxiv.org/abs/1234.56789}
+        }
+        @article{chouzenoux2024sparse,
+          title        = {Sparse graphical linear dynamical systems},
+          author       = {Chouzenoux, Emilie and Elvira, V{\'i}ctor},
+          year         = {2024}
+        }
+        % C61
+        @inproceedings{dahiya2021would,
+          title={Would your tweet invoke hate on the fly? forecasting hate intensity of reply threads on twitter},
+          author={Dahiya, Snehil and Sharma, Shalini and Sahnan, Dhruv and Goel, Vasu and Chouzenoux, Emilie and Elvira, V{\'\i}ctor and Majumdar, Angshul and Bandhakavi, Anil and Chakraborty, Tanmoy},
+          booktitle={Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery \& Data Mining},
+          pages={2732--2742},
+          year={2021}
+        }
+
+        % C60
+        @inproceedings{branchini2021optimized,
+          title={Optimized auxiliary particle filters: adapting mixture proposals via convex optimization},
+          author={Branchini, Nicola and Elvira, V{\'\i}ctor},
+          booktitle={Uncertainty in Artificial Intelligence},
+          pages={1289--1299},
+          year={2021},
+          organization={PMLR}
+        }
+    </textarea> -->
+</div>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- BibTeX Display and Filtering Script -->
+<!-- <script>
+function bibtex_js_draw(filterYear = "all", filterType = "all") {
+    console.log("Starting to parse BibTeX data");
+
+    var bibtexDisplay = $("#bibtex_display");
+    var bibtexInput = $("#bibtex_input").val();
+    var bibtexParser = new BibtexParser();
+    
+    // Clear the existing content before parsing
+    bibtexDisplay.empty();
+
+    // Parse BibTeX input
+    try {
+        bibtexParser.setInput(bibtexInput);
+        bibtexParser.bibtex();
+        var entries = bibtexParser.getEntries();
+        var years = new Set(); // Store unique years for filtering
+        console.log(entries);
+
+        // Iterate over each entry and append it to the reversed ordered list
+        $.each(entries, function (key, entry) {
+            var title = entry['TITLE'] || 'Untitled';
+            var author = entry['AUTHOR'] || 'Unknown';
+            var year = entry['YEAR'] ? entry['YEAR'].trim() : 'No year'; // Trim whitespace to ensure correct parsing
+            console.log(author);
+
+ // // // // WORK IN PROGRESS BELOW
+ // Function to parse and format the author string correctly
+function formatAuthors(authorString) {
+    // Helper function to decode LaTeX accents
+    function decodeAccents(text) {
+        return text
+            .replace(/{|}/g, '') // Remove braces
+            .replace(/\\'\\i/g, 'í') // Handle \'\i (for í)
+            .replace(/\\'e/g, 'é') // Handle \'e (for é)
+            .replace(/\\'a/g, 'á') // Handle \'a (for á)
+            .replace(/\\'o/g, 'ó') // Handle \'o (for ó)
+            .replace(/\\'u/g, 'ú') // Handle \'u (for ú)
+            .replace(/\\\"u/g, 'ü') // Handle \"u (for ü)
+            .replace(/\\c{c}/g, 'ç'); // Handle \c{c} (for ç)
+    }
+ 
+    // Split the string by ' and ' if multiple authors are joined that way
+    let authors = authorString.split(/\s+and\s+/);
+
+    // Clean up and decode each author name
+    authors = authors.map(author => {
+        author = decodeAccents(author);
+
+        // If the author name is in "Last, First" format, reverse it
+        if (author.includes(',')) {
+            const parts = author.split(',').map(part => part.trim());
+            return `${parts[1]} ${parts[0]}`;
+        }
+
+        // Return the cleaned author name
+        return author;
+    });
+
+    // Join the authors with ' and ' for better formatting
+    return authors.join(' and ');
+}
+
+// Example usage:
+const authorString = "Branchini, Nicola and Elvira, V{\\'\\i}ctor";
+const formattedAuthors = formatAuthors(authorString);
+// Example output
+console.log("formatted below"); 
+console.log(formattedAuthors); 
+
+ // // // // // // // // // WORK IN PROGRESS UNTIL HERE
+
+            years.add(year); // Collect years for filter buttons
+
+            // Filter by year and type if necessary
+            if (filterYear !== "all" && filterYear !== year) {
+                return; // Skip this entry if it doesn't match the filter
+            }
+            if (filterType !== "all" && entry['ENTRYTYPE'] !== filterType) {
+                return; // Skip if the entry type doesn't match the filter
+            }
+
+            // Create the list item with title, author, year
+            var listItem = `<li>
+                <strong>${title}</strong><br>
+                <em>${author}</em><br>
+                <small>${year}</small><br>`;
+
+            // Add additional buttons (DOI, arXiv, BibTeX) if available
+            if (entry['DOI']) {
+                listItem += `<a href="${entry['DOI']}" class="btn btn-xs btn-warning">DOI</a> `;
+            }
+            if (entry['ARXIV']) {
+                listItem += `<a href="${entry['ARXIV']}" class="btn btn-xs btn-danger">arXiv</a> `;
+            }
+            listItem += `<button class="btn btn-xs btn-success bibtex_but">BibTeX</button>`;
+
+            listItem += `</li>`;
+            bibtexDisplay.append(listItem);
+        });
+
+        // Update year buttons dynamically
+        updateYearButtons(years);
+    } catch (e) {
+        console.error("Error parsing BibTeX data: ", e);
+    }
+}
+
+// Function to dynamically update year filter buttons
+function updateYearButtons(years) {
+    var filterButtons = $("#filter-buttons");
+    
+    // Clear existing year buttons
+    filterButtons.find(".year-btn").remove();
+
+    // Add a button for each unique year
+    years.forEach(function (year) {
+        filterButtons.append(`<button class="btn btn-secondary year-btn" data-filter="${year}">${year}</button> `);
+    });
+}
+
+$(document).ready(function () {
+    // Draw all publications by default
+    bibtex_js_draw();
+
+    // Handle filter button clicks for year and type
+    $("#filter-buttons").on("click", "button", function () {
+        var filterValue = $(this).data("filter");
+        var filterType = $(this).data("type");
+        
+        if (filterType) {
+            bibtex_js_draw("all", filterType);
+        } else {
+            bibtex_js_draw(filterValue);
+        }
+    });
+
+    // Add buttons for filtering by article or conference
+    $('#filter-buttons').append(`
+        <button class="btn btn-secondary filter-btn" data-type="article">Journal Papers</button>
+        <button class="btn btn-secondary filter-btn" data-type="inproceedings">Conference Papers</button>
+    `);
+});
+</script> -->
+<script>
+if (!window.__pub_init_done__) {
+  window.__pub_init_done__ = true;     // se marca YA, antes de definir nada
+
+  // También invalida renders viejos si hubiera varias carreras
+  window.__bibRunId = 0;
+async function loadBib() {
+  // Fuerza no usar caché en desarrollo
+  const res = await fetch('publications.bib?v=' + Date.now(), { cache: 'no-store' });
+  if (!res.ok) throw new Error('publications.bib not found');
+  return await res.text();
+}
+
+function decodeAccents(text) {
+  return (text || "")
+    .replace(/{|}/g, '')
+    .replace(/\\'\\i/g, 'í').replace(/\\'a/g, 'á').replace(/\\'e/g, 'é').replace(/\\'E/g, 'É')
+    .replace(/\\'i/g, 'í').replace(/\\'o/g, 'ó').replace(/\\'u/g, 'ú')
+    .replace(/\\"u/g, 'ü').replace(/\\c\{c\}/g, 'ç')
+    .replace(/\\~n/g, 'ñ').replace(/\\`a/g, 'à').replace(/\\`e/g, 'è')
+    .replace(/\\`i/g, 'ì').replace(/\\`o/g, 'ò').replace(/\\`u/g, 'ù');
+}
+
+function formatAuthors(authorString) {
+  if (!authorString) return 'Unknown';
+  const authors = authorString.split(/\s+and\s+/).map(a => {
+    a = decodeAccents(a.trim());
+    if (a.includes(',')) {
+      const [last, first] = a.split(',').map(s => s.trim());
+      return `${first} ${last}`.trim();
+    }
+    return a;
+  });
+  return authors.join(', ');
+}
+
+function normDOI(doi) {
+  if (!doi) return '';
+  const d = doi.trim();
+  if (!d) return '';
+  if (d.startsWith('http://') || d.startsWith('https://')) return d;
+  if (d.startsWith('10.')) return 'https://doi.org/' + d;
+  return d;
+}
+
+function renderEntryLI(entry) {
+  const title  = entry['TITLE']  || 'Untitled';
+  const year   = (entry['YEAR']  || '').trim();
+  const authors = formatAuthors(entry['AUTHOR'] || '');
+  const etype  = (entry['ENTRYTYPE'] || '').toLowerCase();
+
+  const isJournal = !!entry['JOURNAL'];
+  const isConf    = !!entry['BOOKTITLE'];
+
+  const venue = [];
+  if (isJournal) {
+    const vol = entry['VOLUME'] ? `, ${entry['VOLUME']}` : '';
+    const num = entry['NUMBER'] ? `(${entry['NUMBER']})` : '';
+    const pgs = entry['PAGES']  ? `, pp. ${entry['PAGES']}` : '';
+    venue.push(`<em>${entry['JOURNAL']}</em>${vol}${num}${pgs}`);
+  } else if (isConf) {
+    const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES']}` : '';
+    venue.push(`<em>${entry['BOOKTITLE']}</em>${pgs}`);
+  }
+
+  const doiURL = normDOI(entry['DOI']);
+  const arxiv  = entry['ARXIV'] || entry['EPRINT'] || '';
+  const url  = entry['URL'];
+
+
+  let buttons = '';
+  buttons += ` <button class="btn btn-mini btn-danger bibtex_but">PDF</button>`;
+if (arxiv)  
+  buttons += ` <a class="btn btn-mini btn-success" target="_blank" rel="noopener" href="${arxiv}">arXiv</a>`;
+if (url)  
+  buttons += ` <a class="btn btn-mini btn-info" target="_blank" rel="noopener" href="${url}">URL</a>`;
+if (doiURL) 
+  buttons += ` <a class="btn btn-mini btn-primary" target="_blank" rel="noopener" href="${doiURL}">DOI</a>`;
+buttons += ` <button class="btn btn-mini btn-secondary bibtex_but">BibTeX</button>`;
+
+  // return `
+  //   <li class="pub-item" data-entrytype="${etype}">
+  //     <strong>${decodeAccents(title)}</strong><br>
+  //     <em>${authors}</em><br>
+  //     ${venue.join(' ')}${year ? '. ' + year : ''}.
+  //     <div class="mt-1">${buttons}</div>
+  //   </li>`;
+    return `
+    <li class="pub-item" data-entrytype="${etype}">
+      <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong> 
+      ${venue.join(' ')}${year ? '. ' + year : ''}.
+      <div class="mt-1">${buttons}</div>
+    </li>`;
+}
+
+function updateYearButtons(years) {
+  const filterButtons = $("#filter-buttons");
+  filterButtons.find(".year-btn").remove();
+  [...years].sort((a,b)=>b.localeCompare(a)).forEach(y => {
+    if (!y) return;
+    filterButtons.append(
+      `<button class="btn btn-secondary year-btn" data-filter="${y}">${y}</button> `
+    );
+  });
+}
+
+async function bibtex_js_draw(filterYear = "all", filterType = "all") {
+  const bibtexDisplay = $("#bibtex_display");
+  bibtexDisplay.empty();
+
+  try {
+    const rawBib = await loadBib();
+    const parser = new BibtexParser();
+    parser.setInput(rawBib);
+    parser.bibtex();
+    const entries = parser.getEntries();
+    const years = new Set();
+
+    Object.keys(entries).forEach(key => {
+      const e = entries[key];
+      const year = (e['YEAR'] || '').trim();
+      years.add(year);
+
+      if (filterYear !== "all" && year !== filterYear) return;
+      if (filterType !== "all") {
+        const et = (e['ENTRYTYPE'] || '').toLowerCase();
+        if (filterType === 'article' && et !== 'article') return;
+        if (filterType === 'inproceedings' && et !== 'inproceedings') return;
+      }
+      bibtexDisplay.append( renderEntryLI(e) );
+    });
+
+    // updateYearButtons(years);
+  } catch (err) {
+    console.error("Error loading/parsing publications.bib:", err);
+    $("#bibtex_display").append(`<li><em>Could not load publications.bib</em></li>`);
+  }
+}
+
+$(document).ready(function () {
+  bibtex_js_draw();
+
+  $("#filter-buttons").on("click", "button", async function () {
+    const filterValue = $(this).data("filter");
+    const filterType  = $(this).data("type");
+    if (filterType) {
+      await bibtex_js_draw("all", filterType);
+    } else {
+      await bibtex_js_draw(filterValue || "all");
+    }
+  });
+
+  $('#filter-buttons').append(`
+    <button class="btn btn-secondary filter-btn" data-type="article">Journal Papers</button>
+    <button class="btn btn-secondary filter-btn" data-type="inproceedings">Conference Papers</button>
+  `);
+});
+}
+</script>
+<!-- Tracking: Google Analytics tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GHT1L88XYZ');
+</script>
+<!-- End Google Analytics tag (gtag.js) -->
+
+<!-- Default Statcounter code for Github personal
+https://victorelvira.github.io/index.html -->
+<script type="text/javascript">
+var sc_project=11157426; 
+var sc_invisible=1; 
+var sc_security="c4968ba5"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/11157426/0/c4968ba5/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>

@@ -118,3 +118,13 @@ footer p {
     padding: 8px 16px; /* Smaller padding for compact look */
     font-size: 0.9rem; /* Slightly smaller font */
 }
+
+/* Publications buttons */
+
+.btn.btn-mini{
+  padding: 2px 8px;   /* Espacio interno horizontal y vertical reducido */
+  font-size: 0.9rem;  /* Texto pequeño */
+  line-height: 1.2;      /* Altura compacta */
+  border-radius: 6px;  /* Bordes redondeados más pequeños */
+  margin: 5;           /* Sin espacio extra alrededor */
+}
