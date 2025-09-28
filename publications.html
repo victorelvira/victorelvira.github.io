@@ -34,7 +34,7 @@
       <button class="btn btn-primary filter-btn" data-type="all">All Papers</button>
       <button class="btn btn-outline-primary filter-btn" data-type="article">Journals</button>
       <button class="btn btn-outline-primary filter-btn" data-type="inproceedings">Conferences</button>
-      <!-- <button class="btn btn-outline-primary filter-btn" data-type="other">Other</button> -->
+      <button class="btn btn-outline-primary filter-btn" data-type="other">Other</button>
     </div>
 
     <!-- Lista numerada invertida (ol reversed) para mostrar los ítems -->
@@ -54,8 +54,8 @@
 
     // --- Carga del archivo .bib (sin caché para desarrollo) ---
     async function loadBib() {
-      const res = await fetch('publications.bib?v=' + Date.now(), { cache: 'no-store' });
-      if (!res.ok) throw new Error('publications.bib not found');
+      const res = await fetch('data/publications/_all_publications.bib?v=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('_all_publications.bib not found');
       return await res.text();
     }
 
@@ -89,21 +89,16 @@
       const t = (e.entryType || e.type || e.ENTRYTYPE || '').toLowerCase();
       if (t) return t;
 
-      // Inferencia por campos presentes
-      if (e.JOURNAL)     return 'article';
-      if (e.BOOKTITLE)   return 'inproceedings';
-      if (e.SCHOOL || e.PHDTHESIS || (e.BIBTEX && /@phdthesis/i.test(e.BIBTEX))) return 'phdthesis';
-      if (e.BIBTEX && /@mastersthesis/i.test(e.BIBTEX)) return 'mastersthesis';
-      if (e.BIBTEX && /@inbook/i.test(e.BIBTEX))        return 'inbook';
-      if (e.BIBTEX && /@incollection/i.test(e.BIBTEX))  return 'incollection';
-      if (e.BIBTEX && /@book/i.test(e.BIBTEX))          return 'book';
-      if (e.BIBTEX && /@techreport/i.test(e.BIBTEX))    return 'techreport';
-
-      // Último recurso: leer el encabezado del bloque BIBTEX
+      // Si no trae ENTRYTYPE, intenta por el bloque BibTeX
       if (e.BIBTEX) {
         const m = e.BIBTEX.match(/@(\w+)/i);
         if (m) return m[1].toLowerCase();
       }
+
+      // Heurísticas suaves como último recurso
+      if (e.JOURNAL)     return 'article';
+      if (e.BOOKTITLE)   return 'inproceedings';
+      if (e.SCHOOL)      return 'phdthesis';
       return 'misc';
     }
 
@@ -137,63 +132,52 @@
      const authors = formatAuthors(entry['AUTHOR'] || '');
      const etype   = inferEntryType(entry);
 
-     // id estable del <li> para poder inyectar botones luego
-     const safeId  = (entry.__bibKey || 'nokey').replace(/[^a-z0-9_-]/gi,'_');
+     // id estable del <li>
+     const safeId  = (entry.__bibKey || 'nokey').toString().replace(/[^a-z0-9_-]/gi, '_');
 
-     const isJournal = !!entry['JOURNAL'];
-     const isConf    = !!entry['BOOKTITLE'];
+     // Decide venue por TIPO (no por presencia de campos)
+     const isJournal = (etype === 'article')       && !!entry['JOURNAL'];
+     const isConf    = (etype === 'inproceedings') && !!entry['BOOKTITLE'];
+     const isChapter = (etype === 'incollection' || etype === 'inbook') && !!entry['BOOKTITLE'];
 
      const venue = [];
      if (isJournal) {
        const vol = entry['VOLUME'] ? `, ${entry['VOLUME']}` : '';
        const num = entry['NUMBER'] ? `(${entry['NUMBER']})` : '';
-       const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
+       const pgs = entry['PAGES']  ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
        venue.push(`<em>${entry['JOURNAL']}</em>${vol}${num}${pgs}`);
      } else if (isConf) {
        const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
        venue.push(`<em>${entry['BOOKTITLE']}</em>${pgs}`);
+     } else if (isChapter) {
+       const pgs = entry['PAGES']     ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
+       const pub = entry['PUBLISHER'] ? `, ${entry['PUBLISHER']}` : '';
+       venue.push(`In <em>${entry['BOOKTITLE']}</em>${pgs}${pub}`);
      }
 
      const doiURL = normDOI(entry['DOI']);
      const arxiv  = entry['ARXIV'] || entry['EPRINT'] || '';
      const url    = entry['URL'];
 
-     // Construye primero los botones "seguros"
+     // Botones "seguros"
      let buttons = '';
      if (arxiv)  buttons += ` <a class="btn btn-mini btn-success"  target="_blank" rel="noopener" href="${arxiv}">arXiv</a>`;
      if (url)    buttons += ` <a class="btn btn-mini btn-info"     target="_blank" rel="noopener" href="${url}">URL</a>`;
      if (doiURL) buttons += ` <a class="btn btn-mini btn-primary"  target="_blank" rel="noopener" href="${doiURL}">DOI</a>`;
-     const k = entry.__bibKey;
-     const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
-     const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
-     if (true)    buttons += ` <a class="btn btn-mini btn-danger"     target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
-     if (true) buttons += ` <a class="btn btn-mini btn-secondary"  target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`;
-     // PDF local (assets/pdf/<bibkey>.pdf) solo si existe
-     // const k = entry.__bibKey;
-     // if (k) {
-       // const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
-       // const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
-       // const slotSel = `#pub_${safeId} .btns`;
 
-       // Promise.all([fileExists(pdfURL), fileExists(bibURL)])
-       //   .then(([hasPdf, hasBib]) => {
-       //     const slot = document.querySelector(slotSel);
-       //     if (!slot) return;
-       //     if (hasPdf) slot.insertAdjacentHTML(
-       //       'beforeend',
-       //       ` <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`
-       //     );
-       //     if (hasBib) slot.insertAdjacentHTML(
-       //       'beforeend',
-       //       ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`
-       //     );
-       //   });
-     // }
+     // PDF/Bib locales SOLO si hay bibKey (si no, no añadimos nada y no se rompe)
+     const kRaw = (entry.__bibKey || '').toString().trim();
+     if (kRaw) {
+       const k = kRaw.toLowerCase();
+       const pdfURL = `assets/papers/${encodeURIComponent(k)}.pdf`;
+       const bibURL = `assets/bib/${encodeURIComponent(k)}.bib`;
+       buttons += ` <a class="btn btn-mini btn-danger"    target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
+       buttons += ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`;
+     }
 
-     // HTML final (nota: id y contenedor .btns para inyecciones)
      return `
        <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}">
-         <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong> 
+         <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong>
          ${venue.join(' ')}${year ? '. ' + year : ''}.
          <div class="mt-1 btns">${buttons}</div>
        </li>`;
@@ -201,13 +185,7 @@
 
     // --- Determinar tipo de manera estable para filtrar en renderPublications ---
     function safeType(e){
-      const et = (e.ENTRYTYPE || '').toLowerCase();
-      if (et) return et;
-      if (e.JOURNAL)      return 'article';
-      if (e.BOOKTITLE)    return 'inproceedings';
-      if (e.SCHOOL)       return 'phdthesis';
-      if (e.HOWPUBLISHED) return 'misc';
-      return 'unknown';
+      return inferEntryType(e);
     }
 
     // Cache global del parseo para no reparsear el .bib en cada clic
@@ -272,7 +250,7 @@
 
       } catch (err) {
         console.error(err);
-        $out.append('<li><em>Could not load publications.bib</em></li>');
+        $out.append('<li><em>Could not load _all_publications.bib</em></li>');
       }
     }
 
