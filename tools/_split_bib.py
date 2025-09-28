@@ -10,8 +10,8 @@ Uso básico:
     python tools/split_bib.py
 
 Opciones avanzadas:
-    python tools/split_bib.py --input data/publications/_all_publications.bib
-    python tools/split_bib.py --input data/publications/_all_publications.bib --outdir assets/bib
+    python tools/split_bib.py --input data/publications/all_publications.bib
+    python tools/split_bib.py --input data/publications/all_publications.bib --outdir assets/bib
 
 Características:
 - Parser robusto basado en conteo de llaves/paréntesis (no requiere librerías externas).
@@ -27,7 +27,7 @@ import argparse
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Rutas por defecto
-DEFAULT_INPUT = os.path.join(ROOT_DIR, 'data', 'publications', '_all_publications.bib')
+DEFAULT_INPUT = os.path.join(ROOT_DIR, 'data', 'publications', 'all_publications.bib')
 DEFAULT_OUTPUT_DIR = os.path.join(ROOT_DIR, 'assets', 'bib')
 
 

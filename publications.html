@@ -54,8 +54,8 @@
 
     // --- Carga del archivo .bib (sin caché para desarrollo) ---
     async function loadBib() {
-      const res = await fetch('data/publications/_all_publications.bib?v=' + Date.now(), { cache: 'no-store' });
-      if (!res.ok) throw new Error('_all_publications.bib not found');
+      const res = await fetch('data/publications/all_publications.bib?v=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('all_publications.bib not found');
       return await res.text();
     }
 
@@ -250,7 +250,7 @@
 
       } catch (err) {
         console.error(err);
-        $out.append('<li><em>Could not load _all_publications.bib</em></li>');
+        $out.append('<li><em>Could not load all_publications.bib</em></li>');
       }
     }
 
