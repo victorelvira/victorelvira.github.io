@@ -59,12 +59,12 @@
       return await res.text();
     }
 
-    async function fileExists(url) {
-      try {
-        const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
-        return r.ok;
-      } catch { return false; }
-    }
+    // async function fileExists(url) {
+    //   try {
+    //     const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+    //     return r.ok;
+    //   } catch { return false; }
+    // }
 
 
 
@@ -163,28 +163,32 @@
      if (arxiv)  buttons += ` <a class="btn btn-mini btn-success"  target="_blank" rel="noopener" href="${arxiv}">arXiv</a>`;
      if (url)    buttons += ` <a class="btn btn-mini btn-info"     target="_blank" rel="noopener" href="${url}">URL</a>`;
      if (doiURL) buttons += ` <a class="btn btn-mini btn-primary"  target="_blank" rel="noopener" href="${doiURL}">DOI</a>`;
-
-     // PDF local (assets/pdf/<bibkey>.pdf) solo si existe
      const k = entry.__bibKey;
-     if (k) {
-       const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
-       const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
-       const slotSel = `#pub_${safeId} .btns`;
+     const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
+     const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
+     if (true)    buttons += ` <a class="btn btn-mini btn-danger"     target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
+     if (true) buttons += ` <a class="btn btn-mini btn-secondary"  target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`;
+     // PDF local (assets/pdf/<bibkey>.pdf) solo si existe
+     // const k = entry.__bibKey;
+     // if (k) {
+       // const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
+       // const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
+       // const slotSel = `#pub_${safeId} .btns`;
 
-       Promise.all([fileExists(pdfURL), fileExists(bibURL)])
-         .then(([hasPdf, hasBib]) => {
-           const slot = document.querySelector(slotSel);
-           if (!slot) return;
-           if (hasPdf) slot.insertAdjacentHTML(
-             'beforeend',
-             ` <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`
-           );
-           if (hasBib) slot.insertAdjacentHTML(
-             'beforeend',
-             ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`
-           );
-         });
-     }
+       // Promise.all([fileExists(pdfURL), fileExists(bibURL)])
+       //   .then(([hasPdf, hasBib]) => {
+       //     const slot = document.querySelector(slotSel);
+       //     if (!slot) return;
+       //     if (hasPdf) slot.insertAdjacentHTML(
+       //       'beforeend',
+       //       ` <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`
+       //     );
+       //     if (hasBib) slot.insertAdjacentHTML(
+       //       'beforeend',
+       //       ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`
+       //     );
+       //   });
+     // }
 
      // HTML final (nota: id y contenedor .btns para inyecciones)
      return `
