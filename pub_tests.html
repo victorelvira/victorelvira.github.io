@@ -1,252 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Víctor Elvira's webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Víctor Elvira's webpage</title>
 
+  <!-- Bootstrap (tema Flatly) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+  <!-- Tu CSS -->
+  <link href="assets/css/styles.css" rel="stylesheet">
 
-
-      <!-- Bootstrap 5 CSS -->
-      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-      <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
-      <!-- CSS -->
-      <link href="assets/css/styles.css" rel="stylesheet">       <!-- Custom CSS -->
-
-      <!-- JS -->
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-  <script type="text/javascript" src="assets/js/bibtex_js.js"></script> <!-- Load bibtex-js -->
-
+  <!-- jQuery (necesario para el selector/eventos que usas) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Script propio: para navbar/footer (no se usa en este snippet el contenido) -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Parser BibTeX (bibtex_js.js define BibtexParser) -->
+  <script type="text/javascript" src="assets/js/bibtex_js.js"></script>
 </head>
+
 <body>
+  <!-- Navbar inyectado por scripts.js -->
+  <div id="navbar-placeholder"></div>
 
-<!-- Load Navbar from nav.html -->
-<div id="navbar-placeholder"></div>
-
-<!-- Publications Section -->
-<div class="container py-5">
+  <!-- Sección de publicaciones -->
+  <div class="container py-5">
     <h2>Publications</h2>
-    
-    <!-- Filter buttons -->
-<div id="filter-buttons" class="mb-3">
-  <button class="btn btn-primary filter-btn" data-type="all">All Papers</button>
-  <button class="btn btn-outline-primary filter-btn" data-type="article">Journals</button>
-  <button class="btn btn-outline-primary filter-btn" data-type="inproceedings">Conferences</button>
-  <button class="btn btn-outline-primary filter-btn" data-type="other">Other</button>
-</div>
-    <!-- Reverse ordered list for publications -->
-    <ol reversed id="bibtex_display">
-        <!-- The BibTeX entries will be dynamically added here -->
-    </ol>
-</div>
 
-<!-- Footer -->
-<div id="footer-placeholder"></div>
+    <!-- Botonera de filtros. Ojo: cada botón tiene data-type que usamos para filtrar -->
+    <div id="filter-buttons" class="mb-3">
+      <button class="btn btn-primary filter-btn" data-type="all">All Papers</button>
+      <button class="btn btn-outline-primary filter-btn" data-type="article">Journals</button>
+      <button class="btn btn-outline-primary filter-btn" data-type="inproceedings">Conferences</button>
+      <button class="btn btn-outline-primary filter-btn" data-type="other">Other</button>
+    </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- 
-<script>
-if (!window.__pub_init_done__) {
-  window.__pub_init_done__ = true;
+    <!-- Lista numerada invertida (ol reversed) para mostrar los ítems -->
+    <ol reversed id="bibtex_display"></ol>
+  </div>
 
-  async function loadBib() {
-    const res = await fetch('publications.bib?v=' + Date.now(), { cache: 'no-store' });
-    if (!res.ok) throw new Error('publications.bib not found');
-    return await res.text();
-  }
+  <!-- Footer inyectado por scripts.js -->
+  <div id="footer-placeholder"></div>
 
-  function decodeAccents(text) {
-    return (text || "")
-      .replace(/{|}/g, '')
-      .replace(/\\'\\i/g, 'í').replace(/\\'a/g, 'á').replace(/\\'e/g, 'é').replace(/\\'E/g, 'É')
-      .replace(/\\'i/g, 'í').replace(/\\'o/g, 'ó').replace(/\\'u/g, 'ú')
-      .replace(/\\"u/g, 'ü').replace(/\\c\{c\}/g, 'ç')
-      .replace(/\\~n/g, 'ñ').replace(/\\`a/g, 'à').replace(/\\`e/g, 'è')
-      .replace(/\\`i/g, 'ì').replace(/\\`o/g, 'ò').replace(/\\`u/g, 'ù')
-      .replace(/\\"O/g, 'Ö')
-      .replace(/\\'c/g, 'ć');
-  }
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  function inferEntryType(e) {
-    // 1) si el parser lo puso con otro nombre
-    const t = (e.entryType || e.type || e.ENTRYTYPE || '').toLowerCase();
-    if (t) return t;
+  <script>
+  // Evita que este bloque se ejecute dos veces si el script se reinyecta
+  if (!window.__pub_init_done__) {
+    window.__pub_init_done__ = true;
 
-    // 2) inferir por campos
-    if (e.JOURNAL)     return 'article';
-    if (e.BOOKTITLE)   return 'inproceedings';
-    if (e.SCHOOL || e.PHDTHESIS || (e.BIBTEX && /@phdthesis/i.test(e.BIBTEX))) return 'phdthesis';
-    if (e.BIBTEX && /@mastersthesis/i.test(e.BIBTEX)) return 'mastersthesis';
-    if (e.BIBTEX && /@inbook/i.test(e.BIBTEX))        return 'inbook';
-    if (e.BIBTEX && /@incollection/i.test(e.BIBTEX))  return 'incollection';
-    if (e.BIBTEX && /@book/i.test(e.BIBTEX))          return 'book';
-    if (e.BIBTEX && /@techreport/i.test(e.BIBTEX))    return 'techreport';
-
-    // 3) como último recurso, mirar el encabezado del BIBTEX genérico
-    if (e.BIBTEX) {
-      const m = e.BIBTEX.match(/@(\w+)/i);
-      if (m) return m[1].toLowerCase();
+    // --- Carga del archivo .bib (sin caché para desarrollo) ---
+    async function loadBib() {
+      const res = await fetch('publications.bib?v=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('publications.bib not found');
+      return await res.text();
     }
-    return 'misc';
-  }
 
-  function formatAuthors(authorString) {
-    if (!authorString) return 'Unknown';
-    const authors = authorString.split(/\s+and\s+/).map(a => {
-      a = decodeAccents(a.trim());
-      if (a.includes(',')) {
-        const [last, first] = a.split(',').map(s => s.trim());
-        return `${first} ${last}`.trim();
+    async function fileExists(url) {
+      try {
+        const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+        return r.ok;
+      } catch { return false; }
+    }
+
+
+
+    // --- Decodificación de acentos LaTeX -> unicode ---
+    function decodeAccents(text) {
+      return (text || "")
+        .replace(/{|}/g, '')
+        .replace(/\\'\\i/g, 'í').replace(/\\'a/g, 'á').replace(/\\'e/g, 'é').replace(/\\'E/g, 'É')
+        .replace(/\\'i/g, 'í').replace(/\\'o/g, 'ó').replace(/\\'u/g, 'ú')
+        .replace(/\\"u/g, 'ü').replace(/\\c\{c\}/g, 'ç')
+        .replace(/\\~n/g, 'ñ').replace(/\\`a/g, 'à').replace(/\\`e/g, 'è')
+        .replace(/\\`i/g, 'ì').replace(/\\`o/g, 'ò').replace(/\\`u/g, 'ù')
+        .replace(/\\"a/g,'ä')
+        .replace(/\\"O/g, 'Ö')
+        .replace(/\\c/g, 'ç')
+        .replace(/\\'c/g, 'ć');
+    }
+
+    // --- Inferir tipo de entrada cuando falta ENTRYTYPE ---
+    //  Devuelve 'article', 'inproceedings', 'phdthesis', etc.
+    function inferEntryType(e) {
+      const t = (e.entryType || e.type || e.ENTRYTYPE || '').toLowerCase();
+      if (t) return t;
+
+      // Inferencia por campos presentes
+      if (e.JOURNAL)     return 'article';
+      if (e.BOOKTITLE)   return 'inproceedings';
+      if (e.SCHOOL || e.PHDTHESIS || (e.BIBTEX && /@phdthesis/i.test(e.BIBTEX))) return 'phdthesis';
+      if (e.BIBTEX && /@mastersthesis/i.test(e.BIBTEX)) return 'mastersthesis';
+      if (e.BIBTEX && /@inbook/i.test(e.BIBTEX))        return 'inbook';
+      if (e.BIBTEX && /@incollection/i.test(e.BIBTEX))  return 'incollection';
+      if (e.BIBTEX && /@book/i.test(e.BIBTEX))          return 'book';
+      if (e.BIBTEX && /@techreport/i.test(e.BIBTEX))    return 'techreport';
+
+      // Último recurso: leer el encabezado del bloque BIBTEX
+      if (e.BIBTEX) {
+        const m = e.BIBTEX.match(/@(\w+)/i);
+        if (m) return m[1].toLowerCase();
       }
-      return a;
-    });
-    return authors.join(', ');
-  }
-
-  function normDOI(doi) {
-    if (!doi) return '';
-    const d = doi.trim();
-    if (!d) return '';
-    if (d.startsWith('http')) return d;
-    if (d.startsWith('10.')) return 'https://doi.org/' + d;
-    return d;
-  }
-
-  function renderEntryLI(entry) {
-    const title  = entry['TITLE']  || 'Untitled';
-    const year   = (entry['YEAR']  || '').trim();
-    const authors = formatAuthors(entry['AUTHOR'] || '');
-    // const etype  = (entry['ENTRYTYPE'] || '').toLowerCase();
-        const etype  = inferEntryType(entry);
-
-console.log("Etype???")
-    console.log(etype)
-
-    const isJournal = !!entry['JOURNAL'];
-    const isConf    = !!entry['BOOKTITLE'];
-
-    const venue = [];
-    if (isJournal) {
-      const vol = entry['VOLUME'] ? `, ${entry['VOLUME']}` : '';
-      const num = entry['NUMBER'] ? `(${entry['NUMBER']})` : '';
-      // const pgs = entry['PAGES']  ? `, pp. ${entry['PAGES']}` : '';
-      const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
-      venue.push(`<em>${entry['JOURNAL']}</em>${vol}${num}${pgs}`);
-    } else if (isConf) {
-      const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
-      venue.push(`<em>${entry['BOOKTITLE']}</em>${pgs}`);
+      return 'misc';
     }
 
-    const doiURL = normDOI(entry['DOI']);
-    const arxiv  = entry['ARXIV'] || entry['EPRINT'] || '';
-    const url    = entry['URL'];
-
-    let buttons = '';
-    buttons += ` <button class="btn btn-mini btn-danger bibtex_but">PDF</button>`;
-    if (arxiv) buttons += ` <a class="btn btn-mini btn-success"  target="_blank" rel="noopener" href="${arxiv}">arXiv</a>`;
-    if (url)   buttons += ` <a class="btn btn-mini btn-info"     target="_blank" rel="noopener" href="${url}">URL</a>`;
-    if (doiURL)buttons += ` <a class="btn btn-mini btn-primary"  target="_blank" rel="noopener" href="${doiURL}">DOI</a>`;
-    buttons += ` <button class="btn btn-mini btn-secondary bibtex_but">BibTeX</button>`;
-
-    return `
-      <li class="pub-item" data-entrytype="${etype}">
-        <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong> 
-        ${venue.join(' ')}${year ? '. ' + year : ''}.
-        <div class="mt-1">${buttons}</div>
-      </li>`;
-  }
-
-
-  function safeType(e){
-  const et = (e.ENTRYTYPE || '').toLowerCase();
-  if (et) return et;
-  if (e.JOURNAL)     return 'article';
-  if (e.BOOKTITLE)   return 'inproceedings';
-  if (e.SCHOOL)      return 'phdthesis';
-  if (e.HOWPUBLISHED)return 'misc';
-  return 'unknown';
-}
-  // cache global para no reparsear cada vez
-  let __BIB_ENTRIES__ = null;
-
-async function renderPublications(filterType = "all") {
-  const $out = $("#bibtex_display").empty();
-  try {
-    if (!__BIB_ENTRIES__) {
-      const raw = await loadBib();
-      const parser = new BibtexParser();
-      parser.setInput(raw); parser.bibtex();
-      __BIB_ENTRIES__ = parser.getEntries();
+    function formatAuthors(authorString) {
+      if (!authorString) return 'Unknown';
+      const authors = authorString.split(/\s+and\s+/).map(a => {
+        a = decodeAccents(a.trim());
+        if (a.includes(',')) { // "Apellido, Nombre"
+          const [last, first] = a.split(',').map(s => s.trim());
+          return `${first} ${last}`.trim();
+        }
+        return a;
+      });
+      return authors.join(', ');
     }
-    Object.keys(__BIB_ENTRIES__).forEach(k => {
-      const e  = __BIB_ENTRIES__[k];
-      const t  = safeType(e);
 
-      // Filtro
-      if (filterType === 'other' && (t === 'article' || t === 'inproceedings')) return;
-      if (filterType !== 'all' && filterType !== 'other' && t !== filterType)   return;
+    // --- Normaliza el DOI a una URL clicable ---
+    function normDOI(doi) {
+      if (!doi) return '';
+      const d = doi.trim();
+      if (!d) return '';
+      if (d.startsWith('http')) return d;
+      if (d.startsWith('10.'))  return 'https://doi.org/' + d;
+      return d;
+    }
 
-      $("#bibtex_display").append( renderEntryLI(e) );
+    // --- Dar formato a la cadena de autores (maneja "Last, First" y acentos) ---
+   function renderEntryLI(entry) {
+     const title   = entry['TITLE']  || 'Untitled';
+     const year    = (entry['YEAR']  || '').trim();
+     const authors = formatAuthors(entry['AUTHOR'] || '');
+     const etype   = inferEntryType(entry);
+
+     // id estable del <li> para poder inyectar botones luego
+     const safeId  = (entry.__bibKey || 'nokey').replace(/[^a-z0-9_-]/gi,'_');
+
+     const isJournal = !!entry['JOURNAL'];
+     const isConf    = !!entry['BOOKTITLE'];
+
+     const venue = [];
+     if (isJournal) {
+       const vol = entry['VOLUME'] ? `, ${entry['VOLUME']}` : '';
+       const num = entry['NUMBER'] ? `(${entry['NUMBER']})` : '';
+       const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
+       venue.push(`<em>${entry['JOURNAL']}</em>${vol}${num}${pgs}`);
+     } else if (isConf) {
+       const pgs = entry['PAGES'] ? `, pp. ${entry['PAGES'].replace(/--/g, '–')}` : '';
+       venue.push(`<em>${entry['BOOKTITLE']}</em>${pgs}`);
+     }
+
+     const doiURL = normDOI(entry['DOI']);
+     const arxiv  = entry['ARXIV'] || entry['EPRINT'] || '';
+     const url    = entry['URL'];
+
+     // Construye primero los botones "seguros"
+     let buttons = '';
+     if (arxiv)  buttons += ` <a class="btn btn-mini btn-success"  target="_blank" rel="noopener" href="${arxiv}">arXiv</a>`;
+     if (url)    buttons += ` <a class="btn btn-mini btn-info"     target="_blank" rel="noopener" href="${url}">URL</a>`;
+     if (doiURL) buttons += ` <a class="btn btn-mini btn-primary"  target="_blank" rel="noopener" href="${doiURL}">DOI</a>`;
+
+     // PDF local (assets/pdf/<bibkey>.pdf) solo si existe
+     const k = entry.__bibKey;
+     if (k) {
+       const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
+       const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
+
+       // inyecta en background si existen
+       fileExists(pdfURL).then(ok => {
+         if (ok) {
+           const slot = document.querySelector(`#pub_${safeId} .btns`);
+           if (slot) slot.insertAdjacentHTML(
+             'beforeend',
+             ` <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`
+           );
+         }
+       });
+
+       fileExists(bibURL).then(ok => {
+         if (ok) {
+           const slot = document.querySelector(`#pub_${safeId} .btns`);
+           if (slot) slot.insertAdjacentHTML(
+             'beforeend',
+             ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`
+           );
+         }
+       });
+     }
+
+     // HTML final (nota: id y contenedor .btns para inyecciones)
+     return `
+       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}">
+         <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong> 
+         ${venue.join(' ')}${year ? '. ' + year : ''}.
+         <div class="mt-1 btns">${buttons}</div>
+       </li>`;
+   }
+
+    // --- Determinar tipo de manera estable para filtrar en renderPublications ---
+    function safeType(e){
+      const et = (e.ENTRYTYPE || '').toLowerCase();
+      if (et) return et;
+      if (e.JOURNAL)      return 'article';
+      if (e.BOOKTITLE)    return 'inproceedings';
+      if (e.SCHOOL)       return 'phdthesis';
+      if (e.HOWPUBLISHED) return 'misc';
+      return 'unknown';
+    }
+
+    // Cache global del parseo para no reparsear el .bib en cada clic
+    let __BIB_ENTRIES__ = null;
+
+    // --- Renderiza TODAS las publicaciones, aplicando un filtro por tipo ---
+    // filterType: "all" | "article" | "inproceedings" | "other"
+    async function renderPublications(filterType = "all") {
+      const $out = $("#bibtex_display").empty(); // Limpia la lista antes de renderizar
+      try {
+        // 1) Parsear una sola vez y cachear
+        if (!__BIB_ENTRIES__) {
+          const raw = await loadBib();
+          const parser = new BibtexParser();
+          parser.setInput(raw);
+          parser.bibtex();
+          __BIB_ENTRIES__ = parser.getEntries(); // objeto { key -> entry }
+
+
+          // Índice global (array) y acceso O(1) por clave
+          window.__PUB_INDEX__   = [];
+          window.__PUB_IDX_MAP__ = new Map();
+
+          function extractBibKey(e){
+            let k = e.KEY || e.key || e.citationKey || e.CITATIONKEY || e.ID || '';
+            k = (k || '').toString().trim();
+            if (!k && e.BIBTEX) {
+              const m = e.BIBTEX.match(/@[\w-]+(?:\{|&#123;)\s*([^,]+)/i);
+              if (m) k = m[1].trim();
+            }
+            return k || '';
+          }
+
+          // Rellena: guarda la clave en cada entrada (B) y construye el índice (A)
+          Object.keys(__BIB_ENTRIES__).forEach(k => {
+            const e = __BIB_ENTRIES__[k];
+            e.__bibKey = extractBibKey(e);
+
+            if (e.__bibKey) {
+              const row = { key: e.__bibKey, hasBib: false, hasPdf: false };
+              window.__PUB_INDEX__.push(row);
+              window.__PUB_IDX_MAP__.set(e.__bibKey, row);
+            }
+          });
+        }
+
+        // 2) Recorrer en el orden en que vienen las keys (el parser suele respetar el orden del .bib)
+        Object.keys(__BIB_ENTRIES__).forEach(k => {
+          const e  = __BIB_ENTRIES__[k];
+          const t  = safeType(e);
+
+          // Filtro:
+          // - "other": muestra todo lo que NO es article ni inproceedings
+          if (filterType === 'other' && (t === 'article' || t === 'inproceedings')) return;
+
+          // - cualquier otro tipo distinto de 'all' exige coincidencia exacta
+          if (filterType !== 'all' && filterType !== 'other' && t !== filterType) return;
+
+          // 3) Pintar el <li>
+          $("#bibtex_display").append( renderEntryLI(e) );
+        });
+
+      } catch (err) {
+        console.error(err);
+        $out.append('<li><em>Could not load publications.bib</em></li>');
+      }
+    }
+
+    // --- Arranque + listeners de los botones de filtro ---
+    $(function () {
+      // Render inicial: TODO
+      renderPublications("all");
+
+      // Delegación de eventos en la botonera (ya presente en el HTML)
+      $("#filter-buttons").off("click.pub").on("click.pub", "button.filter-btn", async function () {
+        // Visual: activar botón clicado
+        $("#filter-buttons .filter-btn")
+          .removeClass("btn-primary active")
+          .addClass("btn-outline-primary");
+
+        $(this)
+          .removeClass("btn-outline-primary")
+          .addClass("btn-primary active");
+
+        // Lógica: filtrar por tipo (all / article / inproceedings / other)
+        const type = $(this).data("type") || "all";
+        await renderPublications(type);
+      });
     });
-  } catch (err) {
-    console.error(err);
-    $out.append('<li><em>Could not load publications.bib</em></li>');
   }
-}
+  </script>
 
-  $(function () {
-    // Render inicial: todo
-    renderPublications("all");
+  <!-- Analytics (sin cambios) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GHT1L88XYZ');
+  </script>
 
-    // Delegación de eventos en la botonera ya presente en el HTML
-    $("#filter-buttons").off("click.pub").on("click.pub", "button.filter-btn", async function () {
-      // Toggle visual bootstrap
-      $("#filter-buttons .filter-btn")
-        .removeClass("btn-primary active")
-        .addClass("btn-outline-primary");
-
-      $(this)
-        .removeClass("btn-outline-primary")
-        .addClass("btn-primary active");
-
-      // Tipo a filtrar (all / article / inproceedings)
-      const type = $(this).data("type") || "all";
-      await renderPublications(type);
-    });
-  });
-}
-</script>
-<!-- Tracking: Google Analytics tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GHT1L88XYZ');
-</script>
-<!-- End Google Analytics tag (gtag.js) -->
-
-<!-- Default Statcounter code for Github personal
-https://victorelvira.github.io/index.html -->
-<script type="text/javascript">
-var sc_project=11157426; 
-var sc_invisible=1; 
-var sc_security="c4968ba5"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/11157426/0/c4968ba5/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
+  <!-- Statcounter (sin cambios) -->
+  <script type="text/javascript">
+    var sc_project=11157426; 
+    var sc_invisible=1; 
+    var sc_security="c4968ba5"; 
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+      </a>
+    </div>
+  </noscript>
 </body>
 </html>
