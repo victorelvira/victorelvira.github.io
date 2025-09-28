@@ -169,7 +169,7 @@
      const kRaw = (entry.__bibKey || '').toString().trim();
      if (kRaw) {
        const k = kRaw.toLowerCase();
-       const pdfURL = `assets/papers/${encodeURIComponent(k)}.pdf`;
+       const pdfURL = `assets/papers/${encodeURIComponent(k)}_pre.pdf`;
        const bibURL = `assets/bib/${encodeURIComponent(k)}.bib`;
        buttons += ` <a class="btn btn-mini btn-danger"    target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
        buttons += ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`;
