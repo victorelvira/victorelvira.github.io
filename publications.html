@@ -74,7 +74,7 @@
         .replace(/{|}/g, '')
         .replace(/\\'\\i/g, 'í').replace(/\\'a/g, 'á').replace(/\\'e/g, 'é').replace(/\\'E/g, 'É')
         .replace(/\\'i/g, 'í').replace(/\\'o/g, 'ó').replace(/\\'u/g, 'ú')
-        .replace(/\\"u/g, 'ü').replace(/\\c\{c\}/g, 'ç')
+        .replace(/\\"u/g, 'ü') 
         .replace(/\\~n/g, 'ñ').replace(/\\`a/g, 'à').replace(/\\`e/g, 'è')
         .replace(/\\`i/g, 'ì').replace(/\\`o/g, 'ò').replace(/\\`u/g, 'ù')
         .replace(/\\"a/g,'ä')
@@ -169,32 +169,26 @@
      if (k) {
        const pdfURL = `assets/papers/${encodeURIComponent(k.toLowerCase())}.pdf`;
        const bibURL = `assets/bib/${encodeURIComponent(k.toLowerCase())}.bib`;
+       const slotSel = `#pub_${safeId} .btns`;
 
-       // inyecta en background si existen
-       fileExists(pdfURL).then(ok => {
-         if (ok) {
-           const slot = document.querySelector(`#pub_${safeId} .btns`);
-           if (slot) slot.insertAdjacentHTML(
+       Promise.all([fileExists(pdfURL), fileExists(bibURL)])
+         .then(([hasPdf, hasBib]) => {
+           const slot = document.querySelector(slotSel);
+           if (!slot) return;
+           if (hasPdf) slot.insertAdjacentHTML(
              'beforeend',
              ` <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`
            );
-         }
-       });
-
-       fileExists(bibURL).then(ok => {
-         if (ok) {
-           const slot = document.querySelector(`#pub_${safeId} .btns`);
-           if (slot) slot.insertAdjacentHTML(
+           if (hasBib) slot.insertAdjacentHTML(
              'beforeend',
              ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`
            );
-         }
-       });
+         });
      }
 
      // HTML final (nota: id y contenedor .btns para inyecciones)
      return `
-       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}">
+       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}">
          <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong> 
          ${venue.join(' ')}${year ? '. ' + year : ''}.
          <div class="mt-1 btns">${buttons}</div>
