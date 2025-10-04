@@ -204,7 +204,6 @@
           parser.bibtex();
           __BIB_ENTRIES__ = parser.getEntries(); // objeto { key -> entry }
 
-
           // Índice global (array) y acceso O(1) por clave
           window.__PUB_INDEX__   = [];
           window.__PUB_IDX_MAP__ = new Map();
@@ -219,9 +218,12 @@
             return k || '';
           }
 
-          // Rellena: guarda la clave en cada entrada (B) y construye el índice (A)
+          // NUEVO: guardar el orden original del .bib
+          let __ORIG_COUNTER__ = 0;
+
           Object.keys(__BIB_ENTRIES__).forEach(k => {
             const e = __BIB_ENTRIES__[k];
+            e.__origIndex = __ORIG_COUNTER__++;   // <- orden del .bib
             e.__bibKey = extractBibKey(e);
 
             if (e.__bibKey) {
@@ -232,19 +234,44 @@
           });
         }
 
-        // 2) Recorrer en el orden en que vienen las keys (el parser suele respetar el orden del .bib)
+        // Helper: prioridad por tipo (journals primero, luego conf)
+        function typePriority(e){
+          const t = (inferEntryType(e) || '');
+          if (t === 'article') return 0;
+          if (t === 'inproceedings') return 1;
+          return 2;
+        }
+
+        // 2) Construir lista filtrada
+        const filtered = [];
         Object.keys(__BIB_ENTRIES__).forEach(k => {
           const e  = __BIB_ENTRIES__[k];
           const t  = safeType(e);
 
           // Filtro:
-          // - "other": muestra todo lo que NO es article ni inproceedings
           if (filterType === 'other' && (t === 'article' || t === 'inproceedings')) return;
-
-          // - cualquier otro tipo distinto de 'all' exige coincidencia exacta
           if (filterType !== 'all' && filterType !== 'other' && t !== filterType) return;
 
-          // 3) Pintar el <li>
+          filtered.push(e);
+        });
+
+        // 3) Orden especial solo en "All Papers":
+        // año descendente, luego journals, luego conferences, luego resto,
+        // y a igualdad respetar el orden original del .bib
+        if (filterType === 'all') {
+          filtered.sort((a, b) => {
+            const ya = parseInt(a.YEAR || a.year || '0', 10) || 0;
+            const yb = parseInt(b.YEAR || b.year || '0', 10) || 0;
+            if (yb !== ya) return yb - ya;                      // año desc
+            const pa = typePriority(a), pb = typePriority(b);
+            if (pa !== pb) return pa - pb;                      // journals antes que conf
+            return (a.__origIndex || 0) - (b.__origIndex || 0); // orden del .bib
+          });
+        }
+
+        // 4) Pintar
+        $("#bibtex_display").empty();
+        filtered.forEach(e => {
           $("#bibtex_display").append( renderEntryLI(e) );
         });
 
