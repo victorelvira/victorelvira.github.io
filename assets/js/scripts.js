@@ -43,7 +43,7 @@ function loadFooter() {
         .catch(error => console.error("Error loading footer:", error));
 }
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", () => {
     loadNavbar();
     loadFooter();
-};
+});
