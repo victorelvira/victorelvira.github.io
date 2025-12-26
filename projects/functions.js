@@ -103,16 +103,7 @@
 
         // to avoid redundance in the source files, the composers of each piece are added here to the concerts variable (goal: filter by composers)
 
-        for (let ii = 0; ii < concerts.length; ii++) { 
-            console.log(concerts[ii].program.piece_id)
-            concerts[ii].program.composer_id = [];
-            for (let jj = 0; jj < concerts[ii].program.piece_id.length; jj++) { 
-                item_filtered = getPieceByIdFromCatalogue(concerts[ii].program.piece_id[jj]);
-                console.log(item_filtered[0].composer_id)
-                concerts[ii].program.composer_id[jj] = item_filtered[0].composer_id;
-                
-            }
-        }
+        
 
 
         // reset colors when clicking in something 
@@ -949,26 +940,27 @@ function getOrdinal(number) {
 
 // STATISTICS
 
-// Populate the dropdown with year options
-function populateYearDropdown(concerts) {
-    const dropdown = document.getElementById('yearDropdown');
-    dropdown.innerHTML = ''; // Clear existing options
+// Populate the dropdown with year options (dead code below)
 
-    // Add "All Years" option
-    const allYearsOption = document.createElement('option');
-    allYearsOption.value = 'all';
-    allYearsOption.text = 'All Years';
-    dropdown.appendChild(allYearsOption);
+// function populateYearDropdown(concerts) {
+//     const dropdown = document.getElementById('yearDropdown');
+//     dropdown.innerHTML = ''; // Clear existing options
 
-    // Add year options from the concerts data
-    const years = [...new Set(concerts.map(concert => concert.year))].sort((a, b) => b - a);
-    years.forEach(year => {
-        const option = document.createElement('option');
-        option.value = year;
-        option.text = year;
-        dropdown.appendChild(option);
-    });
-}
+//     // Add "All Years" option
+//     const allYearsOption = document.createElement('option');
+//     allYearsOption.value = 'all';
+//     allYearsOption.text = 'All Years';
+//     dropdown.appendChild(allYearsOption);
+
+//     // Add year options from the concerts data
+//     const years = [...new Set(concerts.map(concert => concert.year))].sort((a, b) => b - a);
+//     years.forEach(year => {
+//         const option = document.createElement('option');
+//         option.value = year;
+//         option.text = year;
+//         dropdown.appendChild(option);
+//     });
+// }
 
 
 

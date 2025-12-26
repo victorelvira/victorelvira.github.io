@@ -10,19 +10,50 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
-        var last_year = 2025;
+        var last_year = 2026;
         var selected_year = last_year;
         var this_year_conductor = 0;
         const years_highlighted = [];  
         var years_of_this_conductor = [];
         var years_of_this_piece = [];
         var years_of_this_composer = []; 
-    </script>
-    <script type="text/javascript" src="./nyc/catalogue.js"></script>
+    </script>   
+    <!-- <script type="text/javascript" src="./nyc/catalogue.js"></script>
     <script type="text/javascript" src="./nyc/conductors.js"></script>
     <script type="text/javascript" src="./nyc/composers.js"></script>
-    <script type="text/javascript" src="./nyc/concerts.js"></script>
-    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="./nyc/concerts.js"></script> -->
+    
+<script type="text/javascript" src="functions.js"></script>
+
+<script>
+async function init() {
+  const catalogue  = await fetch('./nyc/catalogue.json').then(r => r.json());
+  const conductors = await fetch('./nyc/conductors.json').then(r => r.json());
+  const composers  = await fetch('./nyc/composers.json').then(r => r.json());
+  const concerts   = await fetch('./nyc/concerts.json').then(r => r.json());
+
+  window.catalogue  = catalogue;
+  window.conductors = conductors;
+  window.composers  = composers;
+  window.concerts   = concerts;
+
+  for (let ii = 0; ii < concerts.length; ii++) { 
+      console.log(concerts[ii].program.piece_id)
+      concerts[ii].program.composer_id = [];
+      for (let jj = 0; jj < concerts[ii].program.piece_id.length; jj++) { 
+          item_filtered = getPieceByIdFromCatalogue(concerts[ii].program.piece_id[jj]);
+          console.log(item_filtered[0].composer_id)
+          concerts[ii].program.composer_id[jj] = item_filtered[0].composer_id;
+          
+      }
+  }
+
+  clickOnYear(last_year);
+  // populateYearDropdown(concerts);
+}
+
+init();
+</script>
 
  
     <!-- FAVICON -->
@@ -142,11 +173,11 @@
 
 
 
-    <script>
+<!--     <script>
         clickOnYear(last_year); 
         populateYearDropdown(concerts)
         // clickOnYear(2024);
-    </script>
+    </script> -->
 
 
 
