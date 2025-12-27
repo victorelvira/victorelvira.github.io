@@ -450,8 +450,8 @@
                         
                         if (wiki_link_piece.length>0) // there is link
                         { 
-                            //text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> Find more information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            //text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Find more information about the piece in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
@@ -596,7 +596,7 @@
                                 if (wiki_link_composer.length>0) // non-empty link
                                 {
 
-                                    text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+                                    text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikipedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
                                 }
                                     document.getElementById("info_text").innerHTML = text_other;
                                 });
@@ -693,8 +693,8 @@
                         
                         if (wiki_link_piece.length>0) // there is link
                         { 
-                            // text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> Find more information about the piece in this Wikpedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            // text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Find more information about the piece in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
@@ -850,7 +850,7 @@
     if (wiki_link_composer.length>0) // non-empty link
     {
 
-        text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikpedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
+        text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikipedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
     }
         
         
