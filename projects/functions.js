@@ -368,7 +368,7 @@
                         
                                 if (wiki_link_conductor.length>0) // there is link
                                 { 
-                                    text_other += '<br><br> Find the biography of <a style="color:green">' + this.innerHTML + '</a> in this Wikpedia <a href='+ wiki_link_conductor +'  target="_blank" >link.</a>'
+                                    text_other += '<br><br> Find the biography of <a style="color:green">' + this.innerHTML + '</a> in this Wikipedia <a href='+ wiki_link_conductor +'  target="_blank" >link.</a>'
                                 }
                                 document.getElementById("info_text").innerHTML = text_other;
                             });     
