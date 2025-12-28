@@ -51,6 +51,12 @@ ol {
     padding-top: 2px;
     padding-bottom: 12px;
 }
+.catalogue-panel {
+    padding-left: 0.1rem; /* Consistent margin */
+    padding-right: 0.1rem; /* Consistent margin */
+    padding-top: 5px;
+    background-color: var(--light_gray);
+}
 
 footer {
     margin-top: 5rem;
@@ -246,7 +252,7 @@ th, td { text-align: left; padding: 8px; }
 
     /* force table font size */
     #myTable, #myTable th, #myTable td {
-        font-size: 0.75rem !important;
+        font-size: 0.6rem !important;
         line-height: 1.15 !important;
     }
 
