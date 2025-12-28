@@ -259,33 +259,51 @@ th, td { text-align: left; padding: 8px; }
     /* avoid iOS/Safari auto text scaling */
     html { -webkit-text-size-adjust: 100%; }
 
-    /* optional scroll wrapper (only works if you wrap the table in <div class="table-scroll"> ... ) */
+    /* Horizontal scroll for the table (mobile-safe) */
     .table-scroll{
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
-    #myTable { width: 100%; }
+    #myTable{
+        width: 100%;
+        table-layout: auto;
+    }
 
+    /* Default behaviour: allow wrapping for text columns */
     #myTable th,
     #myTable td{
         white-space: normal;
         overflow-wrap: anywhere;
     }
-    /* Minimum widths per column */
+
+    /* Column 1: Piece */
     #myTable th:nth-child(1),
-    #myTable td:nth-child(1) { min-width: 15ch; } /* Piece */
+    #myTable td:nth-child(1){
+        min-width: 15ch;
+    }
 
+    /* Column 2: Type */
     #myTable th:nth-child(2),
-    #myTable td:nth-child(2) { min-width: 8ch; }  /* Type */
+    #myTable td:nth-child(2){
+        min-width: 8ch;
+    }
 
+    /* Column 3: Composer */
     #myTable th:nth-child(3),
-    #myTable td:nth-child(3) { min-width: 10ch;; }  /* Composer */
+    #myTable td:nth-child(3){
+        min-width: 10ch;
+    }
 
+    /* Column 4: Times (never wrap numbers) */
     #myTable th:nth-child(4),
-    #myTable td:nth-child(4) { 
-      min-width: 5ch;       /* Times */
-      text-align: right;
+    #myTable td:nth-child(4){
+        min-width: 4ch;
+        width: 1%;
+        white-space: nowrap !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        text-align: right;
     }
 }
