@@ -861,7 +861,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 20,
-    "type": "Musikalischer Scherz"
+    "type": "Polka"
   },
   {
     "piece": "Chineser-Galopp, op. 20",
