@@ -18,14 +18,14 @@
         var years_of_this_piece = [];
         var years_of_this_composer = []; 
     </script>   
-    <!-- <script type="text/javascript" src="./nyc/catalogue.js"></script>
+    <script type="text/javascript" src="./nyc/catalogue.js"></script>
     <script type="text/javascript" src="./nyc/conductors.js"></script>
     <script type="text/javascript" src="./nyc/composers.js"></script>
-    <script type="text/javascript" src="./nyc/concerts.js"></script> -->
+    <script type="text/javascript" src="./nyc/concerts.js"></script>
     
 <script type="text/javascript" src="functions.js"></script>
 
-<script>
+<!-- <script>
 async function init() {
   const catalogue  = await fetch('./nyc/catalogue.json').then(r => r.json());
   const conductors = await fetch('./nyc/conductors.json').then(r => r.json());
@@ -38,11 +38,11 @@ async function init() {
   window.concerts   = concerts;
 
   for (let ii = 0; ii < concerts.length; ii++) { 
-      console.log(concerts[ii].program.piece_id)
+      // console.log(concerts[ii].program.piece_id)
       concerts[ii].program.composer_id = [];
       for (let jj = 0; jj < concerts[ii].program.piece_id.length; jj++) { 
           item_filtered = getPieceByIdFromCatalogue(concerts[ii].program.piece_id[jj]);
-          console.log(item_filtered[0].composer_id)
+          // console.log(item_filtered[0].composer_id)
           concerts[ii].program.composer_id[jj] = item_filtered[0].composer_id;
           
       }
@@ -53,8 +53,7 @@ async function init() {
 }
 
 init();
-</script>
-
+</script> -->
  
     <!-- FAVICON -->
     <!-- Primary Favicon -->
@@ -81,8 +80,309 @@ init();
     <!-- Manifest -->
     <link rel="manifest" href="/assets/favicons/main/manifest.json">
 
+
+    <style>
+      thead { background-color: #898989; cursor: pointer; }
+      * { box-sizing: border-box; }
+
+      .float-parent-element { width: 100%; }
+      .float-child-element_left { float: left; width: 90%; height: 80px; }
+      .float-child-element_right { float: left; width: 10%; height: 80px; }
+      .left_div { margin-left: 10px; }
+      .right_div { margin-left: 0px; }
+
+      #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        width: 90%;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+
+      #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+      }
+
+      #myTable th, #myTable td {
+        text-align: left;
+        padding: 12px;
+      }
+
+      #myTable tr { border-bottom: 1px solid #ddd; }
+
+      th, td { text-align: left; padding: 8px; }
+    </style>
+
+    <!-- <script type="text/javascript" src="operadatabase/catalogue.js"></script> -->
+    <script type="text/javascript" src=" nyc/catalogue.js"></script>
+
+    <script>
+      // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
+      // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
+      var myListColumnHeaders = ["Piece", "Type", "Composer","Appearances"];
+      var properties_vector = ["piece", "type", "composer","appearances"];
+
+      var n_cols = myListColumnHeaders.length;
+
+      function find_nested_prop_in_JSON(obj, prop, defval) {
+        if (typeof defval === "undefined") defval = null;
+        prop = prop.split(".");
+        for (var i = 0; i < prop.length; i++) {
+          if (typeof obj[prop[i]] === "undefined") return defval;
+          obj = obj[prop[i]];
+        }
+        return obj;
+      }
+
+      function create_2D_object(obj, props) {
+        var out = new Array(obj.length);
+        for (var ii = 0; ii < obj.length; ii++) { // number of elements
+          out[ii] = new Array(props.length); // number of properties
+          for (var jj = 0; jj < props.length; jj++) { // go through all properties although some may not exist
+            out[ii][jj] = find_nested_prop_in_JSON(obj[ii], props[jj], "");
+          }
+        }
+        console.log(out)
+        return out;
+      }
+
+      function create_links(obj) {
+        var links = new Array(obj.length);
+        for (var ii = 0; ii < obj.length; ii++) {
+          var link_ii = "";
+          var c_last = find_nested_prop_in_JSON(obj[ii], "composer.last", "");
+          link_ii = c_last + "/" + link_ii + "[" + c_last + "] ";
+          var name_full = find_nested_prop_in_JSON(obj[ii], "name.full", "");
+          link_ii = link_ii + name_full + " ";
+          var house = find_nested_prop_in_JSON(obj[ii], "place.opera_house", "");
+          link_ii = link_ii + "(" + house + ", ";
+          var year = find_nested_prop_in_JSON(obj[ii], "date.year", "");
+          link_ii = link_ii + year + ")";
+          links[ii] = link_ii;
+        }
+        return links;
+      }
+
+      function artists_2_string(obj) {
+        var string_artists = new Array(obj.length);
+        for (var ii = 0; ii < obj.length; ii++) {
+          var artists_ii = obj[ii]["artists"];
+          var artists_ii_string = "";
+          if (artists_ii && artists_ii.length) {
+            for (var jj = 0; jj < artists_ii.length; jj++) {
+              var art = artists_ii[jj] ? artists_ii[jj]["sort"] : "";
+              if (typeof art !== "undefined" && art !== null && art !== "") {
+                if (artists_ii_string === "") artists_ii_string = art;
+                else artists_ii_string = artists_ii_string + ", " + art;
+
+                if (artists_ii[jj]["role"] === "Conductor") {
+                  artists_ii_string = artists_ii_string + " (conductor)";
+                }
+              }
+            }
+          }
+          string_artists[ii] = artists_ii_string;
+        }
+        return string_artists;
+      }
+
+      function addAllColumnHeadersFixed(headers) {
+        var table = document.getElementById("myTable");
+
+        if (!table.tHead) table.createTHead();
+        table.tHead.innerHTML = "";
+
+        var row = table.tHead.insertRow(0);
+
+        for (var i = 0; i < headers.length; i++) {
+          var th = document.createElement("th");
+          th.textContent = headers[i];
+          row.appendChild(th);
+        }
+      }
+
+      function buildHtmlTable(table_input) {
+        var table = document.getElementById("myTable");
+        table.innerHTML = "";
+        addAllColumnHeadersFixed(myListColumnHeaders);
+
+        var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
+        tbody.innerHTML = "";
+
+        for (var i = 0; i < table_input.length; i++) {
+          var tr = tbody.insertRow(-1);
+          for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
+            var td = tr.insertCell(-1);
+            var cellValue = table_input[i][colIndex];
+            if (cellValue == null) cellValue = "";
+            td.textContent = cellValue;
+          }
+        }
+
+        function_on_key_up();
+        makeSortable(table);
+      }
+
+      function sortTable(table, col, reverse) {
+        var tb = table.tBodies[0];
+        var rows = Array.prototype.slice.call(tb.rows, 0);
+
+        reverse = -((+reverse) || -1);
+
+        rows.sort(function(a, b) {
+          var v1 = (a.cells[col].textContent || "").trim();
+          var v2 = (b.cells[col].textContent || "").trim();
+          // return reverse * v1.localeCompare(v2);
+          return reverse * (isNaN(v1) || isNaN(v2) ? v1.localeCompare(v2) : (v1 - v2));
+        });
+
+        for (var i = 0; i < rows.length; i++) tb.appendChild(rows[i]);
+        alternate_colors(table.getElementsByTagName("tr"));
+      }
+
+      function makeSortable(table) {
+        var th = table.tHead && table.tHead.rows[0] ? table.tHead.rows[0].cells : null;
+        if (!th) return;
+
+        for (var i = 0; i < th.length; i++) {
+          (function(i) {
+            var dir = 1;
+            th[i].addEventListener("click", function() {
+              sortTable(table, i, (dir = 1 - dir));
+            });
+          })(i);
+        }
+      }
+
+      function get_filter_tokens(raw) {
+        var s = (raw || "").toUpperCase().trim();
+        if (!s) return [];
+        return s.split(/\s+/).filter(function(x) { return x.length > 0; });
+      }
+
+      function function_on_key_up() {
+        var input = document.getElementById("myInput");
+        var table = document.getElementById("myTable");
+        var tr = table.getElementsByTagName("tr");
+
+        var videos_check = document.getElementById("videos_check");
+        var audios_check = document.getElementById("audios_check");
+
+        var filter_vec = get_filter_tokens(input.value);
+
+        var ind_type = myListColumnHeaders.indexOf("type");
+        var count_visible = 0;
+
+        for (var i = 1; i < tr.length; i++) {
+          var row = tr[i];
+          var ok_tokens = new Array(filter_vec.length).fill(false);
+
+          for (var col = 0; col < n_cols; col++) {
+            var td = row.getElementsByTagName("td")[col];
+            if (!td) continue;
+            var txtValue = td.textContent || "";
+
+            for (var k = 0; k < filter_vec.length; k++) {
+              if (txtValue.toUpperCase().indexOf(filter_vec[k]) > -1) ok_tokens[k] = true;
+            }
+          }
+
+
+          // --- text filter (buscador) ---
+          var ok_text = (filter_vec.length === 0)
+            ? true
+            : ok_tokens.every(function(v) { return v === true; });
+
+          // --- media / extra filters (temporalmente desactivados) ---
+          var ok_media = true;
+
+          if (ok_text && ok_media) {
+            row.style.display = "";
+            count_visible++;
+          } else {
+            row.style.display = "none";
+          }
+
+          // var element_ii_is_video = false;
+          // var element_ii_is_audio = false;
+
+          // if (ind_type > -1) {
+          //   var td_type = row.getElementsByTagName("td")[ind_type];
+          //   var t = td_type ? (td_type.textContent || "") : "";
+          //   element_ii_is_video = (t === "video");
+          //   element_ii_is_audio = (t === "audio");
+          // }
+
+          // var ok_text = (filter_vec.length === 0) ? true : ok_tokens.every(function(v) { return v === true; });
+
+          // var ok_media =
+          //   (videos_check && videos_check.checked && element_ii_is_video) ||
+          //   (audios_check && audios_check.checked && element_ii_is_audio);
+          var ok_media = true;
+          // if (ok_text && ok_media) {
+          //   row.style.display = "";
+          //   count_visible++;
+          // } else {
+          //   row.style.display = "none";
+          // }
+        }
+
+        document.getElementById("n_elements").textContent = count_visible + " displayed pieces";
+        alternate_colors(tr);
+      }
+
+      function alternate_colors(tr) {
+        var count_visible = 0;
+        for (var i = 1; i < tr.length; i++) {
+          if (tr[i].style.display === "") {
+            count_visible++;
+            tr[i].style.backgroundColor = (count_visible % 2 === 0) ? "#DEDFDE" : "#EEECEE";
+          }
+        }
+      }
+
+      var object_2D = null;
+
+      function init_page() {
+        object_2D = create_2D_object(catalogue, properties_vector); // create the table object with all info of the catalogue
+        var properties_vector_support = ["piece_id"];
+        console.log(properties_vector_support)
+        var object_2D_support = create_2D_object(catalogue, properties_vector_support); // other non-displayable objects
+
+        // if properties_vector contains number_appearances, fill it where it corresponds 
+        if (true) {
+          aux = 3
+        for (var ii = 0; ii < object_2D.length; ii++) { // number of elements
+          var piece_id = object_2D_support[ii][0];   // <- esto
+            var years_of_this_piece_ii = getConcertByPieceId(piece_id);
+            object_2D[ii][aux] = years_of_this_piece_ii.length;
+          }
+        }
+        // 
+
+        
+
+        var links = create_links(catalogue); // kept for parity, not used as href (same as your current code)
+
+        var ind_artists = myListColumnHeaders.indexOf("artists");
+        if (ind_artists > -1) {
+          var column_artists = artists_2_string(catalogue);
+          for (var i = 0; i < object_2D.length; i++) {
+            object_2D[i].splice(ind_artists, 0, column_artists[i]);
+          }
+        }
+
+        buildHtmlTable(object_2D);
+      }
+    </script>
+
 </head>  
-<body>
+<body onload="init_page()">
     <div class="container-fluid">
         <div class="row my-0 my-sm-3">
         <!-- Title Section -->
@@ -143,7 +443,55 @@ init();
         </div>
     </div>
  
+ 
+<div class="col-md-12 central-panel">
+  <h5>Pieces catalogue</h5>
 
+  <div class="float-parent-element">
+    <div class="float-child-element_left">
+      <input class="left_div" type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
+    </div>
+    <div class="float-child-element_right">
+      <form class="right_div">
+        <!-- <input type="checkbox" id="videos_check" onclick="function_on_key_up()" checked>
+        <label for="videos_check"> videos</label><br>
+        <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
+        <label for="audios_check"> audios</label><br> -->
+      </form>
+    </div>
+  </div>
+
+  <div>
+    <a float="right" id="n_elements"></a>
+  </div>
+
+  <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;"></table>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GHT1L88XYZ');
+  </script>
+
+  <!-- Default Statcounter code for Github personal
+  https://victorelvira.github.io/index.html -->
+  <script type="text/javascript">
+    var sc_project=11157426;
+    var sc_invisible=1;
+    var sc_security="c4968ba5";
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics" referrerpolicy="no-referrer-when-downgrade">
+      </a>
+    </div>
+  </noscript>
+  
 
 <!-- Add a new section below the existing row -->
 <!-- <div class="row my-0 my-sm-3">
@@ -173,11 +521,11 @@ init();
 
 
 
-<!--     <script>
+    <script>
         clickOnYear(last_year); 
         populateYearDropdown(concerts)
         // clickOnYear(2024);
-    </script> -->
+    </script>
 
 
 

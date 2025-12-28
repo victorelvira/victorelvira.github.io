@@ -1,4 +1,4 @@
-var opera_catalogue = [
+var catalogue = [
   {
     "piece": "Abschieds-Rufe, op. 179",
     "composer": "Johann Strauß II.",
@@ -7071,5 +7071,131 @@ var opera_catalogue = [
     },
     "composer_id": 38,
     "type": "Waltz"
+  },
+  {
+      "piece": "Donausagen, op. 446",
+      "composer": "Carl Michael Ziehrer",
+      "piece_id": 394,
+      "links":
+      {
+          "wiki":
+          {
+              "en": "",
+              "de": ""
+          },
+          "you":
+          {
+              "this": "",
+              "other": ""
+          },
+          "imslp": ""
+      },
+      "composer_id": 4,
+      "type": "Waltz"
+  },
+  {
+      "piece": "Malapou-Galoppe, op. 148",
+      "composer": "Joseph Lanner",
+      "piece_id": 395,
+      "links":
+      {
+          "wiki":
+          {
+              "en": "",
+              "de": ""
+          },
+          "you":
+          {
+              "this": "",
+              "other": ""
+          },
+          "imslp": ""
+      },
+      "composer_id": 28,
+      "type": "Galop"
+  },
+  {
+      "piece": "Brausteufelchen, op. 154",
+      "composer": "Eduard Strauß",
+      "piece_id": 396,
+      "links":
+      {
+          "wiki":
+          {
+              "en": "",
+              "de": ""
+          },
+          "you":
+          {
+              "this": "",
+              "other": ""
+          },
+          "imslp": ""
+      },
+      "composer_id": 7,
+      "type": "Polka schnell"
+  },
+  {
+      "piece": "Sirenen Lieder, op. 13 [Arr. W. Dörner]",
+      "composer": "Josefine Weinlich",
+      "piece_id": 397,
+      "links":
+      {
+          "wiki":
+          {
+              "en": "",
+              "de": ""
+          },
+          "you":
+          {
+              "this": "",
+              "other": ""
+          },
+          "imslp": ""
+      },
+      "composer_id": 39,
+      "type": "Polka mazurka"
+  },
+  {
+      "piece": "Rainbow [Arr. W. Dörner]",
+      "composer": "Florence Price",
+      "piece_id": 398,
+      "links":
+      {
+          "wiki":
+          {
+              "en": "",
+              "de": ""
+          },
+          "you":
+          {
+              "this": "",
+              "other": ""
+          },
+          "imslp": ""
+      },
+      "composer_id": 40,
+      "type": "Waltz"
+  },
+  {
+      "piece": "Zirkus, op. 110",
+      "composer": "Philipp Fahrbach Jr.",
+      "piece_id": 399,
+      "links":
+      {
+          "wiki":
+          {
+              "en": "",
+              "de": ""
+          },
+          "you":
+          {
+              "this": "",
+              "other": "https://www.youtube.com/watch?v=w_zr_6NjHYE"
+          },
+          "imslp": ""
+      },
+      "composer_id": 41,
+      "type": "Polka schnell"
   }
 ];

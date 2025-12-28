@@ -18,14 +18,14 @@
         var years_of_this_piece = [];
         var years_of_this_composer = []; 
     </script>   
-    <!-- <script type="text/javascript" src="./nyc/catalogue.js"></script>
+    <script type="text/javascript" src="./nyc/catalogue.js"></script>
     <script type="text/javascript" src="./nyc/conductors.js"></script>
     <script type="text/javascript" src="./nyc/composers.js"></script>
-    <script type="text/javascript" src="./nyc/concerts.js"></script> -->
+    <script type="text/javascript" src="./nyc/concerts.js"></script>
     
 <script type="text/javascript" src="functions.js"></script>
 
-<script>
+<!-- <script>
 async function init() {
   const catalogue  = await fetch('./nyc/catalogue.json').then(r => r.json());
   const conductors = await fetch('./nyc/conductors.json').then(r => r.json());
@@ -38,11 +38,11 @@ async function init() {
   window.concerts   = concerts;
 
   for (let ii = 0; ii < concerts.length; ii++) { 
-      console.log(concerts[ii].program.piece_id)
+      // console.log(concerts[ii].program.piece_id)
       concerts[ii].program.composer_id = [];
       for (let jj = 0; jj < concerts[ii].program.piece_id.length; jj++) { 
           item_filtered = getPieceByIdFromCatalogue(concerts[ii].program.piece_id[jj]);
-          console.log(item_filtered[0].composer_id)
+          // console.log(item_filtered[0].composer_id)
           concerts[ii].program.composer_id[jj] = item_filtered[0].composer_id;
           
       }
@@ -53,7 +53,7 @@ async function init() {
 }
 
 init();
-</script>
+</script> -->
  
     <!-- FAVICON -->
     <!-- Primary Favicon -->
@@ -118,14 +118,14 @@ init();
       th, td { text-align: left; padding: 8px; }
     </style>
 
-    <!-- <script type="text/javascript" src="operadatabase/opera_catalogue.js"></script> -->
+    <!-- <script type="text/javascript" src="operadatabase/catalogue.js"></script> -->
     <script type="text/javascript" src=" nyc/catalogue.js"></script>
 
     <script>
       // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
       // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
-      var myListColumnHeaders = ["Piece", "Type", "Composer"];
-      var properties_vector = ["piece", "type", "composer"];
+      var myListColumnHeaders = ["Piece", "Type", "Composer","Appearances"];
+      var properties_vector = ["piece", "type", "composer","appearances"];
 
       var n_cols = myListColumnHeaders.length;
 
@@ -141,12 +141,13 @@ init();
 
       function create_2D_object(obj, props) {
         var out = new Array(obj.length);
-        for (var ii = 0; ii < obj.length; ii++) {
-          out[ii] = new Array(props.length);
-          for (var jj = 0; jj < props.length; jj++) {
+        for (var ii = 0; ii < obj.length; ii++) { // number of elements
+          out[ii] = new Array(props.length); // number of properties
+          for (var jj = 0; jj < props.length; jj++) { // go through all properties although some may not exist
             out[ii][jj] = find_nested_prop_in_JSON(obj[ii], props[jj], "");
           }
         }
+        console.log(out)
         return out;
       }
 
@@ -236,7 +237,8 @@ init();
         rows.sort(function(a, b) {
           var v1 = (a.cells[col].textContent || "").trim();
           var v2 = (b.cells[col].textContent || "").trim();
-          return reverse * v1.localeCompare(v2);
+          // return reverse * v1.localeCompare(v2);
+          return reverse * (isNaN(v1) || isNaN(v2) ? v1.localeCompare(v2) : (v1 - v2));
         });
 
         for (var i = 0; i < rows.length; i++) tb.appendChild(rows[i]);
@@ -347,12 +349,29 @@ init();
       var object_2D = null;
 
       function init_page() {
-        object_2D = create_2D_object(opera_catalogue, properties_vector);
-        var links = create_links(opera_catalogue); // kept for parity, not used as href (same as your current code)
+        object_2D = create_2D_object(catalogue, properties_vector); // create the table object with all info of the catalogue
+        var properties_vector_support = ["piece_id"];
+        console.log(properties_vector_support)
+        var object_2D_support = create_2D_object(catalogue, properties_vector_support); // other non-displayable objects
+
+        // if properties_vector contains number_appearances, fill it where it corresponds 
+        if (true) {
+          aux = 3
+        for (var ii = 0; ii < object_2D.length; ii++) { // number of elements
+          var piece_id = object_2D_support[ii][0];   // <- esto
+            var years_of_this_piece_ii = getConcertByPieceId(piece_id);
+            object_2D[ii][aux] = years_of_this_piece_ii.length;
+          }
+        }
+        // 
+
+        
+
+        var links = create_links(catalogue); // kept for parity, not used as href (same as your current code)
 
         var ind_artists = myListColumnHeaders.indexOf("artists");
         if (ind_artists > -1) {
-          var column_artists = artists_2_string(opera_catalogue);
+          var column_artists = artists_2_string(catalogue);
           for (var i = 0; i < object_2D.length; i++) {
             object_2D[i].splice(ind_artists, 0, column_artists[i]);
           }
@@ -434,10 +453,10 @@ init();
     </div>
     <div class="float-child-element_right">
       <form class="right_div">
-        <input type="checkbox" id="videos_check" onclick="function_on_key_up()" checked>
+        <!-- <input type="checkbox" id="videos_check" onclick="function_on_key_up()" checked>
         <label for="videos_check"> videos</label><br>
         <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
-        <label for="audios_check"> audios</label><br>
+        <label for="audios_check"> audios</label><br> -->
       </form>
     </div>
   </div>
@@ -502,11 +521,11 @@ init();
 
 
 
-<!--     <script>
+    <script>
         clickOnYear(last_year); 
         populateYearDropdown(concerts)
         // clickOnYear(2024);
-    </script> -->
+    </script>
 
 
 
