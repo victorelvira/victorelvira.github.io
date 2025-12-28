@@ -256,9 +256,30 @@ footer {
     }
 
 
+    /* existing rule: keep it */
     #myTable,
     #myTable th,
     #myTable td {
         font-size: 0.8rem;
     }
+
+    /* add this */
+    .table-scroll{
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #myTable{
+        width: 100%;
+    }
+
+    #myTable th,
+    #myTable td{
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+
+    
 }
