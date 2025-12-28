@@ -51,12 +51,22 @@
                         }
 
                         function getConcertByComposerId(code) {
-                            return concerts.filter(
-                            function(concerts) {
-                                return concerts.program.composer_id.includes(code)
-                            }
-                            );
+                          // Filter all concerts
+                          return concerts.filter(c =>
+                            // Safety guard: make sure composer_id exists and is an array
+                            Array.isArray(c.program.composer_id) &&
+                            // Check whether this composer id appears in the concert program
+                            c.program.composer_id.includes(code)
+                          );
                         }
+
+                        // function getConcertByComposerId(code) {
+                        //     return concerts.filter(
+                        //     function(concerts) {
+                        //         return concerts.program.composer_id.includes(code)
+                        //     }
+                        //     );
+                        // }
 
                         // function getConcertByType(code) {
                         //     return concerts.filter(

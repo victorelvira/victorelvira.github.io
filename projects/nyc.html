@@ -206,6 +206,28 @@ init();
         }
       }
 
+      // function buildHtmlTable(table_input) {
+      //   var table = document.getElementById("myTable");
+      //   table.innerHTML = "";
+      //   addAllColumnHeadersFixed(myListColumnHeaders);
+
+      //   var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
+      //   tbody.innerHTML = "";
+
+      //   for (var i = 0; i < table_input.length; i++) {
+      //     var tr = tbody.insertRow(-1);
+      //     for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
+      //       var td = tr.insertCell(-1);
+      //       var cellValue = table_input[i][colIndex];
+      //       if (cellValue == null) cellValue = "";
+      //       td.textContent = cellValue;
+      //     }
+      //   }
+
+      //   function_on_key_up();
+      //   makeSortable(table);
+      // }
+
       function buildHtmlTable(table_input) {
         var table = document.getElementById("myTable");
         table.innerHTML = "";
@@ -214,13 +236,67 @@ init();
         var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
         tbody.innerHTML = "";
 
+        // Column indices by header name (so you can reorder columns later)
+        var colPiece = myListColumnHeaders.indexOf("Piece");
+        if (colPiece === -1) colPiece = myListColumnHeaders.indexOf("piece");
+
+        var colType = myListColumnHeaders.indexOf("Type");
+        if (colType === -1) colType = myListColumnHeaders.indexOf("type");
+
+        var colComposer = myListColumnHeaders.indexOf("Composer");
+        if (colComposer === -1) colComposer = myListColumnHeaders.indexOf("composer");
+
         for (var i = 0; i < table_input.length; i++) {
           var tr = tbody.insertRow(-1);
+
+          // Whole row click = piece click (default action)
+          tr.style.cursor = "pointer";
+          (function(rowIndex) {
+            tr.addEventListener("click", function() {
+              var pieceTxt = (table_input[rowIndex][colPiece] || "").toString();
+              if (!pieceTxt) return;
+
+              // Call your existing "piece click" logic here:
+              // Example options (use the one you already have):
+              // handlePieceClickByName(pieceTxt);
+              // handleClickPieceName(pieceTxt);
+              // showPieceInfo(pieceTxt);
+              handlePieceClick(pieceTxt); // <-- rename to your real function
+            });
+          })(i);
+
           for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
             var td = tr.insertCell(-1);
             var cellValue = table_input[i][colIndex];
             if (cellValue == null) cellValue = "";
-            td.textContent = cellValue;
+
+            // Type and Composer are clickable independently
+            if (colIndex === colType || colIndex === colComposer) {
+              var span = document.createElement("span");
+              span.textContent = cellValue;
+              span.style.cursor = "pointer";
+              span.style.textDecoration = "underline";
+
+              // Stop the row click when clicking Type or Composer
+              span.addEventListener("click", function(e) { e.stopPropagation(); });
+
+              // Attach the right click handler
+              (function(colIndexCopy, valueCopy) {
+                span.addEventListener("click", function() {
+                  if (colIndexCopy === colType) {
+                    // Call your existing "type click" logic
+                    handleTypeClick(valueCopy); // <-- rename to your real function
+                  } else {
+                    // Call your existing "composer click" logic
+                    handleComposerClick(valueCopy); // <-- rename to your real function
+                  }
+                });
+              })(colIndex, cellValue);
+
+              td.appendChild(span);
+            } else {
+              td.textContent = cellValue;
+            }
           }
         }
 
