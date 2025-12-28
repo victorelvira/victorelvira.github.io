@@ -13,23 +13,18 @@ body {
     padding-right: 0.4rem; /* Consistent margin */
     width: 100%;
 }
-    p {
-/*        padding-top: 0px;*/
-/*        padding-bottom: 0px;*/
-        margin-top: 2px;
-        margin-bottom: 2px;
-    }
+p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 
-    ol, ul, li {
-            margin-bottom: 0px;
-        }
+ol, ul, li {
+    margin-bottom: 0px;
+}
+
 /* Adjust all h4 elements globally */
-h4 {
-    text-align: center;
-}
-h5 {
-    text-align: center;
-}
+h4 { text-align: center; }
+h5 { text-align: center; }
 
 /* Add padding to ordered lists for spacing */
 ol {
@@ -37,11 +32,6 @@ ol {
     margin-left: 0.1rem; /* Consistent margin */
     margin-right: 0.2rem; /* Consistent margin */
 }
-
-/* Ensure list items wrap text properly */
-/*ol li {
-    word-wrap: break-word; /* Ensures long text wraps */
-}*/
 
 /* Reusable column style (adjustable for various layouts) */
 .left-panel {
@@ -56,27 +46,18 @@ ol {
     background-color: var(--light_gray);
 }
 .right-panel {
- padding-left: 1.5rem; /* Consistent margin */
- padding-right: 1.5rem; /* Consistent margin */
- padding-top: 2px;
- padding-bottom: 12px;
+    padding-left: 1.5rem; /* Consistent margin */
+    padding-right: 1.5rem; /* Consistent margin */
+    padding-top: 2px;
+    padding-bottom: 12px;
 }
 
 footer {
     margin-top: 5rem;
 }
 
-
-
-
-
-
-
-
 /* Applies a pointer cursor to clickable elements */
-.clickable {
-    cursor: pointer;
-}
+.clickable { cursor: pointer; }
 
 /* Ensure the container uses full width */
 .container-fluid {
@@ -104,8 +85,6 @@ footer {
     color: white; /* Text color */
     cursor: pointer; /* Show pointer on hover */
 }
-
-/* Hover state for year buttons */
 .year-box:hover {
     background-color: var(--gold_box_hoover);
 }
@@ -119,9 +98,7 @@ footer {
 }
 
 /* Hide the actual radio buttons */
-.radio-toolbar input[type="radio"] {
-    display: none;
-}
+.radio-toolbar input[type="radio"] { display: none; }
 
 /* Style for the labels of radio buttons */
 .radio-toolbar label {
@@ -133,12 +110,9 @@ footer {
     height: 30px; /* Match year-box height */
     font-size: 14px;
     background-color: var(--gold_box); /* Default color */
-/*    border: 1px solid rgb(0, 0, 0);*/
     color: white;
     cursor: pointer; /* Pointer for clickability */
 }
-
-/* Hover state for radio button labels */
 .radio-toolbar label:hover {
     background-color: var(--gold_box_hoover);
 }
@@ -148,9 +122,7 @@ footer {
     background-color: var(--clicked_year_color);
 }
 
-
 /* iframe */
-
 .iframe-container {
     position: relative;
     width: 100%; /* Full width */
@@ -158,7 +130,6 @@ footer {
     height: 0;
     overflow: hidden;
 }
-
 .iframe-container iframe {
     position: absolute;
     top: 0;
@@ -167,81 +138,99 @@ footer {
     height: 100%;
 }
 
+/* ===== moved from HTML: table + search UI ===== */
+thead { background-color: #898989; cursor: pointer; }
+* { box-sizing: border-box; }
+
+.float-parent-element { width: 100%; }
+.float-child-element_left { float: left; width: 90%; height: 80px; }
+.float-child-element_right { float: left; width: 10%; height: 80px; }
+.left_div { margin-left: 10px; }
+.right_div { margin-left: 0px; }
+
+#myInput {
+    background-position: 10px 10px;
+    width: 90%;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+/* make table smaller by default (desktop too) */
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#myTable tr { border-bottom: 1px solid #ddd; }
+
+th, td { text-align: left; padding: 8px; }
 
 /* Responsiveness for small screens */
 @media (max-width: 800px) {
     /* Adjust font sizes for headings */
-    h1 {
-        font-size: 1.8rem; /* Smaller than default */
-    }
-
-    h2 {
-        font-size: 1.6rem; /* Adjust for smaller screens */
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.2rem; }
 
     h4 {
         font-size: 1.1rem;
-        padding-bottom: 0px; /* Minimal space between sections */
-        padding-top: 0px; /* Minimal space between sections */
-        margin-bottom: 0px; /* Minimal space between sections */
-        margin-bottom: 0px; /* Minimal space between sections */
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-bottom: 0px;
         text-align: center;
     }
 
     h5 {
         font-size: 1.1rem;
         text-align: center;
-        padding-top: 5px; /* Minimal space between sections */
-        margin-bottom: 3px; /* Minimal space between sections */
-        margin-top: 3px; /* Minimal space between sections */
+        padding-top: 5px;
+        margin-bottom: 3px;
+        margin-top: 3px;
     }
 
-    h6 {
-        font-size: 0.6rem;
-    }
+    h6 { font-size: 0.6rem; }
 
-    p {
-/*        padding-top: 0px;*/
-/*        padding-bottom: 0px;*/
-        margin-top: 1px;
-    }
-
+    p { margin-top: 1px; }
 
     /* Adjust font sizes for paragraph text */
     body, p, ol, ul, li {
-        font-size: 0.8rem; /* Smaller text for better readability */
+        font-size: 0.8rem;
         margin-bottom: 0px;
     }
-    
+
     a {
-        color: inherit; /* Inherit color from parent */
-        text-decoration: none; /* Remove underline */
+        color: inherit;
+        text-decoration: none;
     }
 
     /* Reusable column style (adjustable for various layouts) */
     .left-panel {
-        padding-left: 0.5rem; /* Consistent margin */
-        padding-right: 0.5rem; /* Consistent margin */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
-    .central-panel {
-        margin-top: 1rem;
-    }
+    .central-panel { margin-top: 1rem; }
     .right-panel {
-        padding-left: 1.5rem; /* Consistent margin */
-        padding-right: 0.5rem; /* Consistent margin */
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
     }
+
     /* Adjust year button font sizes */
     .year-box {
-        font-size: 0.8rem; /* Ensure readability */
-        width: 60px; /* Adjust size to fit text */
+        font-size: 0.8rem;
+        width: 60px;
         height: 30px;
     }
     .light_gray_panel{
-        padding: 5px; /* Internal padding */
+        padding: 5px;
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -251,35 +240,31 @@ footer {
         height: 18px;
     }
     .text-center{
-        margin-top: 1px;    /* Remove any top margin */
-        margin-bottom: 0px; /* Minimal space between sections */
+        margin-top: 1px;
+        margin-bottom: 0px;
     }
 
-
-    /* existing rule: keep it */
-    #myTable,
-    #myTable th,
-    #myTable td {
-        font-size: 0.8rem;
+    /* force table font size */
+    #myTable, #myTable th, #myTable td {
+        font-size: 0.75rem !important;
+        line-height: 1.15 !important;
     }
 
-    /* add this */
+    /* avoid iOS/Safari auto text scaling */
+    html { -webkit-text-size-adjust: 100%; }
+
+    /* optional scroll wrapper (only works if you wrap the table in <div class="table-scroll"> ... ) */
     .table-scroll{
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
-    #myTable{
-        width: 100%;
-    }
+    #myTable { width: 100%; }
 
     #myTable th,
     #myTable td{
         white-space: normal;
         overflow-wrap: anywhere;
     }
-
-
-    
 }
