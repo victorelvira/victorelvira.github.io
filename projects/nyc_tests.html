@@ -124,8 +124,8 @@ init();
     <script>
       // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
       // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
-      var myListColumnHeaders = ["Piece", "Composer", "Type"];
-      var properties_vector = ["piece", "composer", "type"];
+      var myListColumnHeaders = ["Piece", "Type", "Composer"];
+      var properties_vector = ["piece", "type", "composer"];
 
       var n_cols = myListColumnHeaders.length;
 
@@ -322,12 +322,12 @@ init();
           //   (videos_check && videos_check.checked && element_ii_is_video) ||
           //   (audios_check && audios_check.checked && element_ii_is_audio);
           var ok_media = true;
-          if (ok_text && ok_media) {
-            row.style.display = "";
-            count_visible++;
-          } else {
-            row.style.display = "none";
-          }
+          // if (ok_text && ok_media) {
+          //   row.style.display = "";
+          //   count_visible++;
+          // } else {
+          //   row.style.display = "none";
+          // }
         }
 
         document.getElementById("n_elements").textContent = count_visible + " displayed pieces";
