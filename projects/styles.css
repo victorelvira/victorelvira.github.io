@@ -1,156 +1,140 @@
-/* Define root-level custom properties (CSS variables) */
 :root {
-    --gold_box: rgb(143, 109, 45); /* Gold color for year buttons */
-    --gold_box_hoover: rgb(143, 109, 45); /* Hover state for year buttons */
-    --clicked_year_color: #442A14; /* Selected year button color */
-    --light_gray: #dadada; /* Primary light gray */
-    --lighter_gray: #f8f9fa; /* Secondary lighter gray */
+    --gold_box: rgb(143, 109, 45);
+    --gold_box_hoover: rgb(143, 109, 45);
+    --clicked_year_color: #442A14;
+    --light_gray: #dadada;
+    --lighter_gray: #f8f9fa;
 }
 
-/* General settings for the entire page */
+/* General settings */
 body {
-    padding-left: 0.4rem; /* Consistent margin */
-    padding-right: 0.4rem; /* Consistent margin */
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
     width: 100%;
+    font-size: 0.95rem;
 }
-    p {
-/*        padding-top: 0px;*/
-/*        padding-bottom: 0px;*/
-        margin-top: 2px;
-        margin-bottom: 2px;
-    }
 
-    ol, ul, li {
-            margin-bottom: 0px;
-        }
-/* Adjust all h4 elements globally */
-h4 {
-    text-align: center;
+p {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
-h5 {
+
+ol, ul, li {
+    margin-bottom: 0px;
+}
+
+/* Headings */
+h4, h5, h2 {
     text-align: center;
 }
 
-/* Add padding to ordered lists for spacing */
+h2 {
+    font-size: 1.05rem; /* match the feel of your h5 panels */
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+/* Lists */
 ol {
-    padding-left: 0.1rem; /* Space on the left */
-    margin-left: 0.1rem; /* Consistent margin */
-    margin-right: 0.2rem; /* Consistent margin */
+    padding-left: 0.1rem;
+    margin-left: 0.1rem;
+    margin-right: 0.2rem;
 }
 
-/* Ensure list items wrap text properly */
-/*ol li {
-    word-wrap: break-word; /* Ensures long text wraps */
-}*/
-
-/* Reusable column style (adjustable for various layouts) */
+/* Panels */
 .left-panel {
-    padding-left: 1.5rem; /* Consistent margin */
-    padding-right: 1.5rem; /* Consistent margin */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     padding-top: 2px;
 }
+
 .central-panel {
-    padding-left: 1.5rem; /* Consistent margin */
-    padding-right: 1.5rem; /* Consistent margin */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     padding-top: 2px;
     background-color: var(--light_gray);
 }
+
 .right-panel {
- padding-left: 1.5rem; /* Consistent margin */
- padding-right: 1.5rem; /* Consistent margin */
- padding-top: 2px;
- padding-bottom: 12px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 2px;
+    padding-bottom: 12px;
 }
 
-
-
-
-
-
-
-
-/* Applies a pointer cursor to clickable elements */
+/* Clickable */
 .clickable {
     cursor: pointer;
 }
 
-/* Ensure the container uses full width */
+/* Container */
 .container-fluid {
     margin: 0 auto;
     padding: 0;
 }
 
-/* Panels (general style for grouped elements) */
+/* Title strip */
 .light_gray_panel {
     background-color: var(--light_gray);
-    color: #000; /* Text in panels is black */
-    padding: 15px; /* Internal padding */
+    color: #000;
+    padding: 15px;
 }
 
-/* Style for year buttons */
+/* Year buttons */
 .year-box {
     display: inline-block;
     text-align: center;
-    width: 80px; /* Fixed width */
-    height: 40px; /* Fixed height */
+    width: 80px;
+    height: 40px;
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 12px;
-    background-color: var(--gold_box); /* Default color */
-    color: white; /* Text color */
-    cursor: pointer; /* Show pointer on hover */
+    background-color: var(--gold_box);
+    color: white;
+    cursor: pointer;
 }
 
-/* Hover state for year buttons */
 .year-box:hover {
     background-color: var(--gold_box_hoover);
 }
 
-/* Radio buttons container */
 .radio-toolbar {
     display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap */
-    gap: 5px; /* Consistent spacing */
-    justify-content: center; /* Center the buttons */
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
 }
 
-/* Hide the actual radio buttons */
 .radio-toolbar input[type="radio"] {
     display: none;
 }
 
-/* Style for the labels of radio buttons */
 .radio-toolbar label {
-    display: flex; /* Flex for centering */
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 50px; /* Match year-box width */
-    height: 30px; /* Match year-box height */
+    width: 50px;
+    height: 30px;
     font-size: 14px;
-    background-color: var(--gold_box); /* Default color */
-/*    border: 1px solid rgb(0, 0, 0);*/
+    background-color: var(--gold_box);
     color: white;
-    cursor: pointer; /* Pointer for clickability */
+    cursor: pointer;
 }
 
-/* Hover state for radio button labels */
 .radio-toolbar label:hover {
     background-color: var(--gold_box_hoover);
 }
 
-/* Selected radio button label */
 .radio-toolbar input[type="radio"]:checked + label {
     background-color: var(--clicked_year_color);
 }
 
-
-/* iframe */
-
+/* Iframe */
 .iframe-container {
     position: relative;
-    width: 100%; /* Full width */
-    padding-bottom: 56.25%; /* Aspect ratio for 16:9 */
+    width: 100%;
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -163,91 +147,143 @@ ol {
     height: 100%;
 }
 
+/* Catalogue table + search (make them inherit the same font as panels) */
+thead {
+    background-color: #898989;
+    cursor: pointer;
+}
 
-/* Responsiveness for small screens */
+.float-parent-element {
+    width: 100%;
+}
+
+.float-child-element_left {
+    float: left;
+    width: 90%;
+    height: 60px;
+}
+
+.float-child-element_right {
+    float: left;
+    width: 10%;
+    height: 60px;
+}
+
+.left_div {
+    margin-left: 10px;
+}
+
+.right_div {
+    margin-left: 0px;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    width: 90%;
+    font-size: inherit;
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: inherit;
+}
+
+#myTable th,
+#myTable td {
+    text-align: left;
+    padding: 10px;
+}
+
+#myTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Responsive */
 @media (max-width: 800px) {
-    /* Adjust font sizes for headings */
-    h1 {
-        font-size: 1.8rem; /* Smaller than default */
-    }
-
-    h2 {
-        font-size: 1.6rem; /* Adjust for smaller screens */
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.05rem; }
+    h3 { font-size: 1.2rem; }
 
     h4 {
         font-size: 1.1rem;
-        padding-bottom: 0px; /* Minimal space between sections */
-        padding-top: 0px; /* Minimal space between sections */
-        margin-bottom: 0px; /* Minimal space between sections */
-        margin-bottom: 0px; /* Minimal space between sections */
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-bottom: 0px;
         text-align: center;
     }
 
     h5 {
         font-size: 1.1rem;
         text-align: center;
-        padding-top: 5px; /* Minimal space between sections */
-        margin-bottom: 3px; /* Minimal space between sections */
-        margin-top: 3px; /* Minimal space between sections */
+        padding-top: 5px;
+        margin-bottom: 3px;
+        margin-top: 3px;
     }
 
-    h6 {
-        font-size: 0.6rem;
-    }
+    h6 { font-size: 0.6rem; }
 
-    p {
-/*        padding-top: 0px;*/
-/*        padding-bottom: 0px;*/
-        margin-top: 1px;
-    }
+    p { margin-top: 1px; }
 
-
-    /* Adjust font sizes for paragraph text */
     body, p, ol, ul, li {
-        font-size: 0.8rem; /* Smaller text for better readability */
+        font-size: 0.8rem;
         margin-bottom: 0px;
     }
-    
+
     a {
-        color: inherit; /* Inherit color from parent */
-        text-decoration: none; /* Remove underline */
+        color: inherit;
+        text-decoration: none;
     }
 
-    /* Reusable column style (adjustable for various layouts) */
     .left-panel {
-        padding-left: 0.5rem; /* Consistent margin */
-        padding-right: 0.5rem; /* Consistent margin */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
+
     .central-panel {
         margin-top: 1rem;
     }
+
     .right-panel {
-        padding-left: 1.5rem; /* Consistent margin */
-        padding-right: 0.5rem; /* Consistent margin */
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
     }
-    /* Adjust year button font sizes */
+
     .year-box {
-        font-size: 0.8rem; /* Ensure readability */
-        width: 60px; /* Adjust size to fit text */
+        font-size: 0.8rem;
+        width: 60px;
         height: 30px;
     }
-    .light_gray_panel{
-        padding: 5px; /* Internal padding */
+
+    .light_gray_panel {
+        padding: 5px;
         padding-left: 15px;
         padding-right: 15px;
     }
+
     .radio-toolbar label {
         font-size: 0.5rem;
         width: 30px;
         height: 18px;
     }
-    .text-center{
-        margin-top: 1px;    /* Remove any top margin */
-        margin-bottom: 0px; /* Minimal space between sections */
+
+    .text-center {
+        margin-top: 1px;
+        margin-bottom: 0px;
     }
+
+    .float-child-element_left { height: 50px; }
+    .float-child-element_right { height: 50px; }
+    #myInput { padding: 8px 12px; }
+    #myTable th, #myTable td { padding: 8px; }
 }

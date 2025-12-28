@@ -54,7 +54,6 @@ async function init() {
 
 init();
 </script>
-
  
     <!-- FAVICON -->
     <!-- Primary Favicon -->
@@ -119,12 +118,16 @@ init();
       th, td { text-align: left; padding: 8px; }
     </style>
 
-    <script type="text/javascript" src="operadatabase/opera_catalogue.js"></script>
+    <!-- <script type="text/javascript" src="operadatabase/opera_catalogue.js"></script> -->
+    <script type="text/javascript" src=" nyc/catalogue.js"></script>
 
     <script>
-      var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
+      // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
+      // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
+      var myListColumnHeaders = ["piece", "composer", "type"];
+      var properties_vector = ["piece", "composer", "type"];
+
       var n_cols = myListColumnHeaders.length;
-      var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
 
       function find_nested_prop_in_JSON(obj, prop, defval) {
         if (typeof defval === "undefined") defval = null;
@@ -287,22 +290,38 @@ init();
             }
           }
 
-          var element_ii_is_video = false;
-          var element_ii_is_audio = false;
 
-          if (ind_type > -1) {
-            var td_type = row.getElementsByTagName("td")[ind_type];
-            var t = td_type ? (td_type.textContent || "") : "";
-            element_ii_is_video = (t === "video");
-            element_ii_is_audio = (t === "audio");
+          // --- text filter (buscador) ---
+          var ok_text = (filter_vec.length === 0)
+            ? true
+            : ok_tokens.every(function(v) { return v === true; });
+
+          // --- media / extra filters (temporalmente desactivados) ---
+          var ok_media = true;
+
+          if (ok_text && ok_media) {
+            row.style.display = "";
+            count_visible++;
+          } else {
+            row.style.display = "none";
           }
 
-          var ok_text = (filter_vec.length === 0) ? true : ok_tokens.every(function(v) { return v === true; });
+          // var element_ii_is_video = false;
+          // var element_ii_is_audio = false;
 
-          var ok_media =
-            (videos_check && videos_check.checked && element_ii_is_video) ||
-            (audios_check && audios_check.checked && element_ii_is_audio);
+          // if (ind_type > -1) {
+          //   var td_type = row.getElementsByTagName("td")[ind_type];
+          //   var t = td_type ? (td_type.textContent || "") : "";
+          //   element_ii_is_video = (t === "video");
+          //   element_ii_is_audio = (t === "audio");
+          // }
 
+          // var ok_text = (filter_vec.length === 0) ? true : ok_tokens.every(function(v) { return v === true; });
+
+          // var ok_media =
+          //   (videos_check && videos_check.checked && element_ii_is_video) ||
+          //   (audios_check && audios_check.checked && element_ii_is_audio);
+          var ok_media = true;
           if (ok_text && ok_media) {
             row.style.display = "";
             count_visible++;
@@ -311,7 +330,7 @@ init();
           }
         }
 
-        document.getElementById("n_elements").textContent = count_visible + " displayed elements";
+        document.getElementById("n_elements").textContent = count_visible + " displayed pieces";
         alternate_colors(tr);
       }
 
@@ -405,9 +424,9 @@ init();
         </div>
     </div>
  
+ <div class="col-md-12 central-panel">
 
-
-  <h2>Opera recordings</h2>
+  <h2>Pieces catalogue</h2>
 
   <div class="float-parent-element">
     <div class="float-child-element_left">
@@ -428,6 +447,7 @@ init();
   </div>
 
   <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;"></table>
+  </div>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
   <script>
