@@ -275,17 +275,17 @@ th, td { text-align: left; padding: 8px; }
     }
     /* Minimum widths per column */
     #myTable th:nth-child(1),
-    #myTable td:nth-child(1) { min-width: 12rem; } /* Piece */
+    #myTable td:nth-child(1) { min-width: 15ch; } /* Piece */
 
     #myTable th:nth-child(2),
-    #myTable td:nth-child(2) { min-width: 5rem; }  /* Type */
+    #myTable td:nth-child(2) { min-width: 8ch; }  /* Type */
 
     #myTable th:nth-child(3),
-    #myTable td:nth-child(3) { min-width: 8rem; }  /* Composer */
+    #myTable td:nth-child(3) { min-width: 10ch;; }  /* Composer */
 
     #myTable th:nth-child(4),
     #myTable td:nth-child(4) { 
-      min-width: 3rem;       /* Times */
+      min-width: 5ch;       /* Times */
       text-align: right;
     }
 }
