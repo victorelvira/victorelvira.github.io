@@ -49,15 +49,19 @@
                             }
                             );
                         }
+                        function getConcertByComposerId(composerId) {
+                          var target = Number(composerId);
 
-                        function getConcertByComposerId(code) {
-                          // Filter all concerts
-                          return concerts.filter(c =>
-                            // Safety guard: make sure composer_id exists and is an array
-                            Array.isArray(c.program.composer_id) &&
-                            // Check whether this composer id appears in the concert program
-                            c.program.composer_id.includes(code)
-                          );
+                          return concerts.filter(function(c) {
+                            if (!c.program || !Array.isArray(c.program.piece_id)) return false;
+
+                            for (var i = 0; i < c.program.piece_id.length; i++) {
+                              var pid = c.program.piece_id[i];
+                              var item = getPieceByIdFromCatalogue(pid); // returns [pieceObj] or []
+                              if (item && item[0] && Number(item[0].composer_id) === target) return true;
+                            }
+                            return false;
+                          });
                         }
 
                         // function getConcertByComposerId(code) {
@@ -837,7 +841,7 @@
                                     
                                     
                                       if (years_of_this_composer.length == 1){
-                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in<strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
+                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                      } else if (years_of_this_composer.length == 2){
                                          var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>twice</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
                                      }  

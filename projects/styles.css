@@ -312,3 +312,16 @@ th, td { text-align: left; padding: 8px; }
         text-align: right;
     }
 }
+
+/* Tabs match panel background */
+.nav-tabs .nav-link {
+    color: #444;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--light_gray);
+    color: #000;
+    border-color: #dee2e6 #dee2e6 var(--light_gray);
+}
