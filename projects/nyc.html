@@ -520,7 +520,99 @@ init();
     </div>
  
  
-<div class="col-md-12 catalogue-panel">
+
+ <!-- Tabs: Catalogue / Statistics -->
+<ul class="nav nav-tabs mt-3" id="nycTabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="catalogue-tab" data-bs-toggle="tab" data-bs-target="#cataloguePane" type="button" role="tab" aria-controls="cataloguePane" aria-selected="true">
+      Catalogue
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsPane" type="button" role="tab" aria-controls="statsPane" aria-selected="false">
+      Statistics
+    </button>
+  </li>
+</ul>
+
+<div class="tab-content" id="nycTabsContent">
+  <!-- Catalogue tab -->
+  <div class="tab-pane fade show active" id="cataloguePane" role="tabpanel" aria-labelledby="catalogue-tab">
+
+    <div class="col-md-12 catalogue-panel">
+      <h5>Catalogue of pieces</h5>
+
+      <div class="float-parent-element">
+        <div class="float-child-element_left">
+          <input class="left_div" type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
+        </div>
+        <div class="float-child-element_right">
+          <form class="right_div"></form>
+        </div>
+      </div>
+
+      <div>
+        <a float="right" id="n_elements"></a>
+      </div>
+
+      <!-- optional: keeps mobile overflow under control -->
+      <div class="table-scroll">
+        <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;"></table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Statistics tab -->
+  <div class="tab-pane fade" id="statsPane" role="tabpanel" aria-labelledby="stats-tab">
+
+    <div class="col-md-12 catalogue-panel">
+      <h5>Statistics</h5>
+
+      <!-- minimal UI now: selectors later -->
+      <div class="row g-2 align-items-center mb-2">
+        <div class="col-12 col-md-auto">
+          <select id="statsScope" class="form-select form-select-sm">
+            <option value="all" selected>All years</option>
+            <option value="modern">Modern era</option>
+            <option value="postwar">Postwar</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button id="btnRenderStats" class="btn btn-sm btn-secondary" type="button">Render</button>
+        </div>
+      </div>
+
+      <!-- chart containers (Chart.js) -->
+      <div class="row g-3">
+        <div class="col-12 col-lg-6">
+          <div class="p-2" style="background:#fff;border:1px solid #ddd;border-radius:8px;">
+            <div style="font-size:0.95rem;margin-bottom:6px;">Pieces per concert</div>
+            <canvas id="chartPiecesPerConcert"></canvas>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="p-2" style="background:#fff;border:1px solid #ddd;border-radius:8px;">
+            <div style="font-size:0.95rem;margin-bottom:6px;">Waltz share</div>
+            <canvas id="chartWaltzShare"></canvas>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="p-2" style="background:#fff;border:1px solid #ddd;border-radius:8px;">
+            <div style="font-size:0.95rem;margin-bottom:6px;">New pieces vs repeated pieces</div>
+            <canvas id="chartNewVsRepeated"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+    
+<!-- <div class="col-md-12 catalogue-panel">
   <h5>Catalogue of pieces</h5>
 
   <div class="float-parent-element">
@@ -529,21 +621,15 @@ init();
     </div>
     <div class="float-child-element_right">
       <form class="right_div">
-        <!-- <input type="checkbox" id="videos_check" onclick="function_on_key_up()" checked>
-        <label for="videos_check"> videos</label><br>
-        <input type="checkbox" id="audios_check" onclick="function_on_key_up()">
-        <label for="audios_check"> audios</label><br> -->
       </form>
     </div>
   </div>
 
   <div>
     <a float="right" id="n_elements"></a>
-  </div>
-
-  <!-- <div class="table-scroll">
-    <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;"></table>
   </div> -->
+
+
   <div class="table-scroll">
     <table id="myTable"></table>
   </div>
