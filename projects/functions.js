@@ -1,4 +1,50 @@
-     
+        // TBD Some global data (to be moved?)
+
+const TYPE_INFO = { // TBD check descriptions and links
+  "Waltz": {
+    label: "dance form",
+    desc: "A waltz is a dance in triple time, central to the Viennese tradition.",
+    wiki: "https://en.wikipedia.org/wiki/Waltz"
+  },
+  "Polka": {
+    label: "dance form",
+    desc: "A polka is a lively dance in duple time, originally from Bohemia. Polka schnell is a faster and more brilliant variant. Polka mazurka combines polka rhythm with mazurka accents. Polka francaise is lighter and more elegant in character.",
+    wiki: "https://en.wikipedia.org/wiki/Polka"
+  },
+  "March": {
+    label: "musical form",
+    desc: "A match Processional piece with strong rhythmic drive.",
+    wiki: "https://en.wikipedia.org/wiki/March_(music)"
+  },
+  "Galop": {
+    label: "dance form",
+    desc: "A galop is a very fast dance, typically used as a closing number.",
+    wiki: "https://en.wikipedia.org/wiki/Galop"
+  },
+  "Quadrille": {
+    label: "dance form",
+    desc: "A quadrille is a suite of short dances, originally for ballroom figures.",
+    wiki: "https://en.wikipedia.org/wiki/Quadrille"
+  },
+  "Overture": {
+    label: "musical form",
+    desc: "Introductory orchestral piece, often opening an opera or operetta.",
+    wiki: "https://en.wikipedia.org/wiki/Overture"
+  },
+  "Csárdás": {
+    label: "dance form",
+    desc: "Hungarian dance with a slow introduction followed by a fast section.",
+    wiki: "https://en.wikipedia.org/wiki/Cs%C3%A1rd%C3%A1s"
+  },
+  "Fantasie": {
+    label: "musical form",
+    desc: "Free-form composition with an improvisatory character.",
+    wiki: "https://en.wikipedia.org/wiki/Fantasia_(musical_form)"
+  }
+};  
+        
+
+
         // functions to filter in the database
 
                         function getConcertByYear(code) {
@@ -531,7 +577,20 @@
                                             type_ii[0].style.color = "orange";
                                         }
                                     };
-                                    text_other = "TBD"
+                                    // text_other = "TBD"
+                                    // document.getElementById("info_text").innerHTML = text_other;
+                                    const info = TYPE_INFO[type_highlighted] ||
+                                                 TYPE_INFO[Object.keys(TYPE_INFO).find(k => type_highlighted.includes(k))];
+
+                                    if (info) {
+                                      text_other  = info.desc;
+                                      text_other += '<br><br>Find more information about this ' + info.label +
+                                                    ' on Wikipedia <a href="' + info.wiki +
+                                                    '" target="_blank">here</a>.';
+                                    } else {
+                                      text_other = "No description available for this type.";
+                                    }
+
                                     document.getElementById("info_text").innerHTML = text_other;
                                 });
 
@@ -774,7 +833,26 @@
                                                 type_ii[0].style.color = "orange";
                                             }
                                         };
-                                        text_other = "TBD"
+                                        console.log(type_highlighted)
+                                        // text_other = "TBD 2"
+                                        // const desc = TYPE_INFO[type_highlighted] || "No description available.";
+                                        // text_other = desc;
+
+                                        // const info = TYPE_INFO[type_highlighted];
+                                        // Try exact match first (e.g. "Polka"), otherwise fall back to partial match
+                                        // (e.g. "Polka schnell" -> "Polka")
+                                        const info = TYPE_INFO[type_highlighted] ||
+                                                     TYPE_INFO[Object.keys(TYPE_INFO).find(k => type_highlighted.includes(k))];
+
+                                        if (info) {
+                                          text_other  = info.desc;
+                                          text_other += '<br><br>Find more information about this ' + info.label +
+                                                        ' on Wikipedia <a href="' + info.wiki +
+                                                        '" target="_blank">here</a>.';
+                                        } else {
+                                          text_other = "No description available for this type.";
+                                        }
+
                                         document.getElementById("info_text").innerHTML = text_other;
 
                                         // turn ORANGE year boxes in red for years where the composer appeared: TBD (adapted from the composer). Then, do the same with the TYPE OF ENCORES
