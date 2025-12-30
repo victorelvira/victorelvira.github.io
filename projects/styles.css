@@ -325,3 +325,16 @@ th, td { text-align: left; padding: 8px; }
     color: #000;
     border-color: #dee2e6 #dee2e6 var(--light_gray);
 }
+
+.plot-box{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:0.5rem;
+  height: 220px;
+}
+
+.plot-title{
+  font-size:0.95rem;
+  margin:0 0 6px 0;
+}

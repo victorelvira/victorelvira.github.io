@@ -1061,66 +1061,119 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Generate Bar Chart
-function generateBarChart(filteredConcerts) {
-    const chartContainer = document.getElementById('barChartContainer');
-    chartContainer.innerHTML = ''; // Clear previous chart
+// function generateBarChart(filteredConcerts) {
+//     const chartContainer = document.getElementById('barChartContainer');
+//     chartContainer.innerHTML = ''; // Clear previous chart
 
-    const compositionCounts = {};
+//     const compositionCounts = {};
 
-    filteredConcerts.forEach(concert => {
-        if (concert.program && Array.isArray(concert.program.piece_id)) {
-            concert.program.piece_id.forEach(pieceId => {
-                compositionCounts[pieceId] = (compositionCounts[pieceId] || 0) + 1;
-            });
-        } else {
-            console.warn('Invalid program or piece_id in concert:', concert);
-        }
-    });
+//     filteredConcerts.forEach(concert => {
+//         if (concert.program && Array.isArray(concert.program.piece_id)) {
+//             concert.program.piece_id.forEach(pieceId => {
+//                 compositionCounts[pieceId] = (compositionCounts[pieceId] || 0) + 1;
+//             });
+//         } else {
+//             console.warn('Invalid program or piece_id in concert:', concert);
+//         }
+//     });
 
-    const labels = Object.keys(compositionCounts); // These are piece IDs
-    const data = Object.values(compositionCounts);
+//     const labels = Object.keys(compositionCounts); // These are piece IDs
+//     const data = Object.values(compositionCounts);
 
-    console.log('Bar chart data:', labels, data);
+//     console.log('Bar chart data:', labels, data);
 
-    // Placeholder for bar chart drawing
-    chartContainer.textContent = 'Bar chart will be displayed here.';
-}
+//     // Placeholder for bar chart drawing
+//     chartContainer.textContent = 'Bar chart will be displayed here.';
+// }
 
 // Generate Pie Chart
-function generatePieChart(filteredConcerts) {
-    const chartContainer = document.getElementById('pieChartContainer');
-    chartContainer.innerHTML = '<canvas id="pieChart"></canvas>'; // Add canvas for Chart.js
+// function generatePieChart(filteredConcerts) {
+//     const chartContainer = document.getElementById('pieChartContainer');
+//     chartContainer.innerHTML = '<canvas id="pieChart"></canvas>'; // Add canvas for Chart.js
 
-    const composerCounts = {};
-    filteredConcerts.forEach(concert => {
-        concert.program.composer.forEach(composer => {
-            composerCounts[composer] = (composerCounts[composer] || 0) + 1;
-        });
-    });
+//     const composerCounts = {};
+//     filteredConcerts.forEach(concert => {
+//         concert.program.composer.forEach(composer => {
+//             composerCounts[composer] = (composerCounts[composer] || 0) + 1;
+//         });
+//     });
 
-    const labels = Object.keys(composerCounts);
-    const data = Object.values(composerCounts);
+//     const labels = Object.keys(composerCounts);
+//     const data = Object.values(composerCounts);
 
-    // Create Pie Chart
-    const ctx = document.getElementById('pieChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: data,
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9966FF', '#FF9F40'],
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { display: true },
-                title: { display: true, text: 'Composer Distribution' }
-            }
-        }
-    });
-}
+//     // Create Pie Chart
+//     const ctx = document.getElementById('pieChart').getContext('2d');
+//     new Chart(ctx, {
+//         type: 'pie',
+//         data: {
+//             labels: labels,
+//             datasets: [{
+//                 data: data,
+//                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9966FF', '#FF9F40'],
+//             }]
+//         },
+//         options: {
+//             responsive: true,
+//             plugins: {
+//                 legend: { display: true },
+//                 title: { display: true, text: 'Composer Distribution' }
+//             }
+//         }
+//     });
+// }
  
+
+ window._charts = window._charts || {};
+
+ function renderLineChart(canvasId, labels, series) {
+   // series can be:
+   // 1) single: { label: 'Something', data: [...] }
+   // 2) multiple: [ { label:'A', data:[...] }, { label:'B', data:[...] } , ... ]
+
+   const canvas = document.getElementById(canvasId);
+   if (!canvas) return;
+   const ctx = canvas.getContext('2d');
+
+   if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+   const datasets = Array.isArray(series) ? series : [series];
+
+   window._charts[canvasId] = new Chart(ctx, {
+     type: 'line',
+     data: { labels: labels, datasets: datasets },
+     options: {
+       responsive: true,
+       maintainAspectRatio: false
+     }
+   });
+ }
+
+function renderBarChart(canvasId, labels, values) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+  window._charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values }] },
+    options: { responsive: true, maintainAspectRatio: false }
+  });
+}
+
+function renderPieChart(canvasId, labels, values) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+  window._charts[canvasId] = new Chart(ctx, {
+    type: 'pie',
+    data: { labels, datasets: [{ data: values }] },
+    options: { responsive: true, maintainAspectRatio: false }
+  });
+}
 
 

@@ -1,545 +1,629 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Year's Concert - Vienna Philharmonic</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        var last_year = 2026;
-        var selected_year = last_year;
-        var this_year_conductor = 0;
-        const years_highlighted = [];  
-        var years_of_this_conductor = [];
-        var years_of_this_piece = [];
-        var years_of_this_composer = []; 
-    </script>   
-    <script type="text/javascript" src="./nyc/catalogue.js"></script>
-    <script type="text/javascript" src="./nyc/conductors.js"></script>
-    <script type="text/javascript" src="./nyc/composers.js"></script>
-    <script type="text/javascript" src="./nyc/concerts.js"></script>
-    
-<script type="text/javascript" src="functions.js"></script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Year's Concert - Vienna Philharmonic</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            var last_year = 2026;
+            var selected_year = last_year;
+            var this_year_conductor = 0;
+            const years_highlighted = [];  
+            var years_of_this_conductor = [];
+            var years_of_this_piece = [];
+            var years_of_this_composer = []; 
+        </script>   
+        <script type="text/javascript" src="./nyc/catalogue.js"></script>
+        <script type="text/javascript" src="./nyc/conductors.js"></script>
+        <script type="text/javascript" src="./nyc/composers.js"></script>
+        <script type="text/javascript" src="./nyc/concerts.js"></script>
+        
+    <script type="text/javascript" src="functions.js"></script>
 
-<!-- <script>
-async function init() {
-  const catalogue  = await fetch('./nyc/catalogue.json').then(r => r.json());
-  const conductors = await fetch('./nyc/conductors.json').then(r => r.json());
-  const composers  = await fetch('./nyc/composers.json').then(r => r.json());
-  const concerts   = await fetch('./nyc/concerts.json').then(r => r.json());
+    <!-- <script>
+    async function init() {
+      const catalogue  = await fetch('./nyc/catalogue.json').then(r => r.json());
+      const conductors = await fetch('./nyc/conductors.json').then(r => r.json());
+      const composers  = await fetch('./nyc/composers.json').then(r => r.json());
+      const concerts   = await fetch('./nyc/concerts.json').then(r => r.json());
 
-  window.catalogue  = catalogue;
-  window.conductors = conductors;
-  window.composers  = composers;
-  window.concerts   = concerts;
+      window.catalogue  = catalogue;
+      window.conductors = conductors;
+      window.composers  = composers;
+      window.concerts   = concerts;
 
-  for (let ii = 0; ii < concerts.length; ii++) { 
-      // console.log(concerts[ii].program.piece_id)
-      concerts[ii].program.composer_id = [];
-      for (let jj = 0; jj < concerts[ii].program.piece_id.length; jj++) { 
-          item_filtered = getPieceByIdFromCatalogue(concerts[ii].program.piece_id[jj]);
-          // console.log(item_filtered[0].composer_id)
-          concerts[ii].program.composer_id[jj] = item_filtered[0].composer_id;
-          
-      }
-  }
-
-  clickOnYear(last_year);
-  // populateYearDropdown(concerts);
-}
-
-init();
-</script> -->
- 
-    <!-- FAVICON -->
-    <!-- Primary Favicon -->
-    <link rel="icon" href="/assets/favicons/main/favicon.ico" type="image/x-icon">
-    <!-- PNG Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/main/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/main/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/main/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/main/android-icon-192x192.png">
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/main/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/main/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/main/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/main/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/main/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/main/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/main/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/main/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/main/apple-icon-180x180.png">
-    <!-- Microsoft Icons -->
-    <meta name="msapplication-TileImage" content="/assets/favicons/main/ms-icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Manifest -->
-    <link rel="manifest" href="/assets/favicons/main/manifest.json">
-
-
-<!--     <style>
-      thead { background-color: #898989; cursor: pointer; }
-      * { box-sizing: border-box; }
-
-      .float-parent-element { width: 100%; }
-      .float-child-element_left { float: left; width: 90%; height: 80px; }
-      .float-child-element_right { float: left; width: 10%; height: 80px; }
-      .left_div { margin-left: 10px; }
-      .right_div { margin-left: 0px; }
-
-      #myInput {
-        background-image: url('/css/searchicon.png');
-        background-position: 10px 10px;
-        width: 90%;
-        font-size: 16px;
-        padding: 12px 20px;
-        border: 1px solid #ddd;
-        margin-bottom: 12px;
-      }
-
-      #myTable {
-        border-collapse: collapse;
-        width: 100%;
-        border: 1px solid #ddd;
-        font-size: 18px;
-      }
-
-      #myTable th, #myTable td {
-        text-align: left;
-        padding: 12px;
-      }
-
-      #myTable tr { border-bottom: 1px solid #ddd; }
-
-      th, td { text-align: left; padding: 8px; }
-    </style> -->
-
-    <!-- <script type="text/javascript" src="operadatabase/catalogue.js"></script> -->
-    <script type="text/javascript" src=" nyc/catalogue.js"></script>
-
-    <script>
-      // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
-      // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
-      var myListColumnHeaders = ["Piece", "Musical Form", "Composer","Times"];
-      var properties_vector = ["piece", "type", "composer","appearances"];
-
-      var n_cols = myListColumnHeaders.length;
-
-      function find_nested_prop_in_JSON(obj, prop, defval) {
-        if (typeof defval === "undefined") defval = null;
-        prop = prop.split(".");
-        for (var i = 0; i < prop.length; i++) {
-          if (typeof obj[prop[i]] === "undefined") return defval;
-          obj = obj[prop[i]];
-        }
-        return obj;
-      }
-
-      function create_2D_object(obj, props) {
-        var out = new Array(obj.length);
-        for (var ii = 0; ii < obj.length; ii++) { // number of elements
-          out[ii] = new Array(props.length); // number of properties
-          for (var jj = 0; jj < props.length; jj++) { // go through all properties although some may not exist
-            out[ii][jj] = find_nested_prop_in_JSON(obj[ii], props[jj], "");
+      for (let ii = 0; ii < concerts.length; ii++) { 
+          // console.log(concerts[ii].program.piece_id)
+          concerts[ii].program.composer_id = [];
+          for (let jj = 0; jj < concerts[ii].program.piece_id.length; jj++) { 
+              item_filtered = getPieceByIdFromCatalogue(concerts[ii].program.piece_id[jj]);
+              // console.log(item_filtered[0].composer_id)
+              concerts[ii].program.composer_id[jj] = item_filtered[0].composer_id;
+              
           }
-        }
-        console.log(out)
-        return out;
       }
 
-      function create_links(obj) {
-        var links = new Array(obj.length);
-        for (var ii = 0; ii < obj.length; ii++) {
-          var link_ii = "";
-          var c_last = find_nested_prop_in_JSON(obj[ii], "composer.last", "");
-          link_ii = c_last + "/" + link_ii + "[" + c_last + "] ";
-          var name_full = find_nested_prop_in_JSON(obj[ii], "name.full", "");
-          link_ii = link_ii + name_full + " ";
-          var house = find_nested_prop_in_JSON(obj[ii], "place.opera_house", "");
-          link_ii = link_ii + "(" + house + ", ";
-          var year = find_nested_prop_in_JSON(obj[ii], "date.year", "");
-          link_ii = link_ii + year + ")";
-          links[ii] = link_ii;
-        }
-        return links;
-      }
+      clickOnYear(last_year);
+      // populateYearDropdown(concerts);
+    }
 
-      function artists_2_string(obj) {
-        var string_artists = new Array(obj.length);
-        for (var ii = 0; ii < obj.length; ii++) {
-          var artists_ii = obj[ii]["artists"];
-          var artists_ii_string = "";
-          if (artists_ii && artists_ii.length) {
-            for (var jj = 0; jj < artists_ii.length; jj++) {
-              var art = artists_ii[jj] ? artists_ii[jj]["sort"] : "";
-              if (typeof art !== "undefined" && art !== null && art !== "") {
-                if (artists_ii_string === "") artists_ii_string = art;
-                else artists_ii_string = artists_ii_string + ", " + art;
+    init();
+    </script> -->
+     
+        <!-- FAVICON -->
+        <!-- Primary Favicon -->
+        <link rel="icon" href="/assets/favicons/main/favicon.ico" type="image/x-icon">
+        <!-- PNG Favicons -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/main/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/main/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/main/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/main/android-icon-192x192.png">
+        <!-- Apple Touch Icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/main/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/main/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/main/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/main/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/main/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/main/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/main/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/main/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/main/apple-icon-180x180.png">
+        <!-- Microsoft Icons -->
+        <meta name="msapplication-TileImage" content="/assets/favicons/main/ms-icon-144x144.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Manifest -->
+        <link rel="manifest" href="/assets/favicons/main/manifest.json">
 
-                if (artists_ii[jj]["role"] === "Conductor") {
-                  artists_ii_string = artists_ii_string + " (conductor)";
+
+    <!--     <style>
+          thead { background-color: #898989; cursor: pointer; }
+          * { box-sizing: border-box; }
+
+          .float-parent-element { width: 100%; }
+          .float-child-element_left { float: left; width: 90%; height: 80px; }
+          .float-child-element_right { float: left; width: 10%; height: 80px; }
+          .left_div { margin-left: 10px; }
+          .right_div { margin-left: 0px; }
+
+          #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            width: 90%;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+          }
+
+          #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+          }
+
+          #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+          }
+
+          #myTable tr { border-bottom: 1px solid #ddd; }
+
+          th, td { text-align: left; padding: 8px; }
+        </style> -->
+
+        <!-- <script type="text/javascript" src="operadatabase/catalogue.js"></script> -->
+        <script type="text/javascript" src=" nyc/catalogue.js"></script>
+
+        <script>
+          // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
+          // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
+          var myListColumnHeaders = ["Piece", "Musical Form", "Composer","Times"];
+          var properties_vector = ["piece", "type", "composer","appearances"];
+
+          var n_cols = myListColumnHeaders.length;
+
+          function find_nested_prop_in_JSON(obj, prop, defval) {
+            if (typeof defval === "undefined") defval = null;
+            prop = prop.split(".");
+            for (var i = 0; i < prop.length; i++) {
+              if (typeof obj[prop[i]] === "undefined") return defval;
+              obj = obj[prop[i]];
+            }
+            return obj;
+          }
+
+          function create_2D_object(obj, props) {
+            var out = new Array(obj.length);
+            for (var ii = 0; ii < obj.length; ii++) { // number of elements
+              out[ii] = new Array(props.length); // number of properties
+              for (var jj = 0; jj < props.length; jj++) { // go through all properties although some may not exist
+                out[ii][jj] = find_nested_prop_in_JSON(obj[ii], props[jj], "");
+              }
+            }
+            console.log(out)
+            return out;
+          }
+
+          function create_links(obj) {
+            var links = new Array(obj.length);
+            for (var ii = 0; ii < obj.length; ii++) {
+              var link_ii = "";
+              var c_last = find_nested_prop_in_JSON(obj[ii], "composer.last", "");
+              link_ii = c_last + "/" + link_ii + "[" + c_last + "] ";
+              var name_full = find_nested_prop_in_JSON(obj[ii], "name.full", "");
+              link_ii = link_ii + name_full + " ";
+              var house = find_nested_prop_in_JSON(obj[ii], "place.opera_house", "");
+              link_ii = link_ii + "(" + house + ", ";
+              var year = find_nested_prop_in_JSON(obj[ii], "date.year", "");
+              link_ii = link_ii + year + ")";
+              links[ii] = link_ii;
+            }
+            return links;
+          }
+
+          function artists_2_string(obj) {
+            var string_artists = new Array(obj.length);
+            for (var ii = 0; ii < obj.length; ii++) {
+              var artists_ii = obj[ii]["artists"];
+              var artists_ii_string = "";
+              if (artists_ii && artists_ii.length) {
+                for (var jj = 0; jj < artists_ii.length; jj++) {
+                  var art = artists_ii[jj] ? artists_ii[jj]["sort"] : "";
+                  if (typeof art !== "undefined" && art !== null && art !== "") {
+                    if (artists_ii_string === "") artists_ii_string = art;
+                    else artists_ii_string = artists_ii_string + ", " + art;
+
+                    if (artists_ii[jj]["role"] === "Conductor") {
+                      artists_ii_string = artists_ii_string + " (conductor)";
+                    }
+                  }
+                }
+              }
+              string_artists[ii] = artists_ii_string;
+            }
+            return string_artists;
+          }
+
+          function addAllColumnHeadersFixed(headers) {
+            var table = document.getElementById("myTable");
+
+            if (!table.tHead) table.createTHead();
+            table.tHead.innerHTML = "";
+
+            var row = table.tHead.insertRow(0);
+
+            for (var i = 0; i < headers.length; i++) {
+              var th = document.createElement("th");
+              th.textContent = headers[i];
+              row.appendChild(th);
+            }
+          }
+
+          // function buildHtmlTable(table_input) {
+          //   var table = document.getElementById("myTable");
+          //   table.innerHTML = "";
+          //   addAllColumnHeadersFixed(myListColumnHeaders);
+
+          //   var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
+          //   tbody.innerHTML = "";
+
+          //   for (var i = 0; i < table_input.length; i++) {
+          //     var tr = tbody.insertRow(-1);
+          //     for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
+          //       var td = tr.insertCell(-1);
+          //       var cellValue = table_input[i][colIndex];
+          //       if (cellValue == null) cellValue = "";
+          //       td.textContent = cellValue;
+          //     }
+          //   }
+
+          //   function_on_key_up();
+          //   makeSortable(table);
+          // }
+
+          function buildHtmlTable(table_input) {
+            var table = document.getElementById("myTable");
+            table.innerHTML = "";
+            addAllColumnHeadersFixed(myListColumnHeaders);
+
+            var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
+            tbody.innerHTML = "";
+
+            // Column indices by header name (so you can reorder columns later)
+            var colPiece = myListColumnHeaders.indexOf("Piece");
+            if (colPiece === -1) colPiece = myListColumnHeaders.indexOf("piece");
+
+            var colType = myListColumnHeaders.indexOf("Type");
+            if (colType === -1) colType = myListColumnHeaders.indexOf("type");
+
+            var colComposer = myListColumnHeaders.indexOf("Composer");
+            if (colComposer === -1) colComposer = myListColumnHeaders.indexOf("composer");
+
+            for (var i = 0; i < table_input.length; i++) {
+              var tr = tbody.insertRow(-1);
+
+              // Whole row click = piece click (default action)
+              tr.style.cursor = "pointer";
+              (function(rowIndex) {
+                tr.addEventListener("click", function() {
+                  var pieceTxt = (table_input[rowIndex][colPiece] || "").toString();
+                  if (!pieceTxt) return;
+
+                  // Call your existing "piece click" logic here:
+                  // Example options (use the one you already have):
+                  // handlePieceClickByName(pieceTxt);
+                  // handleClickPieceName(pieceTxt);
+                  // showPieceInfo(pieceTxt);
+                  handlePieceClick(pieceTxt); // <-- rename to your real function
+                });
+              })(i);
+
+              for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
+                var td = tr.insertCell(-1);
+                var cellValue = table_input[i][colIndex];
+                if (cellValue == null) cellValue = "";
+
+                // Type and Composer are clickable independently
+                if (colIndex === colType || colIndex === colComposer) {
+                  var span = document.createElement("span");
+                  span.textContent = cellValue;
+                  span.style.cursor = "pointer";
+                  span.style.textDecoration = "underline";
+
+                  // Stop the row click when clicking Type or Composer
+                  span.addEventListener("click", function(e) { e.stopPropagation(); });
+
+                  // Attach the right click handler
+                  (function(colIndexCopy, valueCopy) {
+                    span.addEventListener("click", function() {
+                      if (colIndexCopy === colType) {
+                        // Call your existing "type click" logic
+                        handleTypeClick(valueCopy); // <-- rename to your real function
+                      } else {
+                        // Call your existing "composer click" logic
+                        handleComposerClick(valueCopy); // <-- rename to your real function
+                      }
+                    });
+                  })(colIndex, cellValue);
+
+                  td.appendChild(span);
+                } else {
+                  td.textContent = cellValue;
                 }
               }
             }
+
+            function_on_key_up();
+            makeSortable(table);
           }
-          string_artists[ii] = artists_ii_string;
-        }
-        return string_artists;
-      }
 
-      function addAllColumnHeadersFixed(headers) {
-        var table = document.getElementById("myTable");
+          function sortTable(table, col, reverse) {
+            var tb = table.tBodies[0];
+            var rows = Array.prototype.slice.call(tb.rows, 0);
 
-        if (!table.tHead) table.createTHead();
-        table.tHead.innerHTML = "";
+            reverse = -((+reverse) || -1);
 
-        var row = table.tHead.insertRow(0);
-
-        for (var i = 0; i < headers.length; i++) {
-          var th = document.createElement("th");
-          th.textContent = headers[i];
-          row.appendChild(th);
-        }
-      }
-
-      // function buildHtmlTable(table_input) {
-      //   var table = document.getElementById("myTable");
-      //   table.innerHTML = "";
-      //   addAllColumnHeadersFixed(myListColumnHeaders);
-
-      //   var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
-      //   tbody.innerHTML = "";
-
-      //   for (var i = 0; i < table_input.length; i++) {
-      //     var tr = tbody.insertRow(-1);
-      //     for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
-      //       var td = tr.insertCell(-1);
-      //       var cellValue = table_input[i][colIndex];
-      //       if (cellValue == null) cellValue = "";
-      //       td.textContent = cellValue;
-      //     }
-      //   }
-
-      //   function_on_key_up();
-      //   makeSortable(table);
-      // }
-
-      function buildHtmlTable(table_input) {
-        var table = document.getElementById("myTable");
-        table.innerHTML = "";
-        addAllColumnHeadersFixed(myListColumnHeaders);
-
-        var tbody = table.tBodies.length ? table.tBodies[0] : table.createTBody();
-        tbody.innerHTML = "";
-
-        // Column indices by header name (so you can reorder columns later)
-        var colPiece = myListColumnHeaders.indexOf("Piece");
-        if (colPiece === -1) colPiece = myListColumnHeaders.indexOf("piece");
-
-        var colType = myListColumnHeaders.indexOf("Type");
-        if (colType === -1) colType = myListColumnHeaders.indexOf("type");
-
-        var colComposer = myListColumnHeaders.indexOf("Composer");
-        if (colComposer === -1) colComposer = myListColumnHeaders.indexOf("composer");
-
-        for (var i = 0; i < table_input.length; i++) {
-          var tr = tbody.insertRow(-1);
-
-          // Whole row click = piece click (default action)
-          tr.style.cursor = "pointer";
-          (function(rowIndex) {
-            tr.addEventListener("click", function() {
-              var pieceTxt = (table_input[rowIndex][colPiece] || "").toString();
-              if (!pieceTxt) return;
-
-              // Call your existing "piece click" logic here:
-              // Example options (use the one you already have):
-              // handlePieceClickByName(pieceTxt);
-              // handleClickPieceName(pieceTxt);
-              // showPieceInfo(pieceTxt);
-              handlePieceClick(pieceTxt); // <-- rename to your real function
+            rows.sort(function(a, b) {
+              var v1 = (a.cells[col].textContent || "").trim();
+              var v2 = (b.cells[col].textContent || "").trim();
+              // return reverse * v1.localeCompare(v2);
+              return reverse * (isNaN(v1) || isNaN(v2) ? v1.localeCompare(v2) : (v1 - v2));
             });
-          })(i);
 
-          for (var colIndex = 0; colIndex < table_input[0].length; colIndex++) {
-            var td = tr.insertCell(-1);
-            var cellValue = table_input[i][colIndex];
-            if (cellValue == null) cellValue = "";
+            for (var i = 0; i < rows.length; i++) tb.appendChild(rows[i]);
+            alternate_colors(table.getElementsByTagName("tr"));
+          }
 
-            // Type and Composer are clickable independently
-            if (colIndex === colType || colIndex === colComposer) {
-              var span = document.createElement("span");
-              span.textContent = cellValue;
-              span.style.cursor = "pointer";
-              span.style.textDecoration = "underline";
+          function makeSortable(table) {
+            var th = table.tHead && table.tHead.rows[0] ? table.tHead.rows[0].cells : null;
+            if (!th) return;
 
-              // Stop the row click when clicking Type or Composer
-              span.addEventListener("click", function(e) { e.stopPropagation(); });
-
-              // Attach the right click handler
-              (function(colIndexCopy, valueCopy) {
-                span.addEventListener("click", function() {
-                  if (colIndexCopy === colType) {
-                    // Call your existing "type click" logic
-                    handleTypeClick(valueCopy); // <-- rename to your real function
-                  } else {
-                    // Call your existing "composer click" logic
-                    handleComposerClick(valueCopy); // <-- rename to your real function
-                  }
+            for (var i = 0; i < th.length; i++) {
+              (function(i) {
+                var dir = 1;
+                th[i].addEventListener("click", function() {
+                  sortTable(table, i, (dir = 1 - dir));
                 });
-              })(colIndex, cellValue);
-
-              td.appendChild(span);
-            } else {
-              td.textContent = cellValue;
-            }
-          }
-        }
-
-        function_on_key_up();
-        makeSortable(table);
-      }
-
-      function sortTable(table, col, reverse) {
-        var tb = table.tBodies[0];
-        var rows = Array.prototype.slice.call(tb.rows, 0);
-
-        reverse = -((+reverse) || -1);
-
-        rows.sort(function(a, b) {
-          var v1 = (a.cells[col].textContent || "").trim();
-          var v2 = (b.cells[col].textContent || "").trim();
-          // return reverse * v1.localeCompare(v2);
-          return reverse * (isNaN(v1) || isNaN(v2) ? v1.localeCompare(v2) : (v1 - v2));
-        });
-
-        for (var i = 0; i < rows.length; i++) tb.appendChild(rows[i]);
-        alternate_colors(table.getElementsByTagName("tr"));
-      }
-
-      function makeSortable(table) {
-        var th = table.tHead && table.tHead.rows[0] ? table.tHead.rows[0].cells : null;
-        if (!th) return;
-
-        for (var i = 0; i < th.length; i++) {
-          (function(i) {
-            var dir = 1;
-            th[i].addEventListener("click", function() {
-              sortTable(table, i, (dir = 1 - dir));
-            });
-          })(i);
-        }
-      }
-
-      function get_filter_tokens(raw) {
-        var s = (raw || "").toUpperCase().trim();
-        if (!s) return [];
-        return s.split(/\s+/).filter(function(x) { return x.length > 0; });
-      }
-
-      function function_on_key_up() {
-        var input = document.getElementById("myInput");
-        var table = document.getElementById("myTable");
-        var tr = table.getElementsByTagName("tr");
-
-        var videos_check = document.getElementById("videos_check");
-        var audios_check = document.getElementById("audios_check");
-
-        var filter_vec = get_filter_tokens(input.value);
-
-        var ind_type = myListColumnHeaders.indexOf("type");
-        var count_visible = 0;
-
-        for (var i = 1; i < tr.length; i++) {
-          var row = tr[i];
-          var ok_tokens = new Array(filter_vec.length).fill(false);
-
-          for (var col = 0; col < n_cols; col++) {
-            var td = row.getElementsByTagName("td")[col];
-            if (!td) continue;
-            var txtValue = td.textContent || "";
-
-            for (var k = 0; k < filter_vec.length; k++) {
-              if (txtValue.toUpperCase().indexOf(filter_vec[k]) > -1) ok_tokens[k] = true;
+              })(i);
             }
           }
 
-
-          // --- text filter (buscador) ---
-          var ok_text = (filter_vec.length === 0)
-            ? true
-            : ok_tokens.every(function(v) { return v === true; });
-
-          // --- media / extra filters (temporalmente desactivados) ---
-          var ok_media = true;
-
-          if (ok_text && ok_media) {
-            row.style.display = "";
-            count_visible++;
-          } else {
-            row.style.display = "none";
+          function get_filter_tokens(raw) {
+            var s = (raw || "").toUpperCase().trim();
+            if (!s) return [];
+            return s.split(/\s+/).filter(function(x) { return x.length > 0; });
           }
 
-          // var element_ii_is_video = false;
-          // var element_ii_is_audio = false;
+          function function_on_key_up() {
+            var input = document.getElementById("myInput");
+            var table = document.getElementById("myTable");
+            var tr = table.getElementsByTagName("tr");
 
-          // if (ind_type > -1) {
-          //   var td_type = row.getElementsByTagName("td")[ind_type];
-          //   var t = td_type ? (td_type.textContent || "") : "";
-          //   element_ii_is_video = (t === "video");
-          //   element_ii_is_audio = (t === "audio");
-          // }
+            var videos_check = document.getElementById("videos_check");
+            var audios_check = document.getElementById("audios_check");
 
-          // var ok_text = (filter_vec.length === 0) ? true : ok_tokens.every(function(v) { return v === true; });
+            var filter_vec = get_filter_tokens(input.value);
 
-          // var ok_media =
-          //   (videos_check && videos_check.checked && element_ii_is_video) ||
-          //   (audios_check && audios_check.checked && element_ii_is_audio);
-          var ok_media = true;
-          // if (ok_text && ok_media) {
-          //   row.style.display = "";
-          //   count_visible++;
-          // } else {
-          //   row.style.display = "none";
-          // }
-        }
+            var ind_type = myListColumnHeaders.indexOf("type");
+            var count_visible = 0;
 
-        document.getElementById("n_elements").textContent = count_visible + " displayed pieces";
-        alternate_colors(tr);
-      }
+            for (var i = 1; i < tr.length; i++) {
+              var row = tr[i];
+              var ok_tokens = new Array(filter_vec.length).fill(false);
 
-      function alternate_colors(tr) {
-        var count_visible = 0;
-        for (var i = 1; i < tr.length; i++) {
-          if (tr[i].style.display === "") {
-            count_visible++;
-            tr[i].style.backgroundColor = (count_visible % 2 === 0) ? "#DEDFDE" : "#EEECEE";
+              for (var col = 0; col < n_cols; col++) {
+                var td = row.getElementsByTagName("td")[col];
+                if (!td) continue;
+                var txtValue = td.textContent || "";
+
+                for (var k = 0; k < filter_vec.length; k++) {
+                  if (txtValue.toUpperCase().indexOf(filter_vec[k]) > -1) ok_tokens[k] = true;
+                }
+              }
+
+
+              // --- text filter (buscador) ---
+              var ok_text = (filter_vec.length === 0)
+                ? true
+                : ok_tokens.every(function(v) { return v === true; });
+
+              // --- media / extra filters (temporalmente desactivados) ---
+              var ok_media = true;
+
+              if (ok_text && ok_media) {
+                row.style.display = "";
+                count_visible++;
+              } else {
+                row.style.display = "none";
+              }
+
+              // var element_ii_is_video = false;
+              // var element_ii_is_audio = false;
+
+              // if (ind_type > -1) {
+              //   var td_type = row.getElementsByTagName("td")[ind_type];
+              //   var t = td_type ? (td_type.textContent || "") : "";
+              //   element_ii_is_video = (t === "video");
+              //   element_ii_is_audio = (t === "audio");
+              // }
+
+              // var ok_text = (filter_vec.length === 0) ? true : ok_tokens.every(function(v) { return v === true; });
+
+              // var ok_media =
+              //   (videos_check && videos_check.checked && element_ii_is_video) ||
+              //   (audios_check && audios_check.checked && element_ii_is_audio);
+              var ok_media = true;
+              // if (ok_text && ok_media) {
+              //   row.style.display = "";
+              //   count_visible++;
+              // } else {
+              //   row.style.display = "none";
+              // }
+            }
+
+            document.getElementById("n_elements").textContent = count_visible + " displayed pieces";
+            alternate_colors(tr);
           }
-        }
-      }
 
-      var object_2D = null;
-
-      function init_page() {
-        object_2D = create_2D_object(catalogue, properties_vector); // create the table object with all info of the catalogue
-        var properties_vector_support = ["piece_id"];
-        console.log(properties_vector_support)
-        var object_2D_support = create_2D_object(catalogue, properties_vector_support); // other non-displayable objects
-
-        // if properties_vector contains number_appearances, fill it where it corresponds 
-        if (true) {
-          aux = 3
-        for (var ii = 0; ii < object_2D.length; ii++) { // number of elements
-          var piece_id = object_2D_support[ii][0];   // <- esto
-            var years_of_this_piece_ii = getConcertByPieceId(piece_id);
-            object_2D[ii][aux] = years_of_this_piece_ii.length;
+          function alternate_colors(tr) {
+            var count_visible = 0;
+            for (var i = 1; i < tr.length; i++) {
+              if (tr[i].style.display === "") {
+                count_visible++;
+                tr[i].style.backgroundColor = (count_visible % 2 === 0) ? "#DEDFDE" : "#EEECEE";
+              }
+            }
           }
-        }
-        // 
 
-        
+          var object_2D = null;
 
-        var links = create_links(catalogue); // kept for parity, not used as href (same as your current code)
+          function init_page() {
+            object_2D = create_2D_object(catalogue, properties_vector); // create the table object with all info of the catalogue
+            var properties_vector_support = ["piece_id"];
+            console.log(properties_vector_support)
+            var object_2D_support = create_2D_object(catalogue, properties_vector_support); // other non-displayable objects
 
-        var ind_artists = myListColumnHeaders.indexOf("artists");
-        if (ind_artists > -1) {
-          var column_artists = artists_2_string(catalogue);
-          for (var i = 0; i < object_2D.length; i++) {
-            object_2D[i].splice(ind_artists, 0, column_artists[i]);
+            // if properties_vector contains number_appearances, fill it where it corresponds 
+            if (true) {
+              aux = 3
+            for (var ii = 0; ii < object_2D.length; ii++) { // number of elements
+              var piece_id = object_2D_support[ii][0];   // <- esto
+                var years_of_this_piece_ii = getConcertByPieceId(piece_id);
+                object_2D[ii][aux] = years_of_this_piece_ii.length;
+              }
+            }
+            // 
+
+            
+
+            var links = create_links(catalogue); // kept for parity, not used as href (same as your current code)
+
+            var ind_artists = myListColumnHeaders.indexOf("artists");
+            if (ind_artists > -1) {
+              var column_artists = artists_2_string(catalogue);
+              for (var i = 0; i < object_2D.length; i++) {
+                object_2D[i].splice(ind_artists, 0, column_artists[i]);
+              }
+            }
+
+            buildHtmlTable(object_2D);
           }
-        }
+        </script>
 
-        buildHtmlTable(object_2D);
-      }
-    </script>
-
-</head>  
-<body onload="init_page()">
-    <div class="container-fluid">
-        <div class="row my-0 my-sm-3">
-        <!-- Title Section -->
-            <div class="light_gray_panel">
-                <h4 id="title">Interactive database of the New Year's Concert by the Vienna Philharmonic</h4>
+    </head>  
+    <body onload="init_page()">
+        <div class="container-fluid">
+            <div class="row my-0 my-sm-3">
+            <!-- Title Section -->
+                <div class="light_gray_panel">
+                    <h4 id="title">Interactive database of the New Year's Concert by the Vienna Philharmonic</h4>
+                </div>
             </div>
-        </div>
- 
+     
 
-        <!-- Main Content Section -->
-        <div class="row my-0 my-sm-3">
+            <!-- Main Content Section -->
+            <div class="row my-0 my-sm-3">
 
-            <!-- <div class="row"> -->
-                <!-- Left Panel -->
-                <div class="col-md-3 left-panel">
-                    <h5>Select a year</h5>
-                    <div id="demo" class="radio-toolbar"></div>
-                    <script>
-                        let allRadioButtons = '<div class="row row-cols-auto justify-content-center g-1">'; // Bootstrap grid with auto columns and gap
+                <!-- <div class="row"> -->
+                    <!-- Left Panel -->
+                    <div class="col-md-3 left-panel">
+                        <h5>Select a year</h5>
+                        <div id="demo" class="radio-toolbar"></div>
+                        <script>
+                            let allRadioButtons = '<div class="row row-cols-auto justify-content-center g-1">'; // Bootstrap grid with auto columns and gap
 
-                        for (let i = last_year; i > 1940; i--) {
+                            for (let i = last_year; i > 1940; i--) {
+                                allRadioButtons += `
+                                    <div class="col">
+                                        <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
+                                        <label for="${i}" class="year-box">${i}</label>
+                                    </div>`;
+                            }
+
+                            // Add the 1939 year as well
+                            i = 1939;
                             allRadioButtons += `
                                 <div class="col">
                                     <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
                                     <label for="${i}" class="year-box">${i}</label>
                                 </div>`;
-                        }
 
-                        // Add the 1939 year as well
-                        i = 1939;
-                        allRadioButtons += `
-                            <div class="col">
-                                <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
-                                <label for="${i}" class="year-box">${i}</label>
-                            </div>`;
-
-                        allRadioButtons += '</div>'; // Close the Bootstrap grid
-                        document.getElementById("demo").innerHTML = allRadioButtons;
-                    </script>
+                            allRadioButtons += '</div>'; // Close the Bootstrap grid
+                            document.getElementById("demo").innerHTML = allRadioButtons;
+                        </script>
+                    </div>
+                <!-- </div> -->
+                <!-- Main Panel -->
+                <div class="col-md-5 central-panel">
+                    <h5 id="concert">New Year's Concert</h5>
+                    <p  style="font-size: 0.9em; color: gray; font-style: italic;">(*Click on <span style="color: green;">conductor</span>, <span style="color: blue;">pieces</span>, <span style="color: orange;">musical forms</span>, and <span style="color: red;">composers</span>.)</p>
+                    <p id="conductor_title"><strong><u>Conductor:</u></strong> <span id="conductor" class="text-decoration-none" style="cursor: pointer;">&#8205</span></p>
+                    <p id="program_title"><strong><u>Program:</u></strong></p>
+                    <ol id="list_pieces_program" class="ps-3"></ol>
+                    <p id="encore_title"><strong><u>Encores:</u></strong></p>
+                    <ol id="list_pieces_encores" class="ps-3"></ol>
                 </div>
-            <!-- </div> -->
-            <!-- Main Panel -->
-            <div class="col-md-5 central-panel">
-                <h5 id="concert">New Year's Concert</h5>
-                <p  style="font-size: 0.9em; color: gray; font-style: italic;">(*Click on <span style="color: green;">conductor</span>, <span style="color: blue;">pieces</span>, <span style="color: orange;">musical forms</span>, and <span style="color: red;">composers</span>.)</p>
-                <p id="conductor_title"><strong><u>Conductor:</u></strong> <span id="conductor" class="text-decoration-none" style="cursor: pointer;">&#8205</span></p>
-                <p id="program_title"><strong><u>Program:</u></strong></p>
-                <ol id="list_pieces_program" class="ps-3"></ol>
-                <p id="encore_title"><strong><u>Encores:</u></strong></p>
-                <ol id="list_pieces_encores" class="ps-3"></ol>
-            </div>
 
-            <!-- Right Panel -->
-            <div class="col-md-4 right-panel">
-                <h5 id="concert">Information</h5>
-                <p><span id="info_text" class="text-decoration-none" style="cursor: pointer;">&#8205</span></p>
+                <!-- Right Panel -->
+                <div class="col-md-4 right-panel">
+                    <h5 id="concert">Information</h5>
+                    <p><span id="info_text" class="text-decoration-none" style="cursor: pointer;">&#8205</span></p>
+                </div>
             </div>
         </div>
+     
+     
+
+     <!-- Tabs: Catalogue / Statistics -->
+    <ul class="nav nav-tabs mt-3" id="nycTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="catalogue-tab" data-bs-toggle="tab" data-bs-target="#cataloguePane" type="button" role="tab" aria-controls="cataloguePane" aria-selected="true">
+          Catalogue
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsPane" type="button" role="tab" aria-controls="statsPane" aria-selected="false">
+          Statistics
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="nycTabsContent">
+      <!-- Catalogue tab -->
+      <div class="tab-pane fade" id="cataloguePane" role="tabpanel" aria-labelledby="catalogue-tab">
+
+        <div class="col-md-12 catalogue-panel">
+          <h5>Catalogue of pieces</h5>
+
+          <div class="float-parent-element">
+            <div class="float-child-element_left">
+              <input class="left_div" type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
+            </div>
+            <div class="float-child-element_right">
+              <form class="right_div"></form>
+            </div>
+          </div>
+
+          <div>
+            <a float="right" id="n_elements"></a>
+          </div>
+
+          <!-- optional: keeps mobile overflow under control -->
+          <div class="table-scroll">
+            <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;"></table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Statistics tab -->
+      <div class="tab-pane fade show active" id="statsPane" role="tabpanel" aria-labelledby="stats-tab">
+
+        <div class="col-md-12 catalogue-panel">
+          <h5>Statistics (work in progress)</h5>
+
+          <!-- minimal UI now: selectors later -->
+          <div class="row g-2 align-items-center mb-2">
+    <!--         <div class="col-12 col-md-auto">
+              <select id="statsScope" class="form-select form-select-sm">
+                <option value="all" selected>All years</option>
+                <option value="modern">Modern era</option>
+                <option value="postwar">Postwar</option>
+              </select>
+            </div> -->
+<!--             <div class="col-12 col-md-auto">
+              <button id="btnRenderStats" class="btn btn-sm btn-secondary" type="button">Render</button>
+            </div> -->
+          </div>
+
+          <!-- chart containers (Chart.js) -->
+          <div class="row g-3">
+            
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Pieces per concert</h6>
+                <canvas id="chartPiecesPerConcert"></canvas>
+
+                <script>
+                  window.addEventListener('load', function () {
+                    if (!Array.isArray(window.concerts)) return;
+
+                    const labels = concerts.map(c => c.year);
+
+                    // pieces in program
+                    const y_program = concerts.map(c =>
+                      (typeof c.n_program === 'number') ? c.n_program :
+                      (typeof c.n_program === 'string' && !isNaN(+c.n_program)) ? +c.n_program :
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0
+                    );
+
+                    // total pieces (program + encores, if any)
+                    const y_total = concerts.map((c, i) =>
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : y_program[i]
+                    );
+
+                    renderLineChart('chartPiecesPerConcert', labels, [
+                      { label: 'Program', data: y_program },
+                      { label: 'Total', data: y_total }
+                    ]);
+                  });
+                </script>
+                
+              </div>
+            </div> 
+
+          </div>
+        </div>
+      </div>
     </div>
- 
- 
-
- <!-- Tabs: Catalogue / Statistics -->
-<ul class="nav nav-tabs mt-3" id="nycTabs" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="catalogue-tab" data-bs-toggle="tab" data-bs-target="#cataloguePane" type="button" role="tab" aria-controls="cataloguePane" aria-selected="true">
-      Catalogue
-    </button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsPane" type="button" role="tab" aria-controls="statsPane" aria-selected="false">
-      Statistics
-    </button>
-  </li>
-</ul>
-
-<div class="tab-content" id="nycTabsContent">
-  <!-- Catalogue tab -->
-  <div class="tab-pane fade show active" id="cataloguePane" role="tabpanel" aria-labelledby="catalogue-tab">
-
-    <div class="col-md-12 catalogue-panel">
+    <!-- <div class="col-md-12 catalogue-panel">
       <h5>Catalogue of pieces</h5>
 
       <div class="float-parent-element">
@@ -547,205 +631,134 @@ init();
           <input class="left_div" type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
         </div>
         <div class="float-child-element_right">
-          <form class="right_div"></form>
+          <form class="right_div">
+          </form>
         </div>
       </div>
 
       <div>
         <a float="right" id="n_elements"></a>
-      </div>
+      </div> -->
 
-      <!-- optional: keeps mobile overflow under control -->
+
       <div class="table-scroll">
-        <table id="myTable" border="1" style="width:100%;text-align:left;border-collapse:collapse;"></table>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Statistics tab -->
-  <div class="tab-pane fade" id="statsPane" role="tabpanel" aria-labelledby="stats-tab">
-
-    <div class="col-md-12 catalogue-panel">
-      <h5>Statistics (work in progress)</h5>
-
-      <!-- minimal UI now: selectors later -->
-      <div class="row g-2 align-items-center mb-2">
-<!--         <div class="col-12 col-md-auto">
-          <select id="statsScope" class="form-select form-select-sm">
-            <option value="all" selected>All years</option>
-            <option value="modern">Modern era</option>
-            <option value="postwar">Postwar</option>
-          </select>
-        </div> -->
-        <div class="col-12 col-md-auto">
-          <button id="btnRenderStats" class="btn btn-sm btn-secondary" type="button">Render</button>
-        </div>
+        <table id="myTable"></table>
       </div>
 
-      <!-- chart containers (Chart.js) -->
-      <div class="row g-3">
-        <div class="col-12 col-lg-6">
-          <div class="p-2" style="background:#fff;border:1px solid #ddd;border-radius:8px;">
-            <div style="font-size:0.95rem;margin-bottom:6px;">Pieces per concert</div>
-            <canvas id="chartPiecesPerConcert"></canvas>
-          </div>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GHT1L88XYZ');
+      </script>
+
+      <!-- Default Statcounter code for Github personal
+      https://victorelvira.github.io/index.html -->
+      <script type="text/javascript">
+        var sc_project=11157426;
+        var sc_invisible=1;
+        var sc_security="c4968ba5";
+      </script>
+      <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+      <noscript>
+        <div class="statcounter">
+          <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+            <img class="statcounter" src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics" referrerpolicy="no-referrer-when-downgrade">
+          </a>
         </div>
-        <div class="col-12 col-lg-6">
-          <div class="p-2" style="background:#fff;border:1px solid #ddd;border-radius:8px;">
-            <div style="font-size:0.95rem;margin-bottom:6px;">Waltz share</div>
-            <canvas id="chartWaltzShare"></canvas>
-          </div>
-        </div>
+      </noscript>
+      
 
-        <div class="col-12">
-          <div class="p-2" style="background:#fff;border:1px solid #ddd;border-radius:8px;">
-            <div style="font-size:0.95rem;margin-bottom:6px;">New pieces vs repeated pieces</div>
-            <canvas id="chartNewVsRepeated"></canvas>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-<!-- <div class="col-md-12 catalogue-panel">
-  <h5>Catalogue of pieces</h5>
-
-  <div class="float-parent-element">
-    <div class="float-child-element_left">
-      <input class="left_div" type="text" id="myInput" onkeyup="function_on_key_up()" placeholder="Search..." title="Type" width="20px">
-    </div>
-    <div class="float-child-element_right">
-      <form class="right_div">
-      </form>
-    </div>
-  </div>
-
-  <div>
-    <a float="right" id="n_elements"></a>
-  </div> -->
-
-
-  <div class="table-scroll">
-    <table id="myTable"></table>
-  </div>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-GHT1L88XYZ');
-  </script>
-
-  <!-- Default Statcounter code for Github personal
-  https://victorelvira.github.io/index.html -->
-  <script type="text/javascript">
-    var sc_project=11157426;
-    var sc_invisible=1;
-    var sc_security="c4968ba5";
-  </script>
-  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-  <noscript>
-    <div class="statcounter">
-      <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-        <img class="statcounter" src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics" referrerpolicy="no-referrer-when-downgrade">
-      </a>
-    </div>
-  </noscript>
-  
-
-<!-- Add a new section below the existing row -->
-<!-- <div class="row my-0 my-sm-3">
-    <div class="col-md-12">
-        <h5 class="text-center">Statistics and Visualizations</h5>
-        <p class="text-center">Explore the distribution of compositions, conductors, and other key details about the New Year's Concerts.</p>
-        <div class="text-center">
-            <select id="yearDropdown" class="form-select w-auto d-inline-block mb-3">
-                <option value="all">All Years</option>
-            </select>
-            <button id="viewStatsButton" class="btn btn-primary">View Stats</button>
+    <!-- Add a new section below the existing row -->
+    <!-- <div class="row my-0 my-sm-3">
+        <div class="col-md-12">
+            <h5 class="text-center">Statistics and Visualizations</h5>
+            <p class="text-center">Explore the distribution of compositions, conductors, and other key details about the New Year's Concerts.</p>
+            <div class="text-center">
+                <select id="yearDropdown" class="form-select w-auto d-inline-block mb-3">
+                    <option value="all">All Years</option>
+                </select>
+                <button id="viewStatsButton" class="btn btn-primary">View Stats</button>
+            </div>
         </div>
     </div>
-</div>
-<div class="row my-3">
-    <div class="col-md-6">
-        <h6>Bar Chart</h6>
-        <div id="barChartContainer" class="border rounded bg-light" style="height: 400px;"></div>
-    </div>
-    <div class="col-md-6">
-        <h6>Pie Chart</h6>
-        <div id="pieChartContainer" class="border rounded bg-light" style="height: 400px;"></div>
-    </div>
-</div> -->
+    <div class="row my-3">
+        <div class="col-md-6">
+            <h6>Bar Chart</h6>
+            <div id="barChartContainer" class="border rounded bg-light" style="height: 400px;"></div>
+        </div>
+        <div class="col-md-6">
+            <h6>Pie Chart</h6>
+            <div id="pieChartContainer" class="border rounded bg-light" style="height: 400px;"></div>
+        </div>
+    </div> -->
 
 
 
 
 
-    <script>
-        clickOnYear(last_year); 
-        populateYearDropdown(concerts)
-        // clickOnYear(2024);
-    </script>
-
-
-
-
-
-
-        <!-- Tracking: Google Analytics tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-GHT1L88XYZ');
+            clickOnYear(last_year); 
+            populateYearDropdown(concerts)
+            // clickOnYear(2024);
         </script>
-        <!-- End Google Analytics tag (gtag.js) -->
-        
-        <!-- Default Statcounter code for Github personal
-        https://victorelvira.github.io/index.html -->
-        <script type="text/javascript">
-        var sc_project=11157426; 
-        var sc_invisible=1; 
-        var sc_security="c4968ba5"; 
+
+
+
+
+
+
+            <!-- Tracking: Google Analytics tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-GHT1L88XYZ');
+            </script>
+            <!-- End Google Analytics tag (gtag.js) -->
+            
+            <!-- Default Statcounter code for Github personal
+            https://victorelvira.github.io/index.html -->
+            <script type="text/javascript">
+            var sc_project=11157426; 
+            var sc_invisible=1; 
+            var sc_security="c4968ba5"; 
+            </script>
+            <script type="text/javascript"
+            src="https://www.statcounter.com/counter/counter.js"
+            async></script>
+            <noscript><div class="statcounter"><a title="Web Analytics"
+            href="https://statcounter.com/" target="_blank"><img
+            class="statcounter"
+            src="https://c.statcounter.com/11157426/0/c4968ba5/1/"
+            alt="Web Analytics"
+            referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+            <!-- End of Statcounter Code -->
+
+
+    </body>
+
+
+
+
+
+    <footer class="bg-dark text-white py-3">
+        <div class="text-center">
+            <p>&copy; <span id="currentYear"></span> Víctor Elvira. All rights reserved.</p>
+            <p>Last updated: <span id="lastUpdated"></span></p>
+        </div>
+        <script>
+            // Set the current year dynamically
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            // Get the last modified date of the current file
+            const lastModified = new Date(document.lastModified);
+            document.getElementById("lastUpdated").textContent = 
+                lastModified.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' });
         </script>
-        <script type="text/javascript"
-        src="https://www.statcounter.com/counter/counter.js"
-        async></script>
-        <noscript><div class="statcounter"><a title="Web Analytics"
-        href="https://statcounter.com/" target="_blank"><img
-        class="statcounter"
-        src="https://c.statcounter.com/11157426/0/c4968ba5/1/"
-        alt="Web Analytics"
-        referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-        <!-- End of Statcounter Code -->
+    </footer>
 
-
-</body>
-
-
-
-
-
-<footer class="bg-dark text-white py-3">
-    <div class="text-center">
-        <p>&copy; <span id="currentYear"></span> Víctor Elvira. All rights reserved.</p>
-        <p>Last updated: <span id="lastUpdated"></span></p>
-    </div>
-    <script>
-        // Set the current year dynamically
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-        // Get the last modified date of the current file
-        const lastModified = new Date(document.lastModified);
-        document.getElementById("lastUpdated").textContent = 
-            lastModified.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' });
-    </script>
-</footer>
-
-</html>
+    </html>
