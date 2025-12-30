@@ -589,6 +589,9 @@
             <div class="col-12 col-lg-6 mb-3">
               <div class="plot-box">
                 <h6 class="plot-title">Pieces per concert</h6>
+                <div class="plot-desc">
+                  Number of pieces performed in the main program per New Year’s Concert, by year.
+                </div>
                 <canvas id="chartPiecesPerConcert"></canvas>
 
                 <script>
@@ -622,6 +625,9 @@
             <div class="col-12 col-lg-6 mb-3">
               <div class="plot-box">
                 <h6 class="plot-title">Pieces per concert (bar)</h6>
+                <div class="plot-desc">
+                  Number of pieces performed in the main program per New Year’s Concert, by year.
+                </div>
                 <canvas id="chartPiecesPerConcert_bar"></canvas>
 
                 <script>
@@ -653,19 +659,35 @@
 
               <div class="col-6">
                 <div class="plot-box">
-                  <h6 class="plot-title">Catalogue by composer</h6>
+                  <h6 class="plot-title">Who gets played the most? (all years)</h6>
+                  <div class="plot-desc">
+                    Total number of times pieces by each composer have been performed across all New Year’s Concerts.
+                  </div>
                   <canvas id="chartCatalogueByComposer"></canvas>
 
                   <script>
                     window.addEventListener('load', function () {
-                      if (!Array.isArray(window.catalogue)) return;
+                      const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
+                      const CONCERTS  = (typeof concerts !== 'undefined')  ? concerts  : window.concerts;
+                      if (!Array.isArray(CATALOGUE) || !Array.isArray(CONCERTS)) return;
 
                       const top_show = 5;
 
+                      // piece_id -> composer name
+                      const piece2composer = new Map(
+                        CATALOGUE.map(p => [Number(p.piece_id), p.composer])
+                      );
+
+                      // composer name -> total appearances across all concerts
                       const counts = {};
-                      catalogue.forEach(p => {
-                        const c = p.composer;
-                        counts[c] = (counts[c] || 0) + 1;
+
+                      CONCERTS.forEach(c => {
+                        const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                        ids.forEach(pid => {
+                          const comp = piece2composer.get(Number(pid));
+                          if (!comp) return;
+                          counts[comp] = (counts[comp] || 0) + 1; // +1 per appearance of a piece in a concert
+                        });
                       });
 
                       const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
@@ -686,7 +708,10 @@
 
               <div class="col-6">
                 <div class="plot-box">
-                  <h6 class="plot-title">Catalogue by composer (alt)</h6>
+                  <h6 class="plot-title">Catalogue by composer</h6>
+                  <div class="plot-desc">
+                    Number of appearances of pieces by composer across all New Year's Concerts.
+                  </div>
                   <canvas id="chartCatalogueByComposer_2"></canvas>
 
                   <script>
