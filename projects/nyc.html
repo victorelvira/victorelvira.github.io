@@ -592,7 +592,9 @@
                 <div class="plot-desc">
                   Number of pieces performed in the main program per New Year’s Concert, by year.
                 </div>
-                <canvas id="chartPiecesPerConcert"></canvas>
+                <div class="plot-chart">
+                  <canvas id="chartPiecesPerConcert"></canvas>
+                </div>
 
                 <script>
                   window.addEventListener('load', function () {
@@ -628,8 +630,10 @@
                 <div class="plot-desc">
                   Number of pieces performed in the main program per New Year’s Concert, by year.
                 </div>
-                <canvas id="chartPiecesPerConcert_bar"></canvas>
-
+                <div class="plot-chart">
+                  <canvas id="chartPiecesPerConcert_bar"></canvas>
+                </div>
+ 
                 <script>
                   window.addEventListener('load', function () {
                     if (!Array.isArray(window.concerts)) return;
@@ -657,14 +661,20 @@
 
             <div class="row g-3">
 
+
+
+              <!-- Among all pieces with repetitions  -->
+                    
               <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">Who gets played the most? (all years)</h6>
                   <div class="plot-desc">
                     Total number of times pieces by each composer have been performed across all New Year’s Concerts.
                   </div>
-                  <canvas id="chartCatalogueByComposer"></canvas>
-
+                  <div class="plot-chart">
+                    <canvas id="chartAllConcertsByComposer"></canvas>
+                  </div>
+ 
                   <script>
                     window.addEventListener('load', function () {
                       const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
@@ -700,7 +710,7 @@
                       const others = rest.reduce((s, x) => s + x[1], 0);
                       if (others > 0) { labels.push('Others'); values.push(others); }
 
-                      renderPieChart('chartCatalogueByComposer', labels, values);
+                      renderPieChart('chartAllConcertsByComposer', labels, values);
                     });
                   </script>
                 </div>
@@ -708,22 +718,35 @@
 
               <div class="col-6">
                 <div class="plot-box">
-                  <h6 class="plot-title">Catalogue by composer</h6>
+                  <h6 class="plot-title">What gets played the most? (all years)</h6>
                   <div class="plot-desc">
-                    Number of appearances of pieces by composer across all New Year's Concerts.
+                    Total number of times pieces of each musical form have been performed across all New Year's Concerts.
                   </div>
-                  <canvas id="chartCatalogueByComposer_2"></canvas>
+                  <div class="plot-chart">
+                    <canvas id="chartPlayedByType"></canvas>
+                  </div>
 
                   <script>
-                    window.addEventListener('load', function () {
-                      if (!Array.isArray(window.catalogue)) return;
+                    (function runPlayedByType() {
+                      const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
+                      const CONCERTS  = (typeof concerts  !== 'undefined') ? concerts  : window.concerts;
+                      if (!Array.isArray(CATALOGUE) || !Array.isArray(CONCERTS)) return;
 
                       const top_show = 5;
 
+                      // piece_id -> type
+                      const piece2type = new Map(CATALOGUE.map(p => [Number(p.piece_id), p.type]));
+
+                      // type -> total appearances across all concerts
                       const counts = {};
-                      catalogue.forEach(p => {
-                        const c = p.composer;
-                        counts[c] = (counts[c] || 0) + 1;
+
+                      CONCERTS.forEach(c => {
+                        const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                        ids.forEach(pid => {
+                          const t = piece2type.get(Number(pid));
+                          if (!t) return;
+                          counts[t] = (counts[t] || 0) + 1; // +1 per concert appearance
+                        });
                       });
 
                       const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
@@ -736,11 +759,131 @@
                       const others = rest.reduce((s, x) => s + x[1], 0);
                       if (others > 0) { labels.push('Others'); values.push(others); }
 
-                      renderPieChart('chartCatalogueByComposer_2', labels, values);
+                      renderPieChart('chartPlayedByType', labels, values);
+                    })();
+
+                    // If the tab is not default open, run again when Statistics tab is shown
+                    document.getElementById('stats-tab')?.addEventListener('shown.bs.tab', function () {
+                      const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
+                      const CONCERTS  = (typeof concerts  !== 'undefined') ? concerts  : window.concerts;
+                      if (!Array.isArray(CATALOGUE) || !Array.isArray(CONCERTS)) return;
+
+                      const top_show = 5;
+                      const piece2type = new Map(CATALOGUE.map(p => [Number(p.piece_id), p.type]));
+                      const counts = {};
+                      CONCERTS.forEach(c => {
+                        const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                        ids.forEach(pid => {
+                          const t = piece2type.get(Number(pid));
+                          if (!t) return;
+                          counts[t] = (counts[t] || 0) + 1;
+                        });
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      renderPieChart('chartPlayedByType', labels, values);
                     });
                   </script>
                 </div>
               </div>
+
+              <!-- Within the catalogue (without repetitions)  -->
+                    
+              <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Catalogue by composer</h6>
+                  <div class="plot-desc">
+                    Number of pieces in the catalogue by composer (each piece counted once).
+                  </div>
+                  <div class="plot-chart">
+                    <canvas id="chartCatalogueByComposer"></canvas>
+                  </div>
+
+                  <script>
+                    window.addEventListener('load', function () {
+                      const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
+                      if (!Array.isArray(CATALOGUE)) return;
+
+                      const top_show = 5;
+
+                      // composer -> number of pieces in catalogue
+                      const counts = {};
+                      CATALOGUE.forEach(p => {
+                        if (!p.composer) return;
+                        counts[p.composer] = (counts[p.composer] || 0) + 1;
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) {
+                        labels.push('Others');
+                        values.push(others);
+                      }
+
+                      renderPieChart('chartCatalogueByComposer', labels, values);
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Catalogue by musical form</h6>
+                  <div class="plot-desc">
+                    Number of pieces in the historical catalogue by musical form.
+                  </div>
+
+                  <div class="plot-chart">
+                    <canvas id="chartCatalogueByType"></canvas>
+                  </div>
+
+                  <script>
+                    window.addEventListener('load', function () {
+                      if (!Array.isArray(window.catalogue)) return;
+
+                      const top_show = 5;
+
+                      const counts = {};
+                      catalogue.forEach(p => {
+                        const t = p.type;
+                        if (!t) return;
+                        counts[t] = (counts[t] || 0) + 1;
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) {
+                        labels.push('Others');
+                        values.push(others);
+                      }
+
+                      renderPieChart('chartCatalogueByType', labels, values);
+                    });
+                  </script>
+                </div>
+              </div>
+
 
             </div>
 

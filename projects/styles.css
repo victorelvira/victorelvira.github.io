@@ -331,8 +331,19 @@ th, td { text-align: left; padding: 8px; }
   background:#fff;
   border:1px solid #ddd;
   border-radius:8px;
-  height: 220px;
-  padding: 8px 8px 26px 8px; /* <- más padding abajo */
+  padding: 8px;
+}
+
+/* fixed chart area, NOT fixed canvas */
+.plot-chart{
+  position: relative;
+  height: 240px;   /* ajusta aqui: 220, 260, 300... */
+}
+
+.plot-chart canvas{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 .plot-title{
