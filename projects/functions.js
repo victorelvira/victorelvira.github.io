@@ -1148,19 +1148,22 @@ document.addEventListener('DOMContentLoaded', () => {
    });
  }
 
-function renderBarChart(canvasId, labels, values) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+ function renderBarChart(canvasId, labels, datasets) {
+   const canvas = document.getElementById(canvasId);
+   if (!canvas) return;
+   const ctx = canvas.getContext('2d');
 
-  if (window._charts[canvasId]) window._charts[canvasId].destroy();
+   if (window._charts[canvasId]) window._charts[canvasId].destroy();
 
-  window._charts[canvasId] = new Chart(ctx, {
-    type: 'bar',
-    data: { labels, datasets: [{ data: values }] },
-    options: { responsive: true, maintainAspectRatio: false }
-  });
-}
+   window._charts[canvasId] = new Chart(ctx, {
+     type: 'bar',
+     data: { labels, datasets },
+     options: {
+       responsive: true,
+       maintainAspectRatio: false
+     }
+   });
+ }
 
 function renderPieChart(canvasId, labels, values) {
   const canvas = document.getElementById(canvasId);

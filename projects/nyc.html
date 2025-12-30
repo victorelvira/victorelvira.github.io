@@ -525,7 +525,7 @@
     <ul class="nav nav-tabs mt-3" id="nycTabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="catalogue-tab" data-bs-toggle="tab" data-bs-target="#cataloguePane" type="button" role="tab" aria-controls="cataloguePane" aria-selected="true">
-          Catalogue
+          Full catalogue of pieces
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -615,9 +615,109 @@
                     ]);
                   });
                 </script>
-                
+
               </div>
             </div> 
+
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Pieces per concert (bar)</h6>
+                <canvas id="chartPiecesPerConcert_bar"></canvas>
+
+                <script>
+                  window.addEventListener('load', function () {
+                    if (!Array.isArray(window.concerts)) return;
+
+                    const labels = concerts.map(c => c.year);
+
+                    const y_program = concerts.map(c =>
+                      (typeof c.n_program === 'number') ? c.n_program :
+                      (typeof c.n_program === 'string' && !isNaN(+c.n_program)) ? +c.n_program :
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0
+                    );
+
+                    const y_total = concerts.map((c, i) =>
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : y_program[i]
+                    );
+
+                    renderBarChart('chartPiecesPerConcert_bar', labels, [
+                      { label: 'Program', data: y_program },
+                      { label: 'Total', data: y_total }
+                    ]);
+                  });
+                </script>
+              </div>
+            </div>
+
+            <div class="row g-3">
+
+              <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Catalogue by composer</h6>
+                  <canvas id="chartCatalogueByComposer"></canvas>
+
+                  <script>
+                    window.addEventListener('load', function () {
+                      if (!Array.isArray(window.catalogue)) return;
+
+                      const top_show = 5;
+
+                      const counts = {};
+                      catalogue.forEach(p => {
+                        const c = p.composer;
+                        counts[c] = (counts[c] || 0) + 1;
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      renderPieChart('chartCatalogueByComposer', labels, values);
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Catalogue by composer (alt)</h6>
+                  <canvas id="chartCatalogueByComposer_2"></canvas>
+
+                  <script>
+                    window.addEventListener('load', function () {
+                      if (!Array.isArray(window.catalogue)) return;
+
+                      const top_show = 5;
+
+                      const counts = {};
+                      catalogue.forEach(p => {
+                        const c = p.composer;
+                        counts[c] = (counts[c] || 0) + 1;
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      renderPieChart('chartCatalogueByComposer_2', labels, values);
+                    });
+                  </script>
+                </div>
+              </div>
+
+            </div>
 
           </div>
         </div>
