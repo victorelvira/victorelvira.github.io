@@ -1372,8 +1372,7 @@
 
 
 
-              <!-- Among all pieces with repetitions  -->
-              <!-- Among all pieces with repetitions  -->
+               <!-- Among all pieces with repetitions  -->
               <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">Most performed composers (all years)</h6>
@@ -1461,10 +1460,10 @@
                 </div>
               </div>
 
-              
 
 
-              <div class="col-6">
+
+              <!-- <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">Who gets played the most? (all years)</h6>
                   <div class="plot-desc">
@@ -1516,8 +1515,96 @@
                     });
                   </script>
                 </div>
+              </div> -->
+
+
+              <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Most performed musical forms (all years)</h6>
+
+                  <div class="plot-desc">
+                    Considering all <span id="totalPiecesAllConcerts_2"></span> pieces performed across every edition of the New Year’s Concert (including repetitions), the repertoire is overwhelmingly dominated by a small number of musical forms. Polkas (<span id="countPolka"></span> performances), waltzes (<span id="countWaltz"></span>), and marches (<span id="countMarch"></span>) account for a large fraction of the total programme, while all other forms appear comparatively rarely and are therefore grouped as Others.
+                  </div>
+                  <script>
+                    document.getElementById('totalPiecesAllConcerts_2').textContent = total_pieces_all_concerts;
+                  </script>
+
+                  <div class="plot-chart">
+                    <canvas id="chartPlayedByType"></canvas>
+                  </div>
+
+                  <div class="plot-reading" id="readingPlayedByType">
+                    This horizontal histogram ranks musical forms by how often they appear in the New Year’s Concert. It aggregates all <span id="totalPiecesAllConcerts_types"></span> performed pieces across all editions (including repeats), and displays the <span id="playedTypeTopShow"></span> most frequent forms.
+                  </div>
+                  <script>
+                    document.getElementById('totalPiecesAllConcerts_types').textContent = total_pieces_all_concerts;
+                  </script>
+
+
+                  <script>
+                    function normalizeType(t) {
+                      if (!t) return null;
+                      return t.includes('Polka') ? 'Polka' : t;
+                    }
+
+                    function runPlayedByType() {
+                      const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
+                      const CONCERTS  = (typeof concerts  !== 'undefined') ? concerts  : window.concerts;
+                      if (!Array.isArray(CATALOGUE) || !Array.isArray(CONCERTS)) return;
+
+                      const top_show = 8;
+                      document.getElementById('playedTypeTopShow').textContent = top_show;
+
+                      // piece_id -> type
+                      const piece2type = new Map(CATALOGUE.map(p => [Number(p.piece_id), p.type]));
+
+                      // type -> total appearances across all concerts
+                      const counts = {};
+                      CONCERTS.forEach(c => {
+                        const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                        ids.forEach(pid => {
+                          const t = normalizeType(piece2type.get(Number(pid)));
+                          if (!t) return;
+                          counts[t] = (counts[t] || 0) + 1;
+                        });
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      // total pieces played (including repeats)
+                      const totalPieces = Object.values(counts).reduce((a, b) => a + b, 0);
+
+                      // main forms (case-safe)
+                      const polkaCount  = counts['Polka']   || 0;
+                      const waltzCount  = counts['Waltz']   || 0;
+                      const marchCount  = counts['March']  || 0;
+
+                      // inject into text
+                      document.getElementById('totalPiecesAllConcerts_2').textContent = totalPieces;
+                      document.getElementById('countPolka').textContent  = polkaCount;
+                      document.getElementById('countWaltz').textContent  = waltzCount;
+                      document.getElementById('countMarch').textContent  = marchCount;
+
+                      renderBarChartHorizontal('chartPlayedByType', labels, [
+                        { label: 'Appearances', data: values }
+                      ]);
+                    }
+
+                    window.addEventListener('load', runPlayedByType);
+                    document.getElementById('stats-tab')?.addEventListener('shown.bs.tab', runPlayedByType);
+                  </script>
+                </div>
               </div>
 
+              <!-- 
               <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">What gets played the most? (all years)</h6>
@@ -1542,7 +1629,7 @@
                       const CONCERTS  = (typeof concerts  !== 'undefined') ? concerts  : window.concerts;
                       if (!Array.isArray(CATALOGUE) || !Array.isArray(CONCERTS)) return;
 
-                      const top_show = 5;
+                      const top_show = 7;
 
                       // piece_id -> type
                       const piece2type = new Map(CATALOGUE.map(p => [Number(p.piece_id), p.type]));
@@ -1606,11 +1693,77 @@
                     });
                   </script>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Within the catalogue (without repetitions)  -->
-                    
+              
               <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Composers with the most pieces in the New Year’s Concert repertoire</h6>
+
+                  <div class="plot-desc" id="descCatalogueByComposer">
+                     There are <span id="totalPiecesCatalogue"></span> unique pieces that have been performed in total across all editions of the New Year's Concert. <br><br>
+                    The largest contributors are <span id="catTopComposer1Name"></span> (<span id="catTopComposer1Count"></span>), then <span id="catTopComposer2Name"></span> (<span id="catTopComposer2Count"></span>) and <span id="catTopComposer3Name"></span> (<span id="catTopComposer3Count"></span>).
+                  </div>
+
+                  <div class="plot-chart">
+                    <canvas id="chartCatalogueByComposer"></canvas>
+                  </div>
+
+                  <div class="plot-reading" id="readingCatalogueByComposer">
+                    Horizontal histogram of the top <span id="catTopShow"></span> composers by number of pieces in the catalogue. All remaining composers are grouped as Others.  Here, the Others category is substantially larger than in the previous plot based on performances (with repetitions). This reflects the fact that many non-Strauss composers are represented in the catalogue by only one or two works. While these pieces expand the breadth of the repertoire, they are rarely repeated in concert, so their composers contribute little to the performance-based counts but dominate the long tail of the catalogue itself.
+                  </div>
+
+                  <script>
+                    window.addEventListener('load', function () {
+                      if (!Array.isArray(catalogue)) return;
+
+                      const top_show = 12;
+
+                      document.getElementById('totalPiecesCatalogue').textContent = catalogue.length;
+                      document.getElementById('catTopShow').textContent = top_show;
+
+                      // composer -> number of pieces in catalogue
+                      const counts = {};
+                      catalogue.forEach(p => {
+                        const c = p.composer;
+                        if (!c) return;
+                        counts[c] = (counts[c] || 0) + 1;
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+                      // top 3 for narrative
+                      const top1 = pairs[0] || ['(unknown)', 0];
+                      const top2 = pairs[1] || ['(unknown)', 0];
+                      const top3 = pairs[2] || ['(unknown)', 0];
+
+                      document.getElementById('catTopComposer1Name').textContent = top1[0];
+                      document.getElementById('catTopComposer1Count').textContent = top1[1];
+                      document.getElementById('catTopComposer2Name').textContent = top2[0];
+                      document.getElementById('catTopComposer2Count').textContent = top2[1];
+                      document.getElementById('catTopComposer3Name').textContent = top3[0];
+                      document.getElementById('catTopComposer3Count').textContent = top3[1];
+
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      renderBarChartHorizontal('chartCatalogueByComposer',
+                        labels,
+                        [{ label: 'Pieces in catalogue', data: values }]
+                      );
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">Catalogue by composer</h6>
                   <div class="plot-desc">
@@ -1654,9 +1807,115 @@
                     });
                   </script>
                 </div>
-              </div>
+              </div> -->
+
 
               <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Most frequent musical forms in the New Year’s Concert repertoire</h6>
+
+                  <div class="plot-desc">
+                    Looking at the New Year’s Concert repertoire (each piece ever played, counted once, with no repetitions), there are <span id="totalPiecesCatalogue_types"></span> listed works.<br><br>
+                    Polkas (<span id="catCountPolka"></span> pieces) and waltzes (<span id="catCountWaltz"></span>) remain the most common forms in the catalogue. They are followed by overtures (<span id="catCountOverture"></span>), marches (<span id="catCountMarch"></span>), and galops (<span id="catCountGalop"></span>).
+                  </div>
+
+                  <div class="plot-chart">
+                    <canvas id="chartCatalogueByType"></canvas>
+                  </div>
+
+                  <div class="plot-reading" id="readingCatalogueByType">
+                    This horizontal histogram ranks musical forms by how many pieces of each form exist in the catalogue. It counts each catalogue entry once and shows the <span id="catTypeTopShow"></span> most common forms.
+                  </div>
+                  <!--
+                  <script>
+                    const FIX_TYPES = {
+                      // fill this by hand, e.g.
+                      // 20: 'Rondo',
+                    };
+
+                    function patchedCatalogueType(p) {
+                      return FIX_TYPES[Number(p.piece_id)] || p.type;
+                    }
+                  </script>
+                  -->
+                  <script>
+                    // (function listUnknownCatalogueTypes() {
+                    //   if (!Array.isArray(catalogue)) return;
+
+                    //   const unknown = catalogue.filter(p => {
+                    //     const t = p.type;
+                    //     if (t == null) return true;
+                    //     const s = String(t).trim().toLowerCase();
+                    //     return !s || s === 'unknown' || s === 'n/a' || s === 'na';
+                    //   });
+
+                    //   console.log('Unknown types count =', unknown.length);
+                    //   console.table(
+                    //     unknown.map(p => ({
+                    //       piece_id: p.piece_id,
+                    //       piece: p.piece,
+                    //       composer: p.composer,
+                    //       type: p.type
+                    //     }))
+                    //   );
+                    // })();
+                    function normalizeTypeCatalogue(t) {
+                      if (!t) return null;
+                      return t.includes('Polka') ? 'Polka' : t;
+                    }
+
+                    function runCatalogueByType() {
+                      const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
+                      if (!Array.isArray(CATALOGUE)) return;
+
+                      const top_show = 8;
+                      document.getElementById('catTypeTopShow').textContent = top_show;
+
+                      // type -> number of pieces in catalogue
+                      const counts = {};
+                      CATALOGUE.forEach(p => {
+                        const t = normalizeTypeCatalogue(p.type);
+                        if (!t) return;
+                        counts[t] = (counts[t] || 0) + 1;
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      // totals + headline forms
+                      const totalPieces = Object.values(counts).reduce((a, b) => a + b, 0);
+                      const polkaCount  = counts['Polka']  || 0;
+                      const waltzCount  = counts['Waltz']  || 0;
+                      const marchCount  = counts['March']  || 0;
+                      const galopCount  = counts['Galop']  || 0;
+                      const overtureCount  = counts['Overture']  || 0;
+
+                      document.getElementById('totalPiecesCatalogue_types').textContent = totalPieces;
+                      document.getElementById('catCountPolka').textContent  = polkaCount;
+                      document.getElementById('catCountWaltz').textContent  = waltzCount;
+                      document.getElementById('catCountMarch').textContent  = marchCount;
+                      document.getElementById('catCountGalop').textContent  = galopCount;
+                      document.getElementById('catCountOverture').textContent  = overtureCount;
+
+                      renderBarChartHorizontal('chartCatalogueByType', labels, [
+                        { label: 'Pieces in catalogue', data: values }
+                      ]);
+                    }
+
+                    window.addEventListener('load', runCatalogueByType);
+                    document.getElementById('stats-tab')?.addEventListener('shown.bs.tab', runCatalogueByType);
+                  </script>
+                </div>
+              </div>
+
+              <!-- <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">Catalogue by musical form</h6>
                   <div class="plot-desc">
@@ -1673,7 +1932,7 @@
                     window.addEventListener('load', function () {
                       if (!Array.isArray(window.catalogue)) return;
 
-                      const top_show = 5;
+                      const top_show = 6;
 
                       const counts = {};
                       catalogue.forEach(p => {
@@ -1699,7 +1958,7 @@
                     });
                   </script>
                 </div>
-              </div>
+              </div> -->
 
 
             </div>

@@ -71,7 +71,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                         }
 
                         function getConcertByPieceId(code) {
-                            console.log(code)
+                            // console.log(code)
                             return concerts.filter(
                             function(concerts) {
                                 return concerts.program.piece_id.includes(code)

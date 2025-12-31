@@ -357,7 +357,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 3,
-    "type": "Unknown"
+    "type": "Rondo" // edited
   },
   {
     "piece": "Augensprache, op. 119",
@@ -519,7 +519,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 27,
-    "type": "Unknown"
+    "type": "Other dances" // edited
   },
   {
     "piece": "Banditen-Galopp, op. 378",
@@ -933,7 +933,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 26,
-    "type": "Unknown"
+    "type": "Other dances"
   },
   {
     "piece": "Debut-Quadrille, op. 2",
@@ -1059,7 +1059,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 37,
-    "type": "Unknown"
+    "type": "German dance"
   },
   {
     "piece": "Die Bajadere (The Bayadere), op. 351",
@@ -1239,7 +1239,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 26,
-    "type": "Unknown"
+    "type": "Other dances"
   },
   {
     "piece": "Die Publizisten, op. 321",
@@ -1419,7 +1419,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 32,
-    "type": "Unknown"
+    "type": "Opera excerpt" // edited, choir/sing 
   },
   {
     "piece": "Die tanzende Muse, op. 266",
@@ -1743,7 +1743,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 26,
-    "type": "Unknown"
+    "type": "Other dances"
   },
   {
     "piece": "Elisen-Polka, op. 151",
@@ -2445,7 +2445,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 20,
-    "type": "Unknown"
+    "type": "Entr'acte" // edited, could go in same category as overture as Theatre / stage music 
   },
   {
     "piece": "Galopp und 8 Ecossaises aus op. 49, D735",
@@ -2679,7 +2679,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 26,
-    "type": "Unknown"
+    "type": "Other dance" // edited
   },
   {
     "piece": "Heiterer Muth, op. 281",
@@ -3255,7 +3255,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 37,
-    "type": "Unknown"
+    "type": "Other dance" // edited, contra-dance
   },
   {
     "piece": "Krönungslieder, op. 184",
@@ -4011,7 +4011,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 34,
-    "type": "Unknown"
+    "type": "Opera excerpt" // edited
   },
   {
     "piece": "Morgenblätter, op. 279",
@@ -5289,7 +5289,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 15,
-    "type": "Unknown"
+    "type": "Ballet excerpt" // edited
   },
   {
     "piece": "Process-Polka, op. 294",
@@ -5937,7 +5937,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 28,
-    "type": "Unknown"
+    "type": "Other dances" //edited
   },
   {
     "piece": "Stiefmütterchen, op. 183",
@@ -6009,7 +6009,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 25,
-    "type": "Unknown"
+    "type": "Symphonic movement" // edited
   },
   {
     "piece": "Sängerslust, op. 328",
@@ -6297,7 +6297,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 31,
-    "type": "Unknown"
+    "type": "Other dances" // edited, maybe Contredanse
   },
   {
     "piece": "Un ballo in maschera (Masked Ball), Quadrille, op. 272",
@@ -6333,7 +6333,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 22,
-    "type": "Unknown"
+    "type": "Other dances" // edited
   },
   {
     "piece": "Uno-Marsch",
@@ -6387,7 +6387,7 @@ var catalogue = [
       "imslp": ""
     },
     "composer_id": 26,
-    "type": "Unknown"
+    "type": "Polka mazurka" // edited
   },
   {
     "piece": "Valse espagnole",
