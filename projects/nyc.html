@@ -1261,8 +1261,20 @@
                       <canvas id="chartComposerPerformancesAll"></canvas>
                     </div>
                     <div class="plot-reading" id="readingComposerPerformancesAll">
-                      This horizontal histogram ranks composers by total appearances across all <span id="totalPiecesAllConcerts_comp"></span> performed pieces (including repeats). The plot shows the top <span id="topShow_compA"></span> and groups the rest as Others.
+                      This horizontal histogram ranks composers by total appearances across all <span id="totalPiecesAllConcerts_comp"></span> performed pieces (including repeats). The plot shows the top <span id="topShow_compA"></span> and groups the rest as Others. 
+                      By far, the most performed composer is <span id="top1_comp"></span> (<span id="top1c_comp"></span> times), followed by <span id="top2_comp"></span> (<span id="top2c_comp"></span>), <span id="top3_comp"></span> (<span id="top3c_comp"></span>), and <span id="top4_comp"></span> (<span id="top4c_comp"></span>).
                     </div>
+
+
+                    <script>
+                      // expects `pairs` = [[composer, count], ...] sorted descending
+                      const t = pairs.slice(0, 4);
+
+                      if (t[0]) { document.getElementById('top1_comp').textContent = t[0][0]; document.getElementById('top1c_comp').textContent = t[0][1]; }
+                      if (t[1]) { document.getElementById('top2_comp').textContent = t[1][0]; document.getElementById('top2c_comp').textContent = t[1][1]; }
+                      if (t[2]) { document.getElementById('top3_comp').textContent = t[2][0]; document.getElementById('top3c_comp').textContent = t[2][1]; }
+                      if (t[3]) { document.getElementById('top4_comp').textContent = t[3][0]; document.getElementById('top4c_comp').textContent = t[3][1]; }
+                    </script>
                   </div>
 
                   <!-- 2) Catalogue breadth (each piece counted once) -->
@@ -1271,7 +1283,8 @@
                       <canvas id="chartComposerCatalogueAll"></canvas>
                     </div>
                     <div class="plot-reading" id="readingComposerCatalogueAll">
-                      This horizontal histogram ranks composers by how many distinct pieces they contribute to the repertoire (each piece counted once). It shows the top <span id="topShow_compB"></span> and groups the rest as Others.
+                      This horizontal histogram ranks composers by how many unique pieces they contributed to the New Year’s Concert repertoire (each piece counted once). It shows the top <span id="topShow_compB"></span> and groups the rest as Others. 
+                      The largest contributors are <span id="catTop1_comp"></span> (<span id="catTop1c_comp"></span> pieces), followed by <span id="catTop2_comp"></span> (<span id="catTop2c_comp"></span>), <span id="catTop3_comp"></span> (<span id="catTop3c_comp"></span>), and <span id="catTop4_comp"></span> (<span id="catTop4c_comp"></span>).
                     </div>
                   </div>
 
@@ -1290,7 +1303,7 @@
                     <div class="plot-chart">
                       <canvas id="chartComposersByYearPct"></canvas>
                     </div>
-                    <div class="plot-reading" id="readingComposersByYearPct">
+                    <div class="plot-reading">
                       Same grouping as the stacked chart, but shown as percentages to remove the effect of editions having slightly different program lengths.
                     </div>
                   </div>
@@ -1428,6 +1441,22 @@
                     const othersA = restA.reduce((s,x)=>s+x[1],0);
                     if (othersA > 0) { labelsA.push('Others'); valuesA.push(othersA); }
 
+                    // ---- top 4 narrative for the plot-reading (performances) ----
+                    const t4 = pairsA.slice(0, 4);
+                    function setTop(i, nameId, countId) {
+                      const elN = document.getElementById(nameId);
+                      const elC = document.getElementById(countId);
+                      if (!elN || !elC) return;
+                      if (!t4[i]) { elN.textContent = ''; elC.textContent = ''; return; }
+                      elN.textContent = t4[i][0];
+                      elC.textContent = t4[i][1];
+                    }
+                    setTop(0, 'top1_comp', 'top1c_comp');
+                    setTop(1, 'top2_comp', 'top2c_comp');
+                    setTop(2, 'top3_comp', 'top3c_comp');
+                    setTop(3, 'top4_comp', 'top4c_comp');
+                    // -------------------------------------------------------------
+
                     renderBarChartHorizontal('chartComposerPerformancesAll', labelsA, [
                       { label: 'Appearances', data: valuesA }
                     ]);
@@ -1453,6 +1482,21 @@
                     const valuesB = topB.map(x=>x[1]);
                     const othersB = restB.reduce((s,x)=>s+x[1],0);
                     if (othersB > 0) { labelsB.push('Others'); valuesB.push(othersB); }
+                    // ---- top 4 narrative for the plot-reading (catalogue breadth) ----
+                    const t4b = pairsB.slice(0, 4);
+                    function setTopB(i, nameId, countId) {
+                      const elN = document.getElementById(nameId);
+                      const elC = document.getElementById(countId);
+                      if (!elN || !elC) return;
+                      if (!t4b[i]) { elN.textContent = ''; elC.textContent = ''; return; }
+                      elN.textContent = t4b[i][0];
+                      elC.textContent = t4b[i][1];
+                    }
+                    setTopB(0, 'catTop1_comp', 'catTop1c_comp');
+                    setTopB(1, 'catTop2_comp', 'catTop2c_comp');
+                    setTopB(2, 'catTop3_comp', 'catTop3c_comp');
+                    setTopB(3, 'catTop4_comp', 'catTop4c_comp');
+                    // ---------------------------------------------------------------
 
                     renderBarChartHorizontal('chartComposerCatalogueAll', labelsB, [
                       { label: 'Pieces in repertoire', data: valuesB }
@@ -1543,6 +1587,9 @@
 
                   })();
                 </script>
+
+
+
               </div>
             </div>
 
