@@ -1108,14 +1108,158 @@
                 <h6 class="plot-title">Evolution of the repertoire over time: new pieces and repetitions</h6>
                 <div class="plot-desc">
                     In the early years of the New Year’s Concert, most performed pieces were being played for the first time. As the decades passed, the repertoire gradually stabilised, and by the late 1980s familiar works were returning regularly while genuinely new additions became rarer. A clear change coincides with 1987, when the Philharmonic adopted the policy of regularly rotating conductors, starting with Herbert von Karajan. From that point on, the influx of new pieces increases again, showing how each conductor tried to leave a personal imprint on the programme.                </div>
+
+
+                    <div class="row g-3 mt-2">
+                      <div class="col-12 col-lg-6">
+                        <div class="plot-chart">
+                          <canvas id="chartNewVsRepeatedByYearCount"></canvas>
+                        </div>
+                        <div class="plot-reading" id="readingNewVsRepeatedByYearCount">
+                            Each bar is one edition. A piece is counted as new in a given year if it had never appeared in any earlier New Year’s Concert; otherwise it is counted as a repeat.
+                            Across all editions in this dataset, <span id="totalNewPiecesAcrossYears"></span> distinct works enter the concert’s repertoire at least once (i.e., they appear as 'new' in the year of their first appearance), while <span id="totalRepeatPiecesAcrossYears"></span> performances are repeats of works that had already been heard before.
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      (function () {
+                        if (!Array.isArray(concerts) || !Array.isArray(catalogue)) return;
+
+                        const validIds = new Set(catalogue.map(p => Number(p.piece_id)));
+
+                        const labels = [];
+                        const yNew = [];
+                        const yRep = [];
+
+                        const seen = new Set();
+
+                        concerts.forEach(c => {
+                          const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                          let kNew = 0;
+                          let kRep = 0;
+
+                          ids.forEach(pid => {
+                            const id = Number(pid);
+                            if (!validIds.has(id)) return;
+
+                            if (seen.has(id)) kRep += 1;
+                            else { kNew += 1; seen.add(id); }
+                          });
+
+                          labels.push(c.year);
+                          yNew.push(kNew);
+                          yRep.push(kRep);
+                        });
+
+                        // text stats
+                        const totalNew = yNew.reduce((a, b) => a + b, 0);
+                        const totalRep = yRep.reduce((a, b) => a + b, 0);
+                        document.getElementById('totalNewPiecesAcrossYears').textContent = totalNew;
+                        document.getElementById('totalRepeatPiecesAcrossYears').textContent = totalRep;
+
+                        // stacked bar (local chart)
+                        window._charts = window._charts || {};
+                        const canvasId = 'chartNewVsRepeatedByYearCount';
+                        const canvas = document.getElementById(canvasId);
+                        if (!canvas) return;
+                        const ctx = canvas.getContext('2d');
+
+                        if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+                        window._charts[canvasId] = new Chart(ctx, {
+                          type: 'bar',
+                          data: {
+                            labels,
+                            datasets: [
+                              { label: 'New (first time)', data: yNew, stack: 'stack0' },
+                              { label: 'Repeats', data: yRep, stack: 'stack0' }
+                            ]
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                              x: { stacked: true },
+                              y: { stacked: true, beginAtZero: true }
+                            }
+                          }
+                        });
+                      })();
+                    </script>
+
+                    <div class="row g-3 mt-2">
+                      <div class="col-12 col-lg-6">
+                        <div class="plot-chart">
+                          <canvas id="chartNewVsRepeatedByYearPct"></canvas>
+                        </div>
+                        <div class="plot-reading" id="readingNewVsRepeatedByYearPct">
+                          Same idea as the count chart, but expressed as percentages so that editions with different program lengths are comparable.
+                          The most 'novel' edition (highest share of new pieces) is <span id="yearMaxNewPct"></span> with <span id="maxNewPct"></span>% new pieces.
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      (function () {
+                        if (!Array.isArray(concerts) || !Array.isArray(catalogue)) return;
+
+                        const validIds = new Set(catalogue.map(p => Number(p.piece_id)));
+
+                        const labels = [];
+                        const yNew = [];
+                        const yRep = [];
+
+                        const seen = new Set();
+
+                        concerts.forEach(c => {
+                          const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                          let kNew = 0, kRep = 0;
+
+                          ids.forEach(pid => {
+                            const id = Number(pid);
+                            if (!validIds.has(id)) return;
+
+                            if (seen.has(id)) kRep += 1;
+                            else { kNew += 1; seen.add(id); }
+                          });
+
+                          labels.push(c.year);
+                          yNew.push(kNew);
+                          yRep.push(kRep);
+                        });
+
+                        const yTot = yNew.map((v, i) => v + yRep[i]);
+                        const yNewPct = yTot.map((t, i) => t ? 100 * yNew[i] / t : 0);
+                        const yRepPct = yTot.map((t, i) => t ? 100 * yRep[i] / t : 0);
+
+                        // trivia: max new pct
+                        let maxNewPct = -1, yearMax = null;
+                        for (let i = 0; i < labels.length; i++) {
+                          if (yTot[i] === 0) continue;
+                          if (yNewPct[i] > maxNewPct) { maxNewPct = yNewPct[i]; yearMax = labels[i]; }
+                        }
+                        document.getElementById('yearMaxNewPct').textContent = yearMax;
+                        document.getElementById('maxNewPct').textContent = maxNewPct.toFixed(1);
+
+                        renderLineChart('chartNewVsRepeatedByYearPct', labels, [
+                          { label: 'New (%)', data: yNewPct },
+                          { label: 'Repeats (%)', data: yRepPct }
+                        ]);
+                      })();
+                    </script>
                 <div class="plot-chart">
                   <canvas id="chartNewVsRepeated"></canvas>
                 </div>
+
 
                 <div class="plot-reading" id="readingNewVsRepeated">
                   This plot follows all <span id="totalPiecesPlayed"></span> performed pieces (repeated or not) accumulated across <span id="totalEditions"></span> editions, in chronological order. The horizontal axis counts the total number of pieces performed (including repeats), while the vertical axis shows how many distinct works have appeared so far. The growing gap between the two curves represents the accumulation of repetitions over time. Earlier in the concert’s history, this gap widens rapidly, reflecting the frequent reuse of a small, established repertoire. In more recent decades, the gap expands more slowly, indicating a  tendency to introduce more new pieces.
 
                 </div>
+
+
+
 
                <script>
                  (function () {
