@@ -357,3 +357,15 @@ th, td { text-align: left; padding: 8px; }
   margin-bottom: 6px;
 }
 
+.plot-reading {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+.plot-reading::before{
+  content: "Plot reading: ";
+  font-weight: bold;
+}
