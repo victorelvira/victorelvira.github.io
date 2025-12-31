@@ -1172,8 +1172,8 @@
                           data: {
                             labels,
                             datasets: [
-                              { label: 'New (first time)', data: yNew, stack: 'stack0' },
-                              { label: 'Repeats', data: yRep, stack: 'stack0' }
+                              { label: 'New pieces (first time)', data: yNew, stack: 'stack0' },
+                              { label: 'Repeated pieces', data: yRep, stack: 'stack0' }
                             ]
                           },
                           options: {
@@ -1243,8 +1243,8 @@
                         document.getElementById('maxNewPct').textContent = maxNewPct.toFixed(1);
 
                         renderLineChart('chartNewVsRepeatedByYearPct', labels, [
-                          { label: 'New (%)', data: yNewPct },
-                          { label: 'Repeats (%)', data: yRepPct }
+                          { label: 'New pieces (%)', data: yNewPct },
+                          { label: 'Repeated pieces (%)', data: yRepPct }
                         ]);
                       })();
                     </script>
@@ -1373,7 +1373,97 @@
 
 
               <!-- Among all pieces with repetitions  -->
-                    
+              <!-- Among all pieces with repetitions  -->
+              <div class="col-6">
+                <div class="plot-box">
+                  <h6 class="plot-title">Most performed composers (all years)</h6>
+
+                  <div class="plot-desc" id="descAllConcertsByComposer_A">
+                    Total appearances by composer across all <span id="totalPiecesAllConcerts_A"></span> performed pieces (including repeats).<br><br>
+                    The most performed composer is <span id="topComposer1Name"></span> with <span id="topComposer1Count"></span> appearances, followed by <span id="topComposer2Name"></span> (<span id="topComposer2Count"></span>) and <span id="topComposer3Name"></span> (<span id="topComposer3Count"></span>).
+                  </div>
+
+                  <div class="plot-chart">
+                    <canvas id="chartAllConcertsByComposer_A"></canvas>
+                  </div>
+
+                  <div class="plot-reading" id="readingAllConcertsByComposer_A">
+                    This plot shows the top <span id="topShow_A"></span> composers by total appearances (pieces counted every time they occur). The remaining composers are grouped as Others. Top <span id="topShow_A_2"></span> account for <span id="topShare_A"></span>% of all appearances; Others account for <span id="othersShare_A"></span>%.
+                  </div>
+
+                  <script>
+                    window.addEventListener('load', function () {
+                      if (!Array.isArray(catalogue) || !Array.isArray(concerts)) return;
+
+                      const top_show = 12;
+
+                      // total pieces across all concerts (program only, as per your schema)
+                      // if you already compute total_pieces_all_concerts elsewhere, keep using it
+                      document.getElementById('totalPiecesAllConcerts_A').textContent =
+                        (typeof total_pieces_all_concerts !== 'undefined')
+                          ? total_pieces_all_concerts
+                          : concerts.reduce((s, c) => s + ((c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0), 0);
+
+                      // piece_id -> composer
+                      const piece2composer = new Map(catalogue.map(p => [Number(p.piece_id), p.composer]));
+
+                      // composer -> appearances
+                      const counts = {};
+                      concerts.forEach(c => {
+                        const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                        ids.forEach(pid => {
+                          const comp = piece2composer.get(Number(pid));
+                          if (!comp) return;
+                          counts[comp] = (counts[comp] || 0) + 1;
+                        });
+                      });
+
+                      const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+                      // top 3 for the narrative
+                      const top1 = pairs[0] || ['(unknown)', 0];
+                      const top2 = pairs[1] || ['(unknown)', 0];
+                      const top3 = pairs[2] || ['(unknown)', 0];
+
+                      document.getElementById('topComposer1Name').textContent = top1[0];
+                      document.getElementById('topComposer1Count').textContent = top1[1];
+                      document.getElementById('topComposer2Name').textContent = top2[0];
+                      document.getElementById('topComposer2Count').textContent = top2[1];
+                      document.getElementById('topComposer3Name').textContent = top3[0];
+                      document.getElementById('topComposer3Count').textContent = top3[1];
+
+                      // build top + Others
+                      const top = pairs.slice(0, top_show);
+                      const rest = pairs.slice(top_show);
+
+                      const labels = top.map(x => x[0]);
+                      const values = top.map(x => x[1]);
+
+                      const others = rest.reduce((s, x) => s + x[1], 0);
+                      if (others > 0) { labels.push('Others'); values.push(others); }
+
+                      // extra numerics for plot-reading
+                      const total = pairs.reduce((s, x) => s + x[1], 0);
+                      const topSum = top.reduce((s, x) => s + x[1], 0);
+
+                      document.getElementById('topShow_A').textContent = top_show;
+                      document.getElementById('topShow_A_2').textContent = top_show;
+                      document.getElementById('topShare_A').textContent = total ? (100 * topSum / total).toFixed(1) : '0.0';
+                      document.getElementById('othersShare_A').textContent = total ? (100 * others / total).toFixed(1) : '0.0';
+
+                      renderBarChartHorizontal(
+                        'chartAllConcertsByComposer_A',
+                        labels,
+                        [{ label: 'Appearances', data: values }]
+                      );
+                    });
+                  </script>
+                </div>
+              </div>
+
+              
+
+
               <div class="col-6">
                 <div class="plot-box">
                   <h6 class="plot-title">Who gets played the most? (all years)</h6>
