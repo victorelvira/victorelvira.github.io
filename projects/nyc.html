@@ -22,8 +22,11 @@
         <script type="text/javascript" src="./nyc/conductors.js"></script>
         <script type="text/javascript" src="./nyc/composers.js"></script>
         <script type="text/javascript" src="./nyc/concerts.js"></script>
-        
-    <script type="text/javascript" src="functions.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <script>
+           var total_pieces_all_concerts =
+             concerts.reduce((s, c) => s + c.program.piece_id.length, 0); 
+        </script>
 
     <!-- <script>
     async function init() {
@@ -624,6 +627,9 @@
               </div>
             </div> 
 
+             
+
+
             <div class="col-12 col-lg-6 mb-3">
               <div class="plot-box">
                 <h6 class="plot-title">Pieces per concert (bar)</h6>
@@ -633,7 +639,7 @@
                 <div class="plot-chart">
                   <canvas id="chartPiecesPerConcert_bar"></canvas>
                 </div>
- 
+            
                 <script>
                   window.addEventListener('load', function () {
                     if (!Array.isArray(window.concerts)) return;
@@ -646,18 +652,488 @@
                       (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0
                     );
 
-                    const y_total = concerts.map((c, i) =>
-                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : y_program[i]
+                    // Encore count = total ids minus program count (if you store encores inside piece_id)
+                    // If you have a separate encore array later, swap this.
+                    const y_total_ids = concerts.map(c =>
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0
                     );
 
-                    renderBarChart('chartPiecesPerConcert_bar', labels, [
+                    const y_encore = y_total_ids.map((tot, i) => Math.max(0, tot - y_program[i]));
+
+                    renderStackedBarChart('chartPiecesPerConcert_bar', labels, [
                       { label: 'Program', data: y_program },
-                      { label: 'Total', data: y_total }
+                      { label: 'Encore',  data: y_encore }
                     ]);
                   });
                 </script>
               </div>
             </div>
+
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Strauss vs non Strauss (percentage by year)</h6>
+
+                <div class="plot-desc" id="descStraussVsNonStraussPct">
+                  This graph shows the share of each concert (including encores) written by the Strauss family vs everyone else. Using percentages removes the effect of editions having slightly different program lengths.
+
+                  The New Year’s Concert was conceived from the very beginning as a celebration of the music of the Strauss family. The first work by a non-Strauss composer did not appear until 1961, when Josef Lanner’s Hofballtänze, op. 161 was included.
+                </div>
+
+                <div class="plot-chart">
+                  <canvas id="chartStraussVsNonStraussPct"></canvas>
+                </div>
+
+                <script>
+                  window.addEventListener('load', function () {
+                    if (!Array.isArray(window.concerts) || !Array.isArray(window.catalogue)) return;
+
+                    const piece2composer = new Map(catalogue.map(p => [Number(p.piece_id), (p.composer || '')]));
+
+                    function isStrauss(composer) {
+                      if (!composer) return false;
+                      const s = composer.toLowerCase().replaceAll('ß', 'ss');
+                      return s.includes('strauss');
+                    }
+
+                    const labels = concerts.map(c => c.year);
+
+                    const y_total = concerts.map(c =>
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0
+                    );
+
+                    const y_strauss = concerts.map((c, i) => {
+                      const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                      let k = 0;
+                      ids.forEach(pid => {
+                        const comp = piece2composer.get(Number(pid));
+                        if (isStrauss(comp)) k++;
+                      });
+                      return k;
+                    });
+
+                    const y_non = y_total.map((t, i) => t - y_strauss[i]);
+
+                    // Percentages (0..100)
+                    const y_strauss_pct = y_total.map((t, i) => t ? 100 * y_strauss[i] / t : 0);
+                    const y_non_pct     = y_total.map((t, i) => t ? 100 * y_non[i] / t : 0);
+
+                    // --- programmatic trivia (percent based) ---
+                    let totalConcerts = 0;
+                    let concertsAllStrauss = 0;
+
+                    let minStraussPct = 101;
+                    let yearMinStraussPct = null;
+
+                    for (let i = 0; i < concerts.length; i++) {
+                      const t = y_total[i];
+                      if (!t) continue;
+                      totalConcerts++;
+
+                      if (y_non[i] === 0) concertsAllStrauss++;
+
+                      const sp = y_strauss_pct[i];
+                      if (sp < minStraussPct) {
+                        minStraussPct = sp;
+                        yearMinStraussPct = concerts[i].year;
+                      }
+                    }
+
+                    const descEl = document.getElementById('descStraussVsNonStraussPct');
+                    if (descEl) {
+                      descEl.innerHTML +=
+                        '<br><br>' +
+                        'The least Strauss-heavy edition was ' + yearMinStraussPct + ' (' + minStraussPct.toFixed(1) + '% Strauss).' +
+                        '<br>' +
+                        'Fully Strauss-only editions: ' + concertsAllStrauss + ' out of ' + totalConcerts + '.';
+                    }
+
+                    renderLineChart('chartStraussVsNonStraussPct', labels, [
+                      { label: 'Strauss (%)', data: y_strauss_pct },
+                      { label: 'Non Strauss (%)', data: y_non_pct }
+                    ]);
+                  });
+                </script>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Strauss vs non Strauss (by year)</h6>
+
+                <div class="plot-desc" id="descStraussVsNonStrauss">
+                  This graph shows the number of pieces in each concert (including encores) written by Strauss family vs everyone else.
+
+                  The New Year’s Concert was conceived from the very beginning as a celebration of the music of the Strauss family. The first work by a non-Strauss composer did not appear until 1961, when Josef Lanner’s Hofballtänze, op. 161 was included.
+                </div>
+
+                <div class="plot-chart">
+                  <canvas id="chartStraussVsNonStrauss"></canvas>
+                </div>
+
+                <script>
+                  window.addEventListener('load', function () {
+                    if (!Array.isArray(window.concerts) || !Array.isArray(window.catalogue)) return;
+
+                    // piece_id -> composer string
+                    const piece2composer = new Map(catalogue.map(p => [Number(p.piece_id), (p.composer || '')]));
+
+                    function isStrauss(composer) {
+                      if (!composer) return false;
+                      const s = composer.toLowerCase().replaceAll('ß', 'ss'); // makes "Strauß" match "strauss"
+                      return s.includes('strauss');
+                    }
+
+                    const labels = concerts.map(c => c.year);
+
+                    const y_strauss = concerts.map(c => {
+                      const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                      let k = 0;
+                      ids.forEach(pid => {
+                        const comp = piece2composer.get(Number(pid));
+                        if (isStrauss(comp)) k++;
+                      });
+                      return k;
+                    });
+
+                    const y_total = concerts.map(c =>
+                      (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id.length : 0
+                    );
+
+                    const y_non = y_total.map((t, i) => t - y_strauss[i]);
+
+                    // --- programmatic trivia (X and Y) ---
+                    let totalConcerts = 0;
+                    let concertsOnlyStrauss = 0;
+
+                    let maxNonStrauss = -1;
+                    let yearMaxNonStrauss = null;
+
+                    for (let i = 0; i < concerts.length; i++) {
+                      const t = y_total[i];
+                      if (!t) continue;
+                      totalConcerts++;
+
+                      const non = y_non[i];
+
+                      if (non === 0) concertsOnlyStrauss++;
+
+                      if (non > maxNonStrauss) {
+                        maxNonStrauss = non;
+                        yearMaxNonStrauss = concerts[i].year;
+                      }
+                    }
+
+                    // Inject into description
+                    const descEl = document.getElementById('descStraussVsNonStrauss');
+                    if (descEl) {
+                      descEl.innerHTML +=
+                        '<br><br>' +
+                        'The year with the most non-Strauss pieces was ' + yearMaxNonStrauss + ' with ' + maxNonStrauss + '.' +
+                        '<br>' +
+                        'The number of concerts with only Strauss family pieces are ' + concertsOnlyStrauss + ' out of ' + totalConcerts + '.';
+                    }
+
+                    renderLineChart('chartStraussVsNonStrauss', labels, [
+                      { label: 'Strauss', data: y_strauss },
+                      { label: 'Non Strauss', data: y_non }
+                    ]);
+                  });
+                </script>
+              </div>
+            </div>
+
+
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Who conducts the most?</h6>
+                <div class="plot-desc">
+                    The New Year’s Concert was initially shaped by long, stable periods under a single conductor. Clemens Krauss conducted the concert from 1939 to 1954, with only a brief interruption in 1946 and 1947. He was followed by Willi Boskovsky, who conducted the concert consecutively for 25 editions (1955–1979), establishing many of the traditions that still define the event today.<br><br>
+
+                    During the 1980s, Lorin Maazel became the central figure, conducting 7 editions in a row in that decade (and later returning on 4 more occasions). A structural change occurred in 1987, when the Philharmonic adopted the policy of regularly rotating conductors instead of appointing a long-term musical director for the concert, starting with the legendary Herbert von Karajan.<br><br>
+
+                    Since then, the podium has alternated between returning and first-time conductors. Some have reappeared intermittently over the years, most notably Riccardo Muti, who has conducted the New Year’s Concert 7 times.  
+
+
+                  The plot shows the number of New Year's Concerts conducted by each conductor.
+                </div>
+                <div class="plot-chart">
+                  <canvas id="chartConductors"></canvas>
+                </div>
+
+                <script>
+                  function runConductorsChart() {
+                    console.log('[runConductorsChart] concerts?', Array.isArray(concerts), 'conductors?', Array.isArray(conductors));
+                    if (!Array.isArray(concerts) || !Array.isArray(conductors)) return;
+
+                    // Quick introspection (look at the keys once)
+                    console.log('[runConductorsChart] conductors[0]=', conductors[0]);
+
+                    const top_show = 12;
+
+                    // Try common field names (so you do not need to remember the schema)
+                    function getConductorId(d) {
+                      return Number(d.conductor_id ?? d.id ?? d.conductorId ?? d.conductorID);
+                    }
+                    function getConductorName(d) {
+                      return (d.name ?? d.full_name ?? d.fullName ?? d.conductor ?? d.label ?? '').toString();
+                    }
+
+                    const id2name = new Map();
+                    conductors.forEach(d => {
+                      const id = getConductorId(d);
+                      const name = getConductorName(d);
+                      if (!Number.isNaN(id) && name) id2name.set(id, name);
+                    });
+
+                    console.log('[runConductorsChart] id2name size =', id2name.size);
+
+                    const counts = {};
+                    concerts.forEach(c => {
+                      const id = Number(c.conductor_id);
+                      const name = id2name.get(id) || ('ID ' + id);
+                      counts[name] = (counts[name] || 0) + 1;
+                    });
+
+                    const pairs = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+                    const top = pairs.slice(0, top_show);
+                    const rest = pairs.slice(top_show);
+
+                    const labels = top.map(x => x[0]);
+                    const values = top.map(x => x[1]);
+
+                    const others = rest.reduce((s, x) => s + x[1], 0);
+                    if (others > 0) { labels.push('Others'); values.push(others); }
+
+                    // Important: render only when the canvas is visible (tab shown)
+                    renderBarChart('chartConductors', labels, [
+                      { label: 'Number of conducted concerts', data: values }
+                    ]);
+                  }
+
+                  // If Statistics tab is visible at load, this is enough
+                  window.addEventListener('load', runConductorsChart);
+
+                  // Also render when the Statistics tab becomes visible
+                  document.getElementById('stats-tab')?.addEventListener('shown.bs.tab', runConductorsChart);
+                </script>
+              </div>
+            </div>
+
+
+
+            <div class="col-12 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Most repeated pieces (all years)</h6>
+                <div class="plot-desc">
+                  Some pieces have become inseparable from the identity of the New Year’s Concert, reappearing year after year as musical landmarks of the event. Their recurrence reflects both tradition and audience expectation, shaping a shared collective memory across generations.<br><br>
+
+                  The most frequently performed piece is <span id="mostRepeatedPieceName"></span>, which has appeared <span id="mostRepeatedPieceCount"></span> times across <span id="totalConcertsCount"></span> editions of the concert.   Out of the entire catalogue, <span id="piecesOnce"></span> pieces have been performed only once.  
+
+                  This shows that the repertoire is dominated by a very small subset of frequently repeated works, while the vast majority of pieces appear only sporadically.<br><br>
+
+
+                  This plot shows the most repeated pieces across all New Year’s Concerts, ranked by total number of appearances (including encores).
+                </div>
+                <div class="plot-chart">
+                  <canvas id="chartMostRepeatedPieces"></canvas>
+                </div>
+
+                <script>
+                  function runMostRepeatedPiecesChart() {
+                    if (!Array.isArray(catalogue) || !Array.isArray(concerts)) return;
+
+                    const top_show = 15;
+
+                    // piece_id -> title
+                    const id2title = new Map(catalogue.map(p => [Number(p.piece_id), p.piece]));
+
+                    // piece_id -> appearances across all concerts
+                    const countsById = {};
+                    concerts.forEach(c => {
+                      const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                      ids.forEach(pid => {
+                        const id = Number(pid);
+                        countsById[id] = (countsById[id] || 0) + 1;
+                      });
+                    });
+
+                    // --- NEW: simple summary stats ---
+                    const piecesOnce = Object.values(countsById).filter(v => v === 1).length;
+                    // const piecesAtMostTwice = Object.values(countsById).filter(v => v <= 2).length;
+
+                    document.getElementById('piecesOnce').textContent = piecesOnce;
+                    // document.getElementById('piecesAtMostTwice').textContent = piecesAtMostTwice;
+                    // --- END NEW ---
+
+                    const pairs = Object.entries(countsById)
+                      .map(([id, cnt]) => [id2title.get(Number(id)) || ('ID ' + id), cnt])
+                      .sort((a, b) => b[1] - a[1])
+                      .slice(0, top_show);
+
+                    document.getElementById('mostRepeatedPieceName').textContent = pairs[0][0];
+                    document.getElementById('mostRepeatedPieceCount').textContent = pairs[0][1];
+                    document.getElementById('totalConcertsCount').textContent = concerts.length;
+
+                    const labels = pairs.map(x => x[0]);
+                    const values = pairs.map(x => x[1]);
+
+                    renderBarChartHorizontal('chartMostRepeatedPieces', labels, [
+                      { label: 'Appearances', data: values }
+                    ]);
+                  }
+
+                  window.addEventListener('load', runMostRepeatedPiecesChart);
+                  document.getElementById('stats-tab')?.addEventListener('shown.bs.tab', runMostRepeatedPiecesChart);
+                </script>
+              </div>
+            </div>
+
+
+            <div class="col-12 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">Frequency of pieces across the New Year’s Concert repertoire</h6>
+                <div class="plot-desc">
+                This plot orders all pieces in the catalogue by the total number of times they have been performed across all New Year’s Concerts. 
+                The horizontal axis represents the rank of each piece, from the least frequently performed on the left to the most frequently performed on the right, while the vertical axis shows the total number of appearances.
+
+                The shape of the curve reveals a strong concentration of performances in a very small number of works. 
+                A handful of iconic pieces, such as <em>An der schönen blauen Donau</em> or the <em>Radetzky March</em>, have been played dozens of times, while the majority of the repertoire appears only once or twice in the entire history of the concert.
+
+ 
+                </div>
+                <div class="plot-chart">
+                  <canvas id="chartRankAppearances"></canvas>
+                </div>
+
+                <script>
+                  function runRankAppearancesChart() {
+                    if (!Array.isArray(catalogue) || !Array.isArray(concerts)) return;
+
+                    // piece_id -> title
+                    const id2title = new Map(catalogue.map(p => [Number(p.piece_id), p.piece]));
+
+                    // piece_id -> appearances
+                    const countsById = {};
+                    concerts.forEach(c => {
+                      const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                      ids.forEach(pid => {
+                        const id = Number(pid);
+                        countsById[id] = (countsById[id] || 0) + 1;
+                      });
+                    });
+
+                    // Sorted counts (ascending): many 1s on the left, max on the right
+                    const pairsAsc = Object.entries(countsById)
+                      .map(([id, cnt]) => ({ id: Number(id), title: id2title.get(Number(id)) || ('ID ' + id), cnt }))
+                      .sort((a, b) => a.cnt - b.cnt);
+
+                    const labels = pairsAsc.map((_, i) => String(i + 1)); // rank 1..N
+                    const values = pairsAsc.map(x => x.cnt);
+
+                    renderLineChart('chartRankAppearances', labels, [
+                      { label: 'Appearances', data: values }
+                    ]);
+                  }
+
+                  window.addEventListener('load', runRankAppearancesChart);
+                  document.getElementById('stats-tab')?.addEventListener('shown.bs.tab', runRankAppearancesChart);
+                </script>
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <div class="plot-box">
+                <h6 class="plot-title">New vs repeated pieces (Heaps style)</h6>
+                <div class="plot-desc">
+                  In the early years of the New Year’s Concert, almost every piece performed was new to the event. As the years went by, the repertoire became more established, and many pieces were played again and again. This plot shows how the set of distinct pieces grows, and how repetitions gradually accumulate 
+                </div>
+                <div class="plot-chart">
+                  <canvas id="chartNewVsRepeated"></canvas>
+                </div>
+
+                <script>
+                  (function () {
+                    if (!Array.isArray(concerts) || !Array.isArray(catalogue)) return;
+
+                    // Catalogue universe (optional but keeps ids consistent)
+                    const validIds = new Set(catalogue.map(p => Number(p.piece_id)));
+
+                    const xs = [];
+                    const yUnique = [];
+                    const yRepeats = [];
+
+                    const seen = new Set();
+                    let x = 0;
+
+                    // boundaries to draw year separators
+                    const yearCuts = []; // {xEnd, year}
+
+                    concerts.forEach(c => {
+                      const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                      ids.forEach(pid => {
+                        const id = Number(pid);
+                        if (!validIds.has(id)) return;
+
+                        x += 1;
+                        xs.push(x);
+
+                        const before = seen.size;
+                        seen.add(id);
+                        const uniqueNow = seen.size;
+
+                        yUnique.push(uniqueNow);
+                        yRepeats.push(x - uniqueNow);
+                      });
+
+                      yearCuts.push({ xEnd: x, year: c.year });
+                    });
+
+                    // plugin: vertical lines at each concert boundary + year label every 10 years
+                    const yearCutsPlugin = {
+                      id: 'yearCutsPlugin',
+                      afterDraw(chart) {
+                        const ca = chart.chartArea;
+                        const xScale = chart.scales.x;
+                        if (!ca || !xScale) return;
+
+                        const ctx = chart.ctx;
+                        ctx.save();
+                        ctx.globalAlpha = 0.25;
+
+                        yearCuts.forEach(cut => {
+                          if (!cut.xEnd) return;
+                          const idx = cut.xEnd - 1;
+                          if (idx < 0 || idx >= xs.length) return;
+
+                          const xPix = xScale.getPixelForValue(xs[idx]);
+                          ctx.beginPath();
+                          ctx.moveTo(xPix, ca.top);
+                          ctx.lineTo(xPix, ca.bottom);
+                          ctx.stroke();
+
+                          if (cut.year % 10 === 0) {
+                            ctx.globalAlpha = 0.7;
+                            ctx.fillText(String(cut.year), xPix + 2, ca.top + 10);
+                            ctx.globalAlpha = 0.25;
+                          }
+                        });
+
+                        ctx.restore();
+                      }
+                    };
+
+                    // attach plugin just for this chart
+                    Chart.register(yearCutsPlugin);
+
+                    renderLineChart('chartNewVsRepeated', xs, [
+                      { label: 'Unique pieces (cumulative)', data: yUnique },
+                      { label: 'Repeated pieces (cumulative)', data: yRepeats }
+                    ]);
+                  })();
+                </script>
+              </div>
+            </div>
+
 
             <div class="row g-3">
 
@@ -669,8 +1145,11 @@
                 <div class="plot-box">
                   <h6 class="plot-title">Who gets played the most? (all years)</h6>
                   <div class="plot-desc">
-                    Total number of times pieces by each composer have been performed across all New Year’s Concerts.
+                    Distribution by composers of all <span id="totalPiecesAllConcerts"></span> total pieces played across all New Year's Concerts.
                   </div>
+                  <script>
+                    document.getElementById('totalPiecesAllConcerts').textContent = total_pieces_all_concerts;
+                  </script>
                   <div class="plot-chart">
                     <canvas id="chartAllConcertsByComposer"></canvas>
                   </div>
@@ -720,13 +1199,21 @@
                 <div class="plot-box">
                   <h6 class="plot-title">What gets played the most? (all years)</h6>
                   <div class="plot-desc">
-                    Total number of times pieces of each musical form have been performed across all New Year's Concerts.
+                    Distribution by musical forms of all <span id="totalPiecesAllConcerts_2"></span> total pieces played across all New Year's Concerts.
                   </div>
+                  <script>
+                    document.getElementById('totalPiecesAllConcerts_2').textContent = total_pieces_all_concerts;
+                  </script>
                   <div class="plot-chart">
                     <canvas id="chartPlayedByType"></canvas>
                   </div>
 
                   <script>
+                    function normalizeType(t) {
+                      if (!t) return null;
+                      return t.includes('Polka') ? 'Polka' : t;
+                    }
+
                     (function runPlayedByType() {
                       const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
                       const CONCERTS  = (typeof concerts  !== 'undefined') ? concerts  : window.concerts;
@@ -743,7 +1230,8 @@
                       CONCERTS.forEach(c => {
                         const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
                         ids.forEach(pid => {
-                          const t = piece2type.get(Number(pid));
+                          // const t = piece2type.get(Number(pid));
+                          const t = normalizeType(piece2type.get(Number(pid)));
                           if (!t) return;
                           counts[t] = (counts[t] || 0) + 1; // +1 per concert appearance
                         });
@@ -774,7 +1262,8 @@
                       CONCERTS.forEach(c => {
                         const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
                         ids.forEach(pid => {
-                          const t = piece2type.get(Number(pid));
+                          // const t = piece2type.get(Number(pid));
+                          const t = normalizeType(piece2type.get(Number(pid)));
                           if (!t) return;
                           counts[t] = (counts[t] || 0) + 1;
                         });
@@ -802,8 +1291,11 @@
                 <div class="plot-box">
                   <h6 class="plot-title">Catalogue by composer</h6>
                   <div class="plot-desc">
-                    Number of pieces in the catalogue by composer (each piece counted once).
+                    Distribution of all <span id="totalPiecesCatalogue"></span> pieces in the catalogue (each piece counted once) by composer.
                   </div>
+                  <script>
+                    document.getElementById('totalPiecesCatalogue').textContent = catalogue.length;
+                  </script>
                   <div class="plot-chart">
                     <canvas id="chartCatalogueByComposer"></canvas>
                   </div>
@@ -845,9 +1337,11 @@
                 <div class="plot-box">
                   <h6 class="plot-title">Catalogue by musical form</h6>
                   <div class="plot-desc">
-                    Number of pieces in the historical catalogue by musical form.
+                    Distribution of all <span id="totalPiecesCatalogue_2"></span> pieces in the catalogue (each piece counted once) by musical form.
                   </div>
-
+                  <script>
+                    document.getElementById('totalPiecesCatalogue_2').textContent = catalogue.length;
+                  </script>
                   <div class="plot-chart">
                     <canvas id="chartCatalogueByType"></canvas>
                   </div>
@@ -860,7 +1354,7 @@
 
                       const counts = {};
                       catalogue.forEach(p => {
-                        const t = p.type;
+                        const t = normalizeType(p.type);
                         if (!t) return;
                         counts[t] = (counts[t] || 0) + 1;
                       });

@@ -1126,24 +1126,29 @@ document.addEventListener('DOMContentLoaded', () => {
  window._charts = window._charts || {};
 
  function renderLineChart(canvasId, labels, series) {
-   // series can be:
-   // 1) single: { label: 'Something', data: [...] }
-   // 2) multiple: [ { label:'A', data:[...] }, { label:'B', data:[...] } , ... ]
-
    const canvas = document.getElementById(canvasId);
    if (!canvas) return;
    const ctx = canvas.getContext('2d');
 
    if (window._charts[canvasId]) window._charts[canvasId].destroy();
 
-   const datasets = Array.isArray(series) ? series : [series];
-
    window._charts[canvasId] = new Chart(ctx, {
      type: 'line',
-     data: { labels: labels, datasets: datasets },
+     data: {
+       labels,
+       datasets: series.map(s => ({
+         label: s.label,
+         data: s.data
+       }))
+     },
      options: {
        responsive: true,
-       maintainAspectRatio: false
+       maintainAspectRatio: false,
+       scales: {
+         y: {
+           beginAtZero: true   // <<< THIS
+         }
+       }
      }
    });
  }
@@ -1165,6 +1170,68 @@ document.addEventListener('DOMContentLoaded', () => {
    });
  }
 
+
+ // Horizontal bar chart (for long labels, rankings)
+ function renderBarChartHorizontal(canvasId, labels, datasets) {
+   const canvas = document.getElementById(canvasId);
+   if (!canvas) return;
+   const ctx = canvas.getContext('2d');
+
+   if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+   const MAX_LABEL = 35;
+   const shortLabels = labels.map(l =>
+     l.length > MAX_LABEL ? l.slice(0, MAX_LABEL) + '…' : l
+   );
+
+   window._charts[canvasId] = new Chart(ctx, {
+     type: 'bar',
+     data: { labels: shortLabels, datasets },
+     options: {
+       indexAxis: 'y', // this is what makes it horizontal
+       responsive: true,
+       maintainAspectRatio: false,
+       plugins: {
+         tooltip: {
+           callbacks: {
+             title: items => labels[items[0].dataIndex] // full label
+           }
+         },
+         legend: { display: false }
+       },
+       scales: {
+         x: { beginAtZero: true },
+         y: {
+           ticks: {
+             autoSkip: false,      // show every label
+             maxRotation: 0,
+             minRotation: 0
+           }
+         }
+       }
+     }
+   });
+ }
+
+ function renderStackedBarChart(canvasId, labels, series) {
+   const canvas = document.getElementById(canvasId);
+   if (!canvas) return;
+   const ctx = canvas.getContext('2d');
+
+   if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+   window._charts[canvasId] = new Chart(ctx, {
+     type: 'bar',
+     data: { labels, datasets: series.map(s => ({ label: s.label, data: s.data })) },
+     options: {
+       responsive: true,
+       maintainAspectRatio: false,
+       scales: { x: { stacked: true }, y: { stacked: true } }
+     }
+   });
+ }
+
+
 function renderPieChart(canvasId, labels, values) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
@@ -1179,4 +1246,22 @@ function renderPieChart(canvasId, labels, values) {
   });
 }
 
+
+function renderLineChart(canvasId, labels, datasets) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+  window._charts[canvasId] = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+}
 
