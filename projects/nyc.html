@@ -946,15 +946,33 @@
         ]);
 
          // Rank plot (descending): most repeated on the left
-        const countsDesc = pairsDesc
-          .map(([title, cnt]) => ({ title, cnt })); // already sorted desc
+        // piece_id -> composer
+        const id2composer = new Map(catalogue.map(p => [Number(p.piece_id), (p.composer || '')]));
 
-        const labelsRank = countsDesc.map((_, i) => String(i + 1));
+        // Build countsDesc WITH composer (keep it sorted most->least)
+        const countsDesc = Object.entries(countsById)
+          .map(([id, cnt]) => ({
+            id: Number(id),
+            title: id2title.get(Number(id)) || ('ID ' + id),
+            composer: id2composer.get(Number(id)) || '',
+            cnt: cnt
+          }))
+          .sort((a, b) => b.cnt - a.cnt);
+
+        // Arrays used by the tooltip
+        const titlesRank = countsDesc.map(x => x.title);
+        const composersRank = countsDesc.map(x => x.composer);
         const valuesRank = countsDesc.map(x => x.cnt);
+        const labelsRank = countsDesc.map((_, i) => String(i + 1));
 
-        renderLineChart('chartRankAppearances', labelsRank, [
-          { label: 'Appearances', data: valuesRank }
-        ]);
+          renderLineChart('chartRankAppearances', labelsRank, [
+            {
+              label: 'Appearances',
+              data: valuesRank,
+              pointTitles: titlesRank,
+              pointComposers: composersRank
+            }
+          ]);
       }
 
       window.addEventListener('load', runRepetitionCharts);
@@ -1087,94 +1105,121 @@
 
             <div class="col-12 mb-3">
               <div class="plot-box">
-                <h6 class="plot-title">New vs repeated pieces (Heaps style)</h6>
+                <h6 class="plot-title">Evolution of the repertoire over time: new pieces and repetitions</h6>
                 <div class="plot-desc">
-                  In the early years of the New Year’s Concert, almost every piece performed was new to the event. As the years went by, the repertoire became more established, and many pieces were played again and again. This plot shows how the set of distinct pieces grows, and how repetitions gradually accumulate 
-                </div>
+                    In the early years of the New Year’s Concert, most performed pieces were being played for the first time. As the decades passed, the repertoire gradually stabilised, and by the late 1980s familiar works were returning regularly while genuinely new additions became rarer. A clear change coincides with 1987, when the Philharmonic adopted the policy of regularly rotating conductors, starting with Herbert von Karajan. From that point on, the influx of new pieces increases again, showing how each conductor tried to leave a personal imprint on the programme.                </div>
                 <div class="plot-chart">
                   <canvas id="chartNewVsRepeated"></canvas>
                 </div>
 
-                <script>
-                  (function () {
-                    if (!Array.isArray(concerts) || !Array.isArray(catalogue)) return;
+                <div class="plot-reading" id="readingNewVsRepeated">
+                  This plot follows all <span id="totalPiecesPlayed"></span> performed pieces (repeated or not) accumulated across <span id="totalEditions"></span> editions, in chronological order. The horizontal axis counts the total number of pieces performed (including repeats), while the vertical axis shows how many distinct works have appeared so far. The growing gap between the two curves represents the accumulation of repetitions over time. Earlier in the concert’s history, this gap widens rapidly, reflecting the frequent reuse of a small, established repertoire. In more recent decades, the gap expands more slowly, indicating a  tendency to introduce more new pieces.
 
-                    // Catalogue universe (optional but keeps ids consistent)
-                    const validIds = new Set(catalogue.map(p => Number(p.piece_id)));
+                </div>
 
-                    const xs = [];
-                    const yUnique = [];
-                    const yRepeats = [];
+               <script>
+                 (function () {
+                   if (!Array.isArray(concerts) || !Array.isArray(catalogue)) return;
 
-                    const seen = new Set();
-                    let x = 0;
+                   const validIds = new Set(catalogue.map(p => Number(p.piece_id)));
 
-                    // boundaries to draw year separators
-                    const yearCuts = []; // {xEnd, year}
+                   const xs = [];
+                   const yUnique = [];
+                   const yRepeats = [];
 
-                    concerts.forEach(c => {
-                      const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
-                      ids.forEach(pid => {
-                        const id = Number(pid);
-                        if (!validIds.has(id)) return;
+                   const seen = new Set();
+                   let x = 0;
 
-                        x += 1;
-                        xs.push(x);
+                   const yearCuts = []; // {xEnd, year}
 
-                        const before = seen.size;
-                        seen.add(id);
-                        const uniqueNow = seen.size;
+                   concerts.forEach(c => {
+                     const ids = (c.program && Array.isArray(c.program.piece_id)) ? c.program.piece_id : [];
+                     ids.forEach(pid => {
+                       const id = Number(pid);
+                       if (!validIds.has(id)) return;
 
-                        yUnique.push(uniqueNow);
-                        yRepeats.push(x - uniqueNow);
-                      });
+                       x += 1;
+                       xs.push(x);
 
-                      yearCuts.push({ xEnd: x, year: c.year });
-                    });
+                       seen.add(id);
+                       const uniqueNow = seen.size;
 
-                    // plugin: vertical lines at each concert boundary + year label every 10 years
-                    const yearCutsPlugin = {
-                      id: 'yearCutsPlugin',
-                      afterDraw(chart) {
-                        const ca = chart.chartArea;
-                        const xScale = chart.scales.x;
-                        if (!ca || !xScale) return;
+                       yUnique.push(uniqueNow);
+                       yRepeats.push(x - uniqueNow);
+                     });
 
-                        const ctx = chart.ctx;
-                        ctx.save();
-                        ctx.globalAlpha = 0.25;
+                     yearCuts.push({ xEnd: x, year: c.year });
+                   });
 
-                        yearCuts.forEach(cut => {
-                          if (!cut.xEnd) return;
-                          const idx = cut.xEnd - 1;
-                          if (idx < 0 || idx >= xs.length) return;
+                   const yearCutsPlugin = {
+                     id: 'yearCutsPluginLocalNewVsRepeated',
+                     afterDraw(chart) {
+                       const ca = chart.chartArea;
+                       const xScale = chart.scales.x;
+                       if (!ca || !xScale) return;
 
-                          const xPix = xScale.getPixelForValue(xs[idx]);
-                          ctx.beginPath();
-                          ctx.moveTo(xPix, ca.top);
-                          ctx.lineTo(xPix, ca.bottom);
-                          ctx.stroke();
+                       const ctx = chart.ctx;
+                       ctx.save();
+                       ctx.globalAlpha = 0.25;
+                       ctx.strokeStyle = '#000';
+                       ctx.fillStyle = '#000';
+                       ctx.font = '10px sans-serif';
 
-                          if (cut.year % 10 === 0) {
-                            ctx.globalAlpha = 0.7;
-                            ctx.fillText(String(cut.year), xPix + 2, ca.top + 10);
-                            ctx.globalAlpha = 0.25;
-                          }
-                        });
+                       yearCuts.forEach(cut => {
+                         if (!cut.xEnd) return;
+                         const idx = cut.xEnd - 1;
+                         if (idx < 0 || idx >= xs.length) return;
 
-                        ctx.restore();
-                      }
-                    };
+                         const xPix = xScale.getPixelForValue(xs[idx]);
 
-                    // attach plugin just for this chart
-                    Chart.register(yearCutsPlugin);
+                         ctx.beginPath();
+                         ctx.moveTo(xPix, ca.top);
+                         ctx.lineTo(xPix, ca.bottom);
+                         ctx.stroke();
 
-                    renderLineChart('chartNewVsRepeated', xs, [
-                      { label: 'Unique pieces (cumulative)', data: yUnique },
-                      { label: 'Repeated pieces (cumulative)', data: yRepeats }
-                    ]);
-                  })();
-                </script>
+                         if (cut.year % 10 === 0) {
+                           ctx.globalAlpha = 0.8;
+                           ctx.fillText(String(cut.year), xPix + 2, ca.top + 10);
+                           ctx.globalAlpha = 0.25;
+                         }
+                       });
+
+                       ctx.restore();
+                     }
+                   };
+
+                   window._charts = window._charts || {};
+                   const canvasId = 'chartNewVsRepeated';
+                   const canvas = document.getElementById(canvasId);
+                   if (!canvas) return;
+                   const ctx = canvas.getContext('2d');
+
+                   if (window._charts[canvasId]) window._charts[canvasId].destroy();
+
+                   window._charts[canvasId] = new Chart(ctx, {
+                     type: 'line',
+                     data: {
+                       labels: xs,
+                       datasets: [
+                         { label: 'Unique pieces (cumulative)', data: yUnique },
+                         { label: 'Repeated pieces (cumulative)', data: yRepeats }
+                       ]
+                     },
+                     options: {
+                       responsive: true,
+                       maintainAspectRatio: false,
+                       scales: { y: { beginAtZero: true } }
+                     },
+                     plugins: [yearCutsPlugin]
+                   });
+
+                   // ---- INSERTED TEXT VARIABLES (X and Y) ----
+                   document.getElementById('totalPiecesPlayed').textContent = x;
+                   document.getElementById('totalEditions').textContent = concerts.length;
+                   // ------------------------------------------
+
+                 })();
+               </script>
               </div>
             </div>
 

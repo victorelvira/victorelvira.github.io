@@ -1260,6 +1260,28 @@ function renderLineChart(canvasId, labels, datasets) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      interaction: { mode: 'nearest', intersect: true },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            // This replaces the "1" (rank) with the piece title, if provided
+            title: function(items) {
+              if (!items || !items.length) return '';
+              const it = items[0];
+              const ds = it.dataset || {};
+              const idx = it.dataIndex;
+
+              const rank = it.label; // this is "1", "2", ...
+              const title = (Array.isArray(ds.pointTitles) && ds.pointTitles[idx]) ? ds.pointTitles[idx] : '';
+              const composer = (Array.isArray(ds.pointComposers) && ds.pointComposers[idx]) ? ds.pointComposers[idx] : '';
+
+              if (title && composer) return '#' + rank + ' – ' + title + ' (' + composer + ')';
+              if (title) return '#' + rank + ' – ' + title;
+              return it.label;
+            }
+          }
+        }
+      },
       scales: { y: { beginAtZero: true } }
     }
   });
