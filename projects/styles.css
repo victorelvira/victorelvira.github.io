@@ -369,3 +369,15 @@ th, td { text-align: left; padding: 8px; }
   content: "Plot reading: ";
   font-weight: bold;
 }
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.25rem 0 0;
+}
+
+@media (max-width: 576px) {
+  .page-subtitle {
+    font-size: 0.85rem;
+  }
+}
