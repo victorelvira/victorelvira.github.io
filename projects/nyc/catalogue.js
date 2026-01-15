@@ -7153,7 +7153,7 @@ var catalogue = [
           },
           "imslp": ""
       },
-      "composer_id": 39,
+      "composer_id": 40,
       "type": "Polka mazurka"
   },
   {
@@ -7174,7 +7174,7 @@ var catalogue = [
           },
           "imslp": ""
       },
-      "composer_id": 40,
+      "composer_id": 41,
       "type": "Waltz"
   },
   {
@@ -7195,7 +7195,7 @@ var catalogue = [
           },
           "imslp": ""
       },
-      "composer_id": 41,
+      "composer_id": 42,
       "type": "Polka schnell"
   }
 ];

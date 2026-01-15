@@ -429,8 +429,19 @@ var composers = [
         }
     },
     {
-        "name": "Florence Price",
+        "name": "Josephine Weinlich",
         "id": 40,
+        "links":
+        {
+            "wiki":
+            {
+                "en": "https://en.wikipedia.org/wiki/Josephine_Amann-Weinlich"
+            }
+        }
+    },
+    {
+        "name": "Florence Price",
+        "id": 41,
         "links":
         {
             "wiki":
@@ -441,7 +452,7 @@ var composers = [
     },
     {
         "name": "Philipp Fahrbach Jr.",
-        "id": 41,
+        "id": 42,
         "links":
         {
             "wiki":
