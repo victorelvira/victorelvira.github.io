@@ -59,12 +59,18 @@
       return await res.text();
     }
 
-    // async function fileExists(url) {
-    //   try {
-    //     const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
-    //     return r.ok;
-    //   } catch { return false; }
-    // }
+    // --- Carga del manifest de PDFs disponibles (generado por tools/_gen_pdf_manifest.py) ---
+    // Si falla la carga, __PDF_KEYS__ queda en null y se muestran todos los botones PDF
+    // (comportamiento antiguo), para que un fallo del manifest no oculte nada.
+    let __PDF_KEYS__ = null;
+    async function loadPdfManifest() {
+      try {
+        const res = await fetch('data/publications/pdf_manifest.json?v=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) return;
+        const keys = await res.json();
+        if (Array.isArray(keys)) __PDF_KEYS__ = new Set(keys.map(k => String(k).toLowerCase()));
+      } catch { /* sin manifest: se muestran todos */ }
+    }
 
 
 
@@ -171,7 +177,10 @@
        const k = kRaw.toLowerCase();
        const pdfURL = `assets/papers/${encodeURIComponent(k)}_pre.pdf`;
        const bibURL = `assets/bib/${encodeURIComponent(k)}.bib`;
-       buttons += ` <a class="btn btn-mini btn-danger"    target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
+       // Botón PDF solo si el draft existe según el manifest (o si no hay manifest)
+       if (!__PDF_KEYS__ || __PDF_KEYS__.has(k)) {
+         buttons += ` <a class="btn btn-mini btn-danger"    target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
+       }
        buttons += ` <a class="btn btn-mini btn-secondary" target="_blank" rel="noopener" href="${bibURL}">BibTeX</a>`;
      }
 
@@ -196,9 +205,9 @@
     async function renderPublications(filterType = "all") {
       const $out = $("#bibtex_display").empty(); // Limpia la lista antes de renderizar
       try {
-        // 1) Parsear una sola vez y cachear
+        // 1) Parsear una sola vez y cachear (bib y manifest de PDFs en paralelo)
         if (!__BIB_ENTRIES__) {
-          const raw = await loadBib();
+          const [raw] = await Promise.all([loadBib(), loadPdfManifest()]);
           const parser = new BibtexParser();
           parser.setInput(raw);
           parser.bibtex();
@@ -227,7 +236,8 @@
             e.__bibKey = extractBibKey(e);
 
             if (e.__bibKey) {
-              const row = { key: e.__bibKey, hasBib: false, hasPdf: false };
+              const hasPdf = !!(__PDF_KEYS__ && __PDF_KEYS__.has(e.__bibKey.toLowerCase()));
+              const row = { key: e.__bibKey, hasBib: false, hasPdf: hasPdf };
               window.__PUB_INDEX__.push(row);
               window.__PUB_IDX_MAP__.set(e.__bibKey, row);
             }
