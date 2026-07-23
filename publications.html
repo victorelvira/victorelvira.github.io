@@ -59,7 +59,7 @@
       return await res.text();
     }
 
-    // --- Carga del manifest de PDFs disponibles (generado por tools/_gen_pdf_manifest.py) ---
+    // --- Carga del manifest de PDFs disponibles (generado por _tools/_gen_pdf_manifest.py) ---
     // Si falla la carga, __PDF_KEYS__ queda en null y se muestran todos los botones PDF
     // (comportamiento antiguo), para que un fallo del manifest no oculte nada.
     let __PDF_KEYS__ = null;
