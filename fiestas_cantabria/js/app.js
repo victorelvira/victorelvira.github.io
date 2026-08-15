@@ -319,7 +319,11 @@ document.querySelectorAll(".vista-toggle button").forEach(btn => {
     document.body.classList.toggle("vista-mapa", v === "mapa");
     document.querySelectorAll(".vista-toggle button").forEach(x =>
       x.classList.toggle("vista-activa", x === btn));
-    if (v === "mapa") setTimeout(() => map.invalidateSize(), 60);
+    if (v === "mapa") {
+      setTimeout(() => { map.invalidateSize(); renderLista(); }, 60);
+    } else {
+      renderLista();
+    }
   });
 });
 

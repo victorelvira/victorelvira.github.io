@@ -183,11 +183,17 @@ body {
 @media (max-width: 760px) {
   .vista-toggle { display: flex; }
   .app-body { flex-direction: column; }
-  .sidebar { width: 100%; max-width: 100%; flex: 1; min-height: 0; border-right: none; }
+  .sidebar { width: 100%; max-width: 100%; min-height: 0; border-right: none; }
   .map-wrap { flex: 1; min-height: 0; }
-  /* por defecto (vista lista): se oculta el mapa */
+
+  /* Vista lista (por defecto): mapa oculto; los filtros + la lista ocupan la pantalla */
+  body:not(.vista-mapa) .sidebar { flex: 1; }
   body:not(.vista-mapa) .map-wrap { display: none; }
-  body.vista-mapa .sidebar { display: none; }
+
+  /* Vista mapa: se ocultan SOLO los resultados (la lista); los filtros permanecen visibles */
+  body.vista-mapa .sidebar { flex: 0 0 auto; }
+  body.vista-mapa .lista { display: none; }
+
   .app-header h1 { font-size: 16px; }
   .subtitle { display: none; }
   .detalle { width: 100%; max-width: 100%; }
