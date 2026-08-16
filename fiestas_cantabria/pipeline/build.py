@@ -14,6 +14,7 @@ import planesparahoy, rules, wikipedia
 # se rellenan en main()
 WIKI_ENTRADAS = []
 IA_CACHE = {}
+INTERES_LIST = []   # cargado de interes.json
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(AQUI)
@@ -25,13 +26,19 @@ MESES = ["", "enero","febrero","marzo","abril","mayo","junio","julio",
          "agosto","septiembre","octubre","noviembre","diciembre"]
 DIAS = ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"]
 
-INTERES = {
-    "vijanera": "Nacional", "santoña": "Nacional", "coso blanco": "Nacional",
-    "batalla de (las )?flores": "Nacional", "gala floral": "Nacional",
-    "guerras cántabras": "Nacional", "orujo": "Nacional",
-    "folía": "Regional", "bien aparecida": "Regional",
-    "día de cantabria": "Regional",
-}
+import unicodedata as _ud
+def _sin_acentos(s):
+    return _ud.normalize("NFKD", (s or "").lower()).encode("ascii", "ignore").decode()
+
+def nivel_interes(nombre, municipio, pueblo):
+    """Flag oficial de interés turístico (Nacional/Regional/'') según interes.json."""
+    n, m, p = _sin_acentos(nombre), _sin_acentos(municipio), _sin_acentos(pueblo)
+    for entrada in INTERES_LIST:
+        if entrada["clave"] in n:
+            mm = entrada.get("muni", "")
+            if not mm or mm in m or mm in p:
+                return entrada["nivel"]
+    return ""
 
 def fmt_fecha(ini, fin):
     d1 = datetime.date.fromisoformat(ini)
@@ -95,12 +102,7 @@ def build_registro(ev):
         "lugar": p["venue"],
     } for p in ev["programa"]]
 
-    interes = ""
-    low = ev["title"].lower()
-    for patron, val in INTERES.items():
-        if re.search(patron, low):
-            interes = val
-            break
+    interes = nivel_interes(nombre, ev["muni_name"], pueblo)
 
     fecha_txt = fmt_fecha(ev["start_date"], ev["end_date"])
     fuente = ev["source_url"]
@@ -166,12 +168,16 @@ def es_duplicada(clasica, scrapeadas):
     return None
 
 def main():
-    global WIKI_ENTRADAS, IA_CACHE
+    global WIKI_ENTRADAS, IA_CACHE, INTERES_LIST
     print("· Cargando descripciones de Wikipedia…")
     WIKI_ENTRADAS = wikipedia.cargar(CACHE)
     ia_path = os.path.join(AQUI, "descriptions_ia.json")
     IA_CACHE = json.load(open(ia_path, encoding="utf-8")) if os.path.exists(ia_path) else {}
-    print(f"  {len(WIKI_ENTRADAS)} artículos wiki · {len(IA_CACHE)} descripciones IA")
+    int_path = os.path.join(AQUI, "interes.json")
+    if os.path.exists(int_path):
+        ij = json.load(open(int_path, encoding="utf-8"))
+        INTERES_LIST = ij.get("nacional", []) + ij.get("regional", [])
+    print(f"  {len(WIKI_ENTRADAS)} artículos wiki · {len(IA_CACHE)} descripciones IA · {len(INTERES_LIST)} fiestas de interés")
 
     print("· Descargando feed de planesparahoy…")
     sqlite_path, manifest = planesparahoy.descargar(CACHE)
@@ -195,6 +201,7 @@ def main():
         if dup:
             dup_msgs.append(f"{c['nombre']} · {c['municipio']}  ≈  {dup} (scrapeada)")
         else:
+            c["interes"] = nivel_interes(c["nombre"], c["municipio"], c.get("pueblo", ""))
             c["_fuente_desc"] = "clasica"
             clasicas_kept.append(c)
 

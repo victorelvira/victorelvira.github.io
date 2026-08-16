@@ -41,7 +41,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const markers = new Map(); // id -> marker
+const markersLayer = L.layerGroup().addTo(map); // se reconstruye al filtrar
 
 function iconoTipo(tipo) {
   const color = (TIPOS[tipo] || {}).color || "#888";
@@ -53,12 +53,29 @@ function iconoTipo(tipo) {
   });
 }
 
+// icono para varias fiestas en el mismo punto: círculo con el número
+function iconoGrupo(n) {
+  return L.divIcon({
+    className: "marker-grupo",
+    html: `<div>${n}</div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14]
+  });
+}
+
 const pinStyle = document.createElement("style");
 pinStyle.textContent = `
   .marker-pin div {
     width: 20px; height: 20px; border-radius: 50% 50% 50% 0;
     transform: rotate(-45deg); border: 2px solid #fff;
     box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  }
+  .marker-grupo div {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #14563a; color: #fff; border: 2px solid #fff;
+    display: flex; align-items: center; justify-content: center;
+    font: 700 13px/1 system-ui, sans-serif;
+    box-shadow: 0 1px 5px rgba(0,0,0,.45);
   }`;
 document.head.appendChild(pinStyle);
 
@@ -80,26 +97,50 @@ let _arr = [];            // último conjunto que pasa filtros no espaciales
 
 FIESTAS.forEach((f, i) => f._id = i);
 
-// fechas por defecto: desde hoy en adelante
-$desde.min = HOY_ISO; $hasta.min = HOY_ISO;
+// por defecto arranca en hoy, pero se permite elegir cualquier fecha (también pasada)
 $desde.value = HOY_ISO;
 
-// --- Marcadores (se crean una vez) -----------------------------------
-FIESTAS.forEach(f => {
-  const m = L.marker([f.lat, f.lng], { icon: iconoTipo(f.tipo) });
-  m.bindPopup(popupHTML(f));
-  m.on("popupopen", () => {
-    const link = document.querySelector(".popup-link[data-id='" + f._id + "']");
-    if (link) link.onclick = () => abrirDetalle(f);
+// --- Marcadores: se agrupan por ubicación y se reconstruyen al filtrar ---
+function renderMarkers(arr) {
+  markersLayer.clearLayers();
+  const grupos = new Map();               // "lat,lng" -> [fiestas]
+  arr.forEach(f => {
+    const k = f.lat.toFixed(4) + "," + f.lng.toFixed(4);
+    if (!grupos.has(k)) grupos.set(k, []);
+    grupos.get(k).push(f);
   });
-  markers.set(f._id, m);
-});
+  grupos.forEach(fs => {
+    const f0 = fs[0];
+    const m = fs.length === 1
+      ? L.marker([f0.lat, f0.lng], { icon: iconoTipo(f0.tipo) }).bindPopup(popupHTML(f0))
+      : L.marker([f0.lat, f0.lng], { icon: iconoGrupo(fs.length) }).bindPopup(popupGrupo(fs));
+    m.on("popupopen", wirePopupLinks);
+    m.addTo(markersLayer);
+  });
+}
 
 function popupHTML(f) {
   const t = TIPOS[f.tipo] || { label: f.tipo };
   return `<b>${f.nombre}</b><br>📍 ${f.pueblo}${f.municipio && f.municipio !== f.pueblo ? " · " + f.municipio : ""}<br>
     🗓 ${f.fecha}<br><span style="color:${t.color}">● ${t.label}</span>
     <br><span class="popup-link" data-id="${f._id}">Ver detalle →</span>`;
+}
+
+function popupGrupo(fs) {
+  const items = fs.map(f => {
+    const t = TIPOS[f.tipo] || { label: f.tipo, color: "#888" };
+    return `<div class="pop-item"><span style="color:${t.color}">●</span>
+      <span class="popup-link" data-id="${f._id}">${f.nombre}</span>
+      <small>${f.fecha}</small></div>`;
+  }).join("");
+  return `<b>${fs.length} fiestas en ${fs[0].pueblo}</b><div class="pop-lista">${items}</div>`;
+}
+
+// conecta los enlaces "Ver detalle" de cualquier popup abierto
+function wirePopupLinks() {
+  document.querySelectorAll(".leaflet-popup .popup-link[data-id]").forEach(el => {
+    el.onclick = () => abrirDetalle(FIESTAS[+el.dataset.id]);
+  });
 }
 
 // --- Filtros ----------------------------------------------------------
@@ -111,9 +152,7 @@ function esEsteFinde(f) {
 function pasaFecha(f) {
   if (ignoreDate) return true;
   if (!f.inicio) return true; // sin fecha conocida → no se filtra fuera
-  let ds = $desde.value || HOY_ISO;
-  if (ds < HOY_ISO) ds = HOY_ISO;          // nunca antes de hoy
-  const winStart = ds;
+  const winStart = $desde.value || "0000-01-01";  // se permite cualquier fecha, también pasada
   const winEnd = $hasta.value || "9999-12-31";
   const fFin = f.fin || f.inicio;
   return fFin >= winStart && f.inicio <= winEnd;
@@ -161,11 +200,7 @@ function ordenar(list) {
 // --- Render -----------------------------------------------------------
 function aplicarFiltros() {
   _arr = FIESTAS.filter(pasaNoEspacial);
-  const visibles = new Set(_arr.map(f => f._id));
-  markers.forEach((m, id) => {
-    if (visibles.has(id)) { if (!map.hasLayer(m)) m.addTo(map); }
-    else if (map.hasLayer(m)) map.removeLayer(m);
-  });
+  renderMarkers(_arr);
   renderLista();
 }
 
