@@ -183,16 +183,18 @@ body {
 @media (max-width: 760px) {
   .vista-toggle { display: flex; }
   .app-body { flex-direction: column; }
-  .sidebar { width: 100%; max-width: 100%; min-height: 0; border-right: none; }
-  .map-wrap { flex: 1; min-height: 0; }
+  /* la barra lateral se "disuelve": sus hijos (filtros y lista) pasan a ordenarse
+     junto con el mapa, para poder intercalar filtros → mapa → lista */
+  .sidebar { display: contents; }
+  .filters { background: #fff; order: 0; }
+  .map-wrap { order: 1; min-width: 0; }
+  .lista { order: 2; background: #fff; min-height: 0; flex: 1; }
 
-  /* Vista lista (por defecto): mapa oculto; los filtros + la lista ocupan la pantalla */
-  body:not(.vista-mapa) .sidebar { flex: 1; }
+  /* Vista lista (por defecto): mapa oculto; filtros + lista ocupan la pantalla */
   body:not(.vista-mapa) .map-wrap { display: none; }
 
-  /* Vista mapa: se ocultan SOLO los resultados (la lista); los filtros permanecen visibles */
-  body.vista-mapa .sidebar { flex: 0 0 auto; }
-  body.vista-mapa .lista { display: none; }
+  /* Vista mapa: filtros arriba, mapa con altura fija y la lista debajo */
+  body.vista-mapa .map-wrap { display: block; height: 42vh; flex: 0 0 auto; }
 
   .app-header h1 { font-size: 16px; }
   .subtitle { display: none; }
