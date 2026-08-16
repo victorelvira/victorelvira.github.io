@@ -134,7 +134,10 @@ body {
 
 .leaflet-popup-content { margin: 10px 12px; font-size: 13.5px; }
 .leaflet-popup-content b { font-size: 14.5px; }
-.popup-link { display:inline-block; margin-top:6px; color: var(--verde); font-weight:600; cursor:pointer; }
+.popup-link { display:inline-block; color: var(--verde); font-weight:600; cursor:pointer; }
+.pop-lista { margin-top: 6px; max-height: 190px; overflow-y: auto; }
+.pop-item { padding: 4px 0; border-top: 1px solid var(--linea); line-height: 1.3; }
+.pop-item small { display:block; color: var(--gris); font-size: 11px; }
 
 /* Panel de detalle */
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 900; }
