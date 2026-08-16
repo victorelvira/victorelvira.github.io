@@ -327,5 +327,15 @@ document.querySelectorAll(".vista-toggle button").forEach(btn => {
   });
 });
 
+// --- Indicador de última actualización -------------------------------
+(function mostrarUpdate() {
+  const el = document.getElementById("update-info");
+  if (el && typeof DATA_INFO !== "undefined" && DATA_INFO.generado) {
+    el.textContent = "actualizado " + DATA_INFO.generado + " h";
+    el.title = "Datos regenerados el " + DATA_INFO.generado +
+      (DATA_INFO.feed ? " · feed " + DATA_INFO.feed : "");
+  }
+})();
+
 // --- Inicio -----------------------------------------------------------
 aplicarFiltros();

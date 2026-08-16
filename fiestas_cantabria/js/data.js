@@ -1,6 +1,6 @@
 /*
  * Fiestas de pueblo de Cantabria — dataset generado automáticamente
- * Generado: 2026-08-15T14:41:08
+ * Generado: 2026-08-16T14:52:08
  * Fuente de datos: planesparahoy.com (datos de fuentes públicas).
  * Se extraen hechos (fechas, lugar, programa, coordenadas); las descripciones
  * se sintetizan a partir de esos datos, no se copia texto editorial del sitio.
@@ -14753,6 +14753,8 @@ const FIESTAS_SCRAPED = [
   "descripcion": "Fiestas patronales en Santoña. Fechas: 26 de septiembre. Lugar: Calle Camilo José Cela s/n. Entrada gratuita."
  }
 ];
+
+const DATA_INFO = {"generado": "2026-08-16 14:52", "feed": "20260815114425", "fiestas": 173};
 
 const FIESTAS = (typeof FIESTAS_CLASICAS !== 'undefined'
   ? FIESTAS_CLASICAS.concat(FIESTAS_SCRAPED)

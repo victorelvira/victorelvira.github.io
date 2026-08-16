@@ -43,8 +43,10 @@ body {
 .brand-mark { font-size: 28px; }
 .app-header h1 { margin: 0; font-size: 19px; font-weight: 700; letter-spacing: .2px; }
 .subtitle { margin: 2px 0 0; font-size: 12.5px; opacity: .85; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
 .header-count { font-size: 13px; background: rgba(255,255,255,.16); padding: 6px 12px; border-radius: 999px; }
 .header-count span { font-weight: 700; }
+.update-info { font-size: 10.5px; opacity: .7; letter-spacing: .2px; white-space: nowrap; }
 
 /* Layout */
 .app-body { flex: 1; display: flex; min-height: 0; }
@@ -179,22 +181,26 @@ body {
 }
 .vista-toggle button.vista-activa { background: var(--verde); color: #fff; border-color: var(--verde); }
 
-/* Responsive */
+/* Responsive — móvil: SCROLL NATURAL de toda la página */
 @media (max-width: 760px) {
-  .vista-toggle { display: flex; }
-  .app-body { flex-direction: column; }
-  /* la barra lateral se "disuelve": sus hijos (filtros y lista) pasan a ordenarse
-     junto con el mapa, para poder intercalar filtros → mapa → lista */
+  html, body { height: auto; }          /* deja que la página crezca y scrollee */
+  body { display: block; }
+  .vista-toggle { display: flex; position: sticky; top: 0; }  /* siempre accesible */
+
+  .app-body { display: flex; flex-direction: column; height: auto; min-height: 0; }
+  /* la barra lateral se "disuelve" para poder intercalar filtros → mapa → lista */
   .sidebar { display: contents; }
   .filters { background: #fff; order: 0; }
-  .map-wrap { order: 1; min-width: 0; }
-  .lista { order: 2; background: #fff; min-height: 0; flex: 1; }
+  .map-wrap { order: 1; min-width: 0; flex: none; }  /* flex:none para que se respete height */
+  /* el swipe vertical scrollea la página (llega a la lista); el pellizco sigue haciendo zoom */
+  #map { touch-action: pan-y pinch-zoom; }
+  .lista { order: 2; background: #fff; overflow: visible; flex: none; }  /* fluye, sin scroll propio */
 
-  /* Vista lista (por defecto): mapa oculto; filtros + lista ocupan la pantalla */
+  /* Vista lista (por defecto): mapa oculto; solo filtros + lista */
   body:not(.vista-mapa) .map-wrap { display: none; }
 
-  /* Vista mapa: filtros arriba, mapa con altura fija y la lista debajo */
-  body.vista-mapa .map-wrap { display: block; height: 42vh; flex: 0 0 auto; }
+  /* Vista mapa: filtros arriba, mapa (se va con el scroll) y la lista completa debajo */
+  body.vista-mapa .map-wrap { display: block; height: 55vh; }
 
   .app-header h1 { font-size: 16px; }
   .subtitle { display: none; }
