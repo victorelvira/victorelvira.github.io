@@ -1,0 +1,166 @@
+INFORME DE CALIDAD — 2026-08-16T18:44:03
+Feed planesparahoy: versión 20260816075727
+
+Candidatos: 137
+ACEPTADAS (fiestas de pueblo): 85
+DESCARTADAS (ruido): 52
+CLÁSICAS añadidas: 10  (de 11; 1 duplicadas omitidas)
+TOTAL fiestas: 95
+
+Clásicas omitidas por estar ya en el feed:
+  Batalla de Flores · Laredo  ≈  La Batalla de las Flores (scrapeada)
+
+Distribución por tipo:
+  patronal       75
+  gastronomica   8
+  carnaval       3
+  floral         3
+  religiosa      2
+  romeria        2
+  historica      2
+
+Origen de las descripciones:
+  ia             83
+  clasica        10
+  wikipedia      2
+
+--- DESCARTADAS (revisar; si alguna es fiesta, añádela a OVERRIDES) ---
+  [562890] AURA Summer Edition · Santander  →  override:drop
+  [615203] Sonorama Ribera Day Santander · La Virgen  →  override:drop
+  [43489] Visitas guiadas al Palacio de la Magdalena · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [52] Feria del Libro Antiguo y de Ocasión · Laredo  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [679] Exposición «La piedra y la luz» · Santillana del Mar  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [423784] Concierto de Marcos Bárcena · Ramales de la Victoria  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [42371] 45 Festival de Verano Camargo  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [4130] Feria del Libro Viejo · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [403798] Apertura del Mercado Marinero · Colindres  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [436266] Aldea Fest · San Vitores  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [519025] Apertura del Rincón Infantil · Torrelavega  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [562892] Concierto de Music Time Machine · Luey  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [532958] Concierto de la Coral Torre de Obeso · Otero  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [463781] Misa y Procesión de San Roque · Cartes  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [611769] Taller y fiesta de la espuma · San Vicente de la Barquera  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [533842] Concierto «Marcos Históricos» - Vincenzo Capezzuto y Giancarlo Bianchetti · Noja  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [164406] Concierto Luzylimón «De semillas y flores» · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [533843] Concierto «Marcos Históricos» - Vincenzo Capezzuto y Giancarlo Bianchetti · Arnuero  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [611882] Visita guiada a templos románicos en el Camino de Santiago  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [614831] Fiesta Guajira con Lazarón y amigos · Torrelavega  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [436231] Strength Barre & Brunch · Suances  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [433848] Paseo Cultural de Polanco  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [423590] Love Pride Day · Festival de Naciones · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [599903] Fiesta con DJ Argu Live · La Concha  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [484600] Marcha de Augusto a Tarraco · Cabezón de la Sal  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [43604] Charla: «Cuba, historia del motor tropicalista» · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [434092] Apertura del mercado Macellvm · Cabezón de la Sal  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [40238] Carrera Autos Locos · Puentenansa  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [21953] Festival El Rodeo · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [424057] Kinder Rave: Fiesta familiar para empezar el curso · Santander  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [687] Chirigota del bizcocho · Santoña  →  patrón de no-fiesta (concierto/expo/feria del libro/…)
+  [27338] Frescos «Ama la paz y odia la guerra» de Luis Quintanilla · Santander  →  sin patrón de fiesta ni programa suficiente
+  [519036] A Yantar a las Tabernas · Torrelavega  →  sin patrón de fiesta ni programa suficiente
+  [463790] Sunset Experience Boat Party · Santander  →  sin patrón de fiesta ni programa suficiente
+  [519075] La corte de bonaparte · Torrelavega  →  sin patrón de fiesta ni programa suficiente
+  [435465] Marmite · Escalante  →  sin patrón de fiesta ni programa suficiente
+  [34757] Mercadillo de artesanía y gastronomía con deporte rural · Arnuero  →  sin patrón de fiesta ni programa suficiente
+  [549543] Tardeo en bar de fiestas · Quijano  →  sin patrón de fiesta ni programa suficiente
+  [615216] Homenaje poético «Flores para Rapún» · Santander  →  sin patrón de fiesta ni programa suficiente
+  [532943] Mercadillo del Verano · Ruiloba  →  sin patrón de fiesta ni programa suficiente
+  [619603] Pregón de fiestas · Escalante  →  sin patrón de fiesta ni programa suficiente
+  [619618] Actuación de la Murga Los Artistas · Escalante  →  sin patrón de fiesta ni programa suficiente
+  [619620] Actuación Show del Flow · Escalante  →  sin patrón de fiesta ni programa suficiente
+  [424586] Mercado de las Flores de Laredo  →  sin patrón de fiesta ni programa suficiente
+  [619619] Partido Solteros vs Casados · Escalante  →  sin patrón de fiesta ni programa suficiente
+  [550369] Suelta de vaquillas · Villasevil  →  sin patrón de fiesta ni programa suficiente
+  [583605] Encuentro poético con Candela de las Heras · Santander  →  sin patrón de fiesta ni programa suficiente
+  [24934] MACELLUM – Mercado Cántabro-Romano · Los Corrales de Buelna  →  sin patrón de fiesta ni programa suficiente
+  [424588] Gran Mercado Medieval de Casarrubios del Monte  →  sin patrón de fiesta ni programa suficiente
+  [434095] XX Certamen Internacional de Lanzamiento de Uva Masculino · Cabezón de la Sal  →  sin patrón de fiesta ni programa suficiente
+  [40236] Mercado Medieval Torrelavega  →  sin patrón de fiesta ni programa suficiente
+  [43627] Folclore en todas las estaciones: Miguel Cadavieco · Santander  →  sin patrón de fiesta ni programa suficiente
+
+--- ACEPTADAS ---
+  [599204] 46ª Fiesta de la marmita de Laredo  (patrón de fiesta)
+  [226878] Chupinazo de Fiestas · Penagos  (patrón de fiesta)
+  [550364] Chupinazo y comienzo de fiestas · Villasevil  (patrón de fiesta)
+  [100335] Encuentros en el Puerto de Santander  (ambiguo, 5 actos)
+  [427061] Feria Artesana de Comillas  (patrón de fiesta)
+  [532945] Feria Internacional de la Sidra · Monte  (patrón de fiesta)
+  [691] Feria Nacional del Tomate Antiguo · Polanco  (patrón de fiesta)
+  [482202] Fiesta de La Puente del Valle · Valderredible  (patrón de fiesta)
+  [610934] Fiesta de Verano de Boo de Guarnizo  (patrón de fiesta)
+  [611771] Fiesta de la Patrona · Torrelavega  (patrón de fiesta)
+  [611775] Fiesta de la Patrona · Torrelavega  (patrón de fiesta)
+  [611776] Fiesta de la Patrona · Torrelavega  (patrón de fiesta)
+  [610938] Fiestas Hijas 2026 · Hijas  (patrón de fiesta)
+  [614828] Fiestas Patronales de Noja  (patrón de fiesta)
+  [226556] Fiestas Santos Mártires · Novales  (patrón de fiesta)
+  [534140] Fiestas Virgen Grande de Torrelavega  (patrón de fiesta)
+  [615207] Fiestas de Arenillas de Ebro  (patrón de fiesta)
+  [227370] Fiestas de Arnuero  (patrón de fiesta)
+  [95535] Fiestas de Arnuero La Asunción · Arnuero  (patrón de fiesta)
+  [403992] Fiestas de Carmona San Roque y Las Lindes · Cabuérniga  (patrón de fiesta)
+  [274083] Fiestas de Corvera de Toranzo  (patrón de fiesta)
+  [436247] Fiestas de Gibaja  (patrón de fiesta)
+  [227286] Fiestas de Hazas de Cesto  (patrón de fiesta)
+  [423645] Fiestas de Novales · Alfoz de Lloredo  (patrón de fiesta)
+  [226667] Fiestas de Ntra. Sra. de Consolación · Pie de Concha  (patrón de fiesta)
+  [423822] Fiestas de Nuestra Señora de Moral · Correpoco  (patrón de fiesta)
+  [273970] Fiestas de Nuestra Señora de Valvanuz y San Roque · Selaya  (patrón de fiesta)
+  [436248] Fiestas de Nuestra Señora de Villasomera y San Roque · Rasines  (patrón de fiesta)
+  [611782] Fiestas de Nuestra Señora de la Asunción y San Roque · Galizano  (patrón de fiesta)
+  [619271] Fiestas de Riaño  (patrón de fiesta)
+  [436249] Fiestas de San Agustín · Toranzo  (patrón de fiesta)
+  [614829] Fiestas de San Bartolomé · Ontoria  (patrón de fiesta)
+  [619280] Fiestas de San Lorenzo y San Roque en Parbayón · Piélagos  (patrón de fiesta)
+  [402409] Fiestas de San Lorenzo · Casar de Periedo  (patrón de fiesta)
+  [423787] Fiestas de San Lorenzo · Laredo  (patrón de fiesta)
+  [402290] Fiestas de San Millán · Novales  (patrón de fiesta)
+  [402543] Fiestas de San Román Carandia · Carandía  (patrón de fiesta)
+  [615196] Fiestas de San Roque en Liaño  (patrón de fiesta)
+  [610937] Fiestas de San Roque en Udalla  (patrón de fiesta)
+  [599190] Fiestas de San Roque y San Roquín · Mortera  (patrón de fiesta)
+  [615212] Fiestas de San Roque y San Roquín · Mortera  (patrón de fiesta)
+  [226249] Fiestas de San Roque · Argoños  (patrón de fiesta)
+  [436252] Fiestas de San Roque · Bárcena de Pie de Concha  (patrón de fiesta)
+  [454649] Fiestas de San Roque · Cabárceno  (patrón de fiesta)
+  [463780] Fiestas de San Roque · Camargo  (patrón de fiesta)
+  [436251] Fiestas de San Roque · Celis  (patrón de fiesta)
+  [402413] Fiestas de San Roque · Colindres  (patrón de fiesta)
+  [610829] Fiestas de San Roque · El Barcenal  (patrón de fiesta)
+  [532950] Fiestas de San Roque · Hermosa  (patrón de fiesta)
+  [549180] Fiestas de San Roque · Miengo  (patrón de fiesta)
+  [583064] Fiestas de San Roque · Molledo  (patrón de fiesta)
+  [599201] Fiestas de San Roque · Peñarrubia  (patrón de fiesta)
+  [402407] Fiestas de San Roque · Piélagos  (patrón de fiesta)
+  [583057] Fiestas de San Roque · Reocín  (patrón de fiesta)
+  [402411] Fiestas de San Roque · Rubayo  (patrón de fiesta)
+  [611767] Fiestas de San Roque · San Roque de Riomiera  (patrón de fiesta)
+  [454652] Fiestas de San Roque · Santa Cruz  (patrón de fiesta)
+  [436222] Fiestas de San Roque · Santillana del Mar  (patrón de fiesta)
+  [611750] Fiestas de San Roque · Seña  (patrón de fiesta)
+  [611765] Fiestas de San Roque · Soba  (patrón de fiesta)
+  [431] Fiestas de San Roque · Socobio  (patrón de fiesta)
+  [611770] Fiestas de San Roque · Val de San Vicente  (patrón de fiesta)
+  [562899] Fiestas de San Sebastián · Barcenillas  (patrón de fiesta)
+  [562900] Fiestas de San Vitores · Ibio  (patrón de fiesta)
+  [583056] Fiestas de Somahoz en Honor a San Roque · Somahoz  (patrón de fiesta)
+  [417326] Fiestas de Torrelavega  (patrón de fiesta)
+  [599180] Fiestas de la Asunción y San Roque · Castro-Urdiales  (patrón de fiesta)
+  [599186] Fiestas de la Asunción y San Roque · Laredo  (patrón de fiesta)
+  [226435] Fiestas de la Asunción · Novales  (patrón de fiesta)
+  [532096] Fiestas de la Santísima Cruz · Potes  (patrón de fiesta)
+  [599265] Fiestas de la Virgen de los Desamparados de Secadura · Voto  (patrón de fiesta)
+  [610935] Fiestas de la Virgen de los Desamparados · Secadura  (patrón de fiesta)
+  [611873] Fiestas de la Virgen del Monte · Miengo  (patrón de fiesta)
+  [583076] Fiestas del Agua de Maoño  (patrón de fiesta)
+  [583077] Fiestas del Cristo de Balaguer Garzón  (patrón de fiesta)
+  [34755] Grandes Fiestas de Isla  (ambiguo, 55 actos)
+  [226251] Guerras Cántabras · Los Corrales de Buelna  (patrón de fiesta)
+  [580] La Batalla de las Flores · Laredo  (patrón de fiesta)
+  [41725] Las Noches del Puente · Valdáliga  (ambiguo, 5 actos)
+  [427062] Mercado Medieval de San Vicente de la Barquera  (patrón de fiesta)
+  [20592] Semana Grande de Laredo  (patrón de fiesta)
+  [482274] V Feria de Tapas de Toranzo · Alceda  (patrón de fiesta)
+  [243] VI ORIGEN Cultura · Ampuero  (ambiguo, 8 actos)
+  [562912] XLII Fiestas de la Juventud de La Cavada  (ambiguo, 41 actos)
+  [583501] XVI Feria Nacional de Artesanía · Santander  (patrón de fiesta)
