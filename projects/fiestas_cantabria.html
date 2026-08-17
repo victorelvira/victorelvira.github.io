@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes de Cantabria</title>
+  <meta name="description" content="Agenda y mapa interactivo de Cantabria: fiestas, conciertos, teatro, exposiciones, deporte y más, con fechas y programas.">
+
+  <!-- Leaflet (mapa) desde CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="fiestas_cantabria/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">🗓️</span>
+      <div>
+        <h1>Planes de Cantabria</h1>
+        <p class="subtitle">Agenda: fiestas, conciertos, teatro, expos, deporte…</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-count"><span id="contador">0</span> planes</div>
+      <div class="update-info" id="update-info"></div>
+    </div>
+  </header>
+
+  <div class="vista-toggle">
+    <button type="button" data-vista="lista" class="vista-activa">📋 Lista</button>
+    <button type="button" data-vista="mapa">🗺️ Mapa</button>
+  </div>
+
+  <div class="app-body">
+    <!-- Panel lateral -->
+    <aside class="sidebar">
+      <div class="filters">
+        <input type="search" id="buscar" placeholder="Buscar plan o pueblo…" autocomplete="off">
+        <div class="fechas">
+          <label>Desde <input type="date" id="desde"></label>
+          <label>Hasta <input type="date" id="hasta"></label>
+        </div>
+        <div class="chips">
+          <button type="button" class="chip" data-rango="hoy">Hoy</button>
+          <button type="button" class="chip" data-rango="finde">Este finde</button>
+          <button type="button" class="chip" data-rango="mes">Este mes</button>
+          <button type="button" class="chip" data-rango="todas">Todas</button>
+        </div>
+        <div class="filter-row">
+          <select id="orden">
+            <option value="cortas">Más cortos</option>
+            <option value="inicio">Por fecha de inicio</option>
+            <option value="fin">Por fecha de fin</option>
+          </select>
+        </div>
+        <!-- chips de categoría (se generan en app.js desde TIPOS) -->
+        <div class="categorias" id="categorias"></div>
+        <label class="chk"><input type="checkbox" id="filtro-mapa" checked> Solo las de la zona visible del mapa</label>
+      </div>
+      <ul id="lista" class="lista"></ul>
+    </aside>
+
+    <!-- Mapa -->
+    <main class="map-wrap">
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <!-- Panel de detalle -->
+  <div id="detalle" class="detalle" hidden>
+    <button id="cerrar-detalle" class="cerrar" aria-label="Cerrar">✕</button>
+    <div id="detalle-contenido"></div>
+  </div>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="fiestas_cantabria/data/data.js"></script>
+  <script src="fiestas_cantabria/app.js"></script>
+</body>
+</html>
