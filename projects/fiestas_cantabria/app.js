@@ -40,7 +40,12 @@ function findeRange() {
 const FINDE = findeRange();
 
 // --- Mapa -------------------------------------------------------------
-const map = L.map("map", { scrollWheelZoom: true }).setView([43.25, -4.03], 9);
+// Encuadre de TODA Cantabria (de costa a costa) para que nada quede cortado,
+// sea cual sea el ancho del mapa. Antes se centraba fijo y el este (Castro,
+// Liendo…) se salía por el borde derecho.
+const CANTABRIA_BOUNDS = [[42.78, -4.90], [43.55, -3.05]];
+const map = L.map("map", { scrollWheelZoom: true });
+map.fitBounds(CANTABRIA_BOUNDS);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -211,9 +216,11 @@ function aplicarFiltros() {
 
 function renderLista() {
   let list = _arr.slice();
-  // solo filtramos por zona si el mapa está visible y con tamaño (evita 0 al arrancar oculto en móvil)
+  // Filtro por zona del mapa: solo si está activado, el mapa tiene tamaño y NO
+  // hay búsqueda por texto (buscar por nombre debe encontrar esté donde esté).
   const mapaVisible = map.getSize().x > 0 && map.getSize().y > 0;
-  if ($mapa.checked && mapaVisible) list = list.filter(inBounds);
+  const buscando = $buscar.value.trim() !== "";
+  if ($mapa.checked && mapaVisible && !buscando) list = list.filter(inBounds);
   ordenar(list);
 
   $contador.textContent = list.length;
@@ -361,6 +368,10 @@ document.querySelectorAll(".chip").forEach(chip => {
     ignoreDate = false;
     if (r === "hoy") {
       $desde.value = HOY_ISO; $hasta.value = HOY_ISO;
+    } else if (r === "manana") {
+      const m = new Date(HOY); m.setDate(m.getDate() + 1);
+      const mISO = fmtISO(m);
+      $desde.value = mISO; $hasta.value = mISO;
     } else if (r === "finde") {
       $desde.value = FINDE.sat < HOY_ISO ? HOY_ISO : FINDE.sat;
       $hasta.value = FINDE.sun;
