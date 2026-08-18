@@ -1,7 +1,7 @@
 :root {
   --museum: #7a4a2b;   /* museum — ochre */
   --church: #2e6b6b;   /* church — teal */
-  --private: #8a6d3b;  /* private collection — muted gold */
+  --private: #7b3fb0;  /* private collection — violet (clearly distinct) */
   --bg: #f6f3ee;
   --bar: #ffffff;
   --ink: #241a12;
@@ -40,7 +40,74 @@ body {
 .chip.igl input { accent-color: var(--church); }
 .chip.pri input { accent-color: var(--private); }
 
+#main { flex: 1; min-height: 0; display: flex; }
 #map { flex: 1; min-height: 0; }
+
+/* side panel: the works currently visible on the map (map acts as a filter) */
+#panel {
+  flex: 0 0 320px; width: 320px; overflow-y: auto;
+  background: var(--bar); border-left: 1px solid var(--line);
+}
+#panel-head {
+  position: sticky; top: 0; background: var(--bar); z-index: 1;
+  padding: 10px 14px; font-weight: 600; font-size: 13px;
+  border-bottom: 1px solid var(--line); color: var(--muted);
+}
+#worklist { list-style: none; margin: 0; padding: 0; }
+#worklist li {
+  display: flex; gap: 10px; align-items: center; cursor: pointer;
+  padding: 8px 12px; border-bottom: 1px solid #f0ece3;
+}
+#worklist li:hover { background: #faf7f1; }
+#worklist .th { width: 46px; height: 46px; flex: 0 0 auto; object-fit: cover;
+  border-radius: 5px; background: #efe9df; border: 1px solid var(--line); }
+#worklist .wt { font-weight: 600; font-size: 13px; line-height: 1.25; }
+#worklist .sub { color: var(--muted); font-size: 12px; margin-top: 1px; }
+#worklist .empty { padding: 16px 14px; color: var(--muted); font-size: 13px; }
+
+.chip.btn { cursor: pointer; font: inherit; font-size: 13px; }
+.chip.btn:hover { background: #f2ede4; }
+
+/* clickable thumbnails (open the full image) */
+.card .th, #worklist .th { cursor: zoom-in; }
+
+/* lightbox — the painting at full size */
+#lightbox {
+  position: fixed; inset: 0; z-index: 2000; display: flex;
+  align-items: center; justify-content: center;
+  background: rgba(20,15,10,.92); padding: 24px;
+}
+#lightbox[hidden] { display: none; }
+#lightbox figure { margin: 0; max-width: 96vw; max-height: 92vh; text-align: center; }
+#lightbox img { max-width: 96vw; max-height: 84vh; border-radius: 4px; box-shadow: 0 6px 40px rgba(0,0,0,.6); }
+#lightbox figcaption { color: #f3ece0; margin-top: 10px; font-size: 14px; }
+#lb-close {
+  position: fixed; top: 14px; right: 18px; font-size: 22px; line-height: 1;
+  background: rgba(255,255,255,.14); color: #fff; border: 0; border-radius: 8px;
+  width: 40px; height: 40px; cursor: pointer;
+}
+#lb-close:hover { background: rgba(255,255,255,.28); }
+
+/* your location marker */
+.me {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #1a73e8; border: 3px solid #fff; box-shadow: 0 0 0 3px rgba(26,115,232,.35);
+}
+
+/* "nearest Caravaggio" banner */
+#banner {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 1500; max-width: min(92vw, 560px);
+  background: #241a12; color: #f6efe4; border-radius: 10px;
+  padding: 10px 40px 10px 14px; font-size: 13.5px; line-height: 1.35;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+#banner[hidden] { display: none; }
+#banner b { color: #fff; }
+#banner #banner-x {
+  position: absolute; top: 6px; right: 8px; background: transparent; border: 0;
+  color: #cbb8a3; font-size: 16px; cursor: pointer; line-height: 1;
+}
 
 /* circular marker showing the number of works at the same place */
 .pin {
@@ -52,6 +119,33 @@ body {
 .pin.museum  { background: var(--museum); }
 .pin.church  { background: var(--church); }
 .pin.private { background: var(--private); }
+.pin.lost    { background: #c0392b; }   /* lost / stolen / destroyed */
+/* dashed white ring = this venue holds a work of disputed attribution */
+.pin.disp { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #d8a24a, 0 1px 4px rgba(0,0,0,.35); }
+
+/* cluster badge: neutral, so it never clashes with the type colours */
+.cl {
+  display: grid; place-items: center; border-radius: 50%;
+  background: #3f342b; color: #fff; font-weight: 700; font-size: 13px;
+  border: 2px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.4);
+}
+
+/* legend */
+.legend {
+  background: rgba(255,255,255,.94); border: 1px solid var(--line); border-radius: 8px;
+  padding: 6px 9px; font-size: 11.5px; color: var(--ink); line-height: 1.9;
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);
+}
+.legend .k {
+  display: inline-block; width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.15); vertical-align: -2px; margin-right: 5px;
+}
+.legend .k.museum { background: var(--museum); }
+.legend .k.church { background: var(--church); }
+.legend .k.private { background: var(--private); }
+.legend .k.lost { background: #c0392b; }
+.legend .k.ring { background: #fff; box-shadow: 0 0 0 2px #d8a24a; }
+.legend .row { white-space: nowrap; }
 
 /* popup / place record */
 .leaflet-popup-content { margin: 0; }
@@ -75,7 +169,15 @@ body {
 .card .wk { min-width: 0; }
 .card .wt { font-weight: 600; line-height: 1.25; }
 .card .yr { color: var(--muted); font-weight: 400; }
-.card .lk { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+.card .fx { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.card .ds { font-size: 12.5px; line-height: 1.35; margin-top: 4px; }
+.card .prov {
+  margin-top: 4px; font-size: 11px; color: #8a6a3a;
+  background: #f7efe2; border-radius: 5px; padding: 2px 6px; display: inline-block;
+}
+.card .hd .prov { margin-top: 6px; }
+.card .lk { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.card .lk .lbl { color: var(--muted); font-size: 11px; margin-right: 2px; }
 .card .tag {
   display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px;
   background: #efe9df; color: var(--ink); text-decoration: none;
@@ -83,6 +185,7 @@ body {
 .card a.tag { background: #eef2f2; color: var(--church); border: 1px solid #dbe6e6; }
 .card a.tag.wd { background: #f1eef6; color: #5b4a86; border-color: #e0d9ee; }
 .card .tag.att { background: #f6ede1; color: #8a5a1a; }
+.card .tag.gone { background: #fbe4e0; color: #b23324; }
 
 #foot {
   padding: 8px 16px; background: var(--bar); border-top: 1px solid var(--line);
@@ -90,6 +193,14 @@ body {
 }
 #foot a { color: inherit; }
 #foot .hint { font-style: italic; }
+
+/* stack the panel under the map on narrow windows */
+@media (max-width: 860px) {
+  #main { flex-direction: column; }
+  #map { flex: 1 1 auto; min-height: 45vh; }
+  #panel { flex: 0 0 auto; width: auto; max-height: 38vh;
+    border-left: 0; border-top: 1px solid var(--line); }
+}
 
 /* --- mobile --- */
 @media (max-width: 640px) {

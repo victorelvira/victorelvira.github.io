@@ -4,7 +4,9 @@
    one pin per museum/church/collection, with the number of works held there. */
 
 const KIND_LABEL = { museum: "Museum", church: "Church", private: "Private collection" };
+const STATUS_LABEL = { lost: "lost", stolen: "stolen", destroyed: "destroyed" };
 const ATTR_ACCEPTED = new Set(["certain", "generally accepted"]);
+const GONE = new Set(["lost", "stolen", "destroyed"]);
 const WIKI_LANGS = ["es", "en", "it"];
 
 // Most works are in Europe; open there. The ~12 in the Americas are one zoom-out away.
@@ -15,28 +17,80 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 requestAnimationFrame(() => map.invalidateSize());
 window.addEventListener("resize", () => map.invalidateSize());
 
-const group = L.layerGroup().addTo(map);
-const places = [];   // {marker, kind, count, country, hasAccepted, latlng}
+// clustering: overlapping venues (e.g. all of Rome) merge at low zoom into one badge
+// showing the TOTAL number of works, and split apart as you zoom in.
+const cluster = L.markerClusterGroup({
+  maxClusterRadius: 44,
+  showCoverageOnHover: false,
+  spiderfyOnMaxZoom: true,
+  iconCreateFunction(c) {
+    const works = c.getAllChildMarkers().reduce((a, m) => a + (m.options.works || 1), 0);
+    const size = works >= 25 ? 48 : works >= 10 ? 40 : 32;
+    return L.divIcon({
+      html: `<div class="cl" style="width:${size}px;height:${size}px;line-height:${size - 4}px">${works}</div>`,
+      className: "", iconSize: [size, size],
+    });
+  },
+}).addTo(map);
+
+const legend = L.control({ position: "bottomleft" });
+legend.onAdd = () => {
+  const d = L.DomUtil.create("div", "legend");
+  d.innerHTML =
+    `<div class="row"><span class="k museum"></span>Museum` +
+    ` <span class="k church"></span>Church` +
+    ` <span class="k private"></span>Private</div>` +
+    `<div class="row"><span class="k lost"></span>Lost / stolen` +
+    ` <span class="k ring"></span>Disputed attribution</div>`;
+  return d;
+};
+legend.addTo(map);
+
+const places = [];   // {marker, kind, count, country, hasAccepted, shown}
+const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
+let panelVis = [];   // works currently listed in the panel
 const state = { museum: true, church: true, private: true, onlyAccepted: false };
+
+function passesFilter(p) {
+  return state[p.kind || "museum"] && (!state.onlyAccepted || ATTR_ACCEPTED.has(p.attribution));
+}
 
 function esc(s) {
   return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
 
-function pinIcon(kind, n) {
+// colour = location type; red = lost/stolen/destroyed; dashed ring = holds a disputed work
+function pinIcon(kind, n, { lost = false, disputed = false } = {}) {
+  const cls = lost ? "lost" : kind;
   return L.divIcon({
     className: "",
-    html: `<div class="pin ${kind}">${n}</div>`,
+    html: `<div class="pin ${cls}${disputed ? " disp" : ""}">${n}</div>`,
     iconSize: [26, 26], iconAnchor: [13, 13], popupAnchor: [0, -14],
   });
 }
 
-function wikiLinks(p) {
-  const links = WIKI_LANGS
-    .filter(l => p["wikipedia_" + l])
-    .map(l => `<a class="tag" href="${esc(p["wikipedia_" + l])}" target="_blank" rel="noopener">${l.toUpperCase()}</a>`);
-  if (p.wikidata) links.push(`<a class="tag wd" href="${esc(p.wikidata)}" target="_blank" rel="noopener">Wikidata</a>`);
-  return links.join("");
+// "Wikipedia: ES EN IT · Wikidata" — only the languages that actually have an article.
+function linksRow(p) {
+  const wp = WIKI_LANGS.filter(l => p["wikipedia_" + l]).map(l =>
+    `<a class="tag" href="${esc(p["wikipedia_" + l])}" target="_blank" rel="noopener">${l.toUpperCase()}</a>`);
+  const parts = [];
+  if (wp.length) parts.push(`<span class="lbl">Wikipedia</span>${wp.join("")}`);
+  if (p.wikidata) parts.push(`<a class="tag wd" href="${esc(p.wikidata)}" target="_blank" rel="noopener">Wikidata</a>`);
+  return parts.join(" ");
+}
+
+// visible provenance line for overridden fields (skip those given in `skip`)
+function provLine(p, skip = []) {
+  if (!p._overrides) return "";
+  const rows = Object.entries(p._overrides)
+    .filter(([field]) => !skip.includes(field))
+    .map(([field, o]) => {
+      const who = [o.by, o.at].filter(Boolean).join(", ");
+      const src = o.source ? ` · ${esc(o.source)}` : "";
+      return `<div class="prov"${o.note ? ` title="${esc(o.note)}"` : ""}>` +
+        `✎ ${esc(field)} edited by ${esc(who)}${src}</div>`;
+    });
+  return rows.join("");
 }
 
 // Place record: header (museum · city · country) + one row per work with a thumbnail.
@@ -47,19 +101,27 @@ function placePopup(feats) {
   const head =
     `<div class="hd"><div class="nm">${esc(p0.location || "Location")}</div>` +
     `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ` +
-    `${feats.length} work${feats.length > 1 ? "s" : ""}</div></div>`;
+    `${feats.length} work${feats.length > 1 ? "s" : ""}</div>` +
+    `${provLine(p0, ["attribution", "title", "year", "genre", "medium", "dimensions", "image"])}</div>`;
 
   const items = feats.map(f => {
     const p = f.properties;
     const yr = p.year ? ` <span class="yr">${esc(p.year)}</span>` : "";
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
       ? ` <span class="tag att">${esc(p.attribution)}</span>` : "";
+    const st = p.status && GONE.has(p.status)
+      ? ` <span class="tag gone">${esc(STATUS_LABEL[p.status] || p.status)}</span>` : "";
+    const facts = [p.medium, p.dimensions].filter(Boolean).map(esc).join(" · ");
+    const factsRow = facts ? `<div class="fx">${facts}</div>` : "";
+    const desc = p.summary ? `<div class="ds">${esc(p.summary)}</div>` : "";
+    const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p0.location || ""}`;
     const thumb = p.image
-      ? `<img class="th" src="${esc(p.image)}" alt="" loading="lazy">`
+      ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
     return `<li>${thumb}<div class="wk">` +
-      `<div class="wt">${esc(p.title || "Untitled")}${yr}${att}</div>` +
-      `<div class="lk">${wikiLinks(p)}</div></div></li>`;
+      `<div class="wt">${esc(p.title || "Untitled")}${yr}${att}${st}</div>` +
+      `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
+      `${provLine(p, ["city", "country", "location", "kind"])}</div></li>`;
   }).join("");
 
   return `<div class="card">${head}<ul class="works">${items}</ul></div>`;
@@ -69,14 +131,16 @@ function refresh() {
   for (const pl of places) {
     const kindOn = state[pl.kind];
     const attrOn = !state.onlyAccepted || pl.hasAccepted;
-    if (kindOn && attrOn) pl.marker.addTo(group);
-    else group.removeLayer(pl.marker);
+    const show = kindOn && attrOn;
+    if (show && !pl.shown) { cluster.addLayer(pl.marker); pl.shown = true; }
+    else if (!show && pl.shown) { cluster.removeLayer(pl.marker); pl.shown = false; }
   }
-  const shown = places.filter(pl => map.hasLayer(pl.marker));
-  const works = shown.reduce((a, pl) => a + pl.count, 0);
+  const shown = places.filter(pl => pl.shown);
+  const workCount = shown.reduce((a, pl) => a + pl.count, 0);
   const countries = new Set(shown.map(pl => pl.country).filter(Boolean)).size;
   document.getElementById("stats").textContent =
-    `${works} works · ${shown.length} locations · ${countries} countries`;
+    `${workCount} works · ${shown.length} locations · ${countries} countries`;
+  renderPanel();
 }
 
 // group features by place (key = rounded coordinates)
@@ -100,15 +164,21 @@ fetch("caravaggio/data/caravaggio.geojson")
       const p0 = feats[0].properties;
       const [lon, lat] = feats[0].geometry.coordinates;
       const kind = p0.kind || "museum";
-      const marker = L.marker([lat, lon], { icon: pinIcon(kind, feats.length) })
+      const lost = feats.some(f => GONE.has(f.properties.status));
+      const disputed = feats.some(f => !ATTR_ACCEPTED.has(f.properties.attribution));
+      const marker = L.marker([lat, lon], { icon: pinIcon(kind, feats.length, { lost, disputed }), works: feats.length })
         .bindPopup(placePopup(feats), { maxWidth: 320, minWidth: 240 });
       places.push({
         marker, kind, count: feats.length,
         country: p0.country || null,
         hasAccepted: feats.some(f => ATTR_ACCEPTED.has(f.properties.attribution)),
+        shown: false,
       });
+      for (const f of feats) works.push({ p: f.properties, lat, lon, marker });
     }
     refresh();
+    map.on("moveend", renderPanel);
+    renderPanel();
   })
   .catch(err => {
     console.error("Could not load caravaggio.geojson:", err);
@@ -121,4 +191,108 @@ document.querySelectorAll('.filters input[data-kind]').forEach(cb => {
 });
 document.getElementById("only-accepted").addEventListener("change", e => {
   state.onlyAccepted = e.target.checked; refresh();
+});
+
+// ── side panel: the works currently within the map viewport (map = filter) ──
+function renderPanel() {
+  const b = map.getBounds();
+  panelVis = works
+    .filter(w => passesFilter(w.p) && b.contains([w.lat, w.lon]))
+    .sort((a, z) => (a.p.city || "zzz").localeCompare(z.p.city || "zzz")
+      || (a.p.title || "").localeCompare(z.p.title || ""));
+
+  document.getElementById("panel-head").textContent =
+    `${panelVis.length} work${panelVis.length === 1 ? "" : "s"} in view`;
+
+  const ul = document.getElementById("worklist");
+  if (!panelVis.length) {
+    ul.innerHTML = `<li class="empty">Pan or zoom the map — the works in view are listed here.</li>`;
+    return;
+  }
+  ul.innerHTML = panelVis.map((w, i) => {
+    const p = w.p;
+    const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+    const thumb = p.image
+      ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
+      : `<span class="th"></span>`;
+    const sub = esc([p.location, p.city].filter(Boolean).join(" · "));
+    return `<li data-i="${i}">${thumb}<div>` +
+      `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}</div>` +
+      `<div class="sub">${sub}</div></div></li>`;
+  }).join("");
+}
+
+document.getElementById("worklist").addEventListener("click", e => {
+  if (e.target.closest("img.th")) return;          // thumbnail → lightbox (handled below)
+  const li = e.target.closest("li[data-i]");
+  if (!li) return;
+  const w = panelVis[+li.dataset.i];
+  if (!w) return;
+  map.setView([w.lat, w.lon], Math.max(map.getZoom(), 13));
+  cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup());
+});
+
+// ── lightbox: the painting at full size ──
+function fullImage(thumbUrl) {
+  if (!thumbUrl) return "";
+  return /width=\d+/.test(thumbUrl) ? thumbUrl.replace(/width=\d+/, "width=1600") : thumbUrl;
+}
+const lb = document.getElementById("lightbox");
+function openLightbox(url, cap) {
+  document.getElementById("lb-img").src = url;
+  document.getElementById("lb-cap").textContent = cap || "";
+  lb.hidden = false;
+}
+function closeLightbox() { lb.hidden = true; document.getElementById("lb-img").src = ""; }
+document.getElementById("lb-close").addEventListener("click", closeLightbox);
+lb.addEventListener("click", e => { if (e.target === lb) closeLightbox(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+document.addEventListener("click", e => {
+  const img = e.target.closest("img.th");
+  if (img && img.dataset.full) openLightbox(img.dataset.full, img.dataset.cap);
+});
+
+// ── geolocation: your nearest Caravaggio ──
+function haversine(lat1, lon1, lat2, lon2) {
+  const R = 6371, r = x => x * Math.PI / 180;
+  const dLat = r(lat2 - lat1), dLon = r(lon2 - lon1);
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(r(lat1)) * Math.cos(r(lat2)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+let userMarker = null;
+function showBanner(html) {
+  let el = document.getElementById("banner");
+  if (!el) { el = document.createElement("div"); el.id = "banner"; document.body.appendChild(el); }
+  el.innerHTML = `${html} <button id="banner-x" aria-label="Dismiss">✕</button>`;
+  el.hidden = false;
+  document.getElementById("banner-x").onclick = () => { el.hidden = true; };
+}
+document.getElementById("locate").addEventListener("click", () => {
+  const btn = document.getElementById("locate");
+  if (!navigator.geolocation) { showBanner("Geolocation is not available in this browser."); return; }
+  btn.textContent = "📍 Locating…"; btn.disabled = true;
+  navigator.geolocation.getCurrentPosition(pos => {
+    btn.textContent = "📍 Nearest to me"; btn.disabled = false;
+    const { latitude: lat, longitude: lon } = pos.coords;
+    if (userMarker) map.removeLayer(userMarker);
+    userMarker = L.marker([lat, lon], {
+      icon: L.divIcon({ className: "", html: `<div class="me"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }),
+      zIndexOffset: 1000,
+    }).addTo(map).bindPopup("You are here");
+    let best = null, bd = Infinity;
+    for (const w of works) {
+      if (!passesFilter(w.p)) continue;
+      const d = haversine(lat, lon, w.lat, w.lon);
+      if (d < bd) { bd = d; best = w; }
+    }
+    if (!best) { showBanner("No works match the current filters."); return; }
+    const km = bd < 1 ? `${Math.round(bd * 1000)} m` : `${bd < 10 ? bd.toFixed(1) : Math.round(bd)} km`;
+    map.fitBounds([[lat, lon], [best.lat, best.lon]], { padding: [70, 70], maxZoom: 12 });
+    cluster.zoomToShowLayer(best.marker, () => best.marker.openPopup());
+    showBanner(`Your nearest Caravaggio: <b>${esc(best.p.title || "Untitled")}</b> — ` +
+      `${esc([best.p.location, best.p.city].filter(Boolean).join(", "))} · <b>${km}</b> away`);
+  }, err => {
+    btn.textContent = "📍 Nearest to me"; btn.disabled = false;
+    showBanner("Could not get your location: " + esc(err.message));
+  }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
 });

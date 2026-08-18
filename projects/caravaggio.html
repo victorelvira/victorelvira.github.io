@@ -6,8 +6,8 @@
   <title>Caravaggio · where his works are today</title>
   <meta name="description" content="Interactive map of the current location of every work by Caravaggio around the world. Data from Wikidata, Wikipedia and Wikimedia Commons.">
   <meta name="theme-color" content="#3a2317">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="caravaggio/vendor/leaflet.css">
+  <link rel="stylesheet" href="caravaggio/vendor/MarkerCluster.css">
   <link rel="stylesheet" href="caravaggio/style.css">
 </head>
 <body>
@@ -25,10 +25,22 @@
       <label class="chip igl"><input type="checkbox" data-kind="church" checked> Churches</label>
       <label class="chip pri"><input type="checkbox" data-kind="private" checked> Private</label>
       <label class="chip att"><input type="checkbox" id="only-accepted"> Accepted attribution only</label>
+      <button id="locate" class="chip btn" type="button">📍 Nearest to me</button>
     </div>
   </header>
 
-  <div id="map"></div>
+  <div id="main">
+    <div id="map"></div>
+    <aside id="panel">
+      <div id="panel-head">Works in view</div>
+      <ul id="worklist"></ul>
+    </aside>
+  </div>
+
+  <div id="lightbox" hidden>
+    <button id="lb-close" type="button" aria-label="Close">✕</button>
+    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  </div>
 
   <footer id="foot">
     <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
@@ -38,9 +50,8 @@
     · Missing a work or spotted an error? <span class="hint">fix it on Wikidata</span>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-          crossorigin=""></script>
+  <script src="caravaggio/vendor/leaflet.js"></script>
+  <script src="caravaggio/vendor/leaflet.markercluster.js"></script>
   <script src="caravaggio/app.js"></script>
 </body>
 </html>
