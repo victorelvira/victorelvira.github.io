@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Víctor Elvira's webpage</title>
+    <meta name="description" content="Personal side projects by Víctor Elvira: data-driven web apps and databases on music, culture and local heritage.">
+
+    <!-- CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+
+    <!-- JS -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      .project-card{
+        height: 100%;
+        border: 1px solid #e5e8ec;
+        border-radius: .6rem;
+        overflow: hidden;
+        transition: transform .15s ease, box-shadow .15s ease;
+      }
+      .project-card:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 .6rem 1.4rem rgba(44,62,80,.18);
+      }
+      .project-thumb{
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+      .project-thumb i{ font-size: 2.8rem; opacity: .95; }
+      .project-card .card-title{ margin-bottom: .35rem; }
+      .lang-badge{ font-size: .68rem; letter-spacing: .03em; }
+      /* que toda la tarjeta sea clicable pero el título mantenga su color */
+      .project-card .stretched-link{ color: inherit; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<!-- Navbar (inyectada por scripts.js) -->
+<div id="navbar-placeholder"></div>
+
+<div class="container py-4">
+    <h2>Personal projects</h2>
+    <p class="text-muted mb-4" style="max-width: 46rem;">
+        A few side projects I build for fun — small data-driven web apps and databases
+        around music, culture and my home region of Cantabria.
+    </p>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+        <!-- New Year's Concert -->
+        <div class="col">
+            <div class="card project-card">
+                <div class="project-thumb" style="background:#2C3E50;">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">New Year's Concert Database
+                        <span class="badge bg-secondary lang-badge align-middle">EN</span>
+                    </h5>
+                    <p class="card-text text-muted">
+                        Explore the distribution of compositions, conductors and other key
+                        details across the Vienna Philharmonic's New Year's Concerts.
+                    </p>
+                    <a href="/projects/nyc.html" class="stretched-link" aria-label="Open New Year's Concert Database"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planes de Cantabria -->
+        <div class="col">
+            <div class="card project-card">
+                <div class="project-thumb" style="background:#18BC9C;">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Planes de Cantabria
+                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
+                    </h5>
+                    <p class="card-text text-muted">
+                        Agenda y mapa interactivo de Cantabria: fiestas, conciertos, teatro,
+                        exposiciones, deporte y más, con fechas y programas.
+                    </p>
+                    <a href="/projects/fiestas_cantabria.html" class="stretched-link" aria-label="Abrir Planes de Cantabria"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frontones -->
+        <div class="col">
+            <div class="card project-card">
+                <div class="project-thumb" style="background:#3498DB;">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Frontones
+                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
+                    </h5>
+                    <p class="card-text text-muted">
+                        Mapa de frontones de Cantabria y el País Vasco, a partir de datos
+                        abiertos de OpenStreetMap y el Gobierno de Cantabria.
+                    </p>
+                    <a href="/projects/frontones.html" class="stretched-link" aria-label="Abrir Frontones"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opera Database -->
+        <div class="col">
+            <div class="card project-card">
+                <div class="project-thumb" style="background:#8E44AD;">
+                    <i class="fa-solid fa-masks-theater"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Opera Recordings Database
+                        <span class="badge bg-secondary lang-badge align-middle">EN</span>
+                    </h5>
+                    <p class="card-text text-muted">
+                        A catalogue to browse opera recordings — composers, works and
+                        performances gathered in one place.
+                    </p>
+                    <a href="/projects/operadatabase.html" class="stretched-link" aria-label="Open Opera Recordings Database"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer (inyectado por scripts.js) -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Statcounter -->
+<script type="text/javascript">
+var sc_project=11157426;
+var sc_invisible=1;
+var sc_security="c4968ba5";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+</body>
+</html>

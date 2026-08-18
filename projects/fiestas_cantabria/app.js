@@ -401,6 +401,12 @@ document.querySelectorAll(".vista-toggle button").forEach(btn => {
   });
 });
 
+// Si se arranca en vista Mapa (por defecto), reajustar el mapa cuando el layout
+// haya asentado, para que se dibuje y encuadre bien toda Cantabria.
+if (document.body.classList.contains("vista-mapa")) {
+  setTimeout(() => { map.invalidateSize(); map.fitBounds(CANTABRIA_BOUNDS); }, 120);
+}
+
 // --- Indicador de última actualización -------------------------------
 (function mostrarUpdate() {
   const el = document.getElementById("update-info");

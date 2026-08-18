@@ -1,6 +1,6 @@
 /*
  * Fiestas de pueblo de Cantabria — generado por pipeline/build.py
- * 2026-08-17 23:23 · feed planesparahoy 20260817211544
+ * 2026-08-18 09:28 · feed planesparahoy 20260818071551
  * Fuentes: planesparahoy (agenda), Wikipedia (descripciones notables),
  * descripciones IA y clásicas curadas. Ver pipeline/FUENTES.md.
  */
@@ -24,7 +24,7 @@ const FIESTAS = [
   "_fuente_desc": "clasica"
  },
  {
-  "nombre": "Cabalgata de Reyes de Seña",
+  "nombre": "Cabalgata de Reyes de Seña · Limpias",
   "pueblo": "Seña",
   "municipio": "Limpias",
   "comarca": "Costa Oriental",
@@ -33,8 +33,8 @@ const FIESTAS = [
   "inicio": "2026-01-06",
   "fin": "2026-01-06",
   "tipo": "fiestas",
-  "lat": 43.375,
-  "lng": -3.415,
+  "lat": 43.38541,
+  "lng": -3.41298,
   "descripcion": "Tradicional Cabalgata de Reyes de Seña (Limpias), declarada de Interés Turístico Regional.",
   "fuente": "https://limpias.es/",
   "interes": "Regional",
@@ -67,8 +67,8 @@ const FIESTAS = [
   "inicio": "2026-02-13",
   "fin": "2026-02-17",
   "tipo": "fiestas",
-  "lat": 43.4093,
-  "lng": -3.411,
+  "lat": 43.41063,
+  "lng": -3.4173,
   "descripcion": "Carnaval de Laredo, con concurso de murgas, desfiles y verbenas. Incluye el único Carnaval Escolar de Cantabria.",
   "fuente": "https://www.laredo.es/09/fiestas_otras.php",
   "interes": "",
@@ -126,7 +126,7 @@ const FIESTAS = [
   "_fuente_desc": "clasica"
  },
  {
-  "nombre": "Pasión Viviente",
+  "nombre": "Pasión Viviente · Castro-Urdiales",
   "pueblo": "Castro Urdiales",
   "municipio": "Castro-Urdiales",
   "comarca": "Costa Oriental",
@@ -135,8 +135,8 @@ const FIESTAS = [
   "inicio": "2026-04-03",
   "fin": "2026-04-03",
   "tipo": "fiestas",
-  "lat": 43.3833,
-  "lng": -3.216,
+  "lat": 43.37015,
+  "lng": -3.2176,
   "descripcion": "Representación teatral de la Pasión, muerte y resurrección de Cristo en el casco histórico de Castro Urdiales, una de las más notables de España.",
   "fuente": "https://www.castro-urdiales.net/",
   "interes": "Nacional",
@@ -160,7 +160,7 @@ const FIESTAS = [
   "_fuente_desc": "clasica"
  },
  {
-  "nombre": "Feria de la Anchoa y la Conserva",
+  "nombre": "Feria de la Anchoa y la Conserva · Santoña",
   "pueblo": "Santoña",
   "municipio": "Santoña",
   "comarca": "Costa Oriental",
@@ -169,8 +169,8 @@ const FIESTAS = [
   "inicio": "2026-04-24",
   "fin": "2026-04-26",
   "tipo": "gastronomía",
-  "lat": 43.4419,
-  "lng": -3.4573,
+  "lat": 43.44494,
+  "lng": -3.45536,
   "descripcion": "Feria dedicada a la anchoa y la conserva de Cantabria, con degustaciones y venta directa en la villa conservera de Santoña.",
   "fuente": "https://www.santoña.es/",
   "interes": "",
@@ -194,7 +194,7 @@ const FIESTAS = [
   "_fuente_desc": "clasica"
  },
  {
-  "nombre": "Nuestra Señora de Belén y San Isidro",
+  "nombre": "Nuestra Señora de Belén y San Isidro · Laredo",
   "pueblo": "La Pesquera",
   "municipio": "Laredo",
   "comarca": "Costa Oriental",
@@ -203,8 +203,8 @@ const FIESTAS = [
   "inicio": "2026-05-15",
   "fin": "2026-05-15",
   "tipo": "fiestas",
-  "lat": 43.415,
-  "lng": -3.405,
+  "lat": 43.4032,
+  "lng": -3.42854,
   "descripcion": "El barrio laredano de La Pesquera celebra a Nuestra Señora de Belén y San Isidro en mayo.",
   "fuente": "https://www.laredo.es/09/fiestas_otras.php",
   "interes": "",
@@ -596,7 +596,7 @@ const FIESTAS = [
   ]
  },
  {
-  "nombre": "San Pablo",
+  "nombre": "San Pablo · Laredo",
   "pueblo": "La Pesquera",
   "municipio": "Laredo",
   "comarca": "Costa Oriental",
@@ -605,8 +605,8 @@ const FIESTAS = [
   "inicio": "2026-06-29",
   "fin": "2026-06-29",
   "tipo": "fiestas",
-  "lat": 43.415,
-  "lng": -3.405,
+  "lat": 43.4032,
+  "lng": -3.42854,
   "descripcion": "Misas y verbenas en honor a San Pablo en el barrio de La Pesquera (Laredo).",
   "fuente": "https://www.laredo.es/09/fiestas_otras.php",
   "interes": "",
@@ -1727,24 +1727,7 @@ const FIESTAS = [
   ]
  },
  {
-  "nombre": "Virgen del Carmen",
-  "pueblo": "Laredo",
-  "municipio": "Laredo",
-  "comarca": "Costa Oriental",
-  "mes": 7,
-  "fecha": "16 de julio",
-  "inicio": "2026-07-16",
-  "fin": "2026-07-16",
-  "tipo": "fiestas",
-  "lat": 43.411,
-  "lng": -3.413,
-  "descripcion": "Misa y procesión marítima de la Virgen del Carmen, organizada por la Cofradía de Pescadores San Martín de Laredo.",
-  "fuente": "https://www.laredo.es/09/fiestas_otras.php",
-  "interes": "",
-  "_fuente_desc": "ayuntamiento"
- },
- {
-  "nombre": "Virgen del Carmen",
+  "nombre": "Virgen del Carmen · Castro-Urdiales",
   "pueblo": "Castro Urdiales",
   "municipio": "Castro-Urdiales",
   "comarca": "Costa Oriental",
@@ -1753,10 +1736,27 @@ const FIESTAS = [
   "inicio": "2026-07-16",
   "fin": "2026-07-16",
   "tipo": "fiestas",
-  "lat": 43.3835,
-  "lng": -3.215,
+  "lat": 43.37015,
+  "lng": -3.2176,
   "descripcion": "Romería y procesión marítima de la Virgen del Carmen, patrona de los marineros, en Castro Urdiales.",
   "fuente": "https://www.castro-urdiales.net/",
+  "interes": "",
+  "_fuente_desc": "ayuntamiento"
+ },
+ {
+  "nombre": "Virgen del Carmen · Laredo",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "Costa Oriental",
+  "mes": 7,
+  "fecha": "16 de julio",
+  "inicio": "2026-07-16",
+  "fin": "2026-07-16",
+  "tipo": "fiestas",
+  "lat": 43.41063,
+  "lng": -3.4173,
+  "descripcion": "Misa y procesión marítima de la Virgen del Carmen, organizada por la Cofradía de Pescadores San Martín de Laredo.",
+  "fuente": "https://www.laredo.es/09/fiestas_otras.php",
   "interes": "",
   "_fuente_desc": "ayuntamiento"
  },
@@ -3150,7 +3150,7 @@ const FIESTAS = [
   "fuente": "https://turismodecantabria.com/?post_type=tribe_events&amp;p=213015"
  },
  {
-  "nombre": "Virgen de Santa Ana",
+  "nombre": "Virgen de Santa Ana · Laredo",
   "pueblo": "Tarrueza",
   "municipio": "Laredo",
   "comarca": "Costa Oriental",
@@ -3159,8 +3159,8 @@ const FIESTAS = [
   "inicio": "2026-07-26",
   "fin": "2026-07-26",
   "tipo": "fiestas",
-  "lat": 43.42,
-  "lng": -3.43,
+  "lat": 43.39267,
+  "lng": -3.39942,
   "descripcion": "El barrio de Tarrueza (Laredo) celebra a Santa Ana con misa y verbena.",
   "fuente": "https://www.laredo.es/09/fiestas_otras.php",
   "interes": "",
@@ -6514,7 +6514,7 @@ const FIESTAS = [
   "fuente": "https://turismodecantabria.com/proximamente-evento/la-otra-lucha-contra-el-cambio-climatico-adaptacion"
  },
  {
-  "nombre": "La Virgen de las Nieves",
+  "nombre": "La Virgen de las Nieves · Liendo",
   "pueblo": "Villaviad",
   "municipio": "Liendo",
   "comarca": "Costa Oriental",
@@ -6523,8 +6523,8 @@ const FIESTAS = [
   "inicio": "2026-08-05",
   "fin": "2026-08-05",
   "tipo": "fiestas",
-  "lat": 43.4,
-  "lng": -3.318,
+  "lat": 43.38481,
+  "lng": -3.37954,
   "descripcion": "El barrio de Villaviad, en Liendo, honra a la Virgen de las Nieves el 5 de agosto.",
   "fuente": "https://aytoliendo.org/municipio/fiestas-y-tradiciones/",
   "interes": "",
@@ -17948,7 +17948,7 @@ const FIESTAS = [
   ]
  },
  {
-  "nombre": "San Roque",
+  "nombre": "San Roque · Liendo",
   "pueblo": "Mollaneda",
   "municipio": "Liendo",
   "comarca": "Costa Oriental",
@@ -17957,8 +17957,8 @@ const FIESTAS = [
   "inicio": "2026-08-16",
   "fin": "2026-08-16",
   "tipo": "fiestas",
-  "lat": 43.415,
-  "lng": -3.31,
+  "lat": 43.3979,
+  "lng": -3.3647,
   "descripcion": "El barrio de Mollaneda, en Liendo, celebra a San Roque el 16 de agosto.",
   "fuente": "https://aytoliendo.org/municipio/fiestas-y-tradiciones/",
   "interes": "",
@@ -18595,6 +18595,31 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/escalante/concierto-de-camara-isabel-villanueva-y-francois-dumont-escalante--533841"
  },
  {
+  "nombre": "Cuentacuentos «Animales de cuentos» de Julianini",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "18 de agosto",
+  "inicio": "2026-08-18",
+  "fin": "2026-08-18",
+  "tipo": "infantil",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Actividad infantil en Laredo. 18 de agosto. Lugar: Ferla del libro antiguo y deocasion. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/cuentacuentos-animales-de-cuentos-de-julianini-laredo--629422",
+  "programa": [
+   {
+    "dia": "Mar 18",
+    "hora": "18:30",
+    "evento": "Cuentacuentos «Animales de cuentos»",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "nombre": "Día de la Mujer Revolucionaria",
   "pueblo": "Torrelavega",
   "municipio": "Torrelavega",
@@ -18698,6 +18723,57 @@ const FIESTAS = [
   "descripcion": "Feria o mercado en Ruiloba. 18–19 de agosto. Lugar: Pradera del Colegio. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/ruiloba/mercadillo-del-verano-ruiloba--532943"
+ },
+ {
+  "nombre": "Muestra Internacional de Folklore «Tupa Marka» (Chile)",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "18 de agosto",
+  "inicio": "2026-08-18",
+  "fin": "2026-08-18",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Muestra Internacional de Folklore «Tupa Marka» (Chile) en Laredo. 18 de agosto. 3 EUROS SOLIDARIOS.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/muestra-internacional-de-folklore-tupa-marka-chile-laredo--629423"
+ },
+ {
+  "nombre": "Noches de Capricho: Bandas Sonoras",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "18–20 de agosto",
+  "inicio": "2026-08-18",
+  "fin": "2026-08-20",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Concierto en Comillas. 18–20 de agosto. Lugar: El Capricho de Gaudí. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/noches-de-capricho-bandas-sonoras-comillas--629421"
+ },
+ {
+  "nombre": "Presentación del libro «Tras el rastro de Madrid»",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "18 de agosto",
+  "inicio": "2026-08-18",
+  "fin": "2026-08-18",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Charla o taller en Comillas. 18 de agosto. Lugar: CENTRO CULTURAL EL ESPOLON. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/presentacion-del-libro-tras-el-rastro-de-madrid-comillas--629420"
  },
  {
   "nombre": "Presentación y firma del libro «José Alberto. Rock & Roll de Primera»",
@@ -18852,6 +18928,40 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/arnuero/concierto-de-cactus-railroad-company-soano--628672"
  },
  {
+  "nombre": "Concierto de Fran Juesas",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "19 de agosto",
+  "inicio": "2026-08-19",
+  "fin": "2026-08-19",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Concierto en Comillas. 19 de agosto. Lugar: JUNTOAL CENTRO CULTURAL DE TRASVIA. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/concierto-de-fran-juesas-comillas--629426"
+ },
+ {
+  "nombre": "Concierto de Luis Fercán",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "19 de agosto",
+  "inicio": "2026-08-19",
+  "fin": "2026-08-19",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Concierto en Comillas. 19 de agosto. Lugar: Seminario MayordeComillas. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://entradium.com/es/events/luis-fercan-comillas"
+ },
+ {
   "nombre": "Concierto de PATO da la Vida",
   "pueblo": "Liendo",
   "municipio": "Liendo",
@@ -18884,6 +18994,23 @@ const FIESTAS = [
   "descripcion": "Concierto «Marcos Históricos» - Vincenzo Capezzuto y Giancarlo Bianchetti en Noja. 19 de agosto.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/noja/concierto-marcos-historicos-vincenzo-capezzuto-y-giancarlo-bianchetti-noja--533842"
+ },
+ {
+  "nombre": "Conferencia «Género y urbanismo: retos y experiencias»",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "19 de agosto",
+  "inicio": "2026-08-19",
+  "fin": "2026-08-19",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Charla o taller en Laredo. 19 de agosto. Lugar: CentroCulturalDr.Velasco. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/conferencia-genero-y-urbanismo-retos-y-experiencias-laredo--629428"
  },
  {
   "nombre": "Divertifest Limpias",
@@ -18960,6 +19087,31 @@ const FIESTAS = [
   "descripcion": "Charla o taller en Santander. 19 de agosto. Lugar: Librería Gil. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://santandercreativa.com/eventos/24109"
+ },
+ {
+  "nombre": "Presentación del libro «Memorias de Comillas»",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "19 de agosto",
+  "inicio": "2026-08-19",
+  "fin": "2026-08-19",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Charla o taller en Comillas. 19 de agosto. Lugar: CalleAntonioLopez,3,39520Comillas. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/presentacion-del-libro-memorias-de-comillas-comillas--629425",
+  "programa": [
+   {
+    "dia": "Mié 19",
+    "hora": "20:00",
+    "evento": "Presentación del libro «Memorias de Comillas»",
+    "lugar": "Centro Cultural El Espolón de Comillas"
+   }
+  ]
  },
  {
   "nombre": "Ruta guiada «Camino a Busquemao»",
@@ -19261,6 +19413,23 @@ const FIESTAS = [
   ]
  },
  {
+  "nombre": "La Patrona",
+  "pueblo": "Torrelavega",
+  "municipio": "Torrelavega",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "20 de agosto",
+  "inicio": "2026-08-20",
+  "fin": "2026-08-20",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.34911,
+  "lng": -4.05064,
+  "descripcion": "La Patrona en Torrelavega. 20 de agosto. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/torrelavega/la-patrona-torrelavega--629430"
+ },
+ {
   "nombre": "Pinceladas de las exposiciones del Centro Botín",
   "pueblo": "Santander",
   "municipio": "Santander",
@@ -19276,6 +19445,23 @@ const FIESTAS = [
   "descripcion": "Exposición en Santander. 20 de agosto. Lugar: Centro Botín. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://santandercreativa.com/eventos/pinceladas-de-las-exposiciones-del-centro-botin"
+ },
+ {
+  "nombre": "Presentación del libro «Quinta Quebrada»",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "20 de agosto",
+  "inicio": "2026-08-20",
+  "fin": "2026-08-20",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Charla o taller en Comillas. 20 de agosto. Lugar: Centro Cultural El Espolon, de Comillas. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/presentacion-del-libro-quinta-quebrada-comillas--629431"
  },
  {
   "nombre": "Rally HDC España - Galerna Bike-Rock-Fest",
@@ -19517,6 +19703,115 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/comillas/espectaculo-lirico-teatral-reyes-y-princesas-comillas--9891"
  },
  {
+  "nombre": "Feria Artesana de Comillas",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "21–23 de agosto",
+  "inicio": "2026-08-21",
+  "fin": "2026-08-23",
+  "tipo": "ferias y mercados",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Feria o mercado en Comillas. 21–23 de agosto. Lugar: COMILLAS. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/feria-artesana-de-comillas--629526",
+  "programa": [
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Puestos de artesanía y productores",
+    "lugar": "Comillas"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Talleres didácticos por artesanos",
+    "lugar": "Comillas"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Cuenta cuentos",
+    "lugar": "Comillas"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Conciertos",
+    "lugar": "Comillas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "11:00",
+    "evento": "Apertura del mercado",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "11:00",
+    "evento": "Feria Artesana de Comillas",
+    "lugar": "Campa del Palacio de Sobrellano"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "Cuento-motor «Los diferentosos»",
+    "lugar": "Campa del Palacio de Sobrellano"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "13:00",
+    "evento": "Concierto del grupo Lost in Covers",
+    "lugar": "Campa del Palacio de Sobrellano"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "Dj Cuca",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "Concierto de folk de Juan Saiz",
+    "lugar": "Plaza de Corro Campíos"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "Sesión del DJ Cuca",
+    "lugar": "Campa del Palacio de Sobrellano"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:00",
+    "evento": "Apertura del mercado",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "Cuentacuentos infantil",
+    "lugar": "Campa del Palacio de Sobrellano"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "19:00",
+    "evento": "Juegos infantiles",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "Feria de artesanía Comillas 2026",
+    "lugar": "Parque de Sobrellano (Comillas)"
+   }
+  ]
+ },
+ {
   "nombre": "Fiesta de Verano de Boo de Guarnizo",
   "pueblo": "El Astillero",
   "municipio": "El Astillero",
@@ -19612,9 +19907,9 @@ const FIESTAS = [
   "municipio": "Villaescusa",
   "comarca": "",
   "mes": 8,
-  "fecha": "21 agosto – 5 septiembre",
+  "fecha": "21 agosto – 6 septiembre",
   "inicio": "2026-08-21",
-  "fin": "2026-09-05",
+  "fin": "2026-09-06",
   "tipo": "fiestas",
   "interes": "Regional",
   "lat": 43.37033,
@@ -19661,12 +19956,6 @@ const FIESTAS = [
    },
    {
     "dia": "Sáb 22",
-    "hora": "17:00",
-    "evento": "Apertura Exposición 50 Aniversario Peña Joyancón",
-    "lugar": "Salón Nave Euterpe"
-   },
-   {
-    "dia": "Sáb 22",
     "hora": "20:00",
     "evento": "Festival Folklórico Solidario Valle de Iguña",
     "lugar": ""
@@ -19676,18 +19965,6 @@ const FIESTAS = [
     "hora": "20:00",
     "evento": "Festival Folklórico Solidario Valle de Iguña a favor de IQSEC 2",
     "lugar": ""
-   },
-   {
-    "dia": "Sáb 22",
-    "hora": "22:00",
-    "evento": "Fiesta de los años 80 y 90",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 22",
-    "hora": "",
-    "evento": "Fiestas de Pie de Concha 2026",
-    "lugar": "Barcena de Pie de Concha"
    },
    {
     "dia": "Dom 23",
@@ -19727,6 +20004,12 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 23",
+    "hora": "13:00",
+    "evento": "Blanqueada",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
     "hora": "17:00",
     "evento": "Charangas y Dantzaris",
     "lugar": ""
@@ -19735,6 +20018,12 @@ const FIESTAS = [
     "dia": "Dom 23",
     "hora": "17:30",
     "evento": "Bingo musical y romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:30",
+    "evento": "Bingo musical",
     "lugar": ""
    },
    {
@@ -19748,6 +20037,12 @@ const FIESTAS = [
     "hora": "",
     "evento": "Fiestas de Pie de Concha 2026",
     "lugar": "Barcena de Pie de Concha"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "Romería",
+    "lugar": ""
    },
    {
     "dia": "Lun 24",
@@ -19811,6 +20106,12 @@ const FIESTAS = [
    },
    {
     "dia": "Jue 27",
+    "hora": "00:30",
+    "evento": "Macrofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
     "hora": "11:00",
     "evento": "Montaje y alzado del arco de flores",
     "lugar": ""
@@ -19844,6 +20145,12 @@ const FIESTAS = [
     "hora": "",
     "evento": "Fiestas de Pie de Concha 2026",
     "lugar": "Barcena de Pie de Concha"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "00:30",
+    "evento": "Verbena",
+    "lugar": ""
    },
    {
     "dia": "Vie 28",
@@ -19912,6 +20219,12 @@ const FIESTAS = [
     "lugar": "Barcena de Pie de Concha"
    },
    {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "Fiesta desde Reinosa",
+    "lugar": ""
+   },
+   {
     "dia": "Sáb 29",
     "hora": "00:00",
     "evento": "Fuegos artificiales",
@@ -19969,6 +20282,42 @@ const FIESTAS = [
     "dia": "Sáb 29",
     "hora": "21:00",
     "evento": "Novena a la Virgen de Consolación y Procesión de las Antorchas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "Novena a la Virgen de Consolación",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:30",
+    "evento": "Encierro nocturno",
+    "lugar": "calles del pueblo"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Procesión de las Antorchas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "02:00",
+    "evento": "Pasacalles con música y disparo de cohetes",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "06:00",
+    "evento": "Carrera en paños menores",
     "lugar": ""
    },
    {
@@ -20032,6 +20381,18 @@ const FIESTAS = [
     "lugar": ""
    },
    {
+    "dia": "Dom 30",
+    "hora": "",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "",
+    "evento": "Procesión",
+    "lugar": ""
+   },
+   {
     "dia": "Vie 4",
     "hora": "01:00",
     "evento": "Macrofiesta",
@@ -20060,6 +20421,12 @@ const FIESTAS = [
     "hora": "12:00",
     "evento": "Misa Mayor en la ermita en honor a Nuestra Señora de Consolación",
     "lugar": "ermita"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "01:00",
+    "evento": "Macrofiesta",
+    "lugar": ""
    },
    {
     "dia": "Sáb 5",
@@ -20095,6 +20462,18 @@ const FIESTAS = [
     "dia": "Sáb 5",
     "hora": "21:00",
     "evento": "Novena a la Virgen de Consolación seguida de la solemne y tradicional Procesión de las Antorchas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "23:30",
+    "evento": "Encierro nocturno",
+    "lugar": "calles del pueblo"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "06:00",
+    "evento": "Carrera en paños menores",
     "lugar": ""
    }
   ]
@@ -21229,14 +21608,14 @@ const FIESTAS = [
   "municipio": "Voto",
   "comarca": "",
   "mes": 8,
-  "fecha": "22 de agosto",
+  "fecha": "22–25 de agosto",
   "inicio": "2026-08-22",
-  "fin": "2026-08-22",
+  "fin": "2026-08-25",
   "tipo": "fiestas",
   "interes": "",
   "lat": 43.36694,
   "lng": -3.49136,
-  "descripcion": "Fiestas San Ginés en Rada. 22 de agosto. Con verbenas y bailes, comida popular y deporte y juegos. Entrada gratuita.",
+  "descripcion": "Fiestas San Ginés en Rada. 22–25 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/voto/fiestas-san-gines-rada--628648",
   "programa": [
@@ -21281,6 +21660,42 @@ const FIESTAS = [
     "hora": "21:00",
     "evento": "DJ Tracy",
     "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "08:00",
+    "evento": "Diana floreada con volteo de campanas",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "12:30",
+    "evento": "Celebración de la Santa Misa con procesión de los Santos Gineses",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "13:30",
+    "evento": "Rabas y vermut",
+    "lugar": "plaza de la iglesia"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "16:00",
+    "evento": "Hinchables y karts para los más pequeños",
+    "lugar": "plaza de la iglesia"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "21:00",
+    "evento": "Tortilla, parrillada y chocolatada",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "22:00",
+    "evento": "Romería y verbena",
+    "lugar": ""
    }
   ]
  },
@@ -21300,6 +21715,67 @@ const FIESTAS = [
   "descripcion": "Arenillas de Ebro, en Valderredible, celebra sus fiestas de pueblo en el sur campurriano.",
   "_fuente_desc": "ia",
   "fuente": "https://planesparahoy.com/e/cantabria/valderredible/fiestas-de-arenillas-de-ebro--615207"
+ },
+ {
+  "nombre": "Fiestas de Arenillas de Ebro",
+  "pueblo": "Valderredible",
+  "municipio": "Valderredible",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22 de agosto",
+  "inicio": "2026-08-22",
+  "fin": "2026-08-22",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 42.81852,
+  "lng": -3.90984,
+  "descripcion": "Arenillas de Ebro, en Valderredible, celebra sus fiestas de pueblo en el sur campurriano.",
+  "_fuente_desc": "ia",
+  "fuente": "https://planesparahoy.com/e/cantabria/valderredible/fiestas-de-arenillas-de-ebro--629530",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "00:00",
+    "evento": "Macro Discoteca ECLIPSE con DJ TURI y GRAN BINGO",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:30",
+    "evento": "Pasacalles con los Piteros de Barreda",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "13:00",
+    "evento": "Misa en honor a Ntra. Señora, seguido de la procesión por el pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "13:30",
+    "evento": "Hora del Vermut con degustación de tortillas de patatas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "18:30",
+    "evento": "Juegos infantiles con muchas sorpresas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:00",
+    "evento": "1er Gran Concurso de LANZAMIENTO DE PACAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:30",
+    "evento": "Concierto en directo a cargo del TRÍO ESENCIA",
+    "lugar": ""
+   }
+  ]
  },
  {
   "nombre": "Fiestas de Nuestra Señora",
@@ -21777,6 +22253,23 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/laredo/concierto-de-musica-de-cine-y-musicales-laredo--610832"
  },
  {
+  "nombre": "Concierto del coro juvenil Aila de Laredo",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "23 de agosto",
+  "inicio": "2026-08-23",
+  "fin": "2026-08-23",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Concierto en Laredo. 23 de agosto. Lugar: Iglesia de San Martín de Laredo. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/concierto-del-coro-juvenil-aila-de-laredo--629451"
+ },
+ {
   "nombre": "Feria Internacional de la Sidra",
   "pueblo": "Monte",
   "municipio": "Santander",
@@ -22166,6 +22659,23 @@ const FIESTAS = [
   "descripcion": "Concierto en Noja. 23 de agosto. Lugar: Palacio de Albaicín. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://ayuntamientodenoja.es/portal/evento/actuacion-fis-jazz-about-bach/"
+ },
+ {
+  "nombre": "Marcha contra el cáncer",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "23 de agosto",
+  "inicio": "2026-08-23",
+  "fin": "2026-08-23",
+  "tipo": "deporte",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Evento deportivo en Laredo. 23 de agosto. Lugar: Parque de los Tres Pescadores (Laredo). Dorsal:5E·Dorsal+Camiseta:12E.",
+  "_fuente_desc": "factual",
+  "fuente": "https://enmarcha.contraelcancer.es/es/evento/marcha-contra-el-cancer-laredo-2026"
  },
  {
   "nombre": "Música en la poesía",
@@ -23496,6 +24006,31 @@ const FIESTAS = [
   "descripcion": "Evento deportivo en Castro-Urdiales. 27 de agosto. Lugar: Playa de Brazomar. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/castro-urdiales/xii-concurso-de-castillos-de-arena-castro-urdiales--532939"
+ },
+ {
+  "nombre": "Barracas y ferias",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "ferias y mercados",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Feria o mercado en Laredo. 28 de agosto. Lugar: Alameda Manuel Llano (Laredo). Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/barracas-y-ferias-laredo--629438",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "22:00",
+    "evento": "Concierto de Andy en Laredo",
+    "lugar": "Alameda Miramar"
+   }
+  ]
  },
  {
   "nombre": "Chocolatada de fin de fiesta",
@@ -24924,7 +25459,7 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/24193"
  },
  {
-  "nombre": "San Agustín y San Emeterio",
+  "nombre": "San Agustín y San Emeterio · Liendo",
   "pueblo": "Sopeña",
   "municipio": "Liendo",
   "comarca": "Costa Oriental",
@@ -24933,8 +25468,8 @@ const FIESTAS = [
   "inicio": "2026-08-28",
   "fin": "2026-08-30",
   "tipo": "fiestas",
-  "lat": 43.405,
-  "lng": -3.325,
+  "lat": 43.3882,
+  "lng": -3.37331,
   "descripcion": "El barrio de Sopeña, en Liendo, celebra San Agustín y San Emeterio a finales de agosto.",
   "fuente": "https://aytoliendo.org/municipio/fiestas-y-tradiciones/",
   "interes": "",
@@ -25547,15 +26082,15 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/santander/concierto-de-blizzard-hunter-santander--628654"
  },
  {
-  "nombre": "Santísimo Cristo de la Agonía",
+  "nombre": "Santísimo Cristo de la Agonía · Limpias",
   "pueblo": "Limpias",
   "municipio": "Limpias",
   "comarca": "Costa Oriental",
   "mes": 9,
   "fecha": "Septiembre (por confirmar)",
   "tipo": "fiestas",
-  "lat": 43.356,
-  "lng": -3.41,
+  "lat": 43.36424,
+  "lng": -3.41762,
   "descripcion": "Celebración del Santísimo Cristo de la Agonía, venerado en el santuario de Limpias. Revisar fecha exacta en la web del ayuntamiento.",
   "fuente": "https://limpias.es/events/celebracion-del-santisimo-cristo-de-la-agonia/",
   "interes": "",
@@ -26085,6 +26620,145 @@ const FIESTAS = [
   ]
  },
  {
+  "nombre": "Fiesta de la Salud y San Miguel",
+  "pueblo": "Puentenansa",
+  "municipio": "Rionansa",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5–26 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-26",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.25544,
+  "lng": -4.40597,
+  "descripcion": "Fiesta de la Salud y San Miguel en Puentenansa. 5–26 de septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/rionansa/fiesta-de-la-salud-y-san-miguel-puentenansa--629518",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "11:30",
+    "evento": "III Edición de los autos locos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "13:30",
+    "evento": "I Concurso de arroz con costilla",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "16:00",
+    "evento": "Bingo popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "17:00",
+    "evento": "Talleres infantiles y fiesta de la espuma",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "18:00",
+    "evento": "Partido de bolos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "20:30",
+    "evento": "Entrega de premios",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "21:30",
+    "evento": "Coro Ronda Garcilaso",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "23:00",
+    "evento": "Verbena con el Gran Nacho Barquín",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "09:00",
+    "evento": "Diana de cochetes",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "11:30",
+    "evento": "Pasacalles con los piteros Sones del Nansa",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "12:30",
+    "evento": "Misa solemne en honor a la Virgen de la Salud, cantada por la coral Torre de Obeso y tradicional baile de picayos",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "13:30",
+    "evento": "Todos al bar a blanquear y a degustar los pinchos vecinales",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "14:30",
+    "evento": "Sesión vermú con el Gran Nacho Barquín",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 25",
+    "hora": "00:00",
+    "evento": "Totanium Sow, Alex Dj Music y fiesta Rockera",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "10:00",
+    "evento": "Comienzo del I Torneo de fútbol Sala San Miguel",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "13:00",
+    "evento": "Apertura del bar de la comisión",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "14:30",
+    "evento": "Sesión vermut con Nacho Barquín y paella",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "16:00",
+    "evento": "I Karaoke de San Miguel",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "19:00",
+    "evento": "Chocolatada para todos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "23:30",
+    "evento": "IV Carrera de albarcas",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "nombre": "Fiestas de la Virgen Niña y Encierros de Ampuero",
   "pueblo": "Ampuero",
   "municipio": "Ampuero",
@@ -26094,12 +26768,109 @@ const FIESTAS = [
   "inicio": "2026-09-05",
   "fin": "2026-09-09",
   "tipo": "fiestas",
-  "lat": 43.343,
-  "lng": -3.412,
+  "lat": 43.34406,
+  "lng": -3.41515,
   "descripcion": "Fiestas de la Virgen Niña en Ampuero, célebres por sus encierros taurinos —los 'pequeños San Fermines'— del 8 y 9 de septiembre.",
   "fuente": "https://ampuero.es/turismo-en-ampuero/fiestas/",
   "interes": "Nacional",
   "_fuente_desc": "ayuntamiento"
+ },
+ {
+  "nombre": "Fiestas de la Virgen del Socorro",
+  "pueblo": "La Abadilla",
+  "municipio": "Santa María de Cayón",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5–6 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-06",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.31493,
+  "lng": -3.85529,
+  "descripcion": "Fiestas de la Virgen del Socorro en La Abadilla. 5–6 de septiembre. Con actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santa-maria-de-cayon/fiestas-de-la-virgen-del-socorro-la-abadilla--629531",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "00:00",
+    "evento": "Continuará la fiesta con el grupo \"Norte\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "09:00",
+    "evento": "Volteo de campanas y chupinazo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "10:30",
+    "evento": "\"XII Marcha Virgen del Socorro\"",
+    "lugar": "Ermita de San Antonio"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "13:00",
+    "evento": "Blanqueo y degustación de pinchos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "15:30",
+    "evento": "Concurso de parchís y concurso de flor",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "17:00",
+    "evento": "Hinchables gratuitos para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "18:30",
+    "evento": "Fiesta de la espuma",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "Gran romería amenizada por el grupo \"Norte\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "22:00",
+    "evento": "Barbacoa gratuita a cargo de la \"Junta Vecinal de la Abadilla\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "22:30",
+    "evento": "¡Bingo!",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "11:30",
+    "evento": "Pasacalles a cargo de los \"Gaiteros del Pisueña\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "12:30",
+    "evento": "Misa en honor a la \"Virgen del Socorro\"",
+    "lugar": "Parroquia San Esteban / Ermita de San Antonio"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "13:30",
+    "evento": "Vermut musical amenizado por Francisco Cordón",
+    "lugar": ""
+   }
+  ]
  },
  {
   "nombre": "Gran Mercado Medieval de Casarrubios del Monte",
@@ -26271,7 +27042,7 @@ const FIESTAS = [
   ]
  },
  {
-  "nombre": "Fiestas de la Virgen del Puerto",
+  "nombre": "Fiestas de la Virgen del Puerto · Santoña",
   "pueblo": "Santoña",
   "municipio": "Santoña",
   "comarca": "Costa Oriental",
@@ -26280,8 +27051,8 @@ const FIESTAS = [
   "inicio": "2026-09-06",
   "fin": "2026-09-13",
   "tipo": "fiestas",
-  "lat": 43.4419,
-  "lng": -3.4573,
+  "lat": 43.44494,
+  "lng": -3.45536,
   "descripcion": "Fiestas patronales de Santoña en honor a la Virgen del Puerto, con procesión marítima por la bahía, conciertos y actos marineros.",
   "fuente": "https://www.santoña.es/",
   "interes": "",
@@ -26466,7 +27237,7 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/lierganes/concierto-flamin-groovies-lierganes--100516"
  },
  {
-  "nombre": "La Virgen de Gracia",
+  "nombre": "La Virgen de Gracia · Liendo",
   "pueblo": "Iseca Vieja",
   "municipio": "Liendo",
   "comarca": "Costa Oriental",
@@ -26475,8 +27246,8 @@ const FIESTAS = [
   "inicio": "2026-09-08",
   "fin": "2026-09-08",
   "tipo": "fiestas",
-  "lat": 43.418,
-  "lng": -3.33,
+  "lat": 43.40182,
+  "lng": -3.36916,
   "descripcion": "El barrio de Iseca Vieja, en Liendo, celebra a la Virgen de Gracia el 8 de septiembre.",
   "fuente": "https://aytoliendo.org/municipio/fiestas-y-tradiciones/",
   "interes": "",
@@ -26841,7 +27612,7 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/tudanca/iii-ciguenos-folk-sobrepena-de-ebro-tudanca--628630"
  },
  {
-  "nombre": "La Gran Marmitada",
+  "nombre": "La Gran Marmitada · Santoña",
   "pueblo": "Santoña",
   "municipio": "Santoña",
   "comarca": "Costa Oriental",
@@ -26850,8 +27621,8 @@ const FIESTAS = [
   "inicio": "2026-09-12",
   "fin": "2026-09-12",
   "tipo": "gastronomía",
-  "lat": 43.4419,
-  "lng": -3.456,
+  "lat": 43.44494,
+  "lng": -3.45536,
   "descripcion": "Concurso popular del guiso marinero (marmite de bonito) durante las fiestas de la Virgen del Puerto de Santoña.",
   "fuente": "https://www.santoña.es/",
   "interes": "Regional",
@@ -27791,7 +28562,83 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/recital-poetico-creo-en-lope-todopoderoso-poeta-del-cielo-y-de-la-tierra-a-cargo-de-rita-cofino-y-rosa-gil"
  },
  {
-  "nombre": "San Martín",
+  "nombre": "Concierto Serko",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 10,
+  "fecha": "2 de octubre",
+  "inicio": "2026-10-02",
+  "fin": "2026-10-02",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 2 de octubre. Lugar: Sala Kaya. Entrada anticipada 18€ + gastos de gestión.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/serko-125-km-tour",
+  "programa": [
+   {
+    "dia": "Vie 2",
+    "hora": "23:00",
+    "evento": "Serko",
+    "lugar": "Sala Kaya"
+   }
+  ]
+ },
+ {
+  "nombre": "La Guardia",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 10,
+  "fecha": "2 de octubre",
+  "inicio": "2026-10-02",
+  "fin": "2026-10-02",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 2 de octubre. Lugar: Teatro Casyc. 34.91.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/la-guardia-santander--33991"
+ },
+ {
+  "nombre": "La Guardia. Ruta 40",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 10,
+  "fecha": "2 de octubre",
+  "inicio": "2026-10-02",
+  "fin": "2026-10-02",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 2 de octubre. Lugar: Fundación Caja Cantabria (CASYC). 37€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/la-guardia-ruta-40"
+ },
+ {
+  "nombre": "TEDx Jardines de Pereda «El nuevo norte»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 10,
+  "fecha": "2 de octubre",
+  "inicio": "2026-10-02",
+  "fin": "2026-10-02",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 2 de octubre. Lugar: Paraninfo de la Magdalena. 30€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/tedx-jardines-de-pereda-el-nuevo-norte"
+ },
+ {
+  "nombre": "San Martín · Laredo",
   "pueblo": "Laredo",
   "municipio": "Laredo",
   "comarca": "Costa Oriental",
@@ -27800,8 +28647,8 @@ const FIESTAS = [
   "inicio": "2026-11-11",
   "fin": "2026-11-11",
   "tipo": "fiestas",
-  "lat": 43.4093,
-  "lng": -3.411,
+  "lat": 43.41063,
+  "lng": -3.4173,
   "descripcion": "Fiesta del patrón de los pescadores en Laredo, con procesión, cocido montañés, matanza del cerdo y verbena.",
   "fuente": "https://www.laredo.es/09/fiestas_otras.php",
   "interes": "",
@@ -27825,7 +28672,7 @@ const FIESTAS = [
   "_fuente_desc": "clasica"
  },
  {
-  "nombre": "San Andrés",
+  "nombre": "San Andrés · Castro-Urdiales",
   "pueblo": "Castro Urdiales",
   "municipio": "Castro-Urdiales",
   "comarca": "Costa Oriental",
@@ -27834,8 +28681,8 @@ const FIESTAS = [
   "inicio": "2026-11-30",
   "fin": "2026-11-30",
   "tipo": "fiestas",
-  "lat": 43.383,
-  "lng": -3.213,
+  "lat": 43.37015,
+  "lng": -3.2176,
   "descripcion": "Fiesta marinera del Barrio de los Marineros de Castro Urdiales en honor a San Andrés, con gastronomía y tradición pesquera.",
   "fuente": "https://www.castro-urdiales.net/",
   "interes": "Regional",
@@ -27843,4 +28690,4 @@ const FIESTAS = [
  }
 ];
 
-const DATA_INFO = {"generado": "2026-08-17 23:23", "feed": "20260817211544", "fiestas": 525};
+const DATA_INFO = {"generado": "2026-08-18 09:28", "feed": "20260818071551", "fiestas": 546};
