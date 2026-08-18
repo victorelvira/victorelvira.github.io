@@ -70,7 +70,7 @@ body {
 }
 .pop .tag.src { background: #e8f1eb; color: var(--cb); }
 .pop a.edit {
-  display: inline-block; font-size: 12px; font-weight: 600;
+  display: block; margin-top: 3px; font-size: 12px; font-weight: 600;
   color: var(--cb); text-decoration: none;
 }
 .pop a.edit:hover { text-decoration: underline; }

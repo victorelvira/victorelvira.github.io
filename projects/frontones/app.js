@@ -41,9 +41,13 @@ function popup(p, lat, lon) {
                          : (!muni ? (p.region === "cantabria" ? "Cantabria" : "Euskadi") : "");
   const dir = p.direccion ? esc(p.direccion.replace(/[\s,]*(España|Espagne)\s*$/i, "").trim()) : "";
 
-  const conf = p.confianza === "confirmado"
-    ? `<div class="conf ok">✓ Confirmado · ${p.sources.length} fuentes</div>`
-    : `<div class="conf warn">⚠ Sin confirmar · 1 fuente</div>`;
+  const nSrc = (p.sources || [p.source]).length;
+  const confTxt = (p.sources || []).includes("manual")
+    ? "✓ Añadido a mano"
+    : p.confianza === "confirmado"
+      ? `✓ Confirmado · ${nSrc} fuentes`
+      : "⚠ Sin confirmar · 1 fuente";
+  const conf = `<div class="conf ${p.confianza === "confirmado" ? "ok" : "warn"}">${confTxt}</div>`;
 
   const badges = (p.sources || [p.source]).map(s => srcBadge(s, p)).join("");
 
@@ -56,6 +60,7 @@ function popup(p, lat, lon) {
     ${dir ? `<div class="addr">${dir}</div>` : ""}
     ${conf}
     <div class="tags">${badges}</div>
+    <a class="edit" href="https://www.google.com/maps/search/?api=1&query=${lat},${lon}" target="_blank" rel="noopener">📍 Cómo llegar ↗</a>
     <a class="edit" href="${edit}" target="_blank" rel="noopener">${editTxt}</a>
     <div class="ids">${(p.member_ids || []).map(esc).join(" · ")}</div>
   </div>`;
