@@ -46,10 +46,11 @@ legend.onAdd = () => {
 };
 legend.addTo(map);
 
-const places = [];   // {marker, kind, count, country, hasAccepted, shown}
+let allFeatures = [];   // raw point features from the geojson
+const places = [];   // {marker, kind, feats, lat, lon, shown}
 const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
 let panelVis = [];   // works currently listed in the panel
-const state = { museum: true, church: true, private: true, onlyAccepted: false,
+const state = { mode: "current", museum: true, church: true, private: true, onlyAccepted: false,
                 yearMin: -Infinity, yearMax: Infinity };
 
 function yearNum(p) {
@@ -61,9 +62,16 @@ function inYear(p) {
   return y == null || (y >= state.yearMin && y <= state.yearMax);
 }
 function passesAll(p) {
-  return state[p.kind || "museum"]
-    && (!state.onlyAccepted || ATTR_ACCEPTED.has(p.attribution))
-    && inYear(p);
+  const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"];   // no venue type on map 2
+  return kindOk && (!state.onlyAccepted || ATTR_ACCEPTED.has(p.attribution)) && inYear(p);
+}
+// active coordinate per map: current location, or where it was painted (map 2)
+function activeCoord(f) {
+  if (state.mode === "painted") {
+    const p = f.properties;
+    return (p.creation_lat != null && p.creation_lon != null) ? [p.creation_lon, p.creation_lat] : null;
+  }
+  return f.geometry.coordinates;
 }
 
 function esc(s) {
@@ -90,30 +98,41 @@ function linksRow(p) {
   return parts.join(" ");
 }
 
-// visible provenance line for overridden fields (skip those given in `skip`)
+// visible provenance line for overridden fields (skip those given in `skip`).
+// Public-facing wording only — never names the internal editor.
 function provLine(p, skip = []) {
   if (!p._overrides) return "";
   const rows = Object.entries(p._overrides)
     .filter(([field]) => !skip.includes(field))
     .map(([field, o]) => {
-      const who = [o.by, o.at].filter(Boolean).join(", ");
       const src = o.source ? ` · ${esc(o.source)}` : "";
       return `<div class="prov"${o.note ? ` title="${esc(o.note)}"` : ""}>` +
-        `✎ ${esc(field)} edited by ${esc(who)}${src}</div>`;
+        `✎ ${esc(field)} · post-processed${src}</div>`;
     });
   return rows.join("");
 }
 
 // Place record: header (museum · city · country) + one row per work with a thumbnail.
+const HEAD_SKIP_CURRENT = ["attribution", "title", "year", "genre", "medium", "dimensions", "image", "creation", "status"];
+const HEAD_SKIP_PAINTED = ["attribution", "title", "year", "genre", "medium", "dimensions", "image", "city", "country", "location", "kind", "status"];
+const WORK_SKIP = ["city", "country", "location", "kind", "creation"];
+
 function placePopup(feats) {
   const p0 = feats[0].properties;
-  const kindTxt = KIND_LABEL[p0.kind] || "";
-  const where = [p0.city, p0.country].filter(Boolean).join(", ");
-  const head =
-    `<div class="hd"><div class="nm">${esc(p0.location || "Location")}</div>` +
-    `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ` +
-    `${feats.length} work${feats.length > 1 ? "s" : ""}</div>` +
-    `${provLine(p0, ["attribution", "title", "year", "genre", "medium", "dimensions", "image"])}</div>`;
+  const painted = state.mode === "painted";
+  const n = feats.length;
+  let head;
+  if (painted) {
+    head = `<div class="hd"><div class="nm">${esc(p0.creation_place || "Unknown")}</div>` +
+      `<div class="meta">painted here · ${n} work${n > 1 ? "s" : ""}</div>` +
+      `${provLine(p0, HEAD_SKIP_PAINTED)}</div>`;
+  } else {
+    const kindTxt = KIND_LABEL[p0.kind] || "";
+    const where = [p0.city, p0.country].filter(Boolean).join(", ");
+    head = `<div class="hd"><div class="nm">${esc(p0.location || "Location")}</div>` +
+      `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} work${n > 1 ? "s" : ""}</div>` +
+      `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
+  }
 
   const items = feats.map(f => {
     const p = f.properties;
@@ -122,7 +141,9 @@ function placePopup(feats) {
       ? ` <span class="tag att">${esc(p.attribution)}</span>` : "";
     const st = p.status && GONE.has(p.status)
       ? ` <span class="tag gone">${esc(STATUS_LABEL[p.status] || p.status)}</span>` : "";
-    const facts = [p.medium, p.dimensions].filter(Boolean).map(esc).join(" · ");
+    const factBits = [p.medium, p.dimensions];
+    if (painted && p.location) factBits.push(`now in ${p.location}${p.city ? `, ${p.city}` : ""}`);
+    const facts = factBits.filter(Boolean).map(esc).join(" · ");
     const factsRow = facts ? `<div class="fx">${facts}</div>` : "";
     const desc = p.summary ? `<div class="ds">${esc(p.summary)}</div>` : "";
     const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p0.location || ""}`;
@@ -132,7 +153,7 @@ function placePopup(feats) {
     return `<li>${thumb}<div class="wk">` +
       `<div class="wt">${esc(p.title || "Untitled")}${yr}${att}${st}</div>` +
       `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
-      `${provLine(p, ["city", "country", "location", "kind"])}</div></li>`;
+      `${provLine(p, WORK_SKIP)}</div></li>`;
   }).join("");
 
   return `<div class="card">${head}<ul class="works">${items}</ul></div>`;
@@ -144,10 +165,11 @@ function refresh() {
   for (const pl of places) {
     const vis = pl.feats.filter(f => passesAll(f.properties));   // works here passing every filter
     if (vis.length) {
-      const lost = vis.some(f => GONE.has(f.properties.status));
+      const painted = state.mode === "painted";
+      const lost = !painted && vis.some(f => GONE.has(f.properties.status));
       const disputed = vis.some(f => !ATTR_ACCEPTED.has(f.properties.attribution));
       pl.marker.options.works = vis.length;
-      pl.marker.setIcon(pinIcon(pl.kind, vis.length, { lost, disputed }));
+      pl.marker.setIcon(pinIcon(painted ? "painted" : pl.kind, vis.length, { lost, disputed }));
       pl.marker.setPopupContent(placePopup(vis));
       if (!pl.shown) { cluster.addLayer(pl.marker); pl.shown = true; }
       shownPlaces++; workCount += vis.length;
@@ -166,30 +188,36 @@ function keyOf(f) {
   return `${lat.toFixed(5)},${lon.toFixed(5)}`;
 }
 
+// (re)build markers for the current mode: group features by their active coordinate
+function buildMarkers() {
+  cluster.clearLayers();
+  places.length = 0; works.length = 0;
+  const byPlace = new Map();
+  for (const f of allFeatures) {
+    const c = activeCoord(f);
+    if (!c) continue;                       // e.g. undated work has no creation place
+    const k = `${c[1].toFixed(5)},${c[0].toFixed(5)}`;
+    if (!byPlace.has(k)) byPlace.set(k, []);
+    byPlace.get(k).push(f);
+  }
+  for (const feats of byPlace.values()) {
+    const [lon, lat] = activeCoord(feats[0]);
+    const kind = feats[0].properties.kind || "museum";
+    const marker = L.marker([lat, lon], { works: feats.length })
+      .bindPopup("", { maxWidth: 320, minWidth: 240 });
+    places.push({ marker, kind, feats, lat, lon, shown: false });
+    for (const f of feats) works.push({ p: f.properties, lat, lon, marker });
+  }
+  refresh();
+}
+
 fetch("caravaggio/data/caravaggio.geojson")
   .then(r => r.json())
   .then(gj => {
-    const byPlace = new Map();
-    for (const f of gj.features || []) {
-      if (!f.geometry || f.geometry.type !== "Point") continue;
-      const k = keyOf(f);
-      if (!byPlace.has(k)) byPlace.set(k, []);
-      byPlace.get(k).push(f);
-    }
-
-    for (const feats of byPlace.values()) {
-      const [lon, lat] = feats[0].geometry.coordinates;
-      const kind = feats[0].properties.kind || "museum";
-      const marker = L.marker([lat, lon], { works: feats.length })
-        .bindPopup("", { maxWidth: 320, minWidth: 240 });
-      places.push({ marker, kind, feats, lat, lon, shown: false });
-      for (const f of feats) works.push({ p: f.properties, lat, lon, marker });
-    }
-
-    const yrs = works.map(w => yearNum(w.p)).filter(v => v != null);
+    allFeatures = (gj.features || []).filter(f => f.geometry && f.geometry.type === "Point");
+    const yrs = allFeatures.map(f => yearNum(f.properties)).filter(v => v != null);
     buildTimeline(Math.min(...yrs), Math.max(...yrs));   // sets state.yearMin/Max
-
-    refresh();
+    buildMarkers();
     map.on("moveend", renderPanel);
   })
   .catch(err => {
@@ -203,6 +231,18 @@ document.querySelectorAll('.filters input[data-kind]').forEach(cb => {
 });
 document.getElementById("only-accepted").addEventListener("change", e => {
   state.onlyAccepted = e.target.checked; refresh();
+});
+
+// ── map mode: "where they are today" (venues) vs "where they were painted" (cities) ──
+document.querySelectorAll(".mode-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (state.mode === btn.dataset.mode) return;
+    state.mode = btn.dataset.mode;
+    document.querySelectorAll(".mode-btn").forEach(b => b.classList.toggle("active", b === btn));
+    document.body.classList.toggle("mode-painted", state.mode === "painted");
+    if (nearestLine) { map.removeLayer(nearestLine); nearestLine = null; }
+    buildMarkers();   // regroup by the active coordinate + refresh
+  });
 });
 
 // ── time slider: filter the map + panel by year of creation (dual-handle range) ──
@@ -238,11 +278,15 @@ function renderPanel() {
   const b = map.getBounds();
   const vis = works.filter(w => passesAll(w.p) && b.contains([w.lat, w.lon]));
 
-  // group by venue (rounded coords)
+  // group by the active place (venue on map 1, creation city on map 2)
+  const painted = state.mode === "painted";
   const groups = new Map();
   for (const w of vis) {
     const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
-    if (!groups.has(k)) groups.set(k, { location: w.p.location || "Location", city: w.p.city || "", items: [] });
+    if (!groups.has(k)) groups.set(k, {
+      location: painted ? (w.p.creation_place || "Unknown") : (w.p.location || "Location"),
+      city: painted ? "" : (w.p.city || ""), items: [],
+    });
     groups.get(k).items.push(w);
   }
   const ordered = [...groups.values()].sort((a, z) =>

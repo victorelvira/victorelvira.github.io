@@ -12,6 +12,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Boy Peeling Pears",
     "year": "1592",
     "city": "Florence",
@@ -24,10 +25,19 @@
     "dimensions": "68 × 62.5 cm",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CARAVAGGIO%2C%20A%20boy%20peeling%20fruit%20%281593%29.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q102641148",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102641148",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -41,6 +51,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Prophet with book",
     "city": "Karlsruhe",
     "country": "Germany",
@@ -68,6 +79,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Lamentation of Christ",
     "city": "Berlin",
     "country": "Germany",
@@ -85,7 +97,6 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
@@ -103,6 +114,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Holy Family with Child Saint John",
     "year": "1603",
     "city": "Berlin",
@@ -115,6 +127,9 @@
     "genre": "religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Caravaggio%20055%20-%20color%20enhanced.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q107443198",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107443198",
@@ -122,10 +137,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -140,12 +158,13 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Healing of Tobit",
     "city": "Berlin",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "disputed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "117 × 148 cm",
@@ -159,16 +178,19 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
      },
      "year": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikidata inception 1617 is after Caravaggio's death (1610); no Wikipedia article to verify",
       "note": "date removed as unreliable (leaves it undated rather than assert a false year)"
+     },
+     "attribution": {
+      "at": "2026-08-18",
+      "source": "Editorial flag: no Wikipedia article in any language and an impossible Wikidata date (1617, after Caravaggio's death); attribution unverified",
+      "note": "The Healing of Tobit, Gemäldegalerie Berlin — not a documented autograph"
      }
     }
    }
@@ -183,6 +205,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Q107493287",
     "year": "1600",
     "city": "Liège",
@@ -194,10 +217,19 @@
     "medium": "Oil on canvas",
     "dimensions": "77 × 62.5 cm",
     "wikidata": "https://www.wikidata.org/wiki/Q107493287",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107493287",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -211,6 +243,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of Fra Antonio Martelli",
     "year": "1607",
     "city": "Florence",
@@ -230,10 +263,20 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Fra_Antonio_Martelli_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ritratto_di_Antonio_Martelli",
     "wikidata": "https://www.wikidata.org/wiki/Q1113749",
+    "creation_place": "Malta",
+    "creation_lat": 35.8989,
+    "creation_lon": 14.5146,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1113749",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "Portrait of Fra Antonio Martelli — Malta, 1608",
+      "note": ""
+     }
     }
    }
   },
@@ -247,6 +290,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Crowning with Thorns",
     "year": "1602",
     "city": "Vienna",
@@ -266,10 +310,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Crowning_with_Thorns_(Caravaggio,_Vienna)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Incoronazione_di_spine_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q1117094",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1117094",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -283,6 +336,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Jupiter, Neptune and Pluto",
     "year": "1599",
     "city": "Rome",
@@ -302,10 +356,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Jupiter,_Neptune_and_Pluto",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Giove,_Nettuno_e_Plutone",
     "wikidata": "https://www.wikidata.org/wiki/Q1122537",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1122537",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -319,6 +382,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Burial of Saint Lucy",
     "year": "1608",
     "city": "Syracuse",
@@ -338,10 +402,20 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Burial_of_Saint_Lucy",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Seppellimento_di_santa_Lucia",
     "wikidata": "https://www.wikidata.org/wiki/Q1132479",
+    "creation_place": "Syracuse",
+    "creation_lat": 37.0755,
+    "creation_lon": 15.2866,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1132479",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "The Burial of Saint Lucy — painted in Syracuse, 1608",
+      "note": ""
+     }
     }
    }
   },
@@ -355,6 +429,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Martyrdom of Saint Ursula",
     "year": "1610",
     "city": "Naples",
@@ -374,6 +449,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Martyrdom_of_Saint_Ursula_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Martirio_di_sant%27Orsola",
     "wikidata": "https://www.wikidata.org/wiki/Q1132486",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1132486",
@@ -381,33 +459,33 @@
     },
     "_overrides": {
      "coord": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Gallerie d'Italia – Palazzo Zevallos Stigliano, Via Toledo 185, Naples (Wikipedia)",
       "note": "Wikidata gave only 'Gallerie d'Italia' (the museum network) with no coordinate; The Martyrdom of Saint Ursula hangs at the Naples venue"
      },
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Gallerie d'Italia, Naples",
       "note": ""
      },
      "country": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Gallerie d'Italia, Naples",
       "note": ""
      },
      "location": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Gallerie d'Italia, Naples",
       "note": "precise venue for the 'Gallerie d'Italia' network"
      },
      "kind": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Gallerie d'Italia, Naples",
+      "note": ""
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "The Martyrdom of Saint Ursula — Naples, 1610",
       "note": ""
      }
     }
@@ -423,6 +501,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Calling of Saints Peter and Andrew",
     "city": "Weston-under-Lizard",
     "country": "United Kingdom",
@@ -441,7 +520,6 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Weston Park — civil parish name normalised"
@@ -459,6 +537,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Entombment of Christ",
     "year": "1600",
     "city": "Vatican City",
@@ -478,10 +557,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Entombment_of_Christ_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Deposizione_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q1213151",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1213151",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -495,8 +583,9 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Ecce Homo",
-    "year": "1607-1700",
+    "year": "c. 1605-1609",
     "city": "Madrid",
     "country": "Spain",
     "location": "Museo del Prado",
@@ -513,10 +602,24 @@
     "wikipedia_es": "https://es.wikipedia.org/wiki/Ecce_Homo_(Caravaggio,_Madrid)",
     "wikipedia_en": "https://en.wikipedia.org/wiki/Ecce_Homo_(Caravaggio,_Madrid)",
     "wikidata": "https://www.wikidata.org/wiki/Q125869859",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q125869859",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "year": {
+      "at": "2026-08-18",
+      "source": "Museo del Prado dating of the rediscovered Ecce Homo (c. 1605–1609)",
+      "note": "Wikidata had 1607/1700; the 1700 end-date is erroneous"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -530,6 +633,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Boy Bitten by a Lizard",
     "year": "1597",
     "city": "Florence",
@@ -543,10 +647,19 @@
     "genre": "genre art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boy%20Bitten%20by%20a%20Lizard%20by%20Caravaggio%20%28Florence%29.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q131543672",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131543672",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -560,6 +673,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Young Saint John the Baptist with ram",
     "year": "1602",
     "city": "Rome",
@@ -573,10 +687,19 @@
     "genre": "nude, religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Merisi%20da%20Caravaggio%2C%20Saint%20John%20the%20Baptist%20%28Youth%20with%20a%20Ram%29%20%28c.%201602%2C%20Yorck%20Project%29.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q131613900",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131613900",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -590,6 +713,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Lute Player",
     "city": "Badminton",
     "country": "United Kingdom",
@@ -616,6 +740,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Nativity with Saint Francis and Saint Lawrence",
     "year": "1600",
     "city": "Palermo",
@@ -635,6 +760,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Nativity_with_Saint_Francis_and_Saint_Lawrence",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Nativit%C3%A0_con_i_santi_Lorenzo_e_Francesco_d%27Assisi",
     "wikidata": "https://www.wikidata.org/wiki/Q1433194",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1433194",
@@ -642,10 +770,13 @@
     },
     "_overrides": {
      "status": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes: 'Stolen in 1969'",
       "note": "Nativity with St Francis and St Lawrence — stolen 1969 from the Oratory of San Lorenzo, Palermo; never recovered. Shown in red at its last known location."
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -660,6 +791,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Conversion of Saint Paul",
     "year": "1600",
     "city": "Rome",
@@ -679,10 +811,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Conversion_of_Saint_Paul_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Conversione_di_san_Paolo_(Caravaggio_Odescalchi)",
     "wikidata": "https://www.wikidata.org/wiki/Q1448203",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1448203",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -696,6 +837,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Crowning with Thorns",
     "year": "1604",
     "city": "Prato",
@@ -715,10 +857,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Crowning_with_Thorns_(Caravaggio,_Prato)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Incoronazione_di_spine_(Caravaggio_Prato)",
     "wikidata": "https://www.wikidata.org/wiki/Q1448701",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1448701",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -732,6 +883,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Annunciation",
     "year": "1609",
     "city": "Nancy",
@@ -751,10 +903,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Annunciation_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Annunciazione_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q1448728",
+    "creation_place": "Messina",
+    "creation_lat": 38.1938,
+    "creation_lon": 15.554,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1448728",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -768,6 +929,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Calling of Saints Peter and Andrew",
     "year": "1603-1606",
     "city": "London",
@@ -787,6 +949,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Calling_of_Saints_Peter_and_Andrew",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Vocazione_dei_santi_Pietro_e_Andrea",
     "wikidata": "https://www.wikidata.org/wiki/Q1460179",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1460179",
@@ -794,10 +959,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Hampton Court — Greater London"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -812,6 +980,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of Pope Paul V",
     "year": "1605",
     "city": "Rome",
@@ -831,6 +1000,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Pope_Paul_V",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ritratto_di_papa_Paolo_V",
     "wikidata": "https://www.wikidata.org/wiki/Q1460271",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1460271",
@@ -838,10 +1010,13 @@
     },
     "_overrides": {
      "attribution": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes column",
       "note": "Marked 'Disputed' (Portrait of Pope Paul V)"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -856,6 +1031,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Fortune Teller",
     "year": "1594",
     "city": "Rome",
@@ -873,10 +1049,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Fortune%20Teller-Caravaggio%20%28Rome%29.jpg?width=420",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Buona_ventura_(Caravaggio_Roma)",
     "wikidata": "https://www.wikidata.org/wiki/Q16534183",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16534183",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -890,6 +1075,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of Maffeo Barberini (Pope Urban VIII)",
     "year": "1593",
     "city": "Florence",
@@ -907,10 +1093,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Pope%20Urban%20VIII-Caravaggio%20%28Maffeo%20Barberini%29.jpg?width=420",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ritratto_di_Maffeo_Barberini_(Corsini)",
     "wikidata": "https://www.wikidata.org/wiki/Q16596970",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16596970",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -924,6 +1119,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Cardsharps",
     "year": "1595",
     "city": "Oxford",
@@ -940,10 +1136,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20I%20bari%20%28Mahon%29.jpg?width=420",
     "wikipedia_it": "https://it.wikipedia.org/wiki/I_bari_(Mahon)",
     "wikidata": "https://www.wikidata.org/wiki/Q17992160",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17992160",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -957,6 +1162,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Bacchus",
     "year": "1598",
     "city": "Florence",
@@ -976,10 +1182,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Bacchus_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Bacco_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2011510",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2011510",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -993,6 +1208,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Supper at Emmaus",
     "year": "1606",
     "city": "Milan",
@@ -1012,10 +1228,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Supper_at_Emmaus_(Caravaggio,_Milan)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Cena_in_Emmaus_(Caravaggio_Milano)",
     "wikidata": "https://www.wikidata.org/wiki/Q2097931",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2097931",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1029,6 +1254,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Flagellation of Christ",
     "year": "1607",
     "city": "Naples",
@@ -1048,10 +1274,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Flagellation_of_Christ_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Flagellazione_di_Cristo_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2264942",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2264942",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1065,6 +1300,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Basket of Fruit",
     "year": "1600",
     "city": "Milan",
@@ -1084,10 +1320,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Basket_of_Fruit_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Canestra_di_frutta",
     "wikidata": "https://www.wikidata.org/wiki/Q2270291",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2270291",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1101,6 +1346,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Denial of Saint Peter",
     "year": "1610",
     "city": "New York",
@@ -1120,6 +1366,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Denial_of_Saint_Peter_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Negazione_di_san_Pietro",
     "wikidata": "https://www.wikidata.org/wiki/Q2270778",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2270778",
@@ -1127,10 +1376,14 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the borough; the city is New York"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "The Denial of Saint Peter — Naples, 1610",
+      "note": ""
      }
     }
    }
@@ -1145,6 +1398,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "David and Goliath",
     "year": "1600",
     "city": "Madrid",
@@ -1164,10 +1418,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/David_and_Goliath_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Davide_e_Golia_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2270955",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2270955",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1181,6 +1444,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Conversion on the Way to Damascus",
     "year": "1600",
     "city": "Rome",
@@ -1200,10 +1464,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Conversion_on_the_Way_to_Damascus",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Conversione_di_san_Paolo_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2273517",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2273517",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1217,6 +1490,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Francis in Meditation",
     "year": "1606",
     "city": "Rome",
@@ -1236,10 +1510,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Francis_in_Prayer_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Francesco_in_meditazione_(Caravaggio_Roma)",
     "wikidata": "https://www.wikidata.org/wiki/Q2275353",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2275353",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1253,6 +1536,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Francis in Meditation",
     "year": "1606",
     "city": "Cremona",
@@ -1272,10 +1556,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Francis_in_Meditation_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Francesco_in_meditazione_(Caravaggio_Cremona)",
     "wikidata": "https://www.wikidata.org/wiki/Q2275371",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2275371",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1289,6 +1582,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Raising of Lazarus",
     "year": "1609",
     "city": "Messina",
@@ -1308,10 +1602,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Raising_of_Lazarus_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Resurrezione_di_Lazzaro_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2277635",
+    "creation_place": "Messina",
+    "creation_lat": 38.1938,
+    "creation_lon": 15.554,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2277635",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1325,6 +1628,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Sacrifice of Isaac",
     "year": "1603",
     "city": "Florence",
@@ -1342,10 +1646,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrifice%20of%20Isaac-Caravaggio%20%28Uffizi%29.jpg?width=420",
     "wikipedia_es": "https://es.wikipedia.org/wiki/El_sacrificio_de_Isaac_(Caravaggio,_Florencia)",
     "wikidata": "https://www.wikidata.org/wiki/Q2284829",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2284829",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1359,6 +1672,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Medusa",
     "year": "1597",
     "city": "Florence",
@@ -1378,10 +1692,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Medusa_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Scudo_con_testa_di_Medusa",
     "wikidata": "https://www.wikidata.org/wiki/Q2293905",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2293905",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1395,6 +1718,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Self-Portrait as Bacchus",
     "year": "1595",
     "city": "Rome",
@@ -1414,10 +1738,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Young_Sick_Bacchus",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Bacchino_malato",
     "wikidata": "https://www.wikidata.org/wiki/Q2293936",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2293936",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1431,6 +1764,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Salome with the Head of John the Baptist",
     "year": "1607",
     "city": "London",
@@ -1450,6 +1784,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Salome_with_the_Head_of_John_the_Baptist_(Caravaggio,_London)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Salom%C3%A8_con_la_testa_del_Battista_(Caravaggio_Londra)",
     "wikidata": "https://www.wikidata.org/wiki/Q2318325",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2318325",
@@ -1457,10 +1794,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the London borough; the city is London"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -1475,6 +1815,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Salome with the Head of John the Baptist",
     "year": "1609",
     "city": "Madrid",
@@ -1494,10 +1835,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Salome_with_the_Head_of_John_the_Baptist_(Caravaggio,_Madrid)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Salom%C3%A8_con_la_testa_del_Battista_(Caravaggio_Madrid)",
     "wikidata": "https://www.wikidata.org/wiki/Q2318957",
+    "creation_place": "Messina",
+    "creation_lat": 38.1938,
+    "creation_lon": 15.554,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2318957",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1511,6 +1861,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Ecce Homo",
     "year": "1605",
     "city": "Genoa",
@@ -1530,10 +1881,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Ecce_Homo_(Caravaggio,_Genoa)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ecce_Homo_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2325834",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2325834",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1547,6 +1907,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Adoration of the Shepherds",
     "year": "1609",
     "city": "Messina",
@@ -1566,10 +1927,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Adoration_of_the_Shepherds_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Adorazione_dei_pastori_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2327715",
+    "creation_place": "Messina",
+    "creation_lat": 38.1938,
+    "creation_lon": 15.554,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2327715",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1583,6 +1953,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Inspiration of Saint Matthew",
     "year": "1602",
     "city": "Rome",
@@ -1602,10 +1973,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Inspiration_of_Saint_Matthew",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Matteo_e_l%27angelo_(Caravaggio_Roma)",
     "wikidata": "https://www.wikidata.org/wiki/Q2337873",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2337873",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1619,6 +1999,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Martyrdom of Saint Matthew",
     "year": "1600",
     "city": "Rome",
@@ -1637,10 +2018,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Martyrdom_of_Saint_Matthew_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Martirio_di_san_Matteo",
     "wikidata": "https://www.wikidata.org/wiki/Q2338417",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2338417",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1654,6 +2044,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of a Courtesan",
     "year": "1597-1599",
     "city": "Berlin",
@@ -1673,6 +2064,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_a_Courtesan_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ritratto_di_Fillide_Melandroni",
     "wikidata": "https://www.wikidata.org/wiki/Q2395137",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2395137",
@@ -1680,16 +2074,18 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
      },
      "year": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia (EN), Portrait of a Courtesan: 'Painted between 1597 and 1599'",
       "note": "Wikidata inception was 1590/1601 (impossibly wide); corrected to the sourced range"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -1704,6 +2100,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Incredulity of Saint Thomas",
     "year": "1601",
     "city": "Potsdam",
@@ -1723,10 +2120,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Incredulity_of_Saint_Thomas_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Incredulit%C3%A0_di_san_Tommaso_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2419166",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2419166",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1740,6 +2146,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Sleeping Cupid",
     "year": "1608",
     "city": "Florence",
@@ -1759,10 +2166,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Sleeping_Cupid_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Amorino_dormiente",
     "wikidata": "https://www.wikidata.org/wiki/Q2429754",
+    "creation_place": "Malta",
+    "creation_lat": 35.8989,
+    "creation_lon": 14.5146,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2429754",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1776,6 +2192,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Judith Beheading Holofernes",
     "year": "1599",
     "city": "Rome",
@@ -1795,6 +2212,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Judith_Beheading_Holofernes_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Giuditta_e_Oloferne_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2470123",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2470123",
@@ -1802,10 +2222,13 @@
     },
     "_overrides": {
      "attribution": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes column",
       "note": "'Disputed attribution. Also attributed to Louis Finson.' (Toulouse Judith)"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -1820,6 +2243,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Boy Peeling Fruit",
     "year": "1592",
     "city": "London",
@@ -1839,6 +2263,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Boy_Peeling_Fruit",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ragazzo_che_monda_un_frutto",
     "wikidata": "https://www.wikidata.org/wiki/Q2574120",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2574120",
@@ -1846,10 +2273,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Hampton Court — Greater London"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -1864,6 +2294,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Taking of Christ",
     "year": "1600",
     "city": "Odesa",
@@ -1877,10 +2308,19 @@
     "genre": "religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20Taking%20of%20Christ%20-%20Odessa.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q25796776",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q25796776",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1894,6 +2334,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Francis of Assisi in Ecstasy",
     "year": "1594",
     "city": "Hartford",
@@ -1913,10 +2354,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Francis_of_Assisi_in_Ecstasy_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Francesco_in_estasi_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2609235",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2609235",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -1930,6 +2380,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Fortune Teller",
     "year": "1594",
     "city": "Paris",
@@ -1949,6 +2400,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Fortune_Teller_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Buona_ventura_(Caravaggio_Parigi)",
     "wikidata": "https://www.wikidata.org/wiki/Q2610675",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2610675",
@@ -1956,10 +2410,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the Louvre quarter; the city is Paris"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -1974,6 +2431,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Boy with a Basket of Fruit",
     "year": "1594",
     "city": "Rome",
@@ -1993,10 +2451,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Boy_with_a_Basket_of_Fruit",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Fanciullo_con_canestro_di_frutta",
     "wikidata": "https://www.wikidata.org/wiki/Q2610936",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2610936",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2010,6 +2477,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Seven Works of Mercy",
     "year": "1600-1607",
     "city": "Naples",
@@ -2029,10 +2497,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Seven_Works_of_Mercy_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Sette_opere_di_Misericordia",
     "wikidata": "https://www.wikidata.org/wiki/Q2626595",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2626595",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2046,6 +2523,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Catherine of Alexandria",
     "year": "1598",
     "city": "Madrid",
@@ -2065,10 +2543,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Catherine_of_Alexandria_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Santa_Caterina_d%27Alessandria_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2627034",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2627034",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2082,6 +2569,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "David with the Head of Goliath",
     "year": "1605",
     "city": "Rome",
@@ -2101,10 +2589,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/David_with_the_Head_of_Goliath_(Caravaggio,_Rome)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Davide_con_la_testa_di_Golia_(Caravaggio_Roma)",
     "wikidata": "https://www.wikidata.org/wiki/Q2627056",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2627056",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2118,6 +2615,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Madonna di Loreto",
     "year": "1605",
     "city": "Rome",
@@ -2137,10 +2635,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_di_Loreto_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_dei_Pellegrini",
     "wikidata": "https://www.wikidata.org/wiki/Q2713203",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2713203",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2154,6 +2661,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Jerome",
     "year": "1606",
     "city": "Rome",
@@ -2173,10 +2681,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Jerome_Writing",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Girolamo_scrivente_(Roma)",
     "wikidata": "https://www.wikidata.org/wiki/Q2715177",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2715177",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2190,6 +2707,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Madonna and Child with Saint Anne",
     "year": "1605",
     "city": "Rome",
@@ -2209,10 +2727,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_with_Saint_Anne_(Dei_Palafrenieri)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_dei_Palafrenieri",
     "wikidata": "https://www.wikidata.org/wiki/Q2715302",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2715302",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2226,6 +2753,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "David with the Head of Goliath",
     "year": "1607",
     "city": "Vienna",
@@ -2245,10 +2773,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/David_with_the_Head_of_Goliath_(Caravaggio,_Vienna)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Davide_con_la_testa_di_Golia_(Caravaggio_Vienna)",
     "wikidata": "https://www.wikidata.org/wiki/Q2721037",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2721037",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2262,6 +2799,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Beheading of Saint John the Baptist",
     "year": "1608",
     "city": "Valletta",
@@ -2281,10 +2819,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Beheading_of_Saint_John_the_Baptist_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Decollazione_di_san_Giovanni_Battista_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2727560",
+    "creation_place": "Malta",
+    "creation_lat": 35.8989,
+    "creation_lon": 14.5146,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2727560",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2298,6 +2845,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Penitent Magdalene",
     "year": "1593",
     "city": "Rome",
@@ -2317,10 +2865,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Penitent_Magdalene_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Maddalena_penitente_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q2732274",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2732274",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2334,6 +2891,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of Maffeo Barberini, later Pope Urban VIII",
     "year": "1598",
     "city": "Rome",
@@ -2353,10 +2911,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Maffeo_Barberini",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ritratto_di_Maffeo_Barberini",
     "wikidata": "https://www.wikidata.org/wiki/Q2734111",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2734111",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2370,6 +2937,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Martha and Mary Magdalene",
     "year": "1598",
     "city": "Detroit",
@@ -2389,10 +2957,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Martha_and_Mary_Magdalene_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Marta_e_Maria_Maddalena",
     "wikidata": "https://www.wikidata.org/wiki/Q2734679",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2734679",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2406,11 +2983,12 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Salome with the head of John the Baptist",
     "country": "Netherlands",
     "location": "Cultural Heritage Agency of the Netherlands Art Collection",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "disputed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "128 × 183.5 cm",
@@ -2424,10 +3002,14 @@
     },
     "_overrides": {
      "year": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikidata inception 1624 is after Caravaggio's death; no Wikipedia article (Netherlands RCE holding, likely a later copy)",
       "note": "date removed as unreliable"
+     },
+     "attribution": {
+      "at": "2026-08-18",
+      "source": "Editorial flag: no Wikipedia article and an impossible Wikidata date (1624); held by the Netherlands RCE, likely a later copy",
+      "note": "Salome — attribution unverified"
      }
     }
    }
@@ -2442,6 +3024,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Descent from the Cross",
     "year": "1600",
     "city": "Annecy",
@@ -2455,10 +3038,19 @@
     "genre": "religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1%20Annecy%2Ccathedral22.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q29338617",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29338617",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2472,12 +3064,13 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Lute Player",
     "city": "Munich",
     "country": "Germany",
     "location": "Bavarian State Painting Collections",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "disputed",
     "status": "present",
     "dimensions": "96.6 × 78.6 cm",
     "genre": "portrait",
@@ -2490,10 +3083,14 @@
     },
     "_overrides": {
      "year": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikidata inception 1591 unverifiable; no Wikipedia article (Munich version)",
       "note": "date removed as unreliable"
+     },
+     "attribution": {
+      "at": "2026-08-18",
+      "source": "Editorial flag: no Wikipedia article; unverifiable date; Munich version of the Lute Player",
+      "note": "attribution unverified"
      }
     }
    }
@@ -2508,6 +3105,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Supper at Emmaus",
     "year": "1601",
     "city": "London",
@@ -2527,6 +3125,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Supper_at_Emmaus_(Caravaggio,_London)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Cena_in_Emmaus_(Caravaggio_Londra)",
     "wikidata": "https://www.wikidata.org/wiki/Q318947",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q318947",
@@ -2534,10 +3135,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the London borough; the city is London"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -2552,6 +3156,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Toothpuller",
     "year": "1608",
     "city": "Florence",
@@ -2565,6 +3170,9 @@
     "genre": "genre art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Toothpuller.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q3202347",
+    "creation_place": "Malta",
+    "creation_lat": 35.8989,
+    "creation_lon": 14.5146,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3202347",
@@ -2572,10 +3180,13 @@
     },
     "_overrides": {
      "attribution": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes column",
       "note": "Marked 'Disputed' (The Toothpuller)"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -2590,6 +3201,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Holy Family with Saint John the Baptist",
     "year": "1600",
     "city": "New York",
@@ -2608,6 +3220,9 @@
     "wikipedia_es": "https://es.wikipedia.org/wiki/La_Sagrada_Familia_y_San_Juan_Bautista_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Sacra_Famiglia_con_san_Giovannino_(Caravaggio_New_York)",
     "wikidata": "https://www.wikidata.org/wiki/Q3212682",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3212682",
@@ -2615,16 +3230,18 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the borough; the city is New York"
      },
      "attribution": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes column",
       "note": "Marked 'Disputed' (Holy Family with St John the Baptist)"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -2639,6 +3256,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Crucifixion of Saint Andrew",
     "year": "1607",
     "city": "Cleveland",
@@ -2658,10 +3276,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Crucifixion_of_Saint_Andrew_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Crocifissione_di_sant%27Andrea_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q3221991",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3221991",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2675,6 +3302,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Young Saint John the Baptist with ram",
     "year": "1602",
     "city": "Rome",
@@ -2693,10 +3321,19 @@
     "wikipedia_es": "https://es.wikipedia.org/wiki/Joven_con_un_cordero",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Giovanni_Battista_(Caravaggio_Capitolino-Pamphilj)",
     "wikidata": "https://www.wikidata.org/wiki/Q3223625",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3223625",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2710,6 +3347,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Sacrifice of Isaac",
     "year": "c. 1598",
     "city": "Princeton",
@@ -2727,6 +3365,9 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrifice%20of%20Isaac-Caravaggio%20%28c.%201603%29.jpg?width=420",
     "wikipedia_es": "https://es.wikipedia.org/wiki/El_sacrificio_de_Isaac_(Caravaggio,_Princeton)",
     "wikidata": "https://www.wikidata.org/wiki/Q3226847",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3226847",
@@ -2734,16 +3375,18 @@
     },
     "_overrides": {
      "year": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia (ES), El sacrificio de Isaac: 'supuestamente pintado en 1598'",
       "note": "Wikidata inception was 1590"
      },
      "attribution": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia (ES), El sacrificio de Isaac: 'de autoría discutida'",
       "note": "Princeton Sacrifice of Isaac — disputed attribution"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -2758,6 +3401,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Still Life with Fruit",
     "year": "1601",
     "city": "Denver",
@@ -2777,10 +3421,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Still_Life_with_Fruit_on_a_Stone_Ledge",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Natura_morta_con_frutta",
     "wikidata": "https://www.wikidata.org/wiki/Q3337119",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3337119",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2794,6 +3447,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint John the Baptist",
     "year": "1598",
     "city": "Toledo",
@@ -2810,10 +3464,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio-Baptist-Toledo.jpg?width=420",
     "wikipedia_es": "https://es.wikipedia.org/wiki/San_Juan_Bautista_(Catedral_de_Toledo)",
     "wikidata": "https://www.wikidata.org/wiki/Q3463868",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3463868",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2827,6 +3490,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint John the Baptist",
     "year": "1604",
     "city": "Rome",
@@ -2844,10 +3508,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20San%20Giovanni%20Battista%20%28Galleria%20Corsini%29.jpg?width=420",
     "wikipedia_es": "https://es.wikipedia.org/wiki/Juan_Bautista_(Galer%C3%ADa_Nacional_de_Arte_Antiguo)",
     "wikidata": "https://www.wikidata.org/wiki/Q3463869",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3463869",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2861,6 +3534,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint John the Baptist in the Wilderness",
     "year": "1605",
     "city": "Kansas City",
@@ -2878,10 +3552,19 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Merisi%2C%20called%20Caravaggio%20-%20Saint%20John%20the%20Baptist%20in%20the%20Wilderness%20-%20Google%20Art%20Project.jpg?width=420",
     "wikipedia_es": "https://es.wikipedia.org/wiki/Juan_Bautista_(Kansas_City)",
     "wikidata": "https://www.wikidata.org/wiki/Q3463877",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3463877",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2895,6 +3578,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint John the Baptist at the fountain",
     "year": "1610",
     "city": "Valletta",
@@ -2914,10 +3598,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/St_John_the_Baptist_at_a_Spring",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Giovanni_Battista_alla_sorgente",
     "wikidata": "https://www.wikidata.org/wiki/Q3463878",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3463878",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -2931,6 +3624,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Amor Vincit Omnia",
     "year": "1601",
     "city": "Berlin",
@@ -2950,6 +3644,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Amor_Vincit_Omnia_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Amor_vincit_omnia_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q474024",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q474024",
@@ -2957,10 +3654,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -2975,6 +3675,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Jerome Writing",
     "year": "1607",
     "city": "Valletta",
@@ -2994,10 +3695,20 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Jerome_Writing_(Caravaggio,_Valletta)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Girolamo_scrivente_(Malta)",
     "wikidata": "https://www.wikidata.org/wiki/Q510799",
+    "creation_place": "Malta",
+    "creation_lat": 35.8989,
+    "creation_lon": 14.5146,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q510799",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "Saint Jerome Writing — painted in Malta, 1607–08",
+      "note": ""
+     }
     }
    }
   },
@@ -3011,6 +3722,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Taking of Christ",
     "year": "1602",
     "city": "Dublin",
@@ -3024,6 +3736,9 @@
     "genre": "religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20The%20Taking%20of%20Christ%20restored.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q541376",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q541376",
@@ -3031,10 +3746,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "normalise administrative name"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3049,6 +3767,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Lute Player",
     "year": "1595",
     "city": "Saint Petersburg",
@@ -3061,10 +3780,19 @@
     "dimensions": "94 × 119 cm",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Caravaggio%20020.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q55647084",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55647084",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3078,6 +3806,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Lute Player",
     "year": "1596",
     "city": "New York",
@@ -3090,6 +3819,9 @@
     "dimensions": "100 × 126.5 cm",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Lute%20Player-Caravaggio%20%28Metropolitan%20Museum%20of%20Art%29.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q55647114",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55647114",
@@ -3097,10 +3829,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the borough; the city is New York"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3115,6 +3850,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Matthew and the Angel",
     "year": "1602",
     "city": "Berlin",
@@ -3134,6 +3870,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Matthew_and_the_Angel",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Matteo_e_l%27angelo_(Caravaggio_opera_d%27arte_perduta)",
     "wikidata": "https://www.wikidata.org/wiki/Q577248",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q577248",
@@ -3141,10 +3880,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3159,6 +3901,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Boy Bitten by a Lizard",
     "year": "1594",
     "city": "London",
@@ -3178,6 +3921,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Boy_Bitten_by_a_Lizard",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ragazzo_morso_da_un_ramarro",
     "wikidata": "https://www.wikidata.org/wiki/Q585437",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q585437",
@@ -3185,10 +3931,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the London borough; the city is London"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3203,6 +3952,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Death of the Virgin",
     "year": "1603-1604",
     "city": "Paris",
@@ -3222,6 +3972,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Death_of_the_Virgin_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Morte_della_Vergine_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q597114",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q597114",
@@ -3229,10 +3982,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the Louvre quarter; the city is Paris"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3247,6 +4003,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint Jerome penitent",
     "year": "1600",
     "city": "Montserrat",
@@ -3266,6 +4023,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Jerome_in_Meditation_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Girolamo_in_meditazione",
     "wikidata": "https://www.wikidata.org/wiki/Q626791",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q626791",
@@ -3273,10 +4033,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Museu de Montserrat"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3291,6 +4054,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Musicians",
     "year": "1595",
     "city": "New York",
@@ -3310,6 +4074,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Musicians_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Concerto_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q655705",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q655705",
@@ -3317,10 +4084,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "P131 gave the borough; the city is New York"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3335,6 +4105,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Cardsharps",
     "year": "1596",
     "city": "Fort Worth",
@@ -3354,10 +4125,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Cardsharps",
     "wikipedia_it": "https://it.wikipedia.org/wiki/I_bari",
     "wikidata": "https://www.wikidata.org/wiki/Q663133",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q663133",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3371,6 +4151,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of a gentleman (Scipione Borghese?)",
     "year": "1601",
     "city": "Montepulciano",
@@ -3384,10 +4165,19 @@
     "genre": "portrait",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Merisi%20known%20as%20Caravaggio%20-%20Portrait%20of%20a%20gentleman%20%28Scipione%20Borghese%3F%29%20-%20Google%20Art%20Project.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q67204634",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q67204634",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3401,6 +4191,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Crucifixion of Saint Peter",
     "year": "1600",
     "city": "Rome",
@@ -3420,10 +4211,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Crucifixion_of_Saint_Peter_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Crocifissione_di_san_Pietro_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q685916",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q685916",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3437,6 +4237,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Madonna of the Rosary",
     "year": "1607",
     "city": "Vienna",
@@ -3456,10 +4257,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_of_the_Rosary_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_del_Rosario_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q698228",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q698228",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3473,6 +4283,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Rest on the Flight into Egypt",
     "year": "1597",
     "city": "Rome",
@@ -3492,10 +4303,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Rest_on_the_Flight_into_Egypt_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Riposo_durante_la_fuga_in_Egitto_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q745098",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q745098",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3509,6 +4329,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Narcissuss",
     "year": "1600",
     "city": "Rome",
@@ -3528,6 +4349,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Narcissus_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Narciso_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q746716",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q746716",
@@ -3535,10 +4359,13 @@
     },
     "_overrides": {
      "attribution": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes column",
       "note": "Marked 'Disputed' (Narcissus)"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }
@@ -3553,6 +4380,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Vision of Saint Jerome",
     "city": "Worcester",
     "country": "United States",
@@ -3581,6 +4409,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Saint John the Baptist",
     "year": "1610",
     "city": "Rome",
@@ -3599,10 +4428,19 @@
     "wikipedia_es": "https://es.wikipedia.org/wiki/Juan_Bautista_(Galer%C3%ADa_Borghese)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/San_Giovanni_Battista_(Caravaggio_Borghese)",
     "wikidata": "https://www.wikidata.org/wiki/Q9015206",
+    "creation_place": "Naples",
+    "creation_lat": 40.8518,
+    "creation_lon": 14.2681,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9015206",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3616,6 +4454,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Christ at the Column",
     "year": "1606",
     "city": "Rouen",
@@ -3635,10 +4474,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Christ_at_the_Column_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Flagellazione_di_Cristo_(Caravaggio_Rouen)",
     "wikidata": "https://www.wikidata.org/wiki/Q931837",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q931837",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3652,6 +4500,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Portrait of Alof de Wignacourt and his Page",
     "year": "1600",
     "country": "France",
@@ -3670,10 +4519,19 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Alof_de_Wignacourt_and_his_Page",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Ritratto_di_Alof_de_Wignacourt",
     "wikidata": "https://www.wikidata.org/wiki/Q945164",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q945164",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
     }
    }
   },
@@ -3687,8 +4545,9 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "The Calling of Saint Matthew",
-    "year": "1609",
+    "year": "1599-1600",
     "city": "Rome",
     "country": "Italy",
     "location": "Contarelli Chapel",
@@ -3706,10 +4565,25 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/The_Calling_of_Saint_Matthew",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Vocazione_di_san_Matteo",
     "wikidata": "https://www.wikidata.org/wiki/Q969377",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q969377",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "year": {
+      "at": "2026-08-18",
+      "source": "Contarelli Chapel 'Calling of Saint Matthew' — universally dated c. 1599–1600",
+      "note": "Wikidata inception (1609) is erroneous for this work"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "Contarelli Chapel, Rome (c. 1599–1600)",
+      "note": "overrides the itinerary default (its Wikidata date was wrong)"
+     }
     }
    }
   },
@@ -3723,6 +4597,7 @@
     ]
    },
    "properties": {
+    "painter": "Caravaggio",
     "title": "Christ on the Mount of Olives",
     "year": "1603-1605",
     "city": "Berlin",
@@ -3742,6 +4617,9 @@
     "wikipedia_en": "https://en.wikipedia.org/wiki/Christ_on_the_Mount_of_Olives_(Caravaggio)",
     "wikipedia_it": "https://it.wikipedia.org/wiki/Cristo_sul_Monte_degli_Ulivi_(Caravaggio)",
     "wikidata": "https://www.wikidata.org/wiki/Q976354",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q976354",
@@ -3749,10 +4627,13 @@
     },
     "_overrides": {
      "city": {
-      "by": "claude",
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
+     },
+     "creation": {
+      "at": "2026-08-18",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     }
    }

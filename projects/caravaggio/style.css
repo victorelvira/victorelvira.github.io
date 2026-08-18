@@ -40,6 +40,24 @@ body {
 .chip.igl input { accent-color: var(--church); }
 .chip.pri input { accent-color: var(--private); }
 
+/* map mode switch: today's location vs where it was painted */
+#modes {
+  display: flex; gap: 6px; padding: 8px 16px; background: var(--bar);
+  border-bottom: 1px solid var(--line);
+}
+.mode-btn {
+  font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
+}
+.mode-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* map 2 (painted) pin colour + hide venue-type controls that don't apply there */
+.pin.painted { background: #b0682a; }
+body.mode-painted .filters .chip.mus,
+body.mode-painted .filters .chip.igl,
+body.mode-painted .filters .chip.pri,
+body.mode-painted .legend { display: none; }
+
 /* time slider (dual-handle range) — filters the map + panel by year painted */
 #timeline {
   display: flex; align-items: center; gap: 14px;
