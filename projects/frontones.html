@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Frontones · Cantabria y Euskadi</title>
+  <meta name="description" content="Mapa de frontones de Cantabria y el País Vasco. Datos abiertos de OpenStreetMap y el Gobierno de Cantabria.">
+  <meta name="theme-color" content="#1b5e3f">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="frontones/style.css">
+</head>
+<body>
+  <header id="bar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <strong>Frontones</strong>
+        <small>Cantabria · Euskadi</small>
+      </div>
+    </div>
+    <div id="stats" class="stats">…</div>
+    <div class="filters">
+      <label class="chip cb"><input type="checkbox" data-region="cantabria" checked> Cantabria</label>
+      <label class="chip pv"><input type="checkbox" data-region="euskadi" checked> Euskadi</label>
+      <label class="chip ver"><input type="checkbox" id="solo-verificados"> Solo verificados</label>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+  <footer id="foot">
+    <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
+    · Datos: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a> (ODbL)
+    · <a href="https://mapas.cantabria.es/" target="_blank" rel="noopener">Gobierno de Cantabria</a>
+    · ¿Falta uno o hay un error? <span class="hint">púlsalo y corrígelo en OSM</span>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <script src="frontones/app.js"></script>
+</body>
+</html>

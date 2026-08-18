@@ -1,0 +1,82 @@
+:root {
+  --cb: #1b5e3f;      /* Cantabria verde */
+  --pv: #b23a2e;      /* Euskadi rojo */
+  --bg: #f6f5f1;
+  --bar: #ffffff;
+  --ink: #1d2321;
+  --muted: #6b7370;
+  --line: #e3e1da;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font: 15px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--ink); background: var(--bg);
+  display: flex; flex-direction: column; height: 100dvh;
+}
+
+#bar {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 10px 16px; background: var(--bar);
+  border-bottom: 1px solid var(--line); z-index: 500;
+}
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+.brand strong { display: block; font-size: 16px; letter-spacing: .2px; }
+.brand small { color: var(--muted); }
+.brand .dot {
+  width: 22px; height: 22px; border-radius: 6px;
+  background: linear-gradient(135deg, var(--cb) 50%, var(--pv) 50%);
+}
+.stats { color: var(--muted); font-variant-numeric: tabular-nums; }
+.stats b { color: var(--ink); }
+.stats .ok, .conf.ok { color: var(--cb); }
+.chip.ver { color: #8a6d1a; }
+
+.filters { display: flex; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+  cursor: pointer; user-select: none; font-size: 13px; background: #fff;
+}
+.chip input { accent-color: currentColor; margin: 0; }
+.chip.cb { color: var(--cb); }
+.chip.pv { color: var(--pv); }
+
+#map { flex: 1; }
+
+#foot {
+  padding: 7px 16px; font-size: 12px; color: var(--muted);
+  background: var(--bar); border-top: 1px solid var(--line);
+}
+#foot a { color: inherit; }
+#foot a.home { color: var(--cb); font-weight: 600; text-decoration: none; }
+#foot .hint { color: var(--ink); }
+
+/* Popups */
+.leaflet-popup-content { margin: 12px 14px; min-width: 190px; }
+.pop h3 { margin: 0 0 3px; font-size: 15px; font-weight: 400; }
+.pop h3 .nm { color: var(--ink); }
+.pop h3 .muni { font-weight: 700; }               /* municipio: lo más prominente */
+.pop .sub { color: var(--ink); font-size: 12px; margin-bottom: 4px; }
+.pop .addr { color: var(--muted); font-size: 11px; margin-bottom: 8px; }  /* dirección: tenue */
+.pop .conf { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+.pop .conf.warn { color: #a06a12; }
+.pop .ids { margin-top: 8px; font-size: 10px; color: var(--muted); font-family: ui-monospace, monospace; }
+.pop a.tag.src { text-decoration: none; }
+.pop .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.pop .tag {
+  font-size: 11px; padding: 2px 7px; border-radius: 999px;
+  background: #eef0ec; color: #444;
+}
+.pop .tag.src { background: #e8f1eb; color: var(--cb); }
+.pop a.edit {
+  display: inline-block; font-size: 12px; font-weight: 600;
+  color: var(--cb); text-decoration: none;
+}
+.pop a.edit:hover { text-decoration: underline; }
+
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#161a18; --bar:#1e2320; --ink:#e9ece9; --muted:#9aa39e; --line:#2c332f; }
+  .chip, .pop .tag { background: #232925; }
+  .pop .tag { color: #cbd3ce; }
+}
