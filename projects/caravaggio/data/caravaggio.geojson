@@ -141,7 +141,6 @@
    },
    "properties": {
     "title": "The Healing of Tobit",
-    "year": "1617",
     "city": "Berlin",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
@@ -164,6 +163,12 @@
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
+     },
+     "year": {
+      "by": "claude",
+      "at": "2026-08-18",
+      "source": "Wikidata inception 1617 is after Caravaggio's death (1610); no Wikipedia article to verify",
+      "note": "date removed as unreliable (leaves it undated rather than assert a false year)"
      }
     }
    }
@@ -1650,7 +1655,7 @@
    },
    "properties": {
     "title": "Portrait of a Courtesan",
-    "year": "1590-1601",
+    "year": "1597-1599",
     "city": "Berlin",
     "country": "Germany",
     "location": "Bode Museum",
@@ -1679,6 +1684,12 @@
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
+     },
+     "year": {
+      "by": "claude",
+      "at": "2026-08-18",
+      "source": "Wikipedia (EN), Portrait of a Courtesan: 'Painted between 1597 and 1599'",
+      "note": "Wikidata inception was 1590/1601 (impossibly wide); corrected to the sourced range"
      }
     }
    }
@@ -2396,7 +2407,6 @@
    },
    "properties": {
     "title": "Salome with the head of John the Baptist",
-    "year": "1624",
     "country": "Netherlands",
     "location": "Cultural Heritage Agency of the Netherlands Art Collection",
     "kind": "museum",
@@ -2411,6 +2421,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28108359",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "year": {
+      "by": "claude",
+      "at": "2026-08-18",
+      "source": "Wikidata inception 1624 is after Caravaggio's death; no Wikipedia article (Netherlands RCE holding, likely a later copy)",
+      "note": "date removed as unreliable"
+     }
     }
    }
   },
@@ -2455,7 +2473,6 @@
    },
    "properties": {
     "title": "Lute Player",
-    "year": "1591",
     "city": "Munich",
     "country": "Germany",
     "location": "Bavarian State Painting Collections",
@@ -2470,6 +2487,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30095295",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "year": {
+      "by": "claude",
+      "at": "2026-08-18",
+      "source": "Wikidata inception 1591 unverifiable; no Wikipedia article (Munich version)",
+      "note": "date removed as unreliable"
+     }
     }
    }
   },
@@ -2686,12 +2711,12 @@
    },
    "properties": {
     "title": "Sacrifice of Isaac",
-    "year": "1590",
+    "year": "c. 1598",
     "city": "Princeton",
     "country": "United States",
     "location": "Princeton University",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "disputed",
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "116 × 173 cm",
@@ -2706,6 +2731,20 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3226847",
      "retrieved_at": "2026-08-18"
+    },
+    "_overrides": {
+     "year": {
+      "by": "claude",
+      "at": "2026-08-18",
+      "source": "Wikipedia (ES), El sacrificio de Isaac: 'supuestamente pintado en 1598'",
+      "note": "Wikidata inception was 1590"
+     },
+     "attribution": {
+      "by": "claude",
+      "at": "2026-08-18",
+      "source": "Wikipedia (ES), El sacrificio de Isaac: 'de autoría discutida'",
+      "note": "Princeton Sacrifice of Isaac — disputed attribution"
+     }
     }
    }
   },
