@@ -1101,15 +1101,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.24922,
-     43.77078
+     12.48278,
+     41.89333
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "Portrait of Maffeo Barberini (Pope Urban VIII)",
     "year": "1593",
-    "city": "Florence",
+    "city": "Rome",
     "country": "Italy",
     "location": "Palazzo Corsini",
     "kind": "museum",
@@ -1237,8 +1237,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.18806,
-     45.47194
+     9.18782,
+     45.47196
     ]
    },
    "properties": {
@@ -2429,8 +2429,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -2439,7 +2439,7 @@
     "year": "1594",
     "city": "Paris",
     "country": "France",
-    "location": "Louvre Museum",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2473,7 +2473,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "louvre-museum"
+    "museum_id": "louvre"
    }
   },
   {
@@ -3603,8 +3603,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58096,
-     39.04497
+     -94.58084,
+     39.04531
     ]
    },
    "properties": {
@@ -4025,8 +4025,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4035,7 +4035,7 @@
     "year": "1603-1604",
     "city": "Paris",
     "country": "France",
-    "location": "Louvre Museum",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -4069,7 +4069,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "louvre-museum"
+    "museum_id": "louvre"
    }
   },
   {
@@ -4585,8 +4585,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4594,7 +4594,7 @@
     "title": "Portrait of Alof de Wignacourt and his Page",
     "year": "1600",
     "country": "France",
-    "location": "Department of Paintings of the Louvre",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -4623,7 +4623,8 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "department-of-paintings-of-the-louvre"
+    "museum_id": "louvre",
+    "city": "Paris"
    }
   },
   {

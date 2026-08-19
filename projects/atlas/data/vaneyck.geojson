@@ -1,0 +1,875 @@
+{
+ "type": "FeatureCollection",
+ "_note": "Canon from List of works by Jan van Eyck (Wikipedia). Coords via MediaWiki API.",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.72706,
+     51.05297
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Ghent Altarpiece",
+    "year": "c. 1420-32",
+    "city": "Ghent",
+    "location": "St Bavo's Cathedral",
+    "attribution": "generally accepted",
+    "dimensions": "3.4 m × 5.2 m, open view 3.4 m × 2.23 m, closed view cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Ghent_Altarpiece_Google_Art_Project.jpg/500px-Ghent_Altarpiece_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "st-bavo-s-cathedral",
+    "country": "Belgium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     24.15061,
+     45.7965
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of a Man with a Blue Chaperon",
+    "year": "c. 1430",
+    "city": "Sibiu",
+    "location": "Brukenthal National Museum",
+    "attribution": "generally accepted",
+    "dimensions": "22.5 cm × 16.6 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Jan_van_Eyck_-_Man_in_a_Blue_Cap_%28c.1430%29.jpg/500px-Jan_van_Eyck_-_Man_in_a_Blue_Cap_%28c.1430%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "brukenthal-national-museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68612,
+     45.07405
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Saint Francis Receiving the Stigmata",
+    "year": "c. 1430-32",
+    "city": "Turin",
+    "country": "Italy",
+    "location": "Sabauda Gallery",
+    "attribution": "generally accepted",
+    "dimensions": "29.3 cm × 33.4 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Saint_Francis_of_Assisi_Receiving_the_Stigmata_Turin.jpg/500px-Saint_Francis_of_Assisi_Receiving_the_Stigmata_Turin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "sabauda-gallery"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.181,
+     39.966
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Saint Francis Receiving the Stigmata",
+    "year": "1430-32",
+    "location": "Philadelphia Museum of Art",
+    "attribution": "generally accepted",
+    "dimensions": "12.7 cm × 14.6 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Attributed_to_Jan_van_Eyck%2C_Netherlandish_%28active_Bruges%29%2C_c._1395_-_1441_-_Saint_Francis_of_Assisi_Receiving_the_Stigmata_-_Google_Art_Project.jpg/500px-Attributed_to_Jan_van_Eyck%2C_Netherlandish_%28active_Bruges%29%2C_c._1395_-_1441_-_Saint_Francis_of_Assisi_Receiving_the_Stigmata_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "city": "Philadelphia",
+    "country": "United States"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Crucifixion and Last Judgement",
+    "year": "c. 1430-40",
+    "city": "New York",
+    "location": "Metropolitan Museum of Art",
+    "attribution": "generally accepted",
+    "dimensions": "56.5 cm × 19.5 cm each cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Jan_van_Eyck_-_Crucifixion_and_Last_Judgement_diptych_%28c._1436-38%29.jpg/500px-Jan_van_Eyck_-_Crucifixion_and_Last_Judgement_diptych_%28c._1436-38%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "country": "United States"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of Cardinal Niccolò Albergati",
+    "year": "c. 1431",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "dimensions": "34 cm × 29.5 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Jan_van_Eyck_-_Kardinal_Niccol%C3%B2_Albergati_-_Google_Art_Project.jpg/500px-Jan_van_Eyck_-_Kardinal_Niccol%C3%B2_Albergati_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Léal Souvenir",
+    "year": "1432",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "dimensions": "33.3 cm × 18.9 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Eyck%2C_Jan_van_-_Portrait_of_a_Young_Man_%28Tymotheos%29_-_National_Gallery%2C_London.jpg/500px-Eyck%2C_Jan_van_-_Portrait_of_a_Young_Man_%28Tymotheos%29_-_National_Gallery%2C_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of a Man (Self Portrait?)",
+    "year": "1433",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "dimensions": "25.5 cm × 19 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/%D7%99%D7%90%D7%9F_%D7%95%D7%90%D7%9F_%D7%90%D7%99%D7%99%D7%A7.jpg/500px-%D7%99%D7%90%D7%9F_%D7%95%D7%90%D7%9F_%D7%90%D7%99%D7%99%D7%A7.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Arnolfini Portrait",
+    "year": "1434",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "dimensions": "82 cm × 59.5 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/500px-Van_Eyck_-_Arnolfini_Portrait.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.8914
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Annunciation",
+    "year": "1434-36",
+    "city": "Washington",
+    "country": "United States",
+    "location": "National Gallery of Art",
+    "attribution": "generally accepted",
+    "dimensions": "90.2 cm × 34.1 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg/500px-Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery-of-art"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Annunciation",
+    "year": "1434-36",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Thyssen-Bornemisza Museum",
+    "attribution": "generally accepted",
+    "dimensions": "39 cm × 24 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Jan_van_Eyck%2C_Around_1390-1441_-_The_Annuciation_Diptych_-_Google_Art_Project.jpg/500px-Jan_van_Eyck%2C_Around_1390-1441_-_The_Annuciation_Diptych_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "thyssen-bornemisza-museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of Baudouin de Lannoy",
+    "year": "1435",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "dimensions": "26 cm × 20 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Jan_van_Eyck_%28um_1390-1400_-_1441%29_-_Baudouin_de_Lannoy_-_525G_-_Gem%C3%A4ldegalerie.jpg/500px-Jan_van_Eyck_%28um_1390-1400_-_1441%29_-_Baudouin_de_Lannoy_-_525G_-_Gem%C3%A4ldegalerie.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Madonna of Chancellor Rolin",
+    "year": "1435",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
+    "attribution": "generally accepted",
+    "dimensions": "66 cm × 62 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Louvre%29.webp/500px-The_Virgin_with_Chancellor_Rolin_by_Jan_van_Eyck_%28Louvre%29.webp.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "louvre"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of Jan de Leeuw",
+    "year": "1436",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "dimensions": "24.5 cm × 19 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Portrait_of_jan_de_leeuw.jpg/500px-Portrait_of_jan_de_leeuw.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.22667,
+     51.20528
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Virgin and Child with Canon van der Paele",
+    "year": "1436",
+    "city": "Bruges",
+    "location": "Groeningemuseum",
+    "attribution": "generally accepted",
+    "dimensions": "1.22 m × 1.57 m cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/La_Madone_au_Chanoine_Van_der_Paele.jpg/500px-La_Madone_au_Chanoine_Van_der_Paele.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "groeningemuseum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.41611,
+     51.315
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Dresden Triptych",
+    "year": "1437",
+    "city": "Kassel",
+    "country": "Germany",
+    "location": "Gemäldegalerie Alte Meister",
+    "attribution": "generally accepted",
+    "dimensions": "33 cm × 27.5 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Dresden-triptych-4394.jpg/500px-Dresden-triptych-4394.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie-alte-meister"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Lucca Madonna",
+    "year": "c. 1437",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "location": "Städel Museum",
+    "attribution": "generally accepted",
+    "dimensions": "65.7 cm × 49.6 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jan_van_Eyck_-_Lucca_Madonna_-_Google_Art_Project.jpg/500px-Jan_van_Eyck_-_Lucca_Madonna_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "stadel-museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of Giovanni di Nicolao Arnolfini",
+    "year": "1438",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "dimensions": "29 cm × 20 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Jan_van_Eyck_-_Bildnis_eines_Mannes_%28aus_der_Familie_Arnolfini%29%2C_1438_-_1441%2C_523A.jpg/500px-Jan_van_Eyck_-_Bildnis_eines_Mannes_%28aus_der_Familie_Arnolfini%29%2C_1438_-_1441%2C_523A.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Madonna in the Church",
+    "year": "c. 1438-40",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "dimensions": "31 cm × 14 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Jan_van_Eyck_-_The_Madonna_in_the_Church_-_Google_Art_Project.jpg/500px-Jan_van_Eyck_-_The_Madonna_in_the_Church_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.22667,
+     51.20528
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of Margaret van Eyck",
+    "year": "1439",
+    "city": "Bruges",
+    "location": "Groeningemuseum",
+    "attribution": "generally accepted",
+    "dimensions": "41.2 cm × 34.6 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Jan_van_Eyck_-_Portrait_of_Margaret_van_Eyck_%281439%29_framed.jpg/500px-Jan_van_Eyck_-_Portrait_of_Margaret_van_Eyck_%281439%29_framed.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "groeningemuseum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.39435,
+     51.20882
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Madonna at the Fountain",
+    "year": "1439",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "attribution": "generally accepted",
+    "dimensions": "19 cm × 12 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Jan_van_eyck%2C_madonna_della_fontana%2C_1439_%28anversa%2C_koninklijk_museum%29_00.jpg/500px-Jan_van_eyck%2C_madonna_della_fontana%2C_1439_%28anversa%2C_koninklijk_museum%29_00.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "city": "Antwerp",
+    "country": "Belgium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9672,
+     40.7711
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Madonna of Jan Vos",
+    "year": "1441-43",
+    "city": "New York",
+    "location": "Frick Collection",
+    "attribution": "generally accepted",
+    "dimensions": "47.3 cm × 61.3 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Jan_van_Eyck_-_Virgin_and_Child%2C_with_Saints_and_Donor_-_1441_-_Frick_Collection.jpg/500px-Jan_van_Eyck_-_Virgin_and_Child%2C_with_Saints_and_Donor_-_1441_-_Frick_Collection.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "frick-collection",
+    "country": "United States"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68548,
+     45.0711
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Turin-Milan Hours",
+    "year": "c. 1420",
+    "location": "Turin City Museum of Ancient Art",
+    "attribution": "generally accepted",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/14th-century_painters_-_Les_Tr%C3%A8s_Belles_Heures_de_Notre_Dame_de_Jean_de_Berry_-_WGA16014.jpg/500px-14th-century_painters_-_Les_Tr%C3%A8s_Belles_Heures_de_Notre_Dame_de_Jean_de_Berry_-_WGA16014.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "turin-city-museum-of-ancient-art"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.47334,
+     51.91421
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "The Three Marys at the Tomb",
+    "year": "c. 1410-26",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "location": "Museum Boijmans Van Beuningen",
+    "attribution": "attributed",
+    "dimensions": "71.5 cm × 90 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Hubert_van_Eyck_or_Jan_van_Eyck_or_both_-_The_Three_Marys_at_the_Tomb_-_Google_Art_Project.jpg/500px-Hubert_van_Eyck_or_Jan_van_Eyck_or_both_-_The_Three_Marys_at_the_Tomb_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museum-boijmans-van-beuningen"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.6922,
+     40.4139
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "The Fountain of Life",
+    "year": "c. 1432",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Museo del Prado",
+    "attribution": "workshop",
+    "dimensions": "181 cm c 119 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/La_Fuente_de_la_Gracia.jpg/500px-La_Fuente_de_la_Gracia.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museo-del-prado"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Portrait of a Man with Carnation",
+    "year": "c. 1436",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "workshop",
+    "dimensions": "40 cm × 31 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Jan_van_Eyck_%28successors%29_-_Man_with_pinks_-_Google_Art_Project.jpg/500px-Jan_van_Eyck_%28successors%29_-_Man_with_pinks_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Bruges",
+    "creation_lat": 51.2093,
+    "creation_lon": 3.2247,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.33389,
+     45.44056
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Crucifixion (after van Eyck?)",
+    "city": "Venice",
+    "country": "Italy",
+    "location": "Ca' d'Oro",
+    "attribution": "workshop",
+    "dimensions": "46 cm × 31 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Crocifissione_di_Jan_van_Eyck%2C2.JPG/500px-Crocifissione_di_Jan_van_Eyck%2C2.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "ca-d-oro"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     144.96889,
+     -37.8225
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Ince Hall Madonna (Virgin and Child Reading)",
+    "city": "Melbourne",
+    "location": "National Gallery of Victoria",
+    "attribution": "workshop",
+    "dimensions": "26.5 x 19.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Manner_of_van_Eyck_-_The_Virgin_and_Child_%28National_Gallery_of_Victoria%29.jpg/500px-Manner_of_van_Eyck_-_The_Virgin_and_Child_%28National_Gallery_of_Victoria%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "country": "Australia"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Christ on the Cross with the Virgin and Saint John",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "workshop",
+    "dimensions": "43 cm × 26 cm cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Anonymous_-_Christ_on_the_Cross_-_525_F_-_Gem%C3%A4ldegalerie.jpg/500px-Anonymous_-_Christ_on_the_Cross_-_525_F_-_Gem%C3%A4ldegalerie.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.0647,
+     42.3594
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Saint Jerome in his Study",
+    "location": "Detroit Institute of Arts",
+    "attribution": "workshop",
+    "dimensions": "20.6 x 13.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jan_van_Eyck_-_Saint_Jerome_in_His_Study_DIA.jpg/500px-Jan_van_Eyck_-_Saint_Jerome_in_His_Study_DIA.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "_source": {
+     "source": "Wikipedia: List of works by Jan van Eyck",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "city": "Detroit",
+    "country": "United States"
+   }
+  }
+ ]
+}

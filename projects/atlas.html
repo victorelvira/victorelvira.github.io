@@ -12,18 +12,18 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Interactive Atlas of Painting">
   <meta property="og:description" content="Masterpieces in space and time — where the great painters' works are today and where they were made.">
-  <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg?width=1200">
+  <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Judith%20Beheading%20Holofernes%20-%20Caravaggio.jpg?width=1200">
   <meta property="og:url" content="https://victorelvira.github.io/projects/atlas.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=18">
+  <link rel="stylesheet" href="atlas/style.css?v=21">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
-    <a class="nav-home" href="https://victorelvira.github.io">other interactive projects</a>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects/">other interactive projects</a>
   </nav>
   <header id="bar">
     <div class="brand">
@@ -44,8 +44,8 @@
       <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
       <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
       <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
-      <label class="chip att" title="Show only works of accepted attribution — hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked> Accepted attribution</label>
-      <button id="locate" class="chip btn" type="button">📍 Nearest to me</button>
+      <label class="chip att" title="Show only works of accepted attribution — hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked> Accepted only</label>
+      <button id="locate" class="chip btn" type="button" title="Find the painting nearest to your location">📍 Near me</button>
     </div>
   </header>
 
@@ -92,6 +92,6 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=18"></script>
+  <script src="atlas/app.js?v=21"></script>
 </body>
 </html>

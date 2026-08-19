@@ -23,14 +23,27 @@ const PAINTERS = [
   { slug: "masaccio", name: "Masaccio", file: "atlas/data/masaccio.geojson" },
   { slug: "titian", name: "Titian", file: "atlas/data/titian.geojson" },
   { slug: "vermeer", name: "Vermeer", file: "atlas/data/vermeer.geojson" },
+  { slug: "rembrandt", name: "Rembrandt", file: "atlas/data/rembrandt.geojson" },
+  { slug: "rubens", name: "Rubens", file: "atlas/data/rubens.geojson" },
+  { slug: "vaneyck", name: "Jan van Eyck", file: "atlas/data/vaneyck.geojson" },
+  { slug: "bruegel", name: "Pieter Bruegel the Elder", file: "atlas/data/bruegel.geojson" },
+  { slug: "durer", name: "Albrecht Dürer", file: "atlas/data/durer.geojson" },
+  { slug: "bosch", name: "Hieronymus Bosch", file: "atlas/data/bosch.geojson" },
+  { slug: "fraangelico", name: "Fra Angelico", file: "atlas/data/fraangelico.geojson" },
+  { slug: "piero", name: "Piero della Francesca", file: "atlas/data/piero.geojson" },
+  { slug: "elgreco", name: "El Greco", file: "atlas/data/elgreco.geojson" },
+  { slug: "poussin", name: "Nicolas Poussin", file: "atlas/data/poussin.geojson" },
+  { slug: "veronese", name: "Veronese", file: "atlas/data/veronese.geojson" },
+  { slug: "mantegna", name: "Mantegna", file: "atlas/data/mantegna.geojson" },
 ];
-const DATA_V = "18";   // bump alongside atlas.html ?v= when the geojson changes (cache-bust)
+const DATA_V = "21";   // bump alongside atlas.html ?v= when the geojson changes (cache-bust)
 
 // Each painter has a FIXED colour, by its position in the manifest (stable, always the
 // same). The palette cycles if there are ever more painters than colours.
 const PALETTE = [
   "#7a4a2b", "#3f6fb0", "#4a8f5f", "#9c4f7c", "#c8892a", "#2f8f8f", "#8a5cc0", "#b0483a",
   "#5b7f2f", "#c0568a", "#3a6b8f", "#8a6d2f", "#6a4fb0", "#2f8f6a", "#a0562a", "#4a4a8f",
+  "#7d9b2f", "#b04f6a", "#2f6f9c", "#9c7a2f", "#5f4a9c", "#2f9c8a", "#b06a3a", "#6a5f4a",
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -69,12 +82,15 @@ legend.addTo(map);
 function updateLegend() {
   if (!legendDiv) return;
   const shown = PAINTERS.filter(p => state.painters[p.name] !== false);
-  legendDiv.style.display = shown.length ? "" : "none";
-  if (!shown.length) return;
-  if (shown.length > 12) { legendDiv.innerHTML = `<div class="row">${shown.length} painters</div>`; return; }
-  const rows = shown.map(p => `<span class="k" style="background:${colorFor(p.name)}"></span>${esc(p.name)}`).join(" ");
+  // Only useful when focused on a few painters — hidden by default (all/most selected)
+  // so it never covers the map. Appears once you narrow to a handful.
+  if (!shown.length || shown.length > 8 || shown.length === PAINTERS.length) {
+    legendDiv.style.display = "none"; return;
+  }
+  legendDiv.style.display = "";
+  const rows = shown.map(p => `<span class="le"><span class="k" style="background:${colorFor(p.name)}"></span>${esc(p.name)}</span>`).join("");
   legendDiv.innerHTML = `<div class="row">${rows}` +
-    (shown.length > 1 ? ` <span class="k" style="background:${MULTI_COLOR}"></span>Several` : "") + `</div>`;
+    (shown.length > 1 ? `<span class="le"><span class="k" style="background:${MULTI_COLOR}"></span>Several</span>` : "") + `</div>`;
 }
 
 let allFeatures = [];   // raw point features from the geojson
@@ -204,7 +220,8 @@ function placePopup(feats) {
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
 
-  const items = feats.map(f => {
+  const POPUP_CAP = 12;   // a venue can hold 200+ works — cap the popup, send the rest to the list
+  const items = feats.slice(0, POPUP_CAP).map(f => {
     const p = f.properties;
     const yr = p.year ? ` <span class="yr">${esc(p.year)}</span>` : "";
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
@@ -227,7 +244,14 @@ function placePopup(feats) {
       `${provLine(p, WORK_SKIP)}</div></li>`;
   }).join("");
 
-  return `<div class="card">${head}<ul class="works">${items}</ul></div>`;
+  const extra = feats.length - POPUP_CAP;
+  let more = "";
+  if (extra > 0) {
+    more = !painted
+      ? `<button type="button" class="pop-more" data-museum="${esc(museumKey(p0))}">+ ${extra} more — show all ${feats.length} in the list →</button>`
+      : `<div class="pop-more-note">+ ${extra} more painted here — zoom in or filter to narrow</div>`;
+  }
+  return `<div class="card">${head}<ul class="works">${items}</ul>${more}</div>`;
 }
 
 function refresh() {
@@ -279,7 +303,8 @@ function buildMarkers() {
     const [lon, lat] = activeCoord(feats[0]);
     const kind = feats[0].properties.kind || "museum";
     const marker = L.marker([lat, lon], { works: feats.length })
-      .bindPopup("", { maxWidth: 320, minWidth: 240 });
+      // autoPan:false → opening a popup never scrolls the map out from under you
+      .bindPopup("", { maxWidth: 320, minWidth: 240, autoPan: false });
     places.push({ marker, kind, feats, lat, lon, shown: false });
     for (const f of feats) works.push({ p: f.properties, lat, lon, marker });
   }
@@ -301,6 +326,11 @@ Promise.all(PAINTERS.map(p =>
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     buildMarkers();
     map.on("moveend", renderPanel);
+    // "show all N in the list" inside a capped popup → filter the panel to that venue
+    map.on("popupopen", e => {
+      const b = e.popup.getElement() && e.popup.getElement().querySelector(".pop-more");
+      if (b) b.addEventListener("click", () => { map.closePopup(); selectMuseum(b.dataset.museum); });
+    });
     window.addEventListener("hashchange", () => { applyHash(); buildMarkers(); });
   })
   .catch(err => {
@@ -432,11 +462,11 @@ function renderMuseumChip() {
 function updatePainterBtn() {
   const btn = document.getElementById("painters-btn");
   const sel = PAINTERS.filter(p => state.painters[p.name] !== false);
-  const label = sel.length === PAINTERS.length ? "All painters"
+  const label = sel.length === PAINTERS.length ? `All ${PAINTERS.length} painters`
     : sel.length === 0 ? "No painters"
       : sel.length <= 2 ? sel.map(p => p.name.split(" ")[0]).join(", ")
         : `${sel.length} painters`;
-  btn.textContent = label + " ▾";
+  btn.textContent = "🎨 " + label + " ▾";
 }
 
 // filters
@@ -604,35 +634,52 @@ function showBanner(html) {
   el.hidden = false;
   document.getElementById("banner-x").onclick = () => { el.hidden = true; };
 }
+// "Near me" is a toggle: first click locates + frames your nearest work; click again
+// (it stays pressed) clears the pins and restores the map to exactly where it was.
+let nearMeActive = false, nearMePrevView = null;
+function clearNearMe() {
+  const btn = document.getElementById("locate");
+  if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
+  if (nearestLine) { map.removeLayer(nearestLine); nearestLine = null; }
+  const bn = document.getElementById("banner"); if (bn) bn.hidden = true;
+  btn.textContent = "📍 Near me"; btn.classList.remove("active"); btn.disabled = false;
+  if (nearMePrevView) { map.setView(nearMePrevView.center, nearMePrevView.zoom); nearMePrevView = null; }
+  nearMeActive = false;
+}
 document.getElementById("locate").addEventListener("click", () => {
   const btn = document.getElementById("locate");
+  if (nearMeActive) { clearNearMe(); return; }              // toggle off → restore previous view
   if (!navigator.geolocation) { showBanner("Geolocation is not available in this browser."); return; }
   btn.textContent = "📍 Locating…"; btn.disabled = true;
   navigator.geolocation.getCurrentPosition(pos => {
-    btn.textContent = "📍 Nearest to me"; btn.disabled = false;
+    btn.disabled = false;
     const { latitude: lat, longitude: lon } = pos.coords;
-    if (userMarker) map.removeLayer(userMarker);
-    userMarker = L.marker([lat, lon], {
-      icon: L.divIcon({ className: "", html: `<div class="me"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }),
-      zIndexOffset: 1000,
-    }).addTo(map).bindPopup("You are here");
     let best = null, bd = Infinity;
     for (const w of works) {
       if (!passesAll(w.p)) continue;
       const d = haversine(lat, lon, w.lat, w.lon);
       if (d < bd) { bd = d; best = w; }
     }
-    if (!best) { showBanner("No works match the current filters."); return; }
+    if (!best) { btn.textContent = "📍 Near me"; showBanner("No works match the current filters."); return; }
+    nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };   // remember, to restore on toggle-off
+    if (userMarker) map.removeLayer(userMarker);
+    userMarker = L.marker([lat, lon], {
+      icon: L.divIcon({ className: "", html: `<div class="me"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }),
+      zIndexOffset: 1000,
+    }).addTo(map).bindPopup("You are here");
     const km = bd < 1 ? `${Math.round(bd * 1000)} m` : `${bd < 10 ? bd.toFixed(1) : Math.round(bd)} km`;
     if (nearestLine) map.removeLayer(nearestLine);
     nearestLine = L.polyline([[lat, lon], [best.lat, best.lon]],
       { color: "#1a73e8", weight: 2, dashArray: "5,7", opacity: .8 }).addTo(map);
     map.fitBounds([[lat, lon], [best.lat, best.lon]], { padding: [70, 70], maxZoom: 12 });
     cluster.zoomToShowLayer(best.marker, () => best.marker.openPopup());
-    showBanner(`Your nearest Caravaggio: <b>${esc(best.p.title || "Untitled")}</b> — ` +
-      `${esc([best.p.location, best.p.city].filter(Boolean).join(", "))} · <b>${km}</b> away`);
+    btn.textContent = "📍 Near me"; btn.classList.add("active");   // pressed → click again to reset
+    nearMeActive = true;
+    showBanner(`Your nearest painting: <b>${esc(best.p.title || "Untitled")}</b> — ` +
+      `${esc([best.p.location, best.p.city].filter(Boolean).join(", "))} · <b>${km}</b> away · ` +
+      `<span class="bn-hint">tap “Near me” again to reset the view</span>`);
   }, err => {
-    btn.textContent = "📍 Nearest to me"; btn.disabled = false;
+    btn.textContent = "📍 Near me"; btn.disabled = false;
     showBanner("Could not get your location: " + esc(err.message));
   }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
 });

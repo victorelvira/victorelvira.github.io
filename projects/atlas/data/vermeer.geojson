@@ -195,7 +195,7 @@
     "painter": "Vermeer",
     "title": "Officer with a Laughing Girl (also known as Officer and Laughing Girl )",
     "year": "c. 1657",
-    "city": "New York City",
+    "city": "New York",
     "country": "United States",
     "location": "Frick Collection",
     "attribution": "generally accepted",
@@ -286,7 +286,7 @@
     "title": "The Girl with the Wineglass",
     "year": "c. 1659",
     "city": "Braunschweig",
-    "location": "Herzog Anton-Ulrich-Museum",
+    "location": "Herzog Anton Ulrich Museum",
     "attribution": "generally accepted",
     "dimensions": "Oil on canvas, 78 × 67.5 cm cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Jan_Vermeer_van_Delft_006.jpg/500px-Jan_Vermeer_van_Delft_006.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -298,7 +298,8 @@
      "source": "Wikipedia: List of paintings by Johannes Vermeer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "herzog-anton-ulrich-museum"
+    "museum_id": "herzog-anton-ulrich-museum",
+    "country": "Germany"
    }
   },
   {
@@ -344,7 +345,7 @@
     "painter": "Vermeer",
     "title": "Girl Interrupted at Her Music",
     "year": "1660–61 (or 1658–59)",
-    "city": "New York City",
+    "city": "New York",
     "country": "United States",
     "location": "Frick Collection",
     "attribution": "generally accepted",
@@ -396,15 +397,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.142,
-     51.501
+     -3,
+     55
     ]
    },
    "properties": {
     "painter": "Vermeer",
     "title": "The Music Lesson (also known as A Lady at the Virginals with a Gentleman )",
     "year": "1662/65",
-    "city": "Buckingham Palace",
+    "city": "United Kingdom",
     "location": "Royal Collection",
     "attribution": "generally accepted",
     "dimensions": "Oil on canvas, 73.3 × 64.5 cm cm",
@@ -674,7 +675,7 @@
     "painter": "Vermeer",
     "title": "Mistress and Maid , also known as Lady with her Maidservant Holding a Letter",
     "year": "1667/68",
-    "city": "New York City",
+    "city": "New York",
     "country": "United States",
     "location": "Frick Collection",
     "attribution": "generally accepted",

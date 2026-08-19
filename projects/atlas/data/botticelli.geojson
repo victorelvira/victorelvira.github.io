@@ -109,7 +109,7 @@
     "year": "1465–1470",
     "city": "Paris",
     "country": "France",
-    "location": "Musée du Louvre",
+    "location": "Louvre",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "73 × 50 cm cm",
@@ -122,7 +122,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-louvre"
+    "museum_id": "louvre"
    }
   },
   {
@@ -183,7 +183,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-petit-palais"
+    "museum_id": "musee-du-petit-palais",
+    "country": "France"
    }
   },
   {
@@ -201,7 +202,7 @@
     "year": "1468",
     "city": "Paris",
     "country": "France",
-    "location": "Musée du Louvre",
+    "location": "Louvre",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "90 × 67 cm cm",
@@ -214,7 +215,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-louvre"
+    "museum_id": "louvre"
    }
   },
   {
@@ -480,7 +481,7 @@
     "year": "c. 1470",
     "city": "Paris",
     "country": "France",
-    "location": "Musée du Louvre",
+    "location": "Louvre",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "58 × 40 cm cm",
@@ -493,7 +494,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-louvre"
+    "museum_id": "louvre"
    }
   },
   {
@@ -911,7 +912,7 @@
     "title": "Portrait of a Lady",
     "year": "c. 1475",
     "city": "Altenburg",
-    "location": "Lindenau-Museum",
+    "location": "Lindenau museum",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "53.2 × 37.8 cm cm",
@@ -924,7 +925,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "lindenau-museum"
+    "museum_id": "lindenau-museum",
+    "country": "Germany"
    }
   },
   {
@@ -954,7 +956,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "accademia-carrara"
+    "museum_id": "accademia-carrara",
+    "country": "Italy"
    }
   },
   {
@@ -1201,7 +1204,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "the-hyde-collection"
+    "museum_id": "the-hyde-collection",
+    "country": "United States"
    }
   },
   {
@@ -1804,7 +1808,7 @@
     "year": "c. 1483–1486",
     "city": "Paris",
     "country": "France",
-    "location": "Musée du Louvre",
+    "location": "Louvre",
     "attribution": "generally accepted",
     "medium": "Fresco",
     "dimensions": "211 × 283 cm cm",
@@ -1817,7 +1821,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-louvre"
+    "museum_id": "louvre"
    }
   },
   {
@@ -1835,7 +1839,7 @@
     "year": "c. 1483–1486",
     "city": "Paris",
     "country": "France",
-    "location": "Musée du Louvre",
+    "location": "Louvre",
     "attribution": "generally accepted",
     "medium": "Fresco",
     "dimensions": "237 × 269 cm cm",
@@ -1848,7 +1852,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-louvre"
+    "museum_id": "louvre"
    }
   },
   {
@@ -2033,7 +2037,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "yale-university-art-gallery"
+    "museum_id": "yale-university-art-gallery",
+    "country": "United States"
    }
   },
   {
@@ -2133,15 +2138,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.01111,
-     52.23
+     -3.17917,
+     51.48167
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "The Virgin and Child, St. John and an Angel",
     "year": "c. 1488",
-    "city": "Warsaw",
+    "city": "Cardiff",
     "location": "National Museum",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
@@ -2628,8 +2633,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.3596,
-     48.2226
+     16.3594,
+     48.2225
     ]
    },
    "properties": {
@@ -2712,7 +2717,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fogg-museum"
+    "museum_id": "fogg-museum",
+    "country": "United States"
    }
   },
   {
@@ -2782,8 +2788,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.18139,
-     39.96583
+     -75.181,
+     39.966
     ]
    },
    "properties": {
@@ -2875,8 +2881,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11722,
-     51.51083
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -3143,7 +3149,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "accademia-carrara"
+    "museum_id": "accademia-carrara",
+    "country": "Italy"
    }
   },
   {
@@ -3312,7 +3319,7 @@
     "painter": "Botticelli",
     "title": "Mystic Crucifixion",
     "year": "c. 1500",
-    "city": "Cambridge",
+    "city": "Cambridge (Massachusetts)",
     "location": "Fogg Art Museum",
     "attribution": "generally accepted",
     "medium": "Tempera and oil on canvas ( transferred from panel )",
@@ -3356,7 +3363,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "accademia-carrara"
+    "museum_id": "accademia-carrara",
+    "country": "Italy"
    }
   },
   {
@@ -3455,15 +3463,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     19.05139,
-     47.4925
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Adoration of the Christ Child",
     "year": "c. 1500",
-    "city": "Budapest",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -3478,7 +3486,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "Hungary"
+    "country": "United States"
    }
   },
   {

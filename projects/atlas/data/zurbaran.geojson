@@ -3380,8 +3380,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -99.20462,
-     19.44066
+     -99.2046,
+     19.4407
     ]
    },
    "properties": {
@@ -3466,15 +3466,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.07806,
-     59.32861
+     18.0781,
+     59.3286
     ]
    },
    "properties": {
     "painter": "Zurbarán",
     "title": "The Veil of Saint Veronica, The Holy Face",
     "year": "1635",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "location": "Nationalmuseum",
     "kind": "museum",
@@ -5120,8 +5120,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.142,
-     51.501
+     -3,
+     55
     ]
    },
    "properties": {
@@ -5153,7 +5153,7 @@
      }
     },
     "museum_id": "royal-collection",
-    "city": "Buckingham Palace"
+    "city": "United Kingdom"
    }
   },
   {
@@ -5161,16 +5161,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.39054,
-     29.72561
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Zurbarán",
     "title": "Veil of Veronica",
-    "city": "Houston",
+    "city": "Montréal",
     "country": "United States",
-    "location": "Museum of Fine Arts, Houston",
+    "location": "Museum of Fine Arts",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -5183,7 +5183,7 @@
      "url": "https://www.wikidata.org/wiki/Q28039307",
      "retrieved_at": "2026-08-19"
     },
-    "museum_id": "museum-of-fine-arts-houston"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -5315,8 +5315,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.18139,
-     39.96583
+     -75.181,
+     39.966
     ]
    },
    "properties": {
@@ -6687,8 +6687,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6697,7 +6697,7 @@
     "year": "1631",
     "city": "Paris",
     "country": "France",
-    "location": "Louvre Museum",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -6723,7 +6723,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "louvre-museum"
+    "museum_id": "louvre"
    }
   },
   {
@@ -7155,8 +7155,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7164,7 +7164,7 @@
     "title": "Saint Apollonia",
     "year": "1637",
     "country": "France",
-    "location": "Department of Paintings of the Louvre",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -7189,7 +7189,8 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "department-of-paintings-of-the-louvre"
+    "museum_id": "louvre",
+    "city": "Paris"
    }
   },
   {
@@ -7453,8 +7454,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58096,
-     39.04497
+     -94.58084,
+     39.04531
     ]
    },
    "properties": {
@@ -8946,8 +8947,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     26.09598,
-     44.43978
+     26.09553,
+     44.44016
     ]
    },
    "properties": {
