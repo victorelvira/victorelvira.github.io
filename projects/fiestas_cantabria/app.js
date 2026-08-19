@@ -401,11 +401,16 @@ document.querySelectorAll(".vista-toggle button").forEach(btn => {
   });
 });
 
-// Si se arranca en vista Mapa (por defecto), reajustar el mapa cuando el layout
-// haya asentado, para que se dibuje y encuadre bien toda Cantabria.
-if (document.body.classList.contains("vista-mapa")) {
-  setTimeout(() => { map.invalidateSize(); map.fitBounds(CANTABRIA_BOUNDS); }, 120);
-}
+// Reajustar el encuadre cuando el contenedor ya tiene su tamaño definitivo.
+// Al arrancar, el mapa tarda en conocer su altura real y fitBounds sale a zoom 0
+// (mundo entero). Reintentamos hasta que encuadre de verdad Cantabria.
+function ajustarMapa() { map.invalidateSize(); map.fitBounds(CANTABRIA_BOUNDS); }
+let _reint = 0;
+const _reintentar = setInterval(() => {
+  ajustarMapa();
+  if (map.getZoom() >= 6 || ++_reint > 30) clearInterval(_reintentar);
+}, 150);
+window.addEventListener("load", ajustarMapa);
 
 // --- Indicador de última actualización -------------------------------
 (function mostrarUpdate() {

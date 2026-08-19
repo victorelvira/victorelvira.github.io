@@ -1,3 +1,13 @@
+/* Navbar común de victorelvira.github.io (igual que en atlas de pintura) */
+#navbar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 16px; background: #241a12; font-size: 12.5px;
+}
+#navbar .wordmark { color: #fff; font-weight: 700; text-decoration: none; letter-spacing: .2px; }
+#navbar .nav-sep { color: #8a7f72; }
+#navbar .nav-home { color: #cbbfae; text-decoration: none; }
+#navbar a:hover { text-decoration: underline; }
+
 :root {
   --verde: #1f7a53;
   --verde-osc: #14563a;
