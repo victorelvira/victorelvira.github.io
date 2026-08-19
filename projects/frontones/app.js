@@ -98,7 +98,7 @@ fetch("frontones/data/frontones.geojson")
       const p = f.properties;
       const marker = L.circleMarker([lat, lon], styleFor(p.region, p.confianza))
         .bindPopup(() => popup(p, lat, lon));
-      all.push({ marker, region: p.region, confianza: p.confianza });
+      all.push({ marker, region: p.region, confianza: p.confianza, props: p });
     });
     redraw();
   })
@@ -110,3 +110,101 @@ document.querySelectorAll(".filters input[data-region]").forEach(cb => {
 });
 const verCb = document.getElementById("solo-verificados");
 if (verCb) verCb.addEventListener("change", e => { state.soloVerificados = e.target.checked; redraw(); });
+
+// "Cerca de mí": geolocalización del navegador (sin backend)
+function haversine(aLat, aLon, bLat, bLon) {
+  const R = 6371000, r = x => x * Math.PI / 180;
+  const dLat = r(bLat - aLat), dLon = r(bLon - aLon);
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(r(aLat)) * Math.cos(r(bLat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+const fmtDist = m => m < 1000 ? `${Math.round(m)} m` : `${(m / 1000).toFixed(1)} km`;
+
+let meMarker = null;
+const nearBtn = document.getElementById("near-me");
+if (nearBtn) nearBtn.addEventListener("click", () => {
+  if (!navigator.geolocation) { alert("Tu navegador no permite geolocalización."); return; }
+  nearBtn.textContent = "📍 Buscando…"; nearBtn.disabled = true;
+  navigator.geolocation.getCurrentPosition(pos => {
+    const la = pos.coords.latitude, lo = pos.coords.longitude;
+    if (meMarker) map.removeLayer(meMarker);
+    meMarker = L.circleMarker([la, lo], { radius: 8, weight: 3, color: "#1a73e8", fillColor: "#1a73e8", fillOpacity: 0.9 }).addTo(map);
+    const near = all
+      .filter(it => state[it.region] && (!state.soloVerificados || it.confianza === "confirmado"))
+      .map(it => ({ it, d: haversine(la, lo, it.marker.getLatLng().lat, it.marker.getLatLng().lng) }))
+      .sort((a, b) => a.d - b.d).slice(0, 5);
+    const list = near.map(({ it, d }) => {
+      const nm = it.props.name ? esc(it.props.name) : "Frontón";
+      const mu = it.props.municipio ? ` <span class="muni">${esc(it.props.municipio)}</span>` : "";
+      return `${nm}${mu} — <b>${fmtDist(d)}</b>`;
+    }).join("<br>");
+    meMarker.bindPopup(`<div class="pop"><h3>Estás aquí</h3><div class="near">${list || "Sin frontones visibles"}</div></div>`).openPopup();
+    const pts = [[la, lo], ...near.map(x => [x.it.marker.getLatLng().lat, x.it.marker.getLatLng().lng])];
+    if (pts.length > 1) map.fitBounds(pts, { padding: [60, 60], maxZoom: 14 });
+    else map.setView([la, lo], 13);
+    nearBtn.textContent = "📍 Cerca de mí"; nearBtn.disabled = false;
+  }, () => {
+    nearBtn.textContent = "📍 Cerca de mí"; nearBtn.disabled = false;
+    alert("No pude obtener tu ubicación. ¿Diste permiso al navegador?");
+  }, { enableHighAccuracy: true, timeout: 10000 });
+});
+
+// ── Reporte comunitario ────────────────────────────────────────────────
+// Pega aquí la URL de tu Web App de Google Apps Script (termina en /exec):
+const REPORT_ENDPOINT = "https://script.google.com/macros/s/AKfycbxgpFado69HbPzmWw0d1uqqwMT3ipapcUwtSp9pWyOELcrND5idSUE2k4WG9D4QWa4Q/exec";
+
+const $ = id => document.getElementById(id);
+let reportMarker = null;
+
+function startReport() {
+  if (!REPORT_ENDPOINT) { alert("El reporte aún no está configurado (falta el endpoint)."); return; }
+  $("report-banner").hidden = false;
+  map.getContainer().style.cursor = "crosshair";
+  map.once("click", onReportClick);
+}
+function stopReport() {
+  $("report-banner").hidden = true;
+  map.getContainer().style.cursor = "";
+  map.off("click", onReportClick);
+}
+async function onReportClick(e) {
+  const { lat, lng } = e.latlng;
+  if (reportMarker) map.removeLayer(reportMarker);
+  reportMarker = L.marker([lat, lng]).addTo(map);
+  const form = $("report-form");
+  form.lat.value = lat.toFixed(6);
+  form.lon.value = lng.toFixed(6);
+  $("report-loc").textContent = `Ubicación: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+  $("report-banner").hidden = true;
+  map.getContainer().style.cursor = "";
+  $("report-msg").textContent = "";
+  $("report-panel").hidden = false;
+  // autocompletar municipio (no bloqueante)
+  try {
+    const r = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=14`);
+    const a = (await r.json()).address || {};
+    if (!form.municipio.value) form.municipio.value = a.village || a.town || a.municipality || a.city || "";
+  } catch (_) {}
+}
+function closeReport() {
+  $("report-panel").hidden = true;
+  if (reportMarker) { map.removeLayer(reportMarker); reportMarker = null; }
+  $("report-form").reset();
+}
+
+if ($("report")) $("report").addEventListener("click", startReport);
+if ($("report-abort")) $("report-abort").addEventListener("click", stopReport);
+if ($("report-cancel")) $("report-cancel").addEventListener("click", closeReport);
+if ($("report-form")) $("report-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new URLSearchParams(new FormData($("report-form")));
+  $("report-send").disabled = true;
+  $("report-msg").textContent = "Enviando…";
+  fetch(REPORT_ENDPOINT, { method: "POST", mode: "no-cors", body: data })
+    .then(() => {
+      $("report-msg").textContent = "¡Gracias! Lo revisaré. 🙌";
+      setTimeout(closeReport, 1500);
+    })
+    .catch(() => { $("report-msg").textContent = "No se pudo enviar. Inténtalo luego."; })
+    .finally(() => { $("report-send").disabled = false; });
+});

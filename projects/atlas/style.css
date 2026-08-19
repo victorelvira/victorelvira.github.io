@@ -24,10 +24,17 @@ body {
 .brand { display: flex; align-items: center; gap: 10px; margin-right: auto; }
 .brand strong { display: block; font-size: 16px; letter-spacing: .2px; }
 .brand small { color: var(--muted); }
-.brand .dot {
-  width: 22px; height: 22px; border-radius: 6px; flex: 0 0 auto;
-  background: linear-gradient(135deg, var(--museum) 50%, var(--church) 50%);
+.brand .mark { flex: 0 0 auto; display: block; }   /* map pin + tiny frame — scales to any painter count */
+
+/* thin identity navbar — the same on every project → home + cross-linking */
+#navbar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 16px; background: var(--ink); font-size: 12.5px;
 }
+#navbar .wordmark { color: #fff; font-weight: 700; text-decoration: none; letter-spacing: .2px; }
+#navbar .nav-sep { color: #8a7f72; }
+#navbar .nav-home { color: #cbbfae; text-decoration: none; }
+#navbar a:hover { text-decoration: underline; }
 .stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -36,13 +43,37 @@ body {
   padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px;
   background: #fff; cursor: pointer; user-select: none; font-size: 13px;
 }
-.chip input { accent-color: var(--museum); margin: 0; }
-.chip.igl input { accent-color: var(--church); }
-.chip.pri input { accent-color: var(--private); }
+.chip input { accent-color: #8a817a; margin: 0; }   /* neutral; painter chips override inline */
 
-/* painter filter chips (colour = painter) */
-.painters { display: inline-flex; gap: 8px; flex-wrap: wrap; }
-.chip.pnt .sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; vertical-align: -1px; }
+/* painter selector (button + searchable popover) */
+.painters { position: relative; display: inline-block; }
+#painters-btn { cursor: pointer; font: inherit; font-size: 13px; }
+#painters-pop {
+  position: absolute; top: calc(100% + 4px); left: 0; z-index: 900; width: 240px;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.16); padding: 8px;
+}
+#painters-pop[hidden] { display: none; }
+.pop-search { width: 100%; box-sizing: border-box; padding: 6px 8px; font: inherit; font-size: 13px;
+  border: 1px solid var(--line); border-radius: 6px; }
+.pop-actions { display: flex; gap: 6px; margin: 6px 0; }
+.pop-actions button { flex: 1; font: inherit; font-size: 12px; padding: 3px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 6px; background: #faf7f1; color: var(--muted); }
+.pop-list { list-style: none; margin: 0; padding: 0; max-height: 240px; overflow-y: auto; }
+.pop-list li { padding: 0; }
+.pop-list label { display: flex; align-items: center; gap: 8px; padding: 5px 4px; cursor: pointer; font-size: 13px; }
+.pop-list label:hover { background: #faf7f1; }
+.pop-list .sw { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 auto; }
+.pop-empty { color: var(--muted); font-size: 13px; padding: 6px 4px; }
+.pop-h { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--muted); padding: 6px 4px 2px; }
+.pop-list .mrow { display: flex; gap: 8px; align-items: flex-start; padding: 5px 4px; cursor: pointer; }
+.pop-list .mrow:hover { background: #faf7f1; }
+.mrow .micon { flex: 0 0 auto; }
+.mrow .mname { font-size: 13px; font-weight: 600; line-height: 1.2; }
+.mrow .msub { font-size: 11.5px; color: var(--muted); }
+.chip.mchip { display: inline-flex; align-items: center; gap: 4px; background: #efe9df; }
+.chip.mchip button { background: transparent; border: 0; cursor: pointer; color: var(--muted); font-size: 13px; padding: 0 2px; }
 /* venue type is no longer encoded by colour → hide those chips (state stays "all on") */
 .chip.kind { display: none; }
 
@@ -56,6 +87,18 @@ body {
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
 }
 .mode-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* show/hide map & list */
+#view { margin-left: auto; display: inline-flex; gap: 6px; }
+.view-btn {
+  font: inherit; font-size: 13px; padding: 5px 10px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
+}
+.view-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+body.hide-panel #panel { display: none; }
+body.hide-map #map { display: none; }
+body.hide-map #panel { flex: 1; width: auto; max-height: none; border: 0; }
+body.hide-map #main { overflow: auto; }
 
 /* map 2 (painted) pin colour + hide venue-type controls that don't apply there */
 .pin.painted { background: #b0682a; }
@@ -229,6 +272,8 @@ body.mode-painted .legend { display: none; }
 .card .by { margin-top: 2px; }
 .pby { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 12px; }
 .pdot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
+.qm { display: inline-grid; place-items: center; width: 14px; height: 14px; border-radius: 50%;
+  background: #f3e7d6; color: #9a6a1e; font-size: 10px; font-weight: 700; vertical-align: 1px; cursor: help; }
 .card .fx { color: var(--muted); font-size: 12px; margin-top: 2px; }
 .card .ds { font-size: 12.5px; line-height: 1.35; margin-top: 4px; }
 .card .prov {

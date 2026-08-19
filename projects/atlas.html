@@ -3,20 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Atlas of Painting · where the works are today</title>
-  <meta name="description" content="Interactive atlas of the great painters — where their works are today and where they were painted. Data from Wikidata, Wikipedia and Wikimedia Commons.">
+  <title>Interactive Atlas of Painting · masterpieces in space and time</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237a5a3a' d='M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z'/%3E%3Ccircle cx='12' cy='9' r='2.6' fill='%23fff'/%3E%3C/svg%3E">
+  <meta name="description" content="An interactive atlas of the great painters — where their masterpieces are today and where they were painted, across space and time. Caravaggio, Leonardo, Raphael, Goya, Velázquez, Botticelli, Titian, Vermeer and more. Data from Wikidata, Wikipedia and Wikimedia Commons.">
+  <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#3a2317">
+  <!-- social share cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Interactive Atlas of Painting">
+  <meta property="og:description" content="Masterpieces in space and time — where the great painters' works are today and where they were made.">
+  <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg?width=1200">
+  <meta property="og:url" content="https://victorelvira.github.io/projects/atlas.html">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=5">
+  <link rel="stylesheet" href="atlas/style.css?v=18">
 </head>
 <body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io">other interactive projects</a>
+  </nav>
   <header id="bar">
     <div class="brand">
-      <span class="dot"></span>
+      <svg class="mark" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path fill="#3a2317" d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/>
+        <rect x="8.4" y="6" width="7.2" height="6" rx="1" fill="#fff"/>
+        <circle cx="10.4" cy="9.6" r="1" fill="#c8a24a"/>
+        <path d="M9 11l1.8-1.6L12 11l1.4-1.1L15 11z" fill="#3a2317"/>
+      </svg>
       <div>
-        <strong>Atlas of Painting</strong>
-        <small>where the works are today</small>
+        <strong>Interactive Atlas of Painting</strong>
+        <small>masterpieces in space and time</small>
       </div>
     </div>
     <div id="stats" class="stats">…</div>
@@ -25,15 +44,18 @@
       <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
       <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
       <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
-      <label class="chip att"><input type="checkbox" id="major-only" checked> Major works</label>
-      <label class="chip att"><input type="checkbox" id="only-accepted"> Accepted attribution only</label>
+      <label class="chip att" title="Show only works of accepted attribution — hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked> Accepted attribution</label>
       <button id="locate" class="chip btn" type="button">📍 Nearest to me</button>
     </div>
   </header>
 
   <div id="modes">
-    <button type="button" class="mode-btn active" data-mode="current">📍 On display</button>
+    <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
     <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
+    <span id="view">
+      <button type="button" id="v-map" class="view-btn active" title="Show/hide the map">🗺 Map</button>
+      <button type="button" id="v-list" class="view-btn active" title="Show/hide the list">☰ List</button>
+    </span>
   </div>
 
   <div id="timeline">
@@ -70,6 +92,6 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=5"></script>
+  <script src="atlas/app.js?v=18"></script>
 </body>
 </html>

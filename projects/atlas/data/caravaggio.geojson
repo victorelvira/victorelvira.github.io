@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.277747,
-     43.759539
+     11.27775,
+     43.75954
     ]
    },
    "properties": {
@@ -19,8 +19,7 @@
     "country": "Italy",
     "location": "Fondazione Roberto Longhi",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "68 × 62.5 cm",
@@ -39,7 +38,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "fondazione-roberto-longhi"
    }
   },
   {
@@ -58,8 +58,7 @@
     "country": "Germany",
     "location": "Staatliche Kunsthalle Karlsruhe",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "dimensions": "105 × 85.5 cm",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20%28Nachfolger%29%20-%20Prophet%20mit%20Buch%20-%20467%20-%20Staatliche%20Kunsthalle%20Karlsruhe.jpg?width=420",
@@ -68,7 +67,8 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104528133",
      "retrieved_at": "2026-08-18"
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe"
    }
   },
   {
@@ -76,19 +76,18 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722,
-     52.508611
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "Lamentation of Christ",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "genre": "religious art",
@@ -104,7 +103,8 @@
       "source": "manual geocoding",
       "note": "Wikidata P131 gave the Berlin borough; the city is Berlin"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin"
    }
   },
   {
@@ -112,20 +112,19 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722,
-     52.508611
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "The Holy Family with Child Saint John",
     "year": "1603",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "genre": "religious art",
@@ -149,7 +148,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin"
    }
   },
   {
@@ -157,19 +157,18 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722,
-     52.508611
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "The Healing of Tobit",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": false,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "117 × 148 cm",
@@ -197,7 +196,8 @@
       "source": "Editorial flag: no Wikipedia article in any language and an impossible Wikidata date (1617, after Caravaggio's death); attribution unverified",
       "note": "The Healing of Tobit, Gemäldegalerie Berlin — not a documented autograph"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin"
    }
   },
   {
@@ -205,8 +205,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.577389,
-     50.627472
+     5.57739,
+     50.62747
     ]
    },
    "properties": {
@@ -217,8 +217,7 @@
     "country": "Belgium",
     "location": "La Boverie",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "77 × 62.5 cm",
@@ -236,7 +235,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "la-boverie"
    }
   },
   {
@@ -257,7 +257,6 @@
     "location": "Galleria Palatina",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "118.5 × 95 cm",
@@ -284,7 +283,8 @@
       "source": "Portrait of Fra Antonio Martelli — Malta, 1608",
       "note": ""
      }
-    }
+    },
+    "museum_id": "galleria-palatina"
    }
   },
   {
@@ -293,7 +293,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203881
+     48.20388
     ]
    },
    "properties": {
@@ -305,7 +305,6 @@
     "location": "Kunsthistorisches Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "1270 × 1655 cm",
@@ -331,7 +330,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum"
    }
   },
   {
@@ -339,7 +339,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.487222,
+     12.48722,
      41.9075
     ]
    },
@@ -352,7 +352,6 @@
     "location": "Villa Ludovisi",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "300 × 180 cm",
@@ -378,7 +377,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "villa-ludovisi"
    }
   },
   {
@@ -399,7 +399,6 @@
     "location": "Santa Lucia al Sepolcro sanctuary",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "408 × 207 cm",
@@ -426,7 +425,8 @@
       "source": "The Burial of Saint Lucy — painted in Syracuse, 1608",
       "note": ""
      }
-    }
+    },
+    "museum_id": "santa-lucia-al-sepolcro-sanctuary"
    }
   },
   {
@@ -447,7 +447,6 @@
     "location": "Gallerie d'Italia – Palazzo Zevallos Stigliano",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "154 × 178 cm",
@@ -499,7 +498,8 @@
       "source": "The Martyrdom of Saint Ursula — Naples, 1610",
       "note": ""
      }
-    }
+    },
+    "museum_id": "gallerie-d-italia-palazzo-zevallos-stigliano"
    }
   },
   {
@@ -518,8 +518,7 @@
     "country": "United Kingdom",
     "location": "Weston Park",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "127 × 165.1 cm",
@@ -536,7 +535,8 @@
       "source": "manual geocoding",
       "note": "Weston Park — civil parish name normalised"
      }
-    }
+    },
+    "museum_id": "weston-park"
    }
   },
   {
@@ -557,7 +557,6 @@
     "location": "Pinacoteca Vaticana",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "300 × 203 cm",
@@ -583,7 +582,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-vaticana"
    }
   },
   {
@@ -591,8 +591,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222,
-     40.413889
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -604,7 +604,6 @@
     "location": "Museo del Prado",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "111 × 86 cm",
@@ -634,7 +633,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado"
    }
   },
   {
@@ -642,8 +642,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.277747,
-     43.759539
+     11.27775,
+     43.75954
     ]
    },
    "properties": {
@@ -654,8 +654,7 @@
     "country": "Italy",
     "location": "Fondazione Roberto Longhi",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "62 × 52 cm",
@@ -675,7 +674,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "fondazione-roberto-longhi"
    }
   },
   {
@@ -683,8 +683,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -695,8 +695,7 @@
     "country": "Italy",
     "location": "Galleria Doria Pamphilj",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "132 × 98.5 cm",
@@ -716,7 +715,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-doria-pamphilj"
    }
   },
   {
@@ -736,7 +736,6 @@
     "location": "Badminton House",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": false,
     "status": "present",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggioapollo.jpg?width=420",
     "wikidata": "https://www.wikidata.org/wiki/Q131627548",
@@ -751,7 +750,8 @@
       "source": "Lorena León (art historian) + Wikipedia 'The Lute Player (Caravaggio)#Badminton House version'",
       "note": "the Badminton House Lute Player is a disputed/attributed version, not an accepted autograph"
      }
-    }
+    },
+    "museum_id": "badminton-house"
    }
   },
   {
@@ -772,7 +772,6 @@
     "location": "Oratory of San Lorenzo",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "stolen",
     "medium": "Oil on canvas",
     "dimensions": "268 × 197 cm",
@@ -803,7 +802,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "oratory-of-san-lorenzo"
    }
   },
   {
@@ -811,8 +811,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482528,
-     41.898222
+     12.48253,
+     41.89822
     ]
    },
    "properties": {
@@ -824,7 +824,6 @@
     "location": "Palazzo Chigi-Odescalchi",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on panel",
     "dimensions": "237 × 189 cm",
@@ -850,7 +849,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-chigi-odescalchi"
    }
   },
   {
@@ -858,8 +858,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.094886,
-     43.880222
+     11.09489,
+     43.88022
     ]
    },
    "properties": {
@@ -871,7 +871,6 @@
     "location": "Palazzo degli Alberti",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "178 × 125 cm",
@@ -897,7 +896,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-degli-alberti"
    }
   },
   {
@@ -918,7 +918,6 @@
     "location": "Museum of Fine Arts of Nancy",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "285 × 205 cm",
@@ -944,7 +943,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-nancy"
    }
   },
   {
@@ -952,7 +952,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.337499,
+     -0.3375,
      51.4034
     ]
    },
@@ -965,7 +965,6 @@
     "location": "Hampton Court Palace",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "140.1 × 176 cm",
@@ -996,7 +995,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "hampton-court-palace"
    }
   },
   {
@@ -1004,7 +1004,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -1017,7 +1017,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "203 × 119 cm",
@@ -1048,7 +1047,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -1056,8 +1056,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482778,
-     41.893056
+     12.48278,
+     41.89306
     ]
    },
    "properties": {
@@ -1069,7 +1069,6 @@
     "location": "Capitoline Museums",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "1150 × 1500 cm",
@@ -1093,7 +1092,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "capitoline-museums"
    }
   },
   {
@@ -1101,8 +1101,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249219,
-     43.770777
+     11.24922,
+     43.77078
     ]
    },
    "properties": {
@@ -1114,7 +1114,6 @@
     "location": "Palazzo Corsini",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "121 × 95 cm",
@@ -1138,7 +1137,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-corsini"
    }
   },
   {
@@ -1159,7 +1159,6 @@
     "location": "Ashmolean Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "94.2 × 130.9 cm",
@@ -1182,7 +1181,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum"
    }
   },
   {
@@ -1190,8 +1190,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255278,
-     43.768333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -1203,7 +1203,6 @@
     "location": "Uffizi Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "95 × 85 cm",
@@ -1229,7 +1228,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery"
    }
   },
   {
@@ -1237,8 +1237,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.187815,
-     45.471955
+     9.18806,
+     45.47194
     ]
    },
    "properties": {
@@ -1250,7 +1250,6 @@
     "location": "Pinacoteca di Brera",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "141 × 175 cm",
@@ -1276,7 +1275,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-di-brera"
    }
   },
   {
@@ -1284,8 +1284,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -1297,7 +1297,6 @@
     "location": "Museo di Capodimonte",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "390 × 260 cm",
@@ -1323,7 +1322,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte"
    }
   },
   {
@@ -1331,7 +1331,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.185952,
+     9.18595,
      45.46378
     ]
    },
@@ -1344,7 +1344,6 @@
     "location": "Pinacoteca Ambrosiana",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "67.5 × 54.5 cm",
@@ -1370,7 +1369,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-ambrosiana"
    }
   },
   {
@@ -1378,8 +1378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333,
-     40.779444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -1391,7 +1391,6 @@
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "94 × 125.4 cm",
@@ -1423,7 +1422,8 @@
       "source": "The Denial of Saint Peter — Naples, 1610",
       "note": ""
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -1431,8 +1431,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222,
-     40.413889
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -1444,7 +1444,6 @@
     "location": "Museo del Prado",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "110.4 × 91.3 cm",
@@ -1470,7 +1469,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado"
    }
   },
   {
@@ -1491,7 +1491,6 @@
     "location": "Cerasi Chapel",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "230 × 175 cm",
@@ -1517,7 +1516,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "cerasi-chapel"
    }
   },
   {
@@ -1538,7 +1538,6 @@
     "location": "Santa Maria della Concezione dei Cappuccini",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "123 × 92.5 cm",
@@ -1564,7 +1563,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "santa-maria-della-concezione-dei-cappuccini"
    }
   },
   {
@@ -1572,8 +1572,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.020917,
-     45.137917
+     10.02092,
+     45.13792
     ]
    },
    "properties": {
@@ -1585,7 +1585,6 @@
     "location": "Museo Civico Ala Ponzone",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "130 × 90 cm",
@@ -1611,7 +1610,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-civico-ala-ponzone"
    }
   },
   {
@@ -1619,7 +1619,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     15.561121,
+     15.56112,
      38.2088
     ]
    },
@@ -1632,7 +1632,6 @@
     "location": "Regional museum of Messina",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "380 × 275 cm",
@@ -1658,7 +1657,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "regional-museum-of-messina"
    }
   },
   {
@@ -1666,8 +1666,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255278,
-     43.768333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -1679,7 +1679,6 @@
     "location": "Uffizi Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "104 × 135 cm",
@@ -1703,7 +1702,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery"
    }
   },
   {
@@ -1711,8 +1711,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255278,
-     43.768333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -1724,7 +1724,6 @@
     "location": "Uffizi Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "60 × 55 cm",
@@ -1750,7 +1749,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery"
    }
   },
   {
@@ -1758,7 +1758,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -1771,7 +1771,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "67 × 53 cm",
@@ -1797,7 +1796,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -1805,8 +1805,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333,
-     51.508889
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1818,7 +1818,6 @@
     "location": "National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "91.5 × 106.7 cm",
@@ -1844,7 +1843,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -1852,8 +1852,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.715447,
-     40.415696
+     -3.7033,
+     40.4169
     ]
    },
    "properties": {
@@ -1865,7 +1865,6 @@
     "location": "Royal Collections Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "114 × 137 cm",
@@ -1891,7 +1890,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-collections-gallery"
    }
   },
   {
@@ -1899,8 +1899,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.931815,
-     44.411545
+     8.93182,
+     44.41154
     ]
    },
    "properties": {
@@ -1912,7 +1912,6 @@
     "location": "Palazzo Bianco",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "128 × 103 cm",
@@ -1938,7 +1937,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-bianco"
    }
   },
   {
@@ -1946,7 +1946,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     15.561121,
+     15.56112,
      38.2088
     ]
    },
@@ -1959,7 +1959,6 @@
     "location": "Regional museum of Messina",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "314 × 211 cm",
@@ -1985,7 +1984,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "regional-museum-of-messina"
    }
   },
   {
@@ -2006,7 +2006,6 @@
     "location": "Contarelli Chapel",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "292 × 186 cm",
@@ -2032,7 +2031,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "contarelli-chapel"
    }
   },
   {
@@ -2053,7 +2053,6 @@
     "location": "San Luigi dei Francesi",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "genre": "religious art",
@@ -2078,7 +2077,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "san-luigi-dei-francesi"
    }
   },
   {
@@ -2086,8 +2086,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.394722,
-     52.521944
+     13.39472,
+     52.52194
     ]
    },
    "properties": {
@@ -2099,7 +2099,6 @@
     "location": "Bode Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "66 × 33 cm",
@@ -2135,7 +2134,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "bode-museum"
    }
   },
   {
@@ -2143,8 +2143,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.038626,
-     52.403257
+     13.03863,
+     52.40326
     ]
    },
    "properties": {
@@ -2156,7 +2156,6 @@
     "location": "Sanssouci Palace",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "107 × 146 cm",
@@ -2182,7 +2181,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "sanssouci-palace"
    }
   },
   {
@@ -2203,7 +2203,6 @@
     "location": "Galleria Palatina",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "72 × 105 cm",
@@ -2229,7 +2228,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-palatina"
    }
   },
   {
@@ -2237,8 +2237,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489856,
-     41.903324
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -2250,7 +2250,6 @@
     "location": "Palazzo Barberini",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "145 × 195 cm",
@@ -2281,7 +2280,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-barberini"
    }
   },
   {
@@ -2289,7 +2289,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.337499,
+     -0.3375,
      51.4034
     ]
    },
@@ -2302,7 +2302,6 @@
     "location": "Hampton Court Palace",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "63 × 53 cm",
@@ -2333,7 +2332,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "hampton-court-palace"
    }
   },
   {
@@ -2341,8 +2341,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.743272,
-     46.482663
+     30.74327,
+     46.48266
     ]
    },
    "properties": {
@@ -2353,8 +2353,7 @@
     "country": "Ukraine",
     "location": "Odesa Museum of Western and Eastern Art",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "133 × 171 cm",
@@ -2374,7 +2373,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "odesa-museum-of-western-and-eastern-art"
    }
   },
   {
@@ -2382,8 +2382,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
@@ -2395,7 +2395,6 @@
     "location": "Wadsworth Atheneum Museum of Art",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "93.5 × 128.4 cm",
@@ -2421,7 +2420,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "wadsworth-atheneum-museum-of-art"
    }
   },
   {
@@ -2429,8 +2429,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.33583,
+     48.86111
     ]
    },
    "properties": {
@@ -2442,7 +2442,6 @@
     "location": "Louvre Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "99 × 131 cm",
@@ -2473,7 +2472,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre-museum"
    }
   },
   {
@@ -2481,7 +2481,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -2494,7 +2494,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "70 × 67 cm",
@@ -2520,7 +2519,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -2541,7 +2541,6 @@
     "location": "Pio Monte della Misericordia",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "390 × 70 cm",
@@ -2567,7 +2566,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "pio-monte-della-misericordia"
    }
   },
   {
@@ -2575,8 +2575,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -2588,7 +2588,6 @@
     "location": "Thyssen-Bornemisza Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "173 × 133 cm",
@@ -2614,7 +2613,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -2622,7 +2622,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -2635,7 +2635,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "125 × 101 cm",
@@ -2661,7 +2660,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -2679,10 +2679,9 @@
     "year": "1605",
     "city": "Rome",
     "country": "Italy",
-    "location": "Basilica of Saint Augustine in Campo Marzio",
+    "location": "Basilica of Sant'Agostino",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "260 × 150 cm",
@@ -2708,7 +2707,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "basilica-of-sant-agostino"
    }
   },
   {
@@ -2716,7 +2716,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -2729,7 +2729,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "116 × 153 cm",
@@ -2755,7 +2754,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -2763,7 +2763,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -2776,7 +2776,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "292 × 211 cm",
@@ -2802,7 +2801,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -2811,7 +2811,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203881
+     48.20388
     ]
    },
    "properties": {
@@ -2823,7 +2823,6 @@
     "location": "Kunsthistorisches Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on panel, poplar panel",
     "dimensions": "91 × 116 cm",
@@ -2849,7 +2848,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum"
    }
   },
   {
@@ -2870,7 +2870,6 @@
     "location": "St. John's Co-Cathedral",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "361 × 520 cm",
@@ -2896,7 +2895,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "st-john-s-co-cathedral"
    }
   },
   {
@@ -2904,8 +2904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -2917,7 +2917,6 @@
     "location": "Galleria Doria Pamphilj",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "122.5 × 30 cm",
@@ -2943,7 +2942,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-doria-pamphilj"
    }
   },
   {
@@ -2951,7 +2951,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489527,
+     12.48953,
      41.90278
     ]
    },
@@ -2964,7 +2964,6 @@
     "location": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "124 × 90 cm",
@@ -2990,7 +2989,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica"
    }
   },
   {
@@ -2998,8 +2998,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722,
-     42.359444
+     -83.0647,
+     42.3594
     ]
    },
    "properties": {
@@ -3011,7 +3011,6 @@
     "location": "Detroit Institute of Arts",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "98 × 133 cm",
@@ -3037,7 +3036,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts"
    }
   },
   {
@@ -3045,8 +3045,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.334167,
-     52.038333
+     4.33417,
+     52.03833
     ]
    },
    "properties": {
@@ -3056,7 +3056,6 @@
     "location": "Cultural Heritage Agency of the Netherlands Art Collection",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": false,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "128 × 183.5 cm",
@@ -3079,7 +3078,8 @@
       "source": "Editorial flag: no Wikipedia article and an impossible Wikidata date (1624); held by the Netherlands RCE, likely a later copy",
       "note": "Salome — attribution unverified"
      }
-    }
+    },
+    "museum_id": "cultural-heritage-agency-of-the-netherlands-art-collection"
    }
   },
   {
@@ -3099,8 +3099,7 @@
     "country": "France",
     "location": "St. Peter's Cathedral",
     "kind": "church",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "210 × 145 cm",
@@ -3120,7 +3119,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "st-peter-s-cathedral"
    }
   },
   {
@@ -3128,8 +3128,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3140,7 +3140,6 @@
     "location": "Bavarian State Painting Collections",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": false,
     "status": "present",
     "dimensions": "96.6 × 78.6 cm",
     "genre": "portrait",
@@ -3162,7 +3161,8 @@
       "source": "Editorial flag: no Wikipedia article; unverifiable date; Munich version of the Lute Player",
       "note": "attribution unverified"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections"
    }
   },
   {
@@ -3170,8 +3170,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333,
-     51.508889
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3183,7 +3183,6 @@
     "location": "National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "196.2 × 141 cm",
@@ -3209,7 +3208,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -3230,7 +3230,6 @@
     "location": "Galleria Palatina",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": false,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "140 × 195 cm",
@@ -3255,7 +3254,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-palatina"
    }
   },
   {
@@ -3263,8 +3263,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963245,
-     40.779451
+     -73.96325,
+     40.77945
     ]
    },
    "properties": {
@@ -3276,7 +3276,6 @@
     "location": "The Met Fifth Avenue",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "116 × 94 cm",
@@ -3311,7 +3310,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "the-met-fifth-avenue"
    }
   },
   {
@@ -3319,8 +3319,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611667,
-     41.508889
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -3332,7 +3332,6 @@
     "location": "Cleveland Museum of Art",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "202.5 × 152.7 cm",
@@ -3358,7 +3357,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art"
    }
   },
   {
@@ -3366,8 +3366,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482778,
-     41.893056
+     12.48278,
+     41.89306
     ]
    },
    "properties": {
@@ -3379,7 +3379,6 @@
     "location": "Capitoline Museums",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "1290 × 950 cm",
@@ -3404,7 +3403,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "capitoline-museums"
    }
   },
   {
@@ -3412,8 +3412,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.656111,
-     40.345278
+     -74.65611,
+     40.34528
     ]
    },
    "properties": {
@@ -3425,7 +3425,6 @@
     "location": "Princeton University",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "116 × 173 cm",
@@ -3459,7 +3458,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "princeton-university"
    }
   },
   {
@@ -3467,8 +3467,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -104.989345,
-     39.737188
+     -104.98935,
+     39.73719
     ]
    },
    "properties": {
@@ -3480,7 +3480,6 @@
     "location": "Denver Art Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "105 × 84 cm",
@@ -3506,7 +3505,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "denver-art-museum"
    }
   },
   {
@@ -3514,8 +3514,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023889,
-     39.856944
+     -4.02389,
+     39.85694
     ]
    },
    "properties": {
@@ -3527,7 +3527,6 @@
     "location": "Museo Catedralicio",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "genre": "religious art",
@@ -3550,7 +3549,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-catedralicio"
    }
   },
   {
@@ -3571,7 +3571,6 @@
     "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "94 × 131 cm",
@@ -3595,7 +3594,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini"
    }
   },
   {
@@ -3613,10 +3613,9 @@
     "year": "1605",
     "city": "Kansas City",
     "country": "United States",
-    "location": "The Nelson-Atkins Museum of Art",
+    "location": "Nelson-Atkins Museum of Art",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "172.7 × 132.1 cm",
@@ -3640,7 +3639,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "nelson-atkins-museum-of-art"
    }
   },
   {
@@ -3648,8 +3648,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.511389,
-     35.896389
+     14.51139,
+     35.89639
     ]
    },
    "properties": {
@@ -3661,7 +3661,6 @@
     "location": "MUŻA",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "100 × 73 cm",
@@ -3687,7 +3686,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "muza"
    }
   },
   {
@@ -3695,20 +3695,19 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722,
-     52.508611
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "Amor Vincit Omnia",
     "year": "1601",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "156.5 × 113.3 cm",
@@ -3739,7 +3738,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin"
    }
   },
   {
@@ -3760,7 +3760,6 @@
     "location": "St. John's Co-Cathedral",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "112 × 157 cm",
@@ -3787,7 +3786,8 @@
       "source": "Saint Jerome Writing — painted in Malta, 1607–08",
       "note": ""
      }
-    }
+    },
+    "museum_id": "st-john-s-co-cathedral"
    }
   },
   {
@@ -3807,8 +3807,7 @@
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "135.5 × 169.5 cm",
@@ -3833,7 +3832,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland"
    }
   },
   {
@@ -3841,8 +3841,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611,
-     59.940556
+     30.3136,
+     59.9406
     ]
    },
    "properties": {
@@ -3853,8 +3853,7 @@
     "country": "Russia",
     "location": "Hermitage Museum",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "94 × 119 cm",
@@ -3873,7 +3872,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum"
    }
   },
   {
@@ -3881,8 +3881,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333,
-     40.779444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -3893,8 +3893,7 @@
     "country": "United States",
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "100 × 126.5 cm",
@@ -3918,7 +3917,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -3926,20 +3926,19 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722,
-     52.508611
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "Saint Matthew and the Angel",
     "year": "1602",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "232 × 183 cm",
@@ -3970,7 +3969,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin"
    }
   },
   {
@@ -3978,8 +3978,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333,
-     51.508889
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3991,7 +3991,6 @@
     "location": "National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "66 × 49.5 cm",
@@ -4017,7 +4016,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -4025,8 +4025,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.33583,
+     48.86111
     ]
    },
    "properties": {
@@ -4038,7 +4038,6 @@
     "location": "Louvre Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "369 × 245 cm",
@@ -4069,7 +4068,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre-museum"
    }
   },
   {
@@ -4077,8 +4077,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.836162,
-     41.592868
+     1.83616,
+     41.59287
     ]
    },
    "properties": {
@@ -4090,7 +4090,6 @@
     "location": "Museum of Montserrat",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "137 × 100 cm",
@@ -4121,7 +4120,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-montserrat"
    }
   },
   {
@@ -4129,8 +4129,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333,
-     40.779444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -4142,7 +4142,6 @@
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "92.1 × 118.4 cm",
@@ -4173,7 +4172,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -4182,7 +4182,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611
+     32.74861
     ]
    },
    "properties": {
@@ -4194,7 +4194,6 @@
     "location": "Museo d'arte Kimbell",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "94.2 × 130.9 cm",
@@ -4220,7 +4219,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-d-arte-kimbell"
    }
   },
   {
@@ -4228,8 +4228,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.780949,
-     43.093483
+     11.78095,
+     43.09348
     ]
    },
    "properties": {
@@ -4240,8 +4240,7 @@
     "country": "Italy",
     "location": "Museo Civico di Montepulciano",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "77 × 69 cm",
@@ -4261,7 +4260,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-civico-di-montepulciano"
    }
   },
   {
@@ -4282,7 +4282,6 @@
     "location": "Cerasi Chapel",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "230 × 175 cm",
@@ -4308,7 +4307,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "cerasi-chapel"
    }
   },
   {
@@ -4317,7 +4317,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203881
+     48.20388
     ]
    },
    "properties": {
@@ -4329,7 +4329,6 @@
     "location": "Kunsthistorisches Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "364.5 × 249.5 cm",
@@ -4355,7 +4354,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum"
    }
   },
   {
@@ -4363,8 +4363,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -4376,7 +4376,6 @@
     "location": "Galleria Doria Pamphilj",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "135.5 × 48 cm",
@@ -4402,7 +4401,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-doria-pamphilj"
    }
   },
   {
@@ -4410,7 +4410,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489527,
+     12.48953,
      41.90278
     ]
    },
@@ -4423,7 +4423,6 @@
     "location": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "110 × 92 cm",
@@ -4454,7 +4453,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica"
    }
   },
   {
@@ -4462,8 +4462,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.802222,
-     42.273056
+     -71.80222,
+     42.27306
     ]
    },
    "properties": {
@@ -4473,8 +4473,7 @@
     "country": "United States",
     "location": "Museo de Arte de Worcester",
     "kind": "museum",
-    "attribution": "generally accepted",
-    "notable": false,
+    "attribution": "attributed",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "73.2 × 97.5 cm",
@@ -4484,7 +4483,8 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79035845",
      "retrieved_at": "2026-08-18"
-    }
+    },
+    "museum_id": "museo-de-arte-de-worcester"
    }
   },
   {
@@ -4492,7 +4492,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -4505,7 +4505,6 @@
     "location": "Galleria Borghese",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "159 × 124 cm",
@@ -4530,7 +4529,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese"
    }
   },
   {
@@ -4538,8 +4538,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -4551,7 +4551,6 @@
     "location": "Musée des Beaux-Arts de Rouen",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil paint",
     "dimensions": "134.5 × 175.5 cm",
@@ -4577,7 +4576,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-rouen"
    }
   },
   {
@@ -4585,8 +4585,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.33583,
+     48.86111
     ]
    },
    "properties": {
@@ -4597,7 +4597,6 @@
     "location": "Department of Paintings of the Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "194 × 134 cm",
@@ -4623,7 +4622,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "department-of-paintings-of-the-louvre"
    }
   },
   {
@@ -4644,7 +4644,6 @@
     "location": "Contarelli Chapel",
     "kind": "church",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "340 × 322 cm",
@@ -4676,7 +4675,8 @@
       "source": "Contarelli Chapel, Rome (c. 1599–1600)",
       "note": "overrides the itinerary default (its Wikidata date was wrong)"
      }
-    }
+    },
+    "museum_id": "contarelli-chapel"
    }
   },
   {
@@ -4684,8 +4684,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.394722,
-     52.521944
+     13.39472,
+     52.52194
     ]
    },
    "properties": {
@@ -4697,7 +4697,6 @@
     "location": "Bode Museum",
     "kind": "museum",
     "attribution": "generally accepted",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "154 × 222 cm",
@@ -4728,7 +4727,8 @@
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
-    }
+    },
+    "museum_id": "bode-museum"
    }
   },
   {
@@ -4749,7 +4749,6 @@
     "location": "Kunstmuseum Basel",
     "kind": "museum",
     "attribution": "disputed",
-    "notable": true,
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "102.5 × 83 cm",
@@ -4759,7 +4758,8 @@
     "_source": {
      "source": "Lorena León (art historian)",
      "note": "Not attributed to Caravaggio in Wikidata; disputed attribution"
-    }
+    },
+    "museum_id": "kunstmuseum-basel"
    }
   }
  ]

@@ -11,13 +11,31 @@ const WIKI_LANGS = ["es", "en", "it"];
 
 // painters loaded onto the (shared) map 1. Add a painter = add a line here.
 const PAINTERS = [
-  { slug: "caravaggio", name: "Caravaggio", file: "atlas/data/caravaggio.geojson", color: "#7a4a2b" },
-  { slug: "leonardo", name: "Leonardo da Vinci", file: "atlas/data/leonardo.geojson", color: "#3f6fb0" },
-  { slug: "raphael", name: "Raphael", file: "atlas/data/raphael.geojson", color: "#4a8f5f" },
+  { slug: "caravaggio", name: "Caravaggio", file: "atlas/data/caravaggio.geojson" },
+  { slug: "leonardo", name: "Leonardo da Vinci", file: "atlas/data/leonardo.geojson" },
+  { slug: "raphael", name: "Raphael", file: "atlas/data/raphael.geojson" },
+  { slug: "goya", name: "Goya", file: "atlas/data/goya.geojson" },
+  { slug: "velazquez", name: "Velázquez", file: "atlas/data/velazquez.geojson" },
+  { slug: "botticelli", name: "Botticelli", file: "atlas/data/botticelli.geojson" },
+  { slug: "giotto", name: "Giotto", file: "atlas/data/giotto.geojson" },
+  { slug: "ribera", name: "Ribera", file: "atlas/data/ribera.geojson" },
+  { slug: "zurbaran", name: "Zurbarán", file: "atlas/data/zurbaran.geojson" },
+  { slug: "masaccio", name: "Masaccio", file: "atlas/data/masaccio.geojson" },
+  { slug: "titian", name: "Titian", file: "atlas/data/titian.geojson" },
+  { slug: "vermeer", name: "Vermeer", file: "atlas/data/vermeer.geojson" },
 ];
-const PAINTER_COLOR = Object.fromEntries(PAINTERS.map(p => [p.name, p.color]));
+const DATA_V = "18";   // bump alongside atlas.html ?v= when the geojson changes (cache-bust)
+
+// Each painter has a FIXED colour, by its position in the manifest (stable, always the
+// same). The palette cycles if there are ever more painters than colours.
+const PALETTE = [
+  "#7a4a2b", "#3f6fb0", "#4a8f5f", "#9c4f7c", "#c8892a", "#2f8f8f", "#8a5cc0", "#b0483a",
+  "#5b7f2f", "#c0568a", "#3a6b8f", "#8a6d2f", "#6a4fb0", "#2f8f6a", "#a0562a", "#4a4a8f",
+];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
+const painterColors = Object.fromEntries(PAINTERS.map((p, i) => [p.name, PALETTE[i % PALETTE.length]]));
+function colorFor(name) { return painterColors[name] || MULTI_COLOR; }
 
 // Most works are in Europe; open there. The ~12 in the Americas are one zoom-out away.
 const map = L.map("map", { zoomControl: true, worldCopyJump: true }).setView([43, 9], 5);
@@ -43,29 +61,51 @@ const cluster = L.markerClusterGroup({
   },
 }).addTo(map);
 
+let legendDiv;
 const legend = L.control({ position: "bottomleft" });
-legend.onAdd = () => {
-  const d = L.DomUtil.create("div", "legend");
-  const painters = PAINTERS.map(p => `<span class="k" style="background:${p.color}"></span>${esc(p.name)}`).join(" ");
-  d.innerHTML =
-    `<div class="row">${painters}` +
-    (PAINTERS.length > 1 ? ` <span class="k" style="background:${MULTI_COLOR}"></span>Several` : "") + `</div>` +
-    `<div class="row"><span class="k" style="background:${LOST_COLOR}"></span>Lost / stolen` +
-    ` <span class="k ring"></span>Disputed</div>`;
-  return d;
-};
+legend.onAdd = () => { legendDiv = L.DomUtil.create("div", "legend"); return legendDiv; };
 legend.addTo(map);
+// reflects the current selection: the coloured painters (or a note when too many)
+function updateLegend() {
+  if (!legendDiv) return;
+  const shown = PAINTERS.filter(p => state.painters[p.name] !== false);
+  legendDiv.style.display = shown.length ? "" : "none";
+  if (!shown.length) return;
+  if (shown.length > 12) { legendDiv.innerHTML = `<div class="row">${shown.length} painters</div>`; return; }
+  const rows = shown.map(p => `<span class="k" style="background:${colorFor(p.name)}"></span>${esc(p.name)}`).join(" ");
+  legendDiv.innerHTML = `<div class="row">${rows}` +
+    (shown.length > 1 ? ` <span class="k" style="background:${MULTI_COLOR}"></span>Several` : "") + `</div>`;
+}
 
 let allFeatures = [];   // raw point features from the geojson
 const places = [];   // {marker, kind, feats, lat, lon, shown}
 const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
 let panelVis = [];   // works currently listed in the panel
-const state = { mode: "current", museum: true, church: true, private: true, onlyAccepted: false,
-                majorOnly: true, yearMin: -Infinity, yearMax: Infinity, painters: {} };
+const state = { mode: "current", museum: true, church: true, private: true,
+                acceptedOnly: true, museumFilter: null, yearMin: -Infinity, yearMax: Infinity, painters: {} };
+
+// museum index (derived from the works): each venue with its painters + work count
+const museumIndex = [];
+function museumKey(p) { return p.museum_id || `${p.location || ""}|${p.city || ""}`; }
+function buildMuseumIndex() {
+  const m = new Map();
+  for (const f of allFeatures) {
+    const p = f.properties;
+    if (!p.location) continue;
+    const k = museumKey(p);
+    if (!m.has(k)) m.set(k, {
+      key: k, location: p.location, city: p.city || "", country: p.country || "",
+      lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0], painters: new Set(), count: 0,
+    });
+    const e = m.get(k); e.painters.add(p.painter); e.count++;
+  }
+  museumIndex.length = 0;
+  museumIndex.push(...[...m.values()].sort((a, b) => b.count - a.count));
+}
 PAINTERS.forEach(p => { state.painters[p.name] = true; });
 
 function yearNum(p) {
-  const m = (p.year || "").match(/1[3-9]\d{2}|20\d{2}/);   // 1300s+ (Leonardo/Raphael start pre-1500)
+  const m = (p.year || "").match(/1[2-9]\d{2}|20\d{2}/);   // 12xx+ (Giotto onward)
   return m ? +m[0] : null;
 }
 function inYear(p) {
@@ -75,8 +115,9 @@ function inYear(p) {
 function passesAll(p) {
   const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"];   // no venue type on map 2
   const painterOk = state.painters[p.painter] !== false;
-  const majorOk = !state.majorOnly || p.notable;
-  return painterOk && kindOk && majorOk && (!state.onlyAccepted || ATTR_ACCEPTED.has(p.attribution)) && inYear(p);
+  const attrOk = !state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution);
+  const museumOk = !state.museumFilter || museumKey(p) === state.museumFilter;
+  return painterOk && kindOk && attrOk && museumOk && inYear(p);
 }
 // active coordinate per map: current location, or where it was painted (map 2)
 function activeCoord(f) {
@@ -91,10 +132,16 @@ function esc(s) {
   return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
 
+// subtle "?" for a disputed attribution (a scholarly nuance, not an error → not a warning ⚠)
+function disputedMark(p) {
+  return (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
+    ? ` <span class="qm" title="Disputed attribution">?</span>` : "";
+}
+
 // small painter tag: coloured dot + name (works belong to different painters now)
 function painterTag(p) {
   if (!p.painter) return "";
-  const c = PAINTER_COLOR[p.painter] || MULTI_COLOR;
+  const c = colorFor(p.painter);
   return `<span class="pby"><span class="pdot" style="background:${c}"></span>${esc(p.painter)}</span>`;
 }
 
@@ -184,6 +231,7 @@ function placePopup(feats) {
 }
 
 function refresh() {
+  updateLegend();
   let workCount = 0, shownPlaces = 0;
   const countries = new Set();
   for (const pl of places) {
@@ -194,7 +242,7 @@ function refresh() {
       const disputed = vis.some(f => !ATTR_ACCEPTED.has(f.properties.attribution));
       const painters = new Set(vis.map(f => f.properties.painter));
       const color = lost ? LOST_COLOR
-        : painters.size === 1 ? (PAINTER_COLOR[[...painters][0]] || MULTI_COLOR) : MULTI_COLOR;
+        : painters.size === 1 ? colorFor([...painters][0]) : MULTI_COLOR;
       pl.marker.options.works = vis.length;
       pl.marker.setIcon(pinIcon(color, vis.length, { disputed }));
       pl.marker.setPopupContent(placePopup(vis));
@@ -239,7 +287,7 @@ function buildMarkers() {
 }
 
 Promise.all(PAINTERS.map(p =>
-  fetch(p.file).then(r => r.ok ? r.json() : { features: [] }).catch(() => ({ features: [] }))))
+  fetch(p.file + "?v=" + DATA_V).then(r => r.ok ? r.json() : { features: [] }).catch(() => ({ features: [] }))))
   .then(gjs => {
     allFeatures = [];
     gjs.forEach(gj => (gj.features || []).forEach(f => {
@@ -248,7 +296,8 @@ Promise.all(PAINTERS.map(p =>
     const yrs = allFeatures.map(f => yearNum(f.properties)).filter(v => v != null);
     const [lo, hi] = robustBounds(yrs);   // ignore sparse mis-dated outliers (e.g. copies dated 1900)
     buildTimeline(lo, hi);                 // sets state.yearMin/Max
-    buildPainterChips();
+    buildMuseumIndex();
+    buildPainterSelect();
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     buildMarkers();
     map.on("moveend", renderPanel);
@@ -277,35 +326,144 @@ function applyHash() {
   const parts = location.hash.replace(/^#/, "").split("/").filter(Boolean);
   const focus = PAINTERS.find(p => p.slug === parts[0]);
   PAINTERS.forEach(p => { state.painters[p.name] = focus ? p === focus : true; });
-  document.querySelectorAll("input[data-painter]").forEach(cb => {
-    cb.checked = state.painters[cb.dataset.painter] !== false;
-  });
+  if (document.getElementById("painters-btn")) { updatePainterBtn(); renderPainterList(); }
   state.mode = parts.includes("painted") ? "painted" : "current";
   document.querySelectorAll(".mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
   document.body.classList.toggle("mode-painted", state.mode === "painted");
 }
 
-// painter filter chips (built from the manifest, so adding a painter needs no HTML)
-function buildPainterChips() {
+// painter selector: a button + a searchable checklist popover (scales to many painters)
+function buildPainterSelect() {
   const box = document.getElementById("painters");
   if (!box) return;
-  box.innerHTML = PAINTERS.map(p =>
-    `<label class="chip pnt"><input type="checkbox" data-painter="${esc(p.name)}" checked>` +
-    `<span class="sw" style="background:${p.color}"></span>${esc(p.name)}</label>`).join("");
-  box.querySelectorAll("input[data-painter]").forEach(cb => {
-    cb.addEventListener("change", () => { state.painters[cb.dataset.painter] = cb.checked; refresh(); });
+  box.innerHTML =
+    `<button id="painters-btn" class="chip" type="button" aria-expanded="false">All painters ▾</button>` +
+    `<div id="painters-pop" class="pop" hidden>` +
+    `<input id="painters-search" class="pop-search" placeholder="Search painters or museums…" autocomplete="off">` +
+    `<div class="pop-actions"><button type="button" data-act="all">All</button>` +
+    `<button type="button" data-act="none">None</button></div>` +
+    `<ul id="painters-list" class="pop-list"></ul></div>`;
+
+  const btn = document.getElementById("painters-btn");
+  const pop = document.getElementById("painters-pop");
+  const search = document.getElementById("painters-search");
+
+  btn.addEventListener("click", () => {
+    const open = pop.hidden;
+    pop.hidden = !open; btn.setAttribute("aria-expanded", String(open));
+    if (open) { search.value = ""; renderPainterList(); search.focus(); }
   });
+  document.addEventListener("click", e => {
+    if (!pop.hidden && !box.contains(e.target)) { pop.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") pop.hidden = true; });
+  search.addEventListener("input", renderPainterList);
+  pop.querySelectorAll("[data-act]").forEach(b => b.addEventListener("click", () => {
+    const on = b.dataset.act === "all";
+    PAINTERS.forEach(p => { state.painters[p.name] = on; });
+    renderPainterList(); updatePainterBtn(); refresh();
+  }));
+  renderPainterList(); updatePainterBtn();
+}
+
+// unified search: painters (toggle) + museums (filter to that venue)
+function renderPainterList() {
+  const q = (document.getElementById("painters-search")?.value || "").toLowerCase().trim();
+  const ul = document.getElementById("painters-list");
+  let html = "";
+
+  const museumRow = m =>
+    `<li class="mrow" data-museum="${esc(m.key)}"><span class="micon">🏛</span><div>` +
+    `<div class="mname">${esc(m.location)}</div>` +
+    `<div class="msub">${esc([m.city, m.country].filter(Boolean).join(", "))} · ${m.count} works · ` +
+    `${m.painters.size} painter${m.painters.size > 1 ? "s" : ""}</div></div></li>`;
+
+  if (q) {   // when searching: matching museums first (there are hundreds otherwise)
+    const mus = museumIndex.filter(m =>
+      m.location.toLowerCase().includes(q) || m.city.toLowerCase().includes(q)).slice(0, 8);
+    if (mus.length) html += `<li class="pop-h">Museums</li>` + mus.map(museumRow).join("");
+  }
+
+  const pnt = PAINTERS.filter(p => p.name.toLowerCase().includes(q));
+  if (pnt.length) {
+    if (q && html) html += `<li class="pop-h">Painters</li>`;
+    html += pnt.map(p => {
+      const on = state.painters[p.name] !== false;
+      return `<li><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
+        `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}</label></li>`;
+    }).join("");
+  }
+
+  if (!q && museumIndex.length) {   // idle state: surface the museum search
+    html += `<li class="pop-h">Popular museums · type to search all ${museumIndex.length}</li>` +
+      museumIndex.slice(0, 6).map(museumRow).join("");
+  }
+  ul.innerHTML = html || `<li class="pop-empty">no match</li>`;
+
+  ul.querySelectorAll("input[data-painter]").forEach(cb => cb.addEventListener("change", () => {
+    state.painters[cb.dataset.painter] = cb.checked;
+    refresh(); updatePainterBtn(); renderPainterList();
+  }));
+  ul.querySelectorAll(".mrow").forEach(row => row.addEventListener("click", () => selectMuseum(row.dataset.museum)));
+}
+
+function selectMuseum(key) {
+  state.museumFilter = key;
+  const mu = museumIndex.find(m => m.key === key);
+  const pop = document.getElementById("painters-pop");
+  pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
+  if (mu) { if (!view.map) { view.map = true; setView(); } map.setView([mu.lat, mu.lon], 14); }
+  renderMuseumChip(); refresh();
+}
+function clearMuseum() { state.museumFilter = null; renderMuseumChip(); refresh(); }
+function renderMuseumChip() {
+  let el = document.getElementById("museum-chip");
+  if (!state.museumFilter) { if (el) el.remove(); return; }
+  const mu = museumIndex.find(m => m.key === state.museumFilter);
+  if (!el) {
+    el = document.createElement("span"); el.id = "museum-chip"; el.className = "chip mchip";
+    document.getElementById("painters").after(el);
+  }
+  el.innerHTML = `🏛 ${esc(mu ? mu.location : "Museum")}${mu && mu.city ? ", " + esc(mu.city) : ""} ` +
+    `<button type="button" aria-label="Clear museum">✕</button>`;
+  el.querySelector("button").addEventListener("click", clearMuseum);
+}
+
+function updatePainterBtn() {
+  const btn = document.getElementById("painters-btn");
+  const sel = PAINTERS.filter(p => state.painters[p.name] !== false);
+  const label = sel.length === PAINTERS.length ? "All painters"
+    : sel.length === 0 ? "No painters"
+      : sel.length <= 2 ? sel.map(p => p.name.split(" ")[0]).join(", ")
+        : `${sel.length} painters`;
+  btn.textContent = label + " ▾";
 }
 
 // filters
 document.querySelectorAll('.filters input[data-kind]').forEach(cb => {
   cb.addEventListener("change", () => { state[cb.dataset.kind] = cb.checked; refresh(); });
 });
-document.getElementById("only-accepted").addEventListener("change", e => {
-  state.onlyAccepted = e.target.checked; refresh();
+document.getElementById("accepted-only").addEventListener("change", e => {
+  state.acceptedOnly = e.target.checked; refresh();
 });
-document.getElementById("major-only").addEventListener("change", e => {
-  state.majorOnly = e.target.checked; refresh();
+
+// ── show/hide map and list (at least one stays visible) ──
+const view = { map: true, panel: true };
+function setView() {
+  document.body.classList.toggle("hide-map", !view.map);
+  document.body.classList.toggle("hide-panel", !view.panel);
+  document.getElementById("v-map").classList.toggle("active", view.map);
+  document.getElementById("v-list").classList.toggle("active", view.panel);
+  if (view.map) setTimeout(() => map.invalidateSize(), 60);
+  renderPanel();
+}
+document.getElementById("v-map").addEventListener("click", () => {
+  if (view.map && !view.panel) return;      // it's the only pane shown → keep it
+  view.map = !view.map; setView();
+});
+document.getElementById("v-list").addEventListener("click", () => {
+  if (view.panel && !view.map) return;
+  view.panel = !view.panel; setView();
 });
 
 // ── map mode: "where they are today" (venues) vs "where they were painted" (cities) ──
@@ -350,8 +508,9 @@ function buildTimeline(min, max) {
 
 // ── side panel: the works currently within the map viewport, grouped by venue ──
 function renderPanel() {
-  const b = map.getBounds();
-  const vis = works.filter(w => passesAll(w.p) && b.contains([w.lat, w.lon]));
+  const bounded = view.map;                    // when the map is hidden, list ALL works (no bounds)
+  const b = bounded ? map.getBounds() : null;
+  const vis = works.filter(w => passesAll(w.p) && (!bounded || b.contains([w.lat, w.lon])));
 
   // group by the active place (venue on map 1, creation city on map 2)
   const painted = state.mode === "painted";
@@ -368,7 +527,7 @@ function renderPanel() {
     (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
 
   document.getElementById("panel-head").textContent =
-    `${vis.length} work${vis.length === 1 ? "" : "s"} in view`;
+    `${vis.length} work${vis.length === 1 ? "" : "s"}${bounded ? " in view" : ""}`;
 
   const ul = document.getElementById("worklist");
   if (!vis.length) {
@@ -390,7 +549,7 @@ function renderPanel() {
         ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
         : `<span class="th"></span>`;
       html += `<li data-i="${i}">${thumb}<div>` +
-        `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}</div>` +
+        `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
         `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;
     }
   }
@@ -403,8 +562,11 @@ document.getElementById("worklist").addEventListener("click", e => {
   if (!li) return;
   const w = panelVis[+li.dataset.i];
   if (!w) return;
-  map.setView([w.lat, w.lon], Math.max(map.getZoom(), 13));
-  cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup());
+  const go = () => {
+    map.setView([w.lat, w.lon], Math.max(map.getZoom(), 13));
+    cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup());
+  };
+  if (!view.map) { view.map = true; setView(); setTimeout(go, 120); } else go();
 });
 
 // ── lightbox: the painting at full size ──

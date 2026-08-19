@@ -24,10 +24,39 @@
       <label class="chip cb"><input type="checkbox" data-region="cantabria" checked> Cantabria</label>
       <label class="chip pv"><input type="checkbox" data-region="euskadi" checked> Euskadi</label>
       <label class="chip ver"><input type="checkbox" id="solo-verificados"> Solo verificados</label>
+      <button id="near-me" class="chip act" type="button">📍 Cerca de mí</button>
+      <button id="report" class="chip act2" type="button">➕ Falta uno / error</button>
     </div>
   </header>
 
   <div id="map"></div>
+
+  <div id="report-banner" hidden>📍 Pincha en el mapa dónde está el frontón <button id="report-abort" type="button">cancelar</button></div>
+
+  <div id="report-panel" hidden>
+    <form id="report-form">
+      <h3>Reportar un frontón</h3>
+      <div class="loc" id="report-loc"></div>
+      <label>Tipo
+        <select name="tipo">
+          <option value="falta">Falta este frontón</option>
+          <option value="error">Hay un error aquí</option>
+          <option value="otro">Otro</option>
+        </select>
+      </label>
+      <input name="nombre" placeholder="Nombre del frontón (si lo sabes)">
+      <input name="municipio" placeholder="Municipio">
+      <textarea name="nota" rows="2" placeholder="Detalles: cubierto/descubierto, estado, tipo…"></textarea>
+      <input name="email" type="email" placeholder="Tu email (opcional, por si te consulto)">
+      <input type="hidden" name="lat"><input type="hidden" name="lon">
+      <input type="hidden" name="pagina" value="frontones">
+      <div class="row">
+        <button type="button" id="report-cancel">Cancelar</button>
+        <button type="submit" id="report-send">Enviar</button>
+      </div>
+      <div class="msg" id="report-msg"></div>
+    </form>
+  </div>
 
   <footer id="foot">
     <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
