@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Atlas of Painting · where the works are today</title>
+  <meta name="description" content="Interactive atlas of the great painters — where their works are today and where they were painted. Data from Wikidata, Wikipedia and Wikimedia Commons.">
+  <meta name="theme-color" content="#3a2317">
+  <link rel="stylesheet" href="atlas/vendor/leaflet.css">
+  <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
+  <link rel="stylesheet" href="atlas/style.css?v=5">
+</head>
+<body>
+  <header id="bar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <strong>Atlas of Painting</strong>
+        <small>where the works are today</small>
+      </div>
+    </div>
+    <div id="stats" class="stats">…</div>
+    <div class="filters">
+      <span id="painters" class="painters"></span>
+      <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
+      <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
+      <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
+      <label class="chip att"><input type="checkbox" id="major-only" checked> Major works</label>
+      <label class="chip att"><input type="checkbox" id="only-accepted"> Accepted attribution only</label>
+      <button id="locate" class="chip btn" type="button">📍 Nearest to me</button>
+    </div>
+  </header>
+
+  <div id="modes">
+    <button type="button" class="mode-btn active" data-mode="current">📍 On display</button>
+    <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
+  </div>
+
+  <div id="timeline">
+    <span class="tl-cap">Painted</span>
+    <div class="tl-range">
+      <div class="tl-track"></div>
+      <div id="tl-fill" class="tl-fill"></div>
+      <input type="range" id="tl-min" aria-label="From year">
+      <input type="range" id="tl-max" aria-label="To year">
+    </div>
+    <span id="tl-label" class="tl-val">—</span>
+  </div>
+
+  <div id="main">
+    <div id="map"></div>
+    <aside id="panel">
+      <div id="panel-head">Works in view</div>
+      <ul id="worklist"></ul>
+    </aside>
+  </div>
+
+  <div id="lightbox" hidden>
+    <button id="lb-close" type="button" aria-label="Close">✕</button>
+    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  </div>
+
+  <footer id="foot">
+    <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
+    · Data: <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+    · <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a>
+    · <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>
+    · Missing a work or spotted an error? <span class="hint">fix it on Wikidata</span>
+  </footer>
+
+  <script src="atlas/vendor/leaflet.js"></script>
+  <script src="atlas/vendor/leaflet.markercluster.js"></script>
+  <script src="atlas/app.js?v=5"></script>
+</body>
+</html>
