@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajas nido de Laredo</title>
+  <meta name="description" content="Mapa interactivo de las cajas nido instaladas en Laredo por escolares y voluntarios: tipo, materiales, orientación, fecha y fotos.">
+
+  <link rel="stylesheet" href="cajas_nido/vendor/leaflet.css?v=0.2.1">
+  <link rel="stylesheet" href="cajas_nido/vendor/MarkerCluster.css?v=0.2.1">
+  <link rel="stylesheet" href="cajas_nido/style.css?v=0.2.1">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build"></span>
+  </nav>
+
+  <header class="app-header">
+    <a class="brand" href="cajas_nido.html">
+      <span class="brand-mark">🐦</span>
+      <div>
+        <h1>Cajas nido de Laredo</h1>
+        <p class="subtitle">Municipio Amigo de las Cajas Nido</p>
+      </div>
+    </a>
+    <div class="header-right">
+      <div class="header-count"><span id="contador">0</span> cajas</div>
+      <div class="update-info" id="update-info"></div>
+    </div>
+  </header>
+
+  <div class="vista-toggle">
+    <button type="button" data-vista="mapa" class="vista-activa">🗺️ Mapa</button>
+    <button type="button" data-vista="lista">📋 Lista</button>
+    <button type="button" data-vista="galeria">🖼️ Galería</button>
+    <button type="button" data-vista="datos">📊 Datos</button>
+  </div>
+
+  <div class="app-body">
+    <aside class="sidebar">
+      <div class="filters">
+        <input type="search" id="buscar" placeholder="Busca tu colegio, tu equipo o el número de la caja…" autocomplete="off">
+
+        <div class="grupo-filtro">
+          <span class="grupo-tit">Quién la construyó</span>
+          <div class="chips" id="f-centros"></div>
+        </div>
+
+        <div class="grupo-filtro" id="g-estados" hidden>
+          <span class="grupo-tit">Estado en la última revisión</span>
+          <div class="chips" id="f-estados"></div>
+        </div>
+
+        <div class="grupo-filtro">
+          <span class="grupo-tit">Tipo de caja</span>
+          <div class="chips" id="f-tipos"></div>
+        </div>
+
+        <div class="grupo-filtro">
+          <span class="grupo-tit">Año de instalación</span>
+          <div class="chips" id="f-anios"></div>
+        </div>
+
+        <div class="grupo-filtro">
+          <span class="grupo-tit">Orientación</span>
+          <div class="chips chips-rosa" id="f-expo"></div>
+        </div>
+
+        <label class="chk"><input type="checkbox" id="solo-foto"> Solo cajas con foto</label>
+        <label class="chk"><input type="checkbox" id="filtro-mapa"> Filtrar por la zona visible del mapa</label>
+
+        <div class="capas">
+          <span class="grupo-tit">Capas del mapa</span>
+          <label class="chk"><input type="checkbox" id="capa-riesgos" checked> ⚠️ Riesgos y peligros</label>
+          <label class="chk"><input type="checkbox" id="capa-zonas"> 🌳 Zonas verdes municipales</label>
+        </div>
+
+        <button type="button" id="limpiar" class="limpiar">Limpiar filtros</button>
+      </div>
+      <div class="lista-cab">
+        <span id="lista-n" class="lista-n">Las 99 cajas</span>
+        <span id="lista-filtrada" class="lista-filtrada" hidden>filtradas</span>
+        <label class="lista-orden">Ordenar<select id="orden"></select></label>
+      </div>
+      <ul id="lista" class="lista"></ul>
+    </aside>
+
+    <main class="map-wrap">
+      <div id="map"></div>
+      <div id="panel-datos" class="panel-datos" hidden></div>
+      <div id="panel-galeria" class="panel-datos" hidden></div>
+    </main>
+  </div>
+
+  <div id="detalle" class="detalle" hidden>
+    <button id="cerrar-detalle" class="cerrar" aria-label="Cerrar">✕</button>
+    <div id="detalle-contenido"></div>
+  </div>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <div id="visor" class="visor" hidden>
+    <button class="cerrar" id="cerrar-visor" aria-label="Cerrar">✕</button>
+    <img id="visor-img" alt="">
+  </div>
+
+  <script src="cajas_nido/vendor/leaflet.js?v=0.2.1"></script>
+  <script src="cajas_nido/vendor/leaflet.markercluster.js?v=0.2.1"></script>
+  <script src="cajas_nido/data/data.js?v=0.2.1"></script>
+  <script src="cajas_nido/app.js?v=0.2.1"></script>
+</body>
+</html>
