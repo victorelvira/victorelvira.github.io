@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batalla de Flores · Laredo</title>
+  <meta name="description" content="Archivo navegable de la Batalla de Flores de Laredo: ediciones desde 1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato.">
+  <meta name="theme-color" content="#b6465f">
+  <link rel="stylesheet" href="batalla_de_flores/style.css">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Versión del dataset publicado"></span>
+  </nav>
+
+  <header id="bar">
+    <div class="bar-title">
+      <h1>Batalla de Flores</h1>
+      <span class="bar-sub">Laredo · 1908–2026</span>
+    </div>
+    <div id="stats" class="stats"></div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Carroza, grupo o año" autocomplete="off" aria-label="Buscar">
+      <select id="decade" aria-label="Década"></select>
+      <select id="status" aria-label="Estado de la edición"></select>
+      <label class="toggle"><input id="ranked-only" type="checkbox"><span>Con palmarés</span></label>
+      <button id="clear-filters" class="ghost" type="button">Limpiar</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="pane pane-index" aria-label="Índice">
+      <div class="pane-head">
+        <div class="tabs" role="tablist">
+          <button class="tab is-active" type="button" data-mode="editions" role="tab" aria-selected="true">Ediciones</button>
+          <button class="tab" type="button" data-mode="groups" role="tab" aria-selected="false">Grupos</button>
+          <button class="tab" type="button" data-mode="routes" role="tab" aria-selected="false">Recorridos</button>
+        </div>
+        <p id="index-count" class="muted"></p>
+      </div>
+      <div id="index-body" class="pane-body"></div>
+      <div id="legend" class="legend"></div>
+    </section>
+
+    <section class="pane pane-detail" aria-label="Detalle">
+      <div id="detail" class="pane-body"></div>
+    </section>
+  </main>
+
+  <footer id="credits">
+    <p>
+      <strong>Fuentes.</strong> El grueso de este archivo procede de
+      <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>,
+      un trabajo de recopilación excelente —más de un siglo de ediciones documentadas carroza a carroza—
+      sin el cual esta página no existiría. Los resultados recientes salen de las notas oficiales del
+      <a href="https://www.laredo.es/09/fiestas_flores.php" target="_blank" rel="noopener">Ayuntamiento de Laredo</a>.
+      Las imágenes se enlazan desde el servidor original y pertenecen a sus autores.
+    </p>
+    <p class="muted">
+      Esto es una base de datos derivada —año, posición, carroza, grupo, recorrido—, no una réplica del
+      contenido editorial: cada edición y cada carroza enlazan a la página concreta de la que salen.
+    </p>
+  </footer>
+
+  <script src="batalla_de_flores/app.js"></script>
+</body>
+</html>

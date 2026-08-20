@@ -36,9 +36,15 @@ const PAINTERS = [
   { slug: "veronese", name: "Veronese", file: "atlas/data/veronese.geojson" },
   { slug: "mantegna", name: "Mantegna", file: "atlas/data/mantegna.geojson" },
 ];
-const DATA_V = "0.25";   // version + cache-bust. Bump ONCE per deploy (not per edit); keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-20 11:15";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.26.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-20 13:03";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
+// clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
+document.querySelector(".brand")?.addEventListener("click", e => {
+  e.preventDefault();
+  history.replaceState(null, "", location.pathname);   // strip hash/query so reload is pristine
+  location.reload();
+});
 
 // Each painter has a FIXED colour, by its position in the manifest (stable, always the
 // same). The palette cycles if there are ever more painters than colours.
@@ -415,8 +421,9 @@ function renderPainterList() {
     if (q && html) html += `<li class="pop-h">Painters</li>`;
     html += pnt.map(p => {
       const on = state.painters[p.name] !== false;
-      return `<li><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
-        `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}</label></li>`;
+      return `<li class="prow"><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
+        `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}</label>` +
+        `<button type="button" class="only" data-only="${esc(p.name)}">only</button></li>`;
     }).join("");
   }
 
@@ -428,6 +435,12 @@ function renderPainterList() {
 
   ul.querySelectorAll("input[data-painter]").forEach(cb => cb.addEventListener("change", () => {
     state.painters[cb.dataset.painter] = cb.checked;
+    refresh(); updatePainterBtn(); renderPainterList();
+  }));
+  // "only" (Kayak-style): deselect everyone, keep just this painter
+  ul.querySelectorAll("button[data-only]").forEach(b => b.addEventListener("click", e => {
+    e.preventDefault(); e.stopPropagation();
+    PAINTERS.forEach(p => { state.painters[p.name] = p.name === b.dataset.only; });
     refresh(); updatePainterBtn(); renderPainterList();
   }));
   ul.querySelectorAll(".mrow").forEach(row => row.addEventListener("click", () => selectMuseum(row.dataset.museum)));
