@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -27,7 +27,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "country": "United Kingdom"
    }
   },
   {
@@ -35,7 +37,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -56,7 +58,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -83,7 +86,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "indianapolis-museum-of-art",
+    "city": "Indianapolis"
    }
   },
   {
@@ -91,7 +96,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -110,7 +115,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -118,8 +126,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -139,7 +147,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -167,7 +176,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-museum-of-modern-and-contemporary-art"
    }
   },
   {
@@ -175,7 +185,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -183,7 +193,7 @@
     "painter": "Paul Gauguin",
     "title": "The Seine at Pont de Grenelle",
     "year": "1875",
-    "city": "Cologne",
+    "city": "Altstadt-Nord",
     "country": "Germany",
     "location": "Wallraf-Richartz Museum",
     "attribution": "generally accepted",
@@ -196,7 +206,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "wallraf-richartz-museum"
    }
   },
   {
@@ -224,7 +235,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "deji-art-museum"
    }
   },
   {
@@ -232,8 +244,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -252,7 +264,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
@@ -280,7 +294,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fogg-museum",
+    "country": "United States"
    }
   },
   {
@@ -288,8 +304,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.980556,
-     57.696389
+     11.98056,
+     57.69639
     ]
    },
    "properties": {
@@ -307,7 +323,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "gothenburg-museum-of-art",
+    "city": "Gothenburg Municipality",
+    "country": "Sweden"
    }
   },
   {
@@ -334,7 +353,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "city": "Philadelphia",
+    "country": "United States"
    }
   },
   {
@@ -342,8 +364,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.044816,
-     47.389965
+     8.04482,
+     47.38996
     ]
    },
    "properties": {
@@ -362,7 +384,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "aargauer-kunsthaus"
    }
   },
   {
@@ -370,8 +393,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.636146,
-     42.318876
+     -72.63615,
+     42.31888
     ]
    },
    "properties": {
@@ -390,7 +413,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "smith-college-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -408,7 +433,7 @@
     "year": "1879",
     "city": "Budapest",
     "country": "Hungary",
-    "location": "Szépművészeti Múzeum",
+    "location": "Szépmüvészeti Múzeum",
     "attribution": "generally accepted",
     "medium": "W. 37/57",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Paul_Gauguin_059.jpg/500px-Paul_Gauguin_059.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -419,7 +444,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "szepmuveszeti-muzeum"
    }
   },
   {
@@ -427,7 +453,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -448,7 +474,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -456,7 +483,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -475,7 +502,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "city": "Dallas",
+    "country": "United States"
    }
   },
   {
@@ -483,15 +513,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.566111,
-     53.212222
+     6.56611,
+     53.21222
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Vaugirard Church",
     "year": "1880",
-    "city": "Netherlands",
+    "city": "Groningen",
     "location": "Groninger Museum",
     "attribution": "generally accepted",
     "medium": "W. 30/69",
@@ -503,7 +533,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "groninger-museum"
    }
   },
   {
@@ -511,7 +542,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -532,7 +563,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -540,8 +572,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -559,7 +591,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "city": "Madrid",
+    "country": "Spain"
    }
   },
   {
@@ -587,7 +622,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "israel-museum",
+    "country": "Israel"
    }
   },
   {
@@ -615,7 +652,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "menard-art-museum"
    }
   },
   {
@@ -623,8 +661,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -642,7 +680,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -669,7 +710,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-norway",
+    "city": "Oslo"
    }
   },
   {
@@ -677,8 +720,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.467286,
-     53.379572
+     -1.46729,
+     53.37957
     ]
    },
    "properties": {
@@ -697,7 +740,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "millennium-gallery"
    }
   },
   {
@@ -705,15 +749,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "The little one sleeping",
     "year": "1881",
-    "city": "near Copenhagen",
+    "city": "Copenhagen",
     "location": "Ordrupgaard",
     "attribution": "generally accepted",
     "medium": "W. 52 & 54/75",
@@ -725,7 +769,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "country": "Denmark"
    }
   },
   {
@@ -734,7 +780,7 @@
     "type": "Point",
     "coordinates": [
      -1.675,
-     48.109444
+     48.10944
     ]
    },
    "properties": {
@@ -752,7 +798,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-rennes",
+    "city": "Rennes",
+    "country": "France"
    }
   },
   {
@@ -760,7 +809,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -781,7 +830,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -790,7 +840,7 @@
     "type": "Point",
     "coordinates": [
      -1.675,
-     48.109444
+     48.10944
     ]
    },
    "properties": {
@@ -808,7 +858,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-rennes",
+    "city": "Rennes",
+    "country": "France"
    }
   },
   {
@@ -816,8 +869,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -836,7 +889,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "country": "Canada"
    }
   },
   {
@@ -844,15 +899,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -80.193611,
-     25.774167
+     -80.27566,
+     25.71943
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Blue Barge",
     "year": "1882",
-    "city": "Miami",
+    "city": "Florida",
     "location": "Lowe Art Museum",
     "attribution": "generally accepted",
     "medium": "W. 73/90",
@@ -864,7 +919,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "lowe-art-museum",
+    "country": "United States"
    }
   },
   {
@@ -872,7 +929,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -891,7 +948,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -899,7 +959,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -918,7 +978,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -926,8 +989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.407206,
-     41.826783
+     -71.40721,
+     41.82678
     ]
    },
    "properties": {
@@ -946,7 +1009,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "rhode-island-school-of-design-museum"
    }
   },
   {
@@ -954,7 +1018,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -973,7 +1037,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -981,7 +1048,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -1000,7 +1067,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -1008,15 +1078,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.333333,
-     46.833333
+     133,
+     -25
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Chambre avec vue d’une fenêtre ouverte",
     "year": "ca. 1884",
-    "city": "Switzerland",
+    "city": "Australia",
     "location": "Private collection",
     "attribution": "generally accepted",
     "dimensions": "double-sided painting",
@@ -1028,7 +1098,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "private-collection",
+    "country": "France"
    }
   },
   {
@@ -1036,8 +1108,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944,
-     52.095833
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -1056,7 +1128,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kroller-muller-museum"
    }
   },
   {
@@ -1072,7 +1145,7 @@
     "painter": "Paul Gauguin",
     "title": "Madame Mette Gauguin in Evening Dress",
     "year": "1884",
-    "city": "Oslo",
+    "city": "London",
     "location": "National Gallery",
     "attribution": "generally accepted",
     "medium": "W. 95/154",
@@ -1084,7 +1157,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery",
+    "country": "United Kingdom"
    }
   },
   {
@@ -1092,8 +1167,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731667,
-     47.511111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
@@ -1112,7 +1187,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "am-romerholz"
    }
   },
   {
@@ -1120,8 +1196,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -70.262222,
-     43.653611
+     -70.26222,
+     43.65361
     ]
    },
    "properties": {
@@ -1138,7 +1214,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "portland-museum-of-art"
    }
   },
   {
@@ -1146,8 +1223,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.730278,
-     47.501389
+     8.73028,
+     47.50139
     ]
    },
    "properties": {
@@ -1165,7 +1242,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunstmuseum-winterthur"
    }
   },
   {
@@ -1173,15 +1251,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.057778,
-     42.360278
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Forest Interior",
     "year": "1884",
-    "city": "Boston",
+    "city": "Reims",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -1194,7 +1272,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -1202,8 +1281,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -1223,7 +1302,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -1231,7 +1311,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -1250,7 +1330,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -1258,15 +1341,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.057778,
-     42.360278
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Entrance to the Village of Osny",
     "year": "1884",
-    "city": "Boston",
+    "city": "Reims",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -1279,7 +1362,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -1287,7 +1371,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -1295,9 +1379,9 @@
     "painter": "Paul Gauguin",
     "title": "Manuring, or Return from the Harvest",
     "year": "1884",
-    "city": "Cologne",
+    "city": "Altstadt-Nord",
     "country": "Germany",
-    "location": "Wallraf–Richartz Museum",
+    "location": "Wallraf-Richartz Museum",
     "attribution": "generally accepted",
     "medium": "W. 124/117",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Gauguin_1884_La_Fumure_des_terres.jpg/500px-Gauguin_1884_La_Fumure_des_terres.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1308,7 +1392,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "wallraf-richartz-museum"
    }
   },
   {
@@ -1316,8 +1401,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -1326,7 +1411,7 @@
     "year": "1884",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo Thyssen-Bornemisza",
+    "location": "Thyssen-Bornemisza Museum",
     "attribution": "generally accepted",
     "medium": "W. 127/115",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Rue_Jouvenet_%C3%A0_Rouen.jpg/500px-Rue_Jouvenet_%C3%A0_Rouen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1337,7 +1422,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -1366,7 +1452,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -1394,7 +1481,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-norway"
    }
   },
   {
@@ -1402,8 +1490,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594167,
-     47.554167
+     7.59417,
+     47.55417
     ]
    },
    "properties": {
@@ -1421,7 +1509,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "city": "Basel",
+    "country": "Switzerland"
    }
   },
   {
@@ -1450,7 +1541,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kimbell-art-museum"
    }
   },
   {
@@ -1458,8 +1550,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -1478,7 +1570,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "country": "United Kingdom"
    }
   },
   {
@@ -1486,7 +1580,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -1505,7 +1599,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -1513,8 +1610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.290556,
-     55.868611
+     -4.29056,
+     55.86861
     ]
    },
    "properties": {
@@ -1534,7 +1631,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kelvingrove-art-gallery-and-museum"
    }
   },
   {
@@ -1542,7 +1640,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -1561,7 +1659,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -1569,7 +1670,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -1588,7 +1689,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -1596,7 +1700,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -1615,7 +1719,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -1623,8 +1730,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.044816,
-     47.389965
+     8.04482,
+     47.38996
     ]
    },
    "properties": {
@@ -1643,7 +1750,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "aargauer-kunsthaus"
    }
   },
   {
@@ -1651,8 +1759,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944,
-     52.095833
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -1671,7 +1779,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kroller-muller-museum"
    }
   },
   {
@@ -1679,8 +1788,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     31.219722,
-     30.035556
+     31.21972,
+     30.03556
     ]
    },
    "properties": {
@@ -1699,7 +1808,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "mohamed-mahmoud-khalil-museum"
    }
   },
   {
@@ -1708,7 +1818,7 @@
     "type": "Point",
     "coordinates": [
      9.19,
-     45.466944
+     45.46694
     ]
    },
    "properties": {
@@ -1728,7 +1838,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "galleria-d-arte-moderna"
    }
   },
   {
@@ -1736,8 +1847,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -1757,7 +1868,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen"
    }
   },
   {
@@ -1765,8 +1877,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -70.262222,
-     43.653611
+     -70.26222,
+     43.65361
     ]
    },
    "properties": {
@@ -1784,7 +1896,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "portland-museum-of-art"
    }
   },
   {
@@ -1792,8 +1905,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.692222,
-     35.689722
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -1812,7 +1925,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "country": "Japan"
    }
   },
   {
@@ -1820,8 +1935,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.241389,
-     53.478611
+     -2.24139,
+     53.47861
     ]
    },
    "properties": {
@@ -1839,7 +1954,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "manchester-art-gallery"
    }
   },
   {
@@ -1847,8 +1963,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -1868,7 +1984,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -1876,8 +1993,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -1897,7 +2014,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -1924,7 +2042,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "city": "Philadelphia",
+    "country": "United States"
    }
   },
   {
@@ -1952,7 +2073,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "bridgestone-museum-of-art"
    }
   },
   {
@@ -1980,7 +2102,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "bridgestone-museum-of-art"
    }
   },
   {
@@ -2008,7 +2131,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-du-prieure"
    }
   },
   {
@@ -2016,8 +2140,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -70.262222,
-     43.653611
+     -70.26222,
+     43.65361
     ]
    },
    "properties": {
@@ -2035,7 +2159,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "portland-museum-of-art"
    }
   },
   {
@@ -2043,8 +2168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -2064,7 +2189,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -2072,8 +2198,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -2093,7 +2219,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -2101,15 +2228,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.021111,
-     35.256944
+     139.02111,
+     35.25694
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Mother and Child under a Tree at Pont-Aven",
     "year": "1886",
-    "city": "Kanagawa",
+    "city": "Hakone",
     "location": "Pola Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 197/222 S. 40",
@@ -2121,7 +2248,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pola-museum-of-art",
+    "country": "Japan"
    }
   },
   {
@@ -2129,8 +2258,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -89.917602,
-     35.105971
+     -89.9176,
+     35.10597
     ]
    },
    "properties": {
@@ -2149,7 +2278,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "dixon-gallery-and-gardens"
    }
   },
   {
@@ -2176,7 +2306,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "city": "Los Angeles",
+    "country": "United States"
    }
   },
   {
@@ -2184,8 +2317,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571111,
-     48.149722
+     11.57111,
+     48.14972
     ]
    },
    "properties": {
@@ -2205,7 +2338,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "neue-pinakothek"
    }
   },
   {
@@ -2233,7 +2367,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "laing-art-gallery-and-museum"
    }
   },
   {
@@ -2241,8 +2376,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.980556,
-     57.696389
+     11.98056,
+     57.69639
     ]
    },
    "properties": {
@@ -2260,7 +2395,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "gothenburg-museum-of-art",
+    "city": "Gothenburg Municipality",
+    "country": "Sweden"
    }
   },
   {
@@ -2287,7 +2425,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "indianapolis-museum-of-art",
+    "city": "Indianapolis"
    }
   },
   {
@@ -2303,7 +2443,7 @@
     "painter": "Paul Gauguin",
     "title": "The White Bowl",
     "year": "1886",
-    "location": "Kunsthaus Zürich",
+    "location": "Kunsthaus Zurich",
     "attribution": "generally accepted",
     "medium": "W. 211 S. 36",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Gauguin_-_Stilleben_mit_wei%C3%9Fer_Schale_-_1886.jpg/500px-Gauguin_-_Stilleben_mit_wei%C3%9Fer_Schale_-_1886.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2314,7 +2454,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "city": "Zürich",
+    "country": "Switzerland"
    }
   },
   {
@@ -2323,7 +2466,7 @@
     "type": "Point",
     "coordinates": [
      132.45806,
-     34.398668
+     34.39867
     ]
    },
    "properties": {
@@ -2341,7 +2484,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hiroshima-museum-of-art"
    }
   },
   {
@@ -2349,8 +2493,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -58.381389,
-     -34.603889
+     -58.38139,
+     -34.60389
     ]
    },
    "properties": {
@@ -2369,7 +2513,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museo-nacional-de-bellas-artes"
    }
   },
   {
@@ -2377,7 +2522,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -2398,7 +2543,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -2406,8 +2552,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.736111,
-     48.579444
+     7.73611,
+     48.57944
     ]
    },
    "properties": {
@@ -2425,7 +2571,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "strasbourg-museum-of-modern-and-contemporary-art",
+    "city": "Strasbourg",
+    "country": "France"
    }
   },
   {
@@ -2453,7 +2602,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "israel-museum",
+    "country": "Israel"
    }
   },
   {
@@ -2482,7 +2633,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "van-gogh-museum"
    }
   },
   {
@@ -2511,7 +2663,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "van-gogh-museum"
    }
   },
   {
@@ -2519,8 +2672,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -2540,7 +2693,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -2548,8 +2702,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571111,
-     48.149722
+     11.57111,
+     48.14972
     ]
    },
    "properties": {
@@ -2569,7 +2723,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "neue-pinakothek"
    }
   },
   {
@@ -2577,8 +2732,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195556,
-     55.950833
+     -3.19556,
+     55.95083
     ]
    },
    "properties": {
@@ -2598,7 +2753,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-scotland"
    }
   },
   {
@@ -2606,15 +2762,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.365278,
-     29.756667
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Still Life with Mangoes and a Hibiscus Flower",
     "year": "1888",
-    "city": "Houston",
+    "city": "Reims",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W. 238/256 S. 56",
@@ -2626,7 +2782,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
@@ -2655,7 +2813,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "van-gogh-museum"
    }
   },
   {
@@ -2682,7 +2841,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-grenoble",
+    "city": "Grenoble",
+    "country": "France"
    }
   },
   {
@@ -2690,8 +2852,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195556,
-     55.950833
+     -3.19556,
+     55.95083
     ]
    },
    "properties": {
@@ -2711,7 +2873,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-scotland"
    }
   },
   {
@@ -2719,8 +2882,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -2740,7 +2903,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard"
    }
   },
   {
@@ -2748,8 +2912,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.980556,
-     57.696389
+     11.98056,
+     57.69639
     ]
    },
    "properties": {
@@ -2767,7 +2931,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "konstmuseum-gothenburg"
    }
   },
   {
@@ -2775,7 +2940,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -2794,7 +2959,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium"
    }
   },
   {
@@ -2823,7 +2991,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -2831,7 +3000,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -2850,7 +3019,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -2877,7 +3049,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "city": "Los Angeles",
+    "country": "United States"
    }
   },
   {
@@ -2885,8 +3060,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.692222,
-     35.689722
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -2905,7 +3080,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "country": "Japan"
    }
   },
   {
@@ -2913,7 +3090,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -2932,7 +3109,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -2940,8 +3120,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -2961,7 +3141,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -2989,7 +3170,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "bridgestone-museum-of-art"
    }
   },
   {
@@ -3016,7 +3198,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-grenoble",
+    "city": "Grenoble",
+    "country": "France"
    }
   },
   {
@@ -3024,8 +3209,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -3043,7 +3228,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "city": "Madrid",
+    "country": "Spain"
    }
   },
   {
@@ -3051,15 +3239,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Path down to the Aven",
     "year": "1888",
-    "city": "Denmark",
+    "city": "Copenhagen",
     "location": "Ordrupgaard",
     "attribution": "generally accepted",
     "medium": "W. 268/278",
@@ -3071,7 +3259,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "country": "Denmark"
    }
   },
   {
@@ -3079,8 +3269,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3100,7 +3290,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -3108,15 +3299,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.927728,
-     52.450419
+     -1.92773,
+     52.45042
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "A Landscape at Pont Aven",
     "year": "1888",
-    "city": "Birmingham",
+    "city": "Edgbaston",
     "location": "Barber Institute of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W. 271 S. 102",
@@ -3128,7 +3319,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "barber-institute-of-fine-arts",
+    "country": "United Kingdom"
    }
   },
   {
@@ -3157,7 +3350,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunsthalle"
    }
   },
   {
@@ -3165,8 +3359,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.746667,
-     47.855278
+     -3.74667,
+     47.85528
     ]
    },
    "properties": {
@@ -3184,7 +3378,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-pont-aven"
    }
   },
   {
@@ -3192,8 +3387,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3213,7 +3408,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -3221,8 +3417,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.746667,
-     47.855278
+     -3.74667,
+     47.85528
     ]
    },
    "properties": {
@@ -3240,7 +3436,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-pont-aven"
    }
   },
   {
@@ -3248,8 +3445,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -3269,7 +3466,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -3277,8 +3475,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.909566,
-     47.902588
+     1.90944,
+     47.9025
     ]
    },
    "properties": {
@@ -3296,7 +3494,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-d-orleans",
+    "city": "Orléans",
+    "country": "France"
    }
   },
   {
@@ -3304,8 +3505,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3325,7 +3526,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -3354,7 +3556,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-modern-art"
    }
   },
   {
@@ -3383,7 +3586,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "van-gogh-museum"
    }
   },
   {
@@ -3391,8 +3595,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -3412,7 +3616,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -3420,8 +3625,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294444,
-     38.639444
+     -90.29444,
+     38.63944
     ]
    },
    "properties": {
@@ -3439,7 +3644,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "city": "St. Louis",
+    "country": "United States"
    }
   },
   {
@@ -3447,8 +3655,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -3466,7 +3674,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -3495,7 +3706,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-modern-art"
    }
   },
   {
@@ -3503,8 +3715,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.9378,
-     43.266
+     -2.93785,
+     43.26597
     ]
    },
    "properties": {
@@ -3522,7 +3734,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "bilbao-fine-arts-museum",
+    "city": "Bilbao",
+    "country": "Spain"
    }
   },
   {
@@ -3530,8 +3745,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -3551,7 +3766,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard"
    }
   },
   {
@@ -3559,8 +3775,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -3580,7 +3796,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -3588,8 +3805,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.692222,
-     35.689722
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -3608,7 +3825,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "seiji-togo-memorial-yasuda-kasai-museum-of-art"
    }
   },
   {
@@ -3616,8 +3834,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3637,7 +3855,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -3664,7 +3883,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "indianapolis-museum-of-art",
+    "city": "Indianapolis"
    }
   },
   {
@@ -3693,7 +3914,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "nationalmuseum"
    }
   },
   {
@@ -3701,8 +3923,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -3722,7 +3944,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard"
    }
   },
   {
@@ -3730,8 +3953,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3751,7 +3974,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -3780,7 +4004,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -3788,8 +4013,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3809,7 +4034,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -3838,7 +4064,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-modern-art"
    }
   },
   {
@@ -3846,8 +4073,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673889,
-     41.763333
+     -72.67389,
+     41.76333
     ]
    },
    "properties": {
@@ -3866,7 +4093,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "wadsworth-atheneum"
    }
   },
   {
@@ -3874,8 +4102,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.443611,
-     34.059444
+     -118.44361,
+     34.05944
     ]
    },
    "properties": {
@@ -3895,7 +4123,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hammer-museum"
    }
   },
   {
@@ -3924,7 +4153,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -3932,8 +4162,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -80.131111,
-     26.746944
+     -80.13111,
+     26.74694
     ]
    },
    "properties": {
@@ -3952,7 +4182,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "norton-museum-of-art"
    }
   },
   {
@@ -3969,7 +4200,7 @@
     "title": "The Yellow Christ",
     "year": "1889",
     "city": "Buffalo",
-    "location": "Albright-Knox Art Gallery",
+    "location": "Albright Knox Art Gallery",
     "attribution": "generally accepted",
     "medium": "W. 327 S. 151",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Paul_Gauguin_-_The_Yellow_Christ_%28Le_Christ_jaune%29_1889.jpg/500px-Paul_Gauguin_-_The_Yellow_Christ_%28Le_Christ_jaune%29_1889.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3980,7 +4211,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "albright-knox-art-gallery"
    }
   },
   {
@@ -3988,7 +4220,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -4007,7 +4239,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium"
    }
   },
   {
@@ -4036,7 +4271,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "van-gogh-museum"
    }
   },
   {
@@ -4044,8 +4280,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4065,7 +4301,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -4093,7 +4330,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "mcnay-art-museum"
    }
   },
   {
@@ -4101,8 +4339,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     31.219722,
-     30.035556
+     31.21972,
+     30.03556
     ]
    },
    "properties": {
@@ -4121,7 +4359,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "mohamed-mahmoud-khalil-museum"
    }
   },
   {
@@ -4129,8 +4368,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611667,
-     41.508889
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -4148,7 +4387,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "city": "Cleveland",
+    "country": "United States"
    }
   },
   {
@@ -4156,7 +4398,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -4164,7 +4406,7 @@
     "painter": "Paul Gauguin",
     "title": "Breton Boy",
     "year": "1889",
-    "city": "Cologne",
+    "city": "Altstadt-Nord",
     "country": "Germany",
     "location": "Wallraf-Richartz Museum",
     "attribution": "generally accepted",
@@ -4177,7 +4419,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "wallraf-richartz-museum"
    }
   },
   {
@@ -4185,8 +4428,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.692222,
-     35.689722
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -4205,7 +4448,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "country": "Japan"
    }
   },
   {
@@ -4213,7 +4458,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -4234,7 +4479,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -4242,8 +4488,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     140.456528,
-     37.767917
+     140.45653,
+     37.76792
     ]
    },
    "properties": {
@@ -4261,7 +4507,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fukushima-prefectural-museum-of-art"
    }
   },
   {
@@ -4269,8 +4516,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580842,
-     39.045308
+     -94.58084,
+     39.04531
     ]
    },
    "properties": {
@@ -4290,7 +4537,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "nelson-atkins-museum-of-art"
    }
   },
   {
@@ -4298,8 +4546,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.004167,
-     51.441667
+     7.00417,
+     51.44167
     ]
    },
    "properties": {
@@ -4318,7 +4566,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-folkwang"
    }
   },
   {
@@ -4326,8 +4575,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4347,7 +4596,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -4355,7 +4605,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117472,
+     -0.11747,
      51.51175
     ]
    },
@@ -4376,7 +4626,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "courtauld-institute-galleries"
    }
   },
   {
@@ -4392,7 +4643,7 @@
     "painter": "Paul Gauguin",
     "title": "The Gate",
     "year": "1889",
-    "location": "Kunsthaus Zürich",
+    "location": "Kunsthaus Zurich",
     "attribution": "generally accepted",
     "medium": "W. 353 S. 169",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Gauguin_1889_La_Barri%C3%A8re.jpg/500px-Gauguin_1889_La_Barri%C3%A8re.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4403,7 +4654,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "city": "Zürich",
+    "country": "Switzerland"
    }
   },
   {
@@ -4432,7 +4686,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "nationalmuseum"
    }
   },
   {
@@ -4460,7 +4715,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-norway"
    }
   },
   {
@@ -4488,7 +4744,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-norway"
    }
   },
   {
@@ -4515,7 +4772,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "indianapolis-museum-of-art",
+    "city": "Indianapolis"
    }
   },
   {
@@ -4543,7 +4802,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "springfield-museum-of-art"
    }
   },
   {
@@ -4570,7 +4830,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "city": "Los Angeles",
+    "country": "United States"
    }
   },
   {
@@ -4599,7 +4862,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pierre-rosenberg"
    }
   },
   {
@@ -4626,7 +4890,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "tehran-museum-of-contemporary-art",
+    "city": "Tehran",
+    "country": "Iran"
    }
   },
   {
@@ -4634,15 +4901,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Still Life with Fan",
     "year": "1888",
-    "city": "Paria",
+    "city": "Paris",
     "location": "Musée d'Orsay",
     "attribution": "generally accepted",
     "medium": "W. 377/259 S. 201",
@@ -4654,7 +4921,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "country": "France"
    }
   },
   {
@@ -4683,7 +4952,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "phillips-memorial-gallery"
    }
   },
   {
@@ -4691,7 +4961,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -4712,7 +4982,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -4740,7 +5011,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fogg-art-museum"
    }
   },
   {
@@ -4748,8 +5020,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -4768,7 +5040,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
@@ -4795,7 +5069,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-quimper"
    }
   },
   {
@@ -4824,7 +5099,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -4832,8 +5108,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780228
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -4851,7 +5127,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "staatsgalerie-stuttgart",
+    "city": "Stuttgart",
+    "country": "Germany"
    }
   },
   {
@@ -4859,8 +5138,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.692222,
-     35.689722
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -4879,7 +5158,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "country": "Japan"
    }
   },
   {
@@ -4887,8 +5168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -4906,7 +5187,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -4924,7 +5208,7 @@
     "year": "1890",
     "city": "Philadelphia",
     "country": "United States",
-    "location": "The Barnes Foundation",
+    "location": "Barnes Foundation",
     "attribution": "generally accepted",
     "medium": "W. 388 S. 222",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Paul_Gauguin_Mr_Loulou.jpg/500px-Paul_Gauguin_Mr_Loulou.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4935,7 +5219,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "barnes-foundation"
    }
   },
   {
@@ -4943,15 +5228,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.021111,
-     35.256944
+     139.02111,
+     35.25694
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Exotic Eve",
     "year": "1890",
-    "city": "Kanagawa",
+    "city": "Hakone",
     "location": "Pola Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 389 S. 226",
@@ -4963,7 +5248,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pola-museum-of-art",
+    "country": "Japan"
    }
   },
   {
@@ -4971,8 +5258,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930985,
-     41.308459
+     -72.93099,
+     41.30846
     ]
    },
    "properties": {
@@ -4991,7 +5278,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "country": "United States"
    }
   },
   {
@@ -5018,7 +5307,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "city": "Karlsruhe",
+    "country": "Germany"
    }
   },
   {
@@ -5047,7 +5339,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -5076,7 +5369,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -5092,7 +5386,7 @@
     "painter": "Paul Gauguin",
     "title": "Landscape at Le Pouldu",
     "year": "1890",
-    "city": "Washington D.C.",
+    "city": "Washington",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W. 398 S. 233",
@@ -5104,7 +5398,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art",
+    "country": "United States"
    }
   },
   {
@@ -5132,7 +5428,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fogg-art-museum"
    }
   },
   {
@@ -5140,7 +5437,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -5159,7 +5456,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -5187,7 +5487,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-langmatt"
    }
   },
   {
@@ -5216,7 +5517,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -5243,7 +5545,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "city": "Los Angeles",
+    "country": "United States"
    }
   },
   {
@@ -5271,7 +5576,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "chrysler-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -5299,7 +5606,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "mcnay-art-museum"
    }
   },
   {
@@ -5307,8 +5615,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.080278,
-     48.299722
+     4.08028,
+     48.29972
     ]
    },
    "properties": {
@@ -5326,7 +5634,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-art-moderne-de-troyes"
    }
   },
   {
@@ -5355,7 +5664,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -5363,7 +5673,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -5384,7 +5694,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -5392,7 +5703,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -5411,7 +5722,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium"
    }
   },
   {
@@ -5419,8 +5733,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580842,
-     39.045308
+     -94.58084,
+     39.04531
     ]
    },
    "properties": {
@@ -5440,7 +5754,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "nelson-atkins-museum-of-art"
    }
   },
   {
@@ -5449,7 +5764,7 @@
     "type": "Point",
     "coordinates": [
      -73.96375,
-     40.671306
+     40.67131
     ]
    },
    "properties": {
@@ -5469,7 +5784,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "brooklyn-museum"
    }
   },
   {
@@ -5477,8 +5793,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -5498,7 +5814,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -5506,8 +5823,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -5527,7 +5844,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -5556,7 +5874,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -5564,8 +5883,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398056,
-     52.520833
+     13.39806,
+     52.52083
     ]
    },
    "properties": {
@@ -5585,7 +5904,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "alte-nationalgalerie"
    }
   },
   {
@@ -5593,7 +5913,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -5612,7 +5932,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "city": "Dallas",
+    "country": "United States"
    }
   },
   {
@@ -5639,7 +5962,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "city": "Minneapolis"
    }
   },
   {
@@ -5667,7 +5992,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "israel-museum",
+    "country": "Israel"
    }
   },
   {
@@ -5675,8 +6002,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -5696,7 +6023,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -5712,7 +6040,7 @@
     "painter": "Paul Gauguin",
     "title": "Parau Parau",
     "year": "1891",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 435 S. 252",
@@ -5724,7 +6052,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -5732,8 +6062,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611667,
-     41.508889
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -5751,7 +6081,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "city": "Cleveland",
+    "country": "United States"
    }
   },
   {
@@ -5759,8 +6092,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -5778,7 +6111,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -5786,8 +6122,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.802222,
-     42.273056
+     -71.80222,
+     42.27306
     ]
    },
    "properties": {
@@ -5806,7 +6142,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "worcester-art-museum"
    }
   },
   {
@@ -5822,7 +6159,7 @@
     "painter": "Paul Gauguin",
     "title": "Rue de Tahiti",
     "year": "1891",
-    "city": "Ohio",
+    "city": "Toledo",
     "location": "Toledo Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 441 S. 261",
@@ -5834,7 +6171,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "toledo-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -5863,7 +6202,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -5871,8 +6211,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     19.039773,
-     47.496228
+     19.03977,
+     47.49623
     ]
    },
    "properties": {
@@ -5890,7 +6230,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hungarian-national-gallery"
    }
   },
   {
@@ -5898,8 +6239,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.619167,
-     39.326111
+     -76.61917,
+     39.32611
     ]
    },
    "properties": {
@@ -5917,7 +6258,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "baltimore-museum-of-art",
+    "city": "Baltimore"
    }
   },
   {
@@ -5925,8 +6268,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -5946,7 +6289,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -5975,7 +6319,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-modern-art"
    }
   },
   {
@@ -5983,8 +6328,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944,
-     52.095833
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -6003,7 +6348,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kroller-muller-museum"
    }
   },
   {
@@ -6011,8 +6357,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594167,
-     47.554167
+     7.59417,
+     47.55417
     ]
    },
    "properties": {
@@ -6030,7 +6376,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "city": "Basel",
+    "country": "Switzerland"
    }
   },
   {
@@ -6058,7 +6407,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ohara-museum-of-art"
    }
   },
   {
@@ -6066,8 +6416,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -157.848611,
-     21.303889
+     -157.84861,
+     21.30389
     ]
    },
    "properties": {
@@ -6085,7 +6435,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "honolulu-museum-of-art"
    }
   },
   {
@@ -6102,7 +6453,7 @@
     "title": "Spirit of the Dead Watching",
     "year": "1892",
     "city": "Buffalo",
-    "location": "Albright-Knox Art Gallery",
+    "location": "Albright Knox Art Gallery",
     "attribution": "generally accepted",
     "medium": "W. 457 S. 282",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Paul_Gauguin-_Manao_tupapau_%28The_Spirit_of_the_Dead_Keep_Watch%29.JPG/500px-Paul_Gauguin-_Manao_tupapau_%28The_Spirit_of_the_Dead_Keep_Watch%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6113,7 +6464,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "albright-knox-art-gallery"
    }
   },
   {
@@ -6142,7 +6494,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -6150,8 +6503,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -6171,7 +6524,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -6187,7 +6541,7 @@
     "painter": "Paul Gauguin",
     "title": "Tahitian Women Bathing",
     "year": "1892",
-    "city": "New York City",
+    "city": "New York",
     "location": "Metropolitan Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 462 S. 288",
@@ -6199,7 +6553,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -6228,7 +6584,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -6244,8 +6601,8 @@
     "painter": "Paul Gauguin",
     "title": "Haere Pape",
     "year": "1892",
-    "city": "Merion",
-    "location": "The Barnes Foundation",
+    "city": "Philadelphia",
+    "location": "Barnes Foundation",
     "attribution": "generally accepted",
     "medium": "W. 464 S. 289",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Paul_Gauguin_Haere_Pape.jpg/500px-Paul_Gauguin_Haere_Pape.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6256,7 +6613,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "country": "United States"
    }
   },
   {
@@ -6264,8 +6623,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -58.381389,
-     -34.603889
+     -58.38139,
+     -34.60389
     ]
    },
    "properties": {
@@ -6284,7 +6643,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museo-nacional-de-bellas-artes"
    }
   },
   {
@@ -6313,7 +6673,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "galerie-neue-meister"
    }
   },
   {
@@ -6321,8 +6682,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -6331,7 +6692,7 @@
     "year": "1892",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo Thyssen-Bornemisza",
+    "location": "Thyssen-Bornemisza Museum",
     "attribution": "generally accepted",
     "medium": "W. 467 S. 311",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Paul_Gauguin_-_Mata_Mua.jpg/500px-Paul_Gauguin_-_Mata_Mua.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6342,7 +6703,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum"
    }
   },
   {
@@ -6350,8 +6712,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -6371,7 +6733,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -6379,15 +6742,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.365278,
-     29.756667
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Arearea II",
     "year": "1892",
-    "city": "Houston",
+    "city": "Reims",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W. 469",
@@ -6399,7 +6762,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
@@ -6415,7 +6780,7 @@
     "painter": "Paul Gauguin",
     "title": "Tahitian Pastoral",
     "year": "1892",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 470 S.313",
@@ -6427,7 +6792,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -6435,15 +6802,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.021111,
-     35.256944
+     139.02111,
+     35.25694
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "The Three Huts",
     "year": "1892",
-    "city": "Kanagawa",
+    "city": "Hakone",
     "location": "Pola Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 471 S. 307",
@@ -6455,7 +6822,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pola-museum-of-art",
+    "country": "Japan"
    }
   },
   {
@@ -6463,8 +6832,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930985,
-     41.308459
+     -72.93099,
+     41.30846
     ]
    },
    "properties": {
@@ -6483,7 +6852,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "country": "United States"
    }
   },
   {
@@ -6499,7 +6870,7 @@
     "painter": "Paul Gauguin",
     "title": "Taperaa mahana",
     "year": "1892",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 473 S. 297",
@@ -6511,7 +6882,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -6519,8 +6892,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594167,
-     47.554167
+     7.59417,
+     47.55417
     ]
    },
    "properties": {
@@ -6538,7 +6911,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "city": "Basel",
+    "country": "Switzerland"
    }
   },
   {
@@ -6546,8 +6922,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780228
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -6565,7 +6941,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "staatsgalerie-stuttgart",
+    "city": "Stuttgart",
+    "country": "Germany"
    }
   },
   {
@@ -6581,7 +6960,7 @@
     "painter": "Paul Gauguin",
     "title": "Parahi te marae",
     "year": "1892",
-    "city": "Harvard University",
+    "city": "Cambridge",
     "location": "Fogg Museum",
     "attribution": "generally accepted",
     "medium": "Study for W. 483",
@@ -6593,7 +6972,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fogg-museum",
+    "country": "United States"
    }
   },
   {
@@ -6620,7 +7001,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "city": "Philadelphia",
+    "country": "United States"
    }
   },
   {
@@ -6628,8 +7012,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -6649,7 +7033,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -6657,8 +7042,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -6676,7 +7061,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -6703,7 +7091,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "cincinnati-art-museum",
+    "city": "Eden Park",
+    "country": "United States"
    }
   },
   {
@@ -6730,7 +7121,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "finnish-national-gallery"
    }
   },
   {
@@ -6738,15 +7130,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.333333,
-     46.833333
+     133,
+     -25
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Nue tahitienne assise avec fleur rouge",
     "year": "1892",
-    "city": "Switzerland",
+    "city": "Australia",
     "location": "Private collection",
     "attribution": "generally accepted",
     "dimensions": "double-sided",
@@ -6758,7 +7150,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "private-collection",
+    "country": "France"
    }
   },
   {
@@ -6766,8 +7160,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -6785,7 +7179,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -6793,8 +7190,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -6814,7 +7211,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -6843,7 +7241,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-modern-art"
    }
   },
   {
@@ -6859,7 +7258,7 @@
     "painter": "Paul Gauguin",
     "title": "Ea haere ia oe (A haere ia oe)",
     "year": "1893",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 501 S. 321",
@@ -6871,7 +7270,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -6898,7 +7299,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "minneapolis-institute-of-arts"
    }
   },
   {
@@ -6906,7 +7308,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -6927,7 +7329,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -6935,8 +7338,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -6956,7 +7359,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -6964,8 +7368,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -6985,7 +7389,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -6993,7 +7398,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.093439,
+     -90.09344,
      29.98648
     ]
    },
@@ -7012,7 +7417,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "new-orleans-museum-of-art"
    }
   },
   {
@@ -7020,8 +7426,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7041,7 +7447,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -7057,7 +7464,7 @@
     "painter": "Paul Gauguin",
     "title": "Nave nave moe",
     "year": "1894",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 512 S. 337",
@@ -7069,7 +7476,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -7077,8 +7486,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -7096,7 +7505,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -7112,7 +7524,7 @@
     "painter": "Paul Gauguin",
     "title": "The Siesta",
     "year": "1894 (ca)",
-    "city": "New York City",
+    "city": "New York",
     "location": "Metropolitan Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 515 S. 340",
@@ -7124,7 +7536,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -7132,8 +7546,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.619167,
-     39.326111
+     -76.61917,
+     39.32611
     ]
    },
    "properties": {
@@ -7151,7 +7565,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "baltimore-museum-of-art",
+    "city": "Baltimore"
    }
   },
   {
@@ -7179,7 +7595,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "sterling-and-francine-clark-art-institute"
    }
   },
   {
@@ -7206,7 +7623,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "indianapolis-museum-of-art",
+    "city": "Indianapolis"
    }
   },
   {
@@ -7214,8 +7633,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7235,7 +7654,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -7243,8 +7663,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580842,
-     39.045308
+     -94.58084,
+     39.04531
     ]
    },
    "properties": {
@@ -7264,7 +7684,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "nelson-atkins-museum-of-art"
    }
   },
   {
@@ -7272,8 +7693,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7293,7 +7714,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -7322,7 +7744,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -7330,8 +7753,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7351,7 +7774,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -7380,7 +7804,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "van-gogh-museum"
    }
   },
   {
@@ -7388,7 +7813,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -7409,7 +7834,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -7436,7 +7862,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museu-de-arte-de-sao-paulo"
    }
   },
   {
@@ -7444,8 +7871,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -7463,7 +7890,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "city": "Copenhagen",
+    "country": "Denmark"
    }
   },
   {
@@ -7479,7 +7909,7 @@
     "painter": "Paul Gauguin",
     "title": "Scene from Tahitian Life",
     "year": "1886",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 537 S. 387",
@@ -7491,7 +7921,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -7499,8 +7931,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -7520,7 +7952,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -7536,7 +7969,7 @@
     "painter": "Paul Gauguin",
     "title": "Three Tahitian Women",
     "year": "1896",
-    "city": "New York City",
+    "city": "New York",
     "location": "Metropolitan Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 539 S. 366",
@@ -7548,7 +7981,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -7564,7 +7999,7 @@
     "painter": "Paul Gauguin",
     "title": "Bé bé (Pēpe)",
     "year": "1896",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 540 S. 370",
@@ -7576,7 +8011,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -7584,8 +8021,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571111,
-     48.149722
+     11.57111,
+     48.14972
     ]
    },
    "properties": {
@@ -7605,7 +8042,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "neue-pinakothek"
    }
   },
   {
@@ -7613,8 +8051,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -7634,7 +8072,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -7650,7 +8089,7 @@
     "painter": "Paul Gauguin",
     "title": "Te Vaa",
     "year": "1896",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 544 S. 363",
@@ -7662,7 +8101,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -7689,7 +8130,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museu-de-arte-de-sao-paulo"
    }
   },
   {
@@ -7697,8 +8139,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.102616,
-     49.485043
+     0.10262,
+     49.48504
     ]
    },
    "properties": {
@@ -7717,7 +8159,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-andre-malraux"
    }
   },
   {
@@ -7745,7 +8188,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "fogg-art-museum"
    }
   },
   {
@@ -7772,7 +8216,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-lyon"
    }
   },
   {
@@ -7780,8 +8225,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -7799,7 +8244,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -7828,7 +8276,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -7857,7 +8306,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -7865,8 +8315,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7886,7 +8336,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -7894,7 +8345,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117472,
+     -0.11747,
      51.51175
     ]
    },
@@ -7915,7 +8366,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "courtauld-institute-galleries"
    }
   },
   {
@@ -7923,7 +8375,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117472,
+     -0.11747,
      51.51175
     ]
    },
@@ -7944,7 +8396,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "courtauld-institute-galleries"
    }
   },
   {
@@ -7952,8 +8405,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7973,7 +8426,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -7981,15 +8435,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.057778,
-     42.360278
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Where Do We Come From? What Are We? Where Are We Going?",
     "year": "1897 or 1898",
-    "city": "Boston",
+    "city": "Reims",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -8002,7 +8456,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -8018,7 +8473,7 @@
     "painter": "Paul Gauguin",
     "title": "Tarari maruru",
     "year": "1897",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 562 S. 385",
@@ -8030,7 +8485,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8038,15 +8495,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.927728,
-     52.450419
+     -1.92773,
+     52.45042
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Bathers in Tahiti",
     "year": "1897",
-    "city": "Birmingham",
+    "city": "Edgbaston",
     "location": "Barber Institute of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W. 564 S. 387",
@@ -8058,7 +8515,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "barber-institute-of-fine-arts",
+    "country": "United Kingdom"
    }
   },
   {
@@ -8074,7 +8533,7 @@
     "painter": "Paul Gauguin",
     "title": "Man Picking Fruit from a Tree",
     "year": "1897",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 565 S. 384",
@@ -8086,7 +8545,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8115,7 +8576,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -8144,7 +8606,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery"
    }
   },
   {
@@ -8160,7 +8623,7 @@
     "painter": "Paul Gauguin",
     "title": "Rave te hiti aamu",
     "year": "1898",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 570 S. 394",
@@ -8172,7 +8635,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8180,8 +8645,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -8201,7 +8666,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -8230,7 +8696,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -8238,15 +8705,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3522,
-     48.8567
+     133,
+     -25
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Three Tahitians",
     "year": "1897",
-    "city": "Paris",
+    "city": "Australia",
     "country": "France",
     "location": "Private collection",
     "attribution": "generally accepted",
@@ -8259,7 +8726,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "private-collection"
    }
   },
   {
@@ -8267,7 +8735,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -8288,7 +8756,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -8296,8 +8765,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -8317,7 +8786,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard"
    }
   },
   {
@@ -8345,7 +8815,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-museum-of-serbia",
+    "country": "Serbia"
    }
   },
   {
@@ -8373,7 +8845,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "country": "United States"
    }
   },
   {
@@ -8381,8 +8855,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -8402,7 +8876,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -8418,7 +8893,7 @@
     "painter": "Paul Gauguin",
     "title": "Women on the Seashore (Motherhood I)",
     "year": "1899",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 581 S. 404",
@@ -8430,7 +8905,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8459,7 +8936,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -8475,7 +8953,7 @@
     "painter": "Paul Gauguin",
     "title": "Three Tahitian Women Against a Yellow Background",
     "year": "1899",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 584 S. 406",
@@ -8487,7 +8965,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8495,8 +8975,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -8516,7 +8996,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -8532,7 +9013,7 @@
     "painter": "Paul Gauguin",
     "title": "Te avae no Maria",
     "year": "1899",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 586 S. 405",
@@ -8544,7 +9025,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8552,7 +9035,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -8573,7 +9056,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -8581,8 +9065,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
@@ -8602,7 +9086,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum"
    }
   },
   {
@@ -8631,7 +9116,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-modern-art"
    }
   },
   {
@@ -8659,7 +9145,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "israel-museum",
+    "country": "Israel"
    }
   },
   {
@@ -8667,7 +9155,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944,
+     12.57194,
      55.6725
     ]
    },
@@ -8688,7 +9176,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek"
    }
   },
   {
@@ -8716,7 +9205,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-norway"
    }
   },
   {
@@ -8724,8 +9214,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623889,
-     41.879444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8743,7 +9233,10 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "city": "Chicago",
+    "country": "United States"
    }
   },
   {
@@ -8751,8 +9244,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -8772,7 +9265,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-d-orsay"
    }
   },
   {
@@ -8788,7 +9282,7 @@
     "painter": "Paul Gauguin",
     "title": "The Flight or The Ford",
     "year": "1901",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 597 S. 429",
@@ -8800,7 +9294,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8808,8 +9304,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.322538,
-     48.863845
+     2.32254,
+     48.86384
     ]
    },
    "properties": {
@@ -8829,7 +9325,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "musee-de-l-orangerie"
    }
   },
   {
@@ -8837,7 +9334,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.948976,
+     -79.94898,
      40.44369
     ]
    },
@@ -8845,7 +9342,7 @@
     "painter": "Paul Gauguin",
     "title": "Landscape with Three Figures",
     "year": "1901",
-    "city": "Pittsburg",
+    "city": "Pittsburgh",
     "location": "Carnegie Museum of Art",
     "attribution": "generally accepted",
     "medium": "W. 601 S. 428",
@@ -8857,7 +9354,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "carnegie-museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -8873,7 +9372,7 @@
     "painter": "Paul Gauguin",
     "title": "Still Life with Sunflowers on an Armchair II",
     "year": "1901",
-    "city": "St Petersburg",
+    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "medium": "W. 603 S. 422",
@@ -8885,7 +9384,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia"
    }
   },
   {
@@ -8893,8 +9394,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.004167,
-     51.441667
+     7.00417,
+     51.44167
     ]
    },
    "properties": {
@@ -8913,7 +9414,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-folkwang"
    }
   },
   {
@@ -8942,7 +9444,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art"
    }
   },
   {
@@ -8950,16 +9453,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1275,
-     51.507222
+     133,
+     -25
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "The Guitar Player",
     "year": "1900 (ca)",
-    "city": "London",
-    "country": "United Kingdom",
+    "city": "Australia",
+    "country": "France",
     "location": "Private collection",
     "attribution": "generally accepted",
     "medium": "W. 611 S. 436",
@@ -8971,7 +9474,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "private-collection"
    }
   },
   {
@@ -8979,8 +9483,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611667,
-     41.508889
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -9000,7 +9504,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "cleveland-museum-of-art"
    }
   },
   {
@@ -9028,7 +9533,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "mcnay-art-museum"
    }
   },
   {
@@ -9036,8 +9542,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.004167,
-     51.441667
+     7.00417,
+     51.44167
     ]
    },
    "properties": {
@@ -9056,7 +9562,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-folkwang"
    }
   },
   {
@@ -9085,7 +9592,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "nationalmuseum"
    }
   },
   {
@@ -9093,8 +9601,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.004167,
-     51.441667
+     7.00417,
+     51.44167
     ]
    },
    "properties": {
@@ -9113,7 +9621,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-folkwang"
    }
   },
   {
@@ -9121,8 +9630,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -9142,7 +9651,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ordrupgaard"
    }
   },
   {
@@ -9150,15 +9660,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.606029,
-     55.747029
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Still Life with Parrots",
     "year": "1902",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "location": "Pushkin Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -9171,7 +9681,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "pushkin-museum-of-fine-arts"
    }
   },
   {
@@ -9179,8 +9690,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.146667,
-     51.257222
+     7.14667,
+     51.25722
     ]
    },
    "properties": {
@@ -9199,7 +9710,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "von-der-heydt-museum"
    }
   },
   {
@@ -9227,7 +9739,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "goulandris-museum-of-contemporary-art"
    }
   },
   {
@@ -9235,15 +9748,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594167,
-     47.554167
+     7.59417,
+     47.55417
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Self-Portrait with Glasses",
     "year": "1902–1903",
-    "city": "Switzerland",
+    "city": "Basel",
     "location": "Kunstmuseum Basel",
     "attribution": "generally accepted",
     "medium": "W. 634 S. 459",
@@ -9255,7 +9768,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "country": "Switzerland"
    }
   },
   {
@@ -9284,7 +9799,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "national-gallery-of-art"
    }
   },
   {
@@ -9292,15 +9808,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.057778,
-     42.360278
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Women and a White Horse",
     "year": "1903",
-    "city": "Boston",
+    "city": "Reims",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -9313,7 +9829,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -9321,7 +9838,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     24.944167,
+     24.94417,
      60.17
     ]
    },
@@ -9341,7 +9858,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "ateneum"
    }
   },
   {
@@ -9369,7 +9887,9 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "israel-museum",
+    "country": "Israel"
    }
   },
   {
@@ -9377,8 +9897,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -157.848611,
-     21.303889
+     -157.84861,
+     21.30389
     ]
    },
    "properties": {
@@ -9392,7 +9912,8 @@
     "_source": {
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
-    }
+    },
+    "museum_id": "honolulu-academy-of-arts"
    }
   }
  ]

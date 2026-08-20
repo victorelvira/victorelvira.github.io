@@ -196,10 +196,9 @@ a { color: inherit; }
   width: 100%; height: 3px; margin-top: 2px; border-radius: 2px;
   background: currentColor; opacity: 0.85;
 }
-.cov-strong { color: var(--leaf); }
-.cov-partial { color: var(--gold); }
-.cov-official { color: var(--sky); }
-.cov-none { color: #b9aca0; }
+.tier-full { color: var(--leaf); }
+.tier-partial { color: var(--gold); }
+.tier-none { color: #b9aca0; }
 
 /* ── lista de grupos ───────────────────────────────────────────────────── */
 
@@ -279,6 +278,32 @@ h3.section {
   color: var(--muted);
 }
 
+/* ── mapa de recorridos ────────────────────────────────────────────────── */
+
+.map { margin: 10px 0 0; }
+.map svg {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: #f3f7f9;   /* mar */
+}
+.map.is-compact svg { max-width: 260px; }
+.map figcaption { margin-top: 4px; color: var(--muted); font-size: 11px; }
+.map figcaption a { color: var(--sky); }
+
+.map-coastline { fill: #fffdfa; stroke: #cddbe2; stroke-width: 1; }
+.map-beach { fill: #f3e7cf; stroke: none; }
+.map-route {
+  fill: none; stroke: #c3b3ab; stroke-width: 2.5;
+  stroke-linecap: round; stroke-linejoin: round; cursor: pointer;
+}
+.map-route:hover { stroke: var(--rose); }
+.map-scale line { stroke: var(--muted); stroke-width: 1; }
+.map-scale text { fill: var(--muted); font-size: 9px; text-anchor: middle; font-family: inherit; }
+.map-route.is-active {
+  stroke: var(--rose); stroke-width: 4.5;
+  filter: drop-shadow(0 1px 3px rgba(182, 70, 95, 0.35));
+}
+
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; }
 .gallery a { display: block; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #f1e9df; }
 .gallery img { display: block; width: 100%; height: 74px; object-fit: cover; }
@@ -337,6 +362,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   color: var(--muted); font-size: 11.5px; background: #fffaf5;
 }
 .legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; background: currentColor; margin-right: 5px; vertical-align: middle; }
+.legend b { font-variant-numeric: tabular-nums; }
 
 #credits {
   padding: 6px 16px 8px;

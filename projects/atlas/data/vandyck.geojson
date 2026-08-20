@@ -584,8 +584,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -84.49694,
-     39.11389
+     -84.4969,
+     39.1139
     ]
    },
    "properties": {
@@ -2922,7 +2922,9 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "menil-collection"
+    "museum_id": "menil-collection",
+    "city": "Houston",
+    "country": "United States"
    }
   },
   {

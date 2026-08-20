@@ -28,6 +28,8 @@ const state = {
   editions: [],
   groups: [],
   routes: [],
+  mapContext: [],
+  mapAttribution: null,
   filtered: [],
   mode: "editions",
   selection: null, // {kind: "year"|"group"|"route", id}
@@ -72,15 +74,35 @@ const STATUS_LABEL = {
   unknown: "Hueco documental",
 };
 
+/* `coverage` responde a "de donde sale", no a "cuanto hay". Se muestra como
+ * chip en el detalle. Ojo con "official_only": significa una sola fuente, no
+ * poca informacion — de hecho esos anos traen mas carrozas que muchos "strong". */
 const COVERAGE_LABEL = {
-  strong: "Cobertura fuerte",
-  partial: "Cobertura parcial",
-  official_only: "Solo fuente oficial",
-  official_partial: "Oficial parcial",
+  strong: "Archivo completo",
+  partial: "Archivo parcial",
+  // Las dos variantes oficiales dicen lo mismo: viene del Ayuntamiento. Cuanto
+  // hay lo dice el color de la rejilla y los contadores, no esta etiqueta.
+  official_only: "Fuente oficial",
+  official_partial: "Fuente oficial",
   cancelled: "Cancelada",
   no_event: "Sin edición",
   missing: "Sin documentar",
 };
+
+/* La rejilla colorea por CUANTO hay, que es lo que el visitante quiere saber,
+ * y se calcula del contenido real para que no pueda contradecirlo. */
+const TIERS = [
+  ["tier-full", "Palmarés completo"],
+  ["tier-partial", "Datos parciales"],
+  ["tier-none", "Sin datos"],
+];
+
+function coverageTier(edition) {
+  const floats = edition.floats || [];
+  if (!floats.length) return "tier-none";
+  const ranked = floats.filter(entry => entry.position != null).length;
+  return ranked >= 5 ? "tier-full" : "tier-partial";
+}
 
 /* De donde sale cada entrada. Se muestra tal cual en el detalle para que se
  * vea que un palmares de 1931 y un resultado de 2024 no valen lo mismo. */
@@ -121,10 +143,7 @@ function sourceLabel(sourceType) {
 }
 
 function coverageClass(edition) {
-  if (edition.coverage === "strong") return "cov-strong";
-  if (edition.coverage === "partial") return "cov-partial";
-  if (edition.coverage === "official_only" || edition.coverage === "official_partial") return "cov-official";
-  return "cov-none";
+  return coverageTier(edition);
 }
 
 function routeForYear(year) {
@@ -197,12 +216,14 @@ function renderFilterOptions() {
 function renderLegend() {
   if (state.mode !== "editions") { els.legend.hidden = true; return; }
   els.legend.hidden = false;
-  els.legend.innerHTML = [
-    ["cov-strong", "Cobertura fuerte"],
-    ["cov-partial", "Parcial"],
-    ["cov-official", "Solo fuente oficial"],
-    ["cov-none", "Sin edición o sin documentar"],
-  ].map(([cls, label]) => `<span class="${cls}"><i></i>${label}</span>`).join("");
+  const counts = new Map(TIERS.map(([cls]) => [cls, 0]));
+  state.filtered.forEach(edition => {
+    const tier = coverageTier(edition);
+    counts.set(tier, (counts.get(tier) || 0) + 1);
+  });
+  els.legend.innerHTML = TIERS
+    .map(([cls, label]) => `<span class="${cls}"><i></i>${label} <b>${counts.get(cls) || 0}</b></span>`)
+    .join("");
 }
 
 /* ── indice: anos ───────────────────────────────────────────────────────── */
@@ -354,6 +375,107 @@ function renderIndex() {
   renderLegend();
 }
 
+/* ── mapa de recorridos (SVG, sin dependencias) ─────────────────────────── */
+
+/* Cuatro geometrias fijas: no hacen falta tiles ni zoom. Se proyecta en plano
+ * (equirectangular con correccion por coseno de la latitud), que a 800 m de
+ * ancho no introduce error visible, y se encaja en el viewBox. */
+const MAP_W = 420;
+const MAP_H = 300;
+
+function routeGeometries() {
+  return state.routes.filter(route => route.geometry?.coordinates?.length);
+}
+
+function makeProjection(padding = 18) {
+  const points = routeGeometries().flatMap(route => route.geometry.coordinates);
+  if (!points.length) return null;
+
+  const lons = points.map(p => p[0]);
+  const lats = points.map(p => p[1]);
+  const midLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+  const kx = Math.cos((midLat * Math.PI) / 180);
+
+  // Margen alrededor de las rutas para que se vea algo de costa.
+  const spanLon = (Math.max(...lons) - Math.min(...lons)) * 1.45;
+  const spanLat = (Math.max(...lats) - Math.min(...lats)) * 1.45;
+  const cLon = (Math.min(...lons) + Math.max(...lons)) / 2;
+  const cLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+
+  const scale = Math.min(
+    (MAP_W - padding * 2) / (spanLon * kx),
+    (MAP_H - padding * 2) / spanLat,
+  );
+
+  const project = ([lon, lat]) => [
+    MAP_W / 2 + (lon - cLon) * kx * scale,
+    MAP_H / 2 - (lat - cLat) * scale,   // y invertida: norte arriba
+  ];
+  // Unidades del viewBox por metro, para poder dibujar la barra de escala.
+  project.unitsPerMetre = scale / 111320;
+  return project;
+}
+
+/* Barra de escala: elige el numero redondo que ocupe ~90 unidades. */
+function scaleBar(project) {
+  const target = 90 / project.unitsPerMetre;
+  const metres = [50, 100, 200, 250, 500, 1000].reduce(
+    (best, value) => (Math.abs(value - target) < Math.abs(best - target) ? value : best));
+  const width = metres * project.unitsPerMetre;
+  const x = 14;
+  const y = MAP_H - 16;
+  return `
+    <g class="map-scale">
+      <line x1="${x}" y1="${y}" x2="${x + width}" y2="${y}"/>
+      <line x1="${x}" y1="${y - 4}" x2="${x}" y2="${y + 4}"/>
+      <line x1="${x + width}" y1="${y - 4}" x2="${x + width}" y2="${y + 4}"/>
+      <text x="${x + width / 2}" y="${y - 7}">${metres} m</text>
+    </g>`;
+}
+
+function toPath(coordinates, project, close = false) {
+  const d = coordinates
+    .map((point, index) => {
+      const [x, y] = project(point);
+      return `${index ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
+    })
+    .join("");
+  return close ? `${d}Z` : d;
+}
+
+function renderRouteMap(activeId, { compact = false } = {}) {
+  const project = makeProjection();
+  if (!project) return "";
+
+  const context = (state.mapContext || [])
+    .map(item => `<path class="map-${esc(item.kind)}" d="${toPath(item.coordinates, project, item.kind === "beach")}"/>`)
+    .join("");
+
+  const routes = routeGeometries()
+    .map(route => {
+      const isActive = route.id === activeId;
+      const closed = route.geometry.type === "Polygon";
+      return `<path class="map-route${isActive ? " is-active" : ""}"
+        d="${toPath(route.geometry.coordinates, project, closed)}"
+        data-route="${esc(route.id)}"><title>${esc(route.label)} (${yearRange(route.start_year, route.end_year)})</title></path>`;
+    })
+    .join("");
+
+  const attribution = state.mapAttribution;
+  return `
+    <figure class="map${compact ? " is-compact" : ""}">
+      <svg viewBox="0 0 ${MAP_W} ${MAP_H}" role="img"
+           aria-label="Recorridos históricos de la Batalla de Flores sobre el plano de Laredo">
+        <g class="map-ctx">${context}</g>
+        <g class="map-routes">${routes}</g>
+        ${compact ? "" : scaleBar(project)}
+      </svg>
+      ${attribution ? `<figcaption>Trazados de
+        <a href="${esc(attribution.url)}" target="_blank" rel="noopener">${esc(attribution.source)}</a>
+        (${esc(attribution.licence)}). Geometría actual de las calles, no plano histórico.</figcaption>` : ""}
+    </figure>`;
+}
+
 /* ── detalle: edicion ───────────────────────────────────────────────────── */
 
 function sourceCell(entry) {
@@ -429,7 +551,7 @@ function renderEditionDetail(edition) {
     </div>
     <div class="chips">
       <span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status || "sin estado")}</span>
-      <span class="chip ${edition.coverage === "strong" ? "leaf" : "gold"}">${esc(COVERAGE_LABEL[edition.coverage] || edition.coverage || "")}</span>
+      <span class="chip ${coverageTier(edition) === "tier-full" ? "leaf" : "gold"}">${esc(COVERAGE_LABEL[edition.coverage] || edition.coverage || "")}</span>
       ${route ? `<button class="chip sky group-link" type="button" data-route="${esc(route.id)}">${esc(route.label)}</button>` : ""}
     </div>
 
@@ -439,6 +561,8 @@ function renderEditionDetail(edition) {
       <div class="kpi"><span>${num(new Set(entries.map(e => e.group_canonical).filter(Boolean)).size)}</span><small>grupos</small></div>
       <div class="kpi"><span>${num((edition.source_urls || []).length)}</span><small>fuentes</small></div>
     </div>
+
+    ${route?.geometry ? renderRouteMap(route.id, { compact: true }) : ""}
 
     ${renderGallery(entries)}
 
@@ -572,13 +696,19 @@ function renderRouteDetail(route) {
     </div>
     <div class="chips">
       <span class="chip rose">${yearRange(route.start_year, route.end_year)}</span>
-      <span class="chip ${route.mappable ? "leaf" : ""}">${route.mappable ? "Mapeable" : "Contextual"}</span>
-      <span class="chip">${esc(route.geometry_hint || route.kind || "sin tipología")}</span>
+      <span class="chip ${route.geometry ? "leaf" : ""}">${route.geometry
+        ? (route.approximate ? "Trazado aproximado" : "Trazado real")
+        : "Sin traza"}</span>
+      ${route.osm?.old_name ? `<span class="chip gold">antes: ${esc(route.osm.old_name)}</span>` : ""}
     </div>
     <div class="kpis">
       <div class="kpi"><span>${num(editions.length)}</span><small>ediciones</small></div>
       <div class="kpi"><span>${num(floats)}</span><small>carrozas</small></div>
     </div>
+
+    ${route.geometry ? renderRouteMap(route.id) : ""}
+    ${route.note ? `<p class="muted" style="margin-top:6px">${esc(route.note)}</p>` : ""}
+
     <h3 class="section">Ediciones en este trazado</h3>
     <div class="year-grid">
       ${[...editions].reverse().map(e => `<button class="year ${coverageClass(e)}" type="button" data-year="${e.year}">
@@ -587,8 +717,11 @@ function renderRouteDetail(route) {
     <div class="provenance">
       <b>Procedencia</b>
       <ul>
-        <li>Era de recorrido declarada en <code>data/processed/map_features.json</code>.</li>
-        <li>Todavía es una capa conceptual: no hay geometría real asociada.</li>
+        <li>Las eras las declara el Ayuntamiento de Laredo en su página de la fiesta.</li>
+        ${route.osm ? `<li>Geometría: OpenStreetMap, ${route.osm.way_ids.length === 1
+          ? `way <code>${route.osm.way_ids[0]}</code>`
+          : `${route.osm.way_ids.length} ways`} de «${esc(route.osm.name)}».</li>` : ""}
+        ${route.approximate ? "<li>Trazado <b>aproximado</b>: ninguna fuente detalla las calles exactas del circuito.</li>" : ""}
       </ul>
       ${route.source_url ? `<ul class="plain" style="margin-top:6px"><li><a href="${esc(route.source_url)}" target="_blank" rel="noopener">${esc(route.source_url)}</a></li></ul>` : ""}
     </div>`;
@@ -810,6 +943,8 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
   .then(dataset => {
     state.dataset = dataset;
     state.routes = dataset.map_features || [];
+    state.mapContext = dataset.map_context || [];
+    state.mapAttribution = dataset.map_attribution || null;
     state.groups = dataset.groups || [];
     state.editions = (dataset.editions || []).map(edition => ({
       ...edition,

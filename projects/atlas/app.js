@@ -64,9 +64,12 @@ const PAINTERS = [
   { slug: "seurat", name: "Georges Seurat", file: "atlas/data/seurat.geojson" },
   { slug: "pissarro", name: "Camille Pissarro", file: "atlas/data/pissarro.geojson" },
   { slug: "sorolla", name: "Joaquín Sorolla", file: "atlas/data/sorolla.geojson" },
+  { slug: "picasso", name: "Pablo Picasso", file: "atlas/data/picasso.geojson" },
+  { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
+  { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.27.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-20 18:38";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.28.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-21 00:25";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -103,6 +106,42 @@ const LOST_COLOR = "#c0392b";
 const painterColors = Object.fromEntries(PAINTERS.map((p, i) => [p.name, PALETTE[i % PALETTE.length]]));
 function colorFor(name) { return painterColors[name] || MULTI_COLOR; }
 
+// a {colour: count} map → a CSS background: solid for one painter, a pie (conic-gradient) for several
+function pieStyle(counts) {
+  const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  if (entries.length <= 1) return { style: `background:${entries.length ? entries[0][0] : MULTI_COLOR}`, pie: false };
+  const total = entries.reduce((s, [, n]) => s + n, 0);
+  let acc = 0;
+  const stops = entries.map(([col, n]) => {
+    const a = acc / total * 360; acc += n; return `${col} ${a}deg ${acc / total * 360}deg`;
+  }).join(",");
+  return { style: `background:conic-gradient(${stops})`, pie: true };
+}
+
+// art-historical period per painter (one primary bucket each) — groups the painter selector
+const ERAS = [
+  { key: "1", label: "Gothic & early Renaissance" },
+  { key: "2", label: "High Renaissance & Mannerism" },
+  { key: "3", label: "Baroque" },
+  { key: "4", label: "18th–19th century" },
+  { key: "5", label: "Impressionism & Post-Impressionism" },
+  { key: "6", label: "Modern (20th c.)" },
+];
+const ERA_OF = {
+  giotto: "1", duccio: "1", masaccio: "1", fraangelico: "1", piero: "1", botticelli: "1",
+  ghirlandaio: "1", mantegna: "1", vaneyck: "1", weyden: "1", memling: "1", bosch: "1",
+  leonardo: "2", raphael: "2", michelangelo: "2", durer: "2", cranach: "2", holbein: "2",
+  giorgione: "2", titian: "2", correggio: "2", delsarto: "2", parmigianino: "2", bruegel: "2",
+  tintoretto: "2", veronese: "2", elgreco: "2",
+  caravaggio: "3", artemisia: "3", rubens: "3", vandyck: "3", rembrandt: "3", vermeer: "3",
+  franshals: "3", velazquez: "3", ribera: "3", zurbaran: "3", murillo: "3", poussin: "3",
+  lorrain: "3", delatour: "3",
+  goya: "4", david: "4",
+  manet: "5", monet: "5", renoir: "5", degas: "5", pissarro: "5", cezanne: "5", vangogh: "5",
+  gauguin: "5", seurat: "5", sorolla: "5",
+  picasso: "6", frida: "6", rivera: "6",
+};
+
 // Most works are in Europe; open there. The ~12 in the Americas are one zoom-out away.
 const map = L.map("map", { zoomControl: true, worldCopyJump: true }).setView([43, 9], 5);
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -127,20 +166,9 @@ const cluster = L.markerClusterGroup({
       else works += (m.options.works || 1);
     }
     const size = works >= 25 ? 48 : works >= 10 ? 40 : 32;
-    const entries = Object.entries(agg).sort((a, b) => b[1] - a[1]);
-    let style, pie = "";
-    if (entries.length <= 1) {                       // one painter → solid that colour
-      style = `background:${entries.length ? entries[0][0] : MULTI_COLOR}`;
-    } else {                                         // several → a pie of the painter colours
-      const total = entries.reduce((s, [, n]) => s + n, 0);
-      let acc = 0;
-      const stops = entries.map(([col, n]) => {
-        const a = acc / total * 360; acc += n; return `${col} ${a}deg ${acc / total * 360}deg`;
-      }).join(",");
-      style = `background:conic-gradient(${stops})`; pie = " pie";
-    }
+    const { style, pie } = pieStyle(agg);
     return L.divIcon({
-      html: `<div class="cl${pie}" style="width:${size}px;height:${size}px;${style}"><span class="cl-n">${works}</span></div>`,
+      html: `<div class="cl${pie ? " pie" : ""}" style="width:${size}px;height:${size}px;${style}"><span class="cl-n">${works}</span></div>`,
       className: "", iconSize: [size, size],
     });
   },
@@ -234,10 +262,11 @@ function painterTag(p) {
 }
 
 // colour = painter (red overrides for lost/stolen); dashed ring = holds a disputed work
-function pinIcon(color, n, { disputed = false } = {}) {
+function pinIcon(colorCounts, n, { disputed = false } = {}) {
+  const { style, pie } = pieStyle(colorCounts);   // one painter → solid; several → pie of their colours
   return L.divIcon({
     className: "",
-    html: `<div class="pin${disputed ? " disp" : ""}" style="background:${color}">${n}</div>`,
+    html: `<div class="pin${pie ? " pie" : ""}${disputed ? " disp" : ""}" style="${style}"><span class="pn">${n}</span></div>`,
     iconSize: [26, 26], iconAnchor: [13, 13], popupAnchor: [0, -14],
   });
 }
@@ -330,10 +359,7 @@ function refresh() {
       const painted = state.mode === "painted";
       const lost = !painted && vis.some(f => GONE.has(f.properties.status));
       const disputed = vis.some(f => !ATTR_ACCEPTED.has(f.properties.attribution));
-      const painters = new Set(vis.map(f => f.properties.painter));
-      const color = lost ? LOST_COLOR
-        : painters.size === 1 ? colorFor([...painters][0]) : MULTI_COLOR;
-      // per-work colour breakdown, so a cluster can be a solid colour or a pie of them
+      // per-work colour breakdown → the marker (and its cluster) is a solid colour or a pie
       const colorCounts = {};
       for (const f of vis) {
         const c = (!painted && GONE.has(f.properties.status)) ? LOST_COLOR : colorFor(f.properties.painter);
@@ -341,8 +367,11 @@ function refresh() {
       }
       pl.marker.options.colorCounts = colorCounts;
       pl.marker.options.works = vis.length;
-      pl.marker.setIcon(pinIcon(color, vis.length, { disputed }));
+      pl.marker.setIcon(pinIcon(colorCounts, vis.length, { disputed }));
       pl.marker.setPopupContent(placePopup(vis));
+      // hover label: the venue (map 1) or the place it was painted (map 2), + count
+      const label = painted ? (vis[0].properties.creation_place || "") : (vis[0].properties.location || "");
+      if (label) pl.marker.bindTooltip(`${label} · ${vis.length}`, { direction: "top", offset: [0, -12] });
       if (!pl.shown) { cluster.addLayer(pl.marker); pl.shown = true; }
       shownPlaces++; workCount += vis.length;
       if (vis[0].properties.country) countries.add(vis[0].properties.country);
@@ -492,15 +521,23 @@ function renderPainterList() {
     if (mus.length) html += `<li class="pop-h">Museums</li>` + mus.map(museumRow).join("");
   }
 
+  const painterRow = p => {
+    const on = state.painters[p.name] !== false;
+    return `<li class="prow"><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
+      `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}</label>` +
+      `<button type="button" class="only" data-only="${esc(p.name)}">only</button></li>`;
+  };
   const pnt = PAINTERS.filter(p => p.name.toLowerCase().includes(q));
   if (pnt.length) {
-    if (q && html) html += `<li class="pop-h">Painters</li>`;
-    html += pnt.map(p => {
-      const on = state.painters[p.name] !== false;
-      return `<li class="prow"><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
-        `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}</label>` +
-        `<button type="button" class="only" data-only="${esc(p.name)}">only</button></li>`;
-    }).join("");
+    if (q) {                                   // searching → flat list under one header (if mixed with museums)
+      if (html) html += `<li class="pop-h">Painters</li>`;
+      html += pnt.map(painterRow).join("");
+    } else {                                   // idle → grouped by art-historical period
+      for (const era of ERAS) {
+        const group = pnt.filter(p => ERA_OF[p.slug] === era.key);
+        if (group.length) html += `<li class="pop-h">${esc(era.label)}</li>` + group.map(painterRow).join("");
+      }
+    }
   }
 
   if (!q && museumIndex.length) {   // idle state: surface the museum search

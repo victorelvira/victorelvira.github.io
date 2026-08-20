@@ -115,7 +115,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "brooklyn-museum",
-    "city": "Brooklyn",
+    "city": "New York",
     "country": "United States"
    }
   },
@@ -172,7 +172,9 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "carnegie-museum-of-art"
+    "museum_id": "carnegie-museum-of-art",
+    "city": "Pittsburgh",
+    "country": "United States"
    }
   },
   {
@@ -1733,7 +1735,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fogg-art-museum",
-    "city": "Cambridge (Massachusetts)"
+    "city": "Cambridge"
    }
   },
   {
@@ -2035,8 +2037,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.32908,
-     35.6863
+     139.32949,
+     35.68646
     ]
    },
    "properties": {
@@ -2324,7 +2326,9 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "szepmuveszeti-muzeum"
+    "museum_id": "szepmuveszeti-muzeum",
+    "city": "Budapest",
+    "country": "Hungary"
    }
   },
   {
@@ -2442,7 +2446,9 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "szepmuveszeti-muzeum"
+    "museum_id": "szepmuveszeti-muzeum",
+    "city": "Budapest",
+    "country": "Hungary"
    }
   },
   {
@@ -2450,8 +2456,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -84.49694,
-     39.11389
+     -84.4969,
+     39.1139
     ]
    },
    "properties": {
@@ -3285,15 +3291,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     19.05139,
-     47.4925
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of an unknown woman",
     "year": "1640",
-    "city": "Budapest",
+    "city": "Reims",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "dimensions": "85.2 × 68.1 cm",
@@ -3307,7 +3313,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "Hungary"
+    "country": "United States"
    }
   },
   {
@@ -4260,15 +4266,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     19.05139,
-     47.4925
+     4.0347,
+     49.2628
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a woman",
     "year": "1650",
-    "city": "Budapest",
+    "city": "Reims",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "dimensions": "84.6 x 69.2 cm",
@@ -4282,7 +4288,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "Hungary"
+    "country": "United States"
    }
   },
   {
@@ -4760,7 +4766,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "worcester-art-museum"
+    "museum_id": "worcester-art-museum",
+    "city": "Massachusetts"
    }
   },
   {
