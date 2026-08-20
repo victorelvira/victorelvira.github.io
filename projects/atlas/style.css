@@ -35,6 +35,7 @@ body {
 #navbar .nav-sep { color: #8a7f72; }
 #navbar .nav-home { color: #cbbfae; text-decoration: none; }
 #navbar a:hover { text-decoration: underline; }
+#navbar .build { margin-left: auto; color: #8a7f72; font-size: 11.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -272,13 +273,14 @@ body.mode-painted .legend { display: none; }
   padding: 8px 12px; border-top: 1px solid #f0ece3;
 }
 .card ul.works li:first-child { border-top: 0; }
-.pop-more {
-  display: block; width: calc(100% - 16px); margin: 6px 8px 8px; padding: 7px 10px;
-  font: inherit; font-size: 12.5px; font-weight: 600; color: #3a2317; cursor: pointer;
-  background: #efe6d6; border: 1px solid #d8c7a6; border-radius: 8px; text-align: center;
+/* clickable venue name at the top of a popup → opens the museum in the side list */
+button.pop-museum {
+  background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-align: left;
+  font: inherit; font-weight: 700; font-size: 15px; color: var(--ink);
 }
-.pop-more:hover { background: #e7dcc6; }
-.pop-more-note { margin: 6px 12px 8px; font-size: 12px; color: var(--muted); text-align: center; }
+button.pop-museum:hover { text-decoration: underline; color: #6a4a2a; }
+.pop-museum .pm-arrow { color: var(--muted); font-weight: 400; font-size: 13px; }
+button.pop-museum:hover .pm-arrow { color: #6a4a2a; }
 .card .th {
   width: 52px; height: 52px; flex: 0 0 auto; object-fit: cover;
   border-radius: 6px; background: #efe9df; border: 1px solid var(--line);

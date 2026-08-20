@@ -36,7 +36,9 @@ const PAINTERS = [
   { slug: "veronese", name: "Veronese", file: "atlas/data/veronese.geojson" },
   { slug: "mantegna", name: "Mantegna", file: "atlas/data/mantegna.geojson" },
 ];
-const DATA_V = "21";   // bump alongside atlas.html ?v= when the geojson changes (cache-bust)
+const DATA_V = "0.25";   // version + cache-bust. Bump ONCE per deploy (not per edit); keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-20 11:15";   // update together with DATA_V — shown in the navbar
+{ const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 
 // Each painter has a FIXED colour, by its position in the manifest (stable, always the
 // same). The palette cycles if there are ever more painters than colours.
@@ -215,13 +217,14 @@ function placePopup(feats) {
   } else {
     const kindTxt = KIND_LABEL[p0.kind] || "";
     const where = [p0.city, p0.country].filter(Boolean).join(", ");
-    head = `<div class="hd"><div class="nm">${esc(p0.location || "Location")}</div>` +
+    // the venue name is a button → opens this museum in the side list (filters to it)
+    head = `<div class="hd"><button type="button" class="nm pop-museum" data-museum="${esc(museumKey(p0))}"` +
+      ` title="Show all works of this venue in the list">${esc(p0.location || "Location")}<span class="pm-arrow"> ↗</span></button>` +
       `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} work${n > 1 ? "s" : ""}</div>` +
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
 
-  const POPUP_CAP = 12;   // a venue can hold 200+ works — cap the popup, send the rest to the list
-  const items = feats.slice(0, POPUP_CAP).map(f => {
+  const items = feats.map(f => {
     const p = f.properties;
     const yr = p.year ? ` <span class="yr">${esc(p.year)}</span>` : "";
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
@@ -244,14 +247,7 @@ function placePopup(feats) {
       `${provLine(p, WORK_SKIP)}</div></li>`;
   }).join("");
 
-  const extra = feats.length - POPUP_CAP;
-  let more = "";
-  if (extra > 0) {
-    more = !painted
-      ? `<button type="button" class="pop-more" data-museum="${esc(museumKey(p0))}">+ ${extra} more — show all ${feats.length} in the list →</button>`
-      : `<div class="pop-more-note">+ ${extra} more painted here — zoom in or filter to narrow</div>`;
-  }
-  return `<div class="card">${head}<ul class="works">${items}</ul>${more}</div>`;
+  return `<div class="card">${head}<ul class="works">${items}</ul></div>`;
 }
 
 function refresh() {
@@ -326,9 +322,9 @@ Promise.all(PAINTERS.map(p =>
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     buildMarkers();
     map.on("moveend", renderPanel);
-    // "show all N in the list" inside a capped popup → filter the panel to that venue
+    // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
-      const b = e.popup.getElement() && e.popup.getElement().querySelector(".pop-more");
+      const b = e.popup.getElement() && e.popup.getElement().querySelector(".pop-museum");
       if (b) b.addEventListener("click", () => { map.closePopup(); selectMuseum(b.dataset.museum); });
     });
     window.addEventListener("hashchange", () => { applyHash(); buildMarkers(); });
