@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laredo frente al clima</title>
+<meta name="description" content="Web interactiva del cambio climatico en Laredo y Cantabria: Laredo, Santander, el mar y la region.">
+<meta name="theme-color" content="#0E5163">
+<link rel="stylesheet" href="clima_cantabria/style.css">
+</head>
+<body>
+
+
+<div class="topbar"><div class="inner">
+  <div class="brand"><b>Laredo frente al clima</b><small>Cantabria · datos abiertos</small></div>
+  <nav class="navtabs" id="nav">
+    <button class="navtab" data-v="laredo" aria-selected="true">🏘️ Laredo</button>
+    <button class="navtab" data-v="santander" aria-selected="false">⚓ Observado</button>
+    <button class="navtab" data-v="mar" aria-selected="false">🌊 El mar</button>
+    <button class="navtab" data-v="cantabria" aria-selected="false">🗺️ Cantabria</button>
+  </nav>
+</div></div>
+
+<div class="dash">
+
+  <!-- ============ LAREDO ============ -->
+  <div class="view active" id="v-laredo">
+    <div class="viewhead"><h2>El clima de <span class="kicker">Laredo</span></h2>
+      <p>El clima del pueblo reconstruido con el reanálisis ERA5 (1950→hoy). Pasa el ratón
+        por las gráficas y cambia de variable.</p></div>
+    <div class="grid">
+      <div class="card wide">
+        <h3>Un siglo en franjas</h3>
+        <p class="sub" id="stripescap">Cada franja es un año · pasa el ratón por encima</p>
+        <svg class="stripes" id="stripes"></svg>
+      </div>
+      <div class="card">
+        <h3>Explorador de variables</h3>
+        <p class="sub">Temperatura, extremos y lluvia — con su tendencia.</p>
+        <div class="tabs" id="tabs"></div>
+        <div class="headrow"><span class="big" id="vhead"></span><span class="lab" id="vheadlab"></span></div>
+        <div class="chartbox"><svg class="chart" id="chart"></svg><div class="tt" id="tt"></div></div>
+        <p class="chartcap" id="vcap"></p>
+      </div>
+      <div class="card">
+        <h3>La campana se desplaza</h3>
+        <p class="sub">Distribución de la temperatura diaria por década. Dale al play.</p>
+        <div class="headrow"><span class="big" id="dhead" style="color:var(--tide)"></span></div>
+        <div class="chartbox"><svg class="chart" id="dist"></svg></div>
+        <div class="tabs" id="disttabs" style="margin-top:8px"></div>
+        <button class="tab" id="playbtn">▶ Reproducir evolución</button>
+      </div>
+      <div class="card wide">
+        <h3>Calendario térmico</h3>
+        <p class="sub">Cada mes (fila) de cada año (columna). Rojo = más cálido que 1961–90.
+          <b>Pincha un mes</b> (izquierda) o <b>un año</b> (columna) para ver su evolución debajo.</p>
+        <div class="chartbox"><svg class="chart" id="heat"></svg><div class="tt" id="tth"></div></div>
+        <p class="chartcap" id="heltitle" style="margin-top:14px;font-weight:600;color:var(--ink);font-family:inherit;font-size:.95rem"></p>
+        <div class="chartbox"><svg class="chart" id="heatline"></svg><div class="tt" id="ttl"></div></div>
+        <p class="chartcap" id="helcap"></p>
+      </div>
+    </div>
+    <div class="viewhead" style="margin-top:36px"><h2>El <span class="kicker">tiempo real</span> · la estación del pueblo</h2>
+      <p>Una estación de aficionado (RUBAYA) mide en Laredo cada hora desde 2021. Es «el tiempo»,
+        no clima (solo 5 años y calibración variable), pero es <b>la actualidad de verdad</b>: dato de hace horas.</p></div>
+    <div class="grid">
+      <div class="card">
+        <h3>La estación</h3>
+        <p class="sub" id="estmeta"></p>
+        <p class="note" id="estnow"></p>
+      </div>
+      <div class="card">
+        <h3>El día típico</h3>
+        <p class="sub">Temperatura mediana de 24 h por estación. Pasa el ratón.</p>
+        <div class="chartbox"><svg class="chart" id="diatipico"></svg><div class="tt" id="ttdt"></div></div>
+      </div>
+      <div class="card">
+        <h3>Veranos comparados</h3>
+        <p class="sub">Temperatura media del verano por año (1-jun a 19-ago · 2022 sin datos).</p>
+        <div class="chartbox"><svg class="chart" id="veranos"></svg><div class="tt" id="ttv"></div></div>
+      </div>
+      <div class="card">
+        <h3>Noches tropicales por verano</h3>
+        <p class="sub">Noches que no bajan de 20 °C. Pasa el ratón.</p>
+        <div class="chartbox"><svg class="chart" id="ntrop"></svg><div class="tt" id="ttn"></div></div>
+      </div>
+      <div class="card wide">
+        <h3>Este verano, hora a hora</h3>
+        <p class="sub" id="vhtitle"></p>
+        <div class="chartbox"><svg class="chart" id="veranohora"></svg><div class="tt" id="ttvh"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SANTANDER ============ -->
+  <div class="view" id="v-santander">
+    <div class="viewhead"><h2>Observación <span class="kicker">real</span>: Santander y Bilbao</h2>
+      <p>En Laredo no hay serie de observación larga — no la hay en casi ningún pueblo. Los
+        termómetros con historia viven en aeropuertos y observatorios: <b>Santander (desde 1924)</b>
+        y <b>Bilbao (desde 1947)</b>. Son nuestras anclas reales, y validan el reanálisis ERA5.</p></div>
+    <div class="grid">
+      <div class="card wide">
+        <h3>Santander · un siglo de temperatura</h3>
+        <p class="sub">Media anual observada (GHCN/AEMET), anomalía vs 1961–1990. <b>+2,05 °C</b> desde 1924.</p>
+        <div class="chartbox"><svg class="chart" id="siglo"></svg><div class="tt" id="ttsiglo"></div></div>
+        <p class="chartcap" id="sigcap"></p>
+      </div>
+      <div class="card wide">
+        <h3>Bilbao · 78 años de temperatura</h3>
+        <p class="sub">Aeropuerto de Bilbao (GHCN/AEMET), anomalía vs 1961–1990. Segunda referencia real.</p>
+        <div class="chartbox"><svg class="chart" id="bilbao"></svg><div class="tt" id="ttbilbao"></div></div>
+        <p class="chartcap" id="bilcap"></p>
+      </div>
+      <div class="card">
+        <h3>Por qué importan</h3>
+        <p class="note">Son <b>dato de termómetro</b>, no modelo. Santander sube <b>+2,05 °C</b> desde
+          1924 y Bilbao <b>+1,55 °C</b> desde 1948 — ambas inequívocas y coincidentes. Y validan ERA5
+          (que usamos para Laredo): misma variabilidad (r≈0,89) y dirección.</p>
+        <p class="note" style="margin-top:10px">Para titulares de prensa con dato serio, estas dos son la base.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ EL MAR ============ -->
+  <div class="view" id="v-mar">
+    <div class="viewhead"><h2>El <span class="kicker">mar</span> de Laredo</h2>
+      <p>Para un pueblo con playa, el mar es frontera. Sube de nivel y se calienta.</p></div>
+    <div class="grid">
+      <div class="card wide">
+        <h3>Mira subir el mar</h3>
+        <p class="sub">Nivel del mar en Santander (mareógrafo PSMSL, 1944→). Dale al play.</p>
+        <div class="headrow"><span class="big" id="seahead" style="color:var(--sea)"></span>
+          <span class="lab" id="sealab"></span></div>
+        <div class="chartbox"><svg class="chart" id="seaanim"></svg></div>
+        <button class="tab" id="seaplay">▶ Ver subir el mar</button>
+      </div>
+      <div class="card wide">
+        <h3>El agua también se calienta</h3>
+        <p class="sub">Temperatura superficial del mar frente a Laredo (NOAA OISST, 1982→).</p>
+        <div class="chartbox"><svg class="chart" id="sst"></svg><div class="tt" id="ttsst"></div></div>
+        <p class="chartcap" id="sstcap"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CANTABRIA ============ -->
+  <div class="view" id="v-cantabria">
+    <div class="viewhead"><h2>Toda <span class="kicker">Cantabria</span></h2>
+      <p>El calentamiento no es solo de Laredo: recorre la región entera (NASA POWER, 1981–2025).
+        Mostramos cuánto ha subido la temperatura media <b>en total desde 1981</b> (y, entre
+        paréntesis, el ritmo por década). <b>Pincha cualquier pueblo</b> en el mapa o el ranking.</p></div>
+    <div class="grid">
+      <div class="card wide">
+        <h3>El mapa de Cantabria</h3>
+        <p class="sub">Cambia entre el ritmo total y la evolución año a año.</p>
+        <div class="tabs">
+          <button class="tab" id="mmYear" aria-pressed="true">Año a año</button>
+          <button class="tab" id="mmTrend" aria-pressed="false">Tendencia total</button>
+        </div>
+        <div class="headrow" id="maphead"><span class="big" id="myhead" style="color:var(--warm)"></span>
+          <span class="lab">anomalía de ese año (rojo = más cálido)</span></div>
+        <div class="chartbox"><svg class="chart" id="map"></svg><div class="tt" id="ttm"></div></div>
+        <div class="rowctl" id="mapctl">
+          <button class="tab" id="myplay">▶ Reproducir</button>
+          <input type="range" id="myslider" min="0" max="43" value="43">
+        </div>
+        <p class="chartcap" id="mapcap"></p>
+      </div>
+      <div class="card">
+        <h3>Compara dos localidades</h3>
+        <p class="sub">Cómo se han calentado (anomalía vs su media 1981–2010).</p>
+        <div style="font-size:.75rem;color:var(--muted)">A (roja):</div>
+        <div class="tabs" id="cmpA"></div>
+        <div style="font-size:.75rem;color:var(--muted)">B (azul):</div>
+        <div class="tabs" id="cmpB"></div>
+        <div class="chartbox" style="margin-top:8px"><svg class="chart" id="cmp"></svg></div>
+        <p class="chartcap" id="cmpcap"></p>
+      </div>
+      <div class="card">
+        <h3>Ranking de pueblos</h3>
+        <p class="sub">Calentamiento total desde 1981 por localidad. Pincha uno. Laredo en rojo.</p>
+        <div id="ranking"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>Fuentes:</strong> ERA5 · Copernicus (aire, Laredo) · AEMET / GHCN-Daily (Santander, Bilbao) ·
+  PSMSL (nivel del mar) · NOAA OISST (agua) · NASA POWER (región) ·
+  estación RUBAYA / Weather Underground (tiempo real en Laredo).
+  <strong>Método:</strong> tendencias por Theil-Sen y Mann-Kendall; anomalías vs 1961–1990.
+  Datos abiertos y reproducibles.
+</footer>
+
+
+<script src="clima_cantabria/app.js"></script>
+</body>
+</html>
