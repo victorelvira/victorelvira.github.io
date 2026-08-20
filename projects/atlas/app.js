@@ -54,9 +54,19 @@ const PAINTERS = [
   { slug: "memling", name: "Hans Memling", file: "atlas/data/memling.geojson" },
   { slug: "delsarto", name: "Andrea del Sarto", file: "atlas/data/delsarto.geojson" },
   { slug: "lorrain", name: "Claude Lorrain", file: "atlas/data/lorrain.geojson" },
+  { slug: "vangogh", name: "Vincent van Gogh", file: "atlas/data/vangogh.geojson" },
+  { slug: "monet", name: "Claude Monet", file: "atlas/data/monet.geojson" },
+  { slug: "manet", name: "Édouard Manet", file: "atlas/data/manet.geojson" },
+  { slug: "cezanne", name: "Paul Cézanne", file: "atlas/data/cezanne.geojson" },
+  { slug: "renoir", name: "Pierre-Auguste Renoir", file: "atlas/data/renoir.geojson" },
+  { slug: "degas", name: "Edgar Degas", file: "atlas/data/degas.geojson" },
+  { slug: "gauguin", name: "Paul Gauguin", file: "atlas/data/gauguin.geojson" },
+  { slug: "seurat", name: "Georges Seurat", file: "atlas/data/seurat.geojson" },
+  { slug: "pissarro", name: "Camille Pissarro", file: "atlas/data/pissarro.geojson" },
+  { slug: "sorolla", name: "Joaquín Sorolla", file: "atlas/data/sorolla.geojson" },
 ];
-const DATA_V = "0.27.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-20 18:28";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.27.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-20 18:38";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -86,6 +96,7 @@ const PALETTE = [
   "#8f3f5a", "#3f8f5f", "#8f6f3f", "#5a3f8f", "#3f7f8f", "#8f4f3f", "#4f8f3f", "#7f3f8f",
   "#b08a2f", "#2f5f8f", "#8a2f6a", "#5f8a2f", "#2f8a8a", "#8a5f2f", "#6a2f8a", "#2f8a5f",
   "#a03f6a", "#3f6a3f", "#6a3f3f", "#3f3f6a", "#6a6a2f", "#2f6a6a", "#8f7a5a", "#5a5a8f",
+  "#b0692f", "#2f8fb0", "#7a9c3f", "#9c3f7a", "#3f9c7a", "#9c6a3f", "#5f3f9c", "#3f7a9c",
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -726,6 +737,10 @@ function renderMuseumsTable() {
 
 function setTableView(on) {
   view.table = on;
+  if (on) {                                   // always land on the Works tab
+    tableMode = "works";
+    document.querySelectorAll("#table-tabs .ttab").forEach(x => x.classList.toggle("active", x.dataset.tmode === "works"));
+  }
   document.body.classList.toggle("show-table", on);
   document.getElementById("v-table").classList.toggle("active", on);
   document.getElementById("table").hidden = !on;
