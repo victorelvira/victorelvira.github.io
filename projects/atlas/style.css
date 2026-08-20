@@ -157,6 +157,53 @@ body.mode-painted .legend { display: none; }
 #main { flex: 1; min-height: 0; display: flex; }
 #map { flex: 1; min-height: 0; }
 
+/* ── database table view ── */
+body.show-table .mode-btn, body.show-table #view { display: none; }   /* hide map-only controls */
+#table[hidden], #main[hidden] { display: none; }   /* [hidden] must beat the flex display rules */
+#table { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #fff; }
+#table-bar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+#table-bar #table-search { flex: 1 1 220px; max-width: 420px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 13px; }
+#table-bar .t-count { color: var(--muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+#table-bar #table-csv { margin-left: auto; }
+#table-wrap { flex: 1; overflow: auto; min-height: 0; }
+#works-table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+#works-table thead th { position: sticky; top: 0; z-index: 2; background: #f1ece3; text-align: left;
+  padding: 7px 10px; border-bottom: 2px solid var(--line); white-space: nowrap; color: var(--ink); font-weight: 700; }
+#works-table th.sortable { cursor: pointer; user-select: none; }
+#works-table th.sortable:hover { background: #e9e1d4; }
+#works-table th .ar { color: var(--accent, #6a4a2a); }
+#works-table td { padding: 5px 10px; border-bottom: 1px solid #efeae1; vertical-align: middle; }
+#works-table tbody tr { cursor: pointer; }
+#works-table tbody tr:hover { background: #f4eee3; }
+#works-table tbody tr:hover .c-title { text-decoration: underline; }
+#works-table .c-img { width: 46px; padding: 3px 6px; }
+#works-table .tth { width: 40px; height: 40px; object-fit: cover; border-radius: 3px; display: block; cursor: zoom-in; background: #efe9df; }
+#works-table .tth.ph { display: block; }
+#works-table .c-painter { white-space: nowrap; }
+#works-table .c-painter .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+#works-table .c-title { font-weight: 600; min-width: 190px; }
+#works-table .c-year, #works-table .c-country, #works-table .c-city, #works-table .c-attr { white-space: nowrap; }
+#works-table .c-loc { min-width: 150px; }
+#works-table .c-links a { margin-right: 4px; }
+
+/* ── mobile bottom sheet (hosts marker popups on phones) ── */
+#sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200; background: #fff;
+  border-top-left-radius: 14px; border-top-right-radius: 14px;
+  box-shadow: 0 -6px 24px rgba(0,0,0,.28); max-height: 72vh; display: flex; flex-direction: column;
+}
+#sheet[hidden] { display: none; }
+#sheet-close {
+  position: absolute; top: 8px; right: 10px; z-index: 3; width: 30px; height: 30px; line-height: 1;
+  background: #fff; border: 1px solid var(--line); border-radius: 50%; font-size: 15px; cursor: pointer;
+}
+#sheet-body { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+#sheet-body .card ul.works { max-height: none; overflow: visible; }   /* the sheet itself scrolls */
+
+/* a thumbnail that failed to load (Commons HTTP/2 reset) → neutral grey box, no broken icon */
+img.th.ph, img.tth.ph { background: #efe9df; }
+img.th.ph::after, img.tth.ph::after { content: ""; }
+
 /* side panel: the works currently visible on the map (map acts as a filter) */
 #panel {
   flex: 0 0 320px; width: 320px; overflow-y: auto;

@@ -124,14 +124,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.591,
-     47.5554
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "David with the Head of Goliath before Saul",
-    "year": "1626/1627",
+    "year": "1626",
     "location": "Kunstmuseum Basel",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -357,7 +357,9 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatsgalerie-stuttgart"
+    "museum_id": "staatsgalerie-stuttgart",
+    "city": "Stuttgart",
+    "country": "Germany"
    }
   },
   {
@@ -401,7 +403,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Self-Portrait Study in the Mirror (the Human Skin)",
-    "year": "c. 1627/1628",
+    "year": "c. 1627",
     "location": "Indianapolis Museum of Art",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -484,16 +486,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "The Painter in his Studio (‘Idea’)",
     "year": "c. 1628",
-    "city": "Montréal",
-    "country": "United States",
+    "city": "Budapest",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -615,7 +617,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "The apostle Paul at his Writing Desk",
-    "year": "c. 1629/1630",
+    "year": "c. 1629",
     "city": "Nuremberg",
     "location": "Germanisches Nationalmuseum",
     "attribution": "generally accepted",
@@ -630,7 +632,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "germanisches-nationalmuseum"
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany"
    }
   },
   {
@@ -691,7 +694,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "germanisches-nationalmuseum"
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany"
    }
   },
   {
@@ -875,7 +879,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "stadel"
+    "museum_id": "stadel",
+    "country": "Germany"
    }
   },
   {
@@ -1249,8 +1254,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.31456,
-     48.86603
+     2.31453,
+     48.86604
     ]
    },
    "properties": {
@@ -1895,16 +1900,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of a 62-year-old Woman, possibly Aeltje Pietersdr Uylenburgh",
     "year": "1632",
-    "city": "Montréal",
-    "country": "United States",
+    "city": "Budapest",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -2419,15 +2424,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of a Young Woman",
     "year": "1633",
-    "city": "Montréal",
+    "city": "Budapest",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -2442,7 +2447,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "country": "Hungary"
    }
   },
   {
@@ -2654,7 +2659,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-canada"
+    "museum_id": "national-gallery-of-canada",
+    "country": "Canada"
    }
   },
   {
@@ -2793,7 +2799,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "The Descent from the Cross",
-    "year": "1632/1633",
+    "year": "1632",
     "city": "Munich",
     "country": "Germany",
     "location": "Alte Pinakothek",
@@ -2884,7 +2890,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "John the Baptist Preaching",
-    "year": "c. 1633/1634",
+    "year": "c. 1633",
     "city": "Berlin",
     "country": "Germany",
     "location": "Gemäldegalerie",
@@ -2976,7 +2982,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "The Lamentation",
-    "year": "c. 1633/1634",
+    "year": "c. 1633",
     "city": "London",
     "country": "United Kingdom",
     "location": "National Gallery",
@@ -3007,7 +3013,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "The Entombment",
-    "year": "1633/1634",
+    "year": "1633",
     "city": "Glasgow",
     "country": "United Kingdom",
     "location": "Hunterian Museum and Art Gallery",
@@ -3153,16 +3159,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of a Man in a Broad-brimmed Hat",
     "year": "1634",
-    "city": "Montréal",
-    "country": "United States",
+    "city": "Budapest",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -3184,16 +3190,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of a Woman",
     "year": "1634",
-    "city": "Montréal",
-    "country": "United States",
+    "city": "Budapest",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -3276,16 +3282,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of Reverend Johannes Elison",
     "year": "1634",
-    "city": "Montréal",
-    "country": "United States",
+    "city": "Budapest",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
@@ -3307,16 +3313,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of Maria Bockenolle",
     "year": "1634",
-    "city": "Montréal",
-    "country": "United States",
+    "city": "Budapest",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
@@ -4031,7 +4037,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "stadel"
+    "museum_id": "stadel",
+    "country": "Germany"
    }
   },
   {
@@ -4478,7 +4485,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "King Uzziah Stricken with Leprosy",
-    "year": "c. 1639/1640",
+    "year": "c. 1639",
     "location": "Chatsworth House",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -4813,7 +4820,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Landscape with Arched Bridge",
-    "year": "c. 1637/1638",
+    "year": "c. 1637",
     "city": "Berlin",
     "country": "Germany",
     "location": "Gemäldegalerie",
@@ -4844,7 +4851,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Landscape with a Stone Bridge",
-    "year": "c. 1638/1640",
+    "year": "c. 1638",
     "location": "Rijksmuseum Amsterdam",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
@@ -5514,7 +5521,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Self-portrait with Beret and Red Cloak",
-    "year": "c. 1645/1648",
+    "year": "c. 1645",
     "location": "Staatliche Kunsthalle Karlsruhe",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -7769,7 +7776,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Self-portrait",
-    "year": "1657/1659",
+    "year": "1657",
     "city": "Edinburgh",
     "country": "United Kingdom",
     "location": "National Gallery of Scotland",
@@ -7906,7 +7913,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "stadel"
+    "museum_id": "stadel",
+    "country": "Germany"
    }
   },
   {
@@ -8166,7 +8174,7 @@
     "painter": "Rembrandt",
     "title": "The Virgin of Sorrow",
     "year": "1661",
-    "city": "Epinal",
+    "city": "Épinal",
     "location": "Musée départemental d'Art ancien et contemporain",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
@@ -8180,7 +8188,8 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-departemental-d-art-ancien-et-contemporain"
+    "museum_id": "musee-departemental-d-art-ancien-et-contemporain",
+    "country": "France"
    }
   },
   {
@@ -8258,7 +8267,7 @@
     "painter": "Rembrandt",
     "title": "The Apostle Simon",
     "year": "1661",
-    "location": "Kunsthaus Zürich",
+    "location": "Kunsthaus Zurich",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
     "dimensions": "98.5 × 79 cm",
@@ -8749,7 +8758,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Titus Reading (study in direct and reflected light)",
-    "year": "c. 1660/1665",
+    "year": "c. 1660",
     "city": "Vienna",
     "country": "Austria",
     "location": "Kunsthistorisches Museum",
@@ -9147,7 +9156,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "Self Portrait with Two Circles",
-    "year": "c. 1665/1669",
+    "year": "c. 1665",
     "city": "London",
     "country": "United Kingdom",
     "location": "Kenwood House",
@@ -9178,7 +9187,7 @@
    "properties": {
     "painter": "Rembrandt",
     "title": "The Return of the Prodigal Son",
-    "year": "c. 1660/1665",
+    "year": "c. 1660",
     "city": "Saint Petersburg",
     "country": "Russia",
     "location": "Hermitage Museum",

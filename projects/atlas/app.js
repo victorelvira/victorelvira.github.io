@@ -35,9 +35,28 @@ const PAINTERS = [
   { slug: "poussin", name: "Nicolas Poussin", file: "atlas/data/poussin.geojson" },
   { slug: "veronese", name: "Veronese", file: "atlas/data/veronese.geojson" },
   { slug: "mantegna", name: "Mantegna", file: "atlas/data/mantegna.geojson" },
+  { slug: "artemisia", name: "Artemisia Gentileschi", file: "atlas/data/artemisia.geojson" },
+  { slug: "michelangelo", name: "Michelangelo", file: "atlas/data/michelangelo.geojson" },
+  { slug: "tintoretto", name: "Tintoretto", file: "atlas/data/tintoretto.geojson" },
+  { slug: "vandyck", name: "Anthony van Dyck", file: "atlas/data/vandyck.geojson" },
+  { slug: "franshals", name: "Frans Hals", file: "atlas/data/franshals.geojson" },
+  { slug: "holbein", name: "Hans Holbein the Younger", file: "atlas/data/holbein.geojson" },
+  { slug: "david", name: "Jacques-Louis David", file: "atlas/data/david.geojson" },
+  { slug: "weyden", name: "Rogier van der Weyden", file: "atlas/data/weyden.geojson" },
+  { slug: "giorgione", name: "Giorgione", file: "atlas/data/giorgione.geojson" },
+  { slug: "correggio", name: "Correggio", file: "atlas/data/correggio.geojson" },
+  { slug: "parmigianino", name: "Parmigianino", file: "atlas/data/parmigianino.geojson" },
+  { slug: "murillo", name: "Murillo", file: "atlas/data/murillo.geojson" },
+  { slug: "cranach", name: "Lucas Cranach the Elder", file: "atlas/data/cranach.geojson" },
+  { slug: "duccio", name: "Duccio", file: "atlas/data/duccio.geojson" },
+  { slug: "ghirlandaio", name: "Domenico Ghirlandaio", file: "atlas/data/ghirlandaio.geojson" },
+  { slug: "delatour", name: "Georges de La Tour", file: "atlas/data/delatour.geojson" },
+  { slug: "memling", name: "Hans Memling", file: "atlas/data/memling.geojson" },
+  { slug: "delsarto", name: "Andrea del Sarto", file: "atlas/data/delsarto.geojson" },
+  { slug: "lorrain", name: "Claude Lorrain", file: "atlas/data/lorrain.geojson" },
 ];
-const DATA_V = "0.26.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-20 13:03";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.27.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-20 17:31";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -46,12 +65,27 @@ document.querySelector(".brand")?.addEventListener("click", e => {
   location.reload();
 });
 
+// ── mobile bottom sheet: hosts marker popups on phones (see the popupopen handler) ──
+const isMobile = () => window.matchMedia("(max-width: 640px)").matches;
+function openSheet(html) {
+  const body = document.getElementById("sheet-body");
+  body.innerHTML = html;
+  const b = body.querySelector(".pop-museum");           // clickable venue title → open in list
+  if (b) b.addEventListener("click", () => { closeSheet(); selectMuseum(b.dataset.museum); });
+  document.getElementById("sheet").hidden = false;
+}
+function closeSheet() { const s = document.getElementById("sheet"); if (s) s.hidden = true; }
+document.getElementById("sheet-close")?.addEventListener("click", closeSheet);
+
 // Each painter has a FIXED colour, by its position in the manifest (stable, always the
 // same). The palette cycles if there are ever more painters than colours.
 const PALETTE = [
   "#7a4a2b", "#3f6fb0", "#4a8f5f", "#9c4f7c", "#c8892a", "#2f8f8f", "#8a5cc0", "#b0483a",
   "#5b7f2f", "#c0568a", "#3a6b8f", "#8a6d2f", "#6a4fb0", "#2f8f6a", "#a0562a", "#4a4a8f",
   "#7d9b2f", "#b04f6a", "#2f6f9c", "#9c7a2f", "#5f4a9c", "#2f9c8a", "#b06a3a", "#6a5f4a",
+  "#8f3f5a", "#3f8f5f", "#8f6f3f", "#5a3f8f", "#3f7f8f", "#8f4f3f", "#4f8f3f", "#7f3f8f",
+  "#b08a2f", "#2f5f8f", "#8a2f6a", "#5f8a2f", "#2f8a8a", "#8a5f2f", "#6a2f8a", "#2f8a5f",
+  "#a03f6a", "#3f6a3f", "#6a3f3f", "#3f3f6a", "#6a6a2f", "#2f6a6a", "#8f7a5a", "#5a5a8f",
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -281,6 +315,7 @@ function refresh() {
   document.getElementById("stats").textContent =
     `${workCount} works · ${shownPlaces} locations · ${countries.size} countries`;
   renderPanel();
+  if (typeof view !== "undefined" && view.table) renderTable();
 }
 
 // group features by place (key = rounded coordinates)
@@ -330,9 +365,13 @@ Promise.all(PAINTERS.map(p =>
     map.on("moveend", renderPanel);
     // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
+      // On phones a marker popup is taller than the small map and its header/close get cut
+      // off the top. Route it into a fixed bottom sheet instead — always fully visible.
+      if (isMobile()) { openSheet(e.popup.getContent()); map.closePopup(e.popup); return; }
       const b = e.popup.getElement() && e.popup.getElement().querySelector(".pop-museum");
       if (b) b.addEventListener("click", () => { map.closePopup(); selectMuseum(b.dataset.museum); });
     });
+    map.on("click", closeSheet);   // tapping the map background dismisses the sheet
     window.addEventListener("hashchange", () => { applyHash(); buildMarkers(); });
   })
   .catch(err => {
@@ -505,6 +544,118 @@ document.getElementById("v-list").addEventListener("click", () => {
   view.panel = !view.panel; setView();
 });
 
+// ── database view: every work as a sortable, filterable, exportable table ──
+const TABLE_COLS = [
+  { key: "img", label: "", sortable: false },
+  { key: "painter", label: "Painter" },
+  { key: "title", label: "Title" },
+  { key: "year", label: "Year", num: true },
+  { key: "medium", label: "Technique" },
+  { key: "dimensions", label: "Size" },
+  { key: "attribution", label: "Attribution" },
+  { key: "location", label: "Museum / venue" },
+  { key: "city", label: "City" },
+  { key: "country", label: "Country" },
+  { key: "links", label: "Links", sortable: false },
+];
+let tableSort = { key: "painter", dir: 1 };
+let tableRowCache = [];
+view.table = false;
+
+// table respects the painter / attribution / year / museum filters (not the map-only kind toggles)
+function tablePass(p) {
+  return state.painters[p.painter] !== false
+    && (!state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution))
+    && (!state.museumFilter || museumKey(p) === state.museumFilter)
+    && inYear(p);
+}
+function tableRows() {
+  const q = (document.getElementById("table-search")?.value || "").toLowerCase().trim();
+  let rows = allFeatures.map(f => f.properties).filter(tablePass);
+  if (q) rows = rows.filter(p => [p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
+    .some(v => (v || "").toString().toLowerCase().includes(q)));
+  const k = tableSort.key, num = TABLE_COLS.find(c => c.key === k)?.num;
+  rows.sort((a, b) => {
+    const va = num ? (yearNum(a) ?? -1e9) : (a[k] || "").toString().toLowerCase();
+    const vb = num ? (yearNum(b) ?? -1e9) : (b[k] || "").toString().toLowerCase();
+    return (va < vb ? -1 : va > vb ? 1 : 0) * tableSort.dir;
+  });
+  return rows;
+}
+function renderTable() {
+  const thead = document.querySelector("#works-table thead");
+  const tbody = document.querySelector("#works-table tbody");
+  if (!thead) return;
+  thead.innerHTML = "<tr>" + TABLE_COLS.map(c => {
+    if (c.sortable === false) return `<th class="th-${c.key}">${esc(c.label)}</th>`;
+    const arrow = tableSort.key === c.key ? (tableSort.dir === 1 ? " ▲" : " ▼") : "";
+    return `<th class="th-${c.key} sortable" data-key="${c.key}">${esc(c.label)}<span class="ar">${arrow}</span></th>`;
+  }).join("") + "</tr>";
+  const rows = tableRows();
+  tableRowCache = rows;
+  document.getElementById("table-count").textContent =
+    `${rows.length.toLocaleString()} work${rows.length === 1 ? "" : "s"}`;
+  tbody.innerHTML = rows.map((p, i) => {
+    const thumb = p.image
+      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc((p.title || "") + " — " + (p.location || ""))}" alt="" loading="lazy">`
+      : `<span class="tth ph"></span>`;
+    const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
+      ? `<span class="tag att">${esc(p.attribution)}</span>` : esc(p.attribution || "");
+    return `<tr data-ri="${i}">` +
+      `<td class="c-img">${thumb}</td>` +
+      `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${esc(p.painter)}</td>` +
+      `<td class="c-title">${esc(p.title || "Untitled")}</td>` +
+      `<td class="c-year">${esc(p.year || "")}</td>` +
+      `<td class="c-medium">${esc(p.medium || "")}</td>` +
+      `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
+      `<td class="c-attr">${att}</td>` +
+      `<td class="c-loc">${esc(p.location || "")}</td>` +
+      `<td class="c-city">${esc(p.city || "")}</td>` +
+      `<td class="c-country">${esc(p.country || "")}</td>` +
+      `<td class="c-links">${linksRow(p)}</td>` +
+      "</tr>";
+  }).join("");
+  thead.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.key;
+    if (tableSort.key === k) tableSort.dir *= -1; else tableSort = { key: k, dir: 1 };
+    renderTable();
+  }));
+  tbody.querySelectorAll(".tth[data-full]").forEach(img => img.addEventListener("click", () =>
+    openLightbox(img.dataset.full, img.dataset.cap)));
+  // click a row (not a thumbnail/link) → jump to that work on the map
+  tbody.querySelectorAll("tr[data-ri]").forEach(tr => tr.addEventListener("click", e => {
+    if (e.target.closest("a, img")) return;
+    const p = tableRowCache[+tr.dataset.ri];
+    const w = p && works.find(w => w.p === p);
+    if (!w) return;
+    setTableView(false);
+    if (!view.map) { view.map = true; setView(); }
+    setTimeout(() => { map.setView([w.lat, w.lon], Math.max(map.getZoom(), 13));
+      cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup()); }, 80);
+  }));
+}
+function setTableView(on) {
+  view.table = on;
+  document.body.classList.toggle("show-table", on);
+  document.getElementById("v-table").classList.toggle("active", on);
+  document.getElementById("table").hidden = !on;
+  document.getElementById("main").hidden = on;
+  if (on) renderTable();
+  else setTimeout(() => map.invalidateSize(), 60);
+}
+document.getElementById("v-table").addEventListener("click", () => setTableView(!view.table));
+document.getElementById("table-search").addEventListener("input", renderTable);
+document.getElementById("table-csv").addEventListener("click", () => {
+  const cols = TABLE_COLS.filter(c => !["img", "links"].includes(c.key));
+  const cell = s => `"${(s ?? "").toString().replace(/"/g, '""')}"`;
+  const lines = [cols.map(c => cell(c.label)).join(",")];
+  for (const p of tableRows()) lines.push(cols.map(c => cell(p[c.key])).join(","));
+  const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "atlas-of-painting.csv"; a.click();
+  URL.revokeObjectURL(a.href);
+});
+
 // ── map mode: "where they are today" (venues) vs "where they were painted" (cities) ──
 document.querySelectorAll(".mode-btn").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -627,6 +778,15 @@ document.addEventListener("click", e => {
   const img = e.target.closest("img.th");
   if (img && img.dataset.full) openLightbox(img.dataset.full, img.dataset.cap);
 });
+// Wikimedia Commons occasionally resets HTTP/2 under a burst of thumbnail requests
+// (big popup/table). Degrade a failed thumbnail to the neutral placeholder box instead
+// of a broken-image icon. (Capture phase — <img> error events don't bubble.)
+document.addEventListener("error", e => {
+  const img = e.target;
+  if (img.tagName === "IMG" && (img.classList.contains("th") || img.classList.contains("tth"))) {
+    img.classList.add("ph"); img.removeAttribute("src"); img.removeAttribute("data-full");
+  }
+}, true);
 
 // ── geolocation: your nearest Caravaggio ──
 function haversine(lat1, lon1, lat2, lon2) {

@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.26.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.27.2">
 </head>
 <body>
   <nav id="navbar">
@@ -57,6 +57,7 @@
       <button type="button" id="v-map" class="view-btn active" title="Show/hide the map">🗺 Map</button>
       <button type="button" id="v-list" class="view-btn active" title="Show/hide the list">☰ List</button>
     </span>
+    <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
   </div>
 
   <div id="timeline">
@@ -78,6 +79,25 @@
     </aside>
   </div>
 
+  <section id="table" hidden>
+    <div id="table-bar">
+      <input id="table-search" type="search" placeholder="Filter this table — title, painter, museum, city…" autocomplete="off">
+      <span id="table-count" class="t-count"></span>
+      <button type="button" id="table-csv" class="chip btn" title="Download the current rows as CSV">⭳ CSV</button>
+    </div>
+    <div id="table-wrap">
+      <table id="works-table">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div id="sheet" hidden>
+    <button id="sheet-close" type="button" aria-label="Close">✕</button>
+    <div id="sheet-body"></div>
+  </div>
+
   <div id="lightbox" hidden>
     <button id="lb-close" type="button" aria-label="Close">✕</button>
     <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
@@ -93,6 +113,6 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.26.2"></script>
+  <script src="atlas/app.js?v=0.27.2"></script>
 </body>
 </html>

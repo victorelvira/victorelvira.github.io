@@ -19,6 +19,7 @@ const els = {
   indexBody: document.getElementById("index-body"),
   legend: document.getElementById("legend"),
   detail: document.getElementById("detail"),
+  home: document.getElementById("home"),
 };
 
 const state = {
@@ -662,6 +663,22 @@ function refresh() {
   renderIndex();
 }
 
+function latestRankedEdition() {
+  return [...state.editions].reverse().find(edition => (edition.result_count || 0) > 0) || null;
+}
+
+function resetToStart() {
+  state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false;
+  els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
+  state.groupSort = { key: "wins", dir: -1 };
+  setMode("editions");
+  applyFilters();
+  const latest = latestRankedEdition();
+  if (latest) select("year", latest.year);
+  else { history.replaceState(null, "", location.pathname); renderIndex(); renderDetail(); }
+  els.indexBody.scrollTop = 0;
+}
+
 /* ── eventos ────────────────────────────────────────────────────────────── */
 
 function bindEvents() {
@@ -676,6 +693,13 @@ function bindEvents() {
   });
 
   els.tabs.forEach(tab => tab.addEventListener("click", () => setMode(tab.dataset.mode)));
+
+  // La dalia vuelve al inicio: limpia filtros, vuelve a Ediciones y selecciona
+  // la ultima edicion con palmares, igual que en el arranque.
+  els.home.addEventListener("click", event => {
+    event.preventDefault();
+    resetToStart();
+  });
 
   // Un unico delegador: sirve para el indice y para los enlaces del detalle.
   document.addEventListener("click", event => {
@@ -745,7 +769,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
       if (fromHash.kind === "route") setMode("routes");
       select(fromHash.kind, fromHash.id, { updateHash: false });
     } else {
-      const latest = [...state.editions].reverse().find(edition => (edition.result_count || 0) > 0);
+      const latest = latestRankedEdition();
       renderIndex();
       if (latest) select("year", latest.year, { updateHash: false });
       else renderDetail();

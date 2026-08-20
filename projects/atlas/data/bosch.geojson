@@ -184,7 +184,8 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "groeningemuseum"
+    "museum_id": "groeningemuseum",
+    "country": "Belgium"
    }
   },
   {
@@ -214,7 +215,8 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "groeningemuseum"
+    "museum_id": "groeningemuseum",
+    "country": "Belgium"
    }
   },
   {
@@ -675,15 +677,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.03226,
-     50.81094
+     0.65684,
+     52.22032
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "Adoration of the Magi",
     "year": "c. 1515",
-    "city": "Kingston Lacy",
+    "city": "Ickworth House",
     "location": "National Trust",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
@@ -768,15 +770,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "Christ Carrying the Cross (Ghent)",
     "year": "c. 1530–1540",
-    "city": "Montréal",
+    "city": "Budapest",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
@@ -788,7 +790,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "country": "Hungary"
    }
   },
   {
@@ -1006,15 +1008,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     19.05139,
+     47.4925
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "St. Jerome at Prayer",
     "year": "c. 1485–1495",
-    "city": "Montréal",
+    "city": "Budapest",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
@@ -1029,7 +1031,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "country": "Hungary"
    }
   },
   {

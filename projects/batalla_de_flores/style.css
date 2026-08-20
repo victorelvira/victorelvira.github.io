@@ -53,6 +53,23 @@ a { color: inherit; }
 }
 
 .bar-title { display: flex; align-items: baseline; gap: 8px; }
+
+.home {
+  display: inline-flex; align-items: center; gap: 7px;
+  text-decoration: none; color: inherit; border-radius: 6px;
+}
+.home:hover h1 { color: var(--rose); }
+.home:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+
+.dalia {
+  width: 28px; height: 28px; flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e7cdd6;
+  box-shadow: 0 1px 3px rgba(122, 40, 62, 0.22);
+  transition: transform 0.35s ease;
+}
+.home:hover .dalia { transform: scale(1.08) rotate(8deg); }
 .bar-title h1 {
   margin: 0;
   font-size: 19px;
