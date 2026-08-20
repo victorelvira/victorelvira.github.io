@@ -162,7 +162,12 @@ body.show-table .mode-btn, body.show-table #view { display: none; }   /* hide ma
 #table[hidden], #main[hidden] { display: none; }   /* [hidden] must beat the flex display rules */
 #table { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #fff; }
 #table-bar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-#table-bar #table-search { flex: 1 1 220px; max-width: 420px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 13px; }
+#table-tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+#table-tabs .ttab { padding: 6px 12px; border: 0; background: #fff; font: inherit; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; }
+#table-tabs .ttab + .ttab { border-left: 1px solid var(--line); }
+#table-tabs .ttab.active { background: #3a2317; color: #fff; }
+#table-bar #table-search { flex: 1 1 200px; max-width: 380px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 13px; }
+#works-table .c-num { white-space: nowrap; font-variant-numeric: tabular-nums; }
 #table-bar .t-count { color: var(--muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
 #table-bar #table-csv { margin-left: auto; }
 #table-wrap { flex: 1; overflow: auto; min-height: 0; }
@@ -298,6 +303,10 @@ img.th.ph::after, img.tth.ph::after { content: ""; }
   display: grid; place-items: center; border-radius: 50%;
   background: #3f342b; color: #fff; font-weight: 700; font-size: 13px;
   border: 2px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.4);
+}
+.cl .cl-n { text-shadow: 0 1px 2px rgba(0,0,0,.6); line-height: 1; }
+.cl.pie .cl-n {                     /* legible over a multicolour pie */
+  background: rgba(38,28,20,.66); border-radius: 999px; padding: 1px 5px; text-shadow: none;
 }
 
 /* legend */

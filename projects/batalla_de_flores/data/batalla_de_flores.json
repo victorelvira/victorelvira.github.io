@@ -9,9 +9,9 @@
     "not_held_editions": 4,
     "planned_editions": 1,
     "unknown_editions": 1,
-    "float_count": 712,
+    "float_count": 723,
     "group_count": 186,
-    "years_with_ranked_results": 109,
+    "years_with_ranked_results": 110,
     "placeholders_dropped": 20,
     "groups_folded": 4,
     "year_min": 1908,
@@ -30960,12 +30960,454 @@
         "https://www.laredo.es/09/tablon_ampliado.php?id_Tablon=3820"
       ],
       "notes": [
-        "Hay programa oficial del Ayuntamiento, pero no resultados. El archivo de batalladeflores.net ya no cubre esta edición: deja de publicar tras 2018."
+        "El archivo de batalladeflores.net no cubre esta edición (deja de publicar tras 2018). El palmarés completo procede de la nota oficial del Ayuntamiento de Laredo del 27 de agosto de 2022."
       ],
-      "floats": [],
-      "results": [],
-      "result_count": 0,
-      "float_count": 0
+      "floats": [
+        {
+          "id": "2022-gravity-a-1",
+          "name": "Gravity",
+          "slug": "gravity",
+          "year": 2022,
+          "category": "A",
+          "position": 1,
+          "points": 62,
+          "group_raw": "Come Golayu que lo ha hechu güela",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 3,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-yabba-dabba-doo-b-1",
+          "name": "Yabba Dabba Doo",
+          "slug": "yabba-dabba-doo",
+          "year": 2022,
+          "category": "B",
+          "position": 1,
+          "points": 30,
+          "group_raw": "Grupo Pejino",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-truco-o-trato-b-2",
+          "name": "Truco o trato",
+          "slug": "truco-o-trato",
+          "year": 2022,
+          "category": "B",
+          "position": 2,
+          "points": 26,
+          "group_raw": "Carrozas Oruña",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-siete-vidas-a-2",
+          "name": "¿Siete vidas?",
+          "slug": "siete-vidas",
+          "year": 2022,
+          "category": "A",
+          "position": 2,
+          "points": 60,
+          "group_raw": "Grupo Pejino",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-irezumi-b-3",
+          "name": "Irezumi",
+          "slug": "irezumi",
+          "year": 2022,
+          "category": "B",
+          "position": 3,
+          "points": 24,
+          "group_raw": "Grupo Alegoría",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-venecia-a-3",
+          "name": "Venecia",
+          "slug": "venecia",
+          "year": 2022,
+          "category": "A",
+          "position": 3,
+          "points": 48,
+          "group_raw": "Carrozas Oruña",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": 1,
+          "prize_costumes_rank": 2,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-blocks-creations-b-4",
+          "name": "Blocks creations",
+          "slug": "blocks-creations",
+          "year": 2022,
+          "category": "B",
+          "position": 4,
+          "points": 18,
+          "group_raw": "Grupo Alegoría",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-jigsaw-a-4",
+          "name": "Jigsaw",
+          "slug": "jigsaw",
+          "year": 2022,
+          "category": "A",
+          "position": 4,
+          "points": 38,
+          "group_raw": "Spartans",
+          "group_canonical": "Spartans",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-arrecife-a-5",
+          "name": "Arrecife",
+          "slug": "arrecife",
+          "year": 2022,
+          "category": "A",
+          "position": 5,
+          "points": 36,
+          "group_raw": "El Cantu",
+          "group_canonical": "El Cantu",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 1,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-escuela-de-magia-a-6",
+          "name": "Escuela de magia",
+          "slug": "escuela-de-magia",
+          "year": 2022,
+          "category": "A",
+          "position": 6,
+          "points": 18,
+          "group_raw": "Come Golayu que lo ha hechu güela",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-el-show-de-garfield-a-7",
+          "name": "El show de Garfield",
+          "slug": "el-show-de-garfield",
+          "year": 2022,
+          "category": "A",
+          "position": 7,
+          "points": 14,
+          "group_raw": "Spartans",
+          "group_canonical": "Spartans",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        }
+      ],
+      "results": [
+        {
+          "id": "2022-gravity-a-1",
+          "name": "Gravity",
+          "slug": "gravity",
+          "year": 2022,
+          "category": "A",
+          "position": 1,
+          "points": 62,
+          "group_raw": "Come Golayu que lo ha hechu güela",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 3,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-siete-vidas-a-2",
+          "name": "¿Siete vidas?",
+          "slug": "siete-vidas",
+          "year": 2022,
+          "category": "A",
+          "position": 2,
+          "points": 60,
+          "group_raw": "Grupo Pejino",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-venecia-a-3",
+          "name": "Venecia",
+          "slug": "venecia",
+          "year": 2022,
+          "category": "A",
+          "position": 3,
+          "points": 48,
+          "group_raw": "Carrozas Oruña",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": 1,
+          "prize_costumes_rank": 2,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-jigsaw-a-4",
+          "name": "Jigsaw",
+          "slug": "jigsaw",
+          "year": 2022,
+          "category": "A",
+          "position": 4,
+          "points": 38,
+          "group_raw": "Spartans",
+          "group_canonical": "Spartans",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-arrecife-a-5",
+          "name": "Arrecife",
+          "slug": "arrecife",
+          "year": 2022,
+          "category": "A",
+          "position": 5,
+          "points": 36,
+          "group_raw": "El Cantu",
+          "group_canonical": "El Cantu",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 1,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-escuela-de-magia-a-6",
+          "name": "Escuela de magia",
+          "slug": "escuela-de-magia",
+          "year": 2022,
+          "category": "A",
+          "position": 6,
+          "points": 18,
+          "group_raw": "Come Golayu que lo ha hechu güela",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-el-show-de-garfield-a-7",
+          "name": "El show de Garfield",
+          "slug": "el-show-de-garfield",
+          "year": 2022,
+          "category": "A",
+          "position": 7,
+          "points": 14,
+          "group_raw": "Spartans",
+          "group_canonical": "Spartans",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-yabba-dabba-doo-b-1",
+          "name": "Yabba Dabba Doo",
+          "slug": "yabba-dabba-doo",
+          "year": 2022,
+          "category": "B",
+          "position": 1,
+          "points": 30,
+          "group_raw": "Grupo Pejino",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-truco-o-trato-b-2",
+          "name": "Truco o trato",
+          "slug": "truco-o-trato",
+          "year": 2022,
+          "category": "B",
+          "position": 2,
+          "points": 26,
+          "group_raw": "Carrozas Oruña",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-irezumi-b-3",
+          "name": "Irezumi",
+          "slug": "irezumi",
+          "year": 2022,
+          "category": "B",
+          "position": 3,
+          "points": 24,
+          "group_raw": "Grupo Alegoría",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        },
+        {
+          "id": "2022-blocks-creations-b-4",
+          "name": "Blocks creations",
+          "slug": "blocks-creations",
+          "year": 2022,
+          "category": "B",
+          "position": 4,
+          "points": 18,
+          "group_raw": "Grupo Alegoría",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result",
+          "source_urls": [
+            "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "image_urls": []
+        }
+      ],
+      "result_count": 11,
+      "float_count": 11
     },
     {
       "year": 2023,
@@ -32606,6 +33048,44 @@
       }
     },
     {
+      "canonical_name": "Grupo Pejino",
+      "aliases": [
+        "A.C. Grupo Pejino",
+        "Asoc. Grupo Pejino",
+        "Grupo Pejino",
+        "Peña Los Pejinos"
+      ],
+      "merged_variants": [],
+      "years": [
+        1986,
+        1989,
+        1990,
+        1991,
+        1993,
+        2007,
+        2008,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2019,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "first_year_seen": 1986,
+      "last_year_seen": 2025,
+      "float_count": 29,
+      "wins": 8,
+      "category_counts": {
+        "A": 17,
+        "B": 9
+      }
+    },
+    {
       "canonical_name": "Ortiz y Quintana",
       "aliases": [
         "Ortiz y Quintana"
@@ -32631,40 +33111,45 @@
       }
     },
     {
-      "canonical_name": "Grupo Pejino",
+      "canonical_name": "Come Golayu",
       "aliases": [
-        "A.C. Grupo Pejino",
-        "Asoc. Grupo Pejino",
-        "Grupo Pejino",
-        "Peña Los Pejinos"
+        "Asoc. Come Golayu",
+        "Asoc. Come Golayu que lo Ha Hecho Güela",
+        "Asoc. Come Golayu que lo ha hecho güela",
+        "Asoc. Come golayu que lo ha hechu güela",
+        "Asoc. Come golayu que lo ha puesto güela",
+        "Asoc. come golayu que lo ha hechu güela",
+        "Asoc. come golayu que lo ha puesto güela",
+        "Come Golayu",
+        "Come Golayu que lo ha Hechu Güela",
+        "Come Golayu que lo ha hecho güela",
+        "Come Golayu que lo ha hechu güela"
       ],
       "merged_variants": [],
       "years": [
-        1986,
-        1989,
-        1990,
-        1991,
-        1993,
         2007,
         2008,
+        2009,
+        2010,
+        2011,
         2012,
         2013,
-        2014,
         2015,
         2016,
         2017,
         2019,
+        2022,
         2023,
         2024,
         2025
       ],
-      "first_year_seen": 1986,
+      "first_year_seen": 2007,
       "last_year_seen": 2025,
-      "float_count": 27,
+      "float_count": 26,
       "wins": 7,
       "category_counts": {
-        "A": 16,
-        "B": 8
+        "A": 21,
+        "B": 5
       }
     },
     {
@@ -32716,46 +33201,6 @@
       "wins": 7,
       "category_counts": {
         "A": 7
-      }
-    },
-    {
-      "canonical_name": "Come Golayu",
-      "aliases": [
-        "Asoc. Come Golayu",
-        "Asoc. Come Golayu que lo Ha Hecho Güela",
-        "Asoc. Come Golayu que lo ha hecho güela",
-        "Asoc. Come golayu que lo ha hechu güela",
-        "Asoc. Come golayu que lo ha puesto güela",
-        "Asoc. come golayu que lo ha hechu güela",
-        "Asoc. come golayu que lo ha puesto güela",
-        "Come Golayu",
-        "Come Golayu que lo ha Hechu Güela",
-        "Come Golayu que lo ha hecho güela"
-      ],
-      "merged_variants": [],
-      "years": [
-        2007,
-        2008,
-        2009,
-        2010,
-        2011,
-        2012,
-        2013,
-        2015,
-        2016,
-        2017,
-        2019,
-        2023,
-        2024,
-        2025
-      ],
-      "first_year_seen": 2007,
-      "last_year_seen": 2025,
-      "float_count": 24,
-      "wins": 6,
-      "category_counts": {
-        "A": 19,
-        "B": 5
       }
     },
     {
@@ -32917,17 +33362,18 @@
         2016,
         2017,
         2019,
+        2022,
         2023,
         2024,
         2025
       ],
       "first_year_seen": 1986,
       "last_year_seen": 2025,
-      "float_count": 52,
+      "float_count": 54,
       "wins": 3,
       "category_counts": {
-        "A": 35,
-        "B": 13
+        "A": 36,
+        "B": 14
       }
     },
     {
@@ -33044,16 +33490,17 @@
         2016,
         2017,
         2019,
+        2022,
         2023,
         2024
       ],
       "first_year_seen": 2014,
       "last_year_seen": 2024,
-      "float_count": 11,
+      "float_count": 13,
       "wins": 2,
       "category_counts": {
         "B": 5,
-        "A": 6
+        "A": 8
       }
     },
     {
@@ -33807,17 +34254,18 @@
         2015,
         2016,
         2017,
+        2022,
         2023,
         2024,
         2025
       ],
       "first_year_seen": 2005,
       "last_year_seen": 2025,
-      "float_count": 26,
+      "float_count": 28,
       "wins": 0,
       "category_counts": {
         "A": 16,
-        "B": 10
+        "B": 12
       }
     },
     {
@@ -33871,16 +34319,17 @@
         2015,
         2016,
         2017,
+        2022,
         2023,
         2024,
         2025
       ],
       "first_year_seen": 2009,
       "last_year_seen": 2025,
-      "float_count": 15,
+      "float_count": 16,
       "wins": 0,
       "category_counts": {
-        "A": 11,
+        "A": 12,
         "B": 4
       }
     },
@@ -36084,6 +36533,8 @@
       }
     }
   ],
+  "version": "0.7.0",
+  "built_at": "2026-08-20 18:18",
   "map_features": [
     {
       "id": "route_origin_1908",

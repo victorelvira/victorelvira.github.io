@@ -1,6 +1,6 @@
 /* Cajas nido de Laredo — mapa interactivo. */
-const DATA_V = "0.2.1";
-const BUILD_AT = "2026-08-20 17:53";
+const DATA_V = "0.3.1";
+const BUILD_AT = "2026-08-20 18:28";
 
 const D = window.DATOS;
 const $ = (s) => document.querySelector(s);
@@ -27,8 +27,7 @@ const ESTADO = {
 };
 
 const estado = { tipos: new Set(), centros: new Set(), anios: new Set(), expo: new Set(),
-                 estados: new Set(), texto: "", soloFoto: false, porMapa: false,
-                 orden: "ref", sel: null };
+                 estados: new Set(), texto: "", soloFoto: false, orden: "ref", sel: null };
 const HAY_SEGUIMIENTO = D.cajas.some((c) => c.revisiones.length);
 
 /* ------------------------------------------------------------------ mapa */
@@ -104,10 +103,20 @@ D.cajas.filter((c) => c.coord).forEach((c) => {
 const leyenda = L.control({ position: "bottomleft" });
 leyenda.onAdd = () => {
   const div = L.DomUtil.create("div", "leyenda");
-  div.innerHTML = ORDEN_TIPOS.filter((t) => D.cajas.some((c) => c.tipo === t))
-    .map((t) => `<div><span class="k" style="background:${COLOR[t]}"></span>${
-      D.cajas.find((c) => c.tipo === t).tipoLabel}</div>`).join("") +
-    `<div><span class="k k-tri"></span>Riesgos y peligros</div>`;
+  // En móvil la leyenda se comía media pantalla, así que va plegada tras un
+  // botón; en escritorio el botón se oculta y el cuerpo queda siempre visible.
+  div.innerHTML =
+    `<button type="button" class="leyenda-tog" aria-expanded="false">Leyenda</button>
+     <div class="leyenda-cuerpo">` +
+    ORDEN_TIPOS.filter((t) => D.cajas.some((c) => c.tipo === t))
+      .map((t) => `<div><span class="k" style="background:${COLOR[t]}"></span>${
+        D.cajas.find((c) => c.tipo === t).tipoLabel}</div>`).join("") +
+    `<div><span class="k k-tri"></span>Riesgos y peligros</div></div>`;
+  L.DomEvent.disableClickPropagation(div);
+  div.querySelector(".leyenda-tog").onclick = (e) => {
+    const abierta = div.classList.toggle("leyenda-abierta");
+    e.currentTarget.setAttribute("aria-expanded", abierta);
+  };
   return div;
 };
 leyenda.addTo(map);
@@ -172,7 +181,7 @@ function inicializarFiltros() {
   if (HAY_SEGUIMIENTO) {
     const est = Object.keys(ESTADO)
       .filter((e) => D.cajas.some((c) => c.estado === e))
-      .map((e) => ({ valor: e, etiqueta: `${ESTADO[e].emoji} ${ESTADO[e].etiqueta}`,
+      .map((e) => ({ valor: e, etiqueta: ESTADO[e].etiqueta,
                      color: ESTADO[e].color, n: cuenta("estado", e, D.cajas) }));
     const sinRevisar = D.cajas.filter((c) => !c.estado).length;
     if (sinRevisar) est.push({ valor: "", etiqueta: "Sin revisar", n: sinRevisar });
@@ -180,9 +189,12 @@ function inicializarFiltros() {
   }
 }
 
+// filtrar() = lo que los chips y la búsqueda dejan pasar. Es lo que se dibuja en
+// el mapa. La lista aplica además el encuadre (ver enVista), pero los marcadores
+// no: recortarlos haría que los clústeres del borde cambiaran de número al
+// desplazarse, y eso se lee como un fallo.
 function filtrar() {
   const t = estado.texto.toLowerCase();
-  const b = estado.porMapa ? map.getBounds() : null;
   return D.cajas.filter((c) => {
     if (estado.tipos.size && !estado.tipos.has(c.tipo)) return false;
     if (estado.centros.size && !estado.centros.has(c.centro)) return false;
@@ -190,7 +202,6 @@ function filtrar() {
     if (estado.expo.size && !estado.expo.has(c.exposicion)) return false;
     if (estado.estados.size && !estado.estados.has(c.estado)) return false;
     if (estado.soloFoto && !c.fotos.length) return false;
-    if (b && c.coord && !b.contains(c.coord)) return false;
     if (t) {
       const heno = [c.ref, c.tipoLabel, c.constructor, c.equipo, c.ubicacion, c.notas, c.materiales]
         .join(" ").toLowerCase();
@@ -207,25 +218,54 @@ const ORDENES = {
   tipo:   { etiqueta: "Tipo de caja",   fn: (a, b) => a.tipoLabel.localeCompare(b.tipoLabel, "es") },
 };
 
+function enVista(vis) {
+  // Si el mapa aún no tiene tamaño (pestaña en segundo plano, panel oculto), su
+  // encuadre es un punto y filtrar por él dejaría la lista vacía. Mejor no filtrar.
+  const t = map.getSize();
+  if (!t.x || !t.y) return vis;
+  const b = map.getBounds();
+  if (!b.isValid() || b.getNorth() === b.getSouth()) return vis;
+  return vis.filter((c) => c.coord && b.contains(c.coord));
+}
+
 /* --------------------------------------------------------------- render */
+// Cada superficie tiene su alcance, y es deliberado:
+//   mapa    → chips y búsqueda
+//   lista   → chips y búsqueda + encuadre del mapa (va pegada a él)
+//   galería → chips y búsqueda; es pantalla completa, el mapa no se ve
+//   datos   → chips y búsqueda; las cifras del proyecto no deben encoger
+//             porque hayas hecho zoom
 function render() {
-  const vis = filtrar().sort(ORDENES[estado.orden].fn);
-  $("#contador").textContent = vis.length;
+  const seleccion = filtrar().sort(ORDENES[estado.orden].fn);
+  $("#contador").textContent = seleccion.length;
 
   capaCajas.clearLayers();
-  vis.forEach((c) => { const m = marcadores.get(c.id); if (m) capaCajas.addLayer(m); });
+  seleccion.forEach((c) => { const m = marcadores.get(c.id); if (m) capaCajas.addLayer(m); });
 
+  renderLista();
+  if (!$("#panel-datos").hidden) pintarDatos(seleccion);
+  if (!$("#panel-galeria").hidden) pintarGaleria(seleccion);
+}
+
+// Se llama sola en cada moveend: la lista sigue al encuadre del mapa.
+function renderLista() {
+  const seleccion = filtrar().sort(ORDENES[estado.orden].fn);
+  const vis = enVista(seleccion);
   const total = D.cajas.length;
   $("#lista-n").textContent = vis.length === total
     ? `Las ${total} cajas`
     : `${vis.length} de ${total} cajas`;
-  $("#lista-filtrada").hidden = vis.length === total;
+  $("#lista-filtrada").hidden = seleccion.length === total;
+  $("#lista-zona").hidden = vis.length === seleccion.length;
 
   const ul = $("#lista");
   ul.innerHTML = "";
   if (!vis.length) {
-    ul.innerHTML = '<li class="vacio">Ninguna caja coincide con los filtros.<br>' +
-                   'Prueba a quitar alguno, o pulsa «Limpiar filtros».</li>';
+    ul.innerHTML = seleccion.length
+      ? '<li class="vacio">No hay cajas en esta zona del mapa.<br>' +
+        'Aleja el mapa o desplázalo para ver más.</li>'
+      : '<li class="vacio">Ninguna caja coincide con los filtros.<br>' +
+        'Prueba a quitar alguno, o pulsa «Limpiar filtros».</li>';
     return;
   }
   const frag = document.createDocumentFragment();
@@ -245,12 +285,13 @@ function render() {
          <div class="card-sub">${[c.equipo && "«" + c.equipo + "»", c.centro, fechaES(c.fecha)]
             .filter(Boolean).join(" · ") || "sin datos de construcción"}</div>
        </div>`;
-    li.onclick = () => { abrirCaja(c); marcar(c.id); if (c.coord) map.setView(c.coord, 18); };
+    li.onclick = () => {
+      abrirCaja(c); marcar(c.id);
+      if (c.coord) map.setView(c.coord, Math.max(map.getZoom(), 16));
+    };
     frag.appendChild(li);
   });
   ul.appendChild(frag);
-  if (!$("#panel-datos").hidden) pintarDatos(vis);
-  if (!$("#panel-galeria").hidden) pintarGaleria(vis);
 }
 
 function marcar(id) {
@@ -405,8 +446,7 @@ function pintarDatos(vis) {
 $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value.trim(); render(); });
 $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; render(); });
 $("#solo-foto").addEventListener("change", (e) => { estado.soloFoto = e.target.checked; render(); });
-$("#filtro-mapa").addEventListener("change", (e) => { estado.porMapa = e.target.checked; render(); });
-map.on("moveend", () => { if (estado.porMapa) render(); });
+map.on("moveend", renderLista);
 
 $("#capa-riesgos").checked = true;
 $("#capa-riesgos").addEventListener("change", (e) =>
@@ -447,9 +487,10 @@ document.querySelectorAll(".vista-toggle button").forEach((b) => {
     document.body.className = "vista-" + v;
     $("#panel-datos").hidden = v !== "datos";
     $("#panel-galeria").hidden = v !== "galeria";
-    if (v === "datos") pintarDatos(filtrar());
-    else if (v === "galeria") pintarGaleria(filtrar());
-    else map.invalidateSize();
+    const seleccion = filtrar().sort(ORDENES[estado.orden].fn);
+    if (v === "datos") pintarDatos(seleccion);
+    else if (v === "galeria") pintarGaleria(seleccion);
+    else { map.invalidateSize(); renderLista(); }
   });
 });
 
@@ -460,7 +501,8 @@ document.querySelector(".brand").addEventListener("click", (e) => {
 });
 
 /* ------------------------------------------------------------------ init */
-$("#build").textContent = `v${DATA_V} · updated ${BUILD_AT}`;
+$("#build-v").textContent = `v${DATA_V}`;
+$("#build-t").textContent = ` · updated ${BUILD_AT}`;
 $("#update-info").textContent = `datos del mapa: ${D.meta.generado}`;
 document.body.className = "vista-mapa";
 $("#orden").innerHTML = Object.entries(ORDENES)
@@ -471,6 +513,7 @@ requestAnimationFrame(() => {
   map.invalidateSize();
   const puntos = D.cajas.filter((c) => c.coord).map((c) => c.coord);
   if (puntos.length) map.fitBounds(L.latLngBounds(puntos).pad(0.05));
+  renderLista();
   abrirDesdeHash();
 });
 window.addEventListener("hashchange", abrirDesdeHash);

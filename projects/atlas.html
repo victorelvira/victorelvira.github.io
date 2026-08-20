@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.27.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.27.5">
 </head>
 <body>
   <nav id="navbar">
@@ -81,7 +81,11 @@
 
   <section id="table" hidden>
     <div id="table-bar">
-      <input id="table-search" type="search" placeholder="Filter this table — title, painter, museum, city…" autocomplete="off">
+      <span id="table-tabs">
+        <button type="button" class="ttab active" data-tmode="works">Works</button>
+        <button type="button" class="ttab" data-tmode="museums">Museums</button>
+      </span>
+      <input id="table-search" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off">
       <span id="table-count" class="t-count"></span>
       <button type="button" id="table-csv" class="chip btn" title="Download the current rows as CSV">⭳ CSV</button>
     </div>
@@ -113,6 +117,6 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.27.2"></script>
+  <script src="atlas/app.js?v=0.27.5"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@ const els = {
   legend: document.getElementById("legend"),
   detail: document.getElementById("detail"),
   home: document.getElementById("home"),
+  detailClose: document.getElementById("detail-close"),
 };
 
 const state = {
@@ -35,7 +36,11 @@ const state = {
   status: "all",
   rankedOnly: false,
   groupSort: { key: "wins", dir: -1 },
+  openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
+
+const NARROW = window.matchMedia("(max-width: 900px)");
+const isNarrow = () => NARROW.matches;
 
 /* ── utilidades ─────────────────────────────────────────────────────────── */
 
@@ -175,7 +180,8 @@ function renderStats() {
     `<span><b>${num(summary.group_count)}</b> grupos</span>`,
     `<span><b>${num(summary.years_with_ranked_results)}</b> años con palmarés</span>`,
   ].join("");
-  els.build.textContent = `dataset ${state.dataset.updated_at || "s/f"}`;
+  const version = state.dataset.version ? `v${state.dataset.version}` : "sin versión";
+  els.build.textContent = `${version} · ${state.dataset.built_at || state.dataset.updated_at || "s/f"}`;
 }
 
 function renderFilterOptions() {
@@ -201,29 +207,51 @@ function renderLegend() {
 
 /* ── indice: anos ───────────────────────────────────────────────────────── */
 
+/* En movil solo se despliega una decada; por defecto, la del ano seleccionado
+ * (o la mas reciente que quede tras los filtros). En escritorio se ven todas,
+ * asi que este valor solo decide que fila lleva la clase `is-open`. */
+function resolveOpenDecade(availableDecades) {
+  if (state.openDecade !== null && availableDecades.includes(state.openDecade)) {
+    return state.openDecade;
+  }
+  if (state.selection?.kind === "year") {
+    const fromSelection = Math.floor(state.selection.id / 10) * 10;
+    if (availableDecades.includes(fromSelection)) return fromSelection;
+  }
+  return Math.max(...availableDecades);
+}
+
 function renderYearGrid() {
-  const visible = new Set(state.filtered.map(edition => edition.year));
+  // Los filtros ocultan: una decada que se queda sin anos desaparece entera.
+  // Antes se atenuaban, y ver "1970s" en gris al filtrar por 2020s confundia.
   const decades = new Map();
-  state.editions.forEach(edition => {
+  state.filtered.forEach(edition => {
     const decade = Math.floor(edition.year / 10) * 10;
     if (!decades.has(decade)) decades.set(decade, []);
     decades.get(decade).push(edition);
   });
 
+  if (!decades.size) {
+    els.indexCount.textContent = `0 de ${num(state.editions.length)} ediciones`;
+    els.indexBody.innerHTML = '<p class="empty">Ninguna edición encaja con los filtros actuales.</p>';
+    return;
+  }
+
   els.indexCount.textContent = `${num(state.filtered.length)} de ${num(state.editions.length)} ediciones`;
   // Cronologico inverso: arriba la decada mas reciente, y dentro de cada
   // decada el ano mas reciente primero, para que la lectura sea descendente
   // de principio a fin.
+  const openDecade = resolveOpenDecade([...decades.keys()]);
   els.indexBody.innerHTML = [...decades.entries()].reverse().map(([decade, editions]) => `
-    <div class="decade-row">
-      <div class="decade-label">${decade}s</div>
+    <div class="decade-row${decade === openDecade ? " is-open" : ""}">
+      <button class="decade-label" type="button" data-decade="${decade}"
+              aria-expanded="${decade === openDecade}">${decade}s<span class="decade-count">${editions.length}</span></button>
       <div class="year-grid">
         ${[...editions].reverse().map(edition => {
-          const isVisible = visible.has(edition.year);
           const active = state.selection?.kind === "year" && state.selection.id === edition.year;
           const count = edition.result_count || edition.float_count || 0;
           return `
-            <button class="year ${coverageClass(edition)}${active ? " is-active" : ""}${isVisible ? "" : " is-dim"}"
+            <button class="year ${coverageClass(edition)}${active ? " is-active" : ""}"
                     type="button" data-year="${edition.year}"
                     title="${esc(edition.edition_label || edition.year)} · ${esc(COVERAGE_LABEL[edition.coverage] || "")}">
               <span class="year-num">${edition.year}</span>
@@ -386,7 +414,11 @@ function provenanceBlock(entries, sources) {
 
 function renderEditionDetail(edition) {
   const entries = edition.floats || [];
-  const ranked = entries.filter(entry => entry.position != null || entry.category);
+  // Por categoria y luego posicion: si no, A1 y B1 salian juntos y ordenados
+  // por nombre, que es como leerlo en desorden.
+  const ranked = entries
+    .filter(entry => entry.position != null || entry.category)
+    .sort((a, b) => positionSortKey(a).localeCompare(positionSortKey(b)));
   const unranked = entries.filter(entry => !(entry.position != null || entry.category));
   const route = routeForYear(edition.year);
 
@@ -628,8 +660,10 @@ function renderDetail() {
   els.detail.innerHTML = '<p class="empty">No encuentro ese elemento en el dataset.</p>';
 }
 
-function select(kind, id, { updateHash = true } = {}) {
+function select(kind, id, { updateHash = true, reveal = true } = {}) {
   state.selection = { kind, id };
+  // En movil el detalle se superpone al indice; en escritorio no hace nada.
+  if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
     const prefix = { year: "y", group: "g", route: "r" }[kind];
     history.replaceState(null, "", `#/${prefix}/${id}`);
@@ -667,14 +701,21 @@ function latestRankedEdition() {
   return [...state.editions].reverse().find(edition => (edition.result_count || 0) > 0) || null;
 }
 
+function closeDetail() {
+  document.body.classList.remove("detail-open");
+}
+
 function resetToStart() {
   state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false;
   els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
   state.groupSort = { key: "wins", dir: -1 };
+  state.openDecade = null;
+  closeDetail();
   setMode("editions");
   applyFilters();
   const latest = latestRankedEdition();
-  if (latest) select("year", latest.year);
+  // En movil volver al inicio significa volver al indice, no reabrir la capa.
+  if (latest) select("year", latest.year, { reveal: false });
   else { history.replaceState(null, "", location.pathname); renderIndex(); renderDetail(); }
   els.indexBody.scrollTop = 0;
 }
@@ -701,6 +742,15 @@ function bindEvents() {
     resetToStart();
   });
 
+  els.detailClose.addEventListener("click", () => closeDetail());
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeDetail();
+  });
+  // Al pasar a pantalla ancha, el detalle deja de ser una capa: se descuelga.
+  NARROW.addEventListener("change", event => {
+    if (!event.matches) document.body.classList.remove("detail-open");
+  });
+
   // Un unico delegador: sirve para el indice y para los enlaces del detalle.
   document.addEventListener("click", event => {
     const groupSort = event.target.closest("[data-sort-group]");
@@ -713,6 +763,14 @@ function bindEvents() {
         state.groupSort = { key, dir: GROUP_SORTS[key]?.type === "text" ? 1 : -1 };
       }
       renderGroupList();
+      return;
+    }
+
+    const decadeToggle = event.target.closest("[data-decade]");
+    if (decadeToggle) {
+      const decade = Number(decadeToggle.dataset.decade);
+      state.openDecade = state.openDecade === decade ? null : decade;
+      renderYearGrid();
       return;
     }
 
@@ -771,7 +829,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     } else {
       const latest = latestRankedEdition();
       renderIndex();
-      if (latest) select("year", latest.year, { updateHash: false });
+      if (latest) select("year", latest.year, { updateHash: false, reveal: false });
       else renderDetail();
     }
   })

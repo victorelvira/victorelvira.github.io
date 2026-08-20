@@ -55,8 +55,8 @@ const PAINTERS = [
   { slug: "delsarto", name: "Andrea del Sarto", file: "atlas/data/delsarto.geojson" },
   { slug: "lorrain", name: "Claude Lorrain", file: "atlas/data/lorrain.geojson" },
 ];
-const DATA_V = "0.27.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-20 17:31";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.27.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-20 18:28";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -107,10 +107,29 @@ const cluster = L.markerClusterGroup({
   showCoverageOnHover: false,
   spiderfyOnMaxZoom: true,
   iconCreateFunction(c) {
-    const works = c.getAllChildMarkers().reduce((a, m) => a + (m.options.works || 1), 0);
+    // aggregate the painter-colour breakdown across all works in the cluster
+    const agg = {};
+    let works = 0;
+    for (const m of c.getAllChildMarkers()) {
+      const cc = m.options.colorCounts;
+      if (cc) for (const [col, n] of Object.entries(cc)) { agg[col] = (agg[col] || 0) + n; works += n; }
+      else works += (m.options.works || 1);
+    }
     const size = works >= 25 ? 48 : works >= 10 ? 40 : 32;
+    const entries = Object.entries(agg).sort((a, b) => b[1] - a[1]);
+    let style, pie = "";
+    if (entries.length <= 1) {                       // one painter → solid that colour
+      style = `background:${entries.length ? entries[0][0] : MULTI_COLOR}`;
+    } else {                                         // several → a pie of the painter colours
+      const total = entries.reduce((s, [, n]) => s + n, 0);
+      let acc = 0;
+      const stops = entries.map(([col, n]) => {
+        const a = acc / total * 360; acc += n; return `${col} ${a}deg ${acc / total * 360}deg`;
+      }).join(",");
+      style = `background:conic-gradient(${stops})`; pie = " pie";
+    }
     return L.divIcon({
-      html: `<div class="cl" style="width:${size}px;height:${size}px;line-height:${size - 4}px">${works}</div>`,
+      html: `<div class="cl${pie}" style="width:${size}px;height:${size}px;${style}"><span class="cl-n">${works}</span></div>`,
       className: "", iconSize: [size, size],
     });
   },
@@ -303,6 +322,13 @@ function refresh() {
       const painters = new Set(vis.map(f => f.properties.painter));
       const color = lost ? LOST_COLOR
         : painters.size === 1 ? colorFor([...painters][0]) : MULTI_COLOR;
+      // per-work colour breakdown, so a cluster can be a solid colour or a pie of them
+      const colorCounts = {};
+      for (const f of vis) {
+        const c = (!painted && GONE.has(f.properties.status)) ? LOST_COLOR : colorFor(f.properties.painter);
+        colorCounts[c] = (colorCounts[c] || 0) + 1;
+      }
+      pl.marker.options.colorCounts = colorCounts;
       pl.marker.options.works = vis.length;
       pl.marker.setIcon(pinIcon(color, vis.length, { disputed }));
       pl.marker.setPopupContent(placePopup(vis));
@@ -544,7 +570,7 @@ document.getElementById("v-list").addEventListener("click", () => {
   view.panel = !view.panel; setView();
 });
 
-// ── database view: every work as a sortable, filterable, exportable table ──
+// ── database view: WORKS or MUSEUMS as a sortable, filterable, exportable table ──
 const TABLE_COLS = [
   { key: "img", label: "", sortable: false },
   { key: "painter", label: "Painter" },
@@ -558,19 +584,29 @@ const TABLE_COLS = [
   { key: "country", label: "Country" },
   { key: "links", label: "Links", sortable: false },
 ];
+const MUSEUM_COLS = [
+  { key: "location", label: "Museum / venue" },
+  { key: "city", label: "City" },
+  { key: "country", label: "Country" },
+  { key: "count", label: "Works", num: true },
+  { key: "npainters", label: "Painters", num: true },
+];
+let tableMode = "works";
 let tableSort = { key: "painter", dir: 1 };
+let museumSort = { key: "count", dir: -1 };
 let tableRowCache = [];
 view.table = false;
 
-// table respects the painter / attribution / year / museum filters (not the map-only kind toggles)
+// tables respect the painter / attribution / year / museum filters (not the map-only kind toggles)
 function tablePass(p) {
   return state.painters[p.painter] !== false
     && (!state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution))
     && (!state.museumFilter || museumKey(p) === state.museumFilter)
     && inYear(p);
 }
+function tableSearch() { return (document.getElementById("table-search")?.value || "").toLowerCase().trim(); }
 function tableRows() {
-  const q = (document.getElementById("table-search")?.value || "").toLowerCase().trim();
+  const q = tableSearch();
   let rows = allFeatures.map(f => f.properties).filter(tablePass);
   if (q) rows = rows.filter(p => [p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
     .some(v => (v || "").toString().toLowerCase().includes(q)));
@@ -582,15 +618,49 @@ function tableRows() {
   });
   return rows;
 }
-function renderTable() {
+// aggregate the same filtered works by venue → one row per museum
+function museumRows() {
+  const q = tableSearch();
+  const m = new Map();
+  for (const f of allFeatures) {
+    const p = f.properties;
+    if (!p.location || !tablePass(p)) continue;
+    const k = museumKey(p);
+    if (!m.has(k)) m.set(k, { key: k, location: p.location, city: p.city || "", country: p.country || "",
+      lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0], painters: new Set(), count: 0 });
+    const e = m.get(k); e.painters.add(p.painter); e.count++;
+  }
+  let rows = [...m.values()].map(r => (r.npainters = r.painters.size, r));
+  if (q) rows = rows.filter(r => [r.location, r.city, r.country].some(v => (v || "").toLowerCase().includes(q)));
+  const k = museumSort.key, num = MUSEUM_COLS.find(c => c.key === k)?.num;
+  rows.sort((a, b) => {
+    const va = num ? (a[k] || 0) : (a[k] || "").toLowerCase();
+    const vb = num ? (b[k] || 0) : (b[k] || "").toLowerCase();
+    return (va < vb ? -1 : va > vb ? 1 : 0) * museumSort.dir;
+  });
+  return rows;
+}
+function headHTML(cols, sort) {
+  return "<tr>" + cols.map(c => {
+    if (c.sortable === false) return `<th class="th-${c.key}">${esc(c.label)}</th>`;
+    const arrow = sort.key === c.key ? (sort.dir === 1 ? " ▲" : " ▼") : "";
+    return `<th class="th-${c.key} sortable" data-key="${c.key}">${esc(c.label)}<span class="ar">${arrow}</span></th>`;
+  }).join("") + "</tr>";
+}
+function wireSort(thead, sort) {
+  thead.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.key;
+    if (sort.key === k) sort.dir *= -1; else { sort.key = k; sort.dir = 1; }
+    renderTable();
+  }));
+}
+function renderTable() { return tableMode === "museums" ? renderMuseumsTable() : renderWorksTable(); }
+
+function renderWorksTable() {
   const thead = document.querySelector("#works-table thead");
   const tbody = document.querySelector("#works-table tbody");
   if (!thead) return;
-  thead.innerHTML = "<tr>" + TABLE_COLS.map(c => {
-    if (c.sortable === false) return `<th class="th-${c.key}">${esc(c.label)}</th>`;
-    const arrow = tableSort.key === c.key ? (tableSort.dir === 1 ? " ▲" : " ▼") : "";
-    return `<th class="th-${c.key} sortable" data-key="${c.key}">${esc(c.label)}<span class="ar">${arrow}</span></th>`;
-  }).join("") + "</tr>";
+  thead.innerHTML = headHTML(TABLE_COLS, tableSort);
   const rows = tableRows();
   tableRowCache = rows;
   document.getElementById("table-count").textContent =
@@ -615,14 +685,9 @@ function renderTable() {
       `<td class="c-links">${linksRow(p)}</td>` +
       "</tr>";
   }).join("");
-  thead.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
-    const k = th.dataset.key;
-    if (tableSort.key === k) tableSort.dir *= -1; else tableSort = { key: k, dir: 1 };
-    renderTable();
-  }));
+  wireSort(thead, tableSort);
   tbody.querySelectorAll(".tth[data-full]").forEach(img => img.addEventListener("click", () =>
     openLightbox(img.dataset.full, img.dataset.cap)));
-  // click a row (not a thumbnail/link) → jump to that work on the map
   tbody.querySelectorAll("tr[data-ri]").forEach(tr => tr.addEventListener("click", e => {
     if (e.target.closest("a, img")) return;
     const p = tableRowCache[+tr.dataset.ri];
@@ -634,6 +699,31 @@ function renderTable() {
       cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup()); }, 80);
   }));
 }
+
+function renderMuseumsTable() {
+  const thead = document.querySelector("#works-table thead");
+  const tbody = document.querySelector("#works-table tbody");
+  if (!thead) return;
+  thead.innerHTML = headHTML(MUSEUM_COLS, museumSort);
+  const rows = museumRows();
+  document.getElementById("table-count").textContent =
+    `${rows.length.toLocaleString()} museum${rows.length === 1 ? "" : "s"}`;
+  tbody.innerHTML = rows.map(r =>
+    `<tr data-rk="${esc(r.key)}">` +
+    `<td class="c-title">🏛 ${esc(r.location)}</td>` +
+    `<td class="c-city">${esc(r.city)}</td>` +
+    `<td class="c-country">${esc(r.country)}</td>` +
+    `<td class="c-num">${r.count}</td>` +
+    `<td class="c-num">${r.npainters}</td>` +
+    "</tr>").join("");
+  wireSort(thead, museumSort);
+  tbody.querySelectorAll("tr[data-rk]").forEach(tr => tr.addEventListener("click", () => {
+    setTableView(false);
+    if (!view.map) { view.map = true; setView(); }
+    setTimeout(() => selectMuseum(tr.dataset.rk), 80);
+  }));
+}
+
 function setTableView(on) {
   view.table = on;
   document.body.classList.toggle("show-table", on);
@@ -645,14 +735,23 @@ function setTableView(on) {
 }
 document.getElementById("v-table").addEventListener("click", () => setTableView(!view.table));
 document.getElementById("table-search").addEventListener("input", renderTable);
+document.querySelectorAll("#table-tabs .ttab").forEach(b => b.addEventListener("click", () => {
+  tableMode = b.dataset.tmode;
+  document.querySelectorAll("#table-tabs .ttab").forEach(x => x.classList.toggle("active", x === b));
+  document.getElementById("table-search").value = "";
+  document.getElementById("table-wrap").scrollTop = 0;
+  renderTable();
+}));
 document.getElementById("table-csv").addEventListener("click", () => {
-  const cols = TABLE_COLS.filter(c => !["img", "links"].includes(c.key));
+  const isM = tableMode === "museums";
+  const cols = (isM ? MUSEUM_COLS : TABLE_COLS).filter(c => !["img", "links"].includes(c.key));
+  const rows = isM ? museumRows() : tableRows();
   const cell = s => `"${(s ?? "").toString().replace(/"/g, '""')}"`;
-  const lines = [cols.map(c => cell(c.label)).join(",")];
-  for (const p of tableRows()) lines.push(cols.map(c => cell(p[c.key])).join(","));
+  const lines = [cols.map(c => cell(c.label || c.key)).join(",")];
+  for (const r of rows) lines.push(cols.map(c => cell(r[c.key])).join(","));
   const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob); a.download = "atlas-of-painting.csv"; a.click();
+  a.href = URL.createObjectURL(blob); a.download = `atlas-${isM ? "museums" : "works"}.csv`; a.click();
   URL.revokeObjectURL(a.href);
 });
 

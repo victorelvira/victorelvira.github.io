@@ -135,7 +135,7 @@ body {
 .vacio { padding: 20px; color: #888; text-align: center; font-size: 13.5px; line-height: 1.5; }
 
 /* Mapa */
-.map-wrap { flex: 1; position: relative; min-width: 0; }
+.map-wrap { flex: 1; position: relative; min-width: 0; z-index: 0; }
 #map { position: absolute; inset: 0; }
 .leaflet-container { background: #dfe6df; }
 
@@ -154,7 +154,7 @@ body {
 }
 
 /* Panel de datos */
-.panel-datos { position: absolute; inset: 0; background: var(--arena); overflow-y: auto; padding: 20px; z-index: 600; }
+.panel-datos { position: absolute; inset: 0; background: var(--arena); overflow-y: auto; padding: 20px; z-index: 1100; }
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 22px; }
 .stat { background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 14px; }
 .stat-n { font-size: 26px; font-weight: 700; color: var(--verde); }
@@ -196,11 +196,42 @@ body {
 @media (max-width: 780px) {
   .app-body { position: relative; }
   .sidebar { position: absolute; inset: 0; width: 100%; max-width: none; z-index: 400; }
-  body.vista-mapa .sidebar { display: none; }
+  /* La barra lateral es la vista "Lista" en móvil; en mapa, galería y datos
+     estorba. Se escribe en negativo para no olvidar ninguna vista futura. */
+  .sidebar { display: none; }
   body.vista-lista .sidebar { display: flex; }
-  body.vista-lista .filters { max-height: none; }
-  .detalle { width: 100%; }
-  .app-header h1 { font-size: 16px; }
+  body.vista-lista .filters { max-height: 55%; }
+  .detalle { width: 100%; max-width: 100%; }
+
+  /* La cabecera se comía 44% del alto y el subtítulo chocaba con la fecha */
+  #navbar { padding: 4px 10px; font-size: 11.5px; }
+  #navbar .build-t { display: none; }
+  .app-header { padding: 8px 12px; gap: 10px; }
+  .brand { gap: 8px; min-width: 0; }
+  .brand-mark { font-size: 21px; }
+  .app-header h1 { font-size: 15px; line-height: 1.2; }
+  .subtitle { display: none; }
+  .header-right { flex: none; }
+  .header-count { font-size: 12px; padding: 4px 10px; white-space: nowrap; }
+  .update-info { display: none; }
+  .vista-toggle { padding: 6px 8px; gap: 4px; }
+  .vista-toggle button { padding: 8px 4px; font-size: 12px; }
+
+  /* Leyenda plegada: sólo el botón hasta que se toca */
+  .leyenda { padding: 0; }
+  .leyenda-tog {
+    display: block; border: none; background: none; font: 600 12px system-ui, sans-serif;
+    color: var(--texto); padding: 7px 11px; cursor: pointer; width: 100%; text-align: left;
+  }
+  .leyenda-tog::after { content: " ▾"; color: var(--gris); }
+  .leyenda-abierta .leyenda-tog::after { content: " ▴"; }
+  .leyenda-cuerpo { display: none; padding: 0 11px 8px; }
+  .leyenda-abierta .leyenda-cuerpo { display: block; }
+
+  /* Objetivos táctiles algo mayores en los filtros */
+  .chip { padding: 6px 11px; font-size: 12.5px; }
+  .chips-rosa { grid-template-columns: repeat(3, minmax(58px, 1fr)); }
+  .gal-grid { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 9px; }
 }
 @media (min-width: 781px) {
   .vista-toggle button[data-vista="lista"] { display: none; }
@@ -229,9 +260,6 @@ body {
   vertical-align: -1px; margin-right: 6px;
 }
 
-/* Con un panel encima, el mapa queda detrás: sus controles no deben asomar */
-body.vista-datos .leaflet-control-container,
-body.vista-galeria .leaflet-control-container { display: none; }
 
 /* Galería — la vía rápida para "quiero ver la caja de mi clase" */
 .gal-nota { margin: 0 0 14px; font-size: 12.5px; color: var(--gris); }
@@ -251,6 +279,7 @@ body.vista-galeria .leaflet-control-container { display: none; }
 .rev { position: relative; padding-left: 16px; margin-bottom: 8px; line-height: 1.4; }
 .rev-punto { position: absolute; left: 0; top: 5px; width: 9px; height: 9px; border-radius: 50%; }
 .rev i { color: var(--gris); }
+.leyenda-tog { display: none; }
 .leyenda .k-tri {
   width: 0; height: 0; border-radius: 0; border: none; box-shadow: none;
   border-left: 6px solid transparent; border-right: 6px solid transparent;
@@ -291,3 +320,7 @@ body.vista-galeria .leaflet-control-container { display: none; }
   padding: 2px 7px; border-radius: 999px; white-space: nowrap;
 }
 .card-estado { font-size: 12px; }
+.lista-zona {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px;
+  background: var(--mar, #3d7ea6); color: #fff; padding: 2px 7px; border-radius: 999px;
+}

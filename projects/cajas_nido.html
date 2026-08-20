@@ -6,16 +6,16 @@
   <title>Cajas nido de Laredo</title>
   <meta name="description" content="Mapa interactivo de las cajas nido instaladas en Laredo por escolares y voluntarios: tipo, materiales, orientación, fecha y fotos.">
 
-  <link rel="stylesheet" href="cajas_nido/vendor/leaflet.css?v=0.2.1">
-  <link rel="stylesheet" href="cajas_nido/vendor/MarkerCluster.css?v=0.2.1">
-  <link rel="stylesheet" href="cajas_nido/style.css?v=0.2.1">
+  <link rel="stylesheet" href="cajas_nido/vendor/leaflet.css?v=0.3.1">
+  <link rel="stylesheet" href="cajas_nido/vendor/MarkerCluster.css?v=0.3.1">
+  <link rel="stylesheet" href="cajas_nido/style.css?v=0.3.1">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
     <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
-    <span id="build" class="build"></span>
+    <span id="build" class="build"><span id="build-v"></span><span id="build-t" class="build-t"></span></span>
   </nav>
 
   <header class="app-header">
@@ -70,7 +70,6 @@
         </div>
 
         <label class="chk"><input type="checkbox" id="solo-foto"> Solo cajas con foto</label>
-        <label class="chk"><input type="checkbox" id="filtro-mapa"> Filtrar por la zona visible del mapa</label>
 
         <div class="capas">
           <span class="grupo-tit">Capas del mapa</span>
@@ -83,6 +82,7 @@
       <div class="lista-cab">
         <span id="lista-n" class="lista-n">Las 99 cajas</span>
         <span id="lista-filtrada" class="lista-filtrada" hidden>filtradas</span>
+        <span id="lista-zona" class="lista-zona" hidden>en esta zona</span>
         <label class="lista-orden">Ordenar<select id="orden"></select></label>
       </div>
       <ul id="lista" class="lista"></ul>
@@ -106,9 +106,9 @@
     <img id="visor-img" alt="">
   </div>
 
-  <script src="cajas_nido/vendor/leaflet.js?v=0.2.1"></script>
-  <script src="cajas_nido/vendor/leaflet.markercluster.js?v=0.2.1"></script>
-  <script src="cajas_nido/data/data.js?v=0.2.1"></script>
-  <script src="cajas_nido/app.js?v=0.2.1"></script>
+  <script src="cajas_nido/vendor/leaflet.js?v=0.3.1"></script>
+  <script src="cajas_nido/vendor/leaflet.markercluster.js?v=0.3.1"></script>
+  <script src="cajas_nido/data/data.js?v=0.3.1"></script>
+  <script src="cajas_nido/app.js?v=0.3.1"></script>
 </body>
 </html>
