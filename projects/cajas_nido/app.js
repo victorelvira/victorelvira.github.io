@@ -1,23 +1,37 @@
 /* Cajas nido de Laredo — mapa interactivo. */
-const DATA_V = "0.3.1";
-const BUILD_AT = "2026-08-20 18:28";
+const DATA_V = "0.6.0";
+const BUILD_AT = "2026-08-21 00:56";
 
 const D = window.DATOS;
 const $ = (s) => document.querySelector(s);
 
 const COLOR = {
   paridos: "#3d7ea6", mariquitas: "#d1495b", murcielagos: "#6b4e8f",
-  erizos: "#9c6b3f", lechuzas: "#c98b1b", cernicalos: "#b3541e",
+  erizos: "#9c6b3f", lechuzas: "#c98b1b", cernicalos: "#b3541e", forestales: "#5b8c3e",
   balcon: "#2a8f7e", otras: "#6b7680",
 };
 const EMOJI = {
   paridos: "🐦", mariquitas: "🐞", murcielagos: "🦇", erizos: "🦔",
-  lechuzas: "🦉", cernicalos: "🪶", balcon: "🪟", otras: "📦",
+  lechuzas: "🦉", cernicalos: "🪶", balcon: "🪟", forestales: "🐦‍⬛", otras: "📦",
 };
 const ROSA = ["N", "NE", "E", "SE", "S", "SO", "O", "NO"];
 // Orden fijo de tipos: fija la leyenda y el reparto de los quesitos del clúster.
-const ORDEN_TIPOS = ["paridos", "mariquitas", "murcielagos", "erizos",
+const ORDEN_TIPOS = ["paridos", "forestales", "mariquitas", "murcielagos", "erizos",
                      "lechuzas", "cernicalos", "balcon", "otras"];
+
+// Todas las fichas se publican, estén revisadas o no: decisión del proyecto
+// (21-08-2026). El aviso de "borrador" se sigue mostrando en local, para que el
+// repaso pendiente quede a la vista de quien lo hace, pero no al visitante.
+// Va aquí arriba y no junto a abrirFicha() porque la leyenda, que se construye
+// al cargar, ya la necesita.
+const EN_LOCAL = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+
+function fichaVisible(tipo) {
+  const f = D.fauna[tipo];
+  // La entradilla sola no basta: una ficha sin especies ni explicación es una
+  // pantalla en blanco con un título, y no debe llegar a nadie.
+  return Boolean(f && f.entradilla && (f.especies.length || f.porQue));
+}
 const ESTADO = {
   ocupada:      { etiqueta: "Ocupada",     color: "#2e8b3f", emoji: "🥚" },
   vacia:        { etiqueta: "Vacía",       color: "#8a8a8a", emoji: "⚪" },
@@ -109,10 +123,14 @@ leyenda.onAdd = () => {
     `<button type="button" class="leyenda-tog" aria-expanded="false">Leyenda</button>
      <div class="leyenda-cuerpo">` +
     ORDEN_TIPOS.filter((t) => D.cajas.some((c) => c.tipo === t))
-      .map((t) => `<div><span class="k" style="background:${COLOR[t]}"></span>${
+      .map((t) => `<div${fichaVisible(t) ? ` class="k-ficha" data-tipo="${t}"` : ""}>
+         <span class="k" style="background:${COLOR[t]}"></span>${
         D.cajas.find((c) => c.tipo === t).tipoLabel}</div>`).join("") +
     `<div><span class="k k-tri"></span>Riesgos y peligros</div></div>`;
   L.DomEvent.disableClickPropagation(div);
+  div.querySelectorAll(".k-ficha").forEach((el) => {
+    el.onclick = () => abrirFicha(el.dataset.tipo);
+  });
   div.querySelector(".leyenda-tog").onclick = (e) => {
     const abierta = div.classList.toggle("leyenda-abierta");
     e.currentTarget.setAttribute("aria-expanded", abierta);
@@ -120,6 +138,18 @@ leyenda.onAdd = () => {
   return div;
 };
 leyenda.addTo(map);
+
+// Atajo de "caja en el suelo". Va anclado al mapa y no en la columna de filtros
+// porque es lo único que se hace en la calle, con el móvil y probablemente con
+// prisa: en el móvil el botón quedaba fuera de pantalla y tras un cambio de pestaña.
+const avisoCaida = L.control({ position: "bottomright" });
+avisoCaida.onAdd = () => {
+  const div = L.DomUtil.create("div", "aviso-caida");
+  div.innerHTML = '<button type="button" id="encontrada">📦 ¿Caja en el suelo?</button>';
+  L.DomEvent.disableClickPropagation(div);
+  return div;
+};
+avisoCaida.addTo(map);
 
 /* --------------------------------------------------------------- filtros */
 function cuenta(campo, valor, base) {
@@ -237,7 +267,6 @@ function enVista(vis) {
 //             porque hayas hecho zoom
 function render() {
   const seleccion = filtrar().sort(ORDENES[estado.orden].fn);
-  $("#contador").textContent = seleccion.length;
 
   capaCajas.clearLayers();
   seleccion.forEach((c) => { const m = marcadores.get(c.id); if (m) capaCajas.addLayer(m); });
@@ -252,6 +281,10 @@ function renderLista() {
   const seleccion = filtrar().sort(ORDENES[estado.orden].fn);
   const vis = enVista(seleccion);
   const total = D.cajas.length;
+  // El contador de la cabecera y el de la lista dicen lo mismo. Tenerlos
+  // discrepando (uno contaba los pines del mapa, el otro las filas visibles)
+  // hacía que el número más grande de la pantalla pareciera no responder al zoom.
+  $("#contador").textContent = vis.length === total ? total : `${vis.length} de ${total}`;
   $("#lista-n").textContent = vis.length === total
     ? `Las ${total} cajas`
     : `${vis.length} de ${total} cajas`;
@@ -305,6 +338,75 @@ function fechaES(iso) {
   return `${d}/${m}/${y}`;
 }
 
+/* ----------------------------------------------------------------- fauna */
+// Commons devuelve a veces un párrafo entero en el campo "autor". Se recorta en
+// pantalla, pero el texto íntegro queda en el title y en la página de Commons.
+function credito(foto) {
+  const a = foto.autor.length > 42 ? foto.autor.slice(0, 42).trim() + "…" : foto.autor;
+  return `${a} · ${foto.licencia} · ${foto.fuente}`;
+}
+
+function abrirFicha(tipo) {
+  const f = D.fauna[tipo];
+  if (!f) return;
+  const delTipo = D.cajas.filter((c) => c.tipo === tipo);
+  const rumbos = ROSA.map((r) => [r, delTipo.filter((c) => c.exposicion === r).length])
+    .filter((p) => p[1]).sort((a, b) => b[1] - a[1]);
+
+  $("#detalle-contenido").innerHTML =
+    `<div class="det-cuerpo ficha">
+       ${f.revisado || !EN_LOCAL ? ""
+          : '<p class="aviso-borrador">Borrador sin revisar por Poty Ambienturas. '
+            + 'Este aviso solo se ve en local.</p>'}
+       <span class="det-badge" style="background:${COLOR[tipo]}">${EMOJI[tipo]} ${f.titulo}</span>
+       <h2>¿Qué vive aquí?</h2>
+       <p class="ficha-entradilla">${f.entradilla}</p>
+       ${f.especies.length ? `<div class="ficha-especies">${f.especies.map((e) => `
+          <a class="especie" target="_blank" rel="noopener"
+             href="https://es.wikipedia.org/wiki/${encodeURIComponent(e.wiki)}">
+            ${e.foto ? `<img loading="lazy" src="cajas_nido/img/fauna/${e.foto.fichero}" alt="${e.nombre}">` : ""}
+            <span class="especie-txt">
+              <strong>${e.nombre}</strong><em>${e.cientifico}</em>
+              ${e.foto ? `<span class="credito" title="${e.foto.autor} · ${e.foto.licencia} · ${e.foto.fuente}">${
+                 credito(e.foto)}</span>` : ""}
+            </span>
+          </a>`).join("")}</div>` : ""}
+       ${fila("Por qué es así", f.porQue)}
+       ${fila("Dónde se coloca", f.donde)}
+       ${fila("Calendario", f.calendario)}
+       ${fila("Amenazas", f.amenazas)}
+       ${fila("En Laredo", `Hay ${delTipo.length} ${delTipo.length === 1 ? "caja" : "cajas"} de este tipo.` +
+          (rumbos.length ? ` La orientación más repetida es ${rumbos[0][0]} (${rumbos[0][1]}).` : ""))}
+       <div class="det-acciones">
+         <button type="button" class="compartir" data-tipo="${tipo}">Ver estas cajas en el mapa</button>
+       </div>
+     </div>`;
+  mostrarDetalle();
+}
+
+// Protocolo de caja caída. Es la pantalla con más valor práctico de toda la app:
+// quien encuentra una caja en el suelo está en la calle, con el móvil en la mano.
+function abrirEncontrada() {
+  const e = D.encontrada;
+  if (!e || !e.pasos) return;
+  $("#detalle-contenido").innerHTML =
+    `<div class="det-cuerpo">
+       <span class="det-badge" style="background:#c96a1e">📦 Caja en el suelo</span>
+       <h2>${e.titulo}</h2>
+       <ol class="pasos">${e.pasos.map((p) =>
+          `<li><strong>${p.t}</strong><span>${p.d}</span></li>`).join("")}</ol>
+       <div class="contacto">
+         <p class="contacto-quien"><strong>${e.contacto.nombre}</strong> · ${e.contacto.papel}</p>
+         <a class="contacto-enlace" href="https://www.instagram.com/${e.contacto.instagram}/"
+            target="_blank" rel="noopener">Escríbeles por Instagram</a>
+         <p class="contacto-redes">@${e.contacto.instagram}</p>
+         <a class="contacto-web" href="${e.url}" target="_blank" rel="noopener">
+           o mira la página de ${e.fuente}</a>
+       </div>
+     </div>`;
+  mostrarDetalle();
+}
+
 /* --------------------------------------------------------------- detalle */
 function fila(dt, dd) {
   return dd ? `<div class="det-fila"><dt>${dt}</dt><dd>${dd}</dd></div>` : "";
@@ -326,6 +428,9 @@ function abrirCaja(c) {
        ${fila("Orientación", c.exposicionRaw)}
        ${fila("Materiales", c.materiales)}
        ${fila("Notas", c.notas)}
+       ${fichaVisible(c.tipo) ? `<div class="det-fila"><dt>Fauna</dt><dd>
+          <button type="button" class="enlace-ficha" data-tipo="${c.tipo}">
+            ¿Qué vive en una caja de ${D.fauna[c.tipo].titulo.toLowerCase()}?</button></dd></div>` : ""}
        ${fila("Coordenadas", c.coord ? c.coord.map((n) => n.toFixed(5)).join(", ") : "")}
        ${c.revisiones.length ? `<div class="det-fila"><dt>Seguimiento</dt><dd>${
           c.revisiones.map((r) => `<div class="rev">
@@ -411,6 +516,39 @@ function pintarGaleria(vis) {
   });
 }
 
+/* --------------------------------------------------------- pestaña fauna */
+// Las fichas tenían dos entradas y las dos estaban escondidas: una fila al final
+// del panel de detalle y unas etiquetas de la leyenda que no parecían pinchables.
+// Nadie las encontraba. Ahora tienen pestaña propia.
+function pintarFauna() {
+  const tipos = ORDEN_TIPOS.filter(fichaVisible);
+  $("#panel-fauna").innerHTML =
+    `<p class="gal-nota">Qué animal vive en cada tipo de caja, por qué está construida
+      así y cuándo no hay que acercarse.</p>
+     <div class="fauna-grid">` + tipos.map((t) => {
+      const f = D.fauna[t];
+      const n = D.cajas.filter((c) => c.tipo === t).length;
+      return `<article class="fauna-card" data-tipo="${t}">
+        <header style="background:${COLOR[t]}">
+          <span class="fauna-emoji">${EMOJI[t]}</span>
+          <div>
+            <h3>${f.titulo}</h3>
+            <span class="fauna-n">${n} ${n === 1 ? "caja" : "cajas"} en Laredo</span>
+          </div>
+        </header>
+        <p class="fauna-entradilla">${f.entradilla}</p>
+        ${f.especies.length ? `<div class="fauna-especies">${f.especies.map((e) =>
+           e.foto ? `<img loading="lazy" src="cajas_nido/img/fauna/${e.foto.fichero}"
+                         alt="${e.nombre}" title="${e.nombre}">` : "").join("")}
+           <span class="fauna-cuantas">${f.especies.map((e) => e.nombre).join(" · ")}</span>
+         </div>` : ""}
+      </article>`;
+    }).join("") + `</div>`;
+  $("#panel-fauna").querySelectorAll(".fauna-card").forEach((el) => {
+    el.onclick = () => abrirFicha(el.dataset.tipo);
+  });
+}
+
 /* ----------------------------------------------------------------- datos */
 function pintarDatos(vis) {
   const grupo = (fn) => {
@@ -462,6 +600,7 @@ $("#limpiar").addEventListener("click", () => {
   render();
 });
 
+$("#encontrada").addEventListener("click", abrirEncontrada);
 $("#cerrar-detalle").addEventListener("click", cerrarDetalle);
 $("#overlay").addEventListener("click", cerrarDetalle);
 document.addEventListener("keydown", (e) => {
@@ -470,6 +609,19 @@ document.addEventListener("keydown", (e) => {
 });
 
 $("#detalle").addEventListener("click", (e) => {
+  if (e.target.classList.contains("enlace-ficha")) { abrirFicha(e.target.dataset.tipo); return; }
+  if (e.target.classList.contains("compartir") && e.target.dataset.tipo) {
+    const t = e.target.dataset.tipo;
+    estado.tipos.clear(); estado.tipos.add(t);
+    document.querySelectorAll("#f-tipos .chip").forEach((ch) => ch.classList.remove("activo"));
+    const chip = [...document.querySelectorAll("#f-tipos .chip")]
+      .find((ch) => ch.textContent.includes(D.cajas.find((c) => c.tipo === t).tipoLabel));
+    if (chip) chip.classList.add("activo");
+    cerrarDetalle(); render();
+    const p = D.cajas.filter((c) => c.tipo === t && c.coord).map((c) => c.coord);
+    if (p.length) map.fitBounds(L.latLngBounds(p).pad(0.15));
+    return;
+  }
   if (e.target.classList.contains("compartir")) { compartir(e.target.dataset.slug); return; }
   if (e.target.tagName === "IMG" && e.target.closest(".det-fotos")) {
     $("#visor-img").src = e.target.src;
@@ -487,9 +639,11 @@ document.querySelectorAll(".vista-toggle button").forEach((b) => {
     document.body.className = "vista-" + v;
     $("#panel-datos").hidden = v !== "datos";
     $("#panel-galeria").hidden = v !== "galeria";
+    $("#panel-fauna").hidden = v !== "fauna";
     const seleccion = filtrar().sort(ORDENES[estado.orden].fn);
     if (v === "datos") pintarDatos(seleccion);
     else if (v === "galeria") pintarGaleria(seleccion);
+    else if (v === "fauna") pintarFauna();
     else { map.invalidateSize(); renderLista(); }
   });
 });
@@ -503,7 +657,6 @@ document.querySelector(".brand").addEventListener("click", (e) => {
 /* ------------------------------------------------------------------ init */
 $("#build-v").textContent = `v${DATA_V}`;
 $("#build-t").textContent = ` · updated ${BUILD_AT}`;
-$("#update-info").textContent = `datos del mapa: ${D.meta.generado}`;
 document.body.className = "vista-mapa";
 $("#orden").innerHTML = Object.entries(ORDENES)
   .map(([k, v]) => `<option value="${k}">${v.etiqueta}</option>`).join("");

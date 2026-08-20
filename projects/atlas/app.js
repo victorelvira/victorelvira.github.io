@@ -68,8 +68,8 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.28.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-21 00:25";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.29.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-21 00:55";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -127,20 +127,45 @@ const ERAS = [
   { key: "5", label: "Impressionism & Post-Impressionism" },
   { key: "6", label: "Modern (20th c.)" },
 ];
+// one primary period each; painters that genuinely straddle two get an array (listed in both)
 const ERA_OF = {
   giotto: "1", duccio: "1", masaccio: "1", fraangelico: "1", piero: "1", botticelli: "1",
   ghirlandaio: "1", mantegna: "1", vaneyck: "1", weyden: "1", memling: "1", bosch: "1",
   leonardo: "2", raphael: "2", michelangelo: "2", durer: "2", cranach: "2", holbein: "2",
   giorgione: "2", titian: "2", correggio: "2", delsarto: "2", parmigianino: "2", bruegel: "2",
-  tintoretto: "2", veronese: "2", elgreco: "2",
+  tintoretto: "2", veronese: "2", elgreco: ["2", "3"],   // Mannerism ↔ Baroque (d. 1614)
   caravaggio: "3", artemisia: "3", rubens: "3", vandyck: "3", rembrandt: "3", vermeer: "3",
   franshals: "3", velazquez: "3", ribera: "3", zurbaran: "3", murillo: "3", poussin: "3",
   lorrain: "3", delatour: "3",
   goya: "4", david: "4",
-  manet: "5", monet: "5", renoir: "5", degas: "5", pissarro: "5", cezanne: "5", vangogh: "5",
-  gauguin: "5", seurat: "5", sorolla: "5",
+  manet: "5", monet: "5", renoir: "5", degas: "5", pissarro: "5", cezanne: ["5", "6"],  // Post-Imp ↔ Modern
+  vangogh: "5", gauguin: "5", seurat: "5", sorolla: "5",
   picasso: "6", frida: "6", rivera: "6",
 };
+const erasOf = slug => [].concat(ERA_OF[slug] || []);
+
+// the OTHER axis: national school (the way museums arrange their rooms)
+const SCHOOLS = [
+  { key: "it", label: "Italian" }, { key: "es", label: "Spanish" }, { key: "fr", label: "French" },
+  { key: "nl", label: "Dutch" }, { key: "fl", label: "Flemish / Netherlandish" },
+  { key: "de", label: "German" }, { key: "mx", label: "Mexican" },
+];
+const SCHOOL_OF = {
+  duccio: "it", giotto: "it", masaccio: "it", fraangelico: "it", piero: "it", botticelli: "it",
+  ghirlandaio: "it", mantegna: "it", leonardo: "it", raphael: "it", michelangelo: "it",
+  giorgione: "it", titian: "it", correggio: "it", delsarto: "it", parmigianino: "it",
+  tintoretto: "it", veronese: "it", caravaggio: "it", artemisia: "it",
+  velazquez: "es", goya: "es", elgreco: ["es", "it"], ribera: "es", zurbaran: "es", murillo: "es",
+  sorolla: "es", picasso: ["es", "fr"],   // El Greco trained in Venice; Picasso = École de Paris
+  poussin: "fr", lorrain: "fr", delatour: "fr", david: "fr", manet: "fr", monet: "fr",
+  renoir: "fr", degas: "fr", pissarro: "fr", cezanne: "fr", gauguin: "fr", seurat: "fr",
+  rembrandt: "nl", vermeer: "nl", franshals: "nl", vangogh: ["nl", "fr"],   // Dutch, painted in France
+  vaneyck: "fl", weyden: "fl", memling: "fl", bosch: "fl", bruegel: "fl", rubens: "fl", vandyck: "fl",
+  durer: "de", cranach: "de", holbein: "de",
+  frida: "mx", rivera: "mx",
+};
+const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
+let painterGroupBy = "period";   // "period" | "school"
 
 // Most works are in Europe; open there. The ~12 in the Americas are one zoom-out away.
 const map = L.map("map", { zoomControl: true, worldCopyJump: true }).setView([43, 9], 5);
@@ -357,7 +382,6 @@ function refresh() {
     const vis = pl.feats.filter(f => passesAll(f.properties));   // works here passing every filter
     if (vis.length) {
       const painted = state.mode === "painted";
-      const lost = !painted && vis.some(f => GONE.has(f.properties.status));
       const disputed = vis.some(f => !ATTR_ACCEPTED.has(f.properties.attribution));
       // per-work colour breakdown → the marker (and its cluster) is a solid colour or a pie
       const colorCounts = {};
@@ -477,7 +501,10 @@ function buildPainterSelect() {
     `<button id="painters-btn" class="chip" type="button" aria-expanded="false">All painters ▾</button>` +
     `<div id="painters-pop" class="pop" hidden>` +
     `<input id="painters-search" class="pop-search" placeholder="Search painters or museums…" autocomplete="off">` +
-    `<div class="pop-actions"><button type="button" data-act="all">All</button>` +
+    `<div class="pop-actions">` +
+    `<span id="grp-toggle"><button type="button" data-grp="period" class="active">Period</button>` +
+    `<button type="button" data-grp="school">School</button></span>` +
+    `<button type="button" data-act="all">All</button>` +
     `<button type="button" data-act="none">None</button></div>` +
     `<ul id="painters-list" class="pop-list"></ul></div>`;
 
@@ -495,6 +522,11 @@ function buildPainterSelect() {
   });
   document.addEventListener("keydown", e => { if (e.key === "Escape") pop.hidden = true; });
   search.addEventListener("input", renderPainterList);
+  pop.querySelectorAll("[data-grp]").forEach(b => b.addEventListener("click", () => {
+    painterGroupBy = b.dataset.grp;
+    pop.querySelectorAll("[data-grp]").forEach(x => x.classList.toggle("active", x === b));
+    renderPainterList();
+  }));
   pop.querySelectorAll("[data-act]").forEach(b => b.addEventListener("click", () => {
     const on = b.dataset.act === "all";
     PAINTERS.forEach(p => { state.painters[p.name] = on; });
@@ -532,10 +564,12 @@ function renderPainterList() {
     if (q) {                                   // searching → flat list under one header (if mixed with museums)
       if (html) html += `<li class="pop-h">Painters</li>`;
       html += pnt.map(painterRow).join("");
-    } else {                                   // idle → grouped by art-historical period
-      for (const era of ERAS) {
-        const group = pnt.filter(p => ERA_OF[p.slug] === era.key);
-        if (group.length) html += `<li class="pop-h">${esc(era.label)}</li>` + group.map(painterRow).join("");
+    } else {                                   // idle → grouped by the active axis (period or school)
+      const groups = painterGroupBy === "school" ? SCHOOLS : ERAS;
+      const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
+      for (const g of groups) {
+        const inGroup = pnt.filter(p => keysOf(p.slug).includes(g.key));
+        if (inGroup.length) html += `<li class="pop-h">${esc(g.label)}</li>` + inGroup.map(painterRow).join("");
       }
     }
   }

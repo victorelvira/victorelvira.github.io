@@ -6,9 +6,9 @@
   <title>Cajas nido de Laredo</title>
   <meta name="description" content="Mapa interactivo de las cajas nido instaladas en Laredo por escolares y voluntarios: tipo, materiales, orientación, fecha y fotos.">
 
-  <link rel="stylesheet" href="cajas_nido/vendor/leaflet.css?v=0.3.1">
-  <link rel="stylesheet" href="cajas_nido/vendor/MarkerCluster.css?v=0.3.1">
-  <link rel="stylesheet" href="cajas_nido/style.css?v=0.3.1">
+  <link rel="stylesheet" href="cajas_nido/vendor/leaflet.css?v=0.6.0">
+  <link rel="stylesheet" href="cajas_nido/vendor/MarkerCluster.css?v=0.6.0">
+  <link rel="stylesheet" href="cajas_nido/style.css?v=0.6.0">
 </head>
 <body>
   <nav id="navbar">
@@ -28,7 +28,6 @@
     </a>
     <div class="header-right">
       <div class="header-count"><span id="contador">0</span> cajas</div>
-      <div class="update-info" id="update-info"></div>
     </div>
   </header>
 
@@ -36,6 +35,7 @@
     <button type="button" data-vista="mapa" class="vista-activa">🗺️ Mapa</button>
     <button type="button" data-vista="lista">📋 Lista</button>
     <button type="button" data-vista="galeria">🖼️ Galería</button>
+    <button type="button" data-vista="fauna">🦉 Fauna</button>
     <button type="button" data-vista="datos">📊 Datos</button>
   </div>
 
@@ -92,6 +92,7 @@
       <div id="map"></div>
       <div id="panel-datos" class="panel-datos" hidden></div>
       <div id="panel-galeria" class="panel-datos" hidden></div>
+      <div id="panel-fauna" class="panel-datos" hidden></div>
     </main>
   </div>
 
@@ -106,9 +107,9 @@
     <img id="visor-img" alt="">
   </div>
 
-  <script src="cajas_nido/vendor/leaflet.js?v=0.3.1"></script>
-  <script src="cajas_nido/vendor/leaflet.markercluster.js?v=0.3.1"></script>
-  <script src="cajas_nido/data/data.js?v=0.3.1"></script>
-  <script src="cajas_nido/app.js?v=0.3.1"></script>
+  <script src="cajas_nido/vendor/leaflet.js?v=0.6.0"></script>
+  <script src="cajas_nido/vendor/leaflet.markercluster.js?v=0.6.0"></script>
+  <script src="cajas_nido/data/data.js?v=0.6.0"></script>
+  <script src="cajas_nido/app.js?v=0.6.0"></script>
 </body>
 </html>

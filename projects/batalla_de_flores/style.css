@@ -198,7 +198,14 @@ a { color: inherit; }
 }
 .tier-full { color: var(--leaf); }
 .tier-partial { color: var(--gold); }
+.tier-planned { color: #e07a1f; }
 .tier-none { color: #b9aca0; }
+
+/* La edición por celebrar se marca también en el número y el borde: solo la
+   barra de color no basta para distinguirla de una parcial. */
+.year.tier-planned { border-color: #f0cba6; background: #fff8f1; }
+.year.tier-planned .year-num { color: #c9661a; }
+.year.tier-planned:not(.is-active) .year-meta { color: #c9661a; }
 
 /* ── lista de grupos ───────────────────────────────────────────────────── */
 
@@ -284,16 +291,49 @@ h3.section {
 .map svg {
   display: block; width: 100%; height: auto;
   border: 1px solid var(--line); border-radius: 8px;
-  background: #f3f7f9;   /* mar */
+  background: #eef4f7;   /* mar */
 }
-.map.is-compact svg { max-width: 260px; }
+.map-compact svg { max-width: 300px; }
+
+/* Miniatura en la lista de recorridos: mismo marco para las tres, que es lo
+   que deja compararlas de un vistazo. */
+.rows-routes .row-route {
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 10px; align-items: center; padding: 8px;
+}
+.route-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.route-copy .row-sub { grid-column: auto; }
+.map-thumb { display: block; }
+.map-thumb svg {
+  display: block; width: 128px; height: auto;
+  border: 1px solid var(--line); border-radius: 6px; background: #eef4f7;
+}
+.map-thumb.is-empty {
+  display: flex; align-items: center; justify-content: center;
+  width: 128px; height: 84px;
+  border: 1px dashed var(--line); border-radius: 6px; background: #fffaf5;
+  color: var(--muted); font-size: 11px; font-style: italic;
+}
+.row-route:hover .map-thumb svg,
+.row-route.is-active .map-thumb svg { border-color: var(--rose); }
 .map figcaption { margin-top: 4px; color: var(--muted); font-size: 11px; }
 .map figcaption a { color: var(--sky); }
 
-.map-coastline { fill: #fffdfa; stroke: #cddbe2; stroke-width: 1; }
-.map-beach { fill: #f3e7cf; stroke: none; }
+/* Paleta del plano, en la gama cálida del proyecto en vez del gris de OSM. */
+.map-coastline { fill: #fdfaf6; stroke: #c3d5de; stroke-width: 1; }
+.map-beach { fill: #f6ebd6; stroke: none; }
+.map-sand { fill: #f6ebd6; stroke: none; }
+.map-green { fill: #dce8d5; stroke: #cadcc1; stroke-width: 0.5; }
+.map-water { fill: #d8e6ee; stroke: none; }
+.map-building { fill: #eee5da; stroke: #e2d6c8; stroke-width: 0.4; }
+.map-street { fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+.map-label {
+  fill: #8b7b73; font-size: 6.5px; letter-spacing: 0.02em;
+  text-anchor: middle; paint-order: stroke;
+  stroke: #fdfaf6; stroke-width: 2.2; stroke-linejoin: round;
+}
 .map-route {
-  fill: none; stroke: #c3b3ab; stroke-width: 2.5;
+  fill: none; stroke: #b4a49b; stroke-width: 2.5;
   stroke-linecap: round; stroke-linejoin: round; cursor: pointer;
 }
 .map-route:hover { stroke: var(--rose); }
@@ -344,6 +384,11 @@ ul.plain li { margin-bottom: 3px; }
 ul.plain a { color: var(--sky); word-break: break-all; }
 
 .empty { color: var(--muted); font-size: 12.5px; font-style: italic; padding: 4px 0; }
+
+.placeholder { color: var(--muted); font-size: 13px; max-width: 42ch; padding: 6px 2px; }
+.placeholder p { margin: 0 0 10px; }
+.placeholder-lead { color: var(--ink); font-size: 16px; font-weight: 600; }
+.placeholder-hint { font-variant-numeric: tabular-nums; }
 
 .provenance {
   margin-top: 14px; padding: 8px 10px;

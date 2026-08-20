@@ -28,7 +28,7 @@ const state = {
   editions: [],
   groups: [],
   routes: [],
-  mapContext: [],
+  map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
   filtered: [],
   mode: "editions",
@@ -94,10 +94,14 @@ const COVERAGE_LABEL = {
 const TIERS = [
   ["tier-full", "Palmarés completo"],
   ["tier-partial", "Datos parciales"],
+  ["tier-planned", "Aún por celebrar"],
   ["tier-none", "Sin datos"],
 ];
 
 function coverageTier(edition) {
+  // La proxima edicion no es un hueco documental: no ha pasado todavia. Va en
+  // naranja para que no se confunda con las canceladas ni con las vacias.
+  if (edition.status === "planned") return "tier-planned";
   const floats = edition.floats || [];
   if (!floats.length) return "tier-none";
   const ranked = floats.filter(entry => entry.position != null).length;
@@ -112,6 +116,7 @@ const SOURCE_LABEL = {
   official_result: "Resultado oficial",
   official_result_summary: "Resumen oficial",
   manual_seed: "Seed manual",
+  press_photo: "Prensa (pie de foto)",
 };
 
 /* Version corta para las tablas del panel de detalle, que es estrecho.
@@ -122,6 +127,7 @@ const SOURCE_SHORT = {
   official_result: "OFI",
   official_result_summary: "RES",
   manual_seed: "MAN",
+  press_photo: "PRE",
 };
 
 function sourceShort(sourceType) {
@@ -356,14 +362,21 @@ function renderGroupList() {
 
 function renderRouteList() {
   els.indexCount.textContent = `${state.routes.length} eras de recorrido`;
-  els.indexBody.innerHTML = `<div class="rows">${state.routes.map(route => {
+  // Mismo criterio que la rejilla de anos: lo mas reciente arriba.
+  els.indexBody.innerHTML = `<div class="rows rows-routes">${[...state.routes].reverse().map(route => {
     const active = state.selection?.kind === "route" && state.selection.id === route.id;
     const editions = state.editions.filter(edition => edition.year >= route.start_year && edition.year <= route.end_year);
+    const floats = editions.reduce((total, edition) => total + (edition.float_count || 0), 0);
     return `
-      <button class="row${active ? " is-active" : ""}" type="button" data-route="${esc(route.id)}">
-        <span class="row-name">${esc(route.label)}</span>
-        <span class="row-meta">${yearRange(route.start_year, route.end_year)}</span>
-        <span class="row-sub">${editions.length} ediciones · ${esc(route.geometry_hint || route.kind || "sin tipología")}</span>
+      <button class="row row-route${active ? " is-active" : ""}" type="button" data-route="${esc(route.id)}">
+        ${route.geometry
+          ? renderRouteMap(route.id, { variant: "thumb" })
+          : '<span class="map-thumb is-empty">sin traza</span>'}
+        <span class="route-copy">
+          <span class="row-name">${esc(route.label)}</span>
+          <span class="row-sub">${yearRange(route.start_year, route.end_year)} · ${editions.length} ediciones · ${num(floats)} carrozas</span>
+          ${route.approximate ? '<span class="row-sub"><em>trazado aproximado</em></span>' : ""}
+        </span>
       </button>`;
   }).join("")}</div>`;
 }
@@ -377,18 +390,21 @@ function renderIndex() {
 
 /* ── mapa de recorridos (SVG, sin dependencias) ─────────────────────────── */
 
-/* Cuatro geometrias fijas: no hacen falta tiles ni zoom. Se proyecta en plano
- * (equirectangular con correccion por coseno de la latitud), que a 800 m de
- * ancho no introduce error visible, y se encaja en el viewBox. */
-const MAP_W = 420;
-const MAP_H = 300;
-
+/* Cuatro geometrias fijas: no hacen falta tiles ni zoom interactivo. Se
+ * proyecta en plano (equirectangular con correccion por coseno de la latitud);
+ * a menos de 1 km de ancho el error no se ve.
+ *
+ * Dos encuadres distintos a proposito:
+ *  - `fit: "all"` para las miniaturas de la lista, con el mismo marco para las
+ *    tres, que es lo que permite compararlas de un vistazo.
+ *  - `fit: "route"` para el mapa grande, ajustado a su recorrido: la Alameda a
+ *    escala comun es un borron de 45x31, y sola se lee como el circuito que es.
+ */
 function routeGeometries() {
   return state.routes.filter(route => route.geometry?.coordinates?.length);
 }
 
-function makeProjection(padding = 18) {
-  const points = routeGeometries().flatMap(route => route.geometry.coordinates);
+function makeProjection(points, { width, height, margin = 1.5, padding = 10 }) {
   if (!points.length) return null;
 
   const lons = points.map(p => p[0]);
@@ -396,41 +412,26 @@ function makeProjection(padding = 18) {
   const midLat = (Math.min(...lats) + Math.max(...lats)) / 2;
   const kx = Math.cos((midLat * Math.PI) / 180);
 
-  // Margen alrededor de las rutas para que se vea algo de costa.
-  const spanLon = (Math.max(...lons) - Math.min(...lons)) * 1.45;
-  const spanLat = (Math.max(...lats) - Math.min(...lats)) * 1.45;
   const cLon = (Math.min(...lons) + Math.max(...lons)) / 2;
   const cLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+  // Suelo de 200 m: una calle recta tiene anchura casi nula y sin esto el
+  // encuadre se iria a un zoom absurdo.
+  const spanLon = Math.max((Math.max(...lons) - Math.min(...lons)) * margin, 0.0025);
+  const spanLat = Math.max((Math.max(...lats) - Math.min(...lats)) * margin, 0.0018);
 
   const scale = Math.min(
-    (MAP_W - padding * 2) / (spanLon * kx),
-    (MAP_H - padding * 2) / spanLat,
+    (width - padding * 2) / (spanLon * kx),
+    (height - padding * 2) / spanLat,
   );
 
   const project = ([lon, lat]) => [
-    MAP_W / 2 + (lon - cLon) * kx * scale,
-    MAP_H / 2 - (lat - cLat) * scale,   // y invertida: norte arriba
+    width / 2 + (lon - cLon) * kx * scale,
+    height / 2 - (lat - cLat) * scale,   // y invertida: norte arriba
   ];
-  // Unidades del viewBox por metro, para poder dibujar la barra de escala.
   project.unitsPerMetre = scale / 111320;
+  project.width = width;
+  project.height = height;
   return project;
-}
-
-/* Barra de escala: elige el numero redondo que ocupe ~90 unidades. */
-function scaleBar(project) {
-  const target = 90 / project.unitsPerMetre;
-  const metres = [50, 100, 200, 250, 500, 1000].reduce(
-    (best, value) => (Math.abs(value - target) < Math.abs(best - target) ? value : best));
-  const width = metres * project.unitsPerMetre;
-  const x = 14;
-  const y = MAP_H - 16;
-  return `
-    <g class="map-scale">
-      <line x1="${x}" y1="${y}" x2="${x + width}" y2="${y}"/>
-      <line x1="${x}" y1="${y - 4}" x2="${x}" y2="${y + 4}"/>
-      <line x1="${x + width}" y1="${y - 4}" x2="${x + width}" y2="${y + 4}"/>
-      <text x="${x + width / 2}" y="${y - 7}">${metres} m</text>
-    </g>`;
 }
 
 function toPath(coordinates, project, close = false) {
@@ -443,33 +444,127 @@ function toPath(coordinates, project, close = false) {
   return close ? `${d}Z` : d;
 }
 
-function renderRouteMap(activeId, { compact = false } = {}) {
-  const project = makeProjection();
-  if (!project) return "";
+/* Barra de escala: el numero redondo que ocupe cerca de un cuarto del ancho. */
+function scaleBar(project) {
+  const target = (project.width * 0.28) / project.unitsPerMetre;
+  const metres = [50, 100, 200, 250, 500, 1000]
+    .reduce((best, value) => (Math.abs(value - target) < Math.abs(best - target) ? value : best));
+  const width = metres * project.unitsPerMetre;
+  const x = 12;
+  const y = project.height - 14;
+  return `
+    <g class="map-scale">
+      <line x1="${x}" y1="${y}" x2="${x + width}" y2="${y}"/>
+      <line x1="${x}" y1="${y - 4}" x2="${x}" y2="${y + 4}"/>
+      <line x1="${x + width}" y1="${y - 4}" x2="${x + width}" y2="${y + 4}"/>
+      <text x="${x + width / 2}" y="${y - 6}">${metres} m</text>
+    </g>`;
+}
 
-  const context = (state.mapContext || [])
+/* Etiquetas de calle sobre el propio trazo con <textPath>. Solo se pintan las
+ * que caben: una calle de 40 px no admite "Calle del Marqués de Comillas". */
+let labelSeq = 0;
+
+function streetLabels(project, streets) {
+  const defs = [];
+  const texts = [];
+
+  streets.forEach(street => {
+    if (!street.name) return;
+    let points = street.coordinates.map(project);
+    // Si la calle va de derecha a izquierda el texto saldria del reves.
+    if (points[points.length - 1][0] < points[0][0]) points = [...points].reverse();
+
+    const drawn = points.reduce((total, point, index) =>
+      index ? total + Math.hypot(point[0] - points[index - 1][0], point[1] - points[index - 1][1]) : 0, 0);
+    if (drawn < street.name.length * 5.4 + 12) return;
+
+    // El texto se ancla a la mitad del trazo: si esa mitad cae fuera del
+    // encuadre, la etiqueta sale cortada contra el borde. Mejor no pintarla.
+    const middle = points[Math.floor(points.length / 2)];
+    const margin = 12;
+    if (middle[0] < margin || middle[0] > project.width - margin
+      || middle[1] < margin || middle[1] > project.height - margin) return;
+
+    const id = `st${labelSeq++}`;
+    const d = points.map(([x, y], index) => `${index ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join("");
+    defs.push(`<path id="${id}" d="${d}"/>`);
+    texts.push(`<text class="map-label" dy="-2.5"><textPath href="#${id}" startOffset="50%">${esc(street.name)}</textPath></text>`);
+  });
+
+  return { defs: defs.join(""), texts: texts.join("") };
+}
+
+function mapLayers(project, activeId, { showStreets, showLabels }) {
+  const map = state.map || {};
+
+  const natural = (map.context || [])
     .map(item => `<path class="map-${esc(item.kind)}" d="${toPath(item.coordinates, project, item.kind === "beach")}"/>`)
     .join("");
 
+  const areas = (map.areas || [])
+    .map(item => `<path class="map-${esc(item.kind)}" d="${toPath(item.coordinates, project, true)}"/>`)
+    .join("");
+
+  const buildings = showStreets
+    ? (map.buildings || []).map(points => `<path class="map-building" d="${toPath(points, project, true)}"/>`).join("")
+    : "";
+
+  const streetList = map.streets || [];
+  const streets = showStreets
+    ? streetList.map(item => `<path class="map-street" d="${toPath(item.coordinates, project)}"/>`).join("")
+    : "";
+
+  const labels = showLabels ? streetLabels(project, streetList) : { defs: "", texts: "" };
+
+  // El activo se pinta el ultimo para que quede por encima del resto.
   const routes = routeGeometries()
+    .sort((a, b) => (a.id === activeId ? 1 : 0) - (b.id === activeId ? 1 : 0))
     .map(route => {
-      const isActive = route.id === activeId;
       const closed = route.geometry.type === "Polygon";
-      return `<path class="map-route${isActive ? " is-active" : ""}"
+      return `<path class="map-route${route.id === activeId ? " is-active" : ""}"
         d="${toPath(route.geometry.coordinates, project, closed)}"
         data-route="${esc(route.id)}"><title>${esc(route.label)} (${yearRange(route.start_year, route.end_year)})</title></path>`;
     })
     .join("");
 
-  const attribution = state.mapAttribution;
   return `
-    <figure class="map${compact ? " is-compact" : ""}">
-      <svg viewBox="0 0 ${MAP_W} ${MAP_H}" role="img"
-           aria-label="Recorridos históricos de la Batalla de Flores sobre el plano de Laredo">
-        <g class="map-ctx">${context}</g>
-        <g class="map-routes">${routes}</g>
-        ${compact ? "" : scaleBar(project)}
-      </svg>
+    <defs>${labels.defs}</defs>
+    <g class="map-ctx">${natural}${areas}${buildings}${streets}</g>
+    <g class="map-routes">${routes}</g>
+    <g class="map-labels">${labels.texts}</g>`;
+}
+
+function renderRouteMap(activeId, { variant = "detail" } = {}) {
+  const active = state.routes.find(route => route.id === activeId);
+  const all = routeGeometries().flatMap(route => route.geometry.coordinates);
+  if (!all.length) return "";
+
+  const sizes = { detail: [420, 300], compact: [300, 200], thumb: [128, 84] };
+  const [width, height] = sizes[variant] || sizes.detail;
+
+  const zoomToRoute = variant !== "thumb" && active?.geometry?.coordinates?.length;
+  const project = makeProjection(
+    zoomToRoute ? active.geometry.coordinates : all,
+    { width, height, margin: zoomToRoute ? 1.9 : 1.5, padding: variant === "thumb" ? 6 : 12 },
+  );
+  if (!project) return "";
+
+  const svg = `<svg viewBox="0 0 ${width} ${height}" role="img"
+      aria-label="${esc(active ? `Recorrido: ${active.label}` : "Recorridos de la Batalla de Flores")}">
+      ${mapLayers(project, activeId, {
+        showStreets: variant !== "thumb",
+        showLabels: variant === "detail",
+      })}
+      ${variant === "thumb" ? "" : scaleBar(project)}
+    </svg>`;
+
+  if (variant === "thumb") return `<span class="map-thumb">${svg}</span>`;
+
+  const attribution = state.map?.attribution || state.mapAttribution;
+  return `
+    <figure class="map map-${variant}">
+      ${svg}
       ${attribution ? `<figcaption>Trazados de
         <a href="${esc(attribution.url)}" target="_blank" rel="noopener">${esc(attribution.source)}</a>
         (${esc(attribution.licence)}). Geometría actual de las calles, no plano histórico.</figcaption>` : ""}
@@ -562,7 +657,7 @@ function renderEditionDetail(edition) {
       <div class="kpi"><span>${num((edition.source_urls || []).length)}</span><small>fuentes</small></div>
     </div>
 
-    ${route?.geometry ? renderRouteMap(route.id, { compact: true }) : ""}
+    ${route?.geometry ? renderRouteMap(route.id, { variant: "compact" }) : ""}
 
     ${renderGallery(entries)}
 
@@ -775,7 +870,19 @@ function handleDetailSort(header) {
 function renderDetail() {
   const selection = state.selection;
   if (!selection) {
-    els.detail.innerHTML = '<p class="empty">Elige un año, un grupo o un recorrido en el panel de la izquierda.</p>';
+    const latest = latestRankedEdition();
+    els.detail.innerHTML = `
+      <div class="placeholder">
+        <p class="placeholder-lead">Elige un año en la rejilla.</p>
+        <p>Cada edición trae su palmarés, las carrozas documentadas, las fotos que
+        conserva el archivo y el recorrido de aquel año.</p>
+        <p>También puedes recorrerlo por <button class="group-link" type="button"
+          data-mode-jump="groups">grupos</button> —quién más ha desfilado y quién más ha
+        ganado— o por <button class="group-link" type="button" data-mode-jump="routes">recorridos</button>,
+        que han cambiado tres veces desde 1908.</p>
+        ${latest ? `<p class="placeholder-hint">Lo último: <button class="group-link" type="button"
+          data-year="${latest.year}">${latest.year}</button>.</p>` : ""}
+      </div>`;
     return;
   }
   if (selection.kind === "year") {
@@ -846,10 +953,10 @@ function resetToStart() {
   closeDetail();
   setMode("editions");
   applyFilters();
-  const latest = latestRankedEdition();
-  // En movil volver al inicio significa volver al indice, no reabrir la capa.
-  if (latest) select("year", latest.year, { reveal: false });
-  else { history.replaceState(null, "", location.pathname); renderIndex(); renderDetail(); }
+  state.selection = null;
+  history.replaceState(null, "", location.pathname);
+  renderIndex();
+  renderDetail();
   els.indexBody.scrollTop = 0;
 }
 
@@ -899,6 +1006,9 @@ function bindEvents() {
       return;
     }
 
+    const jump = event.target.closest("[data-mode-jump]");
+    if (jump) { setMode(jump.dataset.modeJump); return; }
+
     const decadeToggle = event.target.closest("[data-decade]");
     if (decadeToggle) {
       const decade = Number(decadeToggle.dataset.decade);
@@ -943,7 +1053,6 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
   .then(dataset => {
     state.dataset = dataset;
     state.routes = dataset.map_features || [];
-    state.mapContext = dataset.map_context || [];
     state.mapAttribution = dataset.map_attribution || null;
     state.groups = dataset.groups || [];
     state.editions = (dataset.editions || []).map(edition => ({
@@ -962,12 +1071,25 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
       if (fromHash.kind === "route") setMode("routes");
       select(fromHash.kind, fromHash.id, { updateHash: false });
     } else {
-      const latest = latestRankedEdition();
+      // Sin seleccion de salida: con una edicion ya abierta, la rejilla no
+      // invitaba a pinchar.
       renderIndex();
-      if (latest) select("year", latest.year, { updateHash: false, reveal: false });
-      else renderDetail();
+      renderDetail();
     }
   })
   .catch(error => {
     els.detail.innerHTML = `<p class="empty">No he podido cargar el dataset (${esc(error.message)}).</p>`;
   });
+
+/* El plano viaja aparte (~170 KB) y no bloquea nada: hasta que llega, los mapas
+ * se pintan solo con los recorridos y al llegar se repinta lo que haya en
+ * pantalla. Si falla, el archivo sigue funcionando entero. */
+fetch("batalla_de_flores/data/map.json")
+  .then(response => (response.ok ? response.json() : null))
+  .then(map => {
+    if (!map) return;
+    state.map = map;
+    if (state.selection) renderDetail();
+    if (state.mode === "routes") renderIndex();
+  })
+  .catch(() => {});
