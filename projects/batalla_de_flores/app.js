@@ -34,6 +34,7 @@ const state = {
   floatView: "grid",   // "grid" | "list": entra por las fotos, que es lo que engancha
   category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
   statsCategory: "all",   // "all" | "A" | "B" en el grafico de trayectorias
+  editionCategory: "A",   // categoria visible en el palmares de una edicion
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
@@ -701,6 +702,34 @@ function renderStatsTab() {
       </div>
       ${chartFloatsPerYear()}
 
+      <h3 class="section">Premios especiales</h3>
+      <p class="chart-note">Además de la clasificación del desfile hay dos galardones aparte.
+      <b>👗 Vestidos</b> lo puntúa el jurado; <b>🎨 Arte</b> lo concede ACELAR, la asociación de
+      comerciantes de Laredo, desde 2009, y su trofeo es una obra de un artista laredano elegida
+      en un concurso propio. Solo constan desde 2016.</p>
+      <div class="prize-lists">
+        ${[["👗 Vestidos", "prize_costumes_rank"], ["🎨 Arte", "prize_art_rank"]].map(([label, field]) => {
+          const rows = state.floats
+            .filter(entry => entry[field])
+            .sort((a, b) => b.year - a.year || a[field] - b[field]);
+          return `
+            <div class="prize-list">
+              <h4>${label} <small>${rows.length}</small></h4>
+              <table class="palmares">
+                <tbody>${rows.map(entry => `
+                  <tr>
+                    <td class="pos"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
+                    <td class="pos">${entry[field]}.º</td>
+                    <td class="name"><button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button></td>
+                    <td class="group">${entry.group_canonical
+                      ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
+                      : "–"}</td>
+                  </tr>`).join("")}</tbody>
+              </table>
+            </div>`;
+        }).join("")}
+      </div>
+
       <h3 class="section">Trayectoria de los carrocistas</h3>
       <div class="chart-tabs">
         ${[["all", "Todas"], ["A", "Categoría A"], ["B", "Categoría B"]].map(([cat, label]) =>
@@ -1016,10 +1045,14 @@ function positionSortKey(entry) {
   return `${entry.category || "Z"}${String(entry.position ?? 999).padStart(3, "0")}`;
 }
 
+/* Premios especiales, aparte de la clasificacion del desfile:
+ *  - Vestidos: lo puntua el jurado (650/430/320 € segun las bases).
+ *  - Arte: lo concede ACELAR, la asociacion de comerciantes, desde 2009. El
+ *    trofeo es una obra de un artista laredano elegida en su propio concurso. */
 function prizeChips(entry) {
   const prizes = [];
-  if (entry.prize_art_rank) prizes.push(`Arte ${entry.prize_art_rank}.º`);
-  if (entry.prize_costumes_rank) prizes.push(`Vestidos ${entry.prize_costumes_rank}.º`);
+  if (entry.prize_costumes_rank) prizes.push(`👗 Vestidos ${entry.prize_costumes_rank}.º`);
+  if (entry.prize_art_rank) prizes.push(`🎨 Arte`);
   if (entry.points != null) prizes.push(`${entry.points} pts`);
   return prizes.join(" · ");
 }
@@ -1085,28 +1118,36 @@ function renderEditionDetail(edition) {
   const groupCount = new Set(entries.map(e => e.group_canonical).filter(Boolean)).size;
   // La miniatura va como columna del palmares en vez de en galeria aparte: la
   // tabla ya tiene el ancho, y asi la foto queda junto a su carroza.
-  const withPhotos = ranked.some(entry => (entry.image_urls || []).length);
+  // Con categorias A y B, mostrarlas juntas mezclaba dos competiciones
+  // distintas: se separan con un selector, como en Estadisticas.
+  const cats = [...new Set(ranked.map(entry => entry.category).filter(Boolean))].sort();
+  const shownCat = cats.includes(state.editionCategory) ? state.editionCategory : cats[0];
+  const shown = cats.length > 1 ? ranked.filter(entry => entry.category === shownCat) : ranked;
+  const withPhotos = shown.some(entry => (entry.image_urls || []).length);
 
   els.detail.innerHTML = `
     <div class="detail-head">
       <h2>${edition.year}</h2>
       <span class="label">${esc(edition.edition_label || "")}</span>
-      <span class="head-counts">
-        <b>${num(edition.float_count || 0)}</b> carrozas
-        <b>${num(groupCount)}</b> grupos
+      <span class="discs">
+        <span class="disc"><b>${num(edition.float_count || 0)}</b>carrozas</span>
+        <span class="disc"><b>${num(groupCount)}</b>grupos</span>
       </span>
-      ${shareButton()}
     </div>
     <div class="chips">
       ${edition.status !== "published"
         ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
       ${route ? `<button class="chip link-chip t-route" type="button" data-route="${esc(route.id)}">${esc(route.label)}</button>` : ""}
       ${edition.virtual_tour ? `<a class="chip link-chip t-year" href="${esc(edition.virtual_tour)}"
-        target="_blank" rel="noopener" title="Panorámicas de laredoturismo.es">Visita 360° ↗</a>` : ""}
+        target="_blank" rel="noopener" title="Panorámicas de laredoturismo.es">360° ↗</a>` : ""}
+      ${shareButton()}
     </div>
 
     ${ranked.length ? `
       <h3 class="section">Palmarés</h3>
+      ${cats.length > 1 ? `<div class="chart-tabs">${cats.map(cat =>
+        `<button class="view${cat === shownCat ? " is-on" : ""}" type="button"
+          data-edition-cat="${esc(cat)}">Categoría ${esc(cat)}</button>`).join("")}</div>` : ""}
       <table class="palmares${withPhotos ? " with-photo" : ""}">
         <thead><tr>
           ${withPhotos ? '<th class="c-photo" aria-label="Foto"></th>' : ""}
@@ -1116,14 +1157,15 @@ function renderEditionDetail(edition) {
           <th data-sort-type="text">Fuente</th>
         </tr></thead>
         <tbody>
-          ${ranked.map(entry => `
+          ${shown.map(entry => `
             <tr>
               ${withPhotos ? `<td class="c-photo">${(entry.image_urls || []).length
                 ? `<button class="thumb" type="button" data-float="${esc(entry.id)}"
                      data-tip="${esc(entry.name)}"><img src="${esc(entry.image_urls[0])}"
                      alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer"></button>`
                 : ""}</td>` : ""}
-              <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
+              <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.position === 1
+                ? `${ICON_TROPHY}` : ""}${cats.length > 1 || !entry.category ? "" : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
               <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
@@ -1797,6 +1839,13 @@ function bindEvents() {
       return;
     }
 
+    const editionCat = event.target.closest("[data-edition-cat]");
+    if (editionCat) {
+      state.editionCategory = editionCat.dataset.editionCat;
+      renderDetail();
+      return;
+    }
+
     const statsCat = event.target.closest("[data-stats-cat]");
     if (statsCat) {
       state.statsCategory = statsCat.dataset.statsCat;
@@ -1842,13 +1891,6 @@ function bindEvents() {
 }
 
 /* ── arranque ───────────────────────────────────────────────────────────── */
-
-/* Maquetas de cabecera en pruebas: ?maqueta=B|D|E. Provisional, se quita
- * cuando esté elegida. */
-{
-  const maqueta = new URLSearchParams(location.search).get("maqueta");
-  if (["B", "D", "E"].includes(maqueta)) document.body.classList.add(`maqueta-${maqueta}`);
-}
 
 fetch("batalla_de_flores/data/batalla_de_flores.json")
   .then(response => {
