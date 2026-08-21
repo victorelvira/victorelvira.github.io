@@ -33,7 +33,7 @@ const state = {
   floats: [],   // indice plano para la pestana Carrozas
   floatView: "grid",   // "grid" | "list": entra por las fotos, que es lo que engancha
   category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
-  statsCategory: "A",  // categoria del grafico de trayectorias
+  statsCategory: "all",   // "all" | "A" | "B" en el grafico de trayectorias
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
@@ -424,7 +424,7 @@ function categoryNote() {
 
 /* En cuadricula no hay cabeceras de tabla donde pinchar, asi que el orden se
  * elige aqui. Se limita a lo que tiene sentido mirando fotos. */
-function gridSort() {
+function gridSort(hidden = false) {
   const options = [
     ["year", "Por año"],
     ["name", "Alfabético"],
@@ -433,11 +433,12 @@ function gridSort() {
   ];
   const { key, dir } = state.sort.floats;
   return `
-    <select class="grid-sort" aria-label="Ordenar la cuadrícula">
+    <span class="sort-slot${hidden ? " is-hidden" : ""}">
+    <select class="grid-sort" aria-label="Ordenar la cuadrícula"${hidden ? " tabindex=\"-1\"" : ""}>
       ${options.map(([value, label]) => `<option value="${value}"${value === key ? " selected" : ""}>${label}</option>`).join("")}
     </select>
     <button class="view" type="button" data-flip="1"
-      title="Invertir el orden">${dir === 1 ? "↑" : "↓"}</button>`;
+      title="Invertir el orden">${dir === 1 ? "↑" : "↓"}</button></span>`;
 }
 
 function viewToggle() {
@@ -478,7 +479,7 @@ function renderFloatList() {
   const rows = filteredFloats();
   if (state.floatView === "grid") return renderFloatGrid(rows);
 
-  els.indexTools.innerHTML = `${viewToggle()}${categoryNote()}`;
+  els.indexTools.innerHTML = `${viewToggle()}${gridSort(true)}${categoryNote()}`;
   setCount(rows.length, state.floats.length, "carrozas");
   if (!rows.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna carroza encaja con la búsqueda.</p>';
@@ -502,7 +503,7 @@ function renderFloatList() {
             <span class="row-name">${esc(entry.name)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
             <span class="col-grp">${esc(entry.group_canonical || "–")}</span>
             <span class="col-num">${entry.year}</span>
-            <span class="col-num col-cat">${entry.category ? esc(entry.category) : "–"}</span>
+            <span class="col-num col-cat">${entry.category ? esc(entry.category) : "única"}</span>
             <span class="col-num">${entry.position != null ? `${entry.position}.º` : "–"}</span>
             <span class="row-go" aria-hidden="true">›</span>
           </button>`;
@@ -569,11 +570,14 @@ function yearAxis(scale, { from, to, step, height }) {
 /* Grafico 1: cada carrocista, una fila. Banda gris de su primera a su ultima
  * aparicion, y un punto por edicion en la que compitio, coloreado por puesto.
  * Asi se ve de un golpe cuando entran, cuando desaparecen y como les fue. */
+const CATEGORIES_FROM = 2011;
+
 function chartCareers(category) {
   const series = new Map();
   state.floats.forEach(entry => {
     if (entry.position == null || !entry.group_canonical) return;
-    if ((entry.category || null) !== category) return;
+    // "todas" recorre el siglo entero; A y B solo tienen sentido desde 2011.
+    if (category !== "all" && (entry.category || null) !== category) return;
     if (!series.has(entry.group_canonical)) series.set(entry.group_canonical, []);
     series.get(entry.group_canonical).push(entry);
   });
@@ -673,17 +677,27 @@ function renderStats() {
         <div class="kpi"><span>${longest.years.length}</span><small>ediciones de ${esc(longest.canonical_name)}</small></div>
       </div>
 
-      <h3 class="section">Carrozas por edición</h3>
-      <p class="chart-note">Cada barra es una edición, con el color de su nivel de datos.</p>
+      <h3 class="section">Carrozas documentadas por edición</h3>
+      <p class="chart-note">Cuenta lo que el archivo conserva, no necesariamente lo que desfiló:
+      donde la documentación es floja la barra se queda corta. El color es el nivel de datos.</p>
+      <div class="chart-legend">
+        ${TIERS.map(([cls, label]) => `<span><i class="key ${cls}"></i>${label}</span>`).join("")}
+      </div>
       ${chartFloatsPerYear()}
 
       <h3 class="section">Trayectoria de los carrocistas</h3>
       <div class="chart-tabs">
-        ${["A", "B"].map(cat => `<button class="view${category === cat ? " is-on" : ""}" type="button"
-          data-stats-cat="${cat}">Categoría ${cat}</button>`).join("")}
+        ${[["all", "Todas"], ["A", "Categoría A"], ["B", "Categoría B"]].map(([cat, label]) =>
+          `<button class="view${category === cat ? " is-on" : ""}" type="button"
+            data-stats-cat="${cat}">${label}</button>`).join("")}
       </div>
       <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
-      de su primera a su última carroza; cada punto es una edición, y los llenos son victorias.</p>
+      de su primera a su última carroza; cada punto es una edición, y el color dice cómo le fue.
+      ${category === "all"
+        ? `Las categorías A y B no existen antes de <b>${CATEGORIES_FROM}</b>, cuando el reglamento
+           municipal las creó según el tamaño de la carroza; por eso «Todas» es la única vista que
+           cubre el siglo entero.`
+        : `Solo desde <b>${CATEGORIES_FROM}</b>: antes de esa fecha había una única lista.`}</p>
       <div class="chart-legend">
         <span><i class="dot win"></i>1.º</span><span><i class="dot podium"></i>podio</span><span><i class="dot ran"></i>resto</span>
       </div>
@@ -707,7 +721,7 @@ function renderRouteList() {
           : '<span class="map-thumb is-empty">sin traza</span>'}
         <span class="route-copy">
           <span class="row-name">${esc(route.label)}</span>
-          <span class="row-sub">${yearRange(route.start_year, route.end_year)} · ${editions.length} ediciones · ${num(floats)} carrozas</span>
+          <span class="row-sub">(<b>${yearRange(route.start_year, route.end_year)}</b>) · ${editions.length} ediciones · ${num(floats)} carrozas</span>
           ${route.approximate ? '<span class="row-sub"><em>trazado aproximado</em></span>' : ""}
         </span>
       </button>`;
@@ -1320,8 +1334,8 @@ function chartGroupTimeline(entries) {
 
   return `
     <h3 class="section">Su trayectoria</h3>
-    ${categories.length > 1 ? `<p class="chart-note">Una línea por categoría: ${categories
-      .map(c => (c === SIN_CAT ? "años <b>sin categoría</b>" : `categoría <b>${esc(c)}</b>`)).join(" y ")}.</p>` : ""}
+    ${categories.length > 1 ? `<div class="chart-legend">${categories.map(c =>
+      `<span><i class="key key-${c === SIN_CAT ? "none" : esc(c)}"></i>${c === SIN_CAT ? "lista única" : esc(c)}</span>`).join("")}</div>` : ""}
     <svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
       aria-label="Evolución del puesto de ${esc(entries[0]?.group_canonical || "")} entre ${from} y ${to}">
       ${grid}
@@ -1347,8 +1361,13 @@ function renderGroupDetail(group) {
       <h2 style="font-size:22px">${esc(group.canonical_name)}</h2>
       ${shareButton()}
     </div>
-    <p class="span-note">${yearRange(group.first_year_seen, group.last_year_seen)}${categories.length
-      ? ` · ${categories.map(([cat, count]) => `${count} en categoría ${esc(cat)}`).join(", ")}` : ""}</p>
+    <p class="span-note">
+      Desfiló entre <b>${group.first_year_seen}</b> y <b>${group.last_year_seen}</b>
+      con <b>${num(group.float_count)}</b> carroza${group.float_count === 1 ? "" : "s"}${categories.length
+        ? `, de las cuales ${categories.map(([cat, count]) =>
+            `<b>${count}</b> en categoría ${esc(cat)}`).join(" y ")} (las categorías existen desde ${CATEGORIES_FROM})`
+        : ""}.
+    </p>
 
     <div class="kpis">
       <div class="kpi"><span>${num(group.years.length)}</span><small>ediciones</small></div>

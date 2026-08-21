@@ -43,6 +43,7 @@
   #navbar .nav-home{color:#cbbfae;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+  .brand,header h1{cursor:pointer}
 </style>
 </head>
 <body>
@@ -138,5 +139,6 @@ fetch('core.json').then(r=>r.json()).then(core=>{
   draw();
 }).catch(e=>{$('#count').textContent='Error loading core.json — '+e;});
 </script>
+<script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
 </body>
 </html>

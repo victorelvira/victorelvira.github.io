@@ -84,6 +84,7 @@
   #navbar .nav-home{color:#cbbfae;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+  .brand,header h1{cursor:pointer}
 </style>
 </head>
 <body>
@@ -143,13 +144,23 @@ function flavor(title, src, acts, note){
 }
 // duración PÚBLICA = MusicBrainz (barras por act, o barra de total). theopera101 = validación oculta.
 function durBlock(o){
+  const dr=o.dur_range;
   let inner;
-  if(o.mb_acts&&o.mb_acts.length) inner=actBars(o.mb_acts);
+  if(dr && dr.acts && dr.acts.length){          // mediana + rango de varias grabaciones
+    const segs=dr.acts.map((a,i)=>{
+      const w=Math.max(a.med*PXMIN,4), lab=w>40?`${a.med}min`:'';
+      return `<div class="seg" style="width:${w}px;background:var(${COLORS[i%6]})" title="${esc(a.name)}: median ${a.med} min (range ${a.lo}–${a.hi}, ${a.n} recordings)">${lab}</div>`;
+    }).join('');
+    const t=dr.total, one=dr.n===1;
+    inner=`<div class="bar">${segs}</div><div class="tot">median ${hhmm(t.med)}`+
+      (one?` · 1 recording`:` · range ${hhmm(t.lo)}–${hhmm(t.hi)} · ${dr.n} recordings`)+`</div>`;
+  }
+  else if(o.mb_acts&&o.mb_acts.length) inner=actBars(o.mb_acts);
   else if(o.mb_total_min) inner=`<div class="bar"><div class="seg" style="width:${Math.max(o.mb_total_min*PXMIN,130)}px;background:var(--a2)">${hhmm(o.mb_total_min)}</div></div><div class="tot">total ${hhmm(o.mb_total_min)} · (no per-act breakdown)</div>`;
   else inner=`<div class="pending">No duration found yet.</div>`;
   let val='';
   if(o.dur_validated) val=`<div class="legend">✓ duration cross-checked</div>`;
-  return `<div class="flavor"><div class="ttl">Duration by act <span class="src">recording · MusicBrainz</span></div>${inner}${val}</div>`;
+  return `<div class="flavor"><div class="ttl">Duration by act <span class="src">recordings · MusicBrainz</span></div>${inner}${val}</div>`;
 }
 
 let F={q:'', facet:null};
@@ -266,5 +277,6 @@ fetch('core.json').then(r=>r.json()).then(d=>{
   if(po){const i=DATA.findIndex(o=>o.title===po||o.title_en===po);if(i>=0)selectOpera(i);}
 }).catch(e=>{$('#count').textContent='Error loading core.json — '+e;});
 </script>
+<script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
 </body>
 </html>

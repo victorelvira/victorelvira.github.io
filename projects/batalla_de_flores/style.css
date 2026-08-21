@@ -265,8 +265,9 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums;
 }
 .year:hover { border-color: var(--rose); }
-.year.is-active { background: var(--rose); border-color: var(--rose); color: #fff; }
-.year.is-active .year-meta { color: rgba(255, 255, 255, 0.82); }
+.year.is-active { background: var(--t-year); border-color: var(--t-year); color: #fff; }
+.year.is-active .year-num { color: #fff; }
+.year.is-active .year-meta { color: rgba(255, 255, 255, 0.85); }
 
 .year-num { font-size: 13px; font-weight: 600; letter-spacing: -0.2px; }
 .year-meta { font-size: 10.5px; color: var(--muted); line-height: 1.1; }
@@ -301,7 +302,9 @@ a { color: inherit; }
   font: inherit; color: inherit;
 }
 .row:hover { background: var(--rose-soft); }
-.row.is-active { background: var(--rose-soft); box-shadow: inset 2px 0 0 var(--rose); }
+.row.is-active { background: var(--t-group-bg); box-shadow: inset 2px 0 0 var(--t-group); }
+.rows-floats .row.is-active { background: var(--t-float-bg); box-shadow: inset 2px 0 0 var(--t-float); }
+.rows-routes .row.is-active { background: var(--t-route-bg); box-shadow: inset 2px 0 0 var(--t-route); }
 .row-name { font-weight: 600; }
 .row-meta { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .row-sub { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
@@ -401,7 +404,7 @@ a { color: inherit; }
 }
 .tile-meta { padding: 1px 7px 6px; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
 .tile:hover { border-color: var(--rose); }
-.tile.is-active { border-color: var(--rose); box-shadow: 0 0 0 2px var(--rose-soft); }
+.tile.is-active { border-color: var(--t-float); box-shadow: 0 0 0 2px var(--t-float-bg); }
 
 /* auto-fit con tope: una sola foto crece hasta 240 px en vez de quedarse en la
    primera columna de 150, y varias siguen embaldosando. */
@@ -416,6 +419,14 @@ a { color: inherit; }
 .chart-tabs { display: flex; gap: 5px; margin-bottom: 6px; }
 .chart-legend { display: flex; gap: 12px; margin-bottom: 4px; color: var(--muted); font-size: 11px; }
 .chart-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+.chart-legend i.key { width: 14px; height: 4px; border-radius: 2px; }
+.key.tier-full { background: var(--leaf); }
+.key.tier-partial { background: var(--gold); }
+.key.tier-planned { background: #e07a1f; }
+.key.tier-none { background: #cfc4b8; }
+.key.key-A { background: var(--t-group); }
+.key.key-B { background: var(--t-year); }
+.key.key-none { background: #b3a79b; }
 
 .axis-line { stroke: var(--line-soft); stroke-width: 1; }
 .axis-label { fill: var(--muted); font-size: 9px; text-anchor: middle; }
@@ -638,7 +649,13 @@ ul.plain a { color: var(--sky); word-break: break-all; }
 
 /* ── leyenda y pie ─────────────────────────────────────────────────────── */
 
+/* El ancho fijo evita que los botones salten al cambiar de vista: «Fotos» y
+   «Lista» no miden lo mismo y el desplegable de orden solo existe en fotos. */
 .tools { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+.view-toggle .view { min-width: 62px; justify-content: center; display: inline-flex; }
+.grid-sort { min-width: 96px; }
+.sort-slot { display: inline-flex; align-items: center; gap: 6px; }
+.sort-slot.is-hidden { visibility: hidden; }
 .tools:empty { display: none; }
 .count:empty { display: none; }
 
@@ -729,14 +746,15 @@ ul.plain a { color: var(--sky); word-break: break-all; }
      sin barra de color. La abierta rompe la línea y despliega su rejilla. */
   .decades { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
   .decade-row { display: contents; }
+  /* Las décadas se parecían demasiado a los años. Ahora son etiquetas macizas
+     sin borde y en versalitas; los años siguen siendo fichas blancas. */
   .decade-row .decade-label {
-    width: auto; padding: 6px 10px;
-    border: 1px solid var(--line); border-radius: 999px; background: #fffdfa;
-    font-size: 13px; font-weight: 600; color: var(--ink);
+    width: auto; padding: 5px 11px;
+    border: 0; border-radius: 6px; background: #eee4d7;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #6d5a55;
   }
-  .decade-row.is-open .decade-label {
-    background: var(--rose-soft); border-color: #eccdd5; color: var(--rose);
-  }
+  .decade-row.is-open .decade-label { background: var(--t-year); color: #fff; }
+  .decade-row.is-open .decade-count { color: rgba(255, 255, 255, 0.75); }
   .decade-row .year-grid { flex-basis: 100%; }
   .decade-label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
   .decade-count { display: inline; color: var(--muted); font-size: 11px; font-weight: 400; }

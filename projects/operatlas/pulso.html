@@ -38,6 +38,7 @@
   #navbar .nav-home{color:#cbbfae;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+  .brand,header h1{cursor:pointer}
 </style>
 </head>
 <body>
@@ -65,9 +66,18 @@
   <div class="lead">Performances logged per year worldwide. Opera <b>as it is actually staged</b>, not just as it is catalogued.</div>
   <div class="chartbox"><svg id="chart" viewBox="0 0 1000 320"></svg></div>
 
+  <div style="display:flex;align-items:baseline;gap:10px;margin:32px 0 2px;flex-wrap:wrap">
+    <h2 style="margin:0">Rising &amp; falling</h2>
+    <span class="lead" style="margin:0">among the
+      <select id="tier" style="background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:6px;padding:3px 7px;font-size:13px">
+        <option value="100" selected>top 100</option><option value="200">top 200</option>
+        <option value="500">top 500</option><option value="0">all</option>
+      </select> most performed · recent 5 years vs a decade earlier
+    </span>
+  </div>
   <div class="cols">
-    <div><h2>📈 On the rise</h2><div class="lead">more performances now than a decade ago</div><div id="up"></div></div>
-    <div><h2>📉 In decline</h2><div class="lead">performed less than before</div><div id="down"></div></div>
+    <div><h2 style="font-size:13px">📈 On the rise</h2><div id="up"></div></div>
+    <div><h2 style="font-size:13px">📉 In decline</h2><div id="down"></div></div>
   </div>
 
   <h2>Most performed (2020–2025)</h2>
@@ -118,17 +128,22 @@ fetch('pulse.json').then(r=>r.json()).then(P=>{
   const ops=Object.values(P.operas);
   const idx=y=>yr.indexOf(y);
   const sumR=(o,a,b)=>o.series.slice(idx(a),idx(b)+1).reduce((x,y)=>x+y,0);
-  const scored=ops.map(o=>{
-    const recent=sumR(o,2021,2025), past=sumR(o,2010,2014);
-    return {o, recent, past, pct:past>=15?(recent-past)/past:null};
-  }).filter(x=>x.pct!==null && x.recent>=40);
-  const up=scored.slice().sort((a,b)=>b.pct-a.pct).slice(0,12);
-  const down=scored.slice().sort((a,b)=>a.pct-b.pct).slice(0,12);
+  // ranking por funciones totales en la ventana (para filtrar por tier de popularidad)
+  const ranked=ops.map(o=>({o, tot:sumR(o,1996,2025)})).sort((a,b)=>b.tot-a.tot).map(x=>x.o);
   const rowHtml=(x,cls)=>`<div class="row" onclick="go('${esc(x.o.title).replace(/'/g,'&#39;')}')">
     ${spark(x.o.series)}<span class="t">${esc(x.o.title)} <small>${esc(x.o.composer)}</small></span>
     <span class="pct" style="color:var(${cls})">${x.pct>0?'+':''}${Math.round(x.pct*100)}%</span></div>`;
-  $('#up').innerHTML=up.map(x=>rowHtml(x,'--up')).join('');
-  $('#down').innerHTML=down.map(x=>rowHtml(x,'--down')).join('');
+  function renderTrends(){
+    const tierN=+$('#tier').value;
+    const pool = tierN ? ranked.slice(0, tierN) : ranked;
+    const scored=pool.map(o=>{
+      const recent=sumR(o,2021,2025), past=sumR(o,2010,2014);
+      return {o, recent, past, pct:past>=20?(recent-past)/past:null};
+    }).filter(x=>x.pct!==null);
+    $('#up').innerHTML  = scored.slice().sort((a,b)=>b.pct-a.pct).slice(0,12).map(x=>rowHtml(x,'--up')).join('');
+    $('#down').innerHTML= scored.slice().sort((a,b)=>a.pct-b.pct).slice(0,12).map(x=>rowHtml(x,'--down')).join('');
+  }
+  $('#tier').onchange=renderTrends; renderTrends();
 
   // ==== top 2020-2025 ====
   const top=ops.map(o=>({o,r:sumR(o,2020,2025)})).sort((a,b)=>b.r-a.r).slice(0,20);
@@ -140,5 +155,6 @@ fetch('pulse.json').then(r=>r.json()).then(P=>{
   $('#top').innerHTML=`<div>${col(top.slice(0,half))}</div><div>${col(top.slice(half))}</div>`;
 }).catch(e=>{$('#chart').outerHTML='Error loading pulse.json — '+e;});
 </script>
+<script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
 </body>
 </html>
