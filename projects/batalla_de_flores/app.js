@@ -390,7 +390,8 @@ function renderGroupList() {
     <div class="rows rows-groups">
       <div class="row-head">
         ${sortHeader("groups", "name", "Grupo")}
-        ${sortHeader("groups", "from", "Periodo", "col-num col-span")}
+        ${sortHeader("groups", "from", "Desde", "col-num")}
+        ${sortHeader("groups", "to", "Hasta", "col-num")}
         ${sortHeader("groups", "editions", 'Edic<span class="short">.</span><span class="long">iones</span>', "col-num")}
         ${sortHeader("groups", "floats", "Carrozas", "col-num col-floats")}
         ${sortHeader("groups", "wins", "🏆", "col-num col-wins")}
@@ -402,7 +403,8 @@ function renderGroupList() {
         return `
           <button class="row${active ? " is-active" : ""}" type="button" data-group="${esc(slug)}">
             <span class="row-name">${esc(group.canonical_name)}</span>
-            <span class="col-num col-span">${yearRange(group.first_year_seen, group.last_year_seen)}</span>
+            <span class="col-num">${group.first_year_seen}</span>
+            <span class="col-num">${group.last_year_seen}</span>
             <span class="col-num">${group.years.length}</span>
             <span class="col-num col-floats">${group.float_count}</span>
             <span class="col-num col-wins">${group.wins || "–"}</span>

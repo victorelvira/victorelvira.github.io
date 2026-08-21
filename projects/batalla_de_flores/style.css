@@ -310,9 +310,11 @@ a { color: inherit; }
 .row-sub { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
 
 /* Lista de grupos en columnas: nombre + desde/hasta + recuentos. */
+/* Nombre a la izquierda, cifras a la derecha: es lo que deja comparar columnas
+   de números de un vistazo. El nombre cede ancho, que le sobraba. */
 .rows-groups .row-head,
 .rows-groups .row {
-  grid-template-columns: minmax(0, 1fr) 84px 76px 76px 62px 14px;
+  grid-template-columns: minmax(0, 1fr) 54px 54px 74px 74px 56px 14px;
   align-items: baseline;
 }
 .rows-groups .row-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -692,7 +694,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
      y que el texto se recorte en vez de desbordarse. */
   .rows-groups .row-head,
   .rows-groups .row {
-    grid-template-columns: minmax(0, 1fr) 62px 46px 26px 10px;
+    grid-template-columns: minmax(0, 1fr) 38px 38px 34px 24px 10px;
     gap: 2px 5px;
     font-size: 13px;
   }
@@ -715,8 +717,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .rows-floats .row .col-num,
   .rows-floats .row-head .sort.col-num { text-align: left; font-size: 11.5px; }
   .rows-floats .row { padding: 5px 6px; }
-  .rows-groups .row .col-num,
-  .rows-groups .row-head .sort.col-num { text-align: left; font-size: 11.5px; }
+  .rows-groups .row .col-num { font-size: 11.5px; }
   .rows-groups .row-head { font-size: 9px; letter-spacing: 0.02em; }
   .rows-groups .row { padding: 5px 6px; }
 }
