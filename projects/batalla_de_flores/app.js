@@ -964,10 +964,11 @@ function renderRouteMap(activeId, { variant = "detail" } = {}) {
   const all = routeGeometries().flatMap(route => route.geometry.coordinates);
   if (!all.length) return "";
 
-  const sizes = { detail: [420, 300], compact: [300, 200], thumb: [128, 84] };
+  const sizes = { detail: [420, 300], compact: [300, 200], thumbstrip: [220, 140], thumb: [128, 84] };
   const [width, height] = sizes[variant] || sizes.detail;
 
   const zoomToRoute = variant !== "thumb" && active?.geometry?.coordinates?.length;
+  const light = variant === "thumbstrip";
   const project = makeProjection(
     zoomToRoute ? active.geometry.coordinates : all,
     { width, height, margin: zoomToRoute ? 1.9 : 1.5, padding: variant === "thumb" ? 6 : 12 },
@@ -979,9 +980,9 @@ function renderRouteMap(activeId, { variant = "detail" } = {}) {
       ${mapLayers(project, activeId, {
         showStreets: variant !== "thumb",
         showLabels: variant === "detail",
-        showArrows: variant !== "thumb",
+        showArrows: variant !== "thumb" && !light,
       })}
-      ${variant === "thumb" ? "" : scaleBar(project)}
+      ${variant === "thumb" || light ? "" : scaleBar(project)}
     </svg>`;
 
   if (variant === "thumb") return `<span class="map-thumb">${svg}</span>`;
@@ -1003,7 +1004,10 @@ function bestSourceUrl(entry) {
 function sourceCell(entry) {
   const url = bestSourceUrl(entry);
   const tag = `<span class="tag" title="${esc(sourceLabel(entry.source_type))} (source_type: ${esc(entry.source_type || "")})">${esc(sourceShort(entry.source_type))}</span>`;
-  return `<span class="src">${tag}${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">fuente ↗</a>` : ""}</span>`;
+  // En movil solo la flecha: "fuente ↗" se comia el ancho de la tabla.
+  return `<span class="src">${tag}${url
+    ? `<a href="${esc(url)}" target="_blank" rel="noopener" title="Ver la fuente"><span class="long">fuente </span>↗</a>`
+    : ""}</span>`;
 }
 
 /* "A1.º" ordenado como texto daria A1, A10, A2. Se genera una clave
@@ -1054,7 +1058,7 @@ function provenanceBlock(entries, sources) {
 
   return `
     <div class="provenance">
-      <b>Procedencia</b>
+      <b>Fuentes</b>
       <ul>
         ${[...counts.entries()].sort((a, b) => b[1] - a[1])
           .map(([label, count]) => `<li>${esc(label)}: ${count} entrada${count === 1 ? "" : "s"}</li>`).join("")
@@ -1078,43 +1082,35 @@ function renderEditionDetail(edition) {
   const unranked = entries.filter(entry => !(entry.position != null || entry.category));
   const route = routeForYear(edition.year);
 
+  const groupCount = new Set(entries.map(e => e.group_canonical).filter(Boolean)).size;
+  // La miniatura va como columna del palmares en vez de en galeria aparte: la
+  // tabla ya tiene el ancho, y asi la foto queda junto a su carroza.
+  const withPhotos = ranked.some(entry => (entry.image_urls || []).length);
+
   els.detail.innerHTML = `
     <div class="detail-head">
       <h2>${edition.year}</h2>
       <span class="label">${esc(edition.edition_label || "")}</span>
-      <span class="source-note">${esc(COVERAGE_LABEL[edition.coverage] || "")}</span>
+      <span class="head-counts">
+        <b>${num(edition.float_count || 0)}</b> carrozas
+        <b>${num(groupCount)}</b> grupos
+      </span>
       ${shareButton()}
     </div>
     <div class="chips">
       ${edition.status !== "published"
         ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
       ${route ? `<button class="chip link-chip t-route" type="button" data-route="${esc(route.id)}">${esc(route.label)}</button>` : ""}
+      ${edition.virtual_tour ? `<a class="chip link-chip t-year" href="${esc(edition.virtual_tour)}"
+        target="_blank" rel="noopener" title="Panorámicas de laredoturismo.es">Visita 360° ↗</a>` : ""}
     </div>
-
-    <div class="kpis">
-      <div class="kpi"><span>${num(edition.float_count || 0)}</span><small>carrozas</small></div>
-      <div class="kpi"><span>${num(new Set(entries.map(e => e.group_canonical).filter(Boolean)).size)}</span><small>grupos</small></div>
-      ${ranked.length !== entries.length
-        ? `<div class="kpi"><span>${num(ranked.length)}</span><small>con posición</small></div>` : ""}
-    </div>
-
-    ${route?.geometry ? renderRouteMap(route.id, { variant: "compact" }) : ""}
-
-    ${renderGallery(entries)}
-
-    ${edition.virtual_tour ? `
-      <h3 class="section">Ver la edición</h3>
-      <p><a class="tour" href="${esc(edition.virtual_tour)}" target="_blank" rel="noopener">
-        Visita virtual en 360° de ${edition.year} ↗</a></p>
-      <p class="muted">Panorámicas del desfile publicadas por laredoturismo.es. No identifican
-      carrozas una a una, pero son la única imagen que existe de esta edición: el archivo
-      fotográfico de batalladeflores.net se detiene en 2012.</p>` : ""}
 
     ${ranked.length ? `
       <h3 class="section">Palmarés</h3>
-      <table class="palmares">
+      <table class="palmares${withPhotos ? " with-photo" : ""}">
         <thead><tr>
-          <th data-sort-type="text">Pos.</th>
+          ${withPhotos ? '<th class="c-photo" aria-label="Foto"></th>' : ""}
+          <th data-sort-type="text">Puesto</th>
           <th data-sort-type="text">Carroza</th>
           <th data-sort-type="text">Grupo</th>
           <th data-sort-type="text">Fuente</th>
@@ -1122,6 +1118,11 @@ function renderEditionDetail(edition) {
         <tbody>
           ${ranked.map(entry => `
             <tr>
+              ${withPhotos ? `<td class="c-photo">${(entry.image_urls || []).length
+                ? `<button class="thumb" type="button" data-float="${esc(entry.id)}"
+                     data-tip="${esc(entry.name)}"><img src="${esc(entry.image_urls[0])}"
+                     alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer"></button>`
+                : ""}</td>` : ""}
               <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
               <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
@@ -1157,6 +1158,12 @@ function renderEditionDetail(edition) {
     ${(edition.notes || []).length ? `
       <h3 class="section">Notas</h3>
       <ul class="plain">${edition.notes.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : ""}
+
+    ${renderGallery(entries.filter(entry => !ranked.includes(entry)))}
+
+    ${route?.geometry ? `
+      <h3 class="section">Recorrido</h3>
+      ${renderRouteMap(route.id, { variant: "thumbstrip" })}` : ""}
 
     ${provenanceBlock(entries, edition.source_urls || [])}
   `;
@@ -1293,7 +1300,7 @@ function renderFloatDetail(entry) {
       : ""}
 
     <div class="provenance">
-      <b>Procedencia</b>
+      <b>Fuentes</b>
       <ul>
         <li>${esc(sourceLabel(entry.source_type))}</li>
         ${edition ? `<li>Edición de ${entry.year}: ${esc(edition.edition_label || "")}</li>` : ""}
@@ -1473,7 +1480,7 @@ function renderRouteDetail(route) {
         <span class="year-num">${e.year}</span><span class="year-bar"></span></button>`).join("")}
     </div>
     <div class="provenance">
-      <b>Procedencia</b>
+      <b>Fuentes</b>
       <ul>
         <li>Las eras las declara el Ayuntamiento de Laredo en su página de la fiesta.</li>
         ${route.osm ? `<li>Geometría: OpenStreetMap, ${route.osm.way_ids.length === 1
@@ -1835,6 +1842,13 @@ function bindEvents() {
 }
 
 /* ── arranque ───────────────────────────────────────────────────────────── */
+
+/* Maquetas de cabecera en pruebas: ?maqueta=B|D|E. Provisional, se quita
+ * cuando esté elegida. */
+{
+  const maqueta = new URLSearchParams(location.search).get("maqueta");
+  if (["B", "D", "E"].includes(maqueta)) document.body.classList.add(`maqueta-${maqueta}`);
+}
 
 fetch("batalla_de_flores/data/batalla_de_flores.json")
   .then(response => {

@@ -347,6 +347,29 @@ a { color: inherit; }
 
 .detail-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
 .detail-head .source-note { color: var(--muted); font-size: 11.5px; }
+
+/* Cifras de la edición en la propia cabecera: ocupan una línea en vez de
+   cuatro tarjetas. */
+.head-counts {
+  display: inline-flex; gap: 10px; margin-left: auto;
+  color: var(--muted); font-size: 12px; white-space: nowrap;
+}
+.head-counts b {
+  display: inline-block; min-width: 22px; padding: 1px 6px; margin-right: 2px;
+  border-radius: 6px; background: #f1e9df; color: var(--ink);
+  font-variant-numeric: tabular-nums; text-align: center;
+}
+
+/* Miniatura como columna del palmarés. */
+table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo { width: 54px; }
+.thumb { padding: 0; border: 0; background: none; cursor: pointer; display: block; }
+.thumb img {
+  display: block; width: 46px; height: 34px; object-fit: cover;
+  border-radius: 5px; border: 1px solid var(--line); background: #f1e9df;
+}
+.thumb:hover img { border-color: var(--t-float); }
+
+.map-thumbstrip svg { max-width: 240px; }
 .span-note { margin: 2px 0 8px; color: var(--muted); font-size: 12.5px; }
 
 .share {
@@ -700,6 +723,15 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   }
   .col-floats { display: none; }
   .rows-groups .row-head .sort { white-space: nowrap; font-size: 8.5px; }
+
+  /* La tabla del palmarés en móvil: fuente reducida a la flecha, grupo más
+     estrecho y sin partir palabras a lo bestia. */
+  .src .long { display: none; }
+  table.palmares { font-size: 12.5px; }
+  table.palmares col.c-src, table.palmares th:last-child { width: 62px; }
+  table.palmares td.group { hyphens: auto; }
+  .thumb img { width: 40px; height: 30px; }
+  table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo { width: 46px; }
   /* «Ediciones» no cabe: se queda en «Edic.» sin perder sentido. */
   .row-head .long { display: none; }
   .row-head .short { display: inline; }
@@ -742,6 +774,10 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .stats span { display: inline-flex; align-items: baseline; gap: 3px; }
 
   .pane-head { padding: 6px 6px; }
+  /* Fotos / Lista pegados a la izquierda, y el hueco del orden reservado para
+     que no bailen al cambiar de vista. */
+  .tools { margin-left: 0; flex-basis: 100%; }
+  .count { margin-left: auto; }
   /* Las cinco pestañas se pasaban por un pelo y saltaban a una segunda fila. */
   .tabs { gap: 3px; }
   .tab { padding: 5px 9px; font-size: 12.5px; }
@@ -794,3 +830,16 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   font-size: 13px; font-weight: 600; text-decoration: none;
 }
 .tour:hover { background: var(--t-year); color: #fff; }
+
+/* ── maquetas de cabecera en pruebas ───────────────────────────────────────
+   Se activan con ?maqueta=B|D|E para poder compararlas en el movil antes de
+   elegir una. Cuando esté decidida, esto y su gancho en app.js se borran. */
+body.maqueta-B .bar-sub,
+body.maqueta-B .stats,
+body.maqueta-B .bar-actions { padding-left: 0; }
+
+body.maqueta-D .controls { padding-left: calc(var(--logo) + var(--logo-gap)); }
+
+body.maqueta-E .bar-sub,
+body.maqueta-E .stats { padding-left: 0; }
+body.maqueta-E .bar-actions { padding-left: 0; justify-content: flex-end; }
