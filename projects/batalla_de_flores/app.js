@@ -782,6 +782,15 @@ function renderEditionDetail(edition) {
 
 /* ── detalle: grupo ─────────────────────────────────────────────────────── */
 
+/* El emoji de bronce se leia como "tercer puesto", que es justo lo contrario de
+ * lo que cuenta. Un podio de tres escalones no deja lugar a dudas. */
+const ICON_TROPHY = `<svg class="kpi-icon" viewBox="0 0 16 16" aria-hidden="true">
+  <path d="M4 2h8v3a4 4 0 0 1-8 0V2z"/><path d="M2 3h2v2a2 2 0 0 1-2-2zM14 3h-2v2a2 2 0 0 0 2-2z"/>
+  <path d="M7 9h2v3H7zM5 12h6v2H5z"/></svg>`;
+const ICON_PODIUM = `<svg class="kpi-icon" viewBox="0 0 16 16" aria-hidden="true">
+  <rect x="6" y="4" width="4" height="10"/><rect x="1.5" y="7.5" width="4" height="6.5"/>
+  <rect x="10.5" y="9" width="4" height="5"/></svg>`;
+
 function renderGroupDetail(group) {
   const entries = [];
   state.editions.forEach(edition => {
@@ -805,8 +814,8 @@ function renderGroupDetail(group) {
     <div class="kpis">
       <div class="kpi"><span>${num(group.years.length)}</span><small>ediciones</small></div>
       <div class="kpi"><span>${num(group.float_count)}</span><small>carrozas</small></div>
-      <div class="kpi"><span>🏆 ${num(group.wins)}</span><small>victorias</small></div>
-      <div class="kpi"><span>🥉 ${num(podium)}</span><small>podios (top 3)</small></div>
+      <div class="kpi"><span>${ICON_TROPHY}${num(group.wins)}</span><small>victorias</small></div>
+      <div class="kpi"><span>${ICON_PODIUM}${num(podium)}</span><small title="Primer, segundo o tercer puesto">podios</small></div>
     </div>
 
     ${renderGallery(entries)}
@@ -1056,8 +1065,16 @@ function latestRankedEdition() {
   return [...state.editions].reverse().find(edition => (edition.result_count || 0) > 0) || null;
 }
 
+/* Cerrar la capa tiene que deshacer la seleccion entera, no solo taparla: si
+ * solo se ocultaba, el ano seguia marcado en la rejilla y la URL seguia
+ * apuntando a el, asi que recargar o compartir devolvia a la ficha cerrada. */
 function closeDetail() {
+  if (!document.body.classList.contains("detail-open")) return;
   document.body.classList.remove("detail-open");
+  state.selection = null;
+  history.replaceState(null, "", location.pathname + location.search);
+  renderIndex();
+  renderDetail();
 }
 
 function resetToStart() {

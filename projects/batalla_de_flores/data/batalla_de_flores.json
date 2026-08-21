@@ -36520,8 +36520,25 @@
       }
     }
   ],
-  "version": "0.12.1",
-  "built_at": "2026-08-21 14:17",
+  "version": "0.14.1",
+  "about": {
+    "url": "https://victorelvira.github.io/projects/batalla_de_flores.html",
+    "compiled_by": "Víctor Elvira",
+    "sources": [
+      {
+        "name": "batalladeflores.net",
+        "url": "https://www.batalladeflores.net/",
+        "role": "archivo histórico: palmarés, fichas de carroza e imágenes (~94% de las entradas)"
+      },
+      {
+        "name": "Ayuntamiento de Laredo",
+        "url": "https://www.laredo.es/09/fiestas_flores.php",
+        "role": "resultados recientes, cancelaciones y eras de recorrido"
+      }
+    ],
+    "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
+  },
+  "built_at": "2026-08-21 14:35",
   "map_features": [
     {
       "id": "route_origin_1908",
