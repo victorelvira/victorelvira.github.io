@@ -31,8 +31,9 @@ const state = {
   editions: [],
   groups: [],
   floats: [],   // indice plano para la pestana Carrozas
-  floatView: "list",   // "list" | "grid"
+  floatView: "grid",   // "grid" | "list": entra por las fotos, que es lo que engancha
   category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
+  statsCategory: "A",  // categoria del grafico de trayectorias
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
@@ -374,7 +375,7 @@ function sortHeader(mode, key, label, extraClass = "") {
   const isActive = active === key;
   const arrow = isActive ? (dir === 1 ? " ▲" : " ▼") : "";
   return `<button class="sort${isActive ? " is-sorted" : ""} ${extraClass}" type="button"
-    data-sort="${mode}:${key}" aria-sort="${isActive ? (dir === 1 ? "ascending" : "descending") : "none"}"
+    data-sort-by="${mode}:${key}" aria-sort="${isActive ? (dir === 1 ? "ascending" : "descending") : "none"}"
   >${label}${arrow}</button>`;
 }
 
@@ -442,10 +443,10 @@ function gridSort() {
 function viewToggle() {
   return `
     <div class="view-toggle">
-      <button class="view${state.floatView === "list" ? " is-on" : ""}" type="button"
-              data-view="list" title="Ver como lista">☰</button>
       <button class="view${state.floatView === "grid" ? " is-on" : ""}" type="button"
-              data-view="grid" title="Ver como cuadrícula de fotos">▦</button>
+              data-view="grid" title="Ver las fotos en cuadrícula">▦ Fotos</button>
+      <button class="view${state.floatView === "list" ? " is-on" : ""}" type="button"
+              data-view="list" title="Ver como tabla ordenable">☰ Lista</button>
     </div>`;
 }
 
@@ -509,6 +510,138 @@ function renderFloatList() {
     </div>`;
 }
 
+/* ── indice: numeros ────────────────────────────────────────────────────── */
+
+/* Graficos en SVG a mano, sin libreria: son tres, fijos, y meter una
+ * dependencia de 200 KB para esto no compensa. */
+
+const CHART = { w: 720, rowH: 13, padL: 128, padR: 14, padT: 16, padB: 22 };
+
+function statsYears() {
+  const years = state.editions.map(edition => edition.year);
+  return { min: Math.min(...years), max: Math.max(...years) };
+}
+
+function xScale(year, width) {
+  const { min, max } = statsYears();
+  return CHART.padL + ((year - min) / (max - min)) * (width - CHART.padL - CHART.padR);
+}
+
+function yearAxis(width, height) {
+  const { min, max } = statsYears();
+  const ticks = [];
+  for (let year = Math.ceil(min / 20) * 20; year <= max; year += 20) ticks.push(year);
+  return ticks.map(year => {
+    const x = xScale(year, width).toFixed(1);
+    return `<line class="axis-line" x1="${x}" y1="${CHART.padT - 6}" x2="${x}" y2="${height - CHART.padB}"/>
+      <text class="axis-label" x="${x}" y="${height - CHART.padB + 13}">${year}</text>`;
+  }).join("");
+}
+
+/* Grafico 1: cada carrocista, una fila. Banda gris de su primera a su ultima
+ * aparicion, y un punto por edicion en la que compitio, coloreado por puesto.
+ * Asi se ve de un golpe cuando entran, cuando desaparecen y como les fue. */
+function chartCareers(category) {
+  const series = new Map();
+  state.floats.forEach(entry => {
+    if (entry.position == null || !entry.group_canonical) return;
+    if ((entry.category || null) !== category) return;
+    if (!series.has(entry.group_canonical)) series.set(entry.group_canonical, []);
+    series.get(entry.group_canonical).push(entry);
+  });
+
+  const rows = [...series.entries()]
+    .filter(([, items]) => items.length >= 3)
+    .map(([name, items]) => ({
+      name,
+      items: items.sort((a, b) => a.year - b.year),
+      from: Math.min(...items.map(i => i.year)),
+      to: Math.max(...items.map(i => i.year)),
+    }))
+    .sort((a, b) => a.from - b.from || a.to - b.to);
+
+  if (!rows.length) return '<p class="empty">No hay suficientes datos en esta categoría.</p>';
+
+  const height = CHART.padT + rows.length * CHART.rowH + CHART.padB;
+  const body = rows.map((row, index) => {
+    const y = CHART.padT + index * CHART.rowH + CHART.rowH / 2;
+    const dots = row.items.map(item => {
+      const cls = item.position === 1 ? "win" : item.position <= 3 ? "podium" : "ran";
+      return `<circle class="dot ${cls}" cx="${xScale(item.year, CHART.w).toFixed(1)}" cy="${y}" r="${item.position === 1 ? 3.4 : 2.6}">
+        <title>${esc(row.name)} · ${item.year} · ${item.position}.º</title></circle>`;
+    }).join("");
+    return `
+      <g class="career" data-group="${esc(slugifyGroup(row.name))}">
+        <rect class="career-hit" x="0" y="${y - CHART.rowH / 2}" width="${CHART.w}" height="${CHART.rowH}"/>
+        <text class="career-name" x="${CHART.padL - 8}" y="${y + 3.2}">${esc(row.name)}</text>
+        <line class="span" x1="${xScale(row.from, CHART.w).toFixed(1)}" y1="${y}"
+              x2="${xScale(row.to, CHART.w).toFixed(1)}" y2="${y}"/>
+        ${dots}
+      </g>`;
+  }).join("");
+
+  return `<svg class="chart" viewBox="0 0 ${CHART.w} ${height}" role="img"
+    aria-label="Trayectoria de cada carrocista a lo largo de los años">
+    ${yearAxis(CHART.w, height)}${body}</svg>`;
+}
+
+/* Grafico 2: cuantas carrozas desfilaron cada edicion. */
+function chartFloatsPerYear() {
+  const width = CHART.w;
+  const height = 150;
+  const rows = state.editions.filter(edition => edition.float_count > 0);
+  const top = Math.max(...rows.map(edition => edition.float_count));
+  const base = height - CHART.padB;
+
+  const bars = rows.map(edition => {
+    const x = xScale(edition.year, width);
+    const h = (edition.float_count / top) * (base - CHART.padT);
+    return `<rect class="bar ${coverageTier(edition)}" x="${(x - 1.8).toFixed(1)}" y="${(base - h).toFixed(1)}"
+      width="3.6" height="${h.toFixed(1)}" data-year="${edition.year}">
+      <title>${edition.year}: ${edition.float_count} carrozas</title></rect>`;
+  }).join("");
+
+  return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
+    aria-label="Carrozas por edición">
+    <text class="axis-label" x="${CHART.padL - 8}" y="${CHART.padT + 4}" text-anchor="end">${top}</text>
+    <line class="axis-line" x1="${CHART.padL}" y1="${base}" x2="${width - CHART.padR}" y2="${base}"/>
+    ${yearAxis(width, height)}${bars}</svg>`;
+}
+
+function renderStats() {
+  const summary = state.dataset.summary || {};
+  const biggest = [...state.editions].sort((a, b) => b.float_count - a.float_count)[0];
+  const topGroup = [...state.groups].sort((a, b) => b.wins - a.wins)[0];
+  const longest = [...state.groups].sort((a, b) => b.years.length - a.years.length)[0];
+  const category = state.statsCategory;
+
+  els.indexBody.innerHTML = `
+    <div class="stats-block">
+      <div class="kpis">
+        <div class="kpi"><span>${num(summary.edition_count)}</span><small>ediciones</small></div>
+        <div class="kpi"><span>${biggest.float_count}</span><small>carrozas en ${biggest.year}, el récord</small></div>
+        <div class="kpi"><span>${topGroup.wins}</span><small>victorias de ${esc(topGroup.canonical_name)}</small></div>
+        <div class="kpi"><span>${longest.years.length}</span><small>ediciones de ${esc(longest.canonical_name)}</small></div>
+      </div>
+
+      <h3 class="section">Carrozas por edición</h3>
+      <p class="chart-note">Cada barra es una edición, con el color de su nivel de datos.</p>
+      ${chartFloatsPerYear()}
+
+      <h3 class="section">Trayectoria de los carrocistas</h3>
+      <div class="chart-tabs">
+        ${["A", "B"].map(cat => `<button class="view${category === cat ? " is-on" : ""}" type="button"
+          data-stats-cat="${cat}">Categoría ${cat}</button>`).join("")}
+      </div>
+      <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
+      de su primera a su última carroza; cada punto es una edición, y los llenos son victorias.</p>
+      <div class="chart-legend">
+        <span><i class="dot win"></i>1.º</span><span><i class="dot podium"></i>podio</span><span><i class="dot ran"></i>resto</span>
+      </div>
+      ${chartCareers(category)}
+    </div>`;
+}
+
 /* ── indice: recorridos ─────────────────────────────────────────────────── */
 
 function renderRouteList() {
@@ -544,6 +677,7 @@ function renderIndex() {
   if (state.mode === "editions") renderYearGrid();
   else if (state.mode === "floats") renderFloatList();
   else if (state.mode === "groups") renderGroupList();
+  else if (state.mode === "stats") renderStats();
   else renderRouteList();
   renderLegend();
 }
@@ -1440,6 +1574,7 @@ function bindEvents() {
   });
 
   els.faq.addEventListener("click", () => select("about", "-"));
+  document.getElementById("faq-foot")?.addEventListener("click", () => select("about", "-"));
   // Compartir la web entera: sin hash, para que el enlace no lleve a una ficha.
   els.shareSite.addEventListener("click", () => shareUrl(
     location.origin + location.pathname,
@@ -1459,9 +1594,9 @@ function bindEvents() {
 
   // Un unico delegador: sirve para el indice y para los enlaces del detalle.
   document.addEventListener("click", event => {
-    const header = event.target.closest("[data-sort]");
+    const header = event.target.closest("[data-sort-by]");
     if (header) {
-      const [mode, key] = header.dataset.sort.split(":");
+      const [mode, key] = header.dataset.sortBy.split(":");
       const current = state.sort[mode];
       if (current.key === key) {
         current.dir = -current.dir;
@@ -1497,6 +1632,13 @@ function bindEvents() {
       state.category = category.dataset.category || null;
       if (state.mode !== "floats") setMode("floats");
       else renderFloatList();
+      return;
+    }
+
+    const statsCat = event.target.closest("[data-stats-cat]");
+    if (statsCat) {
+      state.statsCategory = statsCat.dataset.statsCat;
+      renderStats();
       return;
     }
 
