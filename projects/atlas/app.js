@@ -68,8 +68,8 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.31.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-21 14:05";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.32.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-21 14:40";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -600,7 +600,10 @@ function renderPainterList() {
       const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
       for (const g of groups) {
         const inGroup = pnt.filter(p => keysOf(p.slug).includes(g.key));
-        if (inGroup.length) html += `<li class="pop-h">${esc(g.label)}</li>` + inGroup.map(painterRow).join("");
+        if (inGroup.length) html += `<li class="pop-h grp"><span>${esc(g.label)}</span>` +
+          `<button type="button" class="grp-only" data-grp-only="${esc(g.key)}" ` +
+          `title="Show only the ${esc(g.label)} painters">only</button></li>` +
+          inGroup.map(painterRow).join("");
       }
     }
   }
@@ -619,6 +622,14 @@ function renderPainterList() {
   ul.querySelectorAll("button[data-only]").forEach(b => b.addEventListener("click", e => {
     e.preventDefault(); e.stopPropagation();
     PAINTERS.forEach(p => { state.painters[p.name] = p.name === b.dataset.only; });
+    refresh(); updatePainterBtn(); renderPainterList();
+  }));
+  // group "only": isolate a whole period/school (uses the active grouping axis)
+  ul.querySelectorAll("button[data-grp-only]").forEach(b => b.addEventListener("click", e => {
+    e.preventDefault(); e.stopPropagation();
+    const gk = b.dataset.grpOnly;
+    const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
+    PAINTERS.forEach(p => { state.painters[p.name] = keysOf(p.slug).includes(gk); });
     refresh(); updatePainterBtn(); renderPainterList();
   }));
   ul.querySelectorAll(".mrow").forEach(row => row.addEventListener("click", () => selectMuseum(row.dataset.museum)));
