@@ -31,6 +31,7 @@ const state = {
   groups: [],
   floats: [],   // indice plano para la pestana Carrozas
   floatView: "list",   // "list" | "grid"
+  category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
@@ -202,7 +203,9 @@ function filteredFloats() {
   const query = normalizeText(state.query);
   const visibleYears = new Set(state.filtered.map(edition => edition.year));
   return state.floats.filter(entry =>
-    visibleYears.has(entry.year) && (!query || entry.search.includes(query)));
+    visibleYears.has(entry.year)
+    && (!state.category || entry.category === state.category)
+    && (!query || entry.search.includes(query)));
 }
 
 function filteredGroups() {
@@ -409,6 +412,30 @@ function renderGroupList() {
 
 /* ── indice: carrozas ───────────────────────────────────────────────────── */
 
+function categoryNote() {
+  if (!state.category) return "";
+  return `<button class="chip link-chip t-float" type="button" data-category="">
+    Categoría ${esc(state.category)} ✕</button>`;
+}
+
+/* En cuadricula no hay cabeceras de tabla donde pinchar, asi que el orden se
+ * elige aqui. Se limita a lo que tiene sentido mirando fotos. */
+function gridSort() {
+  const options = [
+    ["year", "Por año"],
+    ["name", "Alfabético"],
+    ["group", "Por grupo"],
+    ["position", "Por puesto"],
+  ];
+  const { key, dir } = state.sort.floats;
+  return `
+    <select class="grid-sort" aria-label="Ordenar la cuadrícula">
+      ${options.map(([value, label]) => `<option value="${value}"${value === key ? " selected" : ""}>${label}</option>`).join("")}
+    </select>
+    <button class="view" type="button" data-flip="1"
+      title="Invertir el orden">${dir === 1 ? "↑" : "↓"}</button>`;
+}
+
 function viewToggle() {
   return `
     <div class="view-toggle">
@@ -423,7 +450,7 @@ function viewToggle() {
  * 318 en blanco esto parecia roto, y el contador ya avisa de cuantas quedan. */
 function renderFloatGrid(rows) {
   const withPhoto = rows.filter(entry => (entry.image_urls || []).length);
-  els.indexCount.innerHTML = `${viewToggle()}<span>${num(withPhoto.length)} con foto, de ${num(rows.length)}</span>`;
+  els.indexCount.innerHTML = `${viewToggle()}${gridSort()}${categoryNote()}<span>${num(withPhoto.length)} con foto, de ${num(rows.length)}</span>`;
 
   if (!withPhoto.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna de estas carrozas tiene foto en el archivo.</p>';
@@ -446,7 +473,7 @@ function renderFloatList() {
   const rows = filteredFloats();
   if (state.floatView === "grid") return renderFloatGrid(rows);
 
-  els.indexCount.innerHTML = `${viewToggle()}<span>${num(rows.length)} de ${num(state.floats.length)} carrozas</span>`;
+  els.indexCount.innerHTML = `${viewToggle()}${categoryNote()}<span>${num(rows.length)} de ${num(state.floats.length)} carrozas</span>`;
   if (!rows.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna carroza encaja con la búsqueda.</p>';
     return;
@@ -832,7 +859,7 @@ function renderEditionDetail(edition) {
     <div class="chips">
       ${edition.status !== "published"
         ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
-      ${route ? `<button class="chip link-chip" type="button" data-route="${esc(route.id)}">${esc(route.label)} →</button>` : ""}
+      ${route ? `<button class="chip link-chip t-route" type="button" data-route="${esc(route.id)}">${esc(route.label)}</button>` : ""}
     </div>
 
     <div class="kpis">
@@ -862,7 +889,7 @@ function renderEditionDetail(edition) {
               <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
-                ? `<button class="group-link" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
+                ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
                 : "—"}</td>
               <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
             </tr>`).join("")}
@@ -883,7 +910,7 @@ function renderEditionDetail(edition) {
             <tr>
               <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
-                ? `<button class="group-link" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
+                ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
                 : "—"}</td>
               <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
             </tr>`).join("")}
@@ -947,6 +974,15 @@ function renderAbout() {
     <p class="muted">Cada edición dice en su ficha de dónde viene lo que muestra, así
     que los huecos se ven en lugar de disimularse.</p>
 
+    <h3 class="section">Cómo moverse</h3>
+    <p>Cada tipo de dato tiene su color, y lo que lleva color se puede pinchar:</p>
+    <p class="legend-types">
+      <span class="t-year">2012 · un año</span>
+      <span class="t-group">Ángel Sainz · un grupo</span>
+      <span class="t-float">Categoría A · una carroza</span>
+      <span class="t-route">Alameda Miramar · un recorrido</span>
+    </p>
+
     <h3 class="section">¿Ves un error?</h3>
     <p>Es muy posible que lo haya: mucho de esto viene de parsear páginas antiguas.
     Si detectas un dato mal, se agradece el aviso a través de
@@ -965,6 +1001,15 @@ function renderAbout() {
 
 /* ── detalle: carroza ───────────────────────────────────────────────────── */
 
+/* "5 de 11": cuantas carrozas compitieron en esa misma categoria y ano. Sin el
+ * denominador, un quinto puesto no dice si fue de once o de cinco. */
+function fieldSize(entry) {
+  return state.floats.filter(other =>
+    other.year === entry.year
+    && other.category === entry.category
+    && other.position != null).length;
+}
+
 function renderFloatDetail(entry) {
   const edition = state.editions.find(item => item.year === entry.year);
   const prizes = prizeChips(entry);
@@ -973,16 +1018,22 @@ function renderFloatDetail(entry) {
     <div class="detail-head">
       <h2 style="font-size:22px">${esc(entry.name)}</h2>
     </div>
-    <div class="chips">
-      ${shareButton()}
-      <button class="chip link-chip" type="button" data-year="${entry.year}">${entry.year} →</button>
-      ${entry.group_canonical
-        ? `<button class="chip link-chip" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)} →</button>`
-        : ""}
-      ${entry.position != null
-        ? `<span class="chip ${entry.position === 1 ? "gold" : ""}">${entry.category ? `Cat. ${esc(entry.category)} · ` : ""}${entry.position}.º puesto</span>`
-        : '<span class="chip">Sin puesto conocido</span>'}
-    </div>
+    <div class="chips">${shareButton()}</div>
+
+    <dl class="facts">
+      <div><dt>Año</dt><dd>
+        <button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button>
+      </dd></div>
+      <div><dt>Grupo</dt><dd>${entry.group_canonical
+        ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
+        : '<span class="muted-val">sin grupo</span>'}</dd></div>
+      <div><dt>Categoría</dt><dd>${entry.category
+        ? `<button class="link t-float" type="button" data-category="${esc(entry.category)}">Categoría ${esc(entry.category)}</button>`
+        : '<span class="muted-val">sin categoría</span>'}</dd></div>
+      <div><dt>Puesto</dt><dd>${entry.position != null
+        ? `<b>${entry.position}</b><span class="of-total"> de ${fieldSize(entry)}</span>`
+        : '<span class="muted-val">no consta</span>'}</dd></div>
+    </dl>
 
     ${prizes ? `<p class="span-note">${esc(prizes)}</p>` : ""}
 
@@ -1067,7 +1118,7 @@ function renderGroupDetail(group) {
       <tbody>
         ${entries.map(entry => `
           <tr>
-            <td class="pos" data-sort="${entry.year}"><button class="group-link" type="button" data-year="${entry.year}">${entry.year}</button></td>
+            <td class="pos" data-sort="${entry.year}"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
             <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
             <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "—"}</td>
             <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
@@ -1182,8 +1233,14 @@ function handleDetailSort(header) {
 /* Compartir. En movil `navigator.share` abre la hoja del sistema (WhatsApp, X,
  * Instagram, lo que tenga instalado), que es mejor que cinco botones de marca.
  * En escritorio no existe casi nunca: ahi se copia el enlace. */
+/* Icono de compartir en vez de solo texto: el emoji cambia de dibujo en cada
+ * sistema y aqui hace falta que se reconozca de un vistazo. */
+const ICON_SHARE = `<svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true">
+  <circle cx="12.5" cy="3.5" r="2.2"/><circle cx="3.5" cy="8" r="2.2"/><circle cx="12.5" cy="12.5" r="2.2"/>
+  <path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.4" fill="none"/></svg>`;
+
 function shareButton() {
-  return `<button id="share" class="share" type="button" title="Compartir esta ficha">Compartir</button>`;
+  return `<button id="share" class="share" type="button" title="Compartir esta ficha">${ICON_SHARE}Compartir</button>`;
 }
 
 async function shareUrl(url, title, text, button) {
@@ -1223,11 +1280,11 @@ function renderDetail() {
         <p class="placeholder-lead">Elige un año en la rejilla.</p>
         <p>Cada edición trae su palmarés, las carrozas documentadas, las fotos que
         conserva el archivo y el recorrido de aquel año.</p>
-        <p>También puedes recorrerlo por <button class="group-link" type="button"
+        <p>También puedes recorrerlo por <button class="link t-group" type="button"
           data-mode-jump="groups">grupos</button> —quién más ha desfilado y quién más ha
-        ganado— o por <button class="group-link" type="button" data-mode-jump="routes">recorridos</button>,
+        ganado— o por <button class="link t-route" type="button" data-mode-jump="routes">recorridos</button>,
         que han cambiado tres veces desde 1908.</p>
-        ${latest ? `<p class="placeholder-hint">Lo último: <button class="group-link" type="button"
+        ${latest ? `<p class="placeholder-hint">Lo último: <button class="link t-year" type="button"
           data-year="${latest.year}">${latest.year}</button>.</p>` : ""}
       </div>`;
     return;
@@ -1324,7 +1381,7 @@ function closeDetail() {
 }
 
 function resetToStart() {
-  state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false;
+  state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false; state.category = null;
   els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
   state.sort = { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } };
   state.openDecade = null;
@@ -1347,11 +1404,19 @@ function bindEvents() {
   els.rankedOnly.addEventListener("change", event => { state.rankedOnly = event.target.checked; refresh(); });
   els.clearFilters.addEventListener("click", () => {
     state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false;
+    state.category = null;
     els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
     refresh();
   });
 
   els.tabs.forEach(tab => tab.addEventListener("click", () => setMode(tab.dataset.mode)));
+
+  els.indexCount.addEventListener("change", event => {
+    if (!event.target.classList.contains("grid-sort")) return;
+    const key = event.target.value;
+    state.sort.floats = { key, dir: SORTS.floats[key].type === "text" ? 1 : -1 };
+    renderFloatList();
+  });
 
   // La dalia vuelve al inicio: limpia filtros, vuelve a Ediciones y selecciona
   // la ultima edicion con palmares, igual que en el arranque.
@@ -1410,6 +1475,21 @@ function bindEvents() {
     const tableHeader = event.target.closest("table.palmares thead th");
     if (tableHeader) {
       handleDetailSort(tableHeader);
+      return;
+    }
+
+    const category = event.target.closest("[data-category]");
+    if (category) {
+      state.category = category.dataset.category || null;
+      if (state.mode !== "floats") setMode("floats");
+      else renderFloatList();
+      return;
+    }
+
+    const flip = event.target.closest("[data-flip]");
+    if (flip) {
+      state.sort.floats.dir = -state.sort.floats.dir;
+      renderFloatList();
       return;
     }
 

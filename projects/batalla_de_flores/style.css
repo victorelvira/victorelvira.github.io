@@ -12,6 +12,18 @@
   --sky: #5b7f96;
   --bar: #fbf7f1;
   --nav: #1d1818;
+
+  /* Un color por tipo de dato. Lo que se puede pinchar lleva el color de su
+     tipo, siempre el mismo, en la tabla, en los chips y en las fichas: a los
+     dos minutos ya sabes que lo violeta es una carroza sin tener que probar. */
+  --t-year: #2a6f97;    /* año       */
+  --t-year-bg: #eaf2f7;
+  --t-group: #b6465f;   /* grupo     */
+  --t-group-bg: #fbeef1;
+  --t-float: #7b4a8c;   /* carroza   */
+  --t-float-bg: #f4eef7;
+  --t-route: #2f6b57;   /* recorrido */
+  --t-route-bg: #eaf3ef;
   --navbar-h: 26px;
   --bar-h: 52px;
 }
@@ -97,6 +109,35 @@ a { color: inherit; }
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
 }
 .pill:hover { border-color: var(--rose); color: var(--rose); }
+.pill, .share { display: inline-flex; align-items: center; gap: 5px; }
+.pill-icon { width: 12px; height: 12px; flex: none; fill: currentColor; stroke: currentColor; }
+
+/* Ficha de carroza: campos etiquetados en vez de chips sueltos. Hay sitio de
+   sobra y asi se lee «Año: 2012» en vez de adivinar que es cada cosa. */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(124px, 1fr)); gap: 8px; margin: 10px 0; }
+.facts > div { padding: 7px 9px; border: 1px solid var(--line-soft); border-radius: 10px; background: #fffaf5; }
+.facts dt {
+  margin: 0 0 2px; color: var(--muted);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.facts dd { margin: 0; font-size: 14.5px; }
+.facts dd b { font-size: 17px; font-variant-numeric: tabular-nums; }
+.facts .of-total { color: var(--muted); font-size: 12.5px; }
+.facts .muted-val { color: var(--muted); font-style: italic; font-size: 13px; }
+
+.legend-types { display: flex; flex-wrap: wrap; gap: 5px; }
+.legend-types span {
+  padding: 2px 9px; border-radius: 999px; font-size: 12px; border: 1px solid;
+}
+.legend-types .t-year  { color: var(--t-year);  border-color: #cadde8; background: var(--t-year-bg); }
+.legend-types .t-group { color: var(--t-group); border-color: #eccdd5; background: var(--t-group-bg); }
+.legend-types .t-float { color: var(--t-float); border-color: #ddcde5; background: var(--t-float-bg); }
+.legend-types .t-route { color: var(--t-route); border-color: #c9ded4; background: var(--t-route-bg); }
+
+.grid-sort {
+  font: inherit; font-size: 11.5px; padding: 2px 6px;
+  border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--muted);
+}
 
 .about-lead { margin: 6px 0 4px; font-size: 14px; line-height: 1.45; }
 #detail p { margin: 0 0 8px; line-height: 1.45; }
@@ -358,8 +399,10 @@ a { color: inherit; }
 .tile:hover { border-color: var(--rose); }
 .tile.is-active { border-color: var(--rose); box-shadow: 0 0 0 2px var(--rose-soft); }
 
-.gallery-big { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-.gallery-big img { height: 120px; }
+/* auto-fit con tope: una sola foto crece hasta 240 px en vez de quedarse en la
+   primera columna de 150, y varias siguen embaldosando. */
+.gallery-big { grid-template-columns: repeat(auto-fit, minmax(160px, 240px)); }
+.gallery-big img { height: 165px; }
 
 .row-go { color: var(--line); font-size: 16px; line-height: 1; }
 .row:hover .row-go, .row.is-active .row-go { color: var(--rose); }
@@ -492,8 +535,25 @@ table.palmares td.pos { font-variant-numeric: tabular-nums; white-space: nowrap;
 table.palmares td.name { font-weight: 600; }
 table.palmares td.group { color: var(--muted); }
 table.palmares tr:hover td { background: #fffaf5; }
-.group-link { background: none; border: 0; padding: 0; font: inherit; color: var(--rose); cursor: pointer; text-align: left; }
+/* Enlace interno, coloreado por tipo de dato. */
+.link { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; text-align: left; }
+.link:hover { text-decoration: underline; }
+.link.t-year  { color: var(--t-year); font-variant-numeric: tabular-nums; }
+.link.t-group { color: var(--t-group); }
+.link.t-float { color: var(--t-float); }
+.link.t-route { color: var(--t-route); }
+.group-link { background: none; border: 0; padding: 0; font: inherit; color: var(--t-group); cursor: pointer; text-align: left; }
 .group-link:hover { text-decoration: underline; }
+
+/* Chip clicable del mismo tipo. */
+.link-chip.t-year  { border-color: #cadde8; background: var(--t-year-bg);  color: var(--t-year); }
+.link-chip.t-group { border-color: #eccdd5; background: var(--t-group-bg); color: var(--t-group); }
+.link-chip.t-float { border-color: #ddcde5; background: var(--t-float-bg); color: var(--t-float); }
+.link-chip.t-route { border-color: #c9ded4; background: var(--t-route-bg); color: var(--t-route); }
+.link-chip.t-year:hover  { background: var(--t-year); color: #fff; }
+.link-chip.t-group:hover { background: var(--t-group); color: #fff; }
+.link-chip.t-float:hover { background: var(--t-float); color: #fff; }
+.link-chip.t-route:hover { background: var(--t-route); color: #fff; }
 
 .src { display: inline-flex; gap: 4px; align-items: center; flex-wrap: wrap; }
 .src a { color: var(--sky); text-decoration: none; font-size: 11.5px; }
