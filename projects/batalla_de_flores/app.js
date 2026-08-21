@@ -522,17 +522,15 @@ function statsYears() {
   return { min: Math.min(...years), max: Math.max(...years) };
 }
 
-function xScale(year, width) {
-  const { min, max } = statsYears();
-  return CHART.padL + ((year - min) / (max - min)) * (width - CHART.padL - CHART.padR);
+function makeScale({ from, to, width, left, right = CHART.padR }) {
+  return year => left + ((year - from) / (to - from || 1)) * (width - left - right);
 }
 
-function yearAxis(width, height) {
-  const { min, max } = statsYears();
+function yearAxis(scale, { from, to, step, height }) {
   const ticks = [];
-  for (let year = Math.ceil(min / 20) * 20; year <= max; year += 20) ticks.push(year);
+  for (let year = Math.ceil(from / step) * step; year <= to; year += step) ticks.push(year);
   return ticks.map(year => {
-    const x = xScale(year, width).toFixed(1);
+    const x = scale(year).toFixed(1);
     return `<line class="axis-line" x1="${x}" y1="${CHART.padT - 6}" x2="${x}" y2="${height - CHART.padB}"/>
       <text class="axis-label" x="${x}" y="${height - CHART.padB + 13}">${year}</text>`;
   }).join("");
@@ -562,27 +560,29 @@ function chartCareers(category) {
 
   if (!rows.length) return '<p class="empty">No hay suficientes datos en esta categoría.</p>';
 
+  const { min, max } = statsYears();
+  const scale = makeScale({ from: min, to: max, width: CHART.w, left: CHART.padL });
   const height = CHART.padT + rows.length * CHART.rowH + CHART.padB;
   const body = rows.map((row, index) => {
     const y = CHART.padT + index * CHART.rowH + CHART.rowH / 2;
     const dots = row.items.map(item => {
       const cls = item.position === 1 ? "win" : item.position <= 3 ? "podium" : "ran";
-      return `<circle class="dot ${cls}" cx="${xScale(item.year, CHART.w).toFixed(1)}" cy="${y}" r="${item.position === 1 ? 3.4 : 2.6}">
+      return `<circle class="dot ${cls}" cx="${scale(item.year).toFixed(1)}" cy="${y}" r="${item.position === 1 ? 3.4 : 2.6}">
         <title>${esc(row.name)} · ${item.year} · ${item.position}.º</title></circle>`;
     }).join("");
     return `
-      <g class="career" data-group="${esc(slugifyGroup(row.name))}">
+      <g class="career${index % 2 ? " alt" : ""}" data-group="${esc(slugifyGroup(row.name))}">
         <rect class="career-hit" x="0" y="${y - CHART.rowH / 2}" width="${CHART.w}" height="${CHART.rowH}"/>
         <text class="career-name" x="${CHART.padL - 8}" y="${y + 3.2}">${esc(row.name)}</text>
-        <line class="span" x1="${xScale(row.from, CHART.w).toFixed(1)}" y1="${y}"
-              x2="${xScale(row.to, CHART.w).toFixed(1)}" y2="${y}"/>
+        <line class="span" x1="${scale(row.from).toFixed(1)}" y1="${y}"
+              x2="${scale(row.to).toFixed(1)}" y2="${y}"/>
         ${dots}
       </g>`;
   }).join("");
 
   return `<svg class="chart" viewBox="0 0 ${CHART.w} ${height}" role="img"
     aria-label="Trayectoria de cada carrocista a lo largo de los años">
-    ${yearAxis(CHART.w, height)}${body}</svg>`;
+    ${yearAxis(scale, { from: min, to: max, step: 20, height })}${body}</svg>`;
 }
 
 /* Grafico 2: cuantas carrozas desfilaron cada edicion. */
@@ -592,9 +592,13 @@ function chartFloatsPerYear() {
   const rows = state.editions.filter(edition => edition.float_count > 0);
   const top = Math.max(...rows.map(edition => edition.float_count));
   const base = height - CHART.padB;
+  const { min, max } = statsYears();
+  // Margen izquierdo minimo: aqui no hay nombres que colocar, solo la cifra
+  // del maximo, asi que la primera barra arranca casi pegada al borde.
+  const scale = makeScale({ from: min, to: max, width, left: 22 });
 
   const bars = rows.map(edition => {
-    const x = xScale(edition.year, width);
+    const x = scale(edition.year);
     const h = (edition.float_count / top) * (base - CHART.padT);
     return `<rect class="bar ${coverageTier(edition)}" x="${(x - 1.8).toFixed(1)}" y="${(base - h).toFixed(1)}"
       width="3.6" height="${h.toFixed(1)}" data-year="${edition.year}">
@@ -603,9 +607,9 @@ function chartFloatsPerYear() {
 
   return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
     aria-label="Carrozas por edición">
-    <text class="axis-label" x="${CHART.padL - 8}" y="${CHART.padT + 4}" text-anchor="end">${top}</text>
-    <line class="axis-line" x1="${CHART.padL}" y1="${base}" x2="${width - CHART.padR}" y2="${base}"/>
-    ${yearAxis(width, height)}${bars}</svg>`;
+    <text class="axis-label" x="18" y="${CHART.padT + 4}" text-anchor="end">${top}</text>
+    <line class="axis-line" x1="22" y1="${base}" x2="${width - CHART.padR}" y2="${base}"/>
+    ${yearAxis(scale, { from: min, to: max, step: 20, height })}${bars}</svg>`;
 }
 
 function renderStats() {
@@ -1225,6 +1229,62 @@ const ICON_PODIUM = `<svg class="kpi-icon" viewBox="0 0 16 16" aria-hidden="true
   <rect x="6" y="4" width="4" height="10"/><rect x="1.5" y="7.5" width="4" height="6.5"/>
   <rect x="10.5" y="9" width="4" height="5"/></svg>`;
 
+/* Linea temporal de un solo carrocista: el eje X va de su primera a su ultima
+ * carroza, no del siglo entero, y el Y es el puesto de verdad, con el 1 arriba.
+ * Una linea por categoria, porque competir en A y en B no es lo mismo. */
+function chartGroupTimeline(entries) {
+  const ranked = entries.filter(entry => entry.position != null);
+  if (ranked.length < 2) return "";
+
+  const from = Math.min(...ranked.map(e => e.year));
+  const to = Math.max(...ranked.map(e => e.year));
+  const worst = Math.max(...ranked.map(e => e.position));
+
+  const width = 620;
+  const height = 34 + worst * 15 + CHART.padB;
+  const left = 30;
+  const base = height - CHART.padB;
+  const scale = makeScale({ from, to, width, left });
+  const yOf = position => CHART.padT + ((position - 1) / Math.max(worst - 1, 1)) * (base - CHART.padT - 6);
+
+  // Rejilla de puestos: 1.º arriba y el peor abajo, con los intermedios si caben.
+  const levels = worst <= 8
+    ? Array.from({ length: worst }, (_, i) => i + 1)
+    : [1, 2, 3, Math.round(worst / 2), worst];
+  const grid = levels.map(position => `
+    <line class="axis-line" x1="${left}" y1="${yOf(position).toFixed(1)}" x2="${width - CHART.padR}" y2="${yOf(position).toFixed(1)}"/>
+    <text class="axis-label" x="${left - 6}" y="${(yOf(position) + 3).toFixed(1)}" text-anchor="end">${position}.º</text>`).join("");
+
+  // Los anos antiguos no tienen categoria; se etiquetan como tal en vez de con
+  // un guion, que no dice nada.
+  const SIN_CAT = "sin categoría";
+  const categories = [...new Set(ranked.map(entry => entry.category || SIN_CAT))].sort();
+  const lines = categories.map(category => {
+    const points = ranked
+      .filter(entry => (entry.category || SIN_CAT) === category)
+      .sort((a, b) => a.year - b.year);
+    const path = points.map((entry, index) =>
+      `${index ? "L" : "M"}${scale(entry.year).toFixed(1)} ${yOf(entry.position).toFixed(1)}`).join("");
+    const dots = points.map(entry => `
+      <circle class="dot ${entry.position === 1 ? "win" : entry.position <= 3 ? "podium" : "ran"}"
+              cx="${scale(entry.year).toFixed(1)}" cy="${yOf(entry.position).toFixed(1)}"
+              r="${entry.position === 1 ? 4 : 3.2}" data-float="${esc(entry.id)}">
+        <title>${esc(entry.name)} · ${entry.year} · ${entry.category || ""}${entry.position}.º</title></circle>`).join("");
+    return `<g class="serie serie-${category === SIN_CAT ? "none" : esc(category)}"><path class="serie-line" d="${path}"/>${dots}</g>`;
+  }).join("");
+
+  return `
+    <h3 class="section">Su trayectoria</h3>
+    ${categories.length > 1 ? `<p class="chart-note">Una línea por categoría: ${categories
+      .map(c => (c === SIN_CAT ? "años <b>sin categoría</b>" : `categoría <b>${esc(c)}</b>`)).join(" y ")}.</p>` : ""}
+    <svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
+      aria-label="Evolución del puesto de ${esc(entries[0]?.group_canonical || "")} entre ${from} y ${to}">
+      ${grid}
+      ${yearAxis(scale, { from, to, step: to - from > 30 ? 10 : to - from > 12 ? 5 : 2, height })}
+      ${lines}
+    </svg>`;
+}
+
 function renderGroupDetail(group) {
   const entries = [];
   state.editions.forEach(edition => {
@@ -1251,6 +1311,8 @@ function renderGroupDetail(group) {
       <div class="kpi"><span>${ICON_TROPHY}${num(group.wins)}</span><small>victorias</small></div>
       <div class="kpi"><span>${ICON_PODIUM}${num(podium)}</span><small title="Primer, segundo o tercer puesto">podios</small></div>
     </div>
+
+    ${chartGroupTimeline(entries)}
 
     ${renderGallery(entries)}
 
