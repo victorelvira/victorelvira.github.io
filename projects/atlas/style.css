@@ -36,7 +36,7 @@ body {
 #navbar .nav-sep { color: #8a7f72; }
 #navbar .nav-home { color: #cbbfae; text-decoration: none; }
 #navbar a:hover { text-decoration: underline; }
-#navbar .build { margin-left: auto; color: #8a7f72; font-size: 11.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: auto; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -242,6 +242,8 @@ img.th.ph::after, img.tth.ph::after { content: ""; }
 #worklist .grp .n { color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
 #worklist .grp.more { justify-content: center; color: var(--muted); font-weight: 600; font-size: 11.5px;
   text-transform: none; background: #f3ece0; }
+#worklist .sentinel { display: block; height: 1px; padding: 0; margin: 0; background: none; cursor: default; }
+#worklist .sentinel:hover { background: none; }
 #worklist li:not(.grp):not(.empty) {
   display: flex; gap: 10px; align-items: center; cursor: pointer;
   padding: 8px 12px; border-bottom: 1px solid #f0ece3;

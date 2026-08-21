@@ -68,8 +68,8 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.32.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 11:00";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.32.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 11:20";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -924,8 +924,52 @@ function buildTimeline(min, max) {
 }
 
 // ── side panel: the works currently within the map viewport, grouped by venue ──
-const PANEL_CAP = 250;   // max rows rendered — keeps pan/zoom smooth on mobile (see note below)
+// Infinite scroll: render the list in chunks and append more as the user nears the bottom.
+// Only a few thumbnails are ever near the viewport, so this stays smooth on mobile while
+// still reaching every work — nothing is dropped. Lazy <img> means only visible thumbs fetch.
+const PANEL_CHUNK = 80;
+let panelQueue = [];    // flat render plan: {grp} headers and {w} work rows, in display order
+let panelCursor = 0;
+let panelIO = null;
+
+function panelRowHTML(w) {
+  const i = panelVis.length; panelVis.push(w);
+  const p = w.p;
+  const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+  const thumb = p.image
+    ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
+    : `<span class="th"></span>`;
+  return `<li data-i="${i}">${thumb}<div>` +
+    `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
+    `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;
+}
+
+function appendPanelChunk() {
+  const ul = document.getElementById("worklist");
+  const oldSentinel = ul.querySelector(".sentinel");
+  if (oldSentinel) oldSentinel.remove();
+  const end = Math.min(panelCursor + PANEL_CHUNK, panelQueue.length);
+  let html = "";
+  for (; panelCursor < end; panelCursor++) {
+    const e = panelQueue[panelCursor];
+    html += e.grp
+      ? `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
+        `<span class="n">${e.grp.count}</span></li>`
+      : panelRowHTML(e.w);
+  }
+  ul.insertAdjacentHTML("beforeend", html);
+  if (panelCursor < panelQueue.length) {           // more to come → sentinel + observe
+    ul.insertAdjacentHTML("beforeend", `<li class="sentinel" aria-hidden="true"></li>`);
+    const s = ul.querySelector(".sentinel");
+    if (!panelIO) panelIO = new IntersectionObserver(
+      es => { if (es.some(x => x.isIntersecting)) appendPanelChunk(); }, { rootMargin: "400px" });
+    else panelIO.disconnect();
+    panelIO.observe(s);
+  } else if (panelIO) { panelIO.disconnect(); }
+}
+
 function renderPanel() {
+  if (panelIO) panelIO.disconnect();
   const bounded = view.map;                    // when the map is hidden, list ALL works (no bounds)
   const b = bounded ? map.getBounds() : null;
   const vis = works.filter(w => passesAll(w.p) && (!bounded || b.contains([w.lat, w.lon])));
@@ -948,36 +992,21 @@ function renderPanel() {
     `${vis.length} work${vis.length === 1 ? "" : "s"}${bounded ? " in view" : ""}`;
 
   const ul = document.getElementById("worklist");
+  panelVis = [];
   if (!vis.length) {
     ul.innerHTML = `<li class="empty">Pan or zoom the map — the works in view are listed here.</li>`;
-    panelVis = [];
     return;
   }
-  panelVis = [];
-  let html = "";
-  let capped = false;
-  // Cap the rendered rows: painting thousands of <li> + remote <img> on every pan/zoom is what
-  // makes mobile crawl. Whole venue groups are kept intact until we cross the cap.
+  // flatten to a render plan, then stream it in chunks
+  panelQueue = [];
   for (const g of ordered) {
-    if (panelVis.length >= PANEL_CAP) { capped = true; break; }
     g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
-    html += `<li class="grp"><span>${esc(g.location)}${g.city ? ` · ${esc(g.city)}` : ""}</span>` +
-      `<span class="n">${g.items.length}</span></li>`;
-    for (const w of g.items) {
-      const i = panelVis.length; panelVis.push(w);
-      const p = w.p;
-      const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
-      const thumb = p.image
-        ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
-        : `<span class="th"></span>`;
-      html += `<li data-i="${i}">${thumb}<div>` +
-        `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
-        `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;
-    }
+    panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length } });
+    for (const w of g.items) panelQueue.push({ w });
   }
-  if (capped) html += `<li class="grp more"><span>+${vis.length - panelVis.length} more in view` +
-    ` — zoom in or filter to narrow the list</span></li>`;
-  ul.innerHTML = html;
+  panelCursor = 0;
+  ul.innerHTML = "";
+  appendPanelChunk();
 }
 
 document.getElementById("worklist").addEventListener("click", e => {
