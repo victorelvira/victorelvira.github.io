@@ -683,6 +683,33 @@ function prizeByYear(field) {
   return [...years.entries()].sort((a, b) => b[0] - a[0]);
 }
 
+/* Quien acumula mas premios. Cuenta por grupo, no por carroza: lo interesante
+ * es que Grupo Pejino gane vestidos tres veces, no con que alegoria. */
+function prizeRanking(field, { onlyFirst }) {
+  const tally = new Map();
+  state.floats.forEach(entry => {
+    const rank = entry[field];
+    if (!rank || !entry.group_canonical) return;
+    if (onlyFirst && rank !== 1) return;
+    tally.set(entry.group_canonical, (tally.get(entry.group_canonical) || 0) + 1);
+  });
+  return [...tally.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 5);
+}
+
+function prizeTop(title, field, options) {
+  const rows = prizeRanking(field, options);
+  if (!rows.length) return "";
+  return `
+    <div class="prize-top">
+      <h5>${title}</h5>
+      <ol>${rows.map(([name, count]) => `<li>
+        <button class="link t-group" type="button" data-group="${esc(slugifyGroup(name))}">${esc(name)}</button>
+        <b>${count}</b></li>`).join("")}</ol>
+    </div>`;
+}
+
 function prizeCell(entry) {
   if (!entry) return '<span class="muted-val">–</span>';
   return `<button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>
@@ -755,6 +782,10 @@ function renderStatsTab() {
               ${[1, 2, 3].map(rank => `<td>${prizeCell(podium[rank])}</td>`).join("")}
             </tr>`).join("")}</tbody>
         </table>
+        <div class="prize-tops">
+          ${prizeTop("Más primeros puestos", "prize_costumes_rank", { onlyFirst: true })}
+          ${prizeTop("Más podios (1.º, 2.º o 3.º)", "prize_costumes_rank", { onlyFirst: false })}
+        </div>
       </div>
 
       <div class="prize-list">
@@ -771,6 +802,9 @@ function renderStatsTab() {
                 : "–"}</td>
             </tr>`).join("")}</tbody>
         </table>
+        <div class="prize-tops">
+          ${prizeTop("Más premios al arte", "prize_art_rank", { onlyFirst: false })}
+        </div>
       </div>
     </div>`;
 }
