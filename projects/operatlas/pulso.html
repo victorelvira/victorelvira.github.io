@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · el pulso</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;--up:#8bc98b;--down:#c97f7f}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 22px 70px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:32px 0 12px;font-weight:600}
+  .lead{color:var(--dim);font-size:14px;margin:2px 0 4px}
+  .chartbox{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  svg{display:block;width:100%;height:auto}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:720px){.cols{grid-template-columns:1fr}}
+  .row{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:7px;cursor:pointer}
+  .row:hover{background:var(--panel2)}
+  .row .t{flex:1;min-width:0;font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .row .t small{color:var(--dim);font-weight:400}
+  .row .pct{font-size:12.5px;font-variant-numeric:tabular-nums;width:52px;text-align:right}
+  .row .n{font-size:12px;color:var(--dim);width:52px;text-align:right}
+  .spark{width:70px;height:22px;flex-shrink:0}
+  .note{color:#5f666c;font-size:11.5px;margin-top:10px}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<header>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <nav>
+    <a href="index.html">Descubre</a>
+    <a href="compositores.html">Compositores</a>
+    <a href="nucleo.html">Óperas</a>
+    <a href="conexiones.html">Conexiones</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="pulso.html" class="on">Pulso</a>
+    <a href="duraciones.html">Duraciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+</header>
+<div class="wrap">
+  <h2 style="margin-top:6px">El pulso de la ópera</h2>
+  <div class="lead">Funciones registradas por año en el mundo. La ópera <b>tal como se representa</b>, no solo como se cataloga.</div>
+  <div class="chartbox"><svg id="chart" viewBox="0 0 1000 320"></svg></div>
+
+  <div class="cols">
+    <div><h2>📈 En auge</h2><div class="lead">más funciones ahora que hace una década</div><div id="up"></div></div>
+    <div><h2>📉 En declive</h2><div class="lead">se representan menos que antes</div><div id="down"></div></div>
+  </div>
+
+  <h2>Las más representadas (2020–2025)</h2>
+  <div id="top" class="cols"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const go=t=>location.href='nucleo.html?opera='+encodeURIComponent(t);
+
+fetch('pulse.json').then(r=>r.json()).then(P=>{
+  const yr=P.years, tot=P.total, n=yr.length;
+  // ==== gráfico principal ====
+  const W=1000,H=320,mL=48,mR=14,mT=14,mB=28;
+  const iw=W-mL-mR, ih=H-mT-mB;
+  const maxY=Math.max(...tot)*1.08;
+  const X=i=>mL+(i/(n-1))*iw, Y=v=>mT+ih-(v/maxY)*ih;
+  const partialIdx=yr.indexOf(P.partial_from);
+  let g='';
+  // grid horizontal
+  for(let k=0;k<=4;k++){const v=maxY*k/4;const y=Y(v);
+    g+=`<line x1="${mL}" y1="${y}" x2="${W-mR}" y2="${y}" stroke="#2b3035" stroke-width="1"/>`;
+    g+=`<text x="${mL-8}" y="${y+4}" fill="#5f666c" font-size="11" text-anchor="end">${Math.round(v/1000)}k</text>`;}
+  // etiquetas de año
+  yr.forEach((y,i)=>{if(y%4===0||y===yr[n-1])g+=`<text x="${X(i)}" y="${H-8}" fill="#9aa0a6" font-size="11" text-anchor="middle">${y}</text>`;});
+  // área + línea (sólida hasta año parcial, punteada el resto)
+  const solid=tot.map((v,i)=>i<=partialIdx-1?[X(i),Y(v)]:null).filter(Boolean);
+  const area=`M${solid.map(p=>p.join(',')).join(' L')} L${X(partialIdx-1)},${Y(0)} L${X(0)},${Y(0)} Z`;
+  g+=`<path d="${area}" fill="#c9a24b18"/>`;
+  g+=`<polyline points="${solid.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#c9a24b" stroke-width="2.5"/>`;
+  g+=`<polyline points="${[X(partialIdx-1),Y(tot[partialIdx-1])].join(',')} ${[X(partialIdx),Y(tot[partialIdx])].join(',')}" fill="none" stroke="#c9a24b" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>`;
+  // marcar COVID 2020
+  const ci=yr.indexOf(2020);
+  if(ci>=0){g+=`<circle cx="${X(ci)}" cy="${Y(tot[ci])}" r="4" fill="#c97f7f"/>`;
+    g+=`<text x="${X(ci)}" y="${Y(tot[ci])-12}" fill="#c97f7f" font-size="12" text-anchor="middle" font-weight="600">COVID 2020</text>`;}
+  // pico
+  const pi=tot.indexOf(Math.max(...tot));
+  g+=`<circle cx="${X(pi)}" cy="${Y(tot[pi])}" r="4" fill="#c9a24b"/>`;
+  g+=`<text x="${X(pi)}" y="${Y(tot[pi])-12}" fill="#c9a24b" font-size="12" text-anchor="middle" font-weight="600">pico ${yr[pi]}</text>`;
+  $('#chart').innerHTML=g;
+
+  // ==== sparkline helper ====
+  const spark=s=>{const mx=Math.max(...s,1);const w=70,h=22;
+    const pts=s.map((v,i)=>`${(i/(s.length-1))*w},${h-2-(v/mx)*(h-4)}`).join(' ');
+    return `<svg class="spark" viewBox="0 0 ${w} ${h}"><polyline points="${pts}" fill="none" stroke="#9aa0a6" stroke-width="1.5"/></svg>`;};
+
+  // ==== auge / declive ====
+  const ops=Object.values(P.operas);
+  const idx=y=>yr.indexOf(y);
+  const sumR=(o,a,b)=>o.series.slice(idx(a),idx(b)+1).reduce((x,y)=>x+y,0);
+  const scored=ops.map(o=>{
+    const recent=sumR(o,2021,2025), past=sumR(o,2010,2014);
+    return {o, recent, past, pct:past>=15?(recent-past)/past:null};
+  }).filter(x=>x.pct!==null && x.recent>=40);
+  const up=scored.slice().sort((a,b)=>b.pct-a.pct).slice(0,12);
+  const down=scored.slice().sort((a,b)=>a.pct-b.pct).slice(0,12);
+  const rowHtml=(x,cls)=>`<div class="row" onclick="go('${esc(x.o.title).replace(/'/g,'&#39;')}')">
+    ${spark(x.o.series)}<span class="t">${esc(x.o.title)} <small>${esc(x.o.composer)}</small></span>
+    <span class="pct" style="color:var(${cls})">${x.pct>0?'+':''}${Math.round(x.pct*100)}%</span></div>`;
+  $('#up').innerHTML=up.map(x=>rowHtml(x,'--up')).join('');
+  $('#down').innerHTML=down.map(x=>rowHtml(x,'--down')).join('');
+
+  // ==== top 2020-2025 ====
+  const top=ops.map(o=>({o,r:sumR(o,2020,2025)})).sort((a,b)=>b.r-a.r).slice(0,20);
+  const half=Math.ceil(top.length/2);
+  const col=arr=>arr.map((x,i)=>`<div class="row" onclick="go('${esc(x.o.title).replace(/'/g,'&#39;')}')">
+    <span class="n" style="color:#5f666c">#${top.indexOf(x)+1}</span>
+    <span class="t">${esc(x.o.title)} <small>${esc(x.o.composer)}</small></span>
+    <span class="n">${x.r.toLocaleString('es')}</span></div>`).join('');
+  $('#top').innerHTML=`<div>${col(top.slice(0,half))}</div><div>${col(top.slice(half))}</div>`;
+}).catch(e=>{$('#chart').outerHTML='Error cargando pulse.json — '+e;});
+</script>
+</body>
+</html>

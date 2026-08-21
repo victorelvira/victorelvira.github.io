@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · compositor</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;
+    --baroque:#c9b48b;--classic:#7fa6c9;--romantic:#c9a24b;--modern:#c97f7f;--contemp:#8bc98b}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  .wrap{max-width:940px;margin:0 auto;padding:26px 22px 70px}
+  .back{color:var(--dim);text-decoration:none;font-size:13px}.back:hover{color:var(--accent)}
+  .top{display:flex;gap:22px;margin:14px 0 8px;align-items:flex-start}
+  .portrait{width:150px;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--panel2);flex-shrink:0}
+  .htext h1{margin:0;font-size:30px;font-weight:700}
+  .htext .dates{color:var(--accent);font-size:15px;margin:6px 0}
+  .htext .desc{color:#c8cace;font-size:14px;line-height:1.5;max-width:560px;margin-top:8px}
+  .stats{display:flex;gap:26px;margin:20px 0 6px;flex-wrap:wrap}
+  .stat .n{font-size:26px;font-weight:700;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+  .stat .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+  h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:30px 0 12px;font-weight:600}
+  .mini{position:relative;height:56px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .mini .dot{position:absolute;top:50%;transform:translate(-50%,-50%);border-radius:50%;cursor:pointer;border:1px solid #0f1113}
+  .mini .dot:hover{outline:2px solid var(--txt)}
+  .mini .yl{position:absolute;bottom:2px;font-size:10px;color:var(--dim);transform:translateX(-50%)}
+  .ops{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+  .op{display:flex;justify-content:space-between;gap:8px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--panel)}
+  .op:hover{border-color:var(--accent)}
+  .op .t{font-size:13.5px;font-weight:600}.op .y{font-size:12px;color:var(--dim)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:4px 11px;font-size:12.5px;color:var(--txt);text-decoration:none}
+  .chip:hover{border-color:var(--accent)}
+  #tip{position:fixed;pointer-events:none;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12.5px;display:none;z-index:20}
+  #tip b{color:var(--accent)}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<header>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <nav>
+    <a href="index.html">Descubre</a>
+    <a href="compositores.html" class="on">Compositores</a>
+    <a href="nucleo.html">Óperas</a>
+    <a href="conexiones.html">Conexiones</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="pulso.html">Pulso</a>
+    <a href="duraciones.html">Duraciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+</header>
+<div class="wrap" id="wrap"><a class="back" href="compositores.html">← todos los compositores</a><div id="body"></div></div>
+<div id="tip"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const eraCol=y=> y<1750?'--baroque': y<1830?'--classic': y<1900?'--romantic': y<1955?'--modern':'--contemp';
+const name=new URLSearchParams(location.search).get('c');
+
+Promise.all([fetch('core.json').then(r=>r.json()), fetch('composers.json').then(r=>r.json())])
+.then(([core,comps])=>{
+  const ops=core.filter(o=>o.composer===name);
+  if(!ops.length){$('#body').innerHTML='<p style="color:#9aa0a6;margin-top:30px">Compositor no encontrado.</p>';return;}
+  const c=comps[name]||{};
+  const MAXP=Math.max(...core.map(o=>o.perfs||1));
+  const dated=ops.filter(o=>o.wd_year).sort((a,b)=>a.wd_year-b.wd_year);
+  const totalPerf=ops.reduce((s,o)=>s+(o.perfs||0),0);
+  const top=ops.slice().sort((a,b)=>b.perfs-a.perfs)[0];
+  // libretistas y fuentes más frecuentes
+  const freq=(key)=>{const m={};ops.forEach(o=>(o[key]||[]).forEach(v=>m[v]=(m[v]||0)+1));
+    return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,8);};
+  const libs=freq('librettist'), srcs=freq('based_on').filter(([s])=>!/^Q\d+$/.test(s));
+  // mini timeline
+  let mini='';
+  if(dated.length){
+    const y0=Math.min(...dated.map(o=>o.wd_year))-3, y1=Math.max(...dated.map(o=>o.wd_year))+3;
+    const X=y=>((y-y0)/Math.max(1,y1-y0))*100;
+    mini=dated.map(o=>{const r=3+7*Math.sqrt((o.perfs||1)/MAXP);
+      return `<div class="dot" style="left:${X(o.wd_year)}%;width:${r*2}px;height:${r*2}px;background:var(${eraCol(o.wd_year)})"
+        data-t="${esc(o.title)}" data-y="${o.wd_year}"></div>`;}).join('');
+    for(let yy=Math.ceil(y0/10)*10;yy<=y1;yy+=Math.max(10,Math.round((y1-y0)/6/10)*10)) mini+=`<div class="yl" style="left:${X(yy)}%">${yy}</div>`;
+  }
+  const listOps=ops.slice().sort((a,b)=>b.perfs-a.perfs);
+  $('#body').innerHTML=`
+    <div class="top">
+      ${c.image?`<img class="portrait" src="${esc(c.image)}" alt="" onerror="this.style.display='none'">`:''}
+      <div class="htext">
+        <h1>${esc(name)}</h1>
+        <div class="dates">${c.born?`${c.born} – ${c.died||''}`:''}${c.country?' · '+esc(c.country):''}</div>
+        ${c.desc?`<div class="desc">${esc(c.desc)}</div>`:''}
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">${ops.length}</div><div class="l">óperas</div></div>
+      <div class="stat"><div class="n">${dated.length?dated[0].wd_year+'–'+dated[dated.length-1].wd_year:'—'}</div><div class="l">periodo</div></div>
+      <div class="stat"><div class="n">${top?esc(top.title):'—'}</div><div class="l">más conocida</div></div>
+    </div>
+    ${dated.length?`<h2>Sus óperas en el tiempo</h2><div class="mini">${mini}</div>`:''}
+    ${libs.length?`<h2>Libretistas habituales</h2><div class="chips">${libs.map(([l,n])=>`<a class="chip" href="nucleo.html?composer=${encodeURIComponent(name)}">${esc(l)} <span style="color:#5f666c">${n}</span></a>`).join('')}</div>`:''}
+    ${srcs.length?`<h2>Fuentes que adaptó</h2><div class="chips">${srcs.map(([s,n])=>`<span class="chip">${esc(s)} <span style="color:#5f666c">${n}</span></span>`).join('')}</div>`:''}
+    <h2>Todas sus óperas (${ops.length})</h2>
+    <div class="ops">${listOps.map(o=>`<div class="op" onclick="location.href='nucleo.html?opera=${encodeURIComponent(o.title)}'">
+      <span class="t">${esc(o.title)}</span><span class="y">${o.wd_year||''}</span></div>`).join('')}</div>`;
+  // tooltip mini
+  const tip=$('#tip');
+  $('#body').querySelectorAll('.mini .dot').forEach(d=>{
+    d.onmousemove=e=>{tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px';tip.innerHTML=`<b>${d.dataset.t}</b> · ${d.dataset.y}`;};
+    d.onmouseleave=()=>tip.style.display='none';
+    d.onclick=()=>location.href='nucleo.html?opera='+encodeURIComponent(d.dataset.t);
+  });
+  document.title='Operatlas · '+name;
+}).catch(e=>{$('#body').innerHTML='Error: '+e;});
+</script>
+</body>
+</html>

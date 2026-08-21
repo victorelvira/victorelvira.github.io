@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · Duraciones por acto</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --bg:#0f1113; --panel:#171a1d; --panel2:#1e2225; --line:#2b3035;
+    --txt:#e8e6e1; --dim:#9aa0a6; --accent:#c9a24b;
+    /* un color por acto */
+    --a1:#c9a24b; --a2:#7fa6c9; --a3:#c97f7f; --a4:#8bc98b; --a5:#b18bc9; --a6:#c9b48b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  header{padding:16px 22px;border-bottom:1px solid var(--line);background:var(--panel);
+    display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+  header h1{margin:0;font-size:19px;font-weight:600;letter-spacing:.4px}
+  header h1 span{color:var(--accent)}
+  header .sub{color:var(--dim);font-size:13px}
+  .controls{margin-left:auto;display:flex;gap:10px;align-items:center}
+  select,input{padding:7px 10px;background:var(--panel2);border:1px solid var(--line);
+    border-radius:7px;color:var(--txt);font-size:13px}
+  .wrap{padding:14px 22px 60px;overflow-x:auto}
+  .scalerow{display:flex;align-items:center;gap:0;height:18px;margin:0 0 4px 300px;
+    color:var(--dim);font-size:10px;position:relative}
+  .row{display:flex;align-items:center;gap:0;padding:5px 0;border-bottom:1px solid #20242700}
+  .row:hover{background:#ffffff08}
+  .label{width:300px;min-width:300px;padding-right:14px;text-align:right}
+  .label .t{font-size:13.5px;font-weight:600}
+  .label .c{font-size:11.5px;color:var(--dim)}
+  .bar{display:flex;height:26px;border-radius:5px;overflow:hidden;box-shadow:0 1px 0 #0006}
+  .seg{display:flex;align-items:center;justify-content:center;font-size:11px;
+    font-weight:600;color:#0d0f10;white-space:nowrap;overflow:hidden;
+    border-right:1px solid #0f1113aa;text-shadow:0 1px 0 #ffffff30}
+  .seg.small{font-size:0}
+  .total{margin-left:10px;font-size:12px;color:var(--accent);
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+  .nodata{background:repeating-linear-gradient(45deg,#2b3035,#2b3035 6px,#232629 6px,#232629 12px);
+    color:var(--dim);text-shadow:none}
+  .legend{margin:2px 0 10px 300px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--dim)}
+  .legend b{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<header>
+  <h1><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span> · duraciones por acto</h1>
+  <span class="sub" id="sub">cargando…</span>
+  <div class="controls">
+    <input type="text" id="q" placeholder="filtrar…" autocomplete="off">
+    <select id="sort">
+      <option value="dur">↓ más larga primero</option>
+      <option value="durasc">↑ más corta primero</option>
+      <option value="alpha">A–Z</option>
+      <option value="acts">nº de actos</option>
+    </select>
+  </div>
+</header>
+<div class="wrap">
+  <div class="legend" id="legend"></div>
+  <div class="scalerow" id="scale"></div>
+  <div id="rows"></div>
+</div>
+<script>
+const COLORS=['--a1','--a2','--a3','--a4','--a5','--a6'];
+const PXMIN=3.1;               // pixeles por minuto
+let DATA=[];
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function draw(){
+  const q=$('#q').value.toLowerCase().trim();
+  let list=DATA.filter(o=>!q||o.opera.toLowerCase().includes(q)||o.composer.toLowerCase().includes(q));
+  const s=$('#sort').value;
+  list.sort((a,b)=> s==='alpha'?a.opera.localeCompare(b.opera)
+    : s==='acts'?(b.acts.length-a.acts.length)
+    : s==='durasc'?(a.total_min-b.total_min)
+    : (b.total_min-a.total_min));
+  $('#sub').textContent=`${list.length} óperas · una barra por ópera, un color por acto`;
+  // escala superior
+  const maxmin=Math.max(...DATA.map(o=>o.total_min||0));
+  let sc='';for(let m=0;m<=maxmin;m+=30){sc+=`<span style="position:absolute;left:${m*PXMIN}px">${m?m+'′':'0'}</span>`;}
+  sc+=`<span style="position:absolute;left:0;top:-1px;color:#565c62">min →</span>`;
+  $('#scale').innerHTML=sc;$('#scale').style.width=(maxmin*PXMIN+40)+'px';
+  // filas
+  $('#rows').innerHTML=list.map(o=>{
+    const acts=o.acts&&o.acts.length?o.acts:null;
+    let bar;
+    if(acts){
+      bar=acts.map((a,i)=>{
+        const w=Math.max(a.min*PXMIN,2);
+        const col=`var(${COLORS[i%COLORS.length]})`;
+        const lab=w>34?`${a.min}min`:'';
+        const cls=w>34?'seg':'seg small';
+        return `<div class="${cls}" style="width:${w}px;background:${col}" title="${esc(a.name)}: ${a.min} min">${lab}</div>`;
+      }).join('');
+    }else{
+      const w=Math.max((o.total_min||0)*PXMIN,60);
+      bar=`<div class="seg nodata" style="width:${w}px" title="sin desglose por acto">${o.total_min?o.total_min+'min (total)':'s/d'}</div>`;
+    }
+    return `<div class="row">
+      <div class="label"><div class="t">${esc(o.opera)}</div><div class="c">${esc(o.composer)}</div></div>
+      <div class="bar">${bar}</div>
+      <div class="total">${o.totaltime||''}</div>
+    </div>`;
+  }).join('');
+}
+$('#q').oninput=draw;$('#sort').onchange=draw;
+
+// Duración pública = MusicBrainz (desde core.json). theopera101 no se publica.
+fetch('core.json').then(r=>r.json()).then(d=>{
+  DATA=d.filter(o=>(o.mb_acts&&o.mb_acts.length)||o.mb_total_min).map(o=>{
+    const acts=(o.mb_acts||[]).map(a=>({name:a.name,min:a.min}));
+    const total=o.mb_total_min||acts.reduce((s,a)=>s+a.min,0);
+    return {opera:o.title, composer:o.composer, acts, total_min:total,
+            totaltime:total?`${Math.floor(total/60)}:${String(total%60).padStart(2,'0')}`:''};
+  });
+  const names=['Acto I','Acto II','Acto III','Acto IV','Acto V','Acto VI'];
+  $('#legend').innerHTML=names.map((n,i)=>`<span><b style="background:var(${COLORS[i]})"></b>${n}</span>`).join('')
+    +`<span style="margin-left:8px">· ancho = minutos · <span style="color:#c9a24b">duración de grabación · MusicBrainz</span></span>`;
+  draw();
+}).catch(e=>{$('#sub').textContent='Error cargando core.json — '+e;});
+</script>
+</body>
+</html>

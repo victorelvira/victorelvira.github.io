@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · conexiones</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;--src:#7fa6c9}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:relative;z-index:5;flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  .tools{margin-left:auto;display:flex;gap:14px;align-items:center;font-size:13px;color:var(--dim)}
+  .tools label{display:flex;gap:6px;align-items:center;cursor:pointer}
+  #wrap{position:relative;flex:1;min-height:0}
+  canvas{display:block;cursor:grab}
+  #tip{position:absolute;pointer-events:none;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:12.5px;max-width:240px;display:none;z-index:10}
+  #tip b{color:var(--accent)}
+  #hint{position:absolute;left:22px;bottom:16px;font-size:12px;color:#5f666c;z-index:5}
+  .leg{position:absolute;right:22px;bottom:16px;font-size:12px;color:var(--dim);z-index:5;text-align:right;line-height:1.7}
+  .leg .d{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<header>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <nav>
+    <a href="index.html">Descubre</a>
+    <a href="compositores.html">Compositores</a>
+    <a href="nucleo.html">Óperas</a>
+    <a href="conexiones.html" class="on">Conexiones</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="pulso.html">Pulso</a>
+    <a href="duraciones.html">Duraciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+  <div class="tools">
+    <label><input type="checkbox" id="lib"> añadir libretistas</label>
+    <span id="stat"></span>
+  </div>
+</header>
+<div id="wrap">
+  <canvas id="c"></canvas>
+  <div id="tip"></div>
+  <div id="hint">arrastra para mover · rueda para zoom · clic en una ópera para abrir su ficha</div>
+  <div class="leg"><span class="d" style="background:#7fa6c9"></span>fuente literaria &nbsp; <span class="d" style="background:#c9a24b"></span>ópera (tamaño = repertorio)<br><span id="legsub"></span></div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const cv=$('#c'), ctx=cv.getContext('2d'), tip=$('#tip');
+let W,H,DPR=window.devicePixelRatio||1;
+function resize(){const w=$('#wrap');W=w.clientWidth;H=w.clientHeight;cv.width=W*DPR;cv.height=H*DPR;cv.style.width=W+'px';cv.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0);}
+addEventListener('resize',resize);
+
+let nodes=[], edges=[], view={x:0,y:0,k:1}, DATA=[];
+const rand=(a,b)=>a+Math.random()*(b-a);
+
+function build(withLib){
+  const opById={};
+  // nodo por ópera con >=1 conexión; hubs por fuente (y libretista opcional)
+  const hubs={};   // key -> node
+  const opNodes={};
+  edges=[];
+  function hub(kind,label){
+    const id=kind+':'+label;
+    if(!hubs[id]) hubs[id]={id,kind,label,hub:true,x:rand(-300,300),y:rand(-200,200),vx:0,vy:0,deg:0};
+    return hubs[id];
+  }
+  function opNode(o){
+    if(!opNodes[o.id]) opNodes[o.id]={id:'op:'+o.id,o,label:o.title,x:rand(-300,300),y:rand(-200,200),vx:0,vy:0,deg:0};
+    return opNodes[o.id];
+  }
+  for(const o of DATA){
+    const links=[];
+    (o.based_on||[]).forEach(s=>links.push(['fuente',s]));
+    if(withLib)(o.librettist||[]).forEach(l=>links.push(['libreto',l]));
+    for(const [kind,label] of links){
+      const h=hub(kind,label); const n=opNode(o);
+      edges.push([n,h,kind]); n.deg++; h.deg++;
+    }
+  }
+  // quitar hubs con grado 1 (no conectan nada) y sus óperas huérfanas
+  for(const id in hubs){ if(hubs[id].deg<2){ // hub que sólo toca 1 ópera: fuera
+      edges=edges.filter(e=>e[1]!==hubs[id]); hubs[id].dead=true; } }
+  for(const id in opNodes){ const n=opNodes[id]; n.deg=edges.filter(e=>e[0]===n).length; if(!n.deg) n.dead=true; }
+  nodes=[...Object.values(hubs),...Object.values(opNodes)].filter(n=>!n.dead);
+  edges=edges.filter(e=>!e[0].dead&&!e[1].dead);
+  $('#stat').textContent=`${nodes.filter(n=>!n.hub).length} óperas · ${nodes.filter(n=>n.hub).length} fuentes conectadas`;
+  $('#legsub').textContent = withLib?'aristas: fuente + libretista':'aristas: fuente literaria';
+  view={x:W/2,y:H/2,k:.8}; alpha=1; userMoved=false;
+}
+
+let alpha=1, userMoved=false;
+function fitView(){
+  if(!nodes.length) return;
+  const xs=nodes.map(n=>n.x).sort((a,b)=>a-b),ys=nodes.map(n=>n.y).sort((a,b)=>a-b);
+  const q=(a,p)=>a[Math.max(0,Math.min(a.length-1,Math.floor(p*(a.length-1))))];
+  const x0=q(xs,0.02),x1=q(xs,0.98),y0=q(ys,0.02),y1=q(ys,0.98);
+  const cx=(x0+x1)/2,cy=(y0+y1)/2,sw=Math.max(x1-x0,120),sh=Math.max(y1-y0,120);
+  view.k=Math.max(0.25,Math.min(2.2,Math.min((W-120)/sw,(H-120)/sh)));
+  view.x=W/2-cx*view.k;view.y=H/2-cy*view.k;
+}
+function tick(){
+  if(alpha>0.02){
+    // repulsión O(n²)
+    for(let i=0;i<nodes.length;i++){const a=nodes[i];
+      for(let j=i+1;j<nodes.length;j++){const b=nodes[j];
+        let dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy+.01;
+        if(d2<40000){const f=900/d2;const d=Math.sqrt(d2);const fx=dx/d*f,fy=dy/d*f;
+          a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;}}}
+    // muelles
+    for(const [a,b] of edges){let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)+.01;
+      const f=(d-70)*0.02;const fx=dx/d*f,fy=dy/d*f;a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;}
+    // gravedad + integración (con límite de velocidad y radio máximo)
+    for(const n of nodes){n.vx-=n.x*0.012;n.vy-=n.y*0.012;
+      n.vx=Math.max(-25,Math.min(25,n.vx));n.vy=Math.max(-25,Math.min(25,n.vy));
+      n.x+=n.vx*alpha;n.y+=n.vy*alpha;n.vx*=0.85;n.vy*=0.85;
+      const d=Math.hypot(n.x,n.y);if(d>650){n.x*=650/d;n.y*=650/d;}}
+    alpha*=0.985;
+    if(!userMoved) fitView();
+  }
+  render();
+  requestAnimationFrame(tick);
+}
+const MAXPOP=()=>Math.max(...DATA.map(o=>o.perfs||1));
+let mp=1;
+function opR(o){return 3+8*Math.sqrt((o.perfs||1)/mp);}
+function render(){
+  ctx.clearRect(0,0,W,H);
+  ctx.save();ctx.translate(view.x,view.y);ctx.scale(view.k,view.k);
+  ctx.lineWidth=0.6/view.k;
+  ctx.strokeStyle='#3a4148';
+  for(const [a,b,kind] of edges){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+    ctx.strokeStyle=kind==='libreto'?'#4a3f2e':'#33424e';ctx.stroke();}
+  for(const n of nodes){
+    if(n.hub){
+      ctx.fillStyle=n.kind==='libreto'?'#b18b4a':'var(--src)';ctx.fillStyle=n.kind==='libreto'?'#9b7f3f':'#5f7f9c';
+      ctx.beginPath();ctx.arc(n.x,n.y,4,0,7);ctx.fill();
+      ctx.fillStyle='#aeb4b9';ctx.font=`${11/view.k}px sans-serif`;ctx.textAlign='center';
+      ctx.fillText(n.label.length>26?n.label.slice(0,25)+'…':n.label,n.x,n.y-8/view.k);
+    }else{
+      const r=opR(n.o);
+      ctx.fillStyle=n.hi?'#f0d896':'#c9a24b';
+      ctx.beginPath();ctx.arc(n.x,n.y,r,0,7);ctx.fill();
+      if(view.k>1.4||n.hi){ctx.fillStyle='#e8e6e1';ctx.font=`${10/view.k}px sans-serif`;ctx.textAlign='center';
+        ctx.fillText(n.label.length>22?n.label.slice(0,21)+'…':n.label,n.x,n.y+r+10/view.k);}
+    }
+  }
+  ctx.restore();
+}
+
+// interacción
+let drag=null,down=null;
+function toWorld(mx,my){return {x:(mx-view.x)/view.k,y:(my-view.y)/view.k};}
+function nodeAt(mx,my){const w=toWorld(mx,my);let best=null,bd=1e9;
+  for(const n of nodes){if(n.hub)continue;const r=opR(n.o)+3;const d=Math.hypot(n.x-w.x,n.y-w.y);if(d<r&&d<bd){bd=d;best=n;}}
+  return best;}
+cv.onmousedown=e=>{down={x:e.offsetX,y:e.offsetY,vx:view.x,vy:view.y,moved:false};cv.style.cursor='grabbing';};
+cv.onmousemove=e=>{
+  if(down){view.x=down.vx+(e.offsetX-down.x);view.y=down.vy+(e.offsetY-down.y);if(Math.hypot(e.offsetX-down.x,e.offsetY-down.y)>4){down.moved=true;userMoved=true;}return;}
+  const n=nodeAt(e.offsetX,e.offsetY);
+  nodes.forEach(x=>x.hi=false);
+  if(n){n.hi=true;tip.style.display='block';tip.style.left=(e.offsetX+14)+'px';tip.style.top=(e.offsetY+14)+'px';
+    tip.innerHTML=`<b>${n.o.title}</b><br>${n.o.composer}${n.o.year?' · '+n.o.year:''}<br><span style="color:#9aa0a6">basada en ${(n.o.based_on||[]).join(', ')||'—'}</span>`;
+    cv.style.cursor='pointer';}
+  else{tip.style.display='none';cv.style.cursor='grab';}
+};
+cv.onmouseup=e=>{cv.style.cursor='grab';if(down&&!down.moved){const n=nodeAt(e.offsetX,e.offsetY);if(n)location.href='nucleo.html?opera='+encodeURIComponent(n.o.title);}down=null;};
+cv.onwheel=e=>{e.preventDefault();userMoved=true;const f=e.deltaY<0?1.1:0.9;const w=toWorld(e.offsetX,e.offsetY);
+  view.k=Math.max(0.2,Math.min(6,view.k*f));view.x=e.offsetX-w.x*view.k;view.y=e.offsetY-w.y*view.k;};
+$('#lib').onchange=e=>build(e.target.checked);
+
+resize();
+fetch('core.json').then(r=>r.json()).then(d=>{DATA=d;mp=MAXPOP();build(false);tick();})
+ .catch(e=>{$('#stat').textContent='Error: '+e;});
+</script>
+</body>
+</html>

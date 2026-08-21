@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · acerca</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  .wrap{max-width:760px;margin:0 auto;padding:30px 22px 70px;line-height:1.6}
+  h1{font-size:26px;margin:0 0 4px}
+  .sub{color:var(--dim);margin-bottom:26px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:28px 0 12px;font-weight:600}
+  p{color:#c8cace;font-size:14.5px}
+  .src{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px;background:var(--panel)}
+  .src h3{margin:0 0 4px;font-size:15px}
+  .src .lic{font-size:12px;color:var(--accent);margin-left:8px;font-weight:400}
+  .src p{margin:4px 0 0;font-size:13.5px}
+  a{color:var(--accent)}
+  .foot{color:#5f666c;font-size:12.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<header>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <nav>
+    <a href="index.html">Descubre</a>
+    <a href="compositores.html">Compositores</a>
+    <a href="nucleo.html">Óperas</a>
+    <a href="conexiones.html">Conexiones</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="pulso.html">Pulso</a>
+    <a href="acerca.html" class="on">Acerca</a>
+  </nav>
+</header>
+<div class="wrap">
+  <h1>Acerca de Operatlas</h1>
+  <div class="sub">Una base de datos interactiva de ópera — mapas, timeline, conexiones y curiosidades.</div>
+
+  <p>Operatlas es un proyecto <b>personal y sin ánimo de lucro</b>. Reúne datos de varias fuentes
+  abiertas y los <b>cruza y valida</b> entre sí: cada ópera se enlaza a compositor, libretista, fuente
+  literaria, estreno, personajes y duración, y esas conexiones se pueden explorar libremente.</p>
+
+  <h2>Fuentes de datos</h2>
+
+  <div class="src"><h3>Wikidata <span class="lic">CC0 · dominio público</span></h3>
+    <p>Compositores, libretistas, fechas y teatros de estreno, fuentes literarias y coordenadas.
+    Núcleo de metadatos del proyecto. <a href="https://www.wikidata.org" target="_blank" rel="noopener">wikidata.org</a></p></div>
+
+  <div class="src"><h3>Wikipedia <span class="lic">CC BY-SA</span></h3>
+    <p>Sinopsis de cada ópera (entradilla). Cada ficha enlaza al artículo original como atribución.
+    <a href="https://es.wikipedia.org" target="_blank" rel="noopener">wikipedia.org</a></p></div>
+
+  <div class="src"><h3>MusicBrainz <span class="lic">CC0 · dominio público</span></h3>
+    <p>Duración por acto a partir de grabaciones (duración musical neta). <a href="https://musicbrainz.org" target="_blank" rel="noopener">musicbrainz.org</a></p></div>
+
+  <div class="src"><h3>The Opera 101 <span class="lic">referencia</span></h3>
+    <p>Tiempos de escena por acto, usados como <b>referencia de validación</b> frente a las duraciones de
+    grabación. <a href="https://theopera101.com" target="_blank" rel="noopener">theopera101.com</a></p></div>
+
+  <h2>Cómo se cruzan</h2>
+  <p>No hay un identificador común entre fuentes, así que el emparejamiento se hace por
+  <b>compositor + título</b> (resolviendo títulos en varios idiomas), con validaciones de sentido común
+  — por ejemplo, se descarta un estreno fechado después de la muerte del compositor. Las cifras son
+  aproximadas y mejoran con el tiempo.</p>
+
+  <div class="foot">Operatlas · proyecto personal de Víctor · hecho con datos abiertos.
+  No afiliado a ninguna de las fuentes citadas.</div>
+</div>
+</body>
+</html>

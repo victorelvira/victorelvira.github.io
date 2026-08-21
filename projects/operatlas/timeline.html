@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · timeline</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;
+    --baroque:#c9b48b;--classic:#7fa6c9;--romantic:#c9a24b;--modern:#c97f7f;--contemp:#8bc98b}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  #app{display:flex;flex-direction:column;flex:1;min-height:0}
+  header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  .tools{margin-left:auto;display:flex;gap:10px;align-items:center}
+  input,select{padding:7px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--txt);font-size:13px}
+  .axis{position:sticky;top:0;z-index:3;background:var(--panel);border-bottom:1px solid var(--line)}
+  #scroll{overflow:auto;flex:1}
+  .lane{display:flex;align-items:center;height:30px;border-bottom:1px solid #20242766}
+  .lane:hover{background:#ffffff06}
+  .name{width:190px;min-width:190px;padding:0 12px;text-align:right;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+  .name:hover{color:var(--accent)}
+  .name .n{color:var(--dim);font-weight:400;font-size:11px}
+  .track{position:relative;flex:1;height:100%}
+  .track .life{position:absolute;top:50%;height:2px;background:#2b3035;transform:translateY(-50%)}
+  .dot{position:absolute;top:50%;transform:translate(-50%,-50%);border-radius:50%;cursor:pointer;border:1px solid #0f1113}
+  .dot:hover{outline:2px solid var(--txt)}
+  .axline{position:absolute;top:0;bottom:0;width:1px;background:#20242766}
+  .axlab{position:absolute;top:6px;font-size:11px;color:var(--dim);transform:translateX(-50%)}
+  #tip{position:fixed;pointer-events:none;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12.5px;display:none;z-index:20;max-width:220px}
+  #tip b{color:var(--accent)}
+  .leg{padding:7px 22px;font-size:11.5px;color:var(--dim);border-top:1px solid var(--line);background:var(--panel);display:flex;gap:16px;flex-wrap:wrap}
+  .leg .d{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<div id="app">
+  <header>
+    <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+    <nav>
+      <a href="index.html">Descubre</a>
+      <a href="compositores.html">Compositores</a>
+      <a href="nucleo.html">Óperas</a>
+      <a href="conexiones.html">Conexiones</a>
+      <a href="timeline.html" class="on">Timeline</a>
+      <a href="pulso.html">Pulso</a>
+      <a href="duraciones.html">Duraciones</a>
+      <a href="mapa.html">Mapa</a>
+    </nav>
+    <div class="tools">
+      <input id="q" type="text" placeholder="filtrar compositor…" autocomplete="off">
+    </div>
+  </header>
+  <div class="axis"><div class="lane" style="height:26px;border:0"><div class="name" style="color:#5f666c;font-weight:400">compositor ↓ / año →</div><div class="track" id="axis"></div></div></div>
+  <div id="scroll"><div id="lanes"></div></div>
+  <div class="leg" id="leg"></div>
+</div>
+<div id="tip"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const Y0=1590,Y1=2030;
+const eraCol=y=> y<1750?'--baroque': y<1830?'--classic': y<1900?'--romantic': y<1955?'--modern':'--contemp';
+const x=y=>((y-Y0)/(Y1-Y0))*100;
+let DATA=[], COMPS=[], MAXP=1;
+
+function drawAxis(){
+  let h='';
+  for(let yr=1600;yr<=2000;yr+=50){h+=`<div class="axline" style="left:${x(yr)}%"></div><div class="axlab" style="left:${x(yr)}%">${yr}</div>`;}
+  $('#axis').innerHTML=h;
+}
+function build(){
+  const byc={};
+  // SOLO años limpios de Wikidata (ob_premiere está sucio: fechas de producción recientes)
+  DATA.forEach(o=>{if(o.wd_year){ (byc[o.composer]=byc[o.composer]||[]).push(o); }});
+  COMPS=Object.entries(byc).map(([name,ops])=>{
+    const ys=ops.map(o=>o.wd_year).sort((a,b)=>a-b);
+    const med=ys[Math.floor(ys.length/2)];
+    return {name, ops, min:Math.min(...ys), max:Math.max(...ys), med, n:ops.length};
+  }).sort((a,b)=>a.med-b.med);  // ordenar por mediana (robusto a años atípicos)
+}
+function draw(){
+  const q=$('#q').value.toLowerCase().trim();
+  const list=COMPS.filter(c=>!q||c.name.toLowerCase().includes(q));
+  $('#lanes').innerHTML=list.map(c=>{
+    const life=`<div class="life" style="left:${x(c.min)}%;width:${x(c.max)-x(c.min)}%"></div>`;
+    const dots=c.ops.map(o=>{
+      const r=3+7*Math.sqrt((o.perfs||1)/MAXP);
+      return `<div class="dot" style="left:${x(o.wd_year)}%;width:${r*2}px;height:${r*2}px;background:var(${eraCol(o.wd_year)})"
+        data-t="${esc(o.title)}" data-c="${esc(o.composer)}" data-y="${o.wd_year}"></div>`;
+    }).join('');
+    return `<div class="lane"><div class="name" data-comp="${esc(c.name)}">${esc(c.name)} <span class="n">${c.n}</span></div>
+      <div class="track">${life}${dots}</div></div>`;
+  }).join('');
+  bind();
+}
+function bind(){
+  const tip=$('#tip');
+  $('#lanes').querySelectorAll('.dot').forEach(d=>{
+    d.onmousemove=e=>{tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px';
+      tip.innerHTML=`<b>${d.dataset.t}</b><br>${d.dataset.c} · ${d.dataset.y}`;};
+    d.onmouseleave=()=>tip.style.display='none';
+    d.onclick=()=>location.href='nucleo.html?opera='+encodeURIComponent(d.dataset.t);
+  });
+  $('#lanes').querySelectorAll('.name').forEach(n=>n.onclick=()=>location.href='compositores.html');
+}
+$('#q').oninput=draw;
+$('#leg').innerHTML=[['--baroque','Barroco (–1750)'],['--classic','Clásico (1750–1830)'],['--romantic','Romántico (1830–1900)'],['--modern','Moderno (1900–1955)'],['--contemp','Contemporáneo (1955–)']]
+  .map(([c,l])=>`<span><span class="d" style="background:var(${c})"></span>${l}</span>`).join('')+' · tamaño = repertorio · solo óperas con año';
+
+fetch('core.json').then(r=>r.json()).then(d=>{DATA=d;MAXP=Math.max(...d.map(o=>o.perfs||1));drawAxis();build();draw();})
+ .catch(e=>{$('#lanes').innerHTML='Error: '+e;});
+addEventListener('resize',drawAxis);
+</script>
+</body>
+</html>

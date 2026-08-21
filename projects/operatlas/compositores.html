@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · compositores</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --bg:#0f1113; --panel:#171a1d; --panel2:#1e2225; --line:#2b3035;
+    --txt:#e8e6e1; --dim:#9aa0a6; --accent:#c9a24b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}
+  .brand span{color:var(--accent)}
+  nav{display:flex;gap:4px}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)}
+  nav a.on{color:var(--accent);background:var(--panel2)}
+  .tools{margin-left:auto;display:flex;gap:9px;align-items:center}
+  input,select{padding:7px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--txt);font-size:13px}
+  .count{color:var(--dim);font-size:13px;padding:8px 22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:6px 22px 60px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .12s,transform .12s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card h3{margin:0 0 3px;font-size:17px;font-weight:600}
+  .card .era{color:var(--dim);font-size:12.5px;margin-bottom:12px}
+  .stats{display:flex;gap:16px;margin-bottom:12px}
+  .stat .n{font-size:22px;font-weight:700;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+  .stat .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+  .top{font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:10px}
+  .top b{color:var(--txt);font-weight:600}
+  .popbar{height:4px;border-radius:2px;background:#2b3035;margin-top:10px;overflow:hidden}
+  .popbar>span{display:block;height:4px;background:var(--accent);opacity:.6}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<header>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <nav>
+    <a href="index.html">Descubre</a>
+    <a href="compositores.html" class="on">Compositores</a>
+    <a href="nucleo.html">Óperas</a>
+    <a href="conexiones.html">Conexiones</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="pulso.html">Pulso</a>
+    <a href="duraciones.html">Duraciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+  <div class="tools">
+    <input id="q" type="text" placeholder="buscar compositor…" autocomplete="off">
+    <select id="sort">
+      <option value="pop">↓ más representados</option>
+      <option value="operas">↓ más óperas</option>
+      <option value="chrono">cronológico</option>
+      <option value="alpha">A–Z</option>
+    </select>
+  </div>
+</header>
+<div class="count" id="count">cargando…</div>
+<div class="grid" id="grid"></div>
+<script>
+let COMPS=[], MAXPOP=1;
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function eraOf(styles){
+  // estilo dominante (más frecuente)
+  const c={}; styles.forEach(s=>{if(s)c[s]=(c[s]||0)+1;});
+  const top=Object.entries(c).sort((a,b)=>b[1]-a[1])[0];
+  return top?top[0]:null;
+}
+function yearOf(o){ return o.wd_year || null; }  // solo años limpios (ob_premiere está sucio)
+
+function draw(){
+  const q=$('#q').value.toLowerCase().trim(), s=$('#sort').value;
+  let list=COMPS.filter(c=>!q||c.name.toLowerCase().includes(q));
+  list.sort((a,b)=> s==='alpha'?a.name.localeCompare(b.name)
+    : s==='operas'?b.n-a.n
+    : s==='chrono'?((a.ymid||9999)-(b.ymid||9999))
+    : b.pop-a.pop);
+  $('#count').textContent=`${list.length} compositores · ${COMPS.reduce((s,c)=>s+c.n,0)} óperas`;
+  $('#grid').innerHTML=list.map(c=>{
+    const span=c.ymin&&c.ymax?`${c.ymin}–${c.ymax}`:'';
+    return `<div class="card" onclick="location.href='compositor.html?c=${encodeURIComponent(c.name)}'">
+      <h3>${esc(c.name)}</h3>
+      <div class="era">${esc(c.era||'—')}${span?' · óperas '+span:''}</div>
+      <div class="stats">
+        <div class="stat"><div class="n">${c.n}</div><div class="l">óperas</div></div>
+        ${c.durs?`<div class="stat"><div class="n">${c.durs}</div><div class="l">con duración</div></div>`:''}
+      </div>
+      <div class="top">más conocida: <b>${esc(c.top)}</b></div>
+      <div class="popbar"><span style="width:${Math.round(100*Math.sqrt(c.pop/MAXPOP))}%"></span></div>
+    </div>`;
+  }).join('');
+}
+$('#q').oninput=draw; $('#sort').onchange=draw;
+
+fetch('core.json').then(r=>r.json()).then(core=>{
+  const by={};
+  for(const o of core){
+    const k=o.composer;
+    (by[k]=by[k]||{name:k,ops:[]}).ops.push(o);
+  }
+  COMPS=Object.values(by).map(c=>{
+    const ops=c.ops;
+    const years=ops.map(yearOf).filter(Boolean);
+    const top=ops.slice().sort((a,b)=>b.perfs-a.perfs)[0];
+    return {
+      name:c.name, n:ops.length,
+      pop:ops.reduce((s,o)=>s+(o.perfs||0),0),
+      durs:ops.filter(o=>o.rt_acts||o.mb_acts).length,
+      era:eraOf(ops.map(o=>o.style)),
+      top:top?top.title:'—',
+      ymin:years.length?Math.min(...years):null,
+      ymax:years.length?Math.max(...years):null,
+      ymid:years.length?years.sort((a,b)=>a-b)[Math.floor(years.length/2)]:null,
+    };
+  });
+  MAXPOP=Math.max(...COMPS.map(c=>c.pop||1));
+  draw();
+}).catch(e=>{$('#count').textContent='Error cargando core.json — '+e;});
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · núcleo</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --bg:#0f1113; --panel:#171a1d; --panel2:#1e2225; --line:#2b3035;
+    --txt:#e8e6e1; --dim:#9aa0a6; --accent:#c9a24b;
+    --a1:#c9a24b; --a2:#7fa6c9; --a3:#c97f7f; --a4:#8bc98b; --a5:#b18bc9; --a6:#c9b48b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  #app{display:grid;grid-template-columns:340px 1fr;grid-template-rows:auto 1fr;flex:1;min-height:0}
+  header{grid-column:1/3;display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}
+  .brand span{color:var(--accent)}
+  nav{display:flex;gap:4px}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)}
+  nav a.on{color:var(--accent);background:var(--panel2)}
+  header .count{color:var(--dim);font-size:13px;margin-left:auto}
+  @media(max-width:720px){
+    #app{grid-template-columns:1fr;grid-template-rows:auto auto 1fr}
+    aside{border-right:0;border-bottom:1px solid var(--line);max-height:40vh}
+    main{padding:18px}
+    header .count{display:none}
+  }
+  aside{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+  .filters{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+  input,select{width:100%;padding:8px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--txt);font-size:13px}
+  #list{overflow:auto;flex:1}
+  .row{padding:9px 14px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;gap:8px;align-items:center}
+  .row:hover,.row.sel{background:var(--panel2)}
+  .row.sel{box-shadow:inset 3px 0 0 var(--accent)}
+  .row .t{font-size:13.5px;font-weight:600}
+  .row .c{font-size:11.5px;color:var(--dim)}
+  .row .d{font-size:11px;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .pop{height:3px;border-radius:2px;background:var(--accent);opacity:.5;margin-top:4px}
+  main{overflow:auto;padding:26px 34px}
+  .empty{color:var(--dim);margin-top:40px;text-align:center}
+  .fh1{font-size:26px;font-weight:700;margin:0}
+  .fsub{color:var(--dim);margin:6px 0 18px;font-size:14px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:12.5px;color:var(--dim)}
+  .chip b{color:var(--txt);font-weight:600}
+  .flavor{margin-bottom:22px}
+  .flavor .ttl{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:8px;display:flex;gap:8px;align-items:center}
+  .flavor .ttl .src{color:#5f666c;text-transform:none;letter-spacing:0}
+  .bar{display:flex;height:30px;border-radius:6px;overflow:hidden;max-width:640px}
+  .seg{display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;color:#0d0f10;white-space:nowrap;overflow:hidden;border-right:1px solid #0f1113aa;text-shadow:0 1px 0 #ffffff30}
+  .tot{margin-top:6px;font-size:12px;color:var(--accent)}
+  .pending{color:#5f666c;font-size:13px;font-style:italic;border:1px dashed var(--line);border-radius:7px;padding:10px 12px;max-width:640px}
+  .legend{margin-top:6px;font-size:11px;color:#5f666c}
+  .cast{margin:0 0 22px;max-width:660px;line-height:2}
+  .cast .ct{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--dim);margin-right:8px}
+  .cch{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:2px 10px;font-size:12.5px;margin:0 4px 4px 0}
+  .cch.recur{border-color:var(--accent);cursor:pointer}
+  .syn{font-size:14px;line-height:1.55;color:#c8cace;max-width:660px;margin:2px 0 22px}
+  .syn .attr{display:block;margin-top:7px;font-size:11px;color:#5f666c}
+  .syn .attr a{color:#5f666c}
+  .lnk{color:var(--txt);border-bottom:1px dotted #6b7278;cursor:pointer}
+  .lnk:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .facetbar{display:flex;flex-wrap:wrap;gap:6px;min-height:0}
+  .facetchip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--accent);border-radius:16px;padding:4px 6px 4px 11px;font-size:12px;color:var(--txt)}
+  .facetchip .k{color:var(--dim)}
+  .facetchip .x{cursor:pointer;color:var(--dim);border:1px solid var(--line);border-radius:50%;width:16px;height:16px;line-height:14px;text-align:center;font-size:11px}
+  .facetchip .x:hover{color:var(--accent);border-color:var(--accent)}
+  .related{margin-top:14px;border-top:1px solid var(--line);padding-top:16px}
+  .related .ttl{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:10px}
+  .rel{display:flex;flex-direction:column;gap:2px;max-width:640px}
+  .rel-item{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border-radius:7px;cursor:pointer;background:var(--panel)}
+  .rel-item:hover{background:var(--panel2)}
+  .rel-item .rt{font-size:13px}.rel-item .rt b{color:var(--accent);font-weight:600}
+  .rel-item .why{font-size:11px;color:var(--dim);white-space:nowrap}
+
+  /* barra de identidad compartida (misma en todos los proyectos) */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#8a7f72}
+  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+
+<div id="app">
+  <header>
+    <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+    <nav>
+      <a href="index.html">Descubre</a>
+      <a href="compositores.html">Compositores</a>
+      <a href="nucleo.html" class="on">Óperas</a>
+      <a href="conexiones.html">Conexiones</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="pulso.html">Pulso</a>
+      <a href="duraciones.html">Duraciones</a>
+      <a href="mapa.html">Mapa</a>
+    </nav>
+    <span class="count" id="count">cargando…</span>
+  </header>
+  <aside>
+    <div class="filters">
+      <input id="q" type="text" placeholder="buscar ópera…" autocomplete="off">
+      <div id="facet" class="facetbar"></div>
+    </div>
+    <div id="list"></div>
+  </aside>
+  <main id="ficha"><div class="empty">Elige una ópera de la lista →</div></main>
+</div>
+<script>
+const COLORS=['--a1','--a2','--a3','--a4','--a5','--a6'];
+const PXMIN=3.4;
+let DATA=[], MAXPOP=1, sel=null;
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hhmm=m=>m?`${Math.floor(m/60)}:${String(m%60).padStart(2,'0')}`:'';
+
+function actBars(acts){
+  if(!acts||!acts.length) return null;
+  const segs=acts.map((a,i)=>{
+    const w=Math.max(a.min*PXMIN,4);
+    const lab=w>40?`${a.min}min`:'';
+    return `<div class="seg" style="width:${w}px;background:var(${COLORS[i%6]})" title="${esc(a.name)}: ${a.min} min">${lab}</div>`;
+  }).join('');
+  const tot=acts.reduce((s,a)=>s+a.min,0);
+  return `<div class="bar">${segs}</div><div class="tot">total ${hhmm(tot)} · ${acts.length} ${acts.length==1?'bloque':'actos'}</div>`;
+}
+
+function flavor(title, src, acts, note){
+  const bars=actBars(acts);
+  return `<div class="flavor"><div class="ttl">${title} <span class="src">${src}</span></div>`+
+    (bars || `<div class="pending">${note}</div>`)+`</div>`;
+}
+// duración PÚBLICA = MusicBrainz (barras por acto, o barra de total). theopera101 = validación oculta.
+function durBlock(o){
+  let inner;
+  if(o.mb_acts&&o.mb_acts.length) inner=actBars(o.mb_acts);
+  else if(o.mb_total_min) inner=`<div class="bar"><div class="seg" style="width:${Math.max(o.mb_total_min*PXMIN,130)}px;background:var(--a2)">${hhmm(o.mb_total_min)}</div></div><div class="tot">total ${hhmm(o.mb_total_min)} · (sin desglose por acto)</div>`;
+  else inner=`<div class="pending">Sin duración localizada aún.</div>`;
+  let val='';
+  if(o.dur_validated) val=`<div class="legend">✓ duración contrastada</div>`;
+  return `<div class="flavor"><div class="ttl">Duración por acto <span class="src">grabación · MusicBrainz</span></div>${inner}${val}</div>`;
+}
+
+let F={q:'', facet:null};
+const escA=s=>esc(s).replace(/'/g,'&#39;');
+// atributo clicable -> fija una faceta
+function lnk(type,value,label){
+  if(!value) return '';
+  return `<span class="lnk" data-t="${type}" data-v="${escA(value)}" onclick="setFacet(this.dataset.t,this.dataset.v)">${esc(label||value)}</span>`;
+}
+function setFacet(type,value){ F.facet={type,value}; draw(); }
+function clearFacet(){ F.facet=null; draw(); }
+window.setFacet=setFacet; window.clearFacet=clearFacet;
+
+const FLABEL={composer:'compositor',librettist:'libretista',based_on:'fuente',language:'idioma',style:'época',city:'ciudad',decade:'década',character:'personaje'};
+let CHARS={};
+function facetMatch(o,f){
+  switch(f.type){
+    case 'composer': return o.composer===f.value;
+    case 'librettist': return (o.librettist||[]).includes(f.value);
+    case 'based_on': return (o.based_on||[]).includes(f.value);
+    case 'language': return o.language===f.value;
+    case 'style': return o.style===f.value;
+    case 'city': return o.ob_city===f.value;
+    case 'character': return (o.cast||[]).includes(f.value);
+    case 'decade': return o.year && Math.floor(o.year/10)*10===+f.value;
+  } return true;
+}
+function match(o){
+  if(F.q && !(o.title.toLowerCase().includes(F.q)||(o.original||'').toLowerCase().includes(F.q))) return false;
+  if(F.facet && !facetMatch(o,F.facet)) return false;
+  return true;
+}
+
+// óperas relacionadas: puntúa por rasgos compartidos
+function related(o){
+  const inter=(a,b)=>(a||[]).filter(x=>(b||[]).includes(x));
+  const out=[];
+  for(const p of DATA){
+    if(p===o) continue;
+    let s=0, why='';
+    const src=inter(o.based_on,p.based_on);
+    const lib=inter(o.librettist,p.librettist);
+    if(src.length){ s+=4*src.length; why='misma fuente: '+src[0]; }
+    if(lib.length){ s+=3*lib.length; if(!why) why='libretista: '+lib[0]; }
+    if(o.composer===p.composer){ s+=1; if(!why) why='mismo compositor'; }
+    if(o.style&&o.style===p.style&&o.language===p.language){ s+=1.5; if(!why) why='misma época e idioma'; }
+    if(s>0) out.push({p,s,why});
+  }
+  return out.sort((a,b)=>b.s-a.s).slice(0,7);
+}
+
+function renderFicha(o){
+  const era=o.style?`<span class="chip">${lnk('style',o.style)}</span>`:'';
+  const lang=o.language?`<span class="chip">idioma ${lnk('language',o.language)}</span>`:'';
+  const roles='';  // recuento de roles inflado (variantes de producción) -> oculto
+  const yr=o.year;
+  const prem=yr?`<span class="chip">estreno ${lnk('decade',String(Math.floor(yr/10)*10),String(yr))}${o.wd_venue?' · '+esc(o.wd_venue):(o.ob_city?' · '+esc(o.ob_city):'')}</span>`:'';
+  const lib=(o.librettist||[]).length?`<span class="chip">libreto ${o.librettist.map(l=>lnk('librettist',l)).join(', ')}</span>`:'';
+  const src=(o.based_on||[]).length?`<span class="chip">basada en ${o.based_on.map(s=>lnk('based_on',s)).join(', ')}</span>`:'';
+  const poppct=Math.round(100*Math.sqrt(o.perfs/MAXPOP));
+  const pop=`<span class="chip">repertorio <span style="display:inline-block;width:70px;height:6px;border-radius:3px;background:#2b3035;vertical-align:middle;margin-left:4px"><span style="display:block;height:6px;border-radius:3px;width:${poppct}%;background:var(--accent)"></span></span></span>`;
+  const rel=related(o);
+  const relHtml=rel.length?`<div class="related"><div class="ttl">Óperas relacionadas</div><div class="rel">`+
+    rel.map(r=>`<div class="rel-item" data-i="${DATA.indexOf(r.p)}"><span class="rt"><b>${esc(r.p.title)}</b> · ${esc(r.p.composer)}</span><span class="why">${esc(r.why)}</span></div>`).join('')+
+    `</div></div>`:'';
+  $('#ficha').innerHTML=`
+    <h1 class="fh1">${esc(o.title)}</h1>
+    <div class="fsub">${lnk('composer',o.composer)}${o.original&&o.original!=o.title?' · <span style="color:#7f868c">'+esc(o.original)+'</span>':''}</div>
+    <div class="chips">${era}${lang}${lib}${src}${roles}${prem}${pop}</div>
+    ${o.synopsis?`<div class="syn">${esc(o.synopsis)}${o.synopsis_url?`<span class="attr">${esc(o.synopsis_src||'')} · <a href="${esc(o.synopsis_url)}" target="_blank" rel="noopener">fuente</a></span>`:''}</div>`:''}
+    ${(o.cast||[]).length?`<div class="cast"><span class="ct">reparto</span>${o.cast.map(c=>{
+        const rec=(CHARS[c]||0)>1;
+        return `<span class="cch${rec?' recur':''}" ${rec?`data-t="character" data-v="${escA(c)}" onclick="setFacet(this.dataset.t,this.dataset.v)"`:''}>${esc(c)}</span>`;
+      }).join('')}</div>`:''}
+    ${durBlock(o)}
+    ${flavor('Duración bruta (función real)','tus vídeos', o.gross_acts, 'Pendiente: extraer de tu colección de vídeos (ffprobe).')}
+    <div class="legend">Colores = Acto I, II, III… · ancho = minutos</div>
+    ${relHtml}`;
+  $('#ficha').querySelectorAll('.rel-item').forEach(el=>el.onclick=()=>selectOpera(+el.dataset.i));
+}
+
+function selectOpera(idx){ sel=idx; renderFicha(DATA[idx]); draw(); $('#ficha').scrollTop=0; }
+window.selectOpera=selectOpera;
+
+function renderFacet(){
+  if(!F.facet){ $('#facet').innerHTML=''; return; }
+  $('#facet').innerHTML=`<span class="facetchip"><span class="k">${FLABEL[F.facet.type]||F.facet.type}:</span> ${esc(F.facet.value)} <span class="x" onclick="clearFacet()">✕</span></span>`;
+}
+
+function draw(){
+  F.q=$('#q').value.toLowerCase().trim();
+  renderFacet();
+  let list=DATA.filter(match);
+  $('#count').textContent=`${list.length} óperas`+(list.length<DATA.length?` (de ${DATA.length})`:'');
+  $('#list').innerHTML=list.slice(0,400).map(o=>{
+    const idx=DATA.indexOf(o);
+    const d=o.mb_total_min?hhmm(o.mb_total_min):'';
+    return `<div class="row ${sel===idx?'sel':''}" data-i="${idx}">
+      <div style="min-width:0"><div class="t">${esc(o.title)}</div><div class="c">${esc(o.composer)}</div>
+        <div class="pop" style="width:${Math.round(100*Math.sqrt(o.perfs/MAXPOP))}%"></div></div>
+      <div class="d">${d}</div></div>`;
+  }).join('');
+  $('#list').querySelectorAll('.row').forEach(r=>r.onclick=()=>selectOpera(+r.dataset.i));
+}
+$('#q').oninput=draw;
+
+fetch('core.json').then(r=>r.json()).then(d=>{
+  DATA=d; MAXPOP=Math.max(...d.map(o=>o.perfs||1));
+  DATA.forEach(o=>(o.cast||[]).forEach(c=>CHARS[c]=(CHARS[c]||0)+1));  // personajes recurrentes
+  const params=new URLSearchParams(location.search);
+  const pc=params.get('composer'), po=params.get('opera');
+  if(pc) F.facet={type:'composer',value:pc};
+  draw();
+  if(po){const i=DATA.findIndex(o=>o.title===po||o.title_en===po);if(i>=0)selectOpera(i);}
+}).catch(e=>{$('#count').textContent='Error cargando core.json — '+e;});
+</script>
+</body>
+</html>
