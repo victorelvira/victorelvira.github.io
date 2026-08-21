@@ -672,6 +672,23 @@ function chartFloatsPerYear() {
     ${yearAxis(scale, { from: min, to: max, step: 20, height })}${bars}</svg>`;
 }
 
+/* El podio de vestidos, una fila por edicion en vez de una por puesto: con
+ * 1.º y 2.º en filas seguidas el ano se repetia y no se comparaba nada. */
+function prizeByYear(field) {
+  const years = new Map();
+  state.floats.filter(entry => entry[field]).forEach(entry => {
+    if (!years.has(entry.year)) years.set(entry.year, {});
+    years.get(entry.year)[entry[field]] = entry;
+  });
+  return [...years.entries()].sort((a, b) => b[0] - a[0]);
+}
+
+function prizeCell(entry) {
+  if (!entry) return '<span class="muted-val">–</span>';
+  return `<button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>
+    <small class="cell-sub">${esc(entry.group_canonical || "")}</small>`;
+}
+
 function renderStatsTab() {
   const summary = state.dataset.summary || {};
   // Las ediciones sin carrozas no pintan barra, asi que sus niveles tampoco
@@ -723,31 +740,37 @@ function renderStatsTab() {
       ${chartCareers(category)}
 
       <h3 class="section">Premios especiales</h3>
-      <p class="chart-note">Además de la clasificación del desfile hay dos galardones aparte.
-      <b>👗 Vestidos</b> lo puntúa el jurado; <b>🎨 Arte</b> lo concede ACELAR, la asociación de
-      comerciantes de Laredo, desde 2009, y su trofeo es una obra de un artista laredano elegida
-      en un concurso propio. Solo constan desde 2016.</p>
-      <div class="prize-lists">
-        ${[["👗 Vestidos", "prize_costumes_rank"], ["🎨 Arte", "prize_art_rank"]].map(([label, field]) => {
-          const rows = state.floats
-            .filter(entry => entry[field])
-            .sort((a, b) => b.year - a.year || a[field] - b[field]);
-          return `
-            <div class="prize-list">
-              <h4>${label} <small>${rows.length}</small></h4>
-              <table class="palmares">
-                <tbody>${rows.map(entry => `
-                  <tr>
-                    <td class="pos"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
-                    <td class="pos">${entry[field]}.º</td>
-                    <td class="name"><button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button></td>
-                    <td class="group">${entry.group_canonical
-                      ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
-                      : "–"}</td>
-                  </tr>`).join("")}</tbody>
-              </table>
-            </div>`;
-        }).join("")}
+      <p class="chart-note">Aparte de la clasificación del desfile. <b>👗 Vestidos</b> lo puntúa el
+      jurado; <b>🎨 Arte</b> lo concede ACELAR, la asociación de comerciantes de Laredo, desde 2009,
+      y su trofeo es una obra de un artista laredano elegida en un concurso propio. Solo constan
+      desde 2016.</p>
+
+      <div class="prize-list">
+        <h4>👗 Premio a los vestidos</h4>
+        <table class="palmares prize-table">
+          <thead><tr><th>Año</th><th>🥇 Primero</th><th>🥈 Segundo</th><th>🥉 Tercero</th></tr></thead>
+          <tbody>${prizeByYear("prize_costumes_rank").map(([year, podium]) => `
+            <tr>
+              <td class="pos"><button class="link t-year" type="button" data-year="${year}">${year}</button></td>
+              ${[1, 2, 3].map(rank => `<td>${prizeCell(podium[rank])}</td>`).join("")}
+            </tr>`).join("")}</tbody>
+        </table>
+      </div>
+
+      <div class="prize-list">
+        <h4>🎨 Premio al arte</h4>
+        <table class="palmares prize-table">
+          <thead><tr><th>Año</th><th>Carroza</th><th>Grupo</th></tr></thead>
+          <tbody>${state.floats.filter(entry => entry.prize_art_rank)
+            .sort((a, b) => b.year - a.year || a.name.localeCompare(b.name)).map(entry => `
+            <tr>
+              <td class="pos"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
+              <td class="name"><button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button></td>
+              <td class="group">${entry.group_canonical
+                ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
+                : "–"}</td>
+            </tr>`).join("")}</tbody>
+        </table>
       </div>
     </div>`;
 }
