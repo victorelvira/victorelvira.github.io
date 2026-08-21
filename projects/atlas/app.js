@@ -68,8 +68,8 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.32.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-21 14:40";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.32.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 11:00";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -924,6 +924,7 @@ function buildTimeline(min, max) {
 }
 
 // ── side panel: the works currently within the map viewport, grouped by venue ──
+const PANEL_CAP = 250;   // max rows rendered — keeps pan/zoom smooth on mobile (see note below)
 function renderPanel() {
   const bounded = view.map;                    // when the map is hidden, list ALL works (no bounds)
   const b = bounded ? map.getBounds() : null;
@@ -954,7 +955,11 @@ function renderPanel() {
   }
   panelVis = [];
   let html = "";
+  let capped = false;
+  // Cap the rendered rows: painting thousands of <li> + remote <img> on every pan/zoom is what
+  // makes mobile crawl. Whole venue groups are kept intact until we cross the cap.
   for (const g of ordered) {
+    if (panelVis.length >= PANEL_CAP) { capped = true; break; }
     g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
     html += `<li class="grp"><span>${esc(g.location)}${g.city ? ` · ${esc(g.city)}` : ""}</span>` +
       `<span class="n">${g.items.length}</span></li>`;
@@ -963,13 +968,15 @@ function renderPanel() {
       const p = w.p;
       const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
       const thumb = p.image
-        ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
+        ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
         : `<span class="th"></span>`;
       html += `<li data-i="${i}">${thumb}<div>` +
         `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
         `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;
     }
   }
+  if (capped) html += `<li class="grp more"><span>+${vis.length - panelVis.length} more in view` +
+    ` — zoom in or filter to narrow the list</span></li>`;
   ul.innerHTML = html;
 }
 

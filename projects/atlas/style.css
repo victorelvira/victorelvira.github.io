@@ -21,7 +21,7 @@ body {
   padding: 10px 16px; background: var(--bar);
   border-bottom: 1px solid var(--line); z-index: 500;
 }
-.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; color: inherit; cursor: pointer; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; cursor: pointer; }
 .brand:hover strong { text-decoration: underline; }
 .brand strong { display: block; font-size: 16px; letter-spacing: .2px; }
 .brand small { color: var(--muted); }
@@ -37,7 +37,7 @@ body {
 #navbar .nav-home { color: #cbbfae; text-decoration: none; }
 #navbar a:hover { text-decoration: underline; }
 #navbar .build { margin-left: auto; color: #8a7f72; font-size: 11.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: auto; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
 .chip {
@@ -56,6 +56,8 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,.08);
 }
 #painters-btn:hover { background: #e7dcc6; border-color: #c8b48c; }
+/* primary control: the painter selector sits beside the title, a touch larger than the chips */
+.painters.primary #painters-btn { padding: 7px 15px; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 #painters-btn[aria-expanded="true"] { background: #e0d3b8; border-color: #b89a68; }
 #painters-pop {
   position: absolute; top: calc(100% + 4px); left: 0; z-index: 900; width: 240px;
@@ -238,6 +240,8 @@ img.th.ph::after, img.tth.ph::after { content: ""; }
   font-weight: 700; font-size: 12px; color: var(--ink);
 }
 #worklist .grp .n { color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+#worklist .grp.more { justify-content: center; color: var(--muted); font-weight: 600; font-size: 11.5px;
+  text-transform: none; background: #f3ece0; }
 #worklist li:not(.grp):not(.empty) {
   display: flex; gap: 10px; align-items: center; cursor: pointer;
   padding: 8px 12px; border-bottom: 1px solid #f0ece3;
