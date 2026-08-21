@@ -55,14 +55,16 @@ a { color: inherit; }
 .bar-title { display: flex; align-items: center; gap: 8px; min-width: 0; flex-wrap: wrap; }
 
 .home {
-  display: inline-flex; align-items: center; gap: 7px;
+  display: inline-flex; align-items: center; gap: var(--logo-gap);
   text-decoration: none; color: inherit; border-radius: 6px;
 }
 .home:hover h1 { color: var(--rose); }
 .home:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
 
+:root { --logo: 28px; --logo-gap: 7px; }
+
 .dalia {
-  width: 28px; height: 28px; flex: none;
+  width: var(--logo); height: var(--logo); flex: none;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid #e7cdd6;
@@ -76,15 +78,34 @@ a { color: inherit; }
   letter-spacing: -0.2px;
 }
 .bar-title h1 .of { font-weight: 400; }
+/* Sangrada para arrancar donde arranca «Batalla», no debajo de la dalia. */
 .bar-sub {
   flex-basis: 100%;
   margin: 1px 0 0;
+  padding-left: calc(var(--logo) + var(--logo-gap));
   max-width: 62ch;
   color: #8b7b73;
-  font-family: Georgia, "Iowan Old Style", serif;
-  font-size: 12.5px; font-style: italic; line-height: 1.3;
+  font-size: 12px; line-height: 1.3;
 }
-.bar-sub .years { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar-actions {
+  flex-basis: 100%;
+  display: flex; gap: 6px; margin-top: 5px;
+  padding-left: calc(var(--logo) + var(--logo-gap));
+}
+.pill {
+  font: inherit; font-size: 11.5px; padding: 3px 11px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
+}
+.pill:hover { border-color: var(--rose); color: var(--rose); }
+
+.about-lead { margin: 6px 0 4px; font-size: 14px; line-height: 1.45; }
+#detail p { margin: 0 0 8px; line-height: 1.45; }
+#detail p a { color: var(--sky); }
+
+.bar-title h1 .years {
+  color: var(--muted); font-weight: 400; font-size: 0.78em;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
 
 .stats { display: flex; gap: 14px; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12.5px; }
 .stats b { color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -134,7 +155,7 @@ a { color: inherit; }
 }
 
 .pane-head {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 6px 12px; flex-wrap: wrap;
   padding: 7px 12px;
   border-bottom: 1px solid var(--line-soft);
   background: #fffaf5;
@@ -163,7 +184,7 @@ a { color: inherit; }
 
 .muted { color: var(--muted); font-size: 12px; margin: 0; }
 .count {
-  margin: 0 0 0 auto; color: var(--muted);
+  margin: 0 0 0 auto; color: var(--muted); text-align: right;
   font-size: 11.5px; font-style: italic; font-variant-numeric: tabular-nums;
 }
 
@@ -295,6 +316,50 @@ a { color: inherit; }
 
 .provenance .codes { margin: 6px 0 0; }
 .provenance .codes .tag { margin-right: 2px; }
+
+/* Tabla de carrozas. En escritorio el grupo tiene columna propia; en movil se
+   cae y aparece como segunda linea bajo el nombre, que ocupa menos. */
+.rows-floats .row-head,
+.rows-floats .row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) 46px 38px 54px 14px;
+  align-items: baseline;
+}
+.rows-floats .row-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rows-floats .row-name small { display: none; }
+.rows-floats .col-grp {
+  color: var(--muted); font-size: 12.5px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rows-floats .row .col-num { color: var(--muted); font-size: 12.5px; }
+
+/* Conmutador lista / cuadricula, junto al contador. */
+.count { display: inline-flex; align-items: center; gap: 8px; }
+.view-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.view {
+  font: inherit; font-size: 13px; line-height: 1; padding: 3px 8px; cursor: pointer;
+  border: 0; background: #fff; color: var(--muted);
+}
+.view + .view { border-left: 1px solid var(--line); }
+.view.is-on { background: var(--rose-soft); color: var(--rose); }
+
+/* Cuadricula de fotos. */
+.float-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(122px, 1fr)); gap: 8px; }
+.tile {
+  display: flex; flex-direction: column; padding: 0; cursor: pointer; text-align: left;
+  border: 1px solid var(--line); border-radius: 9px; background: #fff; overflow: hidden;
+  font: inherit; color: inherit;
+}
+.tile img { display: block; width: 100%; height: 92px; object-fit: cover; background: #f1e9df; }
+.tile-name {
+  padding: 5px 7px 0; font-size: 12px; font-weight: 600; line-height: 1.2;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.tile-meta { padding: 1px 7px 6px; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.tile:hover { border-color: var(--rose); }
+.tile.is-active { border-color: var(--rose); box-shadow: 0 0 0 2px var(--rose-soft); }
+
+.gallery-big { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.gallery-big img { height: 120px; }
 
 .row-go { color: var(--line); font-size: 16px; line-height: 1; }
 .row:hover .row-go, .row.is-active .row-go { color: var(--rose); }
@@ -489,6 +554,20 @@ ul.plain a { color: var(--sky); word-break: break-all; }
     font-size: 13px;
   }
   .col-ed, .col-floats { display: none; }
+
+  .rows-floats .row-head,
+  .rows-floats .row {
+    grid-template-columns: minmax(0, 1fr) 44px 40px 12px;
+    gap: 2px 6px; font-size: 13px;
+  }
+  .rows-floats .col-grp, .rows-floats .col-cat { display: none; }
+  .rows-floats .row-name small {
+    display: block; color: var(--muted); font-size: 11px; font-weight: 400;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .rows-floats .row .col-num,
+  .rows-floats .row-head .sort.col-num { text-align: left; font-size: 11.5px; }
+  .rows-floats .row { padding: 5px 6px; }
   .rows-groups .row .col-num,
   .rows-groups .row-head .sort.col-num { text-align: left; font-size: 11.5px; }
   .rows-groups .row-head { font-size: 9px; letter-spacing: 0.02em; }

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#b6465f">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=0.14.1">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=0.17.0">
 </head>
 <body>
   <nav id="navbar">
@@ -23,10 +23,15 @@
       <a id="home" href="#" class="home" title="Volver al inicio: limpia filtros y vuelve a la última edición">
         <img class="dalia" src="batalla_de_flores/dalia.jpg" width="128" height="128"
              alt="Dalia, la flor con la que se cubren las carrozas">
-        <h1>Batalla de Flores <span class="of">de Laredo</span></h1>
+        <h1>Batalla de Flores <span class="of">de Laredo</span>
+          <span class="years">(1908–2026)</span></h1>
       </a>
-      <p class="bar-sub">Base de datos interactiva de la fiesta, declarada de
-        Interés Turístico Nacional <span class="years">(1908–2026)</span></p>
+      <p class="bar-sub">Base de datos interactiva de la fiesta,
+        declarada de Interés Turístico Nacional</p>
+      <div class="bar-actions">
+        <button id="faq" class="pill" type="button">Qué es esto</button>
+        <button id="share-site" class="pill" type="button">Compartir</button>
+      </div>
     </div>
     <div id="stats" class="stats"></div>
     <div class="controls">
@@ -43,6 +48,7 @@
       <div class="pane-head">
         <div class="tabs" role="tablist">
           <button class="tab is-active" type="button" data-mode="editions" role="tab" aria-selected="true">Ediciones</button>
+          <button class="tab" type="button" data-mode="floats" role="tab" aria-selected="false">Carrozas</button>
           <button class="tab" type="button" data-mode="groups" role="tab" aria-selected="false">Grupos</button>
           <button class="tab" type="button" data-mode="routes" role="tab" aria-selected="false">Recorridos</button>
         </div>
@@ -76,7 +82,7 @@
   <script data-goatcounter="https://victorelvira.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
-  <script src="batalla_de_flores/app.js?v=0.14.1"></script>
+  <script src="batalla_de_flores/app.js?v=0.17.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

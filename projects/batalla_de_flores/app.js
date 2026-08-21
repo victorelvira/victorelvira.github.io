@@ -21,12 +21,16 @@ const els = {
   detail: document.getElementById("detail"),
   home: document.getElementById("home"),
   detailClose: document.getElementById("detail-close"),
+  faq: document.getElementById("faq"),
+  shareSite: document.getElementById("share-site"),
 };
 
 const state = {
   dataset: null,
   editions: [],
   groups: [],
+  floats: [],   // indice plano para la pestana Carrozas
+  floatView: "list",   // "list" | "grid"
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
@@ -37,7 +41,7 @@ const state = {
   decade: "all",
   status: "all",
   rankedOnly: false,
-  groupSort: { key: "wins", dir: -1 },
+  sort: { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } },
   openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
 
@@ -182,6 +186,25 @@ function applyFilters() {
   });
 }
 
+/* Todas las carrozas en una sola lista, para la pestana de tabla. Se construye
+ * una vez al cargar: 724 filas recorridas en cada teclazo del buscador seria
+ * tonteria. */
+function buildFloatIndex(editions) {
+  return editions.flatMap(edition =>
+    (edition.floats || []).map(entry => ({
+      ...entry,
+      year: edition.year,
+      search: normalizeText(`${entry.name} ${entry.group_canonical || ""}`),
+    })));
+}
+
+function filteredFloats() {
+  const query = normalizeText(state.query);
+  const visibleYears = new Set(state.filtered.map(edition => edition.year));
+  return state.floats.filter(entry =>
+    visibleYears.has(entry.year) && (!query || entry.search.includes(query)));
+}
+
 function filteredGroups() {
   const query = normalizeText(state.query);
   const visibleYears = new Set(state.filtered.map(edition => edition.year));
@@ -293,34 +316,59 @@ function renderYearGrid() {
 
 /* Claves de ordenacion de la lista de grupos. `text` ordena ignorando tildes
  * y mayusculas; el resto son numericas. */
-const GROUP_SORTS = {
-  name: { type: "text", get: group => normalizeText(group.canonical_name) },
-  from: { type: "num", get: group => group.first_year_seen },
-  to: { type: "num", get: group => group.last_year_seen },
-  editions: { type: "num", get: group => group.years.length },
-  floats: { type: "num", get: group => group.float_count },
-  wins: { type: "num", get: group => group.wins },
+/* Claves de ordenacion de las dos listas tabulares. `text` ordena ignorando
+ * tildes y mayusculas; el resto son numericas. Los sin dato (una carroza sin
+ * puesto) se mandan al final en vez de colarse como cero. */
+const SORTS = {
+  groups: {
+    name: { type: "text", get: group => normalizeText(group.canonical_name) },
+    from: { type: "num", get: group => group.first_year_seen },
+    to: { type: "num", get: group => group.last_year_seen },
+    editions: { type: "num", get: group => group.years.length },
+    floats: { type: "num", get: group => group.float_count },
+    wins: { type: "num", get: group => group.wins },
+  },
+  floats: {
+    name: { type: "text", get: entry => normalizeText(entry.name) },
+    group: { type: "text", get: entry => normalizeText(entry.group_canonical) },
+    year: { type: "num", get: entry => entry.year },
+    category: { type: "text", get: entry => entry.category || "\uffff" },
+    position: { type: "num", get: entry => entry.position ?? Number.POSITIVE_INFINITY },
+  },
 };
 
-function sortGroups(groups) {
-  const sort = GROUP_SORTS[state.groupSort.key] || GROUP_SORTS.wins;
-  const dir = state.groupSort.dir;
-  return [...groups].sort((a, b) => {
+const TIEBREAK = {
+  groups: (a, b) => b.float_count - a.float_count
+    || normalizeText(a.canonical_name).localeCompare(normalizeText(b.canonical_name)),
+  floats: (a, b) => b.year - a.year
+    || (a.category || "").localeCompare(b.category || "")
+    || (a.position ?? 99) - (b.position ?? 99),
+};
+
+function sortRows(mode, rows) {
+  const { key, dir } = state.sort[mode];
+  const sort = SORTS[mode][key];
+  const missing = value => value === null || value === undefined
+    || value === "" || value === Number.POSITIVE_INFINITY || value === "\uffff";
+
+  return [...rows].sort((a, b) => {
     const left = sort.get(a);
     const right = sort.get(b);
+    // Lo que no tiene dato va siempre al final, se ordene como se ordene: una
+    // carroza sin puesto no es "la primera" ni "la ultima", es que no compitio.
+    if (missing(left) !== missing(right)) return missing(left) ? 1 : -1;
     if (left < right) return -dir;
     if (left > right) return dir;
-    // Desempate estable: mas carrozas primero y luego alfabetico.
-    return b.float_count - a.float_count
-      || normalizeText(a.canonical_name).localeCompare(normalizeText(b.canonical_name));
+    return TIEBREAK[mode](a, b);
   });
 }
 
-function sortHeader(key, label, extraClass = "") {
-  const isActive = state.groupSort.key === key;
-  const arrow = isActive ? (state.groupSort.dir === 1 ? " ▲" : " ▼") : "";
+function sortHeader(mode, key, label, extraClass = "") {
+  const { key: active, dir } = state.sort[mode];
+  const isActive = active === key;
+  const arrow = isActive ? (dir === 1 ? " ▲" : " ▼") : "";
   return `<button class="sort${isActive ? " is-sorted" : ""} ${extraClass}" type="button"
-    data-sort-group="${key}" aria-sort="${isActive ? (state.groupSort.dir === 1 ? "ascending" : "descending") : "none"}"
+    data-sort="${mode}:${key}" aria-sort="${isActive ? (dir === 1 ? "ascending" : "descending") : "none"}"
   >${label}${arrow}</button>`;
 }
 
@@ -334,15 +382,15 @@ function renderGroupList() {
   els.indexBody.innerHTML = `
     <div class="rows rows-groups">
       <div class="row-head">
-        ${sortHeader("name", "Grupo")}
-        ${sortHeader("from", "Desde", "col-num")}
-        ${sortHeader("to", "Hasta", "col-num")}
-        ${sortHeader("editions", "Ediciones", "col-num col-ed")}
-        ${sortHeader("floats", "Carrozas", "col-num col-floats")}
-        ${sortHeader("wins", "🏆", "col-num col-wins")}
+        ${sortHeader("groups", "name", "Grupo")}
+        ${sortHeader("groups", "from", "Desde", "col-num")}
+        ${sortHeader("groups", "to", "Hasta", "col-num")}
+        ${sortHeader("groups", "editions", "Ediciones", "col-num col-ed")}
+        ${sortHeader("groups", "floats", "Carrozas", "col-num col-floats")}
+        ${sortHeader("groups", "wins", "🏆", "col-num col-wins")}
         <span aria-hidden="true"></span>
       </div>
-      ${sortGroups(groups).map(group => {
+      ${sortRows("groups", groups).map(group => {
         const slug = slugifyGroup(group.canonical_name);
         const active = state.selection?.kind === "group" && state.selection.id === slug;
         return `
@@ -353,6 +401,76 @@ function renderGroupList() {
             <span class="col-num col-ed">${group.years.length}</span>
             <span class="col-num col-floats">${group.float_count}</span>
             <span class="col-num col-wins">${group.wins || "—"}</span>
+            <span class="row-go" aria-hidden="true">›</span>
+          </button>`;
+      }).join("")}
+    </div>`;
+}
+
+/* ── indice: carrozas ───────────────────────────────────────────────────── */
+
+function viewToggle() {
+  return `
+    <div class="view-toggle">
+      <button class="view${state.floatView === "list" ? " is-on" : ""}" type="button"
+              data-view="list" title="Ver como lista">☰</button>
+      <button class="view${state.floatView === "grid" ? " is-on" : ""}" type="button"
+              data-view="grid" title="Ver como cuadrícula de fotos">▦</button>
+    </div>`;
+}
+
+/* Cuadricula: solo las carrozas con foto. De 724, 406 la tienen; con las otras
+ * 318 en blanco esto parecia roto, y el contador ya avisa de cuantas quedan. */
+function renderFloatGrid(rows) {
+  const withPhoto = rows.filter(entry => (entry.image_urls || []).length);
+  els.indexCount.innerHTML = `${viewToggle()}<span>${num(withPhoto.length)} con foto, de ${num(rows.length)}</span>`;
+
+  if (!withPhoto.length) {
+    els.indexBody.innerHTML = '<p class="empty">Ninguna de estas carrozas tiene foto en el archivo.</p>';
+    return;
+  }
+
+  els.indexBody.innerHTML = `<div class="float-grid">${sortRows("floats", withPhoto).map(entry => {
+    const active = state.selection?.kind === "float" && state.selection.id === entry.id;
+    return `
+      <button class="tile${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
+        <img src="${esc(entry.image_urls[0])}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+        <span class="tile-name">${esc(entry.name)}</span>
+        <span class="tile-meta">${entry.year}${entry.position != null
+          ? ` · ${entry.category || ""}${entry.position}.º` : ""}</span>
+      </button>`;
+  }).join("")}</div>`;
+}
+
+function renderFloatList() {
+  const rows = filteredFloats();
+  if (state.floatView === "grid") return renderFloatGrid(rows);
+
+  els.indexCount.innerHTML = `${viewToggle()}<span>${num(rows.length)} de ${num(state.floats.length)} carrozas</span>`;
+  if (!rows.length) {
+    els.indexBody.innerHTML = '<p class="empty">Ninguna carroza encaja con la búsqueda.</p>';
+    return;
+  }
+
+  els.indexBody.innerHTML = `
+    <div class="rows rows-floats">
+      <div class="row-head">
+        ${sortHeader("floats", "name", "Carroza")}
+        ${sortHeader("floats", "group", "Grupo", "col-grp")}
+        ${sortHeader("floats", "year", "Año", "col-num")}
+        ${sortHeader("floats", "category", "Cat.", "col-num col-cat")}
+        ${sortHeader("floats", "position", "Puesto", "col-num")}
+        <span aria-hidden="true"></span>
+      </div>
+      ${sortRows("floats", rows).map(entry => {
+        const active = state.selection?.kind === "float" && state.selection.id === entry.id;
+        return `
+          <button class="row row-float${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
+            <span class="row-name">${esc(entry.name)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
+            <span class="col-grp">${esc(entry.group_canonical || "—")}</span>
+            <span class="col-num">${entry.year}</span>
+            <span class="col-num col-cat">${entry.category ? esc(entry.category) : "—"}</span>
+            <span class="col-num">${entry.position != null ? `${entry.position}.º` : "—"}</span>
             <span class="row-go" aria-hidden="true">›</span>
           </button>`;
       }).join("")}
@@ -384,6 +502,7 @@ function renderRouteList() {
 
 function renderIndex() {
   if (state.mode === "editions") renderYearGrid();
+  else if (state.mode === "floats") renderFloatList();
   else if (state.mode === "groups") renderGroupList();
   else renderRouteList();
   renderLegend();
@@ -780,6 +899,122 @@ function renderEditionDetail(edition) {
   els.detail.scrollTop = 0;
 }
 
+/* ── detalle: qué es esto ───────────────────────────────────────────────── */
+
+/* Va por el mismo carril que las demas fichas (seleccion + hash + capa en
+ * movil), asi que hereda la cruz de cerrar y se puede enlazar: #/info */
+function renderAbout() {
+  const summary = state.dataset.summary || {};
+  els.detail.innerHTML = `
+    <div class="detail-head">
+      <h2 style="font-size:22px">Qué es esto</h2>
+    </div>
+    <div class="chips">${shareButton()}</div>
+
+    <p class="about-lead">Un archivo interactivo de la <b>Batalla de Flores de Laredo</b>,
+    declarada Fiesta de Interés Turístico Nacional, que reúne
+    ${num(summary.edition_count)} ediciones desde 1908 con
+    ${num(summary.float_count)} carrozas y ${num(summary.group_count)} grupos
+    carrocistas, cada una con la fuente de la que sale.</p>
+
+    <h3 class="section">No es la web oficial</h3>
+    <p>Es un proyecto personal y sin ánimo de lucro, hecho por afición a la fiesta.
+    No representa al Ayuntamiento ni a la organización. Para información oficial
+    —fechas, inscripciones, programa— acude a
+    <a href="https://www.laredo.es/09/fiestas_flores.php" target="_blank" rel="noopener">laredo.es</a>
+    o a <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>.</p>
+
+    <h3 class="section">De dónde salen los datos</h3>
+    <p>El grueso del archivo histórico procede de
+    <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>,
+    un trabajo de recopilación excelente —más de un siglo documentado carroza a
+    carroza— sin el cual esta página no existiría. Los resultados recientes salen
+    de las notas oficiales del Ayuntamiento de Laredo. Aquí no se copia su
+    contenido: se estructura en una base de datos derivada, y
+    <b>cada carroza enlaza a la página concreta de la que sale</b>.</p>
+    <p>Las imágenes se muestran enlazadas desde el servidor original y
+    pertenecen a sus autores.</p>
+
+    <h3 class="section">Qué falta, y por qué</h3>
+    <ul class="plain">
+      <li>De <b>2018</b> solo se conserva una carroza documentada: ni el archivo ni
+      el Ayuntamiento publicaron el palmarés de aquel año.</li>
+      <li><b>2020 y 2021</b> no se celebraron por la pandemia; entre 1936 y 1939 tampoco.</li>
+      <li>Los años más antiguos tienen fichas sueltas, no palmarés completos.</li>
+      <li>El circuito de la Alameda se dibuja como el perímetro del parque: ninguna
+      fuente detalla las calles exactas.</li>
+    </ul>
+    <p class="muted">Cada edición dice en su ficha de dónde viene lo que muestra, así
+    que los huecos se ven en lugar de disimularse.</p>
+
+    <h3 class="section">¿Ves un error?</h3>
+    <p>Es muy posible que lo haya: mucho de esto viene de parsear páginas antiguas.
+    Si detectas un dato mal, se agradece el aviso a través de
+    <a href="https://victorelvira.github.io" target="_blank" rel="noopener">victorelvira.github.io</a>.</p>
+
+    <div class="provenance">
+      <b>Ficha técnica</b>
+      <ul>
+        <li>Versión ${esc(state.dataset.version || "—")}, generada el ${esc(state.dataset.built_at || "—")}.</li>
+        <li>Web estática sin dependencias; los mapas se dibujan sobre datos de
+        OpenStreetMap (ODbL).</li>
+      </ul>
+    </div>`;
+  els.detail.scrollTop = 0;
+}
+
+/* ── detalle: carroza ───────────────────────────────────────────────────── */
+
+function renderFloatDetail(entry) {
+  const edition = state.editions.find(item => item.year === entry.year);
+  const prizes = prizeChips(entry);
+
+  els.detail.innerHTML = `
+    <div class="detail-head">
+      <h2 style="font-size:22px">${esc(entry.name)}</h2>
+    </div>
+    <div class="chips">
+      ${shareButton()}
+      <button class="chip link-chip" type="button" data-year="${entry.year}">${entry.year} →</button>
+      ${entry.group_canonical
+        ? `<button class="chip link-chip" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)} →</button>`
+        : ""}
+      ${entry.position != null
+        ? `<span class="chip ${entry.position === 1 ? "gold" : ""}">${entry.category ? `Cat. ${esc(entry.category)} · ` : ""}${entry.position}.º puesto</span>`
+        : '<span class="chip">Sin puesto conocido</span>'}
+    </div>
+
+    ${prizes ? `<p class="span-note">${esc(prizes)}</p>` : ""}
+
+    ${(entry.image_urls || []).length ? `
+      <h3 class="section">Imágenes (${entry.image_urls.length})</h3>
+      <div class="gallery gallery-big">
+        ${entry.image_urls.map(url => `
+          <figure class="shot">
+            <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
+               title="${esc(entry.name)} (${entry.year}) — imagen alojada en batalladeflores.net">
+              <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+            </a>
+          </figure>`).join("")}
+      </div>`
+      : '<p class="empty">El archivo no conserva imágenes de esta carroza.</p>'}
+
+    ${(entry.notes || []).length
+      ? `<h3 class="section">Notas</h3><ul class="plain">${entry.notes.map(note => `<li>${esc(note)}</li>`).join("")}</ul>`
+      : ""}
+
+    <div class="provenance">
+      <b>Procedencia</b>
+      <ul>
+        <li>${esc(sourceLabel(entry.source_type))}</li>
+        ${edition ? `<li>Edición de ${entry.year}: ${esc(edition.edition_label || "")}</li>` : ""}
+      </ul>
+      ${(entry.source_urls || []).length ? `<ul class="plain" style="margin-top:6px">${entry.source_urls
+        .map(url => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></li>`).join("")}</ul>` : ""}
+    </div>`;
+  els.detail.scrollTop = 0;
+}
+
 /* ── detalle: grupo ─────────────────────────────────────────────────────── */
 
 /* El emoji de bronce se leia como "tercer puesto", que es justo lo contrario de
@@ -951,28 +1186,32 @@ function shareButton() {
   return `<button id="share" class="share" type="button" title="Compartir esta ficha">Compartir</button>`;
 }
 
-async function shareCurrent() {
-  track("compartir", "Compartir", true);
-  const button = document.getElementById("share");
-  const title = document.querySelector("#detail h2")?.textContent?.trim();
-  const data = {
-    title: `Batalla de Flores de Laredo${title ? ` · ${title}` : ""}`,
-    text: "Archivo de la Batalla de Flores de Laredo",
-    url: location.href,
-  };
+async function shareUrl(url, title, text, button) {
+  track("compartir", title, true);
   try {
     if (navigator.share) {
-      await navigator.share(data);
+      await navigator.share({ title, text, url });
       return;
     }
-    await navigator.clipboard.writeText(location.href);
+    await navigator.clipboard.writeText(url);
     if (button) {
+      const original = button.textContent;
       button.textContent = "Enlace copiado";
-      setTimeout(() => { button.textContent = "Compartir"; }, 2000);
+      setTimeout(() => { button.textContent = original; }, 2000);
     }
   } catch {
     /* el usuario cancelo la hoja de compartir: no hay nada que hacer */
   }
+}
+
+function shareCurrent() {
+  const heading = document.querySelector("#detail h2")?.textContent?.trim();
+  return shareUrl(
+    location.href,
+    `Batalla de Flores de Laredo${heading ? ` · ${heading}` : ""}`,
+    "Archivo de la Batalla de Flores de Laredo",
+    document.getElementById("share"),
+  );
 }
 
 function renderDetail() {
@@ -1005,6 +1244,11 @@ function renderDetail() {
     const route = state.routes.find(r => r.id === selection.id);
     if (route) return renderRouteDetail(route);
   }
+  if (selection.kind === "about") return renderAbout();
+  if (selection.kind === "float") {
+    const entry = state.floats.find(item => item.id === selection.id);
+    if (entry) return renderFloatDetail(entry);
+  }
   els.detail.innerHTML = '<p class="empty">No encuentro ese elemento en el dataset.</p>';
 }
 
@@ -1028,7 +1272,7 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
-    const prefix = { year: "y", group: "g", route: "r" }[kind];
+    const prefix = { year: "y", group: "g", route: "r", float: "c", about: "info" }[kind];
     history.replaceState(null, "", `#/${prefix}/${id}`);
     track(location.pathname + location.hash, `${kind}: ${id}`);
   }
@@ -1037,12 +1281,14 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
 }
 
 function readHash() {
-  const match = /^#\/(y|g|r)\/(.+)$/.exec(location.hash);
+  if (location.hash === "#/info/-") return { kind: "about", id: "-" };
+  const match = /^#\/(y|g|r|c)\/(.+)$/.exec(location.hash);
   if (!match) return null;
   const [, prefix, rawId] = match;
   const id = decodeURIComponent(rawId);
   if (prefix === "y") return { kind: "year", id: Number(id) };
   if (prefix === "g") return { kind: "group", id };
+  if (prefix === "c") return { kind: "float", id };
   return { kind: "route", id };
 }
 
@@ -1080,7 +1326,7 @@ function closeDetail() {
 function resetToStart() {
   state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false;
   els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
-  state.groupSort = { key: "wins", dir: -1 };
+  state.sort = { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } };
   state.openDecade = null;
   closeDetail();
   setMode("editions");
@@ -1114,6 +1360,15 @@ function bindEvents() {
     resetToStart();
   });
 
+  els.faq.addEventListener("click", () => select("about", "-"));
+  // Compartir la web entera: sin hash, para que el enlace no lleve a una ficha.
+  els.shareSite.addEventListener("click", () => shareUrl(
+    location.origin + location.pathname,
+    "Batalla de Flores de Laredo",
+    "Archivo interactivo de la Batalla de Flores de Laredo, desde 1908",
+    els.shareSite,
+  ));
+
   els.detailClose.addEventListener("click", () => closeDetail());
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") closeDetail();
@@ -1125,16 +1380,17 @@ function bindEvents() {
 
   // Un unico delegador: sirve para el indice y para los enlaces del detalle.
   document.addEventListener("click", event => {
-    const groupSort = event.target.closest("[data-sort-group]");
-    if (groupSort) {
-      const key = groupSort.dataset.sortGroup;
-      if (state.groupSort.key === key) {
-        state.groupSort.dir = -state.groupSort.dir;
+    const header = event.target.closest("[data-sort]");
+    if (header) {
+      const [mode, key] = header.dataset.sort.split(":");
+      const current = state.sort[mode];
+      if (current.key === key) {
+        current.dir = -current.dir;
       } else {
         // Texto arranca ascendente; los recuentos, de mayor a menor.
-        state.groupSort = { key, dir: GROUP_SORTS[key]?.type === "text" ? 1 : -1 };
+        state.sort[mode] = { key, dir: SORTS[mode][key].type === "text" ? 1 : -1 };
       }
-      renderGroupList();
+      renderIndex();
       return;
     }
 
@@ -1157,7 +1413,14 @@ function bindEvents() {
       return;
     }
 
-    const target = event.target.closest("[data-year], [data-group], [data-route]");
+    const view = event.target.closest("[data-view]");
+    if (view) {
+      state.floatView = view.dataset.view;
+      renderFloatList();
+      return;
+    }
+
+    const target = event.target.closest("[data-year], [data-group], [data-route], [data-float]");
     if (!target) return;
     if (target.dataset.year) {
       if (state.mode !== "editions") setMode("editions");
@@ -1168,6 +1431,9 @@ function bindEvents() {
     } else if (target.dataset.route) {
       if (state.mode !== "routes") setMode("routes");
       select("route", target.dataset.route);
+    } else if (target.dataset.float) {
+      if (state.mode !== "floats") setMode("floats");
+      select("float", target.dataset.float);
     }
   });
 
@@ -1194,6 +1460,8 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
       searchIndex: buildSearchIndex(edition),
     }));
 
+    state.floats = buildFloatIndex(state.editions);
+
     renderStats();
     renderFilterOptions();
     bindEvents();
@@ -1203,6 +1471,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     if (fromHash) {
       if (fromHash.kind === "group") setMode("groups");
       if (fromHash.kind === "route") setMode("routes");
+      if (fromHash.kind === "float") setMode("floats");
       select(fromHash.kind, fromHash.id, { updateHash: false });
     } else {
       // Sin seleccion de salida: con una edicion ya abierta, la rejilla no
