@@ -442,6 +442,15 @@ i.dot.ran { background: #bfb2a6; }
 .serie-B .serie-line { stroke: var(--t-year); stroke-dasharray: 4 3; }
 .serie-none .serie-line { stroke: #b3a79b; stroke-dasharray: 2 3; }
 
+.tip {
+  position: fixed; z-index: 90; pointer-events: none;
+  padding: 5px 9px; max-width: 260px;
+  border-radius: 7px; background: rgba(34, 23, 22, 0.93); color: #fff;
+  font-size: 11.5px; line-height: 1.35; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+.tip b { display: block; font-weight: 600; margin-top: 1px; }
+.tip[hidden] { display: none; }
+
 .bar { cursor: pointer; }
 .bar.tier-full { fill: var(--leaf); }
 .bar.tier-partial { fill: var(--gold); }

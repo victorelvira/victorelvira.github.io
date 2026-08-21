@@ -510,6 +510,36 @@ function renderFloatList() {
     </div>`;
 }
 
+/* Tooltip de los graficos. Se usa uno solo, movido por delegacion: los SVG
+ * tienen cientos de elementos y ponerle un listener a cada uno seria absurdo.
+ * En tactil no estorba porque `mouseover` no dispara con el dedo. */
+function setupTooltip() {
+  const tip = document.createElement("div");
+  tip.className = "tip";
+  tip.hidden = true;
+  document.body.appendChild(tip);
+
+  document.addEventListener("mouseover", event => {
+    const target = event.target.closest?.("[data-tip]");
+    if (!target) return;
+    tip.innerHTML = target.dataset.tip;
+    tip.hidden = false;
+  });
+
+  document.addEventListener("mousemove", event => {
+    if (tip.hidden) return;
+    // Se aparta del cursor y se pega al borde si no cabe.
+    const x = Math.min(event.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+    const y = event.clientY - tip.offsetHeight - 12;
+    tip.style.left = `${Math.max(8, x)}px`;
+    tip.style.top = `${y < 8 ? event.clientY + 18 : y}px`;
+  });
+
+  document.addEventListener("mouseout", event => {
+    if (event.target.closest?.("[data-tip]")) tip.hidden = true;
+  });
+}
+
 /* ── indice: numeros ────────────────────────────────────────────────────── */
 
 /* Graficos en SVG a mano, sin libreria: son tres, fijos, y meter una
@@ -548,14 +578,28 @@ function chartCareers(category) {
     series.get(entry.group_canonical).push(entry);
   });
 
+  // Un punto por edicion, no por carroza: 45 grupos llevaron dos o tres carrozas
+  // en el mismo ano y los circulos se pisaban unos a otros, dejando anillos de
+  // colores que no significaban nada. Se pinta su mejor puesto de ese ano.
   const rows = [...series.entries()]
     .filter(([, items]) => items.length >= 3)
-    .map(([name, items]) => ({
-      name,
-      items: items.sort((a, b) => a.year - b.year),
-      from: Math.min(...items.map(i => i.year)),
-      to: Math.max(...items.map(i => i.year)),
-    }))
+    .map(([name, items]) => {
+      const perYear = new Map();
+      items.forEach(item => {
+        const current = perYear.get(item.year);
+        if (!current || item.position < current.best) {
+          perYear.set(item.year, { year: item.year, best: item.position, names: [] });
+        }
+      });
+      items.forEach(item => perYear.get(item.year).names.push(`${item.name} (${item.position}.º)`));
+      const years = [...perYear.values()].sort((a, b) => a.year - b.year);
+      return {
+        name,
+        years,
+        from: years[0].year,
+        to: years[years.length - 1].year,
+      };
+    })
     .sort((a, b) => a.from - b.from || a.to - b.to);
 
   if (!rows.length) return '<p class="empty">No hay suficientes datos en esta categoría.</p>';
@@ -565,10 +609,11 @@ function chartCareers(category) {
   const height = CHART.padT + rows.length * CHART.rowH + CHART.padB;
   const body = rows.map((row, index) => {
     const y = CHART.padT + index * CHART.rowH + CHART.rowH / 2;
-    const dots = row.items.map(item => {
-      const cls = item.position === 1 ? "win" : item.position <= 3 ? "podium" : "ran";
-      return `<circle class="dot ${cls}" cx="${scale(item.year).toFixed(1)}" cy="${y}" r="${item.position === 1 ? 3.4 : 2.6}">
-        <title>${esc(row.name)} · ${item.year} · ${item.position}.º</title></circle>`;
+    const dots = row.years.map(item => {
+      const cls = item.best === 1 ? "win" : item.best <= 3 ? "podium" : "ran";
+      const tip = `${row.name} · ${item.year}<b>${item.names.join(" · ")}</b>`;
+      return `<circle class="dot ${cls}" cx="${scale(item.year).toFixed(1)}" cy="${y}"
+        r="${item.best === 1 ? 3.4 : 2.6}" data-tip="${esc(tip)}"/>`;
     }).join("");
     return `
       <g class="career${index % 2 ? " alt" : ""}" data-group="${esc(slugifyGroup(row.name))}">
@@ -601,8 +646,8 @@ function chartFloatsPerYear() {
     const x = scale(edition.year);
     const h = (edition.float_count / top) * (base - CHART.padT);
     return `<rect class="bar ${coverageTier(edition)}" x="${(x - 1.8).toFixed(1)}" y="${(base - h).toFixed(1)}"
-      width="3.6" height="${h.toFixed(1)}" data-year="${edition.year}">
-      <title>${edition.year}: ${edition.float_count} carrozas</title></rect>`;
+      width="3.6" height="${h.toFixed(1)}" data-year="${edition.year}"
+      data-tip="${esc(`${edition.year}<b>${edition.float_count} carrozas</b>`)}"/>`;
   }).join("");
 
   return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
@@ -1268,8 +1313,8 @@ function chartGroupTimeline(entries) {
     const dots = points.map(entry => `
       <circle class="dot ${entry.position === 1 ? "win" : entry.position <= 3 ? "podium" : "ran"}"
               cx="${scale(entry.year).toFixed(1)}" cy="${yOf(entry.position).toFixed(1)}"
-              r="${entry.position === 1 ? 4 : 3.2}" data-float="${esc(entry.id)}">
-        <title>${esc(entry.name)} · ${entry.year} · ${entry.category || ""}${entry.position}.º</title></circle>`).join("");
+              r="${entry.position === 1 ? 4 : 3.2}" data-float="${esc(entry.id)}"
+              data-tip="${esc(`${entry.year} · ${entry.category || ""}${entry.position}.º<b>${entry.name}</b>`)}"/>`).join("");
     return `<g class="serie serie-${category === SIN_CAT ? "none" : esc(category)}"><path class="serie-line" d="${path}"/>${dots}</g>`;
   }).join("");
 
@@ -1763,6 +1808,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     renderStats();
     renderFilterOptions();
     bindEvents();
+    setupTooltip();
     applyFilters();
 
     const fromHash = readHash();
