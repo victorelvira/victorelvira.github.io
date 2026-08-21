@@ -53,18 +53,21 @@ a { color: inherit; }
 #navbar .nav-sep { color: #8a7f72; }
 #navbar .nav-home { color: #cbbfae; text-decoration: none; }
 #navbar a:hover { text-decoration: underline; }
-#navbar .build { margin-left: auto; color: #8a7f72; font-size: 9.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ── barra de título y filtros ─────────────────────────────────────────── */
 
 #bar {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start; gap: 6px 14px;
   padding: 8px 16px;
   background: var(--bar);
   border-bottom: 1px solid var(--line);
 }
+.bar-main { min-width: 0; }
 
-.bar-title { display: flex; align-items: center; gap: 8px; min-width: 0; flex-wrap: wrap; }
+.bar-title { display: flex; align-items: center; gap: 8px; min-width: 0; }
 
 .home {
   display: inline-flex; align-items: center; gap: var(--logo-gap);
@@ -92,18 +95,14 @@ a { color: inherit; }
 .bar-title h1 .of { font-weight: 400; }
 /* Sangrada para arrancar donde arranca «Batalla», no debajo de la dalia. */
 .bar-sub {
-  flex-basis: 100%;
-  margin: 1px 0 0;
+  margin: -1px 0 0;
   padding-left: calc(var(--logo) + var(--logo-gap));
   max-width: 62ch;
   color: #8b7b73;
   font-size: 12px; line-height: 1.3;
 }
-.bar-actions {
-  flex-basis: 100%;
-  display: flex; gap: 6px; margin-top: 5px;
-  padding-left: calc(var(--logo) + var(--logo-gap));
-}
+.bar-actions { display: flex; flex-direction: column; gap: 5px; align-items: stretch; }
+.bar-actions .pill { justify-content: flex-start; white-space: nowrap; }
 .pill {
   font: inherit; font-size: 11.5px; padding: 3px 11px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
@@ -148,10 +147,15 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums; white-space: nowrap;
 }
 
-.stats { display: flex; gap: 14px; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12.5px; }
+.stats {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: 2px;
+  padding-left: calc(var(--logo) + var(--logo-gap));
+  color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12.5px;
+}
 .stats b { color: var(--ink); font-variant-numeric: tabular-nums; }
 
-.controls { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.controls { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
 .controls input[type="search"],
 .controls select {
@@ -225,7 +229,7 @@ a { color: inherit; }
 
 .muted { color: var(--muted); font-size: 12px; margin: 0; }
 .count {
-  margin: 0 0 0 auto; color: var(--muted); text-align: right;
+  margin: 0; color: var(--muted); text-align: right;
   font-size: 11.5px; font-style: italic; font-variant-numeric: tabular-nums;
 }
 
@@ -584,6 +588,10 @@ ul.plain a { color: var(--sky); word-break: break-all; }
 
 /* ── leyenda y pie ─────────────────────────────────────────────────────── */
 
+.tools { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+.tools:empty { display: none; }
+.count:empty { display: none; }
+
 .legend[hidden] { display: none; }
 .legend {
   display: flex; gap: 12px; flex-wrap: wrap;
@@ -643,7 +651,12 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .controls .ghost { padding: 4px 8px; font-size: 12px; }
 
   /* Cabecera más apretada: el bloque de cifras ocupaba media pantalla. */
-  #bar { padding: 6px 12px; gap: 8px; row-gap: 6px; }
+  #bar { grid-template-columns: 1fr; padding: 6px 12px; gap: 6px; }
+  /* Los botones en columna a la derecha estrujaban el título; aquí van debajo. */
+  .bar-actions {
+    flex-direction: row; flex-wrap: wrap;
+    padding-left: calc(var(--logo) + var(--logo-gap));
+  }
   .bar-title h1 { font-size: 17px; }
   .stats { gap: 10px; font-size: 12px; flex-wrap: wrap; }
   .stats span { display: inline-flex; align-items: baseline; gap: 3px; }
@@ -658,24 +671,24 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .controls { margin-left: 0; width: 100%; }
   .controls input[type="search"] { flex: 1; width: auto; min-width: 140px; }
 
-  /* Décadas plegables: solo una abierta, el resto en una fila fina. */
-  .decade-row { grid-template-columns: 1fr; gap: 0; padding: 0; }
-  .decade-label {
-    display: flex; align-items: center; gap: 8px;
-    width: 100%; padding: 9px 4px; cursor: pointer;
-    font-size: 14px; font-weight: 600; color: var(--ink);
+  /* Décadas plegables. Cerradas fluyen como fichas, cuatro o cinco por línea,
+     con forma distinta a los años para que no se confundan: pastilla con tinte,
+     sin barra de color. La abierta rompe la línea y despliega su rejilla. */
+  .decades { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
+  .decade-row { display: contents; }
+  .decade-row .decade-label {
+    width: auto; padding: 6px 10px;
+    border: 1px solid var(--line); border-radius: 999px; background: #fffdfa;
+    font-size: 13px; font-weight: 600; color: var(--ink);
   }
-  .decade-label::before {
-    content: "▸"; color: var(--rose); font-size: 11px;
-    transition: transform 0.18s ease;
+  .decade-row.is-open .decade-label {
+    background: var(--rose-soft); border-color: #eccdd5; color: var(--rose);
   }
-  .decade-row.is-open .decade-label::before { transform: rotate(90deg); }
-  .decade-count {
-    display: inline-block; margin-left: auto;
-    color: var(--muted); font-size: 12px; font-weight: 400;
-  }
+  .decade-row .year-grid { flex-basis: 100%; }
+  .decade-label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+  .decade-count { display: inline; color: var(--muted); font-size: 11px; font-weight: 400; }
   .decade-row:not(.is-open) .year-grid { display: none; }
-  .decade-row.is-open .year-grid { padding: 2px 0 10px; }
+  .decade-row.is-open .year-grid { padding: 2px 0 8px; }
   .year { min-width: 68px; }
 
   /* El detalle se superpone al índice, con cruz para cerrar. */

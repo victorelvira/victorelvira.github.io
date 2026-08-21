@@ -8,36 +8,40 @@
   <meta name="theme-color" content="#b6465f">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=0.18.0">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=0.19.1">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
-    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">otros proyectos interactivos</a>
     <span id="build" class="build" title="Versión del dataset publicado"></span>
   </nav>
 
   <header id="bar">
-    <div class="bar-title">
-      <a id="home" href="#" class="home" title="Volver al inicio: limpia filtros y vuelve a la última edición">
-        <img class="dalia" src="batalla_de_flores/dalia.jpg" width="128" height="128"
-             alt="Dalia, la flor con la que se cubren las carrozas">
-        <h1>Batalla de Flores <span class="of">de Laredo</span>
-          <span class="years">(1908–2026)</span></h1>
-      </a>
+    <div class="bar-main">
+      <div class="bar-title">
+        <a id="home" href="#" class="home" title="Volver al inicio: limpia filtros y vuelve al índice">
+          <img class="dalia" src="batalla_de_flores/dalia.jpg" width="128" height="128"
+               alt="Dalia, la flor con la que se cubren las carrozas">
+          <h1>Batalla de Flores <span class="of">de Laredo</span>
+            <span class="years">(1908–2026)</span></h1>
+        </a>
+      </div>
       <p class="bar-sub">Base de datos interactiva de la fiesta,
         declarada de Interés Turístico Nacional</p>
-      <div class="bar-actions">
-        <button id="faq" class="pill" type="button">
-          <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke-width="1.5"/><path d="M6 6.2a2 2 0 1 1 2.6 1.9c-.4.2-.6.5-.6.9v.5" fill="none" stroke-width="1.5"/><circle cx="8" cy="11.8" r="0.9" stroke="none"/></svg>
-          Qué es esto</button>
-        <button id="share-site" class="pill" type="button">
-          <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.2"/><circle cx="3.5" cy="8" r="2.2"/><circle cx="12.5" cy="12.5" r="2.2"/><path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.4" fill="none"/></svg>
-          Compartir</button>
-      </div>
+      <div id="stats" class="stats"></div>
     </div>
-    <div id="stats" class="stats"></div>
+
+    <div class="bar-actions">
+      <button id="faq" class="pill" type="button">
+        <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke-width="1.5"/><path d="M6 6.2a2 2 0 1 1 2.6 1.9c-.4.2-.6.5-.6.9v.5" fill="none" stroke-width="1.5"/><circle cx="8" cy="11.8" r="0.9" stroke="none"/></svg>
+        ¿Qué es esto?</button>
+      <button id="share-site" class="pill" type="button">
+        <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.2"/><circle cx="3.5" cy="8" r="2.2"/><circle cx="12.5" cy="12.5" r="2.2"/><path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.4" fill="none"/></svg>
+        Compartir</button>
+    </div>
+
     <div class="controls">
       <input id="search" type="search" placeholder="Carroza, grupo o año" autocomplete="off" aria-label="Buscar">
       <select id="decade" aria-label="Década"></select>
@@ -56,6 +60,7 @@
           <button class="tab" type="button" data-mode="floats" role="tab" aria-selected="false">Carrozas</button>
           <button class="tab" type="button" data-mode="routes" role="tab" aria-selected="false">Recorridos</button>
         </div>
+        <div id="index-tools" class="tools"></div>
         <p id="index-count" class="count"></p>
       </div>
       <div id="index-body" class="pane-body"></div>
@@ -86,7 +91,7 @@
   <script data-goatcounter="https://victorelvira.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
-  <script src="batalla_de_flores/app.js?v=0.18.0"></script>
+  <script src="batalla_de_flores/app.js?v=0.19.1"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

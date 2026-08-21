@@ -16,6 +16,7 @@ const els = {
   clearFilters: document.getElementById("clear-filters"),
   tabs: document.querySelectorAll(".tab"),
   indexCount: document.getElementById("index-count"),
+  indexTools: document.getElementById("index-tools"),
   indexBody: document.getElementById("index-body"),
   legend: document.getElementById("legend"),
   detail: document.getElementById("detail"),
@@ -81,7 +82,7 @@ const STATUS_LABEL = {
 
 /* `coverage` responde a "de donde sale", no a "cuanto hay". Se muestra como
  * chip en el detalle. Ojo con "official_only": significa una sola fuente, no
- * poca informacion — de hecho esos anos traen mas carrozas que muchos "strong". */
+ * poca informacion; de hecho esos anos traen mas carrozas que muchos "strong". */
 const COVERAGE_LABEL = {
   strong: "Archivo completo",
   partial: "Archivo parcial",
@@ -136,7 +137,7 @@ const SOURCE_SHORT = {
 };
 
 function sourceShort(sourceType) {
-  if (!sourceType) return "—";
+  if (!sourceType) return "–";
   return sourceType
     .split("+")
     .map(part => SOURCE_SHORT[part] || part)
@@ -284,17 +285,19 @@ function renderYearGrid() {
   });
 
   if (!decades.size) {
-    els.indexCount.textContent = `0 de ${num(state.editions.length)} ediciones`;
+    setCount(0, state.editions.length, "ediciones");
     els.indexBody.innerHTML = '<p class="empty">Ninguna edición encaja con los filtros actuales.</p>';
     return;
   }
 
-  els.indexCount.textContent = `${num(state.filtered.length)} de ${num(state.editions.length)} ediciones`;
+  setCount(state.filtered.length, state.editions.length, "ediciones");
   // Cronologico inverso: arriba la decada mas reciente, y dentro de cada
   // decada el ano mas reciente primero, para que la lectura sea descendente
   // de principio a fin.
   const openDecade = resolveOpenDecade([...decades.keys()]);
-  els.indexBody.innerHTML = [...decades.entries()].reverse().map(([decade, editions]) => `
+  // El envoltorio permite que en movil las decadas cerradas fluyan como fichas
+  // en varias por linea (ver `.decades` en el CSS).
+  els.indexBody.innerHTML = `<div class="decades">` + [...decades.entries()].reverse().map(([decade, editions]) => `
     <div class="decade-row${decade === openDecade ? " is-open" : ""}">
       <button class="decade-label" type="button" data-decade="${decade}"
               aria-expanded="${decade === openDecade}">${decade}s<span class="decade-count">${editions.length}</span></button>
@@ -307,12 +310,12 @@ function renderYearGrid() {
                     type="button" data-year="${edition.year}"
                     title="${esc(edition.edition_label || edition.year)} · ${esc(COVERAGE_LABEL[edition.coverage] || "")}">
               <span class="year-num">${edition.year}</span>
-              <span class="year-meta">${count ? `${count} carroza${count === 1 ? "" : "s"}` : STATUS_LABEL[edition.status] || "—"}</span>
+              <span class="year-meta">${count ? `${count} carroza${count === 1 ? "" : "s"}` : STATUS_LABEL[edition.status] || "–"}</span>
               <span class="year-bar"></span>
             </button>`;
         }).join("")}
       </div>
-    </div>`).join("");
+    </div>`).join("") + `</div>`;
 }
 
 /* ── indice: grupos ─────────────────────────────────────────────────────── */
@@ -377,7 +380,7 @@ function sortHeader(mode, key, label, extraClass = "") {
 
 function renderGroupList() {
   const groups = filteredGroups();
-  els.indexCount.textContent = `${num(groups.length)} de ${num(state.groups.length)} grupos`;
+  setCount(groups.length, state.groups.length, "grupos");
   if (!groups.length) {
     els.indexBody.innerHTML = '<p class="empty">Ningún grupo encaja con los filtros actuales.</p>';
     return;
@@ -403,7 +406,7 @@ function renderGroupList() {
             <span class="col-num">${group.last_year_seen}</span>
             <span class="col-num col-ed">${group.years.length}</span>
             <span class="col-num col-floats">${group.float_count}</span>
-            <span class="col-num col-wins">${group.wins || "—"}</span>
+            <span class="col-num col-wins">${group.wins || "–"}</span>
             <span class="row-go" aria-hidden="true">›</span>
           </button>`;
       }).join("")}
@@ -450,7 +453,8 @@ function viewToggle() {
  * 318 en blanco esto parecia roto, y el contador ya avisa de cuantas quedan. */
 function renderFloatGrid(rows) {
   const withPhoto = rows.filter(entry => (entry.image_urls || []).length);
-  els.indexCount.innerHTML = `${viewToggle()}${gridSort()}${categoryNote()}<span>${num(withPhoto.length)} con foto, de ${num(rows.length)}</span>`;
+  els.indexTools.innerHTML = `${viewToggle()}${gridSort()}${categoryNote()}`;
+  els.indexCount.textContent = `${num(withPhoto.length)} con foto`;
 
   if (!withPhoto.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna de estas carrozas tiene foto en el archivo.</p>';
@@ -473,7 +477,8 @@ function renderFloatList() {
   const rows = filteredFloats();
   if (state.floatView === "grid") return renderFloatGrid(rows);
 
-  els.indexCount.innerHTML = `${viewToggle()}${categoryNote()}<span>${num(rows.length)} de ${num(state.floats.length)} carrozas</span>`;
+  els.indexTools.innerHTML = `${viewToggle()}${categoryNote()}`;
+  setCount(rows.length, state.floats.length, "carrozas");
   if (!rows.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna carroza encaja con la búsqueda.</p>';
     return;
@@ -494,10 +499,10 @@ function renderFloatList() {
         return `
           <button class="row row-float${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
             <span class="row-name">${esc(entry.name)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
-            <span class="col-grp">${esc(entry.group_canonical || "—")}</span>
+            <span class="col-grp">${esc(entry.group_canonical || "–")}</span>
             <span class="col-num">${entry.year}</span>
-            <span class="col-num col-cat">${entry.category ? esc(entry.category) : "—"}</span>
-            <span class="col-num">${entry.position != null ? `${entry.position}.º` : "—"}</span>
+            <span class="col-num col-cat">${entry.category ? esc(entry.category) : "–"}</span>
+            <span class="col-num">${entry.position != null ? `${entry.position}.º` : "–"}</span>
             <span class="row-go" aria-hidden="true">›</span>
           </button>`;
       }).join("")}
@@ -507,7 +512,7 @@ function renderFloatList() {
 /* ── indice: recorridos ─────────────────────────────────────────────────── */
 
 function renderRouteList() {
-  els.indexCount.textContent = `${state.routes.length} eras de recorrido`;
+  els.indexCount.textContent = "";
   // Mismo criterio que la rejilla de anos: lo mas reciente arriba.
   els.indexBody.innerHTML = `<div class="rows rows-routes">${[...state.routes].reverse().map(route => {
     const active = state.selection?.kind === "route" && state.selection.id === route.id;
@@ -527,7 +532,15 @@ function renderRouteList() {
   }).join("")}</div>`;
 }
 
+/* El contador solo aparece cuando filtra: "119 de 119 ediciones" ocupaba una
+ * linea entera para no decir nada. */
+function setCount(shown, total, noun) {
+  els.indexCount.textContent = shown === total ? "" : `${num(shown)} de ${num(total)} ${noun}`;
+}
+
 function renderIndex() {
+  // Solo Carrozas tiene controles propios; el resto limpia la barra.
+  if (state.mode !== "floats") els.indexTools.innerHTML = "";
   if (state.mode === "editions") renderYearGrid();
   else if (state.mode === "floats") renderFloatList();
   else if (state.mode === "groups") renderGroupList();
@@ -801,7 +814,7 @@ function renderGallery(entries) {
       ${images.map(({ url, entry }) => `
         <figure class="shot">
           <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""} — imagen alojada en batalladeflores.net">
+             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}, imagen alojada en batalladeflores.net">
             <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
           </a>
           <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small></figcaption>
@@ -885,12 +898,12 @@ function renderEditionDetail(edition) {
         <tbody>
           ${ranked.map(entry => `
             <tr>
-              <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "—"}</td>
+              <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
               <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
                 ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
-                : "—"}</td>
+                : "–"}</td>
               <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
             </tr>`).join("")}
         </tbody>
@@ -911,7 +924,7 @@ function renderEditionDetail(edition) {
               <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
                 ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
-                : "—"}</td>
+                : "–"}</td>
               <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
             </tr>`).join("")}
         </tbody>
@@ -934,7 +947,7 @@ function renderAbout() {
   const summary = state.dataset.summary || {};
   els.detail.innerHTML = `
     <div class="detail-head">
-      <h2 style="font-size:22px">Qué es esto</h2>
+      <h2 style="font-size:22px">¿Qué es esto?</h2>
     </div>
     <div class="chips">${shareButton()}</div>
 
@@ -947,29 +960,29 @@ function renderAbout() {
     <h3 class="section">No es la web oficial</h3>
     <p>Es un proyecto personal y sin ánimo de lucro, hecho por afición a la fiesta.
     No representa al Ayuntamiento ni a la organización. Para información oficial
-    —fechas, inscripciones, programa— acude a
+    (fechas, inscripciones, programa) acude a
     <a href="https://www.laredo.es/09/fiestas_flores.php" target="_blank" rel="noopener">laredo.es</a>
     o a <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>.</p>
 
     <h3 class="section">De dónde salen los datos</h3>
     <p>El grueso del archivo histórico procede de
     <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>,
-    un trabajo de recopilación excelente —más de un siglo documentado carroza a
-    carroza— sin el cual esta página no existiría. Los resultados recientes salen
+    un trabajo de recopilación excelente, más de un siglo documentado carroza a
+    carroza, sin el cual esta página no existiría. Los resultados recientes salen
     de las notas oficiales del Ayuntamiento de Laredo. Aquí no se copia su
     contenido: se estructura en una base de datos derivada, y
     <b>cada carroza enlaza a la página concreta de la que sale</b>.</p>
     <p>Las imágenes se muestran enlazadas desde el servidor original y
     pertenecen a sus autores.</p>
 
-    <h3 class="section">Qué falta, y por qué</h3>
+    <h3 class="section">¿Qué falta, y por qué?</h3>
     <ul class="plain">
-      <li>De <b>2018</b> solo se conserva una carroza documentada: ni el archivo ni
-      el Ayuntamiento publicaron el palmarés de aquel año.</li>
+      <li><b>2018</b> es el único año celebrado del que falta el palmarés. Se sabe que
+      desfilaron 15 carrozas de ocho grupos, pero ni el archivo ni el Ayuntamiento
+      publicaron los resultados. <b>Se sigue buscando</b>: si guardas un recorte, una
+      foto o el programa de aquella edición, encaja aquí.</li>
       <li><b>2020 y 2021</b> no se celebraron por la pandemia; entre 1936 y 1939 tampoco.</li>
       <li>Los años más antiguos tienen fichas sueltas, no palmarés completos.</li>
-      <li>El circuito de la Alameda se dibuja como el perímetro del parque: ninguna
-      fuente detalla las calles exactas.</li>
     </ul>
     <p class="muted">Cada edición dice en su ficha de dónde viene lo que muestra, así
     que los huecos se ven en lugar de disimularse.</p>
@@ -977,21 +990,22 @@ function renderAbout() {
     <h3 class="section">Cómo moverse</h3>
     <p>Cada tipo de dato tiene su color, y lo que lleva color se puede pinchar:</p>
     <p class="legend-types">
-      <span class="t-year">2012 · un año</span>
-      <span class="t-group">Ángel Sainz · un grupo</span>
-      <span class="t-float">Categoría A · una carroza</span>
-      <span class="t-route">Alameda Miramar · un recorrido</span>
+      <span class="t-year">un año</span>
+      <span class="t-group">un grupo</span>
+      <span class="t-float">una carroza</span>
+      <span class="t-route">un recorrido</span>
     </p>
 
     <h3 class="section">¿Ves un error?</h3>
-    <p>Es muy posible que lo haya: mucho de esto viene de parsear páginas antiguas.
-    Si detectas un dato mal, se agradece el aviso a través de
-    <a href="https://victorelvira.github.io" target="_blank" rel="noopener">victorelvira.github.io</a>.</p>
+    <p>Es muy posible que lo haya: mucho de esto viene de parsear páginas antiguas,
+    y hay años en los que las propias fuentes se contradicen. <b>Próximamente se
+    habilitará un formulario</b> para avisar de datos incorrectos o aportar los que
+    faltan.</p>
 
     <div class="provenance">
       <b>Ficha técnica</b>
       <ul>
-        <li>Versión ${esc(state.dataset.version || "—")}, generada el ${esc(state.dataset.built_at || "—")}.</li>
+        <li>Versión ${esc(state.dataset.version || "–")}, generada el ${esc(state.dataset.built_at || "–")}.</li>
         <li>Web estática sin dependencias; los mapas se dibujan sobre datos de
         OpenStreetMap (ODbL).</li>
       </ul>
@@ -1043,7 +1057,7 @@ function renderFloatDetail(entry) {
         ${entry.image_urls.map(url => `
           <figure class="shot">
             <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-               title="${esc(entry.name)} (${entry.year}) — imagen alojada en batalladeflores.net">
+               title="${esc(entry.name)} (${entry.year}), imagen alojada en batalladeflores.net">
               <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
             </a>
           </figure>`).join("")}
@@ -1120,7 +1134,7 @@ function renderGroupDetail(group) {
           <tr>
             <td class="pos" data-sort="${entry.year}"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
             <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
-            <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "—"}</td>
+            <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
             <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
           </tr>`).join("")}
       </tbody>
@@ -1281,8 +1295,8 @@ function renderDetail() {
         <p>Cada edición trae su palmarés, las carrozas documentadas, las fotos que
         conserva el archivo y el recorrido de aquel año.</p>
         <p>También puedes recorrerlo por <button class="link t-group" type="button"
-          data-mode-jump="groups">grupos</button> —quién más ha desfilado y quién más ha
-        ganado— o por <button class="link t-route" type="button" data-mode-jump="routes">recorridos</button>,
+          data-mode-jump="groups">grupos</button> (quién más ha desfilado y quién más ha
+        ganado) o por <button class="link t-route" type="button" data-mode-jump="routes">recorridos</button>,
         que han cambiado tres veces desde 1908.</p>
         ${latest ? `<p class="placeholder-hint">Lo último: <button class="link t-year" type="button"
           data-year="${latest.year}">${latest.year}</button>.</p>` : ""}
@@ -1411,7 +1425,7 @@ function bindEvents() {
 
   els.tabs.forEach(tab => tab.addEventListener("click", () => setMode(tab.dataset.mode)));
 
-  els.indexCount.addEventListener("change", event => {
+  els.indexTools.addEventListener("change", event => {
     if (!event.target.classList.contains("grid-sort")) return;
     const key = event.target.value;
     state.sort.floats = { key, dir: SORTS.floats[key].type === "text" ? 1 : -1 };
