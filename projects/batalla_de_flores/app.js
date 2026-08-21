@@ -390,9 +390,8 @@ function renderGroupList() {
     <div class="rows rows-groups">
       <div class="row-head">
         ${sortHeader("groups", "name", "Grupo")}
-        ${sortHeader("groups", "from", "Desde", "col-num")}
-        ${sortHeader("groups", "to", "Hasta", "col-num")}
-        ${sortHeader("groups", "editions", "Ediciones", "col-num col-ed")}
+        ${sortHeader("groups", "from", "Periodo", "col-num col-span")}
+        ${sortHeader("groups", "editions", "Ediciones", "col-num")}
         ${sortHeader("groups", "floats", "Carrozas", "col-num col-floats")}
         ${sortHeader("groups", "wins", "🏆", "col-num col-wins")}
         <span aria-hidden="true"></span>
@@ -403,9 +402,8 @@ function renderGroupList() {
         return `
           <button class="row${active ? " is-active" : ""}" type="button" data-group="${esc(slug)}">
             <span class="row-name">${esc(group.canonical_name)}</span>
-            <span class="col-num">${group.first_year_seen}</span>
-            <span class="col-num">${group.last_year_seen}</span>
-            <span class="col-num col-ed">${group.years.length}</span>
+            <span class="col-num col-span">${yearRange(group.first_year_seen, group.last_year_seen)}</span>
+            <span class="col-num">${group.years.length}</span>
             <span class="col-num col-floats">${group.float_count}</span>
             <span class="col-num col-wins">${group.wins || "–"}</span>
             <span class="row-go" aria-hidden="true">›</span>
@@ -514,11 +512,21 @@ function renderFloatList() {
 /* Tooltip de los graficos. Se usa uno solo, movido por delegacion: los SVG
  * tienen cientos de elementos y ponerle un listener a cada uno seria absurdo.
  * En tactil no estorba porque `mouseover` no dispara con el dedo. */
+let tipEl = null;
+
+/* Se llama al repintar y al hacer clic: si el elemento que disparo el tooltip
+ * desaparece del DOM, `mouseout` no llega nunca y el globo se queda flotando
+ * sobre la pagina para siempre. */
+function hideTooltip() {
+  if (tipEl) tipEl.hidden = true;
+}
+
 function setupTooltip() {
   const tip = document.createElement("div");
   tip.className = "tip";
   tip.hidden = true;
   document.body.appendChild(tip);
+  tipEl = tip;
 
   document.addEventListener("mouseover", event => {
     const target = event.target.closest?.("[data-tip]");
@@ -661,7 +669,7 @@ function chartFloatsPerYear() {
     ${yearAxis(scale, { from: min, to: max, step: 20, height })}${bars}</svg>`;
 }
 
-function renderStats() {
+function renderStatsTab() {
   const summary = state.dataset.summary || {};
   const biggest = [...state.editions].sort((a, b) => b.float_count - a.float_count)[0];
   const topGroup = [...state.groups].sort((a, b) => b.wins - a.wins)[0];
@@ -735,12 +743,13 @@ function setCount(shown, total, noun) {
 }
 
 function renderIndex() {
+  hideTooltip();
   // Solo Carrozas tiene controles propios; el resto limpia la barra.
   if (state.mode !== "floats") els.indexTools.innerHTML = "";
   if (state.mode === "editions") renderYearGrid();
   else if (state.mode === "floats") renderFloatList();
   else if (state.mode === "groups") renderGroupList();
-  else if (state.mode === "stats") renderStats();
+  else if (state.mode === "stats") renderStatsTab();
   else renderRouteList();
   renderLegend();
 }
@@ -1083,6 +1092,14 @@ function renderEditionDetail(edition) {
 
     ${renderGallery(entries)}
 
+    ${edition.virtual_tour ? `
+      <h3 class="section">Ver la edición</h3>
+      <p><a class="tour" href="${esc(edition.virtual_tour)}" target="_blank" rel="noopener">
+        Visita virtual en 360° de ${edition.year} ↗</a></p>
+      <p class="muted">Panorámicas del desfile publicadas por laredoturismo.es. No identifican
+      carrozas una a una, pero son la única imagen que existe de esta edición: el archivo
+      fotográfico de batalladeflores.net se detiene en 2012.</p>` : ""}
+
     ${ranked.length ? `
       <h3 class="section">Palmarés</h3>
       <table class="palmares">
@@ -1144,7 +1161,7 @@ function renderAbout() {
   const summary = state.dataset.summary || {};
   els.detail.innerHTML = `
     <div class="detail-head">
-      <h2 style="font-size:22px">¿Qué es esto?</h2>
+      <h2 style="font-size:22px">¿Qué es esta página?</h2>
     </div>
     <div class="chips">${shareButton()}</div>
 
@@ -1546,6 +1563,7 @@ function shareCurrent() {
 }
 
 function renderDetail() {
+  hideTooltip();
   const selection = state.selection;
   if (!selection) {
     const latest = latestRankedEdition();
@@ -1720,6 +1738,7 @@ function bindEvents() {
 
   // Un unico delegador: sirve para el indice y para los enlaces del detalle.
   document.addEventListener("click", event => {
+    hideTooltip();
     const header = event.target.closest("[data-sort-by]");
     if (header) {
       const [mode, key] = header.dataset.sortBy.split(":");
@@ -1764,7 +1783,7 @@ function bindEvents() {
     const statsCat = event.target.closest("[data-stats-cat]");
     if (statsCat) {
       state.statsCategory = statsCat.dataset.statsCat;
-      renderStats();
+      renderStatsTab();
       return;
     }
 
