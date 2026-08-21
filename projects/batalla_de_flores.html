@@ -6,7 +6,7 @@
   <title>Batalla de Flores · Laredo</title>
   <meta name="description" content="Archivo navegable de la Batalla de Flores de Laredo: ediciones desde 1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato.">
   <meta name="theme-color" content="#b6465f">
-  <link rel="stylesheet" href="batalla_de_flores/style.css">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=0.12.0">
 </head>
 <body>
   <nav id="navbar">
@@ -21,16 +21,16 @@
       <a id="home" href="#" class="home" title="Volver al inicio: limpia filtros y vuelve a la última edición">
         <img class="dalia" src="batalla_de_flores/dalia.jpg" width="128" height="128"
              alt="Dalia, la flor con la que se cubren las carrozas">
-        <h1>Batalla de Flores</h1>
+        <h1>Batalla de Flores <span class="of">de Laredo</span></h1>
       </a>
-      <span class="bar-sub">Laredo · 1908–2026</span>
+      <span class="bar-sub">1908–2026</span>
     </div>
     <div id="stats" class="stats"></div>
     <div class="controls">
       <input id="search" type="search" placeholder="Carroza, grupo o año" autocomplete="off" aria-label="Buscar">
       <select id="decade" aria-label="Década"></select>
-      <select id="status" aria-label="Estado de la edición"></select>
-      <label class="toggle"><input id="ranked-only" type="checkbox"><span>Con palmarés</span></label>
+      <select id="status" class="desk-only" aria-label="Estado de la edición"></select>
+      <label class="toggle desk-only"><input id="ranked-only" type="checkbox"><span>Con palmarés</span></label>
       <button id="clear-filters" class="ghost" type="button">Limpiar</button>
     </div>
   </header>
@@ -43,7 +43,7 @@
           <button class="tab" type="button" data-mode="groups" role="tab" aria-selected="false">Grupos</button>
           <button class="tab" type="button" data-mode="routes" role="tab" aria-selected="false">Recorridos</button>
         </div>
-        <p id="index-count" class="muted"></p>
+        <p id="index-count" class="count"></p>
       </div>
       <div id="index-body" class="pane-body"></div>
       <div id="legend" class="legend"></div>
@@ -67,6 +67,34 @@
     </p>
   </footer>
 
-  <script src="batalla_de_flores/app.js"></script>
+  <!-- Analitica: GoatCounter. Sin cookies ni datos personales, asi que no
+       necesita banner de consentimiento. Unica peticion externa de la pagina.
+       No cuenta en localhost: para probarlo hay que desplegar. -->
+  <script data-goatcounter="https://victorelvira.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <script src="batalla_de_flores/app.js?v=0.12.0"></script>
+<!-- Tracking: Google Analytics tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GHT1L88XYZ');
+</script>
+<!-- End Google Analytics tag (gtag.js) -->
+<!-- Default Statcounter code -->
+<script type="text/javascript">
+var sc_project=11157426;
+var sc_invisible=1;
+var sc_security="c4968ba5";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 </body>
 </html>

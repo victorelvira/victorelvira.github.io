@@ -115,7 +115,7 @@ const SOURCE_LABEL = {
   archive_float_page: "Ficha de carroza",
   official_result: "Resultado oficial",
   official_result_summary: "Resumen oficial",
-  manual_seed: "Seed manual",
+  manual_seed: "Transcrito a mano",
   press_photo: "Prensa (pie de foto)",
 };
 
@@ -203,7 +203,6 @@ function renderStats() {
     `<span><b>${num(summary.edition_count)}</b> ediciones</span>`,
     `<span><b>${num(summary.float_count)}</b> carrozas</span>`,
     `<span><b>${num(summary.group_count)}</b> grupos</span>`,
-    `<span><b>${num(summary.years_with_ranked_results)}</b> años con palmarés</span>`,
   ].join("");
   const version = state.dataset.version ? `v${state.dataset.version}` : "sin versión";
   els.build.textContent = `${version} · ${state.dataset.built_at || state.dataset.updated_at || "s/f"}`;
@@ -339,8 +338,9 @@ function renderGroupList() {
         ${sortHeader("from", "Desde", "col-num")}
         ${sortHeader("to", "Hasta", "col-num")}
         ${sortHeader("editions", "Ediciones", "col-num col-ed")}
-        ${sortHeader("floats", "Carrozas", "col-num")}
-        ${sortHeader("wins", "1.º", "col-num col-wins")}
+        ${sortHeader("floats", "Carrozas", "col-num col-floats")}
+        ${sortHeader("wins", "🏆", "col-num col-wins")}
+        <span aria-hidden="true"></span>
       </div>
       ${sortGroups(groups).map(group => {
         const slug = slugifyGroup(group.canonical_name);
@@ -351,8 +351,9 @@ function renderGroupList() {
             <span class="col-num">${group.first_year_seen}</span>
             <span class="col-num">${group.last_year_seen}</span>
             <span class="col-num col-ed">${group.years.length}</span>
-            <span class="col-num">${group.float_count}</span>
+            <span class="col-num col-floats">${group.float_count}</span>
             <span class="col-num col-wins">${group.wins || "—"}</span>
+            <span class="row-go" aria-hidden="true">›</span>
           </button>`;
       }).join("")}
     </div>`;
@@ -495,7 +496,48 @@ function streetLabels(project, streets) {
   return { defs: defs.join(""), texts: texts.join("") };
 }
 
-function mapLayers(project, activeId, { showStreets, showLabels }) {
+/* Flechas de sentido sobre un circuito cerrado.
+ *
+ * El signo del area de Gauss dice como esta enrollado el poligono, pero ojo:
+ * en pantalla la Y crece hacia abajo, asi que area positiva es horario visual.
+ * Si no coincide con el sentido que queremos, se recorre al reves. */
+function directionArrows(points, direction) {
+  if (points.length < 3) return "";
+
+  const area = points.reduce((total, [x, y], index) => {
+    const [nx, ny] = points[(index + 1) % points.length];
+    return total + (x * ny - nx * y);
+  }, 0);
+  const drawnClockwise = area > 0;              // Y invertida: ver comentario
+  const ring = drawnClockwise === (direction === "anticlockwise")
+    ? [...points].reverse()
+    : points;
+
+  // Longitudes acumuladas para repartir las flechas por el perimetro.
+  const closed = [...ring, ring[0]];
+  const steps = [];
+  let total = 0;
+  for (let i = 1; i < closed.length; i++) {
+    total += Math.hypot(closed[i][0] - closed[i - 1][0], closed[i][1] - closed[i - 1][1]);
+    steps.push(total);
+  }
+
+  return [0.16, 0.5, 0.83].map(fraction => {
+    const target = total * fraction;
+    const index = steps.findIndex(value => value >= target);
+    const [ax, ay] = closed[index];
+    const [bx, by] = closed[index + 1] || closed[0];
+    const angle = (Math.atan2(by - ay, bx - ax) * 180) / Math.PI;
+    const before = index ? steps[index - 1] : 0;
+    const t = (target - before) / Math.max(steps[index] - before, 0.001);
+    const x = ax + (bx - ax) * t;
+    const y = ay + (by - ay) * t;
+    return `<path class="map-arrow" d="M-4 -3.4 L4 0 L-4 3.4 Z"
+      transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${angle.toFixed(1)})"/>`;
+  }).join("");
+}
+
+function mapLayers(project, activeId, { showStreets, showLabels, showArrows }) {
   const map = state.map || {};
 
   const natural = (map.context || [])
@@ -517,6 +559,12 @@ function mapLayers(project, activeId, { showStreets, showLabels }) {
 
   const labels = showLabels ? streetLabels(project, streetList) : { defs: "", texts: "" };
 
+  const active = state.routes.find(route => route.id === activeId);
+  // En la miniatura las flechas son ruido: a 128 px no se leen.
+  const arrows = showArrows && active?.direction && active.geometry?.type === "Polygon"
+    ? directionArrows(active.geometry.coordinates.map(project), active.direction)
+    : "";
+
   // El activo se pinta el ultimo para que quede por encima del resto.
   const routes = routeGeometries()
     .sort((a, b) => (a.id === activeId ? 1 : 0) - (b.id === activeId ? 1 : 0))
@@ -532,6 +580,7 @@ function mapLayers(project, activeId, { showStreets, showLabels }) {
     <defs>${labels.defs}</defs>
     <g class="map-ctx">${natural}${areas}${buildings}${streets}</g>
     <g class="map-routes">${routes}</g>
+    <g class="map-arrows">${arrows}</g>
     <g class="map-labels">${labels.texts}</g>`;
 }
 
@@ -555,26 +604,29 @@ function renderRouteMap(activeId, { variant = "detail" } = {}) {
       ${mapLayers(project, activeId, {
         showStreets: variant !== "thumb",
         showLabels: variant === "detail",
+        showArrows: variant !== "thumb",
       })}
       ${variant === "thumb" ? "" : scaleBar(project)}
     </svg>`;
 
   if (variant === "thumb") return `<span class="map-thumb">${svg}</span>`;
 
-  const attribution = state.map?.attribution || state.mapAttribution;
-  return `
-    <figure class="map map-${variant}">
-      ${svg}
-      ${attribution ? `<figcaption>Trazados de
-        <a href="${esc(attribution.url)}" target="_blank" rel="noopener">${esc(attribution.source)}</a>
-        (${esc(attribution.licence)}). Geometría actual de las calles, no plano histórico.</figcaption>` : ""}
-    </figure>`;
+  // Sin figcaption: la atribucion a OSM vive en el pie de la pagina y repetirla
+  // bajo cada mapa solo robaba sitio.
+  return `<figure class="map map-${variant}">${svg}</figure>`;
 }
 
 /* ── detalle: edicion ───────────────────────────────────────────────────── */
 
+/* De varias URLs se elige la mas concreta: la portada de un dominio no dice
+ * nada y ademas redirige. */
+function bestSourceUrl(entry) {
+  const urls = entry.float_url ? [entry.float_url] : (entry.source_urls || []);
+  return [...urls].sort((a, b) => b.length - a.length)[0] || null;
+}
+
 function sourceCell(entry) {
-  const url = entry.float_url || (entry.source_urls || [])[0];
+  const url = bestSourceUrl(entry);
   const tag = `<span class="tag" title="${esc(sourceLabel(entry.source_type))} (source_type: ${esc(entry.source_type || "")})">${esc(sourceShort(entry.source_type))}</span>`;
   return `<span class="src">${tag}${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">fuente ↗</a>` : ""}</span>`;
 }
@@ -601,12 +653,14 @@ function renderGallery(entries) {
     <h3 class="section">Imágenes (${images.length})</h3>
     <div class="gallery">
       ${images.map(({ url, entry }) => `
-        <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-           title="${esc(entry.name)} — imagen alojada en batalladeflores.net">
-          <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
-        </a>`).join("")}
-    </div>
-    <p class="muted" style="margin-top:6px">Imágenes servidas por batalladeflores.net; cada una enlaza a su ficha original.</p>`;
+        <figure class="shot">
+          <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
+             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""} — imagen alojada en batalladeflores.net">
+            <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+          </a>
+          <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small></figcaption>
+        </figure>`).join("")}
+    </div>`;
 }
 
 function provenanceBlock(entries, sources) {
@@ -615,6 +669,14 @@ function provenanceBlock(entries, sources) {
     const label = sourceLabel(entry.source_type);
     counts.set(label, (counts.get(label) || 0) + 1);
   });
+  // Se listan con su abreviatura para poder descifrar los "OFI·MAN" de la tabla.
+  const codes = new Map();
+  entries.forEach(entry => {
+    (entry.source_type || "").split("+").forEach(part => {
+      if (part && SOURCE_SHORT[part]) codes.set(SOURCE_SHORT[part], SOURCE_LABEL[part]);
+    });
+  });
+
   return `
     <div class="provenance">
       <b>Procedencia</b>
@@ -623,6 +685,8 @@ function provenanceBlock(entries, sources) {
           .map(([label, count]) => `<li>${esc(label)}: ${count} entrada${count === 1 ? "" : "s"}</li>`).join("")
           || "<li>Sin entradas registradas para esta edición.</li>"}
       </ul>
+      ${codes.size ? `<p class="codes">${[...codes.entries()]
+        .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>` : ""}
       ${sources.length ? `<ul class="plain" style="margin-top:6px">${sources
         .map(url => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></li>`).join("")}</ul>`
         : '<p style="margin:6px 0 0">Sin URL de fuente asociada.</p>'}
@@ -643,18 +707,20 @@ function renderEditionDetail(edition) {
     <div class="detail-head">
       <h2>${edition.year}</h2>
       <span class="label">${esc(edition.edition_label || "")}</span>
+      <span class="source-note">${esc(COVERAGE_LABEL[edition.coverage] || "")}</span>
+      ${shareButton()}
     </div>
     <div class="chips">
-      <span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status || "sin estado")}</span>
-      <span class="chip ${coverageTier(edition) === "tier-full" ? "leaf" : "gold"}">${esc(COVERAGE_LABEL[edition.coverage] || edition.coverage || "")}</span>
-      ${route ? `<button class="chip sky group-link" type="button" data-route="${esc(route.id)}">${esc(route.label)}</button>` : ""}
+      ${edition.status !== "published"
+        ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
+      ${route ? `<button class="chip link-chip" type="button" data-route="${esc(route.id)}">${esc(route.label)} →</button>` : ""}
     </div>
 
     <div class="kpis">
-      <div class="kpi"><span>${num(edition.result_count || 0)}</span><small>en palmarés</small></div>
       <div class="kpi"><span>${num(edition.float_count || 0)}</span><small>carrozas</small></div>
       <div class="kpi"><span>${num(new Set(entries.map(e => e.group_canonical).filter(Boolean)).size)}</span><small>grupos</small></div>
-      <div class="kpi"><span>${num((edition.source_urls || []).length)}</span><small>fuentes</small></div>
+      ${ranked.length !== entries.length
+        ? `<div class="kpi"><span>${num(ranked.length)}</span><small>con posición</small></div>` : ""}
     </div>
 
     ${route?.geometry ? renderRouteMap(route.id, { variant: "compact" }) : ""}
@@ -731,17 +797,16 @@ function renderGroupDetail(group) {
   els.detail.innerHTML = `
     <div class="detail-head">
       <h2 style="font-size:22px">${esc(group.canonical_name)}</h2>
+      ${shareButton()}
     </div>
-    <div class="chips">
-      <span class="chip rose">${yearRange(group.first_year_seen, group.last_year_seen)}</span>
-      ${categories.map(([cat, count]) => `<span class="chip">Cat. ${esc(cat)}: ${count}</span>`).join("")}
-    </div>
+    <p class="span-note">${yearRange(group.first_year_seen, group.last_year_seen)}${categories.length
+      ? ` · ${categories.map(([cat, count]) => `${count} en categoría ${esc(cat)}`).join(", ")}` : ""}</p>
 
     <div class="kpis">
-      <div class="kpi"><span>${num(group.float_count)}</span><small>carrozas</small></div>
-      <div class="kpi"><span>${num(group.wins)}</span><small>primeros puestos</small></div>
-      <div class="kpi"><span>${num(podium)}</span><small>podios</small></div>
       <div class="kpi"><span>${num(group.years.length)}</span><small>ediciones</small></div>
+      <div class="kpi"><span>${num(group.float_count)}</span><small>carrozas</small></div>
+      <div class="kpi"><span>🏆 ${num(group.wins)}</span><small>victorias</small></div>
+      <div class="kpi"><span>🥉 ${num(podium)}</span><small>podios (top 3)</small></div>
     </div>
 
     ${renderGallery(entries)}
@@ -790,11 +855,13 @@ function renderRouteDetail(route) {
       <h2 style="font-size:20px">${esc(route.label)}</h2>
     </div>
     <div class="chips">
+      ${shareButton()}
       <span class="chip rose">${yearRange(route.start_year, route.end_year)}</span>
       <span class="chip ${route.geometry ? "leaf" : ""}">${route.geometry
         ? (route.approximate ? "Trazado aproximado" : "Trazado real")
         : "Sin traza"}</span>
       ${route.osm?.old_name ? `<span class="chip gold">antes: ${esc(route.osm.old_name)}</span>` : ""}
+      ${route.direction === "anticlockwise" ? '<span class="chip">↺ sentido antihorario</span>' : ""}
     </div>
     <div class="kpis">
       <div class="kpi"><span>${num(editions.length)}</span><small>ediciones</small></div>
@@ -817,6 +884,7 @@ function renderRouteDetail(route) {
           ? `way <code>${route.osm.way_ids[0]}</code>`
           : `${route.osm.way_ids.length} ways`} de «${esc(route.osm.name)}».</li>` : ""}
         ${route.approximate ? "<li>Trazado <b>aproximado</b>: ninguna fuente detalla las calles exactas del circuito.</li>" : ""}
+        ${route.direction_source ? `<li>Sentido de la marcha: ${esc(route.direction_source)}. No lo publica ninguna fuente.</li>` : ""}
       </ul>
       ${route.source_url ? `<ul class="plain" style="margin-top:6px"><li><a href="${esc(route.source_url)}" target="_blank" rel="noopener">${esc(route.source_url)}</a></li></ul>` : ""}
     </div>`;
@@ -867,6 +935,37 @@ function handleDetailSort(header) {
 
 /* ── seleccion y deep-links ─────────────────────────────────────────────── */
 
+/* Compartir. En movil `navigator.share` abre la hoja del sistema (WhatsApp, X,
+ * Instagram, lo que tenga instalado), que es mejor que cinco botones de marca.
+ * En escritorio no existe casi nunca: ahi se copia el enlace. */
+function shareButton() {
+  return `<button id="share" class="share" type="button" title="Compartir esta ficha">Compartir</button>`;
+}
+
+async function shareCurrent() {
+  track("compartir", "Compartir", true);
+  const button = document.getElementById("share");
+  const title = document.querySelector("#detail h2")?.textContent?.trim();
+  const data = {
+    title: `Batalla de Flores de Laredo${title ? ` · ${title}` : ""}`,
+    text: "Archivo de la Batalla de Flores de Laredo",
+    url: location.href,
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(data);
+      return;
+    }
+    await navigator.clipboard.writeText(location.href);
+    if (button) {
+      button.textContent = "Enlace copiado";
+      setTimeout(() => { button.textContent = "Compartir"; }, 2000);
+    }
+  } catch {
+    /* el usuario cancelo la hoja de compartir: no hay nada que hacer */
+  }
+}
+
 function renderDetail() {
   const selection = state.selection;
   if (!selection) {
@@ -900,6 +999,21 @@ function renderDetail() {
   els.detail.innerHTML = '<p class="empty">No encuentro ese elemento en el dataset.</p>';
 }
 
+/* ── analitica ──────────────────────────────────────────────────────────── */
+
+/* GoatCounter cuenta la carga de la pagina por su cuenta, pero aqui la
+ * navegacion es por hash y no dispara nada. Se cuentan las selecciones del
+ * usuario (no la de arranque) para saber que anos y que grupos se miran.
+ * Si el script no esta puesto, esto no hace nada. */
+function track(path, title, event = false) {
+  window.goatcounter?.count?.({ path, title, event });
+  // Lo mismo a GA, para poder comparar los tres contadores midiendo lo mismo.
+  window.gtag?.(event ? "event" : "page_view", event ? title : "page_view", {
+    page_location: location.origin + path,
+    page_title: title,
+  });
+}
+
 function select(kind, id, { updateHash = true, reveal = true } = {}) {
   state.selection = { kind, id };
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
@@ -907,6 +1021,7 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   if (updateHash) {
     const prefix = { year: "y", group: "g", route: "r" }[kind];
     history.replaceState(null, "", `#/${prefix}/${id}`);
+    track(location.pathname + location.hash, `${kind}: ${id}`);
   }
   renderIndex();
   renderDetail();
@@ -1005,6 +1120,8 @@ function bindEvents() {
       renderGroupList();
       return;
     }
+
+    if (event.target.closest("#share")) { shareCurrent(); return; }
 
     const jump = event.target.closest("[data-mode-jump]");
     if (jump) { setMode(jump.dataset.modeJump); return; }

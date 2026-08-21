@@ -88,7 +88,8 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "legion-of-honor-museum"
+    "museum_id": "legion-of-honor-museum",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrax/portlady.html"
    }
   },
   {
@@ -110,6 +111,7 @@
     "dimensions": "37.5 cm (14.8 in) × 32.5 cm (12.8 in)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Anthonis_van_Dyck_025.jpg/500px-Anthonis_van_Dyck_025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Cornelis_van_der_Geest",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -119,7 +121,10 @@
     },
     "museum_id": "national-gallery",
     "city": "London",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q3937501",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937501",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/geest.html"
    }
   },
   {
@@ -292,6 +297,7 @@
     "dimensions": "200 × 133,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Sir_Robert_Shirley_by_Anthony_Van_Dyck_1622_Rome.jpg/500px-Sir_Robert_Shirley_by_Anthony_Van_Dyck_1622_Rome.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Sir_Robert_Shirley",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -299,7 +305,9 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "petworth-house"
+    "museum_id": "petworth-house",
+    "qid": "Q52252296",
+    "wikidata": "https://www.wikidata.org/wiki/Q52252296"
    }
   },
   {
@@ -321,6 +329,7 @@
     "dimensions": "200 × 133,4 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lady_Shirley_by_Anthony_van_Dyck%2C_c._1622.jpg/500px-Lady_Shirley_by_Anthony_van_Dyck%2C_c._1622.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Lady_Theresa_Shirley",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -328,7 +337,9 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "petworth-house"
+    "museum_id": "petworth-house",
+    "qid": "Q61272133",
+    "wikidata": "https://www.wikidata.org/wiki/Q61272133"
    }
   },
   {
@@ -483,7 +494,8 @@
     },
     "museum_id": "palazzo-pitti",
     "city": "Florence",
-    "country": "Italy"
+    "country": "Italy",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/cardinal.html"
    }
   },
   {
@@ -505,6 +517,7 @@
     "dimensions": "265 × 248 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Anthonis_van_Dyck_012.jpg/500px-Anthonis_van_Dyck_012.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Lomellini_Family",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -514,7 +527,10 @@
     },
     "museum_id": "national-gallery-of-scotland",
     "city": "Edinburgh",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q3937446",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937446",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/2portrai/lomellin.html"
    }
   },
   {
@@ -947,7 +963,8 @@
     },
     "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/porrt_man.html"
    }
   },
   {
@@ -1059,6 +1076,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Olivia_Boteler_Porter.jpg/500px-Olivia_Boteler_Porter.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Olivia_Boteler_Porter",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -1068,7 +1086,9 @@
     },
     "museum_id": "bowes-museum",
     "city": "Barnard Castle",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q6828626",
+    "wikidata": "https://www.wikidata.org/wiki/Q6828626"
    }
   },
   {
@@ -1254,7 +1274,8 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/leroy.html"
    }
   },
   {
@@ -1761,6 +1782,7 @@
     "dimensions": "111,5 × 86 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Francisco_de_Moncada%2C_Marqu%C3%A9s_de_Aytona%2C_by_Anthonis_van_Dyck.jpg/500px-Francisco_de_Moncada%2C_Marqu%C3%A9s_de_Aytona%2C_by_Anthonis_van_Dyck.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Francisco_de_Moncada",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -1770,7 +1792,9 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q3937534",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937534"
    }
   },
   {
@@ -1792,6 +1816,7 @@
     "dimensions": "307 × 242 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Van_Dyck_-_PORTRAIT_EQUESTRE_DE_DON_FRANCISCO_DE_MONCADA_%281586-1635%29_%2C_MARQUIS_D%27AYTONA_ET_COMTE_D%27OSSUNA%2C_1632_vers.jpg/500px-Van_Dyck_-_PORTRAIT_EQUESTRE_DE_DON_FRANCISCO_DE_MONCADA_%281586-1635%29_%2C_MARQUIS_D%27AYTONA_ET_COMTE_D%27OSSUNA%2C_1632_vers.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Equestrian_Portrait_of_Francisco_de_Moncada",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -1801,7 +1826,9 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "country": "France"
+    "country": "France",
+    "qid": "Q3937775",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937775"
    }
   },
   {
@@ -1978,6 +2005,7 @@
     "dimensions": "153,7 × 156,8 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Van_Dyck%2C_Charles_II%2C_James_II_and_pr_Mary.jpg/500px-Van_Dyck%2C_Charles_II%2C_James_II_and_pr_Mary.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Three_Eldest_Children_of_Charles_I_(Turin)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -1987,7 +2015,9 @@
     },
     "museum_id": "galleria-sabauda",
     "city": "Turin",
-    "country": "Italy"
+    "country": "Italy",
+    "qid": "Q89354668",
+    "wikidata": "https://www.wikidata.org/wiki/Q89354668"
    }
   },
   {
@@ -2009,6 +2039,7 @@
     "dimensions": "119 × 144 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Anthony_van_Dyck_-_Sir_Endymion_Porter_and_van_Dyck.png/500px-Anthony_van_Dyck_-_Sir_Endymion_Porter_and_van_Dyck.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Self-portrait_with_Sir_Endymion_Porter",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -2018,7 +2049,10 @@
     },
     "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q3630749",
+    "wikidata": "https://www.wikidata.org/wiki/Q3630749",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/2portrai/dualport.html"
    }
   },
   {
@@ -2158,6 +2192,7 @@
     "dimensions": "266 × 207 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Charles_I_of_England.jpg/500px-Charles_I_of_England.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_King_Hunting",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -2167,7 +2202,10 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "country": "France"
+    "country": "France",
+    "qid": "Q3937485",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937485",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/charles1.html"
    }
   },
   {
@@ -2279,6 +2317,7 @@
     "dimensions": "367 × 292 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Anthonis_van_Dyck_-_Equestrian_Portrait_of_Charles_I_-_National_Gallery%2C_London.jpg/500px-Anthonis_van_Dyck_-_Equestrian_Portrait_of_Charles_I_-_National_Gallery%2C_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Charles_I_on_Horseback",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -2288,7 +2327,10 @@
     },
     "museum_id": "national-gallery",
     "city": "London",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q3937481",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937481",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/charles2.html"
    }
   },
   {
@@ -2459,6 +2501,7 @@
     "dimensions": "237,5 × 146,1 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Sir-Anthony-van-Dyck-Lord-John-Stuart-and-His-Brother-Lord-Bernard-Stuart.jpg/500px-Sir-Anthony-van-Dyck-Lord-John-Stuart-and-His-Brother-Lord-Bernard-Stuart.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Lord_John_and_Lord_Bernard_Stuart",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -2468,7 +2511,10 @@
     },
     "museum_id": "national-gallery",
     "city": "London",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q3937593",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937593",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/2portrai/stuarts.html"
    }
   },
   {
@@ -2701,6 +2747,7 @@
     "dimensions": "107 × 91,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Anthonis_van_Dyck_055.jpg/500px-Anthonis_van_Dyck_055.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Drunken_Silenus_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -2710,7 +2757,9 @@
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
-    "country": "Germany"
+    "country": "Germany",
+    "qid": "Q3960488",
+    "wikidata": "https://www.wikidata.org/wiki/Q3960488"
    }
   },
   {
@@ -2732,6 +2781,7 @@
     "dimensions": "150 × 206 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Anthony_van_Dyck_-_Jupiter_and_Antiope_-_WGA07440.jpg/500px-Anthony_van_Dyck_-_Jupiter_and_Antiope_-_WGA07440.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Jupiter_and_Antiope_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -2740,8 +2790,10 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "wallraf-richartz-museum",
-    "city": "Altstadt-Nord",
-    "country": "Germany"
+    "city": "Cologne",
+    "country": "Germany",
+    "qid": "Q11729456",
+    "wikidata": "https://www.wikidata.org/wiki/Q11729456"
    }
   },
   {
@@ -2763,6 +2815,7 @@
     "dimensions": "112x142 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Anthonis_van_Dyck_066.jpg/500px-Anthonis_van_Dyck_066.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Thetis_Receiving_the_Weapons_of_Achilles_from_Hephaestus",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -2772,7 +2825,9 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q22329840",
+    "wikidata": "https://www.wikidata.org/wiki/Q22329840"
    }
   },
   {
@@ -2794,6 +2849,7 @@
     "dimensions": "220x145 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Anthony_van_Dyck_-_Venus_Asks_Vulcan_to_Cast_Arms_for_her_Son_Aeneas_-_WGA07447.jpg/500px-Anthony_van_Dyck_-_Venus_Asks_Vulcan_to_Cast_Arms_for_her_Son_Aeneas_-_WGA07447.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Venus_Asks_Vulcan_to_Forge_Arms_for_her_Son_Aeneas",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -2803,7 +2859,10 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "country": "France"
+    "country": "France",
+    "qid": "Q18939557",
+    "wikidata": "https://www.wikidata.org/wiki/Q18939557",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/venusvul.html"
    }
   },
   {
@@ -2825,6 +2884,7 @@
     "dimensions": "105 × 92 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Anthony_van_Dyck_-_The_shepherd_Paris_as_personification_of_Artistic_Judgement%2C_c._1628.jpg/500px-Anthony_van_Dyck_-_The_shepherd_Paris_as_personification_of_Artistic_Judgement%2C_c._1628.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Shepherd_Paris_(van_Dyck)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -2834,7 +2894,9 @@
     },
     "museum_id": "wallace-collection",
     "city": "London",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q21585380",
+    "wikidata": "https://www.wikidata.org/wiki/Q21585380"
    }
   },
   {
@@ -2885,6 +2947,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Anthony_van_Dyck_-_Saint_Rosalie.jpg/500px-Anthony_van_Dyck_-_Saint_Rosalie.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Rosalia_(Anthony_van_Dyck)",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -2894,7 +2957,9 @@
     },
     "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q27699878",
+    "wikidata": "https://www.wikidata.org/wiki/Q27699878"
    }
   },
   {
@@ -2915,6 +2980,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Anthony_van_Dyck%2C_St_Rosalie_in_Glory%2C_1624%2C_Oil_on_canvas%2C_Menil_Collection.jpg/500px-Anthony_van_Dyck%2C_St_Rosalie_in_Glory%2C_1624%2C_Oil_on_canvas%2C_Menil_Collection.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Rosalia_Crowned_by_Angels_(Houston)",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -2924,7 +2990,9 @@
     },
     "museum_id": "menil-collection",
     "city": "Houston",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q88802733",
+    "wikidata": "https://www.wikidata.org/wiki/Q88802733"
    }
   },
   {
@@ -2945,6 +3013,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Santa_Rosalia_-_Van_Dyck.jpg/500px-Santa_Rosalia_-_Van_Dyck.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Rosalia_Crowned_by_Angels_(Palermo)",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -2954,7 +3023,9 @@
     },
     "museum_id": "palazzo-abatellis",
     "city": "Palermo",
-    "country": "Italy"
+    "country": "Italy",
+    "qid": "Q24668312",
+    "wikidata": "https://www.wikidata.org/wiki/Q24668312"
    }
   },
   {
@@ -3006,6 +3077,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Anthonis_van_Dyck_084.jpg/500px-Anthonis_van_Dyck_084.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Coronation_of_Saint_Rosalia",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3015,7 +3087,9 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q27981782",
+    "wikidata": "https://www.wikidata.org/wiki/Q27981782"
    }
   },
   {
@@ -3036,6 +3110,7 @@
     "medium": "oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Antoon_van_Dyck_-_Santa_Rosal%C3%ADa_intercediendo_por_la_ciudad_de_Palermo.jpg/500px-Antoon_van_Dyck_-_Santa_Rosal%C3%ADa_intercediendo_por_la_ciudad_de_Palermo.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Rosalia_Interceding_for_the_City_of_Palermo",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3045,7 +3120,9 @@
     },
     "museum_id": "museo-de-arte-de-ponce",
     "city": "Ponce",
-    "country": "Puerto Rico"
+    "country": "Puerto Rico",
+    "qid": "Q88854788",
+    "wikidata": "https://www.wikidata.org/wiki/Q88854788"
    }
   },
   {
@@ -3066,6 +3143,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Anthonis_van_Dyck_-_Christus_und_die_hl._Rosalie_-_5263_-_Bavarian_State_Painting_Collections.jpg/500px-Anthonis_van_Dyck_-_Christus_und_die_hl._Rosalie_-_5263_-_Bavarian_State_Painting_Collections.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Virgin_Presenting_Saint_Rosalia_to_the_Trinity",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -3075,7 +3153,9 @@
     },
     "museum_id": "alte-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "qid": "Q29902758",
+    "wikidata": "https://www.wikidata.org/wiki/Q29902758"
    }
   },
   {
@@ -3127,6 +3207,7 @@
     "dimensions": "151 × 229 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg/500px-Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Christ%27s_Entry_into_Jerusalem_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3135,7 +3216,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "indianapolis-museum-of-art",
-    "city": "Indianapolis"
+    "city": "Indianapolis",
+    "qid": "Q16155993",
+    "wikidata": "https://www.wikidata.org/wiki/Q16155993"
    }
   },
   {
@@ -3250,6 +3333,7 @@
     "dimensions": "205 × 235 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Anthony_van_Dyck_-_The_Brazen_Serpent.jpg/500px-Anthony_van_Dyck_-_The_Brazen_Serpent.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Brazen_Serpent_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3259,7 +3343,10 @@
     },
     "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q11784782",
+    "wikidata": "https://www.wikidata.org/wiki/Q11784782",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/brazense.html"
    }
   },
   {
@@ -3281,6 +3368,7 @@
     "dimensions": "223 × 196 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Anthony_van_Dyck_-_Crowning_with_Thorns_-_WGA07433.jpg/500px-Anthony_van_Dyck_-_Crowning_with_Thorns_-_WGA07433.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Christ_Crowned_with_Thorns_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3290,7 +3378,10 @@
     },
     "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q609576",
+    "wikidata": "https://www.wikidata.org/wiki/Q609576",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/crowning.html"
    }
   },
   {
@@ -3321,7 +3412,8 @@
     },
     "museum_id": "staatliche-museen",
     "city": "Berlin",
-    "country": "Germany"
+    "country": "Germany",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/pentecos.html"
    }
   },
   {
@@ -3342,6 +3434,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Anthony_van_Dyck_-_The_Lamentation.jpg/500px-Anthony_van_Dyck_-_The_Lamentation.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Deposition_(van_Dyck,_1618)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3351,7 +3444,9 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q22329816",
+    "wikidata": "https://www.wikidata.org/wiki/Q22329816"
    }
   },
   {
@@ -3404,6 +3499,7 @@
     "dimensions": "149 × 229,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Dyck%2C_Anthonis_van_-_Samson_and_Delilah.jpg/500px-Dyck%2C_Anthonis_van_-_Samson_and_Delilah.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Sampson_and_Delilah_(van_Dyck,_London)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3413,7 +3509,9 @@
     },
     "museum_id": "dulwich-picture-gallery",
     "city": "London",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q9333311",
+    "wikidata": "https://www.wikidata.org/wiki/Q9333311"
    }
   },
   {
@@ -3434,6 +3532,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Van_Dyck-Deposition-Ashmolean.jpg/500px-Van_Dyck-Deposition-Ashmolean.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Deposition_(van_Dyck,_1619)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3443,7 +3542,9 @@
     },
     "museum_id": "ashmolean-museum",
     "city": "Oxford",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q21716251",
+    "wikidata": "https://www.wikidata.org/wiki/Q21716251"
    }
   },
   {
@@ -3465,6 +3566,7 @@
     "dimensions": "149 × 113,2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Anthonis_van_Dyck_005.jpg/500px-Anthonis_van_Dyck_005.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Ambrose_barring_Theodosius_from_Milan_Cathedral",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3474,7 +3576,10 @@
     },
     "museum_id": "national-gallery",
     "city": "London",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q3948693",
+    "wikidata": "https://www.wikidata.org/wiki/Q3948693",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/emperor.html"
    }
   },
   {
@@ -3496,6 +3601,7 @@
     "dimensions": "344 × 249 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Anthonis_van_Dyck_007.jpg/500px-Anthonis_van_Dyck_007.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Betrayal_of_Christ_(van_Dyck,_Madrid)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3505,7 +3611,10 @@
     },
     "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q3663792",
+    "wikidata": "https://www.wikidata.org/wiki/Q3663792",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/capture.html"
    }
   },
   {
@@ -3527,6 +3636,7 @@
     "dimensions": "274 × 222 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Van_Dyck-Betrayal_of_Christ-Bristol.jpg/500px-Van_Dyck-Betrayal_of_Christ-Bristol.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Betrayal_of_Christ_(van_Dyck,_Bristol)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3534,7 +3644,9 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "bristol-museum-and-art-gallery"
+    "museum_id": "bristol-museum-and-art-gallery",
+    "qid": "Q3663791",
+    "wikidata": "https://www.wikidata.org/wiki/Q3663791"
    }
   },
   {
@@ -3556,6 +3668,7 @@
     "dimensions": "142 × 113 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Anthony_van_Dyck_-_The_Betrayal_of_Christ_-_Google_Art_Project.jpg/500px-Anthony_van_Dyck_-_The_Betrayal_of_Christ_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Betrayal_of_Christ_(van_Dyck,_Minneapolis)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3563,7 +3676,9 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "minneapolis-institute-of-arts"
+    "museum_id": "minneapolis-institute-of-arts",
+    "qid": "Q3663793",
+    "wikidata": "https://www.wikidata.org/wiki/Q3663793"
    }
   },
   {
@@ -3616,6 +3731,7 @@
     "dimensions": "194 x 44 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Anthony_van_Dyck_-_Susanna_and_the_Elders_-_WGA07446.jpg/500px-Anthony_van_Dyck_-_Susanna_and_the_Elders_-_WGA07446.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Susanna_and_the_Elders_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3625,7 +3741,9 @@
     },
     "museum_id": "alte-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "qid": "Q29871346",
+    "wikidata": "https://www.wikidata.org/wiki/Q29871346"
    }
   },
   {
@@ -3647,6 +3765,7 @@
     "dimensions": "62.5 x 52.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Anton_Van_Dyck%2C_Madonna_col_Bambino.jpg/500px-Anton_Van_Dyck%2C_Madonna_col_Bambino.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3656,7 +3775,9 @@
     },
     "museum_id": "galleria-nazionale-di-parma",
     "city": "Parma",
-    "country": "Italy"
+    "country": "Italy",
+    "qid": "Q21121912",
+    "wikidata": "https://www.wikidata.org/wiki/Q21121912"
    }
   },
   {
@@ -3738,6 +3859,7 @@
     "dimensions": "99,7 × 73,7 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Anthony_van_Dyck_-_Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo.jpg/500px-Anthony_van_Dyck_-_Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Rosalie_Interceding_for_the_Plague%E2%80%93Stricken_of_Palermo",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
     "creation_lon": 8.9463,
@@ -3747,7 +3869,9 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "city": "New York",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q3949246",
+    "wikidata": "https://www.wikidata.org/wiki/Q3949246"
    }
   },
   {
@@ -3769,6 +3893,7 @@
     "dimensions": "133 × 101 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/%22Christ_on_the_Cross%22_-_Anthonis_van_Dyck_081.jpg/500px-%22Christ_on_the_Cross%22_-_Anthonis_van_Dyck_081.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Crucifixion_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3778,7 +3903,9 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q20083777",
+    "wikidata": "https://www.wikidata.org/wiki/Q20083777"
    }
   },
   {
@@ -3800,6 +3927,7 @@
     "dimensions": "109 × 149 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Anthony_van_Dyck_-_The_lamentation_of_Christ_%28Alte_Pinakothek%29.jpg/500px-Anthony_van_Dyck_-_The_lamentation_of_Christ_%28Alte_Pinakothek%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Lamentation_of_Christ_(Anthony_van_Dyck,_Alte_Pinakothek)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3809,7 +3937,10 @@
     },
     "museum_id": "alte-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "qid": "Q22329818",
+    "wikidata": "https://www.wikidata.org/wiki/Q22329818",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/depositi.html"
    }
   },
   {
@@ -3830,6 +3961,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Anthony_van_Dyck_-_Bewening_van_Christus_-_403_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg/500px-Anthony_van_Dyck_-_Bewening_van_Christus_-_403_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Deposition_(van_Dyck,_1629)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3839,7 +3971,9 @@
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "city": "Antwerp",
-    "country": "Belgium"
+    "country": "Belgium",
+    "qid": "Q21614703",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614703"
    }
   },
   {
@@ -3861,6 +3995,7 @@
     "dimensions": "160 × 128 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Anton_van_Dyck_-_The_Vision_of_the_Blessed_Hermann_Joseph_-_Google_Art_Project.jpg/500px-Anton_van_Dyck_-_The_Vision_of_the_Blessed_Hermann_Joseph_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Vision_of_the_Blessed_Hermann_Joseph",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3870,7 +4005,10 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q16038543",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038543",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/hermann.html"
    }
   },
   {
@@ -3892,6 +4030,7 @@
     "dimensions": "146 × 254 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Anthonis_van_Dyck_052b.jpg/500px-Anthonis_van_Dyck_052b.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Sampson_and_Delilah_(van_Dyck,_Vienna)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3901,7 +4040,9 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q3948607",
+    "wikidata": "https://www.wikidata.org/wiki/Q3948607"
    }
   },
   {
@@ -3923,6 +4064,7 @@
     "dimensions": "250 × 191 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Van_Dyck_-_The_Madonna_of_the_donors.jpg/500px-Van_Dyck_-_The_Madonna_of_the_donors.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_with_Two_Donors_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3932,7 +4074,10 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "country": "France"
+    "country": "France",
+    "qid": "Q3842509",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842509",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/virgin.html"
    }
   },
   {
@@ -3954,6 +4099,7 @@
     "dimensions": "134,7 × 114,8 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Anthonis_van_Dyck_048.jpg/500px-Anthonis_van_Dyck_048.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rest_on_the_Flight_into_Egypt_(van_Dyck)",
     "creation_place": "Antwerp",
     "creation_lat": 51.2194,
     "creation_lon": 4.4025,
@@ -3963,7 +4109,9 @@
     },
     "museum_id": "alte-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "qid": "Q3936370",
+    "wikidata": "https://www.wikidata.org/wiki/Q3936370"
    }
   },
   {
@@ -3985,6 +4133,7 @@
     "dimensions": "215 × 285.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Anthony_van_Dyck_and_Pauwel_de_Vos_-_Rest_on_the_Flight_into_Egypt_%28Madonna_with_Partridges%29.jpg/500px-Anthony_van_Dyck_and_Pauwel_de_Vos_-_Rest_on_the_Flight_into_Egypt_%28Madonna_with_Partridges%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_with_Partridges",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -3994,7 +4143,9 @@
     },
     "museum_id": "hermitage-museum",
     "city": "Saint Petersburg",
-    "country": "Russia"
+    "country": "Russia",
+    "qid": "Q65146651",
+    "wikidata": "https://www.wikidata.org/wiki/Q65146651"
    }
   },
   {
@@ -4015,6 +4166,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Anthony_van_Dyck_-_Bewening_van_Christus2.JPG/500px-Anthony_van_Dyck_-_Bewening_van_Christus2.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Deposition_(van_Dyck,_1635)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -4024,7 +4176,10 @@
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "city": "Antwerp",
-    "country": "Belgium"
+    "country": "Belgium",
+    "qid": "Q21614706",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614706",
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/lamentat.html"
    }
   },
   {
@@ -4045,6 +4200,7 @@
     "medium": "Oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Anthony_van_Dyck_-_Lamentation_over_the_Dead_Christ_-_Google_Art_Project.jpg/500px-Anthony_van_Dyck_-_Lamentation_over_the_Dead_Christ_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Deposition_(van_Dyck,_1640)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -4054,7 +4210,9 @@
     },
     "museum_id": "bilbao-fine-arts-museum",
     "city": "Bilbao",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q22329820",
+    "wikidata": "https://www.wikidata.org/wiki/Q22329820"
    }
   }
  ]

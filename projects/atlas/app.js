@@ -68,14 +68,44 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.29.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-21 00:55";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.31.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-21 14:05";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
   e.preventDefault();
   history.replaceState(null, "", location.pathname);   // strip hash/query so reload is pristine
   location.reload();
+});
+
+// ── error / missing-work report (posts to the shared Google Apps Script, like frontones) ──
+const REPORT_ENDPOINT = "https://script.google.com/macros/s/AKfycbxgpFado69HbPzmWw0d1uqqwMT3ipapcUwtSp9pWyOELcrND5idSUE2k4WG9D4QWa4Q/exec";
+function openReport(prefill = {}) {
+  const f = document.getElementById("report-form");
+  f.painter.value = prefill.painter || "";
+  f.title.value = prefill.title || "";
+  f.qid.value = prefill.qid || "";
+  document.getElementById("report-msg").textContent = "";
+  document.getElementById("report-panel").hidden = false;
+}
+function closeReport() {
+  document.getElementById("report-panel").hidden = true;
+  document.getElementById("report-form").reset();
+}
+document.getElementById("report-open")?.addEventListener("click", () => openReport());
+document.getElementById("report-cancel")?.addEventListener("click", closeReport);
+document.getElementById("report-panel")?.addEventListener("click", e => {
+  if (e.target.id === "report-panel") closeReport();      // click backdrop to dismiss
+});
+document.getElementById("report-form")?.addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new URLSearchParams(new FormData(e.target));
+  const send = document.getElementById("report-send"), msg = document.getElementById("report-msg");
+  send.disabled = true; msg.textContent = "Sending…";
+  fetch(REPORT_ENDPOINT, { method: "POST", mode: "no-cors", body: data })
+    .then(() => { msg.textContent = "Thanks! I'll review it. 🙌"; setTimeout(closeReport, 1500); })
+    .catch(() => { msg.textContent = "Couldn't send — please try again later."; })
+    .finally(() => { send.disabled = false; });
 });
 
 // ── mobile bottom sheet: hosts marker popups on phones (see the popupopen handler) ──
@@ -303,6 +333,7 @@ function linksRow(p) {
   const parts = [];
   if (wp.length) parts.push(`<span class="lbl">Wikipedia</span>${wp.join("")}`);
   if (p.wikidata) parts.push(`<a class="tag wd" href="${esc(p.wikidata)}" target="_blank" rel="noopener">Wikidata</a>`);
+  if (p.wga_url) parts.push(`<a class="tag wga" href="${esc(p.wga_url)}" target="_blank" rel="noopener" title="Web Gallery of Art record">WGA</a>`);
   return parts.join(" ");
 }
 
@@ -949,10 +980,28 @@ function fullImage(thumbUrl) {
   if (!thumbUrl) return "";
   return /width=\d+/.test(thumbUrl) ? thumbUrl.replace(/width=\d+/, "width=1600") : thumbUrl;
 }
+// Every image is hosted on Wikimedia Commons (Special:FilePath or upload.wikimedia.org).
+// Derive the file description page so the viewer can see the actual licence — we credit
+// the source rather than asserting a licence per file.
+function commonsPage(url) {
+  if (!url) return "";
+  const m = url.match(/Special:FilePath\/([^?]+)/);
+  let name;
+  if (m) { name = m[1]; }
+  else {
+    const parts = url.split("?")[0].split("/");
+    name = url.includes("/thumb/") ? parts[parts.length - 2] : parts[parts.length - 1];
+  }
+  return name ? "https://commons.wikimedia.org/wiki/File:" + name : "";
+}
 const lb = document.getElementById("lightbox");
 function openLightbox(url, cap) {
   document.getElementById("lb-img").src = url;
-  document.getElementById("lb-cap").textContent = cap || "";
+  const page = commonsPage(url);
+  const credit = page
+    ? `<a class="lb-credit" href="${esc(page)}" target="_blank" rel="noopener">Wikimedia Commons — licence ↗</a>`
+    : "";
+  document.getElementById("lb-cap").innerHTML = (cap ? esc(cap) : "") + credit;
   lb.hidden = false;
 }
 function closeLightbox() { lb.hidden = true; document.getElementById("lb-img").src = ""; }

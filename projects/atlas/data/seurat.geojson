@@ -388,7 +388,7 @@
     "painter": "Georges Seurat",
     "title": "1882 Massive figure in a meadow in Barbizon",
     "year": "1882 Massive figure in a meadow in Barbizon",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "location": "Wallraf-Richartz Museum",
     "attribution": "generally accepted",
@@ -1050,7 +1050,7 @@
     "painter": "Georges Seurat",
     "title": "1883 Figures on a street",
     "year": "1883 Figures on a street",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "location": "Wallraf-Richartz Museum",
     "attribution": "generally accepted",
@@ -1663,6 +1663,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Baigneurs_a_Asnieres.jpg/500px-Baigneurs_a_Asnieres.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Bathers_at_Asni%C3%A8res",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -1670,7 +1671,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "qid": "Q1090837",
+    "wikidata": "https://www.wikidata.org/wiki/Q1090837"
    }
   },
   {
@@ -2179,6 +2182,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/A_Sunday_Afternoon_on_the_Island_of_La_Grande_Jatte",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -2188,7 +2192,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q1044742",
+    "wikidata": "https://www.wikidata.org/wiki/Q1044742"
    }
   },
   {
@@ -2225,8 +2231,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06117,
-     50.63092
+     3.06291,
+     50.63035
     ]
    },
    "properties": {
@@ -2620,8 +2626,7 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts",
-    "country": "France"
+    "museum_id": "musee-des-beaux-arts"
    }
   },
   {
@@ -2700,6 +2705,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Lighthouse_at_Honfleur_1886_Georges_Seurat.jpg/500px-Lighthouse_at_Honfleur_1886_Georges_Seurat.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Lighthouse_at_Honfleur",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -2707,7 +2713,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art"
+    "museum_id": "national-gallery-of-art",
+    "qid": "Q20189827",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189827"
    }
   },
   {
@@ -2903,6 +2911,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Georges_Seurat_-_Models_%28Poseuses%29_-_BF811_-_Barnes_Foundation.jpg/500px-Georges_Seurat_-_Models_%28Poseuses%29_-_BF811_-_Barnes_Foundation.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Les_Poseuses",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -2910,7 +2919,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "qid": "Q3234845",
+    "wikidata": "https://www.wikidata.org/wiki/Q3234845"
    }
   },
   {
@@ -2989,6 +3000,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Georges_Seurat_066.jpg/500px-Georges_Seurat_066.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Parade_de_cirque",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -2997,7 +3009,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q3823444",
+    "wikidata": "https://www.wikidata.org/wiki/Q3823444"
    }
   },
   {
@@ -3082,7 +3096,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "saint-louis-art-museum",
-    "city": "St. Louis",
+    "city": "St",
     "country": "United States"
    }
   },
@@ -3234,15 +3248,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "1889 Study for Young Woman Powdering Herself",
     "year": "1889 Study for Young Woman Powdering Herself",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Georges_Seurat_-_Young_Woman_Powdering_Herself_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_Young_Woman_Powdering_Herself_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3254,8 +3268,7 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -3362,6 +3375,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Georges_Seurat_-_Le_Chahut_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_Le_Chahut_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Le_Chahut",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -3369,7 +3383,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kroller-muller-museum"
+    "museum_id": "kroller-muller-museum",
+    "qid": "Q3835761",
+    "wikidata": "https://www.wikidata.org/wiki/Q3835761"
    }
   },
   {
@@ -3707,6 +3723,7 @@
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Georges_Seurat_-_The_Circus_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_The_Circus_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Circus_(Seurat)",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -3714,7 +3731,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q2275610",
+    "wikidata": "https://www.wikidata.org/wiki/Q2275610"
    }
   }
  ]

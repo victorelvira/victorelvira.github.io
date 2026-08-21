@@ -41,7 +41,7 @@ a { color: inherit; }
 #navbar .nav-sep { color: #8a7f72; }
 #navbar .nav-home { color: #cbbfae; text-decoration: none; }
 #navbar a:hover { text-decoration: underline; }
-#navbar .build { margin-left: auto; color: #8a7f72; font-size: 11.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#navbar .build { margin-left: auto; color: #8a7f72; font-size: 9.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ── barra de título y filtros ─────────────────────────────────────────── */
 
@@ -75,6 +75,7 @@ a { color: inherit; }
   font-size: 19px;
   letter-spacing: -0.2px;
 }
+.bar-title h1 .of { font-weight: 400; }
 .bar-sub { color: var(--muted); font-size: 12px; white-space: nowrap; }
 
 .stats { display: flex; gap: 14px; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12.5px; }
@@ -136,23 +137,27 @@ a { color: inherit; }
 .detail-close {
   display: none;
   position: absolute; top: 8px; right: 10px; z-index: 2;
-  width: 32px; height: 32px; padding: 0; cursor: pointer;
-  border: 1px solid var(--line); border-radius: 50%;
-  background: #fff; color: var(--muted); font-size: 15px; line-height: 1;
+  width: 42px; height: 42px; padding: 0; cursor: pointer;
+  border: 1px solid var(--rose); border-radius: 50%;
+  background: var(--rose); color: #fff; font-size: 19px; line-height: 1;
+  box-shadow: 0 2px 10px rgba(182, 70, 95, 0.3);
 }
-.detail-close:hover { border-color: var(--rose); color: var(--rose); }
+.detail-close:active { transform: scale(0.94); }
 .pane-detail { position: relative; }
 
 .tabs { display: flex; gap: 4px; }
 .tab {
-  font: inherit; font-size: 12.5px; padding: 3px 10px; cursor: pointer;
-  border: 1px solid transparent; border-radius: 999px; background: none; color: var(--muted);
+  font: inherit; font-size: 12.5px; padding: 4px 12px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
 }
 .tab:hover { color: var(--rose); }
 .tab.is-active { background: var(--rose-soft); border-color: #eccdd5; color: var(--rose); font-weight: 600; }
 
 .muted { color: var(--muted); font-size: 12px; margin: 0; }
-#index-count { margin-left: auto; font-variant-numeric: tabular-nums; }
+.count {
+  margin: 0 0 0 auto; color: var(--muted);
+  font-size: 11.5px; font-style: italic; font-variant-numeric: tabular-nums;
+}
 
 /* ── rejilla de años ───────────────────────────────────────────────────── */
 
@@ -230,7 +235,7 @@ a { color: inherit; }
 /* Lista de grupos en columnas: nombre + desde/hasta + recuentos. */
 .rows-groups .row-head,
 .rows-groups .row {
-  grid-template-columns: minmax(0, 1fr) 58px 58px 76px 76px 48px;
+  grid-template-columns: minmax(0, 1fr) 58px 58px 76px 76px 62px 14px;
   align-items: baseline;
 }
 .rows-groups .row-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -262,6 +267,29 @@ a { color: inherit; }
 /* ── detalle ───────────────────────────────────────────────────────────── */
 
 .detail-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.detail-head .source-note { color: var(--muted); font-size: 11.5px; }
+.span-note { margin: 2px 0 8px; color: var(--muted); font-size: 12.5px; }
+
+.share {
+  font: inherit; font-size: 11.5px; padding: 2px 10px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
+}
+.share:hover { border-color: var(--rose); color: var(--rose); }
+
+/* Pie de cada foto: el archivo no guarda autor ni fecha exacta, pero sí la
+   carroza, el año y el grupo, que es lo que permite reconocerla. */
+.shot { margin: 0; }
+.shot figcaption {
+  margin-top: 3px; color: var(--ink); font-size: 11px; line-height: 1.25;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.shot figcaption small { display: block; color: var(--muted); font-size: 10px; }
+
+.provenance .codes { margin: 6px 0 0; }
+.provenance .codes .tag { margin-right: 2px; }
+
+.row-go { color: var(--line); font-size: 16px; line-height: 1; }
+.row:hover .row-go, .row.is-active .row-go { color: var(--rose); }
 .detail-head h2 { margin: 0; font-size: 26px; letter-spacing: -0.4px; font-variant-numeric: tabular-nums; }
 .detail-head .label { color: var(--muted); font-size: 13px; }
 
@@ -274,6 +302,11 @@ a { color: inherit; }
 .chip.leaf { border-color: #cfe0d9; background: #eff6f3; color: var(--leaf); }
 .chip.gold { border-color: #e8dabc; background: #fbf4e6; color: var(--gold); }
 .chip.sky  { border-color: #cfdde5; background: #eff5f8; color: var(--sky); }
+.link-chip {
+  font: inherit; font-size: 11.5px; cursor: pointer;
+  border-color: #cfdde5; background: #eff5f8; color: var(--sky); font-weight: 600;
+}
+.link-chip:hover { background: var(--sky); border-color: var(--sky); color: #fff; }
 
 .kpis { display: flex; gap: 16px; flex-wrap: wrap; padding: 8px 0 10px; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
 .kpi span { display: block; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -337,6 +370,7 @@ h3.section {
   stroke-linecap: round; stroke-linejoin: round; cursor: pointer;
 }
 .map-route:hover { stroke: var(--rose); }
+.map-arrow { fill: var(--rose); stroke: #fff; stroke-width: 0.8; stroke-linejoin: round; }
 .map-scale line { stroke: var(--muted); stroke-width: 1; }
 .map-scale text { fill: var(--muted); font-size: 9px; text-anchor: middle; font-family: inherit; }
 .map-route.is-active {
@@ -346,6 +380,7 @@ h3.section {
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; }
 .gallery a { display: block; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #f1e9df; }
+.gallery .shot a { display: block; }
 .gallery img { display: block; width: 100%; height: 74px; object-fit: cover; }
 .gallery a:hover { border-color: var(--rose); }
 
@@ -421,13 +456,39 @@ ul.plain a { color: var(--sky); word-break: break-all; }
 /* ── responsive ────────────────────────────────────────────────────────── */
 
 @media (max-width: 720px) {
+  /* En movil se cae "Ediciones", no "Victorias": las victorias son el dato que
+     ordena la lista y el que se venia perdiendo por el borde. */
   .rows-groups .row-head,
-  .rows-groups .row { grid-template-columns: minmax(0, 1fr) 52px 52px 66px; }
-  .col-ed, .col-wins { display: none; }
+  .rows-groups .row {
+    grid-template-columns: minmax(0, 1fr) 42px 42px 34px 12px;
+    gap: 2px 6px;
+    font-size: 13px;
+  }
+  .col-ed, .col-floats { display: none; }
+  .rows-groups .row .col-num,
+  .rows-groups .row-head .sort.col-num { text-align: left; font-size: 11.5px; }
+  .rows-groups .row-head { font-size: 9px; letter-spacing: 0.02em; }
+  .rows-groups .row { padding: 5px 6px; }
 }
 
 @media (max-width: 900px) {
   body { height: auto; }
+
+  /* Filtros que en movil solo estorban: el estado y el toggle de palmarés. */
+  .desk-only { display: none; }
+  .controls { gap: 6px; }
+  .controls .ghost { padding: 4px 8px; font-size: 12px; }
+
+  /* Cabecera más apretada: el bloque de cifras ocupaba media pantalla. */
+  #bar { padding: 6px 12px; gap: 8px; row-gap: 6px; }
+  .bar-title h1 { font-size: 17px; }
+  .stats { gap: 10px; font-size: 12px; flex-wrap: wrap; }
+  .stats span { display: inline-flex; align-items: baseline; gap: 3px; }
+
+  .pane-head { padding: 6px 10px; }
+  .pane-body { padding: 2px 10px 8px; }
+  .decade-row:first-child .decade-label { padding-top: 4px; }
+
   .layout { grid-template-columns: 1fr; height: auto; }
   .pane { max-height: none; }
   .pane-body { overflow-y: visible; max-height: none; }

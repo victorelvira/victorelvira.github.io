@@ -224,15 +224,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Woodgatherers at the Edge of the Forest",
     "year": "1863",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -408,15 +408,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Le Rue de la Bavole at Honfleur",
     "year": "1864",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -544,6 +544,7 @@
     "dimensions": "60 × 81 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%27The_Beach_at_Honfleur%27_by_Claude_Monet%2C_LACMA.jpg/500px-%27The_Beach_at_Honfleur%27_by_Claude_Monet%2C_LACMA.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Beach_at_Honfleur",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -553,7 +554,9 @@
     },
     "museum_id": "los-angeles-county-museum-of-art",
     "city": "Los Angeles",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q20881340",
+    "wikidata": "https://www.wikidata.org/wiki/Q20881340"
    }
   },
   {
@@ -608,6 +611,7 @@
     "dimensions": "65 × 92 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Monet%2C_A_Cart_on_the_Snowy_Road_at_Honfleur_%281865_or_1867%29.jpg/500px-Monet%2C_A_Cart_on_the_Snowy_Road_at_Honfleur_%281865_or_1867%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/A_Cart_on_the_Snowy_Road_at_Honfleur",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -615,7 +619,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q17491886",
+    "wikidata": "https://www.wikidata.org/wiki/Q17491886"
    }
   },
   {
@@ -946,6 +952,7 @@
     "dimensions": "130 × 181 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Le_D%C3%A9jeuner_sur_l%27herbe_-_Monet_%28Pushkin_Museum%29.jpg/500px-Le_D%C3%A9jeuner_sur_l%27herbe_-_Monet_%28Pushkin_Museum%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Le_D%C3%A9jeuner_sur_l%E2%80%99herbe_(Monet)",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -953,7 +960,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "qid": "Q1167912",
+    "wikidata": "https://www.wikidata.org/wiki/Q1167912"
    }
   },
   {
@@ -977,6 +986,7 @@
     "dimensions": "418 × 150 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Claude_Monet_-_Le_dejeurner_sur_l%27herbe_%28left_panel%29.jpg/500px-Claude_Monet_-_Le_dejeurner_sur_l%27herbe_%28left_panel%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Le_D%C3%A9jeuner_sur_l%E2%80%99herbe_(Monet)",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -984,7 +994,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q1167912",
+    "wikidata": "https://www.wikidata.org/wiki/Q1167912"
    }
   },
   {
@@ -1008,6 +1020,7 @@
     "dimensions": "248 × 217 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Monet_dejeunersurlherbe.jpg/500px-Monet_dejeunersurlherbe.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Le_D%C3%A9jeuner_sur_l%E2%80%99herbe_(Monet)",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1015,7 +1028,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q1167912",
+    "wikidata": "https://www.wikidata.org/wiki/Q1167912"
    }
   },
   {
@@ -1101,6 +1116,7 @@
     "dimensions": "256 × 208 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Claude_Monet_024.jpg/500px-Claude_Monet_024.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Women_in_the_Garden",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1108,7 +1124,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q2734892",
+    "wikidata": "https://www.wikidata.org/wiki/Q2734892"
    }
   },
   {
@@ -1131,6 +1149,7 @@
     "dimensions": "80 × 99 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Claude_Monet_022.jpg/500px-Claude_Monet_022.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Woman_in_the_Garden",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1139,7 +1158,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "country": "Russia",
+    "qid": "Q681876",
+    "wikidata": "https://www.wikidata.org/wiki/Q681876"
    }
   },
   {
@@ -1349,6 +1370,7 @@
     "dimensions": "81 × 100 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/1867_The_Road_in_front_of_Saint-Simeon_Farm_in_Winter.jpg/500px-1867_The_Road_in_front_of_Saint-Simeon_Farm_in_Winter.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Road_in_Front_of_Saint-Simeon_Farm_in_Winter",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1356,7 +1378,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q29654799",
+    "wikidata": "https://www.wikidata.org/wiki/Q29654799"
    }
   },
   {
@@ -1566,6 +1590,7 @@
     "dimensions": "75.5 × 101.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Claude_Monet%2C_1867%2C_Regatta_at_Sainte-Adresse%2C_Metropolitan_Museum_of_Art.jpg/500px-Claude_Monet%2C_1867%2C_Regatta_at_Sainte-Adresse%2C_Metropolitan_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Regatta_at_Sainte-Adresse_(Monet)",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1573,7 +1598,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q734082",
+    "wikidata": "https://www.wikidata.org/wiki/Q734082"
    }
   },
   {
@@ -1595,6 +1622,7 @@
     "dimensions": "75 × 101 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Claude_Monet_-_The_Beach_at_Sainte-Adresse_-_Google_Art_Project.jpg/500px-Claude_Monet_-_The_Beach_at_Sainte-Adresse_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Beach_at_Sainte-Adresse",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1604,7 +1632,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q3966658",
+    "wikidata": "https://www.wikidata.org/wiki/Q3966658"
    }
   },
   {
@@ -1720,6 +1750,7 @@
     "dimensions": "98 × 130 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Claude_Monet_-_Jardin_%C3%A0_Sainte-Adresse.jpg/500px-Claude_Monet_-_Jardin_%C3%A0_Sainte-Adresse.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Garden_at_Sainte-Adresse_(Monet)",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1727,7 +1758,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q432253",
+    "wikidata": "https://www.wikidata.org/wiki/Q432253"
    }
   },
   {
@@ -1873,6 +1906,7 @@
     "dimensions": "81 × 100 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Claude_Monet_-_On_the_Bank_of_the_Seine%2C_Bennecourt_-_1922.427_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_On_the_Bank_of_the_Seine%2C_Bennecourt_-_1922.427_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/On_the_Bank_of_the_Seine,_Bennecourt",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -1882,7 +1916,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q20268615",
+    "wikidata": "https://www.wikidata.org/wiki/Q20268615"
    }
   },
   {
@@ -2179,6 +2215,7 @@
     "dimensions": "50 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Claude_Monet_-_Int%C3%A9rieur%2C_Apr%C3%A8s_d%C3%AEner.jpg/500px-Claude_Monet_-_Int%C3%A9rieur%2C_Apr%C3%A8s_d%C3%AEner.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Interior,_after_Dinner",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -2187,7 +2224,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q20188707",
+    "wikidata": "https://www.wikidata.org/wiki/Q20188707"
    }
   },
   {
@@ -2242,6 +2281,7 @@
     "dimensions": "89 × 130 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/500px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Magpie_(Monet)",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -2249,7 +2289,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q4429116",
+    "wikidata": "https://www.wikidata.org/wiki/Q4429116"
    }
   },
   {
@@ -2564,16 +2606,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Entrance to the Port of Trouville",
     "year": "1870",
-    "city": "Reims",
-    "country": "United States",
+    "city": "Montréal",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.154",
@@ -2981,6 +3023,7 @@
     "dimensions": "48.5 × 73.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/CLAUDE_MONET_1840_-_1926_UN_MOULIN_%C3%80_ZAANDAM.jpg/500px-CLAUDE_MONET_1840_-_1926_UN_MOULIN_%C3%80_ZAANDAM.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Windmill_at_Zaandam",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -2988,7 +3031,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "ny-carlsberg-glyptotek"
+    "museum_id": "ny-carlsberg-glyptotek",
+    "qid": "Q50697763",
+    "wikidata": "https://www.wikidata.org/wiki/Q50697763"
    }
   },
   {
@@ -3103,6 +3148,7 @@
     "dimensions": "48 × 73.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Windmill_and_Boats_near_Zaandam%2C_Holland%2C_by_Claude_Monet%2C_1871_-_Ny_Carlsberg_Glyptotek_-_Copenhagen_-_DSC09437.JPG/500px-Windmill_and_Boats_near_Zaandam%2C_Holland%2C_by_Claude_Monet%2C_1871_-_Ny_Carlsberg_Glyptotek_-_Copenhagen_-_DSC09437.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Windmill_at_Zaandam",
     "creation_place": "Amsterdam",
     "creation_lat": 52.3676,
     "creation_lon": 4.9041,
@@ -3110,7 +3156,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "ny-carlsberg-glyptotek"
+    "museum_id": "ny-carlsberg-glyptotek",
+    "qid": "Q50697763",
+    "wikidata": "https://www.wikidata.org/wiki/Q50697763"
    }
   },
   {
@@ -3563,6 +3611,7 @@
     "dimensions": "50 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Lilacs_in_the_Sun%2C_1872.jpg/500px-Lilacs_in_the_Sun%2C_1872.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Lilac_Bush_in_the_Sun",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -3570,7 +3619,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "qid": "Q3832426",
+    "wikidata": "https://www.wikidata.org/wiki/Q3832426"
    }
   },
   {
@@ -3593,6 +3644,7 @@
     "dimensions": "50 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Claude_Monet_-_Springtime_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Springtime_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Springtime_(Claude_Monet)",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -3601,7 +3653,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "walters-art-museum",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q7581196",
+    "wikidata": "https://www.wikidata.org/wiki/Q7581196"
    }
   },
   {
@@ -4056,6 +4110,7 @@
     "dimensions": "48 × 75 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Claude_Monet_-_Regattas_at_Argenteuil_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Regattas_at_Argenteuil_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Regatta_at_Argenteuil",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -4063,7 +4118,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q3454959",
+    "wikidata": "https://www.wikidata.org/wiki/Q3454959"
    }
   },
   {
@@ -4361,6 +4418,7 @@
     "dimensions": "100 × 80 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Red_Kerchief%2C_by_Claude_Monet%2C_Cleveland_Museum_of_Art%2C_1958.39.jpg/500px-The_Red_Kerchief%2C_by_Claude_Monet%2C_Cleveland_Museum_of_Art%2C_1958.39.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Red_Cape",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -4370,7 +4428,9 @@
     },
     "museum_id": "cleveland-museum-of-art",
     "city": "Cleveland",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q50772913",
+    "wikidata": "https://www.wikidata.org/wiki/Q50772913"
    }
   },
   {
@@ -4409,15 +4469,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Study of Boats (also known as Ships in Harbor)",
     "year": "1873",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -4549,6 +4609,7 @@
     "dimensions": "48 × 63 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/500px-Monet_-_Impression%2C_Sunrise.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Impression,_Sunrise",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -4556,7 +4617,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q328523",
+    "wikidata": "https://www.wikidata.org/wiki/Q328523"
    }
   },
   {
@@ -4610,6 +4673,7 @@
     "dimensions": "46.4 х 55.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/La_Seine_%C3%A0_Asni%C3%A8re_-_Monet.jpg/500px-La_Seine_%C3%A0_Asni%C3%A8re_-_Monet.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Seine_at_Asni%C3%A8res",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -4618,7 +4682,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "country": "Russia",
+    "qid": "Q10315096",
+    "wikidata": "https://www.wikidata.org/wiki/Q10315096"
    }
   },
   {
@@ -5101,6 +5167,7 @@
     "dimensions": "80 × 60 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Claude_Monet_-_Boulevard_des_Capucines_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Boulevard_des_Capucines_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Boulevard_des_Capucines_(Monet)",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -5108,7 +5175,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "nelson-atkins-museum-of-art"
+    "museum_id": "nelson-atkins-museum-of-art",
+    "qid": "Q129097749",
+    "wikidata": "https://www.wikidata.org/wiki/Q129097749"
    }
   },
   {
@@ -5299,15 +5368,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Windmill on the Onbekende Canal, Amsterdam",
     "year": "1874",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.302",
@@ -5321,8 +5390,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -5660,7 +5728,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "saint-louis-art-museum",
-    "city": "St. Louis",
+    "city": "St",
     "country": "United States"
    }
   },
@@ -5806,6 +5874,7 @@
     "dimensions": "55 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Monet-ArgenteuilBasinWithASingleSailboat.jpg/500px-Monet-ArgenteuilBasinWithASingleSailboat.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Argenteuil_Basin_with_a_Single_Sailboat",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -5813,7 +5882,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-ireland"
+    "museum_id": "national-gallery-of-ireland",
+    "qid": "Q19570879",
+    "wikidata": "https://www.wikidata.org/wiki/Q19570879"
    }
   },
   {
@@ -6005,15 +6076,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Snow at Argenteuil",
     "year": "1874",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -6082,6 +6153,7 @@
     "dimensions": "55 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Monet_Snow_at_Argenteuil.jpg/500px-Monet_Snow_at_Argenteuil.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Snow_at_Argenteuil",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -6090,7 +6162,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "qid": "Q7548371",
+    "wikidata": "https://www.wikidata.org/wiki/Q7548371"
    }
   },
   {
@@ -6114,6 +6188,7 @@
     "dimensions": "59 × 78 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Claude_Monet%2C_1875%2C_Train_in_the_Snow%2C_oil_on_canvas%2C_59_%C3%97_78_cm%2C_Mus%C3%A9e_Marmottan_Monet.jpg/500px-Claude_Monet%2C_1875%2C_Train_in_the_Snow%2C_oil_on_canvas%2C_59_%C3%97_78_cm%2C_Mus%C3%A9e_Marmottan_Monet.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Train_in_the_Snow",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -6121,7 +6196,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q50415955",
+    "wikidata": "https://www.wikidata.org/wiki/Q50415955"
    }
   },
   {
@@ -6160,15 +6237,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Boulevard St-Denis, Argenteuil, Snow Effect",
     "year": "1875",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -6499,15 +6576,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Meadow with Poplars (also known as Poplars near Argenteuil)",
     "year": "1875",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -6638,6 +6715,7 @@
     "dimensions": "100 × 81 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -6646,7 +6724,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q2395218",
+    "wikidata": "https://www.wikidata.org/wiki/Q2395218"
    }
   },
   {
@@ -6654,15 +6734,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Camille Monet and a Child in the Artist's Garden in Argenteuil",
     "year": "1875",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -6685,15 +6765,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Camille Monet in Japanese Costume",
     "year": "1875",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -6762,6 +6842,7 @@
     "dimensions": "72 × 60 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Claude_Monet_Le_bateau_atelier.jpg/500px-Claude_Monet_Le_bateau_atelier.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Studio_Boat_(Le_Bateau-atelier)",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -6769,7 +6850,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "qid": "Q28128626",
+    "wikidata": "https://www.wikidata.org/wiki/Q28128626"
    }
   },
   {
@@ -7077,8 +7160,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "san-francisco-museum-of-modern-art",
-    "city": "San Francisco",
-    "country": "United States"
+    "city": "San Francisco"
    }
   },
   {
@@ -7317,6 +7399,7 @@
     "dimensions": "59.5 × 80 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Claude_Monet_-_Arrival_of_the_Normandy_Train%2C_Gare_Saint-Lazare_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Arrival_of_the_Normandy_Train%2C_Gare_Saint-Lazare_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Arrival_of_the_Normandy_Train,_Gare_Saint-Lazare",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -7326,7 +7409,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q20272169",
+    "wikidata": "https://www.wikidata.org/wiki/Q20272169"
    }
   },
   {
@@ -8071,15 +8156,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Entering the Village of Vetheuil in Winter",
     "year": "1879",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -8225,16 +8310,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Vetheuil, Flowering Plum Trees",
     "year": "1879",
-    "city": "Reims",
-    "country": "United States",
+    "city": "Montréal",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "64.5 x 81",
@@ -8867,8 +8952,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06117,
-     50.63092
+     3.06291,
+     50.63035
     ]
    },
    "properties": {
@@ -9875,15 +9960,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Cliffs of Les Petites-Dalles",
     "year": "1880",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -10257,6 +10342,7 @@
     "dimensions": "60 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Monet_-_Waves_Breaking%2C_1881.jpg/500px-Monet_-_Waves_Breaking%2C_1881.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Waves_Breaking",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -10265,7 +10351,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fine-arts-museums-of-san-francisco",
-    "city": "San Francisco"
+    "city": "San Francisco",
+    "qid": "Q20198468",
+    "wikidata": "https://www.wikidata.org/wiki/Q20198468"
    }
   },
   {
@@ -10613,15 +10701,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Seacoast at Trouville",
     "year": "1881",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -10675,15 +10763,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Flowers at Vetheuil",
     "year": "1881",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -11050,7 +11138,7 @@
     "painter": "Claude Monet",
     "title": "The Church at Varengeville, against the Sunset",
     "year": "1882",
-    "city": "Edgbaston",
+    "city": "Birmingham",
     "location": "Barber Institute of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.727",
@@ -11394,6 +11482,7 @@
     "dimensions": "64 x 51",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Claude_Monet_-_Der_Koch_%28Le_P%C3%A8re_Paul%29_-_540_-_%C3%96sterreichische_Galerie_Belvedere.jpg/500px-Claude_Monet_-_Der_Koch_%28Le_P%C3%A8re_Paul%29_-_540_-_%C3%96sterreichische_Galerie_Belvedere.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_P%C3%A8re_Paul",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -11403,7 +11492,9 @@
     },
     "museum_id": "osterreichische-galerie-belvedere",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "qid": "Q27665416",
+    "wikidata": "https://www.wikidata.org/wiki/Q27665416"
    }
   },
   {
@@ -11611,6 +11702,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet_-_Cliff_Walk_at_Pourville_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Cliff_Walk_at_Pourville_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Cliff_Walk_at_Pourville",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -11620,7 +11712,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q7723379",
+    "wikidata": "https://www.wikidata.org/wiki/Q7723379"
    }
   },
   {
@@ -11659,15 +11753,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Path at La Cavee, Pourville",
     "year": "1882",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -11996,15 +12090,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Fisherman's Cottage on the Cliffs at Varengeville",
     "year": "1882",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -12027,15 +12121,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.93361,
-     52.40833
+     -3.17917,
+     51.48167
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Beach in Pourville",
     "year": "1882",
-    "city": "Poznań",
+    "city": "Cardiff",
     "location": "National Museum",
     "attribution": "generally accepted",
     "medium": "W.807",
@@ -12222,6 +12316,7 @@
     "dimensions": "81 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Monet-Mer_agit%C3%A9e_%C3%A0_Etretat-MBA-Lyon.jpg/500px-Monet-Mer_agit%C3%A9e_%C3%A0_Etretat-MBA-Lyon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Stormy_Sea_in_%C3%89tretat",
     "creation_place": "Paris",
     "creation_lat": 48.8566,
     "creation_lon": 2.3522,
@@ -12231,7 +12326,9 @@
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
     "city": "Lyon",
-    "country": "France"
+    "country": "France",
+    "qid": "Q131741852",
+    "wikidata": "https://www.wikidata.org/wiki/Q131741852"
    }
   },
   {
@@ -12261,7 +12358,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "wallraf-richartz-museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany"
    }
   },
@@ -12810,8 +12907,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "san-francisco-museum-of-modern-art",
-    "city": "San Francisco",
-    "country": "United States"
+    "city": "San Francisco"
    }
   },
   {
@@ -13050,6 +13146,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Claude_Monet_-_The_Valley_of_the_Nervia.jpg/500px-Claude_Monet_-_The_Valley_of_the_Nervia.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Valley_of_the_Nervia",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
     "creation_lon": 12.4964,
@@ -13057,7 +13154,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q19912578",
+    "wikidata": "https://www.wikidata.org/wiki/Q19912578"
    }
   },
   {
@@ -13157,15 +13256,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Orange Branch Bearing Fruit",
     "year": "1884",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.887",
@@ -13179,8 +13278,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -13338,15 +13436,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Coastal Road at Cap Martin, near Menton",
     "year": "1884",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -13522,15 +13620,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Branch of Oranges",
     "year": "1882–85",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.924",
@@ -13544,8 +13642,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -13645,15 +13742,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Meadow with Haystacks near Giverny",
     "year": "1885",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -13738,15 +13835,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Poppy Field in a Hollow near Giverny",
     "year": "1885",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -14170,16 +14267,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Three Fishing Boats",
     "year": "1885",
-    "city": "Reims",
-    "country": "United States",
+    "city": "Montréal",
+    "country": "Hungary",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.1029",
@@ -14906,15 +15003,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Meadow in the Sun, at Giverny",
     "year": "1886",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -14953,6 +15050,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Scogli_a_Belle-%C3%8Ele.jpg/500px-Scogli_a_Belle-%C3%8Ele.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Pyramides_at_Port-Coton,_Rough_Sea",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -14960,7 +15058,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "qid": "Q3952498",
+    "wikidata": "https://www.wikidata.org/wiki/Q3952498"
    }
   },
   {
@@ -14982,6 +15082,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Claude_Monet_%22Las_Pir%C3%A1mides_a_Port-Coton%22_%281886%29_%C3%93leo_sobre_tela%3B_65%2C5_x_81%2C5_cm.jpg/500px-Claude_Monet_%22Las_Pir%C3%A1mides_a_Port-Coton%22_%281886%29_%C3%93leo_sobre_tela%3B_65%2C5_x_81%2C5_cm.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Pyramides_at_Port-Coton,_Rough_Sea",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -14989,7 +15090,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "caracas-museum-of-contemporary-art"
+    "museum_id": "caracas-museum-of-contemporary-art",
+    "qid": "Q3952498",
+    "wikidata": "https://www.wikidata.org/wiki/Q3952498"
    }
   },
   {
@@ -15013,6 +15116,7 @@
     "dimensions": "60 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Monet_w1086.jpg/500px-Monet_w1086.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Pyramides_at_Port-Coton,_Rough_Sea",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -15020,7 +15124,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "ny-carlsberg-glyptotek"
+    "museum_id": "ny-carlsberg-glyptotek",
+    "qid": "Q3952498",
+    "wikidata": "https://www.wikidata.org/wiki/Q3952498"
    }
   },
   {
@@ -15211,15 +15317,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Rocks at Belle-Ile",
     "year": "1886",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.1107",
@@ -15233,8 +15339,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -15890,15 +15995,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Antibes, Afternoon Effect",
     "year": "1888",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -15921,15 +16026,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Castle in Antibes",
     "year": "1888",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -15952,15 +16057,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Castle in Antibes",
     "year": "1888",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -16076,15 +16181,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Antibes Seen from Plateau Notre Dame",
     "year": "1888",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -16138,15 +16243,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "At Cap d'Antibes, Mistral Wind",
     "year": "1888",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -16600,15 +16705,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Valley of the Creuse (Sunlight Effect)",
     "year": "1889",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -16631,15 +16736,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Ravine of the Creuse at the end of the Day",
     "year": "1889",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.1220",
@@ -16653,8 +16758,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -16662,15 +16766,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Valley of the Creuse (Gray Day)",
     "year": "1889",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -16785,15 +16889,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Valley of the Petite Creuse",
     "year": "1889",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -16847,15 +16951,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Ravine of the Petit Creuse",
     "year": "1889",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -17103,6 +17207,7 @@
     "dimensions": "133 x 145",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Monet_-_canoaepte01.jpg/500px-Monet_-_canoaepte01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Boating_on_the_River_Epte",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17112,7 +17217,9 @@
     },
     "museum_id": "sao-paulo-museum-of-art",
     "city": "São Paulo",
-    "country": "Brazil"
+    "country": "Brazil",
+    "qid": "Q4931530",
+    "wikidata": "https://www.wikidata.org/wiki/Q4931530"
    }
   },
   {
@@ -17151,15 +17258,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Field of Poppies near Giverny",
     "year": "1890",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -17258,6 +17365,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Monet%2C_Champ_d%27avoine_aux_coquelicots_%28_Mus%C3%A9e_d%27art_moderne_et_contemporain%2C_Strasbourg_%29.JPG/500px-Monet%2C_Champ_d%27avoine_aux_coquelicots_%28_Mus%C3%A9e_d%27art_moderne_et_contemporain%2C_Strasbourg_%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Champ_d%27avoine_aux_coquelicots",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17267,7 +17375,9 @@
     },
     "museum_id": "strasbourg-museum-of-modern-and-contemporary-art",
     "city": "Strasbourg",
-    "country": "France"
+    "country": "France",
+    "qid": "Q47510174",
+    "wikidata": "https://www.wikidata.org/wiki/Q47510174"
    }
   },
   {
@@ -17353,6 +17463,7 @@
     "dimensions": "60 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17360,7 +17471,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17383,6 +17496,7 @@
     "dimensions": "60 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Claude_Monet_-_Grainstacks_in_Bright_Sunlight_%281890%29_Google_Art_Project.jpg/500px-Claude_Monet_-_Grainstacks_in_Bright_Sunlight_%281890%29_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17391,7 +17505,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hill-stead-museum",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17413,6 +17529,7 @@
     "dimensions": "60 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_1985.1103_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_1985.1103_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17422,7 +17539,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17444,6 +17563,7 @@
     "dimensions": "65 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Claude_Monet_-_Stacks_of_Wheat_%28End_of_Day%2C_Autumn%29_-_1933.444_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_Stacks_of_Wheat_%28End_of_Day%2C_Autumn%29_-_1933.444_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17453,7 +17573,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17476,6 +17598,7 @@
     "dimensions": "65 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Claude_Monet_-_Meules%2C_milieu_du_jour_%28Haystacks%2C_midday%29_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Meules%2C_milieu_du_jour_%28Haystacks%2C_midday%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17484,7 +17607,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-australia",
-    "country": "Australia"
+    "country": "Australia",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17506,6 +17631,7 @@
     "dimensions": "60 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Monet_-_Meules%2C_effet_de_neige_-_Shelburne.jpg/500px-Monet_-_Meules%2C_effet_de_neige_-_Shelburne.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17513,7 +17639,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "shelburne-museum"
+    "museum_id": "shelburne-museum",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17537,6 +17665,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Claude_Monet_-_Haystacks%2C_Snow_Effect_-_NG_2283_-_National_Galleries_of_Scotland.jpg/500px-Claude_Monet_-_Haystacks%2C_Snow_Effect_-_NG_2283_-_National_Galleries_of_Scotland.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17544,7 +17673,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-galleries-of-scotland"
+    "museum_id": "national-galleries-of-scotland",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17566,6 +17697,7 @@
     "dimensions": "65 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Claude_Monet_-_Stacks_of_Wheat_%28Sunset%2C_Snow_Effect%29_-_1922.431_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_Stacks_of_Wheat_%28Sunset%2C_Snow_Effect%29_-_1922.431_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17575,7 +17707,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17599,6 +17733,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Claude_Monet_%28French%2C_Paris_1840%E2%80%931926_Giverny%29_-_Haystacks_%28Effect_of_Snow_and_Sun%29_-_Google_Art_Project.jpg/500px-Claude_Monet_%28French%2C_Paris_1840%E2%80%931926_Giverny%29_-_Haystacks_%28Effect_of_Snow_and_Sun%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17606,7 +17741,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17614,15 +17751,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Grainstack in the Morning, Snow Effect",
     "year": "1890–91",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -17630,6 +17767,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Claude_Monet%2C_Haystack%2C_Morning_Snow_Effect_%28Meule%2C_Effet_de_Neige%2C_le_Matin%29%2C_1891%2C_oil_on_canvas%2C_65_x_92_cm%2C_Museum_of_Fine_Arts%2C_Boston.jpg/500px-Claude_Monet%2C_Haystack%2C_Morning_Snow_Effect_%28Meule%2C_Effet_de_Neige%2C_le_Matin%29%2C_1891%2C_oil_on_canvas%2C_65_x_92_cm%2C_Museum_of_Fine_Arts%2C_Boston.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17637,7 +17775,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17659,6 +17799,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Claude_Monet_-_Stack_of_Wheat_%28Snow_Effect%2C_Overcast_Day%29_-_1933.1155_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_Stack_of_Wheat_%28Snow_Effect%2C_Overcast_Day%29_-_1933.1155_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17668,7 +17809,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17690,6 +17833,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Claude_Monet_-_Stack_of_Wheat_-_1983.29_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_Stack_of_Wheat_-_1983.29_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17699,7 +17843,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17721,6 +17867,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Claude_Monet_-_Stack_of_Wheat_%28Thaw%2C_Sunset%29_-_1983.166_-_Art_Institute_of_Chicago.jpg/500px-Claude_Monet_-_Stack_of_Wheat_%28Thaw%2C_Sunset%29_-_1983.166_-_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17730,7 +17877,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17752,6 +17901,7 @@
     "dimensions": "65 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Claude_Monet_-_Grainstack%2C_Sun_in_the_Mist_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Grainstack%2C_Sun_in_the_Mist_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17760,7 +17910,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "minneapolis-institute-of-art",
-    "city": "Minneapolis"
+    "city": "Minneapolis",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17782,6 +17934,7 @@
     "dimensions": "60 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Poss_1288_Grainstack_in_Sunshine%2C_1891%2C_Meule_au_soleil%2C_Oil_on_Canvas%2C_60_x_100_cm%2C_Zurich%2C_Kunsthaus_Zurich.jpg/500px-Poss_1288_Grainstack_in_Sunshine%2C_1891%2C_Meule_au_soleil%2C_Oil_on_Canvas%2C_60_x_100_cm%2C_Zurich%2C_Kunsthaus_Zurich.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17791,7 +17944,9 @@
     },
     "museum_id": "kunsthaus-zurich",
     "city": "Zürich",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17799,15 +17954,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Grainstack at Sunset",
     "year": "1891",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -17815,6 +17970,7 @@
     "dimensions": "73 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Claude_Monet_-_Graystaks_I.JPG/500px-Claude_Monet_-_Graystaks_I.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haystacks_(Monet)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17822,7 +17978,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q557000",
+    "wikidata": "https://www.wikidata.org/wiki/Q557000"
    }
   },
   {
@@ -17845,6 +18003,7 @@
     "dimensions": "92 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Monet_Poplars-at-giverny_MOA_W1291.jpg/500px-Monet_Poplars-at-giverny_MOA_W1291.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17852,7 +18011,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "moa-museum-of-art"
+    "museum_id": "moa-museum-of-art",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -17860,15 +18021,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Poplars on the Banks of the River Epte at dusk",
     "year": "1891",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -17876,6 +18037,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Monet_w1296.jpg/500px-Monet_w1296.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17883,7 +18045,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -17905,6 +18069,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Poplars_on_the_Bank_of_the_Epte_River_%28Claude_Monet%2C_1891%29.jpg/500px-Poplars_on_the_Bank_of_the_Epte_River_%28Claude_Monet%2C_1891%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17914,7 +18079,9 @@
     },
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -17938,6 +18105,7 @@
     "dimensions": "92 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Monet_Poplars_on_the_River_Epte.jpg/500px-Monet_Poplars_on_the_River_Epte.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17945,7 +18113,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "tate-britain"
+    "museum_id": "tate-britain",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -17968,6 +18138,7 @@
     "dimensions": "92 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Monet_Poplars_in_the_Sun.jpg/500px-Monet_Poplars_in_the_Sun.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -17976,7 +18147,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -17998,6 +18171,7 @@
     "dimensions": "92 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Claude_Monet%2C_French_-_Poplars_-_Google_Art_Project.jpg/500px-Claude_Monet%2C_French_-_Poplars_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18007,7 +18181,9 @@
     },
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -18031,6 +18207,7 @@
     "dimensions": "82 x 81.5",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/1891_Monet_The_four_trees_anagoria.JPG/500px-1891_Monet_The_four_trees_anagoria.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18038,7 +18215,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -18062,6 +18241,7 @@
     "dimensions": "81.5 x 82",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Claude_Monet_-_Poplars_on_the_Epte_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Poplars_on_the_Epte_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18069,7 +18249,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-galleries-of-scotland"
+    "museum_id": "national-galleries-of-scotland",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -18092,6 +18274,7 @@
     "dimensions": "90 x 93",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Monet_poplars-view-from-the-marsh-1892_W1313.jpg/500px-Monet_poplars-view-from-the-marsh-1892_W1313.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18100,7 +18283,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fitzwilliam-museum",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "qid": "Q733458",
+    "wikidata": "https://www.wikidata.org/wiki/Q733458"
    }
   },
   {
@@ -18586,6 +18771,7 @@
     "dimensions": "100 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Monet-cathedrale-rouen.jpg/500px-Monet-cathedrale-rouen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18595,7 +18781,9 @@
     },
     "museum_id": "musee-des-beaux-arts-de-rouen",
     "city": "Rouen",
-    "country": "France"
+    "country": "France",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18619,6 +18807,7 @@
     "dimensions": "106 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_blanche.jpg/500px-Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_blanche.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18626,7 +18815,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18649,6 +18840,7 @@
     "dimensions": "110 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Claude_Monet_-_Rouen_Cathedral%2C_Facade_and_Tour_d%27AlbaneI.JPG/500px-Claude_Monet_-_Rouen_Cathedral%2C_Facade_and_Tour_d%27AlbaneI.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18657,7 +18849,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "beyeler-foundation",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18665,15 +18859,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Rouen Cathedral, the Portal and the tour d'Albane, Morning Effect",
     "year": "1893",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -18681,6 +18875,7 @@
     "dimensions": "106 x 74",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Claude_Monet_-_Rouen_Cathedral_Fa%C3%A7ade_and_Tour_d%27Albane_%28Morning_Effect%29_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Rouen_Cathedral_Fa%C3%A7ade_and_Tour_d%27Albane_%28Morning_Effect%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18688,7 +18883,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18712,6 +18909,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/The_Rouen_Cathedral_at_Noon_by_Claude_Monet%2C_1894%2C_Pushkin_Museum.JPG/500px-The_Rouen_Cathedral_at_Noon_by_Claude_Monet%2C_1894%2C_Pushkin_Museum.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18719,7 +18917,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18742,6 +18942,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Claude_Monet_-_Rouen_Cathedral%2C_West_Fa%C3%A7ade_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Rouen_Cathedral%2C_West_Fa%C3%A7ade_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18750,7 +18951,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18773,6 +18976,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Claude_Monet_-_Rouen_Cathedral%2C_Facade_%28Morning_effect%29.JPG/500px-Claude_Monet_-_Rouen_Cathedral%2C_Facade_%28Morning_effect%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18780,7 +18984,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-folkwang"
+    "museum_id": "museum-folkwang",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18804,6 +19010,7 @@
     "dimensions": "91 x 63",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_bleue.jpg/500px-Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_bleue.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18811,7 +19018,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18819,15 +19028,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Rouen Cathedral, Façade",
     "year": "1893",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -18835,6 +19044,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Rouen_Cathedral_Boston_W1356.jpg/500px-Rouen_Cathedral_Boston_W1356.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18842,7 +19052,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18864,6 +19076,7 @@
     "dimensions": "100 x 65",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Claude_Monet_Kathedrale_von_Rouen%4020151002_01.JPG/500px-Claude_Monet_Kathedrale_von_Rouen%4020151002_01.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18871,7 +19084,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "schloss-weimar"
+    "museum_id": "schloss-weimar",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18894,6 +19109,7 @@
     "dimensions": "106 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Claude_Monet_La_cath%C3%A9drale_de_Rouen%2C_le_portail.jpg/500px-Claude_Monet_La_cath%C3%A9drale_de_Rouen%2C_le_portail.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18902,7 +19118,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "clark-art-institute",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -18926,6 +19144,7 @@
     "dimensions": "107 x 73",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_bleue_et_or.jpg/500px-Claude_Monet_-_Cath%C3%A9drale_de_Rouen._Harmonie_bleue_et_or.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -18933,7 +19152,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q637414",
+    "wikidata": "https://www.wikidata.org/wiki/Q637414"
    }
   },
   {
@@ -19606,15 +19827,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Arm of the Seine near Giverny",
     "year": "1896",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -20244,15 +20465,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Morning on the Seine near Giverny",
     "year": "1897",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -20565,6 +20786,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Monet_w1521.jpg/500px-Monet_w1521.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20572,7 +20794,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "shelburne-museum-vermont-house"
+    "museum_id": "shelburne-museum-vermont-house",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20595,6 +20819,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Monet_-_Wildenstein_1996%2C_1523.jpg/500px-Monet_-_Wildenstein_1996%2C_1523.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20602,7 +20827,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "murauchi-art-museum"
+    "museum_id": "murauchi-art-museum",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20625,6 +20852,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Monet_w1524.jpg/500px-Monet_w1524.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20632,7 +20860,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "menard-art-museum"
+    "museum_id": "menard-art-museum",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20655,6 +20885,7 @@
     "dimensions": "65 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Claude_Monet_-_Charing-Cross_Bridge_in_London_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Charing-Cross_Bridge_in_London_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20663,7 +20894,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20671,15 +20904,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Charing Cross Bridge, Overcast Day",
     "year": "1899–1901",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -20687,6 +20920,7 @@
     "dimensions": "60 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/4960207242_04ebc9a7d1_o_w1526.jpg/500px-4960207242_04ebc9a7d1_o_w1526.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20694,7 +20928,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20716,6 +20952,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Monet_-_Charing_Cross_Bridge%2C_London%2C_1901.jpg/500px-Monet_-_Charing_Cross_Bridge%2C_London%2C_1901.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20725,7 +20962,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20747,6 +20986,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Amgueddfa_Cymru_-_Pont_Charing_Cross_-_Charing_Cross_Bridge_-_207385.jpeg/500px-Amgueddfa_Cymru_-_Pont_Charing_Cross_-_Charing_Cross_Bridge_-_207385.jpeg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20756,7 +20996,9 @@
     },
     "museum_id": "national-museum-cardiff",
     "city": "Cardiff",
-    "country": "Wales"
+    "country": "Wales",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20778,6 +21020,7 @@
     "dimensions": "66 x 91",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Monet%2C_Claude_-_Charing_Cross_Bridge_-_Google_Art_Project.jpg/500px-Monet%2C_Claude_-_Charing_Cross_Bridge_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20786,7 +21029,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "indianapolis-museum-of-art",
-    "city": "Indianapolis"
+    "city": "Indianapolis",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20810,6 +21055,7 @@
     "dimensions": "65 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Charing_Cross_Bridge%2C_Monet.jpg/500px-Charing_Cross_Bridge%2C_Monet.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20817,7 +21063,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "thyssen-bornemisza-museum"
+    "museum_id": "thyssen-bornemisza-museum",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20839,6 +21087,7 @@
     "dimensions": "65 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Charing_Cross_Bridge%2C_Reflections_on_the_Thames.jpg/500px-Charing_Cross_Bridge%2C_Reflections_on_the_Thames.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20847,7 +21096,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "baltimore-museum-of-art",
-    "city": "Baltimore"
+    "city": "Baltimore",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20871,6 +21122,7 @@
     "dimensions": "73 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Monet_w1535.jpg/500px-Monet_w1535.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20878,7 +21130,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20900,6 +21154,7 @@
     "dimensions": "73 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Monet_w1536.jpg/500px-Monet_w1536.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20907,7 +21162,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "yamagata-museum-of-art"
+    "museum_id": "yamagata-museum-of-art",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20929,6 +21186,7 @@
     "dimensions": "73 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Monet-Tamise-Lyon.jpg/500px-Monet-Tamise-Lyon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20938,7 +21196,9 @@
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
     "city": "Lyon",
-    "country": "France"
+    "country": "France",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20961,6 +21221,7 @@
     "dimensions": "73 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Monet_w1541.jpg/500px-Monet_w1541.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20969,7 +21230,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "art-gallery-of-ontario",
-    "country": "Canada"
+    "country": "Canada",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -20992,6 +21255,7 @@
     "dimensions": "73 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Monet_-_charing-cross-bridge-cleopatra-s-needle-1901.jpg/500px-Monet_-_charing-cross-bridge-cleopatra-s-needle-1901.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -20999,7 +21263,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "mohamed-mahmoud-khalil-museum"
+    "museum_id": "mohamed-mahmoud-khalil-museum",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -21021,6 +21287,7 @@
     "dimensions": "73 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Claude_Monet_-_Charing_Cross_Bridge_%28Saint_Louis%29.jpg/500px-Claude_Monet_-_Charing_Cross_Bridge_%28Saint_Louis%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21029,8 +21296,10 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "saint-louis-art-museum",
-    "city": "St. Louis",
-    "country": "United States"
+    "city": "St",
+    "country": "United States",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -21053,6 +21322,7 @@
     "dimensions": "73 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Monet_-_Charing_Cross_Bridge_Fog_on_the_Thames%2C_1903.jpg/500px-Monet_-_Charing_Cross_Bridge_Fog_on_the_Thames%2C_1903.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21061,7 +21331,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fogg-museum",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
    }
   },
   {
@@ -21616,15 +21888,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -80.27566,
-     25.71943
+     -80.19361,
+     25.77417
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Waterloo Bridge",
     "year": "1899–1901",
-    "city": "Florida",
+    "city": "Miami",
     "location": "Lowe Art Museum",
     "attribution": "generally accepted",
     "medium": "W.1584",
@@ -21784,6 +22056,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Claude_Monet_-_Houses_of_Parliament%2C_Sunlight_Effect_%28Le_Parlement%2C_effet_de_soleil%29_-_Google_Art_Project.jpg/500px-Claude_Monet_-_Houses_of_Parliament%2C_Sunlight_Effect_%28Le_Parlement%2C_effet_de_soleil%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21791,7 +22064,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "brooklyn-museum"
+    "museum_id": "brooklyn-museum",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21814,6 +22089,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Claude_Monet_-_The_Houses_of_Parliament%2C_Sunset.jpg/500px-Claude_Monet_-_The_Houses_of_Parliament%2C_Sunset.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21822,7 +22098,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21844,6 +22122,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Claude_Monet%2C_Houses_of_Parliament%2C_London%2C_1900-1903%2C_1933.1164%2C_Art_Institute_of_Chicago.jpg/500px-Claude_Monet%2C_Houses_of_Parliament%2C_London%2C_1900-1903%2C_1933.1164%2C_Art_Institute_of_Chicago.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21853,7 +22132,9 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21876,6 +22157,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Houses_of_Parliament_in_the_Fog_by_Claude_Monet%2C_High_Museum_of_Art.jpg/500px-Houses_of_Parliament_in_the_Fog_by_Claude_Monet%2C_High_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21883,7 +22165,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "high-museum-of-art"
+    "museum_id": "high-museum-of-art",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21891,8 +22175,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06117,
-     50.63092
+     3.06291,
+     50.63035
     ]
    },
    "properties": {
@@ -21905,6 +22189,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Lille_PdBA_monet_parlement_de_londres.JPG/500px-Lille_PdBA_monet_parlement_de_londres.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21914,7 +22199,9 @@
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "city": "Lille",
-    "country": "France"
+    "country": "France",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21938,6 +22225,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Claude_Monet%2C_Londres%2C_Le_Parlement%2C_Reflets_sur_la_Tamise%2C_1905%2C_huile_sur_toile%2C_Mus%C3%A9e_Marmottan_Monet%2C_Paris.jpg/500px-Claude_Monet%2C_Londres%2C_Le_Parlement%2C_Reflets_sur_la_Tamise%2C_1905%2C_huile_sur_toile%2C_Mus%C3%A9e_Marmottan_Monet%2C_Paris.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21945,7 +22233,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21967,6 +22257,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Claude_Monet_-_Le_Parlement%2C_coucher_de_soleil_-_Kunsthaus_Z%C3%BCrich.jpg/500px-Claude_Monet_-_Le_Parlement%2C_coucher_de_soleil_-_Kunsthaus_Z%C3%BCrich.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -21976,7 +22267,9 @@
     },
     "museum_id": "kunsthaus-zurich",
     "city": "Zürich",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -21998,6 +22291,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Monet_-_Le_Parlement_de_Londres%2C_effet_de_brouillard%2C_1903.jpg/500px-Monet_-_Le_Parlement_de_Londres%2C_effet_de_brouillard%2C_1903.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -22005,7 +22299,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-modern-art-andre-malraux-muma"
+    "museum_id": "museum-of-modern-art-andre-malraux-muma",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -22029,6 +22325,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/The_Houses_of_Parliament_%28Effect_of_Fog%29_MET_DT1893.jpg/500px-The_Houses_of_Parliament_%28Effect_of_Fog%29_MET_DT1893.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -22036,7 +22333,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -22060,6 +22359,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/London%2C_the_Houses_of_Parliament%2C_Sunlight_Opening_in_Fog%2C_by_Claude_Monet.jpg/500px-London%2C_the_Houses_of_Parliament%2C_Sunlight_Opening_in_Fog%2C_by_Claude_Monet.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -22067,7 +22367,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -22089,6 +22391,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Monet%2C_Claude%2C_Houses_of_Parliament%2C_Seagulls.jpg/500px-Monet%2C_Claude%2C_Houses_of_Parliament%2C_Seagulls.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -22096,7 +22399,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum"
+    "museum_id": "princeton-university-art-museum",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -22120,6 +22425,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Seagulls%2C_the_Thames_%26_Houses_of_Parliament_by_Claude_Monet%2C_Pushkin_Museum.JPG/500px-Seagulls%2C_the_Thames_%26_Houses_of_Parliament_by_Claude_Monet%2C_Pushkin_Museum.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)",
     "creation_place": "London",
     "creation_lat": 51.5074,
     "creation_lon": -0.1278,
@@ -22127,7 +22433,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "qid": "Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q468623"
    }
   },
   {
@@ -22212,6 +22520,7 @@
     "dimensions": "81 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Monet_-_Monets_Garten_in_Giverny.jpg/500px-Monet_-_Monets_Garten_in_Giverny.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Le_Jardin_de_l%27artiste_%C3%A0_Giverny",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -22219,7 +22528,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "qid": "Q3794124",
+    "wikidata": "https://www.wikidata.org/wiki/Q3794124"
    }
   },
   {
@@ -22412,8 +22723,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06117,
-     50.63092
+     3.06291,
+     50.63035
     ]
    },
    "properties": {
@@ -22566,15 +22877,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Grand Canal",
     "year": "1908",
-    "city": "Reims",
+    "city": "Montréal",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -22582,6 +22893,7 @@
     "dimensions": "73 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Claude_Monet%2C_Le_Grand_Canal.jpg/500px-Claude_Monet%2C_Le_Grand_Canal.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Le_Grand_Canal",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
     "creation_lon": 12.3155,
@@ -22589,7 +22901,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q19564337",
+    "wikidata": "https://www.wikidata.org/wiki/Q19564337"
    }
   },
   {
@@ -22736,6 +23050,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/The_Doge%27s_Palace_Seen_from_San_Giorgio_Maggiore_MET_DT1904.jpg/500px-The_Doge%27s_Palace_Seen_from_San_Giorgio_Maggiore_MET_DT1904.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Doge%27s_Palace_Seen_from_San_Giorgio_Maggiore_(Claude_Monet)",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
     "creation_lon": 12.3155,
@@ -22743,7 +23058,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q19914267",
+    "wikidata": "https://www.wikidata.org/wiki/Q19914267"
    }
   },
   {
@@ -22888,6 +23205,7 @@
     "dimensions": "65 x 92",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Amgueddfa_Cymru_-_San_Giorgio_Maggiore_yn_y_Gwyll_-_San_Giorgio_Maggiore%2C_Twilight_-_220983.jpeg/500px-Amgueddfa_Cymru_-_San_Giorgio_Maggiore_yn_y_Gwyll_-_San_Giorgio_Maggiore%2C_Twilight_-_220983.jpeg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/San_Giorgio_Maggiore_at_Dusk_(Monet)",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
     "creation_lon": 12.3155,
@@ -22897,7 +23215,9 @@
     },
     "museum_id": "national-museum-cardiff",
     "city": "Cardiff",
-    "country": "Wales"
+    "country": "Wales",
+    "qid": "Q3947218",
+    "wikidata": "https://www.wikidata.org/wiki/Q3947218"
    }
   },
   {
@@ -23017,8 +23337,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "phoenix-art-museum",
-    "city": "Phoenix",
-    "country": "United States"
+    "city": "Phoenix"
    }
   },
   {
@@ -23565,6 +23884,7 @@
     "dimensions": "130 x 110",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Claude_Monet%2C_Weeping_Willow.JPG/500px-Claude_Monet%2C_Weeping_Willow.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Weeping_Willow_(painting)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -23574,7 +23894,9 @@
     },
     "museum_id": "columbus-museum-of-art",
     "city": "Ohio [129]",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q50532779",
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
    }
   },
   {
@@ -23598,6 +23920,7 @@
     "dimensions": "100 x 100",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Claude_Monet_Saule_pleureur.jpg/500px-Claude_Monet_Saule_pleureur.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Weeping_Willow_(painting)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -23605,7 +23928,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q50532779",
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
    }
   },
   {
@@ -23629,6 +23954,7 @@
     "dimensions": "100 x 120",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Monet_w1875.jpg/500px-Monet_w1875.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Weeping_Willow_(painting)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -23636,7 +23962,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q50532779",
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
    }
   },
   {
@@ -23660,6 +23988,7 @@
     "dimensions": "100 x 120",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Claude_Monet_Weeping_Willow.jpg/500px-Claude_Monet_Weeping_Willow.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Weeping_Willow_(painting)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -23667,7 +23996,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kimbell-art-museum"
+    "museum_id": "kimbell-art-museum",
+    "qid": "Q50532779",
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
    }
   },
   {
@@ -23691,6 +24022,7 @@
     "dimensions": "100 x 110",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Weeping_Willow_by_Claude_Monet%2C_Mus%C3%A9e_Marmottan_Monet_5078.JPG/500px-Weeping_Willow_by_Claude_Monet%2C_Mus%C3%A9e_Marmottan_Monet_5078.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Weeping_Willow_(painting)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -23698,7 +24030,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q50532779",
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
    }
   },
   {
@@ -24171,15 +24505,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.0347,
-     49.2628
+     -73.55417,
+     45.50889
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Japanese Bridge",
     "year": "1918–24",
-    "city": "Reims",
+    "city": "Montréal",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "W.1925",
@@ -24193,8 +24527,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "museum_id": "museum-of-fine-arts"
    }
   },
   {
@@ -24558,6 +24891,7 @@
     "dimensions": "116 x 89",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Monet_-_Wildenstein_1996%2C_1943.png/500px-Monet_-_Wildenstein_1996%2C_1943.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Weeping_Willow_(painting)",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
     "creation_lon": 1.5339,
@@ -24565,7 +24899,9 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "qid": "Q50532779",
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
    }
   },
   {

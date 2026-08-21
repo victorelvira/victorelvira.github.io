@@ -259,6 +259,8 @@ img.th.ph::after, img.tth.ph::after { content: ""; }
 #lightbox figure { margin: 0; max-width: 96vw; max-height: 92vh; text-align: center; }
 #lightbox img { max-width: 96vw; max-height: 84vh; border-radius: 4px; box-shadow: 0 6px 40px rgba(0,0,0,.6); }
 #lightbox figcaption { color: #f3ece0; margin-top: 10px; font-size: 14px; }
+#lightbox .lb-credit { display: block; margin-top: 4px; color: #bda98c; font-size: 11.5px; text-decoration: none; }
+#lightbox .lb-credit:hover { color: #f3ece0; text-decoration: underline; }
 #lb-close {
   position: fixed; top: 14px; right: 18px; font-size: 22px; line-height: 1;
   background: rgba(255,255,255,.14); color: #fff; border: 0; border-radius: 8px;
@@ -414,3 +416,18 @@ button.pop-museum:hover .pm-arrow { color: #6a4a2a; }
   #foot { font-size: 11px; padding: 7px 12px; }
   .card ul.works { max-height: 40vh; }
 }
+
+.tag.wga { background:#efe6d6; color:#6a4a2a; }
+
+/* ── error / missing-work report modal ── */
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; }
+#report-panel { position: fixed; inset: 0; z-index: 1400; background: rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; padding: 16px; }
+#report-panel[hidden] { display: none; }
+#report-form { background: #fff; border-radius: 12px; padding: 16px 18px; width: min(420px, 100%); max-height: 90vh; overflow: auto; box-shadow: 0 10px 40px rgba(0,0,0,.3); display: flex; flex-direction: column; gap: 8px; }
+#report-form h3 { margin: 0 0 4px; font-size: 16px; }
+#report-form label { font-size: 12.5px; color: var(--muted); display: flex; flex-direction: column; gap: 3px; }
+#report-form select, #report-form input, #report-form textarea { font: inherit; font-size: 13px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; width: 100%; }
+#report-form .row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+#report-form .row button { font: inherit; font-size: 13px; padding: 7px 14px; border-radius: 8px; cursor: pointer; border: 1px solid var(--line); background: #fff; }
+#report-form #report-send { background: #3a2317; color: #fff; border-color: #3a2317; }
+#report-msg { font-size: 12.5px; color: var(--muted); min-height: 1em; }

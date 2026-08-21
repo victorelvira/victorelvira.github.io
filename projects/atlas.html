@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.29.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.31.1">
 </head>
 <body>
   <nav id="navbar">
@@ -112,11 +112,61 @@
     · Data: <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
     · <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a>
     · <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>
-    · Missing a work or spotted an error? <span class="hint">fix it on Wikidata</span>
+    · <button type="button" id="report-open" class="linkbtn">Missing a work or spotted an error?</button>
   </footer>
+
+  <div id="report-panel" hidden>
+    <form id="report-form">
+      <h3>Report an error or a missing work</h3>
+      <label>Type
+        <select name="type">
+          <option value="missing">A work is missing</option>
+          <option value="location">Wrong location / museum</option>
+          <option value="attribution">Wrong attribution</option>
+          <option value="image">Wrong or missing image</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <input name="painter" placeholder="Painter (if known)">
+      <input name="title" placeholder="Work title (if known)">
+      <textarea name="note" rows="3" placeholder="Details"></textarea>
+      <input name="email" type="email" placeholder="Your email (optional, in case I need to ask)">
+      <input type="hidden" name="qid"><input type="hidden" name="pagina" value="atlas">
+      <div class="row">
+        <button type="button" id="report-cancel">Cancel</button>
+        <button type="submit" id="report-send">Send</button>
+      </div>
+      <div class="msg" id="report-msg"></div>
+    </form>
+  </div>
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.29.2"></script>
+  <script src="atlas/app.js?v=0.31.1"></script>
+<!-- Tracking: Google Analytics tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GHT1L88XYZ');
+</script>
+<!-- End Google Analytics tag (gtag.js) -->
+<!-- Default Statcounter code -->
+<script type="text/javascript">
+var sc_project=11157426;
+var sc_invisible=1;
+var sc_security="c4968ba5";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+<!-- GoatCounter -->
+<script data-goatcounter="https://victorelvira.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
