@@ -155,7 +155,7 @@ a { color: inherit; }
 
 .controls {
   display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
-  padding: 0 12px 7px; border-bottom: 1px solid var(--line-soft); background: #fffaf5;
+  padding: 9px 12px; border-bottom: 1px solid var(--line-soft); background: #fffaf5;
 }
 
 .controls input[type="search"],
@@ -225,8 +225,8 @@ a { color: inherit; }
   font: inherit; font-size: 12.5px; padding: 4px 12px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
 }
-.tab:hover { color: var(--rose); }
-.tab.is-active { background: var(--rose-soft); border-color: #eccdd5; color: var(--rose); font-weight: 600; }
+.tab:hover { color: var(--t-year); }
+.tab.is-active { background: var(--t-year-bg); border-color: #b9d2e0; color: var(--t-year); font-weight: 600; }
 
 .muted { color: var(--muted); font-size: 12px; margin: 0; }
 .count {
@@ -340,8 +340,8 @@ a { color: inherit; }
   white-space: nowrap;
 }
 .row-head .sort.col-num { text-align: right; }
-.row-head .sort:hover { color: var(--rose); }
-.row-head .sort.is-sorted { color: var(--rose); }
+.row-head .sort:hover { color: var(--t-year); }
+.row-head .sort.is-sorted { color: var(--t-year); }
 .rows-groups .row .col-num { color: var(--muted); font-size: 12.5px; }
 
 /* ── detalle ───────────────────────────────────────────────────────────── */
@@ -352,7 +352,15 @@ a { color: inherit; }
 /* Cifras de la edición en la propia cabecera: ocupan una línea en vez de
    cuatro tarjetas. */
 /* Las dos cifras de la edición, en disco, a la derecha del título. */
-.discs { display: inline-flex; gap: 6px; margin-left: auto; }
+/* Año grande, centrado con los discos, y todo agrupado a la izquierda: pegados
+   al borde derecho se confundían con el botón rojo de cerrar. */
+.edition-head { align-items: center; gap: 12px; padding-right: 54px; }
+.edition-head h2 { font-size: 40px; line-height: 1; }
+
+.discs { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+/* «114ª edición» en pastilla achatada, a la misma altura que los discos.
+   Con el rótulo completo se partía en cuatro líneas. */
+.disc-wide { width: auto; padding: 0 16px; border-radius: 999px; white-space: nowrap; }
 .disc {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   width: 52px; height: 52px; flex: none; border-radius: 50%;
@@ -413,7 +421,7 @@ table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo
   border: 0; background: #fff; color: var(--muted);
 }
 .view + .view { border-left: 1px solid var(--line); }
-.view.is-on { background: var(--rose-soft); color: var(--rose); }
+.view.is-on { background: var(--t-year-bg); color: var(--t-year); }
 
 /* Cuadricula de fotos. */
 .float-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(122px, 1fr)); gap: 8px; }
@@ -504,7 +512,7 @@ i.dot.ran { background: #bfb2a6; }
 .bar:hover { fill: var(--rose); }
 
 .row-go { color: var(--line); font-size: 16px; line-height: 1; }
-.row:hover .row-go, .row.is-active .row-go { color: var(--rose); }
+.row:hover .row-go, .row.is-active .row-go { color: var(--t-year); }
 .detail-head h2 { margin: 0; font-size: 26px; letter-spacing: -0.4px; font-variant-numeric: tabular-nums; }
 .detail-head .label { color: var(--muted); font-size: 13px; }
 
@@ -579,7 +587,7 @@ h3.section {
   color: var(--muted); font-size: 11px; font-style: italic;
 }
 .row-route:hover .map-thumb svg,
-.row-route.is-active .map-thumb svg { border-color: var(--rose); }
+.row-route.is-active .map-thumb svg { border-color: var(--t-route); }
 .map figcaption { margin-top: 4px; color: var(--muted); font-size: 11px; }
 .map figcaption a { color: var(--sky); }
 
@@ -624,9 +632,9 @@ table.palmares th {
   color: var(--muted); font-weight: 600; padding: 0 6px 4px 0; border-bottom: 1px solid var(--line);
   cursor: pointer; user-select: none; white-space: nowrap;
 }
-table.palmares th:hover { color: var(--rose); }
+table.palmares th:hover { color: var(--t-year); }
 table.palmares th[aria-sort="ascending"],
-table.palmares th[aria-sort="descending"] { color: var(--rose); }
+table.palmares th[aria-sort="descending"] { color: var(--t-year); }
 table.palmares th[aria-sort="ascending"]::after { content: " ▲"; font-size: 8px; }
 table.palmares th[aria-sort="descending"]::after { content: " ▼"; font-size: 8px; }
 table.palmares td { padding: 5px 6px 5px 0; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
@@ -727,7 +735,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   }
   .col-floats { display: none; }
   .rows-groups .row-head .sort { white-space: nowrap; font-size: 8.5px; }
-  .controls { padding: 0 8px 6px; }
+  .controls { padding: 8px; }
 
   /* La tabla del palmarés en móvil: fuente reducida a la flecha, grupo más
      estrecho y sin partir palabras a lo bestia. */
@@ -807,6 +815,18 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .decade-row.is-open .decade-label { background: var(--t-year); color: #fff; }
   .decade-row.is-open .decade-count { color: rgba(255, 255, 255, 0.75); }
   .decade-row .year-grid { flex-basis: 100%; }
+
+  /* La década abierta deja de ser una etiqueta suelta y pasa a ser un bloque
+     que abraza sus años, con el mismo azul de la selección. */
+  .decade-row.is-open {
+    display: block; flex-basis: 100%;
+    margin: 4px 0 2px; padding: 7px 8px 3px;
+    border-radius: 12px; background: var(--t-year-bg);
+    border: 1px solid #cadde8;
+  }
+  .decade-row.is-open .decade-label { background: none; color: var(--t-year); padding: 0 2px 6px; }
+  .decade-row.is-open .decade-count { color: var(--t-year); opacity: 0.7; }
+  .decade-row.is-open .year-grid { padding: 0 0 4px; }
   .decade-label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
   .decade-count { display: inline; color: var(--muted); font-size: 11px; font-weight: 400; }
   .decade-row:not(.is-open) .year-grid { display: none; }

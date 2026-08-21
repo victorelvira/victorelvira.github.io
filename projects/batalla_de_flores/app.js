@@ -702,6 +702,26 @@ function renderStatsTab() {
       </div>
       ${chartFloatsPerYear()}
 
+      <h3 class="section">Trayectoria de los carrocistas</h3>
+      <div class="chart-tabs">
+        ${[["all", "Todas"], ["A", "Categoría A"], ["B", "Categoría B"]].map(([cat, label]) =>
+          `<button class="view${category === cat ? " is-on" : ""}" type="button"
+            data-stats-cat="${cat}">${label}</button>`).join("")}
+      </div>
+      <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
+      de su primera a su última carroza; cada punto es una edición, y el color dice cómo le fue.
+      ${category === "all"
+        ? `Las categorías A y B no existen antes de <b>${CATEGORIES_FROM}</b>, cuando el reglamento
+           municipal las creó según el tamaño de la carroza; por eso «Todas» es la única vista que
+           cubre el siglo entero.`
+        : `Solo desde <b>${CATEGORIES_FROM}</b>: antes de esa fecha había una única lista.`}</p>
+      <div class="chart-legend">
+        <span class="win-key">${ICON_TROPHY}Ganador</span>
+        <span class="podium-key">${ICON_PODIUM}Podio</span>
+        <span><i class="dot ran"></i>Resto</span>
+      </div>
+      ${chartCareers(category)}
+
       <h3 class="section">Premios especiales</h3>
       <p class="chart-note">Además de la clasificación del desfile hay dos galardones aparte.
       <b>👗 Vestidos</b> lo puntúa el jurado; <b>🎨 Arte</b> lo concede ACELAR, la asociación de
@@ -729,26 +749,6 @@ function renderStatsTab() {
             </div>`;
         }).join("")}
       </div>
-
-      <h3 class="section">Trayectoria de los carrocistas</h3>
-      <div class="chart-tabs">
-        ${[["all", "Todas"], ["A", "Categoría A"], ["B", "Categoría B"]].map(([cat, label]) =>
-          `<button class="view${category === cat ? " is-on" : ""}" type="button"
-            data-stats-cat="${cat}">${label}</button>`).join("")}
-      </div>
-      <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
-      de su primera a su última carroza; cada punto es una edición, y el color dice cómo le fue.
-      ${category === "all"
-        ? `Las categorías A y B no existen antes de <b>${CATEGORIES_FROM}</b>, cuando el reglamento
-           municipal las creó según el tamaño de la carroza; por eso «Todas» es la única vista que
-           cubre el siglo entero.`
-        : `Solo desde <b>${CATEGORIES_FROM}</b>: antes de esa fecha había una única lista.`}</p>
-      <div class="chart-legend">
-        <span class="win-key">${ICON_TROPHY}Ganador</span>
-        <span class="podium-key">${ICON_PODIUM}Podio</span>
-        <span><i class="dot ran"></i>Resto</span>
-      </div>
-      ${chartCareers(category)}
     </div>`;
 }
 
@@ -1126,10 +1126,12 @@ function renderEditionDetail(edition) {
   const withPhotos = shown.some(entry => (entry.image_urls || []).length);
 
   els.detail.innerHTML = `
-    <div class="detail-head">
+    <div class="detail-head edition-head">
       <h2>${edition.year}</h2>
-      <span class="label">${esc(edition.edition_label || "")}</span>
       <span class="discs">
+        ${edition.edition_number
+          ? `<span class="disc disc-wide" title="${esc(edition.edition_label || "")}"><b>${edition.edition_number}ª</b>edición</span>`
+          : ""}
         <span class="disc"><b>${num(edition.float_count || 0)}</b>carrozas</span>
         <span class="disc"><b>${num(groupCount)}</b>grupos</span>
       </span>
