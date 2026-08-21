@@ -66,15 +66,15 @@
 <div id="app">
   <header>
     <h1><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></h1>
-    <span class="count" id="count">cargando…</span>
+    <span class="count" id="count">loading…</span>
   </header>
   <aside>
     <div class="fld">
-      <label>Buscar (título o compositor)</label>
+      <label>Search (title or composer)</label>
       <input type="text" id="q" placeholder="Verdi, Carmen, Wagner…" autocomplete="off">
     </div>
     <div class="fld">
-      <label>Años (estreno / composición)</label>
+      <label>Years (premiere / composition)</label>
       <div class="years">
         <span class="yrlab" id="ymin">—</span>
         <input type="range" id="ra" min="1590" max="2026" value="1590">
@@ -85,18 +85,18 @@
       </div>
     </div>
     <div class="fld">
-      <label>Idioma</label>
-      <select id="lang"><option value="">— todos —</option></select>
+      <label>Language</label>
+      <select id="lang"><option value="">— all —</option></select>
     </div>
     <div class="fld">
-      <label>País de origen</label>
-      <select id="country"><option value="">— todos —</option></select>
+      <label>Country of origin</label>
+      <select id="country"><option value="">— all —</option></select>
     </div>
     <div class="fld">
-      <label class="chk"><input type="checkbox" id="onlymap"> Solo con ubicación en el mapa</label>
+      <label class="chk"><input type="checkbox" id="onlymap"> Only with a map location</label>
     </div>
     <div class="fld">
-      <button class="btn" id="reset">Limpiar filtros</button>
+      <button class="btn" id="reset">Clear filters</button>
     </div>
     <div id="list"></div>
   </aside>
@@ -131,7 +131,7 @@ function match(o){
 
 function render(){
   const sel=DATA.filter(match);
-  $('#count').textContent=sel.length.toLocaleString('es')+' óperas'+
+  $('#count').textContent=sel.length.toLocaleString('es')+' operas'+
     (sel.length<DATA.length?` (de ${DATA.length.toLocaleString('es')})`:'');
   // mapa
   cluster.clearLayers();
@@ -197,7 +197,7 @@ fetch('operas.json').then(r=>r.json()).then(d=>{
   for(const[c,n]of top(countries))$('#country').insertAdjacentHTML('beforeend',`<option value="${esc(c)}">${esc(c)} (${n})</option>`);
   $('#ymin').textContent=1590;$('#ymax').textContent=2026;
   render();
-}).catch(e=>{$('#count').textContent='Error cargando operas.json — ¿lanzaste un servidor local? '+e;});
+}).catch(e=>{$('#count').textContent='Error loading operas.json — is a local server running? '+e;});
 </script>
 </body>
 </html>

@@ -72,40 +72,40 @@
 <header>
   <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
   <nav>
-    <a href="index.html" class="on">Descubre</a>
-    <a href="compositores.html">Compositores</a>
-    <a href="nucleo.html">Óperas</a>
-    <a href="conexiones.html">Conexiones</a>
+    <a href="index.html" class="on">Discover</a>
+    <a href="compositores.html">Composers</a>
+    <a href="nucleo.html">Operas</a>
+    <a href="conexiones.html">Connections</a>
     <a href="timeline.html">Timeline</a>
-    <a href="pulso.html">Pulso</a>
-    <a href="duraciones.html">Duraciones</a>
-    <a href="mapa.html">Mapa</a>
+    <a href="pulso.html">Pulse</a>
+    <a href="duraciones.html">Durations</a>
+    <a href="mapa.html">Map</a>
   </nav>
 </header>
 <div class="wrap">
   <div class="hero">
     <h1>Oper<span>atlas</span></h1>
-    <p>Una base de datos interactiva de ópera — mapas, timeline, conexiones y curiosidades.</p>
+    <p>An interactive opera database — maps, timeline, connections and curiosities.</p>
     <div class="links">
-      <a href="compositores.html">Compositores</a><a href="nucleo.html">Óperas</a>
-      <a href="conexiones.html">Conexiones</a><a href="timeline.html">Timeline</a>
-      <a href="pulso.html">El pulso</a><a href="duraciones.html">Duraciones</a>
+      <a href="compositores.html">Composers</a><a href="nucleo.html">Operas</a>
+      <a href="conexiones.html">Connections</a><a href="timeline.html">Timeline</a>
+      <a href="pulso.html">The pulse</a><a href="duraciones.html">Durations</a>
     </div>
   </div>
-  <h2 style="margin-top:20px">Empieza por aquí</h2>
-  <div class="lead">Si nunca has ido a la ópera: muy representadas, no demasiado largas y accesibles. Buen primer paso.</div>
+  <h2 style="margin-top:20px">Start here</h2>
+  <div class="lead">Never been to the opera? Often performed, not too long and easy to enjoy — a great first step.</div>
   <div class="start" id="start"></div>
 
-  <h2>Curiosidades del núcleo</h2>
+  <h2>Fun facts</h2>
   <div class="facts" id="facts"></div>
 
-  <h2>Juega un rato <span class="rand" id="dice">🎲 ópera al azar</span></h2>
+  <h2>Play a while <span class="rand" id="dice">🎲 random opera</span></h2>
   <div class="games">
-    <div class="game"><h3>¿Cuál se estrenó antes?</h3><div id="g1"></div><div class="score" id="s1"></div></div>
-    <div class="game"><h3>¿De qué ópera es este reparto?</h3><div id="g2"></div><div class="score" id="s2"></div></div>
+    <div class="game"><h3>Which premiered first?</h3><div id="g1"></div><div class="score" id="s1"></div></div>
+    <div class="game"><h3>Which opera is this cast from?</h3><div id="g2"></div><div class="score" id="s2"></div></div>
   </div>
 
-  <div class="pagefoot">Operatlas — proyecto personal con datos abiertos. <a href="acerca.html">Fuentes y créditos →</a></div>
+  <div class="pagefoot">Operatlas — a personal project built on open data. <a href="acerca.html">Sources &amp; credits →</a></div>
 </div>
 <script>
 const $=s=>document.querySelector(s);
@@ -126,8 +126,8 @@ fetch('core.json').then(r=>r.json()).then(D=>{
   const start=D.slice().sort((a,b)=>score(b)-score(a)).slice(0,12);
   $('#start').innerHTML=start.map((o,i)=>{
     const d=dur(o); const bits=[];
-    if(o.perfs>MAXP*0.3) bits.push('de las más representadas');
-    if(d&&d<=150) bits.push('dura '+hhmm(d));
+    if(o.perfs>MAXP*0.3) bits.push('among the most performed');
+    if(d&&d<=150) bits.push('runs '+hhmm(d));
     else if(d) bits.push(hhmm(d));
     if(o.language) bits.push('en '+o.language.toLowerCase());
     return `<div class="scard" onclick="go('${esc(o.title).replace(/'/g,'&#39;')}')">
@@ -139,41 +139,41 @@ fetch('core.json').then(r=>r.json()).then(D=>{
   // CURIOSIDADES
   const facts=[];
   const push=(k,v,s,click)=>facts.push({k,v,s,click});
-  // compositor con más óperas
+  // compositor con más operas
   const byComp={};D.forEach(o=>byComp[o.composer]=(byComp[o.composer]||0)+1);
   const topComp=Object.entries(byComp).sort((a,b)=>b[1]-a[1])[0];
-  push('Compositor más prolífico', topComp[0], `${topComp[1]} óperas en el núcleo`);
+  push('Most prolific composer', topComp[0], `${topComp[1]} operas in the core`);
   // ópera más representada
   const topOp=D.slice().sort((a,b)=>b.perfs-a.perfs)[0];
-  push('La más representada', topOp.title, topOp.composer, topOp.title);
+  push('Most performed', topOp.title, topOp.composer, topOp.title);
   // fuente que más inspira
   const bySrc={};D.forEach(o=>(o.based_on||[]).forEach(s=>bySrc[s]=(bySrc[s]||0)+1));
   const topSrc=Object.entries(bySrc).filter(([s])=>!/^Q\d+$/.test(s)).sort((a,b)=>b[1]-a[1])[0];
-  if(topSrc) push('Fuente que más óperas inspiró', topSrc[0], `${topSrc[1]} óperas la adaptan`);
+  if(topSrc) push('Most-adapted source', topSrc[0], `${topSrc[1]} operas adapt it`);
   // libretista más prolífico
   const byLib={};D.forEach(o=>(o.librettist||[]).forEach(l=>byLib[l]=(byLib[l]||0)+1));
   const topLib=Object.entries(byLib).sort((a,b)=>b[1]-a[1])[0];
-  if(topLib) push('Libretista más prolífico', topLib[0], `${topLib[1]} óperas del núcleo`);
+  if(topLib) push('Most prolific librettist', topLib[0], `${topLib[1]} operas in the core`);
   // década con más estrenos
   // solo años LIMPIOS de Wikidata (ob_premiere está sucio) y hasta 2010 (evita ruido reciente)
   const byDec={};D.forEach(o=>{if(o.wd_year&&o.wd_year<=2010){const d=Math.floor(o.wd_year/10)*10;byDec[d]=(byDec[d]||0)+1;}});
   const topDec=Object.entries(byDec).sort((a,b)=>b[1]-a[1])[0];
-  if(topDec) push('Década con más estrenos', topDec[0]+'s', `${topDec[1]} óperas estrenadas`);
+  if(topDec) push('Decade with most premieres', topDec[0]+'s', `${topDec[1]} operas premiered`);
   // más larga / más corta: prioriza duración curada (theopera101) y acota a 40-300 min
   const durX=o=>{const r=o.rt_total_min; if(r&&r>=40&&r<=300) return r; const m=o.mb_total_min; return (m>=40&&m<=300)?m:null;};
   const wd=D.filter(o=>durX(o)).sort((a,b)=>durX(b)-durX(a));
-  if(wd.length){push('La más larga', wd[0].title, `${hhmm(durX(wd[0]))} · ${wd[0].composer}`, wd[0].title);
-    const short=wd[wd.length-1];push('La más corta', short.title, `${hhmm(durX(short))} · ${short.composer}`, short.title);}
-  // acto más largo
+  if(wd.length){push('The longest', wd[0].title, `${hhmm(durX(wd[0]))} · ${wd[0].composer}`, wd[0].title);
+    const short=wd[wd.length-1];push('The shortest', short.title, `${hhmm(durX(short))} · ${short.composer}`, short.title);}
+  // act más largo
   let bigAct=null;
   D.forEach(o=>(o.rt_acts||[]).forEach(a=>{if(!bigAct||a.min>bigAct.min)bigAct={min:a.min,name:a.name,op:o};}));
-  if(bigAct) push('El acto más largo', bigAct.min+' min', `${bigAct.name} de ${bigAct.op.title}`, bigAct.op.title);
-  // idioma más común
+  if(bigAct) push('The longest act', bigAct.min+' min', `${bigAct.name} de ${bigAct.op.title}`, bigAct.op.title);
+  // language más común
   const byLang={};D.forEach(o=>{if(o.language)byLang[o.language]=(byLang[o.language]||0)+1;});
   const topLang=Object.entries(byLang).sort((a,b)=>b[1]-a[1])[0];
-  if(topLang) push('Idioma dominante', topLang[0], `${topLang[1]} óperas`);
+  if(topLang) push('Main language', topLang[0], `${topLang[1]} operas`);
   // total
-  push('El núcleo', D.length+' óperas', `de ${new Set(D.map(o=>o.composer)).size} compositores`);
+  push('The core', D.length+' operas', `from ${new Set(D.map(o=>o.composer)).size} composers`);
 
   $('#facts').innerHTML=facts.map(f=>`<div class="fact ${f.click?'clk':''}" ${f.click?`onclick="go('${esc(f.click).replace(/'/g,'&#39;')}')"`:''}>
     <div class="k">${esc(f.k)}</div><div class="v">${esc(f.v)}</div><div class="s">${esc(f.s)}</div></div>`).join('');
@@ -190,22 +190,22 @@ fetch('core.json').then(r=>r.json()).then(D=>{
     $('#g1').querySelectorAll('.gopt').forEach(btn=>btn.onclick=()=>{
       sc1.n++; if(+btn.dataset.y===older)sc1.ok++;
       $('#g1').querySelectorAll('.gopt').forEach(x=>{x.disabled=true;x.classList.add(+x.dataset.y===older?'right':'wrong');x.innerHTML+=`<b>${x.dataset.y}</b>`;});
-      $('#s1').innerHTML=`${sc1.ok}/${sc1.n} aciertos · <span class="rand" id="n1">otra ▸</span>`; document.getElementById('n1').onclick=game1;
+      $('#s1').innerHTML=`${sc1.ok}/${sc1.n} correct · <span class="rand" id="n1">another ▸</span>`; document.getElementById('n1').onclick=game1;
     });
   }
   function game2(){
     const t=pick(withCast), opts=[t]; while(opts.length<4){const o=pick(D);if(!opts.includes(o))opts.push(o);}
     opts.sort(()=>Math.random()-0.5);
-    $('#g2').innerHTML=`<div style="font-size:13px;color:#c8cace;margin-bottom:10px">Reparto: <b>${esc(t.cast.slice(0,5).join(', '))}</b></div>`+
+    $('#g2').innerHTML=`<div style="font-size:13px;color:#c8cace;margin-bottom:10px">Cast: <b>${esc(t.cast.slice(0,5).join(', '))}</b></div>`+
       opts.map(o=>`<button class="gopt" data-id="${o.id}">${esc(o.title)} <span style="color:#9aa0a6">· ${esc(o.composer)}</span></button>`).join('');
     $('#g2').querySelectorAll('.gopt').forEach(btn=>btn.onclick=()=>{
       sc2.n++; if(+btn.dataset.id===t.id)sc2.ok++;
       $('#g2').querySelectorAll('.gopt').forEach(x=>{x.disabled=true;if(+x.dataset.id===t.id)x.classList.add('right');else if(x===btn)x.classList.add('wrong');});
-      $('#s2').innerHTML=`${sc2.ok}/${sc2.n} aciertos · <span class="rand" id="n2">otra ▸</span>`; document.getElementById('n2').onclick=game2;
+      $('#s2').innerHTML=`${sc2.ok}/${sc2.n} correct · <span class="rand" id="n2">another ▸</span>`; document.getElementById('n2').onclick=game2;
     });
   }
   game1(); game2();
-}).catch(e=>{$('#start').textContent='Error cargando core.json — '+e;});
+}).catch(e=>{$('#start').textContent='Error loading core.json — '+e;});
 </script>
 </body>
 </html>

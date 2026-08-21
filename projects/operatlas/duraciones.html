@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operatlas · Duraciones por acto</title>
+<title>Operatlas · durations</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{
     --bg:#0f1113; --panel:#171a1d; --panel2:#1e2225; --line:#2b3035;
     --txt:#e8e6e1; --dim:#9aa0a6; --accent:#c9a24b;
-    /* un color por acto */
+    /* un color por act */
     --a1:#c9a24b; --a2:#7fa6c9; --a3:#c97f7f; --a4:#8bc98b; --a5:#b18bc9; --a6:#c9b48b;
   }
   *{box-sizing:border-box}
@@ -61,15 +61,15 @@
 </nav>
 
 <header>
-  <h1><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span> · duraciones por acto</h1>
-  <span class="sub" id="sub">cargando…</span>
+  <h1><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span> · durations by act</h1>
+  <span class="sub" id="sub">loading…</span>
   <div class="controls">
-    <input type="text" id="q" placeholder="filtrar…" autocomplete="off">
+    <input type="text" id="q" placeholder="filter…" autocomplete="off">
     <select id="sort">
-      <option value="dur">↓ más larga primero</option>
-      <option value="durasc">↑ más corta primero</option>
+      <option value="dur">↓ longest first</option>
+      <option value="durasc">↑ shortest first</option>
       <option value="alpha">A–Z</option>
-      <option value="acts">nº de actos</option>
+      <option value="acts">number of acts</option>
     </select>
   </div>
 </header>
@@ -93,7 +93,7 @@ function draw(){
     : s==='acts'?(b.acts.length-a.acts.length)
     : s==='durasc'?(a.total_min-b.total_min)
     : (b.total_min-a.total_min));
-  $('#sub').textContent=`${list.length} óperas · una barra por ópera, un color por acto`;
+  $('#sub').textContent=`${list.length} operas · one bar per opera, one colour per act`;
   // escala superior
   const maxmin=Math.max(...DATA.map(o=>o.total_min||0));
   let sc='';for(let m=0;m<=maxmin;m+=30){sc+=`<span style="position:absolute;left:${m*PXMIN}px">${m?m+'′':'0'}</span>`;}
@@ -113,7 +113,7 @@ function draw(){
       }).join('');
     }else{
       const w=Math.max((o.total_min||0)*PXMIN,60);
-      bar=`<div class="seg nodata" style="width:${w}px" title="sin desglose por acto">${o.total_min?o.total_min+'min (total)':'s/d'}</div>`;
+      bar=`<div class="seg nodata" style="width:${w}px" title="no per-act breakdown">${o.total_min?o.total_min+'min (total)':'s/d'}</div>`;
     }
     return `<div class="row">
       <div class="label"><div class="t">${esc(o.opera)}</div><div class="c">${esc(o.composer)}</div></div>
@@ -132,11 +132,11 @@ fetch('core.json').then(r=>r.json()).then(d=>{
     return {opera:o.title, composer:o.composer, acts, total_min:total,
             totaltime:total?`${Math.floor(total/60)}:${String(total%60).padStart(2,'0')}`:''};
   });
-  const names=['Acto I','Acto II','Acto III','Acto IV','Acto V','Acto VI'];
+  const names=['Act I','Act II','Act III','Act IV','Act V','Act VI'];
   $('#legend').innerHTML=names.map((n,i)=>`<span><b style="background:var(${COLORS[i]})"></b>${n}</span>`).join('')
-    +`<span style="margin-left:8px">· ancho = minutos · <span style="color:#c9a24b">duración de grabación · MusicBrainz</span></span>`;
+    +`<span style="margin-left:8px">· width = minutes · <span style="color:#c9a24b">recording duration · MusicBrainz</span></span>`;
   draw();
-}).catch(e=>{$('#sub').textContent='Error cargando core.json — '+e;});
+}).catch(e=>{$('#sub').textContent='Error loading core.json — '+e;});
 </script>
 </body>
 </html>

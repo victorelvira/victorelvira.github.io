@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operatlas · el pulso</title>
+<title>Operatlas · pulse</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;--up:#8bc98b;--down:#c97f7f}
@@ -50,27 +50,27 @@
 <header>
   <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
   <nav>
-    <a href="index.html">Descubre</a>
-    <a href="compositores.html">Compositores</a>
-    <a href="nucleo.html">Óperas</a>
-    <a href="conexiones.html">Conexiones</a>
+    <a href="index.html">Discover</a>
+    <a href="compositores.html">Composers</a>
+    <a href="nucleo.html">Operas</a>
+    <a href="conexiones.html">Connections</a>
     <a href="timeline.html">Timeline</a>
-    <a href="pulso.html" class="on">Pulso</a>
-    <a href="duraciones.html">Duraciones</a>
-    <a href="mapa.html">Mapa</a>
+    <a href="pulso.html" class="on">Pulse</a>
+    <a href="duraciones.html">Durations</a>
+    <a href="mapa.html">Map</a>
   </nav>
 </header>
 <div class="wrap">
-  <h2 style="margin-top:6px">El pulso de la ópera</h2>
-  <div class="lead">Funciones registradas por año en el mundo. La ópera <b>tal como se representa</b>, no solo como se cataloga.</div>
+  <h2 style="margin-top:6px">The pulse of opera</h2>
+  <div class="lead">Performances logged per year worldwide. Opera <b>as it is actually staged</b>, not just as it is catalogued.</div>
   <div class="chartbox"><svg id="chart" viewBox="0 0 1000 320"></svg></div>
 
   <div class="cols">
-    <div><h2>📈 En auge</h2><div class="lead">más funciones ahora que hace una década</div><div id="up"></div></div>
-    <div><h2>📉 En declive</h2><div class="lead">se representan menos que antes</div><div id="down"></div></div>
+    <div><h2>📈 On the rise</h2><div class="lead">more performances now than a decade ago</div><div id="up"></div></div>
+    <div><h2>📉 In decline</h2><div class="lead">performed less than before</div><div id="down"></div></div>
   </div>
 
-  <h2>Las más representadas (2020–2025)</h2>
+  <h2>Most performed (2020–2025)</h2>
   <div id="top" class="cols"></div>
 </div>
 <script>
@@ -106,7 +106,7 @@ fetch('pulse.json').then(r=>r.json()).then(P=>{
   // pico
   const pi=tot.indexOf(Math.max(...tot));
   g+=`<circle cx="${X(pi)}" cy="${Y(tot[pi])}" r="4" fill="#c9a24b"/>`;
-  g+=`<text x="${X(pi)}" y="${Y(tot[pi])-12}" fill="#c9a24b" font-size="12" text-anchor="middle" font-weight="600">pico ${yr[pi]}</text>`;
+  g+=`<text x="${X(pi)}" y="${Y(tot[pi])-12}" fill="#c9a24b" font-size="12" text-anchor="middle" font-weight="600">peak ${yr[pi]}</text>`;
   $('#chart').innerHTML=g;
 
   // ==== sparkline helper ====
@@ -138,7 +138,7 @@ fetch('pulse.json').then(r=>r.json()).then(P=>{
     <span class="t">${esc(x.o.title)} <small>${esc(x.o.composer)}</small></span>
     <span class="n">${x.r.toLocaleString('es')}</span></div>`).join('');
   $('#top').innerHTML=`<div>${col(top.slice(0,half))}</div><div>${col(top.slice(half))}</div>`;
-}).catch(e=>{$('#chart').outerHTML='Error cargando pulse.json — '+e;});
+}).catch(e=>{$('#chart').outerHTML='Error loading pulse.json — '+e;});
 </script>
 </body>
 </html>

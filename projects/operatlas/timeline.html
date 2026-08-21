@@ -57,20 +57,20 @@
   <header>
     <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
     <nav>
-      <a href="index.html">Descubre</a>
-      <a href="compositores.html">Compositores</a>
-      <a href="nucleo.html">Óperas</a>
-      <a href="conexiones.html">Conexiones</a>
+      <a href="index.html">Discover</a>
+      <a href="compositores.html">Composers</a>
+      <a href="nucleo.html">Operas</a>
+      <a href="conexiones.html">Connections</a>
       <a href="timeline.html" class="on">Timeline</a>
-      <a href="pulso.html">Pulso</a>
-      <a href="duraciones.html">Duraciones</a>
-      <a href="mapa.html">Mapa</a>
+      <a href="pulso.html">Pulse</a>
+      <a href="duraciones.html">Durations</a>
+      <a href="mapa.html">Map</a>
     </nav>
     <div class="tools">
-      <input id="q" type="text" placeholder="filtrar compositor…" autocomplete="off">
+      <input id="q" type="text" placeholder="filter composer…" autocomplete="off">
     </div>
   </header>
-  <div class="axis"><div class="lane" style="height:26px;border:0"><div class="name" style="color:#5f666c;font-weight:400">compositor ↓ / año →</div><div class="track" id="axis"></div></div></div>
+  <div class="axis"><div class="lane" style="height:26px;border:0"><div class="name" style="color:#5f666c;font-weight:400">composer ↓ / year →</div><div class="track" id="axis"></div></div></div>
   <div id="scroll"><div id="lanes"></div></div>
   <div class="leg" id="leg"></div>
 </div>
@@ -124,8 +124,8 @@ function bind(){
   $('#lanes').querySelectorAll('.name').forEach(n=>n.onclick=()=>location.href='compositores.html');
 }
 $('#q').oninput=draw;
-$('#leg').innerHTML=[['--baroque','Barroco (–1750)'],['--classic','Clásico (1750–1830)'],['--romantic','Romántico (1830–1900)'],['--modern','Moderno (1900–1955)'],['--contemp','Contemporáneo (1955–)']]
-  .map(([c,l])=>`<span><span class="d" style="background:var(${c})"></span>${l}</span>`).join('')+' · tamaño = repertorio · solo óperas con año';
+$('#leg').innerHTML=[['--baroque','Baroque (–1750)'],['--classic','Classical (1750–1830)'],['--romantic','Romantic (1830–1900)'],['--modern','Modern (1900–1955)'],['--contemp','Contemporary (1955–)']]
+  .map(([c,l])=>`<span><span class="d" style="background:var(${c})"></span>${l}</span>`).join('')+' · size = repertory · only operas with a year';
 
 fetch('core.json').then(r=>r.json()).then(d=>{DATA=d;MAXP=Math.max(...d.map(o=>o.perfs||1));drawAxis();build();draw();})
  .catch(e=>{$('#lanes').innerHTML='Error: '+e;});

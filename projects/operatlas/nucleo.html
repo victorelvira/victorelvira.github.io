@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operatlas · núcleo</title>
+<title>Operatlas · core</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{
@@ -97,25 +97,25 @@
   <header>
     <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
     <nav>
-      <a href="index.html">Descubre</a>
-      <a href="compositores.html">Compositores</a>
-      <a href="nucleo.html" class="on">Óperas</a>
-      <a href="conexiones.html">Conexiones</a>
+      <a href="index.html">Discover</a>
+      <a href="compositores.html">Composers</a>
+      <a href="nucleo.html" class="on">Operas</a>
+      <a href="conexiones.html">Connections</a>
       <a href="timeline.html">Timeline</a>
-      <a href="pulso.html">Pulso</a>
-      <a href="duraciones.html">Duraciones</a>
-      <a href="mapa.html">Mapa</a>
+      <a href="pulso.html">Pulse</a>
+      <a href="duraciones.html">Durations</a>
+      <a href="mapa.html">Map</a>
     </nav>
-    <span class="count" id="count">cargando…</span>
+    <span class="count" id="count">loading…</span>
   </header>
   <aside>
     <div class="filters">
-      <input id="q" type="text" placeholder="buscar ópera…" autocomplete="off">
+      <input id="q" type="text" placeholder="search opera…" autocomplete="off">
       <div id="facet" class="facetbar"></div>
     </div>
     <div id="list"></div>
   </aside>
-  <main id="ficha"><div class="empty">Elige una ópera de la lista →</div></main>
+  <main id="ficha"><div class="empty">Pick an opera from the list →</div></main>
 </div>
 <script>
 const COLORS=['--a1','--a2','--a3','--a4','--a5','--a6'];
@@ -133,7 +133,7 @@ function actBars(acts){
     return `<div class="seg" style="width:${w}px;background:var(${COLORS[i%6]})" title="${esc(a.name)}: ${a.min} min">${lab}</div>`;
   }).join('');
   const tot=acts.reduce((s,a)=>s+a.min,0);
-  return `<div class="bar">${segs}</div><div class="tot">total ${hhmm(tot)} · ${acts.length} ${acts.length==1?'bloque':'actos'}</div>`;
+  return `<div class="bar">${segs}</div><div class="tot">total ${hhmm(tot)} · ${acts.length} ${acts.length==1?'block':'acts'}</div>`;
 }
 
 function flavor(title, src, acts, note){
@@ -141,15 +141,15 @@ function flavor(title, src, acts, note){
   return `<div class="flavor"><div class="ttl">${title} <span class="src">${src}</span></div>`+
     (bars || `<div class="pending">${note}</div>`)+`</div>`;
 }
-// duración PÚBLICA = MusicBrainz (barras por acto, o barra de total). theopera101 = validación oculta.
+// duración PÚBLICA = MusicBrainz (barras por act, o barra de total). theopera101 = validación oculta.
 function durBlock(o){
   let inner;
   if(o.mb_acts&&o.mb_acts.length) inner=actBars(o.mb_acts);
-  else if(o.mb_total_min) inner=`<div class="bar"><div class="seg" style="width:${Math.max(o.mb_total_min*PXMIN,130)}px;background:var(--a2)">${hhmm(o.mb_total_min)}</div></div><div class="tot">total ${hhmm(o.mb_total_min)} · (sin desglose por acto)</div>`;
-  else inner=`<div class="pending">Sin duración localizada aún.</div>`;
+  else if(o.mb_total_min) inner=`<div class="bar"><div class="seg" style="width:${Math.max(o.mb_total_min*PXMIN,130)}px;background:var(--a2)">${hhmm(o.mb_total_min)}</div></div><div class="tot">total ${hhmm(o.mb_total_min)} · (no per-act breakdown)</div>`;
+  else inner=`<div class="pending">No duration found yet.</div>`;
   let val='';
-  if(o.dur_validated) val=`<div class="legend">✓ duración contrastada</div>`;
-  return `<div class="flavor"><div class="ttl">Duración por acto <span class="src">grabación · MusicBrainz</span></div>${inner}${val}</div>`;
+  if(o.dur_validated) val=`<div class="legend">✓ duration cross-checked</div>`;
+  return `<div class="flavor"><div class="ttl">Duration by act <span class="src">recording · MusicBrainz</span></div>${inner}${val}</div>`;
 }
 
 let F={q:'', facet:null};
@@ -163,7 +163,7 @@ function setFacet(type,value){ F.facet={type,value}; draw(); }
 function clearFacet(){ F.facet=null; draw(); }
 window.setFacet=setFacet; window.clearFacet=clearFacet;
 
-const FLABEL={composer:'compositor',librettist:'libretista',based_on:'fuente',language:'idioma',style:'época',city:'ciudad',decade:'década',character:'personaje'};
+const FLABEL={composer:'composer',librettist:'librettist',based_on:'source',language:'language',style:'era',city:'city',decade:'decade',character:'character'};
 let CHARS={};
 function facetMatch(o,f){
   switch(f.type){
@@ -183,7 +183,7 @@ function match(o){
   return true;
 }
 
-// óperas relacionadas: puntúa por rasgos compartidos
+// operas relacionadas: puntúa por rasgos compartidos
 function related(o){
   const inter=(a,b)=>(a||[]).filter(x=>(b||[]).includes(x));
   const out=[];
@@ -192,10 +192,10 @@ function related(o){
     let s=0, why='';
     const src=inter(o.based_on,p.based_on);
     const lib=inter(o.librettist,p.librettist);
-    if(src.length){ s+=4*src.length; why='misma fuente: '+src[0]; }
-    if(lib.length){ s+=3*lib.length; if(!why) why='libretista: '+lib[0]; }
-    if(o.composer===p.composer){ s+=1; if(!why) why='mismo compositor'; }
-    if(o.style&&o.style===p.style&&o.language===p.language){ s+=1.5; if(!why) why='misma época e idioma'; }
+    if(src.length){ s+=4*src.length; why='same source: '+src[0]; }
+    if(lib.length){ s+=3*lib.length; if(!why) why='librettist: '+lib[0]; }
+    if(o.composer===p.composer){ s+=1; if(!why) why='same composer'; }
+    if(o.style&&o.style===p.style&&o.language===p.language){ s+=1.5; if(!why) why='same era and language'; }
     if(s>0) out.push({p,s,why});
   }
   return out.sort((a,b)=>b.s-a.s).slice(0,7);
@@ -203,30 +203,30 @@ function related(o){
 
 function renderFicha(o){
   const era=o.style?`<span class="chip">${lnk('style',o.style)}</span>`:'';
-  const lang=o.language?`<span class="chip">idioma ${lnk('language',o.language)}</span>`:'';
+  const lang=o.language?`<span class="chip">language ${lnk('language',o.language)}</span>`:'';
   const roles='';  // recuento de roles inflado (variantes de producción) -> oculto
   const yr=o.year;
-  const prem=yr?`<span class="chip">estreno ${lnk('decade',String(Math.floor(yr/10)*10),String(yr))}${o.wd_venue?' · '+esc(o.wd_venue):(o.ob_city?' · '+esc(o.ob_city):'')}</span>`:'';
-  const lib=(o.librettist||[]).length?`<span class="chip">libreto ${o.librettist.map(l=>lnk('librettist',l)).join(', ')}</span>`:'';
-  const src=(o.based_on||[]).length?`<span class="chip">basada en ${o.based_on.map(s=>lnk('based_on',s)).join(', ')}</span>`:'';
+  const prem=yr?`<span class="chip">premiere ${lnk('decade',String(Math.floor(yr/10)*10),String(yr))}${o.wd_venue?' · '+esc(o.wd_venue):(o.ob_city?' · '+esc(o.ob_city):'')}</span>`:'';
+  const lib=(o.librettist||[]).length?`<span class="chip">libretto ${o.librettist.map(l=>lnk('librettist',l)).join(', ')}</span>`:'';
+  const src=(o.based_on||[]).length?`<span class="chip">based on ${o.based_on.map(s=>lnk('based_on',s)).join(', ')}</span>`:'';
   const poppct=Math.round(100*Math.sqrt(o.perfs/MAXPOP));
-  const pop=`<span class="chip">repertorio <span style="display:inline-block;width:70px;height:6px;border-radius:3px;background:#2b3035;vertical-align:middle;margin-left:4px"><span style="display:block;height:6px;border-radius:3px;width:${poppct}%;background:var(--accent)"></span></span></span>`;
+  const pop=`<span class="chip">repertory <span style="display:inline-block;width:70px;height:6px;border-radius:3px;background:#2b3035;vertical-align:middle;margin-left:4px"><span style="display:block;height:6px;border-radius:3px;width:${poppct}%;background:var(--accent)"></span></span></span>`;
   const rel=related(o);
-  const relHtml=rel.length?`<div class="related"><div class="ttl">Óperas relacionadas</div><div class="rel">`+
+  const relHtml=rel.length?`<div class="related"><div class="ttl">Related operas</div><div class="rel">`+
     rel.map(r=>`<div class="rel-item" data-i="${DATA.indexOf(r.p)}"><span class="rt"><b>${esc(r.p.title)}</b> · ${esc(r.p.composer)}</span><span class="why">${esc(r.why)}</span></div>`).join('')+
     `</div></div>`:'';
   $('#ficha').innerHTML=`
     <h1 class="fh1">${esc(o.title)}</h1>
     <div class="fsub">${lnk('composer',o.composer)}${o.original&&o.original!=o.title?' · <span style="color:#7f868c">'+esc(o.original)+'</span>':''}</div>
     <div class="chips">${era}${lang}${lib}${src}${roles}${prem}${pop}</div>
-    ${o.synopsis?`<div class="syn">${esc(o.synopsis)}${o.synopsis_url?`<span class="attr">${esc(o.synopsis_src||'')} · <a href="${esc(o.synopsis_url)}" target="_blank" rel="noopener">fuente</a></span>`:''}</div>`:''}
-    ${(o.cast||[]).length?`<div class="cast"><span class="ct">reparto</span>${o.cast.map(c=>{
+    ${o.synopsis?`<div class="syn">${esc(o.synopsis)}${o.synopsis_url?`<span class="attr">${esc(o.synopsis_src||'')} · <a href="${esc(o.synopsis_url)}" target="_blank" rel="noopener">source</a></span>`:''}</div>`:''}
+    ${(o.cast||[]).length?`<div class="cast"><span class="ct">cast</span>${o.cast.map(c=>{
         const rec=(CHARS[c]||0)>1;
         return `<span class="cch${rec?' recur':''}" ${rec?`data-t="character" data-v="${escA(c)}" onclick="setFacet(this.dataset.t,this.dataset.v)"`:''}>${esc(c)}</span>`;
       }).join('')}</div>`:''}
     ${durBlock(o)}
-    ${flavor('Duración bruta (función real)','tus vídeos', o.gross_acts, 'Pendiente: extraer de tu colección de vídeos (ffprobe).')}
-    <div class="legend">Colores = Acto I, II, III… · ancho = minutos</div>
+    ${flavor('Gross duration (live performance)','your videos', o.gross_acts, 'Pending: extract from your video collection (ffprobe).')}
+    <div class="legend">Colours = Act I, II, III… · width = minutes</div>
     ${relHtml}`;
   $('#ficha').querySelectorAll('.rel-item').forEach(el=>el.onclick=()=>selectOpera(+el.dataset.i));
 }
@@ -243,7 +243,7 @@ function draw(){
   F.q=$('#q').value.toLowerCase().trim();
   renderFacet();
   let list=DATA.filter(match);
-  $('#count').textContent=`${list.length} óperas`+(list.length<DATA.length?` (de ${DATA.length})`:'');
+  $('#count').textContent=`${list.length} operas`+(list.length<DATA.length?` (de ${DATA.length})`:'');
   $('#list').innerHTML=list.slice(0,400).map(o=>{
     const idx=DATA.indexOf(o);
     const d=o.mb_total_min?hhmm(o.mb_total_min):'';
@@ -258,13 +258,13 @@ $('#q').oninput=draw;
 
 fetch('core.json').then(r=>r.json()).then(d=>{
   DATA=d; MAXPOP=Math.max(...d.map(o=>o.perfs||1));
-  DATA.forEach(o=>(o.cast||[]).forEach(c=>CHARS[c]=(CHARS[c]||0)+1));  // personajes recurrentes
+  DATA.forEach(o=>(o.cast||[]).forEach(c=>CHARS[c]=(CHARS[c]||0)+1));  // characters recurrentes
   const params=new URLSearchParams(location.search);
   const pc=params.get('composer'), po=params.get('opera');
   if(pc) F.facet={type:'composer',value:pc};
   draw();
   if(po){const i=DATA.findIndex(o=>o.title===po||o.title_en===po);if(i>=0)selectOpera(i);}
-}).catch(e=>{$('#count').textContent='Error cargando core.json — '+e;});
+}).catch(e=>{$('#count').textContent='Error loading core.json — '+e;});
 </script>
 </body>
 </html>

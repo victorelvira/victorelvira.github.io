@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operatlas · conexiones</title>
+<title>Operatlas · connections</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;--src:#7fa6c9}
@@ -44,25 +44,25 @@
 <header>
   <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
   <nav>
-    <a href="index.html">Descubre</a>
-    <a href="compositores.html">Compositores</a>
-    <a href="nucleo.html">Óperas</a>
-    <a href="conexiones.html" class="on">Conexiones</a>
+    <a href="index.html">Discover</a>
+    <a href="compositores.html">Composers</a>
+    <a href="nucleo.html">Operas</a>
+    <a href="conexiones.html" class="on">Connections</a>
     <a href="timeline.html">Timeline</a>
-    <a href="pulso.html">Pulso</a>
-    <a href="duraciones.html">Duraciones</a>
-    <a href="mapa.html">Mapa</a>
+    <a href="pulso.html">Pulse</a>
+    <a href="duraciones.html">Durations</a>
+    <a href="mapa.html">Map</a>
   </nav>
   <div class="tools">
-    <label><input type="checkbox" id="lib"> añadir libretistas</label>
+    <label><input type="checkbox" id="lib"> add librettists</label>
     <span id="stat"></span>
   </div>
 </header>
 <div id="wrap">
   <canvas id="c"></canvas>
   <div id="tip"></div>
-  <div id="hint">arrastra para mover · rueda para zoom · clic en una ópera para abrir su ficha</div>
-  <div class="leg"><span class="d" style="background:#7fa6c9"></span>fuente literaria &nbsp; <span class="d" style="background:#c9a24b"></span>ópera (tamaño = repertorio)<br><span id="legsub"></span></div>
+  <div id="hint">drag to pan · scroll to zoom · click an opera to open it</div>
+  <div class="leg"><span class="d" style="background:#7fa6c9"></span>literary source &nbsp; <span class="d" style="background:#c9a24b"></span>opera (size = repertory)<br><span id="legsub"></span></div>
 </div>
 <script>
 const $=s=>document.querySelector(s);
@@ -98,14 +98,14 @@ function build(withLib){
       edges.push([n,h,kind]); n.deg++; h.deg++;
     }
   }
-  // quitar hubs con grado 1 (no conectan nada) y sus óperas huérfanas
+  // quitar hubs con grado 1 (no conectan nada) y sus operas huérfanas
   for(const id in hubs){ if(hubs[id].deg<2){ // hub que sólo toca 1 ópera: fuera
       edges=edges.filter(e=>e[1]!==hubs[id]); hubs[id].dead=true; } }
   for(const id in opNodes){ const n=opNodes[id]; n.deg=edges.filter(e=>e[0]===n).length; if(!n.deg) n.dead=true; }
   nodes=[...Object.values(hubs),...Object.values(opNodes)].filter(n=>!n.dead);
   edges=edges.filter(e=>!e[0].dead&&!e[1].dead);
-  $('#stat').textContent=`${nodes.filter(n=>!n.hub).length} óperas · ${nodes.filter(n=>n.hub).length} fuentes conectadas`;
-  $('#legsub').textContent = withLib?'aristas: fuente + libretista':'aristas: fuente literaria';
+  $('#stat').textContent=`${nodes.filter(n=>!n.hub).length} operas · ${nodes.filter(n=>n.hub).length} connected sources`;
+  $('#legsub').textContent = withLib?'edges: source + librettist':'edges: literary source';
   view={x:W/2,y:H/2,k:.8}; alpha=1; userMoved=false;
 }
 
@@ -180,7 +180,7 @@ cv.onmousemove=e=>{
   const n=nodeAt(e.offsetX,e.offsetY);
   nodes.forEach(x=>x.hi=false);
   if(n){n.hi=true;tip.style.display='block';tip.style.left=(e.offsetX+14)+'px';tip.style.top=(e.offsetY+14)+'px';
-    tip.innerHTML=`<b>${n.o.title}</b><br>${n.o.composer}${n.o.year?' · '+n.o.year:''}<br><span style="color:#9aa0a6">basada en ${(n.o.based_on||[]).join(', ')||'—'}</span>`;
+    tip.innerHTML=`<b>${n.o.title}</b><br>${n.o.composer}${n.o.year?' · '+n.o.year:''}<br><span style="color:#9aa0a6">based on ${(n.o.based_on||[]).join(', ')||'—'}</span>`;
     cv.style.cursor='pointer';}
   else{tip.style.display='none';cv.style.cursor='grab';}
 };

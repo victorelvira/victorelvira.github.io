@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operatlas · compositores</title>
+<title>Operatlas · composers</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{
@@ -55,26 +55,26 @@
 <header>
   <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
   <nav>
-    <a href="index.html">Descubre</a>
-    <a href="compositores.html" class="on">Compositores</a>
-    <a href="nucleo.html">Óperas</a>
-    <a href="conexiones.html">Conexiones</a>
+    <a href="index.html">Discover</a>
+    <a href="compositores.html" class="on">Composers</a>
+    <a href="nucleo.html">Operas</a>
+    <a href="conexiones.html">Connections</a>
     <a href="timeline.html">Timeline</a>
-    <a href="pulso.html">Pulso</a>
-    <a href="duraciones.html">Duraciones</a>
-    <a href="mapa.html">Mapa</a>
+    <a href="pulso.html">Pulse</a>
+    <a href="duraciones.html">Durations</a>
+    <a href="mapa.html">Map</a>
   </nav>
   <div class="tools">
-    <input id="q" type="text" placeholder="buscar compositor…" autocomplete="off">
+    <input id="q" type="text" placeholder="search composer…" autocomplete="off">
     <select id="sort">
-      <option value="pop">↓ más representados</option>
-      <option value="operas">↓ más óperas</option>
-      <option value="chrono">cronológico</option>
+      <option value="pop">↓ most performed</option>
+      <option value="operas">↓ most operas</option>
+      <option value="chrono">chronological</option>
       <option value="alpha">A–Z</option>
     </select>
   </div>
 </header>
-<div class="count" id="count">cargando…</div>
+<div class="count" id="count">loading…</div>
 <div class="grid" id="grid"></div>
 <script>
 let COMPS=[], MAXPOP=1;
@@ -96,17 +96,17 @@ function draw(){
     : s==='operas'?b.n-a.n
     : s==='chrono'?((a.ymid||9999)-(b.ymid||9999))
     : b.pop-a.pop);
-  $('#count').textContent=`${list.length} compositores · ${COMPS.reduce((s,c)=>s+c.n,0)} óperas`;
+  $('#count').textContent=`${list.length} composers · ${COMPS.reduce((s,c)=>s+c.n,0)} operas`;
   $('#grid').innerHTML=list.map(c=>{
     const span=c.ymin&&c.ymax?`${c.ymin}–${c.ymax}`:'';
     return `<div class="card" onclick="location.href='compositor.html?c=${encodeURIComponent(c.name)}'">
       <h3>${esc(c.name)}</h3>
-      <div class="era">${esc(c.era||'—')}${span?' · óperas '+span:''}</div>
+      <div class="era">${esc(c.era||'—')}${span?' · operas '+span:''}</div>
       <div class="stats">
-        <div class="stat"><div class="n">${c.n}</div><div class="l">óperas</div></div>
-        ${c.durs?`<div class="stat"><div class="n">${c.durs}</div><div class="l">con duración</div></div>`:''}
+        <div class="stat"><div class="n">${c.n}</div><div class="l">operas</div></div>
+        ${c.durs?`<div class="stat"><div class="n">${c.durs}</div><div class="l">with duration</div></div>`:''}
       </div>
-      <div class="top">más conocida: <b>${esc(c.top)}</b></div>
+      <div class="top">best known: <b>${esc(c.top)}</b></div>
       <div class="popbar"><span style="width:${Math.round(100*Math.sqrt(c.pop/MAXPOP))}%"></span></div>
     </div>`;
   }).join('');
@@ -136,7 +136,7 @@ fetch('core.json').then(r=>r.json()).then(core=>{
   });
   MAXPOP=Math.max(...COMPS.map(c=>c.pop||1));
   draw();
-}).catch(e=>{$('#count').textContent='Error cargando core.json — '+e;});
+}).catch(e=>{$('#count').textContent='Error loading core.json — '+e;});
 </script>
 </body>
 </html>

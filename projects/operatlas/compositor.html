@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operatlas · compositor</title>
+<title>Operatlas · composer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;
@@ -60,17 +60,17 @@
 <header>
   <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
   <nav>
-    <a href="index.html">Descubre</a>
-    <a href="compositores.html" class="on">Compositores</a>
-    <a href="nucleo.html">Óperas</a>
-    <a href="conexiones.html">Conexiones</a>
+    <a href="index.html">Discover</a>
+    <a href="compositores.html" class="on">Composers</a>
+    <a href="nucleo.html">Operas</a>
+    <a href="conexiones.html">Connections</a>
     <a href="timeline.html">Timeline</a>
-    <a href="pulso.html">Pulso</a>
-    <a href="duraciones.html">Duraciones</a>
-    <a href="mapa.html">Mapa</a>
+    <a href="pulso.html">Pulse</a>
+    <a href="duraciones.html">Durations</a>
+    <a href="mapa.html">Map</a>
   </nav>
 </header>
-<div class="wrap" id="wrap"><a class="back" href="compositores.html">← todos los compositores</a><div id="body"></div></div>
+<div class="wrap" id="wrap"><a class="back" href="compositores.html">← all composers</a><div id="body"></div></div>
 <div id="tip"></div>
 <script>
 const $=s=>document.querySelector(s);
@@ -81,7 +81,7 @@ const name=new URLSearchParams(location.search).get('c');
 Promise.all([fetch('core.json').then(r=>r.json()), fetch('composers.json').then(r=>r.json())])
 .then(([core,comps])=>{
   const ops=core.filter(o=>o.composer===name);
-  if(!ops.length){$('#body').innerHTML='<p style="color:#9aa0a6;margin-top:30px">Compositor no encontrado.</p>';return;}
+  if(!ops.length){$('#body').innerHTML='<p style="color:#9aa0a6;margin-top:30px">Composer not found.</p>';return;}
   const c=comps[name]||{};
   const MAXP=Math.max(...core.map(o=>o.perfs||1));
   const dated=ops.filter(o=>o.wd_year).sort((a,b)=>a.wd_year-b.wd_year);
@@ -112,14 +112,14 @@ Promise.all([fetch('core.json').then(r=>r.json()), fetch('composers.json').then(
       </div>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">${ops.length}</div><div class="l">óperas</div></div>
-      <div class="stat"><div class="n">${dated.length?dated[0].wd_year+'–'+dated[dated.length-1].wd_year:'—'}</div><div class="l">periodo</div></div>
-      <div class="stat"><div class="n">${top?esc(top.title):'—'}</div><div class="l">más conocida</div></div>
+      <div class="stat"><div class="n">${ops.length}</div><div class="l">operas</div></div>
+      <div class="stat"><div class="n">${dated.length?dated[0].wd_year+'–'+dated[dated.length-1].wd_year:'—'}</div><div class="l">period</div></div>
+      <div class="stat"><div class="n">${top?esc(top.title):'—'}</div><div class="l">best known</div></div>
     </div>
-    ${dated.length?`<h2>Sus óperas en el tiempo</h2><div class="mini">${mini}</div>`:''}
-    ${libs.length?`<h2>Libretistas habituales</h2><div class="chips">${libs.map(([l,n])=>`<a class="chip" href="nucleo.html?composer=${encodeURIComponent(name)}">${esc(l)} <span style="color:#5f666c">${n}</span></a>`).join('')}</div>`:''}
-    ${srcs.length?`<h2>Fuentes que adaptó</h2><div class="chips">${srcs.map(([s,n])=>`<span class="chip">${esc(s)} <span style="color:#5f666c">${n}</span></span>`).join('')}</div>`:''}
-    <h2>Todas sus óperas (${ops.length})</h2>
+    ${dated.length?`<h2>Their operas over time</h2><div class="mini">${mini}</div>`:''}
+    ${libs.length?`<h2>Frequent librettists</h2><div class="chips">${libs.map(([l,n])=>`<a class="chip" href="nucleo.html?composer=${encodeURIComponent(name)}">${esc(l)} <span style="color:#5f666c">${n}</span></a>`).join('')}</div>`:''}
+    ${srcs.length?`<h2>Sources they adapted</h2><div class="chips">${srcs.map(([s,n])=>`<span class="chip">${esc(s)} <span style="color:#5f666c">${n}</span></span>`).join('')}</div>`:''}
+    <h2>All their operas (${ops.length})</h2>
     <div class="ops">${listOps.map(o=>`<div class="op" onclick="location.href='nucleo.html?opera=${encodeURIComponent(o.title)}'">
       <span class="t">${esc(o.title)}</span><span class="y">${o.wd_year||''}</span></div>`).join('')}</div>`;
   // tooltip mini
