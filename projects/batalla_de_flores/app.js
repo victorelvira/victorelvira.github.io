@@ -391,7 +391,7 @@ function renderGroupList() {
       <div class="row-head">
         ${sortHeader("groups", "name", "Grupo")}
         ${sortHeader("groups", "from", "Periodo", "col-num col-span")}
-        ${sortHeader("groups", "editions", "Ediciones", "col-num")}
+        ${sortHeader("groups", "editions", 'Edic<span class="short">.</span><span class="long">iones</span>', "col-num")}
         ${sortHeader("groups", "floats", "Carrozas", "col-num col-floats")}
         ${sortHeader("groups", "wins", "🏆", "col-num col-wins")}
         <span aria-hidden="true"></span>
@@ -671,6 +671,11 @@ function chartFloatsPerYear() {
 
 function renderStatsTab() {
   const summary = state.dataset.summary || {};
+  // Las ediciones sin carrozas no pintan barra, asi que sus niveles tampoco
+  // tienen por que salir en la leyenda.
+  const shownTiers = new Set(state.editions
+    .filter(edition => edition.float_count > 0)
+    .map(coverageTier));
   const biggest = [...state.editions].sort((a, b) => b.float_count - a.float_count)[0];
   const topGroup = [...state.groups].sort((a, b) => b.wins - a.wins)[0];
   const longest = [...state.groups].sort((a, b) => b.years.length - a.years.length)[0];
@@ -689,7 +694,8 @@ function renderStatsTab() {
       <p class="chart-note">Cuenta lo que el archivo conserva, no necesariamente lo que desfiló:
       donde la documentación es floja la barra se queda corta. El color es el nivel de datos.</p>
       <div class="chart-legend">
-        ${TIERS.map(([cls, label]) => `<span><i class="key ${cls}"></i>${label}</span>`).join("")}
+        ${TIERS.filter(([cls]) => shownTiers.has(cls))
+          .map(([cls, label]) => `<span><i class="key ${cls}"></i>${label}</span>`).join("")}
       </div>
       ${chartFloatsPerYear()}
 
@@ -707,7 +713,9 @@ function renderStatsTab() {
            cubre el siglo entero.`
         : `Solo desde <b>${CATEGORIES_FROM}</b>: antes de esa fecha había una única lista.`}</p>
       <div class="chart-legend">
-        <span><i class="dot win"></i>1.º</span><span><i class="dot podium"></i>podio</span><span><i class="dot ran"></i>resto</span>
+        <span class="win-key">${ICON_TROPHY}Ganador</span>
+        <span class="podium-key">${ICON_PODIUM}Podio</span>
+        <span><i class="dot ran"></i>Resto</span>
       </div>
       ${chartCareers(category)}
     </div>`;

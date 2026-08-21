@@ -420,6 +420,11 @@ a { color: inherit; }
 .chart-legend { display: flex; gap: 12px; margin-bottom: 4px; color: var(--muted); font-size: 11px; }
 .chart-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
 .chart-legend i.key { width: 14px; height: 4px; border-radius: 2px; }
+.chart-legend .kpi-icon { width: 12px; height: 12px; margin-right: 4px; vertical-align: -2px; }
+.chart-legend .win-key { color: var(--gold); }
+.chart-legend .win-key .kpi-icon { fill: var(--gold); }
+.chart-legend .podium-key { color: var(--t-group); }
+.chart-legend .podium-key .kpi-icon { fill: var(--t-group); }
 .key.tier-full { background: var(--leaf); }
 .key.tier-partial { background: var(--gold); }
 .key.tier-planned { background: #e07a1f; }
@@ -658,6 +663,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
 .sort-slot.is-hidden { visibility: hidden; }
 .tools:empty { display: none; }
 .count:empty { display: none; }
+.row-head .short { display: none; }   /* solo en móvil se abrevia */
 
 .legend[hidden] { display: none; }
 .legend {
@@ -682,13 +688,19 @@ ul.plain a { color: var(--sky); word-break: break-all; }
 @media (max-width: 720px) {
   /* En movil se cae "Ediciones", no "Victorias": las victorias son el dato que
      ordena la lista y el que se venia perdiendo por el borde. */
+  /* La copa se montaba encima de «Ediciones»: la cabecera necesitaba más ancho
+     y que el texto se recorte en vez de desbordarse. */
   .rows-groups .row-head,
   .rows-groups .row {
-    grid-template-columns: minmax(0, 1fr) 68px 34px 34px 12px;
-    gap: 2px 6px;
+    grid-template-columns: minmax(0, 1fr) 62px 46px 26px 10px;
+    gap: 2px 5px;
     font-size: 13px;
   }
   .col-floats { display: none; }
+  .rows-groups .row-head .sort { white-space: nowrap; font-size: 8.5px; }
+  /* «Ediciones» no cabe: se queda en «Edic.» sin perder sentido. */
+  .row-head .long { display: none; }
+  .row-head .short { display: inline; }
 
   .rows-floats .row-head,
   .rows-floats .row {
