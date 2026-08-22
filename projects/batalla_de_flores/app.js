@@ -660,9 +660,15 @@ function chartFloatsPerYear() {
   const bars = rows.map(edition => {
     const x = scale(edition.year);
     const h = (edition.float_count / top) * (base - CHART.padT);
-    return `<rect class="bar ${coverageTier(edition)}" x="${(x - 1.8).toFixed(1)}" y="${(base - h).toFixed(1)}"
-      width="3.6" height="${h.toFixed(1)}" data-year="${edition.year}"
-      data-tip="${esc(`${edition.year}<b>${edition.float_count} carrozas</b>`)}"/>`;
+    const tip = esc(`${edition.year}<b>${edition.float_count} carrozas</b>`);
+    // Barra visible fina, zona de toque ancha: con 3,6 px de ancho acertar con
+    // el dedo era una loteria.
+    return `<g class="bar-group" data-year="${edition.year}" data-tip="${tip}">
+      <rect class="bar-hit" x="${(x - 4.5).toFixed(1)}" y="${CHART.padT - 6}"
+        width="9" height="${(base - CHART.padT + 6).toFixed(1)}"/>
+      <rect class="bar ${coverageTier(edition)}" x="${(x - 1.8).toFixed(1)}" y="${(base - h).toFixed(1)}"
+        width="3.6" height="${h.toFixed(1)}"/>
+    </g>`;
   }).join("");
 
   return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
@@ -1648,8 +1654,13 @@ const ICON_SHARE = `<svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true
   <circle cx="12.5" cy="3.5" r="2.2"/><circle cx="3.5" cy="8" r="2.2"/><circle cx="12.5" cy="12.5" r="2.2"/>
   <path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.4" fill="none"/></svg>`;
 
+const ICON_FLAG = `<svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true">
+  <path d="M3.4 1.6v13" stroke-width="1.6" fill="none"/>
+  <path d="M4.6 2.6h8l-1.8 2.9 1.8 2.9h-8z"/></svg>`;
+
 function shareButton() {
-  return `<button id="share" class="share" type="button" title="Compartir esta ficha">${ICON_SHARE}Compartir</button>`;
+  return `<button id="share" class="share" type="button" title="Compartir esta ficha">${ICON_SHARE}Compartir</button>
+    <button id="report-open" class="share" type="button" title="Avisar de un dato incorrecto">${ICON_FLAG}¿Algo mal?</button>`;
 }
 
 async function shareUrl(url, title, text, button) {
@@ -1717,6 +1728,118 @@ function renderDetail() {
     if (entry) return renderFloatDetail(entry);
   }
   els.detail.innerHTML = '<p class="empty">No encuentro ese elemento en el dataset.</p>';
+}
+
+/* ── corregir un dato ───────────────────────────────────────────────────── */
+
+/* Mismo patrón que frontones: un Apps Script de Google recibe el POST y escribe
+ * en una hoja. `no-cors` impide leer la respuesta, así que se da por enviado si
+ * el fetch no revienta. Sin endpoint el botón avisa en vez de fallar callando. */
+const REPORT_ENDPOINT = "";
+
+/* La foto va en base64 dentro del formulario. Antes se reduce en el navegador:
+ * una foto de móvil son 3-5 MB y Apps Script no traga esos POST. */
+const PHOTO_MAX_SIDE = 1600;
+const PHOTO_QUALITY = 0.82;
+let reportPhoto = null;
+
+function shrinkPhoto(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      const image = new Image();
+      image.onerror = reject;
+      image.onload = () => {
+        const scale = Math.min(1, PHOTO_MAX_SIDE / Math.max(image.width, image.height));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(image.width * scale);
+        canvas.height = Math.round(image.height * scale);
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", PHOTO_QUALITY));
+      };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function reportContext() {
+  const selection = state.selection;
+  const heading = document.querySelector("#detail h2")?.textContent?.trim() || "";
+  if (!selection) return { label: "La página en general", id: "" };
+  const kinds = { year: "Edición", group: "Grupo", route: "Recorrido", float: "Carroza", about: "Página" };
+  return { label: `${kinds[selection.kind] || ""} ${heading}`.trim(), id: `${selection.kind}:${selection.id}` };
+}
+
+function openReport() {
+  const context = reportContext();
+  document.getElementById("report-ctx").textContent = `Sobre: ${context.label}`;
+  document.getElementById("report-ficha").value = context.id;
+  document.getElementById("report-url").value = location.href;
+  document.getElementById("report-msg").textContent = "";
+  document.getElementById("report-back").hidden = false;
+  document.querySelector("#report-form [name=nombre]").focus();
+  track("corregir/abrir", "Abrir corrección", true);
+}
+
+function closeReport() {
+  document.getElementById("report-back").hidden = true;
+}
+
+function setupReport() {
+  const form = document.getElementById("report-form");
+  const note = document.getElementById("report-file-note");
+
+  document.getElementById("report-close").addEventListener("click", closeReport);
+  document.getElementById("report-back").addEventListener("click", event => {
+    if (event.target.id === "report-back") closeReport();
+  });
+
+  document.getElementById("report-file").addEventListener("change", async event => {
+    const file = event.target.files[0];
+    reportPhoto = null;
+    if (!file) { note.textContent = ""; return; }
+    note.textContent = "Preparando la imagen…";
+    try {
+      reportPhoto = await shrinkPhoto(file);
+      note.textContent = `${file.name} · ${Math.round(reportPhoto.length / 1400)} KB tras reducir`;
+    } catch {
+      note.textContent = "No he podido leer esa imagen.";
+    }
+  });
+
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    const message = document.getElementById("report-msg");
+    const send = document.getElementById("report-send");
+
+    if (!REPORT_ENDPOINT) {
+      message.textContent = "El formulario todavía no está conectado.";
+      return;
+    }
+
+    const data = new URLSearchParams(new FormData(form));
+    data.set("proyecto", "batalla_de_flores");
+    data.set("version", state.dataset?.version || "");
+    if (reportPhoto) data.set("foto", reportPhoto);
+
+    send.disabled = true;
+    message.textContent = "Enviando…";
+    try {
+      await fetch(REPORT_ENDPOINT, { method: "POST", mode: "no-cors", body: data });
+      message.textContent = "¡Gracias! Lo reviso y, si encaja, lo incorporo. 🙌";
+      track("corregir/enviado", "Corrección enviada", true);
+      form.reset();
+      reportPhoto = null;
+      note.textContent = "";
+      setTimeout(closeReport, 1800);
+    } catch {
+      message.textContent = "No se ha podido enviar. Inténtalo más tarde.";
+    } finally {
+      send.disabled = false;
+    }
+  });
 }
 
 /* ── analitica ──────────────────────────────────────────────────────────── */
@@ -1872,6 +1995,7 @@ function bindEvents() {
     }
 
     if (event.target.closest("#share")) { shareCurrent(); return; }
+    if (event.target.closest("#report-open")) { openReport(); return; }
 
     const jump = event.target.closest("[data-mode-jump]");
     if (jump) { setMode(jump.dataset.modeJump); return; }
@@ -1928,19 +2052,13 @@ function bindEvents() {
 
     const target = event.target.closest("[data-year], [data-group], [data-route], [data-float]");
     if (!target) return;
-    if (target.dataset.year) {
-      if (state.mode !== "editions") setMode("editions");
-      select("year", Number(target.dataset.year));
-    } else if (target.dataset.group) {
-      if (state.mode !== "groups") setMode("groups");
-      select("group", target.dataset.group);
-    } else if (target.dataset.route) {
-      if (state.mode !== "routes") setMode("routes");
-      select("route", target.dataset.route);
-    } else if (target.dataset.float) {
-      if (state.mode !== "floats") setMode("floats");
-      select("float", target.dataset.float);
-    }
+    // Abrir una ficha NO cambia de pestaña: el indice es donde estas mirando y
+    // el detalle lo que miras. Antes saltaba de modo, y al cerrar la capa te
+    // encontrabas en otro sitio del que habias salido.
+    if (target.dataset.year) select("year", Number(target.dataset.year));
+    else if (target.dataset.group) select("group", target.dataset.group);
+    else if (target.dataset.route) select("route", target.dataset.route);
+    else if (target.dataset.float) select("float", target.dataset.float);
   });
 
   window.addEventListener("hashchange", () => {
@@ -1972,6 +2090,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     renderFilterOptions();
     bindEvents();
     setupTooltip();
+    setupReport();
     applyFilters();
 
     const fromHash = readHash();

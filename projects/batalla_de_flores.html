@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#b6465f">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=67742d8f">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=a587d2ab">
 </head>
 <body>
   <nav id="navbar">
@@ -88,7 +88,46 @@
   <script data-goatcounter="https://victorelvira.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
-  <script src="batalla_de_flores/app.js?v=8663b924"></script>
+  <!-- Formulario de corrección. Se abre desde el botón «¿Algo mal?» de cada
+       ficha, con el contexto ya relleno. -->
+  <div id="report-back" class="report-back" hidden>
+    <form id="report-form" class="report">
+      <div class="report-head">
+        <h3>Corregir un dato</h3>
+        <button id="report-close" class="report-x" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <p class="report-ctx" id="report-ctx"></p>
+      <input type="hidden" name="ficha" id="report-ficha">
+      <input type="hidden" name="url" id="report-url">
+
+      <label>Tu nombre y apellidos
+        <input name="nombre" required autocomplete="name" placeholder="Para poder citarte si lo incorporo">
+      </label>
+      <label>Qué dato está mal o falta
+        <textarea name="mal" rows="2" required placeholder="Ej.: el grupo de la carroza «Aiko» no es ese"></textarea>
+      </label>
+      <label>Cuál es el dato correcto
+        <textarea name="correcto" rows="2" required placeholder="Ej.: la llevó el Grupo Pejino, no Come Golayu"></textarea>
+      </label>
+      <label>Evidencia <span class="opt">(opcional, pero ayuda mucho)</span>
+        <textarea name="evidencia" rows="2" placeholder="Un enlace, el nombre del periódico y la fecha, o de dónde lo sabes"></textarea>
+      </label>
+      <label class="file-label">Foto o recorte <span class="opt">(opcional)</span>
+        <input id="report-file" type="file" accept="image/*">
+        <span class="file-note" id="report-file-note"></span>
+      </label>
+      <label>Tu email <span class="opt">(opcional, por si necesito preguntarte)</span>
+        <input name="email" type="email" autocomplete="email" placeholder="nombre@correo.com">
+      </label>
+
+      <div class="report-foot">
+        <span class="report-msg" id="report-msg"></span>
+        <button id="report-send" class="pill send" type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="batalla_de_flores/app.js?v=317174ca"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
