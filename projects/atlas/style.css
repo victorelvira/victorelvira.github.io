@@ -77,12 +77,13 @@ body {
 .painters.primary #painters-btn { padding: 7px 15px; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 #painters-btn[aria-expanded="true"] { background: #e0d3b8; border-color: #b89a68; }
 #painters-pop {
-  position: absolute; top: calc(100% + 4px); left: 0; z-index: 900; width: 240px;
+  position: absolute; top: calc(100% + 4px); left: 0; z-index: 900;
+  width: min(340px, 92vw);
   background: #fff; border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.16); padding: 8px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.16); padding: 10px;
 }
 #painters-pop[hidden] { display: none; }
-.pop-search { width: 100%; box-sizing: border-box; padding: 6px 8px; font: inherit; font-size: 13px;
+.pop-search { width: 100%; box-sizing: border-box; padding: 8px 10px; font: inherit; font-size: 14px;
   border: 1px solid var(--line); border-radius: 6px; }
 .pop-actions { display: flex; gap: 6px; margin: 6px 0; }
 .pop-actions button { flex: 1; font: inherit; font-size: 12px; padding: 3px; cursor: pointer;
@@ -90,7 +91,7 @@ body {
 #grp-toggle { display: inline-flex; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
 #grp-toggle button { flex: 0 0 auto; border: 0; border-radius: 0; background: #fff; font-size: 11px; padding: 3px 9px; }
 #grp-toggle button.active { background: #3a2317; color: #fff; }
-.pop-list { list-style: none; margin: 0; padding: 0; max-height: 240px; overflow-y: auto; }
+.pop-list { list-style: none; margin: 0; padding: 0; max-height: min(60vh, 440px); overflow-y: auto; }
 .pop-list li { padding: 0; }
 .pop-list label { display: flex; align-items: center; gap: 8px; padding: 5px 4px; cursor: pointer; font-size: 13px; }
 .pop-list label:hover { background: #faf7f1; }
@@ -110,7 +111,9 @@ body {
 .pop-empty { color: var(--muted); font-size: 13px; padding: 6px 4px; }
 .pop-h { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
   color: var(--muted); padding: 6px 4px 2px; }
-.pop-h.grp { display: flex; align-items: baseline; justify-content: space-between; }
+.pop-h.grp { display: flex; align-items: center; justify-content: space-between; }
+.pop-h.grp .grp-tick { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.pop-h.grp .grp-tick input { margin: 0; cursor: pointer; accent-color: #6a4a2a; }
 .pop-h.grp .grp-only {
   border: 0; background: none; color: var(--accent, #6a4a2a); font: inherit; font-size: 10.5px;
   font-weight: 700; text-transform: uppercase; letter-spacing: .3px; cursor: pointer;

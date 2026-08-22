@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.35.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 15:30";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.35.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 16:00";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -243,6 +243,29 @@ const BORN = {
   delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904,
 };
 const bornOf = slug => BORN[slug] || 9999;
+
+// short label per painter for the selector button (the first name is often wrong — "Ignacio"
+// for Zuloaga, "Giovanni" for Bellini/Tiepolo). Falls back to the first word.
+const NICK = {
+  caravaggio: "Caravaggio", leonardo: "Leonardo", raphael: "Raphael", goya: "Goya",
+  velazquez: "Velázquez", botticelli: "Botticelli", giotto: "Giotto", ribera: "Ribera",
+  zurbaran: "Zurbarán", masaccio: "Masaccio", titian: "Titian", vermeer: "Vermeer",
+  rembrandt: "Rembrandt", rubens: "Rubens", vaneyck: "Van Eyck", bruegel: "Bruegel",
+  durer: "Dürer", bosch: "Bosch", fraangelico: "Fra Angelico", piero: "Piero", elgreco: "El Greco",
+  poussin: "Poussin", veronese: "Veronese", mantegna: "Mantegna", artemisia: "Artemisia",
+  michelangelo: "Michelangelo", tintoretto: "Tintoretto", vandyck: "Van Dyck", franshals: "Hals",
+  holbein: "Holbein", david: "David", weyden: "Van der Weyden", giorgione: "Giorgione",
+  correggio: "Correggio", parmigianino: "Parmigianino", murillo: "Murillo", cranach: "Cranach",
+  duccio: "Duccio", ghirlandaio: "Ghirlandaio", delatour: "La Tour", memling: "Memling",
+  delsarto: "Del Sarto", lorrain: "Lorrain", vangogh: "Van Gogh", monet: "Monet", manet: "Manet",
+  cezanne: "Cézanne", renoir: "Renoir", degas: "Degas", gauguin: "Gauguin", seurat: "Seurat",
+  pissarro: "Pissarro", sorolla: "Sorolla", picasso: "Picasso", frida: "Frida", rivera: "Rivera",
+  turner: "Turner", bellini: "Bellini", friedrich: "Friedrich", canaletto: "Canaletto",
+  delacroix: "Delacroix", tiepolo: "Tiepolo", uccello: "Uccello", lippi: "Lippi",
+  perugino: "Perugino", bronzino: "Bronzino", carracci: "Carracci", reni: "Reni",
+  guardi: "Guardi", zuloaga: "Zuloaga", dali: "Dalí", miro: "Miró",
+};
+const nickOf = p => NICK[p.slug] || (p.name || "").split(" ")[0];
 let painterGroupBy = "period";   // "period" | "school"
 
 // Most works are in Europe; open there. The ~12 in the Americas are one zoom-out away.
@@ -618,8 +641,9 @@ function buildPainterSelect() {
 }
 
 // unified search: painters (toggle) + museums (filter to that venue)
+const deacc = s => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 function renderPainterList() {
-  const q = (document.getElementById("painters-search")?.value || "").toLowerCase().trim();
+  const q = deacc((document.getElementById("painters-search")?.value || "").trim());  // accent-insensitive
   const ul = document.getElementById("painters-list");
   let html = "";
 
@@ -631,7 +655,7 @@ function renderPainterList() {
 
   if (q) {   // when searching: matching museums first (there are hundreds otherwise)
     const mus = museumIndex.filter(m =>
-      m.location.toLowerCase().includes(q) || m.city.toLowerCase().includes(q)).slice(0, 8);
+      deacc(m.location).includes(q) || deacc(m.city).includes(q)).slice(0, 8);
     if (mus.length) html += `<li class="pop-h">Museums</li>` + mus.map(museumRow).join("");
   }
 
@@ -642,7 +666,7 @@ function renderPainterList() {
       `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}${yr}</label>` +
       `<button type="button" class="only" data-only="${esc(p.name)}">only</button></li>`;
   };
-  const pnt = PAINTERS.filter(p => p.name.toLowerCase().includes(q));
+  const pnt = PAINTERS.filter(p => deacc(p.name).includes(q) || deacc(nickOf(p)).includes(q));
   if (pnt.length) {
     if (q) {                                   // searching → flat list under one header (if mixed with museums)
       if (html) html += `<li class="pop-h">Painters</li>`;
@@ -653,7 +677,12 @@ function renderPainterList() {
       for (const g of groups) {
         const inGroup = pnt.filter(p => keysOf(p.slug).includes(g.key))
           .sort((a, z) => bornOf(a.slug) - bornOf(z.slug));   // chronological within the group
-        if (inGroup.length) html += `<li class="pop-h grp"><span>${esc(g.label)}</span>` +
+        if (!inGroup.length) continue;
+        const allOn = inGroup.every(p => state.painters[p.name] !== false);
+        html += `<li class="pop-h grp">` +
+          `<label class="grp-tick" title="Tick/untick the whole ${esc(g.label)} group">` +
+          `<input type="checkbox" data-grp-tick="${esc(g.key)}"${allOn ? " checked" : ""}>` +
+          `<span>${esc(g.label)}</span></label>` +
           `<button type="button" class="grp-only" data-grp-only="${esc(g.key)}" ` +
           `title="Show only the ${esc(g.label)} painters">only</button></li>` +
           inGroup.map(painterRow).join("");
@@ -683,6 +712,13 @@ function renderPainterList() {
     const gk = b.dataset.grpOnly;
     const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
     PAINTERS.forEach(p => { state.painters[p.name] = keysOf(p.slug).includes(gk); });
+    refresh(); updatePainterBtn(); renderPainterList();
+  }));
+  // group tick: add/remove a whole period/school without disturbing the others
+  ul.querySelectorAll("input[data-grp-tick]").forEach(cb => cb.addEventListener("change", () => {
+    const gk = cb.dataset.grpTick;
+    const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
+    PAINTERS.forEach(p => { if (keysOf(p.slug).includes(gk)) state.painters[p.name] = cb.checked; });
     refresh(); updatePainterBtn(); renderPainterList();
   }));
   ul.querySelectorAll(".mrow").forEach(row => row.addEventListener("click", () => selectMuseum(row.dataset.museum)));
@@ -715,7 +751,7 @@ function updatePainterBtn() {
   const sel = PAINTERS.filter(p => state.painters[p.name] !== false);
   const label = sel.length === PAINTERS.length ? `All ${PAINTERS.length} painters`
     : sel.length === 0 ? "No painters"
-      : sel.length <= 2 ? sel.map(p => p.name.split(" ")[0]).join(", ")
+      : sel.length <= 3 ? sel.map(nickOf).join(", ")
         : `${sel.length} painters`;
   btn.textContent = "🎨 " + label + " ▾";
 }
