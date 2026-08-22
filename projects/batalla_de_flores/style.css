@@ -452,6 +452,15 @@ table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo
 .chart { display: block; width: 100%; height: auto; margin: 4px 0 2px; }
 .chart-note { margin: 0 0 6px; color: var(--muted); font-size: 11.5px; line-height: 1.35; max-width: 66ch; }
 .chart-tabs { display: flex; gap: 5px; margin-bottom: 6px; }
+.zoom-tabs { align-items: center; }
+.zoom-label { color: var(--muted); font-size: 11px; margin-right: 1px; }
+.zoom-hint { color: var(--muted); font-size: 11px; font-style: italic; }
+/* El zoom no escala la imagen: la redibuja mas ancha y aqui se desliza, asi
+ * que el texto de los ejes sigue nitido en vez de emborronarse. */
+.chart-scroll { overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.chart-scroll.is-zoomed { cursor: grab; }
+.chart-scroll .chart { max-width: none; }
+.grid-line { stroke: var(--line-soft); stroke-width: 1; opacity: 0.55; }
 .prize-list {
   margin: 10px 0 0; padding: 8px 10px 4px;
   border: 1px solid var(--line-soft); border-radius: 10px; background: #fffaf5;
@@ -476,7 +485,7 @@ table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo
 .key.tier-none { background: #cfc4b8; }
 .key.key-A { background: var(--t-group); }
 .key.key-B { background: var(--t-year); }
-.key.key-none { background: #b3a79b; }
+.key.key-none { background: #9a8d80; }
 
 .axis-line { stroke: var(--line-soft); stroke-width: 1; }
 .axis-label { fill: var(--muted); font-size: 9px; text-anchor: middle; }
@@ -498,10 +507,12 @@ i.dot.win { background: var(--gold); }
 i.dot.podium { background: var(--t-group); }
 i.dot.ran { background: #bfb2a6; }
 
-.serie-line { fill: none; stroke: var(--t-group); stroke-width: 1.6; opacity: 0.5; }
+/* Todas solidas: el discontinuo se leia como "dato estimado" cuando lo unico
+ * que distingue a las series es la categoria. El color ya las separa. */
+.serie-line { fill: none; stroke: var(--t-group); stroke-width: 1.8; opacity: 0.75; }
 .serie circle { cursor: pointer; }
-.serie-B .serie-line { stroke: var(--t-year); stroke-dasharray: 4 3; }
-.serie-none .serie-line { stroke: #b3a79b; stroke-dasharray: 2 3; }
+.serie-B .serie-line { stroke: var(--t-year); }
+.serie-none .serie-line { stroke: #9a8d80; }
 
 .tip {
   position: fixed; z-index: 90; pointer-events: none;
@@ -880,13 +891,18 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .report-back {
   position: fixed; inset: 0; z-index: 120;
   display: flex; align-items: flex-end; justify-content: center;
+  max-width: 100vw; overflow-x: hidden;
   background: rgba(34, 23, 22, 0.45);
 }
 .report-back[hidden] { display: none; }
 
 .report {
-  width: 100%; max-width: 460px; max-height: 92vh; overflow-y: auto;
-  padding: 14px 16px 16px;
+  width: 100%; max-width: min(460px, 100vw); max-height: 92vh; overflow-y: auto;
+  overscroll-behavior: contain;
+  /* En moviles con muesca o barra de gestos, el borde de la pantalla no es el
+   * borde util: sin esto la hoja se sale por el lado. */
+  padding: 14px max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom))
+           max(16px, env(safe-area-inset-left));
   border-radius: 16px 16px 0 0; background: var(--panel);
   box-shadow: 0 -8px 40px rgba(34, 23, 22, 0.3);
 }
@@ -923,4 +939,17 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 @media (min-width: 620px) {
   .report-back { align-items: center; }
   .report { border-radius: 16px; }
+}
+
+/* iOS amplia la pagina al enfocar un campo cuya letra baje de 16 px. Como la
+ * hoja del formulario es position:fixed, tras ese zoom se sale por la derecha.
+ * No se arregla con maximum-scale, que ademas impide ampliar a quien lo
+ * necesita: se arregla poniendo 16 px justos en los controles. */
+@media (max-width: 619px) {
+  /* Mismos selectores que la regla base: con `.report input` a secas ganaba
+   * ella por especificidad y dos campos se quedaban en 13,5 px. */
+  .report input[type="text"], .report input:not([type]), .report input[type="email"],
+  .report textarea,
+  .controls input[type="search"], .controls select { font-size: 16px; }
+  .controls input[type="search"] { width: 100%; min-width: 0; flex: 1 1 auto; }
 }

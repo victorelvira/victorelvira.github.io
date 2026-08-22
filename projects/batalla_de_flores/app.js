@@ -34,6 +34,7 @@ const state = {
   floatView: "grid",   // "grid" | "list": entra por las fotos, que es lo que engancha
   category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
   statsCategory: "all",   // "all" | "A" | "B" en el grafico de trayectorias
+  statsZoom: 1,           // 1 | 2 | 4: ensancha el grafico de barras y lo hace scrollable
   editionCategory: "A",   // categoria visible en el palmares de una edicion
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
@@ -645,37 +646,69 @@ function chartCareers(category) {
     ${yearAxis(scale, { from: min, to: max, step: 20, height })}${body}</svg>`;
 }
 
-/* Grafico 2: cuantas carrozas desfilaron cada edicion. */
-function chartFloatsPerYear() {
-  const width = CHART.w;
-  const height = 150;
+/* Grafico 2: cuantas carrozas desfilaron cada edicion.
+ *
+ * Con 119 ediciones en 720 px cada barra cae a 3,6 px y en un movil no se lee
+ * nada. El zoom no escala la imagen: la redibuja mas ancha dentro de un
+ * contenedor con scroll, asi que el texto sigue nitido y, sobre todo, caben
+ * mas etiquetas de anos. */
+
+/* Paso "redondo" para que la rejilla caiga en cifras que uno diria en voz alta
+ * (2, 5, 10) y no en 7 o 13. */
+function niceStep(top, target) {
+  const raw = top / target;
+  return [1, 2, 5, 10, 20, 50].find(step => step >= raw) || 100;
+}
+
+function chartFloatsPerYear(zoom = 1) {
+  const width = CHART.w * zoom;
+  // Al ampliar tambien se gana alto: si no, las lineas de rejilla nuevas caen
+  // a 10 px unas de otras y las cifras se tocan.
+  const height = zoom > 1 ? 200 : 150;
   const rows = state.editions.filter(edition => edition.float_count > 0);
   const top = Math.max(...rows.map(edition => edition.float_count));
   const base = height - CHART.padB;
   const { min, max } = statsYears();
-  // Margen izquierdo minimo: aqui no hay nombres que colocar, solo la cifra
-  // del maximo, asi que la primera barra arranca casi pegada al borde.
-  const scale = makeScale({ from: min, to: max, width, left: 22 });
+  const left = 26;
+  const scale = makeScale({ from: min, to: max, width, left });
+  const yOf = value => base - (value / top) * (base - CHART.padT);
 
+  // Al ensanchar caben mas anos: 20 -> 10 -> 5.
+  const yearStep = zoom >= 4 ? 5 : zoom >= 2 ? 10 : 20;
+  // Y mas lineas de rejilla, que es lo que permite leer una barra sin tooltip.
+  const step = niceStep(top, zoom > 1 ? 12 : 5);
+
+  const grid = [];
+  for (let value = 0; value <= top; value += step) {
+    const y = yOf(value).toFixed(1);
+    grid.push(`<line class="grid-line" x1="${left}" y1="${y}" x2="${width - CHART.padR}" y2="${y}"/>
+      <text class="axis-label" x="${left - 5}" y="${(Number(y) + 3).toFixed(1)}" text-anchor="end">${value}</text>`);
+  }
+
+  const barW = 3.6 * Math.min(zoom, 3);
+  const hitW = Math.max(9 * zoom, barW + 3);
   const bars = rows.map(edition => {
     const x = scale(edition.year);
-    const h = (edition.float_count / top) * (base - CHART.padT);
+    const h = base - yOf(edition.float_count);
     const tip = esc(`${edition.year}<b>${edition.float_count} carrozas</b>`);
     // Barra visible fina, zona de toque ancha: con 3,6 px de ancho acertar con
     // el dedo era una loteria.
     return `<g class="bar-group" data-year="${edition.year}" data-tip="${tip}">
-      <rect class="bar-hit" x="${(x - 4.5).toFixed(1)}" y="${CHART.padT - 6}"
-        width="9" height="${(base - CHART.padT + 6).toFixed(1)}"/>
-      <rect class="bar ${coverageTier(edition)}" x="${(x - 1.8).toFixed(1)}" y="${(base - h).toFixed(1)}"
-        width="3.6" height="${h.toFixed(1)}"/>
+      <rect class="bar-hit" x="${(x - hitW / 2).toFixed(1)}" y="${CHART.padT - 6}"
+        width="${hitW.toFixed(1)}" height="${(base - CHART.padT + 6).toFixed(1)}"/>
+      <rect class="bar ${coverageTier(edition)}" x="${(x - barW / 2).toFixed(1)}" y="${yOf(edition.float_count).toFixed(1)}"
+        width="${barW.toFixed(1)}" height="${h.toFixed(1)}"/>
     </g>`;
   }).join("");
 
-  return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
-    aria-label="Carrozas por edición">
-    <text class="axis-label" x="18" y="${CHART.padT + 4}" text-anchor="end">${top}</text>
-    <line class="axis-line" x1="22" y1="${base}" x2="${width - CHART.padR}" y2="${base}"/>
-    ${yearAxis(scale, { from: min, to: max, step: 20, height })}${bars}</svg>`;
+  return `<div class="chart-scroll${zoom > 1 ? " is-zoomed" : ""}">
+    <svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
+      style="width:${zoom * 100}%"
+      aria-label="Número de carrozas por edición">
+      ${grid.join("")}
+      <line class="axis-line" x1="${left}" y1="${base}" x2="${width - CHART.padR}" y2="${base}"/>
+      ${yearAxis(scale, { from: min, to: max, step: yearStep, height })}${bars}
+    </svg></div>`;
 }
 
 /* El podio de vestidos, una fila por edicion en vez de una por puesto: con
@@ -733,6 +766,7 @@ function renderStatsTab() {
   const topGroup = [...state.groups].sort((a, b) => b.wins - a.wins)[0];
   const longest = [...state.groups].sort((a, b) => b.years.length - a.years.length)[0];
   const category = state.statsCategory;
+  const zoom = state.statsZoom;
 
   els.indexBody.innerHTML = `
     <div class="stats-block">
@@ -743,14 +777,21 @@ function renderStatsTab() {
         <div class="kpi"><span>${longest.years.length}</span><small>ediciones de ${esc(longest.canonical_name)}</small></div>
       </div>
 
-      <h3 class="section">Carrozas documentadas por edición</h3>
+      <h3 class="section">Número de carrozas por edición</h3>
       <p class="chart-note">Cuenta lo que el archivo conserva, no necesariamente lo que desfiló:
       donde la documentación es floja la barra se queda corta. El color es el nivel de datos.</p>
       <div class="chart-legend">
         ${TIERS.filter(([cls]) => shownTiers.has(cls))
           .map(([cls, label]) => `<span><i class="key ${cls}"></i>${label}</span>`).join("")}
       </div>
-      ${chartFloatsPerYear()}
+      <div class="chart-tabs zoom-tabs">
+        <span class="zoom-label">Zoom</span>
+        ${[[1, "1×"], [2, "2×"], [4, "4×"]].map(([level, label]) =>
+          `<button class="view${zoom === level ? " is-on" : ""}" type="button"
+            data-stats-zoom="${level}">${label}</button>`).join("")}
+        ${zoom > 1 ? '<span class="zoom-hint">desliza el gráfico →</span>' : ""}
+      </div>
+      ${chartFloatsPerYear(zoom)}
 
       <h3 class="section">Trayectoria de los carrocistas</h3>
       <div class="chart-tabs">
@@ -1455,9 +1496,10 @@ function chartGroupTimeline(entries) {
     <line class="axis-line" x1="${left}" y1="${yOf(position).toFixed(1)}" x2="${width - CHART.padR}" y2="${yOf(position).toFixed(1)}"/>
     <text class="axis-label" x="${left - 6}" y="${(yOf(position) + 3).toFixed(1)}" text-anchor="end">${position}.º</text>`).join("");
 
-  // Los anos antiguos no tienen categoria; se etiquetan como tal en vez de con
-  // un guion, que no dice nada.
-  const SIN_CAT = "sin categoría";
+  // Los anos antiguos no tienen categoria porque el reglamento no las creo
+  // hasta 2011. Se etiquetan diciendo eso, no con un guion ni con "sin
+  // categoria", que se lee como si faltara el dato.
+  const SIN_CAT = `hasta ${CATEGORIES_FROM - 1}`;
   const categories = [...new Set(ranked.map(entry => entry.category || SIN_CAT))].sort();
   const lines = categories.map(category => {
     const points = ranked
@@ -1475,8 +1517,14 @@ function chartGroupTimeline(entries) {
 
   return `
     <h3 class="section">Su trayectoria</h3>
-    ${categories.length > 1 ? `<div class="chart-legend">${categories.map(c =>
-      `<span><i class="key key-${c === SIN_CAT ? "none" : esc(c)}"></i>${c === SIN_CAT ? "lista única" : esc(c)}</span>`).join("")}</div>` : ""}
+    <div class="chart-legend">${categories.map(c =>
+      `<span><i class="key key-${c === SIN_CAT ? "none" : esc(c)}"></i>${
+        c === SIN_CAT ? `Lista única (hasta ${CATEGORIES_FROM - 1})` : `Categoría ${esc(c)}`}</span>`).join("")}</div>
+    ${categories.includes(SIN_CAT) ? `<p class="chart-note">Hasta ${CATEGORIES_FROM - 1} el palmarés
+      era una lista única; las categorías A y B las creó el reglamento municipal en
+      <b>${CATEGORIES_FROM}</b>, según el tamaño de la carroza.${categories.length > 1
+        ? " Por eso la línea cambia de color ese año: no es que el grupo cambiara de sitio, es que cambió la forma de clasificar."
+        : ""}</p>` : ""}
     <svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
       aria-label="Evolución del puesto de ${esc(entries[0]?.group_canonical || "")} entre ${from} y ${to}">
       ${grid}
@@ -2033,6 +2081,13 @@ function bindEvents() {
     const statsCat = event.target.closest("[data-stats-cat]");
     if (statsCat) {
       state.statsCategory = statsCat.dataset.statsCat;
+      renderStatsTab();
+      return;
+    }
+
+    const statsZoom = event.target.closest("[data-stats-zoom]");
+    if (statsZoom) {
+      state.statsZoom = Number(statsZoom.dataset.statsZoom);
       renderStatsTab();
       return;
     }
