@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.33.1">
+  <link rel="stylesheet" href="atlas/style.css?v=0.34.0">
 </head>
 <body>
   <nav id="navbar">
@@ -52,13 +52,14 @@
   </header>
 
   <div id="modes">
-    <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
-    <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
-    <span id="view">
-      <button type="button" id="v-map" class="view-btn active" title="Show/hide the map">🗺 Map</button>
-      <button type="button" id="v-list" class="view-btn active" title="Show/hide the list">☰ List</button>
+    <span id="view-tabs">
+      <button type="button" id="v-mapview" class="view-btn active" title="Map with the list of works beside it">🗺 Map &amp; list</button>
+      <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
     </span>
-    <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
+    <span id="mapopts" title="What the map plots">
+      <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
+      <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
+    </span>
   </div>
 
   <div id="timeline">
@@ -88,7 +89,6 @@
       </span>
       <input id="table-search" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off">
       <span id="table-count" class="t-count"></span>
-      <button type="button" id="table-csv" class="chip btn" title="Download the current rows as CSV">⭳ CSV</button>
     </div>
     <div id="table-wrap">
       <table id="works-table">
@@ -143,7 +143,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.33.1"></script>
+  <script src="atlas/app.js?v=0.34.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

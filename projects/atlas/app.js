@@ -68,9 +68,9 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.33.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 12:40";   // update together with DATA_V — shown in the navbar
-{ const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
+const DATA_V = "0.34.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 13:20";   // update together with DATA_V — shown in the navbar
+{ const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
   e.preventDefault();
@@ -658,7 +658,7 @@ function selectMuseum(key) {
   const mu = museumIndex.find(m => m.key === key);
   const pop = document.getElementById("painters-pop");
   pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
-  if (mu) { if (!view.map) { view.map = true; setView(); } map.setView([mu.lat, mu.lon], 14); }
+  if (mu) { if (view.table) setTableView(false); map.setView([mu.lat, mu.lon], 14); }
   renderMuseumChip(); refresh();
 }
 function clearMuseum() { state.museumFilter = null; renderMuseumChip(); refresh(); }
@@ -693,24 +693,16 @@ document.getElementById("accepted-only").addEventListener("change", e => {
   state.acceptedOnly = e.target.checked; refresh();
 });
 
-// ── show/hide map and list (at least one stays visible) ──
+// ── two top-level views: "Map & list" (map + side list, always together) vs "Table" ──
+// The map's own options (Now in / Painted in) live under the map view — they don't apply to
+// the table. The side list always accompanies the map, so there's no separate list toggle.
 const view = { map: true, panel: true };
 function setView() {
   document.body.classList.toggle("hide-map", !view.map);
   document.body.classList.toggle("hide-panel", !view.panel);
-  document.getElementById("v-map").classList.toggle("active", view.map);
-  document.getElementById("v-list").classList.toggle("active", view.panel);
   if (view.map) setTimeout(() => map.invalidateSize(), 60);
-  renderPanel();
+  if (state.near) renderNearMe(); else renderPanel();
 }
-document.getElementById("v-map").addEventListener("click", () => {
-  if (view.map && !view.panel) return;      // it's the only pane shown → keep it
-  view.map = !view.map; setView();
-});
-document.getElementById("v-list").addEventListener("click", () => {
-  if (view.panel && !view.map) return;
-  view.panel = !view.panel; setView();
-});
 
 // ── database view: WORKS or MUSEUMS as a sortable, filterable, exportable table ──
 const TABLE_COLS = [
@@ -871,15 +863,20 @@ function setTableView(on) {
   if (on) {                                   // always land on the Works tab
     tableMode = "works";
     document.querySelectorAll("#table-tabs .ttab").forEach(x => x.classList.toggle("active", x.dataset.tmode === "works"));
+  } else {                                     // back to the map view → map + list together
+    view.map = true; view.panel = true;
   }
   document.body.classList.toggle("show-table", on);
   document.getElementById("v-table").classList.toggle("active", on);
+  document.getElementById("v-mapview").classList.toggle("active", !on);
+  document.getElementById("mapopts").hidden = on;      // Now in / Painted in only apply to the map
   document.getElementById("table").hidden = !on;
   document.getElementById("main").hidden = on;
   if (on) renderTable();
-  else setTimeout(() => map.invalidateSize(), 60);
+  else setView();
 }
-document.getElementById("v-table").addEventListener("click", () => setTableView(!view.table));
+document.getElementById("v-table").addEventListener("click", () => setTableView(true));
+document.getElementById("v-mapview").addEventListener("click", () => setTableView(false));
 document.getElementById("table-search").addEventListener("input", renderTable);
 document.querySelectorAll("#table-tabs .ttab").forEach(b => b.addEventListener("click", () => {
   tableMode = b.dataset.tmode;
@@ -888,18 +885,6 @@ document.querySelectorAll("#table-tabs .ttab").forEach(b => b.addEventListener("
   document.getElementById("table-wrap").scrollTop = 0;
   renderTable();
 }));
-document.getElementById("table-csv").addEventListener("click", () => {
-  const isM = tableMode === "museums";
-  const cols = (isM ? MUSEUM_COLS : TABLE_COLS).filter(c => !["img", "links"].includes(c.key));
-  const rows = isM ? museumRows() : tableRows();
-  const cell = s => `"${(s ?? "").toString().replace(/"/g, '""')}"`;
-  const lines = [cols.map(c => cell(c.label || c.key)).join(",")];
-  for (const r of rows) lines.push(cols.map(c => cell(r[c.key])).join(","));
-  const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob); a.download = `atlas-${isM ? "museums" : "works"}.csv`; a.click();
-  URL.revokeObjectURL(a.href);
-});
 
 // ── map mode: "where they are today" (venues) vs "where they were painted" (cities) ──
 document.querySelectorAll(".mode-btn").forEach(btn => {
@@ -1181,8 +1166,8 @@ document.getElementById("locate").addEventListener("click", () => {
   navigator.geolocation.getCurrentPosition(pos => {
     btn.disabled = false;
     const { latitude: lat, longitude: lon } = pos.coords;
+    if (view.table) setTableView(false);   // near-me lives on the map → leave the table view
     nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };   // remember, to restore on clear
-    if (!view.map) { view.map = true; setView(); }
     // adaptive default radius: smallest preset that reaches the nearest place
     const vs = nearVenues(lat, lon);
     const d0 = vs.length ? vs[0].d : Infinity;

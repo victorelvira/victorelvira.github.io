@@ -29,12 +29,13 @@ body {
 
 /* thin identity navbar — the same on every project → home + cross-linking */
 #navbar {
-  display: flex; align-items: center; gap: 8px;
-  padding: 5px 16px; background: var(--ink); font-size: 12.5px;
+  display: flex; align-items: center; gap: 6px; flex-wrap: nowrap;
+  padding: 5px 12px; background: var(--ink); font-size: 12.5px;
 }
-#navbar .wordmark { color: #fff; font-weight: 700; text-decoration: none; letter-spacing: .2px; }
+/* the identity links never wrap to a second row on a phone; the tiny build stamp yields first */
+#navbar .wordmark { color: #fff; font-weight: 700; text-decoration: none; letter-spacing: .2px; white-space: nowrap; }
 #navbar .nav-sep { color: #8a7f72; }
-#navbar .nav-home { color: #cbbfae; text-decoration: none; }
+#navbar .nav-home { color: #cbbfae; text-decoration: none; white-space: nowrap; }
 #navbar a:hover { text-decoration: underline; }
 #navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: auto; }
@@ -128,24 +129,28 @@ body {
 /* venue type is no longer encoded by colour → hide those chips (state stays "all on") */
 .chip.kind { display: none; }
 
-/* map mode switch: today's location vs where it was painted */
+/* view switch + map options */
 #modes {
-  display: flex; gap: 6px; padding: 8px 16px; background: var(--bar);
-  border-bottom: 1px solid var(--line);
+  display: flex; gap: 10px 14px; align-items: center; flex-wrap: wrap;
+  padding: 8px 16px; background: var(--bar); border-bottom: 1px solid var(--line);
 }
+/* primary, mutually-exclusive view: "Map & list" vs "Table" (segmented control) */
+#view-tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+#view-tabs .view-btn { border: 0; border-radius: 0; }
+#view-tabs .view-btn + .view-btn { border-left: 1px solid var(--line); }
+.view-btn {
+  font: inherit; font-size: 13px; padding: 6px 14px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted); font-weight: 600;
+}
+.view-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+/* the map's own options (Now in / Painted in) — secondary, and only shown in the map view */
+#mapopts { display: inline-flex; gap: 6px; align-items: center; }
+#mapopts[hidden] { display: none; }
 .mode-btn {
   font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
 }
 .mode-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-
-/* show/hide map & list */
-#view { margin-left: auto; display: inline-flex; gap: 6px; }
-.view-btn {
-  font: inherit; font-size: 13px; padding: 5px 10px; cursor: pointer;
-  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
-}
-.view-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
 body.hide-panel #panel { display: none; }
 body.hide-map #map { display: none; }
 body.hide-map #panel { flex: 1; width: auto; max-height: none; border: 0; }
@@ -189,7 +194,7 @@ body.mode-painted .legend { display: none; }
 #map { flex: 1; min-height: 0; }
 
 /* ── database table view ── */
-body.show-table .mode-btn, body.show-table #view { display: none; }   /* hide map-only controls */
+body.show-table #mapopts { display: none; }   /* hide map-only controls in the table view */
 #table[hidden], #main[hidden] { display: none; }   /* [hidden] must beat the flex display rules */
 #table { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #fff; }
 #table-bar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
@@ -221,6 +226,21 @@ body.show-table .mode-btn, body.show-table #view { display: none; }   /* hide ma
 #works-table .c-year, #works-table .c-country, #works-table .c-city, #works-table .c-attr { white-space: nowrap; }
 #works-table .c-loc { min-width: 150px; }
 #works-table .c-links a { margin-right: 4px; }
+
+/* on a phone the 11-column works table is far too wide — keep the essentials (image, painter,
+   title, year, museum), drop the rest, and let the title/museum wrap so it fits the screen */
+@media (max-width: 640px) {
+  #works-table .th-medium, #works-table .c-medium,
+  #works-table .th-dimensions, #works-table .c-dim,
+  #works-table .th-attribution, #works-table .c-attr,
+  #works-table .th-city, #works-table .c-city,
+  #works-table .th-country, #works-table .c-country,
+  #works-table .th-links, #works-table .c-links { display: none; }
+  #works-table .c-title { min-width: 0; }
+  #works-table .c-loc { min-width: 0; }
+  #works-table .c-painter { white-space: normal; }   /* let painter names wrap too */
+  #works-table td, #works-table thead th { padding: 5px 8px; }
+}
 
 /* ── mobile bottom sheet (hosts marker popups on phones) ── */
 #sheet {
