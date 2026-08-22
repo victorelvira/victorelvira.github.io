@@ -934,7 +934,15 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 }
 .review-box b { color: #8a5f10; }
 .review-box ul { margin: 4px 0 0; padding-left: 16px; color: var(--ink); }
-.review-box p { margin: 6px 0 0; color: var(--muted); }
+.review-box p { margin: 8px 0 0; color: var(--muted); }
+.pill.know {
+  padding: 5px 12px; font-size: 12.5px;
+  border-color: #d9a441; background: #fdf1d8; color: #8a5f10;
+}
+.pill.know:hover { background: #f7e0ad; border-color: #c8942f; }
+.pill.know .pill-icon { fill: #b8862a; }
+.open-note { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+.open-note b { color: var(--ink); }
 
 .open-block { margin: 0 0 12px; }
 .open-block h4 {

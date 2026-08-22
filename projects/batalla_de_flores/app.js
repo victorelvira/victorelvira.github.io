@@ -826,6 +826,8 @@ function openQuestions() {
         // Una atribucion en disputa marca las DOS entradas, pero es un solo caso:
         // listarlo dos veces doblaria el recuento y daria sensacion de caos.
         const target = reason.startsWith("El archivo atribuye") ? disputed : conflicting;
+        // El motivo es identico en las dos mitades del conflicto (normalize.py
+        // ordena los nombres), asi que basta con el para no contarlo dos veces.
         if (!target.some(other => other.year === row.year && other.reason === row.reason)) {
           target.push(row);
         }
@@ -839,6 +841,58 @@ function openQuestions() {
     edition.status === "published" && !(edition.floats || []).some(entry => entry.position != null));
 
   return { disputed, conflicting, incomplete, noPalmares };
+}
+
+/* Pestana propia, no un apendice de Estadisticas: que un archivo diga lo que no
+ * sabe es la parte que lo separa de un listado, y enterrada al final no la ve
+ * nadie. */
+function renderPendingTab() {
+  const q = openQuestions();
+  const total = q.disputed.length + q.conflicting.length + q.incomplete.length + q.noPalmares.length;
+  els.indexCount.textContent = `${num(total)} cuestiones abiertas`;
+  // Buscar "1954" aqui no filtra nada: los controles se esconden en esta vista.
+  document.querySelector(".controls")?.setAttribute("hidden", "");
+
+  const bloque = (icono, titulo, filas, pinta) => filas.length ? `
+    <div class="open-block">
+      <h4>${icono} ${titulo} <span class="open-count">${filas.length}</span></h4>
+      <ul class="open-list">${filas.map(pinta).join("")}</ul>
+    </div>` : "";
+
+  els.indexBody.innerHTML = `
+    <div class="stats-block">
+      <p class="chart-note">Este archivo no está terminado, y prefiere decirlo. Aquí está todo lo
+      que sabemos que falta o que no cuadra. Si conoces la respuesta a alguno,
+      <button class="link t-float" type="button" id="open-report-from-stats">avísanos</button>.</p>
+
+      <div class="open-block">
+        <h4>🏆 Carrocistas repartidos entre varios nombres</h4>
+        <p class="open-note">Los rankings de esta página cuentan <b>grupos</b>, que es lo único que
+        dicen las fuentes: el nombre con el que se inscribió cada carroza. Pero una persona con
+        cincuenta años de trayectoria cambia de socios, se asocia y se separa, y aparece repartida
+        entre nombres distintos. <b>El caso claro es José Antonio «Toñi» Quintana</b>, a quien la
+        Wikipedia atribuye 21 victorias y que aquí sale troceado en trece nombres —solo, con su
+        hermano, con Ángel Sainz y con Transportes Maritina—, así que <b>no encabeza ningún ranking
+        pese a ser el más laureado de la historia</b>. Le pasa a más gente. Reunir esas trayectorias
+        pide un dato que no está escrito en ninguna fuente y sí en la memoria de los carrocistas:
+        qué nombres corresponden a qué persona.</p>
+      </div>
+
+        ${bloque("🏷️", "Carrozas con dos grupos distintos", q.disputed, row => `
+          <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+            <b>${esc(row.name)}</b> — ${esc(row.reason.replace("El archivo atribuye esta carroza a dos grupos: ", ""))}</li>`)}
+        ${bloque("↕️", "Puestos en los que las fuentes no coinciden", q.conflicting, row => `
+          <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+            <b>${esc(row.name)}</b> — ${esc(row.reason.replace("Las fuentes no coinciden en el puesto: ", ""))}</li>`)}
+        ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
+          <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+            ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}</li>`)}
+        ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
+          <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+            ${esc(edition.notes?.[0] || "No se ha localizado la clasificación.")}</li>`)}
+
+
+    </div>`;
 }
 
 function renderStatsTab() {
@@ -905,32 +959,6 @@ function renderStatsTab() {
         <span><i class="dot ran"></i>Resto</span>
       </div>
       ${chartCareers(category)}
-
-      <h3 class="section">❓ Lo que queda por resolver</h3>
-      <p class="chart-note">Este archivo no está terminado, y prefiere decirlo. Aquí está todo lo
-      que sabemos que falta o que no cuadra. Si conoces la respuesta a alguno,
-      <button class="link t-float" type="button" id="open-report-from-stats">avísanos</button>.</p>
-      ${(() => {
-        const q = openQuestions();
-        const bloque = (icono, titulo, filas, pinta) => filas.length ? `
-          <div class="open-block">
-            <h4>${icono} ${titulo} <span class="open-count">${filas.length}</span></h4>
-            <ul class="open-list">${filas.map(pinta).join("")}</ul>
-          </div>` : "";
-        return `
-          ${bloque("🏷️", "Carrozas con dos grupos distintos", q.disputed, row => `
-            <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
-              <b>${esc(row.name)}</b> — ${esc(row.reason.replace("El archivo atribuye esta carroza a dos grupos: ", ""))}</li>`)}
-          ${bloque("↕️", "Puestos en los que las fuentes no coinciden", q.conflicting, row => `
-            <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
-              <b>${esc(row.name)}</b> — ${esc(row.reason.replace("Las fuentes no coinciden en el puesto: ", ""))}</li>`)}
-          ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
-            <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
-              ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}</li>`)}
-          ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
-            <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
-              ${esc(edition.notes?.[0] || "No se ha localizado la clasificación.")}</li>`)}`;
-      })()}
 
       <h3 class="section">🔥 Rachas de victorias</h3>
       <p class="chart-note">Ediciones ganadas seguidas. Cuenta el 1.<sup>er</sup> puesto de la lista
@@ -1019,6 +1047,7 @@ function setCount(shown, total, noun) {
 }
 
 function renderIndex() {
+  if (state.mode !== "pending") document.querySelector(".controls")?.removeAttribute("hidden");
   hideTooltip();
   // Solo Carrozas tiene controles propios; el resto limpia la barra.
   if (state.mode !== "floats") els.indexTools.innerHTML = "";
@@ -1026,6 +1055,7 @@ function renderIndex() {
   else if (state.mode === "floats") renderFloatList();
   else if (state.mode === "groups") renderGroupList();
   else if (state.mode === "stats") renderStatsTab();
+  else if (state.mode === "pending") renderPendingTab();
   else renderRouteList();
   renderLegend();
 }
@@ -1445,9 +1475,22 @@ function renderEditionDetail(edition) {
         </tbody>
       </table>` : ""}
 
-    ${(edition.notes || []).length ? `
-      <h3 class="section">Notas</h3>
-      <ul class="plain">${edition.notes.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : ""}
+    ${(() => {
+      // Los huecos conocidos no son una nota mas al final: son lo que hay que
+      // saber antes de leer el palmares, y la mejor peticion de ayuda posible.
+      const gaps = (edition.notes || []).filter(note =>
+        note.includes("faltan al menos") || note.includes("no aparece en ninguna fuente")
+        || note.includes("no publicó") || note.includes("no el palmarés"));
+      const rest = (edition.notes || []).filter(note => !gaps.includes(note));
+      return `
+        ${gaps.length ? `<div class="review-box">
+          <b>Faltan datos de esta edición</b>
+          <ul>${gaps.map(note => `<li>${esc(note)}</li>`).join("")}</ul>
+          <p><button class="pill know" type="button" id="open-report-from-edition">${ICON_FLAG}¿Conoces el dato?</button></p>
+        </div>` : ""}
+        ${rest.length ? `<h3 class="section">Notas</h3>
+          <ul class="plain">${rest.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : ""}`;
+    })()}
 
     ${renderGallery(entries.filter(entry => !ranked.includes(entry)))}
 
@@ -2271,7 +2314,7 @@ function bindEvents() {
       return;
     }
 
-    if (event.target.closest("#open-report-from-stats, #open-report-from-float")) { openReport(); return; }
+    if (event.target.closest("#open-report-from-stats, #open-report-from-float, #open-report-from-edition")) { openReport(); return; }
 
     const statsZoom = event.target.closest("[data-stats-zoom]");
     if (statsZoom) {
