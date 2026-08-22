@@ -560,6 +560,12 @@ function setupTooltip() {
 
 const CHART = { w: 720, rowH: 13, padL: 128, padR: 14, padT: 16, padB: 22 };
 
+/* "2009, 2012 y 2013", no "2009, 2012, 2013". */
+function listYears(years) {
+  if (years.length < 2) return String(years[0] ?? "");
+  return `${years.slice(0, -1).join(", ")} y ${years[years.length - 1]}`;
+}
+
 function statsYears() {
   const years = state.editions.map(edition => edition.year);
   return { min: Math.min(...years), max: Math.max(...years) };
@@ -762,7 +768,13 @@ function renderStatsTab() {
   const shownTiers = new Set(state.editions
     .filter(edition => edition.float_count > 0)
     .map(coverageTier));
-  const biggest = [...state.editions].sort((a, b) => b.float_count - a.float_count)[0];
+  // El record esta empatado a tres bandas (2009, 2012 y 2013): quedarse con el
+  // primero que saliera del sort era arbitrario y ademas ocultaba dos ediciones.
+  const topFloats = Math.max(...state.editions.map(edition => edition.float_count));
+  const recordYears = state.editions
+    .filter(edition => edition.float_count === topFloats)
+    .map(edition => edition.year)
+    .sort((a, b) => a - b);
   const topGroup = [...state.groups].sort((a, b) => b.wins - a.wins)[0];
   const longest = [...state.groups].sort((a, b) => b.years.length - a.years.length)[0];
   const category = state.statsCategory;
@@ -772,7 +784,8 @@ function renderStatsTab() {
     <div class="stats-block">
       <div class="kpis">
         <div class="kpi"><span>${num(summary.edition_count)}</span><small>ediciones</small></div>
-        <div class="kpi"><span>${biggest.float_count}</span><small>carrozas en ${biggest.year}, el récord</small></div>
+        <div class="kpi"><span>${topFloats}</span><small>carrozas, el récord${
+          recordYears.length > 1 ? ", igualado en" : " en"} ${listYears(recordYears)}</small></div>
         <div class="kpi"><span>${topGroup.wins}</span><small>victorias de ${esc(topGroup.canonical_name)}</small></div>
         <div class="kpi"><span>${longest.years.length}</span><small>ediciones de ${esc(longest.canonical_name)}</small></div>
       </div>
@@ -1476,7 +1489,7 @@ const ICON_PODIUM = `<svg class="kpi-icon" viewBox="0 0 16 16" aria-hidden="true
 /* Copa dibujada dentro del SVG, no el emoji: asi hereda el color de la
  * categoria. Sin pointer-events para no robarle el clic al punto. */
 function trophyMark(cx, cy, cls) {
-  return `<g class="trophy ${cls}" transform="translate(${(cx - 4).toFixed(1)} ${(cy - 14).toFixed(1)}) scale(0.5)"
+  return `<g class="trophy ${cls}" transform="translate(${(cx - 6).toFixed(1)} ${(cy - 20).toFixed(1)}) scale(0.75)"
     aria-hidden="true">
     <path d="M4 2h8v3a4 4 0 0 1-8 0V2z"/><path d="M2 3h2v2a2 2 0 0 1-2-2zM14 3h-2v2a2 2 0 0 0 2-2z"/>
     <path d="M7 9h2v3H7zM5 12h6v2H5z"/></g>`;
@@ -1492,8 +1505,8 @@ function chartGroupTimeline(entries) {
 
   const width = 620;
   // Hueco extra arriba para que la copa del 1.er puesto no se salga.
-  const topPad = CHART.padT + 12;
-  const height = 34 + worst * 15 + CHART.padB + 12;
+  const topPad = CHART.padT + 16;
+  const height = 34 + worst * 15 + CHART.padB + 16;
   const left = 30;
   const base = height - CHART.padB;
   const scale = makeScale({ from, to, width, left });
@@ -1525,6 +1538,15 @@ function chartGroupTimeline(entries) {
   });
   winsByYear.forEach(list => list.sort());
 
+  // La lista unica comparte color con A, asi que la ruptura de 2011 hay que
+  // decirla explicitamente: una vertical discontinua donde cambio el reglamento.
+  const splitYear = from < CATEGORIES_FROM && to >= CATEGORIES_FROM ? CATEGORIES_FROM : null;
+  const split = splitYear ? `
+    <line class="split-line" x1="${scale(splitYear).toFixed(1)}" y1="${topPad - 14}"
+      x2="${scale(splitYear).toFixed(1)}" y2="${base}"/>
+    <text class="split-label" x="${(scale(splitYear) - 4).toFixed(1)}" y="${topPad - 8}"
+      text-anchor="end">${splitYear}</text>` : "";
+
   const lines = categories.map(category => {
     const points = ranked.filter(entry => catOf(entry) === category).sort((a, b) => a.year - b.year);
     const path = points.map((entry, index) =>
@@ -1537,7 +1559,7 @@ function chartGroupTimeline(entries) {
     const cups = points.filter(entry => entry.position === 1).map(entry => {
       const winners = winsByYear.get(entry.year) || [category];
       const index = Math.max(winners.indexOf(category), 0);
-      const offset = (index - (winners.length - 1) / 2) * 9;
+      const offset = (index - (winners.length - 1) / 2) * 13;
       return trophyMark(scale(entry.year) + offset, yOf(entry.position), `trophy-${catClass(category)}`);
     }).join("");
     return `<g class="serie serie-${catClass(category)}"><path class="serie-line" d="${path}"/>${dots}${cups}</g>`;
@@ -1545,19 +1567,19 @@ function chartGroupTimeline(entries) {
 
   return `
     <h3 class="section">Su trayectoria</h3>
-    <div class="chart-legend">${categories.map(c =>
-      `<span><i class="key key-${catClass(c)}"></i>${
-        c === SIN_CAT ? `Lista única (hasta ${CATEGORIES_FROM - 1})` : `Categoría ${esc(c)}`}</span>`).join("")}
+    <div class="chart-legend">${categories.filter(c => c !== SIN_CAT).map(c =>
+      `<span><i class="key key-${catClass(c)}"></i>Categoría ${esc(c)}</span>`).join("")}
+      ${splitYear ? `<span><i class="key key-split"></i>${CATEGORIES_FROM}: se crean A y B</span>` : ""}
       <span class="cup-key">${ICON_TROPHY}1.<sup>er</sup> puesto</span></div>
     ${categories.includes(SIN_CAT) ? `<p class="chart-note">Hasta ${CATEGORIES_FROM - 1} el palmarés
-      era una lista única; las categorías A y B las creó el reglamento municipal en
-      <b>${CATEGORIES_FROM}</b>, según el tamaño de la carroza.${categories.length > 1
-        ? " Por eso la línea cambia de color ese año: no es que el grupo cambiara de sitio, es que cambió la forma de clasificar."
-        : ""}</p>` : ""}
+      era una lista única, que en <b>${CATEGORIES_FROM}</b> el reglamento municipal partió en dos
+      según el tamaño de la carroza. Un puesto de antes se disputaba contra todas; uno de después,
+      solo dentro de su categoría.</p>` : ""}
     <svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
       aria-label="Evolución del puesto de ${esc(entries[0]?.group_canonical || "")} entre ${from} y ${to}">
       ${grid}
       ${yearAxis(scale, { from, to, step: to - from > 30 ? 10 : to - from > 12 ? 5 : 2, height })}
+      ${split}
       ${lines}
     </svg>`;
 }

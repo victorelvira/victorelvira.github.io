@@ -529,8 +529,18 @@ i.dot.ran { background: #bfb2a6; }
 .serie-A .serie-dot, .trophy-A { fill: var(--cat-a); }
 .serie-B .serie-line { stroke: var(--cat-b); }
 .serie-B .serie-dot, .trophy-B { fill: var(--cat-b); }
-.serie-none .serie-line { stroke: var(--cat-none); }
-.serie-none .serie-dot, .trophy-none { fill: var(--cat-none); }
+/* La lista unica anterior a 2011 comparte el azul de A: la A es la categoria
+ * que hereda el peso de la fiesta, y con un color propio la trayectoria de un
+ * grupo se rompia en dos. Lo que marca el cambio es la vertical de 2011. */
+.serie-none .serie-line { stroke: var(--cat-a); }
+.serie-none .serie-dot, .trophy-none { fill: var(--cat-a); }
+
+.split-line { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.55; }
+.split-label { fill: var(--muted); font-size: 9px; }
+.key.key-split {
+  width: 14px; height: 0; border-radius: 0; background: none;
+  border-top: 2px dashed var(--muted); align-self: center;
+}
 
 .tip {
   position: fixed; z-index: 90; pointer-events: none;
