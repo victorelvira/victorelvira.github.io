@@ -1336,9 +1336,9 @@ function renderAbout() {
 
     <h3 class="section">¿Ves un error?</h3>
     <p>Es muy posible que lo haya: mucho de esto viene de parsear páginas antiguas,
-    y hay años en los que las propias fuentes se contradicen. <b>Próximamente se
-    habilitará un formulario</b> para avisar de datos incorrectos o aportar los que
-    faltan.</p>
+    y hay años en los que las propias fuentes se contradicen. Cada ficha lleva un
+    botón <b>¿Algo mal?</b> para avisar del dato incorrecto o aportar el que falta;
+    si puedes adjuntar una foto o un recorte de prensa, mucho mejor.</p>
 
     <div class="provenance">
       <b>Ficha técnica</b>
@@ -1735,7 +1735,8 @@ function renderDetail() {
 /* Mismo patrón que frontones: un Apps Script de Google recibe el POST y escribe
  * en una hoja. `no-cors` impide leer la respuesta, así que se da por enviado si
  * el fetch no revienta. Sin endpoint el botón avisa en vez de fallar callando. */
-const REPORT_ENDPOINT = "";
+const REPORT_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbxwXjxQaL4d9X67HJv3f17mR2ctchtxfpg0JCj054XK5jiViPybpD-XY-H3qSIxloOSXA/exec";
 
 /* La foto va en base64 dentro del formulario. Antes se reduce en el navegador:
  * una foto de móvil son 3-5 MB y Apps Script no traga esos POST. */
