@@ -68,8 +68,8 @@ const PAINTERS = [
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
 ];
-const DATA_V = "0.32.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 11:20";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.33.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 12:40";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · updated ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -195,6 +195,21 @@ const SCHOOL_OF = {
   frida: "mx", rivera: "mx",
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
+
+// birth year per painter — sorts the selector chronologically WITHIN each group (the eras/schools
+// are already roughly chronological between groups). Early ones are the accepted "c." estimates.
+const BORN = {
+  duccio: 1255, giotto: 1267, vaneyck: 1390, fraangelico: 1395, weyden: 1399, masaccio: 1401,
+  piero: 1415, memling: 1430, mantegna: 1431, botticelli: 1445, ghirlandaio: 1448, bosch: 1450,
+  leonardo: 1452, durer: 1471, cranach: 1472, michelangelo: 1475, giorgione: 1477, raphael: 1483,
+  delsarto: 1486, titian: 1488, correggio: 1489, holbein: 1497, parmigianino: 1503, tintoretto: 1518,
+  bruegel: 1525, veronese: 1528, elgreco: 1541, caravaggio: 1571, rubens: 1577, franshals: 1582,
+  artemisia: 1593, delatour: 1593, poussin: 1594, velazquez: 1599, vandyck: 1599, lorrain: 1600,
+  zurbaran: 1598, ribera: 1591, murillo: 1617, rembrandt: 1606, vermeer: 1632, goya: 1746,
+  david: 1748, pissarro: 1830, manet: 1832, degas: 1834, cezanne: 1839, monet: 1840, renoir: 1841,
+  gauguin: 1848, vangogh: 1853, seurat: 1859, sorolla: 1863, picasso: 1881, rivera: 1886, frida: 1907,
+};
+const bornOf = slug => BORN[slug] || 9999;
 let painterGroupBy = "period";   // "period" | "school"
 
 // Most works are in Europe; open there. The ~12 in the Americas are one zoom-out away.
@@ -253,7 +268,8 @@ const places = [];   // {marker, kind, feats, lat, lon, shown}
 const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
 let panelVis = [];   // works currently listed in the panel
 const state = { mode: "current", museum: true, church: true, private: true,
-                acceptedOnly: true, museumFilter: null, yearMin: -Infinity, yearMax: Infinity, painters: {} };
+                acceptedOnly: true, museumFilter: null, near: null,
+                yearMin: -Infinity, yearMax: Infinity, painters: {} };
 
 // museum index (derived from the works): each venue with its painters + work count
 const museumIndex = [];
@@ -435,7 +451,7 @@ function refresh() {
   cluster.refreshClusters();
   document.getElementById("stats").textContent =
     `${workCount} works · ${shownPlaces} locations · ${countries.size} countries`;
-  renderPanel();
+  if (state.near) renderNearMe(); else renderPanel();
   if (typeof view !== "undefined" && view.table) renderTable();
 }
 
@@ -586,8 +602,9 @@ function renderPainterList() {
 
   const painterRow = p => {
     const on = state.painters[p.name] !== false;
+    const yr = BORN[p.slug] ? ` <span class="pyr">b. ${BORN[p.slug]}</span>` : "";
     return `<li class="prow"><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
-      `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}</label>` +
+      `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}${yr}</label>` +
       `<button type="button" class="only" data-only="${esc(p.name)}">only</button></li>`;
   };
   const pnt = PAINTERS.filter(p => p.name.toLowerCase().includes(q));
@@ -599,7 +616,8 @@ function renderPainterList() {
       const groups = painterGroupBy === "school" ? SCHOOLS : ERAS;
       const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
       for (const g of groups) {
-        const inGroup = pnt.filter(p => keysOf(p.slug).includes(g.key));
+        const inGroup = pnt.filter(p => keysOf(p.slug).includes(g.key))
+          .sort((a, z) => bornOf(a.slug) - bornOf(z.slug));   // chronological within the group
         if (inGroup.length) html += `<li class="pop-h grp"><span>${esc(g.label)}</span>` +
           `<button type="button" class="grp-only" data-grp-only="${esc(g.key)}" ` +
           `title="Show only the ${esc(g.label)} painters">only</button></li>` +
@@ -969,6 +987,7 @@ function appendPanelChunk() {
 }
 
 function renderPanel() {
+  if (state.near) return;                       // near-me mode owns the side panel (renderNearMe)
   if (panelIO) panelIO.disconnect();
   const bounded = view.map;                    // when the map is hidden, list ALL works (no bounds)
   const b = bounded ? map.getBounds() : null;
@@ -1084,50 +1103,92 @@ function showBanner(html) {
   el.hidden = false;
   document.getElementById("banner-x").onclick = () => { el.hidden = true; };
 }
-// "Near me" is a toggle: first click locates + frames your nearest work; click again
-// (it stays pressed) clears the pins and restores the map to exactly where it was.
-let nearMeActive = false, nearMePrevView = null;
+// "Near me" = share your location, then browse the PLACES that hold works within a radius you
+// choose (1–250 km). Useful in a city (lots nearby) and in a village (bump the radius to reach
+// the nearest cities). The map shows your position + a radius circle; the side panel lists the
+// places by distance. Click "Near me" again to clear and restore the previous view.
+let nearMePrevView = null, nearCircle = null;
+const NEAR_RADII = [1, 5, 25, 50, 100, 250];   // km presets
+
+function nearVenues(lat, lon) {                 // filtered venues, with distance, sorted nearest-first
+  const g = new Map();
+  for (const w of works) {
+    if (!passesAll(w.p)) continue;
+    const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
+    let v = g.get(k);
+    if (!v) { v = { lat: w.lat, lon: w.lon, location: w.p.location || "—",
+      city: w.p.city || "", country: w.p.country || "", count: 0 }; g.set(k, v); }
+    v.count++;
+  }
+  return [...g.values()].map(v => ({ ...v, d: haversine(lat, lon, v.lat, v.lon) }))
+    .sort((a, z) => a.d - z.d);
+}
+
 function clearNearMe() {
   const btn = document.getElementById("locate");
   if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
-  if (nearestLine) { map.removeLayer(nearestLine); nearestLine = null; }
-  const bn = document.getElementById("banner"); if (bn) bn.hidden = true;
+  if (nearCircle) { map.removeLayer(nearCircle); nearCircle = null; }
   btn.textContent = "📍 Near me"; btn.classList.remove("active"); btn.disabled = false;
+  state.near = null;
   if (nearMePrevView) { map.setView(nearMePrevView.center, nearMePrevView.zoom); nearMePrevView = null; }
-  nearMeActive = false;
+  refresh();                                    // restore the normal viewport list
 }
+
+function setNearRadius(r) { if (state.near) { state.near.radiusKm = r; renderNearMe(); } }
+
+function drawNearMe() {                          // user marker + radius circle, fit to the circle
+  const { lat, lon, radiusKm } = state.near;
+  if (nearCircle) map.removeLayer(nearCircle);
+  if (userMarker) map.removeLayer(userMarker);
+  userMarker = L.marker([lat, lon], { icon: L.divIcon({ className: "",
+    html: `<div class="me"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }), zIndexOffset: 1000 })
+    .addTo(map).bindPopup("You are here");
+  nearCircle = L.circle([lat, lon], { radius: radiusKm * 1000,
+    color: "#1a73e8", weight: 1, fillColor: "#1a73e8", fillOpacity: .06 }).addTo(map);
+  map.fitBounds(nearCircle.getBounds(), { padding: [30, 30] });
+}
+
+function renderNearMe() {                        // owns the side panel while near-me is active
+  if (!state.near) return;
+  const { lat, lon, radiusKm } = state.near;
+  const within = nearVenues(lat, lon).filter(v => v.d <= radiusKm);
+  document.getElementById("panel-head").textContent =
+    `${within.length} place${within.length === 1 ? "" : "s"} within ${radiusKm} km`;
+  const chips = NEAR_RADII.map(r =>
+    `<button type="button" class="rchip${r === radiusKm ? " on" : ""}" data-r="${r}">${r}</button>`).join("");
+  let html = `<li class="near-ctrl"><span class="near-lbl">Radius km</span>${chips}</li>`;
+  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km — try a larger radius.</li>`;
+  for (const v of within) {
+    const km = v.d < 1 ? `${Math.round(v.d * 1000)} m` : `${v.d < 10 ? v.d.toFixed(1) : Math.round(v.d)} km`;
+    html += `<li class="near-row" data-lat="${v.lat}" data-lon="${v.lon}"><span class="micon">🏛</span><div>` +
+      `<div class="mname">${esc(v.location)}</div>` +
+      `<div class="msub">${esc([v.city, v.country].filter(Boolean).join(", "))} · ${v.count} work${v.count === 1 ? "" : "s"} · <b>${km}</b></div></div></li>`;
+  }
+  const ul = document.getElementById("worklist"); ul.innerHTML = html;
+  ul.querySelectorAll(".rchip").forEach(b => b.addEventListener("click", () => setNearRadius(+b.dataset.r)));
+  ul.querySelectorAll(".near-row").forEach(row => row.addEventListener("click", () => {
+    if (!view.map) { view.map = true; setView(); }
+    map.setView([+row.dataset.lat, +row.dataset.lon], 15);
+  }));
+  drawNearMe();
+}
+
 document.getElementById("locate").addEventListener("click", () => {
   const btn = document.getElementById("locate");
-  if (nearMeActive) { clearNearMe(); return; }              // toggle off → restore previous view
+  if (state.near) { clearNearMe(); return; }                // toggle off → restore
   if (!navigator.geolocation) { showBanner("Geolocation is not available in this browser."); return; }
   btn.textContent = "📍 Locating…"; btn.disabled = true;
   navigator.geolocation.getCurrentPosition(pos => {
     btn.disabled = false;
     const { latitude: lat, longitude: lon } = pos.coords;
-    let best = null, bd = Infinity;
-    for (const w of works) {
-      if (!passesAll(w.p)) continue;
-      const d = haversine(lat, lon, w.lat, w.lon);
-      if (d < bd) { bd = d; best = w; }
-    }
-    if (!best) { btn.textContent = "📍 Near me"; showBanner("No works match the current filters."); return; }
-    nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };   // remember, to restore on toggle-off
-    if (userMarker) map.removeLayer(userMarker);
-    userMarker = L.marker([lat, lon], {
-      icon: L.divIcon({ className: "", html: `<div class="me"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }),
-      zIndexOffset: 1000,
-    }).addTo(map).bindPopup("You are here");
-    const km = bd < 1 ? `${Math.round(bd * 1000)} m` : `${bd < 10 ? bd.toFixed(1) : Math.round(bd)} km`;
-    if (nearestLine) map.removeLayer(nearestLine);
-    nearestLine = L.polyline([[lat, lon], [best.lat, best.lon]],
-      { color: "#1a73e8", weight: 2, dashArray: "5,7", opacity: .8 }).addTo(map);
-    map.fitBounds([[lat, lon], [best.lat, best.lon]], { padding: [70, 70], maxZoom: 12 });
-    cluster.zoomToShowLayer(best.marker, () => best.marker.openPopup());
-    btn.textContent = "📍 Near me"; btn.classList.add("active");   // pressed → click again to reset
-    nearMeActive = true;
-    showBanner(`Your nearest painting: <b>${esc(best.p.title || "Untitled")}</b> — ` +
-      `${esc([best.p.location, best.p.city].filter(Boolean).join(", "))} · <b>${km}</b> away · ` +
-      `<span class="bn-hint">tap “Near me” again to reset the view</span>`);
+    nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };   // remember, to restore on clear
+    if (!view.map) { view.map = true; setView(); }
+    // adaptive default radius: smallest preset that reaches the nearest place
+    const vs = nearVenues(lat, lon);
+    const d0 = vs.length ? vs[0].d : Infinity;
+    state.near = { lat, lon, radiusKm: NEAR_RADII.find(r => r >= d0) || NEAR_RADII[NEAR_RADII.length - 1] };
+    btn.textContent = "📍 Near me"; btn.classList.add("active");
+    renderNearMe();
   }, err => {
     btn.textContent = "📍 Near me"; btn.disabled = false;
     showBanner("Could not get your location: " + esc(err.message));

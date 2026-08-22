@@ -47,6 +47,22 @@ body {
 }
 .chip input { accent-color: #8a817a; margin: 0; }   /* neutral; painter chips override inline */
 
+/* clean toggle chip with a custom checkbox (nicer than the native box inside a pill) */
+.chip.toggle { position: relative; padding-left: 28px; }
+.chip.toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.chip.toggle::before {
+  content: ""; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+  width: 14px; height: 14px; border: 1.5px solid #c8b48c; border-radius: 4px; background: #fff;
+  transition: background .12s, border-color .12s;
+}
+.chip.toggle:has(input:checked) { background: #efe6d6; border-color: #d8c7a6; color: #3a2317; font-weight: 600; }
+.chip.toggle:has(input:checked)::before { background: #3a2317; border-color: #3a2317; }
+.chip.toggle:has(input:checked)::after {
+  content: "✓"; position: absolute; left: 11px; top: 50%; transform: translateY(-52%);
+  color: #fff; font-size: 10px; font-weight: 700; line-height: 1;
+}
+.chip.toggle:hover { border-color: #c8b48c; }
+
 /* painter selector (button + searchable popover) */
 .painters { position: relative; display: inline-block; }
 /* make it obviously an interactive dropdown (not a static label) */
@@ -89,6 +105,7 @@ body {
 .pop-list .prow .only:hover { opacity: 1; text-decoration: underline; background: #efe6d6; }
 @media (hover: none) { .pop-list .prow .only { opacity: .75; } }   /* touch: no hover, keep it visible */
 .pop-list .sw { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 auto; }
+.pop-list .pyr { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; margin-left: 2px; }
 .pop-empty { color: var(--muted); font-size: 13px; padding: 6px 4px; }
 .pop-h { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
   color: var(--muted); padding: 6px 4px 2px; }
@@ -244,6 +261,23 @@ img.th.ph::after, img.tth.ph::after { content: ""; }
   text-transform: none; background: #f3ece0; }
 #worklist .sentinel { display: block; height: 1px; padding: 0; margin: 0; background: none; cursor: default; }
 #worklist .sentinel:hover { background: none; }
+
+/* "Near me" panel: radius chips + places-by-distance list */
+#worklist .near-ctrl { display: flex; flex-wrap: wrap; align-items: center; gap: 5px;
+  padding: 8px 12px; background: #faf6ef; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 1; }
+#worklist .near-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--muted); margin-right: 2px; }
+#worklist .rchip { font: inherit; font-size: 12px; padding: 2px 9px; border: 1px solid var(--line);
+  border-radius: 999px; background: #fff; cursor: pointer; font-variant-numeric: tabular-nums; }
+#worklist .rchip:hover { background: #f2ede4; }
+#worklist .rchip.on { background: #3a2317; color: #fff; border-color: #3a2317; }
+#worklist .near-row { display: flex; gap: 8px; align-items: flex-start; padding: 7px 12px;
+  cursor: pointer; border-bottom: 1px solid var(--line); }
+#worklist .near-row:hover { background: #faf7f1; }
+#worklist .near-row .micon { flex: 0 0 auto; }
+#worklist .near-row .mname { font-size: 13px; font-weight: 600; line-height: 1.2; }
+#worklist .near-row .msub { color: var(--muted); font-size: 12px; margin-top: 1px; }
 #worklist li:not(.grp):not(.empty) {
   display: flex; gap: 10px; align-items: center; cursor: pointer;
   padding: 8px 12px; border-bottom: 1px solid #f0ece3;
@@ -303,6 +337,16 @@ img.th.ph::after, img.tth.ph::after { content: ""; }
   position: absolute; top: 6px; right: 8px; background: transparent; border: 0;
   color: #cbb8a3; font-size: 16px; cursor: pointer; line-height: 1;
 }
+#banner .bn-act {
+  font: inherit; font-size: 12.5px; margin: 0 2px; padding: 2px 9px; cursor: pointer;
+  background: #4a3826; color: #f6efe4; border: 1px solid #6a5238; border-radius: 999px;
+}
+#banner .bn-act:hover { background: #5c4630; border-color: #8a6c48; }
+
+/* "Near me" is a discreet, secondary control — quiet until hovered or engaged */
+#locate { background: transparent; border-color: transparent; color: var(--muted); box-shadow: none; }
+#locate:hover { background: #f2ede4; border-color: var(--line); color: var(--ink); }
+#locate.active { background: #3a2317; color: #fff; border-color: #3a2317; }
 
 /* circular marker showing the number of works at the same place */
 .pin {
