@@ -470,6 +470,7 @@ function renderFloatGrid(rows) {
     return `
       <button class="tile${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
         <img src="${esc(entry.image_urls[0])}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+        ${winnerBadge(entry)}
         <span class="tile-name">${esc(entry.name)}</span>
         <span class="tile-meta">${entry.year}${entry.position != null
           ? ` · ${entry.category || ""}${entry.position}.º` : ""}</span>
@@ -502,7 +503,7 @@ function renderFloatList() {
         const active = state.selection?.kind === "float" && state.selection.id === entry.id;
         return `
           <button class="row row-float${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
-            <span class="row-name">${esc(entry.name)}${reviewMark(entry)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
+            <span class="row-name">${winnerBadge(entry, true)}${esc(entry.name)}${reviewMark(entry)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
             <span class="col-grp">${esc(entry.group_canonical || "–")}</span>
             <span class="col-num">${entry.year}</span>
             <span class="col-num col-cat">${entry.category ? esc(entry.category) : "única"}</span>
@@ -1318,6 +1319,16 @@ function positionSortKey(entry) {
  *    trofeo es una obra de un artista laredano elegida en su propio concurso. */
 /* Un dato en duda se publica igual, pero diciendolo. La alternativa -elegir
  * una version en silencio- da una pagina mas limpia y menos cierta. */
+/* Una copa en las ganadoras. Al mirar 406 fotos seguidas no hay forma de saber
+ * cuales ganaron sin abrir cada una, y es lo primero que uno quiere ver.
+ * Solo el 1.er puesto: marcar tambien los podios llenaria la cuadricula. */
+function winnerBadge(entry, inline = false) {
+  if (entry.position !== 1) return "";
+  const label = entry.category ? `Ganadora · categoría ${esc(entry.category)}` : "Ganadora";
+  return `<span class="win-badge${inline ? " inline" : ""}" title="${label} (${entry.year})">
+    ${ICON_TROPHY}</span>`;
+}
+
 function reviewMark(entry) {
   const reasons = entry.needs_review || [];
   if (!reasons.length) return "";
@@ -2136,12 +2147,18 @@ function track(path, title, event = false) {
 }
 
 function select(kind, id, { updateHash = true, reveal = true } = {}) {
+  const hadSelection = Boolean(state.selection);
   state.selection = { kind, id };
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
     const prefix = { year: "y", group: "g", route: "r", float: "c", about: "info" }[kind];
-    history.replaceState(null, "", `#/${prefix}/${id}`);
+    // Se apila UNA sola entrada: la de abrir ficha estando en el indice. Saltar
+    // de una ficha a otra reemplaza. Asi "atras" cierra lo que estas mirando y
+    // te devuelve al indice, y el segundo "atras" ya sale de la pagina. Apilar
+    // cada seleccion obligaria a veinte pulsaciones para escapar.
+    const method = hadSelection ? "replaceState" : "pushState";
+    history[method](null, "", `#/${prefix}/${id}`);
     track(location.pathname + location.hash, `${kind}: ${id}`);
   }
   renderIndex();
@@ -2182,13 +2199,24 @@ function latestRankedEdition() {
 /* Cerrar la capa tiene que deshacer la seleccion entera, no solo taparla: si
  * solo se ocultaba, el ano seguia marcado en la rejilla y la URL seguia
  * apuntando a el, asi que recargar o compartir devolvia a la ficha cerrada. */
-function closeDetail() {
-  if (!document.body.classList.contains("detail-open")) return;
+/* Cierre "logico": limpia el estado sin tocar el historial. Lo usa popstate,
+ * donde el navegador ya ha retrocedido por su cuenta. */
+function clearSelection() {
   document.body.classList.remove("detail-open");
   state.selection = null;
-  history.replaceState(null, "", location.pathname + location.search);
   renderIndex();
   renderDetail();
+}
+
+function closeDetail() {
+  if (!state.selection) return;
+  // Si la ficha metio una entrada en el historial, la X retrocede: asi el boton
+  // atras y la X dejan el historial igual y no se acumulan estados muertos.
+  if (location.hash) {
+    history.back();
+    return;
+  }
+  clearSelection();
 }
 
 function resetToStart() {
@@ -2196,7 +2224,7 @@ function resetToStart() {
   els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
   state.sort = { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } };
   state.openDecade = null;
-  closeDetail();
+  clearSelection();
   setMode("editions");
   applyFilters();
   state.selection = null;
@@ -2348,9 +2376,12 @@ function bindEvents() {
     else if (target.dataset.float) select("float", target.dataset.float);
   });
 
-  window.addEventListener("hashchange", () => {
+  // popstate cubre el boton atras del navegador y el gesto de deslizar del
+  // movil. Sin hash es que hemos vuelto al indice: se cierra la ficha.
+  window.addEventListener("popstate", () => {
     const selection = readHash();
     if (selection) select(selection.kind, selection.id, { updateHash: false });
+    else clearSelection();
   });
 }
 

@@ -849,7 +849,12 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .pane { max-height: none; }
   .pane-body { overflow-y: visible; max-height: none; }
   .controls { margin-left: 0; width: 100%; }
-  .controls input[type="search"] { flex: 1; width: auto; min-width: 140px; }
+  /* Los tres en una linea: el buscador cede el ancho que haga falta. Con
+     min-width 140 no cabia "Limpiar" y se caia a una segunda fila. */
+  .controls { flex-wrap: nowrap; gap: 5px; }
+  .controls input[type="search"] { flex: 1 1 90px; width: auto; min-width: 0; }
+  .controls select { flex: 0 1 auto; min-width: 0; }
+  .controls .ghost { flex: none; }
 
   /* Décadas plegables. Cerradas fluyen como fichas, cuatro o cinco por línea,
      con forma distinta a los años para que no se confundan: pastilla con tinte,
@@ -915,6 +920,22 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 
 /* Marca de dato sin aclarar: visible pero discreta, no una alarma. El dato es
  * bueno, solo que hay algo que no cuadra y se dice. */
+/* Copa dorada sobre la miniatura de las ganadoras. Encima de la foto y no al
+ * lado del nombre: en la cuadricula lo que se mira es la imagen. */
+.win-badge {
+  position: absolute; top: 5px; left: 5px; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(255, 252, 245, 0.94); box-shadow: 0 1px 3px rgba(34, 23, 22, 0.28);
+}
+.win-badge .kpi-icon { width: 12px; height: 12px; fill: var(--gold); }
+.win-badge.inline {
+  position: static; width: 14px; height: 14px; margin-right: 4px;
+  background: none; box-shadow: none; vertical-align: -2px;
+}
+.win-badge.inline .kpi-icon { width: 11px; height: 11px; }
+.tile { position: relative; }
+
 /* Un circulito ambar con interrogacion. Ambar y no rojo a proposito: el dato
  * no esta mal, esta sin confirmar, y el rojo se lee como error. */
 .review-mark {
@@ -1037,5 +1058,7 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
   .report input[type="text"], .report input:not([type]), .report input[type="email"],
   .report textarea,
   .controls input[type="search"], .controls select { font-size: 16px; }
-  .controls input[type="search"] { width: 100%; min-width: 0; flex: 1 1 auto; }
+  /* Solo el tamano de letra. El ancho lo gobierna la regla de arriba
+     (flex:1, min-width:140px): con width:100% el buscador ocupaba la linea
+     entera y mandaba el selector y "Limpiar" a la siguiente. */
 }
