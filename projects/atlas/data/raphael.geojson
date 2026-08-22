@@ -63,7 +63,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pinacoteca-comunale"
+    "museum_id": "pinacoteca-comunale",
+    "country": "Italy"
    }
   },
   {
@@ -93,7 +94,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pinacoteca-comunale"
+    "museum_id": "pinacoteca-comunale",
+    "country": "Italy"
    }
   },
   {
@@ -127,7 +129,8 @@
     "museum_id": "pinacoteca-comunale",
     "qid": "Q1778000",
     "wikidata": "https://www.wikidata.org/wiki/Q1778000",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
+    "country": "Italy"
    }
   },
   {
@@ -2374,16 +2377,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "1508: Esterhazy Madonna",
     "year": "1508",
-    "city": "Montréal",
-    "country": "Hungary",
+    "city": "Boston",
+    "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Tempera and oil on panel 28,5 × 21,5",
@@ -3098,15 +3101,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.0061,
-     40.7128
+     -0.5968,
+     51.9831
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "1513: Madonna of Leo X",
     "year": "1513",
-    "city": "New York City",
+    "city": "Woburn Abbey",
     "location": "Private collection",
     "attribution": "generally accepted",
     "medium": "Oil on canvas 119 x 82,5",
@@ -3406,8 +3409,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.35333,
-     44.49778
+     11.35354,
+     44.49771
     ]
    },
    "properties": {

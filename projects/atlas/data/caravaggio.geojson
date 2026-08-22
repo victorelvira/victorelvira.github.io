@@ -534,7 +534,7 @@
     "country": "United Kingdom",
     "location": "Weston Park",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "127 × 165.1 cm",
@@ -550,6 +550,11 @@
       "at": "2026-08-18",
       "source": "manual geocoding",
       "note": "Weston Park — civil parish name normalised"
+     },
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia: List of paintings by Caravaggio (2026)",
+      "note": "The Calling of Saints Peter and Andrew — 'generally accepted addition', authenticated & restored 2006"
      }
     },
     "museum_id": "weston-park",
@@ -674,7 +679,7 @@
     "country": "Italy",
     "location": "Fondazione Roberto Longhi",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "62 × 52 cm",
@@ -693,6 +698,11 @@
      "creation": {
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia: List of paintings by Caravaggio (2026)",
+      "note": "Boy Bitten by a Lizard — accepted autograph in the main table"
      }
     },
     "museum_id": "fondazione-roberto-longhi",
@@ -1918,8 +1928,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.7033,
-     40.4169
+     -3.71545,
+     40.4157
     ]
    },
    "properties": {
@@ -3689,15 +3699,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.46659,
-     41.89333
+     12,
+     43
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "Saint John the Baptist",
     "year": "1604",
-    "city": "Rome",
+    "city": "Italy",
     "country": "Italy",
     "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "kind": "museum",
@@ -3947,7 +3957,7 @@
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "135.5 × 169.5 cm",
@@ -3971,6 +3981,11 @@
      "creation": {
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia: List of paintings by Caravaggio (2026)",
+      "note": "The Taking of Christ (Dublin) — main accepted table; the famous 1990 rediscovery"
      }
     },
     "museum_id": "national-gallery-of-ireland",
@@ -3995,7 +4010,7 @@
     "country": "Russia",
     "location": "Hermitage Museum",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "94 × 119 cm",
@@ -4013,6 +4028,11 @@
      "creation": {
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia: List of paintings by Caravaggio (2026)",
+      "note": "The Lute Player (Hermitage) — accepted autograph version"
      }
     },
     "museum_id": "hermitage-museum",
@@ -4037,7 +4057,7 @@
     "country": "United States",
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "100 × 126.5 cm",
@@ -4060,6 +4080,11 @@
      "creation": {
       "at": "2026-08-18",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia: List of paintings by Caravaggio (2026)",
+      "note": "The Lute Player (Metropolitan Museum) — accepted autograph version"
      }
     },
     "museum_id": "metropolitan-museum-of-art",

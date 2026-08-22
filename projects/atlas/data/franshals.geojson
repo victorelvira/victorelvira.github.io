@@ -2931,7 +2931,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "woburn-abbey"
+    "museum_id": "woburn-abbey",
+    "city": "England"
    }
   },
   {
@@ -3540,15 +3541,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of an unknown woman",
     "year": "1640",
-    "city": "Montréal",
+    "city": "Boston",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "dimensions": "85.2 × 68.1 cm",
@@ -3561,7 +3562,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
@@ -4514,7 +4516,8 @@
     "museum_id": "museum-catharijneconvent",
     "city": "Utrecht",
     "qid": "Q15429540",
-    "wikidata": "https://www.wikidata.org/wiki/Q15429540"
+    "wikidata": "https://www.wikidata.org/wiki/Q15429540",
+    "country": "Netherlands"
    }
   },
   {
@@ -4551,15 +4554,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a woman",
     "year": "1650",
-    "city": "Montréal",
+    "city": "Boston",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "dimensions": "84.6 x 69.2 cm",
@@ -4573,7 +4576,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/03portwo.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/03portwo.html",
+    "country": "United States"
    }
   },
   {
@@ -5391,7 +5395,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of a Seated Man",
     "year": "1660–1666",
-    "location": "Musée Jacquemart-André",
+    "location": "Musée Jacquemart André",
     "attribution": "generally accepted",
     "dimensions": "69 x 60.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Frans_Hals_-_Portrait_d%E2%80%99homme.jpg/500px-Frans_Hals_-_Portrait_d%E2%80%99homme.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",

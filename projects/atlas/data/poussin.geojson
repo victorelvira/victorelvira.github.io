@@ -44,7 +44,7 @@
     "year": "1622",
     "city": "Lyon",
     "location": "musée des beaux-arts",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "dimensions": "109,5 x 159,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nicolas_Poussin-La_Mort_de_Chion%C3%A9.jpg/500px-Nicolas_Poussin-La_Mort_de_Chion%C3%A9.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -55,7 +55,16 @@
     },
     "museum_id": "musee-des-beaux-arts-2",
     "qid": "Q29784132",
-    "wikidata": "https://www.wikidata.org/wiki/Q29784132"
+    "wikidata": "https://www.wikidata.org/wiki/Q29784132",
+    "attribution_note": "Wikipedia: 'executed in 1622 by Nicolas Poussin, his first known surviving work'; acquired by the Musee des Beaux-Arts de Lyon in 2016. Undisputed autograph.",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia article (read 2026-08-22)",
+      "note": "Wikipedia: 'executed in 1622 by Nicolas Poussin, his first known surviving work'; acquired by the Musee des Beaux-Arts de Lyon in 2016. Undisputed autograph."
+     }
+    },
+    "country": "France"
    }
   },
   {
@@ -1264,7 +1273,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-fesch"
+    "museum_id": "musee-fesch",
+    "country": "France"
    }
   },
   {
@@ -1676,15 +1686,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Mars and Venus",
     "year": "1628–1630 c.",
-    "city": "Montréal",
+    "city": "Boston",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -1821,7 +1831,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -2508,15 +2519,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Landscape with a man frightened by a snake",
     "year": "1633–1635 c.",
-    "city": "Montréal",
+    "city": "Boston",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "dimensions": "65 x 76 cm",
@@ -2529,7 +2540,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
@@ -2838,7 +2850,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "country": "United States"
    }
   },
   {
@@ -4904,15 +4917,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Achilles on Skyros or Achilles among the daughters of Lycomedes",
     "year": "1651–c. 1653",
-    "city": "Montréal",
+    "city": "Boston",
     "country": "United States",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
@@ -5499,7 +5512,8 @@
     },
     "museum_id": "musee-des-beaux-arts-2",
     "qid": "Q970808",
-    "wikidata": "https://www.wikidata.org/wiki/Q970808"
+    "wikidata": "https://www.wikidata.org/wiki/Q970808",
+    "country": "France"
    }
   },
   {

@@ -4223,8 +4223,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1275,
-     51.50722
+     -0.12779,
+     51.49106
     ]
    },
    "properties": {
@@ -4707,7 +4707,7 @@
     "country": "United Kingdom",
     "location": "Barber Institute of Fine Arts",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
     "dimensions": "107.3 × 73.7 cm",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Degas%2C%20Jockeys%20Before%20the%20Race.jpg?width=420",
@@ -4721,10 +4721,16 @@
      "creation": {
       "at": "2026-08-20",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-22",
+      "source": "Wikipedia article (read 2026-08-22)",
+      "note": "Wikipedia: '1879 genre painting by the French artist Edgar Degas'; shown at the 4th Impressionist exhibition; Barber Institute, Birmingham. Undisputed autograph — was mislabelled because its sitelink wasn't captured."
      }
     },
     "museum_id": "barber-institute-of-fine-arts",
-    "qid": "Q80989450"
+    "qid": "Q80989450",
+    "attribution_note": "Wikipedia: '1879 genre painting by the French artist Edgar Degas'; shown at the 4th Impressionist exhibition; Barber Institute, Birmingham. Undisputed autograph — was mislabelled because its sitelink wasn't captured."
    }
   },
   {

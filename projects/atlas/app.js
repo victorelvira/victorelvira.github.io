@@ -67,9 +67,25 @@ const PAINTERS = [
   { slug: "picasso", name: "Pablo Picasso", file: "atlas/data/picasso.geojson" },
   { slug: "frida", name: "Frida Kahlo", file: "atlas/data/frida.geojson" },
   { slug: "rivera", name: "Diego Rivera", file: "atlas/data/rivera.geojson" },
+  { slug: "turner", name: "J.M.W. Turner", file: "atlas/data/turner.geojson" },
+  { slug: "bellini", name: "Giovanni Bellini", file: "atlas/data/bellini.geojson" },
+  { slug: "friedrich", name: "Caspar David Friedrich", file: "atlas/data/friedrich.geojson" },
+  { slug: "canaletto", name: "Canaletto", file: "atlas/data/canaletto.geojson" },
+  { slug: "delacroix", name: "Eugène Delacroix", file: "atlas/data/delacroix.geojson" },
+  { slug: "tiepolo", name: "Giovanni Battista Tiepolo", file: "atlas/data/tiepolo.geojson" },
+  { slug: "uccello", name: "Paolo Uccello", file: "atlas/data/uccello.geojson" },
+  { slug: "lippi", name: "Fra Filippo Lippi", file: "atlas/data/lippi.geojson" },
+  { slug: "perugino", name: "Pietro Perugino", file: "atlas/data/perugino.geojson" },
+  { slug: "bronzino", name: "Bronzino", file: "atlas/data/bronzino.geojson" },
+  { slug: "carracci", name: "Annibale Carracci", file: "atlas/data/carracci.geojson" },
+  { slug: "reni", name: "Guido Reni", file: "atlas/data/reni.geojson" },
+  { slug: "guardi", name: "Francesco Guardi", file: "atlas/data/guardi.geojson" },
+  { slug: "zuloaga", name: "Ignacio Zuloaga", file: "atlas/data/zuloaga.geojson" },
+  { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
+  { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.34.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 13:20";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.35.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 15:30";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -130,6 +146,8 @@ const PALETTE = [
   "#b08a2f", "#2f5f8f", "#8a2f6a", "#5f8a2f", "#2f8a8a", "#8a5f2f", "#6a2f8a", "#2f8a5f",
   "#a03f6a", "#3f6a3f", "#6a3f3f", "#3f3f6a", "#6a6a2f", "#2f6a6a", "#8f7a5a", "#5a5a8f",
   "#b0692f", "#2f8fb0", "#7a9c3f", "#9c3f7a", "#3f9c7a", "#9c6a3f", "#5f3f9c", "#3f7a9c",
+  "#6a8f4a", "#b0417a", "#417a8f", "#8f6a41", "#7a41b0", "#41a06a", "#a0552f", "#4a6a8f",
+  "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a",
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -171,6 +189,13 @@ const ERA_OF = {
   manet: "5", monet: "5", renoir: "5", degas: "5", pissarro: "5", cezanne: ["5", "6"],  // Post-Imp ↔ Modern
   vangogh: "5", gauguin: "5", seurat: "5", sorolla: "5",
   picasso: "6", frida: "6", rivera: "6",
+  // added 2026-08-22
+  uccello: "1", lippi: "1", perugino: "1", bellini: "1",
+  bronzino: "2",
+  carracci: "3", reni: "3",
+  canaletto: "4", tiepolo: "4", guardi: "4", turner: "4", friedrich: "4", delacroix: "4",
+  zuloaga: "5",
+  dali: "6", miro: "6",
 };
 const erasOf = slug => [].concat(ERA_OF[slug] || []);
 
@@ -178,7 +203,7 @@ const erasOf = slug => [].concat(ERA_OF[slug] || []);
 const SCHOOLS = [
   { key: "it", label: "Italian" }, { key: "es", label: "Spanish" }, { key: "fr", label: "French" },
   { key: "nl", label: "Dutch" }, { key: "fl", label: "Flemish / Netherlandish" },
-  { key: "de", label: "German" }, { key: "mx", label: "Mexican" },
+  { key: "de", label: "German" }, { key: "en", label: "English" }, { key: "mx", label: "Mexican" },
 ];
 const SCHOOL_OF = {
   duccio: "it", giotto: "it", masaccio: "it", fraangelico: "it", piero: "it", botticelli: "it",
@@ -193,6 +218,10 @@ const SCHOOL_OF = {
   vaneyck: "fl", weyden: "fl", memling: "fl", bosch: "fl", bruegel: "fl", rubens: "fl", vandyck: "fl",
   durer: "de", cranach: "de", holbein: "de",
   frida: "mx", rivera: "mx",
+  // added 2026-08-22
+  bellini: "it", canaletto: "it", tiepolo: "it", uccello: "it", lippi: "it", perugino: "it",
+  bronzino: "it", carracci: "it", reni: "it", guardi: "it",
+  turner: "en", friedrich: "de", delacroix: "fr", zuloaga: "es", dali: "es", miro: "es",
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 
@@ -208,6 +237,10 @@ const BORN = {
   zurbaran: 1598, ribera: 1591, murillo: 1617, rembrandt: 1606, vermeer: 1632, goya: 1746,
   david: 1748, pissarro: 1830, manet: 1832, degas: 1834, cezanne: 1839, monet: 1840, renoir: 1841,
   gauguin: 1848, vangogh: 1853, seurat: 1859, sorolla: 1863, picasso: 1881, rivera: 1886, frida: 1907,
+  // added 2026-08-22
+  uccello: 1397, lippi: 1406, bellini: 1430, perugino: 1448, bronzino: 1503, carracci: 1560,
+  reni: 1575, tiepolo: 1696, canaletto: 1697, guardi: 1712, friedrich: 1774, turner: 1775,
+  delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904,
 };
 const bornOf = slug => BORN[slug] || 9999;
 let painterGroupBy = "period";   // "period" | "school"
@@ -321,8 +354,10 @@ function esc(s) {
 
 // subtle "?" for a disputed attribution (a scholarly nuance, not an error → not a warning ⚠)
 function disputedMark(p) {
-  return (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
-    ? ` <span class="qm" title="Disputed attribution">?</span>` : "";
+  if (!p.attribution || ATTR_ACCEPTED.has(p.attribution)) return "";
+  // show WHY when we have a recorded reason, else the generic label
+  const why = p.attribution_note || `${p.attribution} attribution`;
+  return ` <span class="qm" title="${esc(why)}">?</span>`;
 }
 
 // small painter tag: coloured dot + name (works belong to different painters now)

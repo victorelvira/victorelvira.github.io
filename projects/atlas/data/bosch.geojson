@@ -767,7 +767,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-trust",
-    "wga_url": "https://www.wga.hu/html/b/bosch/91adorat/11centre.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/91adorat/11centre.html",
+    "country": "United Kingdom"
    }
   },
   {
@@ -845,15 +846,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "Christ Carrying the Cross (Ghent)",
     "year": "c. 1530–1540",
-    "city": "Montréal",
+    "city": "Boston",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
@@ -867,7 +868,8 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q680128",
-    "wikidata": "https://www.wikidata.org/wiki/Q680128"
+    "wikidata": "https://www.wikidata.org/wiki/Q680128",
+    "country": "United States"
    }
   },
   {
@@ -875,8 +877,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.71417,
-     40.41806
+     -3.71431,
+     40.41795
     ]
    },
    "properties": {
@@ -885,7 +887,7 @@
     "year": "c. 1495–1505",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Palacio Real",
+    "location": "Royal Palace of Madrid",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "150 × 94 cm",
@@ -899,7 +901,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "palacio-real",
+    "museum_id": "royal-palace-of-madrid",
     "qid": "Q2328603",
     "wikidata": "https://www.wikidata.org/wiki/Q2328603",
     "wga_url": "https://www.wga.hu/html/b/bosch/5panels/14carryi.html"
@@ -1107,15 +1109,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "St. Jerome at Prayer",
     "year": "c. 1485–1495",
-    "city": "Montréal",
+    "city": "Boston",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
@@ -1133,7 +1135,8 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q2566840",
     "wikidata": "https://www.wikidata.org/wiki/Q2566840",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/09jerome.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/09jerome.html",
+    "country": "United States"
    }
   },
   {

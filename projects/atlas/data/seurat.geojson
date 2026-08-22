@@ -949,7 +949,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hiroshima-museum-of-art"
+    "museum_id": "hiroshima-museum-of-art",
+    "city": "Motomachi",
+    "country": "Japan"
    }
   },
   {
@@ -2606,15 +2608,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.83,
-     47.10278
+     6.02,
+     47.24
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "1886 The Beach of Bas-Butin, Honfleur",
     "year": "1886 The Beach of Bas-Butin, Honfleur",
-    "city": "La Chaux-de-Fonds",
+    "city": "Besançon",
     "location": "Musée des Beaux-Arts",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Seurat_-_Der_Strand_Le_Bas_Butin_bei_Honfleur_-_1886.jpeg/500px-Seurat_-_Der_Strand_Le_Bas_Butin_bei_Honfleur_-_1886.jpeg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3039,7 +3041,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "minneapolis-institute-of-art",
-    "city": "Minneapolis"
+    "city": "Minneapolis",
+    "country": "United States"
    }
   },
   {
@@ -3248,15 +3251,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.55417,
-     45.50889
+     -71.05778,
+     42.36028
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "1889 Study for Young Woman Powdering Herself",
     "year": "1889 Study for Young Woman Powdering Herself",
-    "city": "Montréal",
+    "city": "Boston",
     "location": "Museum of Fine Arts",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Georges_Seurat_-_Young_Woman_Powdering_Herself_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_Young_Woman_Powdering_Herself_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3268,7 +3271,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "country": "United States"
    }
   },
   {
