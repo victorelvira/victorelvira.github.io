@@ -978,6 +978,17 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .open-list li { margin-bottom: 3px; }
 .open-list b { color: var(--ink); font-weight: 600; }
 
+/* Boton compacto al final de cada linea. Con 37 lineas, uno del tamano normal
+ * competiria con el texto; asi se ve pero no manda. */
+.ask {
+  display: inline-flex; align-items: center; gap: 3px; margin-left: 5px;
+  padding: 1px 7px 1px 5px; cursor: pointer; white-space: nowrap;
+  border: 1px solid #e0c489; border-radius: 999px;
+  background: #fdf7ea; color: #8a5f10; font: inherit; font-size: 11px;
+}
+.ask:hover { background: #f7e0ad; border-color: #d9a441; }
+.ask svg { width: 9px; height: 9px; fill: #b8862a; }
+
 /* Rachas: el numero manda, el resto acompana. */
 .streaks { list-style: none; margin: 2px 0 10px; padding: 0; }
 .streaks li {

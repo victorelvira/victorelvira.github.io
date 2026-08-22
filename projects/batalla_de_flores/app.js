@@ -847,6 +847,13 @@ function openQuestions() {
 /* Pestana propia, no un apendice de Estadisticas: que un archivo diga lo que no
  * sabe es la parte que lo separa de un listado, y enterrada al final no la ve
  * nadie. */
+/* Boton por linea, no uno global: el aviso llega con la pregunta concreta ya
+ * puesta, asi que quien responde no tiene que explicar de que hablaba. */
+function askButton(id, label) {
+  return `<button class="ask" type="button" data-ask="${esc(id)}" data-ask-label="${esc(label)}"
+    title="¿Conoces el dato?">${ICON_FLAG}<span>¿lo sabes?</span></button>`;
+}
+
 function renderPendingTab() {
   const q = openQuestions();
   const total = q.disputed.length + q.conflicting.length + q.incomplete.length + q.noPalmares.length;
@@ -862,37 +869,40 @@ function renderPendingTab() {
 
   els.indexBody.innerHTML = `
     <div class="stats-block">
-      <p class="chart-note">Este archivo no está terminado, y prefiere decirlo. Aquí está todo lo
-      que sabemos que falta o que no cuadra. Si conoces la respuesta a alguno,
-      <button class="link t-float" type="button" id="open-report-from-stats">avísanos</button>.</p>
+      <p class="chart-note">Este archivo no está terminado. Aquí está todo lo que sabemos que falta
+      o que no cuadra. Si conoces la respuesta a alguno, dínoslo con el botón de su línea.</p>
 
       <div class="open-block">
         <h4>🏆 Carrocistas repartidos entre varios nombres</h4>
-        <p class="open-note">Los rankings de esta página cuentan <b>grupos</b>, que es lo único que
-        dicen las fuentes: el nombre con el que se inscribió cada carroza. Pero una persona con
-        cincuenta años de trayectoria cambia de socios, se asocia y se separa, y aparece repartida
-        entre nombres distintos. <b>El caso claro es José Antonio «Toñi» Quintana</b>, a quien la
-        Wikipedia atribuye 21 victorias y que aquí sale troceado en trece nombres —solo, con su
-        hermano, con Ángel Sainz y con Transportes Maritina—, así que <b>no encabeza ningún ranking
-        pese a ser el más laureado de la historia</b>. Le pasa a más gente. Reunir esas trayectorias
-        pide un dato que no está escrito en ninguna fuente y sí en la memoria de los carrocistas:
-        qué nombres corresponden a qué persona.</p>
+        <p class="open-note">Los rankings de esta página cuentan grupos, que es lo único que dicen
+        las fuentes: el nombre con el que se inscribió cada carroza. Pero una persona con cincuenta
+        años de trayectoria cambia de socios, se asocia y se separa, y aparece repartida entre
+        nombres distintos. El caso claro es José Antonio «Toñi» Quintana, a quien la Wikipedia
+        atribuye 21 victorias y que aquí sale troceado en trece nombres —solo, con su hermano, con
+        Ángel Sainz y con Transportes Maritina—, así que no encabeza ningún ranking pese a ser el
+        más laureado de la historia. Le pasa a más gente. Reunir esas trayectorias pide un dato que
+        no está escrito en ninguna fuente y sí en la memoria de los carrocistas: qué nombres
+        corresponden a qué persona.</p>
+        <p><button class="pill know" type="button" data-ask="carrocistas"
+          data-ask-label="Carrocistas repartidos entre varios nombres">${ICON_FLAG}¿Conoces el dato?</button></p>
       </div>
 
-        ${bloque("🏷️", "Carrozas con dos grupos distintos", q.disputed, row => `
-          <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
-            <b>${esc(row.name)}</b> — ${esc(row.reason.replace("El archivo atribuye esta carroza a dos grupos: ", ""))}</li>`)}
-        ${bloque("↕️", "Puestos en los que las fuentes no coinciden", q.conflicting, row => `
-          <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
-            <b>${esc(row.name)}</b> — ${esc(row.reason.replace("Las fuentes no coinciden en el puesto: ", ""))}</li>`)}
-        ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
-          <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
-            ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}</li>`)}
-        ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
-          <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
-            ${esc(edition.notes?.[0] || "No se ha localizado la clasificación.")}</li>`)}
-
-
+      ${bloque("🏷️", "Carrozas con dos grupos distintos", q.disputed, row => `
+        <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+          ${esc(row.name)} — ${esc(row.reason.replace("El archivo atribuye esta carroza a dos grupos: ", ""))}
+          ${askButton(`year:${row.year}`, `${row.year} · ${row.name} · atribución`)}</li>`)}
+      ${bloque("↕️", "Puestos en los que las fuentes no coinciden", q.conflicting, row => `
+        <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+          ${esc(row.name)} — ${esc(row.reason.replace("Las fuentes no coinciden en el puesto: ", ""))}
+          ${askButton(`year:${row.year}`, `${row.year} · ${row.name} · puesto`)}</li>`)}
+      ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
+        <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+          ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}
+          ${askButton(`year:${edition.year}`, `Edición ${edition.year} · faltan carrozas`)}</li>`)}
+      ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
+        <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+          ${esc(edition.notes?.[0] || "No se ha localizado la clasificación.")}
+          ${askButton(`year:${edition.year}`, `Edición ${edition.year} · sin palmarés`)}</li>`)}
     </div>`;
 }
 
@@ -2061,8 +2071,8 @@ function reportContext() {
   return { label: `${kinds[selection.kind] || ""} ${heading}`.trim(), id: `${selection.kind}:${selection.id}` };
 }
 
-function openReport() {
-  const context = reportContext();
+function openReport(override) {
+  const context = override || reportContext();
   document.getElementById("report-ctx").textContent = `Sobre: ${context.label}`;
   document.getElementById("report-ficha").value = context.id;
   document.getElementById("report-url").value = location.href;
@@ -2342,6 +2352,11 @@ function bindEvents() {
       return;
     }
 
+    const ask = event.target.closest("[data-ask]");
+    if (ask) {
+      openReport({ id: ask.dataset.ask, label: ask.dataset.askLabel });
+      return;
+    }
     if (event.target.closest("#open-report-from-stats, #open-report-from-float, #open-report-from-edition")) { openReport(); return; }
 
     const statsZoom = event.target.closest("[data-stats-zoom]");
