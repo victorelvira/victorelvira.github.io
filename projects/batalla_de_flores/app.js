@@ -502,7 +502,7 @@ function renderFloatList() {
         const active = state.selection?.kind === "float" && state.selection.id === entry.id;
         return `
           <button class="row row-float${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
-            <span class="row-name">${esc(entry.name)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
+            <span class="row-name">${esc(entry.name)}${reviewMark(entry)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
             <span class="col-grp">${esc(entry.group_canonical || "–")}</span>
             <span class="col-num">${entry.year}</span>
             <span class="col-num col-cat">${entry.category ? esc(entry.category) : "única"}</span>
@@ -741,6 +741,46 @@ function prizeByYear(field) {
   return [...years.entries()].sort((a, b) => b[0] - a[0]);
 }
 
+/* Rachas de victorias. "Victoria" = 1.er puesto de la lista unica (hasta 2010)
+ * o de la categoria A: son la misma competicion en dos epocas, y la B es otra.
+ *
+ * Se cuentan ediciones consecutivas, no anos consecutivos: hubo guerras y anos
+ * sin fiesta, y encadenar 1935 con 1940 es ganar dos veces seguidas aunque
+ * medien cinco anos. Contar anos naturales penalizaria por algo ajeno. */
+function winStreaks(limit = 8) {
+  const held = state.editions
+    .filter(edition => (edition.floats || []).some(entry => entry.position != null))
+    .sort((a, b) => a.year - b.year);
+  const order = new Map(held.map((edition, index) => [edition.year, index]));
+
+  const wins = new Map();
+  held.forEach(edition => {
+    (edition.floats || []).forEach(entry => {
+      const main = entry.category == null || entry.category === "" || entry.category === "A";
+      if (entry.position !== 1 || !main || !entry.group_canonical) return;
+      if (!wins.has(entry.group_canonical)) wins.set(entry.group_canonical, new Set());
+      wins.get(entry.group_canonical).add(edition.year);
+    });
+  });
+
+  const rows = [];
+  wins.forEach((years, group) => {
+    const sorted = [...years].sort((a, b) => a - b);
+    let best = [sorted[0]];
+    let run = [sorted[0]];
+    sorted.slice(1).forEach(year => {
+      run = order.get(year) === order.get(run[run.length - 1]) + 1 ? [...run, year] : [year];
+      if (run.length > best.length) best = run;
+    });
+    rows.push({ group, length: best.length, from: best[0], to: best[best.length - 1] });
+  });
+
+  return rows
+    .filter(row => row.length >= 3)
+    .sort((a, b) => b.length - a.length || a.from - b.from)
+    .slice(0, limit);
+}
+
 /* Quien acumula mas premios. Cuenta por grupo, no por carroza: lo interesante
  * es que Grupo Pejino gane vestidos tres veces, no con que alegoria. */
 function prizeRanking(field, { onlyFirst }) {
@@ -772,6 +812,33 @@ function prizeCell(entry) {
   if (!entry) return '<span class="muted-val">–</span>';
   return `<button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>
     <small class="cell-sub">${esc(entry.group_canonical || "")}</small>`;
+}
+
+/* Inventario de lo que no sabemos. Va en Estadisticas con el mismo rango que
+ * el resto: un archivo que solo ensena lo que tiene tapa sus huecos. */
+function openQuestions() {
+  const disputed = [];
+  const conflicting = [];
+  state.editions.forEach(edition => {
+    (edition.floats || []).forEach(entry => {
+      (entry.needs_review || []).forEach(reason => {
+        const row = { year: edition.year, name: entry.name, reason, id: entry.id };
+        // Una atribucion en disputa marca las DOS entradas, pero es un solo caso:
+        // listarlo dos veces doblaria el recuento y daria sensacion de caos.
+        const target = reason.startsWith("El archivo atribuye") ? disputed : conflicting;
+        if (!target.some(other => other.year === row.year && other.reason === row.reason)) {
+          target.push(row);
+        }
+      });
+    });
+  });
+
+  const incomplete = state.editions.filter(edition =>
+    (edition.notes || []).some(note => note.includes("faltan al menos")));
+  const noPalmares = state.editions.filter(edition =>
+    edition.status === "published" && !(edition.floats || []).some(entry => entry.position != null));
+
+  return { disputed, conflicting, incomplete, noPalmares };
 }
 
 function renderStatsTab() {
@@ -839,6 +906,46 @@ function renderStatsTab() {
       </div>
       ${chartCareers(category)}
 
+      <h3 class="section">❓ Lo que queda por resolver</h3>
+      <p class="chart-note">Este archivo no está terminado, y prefiere decirlo. Aquí está todo lo
+      que sabemos que falta o que no cuadra. Si conoces la respuesta a alguno,
+      <button class="link t-float" type="button" id="open-report-from-stats">avísanos</button>.</p>
+      ${(() => {
+        const q = openQuestions();
+        const bloque = (icono, titulo, filas, pinta) => filas.length ? `
+          <div class="open-block">
+            <h4>${icono} ${titulo} <span class="open-count">${filas.length}</span></h4>
+            <ul class="open-list">${filas.map(pinta).join("")}</ul>
+          </div>` : "";
+        return `
+          ${bloque("🏷️", "Carrozas con dos grupos distintos", q.disputed, row => `
+            <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+              <b>${esc(row.name)}</b> — ${esc(row.reason.replace("El archivo atribuye esta carroza a dos grupos: ", ""))}</li>`)}
+          ${bloque("↕️", "Puestos en los que las fuentes no coinciden", q.conflicting, row => `
+            <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+              <b>${esc(row.name)}</b> — ${esc(row.reason.replace("Las fuentes no coinciden en el puesto: ", ""))}</li>`)}
+          ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
+            <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+              ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}</li>`)}
+          ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
+            <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+              ${esc(edition.notes?.[0] || "No se ha localizado la clasificación.")}</li>`)}`;
+      })()}
+
+      <h3 class="section">🔥 Rachas de victorias</h3>
+      <p class="chart-note">Ediciones ganadas seguidas. Cuenta el 1.<sup>er</sup> puesto de la lista
+      única hasta ${CATEGORIES_FROM - 1} y el de la <b>categoría A</b> desde entonces: son la misma
+      competición en dos épocas. Se miden <b>ediciones consecutivas</b>, no años: hubo guerras y años
+      sin fiesta, y encadenar dos ediciones es ganarlas seguidas aunque medien cinco años.</p>
+      <ol class="streaks">
+        ${winStreaks().map((row, index) => `
+          <li${index ? "" : ' class="top"'}>
+            <span class="streak-n">${row.length}</span>
+            <button class="link t-group" type="button" data-group="${esc(slugifyGroup(row.group))}">${esc(row.group)}</button>
+            <span class="streak-years">${row.from}–${row.to}</span>
+          </li>`).join("")}
+      </ol>
+
       <h3 class="section">Premios especiales</h3>
       <p class="chart-note">Aparte de la clasificación del desfile. <b>👗 Vestidos</b> lo puntúa el
       jurado; <b>🎨 Arte</b> lo concede ACELAR, la asociación de comerciantes de Laredo, desde 2009,
@@ -869,7 +976,7 @@ function renderStatsTab() {
             .sort((a, b) => b.year - a.year || a.name.localeCompare(b.name)).map(entry => `
             <tr>
               <td class="pos"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
-              <td class="name"><button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button></td>
+              <td class="name"><button class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>${reviewMark(entry)}</td>
               <td class="group">${entry.group_canonical
                 ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
                 : "–"}</td>
@@ -1179,6 +1286,15 @@ function positionSortKey(entry) {
  *  - Vestidos: lo puntua el jurado (650/430/320 € segun las bases).
  *  - Arte: lo concede ACELAR, la asociacion de comerciantes, desde 2009. El
  *    trofeo es una obra de un artista laredano elegida en su propio concurso. */
+/* Un dato en duda se publica igual, pero diciendolo. La alternativa -elegir
+ * una version en silencio- da una pagina mas limpia y menos cierta. */
+function reviewMark(entry) {
+  const reasons = entry.needs_review || [];
+  if (!reasons.length) return "";
+  return `<sup class="review-mark" data-tip="${esc(reasons.join(" · "))}"
+    title="Dato sin aclarar">?</sup>`;
+}
+
 function prizeChips(entry) {
   const prizes = [];
   if (entry.prize_costumes_rank) prizes.push(`👗 Vestidos ${entry.prize_costumes_rank}.º`);
@@ -1298,7 +1414,7 @@ function renderEditionDetail(edition) {
                 : ""}</td>` : ""}
               <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.position === 1
                 ? `${ICON_TROPHY}` : ""}${cats.length > 1 || !entry.category ? "" : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
-              <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${prizeChips(entry)
+              <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${reviewMark(entry)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
                 ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
@@ -1435,9 +1551,15 @@ function renderFloatDetail(entry) {
 
   els.detail.innerHTML = `
     <div class="detail-head">
-      <h2 style="font-size:22px">${esc(entry.name)}</h2>
+      <h2 style="font-size:22px">${esc(entry.name)}${reviewMark(entry)}</h2>
     </div>
     <div class="chips">${shareButton()}</div>
+    ${(entry.needs_review || []).length ? `<div class="review-box">
+      <b>Dato sin aclarar</b>
+      <ul>${entry.needs_review.map(reason => `<li>${esc(reason)}</li>`).join("")}</ul>
+      <p>Si sabes cuál es la versión buena, <button class="link t-float" type="button"
+         id="open-report-from-float">cuéntanoslo</button>.</p>
+    </div>` : ""}
 
     <dl class="facts">
       <div><dt>Año</dt><dd>
@@ -2148,6 +2270,8 @@ function bindEvents() {
       renderStatsTab();
       return;
     }
+
+    if (event.target.closest("#open-report-from-stats, #open-report-from-float")) { openReport(); return; }
 
     const statsZoom = event.target.closest("[data-stats-zoom]");
     if (statsZoom) {
