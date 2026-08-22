@@ -575,7 +575,22 @@ function makeScale({ from, to, width, left, right = CHART.padR }) {
   return year => left + ((year - from) / (to - from || 1)) * (width - left - right);
 }
 
-function yearAxis(scale, { from, to, step, height }) {
+/* El paso del eje X se calcula, no se fija: se pinta un ano de cada N, siendo N
+ * el menor paso "redondo" que deje los rotulos separados al menos `minGap`.
+ * Asi salen todos los anos cuando caben, y solo se ralean cuando se tocarian.
+ * Se mide en unidades del viewBox, que es donde vive tambien el tamano de letra:
+ * al encoger el SVG encogen los dos a la vez, asi que la cuenta sigue valiendo. */
+const YEAR_STEPS = [1, 2, 5, 10, 20, 25, 50, 100];
+
+/* 28 unidades: un ano ocupa ~23, asi que deja un respiro de ~5 entre rotulos.
+ * Bajarlo los pega; subirlo empieza a esconder anos que cabian. */
+function yearStepFor(scale, from, to, minGap = 28) {
+  const perYear = Math.abs(scale(to) - scale(from)) / Math.max(to - from, 1);
+  return YEAR_STEPS.find(step => step * perYear >= minGap) || YEAR_STEPS[YEAR_STEPS.length - 1];
+}
+
+function yearAxis(scale, { from, to, step, height, minGap }) {
+  step = step || yearStepFor(scale, from, to, minGap);
   const ticks = [];
   for (let year = Math.ceil(from / step) * step; year <= to; year += step) ticks.push(year);
   return ticks.map(year => {
@@ -649,7 +664,7 @@ function chartCareers(category) {
 
   return `<svg class="chart" viewBox="0 0 ${CHART.w} ${height}" role="img"
     aria-label="Trayectoria de cada carrocista a lo largo de los años">
-    ${yearAxis(scale, { from: min, to: max, step: 20, height })}${body}</svg>`;
+    ${yearAxis(scale, { from: min, to: max, height })}${body}</svg>`;
 }
 
 /* Grafico 2: cuantas carrozas desfilaron cada edicion.
@@ -679,8 +694,6 @@ function chartFloatsPerYear(zoom = 1) {
   const scale = makeScale({ from: min, to: max, width, left });
   const yOf = value => base - (value / top) * (base - CHART.padT);
 
-  // Al ensanchar caben mas anos: 20 -> 10 -> 5.
-  const yearStep = zoom >= 4 ? 5 : zoom >= 2 ? 10 : 20;
   // Y mas lineas de rejilla, que es lo que permite leer una barra sin tooltip.
   const step = niceStep(top, zoom > 1 ? 12 : 5);
 
@@ -713,7 +726,7 @@ function chartFloatsPerYear(zoom = 1) {
       aria-label="Número de carrozas por edición">
       ${grid.join("")}
       <line class="axis-line" x1="${left}" y1="${base}" x2="${width - CHART.padR}" y2="${base}"/>
-      ${yearAxis(scale, { from: min, to: max, step: yearStep, height })}${bars}
+      ${yearAxis(scale, { from: min, to: max, height })}${bars}
     </svg></div>`;
 }
 
@@ -1578,7 +1591,7 @@ function chartGroupTimeline(entries) {
     <svg class="chart" viewBox="0 0 ${width} ${height}" role="img"
       aria-label="Evolución del puesto de ${esc(entries[0]?.group_canonical || "")} entre ${from} y ${to}">
       ${grid}
-      ${yearAxis(scale, { from, to, step: to - from > 30 ? 10 : to - from > 12 ? 5 : 2, height })}
+      ${yearAxis(scale, { from, to, height })}
       ${split}
       ${lines}
     </svg>`;
