@@ -1473,6 +1473,15 @@ const ICON_PODIUM = `<svg class="kpi-icon" viewBox="0 0 16 16" aria-hidden="true
 /* Linea temporal de un solo carrocista: el eje X va de su primera a su ultima
  * carroza, no del siglo entero, y el Y es el puesto de verdad, con el 1 arriba.
  * Una linea por categoria, porque competir en A y en B no es lo mismo. */
+/* Copa dibujada dentro del SVG, no el emoji: asi hereda el color de la
+ * categoria. Sin pointer-events para no robarle el clic al punto. */
+function trophyMark(cx, cy, cls) {
+  return `<g class="trophy ${cls}" transform="translate(${(cx - 4).toFixed(1)} ${(cy - 14).toFixed(1)}) scale(0.5)"
+    aria-hidden="true">
+    <path d="M4 2h8v3a4 4 0 0 1-8 0V2z"/><path d="M2 3h2v2a2 2 0 0 1-2-2zM14 3h-2v2a2 2 0 0 0 2-2z"/>
+    <path d="M7 9h2v3H7zM5 12h6v2H5z"/></g>`;
+}
+
 function chartGroupTimeline(entries) {
   const ranked = entries.filter(entry => entry.position != null);
   if (ranked.length < 2) return "";
@@ -1482,11 +1491,13 @@ function chartGroupTimeline(entries) {
   const worst = Math.max(...ranked.map(e => e.position));
 
   const width = 620;
-  const height = 34 + worst * 15 + CHART.padB;
+  // Hueco extra arriba para que la copa del 1.er puesto no se salga.
+  const topPad = CHART.padT + 12;
+  const height = 34 + worst * 15 + CHART.padB + 12;
   const left = 30;
   const base = height - CHART.padB;
   const scale = makeScale({ from, to, width, left });
-  const yOf = position => CHART.padT + ((position - 1) / Math.max(worst - 1, 1)) * (base - CHART.padT - 6);
+  const yOf = position => topPad + ((position - 1) / Math.max(worst - 1, 1)) * (base - topPad - 6);
 
   // Rejilla de puestos: 1.º arriba y el peor abajo, con los intermedios si caben.
   const levels = worst <= 8
@@ -1500,26 +1511,44 @@ function chartGroupTimeline(entries) {
   // hasta 2011. Se etiquetan diciendo eso, no con un guion ni con "sin
   // categoria", que se lee como si faltara el dato.
   const SIN_CAT = `hasta ${CATEGORIES_FROM - 1}`;
-  const categories = [...new Set(ranked.map(entry => entry.category || SIN_CAT))].sort();
+  const catOf = entry => entry.category || SIN_CAT;
+  const catClass = category => category === SIN_CAT ? "none" : esc(category);
+  const categories = [...new Set(ranked.map(catOf))].sort();
+
+  // Un ano puede traer dos victorias, una por categoria. Se cuentan aqui para
+  // repartir las copas en horizontal y que no se pisen.
+  const winsByYear = new Map();
+  ranked.filter(entry => entry.position === 1).forEach(entry => {
+    if (!winsByYear.has(entry.year)) winsByYear.set(entry.year, []);
+    const list = winsByYear.get(entry.year);
+    if (!list.includes(catOf(entry))) list.push(catOf(entry));
+  });
+  winsByYear.forEach(list => list.sort());
+
   const lines = categories.map(category => {
-    const points = ranked
-      .filter(entry => (entry.category || SIN_CAT) === category)
-      .sort((a, b) => a.year - b.year);
+    const points = ranked.filter(entry => catOf(entry) === category).sort((a, b) => a.year - b.year);
     const path = points.map((entry, index) =>
       `${index ? "L" : "M"}${scale(entry.year).toFixed(1)} ${yOf(entry.position).toFixed(1)}`).join("");
     const dots = points.map(entry => `
-      <circle class="dot ${entry.position === 1 ? "win" : entry.position <= 3 ? "podium" : "ran"}"
-              cx="${scale(entry.year).toFixed(1)}" cy="${yOf(entry.position).toFixed(1)}"
+      <circle class="serie-dot" cx="${scale(entry.year).toFixed(1)}" cy="${yOf(entry.position).toFixed(1)}"
               r="${entry.position === 1 ? 4 : 3.2}" data-float="${esc(entry.id)}"
               data-tip="${esc(`${entry.year} · ${entry.category || ""}${entry.position}.º<b>${entry.name}</b>`)}"/>`).join("");
-    return `<g class="serie serie-${category === SIN_CAT ? "none" : esc(category)}"><path class="serie-line" d="${path}"/>${dots}</g>`;
+    // La copa va en su propia capa, encima de todas las lineas.
+    const cups = points.filter(entry => entry.position === 1).map(entry => {
+      const winners = winsByYear.get(entry.year) || [category];
+      const index = Math.max(winners.indexOf(category), 0);
+      const offset = (index - (winners.length - 1) / 2) * 9;
+      return trophyMark(scale(entry.year) + offset, yOf(entry.position), `trophy-${catClass(category)}`);
+    }).join("");
+    return `<g class="serie serie-${catClass(category)}"><path class="serie-line" d="${path}"/>${dots}${cups}</g>`;
   }).join("");
 
   return `
     <h3 class="section">Su trayectoria</h3>
     <div class="chart-legend">${categories.map(c =>
-      `<span><i class="key key-${c === SIN_CAT ? "none" : esc(c)}"></i>${
-        c === SIN_CAT ? `Lista única (hasta ${CATEGORIES_FROM - 1})` : `Categoría ${esc(c)}`}</span>`).join("")}</div>
+      `<span><i class="key key-${catClass(c)}"></i>${
+        c === SIN_CAT ? `Lista única (hasta ${CATEGORIES_FROM - 1})` : `Categoría ${esc(c)}`}</span>`).join("")}
+      <span class="cup-key">${ICON_TROPHY}1.<sup>er</sup> puesto</span></div>
     ${categories.includes(SIN_CAT) ? `<p class="chart-note">Hasta ${CATEGORIES_FROM - 1} el palmarés
       era una lista única; las categorías A y B las creó el reglamento municipal en
       <b>${CATEGORIES_FROM}</b>, según el tamaño de la carroza.${categories.length > 1

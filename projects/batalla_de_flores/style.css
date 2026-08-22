@@ -19,6 +19,11 @@
   --t-year: #2a6f97;    /* año       */
   --t-year-bg: #eaf2f7;
   --t-group: #b6465f;   /* grupo     */
+  /* Categorias del palmares. Nada que ver con los colores por tipo de dato:
+   * aqui A y B son dos competiciones distintas, no dos entidades. */
+  --cat-a: #2a6f97;     /* A: azul     */
+  --cat-b: #b1379a;     /* B: magenta  */
+  --cat-none: #9a8d80;  /* lista unica */
   --t-group-bg: #fbeef1;
   --t-float: #7b4a8c;   /* carroza   */
   --t-float-bg: #f4eef7;
@@ -483,9 +488,11 @@ table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo
 .key.tier-partial { background: var(--gold); }
 .key.tier-planned { background: #e07a1f; }
 .key.tier-none { background: #cfc4b8; }
-.key.key-A { background: var(--t-group); }
-.key.key-B { background: var(--t-year); }
-.key.key-none { background: #9a8d80; }
+.key.key-A { background: var(--cat-a); }
+.key.key-B { background: var(--cat-b); }
+.key.key-none { background: var(--cat-none); }
+.chart-legend .cup-key { color: var(--muted); }
+.chart-legend .cup-key .kpi-icon { fill: var(--muted); }
 
 .axis-line { stroke: var(--line-soft); stroke-width: 1; }
 .axis-label { fill: var(--muted); font-size: 9px; text-anchor: middle; }
@@ -508,11 +515,22 @@ i.dot.podium { background: var(--t-group); }
 i.dot.ran { background: #bfb2a6; }
 
 /* Todas solidas: el discontinuo se leia como "dato estimado" cuando lo unico
- * que distingue a las series es la categoria. El color ya las separa. */
-.serie-line { fill: none; stroke: var(--t-group); stroke-width: 1.8; opacity: 0.75; }
+ * que distingue a las series es la categoria. El color ya las separa.
+ *
+ * Y los puntos van del color de su linea, no del puesto: con dos categorias
+ * mezcladas, un punto dorado no decia si era el mejor de A o el de B. Quien
+ * gana lleva copa encima, tambien del color de su categoria. */
+.serie-line { fill: none; stroke-width: 1.8; opacity: 0.75; }
 .serie circle { cursor: pointer; }
-.serie-B .serie-line { stroke: var(--t-year); }
-.serie-none .serie-line { stroke: #9a8d80; }
+.serie-dot { stroke: var(--panel); stroke-width: 1; }
+.trophy { pointer-events: none; }
+
+.serie-A .serie-line { stroke: var(--cat-a); }
+.serie-A .serie-dot, .trophy-A { fill: var(--cat-a); }
+.serie-B .serie-line { stroke: var(--cat-b); }
+.serie-B .serie-dot, .trophy-B { fill: var(--cat-b); }
+.serie-none .serie-line { stroke: var(--cat-none); }
+.serie-none .serie-dot, .trophy-none { fill: var(--cat-none); }
 
 .tip {
   position: fixed; z-index: 90; pointer-events: none;
