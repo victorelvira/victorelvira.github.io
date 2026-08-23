@@ -1853,6 +1853,16 @@ function chartGroupTimeline(entries) {
     </svg>`;
 }
 
+/* La mitad de los "grupos" son nombres de persona -"Ángel Sainz"-, y empezar
+ * con "Desfiló entre..." dejaba la frase sin sujeto. Se antepone "El grupo",
+ * salvo cuando el nombre ya es colectivo y quedaria "El grupo Grupo Pejino". */
+const COLLECTIVE_START = /^(grupo|grupos|asoc|asociaci[oó]n|agrupaci[oó]n|agrupa|agrup|peña|pena|hnos|hermanos|hijos|colaboradores|amigos|vecinos|cofrad[ií]a|ayuntamiento|transportes|carrozas|gr\.)\b/i;
+
+function groupSubject(name) {
+  const limpio = esc(name);
+  return COLLECTIVE_START.test(name) ? `<b>${limpio}</b>` : `El grupo <b>${limpio}</b>`;
+}
+
 function renderGroupDetail(group) {
   const entries = [];
   state.editions.forEach(edition => {
@@ -1871,7 +1881,8 @@ function renderGroupDetail(group) {
       ${shareButton()}
     </div>
     <p class="span-note">
-      Desfiló entre <b>${group.first_year_seen}</b> y <b>${group.last_year_seen}</b>
+      ${groupSubject(group.canonical_name)} desfiló
+      entre <b>${group.first_year_seen}</b> y <b>${group.last_year_seen}</b>
       con <b>${num(group.float_count)}</b> carroza${group.float_count === 1 ? "" : "s"}${categories.length
         ? `, de las cuales ${categories.map(([cat, count]) =>
             `<b>${count}</b> en categoría ${esc(cat)}`).join(" y ")} (las categorías existen desde ${CATEGORIES_FROM})`

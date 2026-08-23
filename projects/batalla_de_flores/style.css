@@ -18,13 +18,18 @@
      dos minutos ya sabes que lo violeta es una carroza sin tener que probar. */
   --t-year: #2a6f97;    /* año       */
   --t-year-bg: #eaf2f7;
-  --t-group: #b6465f;   /* grupo     */
+  /* Naranja, no rosa: el rojo queda reservado para avisar de lo que falta. */
+  --t-group: #b5651d;   /* grupo     */
   /* Categorias del palmares. Nada que ver con los colores por tipo de dato:
    * aqui A y B son dos competiciones distintas, no dos entidades. */
   --cat-a: #2a6f97;     /* A: azul     */
   --cat-b: #b1379a;     /* B: magenta  */
   --cat-none: #9a8d80;  /* lista unica */
-  --t-group-bg: #fbeef1;
+  /* Avisos: hueco de datos o dato sin confirmar. */
+  --alerta: #b3261e;
+  --alerta-borde: #e9b6b1;
+  --alerta-bg: #fdeceb;
+  --t-group-bg: #fdf0e3;
   --t-float: #7b4a8c;   /* carroza   */
   --t-float-bg: #f4eef7;
   --t-route: #2f6b57;   /* recorrido */
@@ -133,7 +138,7 @@ a { color: inherit; }
   padding: 2px 9px; border-radius: 999px; font-size: 12px; border: 1px solid;
 }
 .legend-types .t-year  { color: var(--t-year);  border-color: #cadde8; background: var(--t-year-bg); }
-.legend-types .t-group { color: var(--t-group); border-color: #eccdd5; background: var(--t-group-bg); }
+.legend-types .t-group { color: var(--t-group); border-color: #e8cfae; background: var(--t-group-bg); }
 .legend-types .t-float { color: var(--t-float); border-color: #ddcde5; background: var(--t-float-bg); }
 .legend-types .t-route { color: var(--t-route); border-color: #c9ded4; background: var(--t-route-bg); }
 
@@ -709,7 +714,7 @@ table.palmares tr:hover td { background: #fffaf5; }
 
 /* Chip clicable del mismo tipo. */
 .link-chip.t-year  { border-color: #cadde8; background: var(--t-year-bg);  color: var(--t-year); }
-.link-chip.t-group { border-color: #eccdd5; background: var(--t-group-bg); color: var(--t-group); }
+.link-chip.t-group { border-color: #e8cfae; background: var(--t-group-bg); color: var(--t-group); }
 .link-chip.t-float { border-color: #ddcde5; background: var(--t-float-bg); color: var(--t-float); }
 .link-chip.t-route { border-color: #c9ded4; background: var(--t-route-bg); color: var(--t-route); }
 .link-chip.t-year:hover  { background: var(--t-year); color: #fff; }
@@ -948,27 +953,27 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .review-mark {
   display: inline-flex; align-items: center; justify-content: center;
   width: 15px; height: 15px; margin-left: 5px; cursor: help;
-  border: 1px solid #d9a441; border-radius: 50%;
-  background: #fdf1d8; color: #9a6b12;
+  border: 1px solid var(--alerta-borde); border-radius: 50%;
+  background: var(--alerta-bg); color: var(--alerta);
   font-size: 10px; font-weight: 700; line-height: 1; vertical-align: 1px;
 }
-.review-mark:hover { background: #f7e0ad; }
+.review-mark:hover { background: #f8d5d2; }
 
 /* En la ficha de la carroza no basta el circulito: se explica entero. */
 .review-box {
   margin: 8px 0 4px; padding: 9px 11px;
-  border: 1px solid #e8cf9a; border-left: 3px solid #d9a441; border-radius: 8px;
-  background: #fdf7ea; font-size: 12.5px; line-height: 1.45;
+  border: 1px solid var(--alerta-borde); border-left: 3px solid var(--alerta); border-radius: 8px;
+  background: var(--alerta-bg); font-size: 12.5px; line-height: 1.45;
 }
-.review-box b { color: #8a5f10; }
+.review-box b { color: var(--alerta); }
 .review-box ul { margin: 4px 0 0; padding-left: 16px; color: var(--ink); }
 .review-box p { margin: 8px 0 0; color: var(--muted); }
 .pill.know {
   padding: 5px 12px; font-size: 12.5px;
-  border-color: #d9a441; background: #fdf1d8; color: #8a5f10;
+  border-color: var(--alerta-borde); background: var(--alerta-bg); color: var(--alerta);
 }
-.pill.know:hover { background: #f7e0ad; border-color: #c8942f; }
-.pill.know .pill-icon { fill: #b8862a; }
+.pill.know:hover { background: #f8d5d2; border-color: var(--alerta); }
+.pill.know .pill-icon { fill: var(--alerta); }
 .open-note { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
 .open-note b { color: var(--ink); }
 
@@ -993,8 +998,8 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .prov-list { margin: 4px 0 0; padding-left: 16px; line-height: 1.5; }
 .prov-list li { margin-bottom: 3px; }
 .prov-list b { color: var(--ink); }
-.prov-warn { color: #8a5f10; }
-.prov-warn b { color: #8a5f10; }
+.prov-warn { color: var(--alerta); }
+.prov-warn b { color: var(--alerta); }
 .prov-list .review-mark { width: 13px; height: 13px; margin: 0 1px; font-size: 9px; }
 
 /* Boton compacto al final de cada linea. Con 37 lineas, uno del tamano normal
@@ -1002,11 +1007,11 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .ask {
   display: inline-flex; align-items: center; gap: 3px; margin-left: 5px;
   padding: 1px 7px 1px 5px; cursor: pointer; white-space: nowrap;
-  border: 1px solid #e0c489; border-radius: 999px;
-  background: #fdf7ea; color: #8a5f10; font: inherit; font-size: 11px;
+  border: 1px solid var(--alerta-borde); border-radius: 999px;
+  background: var(--alerta-bg); color: var(--alerta); font: inherit; font-size: 11px;
 }
-.ask:hover { background: #f7e0ad; border-color: #d9a441; }
-.ask svg { width: 9px; height: 9px; fill: #b8862a; }
+.ask:hover { background: #f8d5d2; border-color: var(--alerta); }
+.ask svg { width: 9px; height: 9px; fill: var(--alerta); }
 
 /* Rachas: el numero manda, el resto acompana. */
 .streaks { list-style: none; margin: 2px 0 10px; padding: 0; }
