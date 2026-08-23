@@ -298,8 +298,14 @@ body.resizing #map { pointer-events: none; }
   gap: 6px; padding: 8px; align-content: start; }
 .gallery .grp { grid-column: 1 / -1; }   /* venue dividers span the full row */
 .gallery .sentinel { grid-column: 1 / -1; }
-.gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden;
+.gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden; position: relative;
   border: 1px solid var(--line); background: #fff; display: flex; flex-direction: column; }
+.gshare { position: absolute; top: 5px; right: 5px; z-index: 2; width: 27px; height: 27px; padding: 0;
+  border: 0; border-radius: 999px; background: rgba(255,255,255,.92); cursor: pointer; font-size: 13px;
+  line-height: 27px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.28); opacity: 0; transition: opacity .12s; }
+.gcell:hover .gshare, .gcell:focus-within .gshare { opacity: 1; }
+.gshare:hover { background: #fff; }
+@media (hover: none) { .gshare { opacity: .92; } }   /* touch: always visible */
 .gcell .th { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block;
   cursor: zoom-in; background: #efe9df; }
 .gcell span.th.ph { background: repeating-linear-gradient(45deg,#efe9df,#efe9df 6px,#e7ded1 6px,#e7ded1 12px); }

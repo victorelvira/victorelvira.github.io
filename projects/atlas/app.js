@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.39.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 20:05";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.40.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 00:13";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -985,6 +985,8 @@ function renderWorksGallery() {
         el.scrollTop + el.clientHeight >= el.scrollHeight - 700) tGalAppend();
   });
   document.getElementById("table-gallery").addEventListener("click", e => {
+    const sh = e.target.closest(".gshare");
+    if (sh) { e.stopPropagation(); shareWork(tGalVis[+sh.dataset.i].p); return; }   // 🔗 → share
     if (e.target.closest("img.th")) return;               // image → lightbox (global handler)
     const cell = e.target.closest(".gcell");
     if (cell) openWorkCard(tGalVis[+cell.dataset.i]);      // caption → the work ficha
@@ -1078,7 +1080,8 @@ function tileHTML(w, vis) {
   const img = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
-  return `<li class="gcell" data-i="${i}" title="${esc(cap)}">${img}<div class="gmeta">` +
+  const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
+  return `<li class="gcell" data-i="${i}" title="${esc(cap)}">${img}${share}<div class="gmeta">` +
     `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
     `</div></li>`;
@@ -1167,6 +1170,8 @@ function renderPanel() {
 }
 
 document.getElementById("worklist").addEventListener("click", e => {
+  const sh = e.target.closest(".gshare");
+  if (sh) { e.stopPropagation(); shareWork(panelVis[+sh.dataset.i].p); return; }   // 🔗 → share
   if (e.target.closest("img.th")) return;          // thumbnail → lightbox (handled below)
   const cell = e.target.closest(".gcell");
   if (cell) { openWorkCard(panelVis[+cell.dataset.i]); return; }   // gallery caption → the work ficha
