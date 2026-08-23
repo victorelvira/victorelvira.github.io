@@ -2337,8 +2337,8 @@ function renderRouteDetail(route) {
       data-route="${esc(route.id)}"
       aria-label="Mapa del recorrido: ${esc(route.label)}"></div>
       <p class="chart-note mapa-pie">Mapa real, con calles y comercios: puedes ampliar, moverlo y
-      situarte con <b>◎</b>. ${route.direction === "anticlockwise"
-        ? "Las flechas marcan el sentido antihorario del desfile." : ""}</p>` : ""}
+      situarte con <b>◎</b>. El punto verde marca dónde arranca el trazado${
+        route.direction === "anticlockwise" ? ", que se recorre en sentido antihorario" : ""}.</p>` : ""}
     ${route.note ? `<p class="muted" style="margin-top:6px">${esc(route.note)}</p>` : ""}
 
     <h3 class="section">Ediciones en este trazado</h3>
