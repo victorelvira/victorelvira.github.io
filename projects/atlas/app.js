@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.39.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 19:45";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.39.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 20:05";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -735,9 +735,14 @@ function selectMuseum(key) {
   const pop = document.getElementById("painters-pop");
   pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
   if (mu) { if (view.table) setTableView(false); map.setView([mu.lat, mu.lon], 14); }
+  history.replaceState(null, "", location.pathname + "?m=" + encodeURIComponent(key) + location.hash);
   renderMuseumChip(); refresh();
 }
-function clearMuseum() { state.museumFilter = null; renderMuseumChip(); refresh(); }
+function clearMuseum() {
+  state.museumFilter = null;
+  if (new URLSearchParams(location.search).has("m")) history.replaceState(null, "", location.pathname + location.hash);
+  renderMuseumChip(); refresh();
+}
 function renderMuseumChip() {
   let el = document.getElementById("museum-chip");
   if (!state.museumFilter) { if (el) el.remove(); return; }
@@ -1291,10 +1296,17 @@ function openWorkCard(w) {
     row("Painter", painterTag(p)) + row("Date", esc(p.year || "")) + row("Where", esc(venue)) +
     row("Technique", esc(p.medium || "")) + row("Size", esc(p.dimensions || "")) + row("Attribution", attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
-    `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button></div></div>`;
+    `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button>` +
+    `<span class="wc-hint">or just copy the address bar</span></div></div>`;
   workCard.hidden = false;
+  // reflect the open painting in the address bar → copying the URL shares this exact work
+  if (p.qid) history.replaceState(null, "", location.pathname + "?w=" + p.qid + location.hash);
 }
-function closeWorkCard() { workCard.hidden = true; wcWork = null; document.getElementById("wc-body").innerHTML = ""; }
+function closeWorkCard() {
+  workCard.hidden = true; wcWork = null; document.getElementById("wc-body").innerHTML = "";
+  if (new URLSearchParams(location.search).has("w"))
+    history.replaceState(null, "", location.pathname + location.hash);   // drop ?w= when closed
+}
 document.getElementById("wc-close").addEventListener("click", closeWorkCard);
 workCard.addEventListener("click", e => {
   if (e.target.closest(".wc-share") && wcWork) { shareWork(wcWork.p); return; }

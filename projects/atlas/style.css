@@ -390,7 +390,8 @@ body.resizing #map { pointer-events: none; }
   text-transform: uppercase; letter-spacing: .03em; padding-top: 2px; }
 .wc-note { color: var(--muted); font-style: italic; }
 .wc-links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.wc-actions { margin-top: 14px; }
+.wc-actions { margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.wc-actions .wc-hint { color: var(--muted); font-size: 12px; }
 .wc-share { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 14px; cursor: pointer;
   border: 1px solid #d8c7a6; border-radius: 999px; background: #efe6d6; color: #3a2317; }
 .wc-share:hover { background: #e7dcc6; }
