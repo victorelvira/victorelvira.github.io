@@ -1401,7 +1401,7 @@ function nocheMagicaBlock(edition) {
             <td class="name">${esc(fila.grupo)}</td>
             <td>${esc(carrozas)}</td>
             <td>${sitio ? `<a href="https://www.openstreetmap.org/?mlat=${sitio.lat}&mlon=${sitio.lon}#map=18/${sitio.lat}/${sitio.lon}"
-              target="_blank" rel="noopener">${esc(sitio.nombre)} ↗</a>` : "–"}</td>
+              target="_blank" rel="noopener" title="${esc(sitio.nombre)}">${esc(sitio.corto || sitio.nombre)} ↗</a>` : "–"}</td>
           </tr>`;
         }).join("")}
       </tbody>
@@ -1587,7 +1587,12 @@ function renderEditionDetail(edition) {
   const unranked = entries.filter(entry => !(entry.position != null || entry.category));
   const route = routeForYear(edition.year);
 
-  const groupCount = new Set(entries.map(e => e.group_canonical).filter(Boolean)).size;
+  // Para la edicion que viene no hay carrozas en el palmares, pero si sabemos
+  // cuantas van a desfilar: la cabecera diria "0 carrozas" y seria mentira.
+  const nm = state.dataset.noche_magica;
+  const previa = nm && nm.year === edition.year && !entries.length ? nm : null;
+  const groupCount = previa ? previa.grupos.length
+    : new Set(entries.map(e => e.group_canonical).filter(Boolean)).size;
   // La miniatura va como columna del palmares en vez de en galeria aparte: la
   // tabla ya tiene el ancho, y asi la foto queda junto a su carroza.
   // Con categorias A y B, mostrarlas juntas mezclaba dos competiciones
@@ -1604,7 +1609,7 @@ function renderEditionDetail(edition) {
         ${edition.edition_number
           ? `<span class="disc disc-wide" title="${esc(edition.edition_label || "")}"><b>${edition.edition_number}ª</b>edición</span>`
           : ""}
-        <span class="disc"><b>${num(edition.float_count || 0)}</b>carrozas</span>
+        <span class="disc"><b>${num(previa ? previa.float_count : (edition.float_count || 0))}</b>carrozas</span>
         <span class="disc"><b>${num(groupCount)}</b>grupos</span>
       </span>
     </div>

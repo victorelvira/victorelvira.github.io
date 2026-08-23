@@ -39496,6 +39496,7 @@
       {
         "id": "villa-del-mar",
         "nombre": "Patio del Colegio Villa del Mar",
+        "corto": "Colegio Villa del Mar",
         "lat": 43.4074368,
         "lon": -3.4165262,
         "osm": "CEIP Villa del Mar"
@@ -39503,6 +39504,7 @@
       {
         "id": "reconquista",
         "nombre": "Calle de la Reconquista de Sevilla",
+        "corto": "C/ Reconquista de Sevilla",
         "lat": 43.408733,
         "lon": -3.4135213,
         "osm": "Calle de la Reconquista de Sevilla"
@@ -39510,6 +39512,7 @@
       {
         "id": "comillas-cantabria",
         "nombre": "Parcela en la esquina de Marqués de Comillas con Avenida de Cantabria",
+        "corto": "Marqués de Comillas × Avda. de Cantabria",
         "lat": 43.410914,
         "lon": -3.418032,
         "osm": "cruce de ambas calles"
@@ -39517,6 +39520,7 @@
       {
         "id": "menendez-pelayo",
         "nombre": "Calle de Menéndez Pelayo",
+        "corto": "C/ Menéndez Pelayo",
         "lat": 43.4128292,
         "lon": -3.4127671,
         "osm": "Calle de Menéndez Pelayo"
@@ -39524,6 +39528,7 @@
       {
         "id": "bernardino",
         "nombre": "Patio del IES Bernardino Escalante",
+        "corto": "IES Bernardino Escalante",
         "lat": 43.4080845,
         "lon": -3.4142461,
         "osm": "IES Bernardino Escalante"
@@ -39581,7 +39586,7 @@
       }
     ]
   },
-  "version": "0.37.0",
+  "version": "0.38.0",
   "about": {
     "url": "https://victorelvira.github.io/projects/batalla_de_flores.html",
     "compiled_by": "Víctor Elvira",
@@ -39599,7 +39604,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-23 16:49",
+  "built_at": "2026-08-23 16:53",
   "map_features": [
     {
       "id": "route_origin_1908",
