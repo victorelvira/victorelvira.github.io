@@ -36165,10 +36165,13 @@
         "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4490"
       ],
       "notes": [
-        "Hay participantes confirmados, pero la edición no se ha celebrado todavía."
+        "La 115.ª edición se celebra el viernes 28 de agosto de 2026 con 14 carrozas (10 en categoría A y 4 en categoría B) de 7 agrupaciones. La Noche Mágica es el jueves 27 de agosto de 2026, a partir de las 20:00."
       ],
       "floats": [],
       "results": [],
+      "extra_source_urls": [
+        "https://www.laredo.es/09/agenda_ampliada/4015.html"
+      ],
       "result_count": 0,
       "float_count": 0
     }
@@ -39480,7 +39483,105 @@
       "category_counts": {}
     }
   ],
-  "version": "0.32.0",
+  "noche_magica": {
+    "year": 2026,
+    "fecha": "jueves 27 de agosto de 2026",
+    "hora": "a partir de las 20:00",
+    "desfile": "viernes 28 de agosto de 2026",
+    "edition_number": 115,
+    "float_count": 14,
+    "source_url": "https://www.laredo.es/09/agenda_ampliada/4015.html",
+    "snapshot": "data/raw/source_snapshots/laredo/2026_noche_magica.html",
+    "sitios": [
+      {
+        "id": "villa-del-mar",
+        "nombre": "Patio del Colegio Villa del Mar",
+        "lat": 43.4074368,
+        "lon": -3.4165262,
+        "osm": "CEIP Villa del Mar"
+      },
+      {
+        "id": "reconquista",
+        "nombre": "Calle de la Reconquista de Sevilla",
+        "lat": 43.408733,
+        "lon": -3.4135213,
+        "osm": "Calle de la Reconquista de Sevilla"
+      },
+      {
+        "id": "comillas-cantabria",
+        "nombre": "Parcela en la esquina de Marqués de Comillas con Avenida de Cantabria",
+        "lat": 43.410914,
+        "lon": -3.418032,
+        "osm": "cruce de ambas calles"
+      },
+      {
+        "id": "menendez-pelayo",
+        "nombre": "Calle de Menéndez Pelayo",
+        "lat": 43.4128292,
+        "lon": -3.4127671,
+        "osm": "Calle de Menéndez Pelayo"
+      },
+      {
+        "id": "bernardino",
+        "nombre": "Patio del IES Bernardino Escalante",
+        "lat": 43.4080845,
+        "lon": -3.4142461,
+        "osm": "IES Bernardino Escalante"
+      }
+    ],
+    "grupos": [
+      {
+        "orden": 1,
+        "grupo": "Come Golayu que lo ha hechu güela",
+        "a": 2,
+        "b": 0,
+        "sitio": "villa-del-mar"
+      },
+      {
+        "orden": 2,
+        "grupo": "Grupo Pejino",
+        "a": 2,
+        "b": 0,
+        "sitio": "reconquista"
+      },
+      {
+        "orden": 3,
+        "grupo": "Grupo Alegoría",
+        "a": 1,
+        "b": 1,
+        "sitio": "comillas-cantabria"
+      },
+      {
+        "orden": 4,
+        "grupo": "Carrozas Oruña",
+        "a": 1,
+        "b": 1,
+        "sitio": "villa-del-mar"
+      },
+      {
+        "orden": 5,
+        "grupo": "El Cantu",
+        "a": 1,
+        "b": 1,
+        "sitio": "comillas-cantabria"
+      },
+      {
+        "orden": 6,
+        "grupo": "Mi Vida Loca",
+        "a": 2,
+        "b": 0,
+        "sitio": "menendez-pelayo"
+      },
+      {
+        "orden": 7,
+        "grupo": "Agrupa-2",
+        "a": 1,
+        "b": 1,
+        "sitio": "bernardino"
+      }
+    ]
+  },
+  "version": "0.37.0",
   "about": {
     "url": "https://victorelvira.github.io/projects/batalla_de_flores.html",
     "compiled_by": "Víctor Elvira",
@@ -39498,7 +39599,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-23 13:39",
+  "built_at": "2026-08-23 16:49",
   "map_features": [
     {
       "id": "route_origin_1908",

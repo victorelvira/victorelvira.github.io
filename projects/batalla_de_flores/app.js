@@ -229,6 +229,42 @@ function filteredGroups() {
 
 /* ── cabecera ───────────────────────────────────────────────────────────── */
 
+/* Aviso de la Noche Magica.
+ *
+ * Aparece en la cabecera solo en la cuenta atras -desde un mes antes hasta el
+ * dia del desfile- y desaparece solo despues. Un banner permanente se vuelve
+ * invisible; uno que solo sale cuando sirve, se lee. */
+function nocheMagicaEstado() {
+  const nm = state.dataset.noche_magica;
+  if (!nm) return null;
+  const noche = new Date(`${nm.year}-08-27T20:00:00`);
+  const desfile = new Date(`${nm.year}-08-28T23:59:00`);
+  const hoy = new Date();
+  const dias = Math.ceil((noche - hoy) / 86400000);
+  if (hoy > desfile || dias > 31) return null;
+  return { nm, dias, esHoy: dias === 0, pasada: hoy > noche };
+}
+
+function renderNocheMagica() {
+  const estado = nocheMagicaEstado();
+  const caja = document.getElementById("noche-magica");
+  if (!caja) return;
+  if (!estado) { caja.hidden = true; return; }
+
+  const { nm, dias, esHoy, pasada } = estado;
+  const cuando = esHoy ? "es esta noche"
+    : pasada ? "fue anoche"
+    : dias === 1 ? "es mañana"
+    : `es en ${dias} días`;
+
+  caja.hidden = false;
+  caja.innerHTML = `
+    <span class="nm-flor">🌺</span>
+    <span class="nm-texto"><b>La Noche Mágica ${cuando}</b> · ${esc(nm.fecha)}, ${esc(nm.hora)}.
+      Los siete grupos abren sus locales para ver rematarse las ${nm.float_count} carrozas.</span>
+    <button class="nm-ir" type="button" data-year="${nm.year}">Ver el mapa →</button>`;
+}
+
 function renderStats() {
   const summary = state.dataset.summary || {};
   els.stats.innerHTML = [
@@ -1303,6 +1339,75 @@ function renderRouteMap(activeId, { variant = "detail" } = {}) {
   return `<figure class="map map-${variant}">${svg}</figure>`;
 }
 
+/* La edicion que viene no tiene palmares -no se ha celebrado- pero si se sabe
+ * quien participa, con cuantas carrozas y donde las monta. Es lo unico util que
+ * puede dar la ficha de un ano futuro, y ademas caduca: el jueves siguiente ya
+ * no sirve. */
+/* Mapa de los locales de montaje. Reaprovecha la proyeccion y las capas de los
+ * mapas de recorrido: mismas calles, mismo estilo, solo cambian las marcas. */
+function renderMontajeMap(nm) {
+  const puntos = nm.sitios.map(sitio => [sitio.lon, sitio.lat]);
+  const project = makeProjection(puntos, { width: 420, height: 300, margin: 2.6, padding: 26 });
+  if (!project) return "";
+
+  const cuantos = sitio => nm.grupos.filter(g => g.sitio === sitio.id);
+  const marcas = nm.sitios.map(sitio => {
+    const [x, y] = project([sitio.lon, sitio.lat]);
+    const grupos = cuantos(sitio);
+    const etiqueta = grupos.map(g => g.orden).join("·");
+    const tip = `${sitio.nombre}<b>${grupos.map(g => g.grupo).join(" · ")}</b>`;
+    return `<g class="montaje" data-tip="${esc(tip)}">
+      <circle class="montaje-halo" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="13"/>
+      <circle class="montaje-pin" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9.5"/>
+      <text class="montaje-num" x="${x.toFixed(1)}" y="${(y + 3.4).toFixed(1)}">${esc(etiqueta)}</text>
+    </g>`;
+  }).join("");
+
+  return `<figure class="map map-detail">
+    <svg viewBox="0 0 420 300" role="img"
+      aria-label="Mapa de los locales de montaje de la Noche Mágica ${nm.year}">
+      ${mapLayers(project, null, { showStreets: true, showLabels: true, showArrows: false })}
+      ${marcas}
+      ${scaleBar(project)}
+    </svg>
+  </figure>`;
+}
+
+function nocheMagicaBlock(edition) {
+  const nm = state.dataset.noche_magica;
+  if (!nm || nm.year !== edition.year) return "";
+  const sitios = new Map(nm.sitios.map(sitio => [sitio.id, sitio]));
+
+  return `
+    <h3 class="section">🌺 Noche Mágica · ${esc(nm.fecha)}</h3>
+    <p class="chart-note">La víspera del desfile, ${esc(nm.hora)}, los grupos abren sus locales
+    para que la gente vea cómo se clavan las flores. Estas son las ubicaciones de montaje que
+    publica el Ayuntamiento; el número es el orden de salida en el desfile.</p>
+
+    ${renderMontajeMap(nm)}
+
+    <table class="palmares">
+      <colgroup><col class="c-src"><col><col><col></colgroup>
+      <thead><tr>
+        <th>N.º</th><th>Grupo</th><th>Carrozas</th><th>Dónde monta</th>
+      </tr></thead>
+      <tbody>
+        ${nm.grupos.map(fila => {
+          const sitio = sitios.get(fila.sitio);
+          const carrozas = [fila.a ? `${fila.a} en A` : "", fila.b ? `${fila.b} en B` : ""]
+            .filter(Boolean).join(" · ");
+          return `<tr>
+            <td class="pos"><span class="nm-num">${fila.orden}</span></td>
+            <td class="name">${esc(fila.grupo)}</td>
+            <td>${esc(carrozas)}</td>
+            <td>${sitio ? `<a href="https://www.openstreetmap.org/?mlat=${sitio.lat}&mlon=${sitio.lon}#map=18/${sitio.lat}/${sitio.lon}"
+              target="_blank" rel="noopener">${esc(sitio.nombre)} ↗</a>` : "–"}</td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    </table>`;
+}
+
 /* ── detalle: edicion ───────────────────────────────────────────────────── */
 
 /* De varias URLs se elige la mas concreta: la portada de un dominio no dice
@@ -1582,6 +1687,8 @@ function renderEditionDetail(edition) {
         ${rest.length ? `<h3 class="section">Notas</h3>
           <ul class="plain">${rest.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : ""}`;
     })()}
+
+    ${nocheMagicaBlock(edition)}
 
     ${renderGallery(entries.filter(entry => !ranked.includes(entry)))}
 
@@ -2287,6 +2394,7 @@ function setMode(mode) {
 }
 
 function refresh() {
+  renderNocheMagica();
   applyFilters();
   renderIndex();
 }
@@ -2448,6 +2556,9 @@ function bindEvents() {
       return;
     }
 
+    const nmIr = event.target.closest(".nm-ir");
+    if (nmIr) { setMode("editions"); select("year", Number(nmIr.dataset.year)); return; }
+
     const ask = event.target.closest("[data-ask]");
     if (ask) {
       openReport({ id: ask.dataset.ask, label: ask.dataset.askLabel });
@@ -2521,6 +2632,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     setupTooltip();
     setupReport();
     applyFilters();
+    renderNocheMagica();
 
     const fromHash = readHash();
     if (location.hash === "#/pendiente") {

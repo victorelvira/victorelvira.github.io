@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.35.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 16:00";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.37.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 18:00";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -859,7 +859,14 @@ function wireSort(thead, sort) {
     renderTable();
   }));
 }
-function renderTable() { return tableMode === "museums" ? renderMuseumsTable() : renderWorksTable(); }
+function renderTable() {
+  const isWorks = tableMode === "works";
+  document.getElementById("table-view").style.display = isWorks ? "" : "none";   // gallery toggle: Works only
+  const tbl = document.getElementById("works-table"), gal = document.getElementById("table-gallery");
+  if (isWorks && tableGallery) return renderWorksGallery();
+  tbl.hidden = false; gal.hidden = true;
+  return isWorks ? renderWorksTable() : renderMuseumsTable();
+}
 
 function renderWorksTable() {
   const thead = document.querySelector("#works-table thead");
@@ -928,6 +935,51 @@ function renderMuseumsTable() {
     setTimeout(() => selectMuseum(tr.dataset.rk), 80);
   }));
 }
+
+// ── Works table in gallery mode: the same tiles as the map panel, streamed with lazy images ──
+let tableGallery = false, tGalVis = [], tGalRows = [], tGalCursor = 0;
+const TGAL_CHUNK = 60;
+function tGalAppend() {
+  const g = document.getElementById("table-gallery");
+  const end = Math.min(tGalCursor + TGAL_CHUNK, tGalRows.length);
+  let html = "";
+  for (; tGalCursor < end; tGalCursor++) html += tileHTML({ p: tGalRows[tGalCursor] }, tGalVis);
+  g.insertAdjacentHTML("beforeend", html);
+}
+function renderWorksGallery() {
+  document.getElementById("works-table").hidden = true;
+  const g = document.getElementById("table-gallery"); g.hidden = false;
+  tGalRows = tableRows();
+  document.getElementById("table-count").textContent =
+    `${tGalRows.length.toLocaleString()} work${tGalRows.length === 1 ? "" : "s"}`;
+  tGalVis = []; tGalCursor = 0; g.innerHTML = "";
+  g.style.setProperty("--thumb", document.getElementById("tv-thumb").value + "px");
+  tGalAppend();
+}
+(function wireTableView() {
+  const slider = document.getElementById("tv-thumb");
+  const setMode = on => {
+    tableGallery = on;
+    document.getElementById("tv-grid").classList.toggle("active", on);
+    document.getElementById("tv-list").classList.toggle("active", !on);
+    slider.hidden = !on;
+    if (view.table && tableMode === "works") renderTable();
+  };
+  document.getElementById("tv-list").addEventListener("click", () => setMode(false));
+  document.getElementById("tv-grid").addEventListener("click", () => setMode(true));
+  slider.addEventListener("input", () =>
+    document.getElementById("table-gallery").style.setProperty("--thumb", slider.value + "px"));
+  document.getElementById("table-wrap").addEventListener("scroll", e => {
+    const el = e.target;
+    if (tableGallery && tableMode === "works" && tGalCursor < tGalRows.length &&
+        el.scrollTop + el.clientHeight >= el.scrollHeight - 700) tGalAppend();
+  });
+  document.getElementById("table-gallery").addEventListener("click", e => {
+    if (e.target.closest("img.th")) return;               // image → lightbox (global handler)
+    const cell = e.target.closest(".gcell");
+    if (cell) openWorkCard(tGalVis[+cell.dataset.i]);      // caption → the work ficha
+  });
+})();
 
 function setTableView(on) {
   view.table = on;
@@ -1005,6 +1057,23 @@ const PANEL_CHUNK = 80;
 let panelQueue = [];    // flat render plan: {grp} headers and {w} work rows, in display order
 let panelCursor = 0;
 let panelIO = null;
+let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
+
+// gallery tile — lazy thumbnail (click → lightbox) + caption (click → the work "ficha").
+// `vis` is the index array the caption click resolves against (panelVis or the table's own).
+function tileHTML(w, vis) {
+  const i = vis.length; vis.push(w);
+  const p = w.p;
+  const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+  const img = p.image
+    ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
+    : `<span class="th ph"></span>`;
+  return `<li class="gcell" data-i="${i}" title="${esc(cap)}">${img}<div class="gmeta">` +
+    `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
+    (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
+    `</div></li>`;
+}
+function panelCellHTML(w) { return tileHTML(w, panelVis); }
 
 function panelRowHTML(w) {
   const i = panelVis.length; panelVis.push(w);
@@ -1026,10 +1095,13 @@ function appendPanelChunk() {
   let html = "";
   for (; panelCursor < end; panelCursor++) {
     const e = panelQueue[panelCursor];
-    html += e.grp
-      ? `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
-        `<span class="n">${e.grp.count}</span></li>`
-      : panelRowHTML(e.w);
+    if (e.grp) {
+      if (panelMode === "gallery") continue;   // gallery is a flat grid — museum is on each tile
+      html += `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
+        `<span class="n">${e.grp.count}</span></li>`;
+    } else {
+      html += panelMode === "gallery" ? panelCellHTML(e.w) : panelRowHTML(e.w);
+    }
   }
   ul.insertAdjacentHTML("beforeend", html);
   if (panelCursor < panelQueue.length) {           // more to come → sentinel + observe
@@ -1086,6 +1158,8 @@ function renderPanel() {
 
 document.getElementById("worklist").addEventListener("click", e => {
   if (e.target.closest("img.th")) return;          // thumbnail → lightbox (handled below)
+  const cell = e.target.closest(".gcell");
+  if (cell) { openWorkCard(panelVis[+cell.dataset.i]); return; }   // gallery caption → the work ficha
   const li = e.target.closest("li[data-i]");
   if (!li) return;
   const w = panelVis[+li.dataset.i];
@@ -1096,6 +1170,61 @@ document.getElementById("worklist").addEventListener("click", e => {
   };
   if (!view.map) { view.map = true; setView(); setTimeout(go, 120); } else go();
 });
+
+// ── panel view: list vs gallery (thumbnail grid) + a size slider ──
+(function wirePanelView() {
+  const ul = document.getElementById("worklist");
+  const slider = document.getElementById("thumb-size");
+  const setMode = m => {
+    panelMode = m;
+    ul.classList.toggle("gallery", m === "gallery");
+    document.getElementById("pv-list").classList.toggle("active", m === "list");
+    document.getElementById("pv-grid").classList.toggle("active", m === "gallery");
+    slider.hidden = m !== "gallery";
+    if (!state.near) renderPanel();               // re-render the same in-view works in the new mode
+  };
+  document.getElementById("pv-list").addEventListener("click", () => setMode("list"));
+  document.getElementById("pv-grid").addEventListener("click", () => setMode("gallery"));
+  const applySize = () => ul.style.setProperty("--thumb", slider.value + "px");
+  slider.addEventListener("input", applySize);
+  applySize();
+  // Reliable infinite-scroll trigger: append the next chunk when the scroll container nears the
+  // bottom. Covers both scrollers (#panel with the map, #main when the map is hidden) and backs
+  // up the IntersectionObserver, which is flaky with nested scroll containers.
+  ["panel", "main"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("scroll", () => {
+      if (!state.near && panelCursor < panelQueue.length &&
+          el.scrollTop + el.clientHeight >= el.scrollHeight - 700) appendPanelChunk();
+    });
+  });
+})();
+
+// ── draggable panel width (desktop): a splitter between the map and the side panel ──
+(function wirePanelResize() {
+  const handle = document.getElementById("panel-resize");
+  if (!handle) return;
+  const MIN = 240, MAX = 720, root = document.documentElement;
+  const saved = parseInt(localStorage.getItem("atlasPanelW") || "", 10);
+  if (saved >= MIN && saved <= MAX) root.style.setProperty("--panel-w", saved + "px");
+  let dragging = false, raf = 0;
+  const onMove = e => {
+    if (!dragging) return;
+    const r = document.getElementById("main").getBoundingClientRect();
+    const w = Math.max(MIN, Math.min(MAX, Math.round(r.right - e.clientX)));
+    root.style.setProperty("--panel-w", w + "px");
+    if (!raf) raf = requestAnimationFrame(() => { raf = 0; if (typeof map !== "undefined") map.invalidateSize(); });
+  };
+  handle.addEventListener("mousedown", e => { dragging = true; document.body.classList.add("resizing"); e.preventDefault(); });
+  window.addEventListener("mousemove", onMove);
+  window.addEventListener("mouseup", () => {
+    if (!dragging) return;
+    dragging = false; document.body.classList.remove("resizing");
+    const w = parseInt(root.style.getPropertyValue("--panel-w"), 10);
+    if (w) localStorage.setItem("atlasPanelW", w);
+    if (typeof map !== "undefined") map.invalidateSize();
+  });
+})();
 
 // ── lightbox: the painting at full size ──
 function fullImage(thumbUrl) {
@@ -1134,6 +1263,33 @@ document.addEventListener("click", e => {
   const img = e.target.closest("img.th");
   if (img && img.dataset.full) openLightbox(img.dataset.full, img.dataset.cap);
 });
+
+// ── work "ficha": the full record for one painting (image + facts + links) ──
+const workCard = document.getElementById("work-card");
+function openWorkCard(w) {
+  if (!w) return;
+  const p = w.p;
+  const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+  const img = p.image
+    ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
+    : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;
+  const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
+  const venue = [p.location, p.city, p.country].filter(Boolean).join(", ");
+  const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
+    ? esc(p.attribution) + (p.attribution_note ? ` — <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
+  const links = linksRow(p);
+  document.getElementById("wc-body").innerHTML =
+    `<div class="wc-imgwrap">${img}</div>` +
+    `<div class="wc-info"><h3 class="wc-title">${esc(p.title || "Untitled")}</h3>` +
+    row("Painter", painterTag(p)) + row("Date", esc(p.year || "")) + row("Where", esc(venue)) +
+    row("Technique", esc(p.medium || "")) + row("Size", esc(p.dimensions || "")) + row("Attribution", attr) +
+    (links ? `<div class="wc-links">${links}</div>` : "") + `</div>`;
+  workCard.hidden = false;
+}
+function closeWorkCard() { workCard.hidden = true; document.getElementById("wc-body").innerHTML = ""; }
+document.getElementById("wc-close").addEventListener("click", closeWorkCard);
+workCard.addEventListener("click", e => { if (e.target === workCard) closeWorkCard(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeWorkCard(); });
 // Wikimedia Commons occasionally resets HTTP/2 under a burst of thumbnail requests
 // (big popup/table). Degrade a failed thumbnail to the neutral placeholder box instead
 // of a broken-image icon. (Capture phase — <img> error events don't bubble.)

@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.35.1">
+  <link rel="stylesheet" href="atlas/style.css?v=0.37.0">
 </head>
 <body>
   <nav id="navbar">
@@ -75,8 +75,16 @@
 
   <div id="main">
     <div id="map"></div>
+    <div id="panel-resize" title="Drag to resize the panel" aria-hidden="true"></div>
     <aside id="panel">
-      <div id="panel-head">Works in view</div>
+      <div id="panel-top">
+        <span id="panel-head">Works in view</span>
+        <span id="panel-view">
+          <input id="thumb-size" type="range" min="72" max="240" value="112" title="Thumbnail size" hidden>
+          <button type="button" id="pv-list" class="pvbtn active" title="List view">☰</button>
+          <button type="button" id="pv-grid" class="pvbtn" title="Gallery view">▦</button>
+        </span>
+      </div>
       <ul id="worklist"></ul>
     </aside>
   </div>
@@ -89,12 +97,18 @@
       </span>
       <input id="table-search" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off">
       <span id="table-count" class="t-count"></span>
+      <span id="table-view">
+        <input id="tv-thumb" type="range" min="72" max="260" value="150" title="Thumbnail size" hidden>
+        <button type="button" id="tv-list" class="pvbtn active" title="Table view">☰</button>
+        <button type="button" id="tv-grid" class="pvbtn" title="Gallery view">▦</button>
+      </span>
     </div>
     <div id="table-wrap">
       <table id="works-table">
         <thead></thead>
         <tbody></tbody>
       </table>
+      <ul id="table-gallery" class="gallery" hidden></ul>
     </div>
   </section>
 
@@ -106,6 +120,13 @@
   <div id="lightbox" hidden>
     <button id="lb-close" type="button" aria-label="Close">✕</button>
     <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  </div>
+
+  <div id="work-card" hidden>
+    <div class="wc-card">
+      <button id="wc-close" type="button" aria-label="Close">✕</button>
+      <div id="wc-body"></div>
+    </div>
   </div>
 
   <footer id="foot">
@@ -143,7 +164,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.35.1"></script>
+  <script src="atlas/app.js?v=0.37.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

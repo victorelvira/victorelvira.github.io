@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Interactive Atlas of Wood Carving · where the carvings are</title>
+  <link rel="icon" href="carving/favicon.svg">
+  <meta name="description" content="An interactive atlas of wood carving — statues, altarpieces, choir stalls and reliquaries, mapped where they stand today. Map, gallery and table views. Data from the Palissy database of the French Ministry of Culture.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#2a1d12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Interactive Atlas of Wood Carving">
+  <meta property="og:description" content="Statues, altarpieces and choir stalls in wood, mapped where they stand today.">
+  <meta property="og:url" content="https://victorelvira.github.io/projects/carving.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="carving/vendor/leaflet.css">
+  <link rel="stylesheet" href="carving/vendor/MarkerCluster.css">
+  <link rel="stylesheet" href="carving/style.css?v=0.2.5">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Version and last update"></span>
+  </nav>
+
+  <header id="bar">
+    <a class="brand" href="carving.html" title="Reload the atlas (clears filters)">
+      <svg class="mark" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path fill="#7a5a3a" d="M6 21c0-5 1.4-8.6 3-11 1.3-2 2.4-3.4 3-5 .6 1.6 1.7 3 3 5 1.6 2.4 3 6 3 11z"/>
+        <path fill="#a8743c" d="M12 5c.6 1.6 1.7 3 3 5 1.6 2.4 3 6 3 11h-6z"/>
+        <path fill="#3f2c1a" d="M4 21h16v2H4z"/>
+      </svg>
+      <div>
+        <strong>Interactive Atlas of Wood Carving</strong>
+        <small>where the carvings are</small>
+      </div>
+    </a>
+    <div id="stats" class="stats">…</div>
+  </header>
+
+  <div id="modes">
+    <span id="view-tabs">
+      <button type="button" class="view-btn active" data-view="map" title="Map with the list of carvings beside it">🗺 Map &amp; list</button>
+      <button type="button" class="view-btn" data-view="gallery" title="Browse every carving as a photo grid">▦ Gallery</button>
+      <button type="button" class="view-btn" data-view="table" title="Browse every carving as a sortable table">☰ Table</button>
+    </span>
+    <input id="search" type="search" placeholder="Search — title, church, commune, carver…" autocomplete="off" aria-label="Search">
+    <span id="result-count" class="t-count"></span>
+    <button id="clear-filters" class="chip btn" type="button">Clear</button>
+  </div>
+
+  <div id="filters">
+    <span id="sources" class="chips" aria-label="Collection"></span>
+    <span class="fsep"></span>
+    <span id="kinds" class="chips" aria-label="Object type"></span>
+    <span class="fsep"></span>
+    <span id="finishes" class="chips" aria-label="Finish"></span>
+    <span class="fsep"></span>
+    <label class="chip toggle" title="Only carvings whose maker is named in the record — about 7% of the corpus, because devotional carving is largely anonymous workshop art"><input type="checkbox" id="named-only"><span>Named carver</span></label>
+  </div>
+
+  <div id="timeline">
+    <span class="tl-cap">Carved</span>
+    <div class="tl-range">
+      <div class="tl-track"></div>
+      <div id="tl-fill" class="tl-fill"></div>
+      <input type="range" id="tl-min" aria-label="From year">
+      <input type="range" id="tl-max" aria-label="To year">
+    </div>
+    <span id="tl-label" class="tl-val">—</span>
+  </div>
+
+  <div id="main">
+    <div id="map"></div>
+    <aside id="panel">
+      <div id="panel-head">Carvings in view</div>
+      <ul id="worklist"></ul>
+    </aside>
+  </div>
+
+  <section id="gallery" hidden>
+    <div id="grid" class="grid"></div>
+    <button id="more" class="more" type="button" hidden>Show more</button>
+  </section>
+
+  <section id="table" hidden>
+    <div id="table-wrap">
+      <table id="works-table"><thead></thead><tbody></tbody></table>
+    </div>
+    <button id="more-table" class="more" type="button" hidden>Show more</button>
+  </section>
+
+  <div id="sheet" hidden>
+    <button id="sheet-close" type="button" aria-label="Close">✕</button>
+    <div id="sheet-body"></div>
+  </div>
+
+  <div id="lightbox" hidden>
+    <button id="lb-close" type="button" aria-label="Close">✕</button>
+    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  </div>
+
+  <footer id="foot">
+    <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
+    · Data: <a href="https://www.pop.culture.gouv.fr/" target="_blank" rel="noopener">Base Palissy, Ministère de la Culture</a>
+    · Photographs are linked from their source, never redistributed
+  </footer>
+
+  <script src="carving/vendor/leaflet.js"></script>
+  <script src="carving/vendor/leaflet.markercluster.js"></script>
+  <script src="carving/app.js?v=0.2.5"></script>
+  <script data-goatcounter="https://victorelvira.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
