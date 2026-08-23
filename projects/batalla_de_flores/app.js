@@ -1571,7 +1571,10 @@ function pintarMapaMontaje(nm) {
       // Sin tope, en movil el globo se sale por la derecha.
       marca.bindPopup(`
         <b>${esc(sitio.nombre)}</b><br>
-        ${grupos.map(g => `${g.orden}. ${esc(g.grupo)}`).join("<br>")}
+        ${grupos.map(g => `${g.orden}. ${g.group_canonical
+          ? `<button class="link t-group" type="button"
+              data-group="${esc(slugifyGroup(g.group_canonical))}">${esc(g.grupo)}</button>`
+          : esc(g.grupo)}`).join("<br>")}
         <div class="pop-acciones">
           <a href="${comoLlegar(sitio)}" target="_blank" rel="noopener">Cómo llegar ↗</a>
           <button type="button" data-share-sitio="${esc(sitio.id)}">Compartir</button>
@@ -1658,7 +1661,11 @@ function nocheMagicaBlock(edition) {
           // hueco del grupo y las columnas propias se ocultan por CSS.
           return `<tr>
             <td class="pos"><span class="nm-num">${fila.orden}</span></td>
-            <td class="name">${esc(fila.grupo)}
+            <td class="name">${fila.group_canonical
+              ? `<button class="link t-group" type="button"
+                  data-group="${esc(slugifyGroup(fila.group_canonical))}"
+                  title="Ver la trayectoria de ${esc(fila.group_canonical)}">${esc(fila.grupo)}</button>`
+              : esc(fila.grupo)}
               <small class="nm-movil">${esc(carrozas)} · ${enlace}</small></td>
             <td class="nm-col">${esc(carrozas)}</td>
             <td class="nm-col">${enlace}</td>
