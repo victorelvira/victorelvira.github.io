@@ -39488,6 +39488,8 @@
     "fecha": "jueves 27 de agosto de 2026",
     "hora": "a partir de las 20:00",
     "desfile": "viernes 28 de agosto de 2026",
+    "fecha_iso": "2026-08-27",
+    "desfile_iso": "2026-08-28",
     "edition_number": 115,
     "float_count": 14,
     "source_url": "https://www.laredo.es/09/agenda_ampliada/4015.html",
@@ -39586,7 +39588,7 @@
       }
     ]
   },
-  "version": "0.38.0",
+  "version": "0.39.0",
   "about": {
     "url": "https://victorelvira.github.io/projects/batalla_de_flores.html",
     "compiled_by": "Víctor Elvira",
@@ -39604,7 +39606,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-23 16:53",
+  "built_at": "2026-08-23 17:24",
   "map_features": [
     {
       "id": "route_origin_1908",

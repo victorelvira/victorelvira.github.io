@@ -234,15 +234,23 @@ function filteredGroups() {
  * Aparece en la cabecera solo en la cuenta atras -desde un mes antes hasta el
  * dia del desfile- y desaparece solo despues. Un banner permanente se vuelve
  * invisible; uno que solo sale cuando sirve, se lee. */
-function nocheMagicaEstado() {
+function nocheMagicaEstado(ahora = new Date()) {
   const nm = state.dataset.noche_magica;
-  if (!nm) return null;
-  const noche = new Date(`${nm.year}-08-27T20:00:00`);
-  const desfile = new Date(`${nm.year}-08-28T23:59:00`);
-  const hoy = new Date();
-  const dias = Math.ceil((noche - hoy) / 86400000);
+  if (!nm?.fecha_iso || !nm?.desfile_iso) return null;
+
+  // Diferencia en DIAS DE CALENDARIO, no en milisegundos: a las 10 de la mañana
+  // del 27 faltan diez horas para las 20:00, y restando milisegundos eso
+  // redondeaba a "mañana" cuando la respuesta correcta es "hoy".
+  const soloDia = fecha => Date.UTC(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
+  const [ay, am, ad] = nm.fecha_iso.split("-").map(Number);
+  const [dy, dm, dd] = nm.desfile_iso.split("-").map(Number);
+  const hoy = soloDia(ahora);
+  const noche = Date.UTC(ay, am - 1, ad);
+  const desfile = Date.UTC(dy, dm - 1, dd);
+
+  const dias = Math.round((noche - hoy) / 86400000);
   if (hoy > desfile || dias > 31) return null;
-  return { nm, dias, esHoy: dias === 0, pasada: hoy > noche };
+  return { nm, dias, esDiaDesfile: hoy === desfile, ahora };
 }
 
 function renderNocheMagica() {
@@ -251,18 +259,29 @@ function renderNocheMagica() {
   if (!caja) return;
   if (!estado) { caja.hidden = true; return; }
 
-  const { nm, dias, esHoy, pasada } = estado;
-  const cuando = esHoy ? "es esta noche"
-    : pasada ? "fue anoche"
-    : dias === 1 ? "es mañana"
-    : `es en ${dias} días`;
+  const { nm, dias, esDiaDesfile, ahora } = estado;
+  const [, , hora] = (nm.hora.match(/(\d{1,2}):(\d{2})/) || [null, null, null]);
+  const empezada = dias === 0 && ahora.getHours() >= Number((nm.hora.match(/(\d{1,2}):/) || [0, 20])[1]);
+
+  let titular;
+  if (esDiaDesfile) titular = "El desfile es hoy";
+  else if (dias === 0) titular = empezada ? "La Noche Mágica está siendo ahora" : "La Noche Mágica es hoy";
+  else if (dias === 1) titular = "La Noche Mágica es mañana";
+  else titular = `La Noche Mágica es en ${dias} días`;
+
+  // Corto a proposito: el recuadro vive sobre la cabecera y cada linea de mas
+  // empuja el contenido real hacia abajo.
+  const dia = esc(nm.fecha.replace(/ de \d{4}$/, "").replace(" de agosto", ""));
+  const detalle = esDiaDesfile
+    ? `${nm.float_count} carrozas de ${nm.grupos.length} grupos en la Alameda Miramar.`
+    : `${dia} de agosto, ${esc(nm.hora)}. Locales abiertos de los ${nm.grupos.length} grupos.`;
 
   caja.hidden = false;
   caja.innerHTML = `
     <span class="nm-flor">🌺</span>
-    <span class="nm-texto"><b>La Noche Mágica ${cuando}</b> · ${esc(nm.fecha)}, ${esc(nm.hora)}.
-      Los siete grupos abren sus locales para ver rematarse las ${nm.float_count} carrozas.</span>
-    <button class="nm-ir" type="button" data-year="${nm.year}">Ver el mapa →</button>`;
+    <span class="nm-texto"><b>${titular}</b> · ${detalle}</span>
+    <button class="nm-ir" type="button" data-year="${nm.year}">${
+      esDiaDesfile ? "Ver la edición →" : "Ver el mapa →"}</button>`;
 }
 
 function renderStats() {
@@ -1345,6 +1364,104 @@ function renderRouteMap(activeId, { variant = "detail" } = {}) {
  * no sirve. */
 /* Mapa de los locales de montaje. Reaprovecha la proyeccion y las capas de los
  * mapas de recorrido: mismas calles, mismo estilo, solo cambian las marcas. */
+/* Zoom y arrastre sobre el SVG, sin libreria: se mueve el viewBox.
+ *
+ * Ampliar el viewBox en vez de escalar con CSS mantiene el texto y las lineas
+ * nitidos a cualquier aumento, que es justo lo que se pierde con un transform.
+ * Cubre rueda del raton, pellizco de dos dedos, arrastre y doble toque. */
+function makeZoomable(svg) {
+  if (!svg || svg.dataset.zoomReady) return;
+  svg.dataset.zoomReady = "1";
+
+  const base = svg.viewBox.baseVal;
+  const inicial = { x: base.x, y: base.y, w: base.width, h: base.height };
+  let vista = { ...inicial };
+  const MAX = 8;
+
+  const aplicar = () => {
+    svg.setAttribute("viewBox", `${vista.x} ${vista.y} ${vista.w} ${vista.h}`);
+    svg.classList.toggle("is-zoomed", vista.w < inicial.w - 0.5);
+  };
+
+  /* Amplia manteniendo fijo el punto que hay bajo el dedo o el cursor. */
+  const zoom = (factor, cx, cy) => {
+    const w = Math.min(inicial.w, Math.max(inicial.w / MAX, vista.w / factor));
+    const escala = w / vista.w;
+    vista = {
+      w, h: vista.h * escala,
+      x: cx - (cx - vista.x) * escala,
+      y: cy - (cy - vista.y) * escala,
+    };
+    // Sin esto se puede arrastrar el mapa fuera de la vista y perderlo.
+    vista.x = Math.max(inicial.x, Math.min(vista.x, inicial.x + inicial.w - vista.w));
+    vista.y = Math.max(inicial.y, Math.min(vista.y, inicial.y + inicial.h - vista.h));
+    aplicar();
+  };
+
+  const aSvg = event => {
+    const r = svg.getBoundingClientRect();
+    return [vista.x + ((event.clientX - r.left) / r.width) * vista.w,
+            vista.y + ((event.clientY - r.top) / r.height) * vista.h];
+  };
+
+  svg.addEventListener("wheel", event => {
+    event.preventDefault();
+    const [cx, cy] = aSvg(event);
+    zoom(event.deltaY < 0 ? 1.25 : 1 / 1.25, cx, cy);
+  }, { passive: false });
+
+  svg.addEventListener("dblclick", event => {
+    const [cx, cy] = aSvg(event);
+    zoom(2, cx, cy);
+  });
+
+  const punteros = new Map();
+  let previo = null;
+  svg.addEventListener("pointerdown", event => {
+    svg.setPointerCapture(event.pointerId);
+    punteros.set(event.pointerId, event);
+    previo = null;
+  });
+  svg.addEventListener("pointermove", event => {
+    if (!punteros.has(event.pointerId)) return;
+    const antes = punteros.get(event.pointerId);
+    punteros.set(event.pointerId, event);
+    const r = svg.getBoundingClientRect();
+
+    if (punteros.size === 2) {
+      const [a, b] = [...punteros.values()];
+      const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+      if (previo) {
+        const cx = vista.x + (((a.clientX + b.clientX) / 2 - r.left) / r.width) * vista.w;
+        const cy = vista.y + (((a.clientY + b.clientY) / 2 - r.top) / r.height) * vista.h;
+        zoom(dist / previo, cx, cy);
+      }
+      previo = dist;
+      return;
+    }
+    if (vista.w >= inicial.w - 0.5) return;   // sin ampliar no hay nada que arrastrar
+    vista.x -= ((event.clientX - antes.clientX) / r.width) * vista.w;
+    vista.y -= ((event.clientY - antes.clientY) / r.height) * vista.h;
+    vista.x = Math.max(inicial.x, Math.min(vista.x, inicial.x + inicial.w - vista.w));
+    vista.y = Math.max(inicial.y, Math.min(vista.y, inicial.y + inicial.h - vista.h));
+    aplicar();
+  });
+  const soltar = event => { punteros.delete(event.pointerId); previo = null; };
+  svg.addEventListener("pointerup", soltar);
+  svg.addEventListener("pointercancel", soltar);
+
+  const figura = svg.closest("figure");
+  figura?.querySelectorAll("[data-zoom-act]").forEach(boton => {
+    boton.addEventListener("click", () => {
+      const act = boton.dataset.zoomAct;
+      const cx = vista.x + vista.w / 2;
+      const cy = vista.y + vista.h / 2;
+      if (act === "reset") { vista = { ...inicial }; aplicar(); }
+      else zoom(act === "in" ? 1.6 : 1 / 1.6, cx, cy);
+    });
+  });
+}
+
 function renderMontajeMap(nm) {
   const puntos = nm.sitios.map(sitio => [sitio.lon, sitio.lat]);
   const project = makeProjection(puntos, { width: 420, height: 300, margin: 2.6, padding: 26 });
@@ -1363,8 +1480,13 @@ function renderMontajeMap(nm) {
     </g>`;
   }).join("");
 
-  return `<figure class="map map-detail">
-    <svg viewBox="0 0 420 300" role="img"
+  return `<figure class="map map-detail map-zoom">
+    <div class="zoom-ctrl">
+      <button type="button" data-zoom-act="in" title="Ampliar" aria-label="Ampliar">+</button>
+      <button type="button" data-zoom-act="out" title="Reducir" aria-label="Reducir">−</button>
+      <button type="button" data-zoom-act="reset" title="Ver todo" aria-label="Ver todo">⟲</button>
+    </div>
+    <svg class="zoomable" viewBox="0 0 420 300" role="img"
       aria-label="Mapa de los locales de montaje de la Noche Mágica ${nm.year}">
       ${mapLayers(project, null, { showStreets: true, showLabels: true, showArrows: false })}
       ${marcas}
@@ -1389,19 +1511,26 @@ function nocheMagicaBlock(edition) {
     <table class="palmares">
       <colgroup><col class="c-src"><col><col><col></colgroup>
       <thead><tr>
-        <th>N.º</th><th>Grupo</th><th>Carrozas</th><th>Dónde monta</th>
+        <th>N.º</th><th>Grupo</th>
+        <th class="nm-col">Carrozas</th><th class="nm-col">Dónde monta</th>
       </tr></thead>
       <tbody>
         ${nm.grupos.map(fila => {
           const sitio = sitios.get(fila.sitio);
           const carrozas = [fila.a ? `${fila.a} en A` : "", fila.b ? `${fila.b} en B` : ""]
             .filter(Boolean).join(" · ");
+          const enlace = sitio
+            ? `<a href="https://www.openstreetmap.org/?mlat=${sitio.lat}&mlon=${sitio.lon}#map=18/${sitio.lat}/${sitio.lon}"
+                target="_blank" rel="noopener" title="${esc(sitio.nombre)}">${esc(sitio.corto || sitio.nombre)} ↗</a>`
+            : "–";
+          // En movil no caben cuatro columnas: carrozas y ubicacion bajan al
+          // hueco del grupo y las columnas propias se ocultan por CSS.
           return `<tr>
             <td class="pos"><span class="nm-num">${fila.orden}</span></td>
-            <td class="name">${esc(fila.grupo)}</td>
-            <td>${esc(carrozas)}</td>
-            <td>${sitio ? `<a href="https://www.openstreetmap.org/?mlat=${sitio.lat}&mlon=${sitio.lon}#map=18/${sitio.lat}/${sitio.lon}"
-              target="_blank" rel="noopener" title="${esc(sitio.nombre)}">${esc(sitio.corto || sitio.nombre)} ↗</a>` : "–"}</td>
+            <td class="name">${esc(fila.grupo)}
+              <small class="nm-movil">${esc(carrozas)} · ${enlace}</small></td>
+            <td class="nm-col">${esc(carrozas)}</td>
+            <td class="nm-col">${enlace}</td>
           </tr>`;
         }).join("")}
       </tbody>
@@ -1704,6 +1833,7 @@ function renderEditionDetail(edition) {
     ${provenanceBlock(entries, edition.source_urls || [], edition)}
   `;
   els.detail.scrollTop = 0;
+  activarMapasZoom();
 }
 
 /* ── detalle: qué es esto ───────────────────────────────────────────────── */
@@ -1778,6 +1908,7 @@ function renderAbout() {
       </ul>
     </div>`;
   els.detail.scrollTop = 0;
+  activarMapasZoom();
 }
 
 /* ── detalle: carroza ───────────────────────────────────────────────────── */
@@ -1851,6 +1982,7 @@ function renderFloatDetail(entry) {
         .map(url => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></li>`).join("")}</ul>` : ""}
     </div>`;
   els.detail.scrollTop = 0;
+  activarMapasZoom();
 }
 
 /* ── detalle: grupo ─────────────────────────────────────────────────────── */
@@ -2044,6 +2176,7 @@ function renderGroupDetail(group) {
       </ul>
     </div>`;
   els.detail.scrollTop = 0;
+  activarMapasZoom();
 }
 
 /* ── detalle: recorrido ─────────────────────────────────────────────────── */
@@ -2090,6 +2223,7 @@ function renderRouteDetail(route) {
       ${route.source_url ? `<ul class="plain" style="margin-top:6px"><li><a href="${esc(route.source_url)}" target="_blank" rel="noopener">${esc(route.source_url)}</a></li></ul>` : ""}
     </div>`;
   els.detail.scrollTop = 0;
+  activarMapasZoom();
 }
 
 /* ── ordenacion de las tablas del detalle ───────────────────────────────── */
@@ -2180,6 +2314,10 @@ function shareCurrent() {
     "Archivo de la Batalla de Flores de Laredo",
     document.getElementById("share"),
   );
+}
+
+function activarMapasZoom() {
+  document.querySelectorAll("#detail svg.zoomable").forEach(makeZoomable);
 }
 
 function renderDetail() {
