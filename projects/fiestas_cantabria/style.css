@@ -58,34 +58,45 @@ body {
 .header-count span { font-weight: 700; }
 .update-info { font-size: 10.5px; opacity: .7; letter-spacing: .2px; white-space: nowrap; }
 
-/* Layout */
+/* Layout estilo atlas: filtros arriba · mapa grande · lista a la derecha */
+#barra-filtros {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  padding: 9px 16px; background: #fff; border-bottom: 1px solid var(--linea); z-index: 400;
+}
+#barra-filtros input[type="search"], #barra-filtros select {
+  font-size: 13.5px; padding: 7px 10px; border: 1px solid var(--linea);
+  border-radius: 9px; background: #fff; color: var(--texto);
+}
+#barra-filtros input[type="search"] { flex: 1 1 220px; min-width: 180px; max-width: 340px; }
+#barra-filtros input:focus, #barra-filtros select:focus { outline: 2px solid var(--verde); border-color: var(--verde); }
+
 .app-body { flex: 1; display: flex; min-height: 0; }
+.map-wrap { flex: 1; min-width: 0; }
+#map { height: 100%; width: 100%; }
 
-.sidebar {
-  width: 380px;
-  max-width: 42%;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-right: 1px solid var(--linea);
-  min-height: 0;
+.sidebar {   /* panel de lista a la derecha */
+  flex: 0 0 330px; width: 330px;
+  display: flex; flex-direction: column;
+  background: #fff; border-left: 1px solid var(--linea); min-height: 0;
 }
-.filters { padding: 14px; border-bottom: 1px solid var(--linea); display: flex; flex-direction: column; gap: 10px; }
-.filters input, .filters select {
-  font-size: 14px;
-  padding: 9px 11px;
-  border: 1px solid var(--linea);
-  border-radius: 9px;
-  background: #fff;
-  color: var(--texto);
-  width: 100%;
-}
-.filters input:focus, .filters select:focus { outline: 2px solid var(--verde); border-color: var(--verde); }
-.filter-row { display: flex; gap: 8px; }
 
-.fechas { display: flex; gap: 8px; }
-.fechas label { flex: 1; font-size: 11px; color: var(--gris); font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
-.fechas input[type="date"] { margin-top: 3px; font-size: 13px; }
+/* Rango de fechas en una sola píldora alineada con la barra */
+.fechas {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid var(--linea); border-radius: 9px;
+  padding: 4px 10px;
+}
+.fechas label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; color: var(--gris); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .4px;
+}
+.fechas label + label { border-left: 1px solid var(--linea); padding-left: 8px; }
+.fechas input[type="date"] {
+  margin: 0; border: none; background: transparent; color: var(--texto);
+  font-family: inherit; font-size: 12.5px; padding: 2px 0;
+}
+.fechas input[type="date"]:focus { outline: none; }
 
 .chips { display: flex; gap: 6px; flex-wrap: wrap; }
 .chip {
@@ -108,30 +119,80 @@ body {
 .cat-chip.cat-activa { background: var(--c); color: #fff; border-color: var(--c); }
 .cat-chip .cat-n { font-size: 10px; opacity: .65; font-weight: 700; }
 .cat-chip.cat-activa .cat-n { opacity: .9; }
+.cat-chip.cat-cero { opacity: .38; }   /* sin eventos con los filtros actuales */
 
 .chk { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--gris); cursor: pointer; }
 .chk input { width: auto; }
 
 .vacio { padding: 20px; color: #888; text-align: center; font-size: 13.5px; line-height: 1.4; }
+.sentinel { height: 1px; margin: 0; padding: 0; list-style: none; }
 
-.lista { list-style: none; margin: 0; padding: 8px; overflow-y: auto; flex: 1; }
-.card {
-  border: 1px solid var(--linea);
-  border-left: 5px solid var(--gris);
-  border-radius: 10px;
-  padding: 11px 13px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: background .12s, transform .12s;
+/* Conmutador Mapa / Tabla */
+#modo-vista { display: inline-flex; border: 1px solid var(--linea); border-radius: 9px; overflow: hidden; }
+.mv-btn { border: none; background: #fff; color: var(--texto); font-size: 13px; padding: 7px 12px; cursor: pointer; }
+.mv-btn + .mv-btn { border-left: 1px solid var(--linea); }
+.mv-btn.mv-activo { background: var(--verde); color: #fff; }
+body.vista-tabla .vista-toggle { display: none; }
+
+/* Vista de tabla */
+.app-body[hidden] { display: none; }
+#tabla[hidden] { display: none; }
+#tabla { flex: 1; min-height: 0; flex-direction: column; background: #fff; }
+#tabla:not([hidden]) { display: flex; }
+#tabla-wrap { flex: 1; overflow: auto; }
+#tabla table { width: 100%; border-collapse: collapse; font-size: 13px; }
+#tabla thead th {
+  position: sticky; top: 0; background: #f3ece0; text-align: left;
+  padding: 9px 12px; border-bottom: 2px solid var(--linea); cursor: pointer;
+  font-weight: 700; white-space: nowrap; z-index: 1;
 }
-.card:hover { background: #faf8f3; transform: translateX(2px); }
+#tabla thead th:hover { background: #e9e0d0; }
+#tabla thead th.ordenado::after { content: " ▾"; opacity: .7; }
+#tabla thead th.ordenado.asc::after { content: " ▴"; }
+#tabla tbody td { padding: 7px 12px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+#tabla tbody tr { cursor: pointer; }
+#tabla tbody tr:hover { background: #faf8f3; }
+#tabla .td-fecha { white-space: nowrap; color: var(--gris); }
+#tabla .td-nombre { font-weight: 600; }
+#tabla .ti-mini { color: #d9a400; font-size: 12px; }   /* estrella de Interés Turístico */
+
+/* Cabecera de la lista: seguir-al-mapa + orden */
+.lista-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 7px 11px; border-bottom: 1px solid var(--linea); background: #fbf9f4;
+  font-size: 12px; flex: 0 0 auto;
+}
+.lista-head .zona-tgl { display: flex; align-items: center; gap: 6px; color: var(--texto); cursor: pointer; font-weight: 600; }
+.lista-head .zona-tgl input { width: auto; }
+.lista-head .orden-lbl { display: flex; align-items: center; gap: 5px; color: var(--gris); text-transform: uppercase; font-size: 10.5px; letter-spacing: .3px; }
+.lista-head select { font-size: 12px; padding: 3px 6px; border: 1px solid var(--linea); border-radius: 7px; background: #fff; color: var(--texto); text-transform: none; letter-spacing: 0; }
+
+.lista { list-style: none; margin: 0; padding: 7px; overflow-y: auto; flex: 1; }
+
+/* Tarjetas compactas (sobrias): título + una línea de meta */
+.card {
+  --c: var(--gris);
+  border: 1px solid var(--linea);
+  border-left: 4px solid var(--c);
+  border-radius: 8px;
+  padding: 7px 11px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: background .12s;
+}
+.card:hover { background: #faf8f3; }
 .card.activa { background: #eef6f1; border-color: var(--verde); }
-.card h3 { margin: 0 0 3px; font-size: 15px; }
-.card .meta { font-size: 12.5px; color: var(--gris); display: flex; flex-wrap: wrap; gap: 6px 10px; }
-.card .meta .pueblo::before { content: "📍 "; }
-.card .meta .fecha::before { content: "🗓 "; }
-.card .meta .dur { background: #eef2f4; color: var(--mar); padding: 1px 7px; border-radius: 999px; font-weight: 600; }
-.card .meta .dur::before { content: "⏱ "; }
+.card h3 { margin: 0 0 3px; font-size: 13.6px; font-weight: 600; line-height: 1.25; }
+.card .c-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 1px 9px; font-size: 11.5px; color: var(--gris); }
+.card .c-meta .cat { font-weight: 700; }
+.card .c-meta .fecha::before { content: "🗓 "; }
+.card .c-meta .pueblo::before { content: "📍 "; }
+.card .c-meta .dur { color: var(--mar); font-weight: 600; }
+.ti-mini { color: #d9a400; }
+.finde-mini {
+  background: var(--t-carnaval); color: #fff; font-size: 9.5px; font-weight: 700;
+  padding: 1px 6px; border-radius: 999px; vertical-align: 1px; letter-spacing: .3px;
+}
 .badge {
   display: inline-block;
   font-size: 11px;
@@ -143,7 +204,6 @@ body {
   background: #fff3cd; color: #7a5c00; border: 1px solid #ffe08a;
   text-transform: none;
 }
-.card-badges { margin-top: 7px; display: flex; gap: 6px; flex-wrap: wrap; }
 
 .hoy-flag {
   background: var(--t-carnaval); color:#fff; font-size:11px; font-weight:700;
@@ -206,26 +266,29 @@ body {
 }
 .vista-toggle button.vista-activa { background: var(--verde); color: #fff; border-color: var(--verde); }
 
-/* Responsive — móvil: SCROLL NATURAL de toda la página */
+/* Panel de grupo (varios eventos en el mismo punto del mapa) */
+.grupo-lista { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.grupo-item { border: 1px solid var(--linea); border-radius: 10px; padding: 9px 11px; cursor: pointer; }
+.grupo-item:hover { background: #faf8f3; }
+.gi-nombre { font-weight: 600; font-size: 14px; margin-top: 5px; }
+.gi-fecha { font-size: 12px; color: var(--gris); margin-top: 2px; }
+
+/* Responsive — móvil: filtros arriba, y scroll natural (Mapa por defecto) */
 @media (max-width: 760px) {
-  html, body { height: auto; }          /* deja que la página crezca y scrollee */
+  html, body { height: auto; }
   body { display: block; }
-  .vista-toggle { display: flex; position: sticky; top: 0; }  /* siempre accesible */
+  .vista-toggle { display: flex; position: sticky; top: 0; z-index: 410; }
+
+  #barra-filtros { gap: 6px 10px; }
 
   .app-body { display: flex; flex-direction: column; height: auto; min-height: 0; }
-  /* la barra lateral se "disuelve" para poder intercalar filtros → mapa → lista */
-  .sidebar { display: contents; }
-  .filters { background: #fff; order: 0; }
-  .map-wrap { order: 1; min-width: 0; flex: none; }  /* flex:none para que se respete height */
-  /* el swipe vertical scrollea la página (llega a la lista); el pellizco sigue haciendo zoom */
+  .map-wrap { flex: none; min-width: 0; }
   #map { touch-action: pan-y pinch-zoom; }
-  .lista { order: 2; background: #fff; overflow: visible; flex: none; }  /* fluye, sin scroll propio */
+  .sidebar { flex: none; width: 100%; border-left: none; background: #fff; }
+  .lista { overflow: visible; flex: none; }
 
-  /* Vista lista (por defecto): mapa oculto; solo filtros + lista */
-  body:not(.vista-mapa) .map-wrap { display: none; }
-
-  /* Vista mapa: filtros arriba, mapa (se va con el scroll) y la lista completa debajo */
-  body.vista-mapa .map-wrap { display: block; height: 55vh; }
+  body:not(.vista-mapa) .map-wrap { display: none; }     /* vista lista */
+  body.vista-mapa .map-wrap { display: block; height: 55vh; }  /* vista mapa + lista debajo */
 
   .app-header h1 { font-size: 16px; }
   .subtitle { display: none; }

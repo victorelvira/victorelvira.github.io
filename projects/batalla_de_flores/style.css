@@ -994,6 +994,32 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .prov-urls li { margin-bottom: 5px; }
 .prov-urls small { display: block; color: var(--muted); font-size: 10.5px; word-break: break-all; }
 
+/* Mapa de Leaflet de la Noche Magica. */
+.mapa-montaje {
+  height: 300px; margin: 4px 0 2px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--line-soft);
+}
+.mapa-pie { margin-top: 5px; }
+.montaje-icon span {
+  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #2f7d4f; color: #fff; border: 2px solid #fffaf5;
+  font-size: 12px; font-weight: 700;
+  box-shadow: 0 1px 4px rgba(34, 23, 22, 0.35);
+}
+.pop-acciones { display: flex; gap: 8px; align-items: center; margin-top: 7px; }
+.pop-acciones button {
+  padding: 2px 9px; cursor: pointer; border: 1px solid var(--line);
+  border-radius: 999px; background: #fff; font: inherit; font-size: 12px;
+}
+.leaflet-yo {
+  width: 32px; height: 32px; cursor: pointer;
+  border: 1px solid rgba(34,23,22,0.25); border-radius: 5px;
+  background: #fff; font-size: 15px; line-height: 1;
+}
+.leaflet-yo:hover { background: #f2f2f2; }
+
 /* Marcas de los locales de montaje: numeradas por orden de salida, para que la
  * tabla y el mapa se lean juntos. */
 .montaje-halo { fill: #2f7d4f; opacity: 0.18; }

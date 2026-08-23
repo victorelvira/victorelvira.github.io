@@ -390,6 +390,15 @@ body.resizing #map { pointer-events: none; }
   text-transform: uppercase; letter-spacing: .03em; padding-top: 2px; }
 .wc-note { color: var(--muted); font-style: italic; }
 .wc-links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.wc-actions { margin-top: 14px; }
+.wc-share { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 14px; cursor: pointer;
+  border: 1px solid #d8c7a6; border-radius: 999px; background: #efe6d6; color: #3a2317; }
+.wc-share:hover { background: #e7dcc6; }
+#toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(10px);
+  background: #241a12; color: #f6efe4; padding: 9px 16px; border-radius: 999px; font-size: 13px;
+  z-index: 3000; opacity: 0; pointer-events: none; box-shadow: 0 4px 20px rgba(0,0,0,.4);
+  transition: opacity .18s, transform .18s; }
+#toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
 @media (max-width: 640px) { #wc-body { grid-template-columns: 1fr; } .wc-imgwrap .wc-img { max-height: 46vh; } }
 #lb-close {
   position: fixed; top: 14px; right: 18px; font-size: 22px; line-height: 1;

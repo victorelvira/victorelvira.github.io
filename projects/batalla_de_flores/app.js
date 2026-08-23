@@ -1362,13 +1362,8 @@ function renderRouteMap(activeId, { variant = "detail" } = {}) {
  * quien participa, con cuantas carrozas y donde las monta. Es lo unico util que
  * puede dar la ficha de un ano futuro, y ademas caduca: el jueves siguiente ya
  * no sirve. */
-/* Mapa de los locales de montaje. Reaprovecha la proyeccion y las capas de los
- * mapas de recorrido: mismas calles, mismo estilo, solo cambian las marcas. */
 /* Zoom y arrastre sobre el SVG, sin libreria: se mueve el viewBox.
- *
- * Ampliar el viewBox en vez de escalar con CSS mantiene el texto y las lineas
- * nitidos a cualquier aumento, que es justo lo que se pierde con un transform.
- * Cubre rueda del raton, pellizco de dos dedos, arrastre y doble toque. */
+ * Se usa en los mapas de recorrido; el de la Noche Magica va con Leaflet. */
 function makeZoomable(svg) {
   if (!svg || svg.dataset.zoomReady) return;
   svg.dataset.zoomReady = "1";
@@ -1383,16 +1378,11 @@ function makeZoomable(svg) {
     svg.classList.toggle("is-zoomed", vista.w < inicial.w - 0.5);
   };
 
-  /* Amplia manteniendo fijo el punto que hay bajo el dedo o el cursor. */
   const zoom = (factor, cx, cy) => {
     const w = Math.min(inicial.w, Math.max(inicial.w / MAX, vista.w / factor));
     const escala = w / vista.w;
-    vista = {
-      w, h: vista.h * escala,
-      x: cx - (cx - vista.x) * escala,
-      y: cy - (cy - vista.y) * escala,
-    };
-    // Sin esto se puede arrastrar el mapa fuera de la vista y perderlo.
+    vista = { w, h: vista.h * escala,
+      x: cx - (cx - vista.x) * escala, y: cy - (cy - vista.y) * escala };
     vista.x = Math.max(inicial.x, Math.min(vista.x, inicial.x + inicial.w - vista.w));
     vista.y = Math.max(inicial.y, Math.min(vista.y, inicial.y + inicial.h - vista.h));
     aplicar();
@@ -1409,11 +1399,7 @@ function makeZoomable(svg) {
     const [cx, cy] = aSvg(event);
     zoom(event.deltaY < 0 ? 1.25 : 1 / 1.25, cx, cy);
   }, { passive: false });
-
-  svg.addEventListener("dblclick", event => {
-    const [cx, cy] = aSvg(event);
-    zoom(2, cx, cy);
-  });
+  svg.addEventListener("dblclick", event => { const [cx, cy] = aSvg(event); zoom(2, cx, cy); });
 
   const punteros = new Map();
   let previo = null;
@@ -1427,7 +1413,6 @@ function makeZoomable(svg) {
     const antes = punteros.get(event.pointerId);
     punteros.set(event.pointerId, event);
     const r = svg.getBoundingClientRect();
-
     if (punteros.size === 2) {
       const [a, b] = [...punteros.values()];
       const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
@@ -1439,7 +1424,7 @@ function makeZoomable(svg) {
       previo = dist;
       return;
     }
-    if (vista.w >= inicial.w - 0.5) return;   // sin ampliar no hay nada que arrastrar
+    if (vista.w >= inicial.w - 0.5) return;
     vista.x -= ((event.clientX - antes.clientX) / r.width) * vista.w;
     vista.y -= ((event.clientY - antes.clientY) / r.height) * vista.h;
     vista.x = Math.max(inicial.x, Math.min(vista.x, inicial.x + inicial.w - vista.w));
@@ -1450,49 +1435,192 @@ function makeZoomable(svg) {
   svg.addEventListener("pointerup", soltar);
   svg.addEventListener("pointercancel", soltar);
 
-  const figura = svg.closest("figure");
-  figura?.querySelectorAll("[data-zoom-act]").forEach(boton => {
+  svg.closest("figure")?.querySelectorAll("[data-zoom-act]").forEach(boton => {
     boton.addEventListener("click", () => {
-      const act = boton.dataset.zoomAct;
       const cx = vista.x + vista.w / 2;
       const cy = vista.y + vista.h / 2;
-      if (act === "reset") { vista = { ...inicial }; aplicar(); }
-      else zoom(act === "in" ? 1.6 : 1 / 1.6, cx, cy);
+      if (boton.dataset.zoomAct === "reset") { vista = { ...inicial }; aplicar(); }
+      else zoom(boton.dataset.zoomAct === "in" ? 1.6 : 1 / 1.6, cx, cy);
     });
   });
 }
 
-function renderMontajeMap(nm) {
-  const puntos = nm.sitios.map(sitio => [sitio.lon, sitio.lat]);
-  const project = makeProjection(puntos, { width: 420, height: 300, margin: 2.6, padding: 26 });
-  if (!project) return "";
+/* Leaflet servido desde el propio dominio, no de un CDN, y cargado SOLO cuando
+ * hace falta un mapa de verdad: quien no lo abra no baja ni un byte. */
+const LEAFLET = {
+  js: "batalla_de_flores/vendor/leaflet.js",
+  css: "batalla_de_flores/vendor/leaflet.css",
+};
+let leafletCargando = null;
 
-  const cuantos = sitio => nm.grupos.filter(g => g.sitio === sitio.id);
-  const marcas = nm.sitios.map(sitio => {
-    const [x, y] = project([sitio.lon, sitio.lat]);
-    const grupos = cuantos(sitio);
-    const etiqueta = grupos.map(g => g.orden).join("·");
-    const tip = `${sitio.nombre}<b>${grupos.map(g => g.grupo).join(" · ")}</b>`;
-    return `<g class="montaje" data-tip="${esc(tip)}">
-      <circle class="montaje-halo" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="13"/>
-      <circle class="montaje-pin" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9.5"/>
-      <text class="montaje-num" x="${x.toFixed(1)}" y="${(y + 3.4).toFixed(1)}">${esc(etiqueta)}</text>
-    </g>`;
-  }).join("");
+function cargarLeaflet() {
+  if (window.L) return Promise.resolve();
+  if (leafletCargando) return leafletCargando;
+  leafletCargando = new Promise((ok, fallo) => {
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = LEAFLET.css;
+    document.head.appendChild(css);
+    const js = document.createElement("script");
+    js.src = LEAFLET.js;
+    js.onload = ok;
+    js.onerror = () => fallo(new Error("no se pudo cargar Leaflet"));
+    document.head.appendChild(js);
+  });
+  return leafletCargando;
+}
 
-  return `<figure class="map map-detail map-zoom">
-    <div class="zoom-ctrl">
-      <button type="button" data-zoom-act="in" title="Ampliar" aria-label="Ampliar">+</button>
-      <button type="button" data-zoom-act="out" title="Reducir" aria-label="Reducir">−</button>
-      <button type="button" data-zoom-act="reset" title="Ver todo" aria-label="Ver todo">⟲</button>
-    </div>
-    <svg class="zoomable" viewBox="0 0 420 300" role="img"
-      aria-label="Mapa de los locales de montaje de la Noche Mágica ${nm.year}">
-      ${mapLayers(project, null, { showStreets: true, showLabels: true, showArrows: false })}
-      ${marcas}
-      ${scaleBar(project)}
-    </svg>
-  </figure>`;
+/* Enlace de navegacion: Google Maps con solo el destino usa la ubicacion actual
+ * como origen, asi que no hay que pedirle la posicion a nadie ni guardarla. */
+function comoLlegar(sitio) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${sitio.lat},${sitio.lon}`;
+}
+
+/* El mismo salto que en la Noche Magica, por el mismo motivo: en la ficha de un
+ * recorrido uno quiere ver POR DONDE pasa de verdad, con los nombres de calle
+ * al lado. Las miniaturas de las listas siguen siendo SVG: ahi el mapa si es
+ * decorativo y ademas se pintan cientos, que con Leaflet seria insostenible. */
+function pintarMapaRecorrido() {
+  const caja = document.getElementById("mapa-recorrido");
+  if (!caja || caja.dataset.listo) return;
+  const ruta = state.routes.find(r => r.id === caja.dataset.route);
+  const coords = ruta?.geometry?.coordinates || [];
+  if (!coords.length) return;
+
+  cargarLeaflet().then(() => {
+    if (caja.dataset.listo) return;
+    caja.dataset.listo = "1";
+
+    // El GeoJSON viene [lon, lat] y Leaflet quiere [lat, lon].
+    const puntos = coords.map(([lon, lat]) => [lat, lon]);
+    const mapa = L.map(caja, { scrollWheelZoom: false }).setView(puntos[0], 16);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19, attribution: "© colaboradores de OpenStreetMap",
+    }).addTo(mapa);
+    mapa.on("click", () => mapa.scrollWheelZoom.enable());
+
+    const linea = L.polyline(puntos, {
+      color: "#b6465f", weight: 6, opacity: 0.85, lineJoin: "round",
+    }).addTo(mapa);
+    L.polyline(puntos, { color: "#fff", weight: 2, opacity: 0.6, dashArray: "1 14" }).addTo(mapa);
+
+    L.circleMarker(puntos[0], {
+      radius: 7, color: "#fff", weight: 2, fillColor: "#2f7d4f", fillOpacity: 1,
+    }).addTo(mapa).bindPopup(`<b>${esc(ruta.label)}</b><br>${esc(yearRange(ruta.start_year, ruta.end_year))}`);
+
+    const encuadrar = () => {
+      mapa.invalidateSize();
+      mapa.fitBounds(linea.getBounds(), { padding: [26, 26] });
+    };
+    encuadrar();
+    requestAnimationFrame(encuadrar);
+    new ResizeObserver(encuadrar).observe(caja);
+
+    const yo = L.control({ position: "topright" });
+    yo.onAdd = () => {
+      const boton = L.DomUtil.create("button", "leaflet-yo");
+      boton.type = "button";
+      boton.textContent = "◎";
+      boton.title = "Dónde estoy";
+      L.DomEvent.disableClickPropagation(boton);
+      boton.addEventListener("click", () => {
+        navigator.geolocation?.getCurrentPosition(pos => {
+          const punto = [pos.coords.latitude, pos.coords.longitude];
+          L.circleMarker(punto, {
+            radius: 7, color: "#1c6fd0", fillColor: "#3b8ee6", fillOpacity: 0.9, weight: 2,
+          }).addTo(mapa).bindPopup("Estás aquí");
+          mapa.setView(punto, Math.max(mapa.getZoom(), 16));
+        });
+      });
+      return boton;
+    };
+    yo.addTo(mapa);
+  });
+}
+
+function pintarMapaMontaje(nm) {
+  const caja = document.getElementById("mapa-montaje");
+  if (!caja || caja.dataset.listo) return;
+
+  cargarLeaflet().then(() => {
+    if (caja.dataset.listo) return;
+    caja.dataset.listo = "1";
+
+    // Vista de salida ANTES de anadir capas: un mapa de Leaflet sin centro ni
+    // zoom no pinta nada, y el encuadre real llega despues.
+    const centro = nm.sitios.reduce((a, s) => [a[0] + s.lat / nm.sitios.length,
+                                               a[1] + s.lon / nm.sitios.length], [0, 0]);
+    const mapa = L.map(caja, { scrollWheelZoom: false }).setView(centro, 15);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "© colaboradores de OpenStreetMap",
+    }).addTo(mapa);
+    // Rueda solo tras hacer clic: si no, bajar la pagina con el raton encima
+    // del mapa amplia el mapa en vez de desplazar.
+    mapa.on("click", () => mapa.scrollWheelZoom.enable());
+
+    const marcas = nm.sitios.map(sitio => {
+      const grupos = nm.grupos.filter(g => g.sitio === sitio.id);
+      const icono = L.divIcon({
+        className: "montaje-icon",
+        html: `<span>${grupos.map(g => g.orden).join("·")}</span>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+      });
+      const marca = L.marker([sitio.lat, sitio.lon], { icon: icono }).addTo(mapa);
+      // Sin tope, en movil el globo se sale por la derecha.
+      marca.bindPopup(`
+        <b>${esc(sitio.nombre)}</b><br>
+        ${grupos.map(g => `${g.orden}. ${esc(g.grupo)}`).join("<br>")}
+        <div class="pop-acciones">
+          <a href="${comoLlegar(sitio)}" target="_blank" rel="noopener">Cómo llegar ↗</a>
+          <button type="button" data-share-sitio="${esc(sitio.id)}">Compartir</button>
+        </div>`, { maxWidth: 230, autoPanPadding: [12, 12] });
+      return marca;
+    });
+
+    // invalidateSize antes de encuadrar: si el contenedor todavia no tiene su
+    // tamano final, fitBounds calcula sobre 0x0 y el mapa abre pegadisimo.
+    const encuadrar = () => {
+      mapa.invalidateSize();
+      mapa.fitBounds(L.featureGroup(marcas).getBounds(), { padding: [34, 34] });
+    };
+    encuadrar();
+    requestAnimationFrame(encuadrar);
+    // El panel de detalle puede estar oculto al pintar: cuando aparezca y el
+    // contenedor coja tamano, se reencuadra solo.
+    new ResizeObserver(encuadrar).observe(caja);
+
+    // "Dónde estoy": la posicion no se guarda ni se manda a ningun sitio, solo
+    // se pinta. Por eso el boton lo pide y no se pide al cargar.
+    const yo = L.control({ position: "topright" });
+    yo.onAdd = () => {
+      const boton = L.DomUtil.create("button", "leaflet-yo");
+      boton.type = "button";
+      boton.textContent = "◎";
+      boton.title = "Dónde estoy";
+      L.DomEvent.disableClickPropagation(boton);
+      boton.addEventListener("click", () => {
+        boton.textContent = "…";
+        navigator.geolocation?.getCurrentPosition(
+          pos => {
+            const punto = [pos.coords.latitude, pos.coords.longitude];
+            L.circleMarker(punto, {
+              radius: 7, color: "#1c6fd0", fillColor: "#3b8ee6", fillOpacity: 0.9, weight: 2,
+            }).addTo(mapa).bindPopup("Estás aquí");
+            mapa.setView(punto, Math.max(mapa.getZoom(), 15));
+            boton.textContent = "◎";
+          },
+          () => { boton.textContent = "◎"; boton.title = "No se pudo obtener la ubicación"; },
+          { enableHighAccuracy: true, timeout: 8000 },
+        );
+      });
+      return boton;
+    };
+    yo.addTo(mapa);
+  }).catch(() => {
+    caja.innerHTML = '<p class="empty">No se ha podido cargar el mapa.</p>';
+  });
 }
 
 function nocheMagicaBlock(edition) {
@@ -1506,7 +1634,10 @@ function nocheMagicaBlock(edition) {
     para que la gente vea cómo se clavan las flores. Estas son las ubicaciones de montaje que
     publica el Ayuntamiento; el número es el orden de salida en el desfile.</p>
 
-    ${renderMontajeMap(nm)}
+    <div id="mapa-montaje" class="mapa-montaje"
+      aria-label="Mapa de los locales de montaje de la Noche Mágica"></div>
+    <p class="chart-note mapa-pie">Pulsa una marca para ver quién monta allí, cómo llegar o
+    compartir la ubicación. El botón <b>◎</b> te sitúa en el mapa.</p>
 
     <table class="palmares">
       <colgroup><col class="c-src"><col><col><col></colgroup>
@@ -2202,7 +2333,12 @@ function renderRouteDetail(route) {
       <div class="kpi"><span>${num(floats)}</span><small>carrozas</small></div>
     </div>
 
-    ${route.geometry ? renderRouteMap(route.id) : ""}
+    ${route.geometry ? `<div id="mapa-recorrido" class="mapa-montaje"
+      data-route="${esc(route.id)}"
+      aria-label="Mapa del recorrido: ${esc(route.label)}"></div>
+      <p class="chart-note mapa-pie">Mapa real, con calles y comercios: puedes ampliar, moverlo y
+      situarte con <b>◎</b>. ${route.direction === "anticlockwise"
+        ? "Las flechas marcan el sentido antihorario del desfile." : ""}</p>` : ""}
     ${route.note ? `<p class="muted" style="margin-top:6px">${esc(route.note)}</p>` : ""}
 
     <h3 class="section">Ediciones en este trazado</h3>
@@ -2318,6 +2454,9 @@ function shareCurrent() {
 
 function activarMapasZoom() {
   document.querySelectorAll("#detail svg.zoomable").forEach(makeZoomable);
+  const nm = state.dataset.noche_magica;
+  if (nm && document.getElementById("mapa-montaje")) pintarMapaMontaje(nm);
+  pintarMapaRecorrido();
 }
 
 function renderDetail() {
@@ -2696,6 +2835,18 @@ function bindEvents() {
     if (statsCat) {
       state.statsCategory = statsCat.dataset.statsCat;
       renderStatsTab();
+      return;
+    }
+
+    const compartirSitio = event.target.closest("[data-share-sitio]");
+    if (compartirSitio) {
+      const nm = state.dataset.noche_magica;
+      const sitio = nm?.sitios.find(x => x.id === compartirSitio.dataset.shareSitio);
+      if (sitio) {
+        const grupos = nm.grupos.filter(g => g.sitio === sitio.id).map(g => g.grupo).join(" y ");
+        shareUrl(comoLlegar(sitio), `Noche Mágica · ${sitio.nombre}`,
+          `Aquí montan ${grupos} sus carrozas para la Batalla de Flores.`, compartirSitio);
+      }
       return;
     }
 

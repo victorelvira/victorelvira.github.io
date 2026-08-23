@@ -16,8 +16,8 @@
  * carving.html on every change, or browsers will serve stale files.
  */
 
-const DATA_V = "0.2.5";
-const BUILD_AT = "2026-08-23 19:05";
+const DATA_V = "0.3.2";
+const BUILD_AT = "2026-08-23 21:40";
 
 // Gallery/table batch size. Kept at 60 rather than 120 because every card is a
 // remote image: browsers open ~6 connections per host, so a 120-card batch
@@ -33,6 +33,7 @@ const state = {
   q: "",
   kinds: new Set(),        // empty = no type filter
   finishes: new Set(),
+  forms: new Set(),        // relief depth / in the round
   namedOnly: false,
   sources: new Set(),      // empty = every collection
   yearMin: null, yearMax: null, yearWideOpen: true,
@@ -61,6 +62,7 @@ const recordURL = it => it.u || (state.meta.notice_base + it.i);
 
 const SOURCE_LABEL = {
   palissy: "French churches", vam: "V&A", met: "The Met", cleveland: "Cleveland",
+  wikidata: "Wikidata / Commons",
 };
 
 /* ── filtering — the single source of truth for all three views ── */
@@ -68,6 +70,7 @@ function passes(it) {
   if (state.sources.size && !state.sources.has(it.src)) return false;
   if (state.kinds.size && !state.kinds.has(it.k)) return false;
   if (state.finishes.size && !(it.f || []).some(f => state.finishes.has(f))) return false;
+  if (state.forms.size && !state.forms.has(it.fm)) return false;
   if (state.namedOnly && !it.a) return false;
   if (state.yearMin != null && it.y[0] && !state.yearWideOpen) {
     // A piece counts as inside the window if its range overlaps it at all;
@@ -282,6 +285,7 @@ function openSheet(id) {
         ${(it.f || []).length ? `<div class="tags">${it.f.map(f => `<span class="tag">${esc(f)}</span>`).join("")}</div>` : ""}
         <dl class="facts">
           ${fact("Type", it.k)}
+          ${fact("Form", it.fm)}
           ${fact("Date", dateLabel(it))}
           ${fact("Carver", it.a)}
           ${fact("Where", SOURCE_LABEL[it.src] || it.src)}
@@ -311,6 +315,12 @@ function buildChips() {
     .sort((a, b) => count("k", b) - count("k", a));
   $("#kinds").innerHTML = kinds.map(k =>
     `<button class="chip" data-kind="${esc(k)}" type="button">${esc(k)} <span class="n">${count("k", k)}</span></button>`).join("");
+  const forms = [...new Set(state.items.map(i => i.fm).filter(Boolean))]
+    .sort((a, b) => state.items.filter(i => i.fm === b).length
+                  - state.items.filter(i => i.fm === a).length);
+  $("#forms").innerHTML = forms.map(f =>
+    `<button class="chip" data-form="${esc(f)}" type="button">${esc(f)} <span class="n">${state.items.filter(i => i.fm === f).length.toLocaleString("en")}</span></button>`).join("");
+
   const fins = [...new Set(state.items.flatMap(i => i.f || []))]
     .sort((a, b) => count("f", b) - count("f", a));
   $("#finishes").innerHTML = fins.map(f =>
@@ -401,13 +411,21 @@ function wire() {
     state.finishes.has(f) ? state.finishes.delete(f) : state.finishes.add(f);
     b.classList.toggle("on"); state.shown = PAGE; refresh();
   };
+  $("#forms").onclick = e => {
+    const b = e.target.closest("[data-form]"); if (!b) return;
+    const f = b.dataset.form;
+    state.forms.has(f) ? state.forms.delete(f) : state.forms.add(f);
+    b.classList.toggle("on"); state.shown = PAGE; refresh();
+  };
+
   $("#named-only").onchange = e => { state.namedOnly = e.target.checked; state.shown = PAGE; refresh(); };
 
   $("#clear-filters").onclick = () => {
-    state.kinds.clear(); state.finishes.clear(); state.sources.clear(); state.namedOnly = false;
+    state.kinds.clear(); state.finishes.clear(); state.sources.clear();
+    state.forms.clear(); state.namedOnly = false;
     state.q = ""; state.shown = PAGE;
     $("#search").value = ""; $("#named-only").checked = false;
-    $$("#kinds .chip, #finishes .chip, #sources .chip").forEach(c => c.classList.remove("on"));
+    $$("#kinds .chip, #finishes .chip, #sources .chip, #forms .chip").forEach(c => c.classList.remove("on"));
     $("#tl-min").value = $("#tl-min").min; $("#tl-max").value = $("#tl-max").max;
     $("#tl-min").dispatchEvent(new Event("input"));
   };

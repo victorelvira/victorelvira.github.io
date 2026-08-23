@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planes de Cantabria</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%97%93%EF%B8%8F%3C/text%3E%3C/svg%3E">
   <meta name="description" content="Agenda y mapa interactivo de Cantabria: fiestas, conciertos, teatro, exposiciones, deporte y más, con fechas y programas.">
 
   <!-- Leaflet (mapa) desde CDN -->
@@ -12,7 +13,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <link rel="stylesheet" href="fiestas_cantabria/style.css?v=10">
+  <link rel="stylesheet" href="fiestas_cantabria/style.css?v=13">
 </head>
 <body class="vista-mapa">
   <nav id="navbar">
@@ -34,46 +35,71 @@
     </div>
   </header>
 
+  <!-- BARRA DE FILTROS (arriba, horizontal — estilo atlas) -->
+  <div id="barra-filtros">
+    <div id="modo-vista">
+      <button type="button" class="mv-btn mv-activo" data-modo="mapa">🗺 Mapa</button>
+      <button type="button" class="mv-btn" data-modo="tabla">▦ Tabla</button>
+    </div>
+    <input type="search" id="buscar" placeholder="Buscar plan o pueblo…" autocomplete="off">
+    <div class="chips" id="chips-fecha">
+      <button type="button" class="chip" data-rango="hoy">Hoy</button>
+      <button type="button" class="chip" data-rango="manana">Mañana</button>
+      <button type="button" class="chip" data-rango="finde">Este finde</button>
+      <button type="button" class="chip" data-rango="mes">Este mes</button>
+      <button type="button" class="chip" data-rango="todas">Todas</button>
+    </div>
+    <div class="fechas">
+      <label>Desde <input type="date" id="desde"></label>
+      <label>Hasta <input type="date" id="hasta"></label>
+    </div>
+    <!-- chips de categoría (se generan en app.js desde TIPOS) -->
+    <div class="categorias" id="categorias"></div>
+  </div>
+
   <div class="vista-toggle">
     <button type="button" data-vista="lista">📋 Lista</button>
     <button type="button" data-vista="mapa" class="vista-activa">🗺️ Mapa</button>
   </div>
 
+  <!-- MAPA grande (izquierda) + LISTA (panel derecho) -->
   <div class="app-body">
-    <!-- Panel lateral -->
+    <main class="map-wrap">
+      <div id="map"></div>
+    </main>
     <aside class="sidebar">
-      <div class="filters">
-        <input type="search" id="buscar" placeholder="Buscar plan o pueblo…" autocomplete="off">
-        <div class="fechas">
-          <label>Desde <input type="date" id="desde"></label>
-          <label>Hasta <input type="date" id="hasta"></label>
-        </div>
-        <div class="chips">
-          <button type="button" class="chip" data-rango="hoy">Hoy</button>
-          <button type="button" class="chip" data-rango="manana">Mañana</button>
-          <button type="button" class="chip" data-rango="finde">Este finde</button>
-          <button type="button" class="chip" data-rango="mes">Este mes</button>
-          <button type="button" class="chip" data-rango="todas">Todas</button>
-        </div>
-        <div class="filter-row">
+      <div class="lista-head">
+        <label class="zona-tgl" title="Que la lista muestre solo lo que se ve en el mapa (se actualiza al mover el mapa)">
+          <input type="checkbox" id="filtro-mapa" checked> 🗺 Seguir al mapa
+        </label>
+        <label class="orden-lbl">Ordenar
           <select id="orden">
             <option value="cortas">Más cortos</option>
             <option value="inicio">Por fecha de inicio</option>
             <option value="fin">Por fecha de fin</option>
           </select>
-        </div>
-        <!-- chips de categoría (se generan en app.js desde TIPOS) -->
-        <div class="categorias" id="categorias"></div>
-        <label class="chk"><input type="checkbox" id="filtro-mapa"> Filtrar por la zona visible del mapa</label>
+        </label>
       </div>
       <ul id="lista" class="lista"></ul>
     </aside>
-
-    <!-- Mapa -->
-    <main class="map-wrap">
-      <div id="map"></div>
-    </main>
   </div>
+
+  <!-- VISTA DE TABLA (oculta hasta pulsar "Tabla") -->
+  <section id="tabla" hidden>
+    <div id="tabla-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="inicio" class="th-orden">Fecha</th>
+            <th data-col="nombre">Plan</th>
+            <th data-col="tipo">Categoría</th>
+            <th data-col="pueblo">Lugar</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body"></tbody>
+      </table>
+    </div>
+  </section>
 
   <!-- Panel de detalle -->
   <div id="detalle" class="detalle" hidden>
@@ -82,8 +108,8 @@
   </div>
   <div id="overlay" class="overlay" hidden></div>
 
-  <script src="fiestas_cantabria/data/data.js?v=10"></script>
-  <script src="fiestas_cantabria/app.js?v=10"></script>
+  <script src="fiestas_cantabria/data/data.js?v=13"></script>
+  <script src="fiestas_cantabria/app.js?v=13"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

@@ -123,35 +123,33 @@ function renderMarkers(arr) {
   grupos.forEach(fs => {
     const f0 = fs[0];
     const m = fs.length === 1
-      ? L.marker([f0.lat, f0.lng], { icon: iconoTipo(f0.tipo) }).bindPopup(popupHTML(f0))
-      : L.marker([f0.lat, f0.lng], { icon: iconoGrupo(fs.length) }).bindPopup(popupGrupo(fs));
-    m.on("popupopen", wirePopupLinks);
+      ? L.marker([f0.lat, f0.lng], { icon: iconoTipo(f0.tipo) })
+      : L.marker([f0.lat, f0.lng], { icon: iconoGrupo(fs.length) });
+    // Al pulsar: panel de detalle (nada de popup de Leaflet).
+    m.on("click", () => (fs.length === 1 ? abrirDetalle(f0) : abrirGrupo(fs)));
     m.addTo(markersLayer);
   });
 }
 
-function popupHTML(f) {
-  const t = TIPOS[f.tipo] || { label: f.tipo };
-  return `<b>${f.nombre}</b><br>📍 ${f.pueblo}${f.municipio && f.municipio !== f.pueblo ? " · " + f.municipio : ""}<br>
-    🗓 ${f.fecha}<br><span style="color:${t.color}">● ${t.label}</span>
-    <br><span class="popup-link" data-id="${f._id}">Ver detalle →</span>`;
-}
-
-function popupGrupo(fs) {
+// Panel con la lista de eventos que hay en un mismo punto del mapa.
+function abrirGrupo(fs) {
+  fs = fs.slice().sort((a, b) => (a.inicio || "").localeCompare(b.inicio || ""));
   const items = fs.map(f => {
     const t = TIPOS[f.tipo] || { label: f.tipo, color: "#888" };
-    return `<div class="pop-item"><span style="color:${t.color}">●</span>
-      <span class="popup-link" data-id="${f._id}">${f.nombre}</span>
-      <small>${f.fecha}</small></div>`;
+    return `<div class="grupo-item" data-id="${f._id}">
+      <span class="badge" style="background:${t.color}">${t.icon || ""} ${t.label}</span>
+      <div class="gi-nombre">${f.nombre}</div>
+      <div class="gi-fecha">${f.fecha}</div>
+    </div>`;
   }).join("");
-  return `<b>${fs.length} fiestas en ${fs[0].pueblo}</b><div class="pop-lista">${items}</div>`;
-}
-
-// conecta los enlaces "Ver detalle" de cualquier popup abierto
-function wirePopupLinks() {
-  document.querySelectorAll(".leaflet-popup .popup-link[data-id]").forEach(el => {
-    el.onclick = () => abrirDetalle(FIESTAS[+el.dataset.id]);
-  });
+  $detalleCont.innerHTML =
+    `<h2>${fs.length} planes</h2>
+     <div class="d-meta">📍 ${fs[0].pueblo}${fs[0].municipio && fs[0].municipio !== fs[0].pueblo ? " · " + fs[0].municipio : ""}</div>
+     <div class="grupo-lista">${items}</div>`;
+  $detalleCont.querySelectorAll(".grupo-item").forEach(el =>
+    el.addEventListener("click", () => abrirDetalle(FIESTAS[+el.dataset.id])));
+  $detalle.hidden = false;
+  $overlay.hidden = false;
 }
 
 // --- Filtros ----------------------------------------------------------
@@ -169,15 +167,20 @@ function pasaFecha(f) {
   return fFin >= winStart && f.inicio <= winEnd;
 }
 
-function pasaNoEspacial(f) {
+// pasa todos los filtros MENOS el de categoría (para contar por etiqueta)
+function pasaSinCategoria(f) {
   const q = $buscar.value.trim().toLowerCase();
-  if (catActiva && f.tipo !== catActiva) return false;
   if (!pasaFecha(f)) return false;
   if (q) {
     const txt = (f.nombre + " " + f.pueblo + " " + f.municipio + " " + (f.comarca || "")).toLowerCase();
     if (!txt.includes(q)) return false;
   }
   return true;
+}
+
+function pasaNoEspacial(f) {
+  if (catActiva && f.tipo !== catActiva) return false;
+  return pasaSinCategoria(f);
 }
 
 function inBounds(f) {
@@ -210,9 +213,123 @@ function ordenar(list) {
 // --- Render -----------------------------------------------------------
 function aplicarFiltros() {
   _arr = FIESTAS.filter(pasaNoEspacial);
+  actualizarConteos();
   renderMarkers(_arr);
-  renderLista();
+  if (modoTabla) renderTabla(); else renderLista();
 }
+
+// Recuenta cuántos eventos hay por categoría con los filtros actuales
+// (fechas, búsqueda) para que los números de los chips se actualicen.
+function actualizarConteos() {
+  const base = FIESTAS.filter(pasaSinCategoria);
+  const conteos = {};
+  base.forEach(f => { conteos[f.tipo] = (conteos[f.tipo] || 0) + 1; });
+  $categorias.querySelectorAll(".cat-chip").forEach(chip => {
+    const c = chip.dataset.cat;
+    if (!c) return;                       // "Todas" no lleva número
+    const n = conteos[c] || 0;
+    const span = chip.querySelector(".cat-n");
+    if (span) span.textContent = n;
+    chip.classList.toggle("cat-cero", n === 0);
+  });
+}
+
+// --- Vista de TABLA ordenable -----------------------------------------
+let modoTabla = false;
+let tablaOrden = { col: "inicio", dir: 1 };
+const $tabla = document.getElementById("tabla");
+const $tablaBody = document.getElementById("tabla-body");
+
+function renderTabla() {
+  const c = tablaOrden.col;
+  const list = _arr.slice().sort((a, b) => {
+    const va = (c === "inicio" ? (a.inicio || "") : (a[c] || "")).toString().toLowerCase();
+    const vb = (c === "inicio" ? (b.inicio || "") : (b[c] || "")).toString().toLowerCase();
+    return (va < vb ? -1 : va > vb ? 1 : 0) * tablaOrden.dir;
+  });
+  $contador.textContent = list.length;
+  $tablaBody.innerHTML = list.map(f => {
+    const t = TIPOS[f.tipo] || { label: f.tipo, color: "#888", icon: "" };
+    return `<tr data-id="${f._id}">
+      <td class="td-fecha">${f.fecha}</td>
+      <td class="td-nombre">${f.nombre}${f.interes ? ` <span class="ti-mini" title="Interés Turístico ${f.interes}">★</span>` : ""}</td>
+      <td><span class="badge" style="background:${t.color}">${t.icon || ""} ${t.label}</span></td>
+      <td>${f.pueblo}</td></tr>`;
+  }).join("");
+  document.querySelectorAll("#tabla thead th").forEach(th => {
+    th.classList.toggle("ordenado", th.dataset.col === c);
+    th.classList.toggle("asc", th.dataset.col === c && tablaOrden.dir === 1);
+  });
+}
+
+document.querySelectorAll("#tabla thead th").forEach(th => {
+  th.addEventListener("click", () => {
+    const col = th.dataset.col;
+    if (tablaOrden.col === col) tablaOrden.dir *= -1;
+    else { tablaOrden.col = col; tablaOrden.dir = 1; }
+    renderTabla();
+  });
+});
+$tablaBody.addEventListener("click", e => {
+  const tr = e.target.closest("tr[data-id]");
+  if (tr) abrirDetalle(FIESTAS[+tr.dataset.id]);
+});
+document.querySelectorAll(".mv-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    modoTabla = btn.dataset.modo === "tabla";
+    document.querySelectorAll(".mv-btn").forEach(b => b.classList.toggle("mv-activo", b === btn));
+    document.body.classList.toggle("vista-tabla", modoTabla);
+    document.querySelector(".app-body").hidden = modoTabla;
+    $tabla.hidden = !modoTabla;
+    if (modoTabla) renderTabla();
+    else { renderLista(); setTimeout(() => { map.invalidateSize(); map.fitBounds(CANTABRIA_BOUNDS); }, 60); }
+  });
+});
+
+// --- Lista con carga por páginas (scroll infinito) para que sea instantánea ---
+const PAGINA = 60;
+let _listaFull = [], _mostradas = 0;
+
+function crearCard(f) {
+  const t = TIPOS[f.tipo] || { label: f.tipo, color: "#888" };
+  const d = durDias(f);
+  const li = document.createElement("li");
+  li.className = "card";
+  li.style.setProperty("--c", t.color);
+  li.dataset.id = f._id;
+  li.innerHTML = `
+    <h3>${f.nombre}${f.interes ? ` <span class="ti-mini" title="Interés Turístico ${f.interes}">★</span>` : ""}${esEsteFinde(f) ? ` <span class="finde-mini">finde</span>` : ""}</h3>
+    <div class="c-meta">
+      <span class="cat" style="color:${t.color}">${t.icon ? t.icon + " " : ""}${t.label}</span>
+      <span class="fecha">${f.fecha}</span>${d > 1 ? ` <span class="dur">${d} días</span>` : ""}
+      <span class="pueblo">${f.pueblo}</span>
+    </div>`;
+  li.onclick = () => {
+    marcarActiva(f._id);
+    abrirDetalle(f);
+    map.flyTo([f.lat, f.lng], 12, { duration: .6 });
+  };
+  return li;
+}
+
+function añadirPagina() {
+  if (_mostradas >= _listaFull.length) return;
+  const frag = document.createDocumentFragment();
+  const hasta = Math.min(_mostradas + PAGINA, _listaFull.length);
+  for (let i = _mostradas; i < hasta; i++) frag.appendChild(crearCard(_listaFull[i]));
+  _mostradas = hasta;
+  $lista.appendChild(frag);
+}
+
+// Carga más cuando el usuario se acerca al fondo (panel en PC, página en móvil).
+function quizasCargarMas() {
+  if (_mostradas >= _listaFull.length) return;
+  const cercaFondoLista = $lista.scrollHeight - $lista.scrollTop - $lista.clientHeight < 600;
+  const cercaFondoPagina = window.innerHeight + window.scrollY > document.body.scrollHeight - 600;
+  if (cercaFondoLista || cercaFondoPagina) añadirPagina();
+}
+$lista.addEventListener("scroll", quizasCargarMas, { passive: true });
+window.addEventListener("scroll", quizasCargarMas, { passive: true });
 
 function renderLista() {
   let list = _arr.slice();
@@ -225,40 +342,16 @@ function renderLista() {
 
   $contador.textContent = list.length;
   $lista.innerHTML = "";
+  _listaFull = list; _mostradas = 0;
 
   if (list.length === 0) {
     const msg = $mapa.checked
-      ? "No hay fiestas en esta zona del mapa con estos filtros. Aleja el mapa o desmarca «solo zona visible»."
+      ? "No hay planes en esta zona del mapa con estos filtros. Aleja el mapa o desmarca «solo zona visible»."
       : "Sin resultados con estos filtros.";
     $lista.innerHTML = `<li class="vacio">${msg}</li>`;
     return;
   }
-
-  list.forEach(f => {
-    const t = TIPOS[f.tipo] || { label: f.tipo, color: "#888" };
-    const li = document.createElement("li");
-    li.className = "card";
-    li.style.borderLeftColor = t.color;
-    li.dataset.id = f._id;
-    li.innerHTML = `
-      <h3>${f.nombre}</h3>
-      <div class="meta">
-        <span class="pueblo">${f.pueblo}</span>
-        <span class="fecha">${f.fecha}</span>
-        <span class="dur">${durDias(f)} día${durDias(f) !== 1 ? "s" : ""}</span>
-      </div>
-      <div class="card-badges">
-        <span class="badge" style="background:${t.color}">${t.icon ? t.icon + " " : ""}${t.label}</span>
-        ${f.interes ? `<span class="badge badge-interes">Interés ${f.interes}</span>` : ""}
-        ${esEsteFinde(f) ? `<span class="hoy-flag">¡Este finde!</span>` : ""}
-      </div>`;
-    li.onclick = () => {
-      marcarActiva(f._id);
-      abrirDetalle(f);
-      map.flyTo([f.lat, f.lng], 12, { duration: .6 });
-    };
-    $lista.appendChild(li);
-  });
+  añadirPagina();   // primera página, instantánea; el resto al hacer scroll
 }
 
 function marcarActiva(id) {
@@ -315,7 +408,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarDetall
 
 // --- Eventos de filtros ----------------------------------------------
 $buscar.addEventListener("input", aplicarFiltros);
-$orden.addEventListener("change", renderLista);
+$orden.addEventListener("change", () => (modoTabla ? renderTabla() : renderLista()));
 
 // --- Chips de categoría (generados desde TIPOS) ----------------------
 function construirChips() {
@@ -351,7 +444,7 @@ $desde.addEventListener("change", onFechaManual);
 $hasta.addEventListener("change", onFechaManual);
 
 $mapa.addEventListener("change", renderLista);
-map.on("moveend", () => { if ($mapa.checked) renderLista(); });
+map.on("moveend", () => { if ($mapa.checked && !modoTabla) renderLista(); });
 
 // botones rápidos de fecha
 function lastDayOfMonthISO(base) {

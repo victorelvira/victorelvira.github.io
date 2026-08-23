@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.37.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 18:00";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.38.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 18:30";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -557,6 +557,7 @@ Promise.all(PAINTERS.map(p =>
     buildPainterSelect();
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     buildMarkers();
+    deepLink();                        // ?w=<qid> opens that painting's ficha; ?m=<id> its museum
     map.on("moveend", renderPanel);
     // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
@@ -1266,8 +1267,10 @@ document.addEventListener("click", e => {
 
 // ── work "ficha": the full record for one painting (image + facts + links) ──
 const workCard = document.getElementById("work-card");
+let wcWork = null;
 function openWorkCard(w) {
   if (!w) return;
+  wcWork = w;
   const p = w.p;
   const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
   const img = p.image
@@ -1283,13 +1286,41 @@ function openWorkCard(w) {
     `<div class="wc-info"><h3 class="wc-title">${esc(p.title || "Untitled")}</h3>` +
     row("Painter", painterTag(p)) + row("Date", esc(p.year || "")) + row("Where", esc(venue)) +
     row("Technique", esc(p.medium || "")) + row("Size", esc(p.dimensions || "")) + row("Attribution", attr) +
-    (links ? `<div class="wc-links">${links}</div>` : "") + `</div>`;
+    (links ? `<div class="wc-links">${links}</div>` : "") +
+    `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button></div></div>`;
   workCard.hidden = false;
 }
-function closeWorkCard() { workCard.hidden = true; document.getElementById("wc-body").innerHTML = ""; }
+function closeWorkCard() { workCard.hidden = true; wcWork = null; document.getElementById("wc-body").innerHTML = ""; }
 document.getElementById("wc-close").addEventListener("click", closeWorkCard);
-workCard.addEventListener("click", e => { if (e.target === workCard) closeWorkCard(); });
+workCard.addEventListener("click", e => {
+  if (e.target.closest(".wc-share") && wcWork) { shareWork(wcWork.p); return; }
+  if (e.target === workCard) closeWorkCard();
+});
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeWorkCard(); });
+
+// ── sharing: a link that reopens the atlas on this exact painting (or museum) ──
+let toastT = 0;
+function toast(msg) {
+  let el = document.getElementById("toast");
+  if (!el) { el = document.createElement("div"); el.id = "toast"; document.body.appendChild(el); }
+  el.textContent = msg; el.classList.add("on");
+  clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("on"), 1700);
+}
+function shareWork(p) {
+  // share the per-work stub page (carries this painting's og:image so previews unfurl) — it
+  // redirects into the app at ?w=<qid>. Falls back to the app URL if there's no qid.
+  const url = p.qid ? new URL("atlas/w/" + p.qid + ".html", location.href).href : location.href;
+  const title = `${p.title || "Painting"}${p.painter ? " — " + p.painter : ""}`;
+  if (navigator.share) navigator.share({ title, url }).catch(() => {});
+  else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast("Link copied ✓")).catch(() => toast("Copy failed"));
+  else toast(url);
+}
+function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum key> → that museum
+  const q = new URLSearchParams(location.search);
+  const w = q.get("w"), m = q.get("m");
+  if (w) { const hit = works.find(x => x.p.qid === w); if (hit) return openWorkCard(hit); }
+  if (m && museumIndex.some(x => x.key === m)) selectMuseum(m);
+}
 // Wikimedia Commons occasionally resets HTTP/2 under a burst of thumbnail requests
 // (big popup/table). Degrade a failed thumbnail to the neutral placeholder box instead
 // of a broken-image icon. (Capture phase — <img> error events don't bubble.)
