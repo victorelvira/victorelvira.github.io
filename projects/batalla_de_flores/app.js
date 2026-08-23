@@ -126,6 +126,7 @@ const SOURCE_LABEL = {
   official_result_summary: "Resumen oficial",
   manual_seed: "Transcrito a mano",
   press_photo: "Prensa (pie de foto)",
+  press_clipping: "Recorte de prensa",
 };
 
 /* Version corta para las tablas del panel de detalle, que es estrecho.
@@ -137,6 +138,7 @@ const SOURCE_SHORT = {
   official_result_summary: "RES",
   manual_seed: "MAN",
   press_photo: "PRE",
+  press_clipping: "REC",
 };
 
 function sourceShort(sourceType) {
@@ -871,13 +873,15 @@ function renderPendingTab() {
     <div class="stats-block">
       <p class="chart-note">Este archivo no está terminado. Aquí está todo lo que sabemos que falta
       o que no cuadra. Si conoces la respuesta a alguno, dínoslo con el botón de su línea.</p>
+      <div class="chips"><button id="share-pending" class="share" type="button"
+        title="Compartir esta lista">${ICON_SHARE}Compartir esta lista</button></div>
 
       <div class="open-block">
         <h4>🏆 Carrocistas repartidos entre varios nombres</h4>
         <p class="open-note">Los rankings de esta página cuentan grupos, que es lo único que dicen
         las fuentes: el nombre con el que se inscribió cada carroza. Pero una persona con cincuenta
         años de trayectoria cambia de socios, se asocia y se separa, y aparece repartida entre
-        nombres distintos. El caso claro es José Antonio «Toñi» Quintana, a quien la Wikipedia
+        nombres de grupo distintos. El caso claro es José Antonio «Toñi» Quintana, a quien la Wikipedia
         atribuye 21 victorias y que aquí sale troceado en trece nombres —solo, con su hermano, con
         Ángel Sainz y con Transportes Maritina—, así que no encabeza ningún ranking pese a ser el
         más laureado de la historia. Le pasa a más gente. Reunir esas trayectorias pide un dato que
@@ -1372,32 +1376,98 @@ function renderGallery(entries) {
     </div>`;
 }
 
-function provenanceBlock(entries, sources) {
+/* Informe de procedencia, no una lista de fuentes.
+ *
+ * La pregunta que se hace quien mira una ficha no es "que fuentes hay" sino
+ * "de donde sale ESTE dato". Asi que se responde por tipo de dato: quien
+ * desfilo, quien gano, que no cuadra y que ha confirmado otra fuente distinta.
+ * Todo sale del `source_type` de cada carroza, que es una lista unida por "+"
+ * con las fuentes que aportaron esa fila. */
+
+/* Familias de fuente, para poder decir "dos fuentes independientes": el
+ * palmares y la ficha de carroza son la misma web, asi que no se confirman
+ * entre si. */
+const SOURCE_FAMILY = {
+  archive_palmares: "archivo",
+  archive_float_page: "archivo",
+  official_result: "oficial",
+  official_result_summary: "oficial",
+  press_clipping: "prensa",
+  press_photo: "prensa",
+  // La capa manual NO es una familia: es transcripcion nuestra de esas mismas
+  // fuentes, asi que no puede "confirmar" nada de forma independiente.
+};
+
+function sourceParts(entry) {
+  return (entry.source_type || "").split("+").filter(Boolean);
+}
+
+function families(entry) {
+  return new Set(sourceParts(entry).map(part => SOURCE_FAMILY[part]).filter(Boolean));
+}
+
+/* "el archivo y la prensa" en vez de "archivo, prensa". */
+function joinEs(items) {
+  if (items.length < 2) return items[0] || "";
+  return `${items.slice(0, -1).join(", ")} y ${items[items.length - 1]}`;
+}
+
+function countBySource(entries) {
   const counts = new Map();
-  entries.forEach(entry => {
-    const label = sourceLabel(entry.source_type);
-    counts.set(label, (counts.get(label) || 0) + 1);
-  });
-  // Se listan con su abreviatura para poder descifrar los "OFI·MAN" de la tabla.
+  entries.forEach(entry => sourceParts(entry).forEach(part => {
+    counts.set(part, (counts.get(part) || 0) + 1);
+  }));
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+function provenanceLine(label, entries, vacio) {
+  if (!entries.length) return `<li><b>${label}:</b> ${vacio}</li>`;
+  const partes = countBySource(entries)
+    .map(([part, n]) => `${esc(SOURCE_LABEL[part] || part)} (${n})`);
+  return `<li><b>${label}:</b> ${entries.length}, de ${joinEs(partes)}.</li>`;
+}
+
+function provenanceBlock(entries, sources, edition) {
+  const ranked = entries.filter(entry => entry.position != null);
+  const cruzadas = entries.filter(entry => families(entry).size > 1);
+  const dudosas = entries.filter(entry => (entry.needs_review || []).length);
+  const huecos = (edition?.notes || []).filter(note =>
+    note.includes("faltan") || note.includes("no aparece en ninguna fuente")
+    || note.includes("no el palmarés"));
+
   const codes = new Map();
-  entries.forEach(entry => {
-    (entry.source_type || "").split("+").forEach(part => {
-      if (part && SOURCE_SHORT[part]) codes.set(SOURCE_SHORT[part], SOURCE_LABEL[part]);
-    });
-  });
+  entries.forEach(entry => sourceParts(entry).forEach(part => {
+    if (SOURCE_SHORT[part]) codes.set(SOURCE_SHORT[part], SOURCE_LABEL[part]);
+  }));
 
   return `
     <div class="provenance">
-      <b>Fuentes</b>
-      <ul>
-        ${[...counts.entries()].sort((a, b) => b[1] - a[1])
-          .map(([label, count]) => `<li>${esc(label)}: ${count} entrada${count === 1 ? "" : "s"}</li>`).join("")
-          || "<li>Sin entradas registradas para esta edición.</li>"}
+      <b>De dónde sale cada dato</b>
+      <ul class="prov-list">
+        ${provenanceLine("Participantes", entries, "no consta ninguna carroza.")}
+        ${ranked.length === entries.length && entries.length
+          ? `<li><b>Clasificación:</b> las ${entries.length} tienen puesto, de las mismas fuentes.</li>`
+          : provenanceLine("Clasificación", ranked, "ninguna carroza tiene puesto.")}
+        ${cruzadas.length ? `<li><b>Confirmado por más de una fuente:</b> ${cruzadas.length}
+          carroza${cruzadas.length === 1 ? "" : "s"} ${cruzadas.length === 1 ? "aparece" : "aparecen"}
+          en fuentes independientes entre sí
+          (${joinEs([...new Set(cruzadas.flatMap(entry => [...families(entry)]))].sort())}),
+          que coinciden en el dato.</li>` : ""}
+        ${dudosas.length ? `<li class="prov-warn"><b>Inconsistencias detectadas:</b> ${dudosas.length}
+          en esta edición. Están marcadas con <span class="review-mark">?</span> en la tabla.</li>` : ""}
+        ${huecos.length ? `<li class="prov-warn"><b>Lo que falta:</b> ${esc(huecos[0])}</li>` : ""}
       </ul>
       ${codes.size ? `<p class="codes">${[...codes.entries()]
         .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>` : ""}
-      ${sources.length ? `<ul class="plain" style="margin-top:6px">${sources
-        .map(url => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></li>`).join("")}</ul>`
+      ${sources.length ? `<ul class="plain prov-urls">${sources.map(url => {
+        // Un enlace a un .jpg de prensa no se explica solo: se etiqueta.
+        const etiqueta = /\.jpe?g$/i.test(url) ? "📰 Ver el recorte de prensa original"
+          : url.includes("revista-de-prensa") ? "Página de revista de prensa"
+          : url.includes("laredo.es") ? "Nota del Ayuntamiento"
+          : "Archivo de batalladeflores.net";
+        return `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(etiqueta)}</a>
+          <small>${esc(url)}</small></li>`;
+      }).join("")}</ul>`
         : '<p style="margin:6px 0 0">Sin URL de fuente asociada.</p>'}
     </div>`;
 }
@@ -1519,7 +1589,7 @@ function renderEditionDetail(edition) {
       <h3 class="section">Recorrido</h3>
       ${renderRouteMap(route.id, { variant: "thumbstrip" })}` : ""}
 
-    ${provenanceBlock(entries, edition.source_urls || [])}
+    ${provenanceBlock(entries, edition.source_urls || [], edition)}
   `;
   els.detail.scrollTop = 0;
 }
@@ -2177,6 +2247,9 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
 
 function readHash() {
   if (location.hash === "#/info/-") return { kind: "about", id: "-" };
+  // La pestaña Pendiente es compartible: es la parte que uno quiere mandarle a
+  // un carrocista, y sin URL propia no habia forma de enlazarla.
+  if (location.hash === "#/pendiente") return null;
   const match = /^#\/(y|g|r|c)\/(.+)$/.exec(location.hash);
   if (!match) return null;
   const [, prefix, rawId] = match;
@@ -2189,6 +2262,11 @@ function readHash() {
 
 function setMode(mode) {
   state.mode = mode;
+  if (mode === "pending" && !state.selection) {
+    history.replaceState(null, "", `${location.pathname}#/pendiente`);
+  } else if (location.hash === "#/pendiente") {
+    history.replaceState(null, "", location.pathname);
+  }
   els.tabs.forEach(tab => {
     const isActive = tab.dataset.mode === mode;
     tab.classList.toggle("is-active", isActive);
@@ -2310,6 +2388,13 @@ function bindEvents() {
       return;
     }
 
+    if (event.target.closest("#share-pending")) {
+      shareUrl(`${location.origin}${location.pathname}#/pendiente`,
+        "Batalla de Flores de Laredo · lo que queda por resolver",
+        "Datos que faltan o no cuadran en el archivo de la Batalla de Flores de Laredo. Si conoces alguno, se agradece.",
+        event.target.closest("#share-pending"));
+      return;
+    }
     if (event.target.closest("#share")) { shareCurrent(); return; }
     if (event.target.closest("#report-open")) { openReport(); return; }
 
@@ -2427,7 +2512,10 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     applyFilters();
 
     const fromHash = readHash();
-    if (fromHash) {
+    if (location.hash === "#/pendiente") {
+      setMode("pending");
+      renderDetail();
+    } else if (fromHash) {
       if (fromHash.kind === "group") setMode("groups");
       if (fromHash.kind === "route") setMode("routes");
       if (fromHash.kind === "float") setMode("floats");

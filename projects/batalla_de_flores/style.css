@@ -158,6 +158,10 @@ a { color: inherit; }
 }
 .stats b { color: var(--ink); font-variant-numeric: tabular-nums; }
 
+/* `hidden` es solo display:none de la hoja del navegador, y cualquier regla de
+ * display le gana: sin esto el atributo se ponia y los controles seguian ahi. */
+.controls[hidden] { display: none; }
+
 .controls {
   display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
   padding: 9px 12px; border-bottom: 1px solid var(--line-soft); background: #fffaf5;
@@ -852,8 +856,11 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   /* Los tres en una linea: el buscador cede el ancho que haga falta. Con
      min-width 140 no cabia "Limpiar" y se caia a una segunda fila. */
   .controls { flex-wrap: nowrap; gap: 5px; }
-  .controls input[type="search"] { flex: 1 1 90px; width: auto; min-width: 0; }
-  .controls select { flex: 0 1 auto; min-width: 0; }
+  .controls input[type="search"] { flex: 1 1 150px; width: auto; min-width: 0; }
+  /* El selector no necesita 16 px: no se escribe en el, asi que iOS no hace
+     zoom al tocarlo. Al bajarlo al tamano de "Limpiar" deja de comerse la
+     linea y el buscador recupera ancho. */
+  .controls select { flex: 0 1 auto; min-width: 0; font-size: 12.5px; padding: 4px 6px; }
   .controls .ghost { flex: none; }
 
   /* Décadas plegables. Cerradas fluyen como fichas, cuatro o cinco por línea,
@@ -978,6 +985,18 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .open-list li { margin-bottom: 3px; }
 .open-list b { color: var(--ink); font-weight: 600; }
 
+.prov-urls { margin-top: 7px; }
+.prov-urls li { margin-bottom: 5px; }
+.prov-urls small { display: block; color: var(--muted); font-size: 10.5px; word-break: break-all; }
+
+/* Informe de procedencia: una linea por tipo de dato. */
+.prov-list { margin: 4px 0 0; padding-left: 16px; line-height: 1.5; }
+.prov-list li { margin-bottom: 3px; }
+.prov-list b { color: var(--ink); }
+.prov-warn { color: #8a5f10; }
+.prov-warn b { color: #8a5f10; }
+.prov-list .review-mark { width: 13px; height: 13px; margin: 0 1px; font-size: 9px; }
+
 /* Boton compacto al final de cada linea. Con 37 lineas, uno del tamano normal
  * competiria con el texto; asi se ve pero no manda. */
 .ask {
@@ -1068,7 +1087,7 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
    * ella por especificidad y dos campos se quedaban en 13,5 px. */
   .report input[type="text"], .report input:not([type]), .report input[type="email"],
   .report textarea,
-  .controls input[type="search"], .controls select { font-size: 16px; }
+  .controls input[type="search"] { font-size: 16px; }
   /* Solo el tamano de letra. El ancho lo gobierna la regla de arriba
      (flex:1, min-width:140px): con width:100% el buscador ocupaba la linea
      entera y mandaba el selector y "Limpiar" a la siguiente. */
