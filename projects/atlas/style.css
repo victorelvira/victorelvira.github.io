@@ -283,7 +283,7 @@ body.resizing #map { pointer-events: none; }
 #panel-head { font-weight: 600; font-size: 13px; color: var(--muted); min-width: 0; }
 #panel-view { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; }
 #panel-view #thumb-size { width: 76px; accent-color: #6a4a2a; cursor: pointer; }
-#table-view { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+#table-view { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; margin-left: auto; }
 #table-view #tv-thumb { width: 96px; accent-color: #6a4a2a; cursor: pointer; }
 .pvbtn {
   font: inherit; font-size: 13px; line-height: 1; padding: 4px 8px; cursor: pointer;

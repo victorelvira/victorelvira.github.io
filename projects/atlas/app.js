@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.38.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-22 19:10";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.39.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-22 19:45";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -543,8 +543,12 @@ function buildMarkers() {
   refresh();
 }
 
-Promise.all(PAINTERS.map(p =>
-  fetch(p.file + "?v=" + DATA_V).then(r => r.ok ? r.json() : { features: [] }).catch(() => ({ features: [] }))))
+// One bundled file (fast: 1 request, minified, no build-provenance) — fall back to the 72
+// per-painter files if the bundle isn't there (dev before running scripts/bundle_data.py).
+fetch("atlas/data/all.geojson?v=" + DATA_V)
+  .then(r => { if (!r.ok) throw new Error("no bundle"); return r.json(); }).then(gj => [gj])
+  .catch(() => Promise.all(PAINTERS.map(p =>
+    fetch(p.file + "?v=" + DATA_V).then(r => r.ok ? r.json() : { features: [] }).catch(() => ({ features: [] })))))
   .then(gjs => {
     allFeatures = [];
     gjs.forEach(gj => (gj.features || []).forEach(f => {
@@ -938,7 +942,7 @@ function renderMuseumsTable() {
 }
 
 // ── Works table in gallery mode: the same tiles as the map panel, streamed with lazy images ──
-let tableGallery = false, tGalVis = [], tGalRows = [], tGalCursor = 0;
+let tableGallery = true, tGalVis = [], tGalRows = [], tGalCursor = 0;   // Pictures grid by default
 const TGAL_CHUNK = 60;
 function tGalAppend() {
   const g = document.getElementById("table-gallery");
