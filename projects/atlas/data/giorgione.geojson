@@ -7,6 +7,77 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
+     13.36472,
+     52.50861
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Q107445912",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "location": "Gemäldegalerie Berlin",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "wikidata": "https://www.wikidata.org/wiki/Q107445912",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107445912",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "qid": "Q107445912"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.1439,
+     34.1475
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Head of a Venetian Girl",
+    "year": "1509",
+    "city": "Pasadena",
+    "country": "United States",
+    "location": "Norton Simon Museum",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "31.8 × 23.8 cm",
+    "genre": "portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27Head%20of%20a%20Venetian%20Girl%27%20by%20Giorgione%2C%20Norton%20Simon%20Museum.JPG?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q133503451",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q133503451",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "norton-simon-museum",
+    "qid": "Q133503451"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
      12.32814,
      45.43108
     ]
@@ -32,11 +103,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q137594811",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -77,11 +148,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1720631",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -120,16 +191,131 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17335702",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "rijksmuseum",
     "qid": "Q17335702"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Portrait of a Young Man",
+    "year": "1501",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "location": "Statens Museum for Kunst",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "600 × 460 cm",
+    "genre": "portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione%20-%20Portrait%20of%20a%20Young%20Man%20-%20KMS553%20-%20Statens%20Museum%20for%20Kunst.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q20440585",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20440585",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "qid": "Q20440585"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "David",
+    "year": "1501",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "location": "Statens Museum for Kunst",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "945 × 730 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ubekendt%20italiensk%20KMSsp139%20-%20David%20-%20KMSsp139%20-%20Statens%20Museum%20for%20Kunst.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q20547967",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20547967",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "qid": "Q20547967"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.04681,
+     38.91139
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "The Hour Glass",
+    "city": "Washington D.C.",
+    "country": "United States",
+    "location": "Phillips Collection",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "114.3 × 193.7 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione%20%28attributed%20to%29%20-%20The%20Hour%20Glass%20-%20Google%20Art%20Project.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q23946108",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23946108",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "phillips-collection",
+    "qid": "Q23946108"
    }
   },
   {
@@ -165,11 +351,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2452374",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -183,15 +369,136 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.53306,
-     52.26333
+     30.3136,
+     59.9406
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Judith",
+    "year": "1504",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "location": "Hermitage Museum",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "144 × 68 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Judith%20Holofernes%20Giorgione.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Judit_(Giorgione)",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Judith_(Giorgione)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Giuditta_con_la_testa_di_Oloferne_(Giorgione)",
+    "wikidata": "https://www.wikidata.org/wiki/Q2537695",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2537695",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "hermitage-museum",
+    "qid": "Q2537695",
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/judith.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Nymphs and Children in a Landscape with Shepherds",
+    "year": "1600",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "46.6 × 87.6 cm",
+    "genre": "mythological painting",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Navolger%20van%20Giorgione%20-%20Nimfen%20en%20kinderen%20in%20een%20landschap%20met%20herders%20-%20NG1695%20-%20National%20Gallery.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q26699539",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26699539",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q26699539"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.19556,
+     55.95083
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Portrait of An Archer",
+    "year": "1508",
+    "city": "Edinburgh",
+    "country": "United Kingdom",
+    "location": "Scottish National Gallery",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "53.5 × 41.5 cm",
+    "genre": "portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione%20%28attrib.%29%20-%20Portrait%20of%20An%20Archer.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q27968196",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27968196",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "scottish-national-gallery",
+    "qid": "Q27968196"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.533,
+     52.2635
     ]
    },
    "properties": {
     "painter": "Giorgione",
     "title": "Self-portrait",
     "year": "1509",
-    "city": "Braunschweig",
+    "city": "Brunswick",
     "country": "Germany",
     "location": "Herzog Anton Ulrich Museum",
     "kind": "museum",
@@ -210,17 +517,93 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2872711",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "herzog-anton-ulrich-museum",
     "qid": "Q2872711",
     "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/05selfpo.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57178,
+     48.14958
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Portrait of a Man",
+    "year": "1512",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Bavarian State Painting Collections",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil paint, poplar panel",
+    "dimensions": "69.4 × 53.6 cm",
+    "genre": "portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione%2C%20Portrait%20of%20a%20Young%20Man%202.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q29477844",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29477844",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "qid": "Q29477844",
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/09young.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57178,
+     48.14958
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Portrait of Giovanni Borgherini and Trifone Gabriele",
+    "year": "1509",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Bavarian State Painting Collections",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "91.3 × 66.6 cm",
+    "genre": "double portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgio%20da%20Castelfranco%20Giorgione%20-%20Bildnis%20eines%20Venezianischen%20Senators%20-%207452%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q29916352",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29916352",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "qid": "Q29916352"
    }
   },
   {
@@ -254,11 +637,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3098667",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -297,11 +680,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3605531",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -343,11 +726,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3605563",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -369,7 +752,7 @@
     "painter": "Giorgione",
     "title": "Portrait of a Youth",
     "year": "1503",
-    "city": "Zugló",
+    "city": "Budapest district XIV",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -388,11 +771,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3656034",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -432,11 +815,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3656454",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -477,11 +860,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3697665",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -521,11 +904,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3714154",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -561,7 +944,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3752977",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "casa-giorgione",
     "qid": "Q3752977"
@@ -599,11 +982,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3766873",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -639,7 +1022,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842552",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "hermitage-museum",
     "qid": "Q3842552",
@@ -677,11 +1060,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3879242",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -721,11 +1104,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3924389",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -766,11 +1149,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937389",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -810,11 +1193,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937411",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -853,11 +1236,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937417",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -897,11 +1280,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937532",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -940,11 +1323,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937736",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -984,11 +1367,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3944458",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1028,16 +1411,62 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3977127",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "galleria-borghese",
     "qid": "Q3977127"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Il Tramonto (The Sunset)",
+    "year": "1508",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "73.3 × 91.4 cm",
+    "genre": "landscape painting, religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione%20-%20Il%20Tramonto%20%281506-1510%29.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Tramonto",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Il_Tramonto_(The_Sunset)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Tramonto_(Giorgione)",
+    "wikidata": "https://www.wikidata.org/wiki/Q3997388",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3997388",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q3997388",
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/tramonto.html"
    }
   },
   {
@@ -1072,11 +1501,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3998112",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1117,11 +1546,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3998923",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1162,11 +1591,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009159",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1180,15 +1609,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     9.41611,
+     51.315
     ]
    },
    "properties": {
     "painter": "Giorgione",
     "title": "Sleeping Venus",
     "year": "1509",
-    "city": "Dresden",
+    "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
@@ -1208,17 +1637,47 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q500812",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "qid": "Q500812",
     "wga_url": "https://www.wga.hu/html/g/giorgion/various/venus.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     19.07678,
+     47.51587
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Two Shepherds",
+    "city": "Budapest district XIV",
+    "country": "Hungary",
+    "location": "Museum of Fine Arts, Budapest",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "91 × 63 cm",
+    "wikidata": "https://www.wikidata.org/wiki/Q50881662",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50881662",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "qid": "Q50881662"
    }
   },
   {
@@ -1254,17 +1713,99 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q595707",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q595707",
     "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/02laura.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.467513,
+     45.232916
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "Judith",
+    "year": "1500",
+    "city": "Montagnana",
+    "country": "Italy",
+    "location": "Santa Maria Assunta church",
+    "kind": "church",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil paint",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giuditta-Giorgione.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q87533881",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q87533881",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "santa-maria-assunta-church",
+    "qid": "Q87533881"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.46751,
+     45.23292
+    ]
+   },
+   "properties": {
+    "painter": "Giorgione",
+    "title": "David with the Head of Goliath",
+    "year": "1500",
+    "city": "Montagnana",
+    "country": "Italy",
+    "location": "Santa Maria Assunta church",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Fresco",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David-Giorgione-02.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q87534049",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q87534049",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "santa-maria-assunta-church",
+    "qid": "Q87534049"
    }
   },
   {
@@ -1300,11 +1841,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q877191",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1346,11 +1887,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q930137",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },

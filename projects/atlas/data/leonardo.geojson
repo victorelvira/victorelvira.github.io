@@ -7,35 +7,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.171111,
-     45.465833
-    ]
-   },
-   "properties": {
-    "painter": "Leonardo da Vinci",
-    "title": "Three lunettes above the Last Supper",
-    "city": "Senigallia",
-    "country": "Italy",
-    "location": "Santa Maria delle Grazie",
-    "kind": "church",
-    "attribution": "attributed",
-    "status": "present",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Three%20lunettes%20above%20the%20Last%20Supper.jpg?width=420",
-    "wikidata": "https://www.wikidata.org/wiki/Q105338178",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q105338178",
-     "retrieved_at": "2026-08-18"
-    },
-    "museum_id": "santa-maria-delle-grazie",
-    "qid": "Q105338178"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      11.25528,
      43.76833
     ]
@@ -64,11 +35,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1059211",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -110,11 +81,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1142058",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -153,11 +124,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11935346",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -165,38 +136,6 @@
     "city": "Paris",
     "qid": "Q11935346",
     "wga_url": "https://www.wga.hu/html/l/leonardo/02/2virg_p2.html"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.26056,
-     51.75556
-    ]
-   },
-   "properties": {
-    "painter": "Leonardo da Vinci",
-    "title": "Saint John the Baptist",
-    "city": "Oxford",
-    "country": "United Kingdom",
-    "location": "Ashmolean Museum",
-    "kind": "museum",
-    "attribution": "attributed",
-    "status": "present",
-    "medium": "Oil on panel",
-    "dimensions": "75 × 53.4 cm",
-    "genre": "religious art",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo%20da%20Vinci%20%281452-1519%29%20%28studio%20of%29%20-%20St%20John%20the%20Baptist%20-%20WA1937.102%20-%20Ashmolean%20Museum.jpg?width=420",
-    "wikidata": "https://www.wikidata.org/wiki/Q119499276",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q119499276",
-     "retrieved_at": "2026-08-18"
-    },
-    "museum_id": "ashmolean-museum",
-    "qid": "Q119499276"
    }
   },
   {
@@ -224,7 +163,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840740",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "christ-church",
     "qid": "Q119840740"
@@ -256,7 +195,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119891464",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "harris-manchester-college",
     "qid": "Q119891464"
@@ -295,58 +234,17 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1217213",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q1217213",
     "wga_url": "https://www.wga.hu/html/l/leonardo/01/2annunc.html"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -118.44361,
-     34.05944
-    ]
-   },
-   "properties": {
-    "painter": "Leonardo da Vinci",
-    "title": "Madonna and Child with Saint Anne in a Landscape",
-    "year": "1508",
-    "city": "Los Angeles",
-    "country": "United States",
-    "location": "Hammer Museum",
-    "kind": "museum",
-    "attribution": "attributed",
-    "status": "present",
-    "medium": "Oil on panel",
-    "genre": "religious art",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madonna%20and%20Child%20with%20Saint%20Anne%20in%20a%20Landscape%2C%20Worshop%20of%20Leonardo%20da%20Vinci%2C%20Possibly%20by%20Gian%20Giacomo%20Caprotti%20%28Getty%20Center%29%20-%20no%20frame.jpg?width=420",
-    "wikidata": "https://www.wikidata.org/wiki/Q123838188",
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q123838188",
-     "retrieved_at": "2026-08-18"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-18",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "hammer-museum",
-    "qid": "Q123838188"
    }
   },
   {
@@ -382,11 +280,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q12418",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -428,63 +326,17 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1267893",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q1267893",
     "wga_url": "https://www.wga.hu/html/l/leonardo/01/4benci.html"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     9.171111,
-     45.465833
-    ]
-   },
-   "properties": {
-    "painter": "Leonardo da Vinci",
-    "title": "The Last Supper",
-    "year": "1490",
-    "city": "Senigallia",
-    "country": "Italy",
-    "location": "Santa Maria delle Grazie",
-    "kind": "church",
-    "attribution": "generally accepted",
-    "status": "present",
-    "medium": "Gesso, tempera",
-    "dimensions": "700 × 880 cm",
-    "genre": "religious art",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo%20da%20Vinci%20%281452-1519%29%20-%20The%20Last%20Supper%20%281495-1498%29.jpg?width=420",
-    "wikipedia_es": "https://es.wikipedia.org/wiki/La_%C3%BAltima_cena_(Leonardo_da_Vinci)",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo)",
-    "wikipedia_it": "https://it.wikipedia.org/wiki/Ultima_Cena_(Leonardo)",
-    "wikidata": "https://www.wikidata.org/wiki/Q128910",
-    "creation_place": "Milan",
-    "creation_lat": 45.4642,
-    "creation_lon": 9.19,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q128910",
-     "retrieved_at": "2026-08-18"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-18",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "santa-maria-delle-grazie",
-    "qid": "Q128910",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/03/4lastsu4.html"
    }
   },
   {
@@ -514,11 +366,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131414918",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -559,11 +411,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1327676",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -605,11 +457,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1638622",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -651,11 +503,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1892745",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -692,11 +544,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20174114",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -737,11 +589,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2045726",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -782,11 +634,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2308934",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -827,63 +679,17 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2338404",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "pinacoteca-ambrosiana",
     "qid": "Q2338404",
     "wga_url": "https://www.wga.hu/html/l/leonardo/03/1musicia.html"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.25528,
-     43.76833
-    ]
-   },
-   "properties": {
-    "painter": "Leonardo da Vinci",
-    "title": "Tavola Doria",
-    "year": "1503",
-    "city": "Florence",
-    "country": "Italy",
-    "location": "Uffizi Gallery",
-    "kind": "museum",
-    "attribution": "generally accepted",
-    "status": "present",
-    "medium": "Oil paint, poplar panel",
-    "dimensions": "86 × 115 cm",
-    "genre": "history painting",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Battaglia%20di%20Anghiari%20di%20Leonardo.jpg?width=420",
-    "wikipedia_es": "https://es.wikipedia.org/wiki/Tavola_Doria",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Tavola_Doria",
-    "wikipedia_it": "https://it.wikipedia.org/wiki/Tavola_Doria",
-    "wikidata": "https://www.wikidata.org/wiki/Q2397593",
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q2397593",
-     "retrieved_at": "2026-08-18"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-18",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "uffizi-gallery",
-    "qid": "Q2397593",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/06anghia/2doria.html"
    }
   },
   {
@@ -916,11 +722,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27970282",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -961,11 +767,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3618186",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1003,61 +809,17 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3800774",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "sforza-castle",
     "qid": "Q3800774",
     "wga_url": "https://www.wga.hu/html/l/leonardo/03/5ceilin1.html"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.25528,
-     43.76833
-    ]
-   },
-   "properties": {
-    "painter": "Leonardo da Vinci",
-    "title": "Leda and the Swan",
-    "year": "1505",
-    "city": "Florence",
-    "country": "Italy",
-    "location": "Uffizi Gallery",
-    "kind": "museum",
-    "attribution": "generally accepted",
-    "status": "present",
-    "dimensions": "130 × 77.5 cm",
-    "genre": "mythological painting",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Leda%20Melzi%20Uffizi.jpg?width=420",
-    "wikipedia_es": "https://es.wikipedia.org/wiki/Leda_y_el_cisne_(Uffizi)",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Leda_and_the_Swan_(Uffizi)",
-    "wikipedia_it": "https://it.wikipedia.org/wiki/Leda_col_cigno_(Uffizi)",
-    "wikidata": "https://www.wikidata.org/wiki/Q3829345",
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3829345",
-     "retrieved_at": "2026-08-18"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-18",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "uffizi-gallery",
-    "qid": "Q3829345"
    }
   },
   {
@@ -1089,11 +851,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937378",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1133,11 +895,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3985169",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1176,11 +938,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009972",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1222,11 +984,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q474338",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1265,11 +1027,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q56280397",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1310,11 +1072,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q563727",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1355,11 +1117,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q656434",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1402,11 +1164,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6696013",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1447,11 +1209,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q698015",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1493,11 +1255,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q783215",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1533,11 +1295,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79052262",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1578,11 +1340,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q797902",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1624,11 +1386,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q972196",
-     "retrieved_at": "2026-08-18"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-18",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },

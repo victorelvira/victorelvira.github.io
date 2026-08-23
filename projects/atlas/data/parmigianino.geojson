@@ -34,11 +34,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106262020",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -76,16 +76,163 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112078318",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "getty-center",
     "qid": "Q112078318"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.88019,
+     43.61174
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "L'Enfant Jésus porté par des Anges",
+    "year": "1540",
+    "city": "Montpellier",
+    "country": "France",
+    "location": "Musée Fabre",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "36 × 27.5 cm",
+    "genre": "religious art",
+    "wikidata": "https://www.wikidata.org/wiki/Q117832511",
+    "creation_place": "Parma",
+    "creation_lat": 44.8015,
+    "creation_lon": 10.3279,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q117832511",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "musee-fabre",
+    "qid": "Q117832511"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.02035,
+     51.5913
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "A Martyrdom",
+    "year": "1530",
+    "city": "London Borough of Waltham Forest",
+    "country": "United Kingdom",
+    "location": "William Morris Gallery",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "111.5 × 96 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino%20%281503-1540%29%20%28attributed%20to%29%20-%20A%20Martyrdom%20-%20BrO46%20-%20William%20Morris%20Gallery.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q119456605",
+    "creation_place": "Bologna",
+    "creation_lat": 44.4949,
+    "creation_lon": 11.3426,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119456605",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "william-morris-gallery",
+    "qid": "Q119456605"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.675,
+     48.10944
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Q123510136",
+    "year": "1601",
+    "city": "Rennes",
+    "country": "France",
+    "location": "Musée des Beaux-Arts de Rennes",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Wood",
+    "dimensions": "23.8 × 20 cm",
+    "genre": "religious art",
+    "wikidata": "https://www.wikidata.org/wiki/Q123510136",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123510136",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "musee-des-beaux-arts-de-rennes",
+    "qid": "Q123510136"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.675,
+     48.10944
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Q123551011",
+    "year": "1501",
+    "city": "Rennes",
+    "country": "France",
+    "location": "Musée des Beaux-Arts de Rennes",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Canvas",
+    "dimensions": "92.5 × 72.5 cm",
+    "genre": "nude, religious art",
+    "wikidata": "https://www.wikidata.org/wiki/Q123551011",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123551011",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "musee-des-beaux-arts-de-rennes",
+    "qid": "Q123551011"
    }
   },
   {
@@ -118,7 +265,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1595032",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-del-prado",
     "qid": "Q1595032"
@@ -156,11 +303,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1896483",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -199,16 +346,58 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19966608",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "galleria-nazionale-di-parma",
     "qid": "Q19966608"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Cardinal Lorenzo Pucci",
+    "year": "1529",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "95.3 × 81.3 cm",
+    "genre": "portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino%20019.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q26713754",
+    "creation_place": "Bologna",
+    "creation_lat": 44.4949,
+    "creation_lon": 11.3426,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26713754",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q26713754"
    }
   },
   {
@@ -241,16 +430,57 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28020401",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q28020401"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.142,
+     51.501
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Portrait of a Young Nobleman",
+    "year": "1531",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "Buckingham Palace",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "dimensions": "98.5 × 82.4 cm",
+    "genre": "portrait",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino%20%28Parma%201503-Casalmaggiore%201540%29%20-%20Portrait%20of%20a%20Young%20Nobleman%20-%20RCIN%20406025%20-%20Royal%20Collection.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q28035519",
+    "creation_place": "Bologna",
+    "creation_lat": 44.4949,
+    "creation_lon": 11.3426,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28035519",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "buckingham-palace",
+    "qid": "Q28035519"
    }
   },
   {
@@ -283,7 +513,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q282277",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "detroit-institute-of-arts",
     "qid": "Q282277"
@@ -319,16 +549,47 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29839542",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "bavarian-state-painting-collections",
     "qid": "Q29839542"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Q30057024",
+    "year": "1602",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "dimensions": "141.8 × 148.5 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parma%20-%20Selene%20und%20Endymion%20-%201255%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q30057024",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30057024",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q30057024"
    }
   },
   {
@@ -364,11 +625,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3275305",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -409,11 +670,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3605537",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -450,7 +711,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3636746",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3636746"
@@ -489,11 +750,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3689725",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -535,11 +796,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3739205",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -580,11 +841,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3839035",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -624,11 +885,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842425",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -667,11 +928,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842495",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -684,15 +945,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     9.41611,
+     51.315
     ]
    },
    "properties": {
     "painter": "Parmigianino",
     "title": "Madonna of the rose",
     "year": "1529",
-    "city": "Dresden",
+    "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
@@ -711,11 +972,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842680",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -755,11 +1016,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842736",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -800,16 +1061,105 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842737",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q3842737"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "The Mystic Marriage of Saint Catherine",
+    "year": "1529",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on panel",
+    "dimensions": "74.2 × 57.2 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino%20-%20The%20Mystic%20Marriage%20of%20Saint%20Catherine.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Mystic_Marriage_of_Saint_Catherine_(Parmigianino,_London)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Matrimonio_mistico_di_santa_Caterina_d%27Alessandria_(Parmigianino_Londra)",
+    "wikidata": "https://www.wikidata.org/wiki/Q3851962",
+    "creation_place": "Bologna",
+    "creation_lat": 44.4949,
+    "creation_lon": 11.3426,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3851962",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q3851962"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Mystic Marriage of St. Catherine",
+    "year": "1528",
+    "country": "France",
+    "location": "Louvre",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil paint, poplar panel",
+    "dimensions": "20 × 27 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Mariage%20mystique%20de%20sainte%20Catherine%20-%20Parmigianino%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20RF%201992%20411.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Mystic_Marriage_of_Saint_Catherine_(Parmigianino,_Louvre)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Matrimonio_mistico_di_santa_Caterina_d%27Alessandria_(Parmigianino_Parigi)",
+    "wikidata": "https://www.wikidata.org/wiki/Q3851963",
+    "creation_place": "Bologna",
+    "creation_lat": 44.4949,
+    "creation_lon": 11.3426,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3851963",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "city": "Paris",
+    "qid": "Q3851963",
+    "wga_url": "https://www.wga.hu/html/p/parmigia/mysticma.html"
    }
   },
   {
@@ -843,11 +1193,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3858368",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -885,7 +1235,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3873235",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "doughty-house",
     "qid": "Q3873235"
@@ -896,15 +1246,59 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     12.48114,
+     41.89767
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Nativity of Christ with angels",
+    "year": "1525",
+    "city": "Rome",
+    "country": "Italy",
+    "location": "Doria Pamphilj Gallery",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "59 × 34 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino%2C%20nativit%C3%A0%20con%20angeli.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Nativity_with_Angels_(Parmigianino)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Nativit%C3%A0_con_angeli",
+    "wikidata": "https://www.wikidata.org/wiki/Q3873239",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3873239",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "qid": "Q3873239"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.41611,
+     51.315
     ]
    },
    "properties": {
     "painter": "Parmigianino",
     "title": "Madonna and child with Saints Stephen and John the Baptist",
     "year": "1539-1540",
-    "city": "Dresden",
+    "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
@@ -922,16 +1316,51 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3889233",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "qid": "Q3889233"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.731663,
+     44.632003
+    ]
+   },
+   "properties": {
+    "painter": "Parmigianino",
+    "title": "Bardi Altarpiece",
+    "year": "1521",
+    "city": "Bardi",
+    "country": "Italy",
+    "location": "Santa Maria Addolorata",
+    "kind": "church",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Panel",
+    "dimensions": "203 × 130 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20Santa%20Maria%20Addolorata%20%28Bardi%29%20-%20Pala%20di%20Bardi%203%202022-05-16.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Bardi_Altarpiece_(Parmigianino)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Pala_di_Bardi",
+    "wikidata": "https://www.wikidata.org/wiki/Q3889239",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3889239",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "santa-maria-addolorata",
+    "qid": "Q3889239"
    }
   },
   {
@@ -964,11 +1393,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937392",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1008,11 +1437,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937415",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1051,11 +1480,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937424",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1097,11 +1526,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937480",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1142,11 +1571,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937503",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1187,11 +1616,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937542",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1232,11 +1661,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937595",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1277,11 +1706,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937655",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1320,11 +1749,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937704",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1364,11 +1793,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937763",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1407,11 +1836,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937792",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1452,11 +1881,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3944466",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1497,11 +1926,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3944485",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1539,11 +1968,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3947911",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1578,7 +2007,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3948034",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
     "qid": "Q3948034"
@@ -1611,7 +2040,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3948651",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
     "qid": "Q3948651"
@@ -1644,7 +2073,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3948950",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "sanctuary-of-santa-maria-della-steccata",
     "qid": "Q3948950"
@@ -1679,7 +2108,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3949270",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "stadel-museum",
     "qid": "Q3949270",
@@ -1713,7 +2142,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3949310",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
     "qid": "Q3949310"
@@ -1746,7 +2175,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3949373",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
     "qid": "Q3949373"
@@ -1781,11 +2210,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3998159",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1826,11 +2255,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4006164",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1868,7 +2297,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q699319",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q699319",
@@ -1907,11 +2336,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q866489",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1952,11 +2381,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q866500",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1994,7 +2423,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q867403",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q867403",
@@ -2034,11 +2463,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q867678",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2079,11 +2508,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q892604",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },

@@ -33,11 +33,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105525573",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -76,11 +76,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106497109",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -94,8 +94,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.371,
-     39.479
+     -0.37083,
+     39.47917
     ]
    },
    "properties": {
@@ -118,11 +118,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106691050",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -160,11 +160,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107290861",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -201,11 +201,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q108314458",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -239,7 +239,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q109535214",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "hospital-de-la-santa-caridad",
     "qid": "Q109535214"
@@ -276,11 +276,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q110159901",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -320,17 +320,61 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11681382",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "museo-del-prado",
     "qid": "Q11681382",
     "wga_url": "https://www.wga.hu/html/m/murillo/3/313muril.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.69891,
+     45.42954
+    ]
+   },
+   "properties": {
+    "painter": "Murillo",
+    "title": "Abraham Receiving the Three Angels",
+    "year": "1670",
+    "city": "Ottawa",
+    "country": "Canada",
+    "location": "National Gallery of Canada",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "236.2 × 261.5 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Murillo%20Abraham.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Abraham_y_los_tres_%C3%81ngeles",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Abraham_and_the_Three_Angels",
+    "wikidata": "https://www.wikidata.org/wiki/Q11684158",
+    "creation_place": "Seville",
+    "creation_lat": 37.3891,
+    "creation_lon": -5.9845,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11684158",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "qid": "Q11684158"
    }
   },
   {
@@ -366,11 +410,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11694421",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -383,15 +427,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     9.41611,
+     51.315
     ]
    },
    "properties": {
     "painter": "Murillo",
     "title": "Joseph and Potiphar's Wife",
     "year": "1640",
-    "city": "Dresden",
+    "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
@@ -406,7 +450,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11731707",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "qid": "Q11731707",
@@ -446,11 +490,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11770877",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -490,11 +534,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11772156",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -534,11 +578,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11790316",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -577,11 +621,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11821340",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -623,11 +667,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11825956",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -669,11 +713,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q12184056",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -711,11 +755,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q123905498",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -746,7 +790,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126727184",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "palazzo-bianco",
     "qid": "Q126727184"
@@ -775,7 +819,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126875002",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-del-prado",
     "qid": "Q126875002"
@@ -811,11 +855,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131462491",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -828,8 +872,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -99.2046,
-     19.4407
+     -99.20462,
+     19.44066
     ]
    },
    "properties": {
@@ -852,11 +896,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131537857",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -894,11 +938,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131541198",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -935,11 +979,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q135615843",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -977,11 +1021,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q138811323",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1022,11 +1066,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16593003",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1068,11 +1112,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16627776",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1111,11 +1155,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17343143",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1153,11 +1197,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18683394",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1195,11 +1239,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18749427",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1240,11 +1284,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18915626",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1281,11 +1325,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18916064",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1325,11 +1369,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18920264",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1368,11 +1412,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19906247",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1410,11 +1454,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19911474",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1452,11 +1496,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19912900",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1495,11 +1539,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20873211",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1540,11 +1584,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21725156",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1584,11 +1628,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21729759",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1626,11 +1670,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21730878",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1668,11 +1712,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21741365",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1710,11 +1754,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21764178",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1755,11 +1799,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q22120723",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1796,11 +1840,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q23928474",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1837,11 +1881,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q23948862",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1878,11 +1922,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q24255070",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1923,11 +1967,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2450139",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1968,11 +2012,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2456003",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1985,8 +2029,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -99.2046,
-     19.4407
+     -99.20462,
+     19.44066
     ]
    },
    "properties": {
@@ -2011,11 +2055,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q24569472",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2053,11 +2097,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26506646",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2095,11 +2139,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26707921",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2112,8 +2156,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.71431,
-     40.41795
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2122,7 +2166,7 @@
     "year": "1650",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Royal Palace of Madrid",
+    "location": "Museo del Prado",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2137,15 +2181,15 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27701814",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "royal-palace-of-madrid",
+    "museum_id": "museo-del-prado",
     "qid": "Q27701814"
    }
   },
@@ -2179,11 +2223,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27749015",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2223,11 +2267,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27749021",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2265,11 +2309,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27749033",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2307,11 +2351,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27749754",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2349,11 +2393,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27750970",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2392,11 +2436,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27751761",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2434,11 +2478,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27751843",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2478,11 +2522,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27752264",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2521,11 +2565,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27752303",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2563,11 +2607,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27753247",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2609,11 +2653,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27966311",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2653,11 +2697,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27968621",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2697,11 +2741,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27976022",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2739,11 +2783,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28777900",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2781,11 +2825,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28777906",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2827,11 +2871,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2880218",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2868,11 +2912,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28803561",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2913,11 +2957,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3633626",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -2957,11 +3001,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3715943",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3003,11 +3047,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3757652",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3049,11 +3093,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3918296",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3095,11 +3139,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3947097",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3138,11 +3182,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43543173",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3181,11 +3225,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q46420346",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3198,15 +3242,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     9.41611,
+     51.315
     ]
    },
    "properties": {
     "painter": "Murillo",
     "title": "Madonna and Child",
     "year": "1675",
-    "city": "Dresden",
+    "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
@@ -3223,11 +3267,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50325648",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3266,11 +3310,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50819955",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3308,11 +3352,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q52157686",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3351,11 +3395,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5289575",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3394,11 +3438,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5659824",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3441,11 +3485,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5792618",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3486,11 +3530,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5826757",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3531,11 +3575,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59313692",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3576,11 +3620,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5968484",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3621,11 +3665,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6025684",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3666,11 +3710,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6102310",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3711,11 +3755,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6120453",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3755,11 +3799,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6120755",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3797,11 +3841,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q69495877",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3837,7 +3881,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77927306",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-ireland",
     "qid": "Q77927306"
@@ -3873,11 +3917,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79361895",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3915,11 +3959,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9162667",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -3959,11 +4003,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9191536",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4002,11 +4046,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9191539",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4046,11 +4090,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9191554",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4090,11 +4134,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9191556",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4134,11 +4178,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9199638",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4159,7 +4203,7 @@
     "painter": "Murillo",
     "title": "The Infant Christ Distributing Bread to the Pilgrims",
     "year": "1678",
-    "city": "Zugló",
+    "city": "Budapest district XIV",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -4178,11 +4222,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9248340",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4221,11 +4265,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9248634",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4263,11 +4307,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9250142",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4306,11 +4350,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9367601",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4346,7 +4390,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9372596",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "fitzwilliam-museum",
     "qid": "Q9372596"
@@ -4381,11 +4425,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9390345",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4425,11 +4469,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9395953",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4468,11 +4512,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9395954",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4494,7 +4538,7 @@
     "painter": "Murillo",
     "title": "Holy Family with St. John the Baptist",
     "year": "1601",
-    "city": "Zugló",
+    "city": "Budapest district XIV",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -4510,7 +4554,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9396638",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q9396638",
@@ -4549,11 +4593,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9396767",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4592,11 +4636,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9396803",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4636,11 +4680,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9396823",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4653,15 +4697,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     9.41611,
+     51.315
     ]
    },
    "properties": {
     "painter": "Murillo",
     "title": "Saint Roderick",
     "year": "1652",
-    "city": "Dresden",
+    "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
@@ -4679,11 +4723,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9396888",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -4721,11 +4765,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9397467",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },

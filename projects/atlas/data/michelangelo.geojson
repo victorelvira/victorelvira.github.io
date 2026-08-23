@@ -7,6 +7,48 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Michelangelo",
+    "title": "Drunkenness of Noah",
+    "year": "1509",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "location": "Sistine Chapel",
+    "kind": "church",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Fresco",
+    "dimensions": "170 × 260 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20drunken%20Noah.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q116621556",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116621556",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "qid": "Q116621556",
+    "wga_url": "https://www.wga.hu/html/m/michelan/3sistina/1genesis/1drunken/01_3ce1.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
      -0.1283,
      51.5089
     ]
@@ -35,11 +77,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1213160",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -76,11 +118,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1213320",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -120,11 +162,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1473546",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -166,11 +208,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1684762",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -209,7 +251,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2327759",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-d-arte-kimbell",
     "qid": "Q2327759"
@@ -246,17 +288,108 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3614330",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "vatican-museums",
     "qid": "Q3614330",
     "wga_url": "https://www.wga.hu/html/m/michelan/3sistina/6lunette/14/lu14ami.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Michelangelo",
+    "title": "The Creation of the Sun, Moon and Planets",
+    "year": "1511",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "location": "Sistine Chapel",
+    "kind": "church",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Fresco",
+    "dimensions": "280 × 570 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%2C%20Creation%20of%20the%20Sun%2C%20Moon%2C%20and%20Plants%2001.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Creaci%C3%B3n_de_los_astros_y_las_plantas",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Creation_of_the_Sun,_Moon,_and_Plants",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Creazione_degli_astri_e_delle_piante",
+    "wikidata": "https://www.wikidata.org/wiki/Q3696827",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3696827",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "qid": "Q3696827",
+    "wga_url": "https://www.wga.hu/html/m/michelan/3sistina/1genesis/8plants/08_3ce8.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Michelangelo",
+    "title": "The Creation of Eve",
+    "year": "1511",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "location": "Sistine Chapel",
+    "kind": "church",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Fresco",
+    "dimensions": "170 × 260 cm",
+    "genre": "nude, religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%2C%20Creation%20of%20Eve%2001.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/La_creaci%C3%B3n_de_Eva_(Miguel_%C3%81ngel)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Creazione_di_Eva_(Michelangelo)",
+    "wikidata": "https://www.wikidata.org/wiki/Q3696835",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3696835",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "qid": "Q3696835",
+    "wga_url": "https://www.wga.hu/html/m/michelan/3sistina/1genesis/5eve/05_3ce5.html"
    }
   },
   {
@@ -290,11 +423,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3707697",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -335,11 +468,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3736323",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -379,11 +512,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3769181",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -422,11 +555,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3792087",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -465,11 +598,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3869770",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -509,11 +642,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3887821",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -553,11 +686,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3925593",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -597,11 +730,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3939302",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -642,11 +775,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3944655",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -686,11 +819,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3945680",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -704,8 +837,98 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.45443,
-     41.90296
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Michelangelo",
+    "title": "The Separation of the Earth and Waters",
+    "year": "1511",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "location": "Sistine Chapel",
+    "kind": "church",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Fresco",
+    "dimensions": "155 × 270 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sistine%20Chapel%20ceiling%2C%20Creation%20of%20Adam.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Separaci%C3%B3n_de_las_aguas_y_la_tierra",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Separazione_della_terra_dalle_acque",
+    "wikidata": "https://www.wikidata.org/wiki/Q3955632",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3955632",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "qid": "Q3955632",
+    "wga_url": "https://www.wga.hu/html/m/michelan/3sistina/1genesis/7earth/07_3ce7.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Michelangelo",
+    "title": "Separation of Light from Darkness",
+    "year": "1512",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "location": "Sistine Chapel",
+    "kind": "church",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Fresco",
+    "dimensions": "180 × 260 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dividing%20Light%20from%20Darkness.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Separaci%C3%B3n_de_la_luz_de_la_oscuridad",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Separation_of_Light_from_Darkness",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Separazione_della_luce_dalle_tenebre",
+    "wikidata": "https://www.wikidata.org/wiki/Q3955636",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3955636",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "qid": "Q3955636"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.454433,
+     41.902956
     ]
    },
    "properties": {
@@ -715,7 +938,7 @@
     "city": "Vatican City",
     "country": "Vatican City",
     "location": "Sistine Chapel",
-    "kind": "museum",
+    "kind": "church",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Fresco",
@@ -730,11 +953,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3957934",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -775,11 +998,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3960003",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -819,11 +1042,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3960006",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -863,11 +1086,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3960008",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -908,11 +1131,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3960012",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -952,11 +1175,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009315",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -996,11 +1219,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009316",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1040,11 +1263,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009319",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1084,11 +1307,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009320",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1127,11 +1350,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009321",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1170,11 +1393,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009322",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1188,8 +1411,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454433,
-     41.902956
+     12.45443,
+     41.90296
     ]
    },
    "properties": {
@@ -1199,7 +1422,7 @@
     "city": "Vatican City",
     "country": "Vatican City",
     "location": "Sistine Chapel",
-    "kind": "church",
+    "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Fresco",
@@ -1214,11 +1437,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009323",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1259,11 +1482,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4023582",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1303,11 +1526,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4024821",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },

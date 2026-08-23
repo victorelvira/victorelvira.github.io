@@ -32,11 +32,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104411621",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -74,11 +74,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104854324",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -117,11 +117,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104854363",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -160,11 +160,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105398451",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -202,11 +202,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107291429",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -243,11 +243,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107291430",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -286,11 +286,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107445209",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -329,11 +329,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107597258",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -372,11 +372,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11740522",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -415,11 +415,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118895167",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -458,17 +458,88 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1193312",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q1193312"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.35824,
+     50.84168
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The hurdy-gurdy player",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium",
+    "location": "Royal Museums of Fine Arts of Belgium",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "dimensions": "85.5 × 58.5 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20Vielleur%20a%20mi-corps%20fragment%20Mus%C3%A9es%20royaux%20des%20beaux-arts%20de%20Belgique.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q122209653",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q122209653",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "qid": "Q122209653"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.39278,
+     43.65361
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Saint Anne with the Infant Jesus",
+    "year": "1647",
+    "city": "Toronto",
+    "country": "Canada",
+    "location": "Art Gallery of Ontario",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "66 × 55 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20Le%20Nouveau-ne%20Mus%C3%A9e%20des%20beaux-arts%20de%20l%27Ontario.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q124433778",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124433778",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "art-gallery-of-ontario",
+    "qid": "Q124433778"
    }
   },
   {
@@ -501,16 +572,58 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q125707590",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "musee-des-beaux-arts-de-dijon",
     "qid": "Q125707590"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.38306,
+     29.76278
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The Repentant Magdalene",
+    "year": "1630-1640",
+    "city": "Harris County",
+    "country": "United States",
+    "location": "Houston",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "78 × 110 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Tour%20-%20The%20Repentant%20Magdalene%20with%20a%20Document%2C%20circa%201630-1650.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q138330748",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q138330748",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "houston",
+    "qid": "Q138330748"
    }
   },
   {
@@ -544,11 +657,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q14940735",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -589,11 +702,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q14940736",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -634,11 +747,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q14940737",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -678,11 +791,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q14940739",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -723,16 +836,102 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17627500",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "nantes-museum-of-arts",
     "qid": "Q17627500"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.3592,
+     34.0633
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Magdalen with the Smoking Flame",
+    "year": "1640",
+    "city": "Los Angeles",
+    "country": "United States",
+    "location": "Los Angeles County Museum of Art",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "1170 × 917.7 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20-%20The%20Magdalen%20with%20the%20Smoking%20Flame%20-%20Google%20Art%20Project.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Magdalena_penitente_de_la_llama_humeante",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Maddalena_con_la_fiamma_fumante",
+    "wikidata": "https://www.wikidata.org/wiki/Q18564687",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18564687",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "qid": "Q18564687"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9672,
+     40.7711
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The Education of the Virgin",
+    "year": "1650",
+    "city": "New York",
+    "country": "United States",
+    "location": "Frick Collection",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "83.8 × 100.3 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20L%27Education%20de%20la%20Vierge%20The%20Frick%20Collection.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q19857310",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19857310",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "frick-collection",
+    "qid": "Q19857310"
    }
   },
   {
@@ -765,11 +964,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20198401",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -807,11 +1006,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20198403",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -851,11 +1050,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21693177",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -893,11 +1092,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q23948730",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -935,11 +1134,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27180501",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -977,17 +1176,60 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27700014",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "museo-del-prado",
     "qid": "Q27700014",
     "wga_url": "https://www.wga.hu/html/l/la_tour/georges/2/09blind.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.14241,
+     51.4998
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Saint Jerome",
+    "year": "1621",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "King's Gallery",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "63.8 × 47.2 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20la%20Tour%20%281593-1652%29%20-%20Saint%20Jerome%20-%20RCIN%20405462%20-%20Royal%20Collection.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q28026337",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28026337",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "king-s-gallery",
+    "qid": "Q28026337",
+    "wga_url": "https://www.wga.hu/html/l/la_tour/georges/1/01jerome.html"
    }
   },
   {
@@ -1019,11 +1261,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29644867",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1031,6 +1273,97 @@
     "city": "Paris",
     "qid": "Q29644867",
     "wga_url": "https://www.wga.hu/html/l/la_tour/georges/1/05thomas.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.8914
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The Repentant Magdalen",
+    "year": "1637",
+    "city": "Washington",
+    "country": "United States",
+    "location": "National Gallery of Art",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "113 × 92.7 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20006.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Magdalena_penitente_del_espejo",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Magdalene_at_a_Mirror",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Maddalena_allo_specchio",
+    "wikidata": "https://www.wikidata.org/wiki/Q3210250",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3210250",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "national-gallery-of-art",
+    "qid": "Q3210250"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The Penitent Magdalen",
+    "year": "1625-1640",
+    "city": "New York",
+    "country": "United States",
+    "location": "Metropolitan Museum of Art",
+    "kind": "museum",
+    "attribution": "generally accepted",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "133.4 × 102.2 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Penitent%20Magdalen%20MET%20DT7252.jpg?width=420",
+    "wikipedia_es": "https://es.wikipedia.org/wiki/Magdalena_penitente_(De_la_Tour,_Nueva_York)",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Magdalene_with_Two_Flames",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Maddalena_dalle_due_fiamme",
+    "wikidata": "https://www.wikidata.org/wiki/Q3210251",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3210251",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q3210251",
+    "wga_url": "https://www.wga.hu/html/l/la_tour/georges/1/10penite.html"
    }
   },
   {
@@ -1066,11 +1399,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3210253",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1111,11 +1444,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q379906",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1154,11 +1487,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48252412",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1196,16 +1529,130 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60515901",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "cleveland-museum-of-art",
     "qid": "Q60515901"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.0647,
+     42.3594
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Saint Sebastian Nursed by Saint Irene",
+    "city": "Detroit",
+    "country": "United States",
+    "location": "Detroit Institute of Arts",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20-%20Saint%20Sebastian%20Nursed%20by%20Saint%20Irene%20-%2048.278%20-%20Detroit%20Institute%20of%20Arts.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q64517583",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64517583",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "qid": "Q64517583"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.0647,
+     42.3594
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Young Virgin Mary",
+    "year": "1640",
+    "city": "Detroit",
+    "country": "United States",
+    "location": "Detroit Institute of Arts",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20-%20Young%20Virgin%20Mary%20-%2038.8%20-%20Detroit%20Institute%20of%20Arts.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q64537003",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64537003",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "qid": "Q64537003"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.365,
+     32.74861
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Saint Sebastian Tended by Irene",
+    "year": "1632",
+    "city": "Fort Worth",
+    "country": "United States",
+    "location": "Museo d'arte Kimbell",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "104.8 × 139.4 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27Saint%20Sebastian%20Tended%20by%20Irene%27%2C%20attributed%20to%20Georges%20de%20La%20Tour%2C%20early%201630s%2C%20oil%20on%20canvas%2C%20Kimbell%20Art%20Museum.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q72753392",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q72753392",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "museo-d-arte-kimbell",
+    "qid": "Q72753392"
    }
   },
   {
@@ -1238,16 +1685,58 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q73190680",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "chrysler-museum-of-art",
     "qid": "Q73190680"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.29808,
+     51.45209
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Diogenes",
+    "year": "1620",
+    "city": "London Borough of Richmond upon Thames",
+    "country": "United Kingdom",
+    "location": "Doughty House",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "99.9 × 121.4 cm",
+    "genre": "genre art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20la%20Tour%20-%20Diogenes.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q73983236",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q73983236",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "doughty-house",
+    "qid": "Q73983236"
    }
   },
   {
@@ -1282,11 +1771,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q743643",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1294,6 +1783,77 @@
     "city": "Paris",
     "qid": "Q743643",
     "wga_url": "https://www.wga.hu/html/l/la_tour/georges/2/06carpe1.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.33813,
+     47.60731
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "Saint Sebastian Tended by Saint Irene",
+    "year": "1638",
+    "city": "Seattle",
+    "country": "United States",
+    "location": "Seattle Art Museum",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "genre": "religious art",
+    "wikidata": "https://www.wikidata.org/wiki/Q77925286",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77925286",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "seattle-art-museum",
+    "qid": "Q77925286"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.25255,
+     53.34091
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The Image of Saint Alexis",
+    "city": "Dublin",
+    "country": "Ireland",
+    "location": "National Gallery of Ireland",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "143.5 × 117 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Image%20of%20Saint%20Alexis%20P604.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q77934304",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77934304",
+     "retrieved_at": "2026-08-23"
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "qid": "Q77934304"
    }
   },
   {
@@ -1326,11 +1886,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q80113878",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1367,11 +1927,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q87188157",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1411,11 +1971,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q8774031",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1453,7 +2013,7 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9335245",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "museum_id": "nantes-museum-of-arts",
     "qid": "Q9335245",
@@ -1492,11 +2052,11 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9402747",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
@@ -1520,7 +2080,7 @@
     "title": "The money paid",
     "year": "1627",
     "city": "Lviv",
-    "country": "Austria–Hungary",
+    "country": "Ukraine",
     "location": "Potocki Palace",
     "kind": "museum",
     "attribution": "attributed",
@@ -1536,16 +2096,57 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q95582247",
-     "retrieved_at": "2026-08-20"
+     "retrieved_at": "2026-08-23"
     },
     "_overrides": {
      "creation": {
-      "at": "2026-08-20",
+      "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
     "museum_id": "potocki-palace",
     "qid": "Q95582247"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.1278,
+     52.6292
+    ]
+   },
+   "properties": {
+    "painter": "Georges de La Tour",
+    "title": "The Young Singer",
+    "year": "1645",
+    "city": "Leicester",
+    "country": "United Kingdom",
+    "location": "Leicester Museum & Art Gallery",
+    "kind": "museum",
+    "attribution": "attributed",
+    "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "66.5 × 50 cm",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20de%20La%20Tour%20Le%20Jeune%20chanteur%20New%20Walk%20Museum%20and%20Art%20Gallery.jpg?width=420",
+    "wikidata": "https://www.wikidata.org/wiki/Q96585417",
+    "creation_place": "Lunéville",
+    "creation_lat": 48.5936,
+    "creation_lon": 6.4936,
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q96585417",
+     "retrieved_at": "2026-08-23"
+    },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
+    "museum_id": "leicester-museum-art-gallery",
+    "qid": "Q96585417"
    }
   }
  ]
