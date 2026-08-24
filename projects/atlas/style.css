@@ -401,6 +401,9 @@ body.resizing #map { pointer-events: none; }
 .wc-share { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 14px; cursor: pointer;
   border: 1px solid #d8c7a6; border-radius: 999px; background: #efe6d6; color: #3a2317; }
 .wc-share:hover { background: #e7dcc6; }
+.wc-map { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 14px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); }
+.wc-map:hover { background: #f2ede4; }
 #toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(10px);
   background: #241a12; color: #f6efe4; padding: 9px 16px; border-radius: 999px; font-size: 13px;
   z-index: 3000; opacity: 0; pointer-events: none; box-shadow: 0 4px 20px rgba(0,0,0,.4);
@@ -508,6 +511,10 @@ body.resizing #map { pointer-events: none; }
   padding: 8px 12px; border-top: 1px solid #f0ece3;
 }
 .card ul.works li:first-child { border-top: 0; }
+.card ul.works li.pop-work { cursor: pointer; }
+.card ul.works li.pop-work:hover { background: #faf7f1; }
+.card ul.works li.pop-work .wt { text-decoration: underline transparent; }
+.card ul.works li.pop-work:hover .wt { text-decoration-color: currentColor; }
 /* clickable venue name at the top of a popup → opens the museum in the side list */
 button.pop-museum {
   background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-align: left;

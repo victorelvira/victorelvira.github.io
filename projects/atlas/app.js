@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.40.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 00:13";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.41.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 09:47";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -126,12 +126,22 @@ document.getElementById("report-form")?.addEventListener("submit", e => {
 
 // ── mobile bottom sheet: hosts marker popups on phones (see the popupopen handler) ──
 const isMobile = () => window.matchMedia("(max-width: 640px)").matches;
-function openSheet(html) {
+function openSheet(html, feats) {
   const body = document.getElementById("sheet-body");
   body.innerHTML = html;
   const b = body.querySelector(".pop-museum");           // clickable venue title → open in list
   if (b) b.addEventListener("click", () => { closeSheet(); selectMuseum(b.dataset.museum); });
+  wireWorkItems(body, feats, closeSheet);                // each work row → its ficha
   document.getElementById("sheet").hidden = false;
+}
+// make each work row in a popup / sheet open that painting's ficha (the painting is the unit)
+function wireWorkItems(container, feats, onOpen) {
+  if (!container || !feats) return;
+  container.querySelectorAll("li.pop-work[data-i]").forEach(li => li.addEventListener("click", ev => {
+    if (ev.target.closest("a, img")) return;             // links + thumbnail keep their own action
+    const f = feats[+li.dataset.i];
+    if (f) { if (onOpen) onOpen(); openWorkCard({ p: f.properties }); }
+  }));
 }
 function closeSheet() { const s = document.getElementById("sheet"); if (s) s.hidden = true; }
 document.getElementById("sheet-close")?.addEventListener("click", closeSheet);
@@ -453,7 +463,7 @@ function placePopup(feats) {
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
 
-  const items = feats.map(f => {
+  const items = feats.map((f, i) => {
     const p = f.properties;
     const yr = p.year ? ` <span class="yr">${esc(p.year)}</span>` : "";
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
@@ -469,7 +479,7 @@ function placePopup(feats) {
     const thumb = p.image
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
-    return `<li>${thumb}<div class="wk">` +
+    return `<li class="pop-work" data-i="${i}">${thumb}<div class="wk">` +
       `<div class="wt">${esc(p.title || "Untitled")}${yr}${att}${st}</div>` +
       `<div class="by">${painterTag(p)}</div>` +
       `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
@@ -496,6 +506,7 @@ function refresh() {
       }
       pl.marker.options.colorCounts = colorCounts;
       pl.marker.options.works = vis.length;
+      pl.marker.options.feats = vis;              // for popup work-item → ficha
       pl.marker.setIcon(pinIcon(colorCounts, vis.length, { disputed }));
       pl.marker.setPopupContent(placePopup(vis));
       // hover label: the venue (map 1) or the place it was painted (map 2), + count
@@ -565,11 +576,14 @@ fetch("atlas/data/all.geojson?v=" + DATA_V)
     map.on("moveend", renderPanel);
     // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
+      const feats = e.popup._source && e.popup._source.options.feats;
       // On phones a marker popup is taller than the small map and its header/close get cut
       // off the top. Route it into a fixed bottom sheet instead — always fully visible.
-      if (isMobile()) { openSheet(e.popup.getContent()); map.closePopup(e.popup); return; }
-      const b = e.popup.getElement() && e.popup.getElement().querySelector(".pop-museum");
+      if (isMobile()) { openSheet(e.popup.getContent(), feats); map.closePopup(e.popup); return; }
+      const el = e.popup.getElement();
+      const b = el && el.querySelector(".pop-museum");
       if (b) b.addEventListener("click", () => { map.closePopup(); selectMuseum(b.dataset.museum); });
+      wireWorkItems(el, feats, () => map.closePopup());   // each work row → its ficha
     });
     map.on("click", closeSheet);   // tapping the map background dismisses the sheet
     window.addEventListener("hashchange", () => { applyHash(); buildMarkers(); });
@@ -911,14 +925,9 @@ function renderWorksTable() {
   tbody.querySelectorAll(".tth[data-full]").forEach(img => img.addEventListener("click", () =>
     openLightbox(img.dataset.full, img.dataset.cap)));
   tbody.querySelectorAll("tr[data-ri]").forEach(tr => tr.addEventListener("click", e => {
-    if (e.target.closest("a, img")) return;
+    if (e.target.closest("a, img")) return;                        // links + thumbnail keep their own action
     const p = tableRowCache[+tr.dataset.ri];
-    const w = p && works.find(w => w.p === p);
-    if (!w) return;
-    setTableView(false);
-    if (!view.map) { view.map = true; setView(); }
-    setTimeout(() => { map.setView([w.lat, w.lon], Math.max(map.getZoom(), 13));
-      cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup()); }, 80);
+    if (p) openWorkCard({ p });                                     // table row → the work ficha
   }));
 }
 
@@ -1176,14 +1185,7 @@ document.getElementById("worklist").addEventListener("click", e => {
   const cell = e.target.closest(".gcell");
   if (cell) { openWorkCard(panelVis[+cell.dataset.i]); return; }   // gallery caption → the work ficha
   const li = e.target.closest("li[data-i]");
-  if (!li) return;
-  const w = panelVis[+li.dataset.i];
-  if (!w) return;
-  const go = () => {
-    map.setView([w.lat, w.lon], Math.max(map.getZoom(), 13));
-    cluster.zoomToShowLayer(w.marker, () => w.marker.openPopup());
-  };
-  if (!view.map) { view.map = true; setView(); setTimeout(go, 120); } else go();
+  if (li) openWorkCard(panelVis[+li.dataset.i]);                   // list row → the work ficha too
 });
 
 // ── panel view: list vs gallery (thumbnail grid) + a size slider ──
@@ -1302,6 +1304,7 @@ function openWorkCard(w) {
     row("Technique", esc(p.medium || "")) + row("Size", esc(p.dimensions || "")) + row("Attribution", attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
     `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button>` +
+    `<button type="button" class="wc-map">📍 On the map</button>` +
     `<span class="wc-hint">or just copy the address bar</span></div></div>`;
   workCard.hidden = false;
   // reflect the open painting in the address bar → copying the URL shares this exact work
@@ -1313,8 +1316,18 @@ function closeWorkCard() {
     history.replaceState(null, "", location.pathname + location.hash);   // drop ?w= when closed
 }
 document.getElementById("wc-close").addEventListener("click", closeWorkCard);
+// fly the map to a work (resolve the full work object — table/ficha may hold a {p}-only wrapper)
+function flyToWork(w) {
+  const full = (w && works.find(x => x.p === w.p)) || w;
+  if (!full || full.lat == null || !full.marker) return;
+  if (view.table) setTableView(false);
+  const go = () => { map.setView([full.lat, full.lon], Math.max(map.getZoom(), 13));
+    cluster.zoomToShowLayer(full.marker, () => full.marker.openPopup()); };
+  if (!view.map) { view.map = true; setView(); setTimeout(go, 140); } else go();
+}
 workCard.addEventListener("click", e => {
   if (e.target.closest(".wc-share") && wcWork) { shareWork(wcWork.p); return; }
+  if (e.target.closest(".wc-map") && wcWork) { const w = wcWork; closeWorkCard(); flyToWork(w); return; }
   if (e.target === workCard) closeWorkCard();
 });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeWorkCard(); });
