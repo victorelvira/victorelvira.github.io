@@ -7,29 +7,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.594193,
+     47.554032
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1515–16",
+    "title": "Head of a female saint",
+    "year": "1527",
     "location": "Kunstmuseum Basel",
-    "attribution": "generally accepted",
-    "medium": "Oil and tempera on spruce wood",
-    "dimensions": "23.5 × 21.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Head_of_a_Female_Saint%2C_by_Hans_Holbein_the_Younger.jpg/500px-Head_of_a_Female_Saint%2C_by_Hans_Holbein_the_Younger.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Basel",
-    "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunstmuseum-basel",
     "city": "Basel",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20a%20Female%20Saint%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q114761140",
+    "wikidata": "https://www.wikidata.org/wiki/Q114761140",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114761140",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "23.5 × 21.5 cm",
+    "medium": "Oil and tempera on spruce wood"
    }
   },
   {
@@ -37,29 +46,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.594193,
+     47.554032
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1515–16",
+    "title": "Head of a male saint",
+    "year": "1515",
     "location": "Kunstmuseum Basel",
+    "city": "Basel",
+    "country": "Switzerland",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on spruce wood",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20a%20Male%20Saint%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q114761139",
+    "wikidata": "https://www.wikidata.org/wiki/Q114761139",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114761139",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "23.5 × 21.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Head_of_a_Male_Saint%2C_by_Hans_Holbein_the_Younger.jpg/500px-Head_of_a_Male_Saint%2C_by_Hans_Holbein_the_Younger.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil and tempera on spruce wood",
     "creation_place": "Basel",
     "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunstmuseum-basel",
-    "city": "Basel",
-    "country": "Switzerland"
+    "creation_lon": 7.5886
    }
   },
   {
@@ -217,29 +228,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.594193,
+     47.554032
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait of Bonifacius Amerbach",
     "year": "1519",
     "location": "Kunstmuseum Basel",
+    "city": "Basel",
+    "country": "Switzerland",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on pine",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Bonifacius%20Amerbach%20by%20Hans%20Holbein%20the%20Younger%20%281519%29.jpg?width=500",
+    "qid": "Q106687973",
+    "wikidata": "https://www.wikidata.org/wiki/Q106687973",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106687973",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "28.5 × 27.4 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Portrait_of_Bonifacius_Amerbach_by_Hans_Holbein_the_Younger_%281519%29.jpg/500px-Portrait_of_Bonifacius_Amerbach_by_Hans_Holbein_the_Younger_%281519%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil and tempera on pine",
     "creation_place": "Basel",
     "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunstmuseum-basel",
-    "city": "Basel",
-    "country": "Switzerland"
+    "creation_lon": 7.5886
    }
   },
   {
@@ -393,29 +406,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "1523",
-    "city": "Paris",
-    "country": "France",
+    "title": "Portrait of Erasmus (1467-1536) writing",
+    "year": "1528",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on wood",
-    "dimensions": "43 × 33 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hans_Holbein_d._J._-_Erasmus_-_Louvre.jpg/500px-Hans_Holbein_d._J._-_Erasmus_-_Louvre.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Basel",
-    "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.%20J.%20-%20Erasmus%20-%20Louvre.jpg?width=500",
+    "qid": "Q19943528",
+    "wikidata": "https://www.wikidata.org/wiki/Q19943528",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19943528",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "43 × 33 cm",
+    "medium": "Oil and tempera on wood"
    }
   },
   {
@@ -603,29 +625,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.594193,
+     47.554032
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Lais of Corinth",
     "year": "1526",
     "location": "Kunstmuseum Basel",
-    "attribution": "generally accepted",
-    "medium": "Oil and tempera on limewood",
-    "dimensions": "34.6 × 26.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Lais_of_Corinth%2C_by_Hans_Holbein_the_Younger.jpg/500px-Lais_of_Corinth%2C_by_Hans_Holbein_the_Younger.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Basel",
-    "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunstmuseum-basel",
     "city": "Basel",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lais%20of%20Corinth%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q6474124",
+    "wikidata": "https://www.wikidata.org/wiki/Q6474124",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q6474124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "34.6 × 26.8 cm",
+    "medium": "Oil and tempera on limewood"
    }
   },
   {
@@ -667,23 +698,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "1526 and 1528–30",
-    "city": "Schwäbisch Hall",
+    "title": "Darmstadt Madonna",
+    "year": "1526",
     "location": "Johanniterkirche",
+    "city": "Schwäbisch Hall",
+    "country": "Germany",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on limewood",
-    "dimensions": "146.5 × 102 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Darmstadtmadonna.jpg/500px-Darmstadtmadonna.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Basel",
-    "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Darmstadtmadonna.jpg?width=500",
+    "qid": "Q455319",
+    "wikidata": "https://www.wikidata.org/wiki/Q455319",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q455319",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "johanniterkirche",
-    "country": "Germany"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "146.5 × 102 cm",
+    "medium": "Oil and tempera on limewood"
    }
   },
   {
@@ -691,29 +731,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9672,
-     40.7711
+     -73.967222222,
+     40.771111111
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait of Sir Thomas More",
     "year": "1527",
-    "city": "New York",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
     "country": "United States",
-    "location": "Frick Collection",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "74.2 × 59 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hans_Holbein%2C_the_Younger_-_Sir_Thomas_More_-_Google_Art_Project.jpg/500px-Hans_Holbein%2C_the_Younger_-_Sir_Thomas_More_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%2C%20the%20Younger%20-%20Sir%20Thomas%20More%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q5296650",
+    "wikidata": "https://www.wikidata.org/wiki/Q5296650",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q5296650",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "frick-collection"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "74.2 × 59 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -781,29 +830,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.29444,
-     38.63944
+     -90.294491,
+     38.639306
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Mary, Lady Guildford",
     "year": "1527",
-    "city": "St",
     "location": "Saint Louis Art Museum",
+    "city": "St. Louis",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "87 × 70.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Hans_Holbein_the_Younger_-_Mary%2C_Lady_Guildford_%28Saint_Louis_Art_Museum%29.JPG/500px-Hans_Holbein_the_Younger_-_Mary%2C_Lady_Guildford_%28Saint_Louis_Art_Museum%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Mary%2C%20Lady%20Guildford%20%28Saint%20Louis%20Art%20Museum%29.JPG?width=500",
+    "qid": "Q78685107",
+    "wikidata": "https://www.wikidata.org/wiki/Q78685107",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q78685107",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "saint-louis-art-museum",
-    "country": "United States"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "87 × 70.5 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -811,29 +869,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1527–28",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "A Lady with a Squirrel and a Starling (Anne Lovell?)",
+    "year": "1527",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "54 × 38.7 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Lady_with_a_Squirrel_by_Hans_Holbein_the_Younger_in_the_National_Gallery.jpg/500px-Lady_with_a_Squirrel_by_Hans_Holbein_the_Younger_in_the_National_Gallery.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady%20with%20a%20Squirrel%20by%20Hans%20Holbein%20the%20Younger%20in%20the%20National%20Gallery.jpg?width=500",
+    "qid": "Q18685969",
+    "wikidata": "https://www.wikidata.org/wiki/Q18685969",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18685969",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "54 × 38.7 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -901,29 +968,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.594193,
+     47.554032
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1528–29",
+    "title": "Portrait of the Artist's Family",
+    "year": "1528",
     "location": "Kunstmuseum Basel",
-    "attribution": "generally accepted",
-    "medium": "Oil and tempera on paper, cut out and mounted on wood",
-    "dimensions": "79.4 × 64.7 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Retrato_de_la_esposa_del_artista_con_sus_dos_hijos%2C_por_Hans_Holbein_el_Joven.jpg/500px-Retrato_de_la_esposa_del_artista_con_sus_dos_hijos%2C_por_Hans_Holbein_el_Joven.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunstmuseum-basel",
     "city": "Basel",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20la%20esposa%20del%20artista%20con%20sus%20dos%20hijos%2C%20por%20Hans%20Holbein%20el%20Joven.jpg?width=500",
+    "qid": "Q37027299",
+    "wikidata": "https://www.wikidata.org/wiki/Q37027299",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q37027299",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "79.4 × 64.7 cm",
+    "medium": "Oil and tempera on paper, cut out and mounted on wood"
    }
   },
   {
@@ -991,29 +1067,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Hermann von Wedigh III (died 1560)",
     "year": "1532",
-    "city": "New York",
-    "country": "United States",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on wood",
-    "dimensions": "42.2 × 32.4 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hans_Holbein_d.J._-_Portr%C3%A4t_eines_Mitgliedes_der_Familie_Wedigh.jpg/500px-Hans_Holbein_d.J._-_Portr%C3%A4t_eines_Mitgliedes_der_Familie_Wedigh.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Basel",
-    "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.J.%20-%20Portr%C3%A4t%20eines%20Mitgliedes%20der%20Familie%20Wedigh.jpg?width=500",
+    "qid": "Q19911428",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911428",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911428",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "42.2 × 32.4 cm",
+    "medium": "Oil and tempera on wood"
    }
   },
   {
@@ -1049,29 +1134,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9672,
-     40.7711
+     -73.967222222,
+     40.771111111
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1532–33",
-    "city": "New York",
+    "title": "Thomas Cromwell",
+    "year": "1532",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
     "country": "United States",
-    "location": "Frick Collection",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "76 × 61 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Cromwell%2CThomas%281EEssex%2901.jpg/500px-Cromwell%2CThomas%281EEssex%2901.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Basel",
-    "creation_lat": 47.5596,
-    "creation_lon": 7.5886,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell%2CThomas%281EEssex%2901.jpg?width=500",
+    "qid": "Q19857305",
+    "wikidata": "https://www.wikidata.org/wiki/Q19857305",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19857305",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "frick-collection"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "76 × 61 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1204,23 +1298,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Derich Born",
     "year": "1533",
-    "city": "England",
     "location": "Royal Collection",
+    "city": "",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "60.3 × 45 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hans_Holbein_the_Younger_-_Derich_Born_%281510%3F-49%29_-_Google_Art_Project.jpg/500px-Hans_Holbein_the_Younger_-_Derich_Born_%281510%3F-49%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Derich%20Born%20%281510%3F-49%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q28016092",
+    "wikidata": "https://www.wikidata.org/wiki/Q28016092",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28016092",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "60.3 × 45 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1258,29 +1361,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.3143,
-     52.0804
+     4.314305555,
+     52.080388888
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait of Robert Cheseman (1485-1547)",
     "year": "1533",
+    "location": "Mauritshuis",
     "city": "The Hague",
     "country": "Netherlands",
-    "location": "Mauritshuis",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "59 × 62.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hans_Holbein_de_Jonge_-_Portrait_of_Robert_Cheseman_%281485-1547%29_-_276_-_Mauritshuis.jpg/500px-Hans_Holbein_de_Jonge_-_Portrait_of_Robert_Cheseman_%281485-1547%29_-_276_-_Mauritshuis.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20de%20Jonge%20-%20Portrait%20of%20Robert%20Cheseman%20%281485-1547%29%20-%20276%20-%20Mauritshuis.jpg?width=500",
+    "qid": "Q17275918",
+    "wikidata": "https://www.wikidata.org/wiki/Q17275918",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17275918",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "mauritshuis"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "59 × 62.5 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1354,23 +1466,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait of Cyriacus Kale",
     "year": "1533",
-    "city": "Brunswick",
     "location": "Herzog Anton Ulrich Museum",
+    "city": "Brunswick",
+    "country": "Germany",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "60 × 44 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Portrait_of_Cyriacus_Kale%2C_by_Hans_Holbein_the_Younger.jpg/500px-Portrait_of_Cyriacus_Kale%2C_by_Hans_Holbein_the_Younger.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Cyriacus%20Kale%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q107291654",
+    "wikidata": "https://www.wikidata.org/wiki/Q107291654",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107291654",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "herzog-anton-ulrich-museum",
-    "country": "Germany"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "60 × 44 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1378,29 +1499,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "The Ambassadors",
     "year": "1533",
-    "city": "London",
-    "country": "United Kingdom",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "207 × 209 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg/500px-Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20The%20Ambassadors%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q1212937",
+    "wikidata": "https://www.wikidata.org/wiki/Q1212937",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1212937",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "207 × 209 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1439,28 +1569,37 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.20388
+     48.203880555
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "A servant of King Henry VIII",
     "year": "1534",
+    "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
-    "location": "Kunsthistorisches Museum",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on limewood",
-    "dimensions": "12 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Hans_Holbein_d.J._-_Ein_Hofbediensteter_K%C3%B6nig_Heinrichs_VIII.jpg/500px-Hans_Holbein_d.J._-_Ein_Hofbediensteter_K%C3%B6nig_Heinrichs_VIII.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.J.%20-%20Ein%20Hofbediensteter%20K%C3%B6nig%20Heinrichs%20VIII.jpg?width=500",
+    "qid": "Q27982208",
+    "wikidata": "https://www.wikidata.org/wiki/Q27982208",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27982208",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "12 cm diameter",
+    "medium": "Oil and tempera on limewood"
    }
   },
   {
@@ -1469,28 +1608,37 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.20388
+     48.203880555
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "The wife of a servant of King Henry VIII",
     "year": "1534",
+    "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
-    "location": "Kunsthistorisches Museum",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on limewood",
-    "dimensions": "12 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Hans_Holbein_d.J._-_Die_Frau_eines_Hofbediensteten_K%C3%B6nig_Heinrichs_VIII.jpg/500px-Hans_Holbein_d.J._-_Die_Frau_eines_Hofbediensteten_K%C3%B6nig_Heinrichs_VIII.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.J.%20-%20Die%20Frau%20eines%20Hofbediensteten%20K%C3%B6nig%20Heinrichs%20VIII.jpg?width=500",
+    "qid": "Q27982211",
+    "wikidata": "https://www.wikidata.org/wiki/Q27982211",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27982211",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "12 cm diameter",
+    "medium": "Oil and tempera on limewood"
    }
   },
   {
@@ -1587,29 +1735,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Derick Berck of Cologne",
     "year": "1536",
-    "city": "New York",
-    "country": "United States",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera transferred to canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Derich%20Berck%2C%20by%20Hans%20Holbein.jpg?width=500",
+    "qid": "Q19911567",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911567",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911567",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "dimensions": "53.3 × 42.6 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Derich_Berck%2C_by_Hans_Holbein.jpg/500px-Derich_Berck%2C_by_Hans_Holbein.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "metropolitan-museum-of-art"
+    "medium": "Oil and tempera transferred to canvas"
    }
   },
   {
@@ -1617,59 +1774,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1536",
-    "city": "New York",
-    "country": "United States",
+    "title": "William Roper (1493/94–1578)",
+    "year": "1535",
     "location": "Metropolitan Museum of Art",
-    "attribution": "generally accepted",
-    "medium": "Bodycolour on vellum mounted on card",
-    "dimensions": "4.5 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Hans_Holbein_the_Younger_-_William_Roper_%28Metropolitan_Museum_of_Art%29.JPG/500px-Hans_Holbein_the_Younger_-_William_Roper_%28Metropolitan_Museum_of_Art%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "metropolitan-museum-of-art"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.9631,
-     40.7794
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "year": "c. 1536",
-    "city": "New York",
+    "city": "Manhattan",
     "country": "United States",
-    "location": "Metropolitan Museum of Art",
     "attribution": "generally accepted",
-    "medium": "Bodycolour on vellum mounted on card",
-    "dimensions": "4.5 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hans_Holbein_the_Younger_-_Margaret_Roper_%28Metropolitan_Museum_of_Art%29.JPG/500px-Hans_Holbein_the_Younger_-_Margaret_Roper_%28Metropolitan_Museum_of_Art%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20William%20Roper%20%28Metropolitan%20Museum%20of%20Art%29.JPG?width=500",
+    "qid": "Q19913456",
+    "wikidata": "https://www.wikidata.org/wiki/Q19913456",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19913456",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "4.5 cm diameter",
+    "medium": "Bodycolour on vellum mounted on card"
    }
   },
   {
@@ -1677,29 +1813,77 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.25528,
-     43.76833
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait Miniature of Margaret Roper",
+    "year": "1535",
+    "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Margaret%20Roper%20%28Metropolitan%20Museum%20of%20Art%29.JPG?width=500",
+    "qid": "Q7232242",
+    "wikidata": "https://www.wikidata.org/wiki/Q7232242",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q7232242",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "4.5 cm diameter",
+    "medium": "Bodycolour on vellum mounted on card"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Hans Holbein the Younger",
+    "title": "Portrait of Sir Richard Southwell",
     "year": "1536",
+    "location": "Uffizi Gallery",
     "city": "Florence",
     "country": "Italy",
-    "location": "Uffizi Gallery",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "47.5 × 38 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Hans_Holbein_d._J._060.jpg/500px-Hans_Holbein_d._J._060.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.%20J.%20060.jpg?width=500",
+    "qid": "Q3937666",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937666",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937666",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "uffizi-gallery"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "47.5 × 38 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1737,29 +1921,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1537",
-    "city": "Paris",
-    "country": "France",
+    "title": "Sir Henry Wyatt",
+    "year": "1528",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "39 × 31 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Sir_Henry_Wyatt%2C_by_Hans_Holbein_the_Younger.jpg/500px-Sir_Henry_Wyatt%2C_by_Hans_Holbein_the_Younger.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Henry%20Wyatt%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q29654706",
+    "wikidata": "https://www.wikidata.org/wiki/Q29654706",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29654706",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "39 × 31 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1798,28 +1991,37 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.20388
+     48.203880555
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "1537",
+    "title": "Jane Seymour",
+    "year": "1536",
+    "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
-    "location": "Kunsthistorisches Museum",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "65 × 40 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Hans_Holbein_the_Younger_-_Jane_Seymour%2C_Queen_of_England_-_Google_Art_Project.jpg/500px-Hans_Holbein_the_Younger_-_Jane_Seymour%2C_Queen_of_England_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Jane%20Seymour%2C%20Queen%20of%20England%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20091565",
+    "wikidata": "https://www.wikidata.org/wiki/Q20091565",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20091565",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "65 × 40 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -1923,23 +2125,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1538",
-    "city": "England",
+    "title": "Elizabeth, Lady Audley",
+    "year": "1538",
     "location": "Royal Collection",
+    "city": "",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Watercolour on vellum mounted on playing card",
-    "dimensions": "5.6 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Lady_Audley%2C_by_Hans_Holbein_the_Younger_02.jpg/500px-Lady_Audley%2C_by_Hans_Holbein_the_Younger_02.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady%20Audley%2C%20by%20Hans%20Holbein%20the%20Younger%2002.jpg?width=500",
+    "qid": "Q114580423",
+    "wikidata": "https://www.wikidata.org/wiki/Q114580423",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114580423",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "5.6 cm diameter",
+    "medium": "Watercolour on vellum mounted on playing card"
    }
   },
   {
@@ -2043,23 +2254,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1540",
-    "city": "England",
+    "title": "Portrait of Katherine Howard",
+    "year": "1540",
     "location": "Royal Collection",
+    "city": "",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Bodycolour on vellum mounted on playing card",
-    "dimensions": "6.4 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hans_Holbein_the_Younger_-_Portrait_of_a_Lady%2C_perhaps_Katherine_Howard_%28Royal_Collection%29.JPG/500px-Hans_Holbein_the_Younger_-_Portrait_of_a_Lady%2C_perhaps_Katherine_Howard_%28Royal_Collection%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Portrait%20of%20a%20Lady%2C%20perhaps%20Katherine%20Howard%20%28Royal%20Collection%29.JPG?width=500",
+    "qid": "Q113531203",
+    "wikidata": "https://www.wikidata.org/wiki/Q113531203",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q113531203",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "6.4 cm diameter",
+    "medium": "Bodycolour on vellum mounted on playing card"
    }
   },
   {
@@ -2096,29 +2316,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.5594,
-     41.6583
+     -83.559444444,
+     41.658333333
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1535–1540",
+    "title": "Portrait of a Lady, probably a Member of the Cromwell Family",
+    "year": "1540",
     "location": "Toledo Museum of Art",
-    "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "74 × 48 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Holbein%2C_Hans_%28II%29_-_Portrait_of_a_lady%2C_probably_of_the_Cromwell_Family_formerly_known_as_Catherine_Howard_-_WGA11565.jpg/500px-Holbein%2C_Hans_%28II%29_-_Portrait_of_a_lady%2C_probably_of_the_Cromwell_Family_formerly_known_as_Catherine_Howard_-_WGA11565.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "toledo-museum-of-art",
     "city": "Toledo",
-    "country": "United States"
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%2C%20Hans%20%28II%29%20-%20Portrait%20of%20a%20lady%2C%20probably%20of%20the%20Cromwell%20Family%20formerly%20known%20as%20Catherine%20Howard%20-%20WGA11565.jpg?width=500",
+    "qid": "Q78690901",
+    "wikidata": "https://www.wikidata.org/wiki/Q78690901",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q78690901",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "74 × 48 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -2126,29 +2355,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.17194,
-     51.49667
+     -0.17162,
+     51.49685
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1540",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Portrait Miniature of Mrs Jane Small, formerly Mrs Pemberton",
+    "year": "1536",
     "location": "Victoria and Albert Museum",
+    "city": "Royal Borough of Kensington and Chelsea",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Bodycolour on vellum",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%2C%20Hans%20%28II%29%20-%20Mrs%20Jane%20Small%2C%20formerly%20Mrs%20Pemberton%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q136765130",
+    "wikidata": "https://www.wikidata.org/wiki/Q136765130",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q136765130",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "dimensions": "5.3 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Holbein%2C_Hans_%28II%29_-_Mrs_Jane_Small%2C_formerly_Mrs_Pemberton_-_Google_Art_Project.jpg/500px-Holbein%2C_Hans_%28II%29_-_Mrs_Jane_Small%2C_formerly_Mrs_Pemberton_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "victoria-and-albert-museum"
+    "medium": "Bodycolour on vellum"
    }
   },
   {
@@ -2156,28 +2394,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.22056,
-     52.02083
+     0.220555555,
+     52.020833333
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1540–43",
-    "city": "Audley End House",
-    "location": "English Heritage",
+    "title": "Portrait of an Unknown Gentleman",
+    "year": "1540",
+    "location": "Audley End House",
+    "city": "Saffron Walden",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Unknown%20Man%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q107258623",
+    "wikidata": "https://www.wikidata.org/wiki/Q107258623",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107258623",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "dimensions": "44.4 × 34.2 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unknown_Man%2C_by_Hans_Holbein_the_Younger.jpg/500px-Unknown_Man%2C_by_Hans_Holbein_the_Younger.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "english-heritage"
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -2191,23 +2439,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Henry Brandon, 2nd Duke of Suffolk (1535-51)",
     "year": "1541",
-    "city": "England",
     "location": "Royal Collection",
+    "city": "",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Bodycolour on vellum mounted on playing card",
-    "dimensions": "5.7 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hans_Holbein_the_Younger_-_Henry_Brandon%2C_2nd_Duke_of_Suffolk_%281535-51%29_-_Google_Art_Project.jpg/500px-Hans_Holbein_the_Younger_-_Henry_Brandon%2C_2nd_Duke_of_Suffolk_%281535-51%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Henry%20Brandon%2C%202nd%20Duke%20of%20Suffolk%20%281535-51%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q28840557",
+    "wikidata": "https://www.wikidata.org/wiki/Q28840557",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28840557",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "5.7 cm diameter",
+    "medium": "Bodycolour on vellum mounted on playing card"
    }
   },
   {
@@ -2221,23 +2478,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Charles Brandon, 3rd Duke of Suffolk (1537/8-1551)",
     "year": "1541",
-    "city": "England",
     "location": "Royal Collection",
+    "city": "",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Bodycolour on vellum mounted on playing card",
-    "dimensions": "5.7 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Hans_Holbein_the_Younger_-_Charles_Brandon_%28Royal_Collection%29.JPG/500px-Hans_Holbein_the_Younger_-_Charles_Brandon_%28Royal_Collection%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Charles%20Brandon%20%28Royal%20Collection%29.JPG?width=500",
+    "qid": "Q114350881",
+    "wikidata": "https://www.wikidata.org/wiki/Q114350881",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114350881",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "5.7 cm diameter",
+    "medium": "Bodycolour on vellum mounted on playing card"
    }
   },
   {
@@ -2303,29 +2569,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.359166666,
+     34.063333333
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait of a Young Woman with a White Coif",
     "year": "1541",
     "location": "Los Angeles County Museum of Art",
-    "attribution": "generally accepted",
-    "medium": "Oil and tempera on panel",
-    "dimensions": "11.11 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Hans_Holbein_the_Younger_Young_Woman_with_a_White_Coif_1541_LACMA_M44_2_9_2.jpg/500px-Hans_Holbein_the_Younger_Young_Woman_with_a_White_Coif_1541_LACMA_M44_2_9_2.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "los-angeles-county-museum-of-art",
     "city": "Los Angeles",
-    "country": "United States"
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20Young%20Woman%20with%20a%20White%20Coif%201541%20LACMA%20M44%202%209%202.jpg?width=500",
+    "qid": "Q20881058",
+    "wikidata": "https://www.wikidata.org/wiki/Q20881058",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20881058",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "11.11 cm diameter",
+    "medium": "Oil and tempera on panel"
    }
   },
   {
@@ -2363,29 +2638,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.655833333,
+     -23.561111111
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1542",
-    "city": "São Paulo",
+    "title": "The poet Henry Howard, Earl of Surrey",
+    "year": "1542",
     "location": "São Paulo Museum of Art",
+    "city": "São Paulo",
+    "country": "Brazil",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "55.5 × 44 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Holbein_-_henryhoward01.jpg/500px-Holbein_-_henryhoward01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%20-%20henryhoward01.jpg?width=500",
+    "qid": "Q49877743",
+    "wikidata": "https://www.wikidata.org/wiki/Q49877743",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q49877743",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "sao-paulo-museum-of-art",
-    "country": "Brazil"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "55.5 × 44 cm",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -2423,29 +2707,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.25528,
-     43.76833
+     11.255277777,
+     43.768333333
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1542–1543",
+    "title": "Self-portrait",
+    "year": "1542",
+    "location": "Uffizi Gallery",
     "city": "Florence",
     "country": "Italy",
-    "location": "Uffizi Gallery",
     "attribution": "generally accepted",
-    "medium": "Coloured chalks and pen",
-    "dimensions": "32× 26 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hans_Holbein_the_Younger%2C_self-portrait.jpg/500px-Hans_Holbein_the_Younger%2C_self-portrait.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%2C%20self-portrait.jpg?width=500",
+    "qid": "Q3630726",
+    "wikidata": "https://www.wikidata.org/wiki/Q3630726",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3630726",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "uffizi-gallery"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "32× 26 cm",
+    "medium": "Coloured chalks and pen"
    }
   },
   {
@@ -2543,29 +2836,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60603,
-     55.74703
+     37.60602901,
+     55.74702868
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
+    "title": "Portrait of Johann von Schwarzwaldt",
     "year": "1543",
-    "city": "Moscow",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
     "country": "Russia",
-    "location": "Pushkin State Museum of Fine Arts",
     "attribution": "generally accepted",
-    "medium": "Tempera on parchment",
-    "dimensions": "5.4 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Man_Aged_24%2C_1543%2C_Hans_Holbein_2.jpg/500px-Man_Aged_24%2C_1543%2C_Hans_Holbein_2.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Man%20Aged%2024%2C%201543%2C%20Hans%20Holbein%202.jpg?width=500",
+    "qid": "Q111972739",
+    "wikidata": "https://www.wikidata.org/wiki/Q111972739",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111972739",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "pushkin-state-museum-of-fine-arts"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "5.4 cm diameter",
+    "medium": "Tempera on parchment"
    }
   },
   {
@@ -2607,23 +2909,32 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1543",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Henry VIII and the Barber Surgeons",
+    "year": "1542",
     "location": "Worshipful Company of Barbers",
+    "city": "",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on oak",
-    "dimensions": "108.3 × 312.4 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Henry_VIII_and_the_Barber_Surgeons%2C_by_Hans_Holbein_the_Younger%2C_Richard_Greenbury%2C_and_others.jpg/500px-Henry_VIII_and_the_Barber_Surgeons%2C_by_Hans_Holbein_the_Younger%2C_Richard_Greenbury%2C_and_others.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Henry%20VIII%20and%20the%20Barber%20Surgeons%2C%20by%20Hans%20Holbein%20the%20Younger%2C%20Richard%20Greenbury%2C%20and%20others.jpg?width=500",
+    "qid": "Q23642680",
+    "wikidata": "https://www.wikidata.org/wiki/Q23642680",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23642680",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "worshipful-company-of-barbers"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "108.3 × 312.4 cm",
+    "medium": "Oil on oak"
    }
   },
   {
@@ -2810,29 +3121,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.17194,
-     51.49667
+     -0.17162,
+     51.49685
     ]
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1535–40",
-    "city": "London",
+    "title": "Hans of Antwerp",
+    "year": "1532",
     "location": "Victoria and Albert Museum",
-    "attribution": "copy",
-    "medium": "Oil and tempera on oak",
-    "dimensions": "13 cm diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Hans_Holbein_the_Younger_-_Hans_of_Antwerp_%28Victoria_and_Albert_Museum%29.JPG/500px-Hans_Holbein_the_Younger_-_Hans_of_Antwerp_%28Victoria_and_Albert_Museum%29.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "city": "Royal Borough of Kensington and Chelsea",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Hans%20of%20Antwerp%20%28Victoria%20and%20Albert%20Museum%29.JPG?width=500",
+    "qid": "Q114251782",
+    "wikidata": "https://www.wikidata.org/wiki/Q114251782",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114251782",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "victoria-and-albert-museum",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "13 cm diameter",
+    "medium": "Oil and tempera on oak"
    }
   },
   {
@@ -3421,43 +3741,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Johann von Schwarzwaldt",
-    "year": "1543",
-    "location": "Pushkin Museum of Fine Arts",
-    "city": "Khamovniki District",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Man%20Aged%2024%2C%201543%2C%20Hans%20Holbein%202.jpg?width=500",
-    "qid": "Q111972739",
-    "wikidata": "https://www.wikidata.org/wiki/Q111972739",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q111972739",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -71.099121,
      42.33818
     ]
@@ -3666,33 +3949,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Bonifacius Amerbach",
-    "year": "1519",
-    "location": "Kunstmuseum Basel",
-    "city": "Basel",
-    "country": "Switzerland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Bonifacius%20Amerbach%20by%20Hans%20Holbein%20the%20Younger%20%281519%29.jpg?width=500",
-    "qid": "Q106687973",
-    "wikidata": "https://www.wikidata.org/wiki/Q106687973",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q106687973",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.594193,
-     47.554032
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Portrait of an Englishman",
     "year": "1540",
     "location": "Kunstmuseum Basel",
@@ -3842,107 +4098,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Head of a male saint",
-    "year": "1515",
-    "location": "Kunstmuseum Basel",
-    "city": "Basel",
-    "country": "Switzerland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20a%20Male%20Saint%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
-    "qid": "Q114761139",
-    "wikidata": "https://www.wikidata.org/wiki/Q114761139",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114761139",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.594193,
-     47.554032
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Head of a female saint",
-    "year": "1527",
-    "location": "Kunstmuseum Basel",
-    "city": "Basel",
-    "country": "Switzerland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20a%20Female%20Saint%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
-    "qid": "Q114761140",
-    "wikidata": "https://www.wikidata.org/wiki/Q114761140",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114761140",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.17162,
-     51.49685
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Hans of Antwerp",
-    "year": "1532",
-    "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Hans%20of%20Antwerp%20%28Victoria%20and%20Albert%20Museum%29.JPG?width=500",
-    "qid": "Q114251782",
-    "wikidata": "https://www.wikidata.org/wiki/Q114251782",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114251782",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.17162,
      51.49685
     ]
@@ -4071,80 +4226,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.533,
-     52.2635
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Cyriacus Kale",
-    "year": "1533",
-    "location": "Herzog Anton Ulrich Museum",
-    "city": "Brunswick",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Cyriacus%20Kale%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
-    "qid": "Q107291654",
-    "wikidata": "https://www.wikidata.org/wiki/Q107291654",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107291654",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.220555555,
-     52.020833333
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of an Unknown Gentleman",
-    "year": "1540",
-    "location": "Audley End House",
-    "city": "Saffron Walden",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Unknown%20Man%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
-    "qid": "Q107258623",
-    "wikidata": "https://www.wikidata.org/wiki/Q107258623",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107258623",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      0.220555555,
      52.020833333
     ]
@@ -4182,117 +4263,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.142,
-     51.501
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Katherine Howard",
-    "year": "1540",
-    "location": "Royal Collection",
-    "city": "",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Portrait%20of%20a%20Lady%2C%20perhaps%20Katherine%20Howard%20%28Royal%20Collection%29.JPG?width=500",
-    "qid": "Q113531203",
-    "wikidata": "https://www.wikidata.org/wiki/Q113531203",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q113531203",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.142,
-     51.501
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Charles Brandon, 3rd Duke of Suffolk (1537/8-1551)",
-    "year": "1541",
-    "location": "Royal Collection",
-    "city": "",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Charles%20Brandon%20%28Royal%20Collection%29.JPG?width=500",
-    "qid": "Q114350881",
-    "wikidata": "https://www.wikidata.org/wiki/Q114350881",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114350881",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.142,
-     51.501
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Elizabeth, Lady Audley",
-    "year": "1538",
-    "location": "Royal Collection",
-    "city": "",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady%20Audley%2C%20by%20Hans%20Holbein%20the%20Younger%2002.jpg?width=500",
-    "qid": "Q114580423",
-    "wikidata": "https://www.wikidata.org/wiki/Q114580423",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114580423",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -97.365,
      32.748611111
     ]
@@ -4311,80 +4281,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107199591",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -83.559444444,
-     41.658333333
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of a Lady, probably a Member of the Cromwell Family",
-    "year": "1540",
-    "location": "Toledo Museum of Art",
-    "city": "Toledo",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%2C%20Hans%20%28II%29%20-%20Portrait%20of%20a%20lady%2C%20probably%20of%20the%20Cromwell%20Family%20formerly%20known%20as%20Catherine%20Howard%20-%20WGA11565.jpg?width=500",
-    "qid": "Q78690901",
-    "wikidata": "https://www.wikidata.org/wiki/Q78690901",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q78690901",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -90.294491,
-     38.639306
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Mary, Lady Guildford",
-    "year": "1527",
-    "location": "Saint Louis Art Museum",
-    "city": "St. Louis",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Mary%2C%20Lady%20Guildford%20%28Saint%20Louis%20Art%20Museum%29.JPG?width=500",
-    "qid": "Q78685107",
-    "wikidata": "https://www.wikidata.org/wiki/Q78685107",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q78685107",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -4687,154 +4583,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Self-portrait",
-    "year": "1542",
-    "location": "Uffizi Gallery",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%2C%20self-portrait.jpg?width=500",
-    "qid": "Q3630726",
-    "wikidata": "https://www.wikidata.org/wiki/Q3630726",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3630726",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.255277777,
-     43.768333333
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Sir Richard Southwell",
-    "year": "1536",
-    "location": "Uffizi Gallery",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.%20J.%20060.jpg?width=500",
-    "qid": "Q3937666",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937666",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937666",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -46.655833333,
-     -23.561111111
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "The poet Henry Howard, Earl of Surrey",
-    "year": "1542",
-    "location": "São Paulo Museum of Art",
-    "city": "São Paulo",
-    "country": "Brazil",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%20-%20henryhoward01.jpg?width=500",
-    "qid": "Q49877743",
-    "wikidata": "https://www.wikidata.org/wiki/Q49877743",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q49877743",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Jane Seymour",
-    "year": "1536",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Jane%20Seymour%2C%20Queen%20of%20England%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q20091565",
-    "wikidata": "https://www.wikidata.org/wiki/Q20091565",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20091565",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      16.3616,
      48.203880555
     ]
@@ -4853,80 +4601,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20091567",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "A servant of King Henry VIII",
-    "year": "1534",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.J.%20-%20Ein%20Hofbediensteter%20K%C3%B6nig%20Heinrichs%20VIII.jpg?width=500",
-    "qid": "Q27982208",
-    "wikidata": "https://www.wikidata.org/wiki/Q27982208",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27982208",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "The wife of a servant of King Henry VIII",
-    "year": "1534",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.J.%20-%20Die%20Frau%20eines%20Hofbediensteten%20K%C3%B6nig%20Heinrichs%20VIII.jpg?width=500",
-    "qid": "Q27982211",
-    "wikidata": "https://www.wikidata.org/wiki/Q27982211",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27982211",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -5063,43 +4737,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "Portrait Miniature of Margaret Roper",
-    "year": "1535",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Margaret%20Roper%20%28Metropolitan%20Museum%20of%20Art%29.JPG?width=500",
-    "qid": "Q7232242",
-    "wikidata": "https://www.wikidata.org/wiki/Q7232242",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q7232242",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Benedikt von Hertenstein (born about 1495, died 1522)",
     "year": "1517",
     "location": "Metropolitan Museum of Art",
@@ -5113,43 +4750,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19904795",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Hermann von Wedigh III (died 1560)",
-    "year": "1532",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.J.%20-%20Portr%C3%A4t%20eines%20Mitgliedes%20der%20Familie%20Wedigh.jpg?width=500",
-    "qid": "Q19911428",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911428",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911428",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -5201,43 +4801,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "Derick Berck of Cologne",
-    "year": "1536",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Derich%20Berck%2C%20by%20Hans%20Holbein.jpg?width=500",
-    "qid": "Q19911567",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911567",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911567",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Thomas Wriothesley (1505–1550), First Earl of Southampton",
     "year": "1535",
     "location": "Metropolitan Museum of Art",
@@ -5250,43 +4813,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19912410",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "William Roper (1493/94–1578)",
-    "year": "1535",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20William%20Roper%20%28Metropolitan%20Museum%20of%20Art%29.JPG?width=500",
-    "qid": "Q19913456",
-    "wikidata": "https://www.wikidata.org/wiki/Q19913456",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19913456",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -5460,43 +4986,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "The Ambassadors",
-    "year": "1533",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20The%20Ambassadors%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q1212937",
-    "wikidata": "https://www.wikidata.org/wiki/Q1212937",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q1212937",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Christina of Denmark, Duchess of Milan",
     "year": "1538",
     "location": "National Gallery",
@@ -5509,43 +4998,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4373334",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "A Lady with a Squirrel and a Starling (Anne Lovell?)",
-    "year": "1527",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady%20with%20a%20Squirrel%20by%20Hans%20Holbein%20the%20Younger%20in%20the%20National%20Gallery.jpg?width=500",
-    "qid": "Q18685969",
-    "wikidata": "https://www.wikidata.org/wiki/Q18685969",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18685969",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -5662,43 +5114,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "Lais of Corinth",
-    "year": "1526",
-    "location": "Kunstmuseum Basel",
-    "city": "Basel",
-    "country": "Switzerland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lais%20of%20Corinth%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
-    "qid": "Q6474124",
-    "wikidata": "https://www.wikidata.org/wiki/Q6474124",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q6474124",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.594193,
-     47.554032
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Double Portrait of Jakob Meyer zum Hasen and Dorothea Kannengießer",
     "year": "1516",
     "location": "Kunstmuseum Basel",
@@ -5712,80 +5127,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q23784169",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.594193,
-     47.554032
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of the Artist's Family",
-    "year": "1528",
-    "location": "Kunstmuseum Basel",
-    "city": "Basel",
-    "country": "Switzerland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20la%20esposa%20del%20artista%20con%20sus%20dos%20hijos%2C%20por%20Hans%20Holbein%20el%20Joven.jpg?width=500",
-    "qid": "Q37027299",
-    "wikidata": "https://www.wikidata.org/wiki/Q37027299",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q37027299",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     9.7326,
-     49.1132
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Darmstadt Madonna",
-    "year": "1526",
-    "location": "Johanniterkirche",
-    "city": "Schwäbisch Hall",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Darmstadtmadonna.jpg?width=500",
-    "qid": "Q455319",
-    "wikidata": "https://www.wikidata.org/wiki/Q455319",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q455319",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -5914,43 +5255,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17275917",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.314305555,
-     52.080388888
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Robert Cheseman (1485-1547)",
-    "year": "1533",
-    "location": "Mauritshuis",
-    "city": "The Hague",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20de%20Jonge%20-%20Portrait%20of%20Robert%20Cheseman%20%281485-1547%29%20-%20276%20-%20Mauritshuis.jpg?width=500",
-    "qid": "Q17275918",
-    "wikidata": "https://www.wikidata.org/wiki/Q17275918",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17275918",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -6199,80 +5503,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20440670",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.967222222,
-     40.771111111
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Sir Thomas More",
-    "year": "1527",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%2C%20the%20Younger%20-%20Sir%20Thomas%20More%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q5296650",
-    "wikidata": "https://www.wikidata.org/wiki/Q5296650",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q5296650",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.967222222,
-     40.771111111
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Thomas Cromwell",
-    "year": "1532",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cromwell%2CThomas%281EEssex%2901.jpg?width=500",
-    "qid": "Q19857305",
-    "wikidata": "https://www.wikidata.org/wiki/Q19857305",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19857305",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -6564,43 +5794,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "Derich Born",
-    "year": "1533",
-    "location": "Royal Collection",
-    "city": "",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Derich%20Born%20%281510%3F-49%29%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q28016092",
-    "wikidata": "https://www.wikidata.org/wiki/Q28016092",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q28016092",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.142,
-     51.501
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Sir Henry Guildford (1489-1532)",
     "year": "1527",
     "location": "Royal Collection",
@@ -6770,43 +5963,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.142,
-     51.501
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Henry Brandon, 2nd Duke of Suffolk (1535-51)",
-    "year": "1541",
-    "location": "Royal Collection",
-    "city": "",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Henry%20Brandon%2C%202nd%20Duke%20of%20Suffolk%20%281535-51%29%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q28840557",
-    "wikidata": "https://www.wikidata.org/wiki/Q28840557",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q28840557",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.394349,
      51.208819
     ]
@@ -6889,43 +6045,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49198065",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -118.359166666,
-     34.063333333
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of a Young Woman with a White Coif",
-    "year": "1541",
-    "location": "Los Angeles County Museum of Art",
-    "city": "Los Angeles",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20Young%20Woman%20with%20a%20White%20Coif%201541%20LACMA%20M44%202%209%202.jpg?width=500",
-    "qid": "Q20881058",
-    "wikidata": "https://www.wikidata.org/wiki/Q20881058",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20881058",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -7247,43 +6366,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126912705",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.17162,
-     51.49685
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait Miniature of Mrs Jane Small, formerly Mrs Pemberton",
-    "year": "1536",
-    "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%2C%20Hans%20%28II%29%20-%20Mrs%20Jane%20Small%2C%20formerly%20Mrs%20Pemberton%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q136765130",
-    "wikidata": "https://www.wikidata.org/wiki/Q136765130",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q136765130",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -8067,43 +7149,6 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "title": "Portrait of Erasmus (1467-1536) writing",
-    "year": "1528",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.%20J.%20-%20Erasmus%20-%20Louvre.jpg?width=500",
-    "qid": "Q19943528",
-    "wikidata": "https://www.wikidata.org/wiki/Q19943528",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19943528",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
     "title": "Portrait of William Warham",
     "year": "1528",
     "location": "Louvre",
@@ -8116,80 +7161,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27150245",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Sir Henry Wyatt",
-    "year": "1528",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Henry%20Wyatt%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
-    "qid": "Q29654706",
-    "wikidata": "https://www.wikidata.org/wiki/Q29654706",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q29654706",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.09466,
-     51.51803
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Henry VIII and the Barber Surgeons",
-    "year": "1542",
-    "location": "Worshipful Company of Barbers",
-    "city": "",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Henry%20VIII%20and%20the%20Barber%20Surgeons%2C%20by%20Hans%20Holbein%20the%20Younger%2C%20Richard%20Greenbury%2C%20and%20others.jpg?width=500",
-    "qid": "Q23642680",
-    "wikidata": "https://www.wikidata.org/wiki/Q23642680",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q23642680",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",

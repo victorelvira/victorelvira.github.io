@@ -298,21 +298,24 @@
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a Man Standing (Kassel)",
-    "year": "1618–1620",
-    "location": "Museum Schloss Wilhelmshöhe",
+    "title": "Portrait of a Man Standing",
+    "year": "1619",
+    "location": "Gemäldegalerie Alte Meister",
+    "city": "Kassel",
+    "country": "Germany",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20062.jpg?width=500",
+    "qid": "Q17647280",
+    "wikidata": "https://www.wikidata.org/wiki/Q17647280",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17647280",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "102.5 × 79 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Frans_Hals_062.jpg/500px-Frans_Hals_062.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museum-schloss-wilhelmshohe"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -584,27 +587,29 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.22778
+     53.227777777
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "(Possibly) portrait of Isaac Massa",
+    "title": "Portrait of a man, possibly Isaac Massa",
     "year": "1622",
-    "location": "Devonshire Collection",
+    "location": "Chatsworth House",
+    "city": "Bakewell",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20080.jpg?width=500",
+    "qid": "Q17647679",
+    "wikidata": "https://www.wikidata.org/wiki/Q17647679",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17647679",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "107 × 85 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Frans_Hals_080.jpg/500px-Frans_Hals_080.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "devonshire-collection",
-    "city": "Chatsworth House"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -1225,29 +1230,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -9.15417,
-     38.73667
+     -9.154166666,
+     38.736666666
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portret van Sara Andriesdr Hessix",
+    "title": "Portrait of Sara Andriesdr Hessix",
     "year": "1626",
-    "location": "Museu Calouste Gulbenkian",
+    "location": "Calouste Gulbenkian Museum",
+    "city": "Avenidas Novas",
+    "country": "Portugal",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sara%20Andriesdr%20Hessix%2C%20by%20Frans%20Hals.jpg?width=500",
+    "qid": "Q17815808",
+    "wikidata": "https://www.wikidata.org/wiki/Q17815808",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17815808",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "87 x 70 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Sara_Andriesdr_Hessix%2C_by_Frans_Hals.jpg/500px-Sara_Andriesdr_Hessix%2C_by_Frans_Hals.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museu-calouste-gulbenkian",
-    "city": "Lisbon",
-    "country": "Portugal"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -1878,27 +1884,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.6336,
-     52.37661
+     4.633598,
+     52.376609
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of Pieter Jacobsz. Olycan (1572–1658)",
-    "year": "1630–1635",
+    "title": "Square portrait of Pieter Jacobsz Olycan",
+    "year": "1639",
     "location": "Frans Hals Museum",
+    "city": "Haarlem",
+    "country": "Netherlands",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20portrait%20of%20Pieter%20Jacobsz%20Olycan%20at%20bust%20length%20OS-2004-39.JPG?width=500",
+    "qid": "Q17522209",
+    "wikidata": "https://www.wikidata.org/wiki/Q17522209",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17522209",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "68 x 57.6 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Frans_Hals_-_portrait_of_Pieter_Jacobsz_Olycan_at_bust_length_OS-2004-39.JPG/500px-Frans_Hals_-_portrait_of_Pieter_Jacobsz_Olycan_at_bust_length_OS-2004-39.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "frans-hals-museum"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -2047,29 +2056,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.69493,
-     40.41604
+     -3.694925,
+     40.416041
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Violin playing man in a dune landscape",
-    "year": "c. 1630",
+    "title": "Fisherman playing the violin",
+    "year": "1630",
     "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Violin%20player%20in%20a%20dune%20landscape%201930.30.jpg?width=500",
+    "qid": "Q17816560",
+    "wikidata": "https://www.wikidata.org/wiki/Q17816560",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17816560",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "86.4 x 70 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Frans_Hals_-_Violin_player_in_a_dune_landscape_1930.30.jpg/500px-Frans_Hals_-_Violin_player_in_a_dune_landscape_1930.30.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "thyssen-bornemisza-museum",
-    "city": "Madrid",
-    "country": "Spain"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3114,29 +3124,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.18688,
-     48.78023
+     9.186875,
+     48.780227777
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a woman facing right and holding a fan",
-    "year": "1637",
+    "title": "Portrait of a woman in an octagonal frame",
+    "year": "1635",
     "location": "Staatsgalerie Stuttgart",
+    "city": "Stuttgart",
+    "country": "Germany",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20woman%20in%20an%20octagonal%20frame%20-%20Stuttgart.jpg?width=500",
+    "qid": "Q17863925",
+    "wikidata": "https://www.wikidata.org/wiki/Q17863925",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17863925",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "67.5 x 57 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Frans_Hals_-_Portrait_of_a_woman_in_an_octagonal_frame_-_Stuttgart.jpg/500px-Frans_Hals_-_Portrait_of_a_woman_in_an_octagonal_frame_-_Stuttgart.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "staatsgalerie-stuttgart",
-    "city": "Stuttgart",
-    "country": "Germany"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3176,29 +3187,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.61167,
-     41.50889
+     -81.611666666,
+     41.508888888
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of Aeltje Dircksdr. Pater (1597–1678)",
+    "title": "Portrait of a Woman, probably Aeltje Dircksdr. Pater",
     "year": "1638",
     "location": "Cleveland Museum of Art",
+    "city": "Cleveland",
+    "country": "United States",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20Woman%2C%20possibly%20Aeltje%20Dircksdr.%20Pater%20-%201948.137%20-%20Cleveland%20Museum%20of%20Art.tiff?width=500",
+    "qid": "Q17907428",
+    "wikidata": "https://www.wikidata.org/wiki/Q17907428",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17907428",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "66.5 × 52.3 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Frans_Hals_-_Portrait_of_a_Woman%2C_possibly_Aeltje_Dircksdr._Pater_-_1948.137_-_Cleveland_Museum_of_Art.tiff/lossy-page1-250px-Frans_Hals_-_Portrait_of_a_Woman%2C_possibly_Aeltje_Dircksdr._Pater_-_1948.137_-_Cleveland_Museum_of_Art.tiff.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "cleveland-museum-of-art",
-    "city": "Cleveland",
-    "country": "United States"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3242,23 +3254,24 @@
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of an unknown man",
+    "title": "Portrait of a man aged 34",
     "year": "1638",
     "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20053.jpg?width=500",
+    "qid": "Q17905552",
+    "wikidata": "https://www.wikidata.org/wiki/Q17905552",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17905552",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "94.4 × 70.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Frans_Hals_053.jpg/500px-Frans_Hals_053.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "stadel-museum",
-    "city": "Frankfurt",
-    "country": "Germany"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3697,29 +3710,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9672,
-     40.7711
+     -73.967222222,
+     40.771111111
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of an unknown man",
-    "year": "1625–1649",
-    "location": "Frick Collection",
+    "title": "Portrait of an elderly man",
+    "year": "1630",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Frick%20Portrait%20of%20an%20elderly%20man%201910.1.69.jpg?width=500",
+    "qid": "Q17818668",
+    "wikidata": "https://www.wikidata.org/wiki/Q17818668",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17818668",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "115.5 x 91.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Frans_Hals_-_Frick_Portrait_of_an_elderly_man_1910.1.69.jpg/500px-Frans_Hals_-_Frick_Portrait_of_an_elderly_man_1910.1.69.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "frick-collection",
-    "city": "New York",
-    "country": "United States"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3727,29 +3741,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.95861,
+     6.958611,
      50.9375
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of an unknown woman, possibly Cornelia van der Meer",
-    "year": "c.1640",
-    "location": "Wallraf-Richartz Museum",
+    "title": "Portrait of a woman, possibly Cornelia van der Meer",
+    "year": "1640",
+    "location": "Wallraf–Richartz Museum",
+    "city": "Altstadt-Nord",
+    "country": "Germany",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20102%20WGA%20version.jpg?width=500",
+    "qid": "Q17986633",
+    "wikidata": "https://www.wikidata.org/wiki/Q17986633",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17986633",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "120 x 94.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Frans_Hals_102_WGA_version.jpg/500px-Frans_Hals_102_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "wallraf-richartz-museum",
-    "city": "Cologne",
-    "country": "Germany"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3757,29 +3772,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.95861,
+     6.958611,
      50.9375
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of an unknown man, possibly Albert van Nierop",
-    "year": "c.1640",
-    "location": "Wallraf-Richartz Museum",
+    "title": "Portrait of a man, probably Nicolaes Noppen",
+    "year": "1640",
+    "location": "Wallraf–Richartz Museum",
+    "city": "Altstadt-Nord",
+    "country": "Germany",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20101%20WGA%20version.jpg?width=500",
+    "qid": "Q17986476",
+    "wikidata": "https://www.wikidata.org/wiki/Q17986476",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17986476",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "120 x 95 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Frans_Hals_101_WGA_version.jpg/500px-Frans_Hals_101_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "wallraf-richartz-museum",
-    "city": "Cologne",
-    "country": "Germany"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -3924,27 +3940,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.078055555,
+     59.328611111
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of an unknown woman",
+    "title": "Portrait of Maria Bastiaens van Hout",
     "year": "1643",
-    "location": "Nationalmuseum Stockholm",
+    "location": "Nationalmuseum",
+    "city": "Stockholm",
+    "country": "Sweden",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Lady%20%28Frans%20Hals%20d.%C3%A4.%29%20-%20Nationalmuseum%20-%2023470.tif?width=500",
+    "qid": "Q17986808",
+    "wikidata": "https://www.wikidata.org/wiki/Q17986808",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17986808",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "82,6 x 67,3 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Portrait_of_a_Lady_%28Frans_Hals_d.%C3%A4.%29_-_Nationalmuseum_-_23470.tif/lossy-page1-250px-Portrait_of_a_Lady_%28Frans_Hals_d.%C3%A4.%29_-_Nationalmuseum_-_23470.tif.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "nationalmuseum-stockholm"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -4048,29 +4067,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.930958,
+     41.30839
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of Mr. Bodolphe",
+    "title": "Portrait of an Elderly Man, traditionally called Heer Bodolphe",
     "year": "1643",
     "location": "Yale University Art Gallery",
+    "city": "New Haven",
+    "country": "United States",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20078.jpg?width=500",
+    "qid": "Q17987246",
+    "wikidata": "https://www.wikidata.org/wiki/Q17987246",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17987246",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "122.4 × 97.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Frans_Hals_078.jpg/500px-Frans_Hals_078.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "yale-university-art-gallery",
-    "city": "New Haven",
-    "country": "United States"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -4941,30 +4961,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9672,
-     40.7711
+     -73.967222222,
+     40.771111111
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a man",
-    "year": "after 1650",
-    "location": "Frick Collection",
+    "title": "Portrait of a painter",
+    "year": "1650",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20painter%201650s%20-%201906.1.71.jpg?width=500",
+    "qid": "Q18011387",
+    "wikidata": "https://www.wikidata.org/wiki/Q18011387",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18011387",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "100.3 x 82.9 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Frans_Hals_-_Portrait_of_a_painter_1650s_-_1906.1.71.jpg/500px-Frans_Hals_-_Portrait_of_a_painter_1650s_-_1906.1.71.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "frick-collection",
-    "city": "New York",
-    "country": "United States",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -5395,29 +5415,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.885277777,
      52.36
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a man, possibly a minister",
+    "title": "Portrait of a man, possibly a clergyman",
     "year": "1660",
     "location": "Rijksmuseum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20063.jpg?width=500",
+    "qid": "Q17331041",
+    "wikidata": "https://www.wikidata.org/wiki/Q17331041",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17331041",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "37 x 29.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Frans_Hals_063.jpg/500px-Frans_Hals_063.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "rijksmuseum",
-    "city": "Amsterdam",
-    "country": "Netherlands"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -5488,29 +5509,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.11944,
-     52.20028
+     0.119444,
+     52.200278
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a man in a gray cloak with wide brim hat perched at an angle on his head",
-    "year": "1660–1663",
+    "title": "Portrait of a man in a gray cloak with wide brim hat",
+    "year": "1660",
     "location": "Fitzwilliam Museum",
+    "city": "Cambridge",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20067.jpg?width=500",
+    "qid": "Q17817522",
+    "wikidata": "https://www.wikidata.org/wiki/Q17817522",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17817522",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "80 × 67 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Frans_Hals_067.jpg/500px-Frans_Hals_067.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "fitzwilliam-museum",
-    "city": "Cambridge",
-    "country": "United Kingdom"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -5546,29 +5568,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.57,
-     48.14833
+     11.569985,
+     48.148291
     ]
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of Willem Croes (d.1666)",
-    "year": "1662–1666",
+    "title": "Portrait of Willem Croes",
+    "year": "1658",
     "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20041.jpg?width=500",
+    "qid": "Q17773122",
+    "wikidata": "https://www.wikidata.org/wiki/Q17773122",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17773122",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "47.1 × 34.4 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Frans_Hals_041.jpg/500px-Frans_Hals_041.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Haarlem",
     "creation_lat": 52.3874,
-    "creation_lon": 4.6462,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Frans Hals",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "alte-pinakothek",
-    "city": "Munich",
-    "country": "Germany"
+    "creation_lon": 4.6462
    }
   },
   {
@@ -5731,87 +5754,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Andries van Hoorn",
-    "year": "1638",
-    "location": "São Paulo Museum of Art",
-    "city": "São Paulo",
-    "country": "Brazil",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Andries%20van%20Hoorn.jpg?width=500",
-    "qid": "Q17906243",
-    "wikidata": "https://www.wikidata.org/wiki/Q17906243",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17906243",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.569985,
-     48.148291
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Willem Croes",
-    "year": "1658",
-    "location": "Alte Pinakothek",
-    "city": "Munich",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20041.jpg?width=500",
-    "qid": "Q17773122",
-    "wikidata": "https://www.wikidata.org/wiki/Q17773122",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17773122",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     8.67388,
-     50.10322
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a man aged 34",
-    "year": "1638",
-    "location": "Städel Museum",
-    "city": "Frankfurt",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20053.jpg?width=500",
-    "qid": "Q17905552",
-    "wikidata": "https://www.wikidata.org/wiki/Q17905552",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17905552",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      13.364722222,
      52.508611111
     ]
@@ -5857,60 +5799,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17861081",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.694925,
-     40.416041
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Fisherman playing the violin",
-    "year": "1630",
-    "location": "Thyssen-Bornemisza Museum",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Violin%20player%20in%20a%20dune%20landscape%201930.30.jpg?width=500",
-    "qid": "Q17816560",
-    "wikidata": "https://www.wikidata.org/wiki/Q17816560",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17816560",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -9.154166666,
-     38.736666666
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Sara Andriesdr Hessix",
-    "year": "1626",
-    "location": "Calouste Gulbenkian Museum",
-    "city": "Avenidas Novas",
-    "country": "Portugal",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sara%20Andriesdr%20Hessix%2C%20by%20Frans%20Hals.jpg?width=500",
-    "qid": "Q17815808",
-    "wikidata": "https://www.wikidata.org/wiki/Q17815808",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17815808",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -6136,141 +6024,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a Woman, probably Aeltje Dircksdr. Pater",
-    "year": "1638",
-    "location": "Cleveland Museum of Art",
-    "city": "Cleveland",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20Woman%2C%20possibly%20Aeltje%20Dircksdr.%20Pater%20-%201948.137%20-%20Cleveland%20Museum%20of%20Art.tiff?width=500",
-    "qid": "Q17907428",
-    "wikidata": "https://www.wikidata.org/wiki/Q17907428",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17907428",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.473341,
-     51.914215
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a man called Johannes Saeckma",
-    "year": "1635",
-    "location": "Museum Boijmans Van Beuningen",
-    "city": "Rotterdam",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20%28I%29%20122.jpg?width=500",
-    "qid": "Q17866274",
-    "wikidata": "https://www.wikidata.org/wiki/Q17866274",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17866274",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.967222222,
-     40.771111111
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of an elderly man",
-    "year": "1630",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Frick%20Portrait%20of%20an%20elderly%20man%201910.1.69.jpg?width=500",
-    "qid": "Q17818668",
-    "wikidata": "https://www.wikidata.org/wiki/Q17818668",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17818668",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     6.958611,
-     50.9375
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a man, probably Nicolaes Noppen",
-    "year": "1640",
-    "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20101%20WGA%20version.jpg?width=500",
-    "qid": "Q17986476",
-    "wikidata": "https://www.wikidata.org/wiki/Q17986476",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17986476",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     6.958611,
-     50.9375
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a woman, possibly Cornelia van der Meer",
-    "year": "1640",
-    "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20102%20WGA%20version.jpg?width=500",
-    "qid": "Q17986633",
-    "wikidata": "https://www.wikidata.org/wiki/Q17986633",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17986633",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      18.078055555,
      59.328611111
     ]
@@ -6298,33 +6051,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Maria Bastiaens van Hout",
-    "year": "1643",
-    "location": "Nationalmuseum",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Lady%20%28Frans%20Hals%20d.%C3%A4.%29%20-%20Nationalmuseum%20-%2023470.tif?width=500",
-    "qid": "Q17986808",
-    "wikidata": "https://www.wikidata.org/wiki/Q17986808",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17986808",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -83.064722222,
      42.359444444
     ]
@@ -6343,60 +6069,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17984082",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.119444,
-     52.200278
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a man in a gray cloak with wide brim hat",
-    "year": "1660",
-    "location": "Fitzwilliam Museum",
-    "city": "Cambridge",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20067.jpg?width=500",
-    "qid": "Q17817522",
-    "wikidata": "https://www.wikidata.org/wiki/Q17817522",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17817522",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.930958,
-     41.30839
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of an Elderly Man, traditionally called Heer Bodolphe",
-    "year": "1643",
-    "location": "Yale University Art Gallery",
-    "city": "New Haven",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20078.jpg?width=500",
-    "qid": "Q17987246",
-    "wikidata": "https://www.wikidata.org/wiki/Q17987246",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17987246",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -6547,33 +6219,6 @@
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a woman in an octagonal frame",
-    "year": "1635",
-    "location": "Staatsgalerie Stuttgart",
-    "city": "Stuttgart",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20woman%20in%20an%20octagonal%20frame%20-%20Stuttgart.jpg?width=500",
-    "qid": "Q17863925",
-    "wikidata": "https://www.wikidata.org/wiki/Q17863925",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17863925",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     9.186875,
-     48.780227777
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
     "title": "Portrait of a man in an octagonal frame",
     "year": "1637",
     "location": "Staatsgalerie Stuttgart",
@@ -6709,33 +6354,6 @@
    },
    "properties": {
     "painter": "Frans Hals",
-    "title": "Portrait of a man, possibly a clergyman",
-    "year": "1660",
-    "location": "Rijksmuseum",
-    "city": "Amsterdam",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20063.jpg?width=500",
-    "qid": "Q17331041",
-    "wikidata": "https://www.wikidata.org/wiki/Q17331041",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17331041",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.885277777,
-     52.36
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
     "title": "Portrait of Lucas de Clercq",
     "year": "1635",
     "location": "Rijksmuseum",
@@ -6802,33 +6420,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17644271",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.633598,
-     52.376609
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Square portrait of Pieter Jacobsz Olycan",
-    "year": "1639",
-    "location": "Frans Hals Museum",
-    "city": "Haarlem",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20portrait%20of%20Pieter%20Jacobsz%20Olycan%20at%20bust%20length%20OS-2004-39.JPG?width=500",
-    "qid": "Q17522209",
-    "wikidata": "https://www.wikidata.org/wiki/Q17522209",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17522209",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -6919,33 +6510,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.57861,
-     55.68889
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of René Descartes",
-    "year": "1649",
-    "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
-    "country": "Denmark",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%2C%20Portrait%20of%20Ren%C3%A9%20Descartes.jpg?width=500",
-    "qid": "Q17645192",
-    "wikidata": "https://www.wikidata.org/wiki/Q17645192",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17645192",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.1675,
      51.571388888
     ]
@@ -6964,87 +6528,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17642106",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.195686,
-     55.950902
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Pieter Verdonck",
-    "year": "1627",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Verdonck%20-%20WGA11086.jpg?width=500",
-    "qid": "Q17644447",
-    "wikidata": "https://www.wikidata.org/wiki/Q17644447",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17644447",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -79.949,
-     40.4437
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Pieter van der Morsch",
-    "year": "1616",
-    "location": "Carnegie Museum of Art",
-    "city": "Pittsburgh",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Pieter%20Cornelisz.%20van%20der%20Morsch.jpg?width=500",
-    "qid": "Q17627174",
-    "wikidata": "https://www.wikidata.org/wiki/Q17627174",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17627174",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.61,
-     53.227777777
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a man, possibly Isaac Massa",
-    "year": "1622",
-    "location": "Chatsworth House",
-    "city": "Bakewell",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20080.jpg?width=500",
-    "qid": "Q17647679",
-    "wikidata": "https://www.wikidata.org/wiki/Q17647679",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17647679",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -7108,60 +6591,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.41611,
-     51.315
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a Man Standing",
-    "year": "1619",
-    "location": "Gemäldegalerie Alte Meister",
-    "city": "Kassel",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20062.jpg?width=500",
-    "qid": "Q17647280",
-    "wikidata": "https://www.wikidata.org/wiki/Q17647280",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17647280",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -83.559444444,
-     41.658333333
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Van Campen Family Portrait in a Landscape (left half)",
-    "year": "1620",
-    "location": "Toledo Museum of Art",
-    "city": "Toledo",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Family%20Portrait%20in%20a%20Landscape.jpg?width=500",
-    "qid": "Q17627383",
-    "wikidata": "https://www.wikidata.org/wiki/Q17627383",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17627383",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      5.04267,
      47.3216
     ]
@@ -7207,33 +6636,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17646765",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -84.503333,
-     39.1025
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Michiel de Wael",
-    "year": "1634",
-    "location": "Taft Museum of Art",
-    "city": "Cincinnati",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Captain%20Michiel%20de%20Wael.jpg?width=500",
-    "qid": "Q17642214",
-    "wikidata": "https://www.wikidata.org/wiki/Q17642214",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17642214",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -7342,33 +6744,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17275956",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.885277777,
-     52.36
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Maritge Claesdr Vooght (....-1644)",
-    "year": "1639",
-    "location": "Rijksmuseum",
-    "city": "Amsterdam",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Maritge%20Claesdr.%20Voogt%20%281577-1644%29%20by%20Frans%20Hals%20027.jpg?width=500",
-    "qid": "Q17341971",
-    "wikidata": "https://www.wikidata.org/wiki/Q17341971",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17341971",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -8026,33 +7401,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.967222222,
-     40.771111111
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of a painter",
-    "year": "1650",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20painter%201650s%20-%201906.1.71.jpg?width=500",
-    "qid": "Q18011387",
-    "wikidata": "https://www.wikidata.org/wiki/Q18011387",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18011387",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.729,
      47.5004
     ]
@@ -8071,33 +7419,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18756301",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.802222222,
-     42.273055555
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Frans Post",
-    "year": "1655",
-    "location": "Museo de Arte de Worcester",
-    "city": "Worcester",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Frans%20Post%20%28Worcester%20Art%20Museum%29.jpg?width=500",
-    "qid": "Q18058930",
-    "wikidata": "https://www.wikidata.org/wiki/Q18058930",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18058930",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -8314,33 +7635,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27950108",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     5.124167,
-     52.087222
-    ]
-   },
-   "properties": {
-    "painter": "Frans Hals",
-    "title": "Portrait of Nicolaas Stenius",
-    "year": "1650",
-    "location": "Museum Catharijneconvent",
-    "city": "Utrecht",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Nicolaas%20Stenius%201650.jpg?width=500",
-    "qid": "Q18011066",
-    "wikidata": "https://www.wikidata.org/wiki/Q18011066",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18011066",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }

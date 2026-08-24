@@ -741,6 +741,29 @@ table.palmares tr:hover td { background: #fffaf5; }
   font-size: 9.5px; letter-spacing: .03em; padding: 1px 5px; border-radius: 4px;
   border: 1px solid var(--line); background: #fff; color: var(--muted);
 }
+/* El codigo de fuente se pulsa: lleva a la ficha con la procedencia abierta.
+   Tiene que verse que es un boton sin convertir la columna en un semaforo. */
+.tag-src { cursor: pointer; font-family: inherit; }
+
+/* Un par código+enlace por fuente. Se apilan: en escritorio caben en línea y en
+   el móvil bajan solos sin cortar nada. */
+.src { display: flex; flex-wrap: wrap; gap: 3px 6px; justify-content: flex-end; }
+.src-one { display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+/* La fuente que no es una página web: un punto apagado en lugar de la flecha,
+   para que se vea que ahí no falta un enlace, es que no lo hay. */
+.src-nolink { color: var(--line); font-size: 11.5px; cursor: help; }
+.tag-src:hover { border-color: var(--sky); color: var(--sky); background: #f2f7fa; }
+.tag-src:focus-visible { outline: 2px solid var(--sky); outline-offset: 1px; }
+
+/* Leyenda pegada a la tabla del palmares. */
+.codes-inline {
+  margin: 7px 0 0; font-size: 11px; color: var(--muted); line-height: 1.7;
+}
+.codes-inline .tag {
+  font-size: 9.5px; letter-spacing: .03em; padding: 1px 5px; border-radius: 4px;
+  border: 1px solid var(--line); background: #fff; color: var(--muted);
+  margin-right: 2px;
+}
 
 ul.plain { margin: 0; padding-left: 16px; color: var(--muted); font-size: 12.5px; }
 ul.plain li { margin-bottom: 3px; }

@@ -713,30 +713,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
-    "title": "Portrait of Geneviève Jacqueline Pecoul",
+    "title": "Portrait of Madame Charles-Pierre Pecoul",
     "year": "1784",
-    "city": "Paris",
-    "country": "France",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "92 × 72 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Genevi%C3%A8ve_Jacqueline_Pecoul_par_David.jpg/500px-Genevi%C3%A8ve_Jacqueline_Pecoul_par_David.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Genevi%C3%A8ve%20Jacqueline%20Pecoul%20par%20David.jpg?width=500",
+    "qid": "Q19008821",
+    "wikidata": "https://www.wikidata.org/wiki/Q19008821",
     "_source": {
-     "source": "Wikipedia: List of paintings by Jacques-Louis David",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19008821",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "92 × 72 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -989,30 +997,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.57111,
-     48.14972
+     11.571114,
+     48.149887
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
-    "title": "Portrait of Anne-Marie-Louise Thélusson, Countess of Sorcy",
+    "title": "Anne-Marie-Louise Thélusson, Countess of Sorcy",
     "year": "1790",
+    "location": "Neue Pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "location": "Neue Pinakothek",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "129 × 97 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/David_-_Portrait.JPG/500px-David_-_Portrait.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Portrait.JPG?width=500",
+    "qid": "Q3399477",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399477",
     "_source": {
-     "source": "Wikipedia: List of paintings by Jacques-Louis David",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399477",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "neue-pinakothek"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "129 × 97 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -1226,30 +1242,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.07972,
-     48.30111
+     4.07972222,
+     48.30111111
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
-    "title": "Antoinette Gabrielle Charpentier Danton",
+    "title": "Antoinette Gabrielle Danton",
     "year": "1793",
-    "city": "Troyes",
     "location": "Musée des Beaux-Arts de Troyes",
+    "city": "Troyes",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "64.7 × 55.6 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Antoinette_Gabrielle_Charpentier_Danton.jpg/500px-Antoinette_Gabrielle_Charpentier_Danton.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoinette%20Gabrielle%20Charpentier%20Danton.jpg?width=500",
+    "qid": "Q28976720",
+    "wikidata": "https://www.wikidata.org/wiki/Q28976720",
     "_source": {
-     "source": "Wikipedia: List of paintings by Jacques-Louis David",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28976720",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-des-beaux-arts-de-troyes",
-    "country": "France"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "64.7 × 55.6 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -1358,30 +1382,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
-    "title": "View of the Luxembourg Gardens",
+    "title": "Vue des Jardins du Luxembourg",
     "year": "1794",
-    "city": "Paris",
-    "country": "France",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "55 × 65 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Vue_des_Jardins_du_Luxembourg_%281794%29_Jacques_Louis_David.png/500px-Vue_des_Jardins_du_Luxembourg_%281794%29_Jacques_Louis_David.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20des%20Jardins%20du%20Luxembourg%20%281794%29%20Jacques%20Louis%20David.png?width=500",
+    "qid": "Q29862500",
+    "wikidata": "https://www.wikidata.org/wiki/Q29862500",
     "_source": {
-     "source": "Wikipedia: List of paintings by Jacques-Louis David",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29862500",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "55 × 65 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -2193,30 +2225,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
-    "title": "Portrait of the Countess Vilain XIIII and her Daughter Louise",
+    "title": "Portrait of the Comtesse Vilain XIIII and her Daughter Louise",
     "year": "1816",
-    "city": "London",
-    "country": "United Kingdom",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "95 × 76 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Comtesse_Vilain_XIIII_JLDavid.jpg/500px-Comtesse_Vilain_XIIII_JLDavid.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Brussels",
-    "creation_lat": 50.8503,
-    "creation_lon": 4.3517,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtesse%20Vilain%20XIIII%20JLDavid.jpg?width=500",
+    "qid": "Q26531795",
+    "wikidata": "https://www.wikidata.org/wiki/Q26531795",
     "_source": {
-     "source": "Wikipedia: List of paintings by Jacques-Louis David",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26531795",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "95 × 76 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -2673,80 +2713,6 @@
     "creation_place": "Paris",
     "creation_lat": 48.8567,
     "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.571114,
-     48.149887
-    ]
-   },
-   "properties": {
-    "painter": "Jacques-Louis David",
-    "title": "Anne-Marie-Louise Thélusson, Countess of Sorcy",
-    "year": "1790",
-    "location": "Neue Pinakothek",
-    "city": "Munich",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Portrait.JPG?width=500",
-    "qid": "Q3399477",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399477",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3399477",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Jacques-Louis David",
-    "title": "Portrait of the Comtesse Vilain XIIII and her Daughter Louise",
-    "year": "1816",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtesse%20Vilain%20XIIII%20JLDavid.jpg?width=500",
-    "qid": "Q26531795",
-    "wikidata": "https://www.wikidata.org/wiki/Q26531795",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26531795",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
     "_overrides": {
      "creation": {
       "at": "2026-08-24",
@@ -3232,43 +3198,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.07972222,
-     48.30111111
-    ]
-   },
-   "properties": {
-    "painter": "Jacques-Louis David",
-    "title": "Antoinette Gabrielle Danton",
-    "year": "1793",
-    "location": "Musée des Beaux-Arts de Troyes",
-    "city": "Troyes",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoinette%20Gabrielle%20Charpentier%20Danton.jpg?width=500",
-    "qid": "Q28976720",
-    "wikidata": "https://www.wikidata.org/wiki/Q28976720",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q28976720",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      2.336111111,
      48.860194444
     ]
@@ -3386,43 +3315,6 @@
    },
    "properties": {
     "painter": "Jacques-Louis David",
-    "title": "Portrait of Madame Charles-Pierre Pecoul",
-    "year": "1784",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Genevi%C3%A8ve%20Jacqueline%20Pecoul%20par%20David.jpg?width=500",
-    "qid": "Q19008821",
-    "wikidata": "https://www.wikidata.org/wiki/Q19008821",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19008821",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Jacques-Louis David",
     "title": "Catherine-Marie-Jeanne Tallard",
     "year": "1795",
     "location": "Louvre",
@@ -3509,43 +3401,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29862493",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Jacques-Louis David",
-    "title": "Vue des Jardins du Luxembourg",
-    "year": "1794",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20des%20Jardins%20du%20Luxembourg%20%281794%29%20Jacques%20Louis%20David.png?width=500",
-    "qid": "Q29862500",
-    "wikidata": "https://www.wikidata.org/wiki/Q29862500",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q29862500",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",

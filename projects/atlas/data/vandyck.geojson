@@ -141,30 +141,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Self-portrait 1620–21",
-    "year": "1620–1621",
+    "title": "Self-Portrait",
+    "year": "1620",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "119,7 × 87,9 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Anthony_van_Dyck_-_Self_portrait.jpg/500px-Anthony_van_Dyck_-_Self_portrait.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Self%20portrait.jpg?width=500",
+    "qid": "Q3630737",
+    "wikidata": "https://www.wikidata.org/wiki/Q3630737",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3630737",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "city": "New York",
-    "country": "United States"
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "119,7 × 87,9 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -371,61 +379,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.35824,
+     4.358238,
      50.84168
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of François Duquesnoy",
+    "title": "Portrait of the Sculptor François Duquesnoy",
     "year": "1622",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "77,5 × 61 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Anthonis_van_Dyck_024.jpg/500px-Anthonis_van_Dyck_024.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Genoa",
-    "creation_lat": 44.4056,
-    "creation_lon": 8.9463,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "city": "Brussels-Capital Region",
-    "country": "Belgium"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.3136,
-     59.9406
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Self-portrait 1622–23",
-    "year": "1622–1623",
-    "location": "Hermitage Museum",
+    "country": "Belgium",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20024.jpg?width=500",
+    "qid": "Q3937536",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937536",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937536",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "dimensions": "77,5 × 61 cm",
     "medium": "Oil on canvas",
-    "dimensions": "116,5 × 93,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Anthonis_van_Dyck_049.jpg/500px-Anthonis_van_Dyck_049.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "hermitage-museum",
-    "city": "Saint Petersburg",
-    "country": "Russia"
+    "creation_lon": 8.9463
    }
   },
   {
@@ -433,30 +411,63 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of marchesa Lomellini with her children",
+    "title": "Self-portrait",
+    "year": "1622",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20049.jpg?width=500",
+    "qid": "Q3630740",
+    "wikidata": "https://www.wikidata.org/wiki/Q3630740",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3630740",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "dimensions": "116,5 × 93,5 cm",
+    "medium": "Oil on canvas",
+    "creation_place": "Genoa",
+    "creation_lat": 44.4056,
+    "creation_lon": 8.9463
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -46.655833333,
+     -23.561111111
+    ]
+   },
+   "properties": {
+    "painter": "Anthony van Dyck",
+    "title": "Portrait of Marquise Lomellini, with her children at prayer",
     "year": "1623",
     "location": "São Paulo Museum of Art",
+    "city": "São Paulo",
+    "country": "Brazil",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Retrato%20da%20Marquesa%20Lomellini%2C%20com%20os%20Filhos%20em%20Ora%C3%A7%C3%A3o%2C%20c.%201623.jpg?width=500",
+    "qid": "Q49876248",
+    "wikidata": "https://www.wikidata.org/wiki/Q49876248",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q49876248",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "221 × 152 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Anthony_van_Dyck_-_Retrato_da_Marquesa_Lomellini%2C_com_os_Filhos_em_Ora%C3%A7%C3%A3o%2C_c._1623.jpg/500px-Anthony_van_Dyck_-_Retrato_da_Marquesa_Lomellini%2C_com_os_Filhos_em_Ora%C3%A7%C3%A3o%2C_c._1623.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "sao-paulo-museum-of-art",
-    "city": "São Paulo",
-    "country": "Brazil"
+    "creation_lon": 8.9463
    }
   },
   {
@@ -465,29 +476,30 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Elena Cattaneo",
+    "title": "Portrait of the Marchesa Elena Grimaldi Cattaneo",
     "year": "1623",
-    "location": "National Gallery of Art",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20016.jpg?width=500",
+    "qid": "Q3937510",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937510",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937510",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "246 × 173 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthonis_van_Dyck_016.jpg/500px-Anthonis_van_Dyck_016.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "national-gallery-of-art",
-    "city": "Washington",
-    "country": "United States"
+    "creation_lon": 8.9463
    }
   },
   {
@@ -571,30 +583,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.08639,
-     51.44611
+     -0.086388888,
+     51.446111111
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Emanuele Filiberto, prince of Savoy",
+    "title": "Emmanuel Philibert of Savoy, Prince of Oneglia",
     "year": "1624",
     "location": "Dulwich Picture Gallery",
+    "city": "Dulwich",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%2C%20Sir%20Anthony%20-%20Emmanuel%20Philibert%20of%20Savoy%2C%20Prince%20of%20Oneglia%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3937515",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937515",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937515",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "126 × 99,6 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Van_Dyck%2C_Sir_Anthony_-_Emmanuel_Philibert_of_Savoy%2C_Prince_of_Oneglia_-_Google_Art_Project.jpg/500px-Van_Dyck%2C_Sir_Anthony_-_Emmanuel_Philibert_of_Savoy%2C_Prince_of_Oneglia_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "dulwich-picture-gallery",
-    "city": "London",
-    "country": "United Kingdom"
+    "creation_lon": 8.9463
    }
   },
   {
@@ -603,29 +616,30 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of a Genoese Noblewoman with her Son",
-    "year": "1625",
-    "location": "National Gallery of Art",
+    "title": "A Genoese Noblewoman and Her Son",
+    "year": "1626",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20023.jpg?width=500",
+    "qid": "Q3937751",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937751",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937751",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "189 × 139 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Anthonis_van_Dyck_023.jpg/500px-Anthonis_van_Dyck_023.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "national-gallery-of-art",
-    "city": "Washington",
-    "country": "United States"
+    "creation_lon": 8.9463
    }
   },
   {
@@ -987,30 +1001,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.80306,
+     0.803055555,
      52.95
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of the duke of Arenberg",
-    "year": "1628–1632",
+    "title": "Portrait of the Duke of Arenberg on Horseback",
+    "year": "1636",
     "location": "Holkham Hall",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "315 × 240 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Van_Dyck_-_Duke_of_Arenberg.jpg/500px-Van_Dyck_-_Duke_of_Arenberg.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "holkham-hall",
     "city": "Holkham",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Duke%20of%20Arenberg.jpg?width=500",
+    "qid": "Q88114122",
+    "wikidata": "https://www.wikidata.org/wiki/Q88114122",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q88114122",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "315 × 240 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1059,30 +1081,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.35824,
+     4.358238,
      50.84168
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Jean-Charles della Faille",
+    "title": "Portrait of Jean-Charles de la Faille",
     "year": "1629",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "130,8 × 118,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_van_Dyck-_Portret_van_pater_Jan-Karel_Della_Faille_s.j.jpg/500px-Anthony_van_Dyck-_Portret_van_pater_Jan-Karel_Della_Faille_s.j.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "city": "Brussels-Capital Region",
-    "country": "Belgium"
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck-%20Portret%20van%20pater%20Jan-Karel%20Della%20Faille%20s.j.jpg?width=500",
+    "qid": "Q89259391",
+    "wikidata": "https://www.wikidata.org/wiki/Q89259391",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q89259391",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "130,8 × 118,5 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1214,30 +1244,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Martin Rijckaert",
-    "year": "1630",
+    "title": "The Painter Martin Ryckaert",
+    "year": "1631",
     "location": "Museo del Prado",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "148 × 113 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Van_dyck-el_pintor_martin_ryckaert-prado.jpg/500px-Van_dyck-el_pintor_martin_ryckaert-prado.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20dyck-el%20pintor%20martin%20ryckaert-prado.jpg?width=500",
+    "qid": "Q16712385",
+    "wikidata": "https://www.wikidata.org/wiki/Q16712385",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16712385",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "148 × 113 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1276,30 +1314,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.48528,
-     49.19389
+     2.485277777,
+     49.193944444
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Gaston d'Orléans",
-    "year": "1631",
+    "title": "Portrait of Gaston de France",
+    "year": "1632",
     "location": "Musée Condé",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "193 × 119 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Full_length_portrait_painting_of_Gaston_of_France%2C_Duke_of_Orl%C3%A9ans_in_1634_by_Anthony_van_Dyck_%28Mus%C3%A9e_Cond%C3%A9%29.jpg/500px-Full_length_portrait_painting_of_Gaston_of_France%2C_Duke_of_Orl%C3%A9ans_in_1634_by_Anthony_van_Dyck_%28Mus%C3%A9e_Cond%C3%A9%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-conde",
     "city": "Chantilly",
-    "country": "France"
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Full%20length%20portrait%20painting%20of%20Gaston%20of%20France%2C%20Duke%20of%20Orl%C3%A9ans%20in%201634%20by%20Anthony%20van%20Dyck%20%28Mus%C3%A9e%20Cond%C3%A9%29.jpg?width=500",
+    "qid": "Q3399430",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399430",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399430",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "193 × 119 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1338,31 +1384,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.69493,
-     40.41604
+     -3.694925,
+     40.416041
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Jacques Le Roy",
+    "title": "Portrait of James le Roy, Lord of Herbaix",
     "year": "1631",
     "location": "Thyssen-Bornemisza Museum",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "117.8 x 100.6 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Anthony_van_Dyck_-_Portrait_of_Jacques_Le_Roy_-_WGA07397.jpg/500px-Anthony_van_Dyck_-_Portrait_of_Jacques_Le_Roy_-_WGA07397.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "thyssen-bornemisza-museum",
     "city": "Madrid",
     "country": "Spain",
-    "wga_url": "https://www.wga.hu/html/d/dyck_van/1portrai/leroy.html"
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20Jacques%20Le%20Roy%20-%20WGA07397.jpg?width=500",
+    "qid": "Q21711847",
+    "wikidata": "https://www.wikidata.org/wiki/Q21711847",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21711847",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "117.8 x 100.6 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1371,29 +1424,37 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.20388
+     48.203880555
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Prince Charles Louis",
-    "year": "1631–1632",
+    "title": "Portrait of Carlo Emanuele d'Este, Marchese di Borgomanero (1622-1695)",
+    "year": "1631",
     "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20079.jpg?width=500",
+    "qid": "Q3937490",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937490",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937490",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "dimensions": "176 × 96 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Anthonis_van_Dyck_079.jpg/500px-Anthonis_van_Dyck_079.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunsthistorisches-museum",
-    "city": "Vienna",
-    "country": "Austria"
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1402,29 +1463,37 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.20388
+     48.203880555
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Prince Rupert of the Rhine",
-    "year": "1631–1632",
+    "title": "Portrait of Filippo Francesco d'Este, Marchese di Lanzo with his Dog",
+    "year": "1631",
     "location": "Kunsthistorisches Museum",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "175 × 95,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Anthonis_van_Dyck_085.jpg/500px-Anthonis_van_Dyck_085.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Antwerp",
-    "creation_lat": 51.2194,
-    "creation_lon": 4.4025,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20085.jpg?width=500",
+    "qid": "Q3937659",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937659",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937659",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "175 × 95,5 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1674,30 +1743,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of the Cardinal-Infante Ferdinand of Austria",
-    "year": "1634 circa",
+    "title": "The Cardinal-Infante Ferdinand of Austria",
+    "year": "1634",
     "location": "Museo del Prado",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "107 x 106 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Anton_van_Dyck_-_The_Cardinal-Infante_Fernando_de_Austria.jpg/500px-Anton_van_Dyck_-_The_Cardinal-Infante_Fernando_de_Austria.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-del-prado",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton%20van%20Dyck%20-%20The%20Cardinal-Infante%20Fernando%20de%20Austria.jpg?width=500",
+    "qid": "Q27700241",
+    "wikidata": "https://www.wikidata.org/wiki/Q27700241",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27700241",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "107 x 106 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -1775,30 +1852,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of William Feilding, 1st Earl of Denbigh",
-    "year": "1633–1634",
+    "title": "William Feilding, 1st Earl of Denbigh",
+    "year": "1633",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "247,5 × 148,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/1stEarlOfDenbigh.jpg/500px-1stEarlOfDenbigh.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1stEarlOfDenbigh.jpg?width=500",
+    "qid": "Q26708300",
+    "wikidata": "https://www.wikidata.org/wiki/Q26708300",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26708300",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery",
-    "city": "London",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "247,5 × 148,5 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -2022,24 +2107,32 @@
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Prince Tommaso Francesco of Savoia Carignano",
+    "title": "Equestrian portrait of Prince Tomaso of Savoy-Carignan",
     "year": "1634",
     "location": "Galleria Sabauda",
-    "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "315 × 236 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Van_dyck_tomaso_1634_1635.jpg/500px-Van_dyck_tomaso_1634_1635.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "galleria-sabauda",
     "city": "Turin",
-    "country": "Italy"
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20dyck%20tomaso%201634%201635.jpg?width=500",
+    "qid": "Q3937435",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937435",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937435",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "315 × 236 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -2223,22 +2316,32 @@
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Philip Herbert, 4th Earl of Pembroke and His Family",
+    "title": "Portrait of Philip Herbert,4th Earl of Pembroke, his second wife Lady Anne Clifford,14th Baroness of Clifford and his surviving children by his first marriage and Lady Mary Villiers",
     "year": "1635",
     "location": "Wilton House",
+    "city": "Wilton",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "123 × 96,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Philip_Herbert%2C_4th_Earl_of_Pembroke%2C_with_his_Family.jpg/500px-Philip_Herbert%2C_4th_Earl_of_Pembroke%2C_with_his_Family.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20Herbert%2C%204th%20Earl%20of%20Pembroke%2C%20with%20his%20Family.jpg?width=500",
+    "qid": "Q3937651",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937651",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937651",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "wilton-house"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "123 × 96,5 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -2507,30 +2610,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Prince Charles Louis and Prince Rupert",
+    "title": "Portrait of Charles Louis Elector Palatine (1617-1680) and his brother, Rupert of the Palatinate (1619-1682)",
     "year": "1637",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "132 × 152 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Princes_Palatins_Van_Dyck.jpg/500px-Princes_Palatins_Van_Dyck.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Princes%20Palatins%20Van%20Dyck.jpg?width=500",
+    "qid": "Q3937488",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937488",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937488",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre",
-    "city": "Paris",
-    "country": "France"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "132 × 152 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -2538,30 +2649,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Dorothy Savage, Viscountess Andover and her sister Elizabeth, Lady Thimbleby",
+    "title": "Lady Elizabeth Thimbelby and her Sister",
     "year": "1637",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "132,1 × 149,9 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Anthonis_van_Dyck_014.jpg/500px-Anthonis_van_Dyck_014.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20014.jpg?width=500",
+    "qid": "Q3937508",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937508",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937508",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery",
-    "city": "London",
-    "country": "United Kingdom"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "132,1 × 149,9 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -2730,23 +2849,32 @@
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Portrait of Lady Dorothy Sidney, Lady Spencer, Countess of Sunderland",
-    "year": "1639 circa",
+    "title": "Portrait of Lady Dorothy Sidney, Lady Spencer, Countess of Sunderland (1617-1684)",
+    "year": "1639",
     "location": "Petworth House",
+    "city": "Petworth",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "136,2 x 109,2cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Van_Dyck_-_Portrait_of_Lady_Dorothy_Sidney%2C_Lady_Spencer%2C_Countess_of_Sunderland_%281617-1684%29%2C_ca_1639.jpg/500px-Van_Dyck_-_Portrait_of_Lady_Dorothy_Sidney%2C_Lady_Spencer%2C_Countess_of_Sunderland_%281617-1684%29%2C_ca_1639.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Portrait%20of%20Lady%20Dorothy%20Sidney%2C%20Lady%20Spencer%2C%20Countess%20of%20Sunderland%20%281617-1684%29%2C%20ca%201639.jpg?width=500",
+    "qid": "Q89357153",
+    "wikidata": "https://www.wikidata.org/wiki/Q89357153",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q89357153",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "petworth-house",
-    "city": "Petworth"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "136,2 x 109,2cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -2754,28 +2882,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.55361,
-     50.85611
+     -0.553611111,
+     50.856111111
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Madagascar Portrait (Arundel version)",
+    "title": "The Madagascar Portrait of Thomas Howard and His Wife Aletheia Talbot",
     "year": "1639",
     "location": "Arundel Castle",
+    "city": "Arundel",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "135 × 206,8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Anthonis_van_Dyck_035.jpg/500px-Anthonis_van_Dyck_035.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20035.jpg?width=500",
+    "qid": "Q69495964",
+    "wikidata": "https://www.wikidata.org/wiki/Q69495964",
     "_source": {
-     "source": "Wikipedia: List of paintings by Anthony van Dyck",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q69495964",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "arundel-castle"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "135 × 206,8 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -4500,198 +4638,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Carlo Emanuele d'Este, Marchese di Borgomanero (1622-1695)",
-    "year": "1631",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20079.jpg?width=500",
-    "qid": "Q3937490",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937490",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937490",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Self-portrait",
-    "year": "1622",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20049.jpg?width=500",
-    "qid": "Q3630740",
-    "wikidata": "https://www.wikidata.org/wiki/Q3630740",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3630740",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Self-Portrait",
-    "year": "1620",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Self%20portrait.jpg?width=500",
-    "qid": "Q3630737",
-    "wikidata": "https://www.wikidata.org/wiki/Q3630737",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3630737",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Lady Elizabeth Thimbelby and her Sister",
-    "year": "1637",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20014.jpg?width=500",
-    "qid": "Q3937508",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937508",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937508",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of the Marchesa Elena Grimaldi Cattaneo",
-    "year": "1623",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20016.jpg?width=500",
-    "qid": "Q3937510",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937510",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937510",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.358238,
-     50.84168
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of the Sculptor François Duquesnoy",
-    "year": "1622",
-    "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
-    "country": "Belgium",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20024.jpg?width=500",
-    "qid": "Q3937536",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937536",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937536",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      16.365103,
      48.201253
     ]
@@ -4748,70 +4694,6 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.485277777,
-     49.193944444
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Gaston de France",
-    "year": "1632",
-    "location": "Musée Condé",
-    "city": "Chantilly",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Full%20length%20portrait%20painting%20of%20Gaston%20of%20France%2C%20Duke%20of%20Orl%C3%A9ans%20in%201634%20by%20Anthony%20van%20Dyck%20%28Mus%C3%A9e%20Cond%C3%A9%29.jpg?width=500",
-    "qid": "Q3399430",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399430",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3399430",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.086388888,
-     51.446111111
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Emmanuel Philibert of Savoy, Prince of Oneglia",
-    "year": "1624",
-    "location": "Dulwich Picture Gallery",
-    "city": "Dulwich",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%2C%20Sir%20Anthony%20-%20Emmanuel%20Philibert%20of%20Savoy%2C%20Prince%20of%20Oneglia%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3937515",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937515",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937515",
-     "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
   },
@@ -5032,43 +4914,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.68618,
-     45.07412
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Equestrian portrait of Prince Tomaso of Savoy-Carignan",
-    "year": "1634",
-    "location": "Galleria Sabauda",
-    "city": "Turin",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20dyck%20tomaso%201634%201635.jpg?width=500",
-    "qid": "Q3937435",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937435",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937435",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.946075,
      52.044836
     ]
@@ -5088,43 +4933,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2201493",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Charles Louis Elector Palatine (1617-1680) and his brother, Rupert of the Palatinate (1619-1682)",
-    "year": "1637",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Princes%20Palatins%20Van%20Dyck.jpg?width=500",
-    "qid": "Q3937488",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937488",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937488",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -6078,43 +5886,6 @@
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "Rest on the Flight into Egypt (Madonna with Partridges)",
-    "year": "1632",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20and%20Pauwel%20de%20Vos%20-%20Rest%20on%20the%20Flight%20into%20Egypt%20%28Madonna%20with%20Partridges%29.jpg?width=500",
-    "qid": "Q27974869",
-    "wikidata": "https://www.wikidata.org/wiki/Q27974869",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27974869",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
     "title": "Portrait of Henry Danvers, Earl of Danby",
     "year": "1639",
     "location": "Hermitage Museum",
@@ -6401,43 +6172,6 @@
    },
    "properties": {
     "painter": "Anthony van Dyck",
-    "title": "The Cardinal-Infante Ferdinand of Austria",
-    "year": "1634",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton%20van%20Dyck%20-%20The%20Cardinal-Infante%20Fernando%20de%20Austria.jpg?width=500",
-    "qid": "Q27700241",
-    "wikidata": "https://www.wikidata.org/wiki/Q27700241",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27700241",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
     "title": "Amalia de Solms-Braunfels",
     "year": "1631",
     "location": "Museo del Prado",
@@ -6617,43 +6351,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Filippo Francesco d'Este, Marchese di Lanzo with his Dog",
-    "year": "1631",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20085.jpg?width=500",
-    "qid": "Q3937659",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937659",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937659",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      30.313611111,
      59.940555555
     ]
@@ -6704,43 +6401,6 @@
     "creation_place": "London",
     "creation_lat": 51.507222,
     "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "The Painter Martin Ryckaert",
-    "year": "1631",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20dyck-el%20pintor%20martin%20ryckaert-prado.jpg?width=500",
-    "qid": "Q16712385",
-    "wikidata": "https://www.wikidata.org/wiki/Q16712385",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16712385",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
     "_overrides": {
      "creation": {
       "at": "2026-08-24",
@@ -7338,33 +6998,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "A Genoese Noblewoman and Her Son",
-    "year": "1626",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20023.jpg?width=500",
-    "qid": "Q3937751",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937751",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937751",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.314305555,
      52.080388888
     ]
@@ -7812,43 +7445,6 @@
     "creation_place": "Antwerp",
     "creation_lat": 51.217778,
     "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.85959,
-     51.07802
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Philip Herbert,4th Earl of Pembroke, his second wife Lady Anne Clifford,14th Baroness of Clifford and his surviving children by his first marriage and Lady Mary Villiers",
-    "year": "1635",
-    "location": "Wilton House",
-    "city": "Wilton",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20Herbert%2C%204th%20Earl%20of%20Pembroke%2C%20with%20his%20Family.jpg?width=500",
-    "qid": "Q3937651",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937651",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937651",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
     "_overrides": {
      "creation": {
       "at": "2026-08-24",
@@ -16508,33 +16104,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Marquise Lomellini, with her children at prayer",
-    "year": "1623",
-    "location": "São Paulo Museum of Art",
-    "city": "São Paulo",
-    "country": "Brazil",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Retrato%20da%20Marquesa%20Lomellini%2C%20com%20os%20Filhos%20em%20Ora%C3%A7%C3%A3o%2C%20c.%201623.jpg?width=500",
-    "qid": "Q49876248",
-    "wikidata": "https://www.wikidata.org/wiki/Q49876248",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q49876248",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      13.364722222,
      52.508611111
     ]
@@ -21618,43 +21187,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of James le Roy, Lord of Herbaix",
-    "year": "1631",
-    "location": "Thyssen-Bornemisza Museum",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20Jacques%20Le%20Roy%20-%20WGA07397.jpg?width=500",
-    "qid": "Q21711847",
-    "wikidata": "https://www.wikidata.org/wiki/Q21711847",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21711847",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.128333333,
      51.508888888
     ]
@@ -23295,43 +22827,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
-     50.84168
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Jean-Charles de la Faille",
-    "year": "1629",
-    "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
-    "country": "Belgium",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck-%20Portret%20van%20pater%20Jan-Karel%20Della%20Faille%20s.j.jpg?width=500",
-    "qid": "Q89259391",
-    "wikidata": "https://www.wikidata.org/wiki/Q89259391",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q89259391",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -76.6195034,
      39.3259955
     ]
@@ -24155,43 +23650,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q89483400",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.611,
-     50.9881
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of Lady Dorothy Sidney, Lady Spencer, Countess of Sunderland (1617-1684)",
-    "year": "1639",
-    "location": "Petworth House",
-    "city": "Petworth",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Portrait%20of%20Lady%20Dorothy%20Sidney%2C%20Lady%20Spencer%2C%20Countess%20of%20Sunderland%20%281617-1684%29%2C%20ca%201639.jpg?width=500",
-    "qid": "Q89357153",
-    "wikidata": "https://www.wikidata.org/wiki/Q89357153",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q89357153",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -25094,43 +24552,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q90020066",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "William Feilding, 1st Earl of Denbigh",
-    "year": "1633",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1stEarlOfDenbigh.jpg?width=500",
-    "qid": "Q26708300",
-    "wikidata": "https://www.wikidata.org/wiki/Q26708300",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26708300",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -29745,43 +29166,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.553611111,
-     50.856111111
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "The Madagascar Portrait of Thomas Howard and His Wife Aletheia Talbot",
-    "year": "1639",
-    "location": "Arundel Castle",
-    "city": "Arundel",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20035.jpg?width=500",
-    "qid": "Q69495964",
-    "wikidata": "https://www.wikidata.org/wiki/Q69495964",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q69495964",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.1675,
      51.571388888
     ]
@@ -34364,43 +33748,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q86471939",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.803055555,
-     52.95
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Portrait of the Duke of Arenberg on Horseback",
-    "year": "1636",
-    "location": "Holkham Hall",
-    "city": "Holkham",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Duke%20of%20Arenberg.jpg?width=500",
-    "qid": "Q88114122",
-    "wikidata": "https://www.wikidata.org/wiki/Q88114122",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q88114122",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",

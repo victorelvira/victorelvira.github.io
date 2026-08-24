@@ -40,30 +40,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.68585,
-     40.43691
+     -3.685848,
+     40.436911
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Adoration of the Magi",
-    "year": "c. 1565 — 1567",
+    "title": "The Adoration of the Magi with a Horse",
+    "year": "1568",
+    "location": "Museo Lázaro Galdiano",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo Lázaro Galdiano",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "45 × 52 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Adoration_marii.jpg/500px-Adoration_marii.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Heraklion",
-    "creation_lat": 35.3387,
-    "creation_lon": 25.1442,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Adoration%20marii.jpg?width=500",
+    "qid": "Q16589380",
+    "wikidata": "https://www.wikidata.org/wiki/Q16589380",
     "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16589380",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-lazaro-galdiano"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "45 × 52 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -77,23 +85,31 @@
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Adoration of the Magi",
-    "year": "c. 1565 — 1567",
-    "city": "Mexico City",
+    "title": "Adoration of the Magi with Camels",
+    "year": "1568",
     "location": "Museo Soumaya",
+    "city": "Mexico City",
+    "country": "Mexico",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/7222_Adoraci%C3%B3n_de_los_Reyes_Magos.jpg/500px-7222_Adoraci%C3%B3n_de_los_Reyes_Magos.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Heraklion",
-    "creation_lat": 35.3387,
-    "creation_lon": 25.1442,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/7222%20Adoraci%C3%B3n%20de%20los%20Reyes%20Magos.jpg?width=500",
+    "qid": "Q18221011",
+    "wikidata": "https://www.wikidata.org/wiki/Q18221011",
     "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18221011",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-soumaya",
-    "country": "Mexico"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -307,29 +323,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.05081,
-     55.84478
+     12.05080556,
+     55.84477778
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Adoration of the Magi",
-    "year": "c. 1569 — 1570",
-    "city": "Frederikssund",
+    "title": "Adoration of the Shepherds",
+    "year": "1569",
     "location": "Willumsens Museum",
+    "city": "Frederikssund Municipality",
+    "country": "Denmark",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "63.5 × 76 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Adoration_%281570%29_El_Greco.jpg/500px-Adoration_%281570%29_El_Greco.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Adoration%20%281570%29%20El%20Greco.jpg?width=500",
+    "qid": "Q16589390",
+    "wikidata": "https://www.wikidata.org/wiki/Q16589390",
     "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16589390",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "willumsens-museum"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "63.5 × 76 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -760,30 +785,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.5481,
-     47.3703
+     8.548055555,
+     47.370277777
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Portrait of Charles de Guise",
-    "year": "c. 1572",
-    "city": "Zürich",
-    "location": "Kunsthaus Zurich",
+    "title": "Portrait of Charles de Guise, cardinal of Lorraine, archbishop of Reims",
+    "year": "1572",
+    "location": "Kunsthaus Zürich",
+    "city": "Zurich",
+    "country": "Switzerland",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
-    "dimensions": "178.5 × 94.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/CharlesdeGuise.jpg/500px-CharlesdeGuise.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CharlesdeGuise.jpg?width=500",
+    "qid": "Q16590319",
+    "wikidata": "https://www.wikidata.org/wiki/Q16590319",
     "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16590319",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kunsthaus-zurich",
-    "country": "Switzerland"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "178.5 × 94.5 cm",
+    "medium": "oil on canvas"
    }
   },
   {
@@ -2761,30 +2794,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Portrait of a Cardinal (possibly Fernando Niño de Guevara)",
-    "year": "c.1600",
-    "city": "New York",
-    "country": "United States",
+    "title": "Cardinal Fernando Niño de Guevara",
+    "year": "1600",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cardinal%20Fernando%20Ni%C3%B1o%20de%20Guevara%20%281541%E2%80%931609%29%20MET%20DT854.jpg?width=500",
+    "qid": "Q3784753",
+    "wikidata": "https://www.wikidata.org/wiki/Q3784753",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3784753",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "67.2 × 42.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Cardinal_Fernando_Ni%C3%B1o_de_Guevara_%281541%E2%80%931609%29_MET_DT854.jpg/500px-Cardinal_Fernando_Ni%C3%B1o_de_Guevara_%281541%E2%80%931609%29_MET_DT854.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "metropolitan-museum-of-art"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -2862,30 +2896,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.37083,
-     39.47917
+     -0.370833333,
+     39.479166666
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint John the Baptist",
-    "year": "1600–1605",
+    "title": "St. John the Baptist, Valencia",
+    "year": "1600",
+    "location": "Museu de Belles Arts de València",
     "city": "Valencia",
     "country": "Spain",
-    "location": "Museu de Belles Arts de València",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20Saint%20Jean%20Baptiste.jpg?width=500",
+    "qid": "Q92902828",
+    "wikidata": "https://www.wikidata.org/wiki/Q92902828",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q92902828",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "103 × 62 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/El_Greco_Saint_Jean_Baptiste.jpg/500px-El_Greco_Saint_Jean_Baptiste.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museu-de-belles-arts-de-valencia"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -2999,30 +3034,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.02389,
-     39.85708
+     -4.023888888,
+     39.857083333
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint Luke (Toledo series)",
-    "year": "1602–1605",
+    "title": "Saint Luke the Evangelist",
+    "year": "1603",
+    "location": "Toledo Cathedral",
     "city": "Toledo",
     "country": "Spain",
-    "location": "Toledo Cathedral",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20035.jpg?width=500",
+    "qid": "Q16621351",
+    "wikidata": "https://www.wikidata.org/wiki/Q16621351",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16621351",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "100 × 76 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/El_Greco_035.jpg/500px-El_Greco_035.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "toledo-cathedral"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -3095,30 +3131,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.02389,
-     39.85708
+     -4.023888888,
+     39.857083333
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint Andrew (Toledo series)",
-    "year": "1602–1607",
+    "title": "Saint Andrew",
+    "year": "1605",
+    "location": "Toledo Cathedral",
     "city": "Toledo",
     "country": "Spain",
-    "location": "Toledo Cathedral",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20of%20Toledo%2C%20sacristy%2C%20with%20paintings%20by%20El%20Greco%20%2810%29%20%2829161324034%29.jpg?width=500",
+    "qid": "Q102159012",
+    "wikidata": "https://www.wikidata.org/wiki/Q102159012",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q102159012",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "98 × 78 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cathedral_of_Toledo%2C_sacristy%2C_with_paintings_by_El_Greco_%2810%29_%2829161324034%29.jpg/500px-Cathedral_of_Toledo%2C_sacristy%2C_with_paintings_by_El_Greco_%2810%29_%2829161324034%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "toledo-cathedral"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -3126,30 +3163,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.02389,
-     39.85708
+     -4.023888888,
+     39.857083333
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint Matthew (Toledo series)",
-    "year": "1602–1607",
+    "title": "Saint Matthew",
+    "year": "1605",
+    "location": "Toledo Cathedral",
     "city": "Toledo",
     "country": "Spain",
-    "location": "Toledo Cathedral",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20of%20Toledo%2C%20sacristy%2C%20with%20paintings%20by%20El%20Greco%20%281%29%20%2829676909202%29.jpg?width=500",
+    "qid": "Q102159307",
+    "wikidata": "https://www.wikidata.org/wiki/Q102159307",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q102159307",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "98 × 78 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Cathedral_of_Toledo%2C_sacristy%2C_with_paintings_by_El_Greco_%281%29_%2829676909202%29.jpg/500px-Cathedral_of_Toledo%2C_sacristy%2C_with_paintings_by_El_Greco_%281%29_%2829676909202%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "toledo-cathedral"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -3157,30 +3195,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.02389,
-     39.85708
+     -4.023888888,
+     39.857083333
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint Thaddeus (Saint Jude) (Toledo series)",
-    "year": "1602–1607",
+    "title": "Saint Jude",
+    "year": "1605",
+    "location": "Toledo Cathedral",
     "city": "Toledo",
     "country": "Spain",
-    "location": "Toledo Cathedral",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20of%20Toledo%2C%20sacristy%2C%20with%20paintings%20by%20El%20Greco%20%2817%29%20%2829160979634%29.jpg?width=500",
+    "qid": "Q102159160",
+    "wikidata": "https://www.wikidata.org/wiki/Q102159160",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q102159160",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "98 × 78 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cathedral_of_Toledo%2C_sacristy%2C_with_paintings_by_El_Greco_%2817%29_%2829160979634%29.jpg/500px-Cathedral_of_Toledo%2C_sacristy%2C_with_paintings_by_El_Greco_%2817%29_%2829160979634%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "toledo-cathedral"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -3608,30 +3647,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint James the Elder (Almadrones series)",
-    "year": "1608–1614",
+    "title": "St James",
+    "year": "1608",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "medium": "oil on canvas",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20%E2%80%93%20St%20James.jpg?width=500",
+    "qid": "Q6121274",
+    "wikidata": "https://www.wikidata.org/wiki/Q6121274",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q6121274",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "72 × 55 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/El_Greco_%E2%80%93_St_James.jpg/500px-El_Greco_%E2%80%93_St_James.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "oil on canvas",
     "creation_place": "Toledo",
     "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
-    "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-del-prado"
+    "creation_lon": -4.0273
    }
   },
   {
@@ -4997,87 +5037,6 @@
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint Andrew",
-    "year": "1605",
-    "location": "Toledo Cathedral",
-    "city": "Toledo",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20of%20Toledo%2C%20sacristy%2C%20with%20paintings%20by%20El%20Greco%20%2810%29%20%2829161324034%29.jpg?width=500",
-    "qid": "Q102159012",
-    "wikidata": "https://www.wikidata.org/wiki/Q102159012",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q102159012",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.023888888,
-     39.857083333
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Saint Jude",
-    "year": "1605",
-    "location": "Toledo Cathedral",
-    "city": "Toledo",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20of%20Toledo%2C%20sacristy%2C%20with%20paintings%20by%20El%20Greco%20%2817%29%20%2829160979634%29.jpg?width=500",
-    "qid": "Q102159160",
-    "wikidata": "https://www.wikidata.org/wiki/Q102159160",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q102159160",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.023888888,
-     39.857083333
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Saint Matthew",
-    "year": "1605",
-    "location": "Toledo Cathedral",
-    "city": "Toledo",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20of%20Toledo%2C%20sacristy%2C%20with%20paintings%20by%20El%20Greco%20%281%29%20%2829676909202%29.jpg?width=500",
-    "qid": "Q102159307",
-    "wikidata": "https://www.wikidata.org/wiki/Q102159307",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q102159307",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.023888888,
-     39.857083333
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
     "title": "Saint Paul",
     "year": "1605",
     "location": "Toledo Cathedral",
@@ -5495,33 +5454,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102173891",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.370833333,
-     39.479166666
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "St. John the Baptist, Valencia",
-    "year": "1600",
-    "location": "Museu de Belles Arts de València",
-    "city": "Valencia",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20Saint%20Jean%20Baptiste.jpg?width=500",
-    "qid": "Q92902828",
-    "wikidata": "https://www.wikidata.org/wiki/Q92902828",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q92902828",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -6081,33 +6013,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.373083,
-     39.472361
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Allegory of the Order of the Camaldolese",
-    "year": "1597",
-    "location": "Museu del Patriarca",
-    "city": "Valencia",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Greco%20-%20camaldulenses%20-%20Valencia.jpg?width=500",
-    "qid": "Q84430070",
-    "wikidata": "https://www.wikidata.org/wiki/Q84430070",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q84430070",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -2.247951297,
      43.298353655
     ]
@@ -6126,33 +6031,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102177002",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "The Resurrection",
-    "year": "1598",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20The%20Resurrection%20%28La%20Resurrecci%C3%B3n%20de%20Cristo%29%201597-1600.jpg?width=500",
-    "qid": "Q617629",
-    "wikidata": "https://www.wikidata.org/wiki/Q617629",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q617629",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -6315,33 +6193,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6119109",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Cardinal Fernando Niño de Guevara",
-    "year": "1600",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cardinal%20Fernando%20Ni%C3%B1o%20de%20Guevara%20%281541%E2%80%931609%29%20MET%20DT854.jpg?width=500",
-    "qid": "Q3784753",
-    "wikidata": "https://www.wikidata.org/wiki/Q3784753",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3784753",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -7377,43 +7228,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -99.20462,
-     19.44066
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Adoration of the Magi with Camels",
-    "year": "1568",
-    "location": "Museo Soumaya",
-    "city": "Mexico City",
-    "country": "Mexico",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/7222%20Adoraci%C3%B3n%20de%20los%20Reyes%20Magos.jpg?width=500",
-    "qid": "Q18221011",
-    "wikidata": "https://www.wikidata.org/wiki/Q18221011",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18221011",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -71.40754,
      41.8269
     ]
@@ -8424,33 +8238,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621982",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "St James",
-    "year": "1608",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20%E2%80%93%20St%20James.jpg?width=500",
-    "qid": "Q6121274",
-    "wikidata": "https://www.wikidata.org/wiki/Q6121274",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q6121274",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -9739,43 +9526,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.685848,
-     40.436911
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "The Adoration of the Magi with a Horse",
-    "year": "1568",
-    "location": "Museo Lázaro Galdiano",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Adoration%20marii.jpg?width=500",
-    "qid": "Q16589380",
-    "wikidata": "https://www.wikidata.org/wiki/Q16589380",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16589380",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -75.181388888,
      39.965833333
     ]
@@ -9880,43 +9630,6 @@
     "creation_place": "Venice",
     "creation_lat": 45.4375,
     "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     8.548055555,
-     47.370277777
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Portrait of Charles de Guise, cardinal of Lorraine, archbishop of Reims",
-    "year": "1572",
-    "location": "Kunsthaus Zürich",
-    "city": "Zurich",
-    "country": "Switzerland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CharlesdeGuise.jpg?width=500",
-    "qid": "Q16590319",
-    "wikidata": "https://www.wikidata.org/wiki/Q16590319",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16590319",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
     "_overrides": {
      "creation": {
       "at": "2026-08-24",
@@ -10084,60 +9797,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11838643",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.023888888,
-     39.857083333
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Saint Luke the Evangelist",
-    "year": "1603",
-    "location": "Toledo Cathedral",
-    "city": "Toledo",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20035.jpg?width=500",
-    "qid": "Q16621351",
-    "wikidata": "https://www.wikidata.org/wiki/Q16621351",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16621351",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     26.09598,
-     44.43978
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "The Marriage of the Virgin",
-    "year": "1613",
-    "location": "National Museum of Art of Romania",
-    "city": "Bucharest",
-    "country": "Romania",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20The%20Marriage%20of%20the%20Virgin%20-%20WGA10630.jpg?width=500",
-    "qid": "Q16619520",
-    "wikidata": "https://www.wikidata.org/wiki/Q16619520",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16619520",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -10409,43 +10068,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590356",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.05080556,
-     55.84477778
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Adoration of the Shepherds",
-    "year": "1569",
-    "location": "Willumsens Museum",
-    "city": "Frederikssund Municipality",
-    "country": "Denmark",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Adoration%20%281570%29%20El%20Greco.jpg?width=500",
-    "qid": "Q16589390",
-    "wikidata": "https://www.wikidata.org/wiki/Q16589390",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16589390",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -10780,33 +10402,6 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.690277777,
-     40.433333333
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Allegory of the Order of the Camaldolese",
-    "year": "1600",
-    "location": "Instituto Valencia of Don Juan",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RomualdGreco.jpg?width=500",
-    "qid": "Q16527161",
-    "wikidata": "https://www.wikidata.org/wiki/Q16527161",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16527161",
-     "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
   }

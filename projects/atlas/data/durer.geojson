@@ -445,30 +445,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.364722222,
+     52.508611111
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
-    "title": "Portrait of a Young Woman with Her Hair Done Up (formerly believed to be a Fürleger)",
+    "title": "Portrait of a Young Woman with braided hair",
     "year": "1497",
-    "city": "Berlin",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
     "attribution": "generally accepted",
-    "medium": "Watercolor on canvas ( Tüchlein )",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Bildnis%20einer%20jungen%20Frau%20mit%20geflochtenem%20Haar%2C%201497%2C%20Gem%C3%A4ldegalerie%20Berlin.jpg?width=500",
+    "qid": "Q3755489",
+    "wikidata": "https://www.wikidata.org/wiki/Q3755489",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3755489",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "56.5 × 43.1 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/D%C3%BCrer_-_Bildnis_einer_jungen_Frau_mit_geflochtenem_Haar%2C_1497%2C_Gem%C3%A4ldegalerie_Berlin.jpg/500px-D%C3%BCrer_-_Bildnis_einer_jungen_Frau_mit_geflochtenem_Haar%2C_1497%2C_Gem%C3%A4ldegalerie_Berlin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Watercolor on canvas ( Tüchlein )",
     "creation_place": "Nuremberg",
     "creation_lat": 49.4521,
-    "creation_lon": 11.0767,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Albrecht Dürer",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "gemaldegalerie"
+    "creation_lon": 11.0767
    }
   },
   {
@@ -1110,30 +1111,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
-    "title": "Salvator Mundi unfinished",
+    "title": "Salvator Mundi",
     "year": "1505",
-    "city": "New York",
-    "country": "United States",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil on panel",
-    "dimensions": "58.1 × 47 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Salvator_Mundi%2C_by_Albrecht_D%C3%BCrer%2C_MET.jpg/500px-Salvator_Mundi%2C_by_Albrecht_D%C3%BCrer%2C_MET.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salvator%20Mundi%2C%20by%20Albrecht%20D%C3%BCrer%2C%20MET.jpg?width=500",
+    "qid": "Q19911432",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911432",
     "_source": {
-     "source": "Wikipedia: List of paintings by Albrecht Dürer",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911432",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "58.1 × 47 cm",
+    "medium": "Oil on panel"
    }
   },
   {
@@ -1393,30 +1402,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.364722222,
+     52.508611111
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
-    "title": "Portrait of a Young Girl (with a Red Beret)",
+    "title": "Portrait of a Young Woman with a (Red) Beret",
     "year": "1507",
-    "city": "Berlin",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
     "attribution": "generally accepted",
-    "medium": "Color on parchment transferred to panel",
-    "dimensions": "32.5 × 22.3 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/D%C3%BCrer_-_Bildnis_eines_M%C3%A4dchens_mit_rotem_Barett%2C_1507%2C_557I.jpg/500px-D%C3%BCrer_-_Bildnis_eines_M%C3%A4dchens_mit_rotem_Barett%2C_1507%2C_557I.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Bildnis%20eines%20M%C3%A4dchens%20mit%20rotem%20Barett%2C%201507%2C%20557I.jpg?width=500",
+    "qid": "Q3937756",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937756",
     "_source": {
-     "source": "Wikipedia: List of paintings by Albrecht Dürer",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937756",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "gemaldegalerie"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "32.5 × 22.3 cm",
+    "medium": "Color on parchment transferred to panel"
    }
   },
   {
@@ -1568,29 +1585,30 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.20388
+     48.203880555
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
-    "title": "Adoration of the Trinity (Landauer Altar) with frame designed by Dürer",
+    "title": "Adoration of the Trinity",
     "year": "1511",
+    "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
-    "location": "Kunsthistorisches Museum",
     "attribution": "generally accepted",
-    "medium": "Oil on panel (limewood)",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Adoration%20of%20the%20Trinity%20%28Landauer%20Altar%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q688870",
+    "wikidata": "https://www.wikidata.org/wiki/Q688870",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q688870",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "135 × 123.4 (limewood) 147,7 × 135.4 (frame)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_%28Landauer_Altar%29_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_%28Landauer_Altar%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Oil on panel (limewood)",
     "creation_place": "Nuremberg",
     "creation_lat": 49.4521,
-    "creation_lon": 11.0767,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Albrecht Dürer",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "kunsthistorisches-museum"
+    "creation_lon": 11.0767
    }
   },
   {
@@ -1815,30 +1833,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.25528,
-     43.76833
+     11.255277777,
+     43.768333333
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
-    "title": "Apostles Philip and James",
+    "title": "Saint Philip",
     "year": "1516",
+    "location": "Uffizi Gallery",
     "city": "Florence",
     "country": "Italy",
-    "location": "Uffizi Gallery",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20009.jpg?width=500",
+    "qid": "Q3947062",
+    "wikidata": "https://www.wikidata.org/wiki/Q3947062",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3947062",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "45 × 38 46 × 37 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Albrecht_D%C3%BCrer_009.jpg/500px-Albrecht_D%C3%BCrer_009.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "medium": "Tempera on panel",
     "creation_place": "Nuremberg",
     "creation_lat": 49.4521,
-    "creation_lon": 11.0767,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Albrecht Dürer",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "uffizi-gallery"
+    "creation_lon": 11.0767
    }
   },
   {
@@ -2507,33 +2526,6 @@
    },
    "properties": {
     "painter": "Albrecht Dürer",
-    "title": "Saint Philip",
-    "year": "1516",
-    "location": "Uffizi Gallery",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20009.jpg?width=500",
-    "qid": "Q3947062",
-    "wikidata": "https://www.wikidata.org/wiki/Q3947062",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3947062",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.255277777,
-     43.768333333
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
     "title": "The Apostle James the Elder",
     "year": "1516",
     "location": "Uffizi Gallery",
@@ -2573,33 +2565,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009969",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Adoration of the Trinity",
-    "year": "1511",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Adoration%20of%20the%20Trinity%20%28Landauer%20Altar%29%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q688870",
-    "wikidata": "https://www.wikidata.org/wiki/Q688870",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q688870",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -2690,70 +2655,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Portrait of a Young Woman with braided hair",
-    "year": "1497",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Bildnis%20einer%20jungen%20Frau%20mit%20geflochtenem%20Haar%2C%201497%2C%20Gem%C3%A4ldegalerie%20Berlin.jpg?width=500",
-    "qid": "Q3755489",
-    "wikidata": "https://www.wikidata.org/wiki/Q3755489",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3755489",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     13.364722222,
-     52.508611111
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Portrait of a Young Woman with a (Red) Beret",
-    "year": "1507",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Bildnis%20eines%20M%C3%A4dchens%20mit%20rotem%20Barett%2C%201507%2C%20557I.jpg?width=500",
-    "qid": "Q3937756",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937756",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937756",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.885277777,
      52.36
     ]
@@ -2772,33 +2673,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17319783",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.075556,
-     49.448333
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Portrait of Barbara Holper",
-    "year": "1490",
-    "location": "Germanisches Nationalmuseum",
-    "city": "Nuremberg",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20072.jpg?width=500",
-    "qid": "Q3937468",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937468",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937468",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
@@ -3027,33 +2901,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Portrait of the artist's father",
-    "year": "1490",
-    "location": "Uffizi Gallery",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Ritratto%20del%20padre%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18683052",
-    "wikidata": "https://www.wikidata.org/wiki/Q18683052",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18683052",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      16.3616,
      48.203880555
     ]
@@ -3136,43 +2983,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27697311",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Salvator Mundi",
-    "year": "1505",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salvator%20Mundi%2C%20by%20Albrecht%20D%C3%BCrer%2C%20MET.jpg?width=500",
-    "qid": "Q19911432",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911432",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911432",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Venice",
@@ -4481,33 +4291,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48554354",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Albrecht Dürer",
-    "title": "Lot and his daughters",
-    "year": "",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Lot%20und%20seine%20T%C3%B6chter%20%28NGA%29.jpg?width=500",
-    "qid": "Q84574488",
-    "wikidata": "https://www.wikidata.org/wiki/Q84574488",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q84574488",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }

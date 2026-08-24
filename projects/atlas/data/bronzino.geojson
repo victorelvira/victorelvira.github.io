@@ -1020,30 +1020,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9672,
-     40.7711
+     -73.967222222,
+     40.771111111
     ]
    },
    "properties": {
     "painter": "Bronzino",
-    "title": "Portrait of Lodovico Capponi",
-    "year": "c. 1550–1555",
-    "city": "New York",
-    "location": "Frick Collection",
+    "title": "Lodovico Capponi",
+    "year": "1550",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "Oil on panel",
-    "dimensions": "117 x 86 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Angelo_Bronzino_055.jpg/500px-Angelo_Bronzino_055.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20055.jpg?width=500",
+    "qid": "Q19857192",
+    "wikidata": "https://www.wikidata.org/wiki/Q19857192",
     "_source": {
-     "source": "Wikipedia: List of works by Bronzino",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19857192",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "frick-collection",
-    "country": "United States"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "117 x 86 cm",
+    "medium": "Oil on panel"
    }
   },
   {
@@ -1051,30 +1059,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Bronzino",
-    "title": "Portrait of Don Garcia de' Medici",
-    "year": "c. 1550",
+    "title": "Garzia de' Medici",
+    "year": "1550",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "medium": "Oil on panel",
-    "dimensions": "38 x 48 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Garcia_de%27_Medici_by_Angelo_Bronzino.jpg/500px-Garcia_de%27_Medici_by_Angelo_Bronzino.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Garcia%20de%27%20Medici%20by%20Angelo%20Bronzino.jpg?width=500",
+    "qid": "Q27697982",
+    "wikidata": "https://www.wikidata.org/wiki/Q27697982",
     "_source": {
-     "source": "Wikipedia: List of works by Bronzino",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27697982",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "38 x 48 cm",
+    "medium": "Oil on panel"
    }
   },
   {
@@ -1414,80 +1430,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111577849",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.203880555
-    ]
-   },
-   "properties": {
-    "painter": "Bronzino",
-    "title": "Holy Family with St. Anne and the Infant St. John",
-    "year": "1545",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20di%20Cosimo%2C%20called%20Bronzino%20-%20Holy%20Family%20with%20St.%20Anne%20and%20the%20Infant%20St.%20John%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q27979302",
-    "wikidata": "https://www.wikidata.org/wiki/Q27979302",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27979302",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Bronzino",
-    "title": "Garzia de' Medici",
-    "year": "1550",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Garcia%20de%27%20Medici%20by%20Angelo%20Bronzino.jpg?width=500",
-    "qid": "Q27697982",
-    "wikidata": "https://www.wikidata.org/wiki/Q27697982",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27697982",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Florence",
@@ -2144,43 +2086,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20440484",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.967222222,
-     40.771111111
-    ]
-   },
-   "properties": {
-    "painter": "Bronzino",
-    "title": "Lodovico Capponi",
-    "year": "1550",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20055.jpg?width=500",
-    "qid": "Q19857192",
-    "wikidata": "https://www.wikidata.org/wiki/Q19857192",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19857192",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Florence",

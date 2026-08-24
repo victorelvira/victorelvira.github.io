@@ -1386,28 +1386,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93091,
-     41.30791
+     -72.930906,
+     41.307908
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Chateaux de St Michael, Bonneville, Savoy",
-    "year": "1802-1803",
-    "city": "Connecticut",
+    "title": "Chateau de St. Michael, Bonneville, Savoy",
+    "year": "1802",
     "location": "Yale Center for British Art",
+    "city": "New Haven",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "91.4 × 121.9 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Joseph_Mallord_William_Turner_-_Chateau_de_St._Michael%2C_Bonneville%2C_Savoy_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Chateau_de_St._Michael%2C_Bonneville%2C_Savoy_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Chateau%20de%20St.%20Michael%2C%20Bonneville%2C%20Savoy%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q23757006",
+    "wikidata": "https://www.wikidata.org/wiki/Q23757006",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23757006",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "yale-center-for-british-art"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "91.4 × 121.9 cm"
    }
   },
   {
@@ -2354,28 +2363,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93091,
-     41.30791
+     -72.930906,
+     41.307908
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "The ‘Victory’ Returning from Trafalgar, in Three Positions",
+    "title": "The Victory Returning from Trafalgar, in Three Position",
     "year": "1806",
-    "city": "Connecticut",
     "location": "Yale Center for British Art",
+    "city": "New Haven",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "67 × 100.3 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Joseph_Mallord_William_Turner_-_The_Victory_Returning_from_Trafalgar%2C_in_Three_Positions_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_The_Victory_Returning_from_Trafalgar%2C_in_Three_Positions_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20The%20Victory%20Returning%20from%20Trafalgar%2C%20in%20Three%20Positions%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q23700453",
+    "wikidata": "https://www.wikidata.org/wiki/Q23700453",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23700453",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "yale-center-for-british-art"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "67 × 100.3 cm"
    }
   },
   {
@@ -3228,13 +3246,13 @@
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Newark Abbey",
+    "title": "Newark Abbey on the Wey",
     "year": "1807",
     "city": "London",
     "country": "United Kingdom",
     "location": "Tate Britain",
     "attribution": "generally accepted",
-    "dimensions": "29.5 × 35.2 cm",
+    "dimensions": "36.8 × 73.7 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Joseph_Mallord_William_Turner_%281775-1851%29_-_Newark_Abbey_on_the_Wey_-_N02677_-_Tate.jpg/500px-Joseph_Mallord_William_Turner_%281775-1851%29_-_Newark_Abbey_on_the_Wey_-_N02677_-_Tate.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
     "creation_place": "London",
@@ -3244,7 +3262,16 @@
      "source": "Wikipedia: List of paintings by J. M. W. Turner",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "tate-britain"
+    "museum_id": "tate-britain",
+    "qid": "Q28533133",
+    "wikidata": "https://www.wikidata.org/wiki/Q28533133",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q28533133 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -3464,45 +3491,6 @@
       "at": "2026-08-24",
       "source": "Wikidata reconciliation",
       "note": "matched to Q28532600 by normalised title + year (±8), same creator (merge_wd_extras)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.12722,
-     51.49083
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Newark Abbey on the Wey",
-    "year": "1807",
-    "city": "London",
-    "country": "United Kingdom",
-    "location": "Tate Britain",
-    "attribution": "generally accepted",
-    "dimensions": "36.8 × 73.7 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Joseph_Mallord_William_Turner_%281775-1851%29_-_Newark_Abbey_on_the_Wey_-_N02677_-_Tate.jpg/500px-Joseph_Mallord_William_Turner_%281775-1851%29_-_Newark_Abbey_on_the_Wey_-_N02677_-_Tate.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "tate-britain",
-    "qid": "Q28533133",
-    "wikidata": "https://www.wikidata.org/wiki/Q28533133",
-    "_overrides": {
-     "qid": {
-      "at": "2026-08-24",
-      "source": "Wikidata reconciliation",
-      "note": "matched to Q28533133 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     }
    }
@@ -5368,28 +5356,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93091,
-     41.30791
+     -72.930906,
+     41.307908
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Lake Avernus: Aeneas and the Cumaean Sibyl",
-    "year": "1814- 15",
-    "city": "Connecticut",
+    "title": "Lake Avernus: Aeneas and the Cumaean Sybil",
+    "year": "1814",
     "location": "Yale Center for British Art",
+    "city": "New Haven",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "71.8 × 97.2 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joseph_Mallord_William_Turner_-_Lake_Avernus-_Aeneas_and_the_Cumaean_Sybil_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Lake_Avernus-_Aeneas_and_the_Cumaean_Sybil_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Lake%20Avernus-%20Aeneas%20and%20the%20Cumaean%20Sybil%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q23758112",
+    "wikidata": "https://www.wikidata.org/wiki/Q23758112",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23758112",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "yale-center-for-british-art"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "71.8 × 97.2 cm"
    }
   },
   {
@@ -13163,23 +13160,31 @@
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Van Tromp, Going About to Please His Masters",
+    "title": "Van Tromp",
     "year": "1844",
+    "location": "J. Paul Getty Museum",
     "city": "Los Angeles",
     "country": "United States",
-    "location": "Getty Museum",
     "attribution": "generally accepted",
-    "dimensions": "91.4 × 121.9 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Joseph_Mallord_William_Turner_%28British_-_Van_Tromp%2C_Going_About_to_Please_His_Masters_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_%28British_-_Van_Tromp%2C_Going_About_to_Please_His_Masters_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20%28British%20-%20Van%20Tromp%2C%20Going%20About%20to%20Please%20His%20Masters%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20179743",
+    "wikidata": "https://www.wikidata.org/wiki/Q20179743",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20179743",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "getty-museum"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "91.4 × 121.9 cm"
    }
   },
   {
@@ -13265,28 +13270,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93091,
-     41.30791
+     -72.930906,
+     41.307908
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Off the Nore",
-    "year": "1840-1845",
-    "city": "Connecticut",
+    "title": "Squally Weather",
+    "year": "1840",
     "location": "Yale Center for British Art",
+    "city": "New Haven",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "30.5 × 45.7 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Joseph_Mallord_William_Turner_-_Off_the_Nore_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Off_the_Nore_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Off%20the%20Nore%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q23758107",
+    "wikidata": "https://www.wikidata.org/wiki/Q23758107",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23758107",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "yale-center-for-british-art"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "30.5 × 45.7 cm"
    }
   },
   {
@@ -15501,191 +15515,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.475,
-     34.0775
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Van Tromp",
-    "year": "1844",
-    "location": "J. Paul Getty Museum",
-    "city": "Los Angeles",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20%28British%20-%20Van%20Tromp%2C%20Going%20About%20to%20Please%20His%20Masters%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q20179743",
-    "wikidata": "https://www.wikidata.org/wiki/Q20179743",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20179743",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.930906,
-     41.307908
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "The Victory Returning from Trafalgar, in Three Position",
-    "year": "1806",
-    "location": "Yale Center for British Art",
-    "city": "New Haven",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20The%20Victory%20Returning%20from%20Trafalgar%2C%20in%20Three%20Positions%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q23700453",
-    "wikidata": "https://www.wikidata.org/wiki/Q23700453",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q23700453",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.930906,
-     41.307908
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Chateau de St. Michael, Bonneville, Savoy",
-    "year": "1802",
-    "location": "Yale Center for British Art",
-    "city": "New Haven",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Chateau%20de%20St.%20Michael%2C%20Bonneville%2C%20Savoy%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q23757006",
-    "wikidata": "https://www.wikidata.org/wiki/Q23757006",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q23757006",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.930906,
-     41.307908
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Squally Weather",
-    "year": "1840",
-    "location": "Yale Center for British Art",
-    "city": "New Haven",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Off%20the%20Nore%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q23758107",
-    "wikidata": "https://www.wikidata.org/wiki/Q23758107",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q23758107",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.930906,
-     41.307908
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Lake Avernus: Aeneas and the Cumaean Sybil",
-    "year": "1814",
-    "location": "Yale Center for British Art",
-    "city": "New Haven",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Lake%20Avernus-%20Aeneas%20and%20the%20Cumaean%20Sybil%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q23758112",
-    "wikidata": "https://www.wikidata.org/wiki/Q23758112",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q23758112",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -46.655833333,
      -23.561111111
     ]
@@ -15704,43 +15533,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49872775",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -81.611666666,
-     41.508888888
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "The Burning of the Houses of Lords and Commons, 16 October 1834",
-    "year": "1835",
-    "location": "Cleveland Museum of Art",
-    "city": "Cleveland",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20The%20Burning%20of%20the%20Houses%20of%20Lords%20and%20Commons%2C%2016%20October%201834%20-%201942.647%20-%20Cleveland%20Museum%20of%20Art.jpg?width=500",
-    "qid": "Q60514853",
-    "wikidata": "https://www.wikidata.org/wiki/Q60514853",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q60514853",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -16074,43 +15866,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q15077736",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.181388888,
-     39.965833333
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "The Burning of the Houses of Lords and Commons",
-    "year": "1834",
-    "location": "Philadelphia Museum of Art",
-    "city": "Philadelphia",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%2C%20English%20-%20The%20Burning%20of%20the%20Houses%20of%20Lords%20and%20Commons%2C%20October%2016%2C%201834%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3204090",
-    "wikidata": "https://www.wikidata.org/wiki/Q3204090",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3204090",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -16471,43 +16226,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105071481",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.224719444,
-     46.798888888
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Scène dans le Derbyshire",
-    "year": "1827",
-    "location": "Musée national des beaux-arts du Québec",
-    "city": "La Cité-Limoilou",
-    "country": "Canada",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turner%20-%20Sc%C3%A8ne%20dans%20le%20Derbyshire.%20Les%20Hauteurs%20d%E2%80%99Abraham%2C%20Matlock%20Bath%2C%201827%20ou%20avant%2C%201959.579.jpg?width=500",
-    "qid": "Q59562914",
-    "wikidata": "https://www.wikidata.org/wiki/Q59562914",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q59562914",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "London",
@@ -17266,43 +16984,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119823338",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -2.9214,
-     53.3735
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Schloss Rosenau, Bavaria, Seat of HRH Prince Albert of Coburg",
-    "year": "1841",
-    "location": "Sudley House",
-    "city": "Liverpool",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turner%20-%20Schloss%20Rosenau%2C%20Bavaria%2C%20Seat%20of%20HRH%20Prince%20Albert%20of%20Coburg%2C%20c.1841%2C%20WAG%20309.jpg?width=500",
-    "qid": "Q119052308",
-    "wikidata": "https://www.wikidata.org/wiki/Q119052308",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q119052308",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },

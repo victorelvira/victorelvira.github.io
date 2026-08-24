@@ -236,29 +236,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
-    "title": "Lola of Valencia",
+    "title": "Lola de Valence",
     "year": "1862",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "123 × 92 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Lola_de_Valence_%281862%29_-_Edouard_Manet_%28Mus%C3%A9e_d%27Orsay%2C_Paris%29.jpg/500px-Lola_de_Valence_%281862%29_-_Edouard_Manet_%28Mus%C3%A9e_d%27Orsay%2C_Paris%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lola%20de%20Valence%20%281862%29%20-%20Edouard%20Manet%20%28Mus%C3%A9e%20d%27Orsay%2C%20Paris%29.jpg?width=500",
+    "qid": "Q44124",
+    "wikidata": "https://www.wikidata.org/wiki/Q44124",
     "_source": {
-     "source": "Wikipedia: List of paintings by Édouard Manet",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q44124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay",
-    "city": "Paris",
-    "country": "France"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "123 × 92 cm"
    }
   },
   {
@@ -4186,43 +4194,6 @@
    },
    "properties": {
     "painter": "Édouard Manet",
-    "title": "Lola de Valence",
-    "year": "1862",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lola%20de%20Valence%20%281862%29%20-%20Edouard%20Manet%20%28Mus%C3%A9e%20d%27Orsay%2C%20Paris%29.jpg?width=500",
-    "qid": "Q44124",
-    "wikidata": "https://www.wikidata.org/wiki/Q44124",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q44124",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Édouard Manet",
     "title": "Head of a Young Woman (Ellen Andrée)",
     "year": "1878",
     "location": "Musée d'Orsay",
@@ -7155,43 +7126,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19906223",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Édouard Manet",
-    "title": "The Monet Family in Their Garden at Argenteuil",
-    "year": "1874",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20--The%20Monet%20Family%20in%20Their%20Garden%20at%20Argenteuil.jpg?width=500",
-    "qid": "Q19911640",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911640",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911640",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",

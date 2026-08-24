@@ -768,7 +768,10 @@
     },
     "museum_id": "turin-city-museum-of-ancient-art",
     "qid": "Q1477302",
-    "wikidata": "https://www.wikidata.org/wiki/Q1477302"
+    "wikidata": "https://www.wikidata.org/wiki/Q1477302",
+    "creation_place": "The Hague",
+    "creation_lat": 52.08,
+    "creation_lon": 4.31
    }
   },
   {
@@ -1641,43 +1644,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q137599158",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.68548,
-     45.0711
-    ]
-   },
-   "properties": {
-    "painter": "Jan van Eyck",
-    "title": "Birth of John the Baptist",
-    "year": "1423",
-    "location": "Museo Civico d'Arte Antica",
-    "city": "Turin",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/14th-century%20painters%20-%20Les%20Tr%C3%A8s%20Belles%20Heures%20de%20Notre%20Dame%20de%20Jean%20de%20Berry%20-%20WGA16014.jpg?width=500",
-    "qid": "Q11789743",
-    "wikidata": "https://www.wikidata.org/wiki/Q11789743",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11789743",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "The Hague",
-    "creation_lat": 52.08,
-    "creation_lon": 4.31,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },

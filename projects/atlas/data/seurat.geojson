@@ -93,28 +93,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1879 Paysage rose",
-    "year": "1879 Paysage rose",
-    "city": "Paris",
-    "country": "France",
+    "title": "Paysage rose",
+    "year": "1879",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Champs_%C3%A0_Barbizon_%28Field_in_Barbizon%29_by_Georges_Seurat.jpg/500px-Champs_%C3%A0_Barbizon_%28Field_in_Barbizon%29_by_Georges_Seurat.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Champs%20%C3%A0%20Barbizon%20%28Field%20in%20Barbizon%29%20by%20Georges%20Seurat.jpg?width=500",
+    "qid": "Q3888858",
+    "wikidata": "https://www.wikidata.org/wiki/Q3888858",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3888858",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -156,20 +164,30 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1881 Sunset",
-    "year": "1881 Sunset",
-    "location": "Bristol Museum & Art Gallery",
+    "title": "Sunset",
+    "year": "1881",
+    "location": "Bristol City Museum & Art Gallery",
+    "city": "City of Bristol",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Georges_Seurat_-_Sunset_PC_9.jpg/500px-Georges_Seurat_-_Sunset_PC_9.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Sunset%20PC%209.jpg?width=500",
+    "qid": "Q90735791",
+    "wikidata": "https://www.wikidata.org/wiki/Q90735791",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q90735791",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "bristol-museum-art-gallery"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -177,28 +195,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1881 Landscape with \"The Poor Fisherman\" by Puvis de Chavannes",
-    "year": "1881 Landscape with \"The Poor Fisherman\" by Puvis de Chavannes",
-    "city": "Paris",
-    "country": "France",
+    "title": "Landscape with Puvis de Chavannes' Poor Fisherman",
+    "year": "1881",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Seurat_Il_povero_pescatore.jpg/500px-Seurat_Il_povero_pescatore.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Il%20povero%20pescatore.jpg?width=500",
+    "qid": "Q3882034",
+    "wikidata": "https://www.wikidata.org/wiki/Q3882034",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3882034",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -235,28 +261,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1881 to 1882 A man leaning against a Parapet",
-    "year": "1881 to 1882 A man leaning against a Parapet",
-    "city": "New York",
+    "title": "A Man Leaning on a Parapet",
+    "year": "1881",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Georges_Seurat_-_A_Man_Leaning_on_a_Parapet_-_2019.141.17_-_Metropolitan_Museum_of_Art.jpg/500px-Georges_Seurat_-_A_Man_Leaning_on_a_Parapet_-_2019.141.17_-_Metropolitan_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20A%20Man%20Leaning%20on%20a%20Parapet%20-%202019.141.17%20-%20Metropolitan%20Museum%20of%20Art.jpg?width=500",
+    "qid": "Q78638850",
+    "wikidata": "https://www.wikidata.org/wiki/Q78638850",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q78638850",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -294,27 +328,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 Peasant with a Hoe",
-    "year": "1882 Peasant with a Hoe",
-    "city": "Washington",
+    "title": "Peasant with a Hoe",
+    "year": "1882",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Peasant_with_a_Hoe_C16531.jpg/500px-Peasant_with_a_Hoe_C16531.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peasant%20with%20a%20Hoe%20C16531.jpg?width=500",
+    "qid": "Q20189540",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189540",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189540",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -322,28 +364,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.29056,
-     55.86861
+     -4.290636382,
+     55.868608412
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 to 1883 Boy sitting in a meadow",
-    "year": "1882 to 1883 Boy sitting in a meadow",
-    "city": "Glasgow",
-    "country": "United Kingdom",
+    "title": "Boy Sitting in a Meadow",
+    "year": "1882",
     "location": "Kelvingrove Art Gallery and Museum",
+    "city": "Glasgow City",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Georges_Seurat_001.jpg/500px-Georges_Seurat_001.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20001.jpg?width=500",
+    "qid": "Q87842421",
+    "wikidata": "https://www.wikidata.org/wiki/Q87842421",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q87842421",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kelvingrove-art-gallery-and-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -351,28 +401,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 Le Petit Paysan en bleu",
-    "year": "1882 Le Petit Paysan en bleu",
-    "city": "Paris",
-    "country": "France",
+    "title": "Le Petit paysan en bleu",
+    "year": "1881",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Georges_Seurat_-_Le_petit_paysan_en_bleu.jpg/500px-Georges_Seurat_-_Le_petit_paysan_en_bleu.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Le%20petit%20paysan%20en%20bleu.jpg?width=500",
+    "qid": "Q3766158",
+    "wikidata": "https://www.wikidata.org/wiki/Q3766158",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3766158",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -380,28 +438,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.95861,
+     6.958611,
      50.9375
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 Massive figure in a meadow in Barbizon",
-    "year": "1882 Massive figure in a meadow in Barbizon",
-    "city": "Cologne",
+    "title": "Massif figure in a landscape",
+    "year": "1882",
+    "location": "Wallraf–Richartz Museum",
+    "city": "Altstadt-Nord",
     "country": "Germany",
-    "location": "Wallraf-Richartz Museum",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Georges_Seurat_-_Figure_massive_dans_un_paysage_%C3%A0_Barbizon_PC_27.jpg/500px-Georges_Seurat_-_Figure_massive_dans_un_paysage_%C3%A0_Barbizon_PC_27.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Figure%20massive%20dans%20un%20paysage%20%C3%A0%20Barbizon%20PC%2027.jpg?width=500",
+    "qid": "Q116143435",
+    "wikidata": "https://www.wikidata.org/wiki/Q116143435",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116143435",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "wallraf-richartz-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -437,28 +503,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.97972,
-     53.41
+     -2.979666,
+     53.410068
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 to 1883 White houses in Ville d'Avray",
-    "year": "1882 to 1883 White houses in Ville d'Avray",
-    "city": "Liverpool",
+    "title": "Ville d'Avray, white houses",
+    "year": "1882",
     "location": "Walker Art Gallery",
+    "city": "Liverpool",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Georges_Seurat_062.jpg/500px-Georges_Seurat_062.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20062.jpg?width=500",
+    "qid": "Q107351629",
+    "wikidata": "https://www.wikidata.org/wiki/Q107351629",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107351629",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "walker-art-gallery",
-    "country": "United Kingdom"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -496,27 +570,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 to 1883 Man with a Hoe",
-    "year": "1882 to 1883 Man with a Hoe",
-    "city": "Washington",
+    "title": "Man with a Hoe",
+    "year": "1882",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Man_with_a_Hoe_C16560.jpg/500px-Man_with_a_Hoe_C16560.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Man%20with%20a%20Hoe%20C16560.jpg?width=500",
+    "qid": "Q20189514",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189514",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189514",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -525,27 +607,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 to 1883 The Stone breaker",
-    "year": "1882 to 1883 The Stone breaker",
-    "city": "Washington",
+    "title": "The Stone Breaker",
+    "year": "1882",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/The_Stone_Breaker_C17508.jpg/500px-The_Stone_Breaker_C17508.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Stone%20Breaker%20C17508.jpg?width=500",
+    "qid": "Q20189560",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189560",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189560",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -612,27 +702,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 Haymakers at Montfermeil",
-    "year": "1882 Haymakers at Montfermeil",
-    "city": "Washington",
+    "title": "Haymakers at Montfermeil",
+    "year": "1882",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Haymakers_at_Montfermeil_C16629.jpg/500px-Haymakers_at_Montfermeil_C16629.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Haymakers%20at%20Montfermeil%20C16629.jpg?width=500",
+    "qid": "Q20189492",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189492",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189492",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -669,28 +767,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 to 1883 The Gardener",
-    "year": "1882 to 1883 The Gardener",
-    "city": "New York",
+    "title": "The Gardener",
+    "year": "1882",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/The_Gardener_MET_DT1499.jpg/500px-The_Gardener_MET_DT1499.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gardener%20MET%20DT1499.jpg?width=500",
+    "qid": "Q19912803",
+    "wikidata": "https://www.wikidata.org/wiki/Q19912803",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19912803",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -699,27 +805,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 Haystacks",
-    "year": "1882 Haystacks",
-    "city": "Washington",
+    "title": "Haystacks",
+    "year": "1882",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Haystacks_C17507.jpg/500px-Haystacks_C17507.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Haystacks%20C17507.jpg?width=500",
+    "qid": "Q20189498",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189498",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189498",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -786,27 +900,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Figures in a Landscape",
-    "year": "1883 Figures in a Landscape",
-    "city": "Washington",
+    "title": "Figures in a Landscape",
+    "year": "1883",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Figures_in_a_Landscape_C16890.jpg/500px-Figures_in_a_Landscape_C16890.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Figures%20in%20a%20Landscape%20C16890.jpg?width=500",
+    "qid": "Q20189600",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189600",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189600",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -815,27 +937,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 A Summer Landscape",
-    "year": "1883 A Summer Landscape",
-    "city": "Washington",
+    "title": "A Summer Landscape",
+    "year": "1883",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/A_Summer_Landscape_C17089.jpg/500px-A_Summer_Landscape_C17089.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Summer%20Landscape%20C17089.jpg?width=500",
+    "qid": "Q20189665",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189665",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189665",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -843,57 +973,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Arbres, hiver",
-    "year": "1883 Arbres, hiver",
-    "city": "Paris",
-    "country": "France",
+    "title": "Winter",
+    "year": "1883",
     "location": "Musée d'Orsay",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Seurat_Arbres%2C_Hiver.JPG/500px-Seurat_Arbres%2C_Hiver.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-d-orsay"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.32653,
-     48.85997
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "1883 Lisière de bois au printemps",
-    "year": "1883 Lisière de bois au printemps",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
-    "location": "Musée d'Orsay",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Lisi%C3%A8re_de_bois_au_printemps%2C_Georges_Seurat%2C_vers_1882-1883_%2816411914023%29.jpg/500px-Lisi%C3%A8re_de_bois_au_printemps%2C_Georges_Seurat%2C_vers_1882-1883_%2816411914023%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Arbres%2C%20Hiver.JPG?width=500",
+    "qid": "Q3607971",
+    "wikidata": "https://www.wikidata.org/wiki/Q3607971",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3607971",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -901,28 +1010,66 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8811,
-     52.3583
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 to 1884 The Seine at Courbevoie",
+    "title": "Lisière de bois au printemps",
+    "year": "1882",
+    "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lisi%C3%A8re%20de%20bois%20au%20printemps%2C%20Georges%20Seurat%2C%20vers%201882-1883%20%2816411914023%29.jpg?width=500",
+    "qid": "Q3832504",
+    "wikidata": "https://www.wikidata.org/wiki/Q3832504",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3832504",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.881111111,
+     52.358333333
+    ]
+   },
+   "properties": {
+    "painter": "Georges Seurat",
+    "title": "The Seine at Courbevoie",
     "year": "1883 to 1884 The Seine at Courbevoie",
+    "location": "Van Gogh Museum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "location": "Van Gogh Museum",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/De_Seine_bij_Courbevoie_-_s0489S1998_-_Van_Gogh_Museum.jpg/500px-De_Seine_bij_Courbevoie_-_s0489S1998_-_Van_Gogh_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20Seine%20bij%20Courbevoie%20-%20s0489S1998%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19838019",
+    "wikidata": "https://www.wikidata.org/wiki/Q19838019",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19838019",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Paris",
     "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "van-gogh-museum"
+    "creation_lon": 2.3522
    }
   },
   {
@@ -930,28 +1077,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     132.45806,
-     34.39867
+     132.458061111,
+     34.398669444
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Around the Town",
-    "year": "1883 Around the Town",
+    "title": "Around the Town",
+    "year": "1883",
     "location": "Hiroshima Museum of Art",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Georges_Seurat_-_Vers_le_bourg_PC_63.jpg/500px-Georges_Seurat_-_Vers_le_bourg_PC_63.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "hiroshima-museum-of-art",
     "city": "Motomachi",
-    "country": "Japan"
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Vers%20le%20bourg%20PC%2063.jpg?width=500",
+    "qid": "Q83179707",
+    "wikidata": "https://www.wikidata.org/wiki/Q83179707",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q83179707",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -989,27 +1144,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Watering can at Le Raincy",
-    "year": "1883 Watering can at Le Raincy",
-    "city": "Washington",
+    "title": "The Watering Can - Garden at Le Raincy",
+    "year": "1883",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Watering_Can_-_Garden_at_Le_Raincy_C16561.jpg/500px-The_Watering_Can_-_Garden_at_Le_Raincy_C16561.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Watering%20Can%20-%20Garden%20at%20Le%20Raincy%20C16561.jpg?width=500",
+    "qid": "Q20189671",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189671",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189671",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1017,26 +1180,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.08028,
-     48.29972
+     4.08027778,
+     48.29972222
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Suburb",
-    "year": "1883 Suburb",
-    "location": "Musée d'art moderne de Troyes",
+    "title": "Banlieue",
+    "year": "1881",
+    "location": "Musée d'Art moderne de Troyes",
+    "city": "Troyes",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Georges_Seurat_007.jpg/500px-Georges_Seurat_007.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20007.jpg?width=500",
+    "qid": "Q3899880",
+    "wikidata": "https://www.wikidata.org/wiki/Q3899880",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3899880",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-art-moderne-de-troyes"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1160,28 +1333,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.63444,
-     43.31028
+     -73.634444,
+     43.310278
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Banks of the Seine near Courbevoie",
-    "year": "1883 Banks of the Seine near Courbevoie",
-    "city": "Glens Falls",
+    "title": "Banks of the Seine near Courbevoie",
+    "year": "1883",
     "location": "The Hyde Collection",
+    "city": "New York",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/George_Seurat_-_River%27s_Edge_PC_77.jpg/500px-George_Seurat_-_River%27s_Edge_PC_77.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/George%20Seurat%20-%20River%27s%20Edge%20PC%2077.jpg?width=500",
+    "qid": "Q110894272",
+    "wikidata": "https://www.wikidata.org/wiki/Q110894272",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110894272",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "the-hyde-collection",
-    "country": "United States"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1189,28 +1370,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Allée en forêt, Barbizon",
-    "year": "1883 Allée en forêt, Barbizon",
-    "city": "Paris",
-    "country": "France",
+    "title": "Path in the woods, Barbizon",
+    "year": "1883",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Alley_in_the_Forest_Barbizon_%28All%C3%A9e_en_for%C3%AAt%2C_Barbizon%29_by_Georges_Seurat.jpg/500px-Alley_in_the_Forest_Barbizon_%28All%C3%A9e_en_for%C3%AAt%2C_Barbizon%29_by_Georges_Seurat.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alley%20in%20the%20Forest%20Barbizon%20%28All%C3%A9e%20en%20for%C3%AAt%2C%20Barbizon%29%20by%20Georges%20Seurat.jpg?width=500",
+    "qid": "Q3955440",
+    "wikidata": "https://www.wikidata.org/wiki/Q3955440",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3955440",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1276,26 +1465,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.08028,
-     48.29972
+     4.08027778,
+     48.29972222
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Fishermen on the banks of the Seine",
-    "year": "1883 Fishermen on the banks of the Seine",
-    "location": "Musée d'art moderne de Troyes",
+    "title": "The Anglers, Study for la Grande Jatte",
+    "year": "1883",
+    "location": "Musée d'Art moderne de Troyes",
+    "city": "Troyes",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Seurat_Pescatori.jpg/500px-Seurat_Pescatori.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Pescatori.jpg?width=500",
+    "qid": "Q3900691",
+    "wikidata": "https://www.wikidata.org/wiki/Q3900691",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3900691",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-art-moderne-de-troyes"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1333,27 +1532,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Horse and Boats",
-    "year": "1883 Horse and Boats",
-    "city": "Washington",
+    "title": "Horse and Boats (Study for  Bathers at Asnieres )",
+    "year": "1883",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Horse_and_Boats_C17510.jpg/500px-Horse_and_Boats_C17510.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse%20and%20Boats%20C17510.jpg?width=500",
+    "qid": "Q20189626",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189626",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189626",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1362,27 +1569,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Bathers",
-    "year": "1883 Bathers",
-    "city": "Washington",
+    "title": "Bathers at Asnières (Study I)",
+    "year": "1883",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bathers_-_Study_for_Bathers_at_Asni%C3%A8res_C17509.jpg/500px-Bathers_-_Study_for_Bathers_at_Asni%C3%A8res_C17509.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bathers%20-%20Study%20for%20Bathers%20at%20Asni%C3%A8res%20C17509.jpg?width=500",
+    "qid": "Q20189581",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189581",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189581",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1390,28 +1605,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 The Rainbow",
-    "year": "1883 The Rainbow",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "The Rainbow: Study for 'Bathers at Asnières'",
+    "year": "1883",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Georges_Seurat_-_The_Rainbow_Study_for_Bathers_at_Asni%C3%A8res.jpg/500px-Georges_Seurat_-_The_Rainbow_Study_for_Bathers_at_Asni%C3%A8res.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20The%20Rainbow%20Study%20for%20Bathers%20at%20Asni%C3%A8res.jpg?width=500",
+    "qid": "Q26708470",
+    "wikidata": "https://www.wikidata.org/wiki/Q26708470",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26708470",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1419,28 +1642,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.61167,
-     41.50889
+     -81.611666666,
+     41.508888888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Sitting Man on the Banks of the Seine",
-    "year": "1883 Sitting Man on the Banks of the Seine",
+    "title": "Study for \"Bathers at Asnières\"",
+    "year": "1880",
+    "location": "Cleveland Museum of Art",
     "city": "Cleveland",
     "country": "United States",
-    "location": "Cleveland Museum of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Georges_Seurat_-_Study_for_%22Bathers_at_Asni%C3%A8res%22_-_1958.51_-_Cleveland_Museum_of_Art.jpg/500px-Georges_Seurat_-_Study_for_%22Bathers_at_Asni%C3%A8res%22_-_1958.51_-_Cleveland_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20%22Bathers%20at%20Asni%C3%A8res%22%20-%201958.51%20-%20Cleveland%20Museum%20of%20Art.jpg?width=500",
+    "qid": "Q60465161",
+    "wikidata": "https://www.wikidata.org/wiki/Q60465161",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q60465161",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "cleveland-museum-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1448,28 +1679,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Five Male Figures",
-    "year": "1883 Five Male Figures",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Bathers at Asnières (Study II)",
+    "year": "1883",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Georges_Seurat_-_Study_for_Bathers_at_Asni%C3%A8res_PC_91.jpg/500px-Georges_Seurat_-_Study_for_Bathers_at_Asni%C3%A8res_PC_91.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Bathers%20at%20Asni%C3%A8res%20PC%2091.jpg?width=500",
+    "qid": "Q26691800",
+    "wikidata": "https://www.wikidata.org/wiki/Q26691800",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26691800",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1507,27 +1746,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 The Seine with Clothing on the Bank",
-    "year": "1883 The Seine with Clothing on the Bank",
-    "city": "Washington",
+    "title": "The Seine with Clothing on the Bank",
+    "year": "1883",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/The_Seine_with_Clothing_on_the_Bank_C16017.jpg/500px-The_Seine_with_Clothing_on_the_Bank_C16017.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Seine%20with%20Clothing%20on%20the%20Bank%20C16017.jpg?width=500",
+    "qid": "Q20189658",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189658",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189658",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1593,28 +1840,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.580960249,
+     39.044969557
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Bathers sitting on the Beach of the Seine",
-    "year": "1883 Bathers sitting on the Beach of the Seine",
+    "title": "Study for \"Bathers at Asnières\"",
+    "year": "1883",
+    "location": "The Nelson-Atkins Museum of Art",
     "city": "Kansas City",
     "country": "United States",
-    "location": "Nelson-Atkins Museum of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Georges_Seurat_-_%C3%89tude_pour_Une_baignade_%C3%A0_Asni%C3%A8res_PC_96.jpg/500px-Georges_Seurat_-_%C3%89tude_pour_Une_baignade_%C3%A0_Asni%C3%A8res_PC_96.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20%C3%89tude%20pour%20Une%20baignade%20%C3%A0%20Asni%C3%A8res%20PC%2096.jpg?width=500",
+    "qid": "Q64578123",
+    "wikidata": "https://www.wikidata.org/wiki/Q64578123",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64578123",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "nelson-atkins-museum-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1683,28 +1938,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.11944,
-     52.20028
+     0.119444,
+     52.200278
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 The Rue St Vincent, Paris in Spring",
-    "year": "1884 The Rue St Vincent, Paris in Spring",
-    "city": "Cambridge",
+    "title": "The Rue St. Vincent, Paris, in Spring",
+    "year": "1884",
     "location": "Fitzwilliam Museum",
+    "city": "Cambridge",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Seurat_Rue_Saint-Vincent.jpg/500px-Seurat_Rue_Saint-Vincent.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Rue%20Saint-Vincent.jpg?width=500",
+    "qid": "Q50816044",
+    "wikidata": "https://www.wikidata.org/wiki/Q50816044",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50816044",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "fitzwilliam-museum",
-    "country": "United Kingdom"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1712,28 +1975,29 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.078055555,
+     59.328611111
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 The bridge at Bineau",
+    "title": "The Bridge at Bineau",
     "year": "1884 The bridge at Bineau",
+    "location": "Nationalmuseum",
     "city": "Stockholm",
     "country": "Sweden",
-    "location": "Nationalmuseum",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/The_Bridge_at_Bineau_%28Georges_Seurat%29_-_Nationalmuseum_-_23400.tif/lossy-page1-250px-The_Bridge_at_Bineau_%28Georges_Seurat%29_-_Nationalmuseum_-_23400.tif.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Bridge%20at%20Bineau%20%28Georges%20Seurat%29%20-%20Nationalmuseum%20-%2023400.tif?width=500",
+    "qid": "Q18600244",
+    "wikidata": "https://www.wikidata.org/wiki/Q18600244",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18600244",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Paris",
     "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "nationalmuseum"
+    "creation_lon": 2.3522
    }
   },
   {
@@ -1742,27 +2006,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 to 1885 Study for La Grande Jatte",
-    "year": "1884 to 1885 Study for La Grande Jatte",
-    "city": "Washington",
+    "title": "La Grande Jatte (Study II)",
+    "year": "1884",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Study_for_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/500px-Study_for_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Study%20for%20La%20Grande%20Jatte%2C%20Georges%20Seurat%2C%201884.jpg?width=500",
+    "qid": "Q20189720",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189720",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189720",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1770,28 +2042,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 Study for A Sunday on La Grande Jatte",
-    "year": "1884 Study for A Sunday on La Grande Jatte",
-    "city": "New York",
+    "title": "Group of characters",
+    "year": "1884",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Georges_Seurat_038.jpg/500px-Georges_Seurat_038.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20038.jpg?width=500",
+    "qid": "Q20186455",
+    "wikidata": "https://www.wikidata.org/wiki/Q20186455",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20186455",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1828,28 +2108,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 Seated male and reclining female figure",
-    "year": "1884 Seated male and reclining female figure",
-    "city": "Paris",
-    "country": "France",
+    "title": "Moyenne distance, gauche, deux personnages. Étude pour la Grande-Jatte",
+    "year": "1884",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Georges_Seurat_-_Etude_pur-un-dimanche-apr%C3%A8s-midi-%C3%A0-l-%C3%AEle-de-la-grande-jatte-1884_PC_117.jpg/500px-Georges_Seurat_-_Etude_pur-un-dimanche-apr%C3%A8s-midi-%C3%A0-l-%C3%AEle-de-la-grande-jatte-1884_PC_117.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Etude%20pur-un-dimanche-apr%C3%A8s-midi-%C3%A0-l-%C3%AEle-de-la-grande-jatte-1884%20PC%20117.jpg?width=500",
+    "qid": "Q3853687",
+    "wikidata": "https://www.wikidata.org/wiki/Q3853687",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3853687",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1886,28 +2174,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 to 1886 Seated figures and woman with large hat",
-    "year": "1884 to 1886 Seated figures and woman with large hat",
-    "city": "Paris",
-    "country": "France",
+    "title": "Study for \"Bathers at Asnières\"",
+    "year": "1883",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Georges_Seurat-_Etude_pour_Un_dimanche_apr%C3%A8s-midi_%C3%A0_l%27%C3%AEle_de_la_Grande_Jatte_PC_120.jpg/500px-Georges_Seurat-_Etude_pour_Un_dimanche_apr%C3%A8s-midi_%C3%A0_l%27%C3%AEle_de_la_Grande_Jatte_PC_120.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat-%20Etude%20pour%20Un%20dimanche%20apr%C3%A8s-midi%20%C3%A0%20l%27%C3%AEle%20de%20la%20Grande%20Jatte%20PC%20120.jpg?width=500",
+    "qid": "Q3766184",
+    "wikidata": "https://www.wikidata.org/wiki/Q3766184",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3766184",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -1979,21 +2275,30 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 View of the Grande Jatte",
-    "year": "1884 View of the Grande Jatte",
-    "city": "Winona",
+    "title": "Landscape, Ile de la Grande-Jatte",
+    "year": "1884",
     "location": "Minnesota Marine Art Museum",
+    "city": "Winona",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Georges_Seurat_-_Paysage%2C_L_Ile_de_la_Grande-Jatte_PC130.jpg/500px-Georges_Seurat_-_Paysage%2C_L_Ile_de_la_Grande-Jatte_PC130.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Paysage%2C%20L%20Ile%20de%20la%20Grande-Jatte%20PC130.jpg?width=500",
+    "qid": "Q96098657",
+    "wikidata": "https://www.wikidata.org/wiki/Q96098657",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q96098657",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "minnesota-marine-art-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2058,27 +2363,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 to 1885 Study of Figures for La Grande Jatte",
-    "year": "1884 to 1885 Study of Figures for La Grande Jatte",
-    "city": "Washington",
+    "title": "Study of Figures for  La Grande Jatte",
+    "year": "1884",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Study_of_Figures_for_La_Grande_Jatte_C17090.jpg/500px-Study_of_Figures_for_La_Grande_Jatte_C17090.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Study%20of%20Figures%20for%20La%20Grande%20Jatte%20C17090.jpg?width=500",
+    "qid": "Q20189724",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189724",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189724",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2114,28 +2427,29 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.11944,
-     52.20028
+     0.119444,
+     52.200278
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 to 1885 Promenading Couple",
+    "title": "Study for 'A Sunday on the Island of La Grand Jatte': Couple Walking",
     "year": "1884 to 1885 Promenading Couple",
-    "city": "Cambridge",
     "location": "Fitzwilliam Museum",
+    "city": "Cambridge",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Georges_Seurat_-_Study_for_A_Sunday_on_the_Island_of_La_Grand_Jatte_-_Couple_Walking_PC_140.jpg/500px-Georges_Seurat_-_Study_for_A_Sunday_on_the_Island_of_La_Grand_Jatte_-_Couple_Walking_PC_140.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20A%20Sunday%20on%20the%20Island%20of%20La%20Grand%20Jatte%20-%20Couple%20Walking%20PC%20140.jpg?width=500",
+    "qid": "Q119145067",
+    "wikidata": "https://www.wikidata.org/wiki/Q119145067",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119145067",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Paris",
     "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "fitzwilliam-museum",
-    "country": "United Kingdom"
+    "creation_lon": 2.3522
    }
   },
   {
@@ -2143,28 +2457,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 Final study for La Grande Jatte",
-    "year": "1884 Final study for La Grande Jatte",
-    "city": "New York",
+    "title": "Final study for \"La Grande Jatte\"",
+    "year": "1884",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Georges_Seurat_034.jpg/500px-Georges_Seurat_034.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20034.jpg?width=500",
+    "qid": "Q3976307",
+    "wikidata": "https://www.wikidata.org/wiki/Q3976307",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3976307",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2320,28 +2642,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 Mill ruin at Grandchamp",
-    "year": "1885 Mill ruin at Grandchamp",
-    "city": "Paris",
-    "country": "France",
+    "title": "Ruines à Grandcamp",
+    "year": "1885",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Georges_Seurat_-_Ruines_%C3%A0_Grandcamp.jpg/500px-Georges_Seurat_-_Ruines_%C3%A0_Grandcamp.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Ruines%20%C3%A0%20Grandcamp.jpg?width=500",
+    "qid": "Q3941966",
+    "wikidata": "https://www.wikidata.org/wiki/Q3941966",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3941966",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2349,28 +2679,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.02111,
-     35.25694
+     139.021145,
+     35.256711
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 Boats at low tide at Grandchamp",
-    "year": "1885 Boats at low tide at Grandchamp",
-    "city": "Hakone",
+    "title": "Low Tide at Grandcamp",
+    "year": "1885",
     "location": "Pola Museum of Art",
+    "city": "Sengokuhara",
+    "country": "Japan",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Georges_Seurat_-_Low_Tide_at_Grandcamp_PC_155.jpg/500px-Georges_Seurat_-_Low_Tide_at_Grandcamp_PC_155.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Low%20Tide%20at%20Grandcamp%20PC%20155.jpg?width=500",
+    "qid": "Q79790954",
+    "wikidata": "https://www.wikidata.org/wiki/Q79790954",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q79790954",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "pola-museum-of-art",
-    "country": "Japan"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2378,28 +2716,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 Fort-Samson, Grandchamp",
-    "year": "1885 Fort-Samson, Grandchamp",
+    "title": "Fort Samson, Grandcamp",
+    "year": "1885",
+    "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage Museum",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Georges_Seurat_-_View_of_Fort_Samson.jpg/500px-Georges_Seurat_-_View_of_Fort_Samson.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20View%20of%20Fort%20Samson.jpg?width=500",
+    "qid": "Q27967940",
+    "wikidata": "https://www.wikidata.org/wiki/Q27967940",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27967940",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2407,28 +2753,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     149.1364,
-     -35.3003
+     149.136388888,
+     -35.300277777
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 Study for \"Le Bec du Hoc, Grandchamp\"",
-    "year": "1885 Study for \"Le Bec du Hoc, Grandchamp\"",
-    "city": "Canberra",
+    "title": "Study for Le Bec du Hoc, Grandcamp",
+    "year": "1885",
     "location": "National Gallery of Australia",
+    "city": "Canberra",
+    "country": "Australia",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Georges_Seurat_-_Study_for_Le_Bec_du_Hoc%2C_Grandcamp_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_Study_for_Le_Bec_du_Hoc%2C_Grandcamp_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Le%20Bec%20du%20Hoc%2C%20Grandcamp%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q50734518",
+    "wikidata": "https://www.wikidata.org/wiki/Q50734518",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50734518",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-australia",
-    "country": "Australia"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2436,28 +2790,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 Le Bec du Hoc, Grandchamp",
-    "year": "1885 Le Bec du Hoc, Grandchamp",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Le Bec du Hoc, Grandcamp",
+    "year": "1885",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Seurat-Le_Bec_du_Hoc_%C3%A0_Grandcamp.jpg/500px-Seurat-Le_Bec_du_Hoc_%C3%A0_Grandcamp.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat-Le%20Bec%20du%20Hoc%20%C3%A0%20Grandcamp.jpg?width=500",
+    "qid": "Q26705602",
+    "wikidata": "https://www.wikidata.org/wiki/Q26705602",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26705602",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2494,28 +2856,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 The Morning Walk , Study for \"The Seine at Courbevoie\"",
-    "year": "1885 The Morning Walk , Study for \"The Seine at Courbevoie\"",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "The Morning Walk",
+    "year": "1884",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Georges_Seurat_050.jpg/500px-Georges_Seurat_050.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20050.jpg?width=500",
+    "qid": "Q3713940",
+    "wikidata": "https://www.wikidata.org/wiki/Q3713940",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3713940",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2523,27 +2893,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.81694,
-     52.09583
+     5.816944444,
+     52.095833333
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1886 Harbour at Honfleur",
-    "year": "1886 Harbour at Honfleur",
-    "city": "Otterlo",
+    "title": "Corner of the harbour, Honfleur",
+    "year": "1886",
     "location": "Kröller-Müller Museum",
+    "city": "Ede",
+    "country": "Netherlands",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/1886_Seurat_Hafen_von_Honfleur_anagoria.JPG/500px-1886_Seurat_Hafen_von_Honfleur_anagoria.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1886%20Seurat%20Hafen%20von%20Honfleur%20anagoria.JPG?width=500",
+    "qid": "Q3617404",
+    "wikidata": "https://www.wikidata.org/wiki/Q3617404",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3617404",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kroller-muller-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2637,27 +3016,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.81694,
-     52.09583
+     5.816944444,
+     52.095833333
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1886 Harbour entrance at Honfleur",
-    "year": "1886 Harbour entrance at Honfleur",
-    "city": "Otterlo",
+    "title": "End of the pier, Honfleur",
+    "year": "1886",
     "location": "Kröller-Müller Museum",
+    "city": "Ede",
+    "country": "Netherlands",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Georges_Seurat_-_Bout_de_la_jet%C3%A9e_%C3%A0_Honfleur_PC_171.jpg/500px-Georges_Seurat_-_Bout_de_la_jet%C3%A9e_%C3%A0_Honfleur_PC_171.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Bout%20de%20la%20jet%C3%A9e%20%C3%A0%20Honfleur%20PC%20171.jpg?width=500",
+    "qid": "Q3796592",
+    "wikidata": "https://www.wikidata.org/wiki/Q3796592",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3796592",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kroller-muller-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2784,28 +3172,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1887 Les Poseuses , Study of a standing model from the front",
-    "year": "1887 Les Poseuses , Study of a standing model from the front",
-    "city": "Paris",
-    "country": "France",
+    "title": "Poseuse debout, de face, étude pour Les Poseuses",
+    "year": "1886",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Poseuse_debout%2C_de_face%2C_%C3%A9tude_pour_Les_Poseuses_%28ca._1887%29_Georges_Seurat_%28Mus%C3%A9e_d%27Orsay%29.jpg/500px-Poseuse_debout%2C_de_face%2C_%C3%A9tude_pour_Les_Poseuses_%28ca._1887%29_Georges_Seurat_%28Mus%C3%A9e_d%27Orsay%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poseuse%20debout%2C%20de%20face%2C%20%C3%A9tude%20pour%20Les%20Poseuses%20%28ca.%201887%29%20Georges%20Seurat%20%28Mus%C3%A9e%20d%27Orsay%29.jpg?width=500",
+    "qid": "Q3859804",
+    "wikidata": "https://www.wikidata.org/wiki/Q3859804",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3859804",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2813,28 +3209,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1887 to 1890 Les Poseuses , Study of a standing model",
-    "year": "1887 to 1890 Les Poseuses , Study of a standing model",
-    "city": "Paris",
-    "country": "France",
+    "title": "Poseuse debout",
+    "year": "1887",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Seurat_Modella_in_piedi.jpg/500px-Seurat_Modella_in_piedi.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Modella%20in%20piedi.jpg?width=500",
+    "qid": "Q3859805",
+    "wikidata": "https://www.wikidata.org/wiki/Q3859805",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3859805",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2842,28 +3246,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1887 Les Poseuses , Study of a seated model in profile",
-    "year": "1887 Les Poseuses , Study of a seated model in profile",
-    "city": "Paris",
-    "country": "France",
+    "title": "Poseuse assise, de profil",
+    "year": "1887",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Seurat_Modella_di_profilo.jpg/500px-Seurat_Modella_di_profilo.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Modella%20di%20profilo.jpg?width=500",
+    "qid": "Q3859806",
+    "wikidata": "https://www.wikidata.org/wiki/Q3859806",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3859806",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -2871,28 +3283,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1887 Les Poseuses , Study of a model from behind",
-    "year": "1887 Les Poseuses , Study of a model from behind",
-    "city": "Paris",
-    "country": "France",
+    "title": "Poseuse de dos",
+    "year": "1887",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Seurat_Modella_di_spalle.jpg/500px-Seurat_Modella_di_spalle.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Modella%20di%20spalle.jpg?width=500",
+    "qid": "Q1119387",
+    "wikidata": "https://www.wikidata.org/wiki/Q1119387",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1119387",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3052,27 +3472,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1888 Seascape at Port-en-Bessin, Normandy",
-    "year": "1888 Seascape at Port-en-Bessin, Normandy",
-    "city": "Washington",
+    "title": "Seascape at Port-en-Bessin, Normandy",
+    "year": "1888",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Georges_Seurat_046.jpg/500px-Georges_Seurat_046.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20046.jpg?width=500",
+    "qid": "Q20189963",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189963",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20189963",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3109,27 +3537,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.81694,
-     52.09583
+     5.816944444,
+     52.095833333
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1888 View of Port-en-Bessin, Sunday",
-    "year": "1888 View of Port-en-Bessin, Sunday",
-    "city": "Otterlo",
+    "title": "Sunday at Port-en-Bessin",
+    "year": "1888",
     "location": "Kröller-Müller Museum",
+    "city": "Ede",
+    "country": "Netherlands",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Georges_Seurat_057.jpg/500px-Georges_Seurat_057.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20057.jpg?width=500",
+    "qid": "Q3712836",
+    "wikidata": "https://www.wikidata.org/wiki/Q3712836",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3712836",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kroller-muller-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3166,28 +3603,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1888 Port-en-Bessin, Port entrance at high tide",
-    "year": "1888 Port-en-Bessin, Port entrance at high tide",
-    "city": "Paris",
-    "country": "France",
+    "title": "Port-en-Bessin, outer harbour, high tide",
+    "year": "1888",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Georges_Seurat_049.jpg/500px-Georges_Seurat_049.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20049.jpg?width=500",
+    "qid": "Q3908651",
+    "wikidata": "https://www.wikidata.org/wiki/Q3908651",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3908651",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3427,28 +3872,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.181388888,
+     39.965833333
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 Moored boats and trees at gravelines",
-    "year": "1890 Moored boats and trees at gravelines",
+    "title": "Moored Boats and Trees",
+    "year": "1890",
+    "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "location": "Philadelphia Museum of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Georges_Seurat%2C_French_-_Moored_Boats_and_Trees_-_Google_Art_Project.jpg/500px-Georges_Seurat%2C_French_-_Moored_Boats_and_Trees_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%2C%20French%20-%20Moored%20Boats%20and%20Trees%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18685714",
+    "wikidata": "https://www.wikidata.org/wiki/Q18685714",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18685714",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "philadelphia-museum-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3457,27 +3910,35 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 Seascape at Gravelines",
-    "year": "1890 Seascape at Gravelines",
-    "city": "Washington",
+    "title": "Seascape (Gravelines)",
+    "year": "1890",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Seascape_%28Gravelines%29_A17554.jpg/500px-Seascape_%28Gravelines%29_A17554.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seascape%20%28Gravelines%29%20A17554.jpg?width=500",
+    "qid": "Q20190227",
+    "wikidata": "https://www.wikidata.org/wiki/Q20190227",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20190227",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3514,28 +3975,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.580960249,
+     39.044969557
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 Study for \"The Channel of Gravelines, Petit Fort Philippe\"",
-    "year": "1890 Study for \"The Channel of Gravelines, Petit Fort Philippe\"",
+    "title": "The Channel at Gravelines, Petit-Fort-Philippe",
+    "year": "1890",
+    "location": "The Nelson-Atkins Museum of Art",
     "city": "Kansas City",
     "country": "United States",
-    "location": "Nelson-Atkins Museum of Art",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Georges_Seurat_-_The_Channel_at_Gravelines%2C_Petit-Fort-Philippe_PC_208.jpg/500px-Georges_Seurat_-_The_Channel_at_Gravelines%2C_Petit-Fort-Philippe_PC_208.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20The%20Channel%20at%20Gravelines%2C%20Petit-Fort-Philippe%20PC%20208.jpg?width=500",
+    "qid": "Q64540662",
+    "wikidata": "https://www.wikidata.org/wiki/Q64540662",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64540662",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "nelson-atkins-museum-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3543,27 +4012,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.185655,
+     39.826019
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 The Channel of Gravelines, Petit Fort Philippe",
-    "year": "1890 The Channel of Gravelines, Petit Fort Philippe",
+    "title": "The Channel of Gravelines, Petit Fort Philippe",
+    "year": "1890",
+    "location": "Museo de Arte de Indianápolis",
     "city": "Indianapolis",
-    "location": "Indianapolis Museum of Art",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Seurat%2C_Georges_-_The_Channel_of_Gravelines%2C_Petit_Fort_Philippe_-_Google_Art_Project.jpg/500px-Seurat%2C_Georges_-_The_Channel_of_Gravelines%2C_Petit_Fort_Philippe_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%2C%20Georges%20-%20The%20Channel%20of%20Gravelines%2C%20Petit%20Fort%20Philippe%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3793238",
+    "wikidata": "https://www.wikidata.org/wiki/Q3793238",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3793238",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "indianapolis-museum-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3571,28 +4049,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 Gravelines. Grand Fort Philippe",
-    "year": "1890 Gravelines. Grand Fort Philippe",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "The Channel of Gravelines, Grand Fort-Philippe",
+    "year": "1890",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Georges_Seurat_016.jpg/500px-Georges_Seurat_016.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20016.jpg?width=500",
+    "qid": "Q26492621",
+    "wikidata": "https://www.wikidata.org/wiki/Q26492621",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26492621",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3600,27 +4086,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.81694,
-     52.09583
+     5.816944444,
+     52.095833333
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 The Channel at Gravelines, in the Direction of the Sea",
-    "year": "1890 The Channel at Gravelines, in the Direction of the Sea",
-    "city": "Otterlo",
+    "title": "The Gravelines Channel, towards the sea",
+    "year": "1890",
     "location": "Kröller-Müller Museum",
+    "city": "Ede",
+    "country": "Netherlands",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/1890_Seurat_Kanal_von_Gravelines_anagoria.JPG/500px-1890_Seurat_Kanal_von_Gravelines_anagoria.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1890%20Seurat%20Kanal%20von%20Gravelines%20anagoria.JPG?width=500",
+    "qid": "Q3793239",
+    "wikidata": "https://www.wikidata.org/wiki/Q3793239",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3793239",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kroller-muller-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3685,28 +4180,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1891 Study for \"The Circus\"",
-    "year": "1891 Study for \"The Circus\"",
-    "city": "Paris",
-    "country": "France",
+    "title": "The Circus (Study)",
+    "year": "1890",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Georges_Seurat_065.jpg/500px-Georges_Seurat_065.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20065.jpg?width=500",
+    "qid": "Q3976298",
+    "wikidata": "https://www.wikidata.org/wiki/Q3976298",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3976298",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3752,43 +4255,6 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "Poseuse de dos",
-    "year": "1887",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Modella%20di%20spalle.jpg?width=500",
-    "qid": "Q1119387",
-    "wikidata": "https://www.wikidata.org/wiki/Q1119387",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q1119387",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
     "title": "À droite. Moyenne distance. Étude pour la Grande-Jatte",
     "year": "1884",
     "location": "Musée d'Orsay",
@@ -3801,339 +4267,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3602905",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Winter",
-    "year": "1883",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Arbres%2C%20Hiver.JPG?width=500",
-    "qid": "Q3607971",
-    "wikidata": "https://www.wikidata.org/wiki/Q3607971",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3607971",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Le Petit paysan en bleu",
-    "year": "1881",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Le%20petit%20paysan%20en%20bleu.jpg?width=500",
-    "qid": "Q3766158",
-    "wikidata": "https://www.wikidata.org/wiki/Q3766158",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3766158",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study for \"Bathers at Asnières\"",
-    "year": "1883",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat-%20Etude%20pour%20Un%20dimanche%20apr%C3%A8s-midi%20%C3%A0%20l%27%C3%AEle%20de%20la%20Grande%20Jatte%20PC%20120.jpg?width=500",
-    "qid": "Q3766184",
-    "wikidata": "https://www.wikidata.org/wiki/Q3766184",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3766184",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Lisière de bois au printemps",
-    "year": "1882",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lisi%C3%A8re%20de%20bois%20au%20printemps%2C%20Georges%20Seurat%2C%20vers%201882-1883%20%2816411914023%29.jpg?width=500",
-    "qid": "Q3832504",
-    "wikidata": "https://www.wikidata.org/wiki/Q3832504",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3832504",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Moyenne distance, gauche, deux personnages. Étude pour la Grande-Jatte",
-    "year": "1884",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Etude%20pur-un-dimanche-apr%C3%A8s-midi-%C3%A0-l-%C3%AEle-de-la-grande-jatte-1884%20PC%20117.jpg?width=500",
-    "qid": "Q3853687",
-    "wikidata": "https://www.wikidata.org/wiki/Q3853687",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3853687",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Poseuse debout, de face, étude pour Les Poseuses",
-    "year": "1886",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poseuse%20debout%2C%20de%20face%2C%20%C3%A9tude%20pour%20Les%20Poseuses%20%28ca.%201887%29%20Georges%20Seurat%20%28Mus%C3%A9e%20d%27Orsay%29.jpg?width=500",
-    "qid": "Q3859804",
-    "wikidata": "https://www.wikidata.org/wiki/Q3859804",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3859804",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Poseuse debout",
-    "year": "1887",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Modella%20in%20piedi.jpg?width=500",
-    "qid": "Q3859805",
-    "wikidata": "https://www.wikidata.org/wiki/Q3859805",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3859805",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Poseuse assise, de profil",
-    "year": "1887",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Modella%20di%20profilo.jpg?width=500",
-    "qid": "Q3859806",
-    "wikidata": "https://www.wikidata.org/wiki/Q3859806",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3859806",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Landscape with Puvis de Chavannes' Poor Fisherman",
-    "year": "1881",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Il%20povero%20pescatore.jpg?width=500",
-    "qid": "Q3882034",
-    "wikidata": "https://www.wikidata.org/wiki/Q3882034",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3882034",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -4227,191 +4360,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Paysage rose",
-    "year": "1879",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Champs%20%C3%A0%20Barbizon%20%28Field%20in%20Barbizon%29%20by%20Georges%20Seurat.jpg?width=500",
-    "qid": "Q3888858",
-    "wikidata": "https://www.wikidata.org/wiki/Q3888858",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3888858",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Port-en-Bessin, outer harbour, high tide",
-    "year": "1888",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20049.jpg?width=500",
-    "qid": "Q3908651",
-    "wikidata": "https://www.wikidata.org/wiki/Q3908651",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3908651",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Ruines à Grandcamp",
-    "year": "1885",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Ruines%20%C3%A0%20Grandcamp.jpg?width=500",
-    "qid": "Q3941966",
-    "wikidata": "https://www.wikidata.org/wiki/Q3941966",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3941966",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Path in the woods, Barbizon",
-    "year": "1883",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alley%20in%20the%20Forest%20Barbizon%20%28All%C3%A9e%20en%20for%C3%AAt%2C%20Barbizon%29%20by%20Georges%20Seurat.jpg?width=500",
-    "qid": "Q3955440",
-    "wikidata": "https://www.wikidata.org/wiki/Q3955440",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3955440",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Circus (Study)",
-    "year": "1890",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20065.jpg?width=500",
-    "qid": "Q3976298",
-    "wikidata": "https://www.wikidata.org/wiki/Q3976298",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3976298",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -73.963333333,
      40.779444444
     ]
@@ -4430,43 +4378,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3965263",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Final study for \"La Grande Jatte\"",
-    "year": "1884",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20034.jpg?width=500",
-    "qid": "Q3976307",
-    "wikidata": "https://www.wikidata.org/wiki/Q3976307",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3976307",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -4566,43 +4477,6 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "The Gardener",
-    "year": "1882",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gardener%20MET%20DT1499.jpg?width=500",
-    "qid": "Q19912803",
-    "wikidata": "https://www.wikidata.org/wiki/Q19912803",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19912803",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
     "title": "Landscape at Saint-Ouen",
     "year": "1878",
     "location": "Metropolitan Museum of Art",
@@ -4671,43 +4545,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Group of characters",
-    "year": "1884",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20038.jpg?width=500",
-    "qid": "Q20186455",
-    "wikidata": "https://www.wikidata.org/wiki/Q20186455",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20186455",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.128333333,
      51.508888888
     ]
@@ -4726,43 +4563,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3603728",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Morning Walk",
-    "year": "1884",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20050.jpg?width=500",
-    "qid": "Q3713940",
-    "wikidata": "https://www.wikidata.org/wiki/Q3713940",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3713940",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -5041,514 +4841,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Haymakers at Montfermeil",
-    "year": "1882",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Haymakers%20at%20Montfermeil%20C16629.jpg?width=500",
-    "qid": "Q20189492",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189492",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189492",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Haystacks",
-    "year": "1882",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Haystacks%20C17507.jpg?width=500",
-    "qid": "Q20189498",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189498",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189498",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Man with a Hoe",
-    "year": "1882",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Man%20with%20a%20Hoe%20C16560.jpg?width=500",
-    "qid": "Q20189514",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189514",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189514",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Peasant with a Hoe",
-    "year": "1882",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peasant%20with%20a%20Hoe%20C16531.jpg?width=500",
-    "qid": "Q20189540",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189540",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189540",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Stone Breaker",
-    "year": "1882",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Stone%20Breaker%20C17508.jpg?width=500",
-    "qid": "Q20189560",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189560",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189560",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Bathers at Asnières (Study I)",
-    "year": "1883",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bathers%20-%20Study%20for%20Bathers%20at%20Asni%C3%A8res%20C17509.jpg?width=500",
-    "qid": "Q20189581",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189581",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189581",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Figures in a Landscape",
-    "year": "1883",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Figures%20in%20a%20Landscape%20C16890.jpg?width=500",
-    "qid": "Q20189600",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189600",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189600",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Horse and Boats (Study for  Bathers at Asnieres )",
-    "year": "1883",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse%20and%20Boats%20C17510.jpg?width=500",
-    "qid": "Q20189626",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189626",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189626",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Seine with Clothing on the Bank",
-    "year": "1883",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Seine%20with%20Clothing%20on%20the%20Bank%20C16017.jpg?width=500",
-    "qid": "Q20189658",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189658",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189658",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "A Summer Landscape",
-    "year": "1883",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Summer%20Landscape%20C17089.jpg?width=500",
-    "qid": "Q20189665",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189665",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189665",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Watering Can - Garden at Le Raincy",
-    "year": "1883",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Watering%20Can%20-%20Garden%20at%20Le%20Raincy%20C16561.jpg?width=500",
-    "qid": "Q20189671",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189671",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189671",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "La Grande Jatte (Study II)",
-    "year": "1884",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Study%20for%20La%20Grande%20Jatte%2C%20Georges%20Seurat%2C%201884.jpg?width=500",
-    "qid": "Q20189720",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189720",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189720",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study of Figures for  La Grande Jatte",
-    "year": "1884",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Study%20of%20Figures%20for%20La%20Grande%20Jatte%20C17090.jpg?width=500",
-    "qid": "Q20189724",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189724",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189724",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.881111111,
-     52.358333333
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Seine at Courbevoie",
-    "year": "",
-    "location": "Van Gogh Museum",
-    "city": "Amsterdam",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20Seine%20bij%20Courbevoie%20-%20s0489S1998%20-%20Van%20Gogh%20Museum.jpg?width=500",
-    "qid": "Q19838019",
-    "wikidata": "https://www.wikidata.org/wiki/Q19838019",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19838019",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.358238,
      50.84168
     ]
@@ -5567,43 +4859,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q13571392",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.181388888,
-     39.965833333
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Moored Boats and Trees",
-    "year": "1890",
-    "location": "Philadelphia Museum of Art",
-    "city": "Philadelphia",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%2C%20French%20-%20Moored%20Boats%20and%20Trees%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18685714",
-    "wikidata": "https://www.wikidata.org/wiki/Q18685714",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18685714",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -5734,218 +4989,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Bridge at Bineau",
-    "year": "",
-    "location": "Nationalmuseum",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Bridge%20at%20Bineau%20%28Georges%20Seurat%29%20-%20Nationalmuseum%20-%2023400.tif?width=500",
-    "qid": "Q18600244",
-    "wikidata": "https://www.wikidata.org/wiki/Q18600244",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18600244",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     5.816944444,
-     52.095833333
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Corner of the harbour, Honfleur",
-    "year": "1886",
-    "location": "Kröller-Müller Museum",
-    "city": "Ede",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1886%20Seurat%20Hafen%20von%20Honfleur%20anagoria.JPG?width=500",
-    "qid": "Q3617404",
-    "wikidata": "https://www.wikidata.org/wiki/Q3617404",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3617404",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     5.816944444,
-     52.095833333
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Sunday at Port-en-Bessin",
-    "year": "1888",
-    "location": "Kröller-Müller Museum",
-    "city": "Ede",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20057.jpg?width=500",
-    "qid": "Q3712836",
-    "wikidata": "https://www.wikidata.org/wiki/Q3712836",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3712836",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     5.816944444,
-     52.095833333
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Gravelines Channel, towards the sea",
-    "year": "1890",
-    "location": "Kröller-Müller Museum",
-    "city": "Ede",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1890%20Seurat%20Kanal%20von%20Gravelines%20anagoria.JPG?width=500",
-    "qid": "Q3793239",
-    "wikidata": "https://www.wikidata.org/wiki/Q3793239",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3793239",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     5.816944444,
-     52.095833333
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "End of the pier, Honfleur",
-    "year": "1886",
-    "location": "Kröller-Müller Museum",
-    "city": "Ede",
-    "country": "Netherlands",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Bout%20de%20la%20jet%C3%A9e%20%C3%A0%20Honfleur%20PC%20171.jpg?width=500",
-    "qid": "Q3796592",
-    "wikidata": "https://www.wikidata.org/wiki/Q3796592",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3796592",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -86.185655,
-     39.826019
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Channel of Gravelines, Petit Fort Philippe",
-    "year": "1890",
-    "location": "Museo de Arte de Indianápolis",
-    "city": "Indianapolis",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%2C%20Georges%20-%20The%20Channel%20of%20Gravelines%2C%20Petit%20Fort%20Philippe%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3793238",
-    "wikidata": "https://www.wikidata.org/wiki/Q3793238",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3793238",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -71.094166666,
      42.339444444
     ]
@@ -5965,154 +5008,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20539818",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     132.458061111,
-     34.398669444
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Around the Town",
-    "year": "1883",
-    "location": "Hiroshima Museum of Art",
-    "city": "Motomachi",
-    "country": "Japan",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Vers%20le%20bourg%20PC%2063.jpg?width=500",
-    "qid": "Q83179707",
-    "wikidata": "https://www.wikidata.org/wiki/Q83179707",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q83179707",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Fort Samson, Grandcamp",
-    "year": "1885",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20View%20of%20Fort%20Samson.jpg?width=500",
-    "qid": "Q27967940",
-    "wikidata": "https://www.wikidata.org/wiki/Q27967940",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27967940",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "A Man Leaning on a Parapet",
-    "year": "1881",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20A%20Man%20Leaning%20on%20a%20Parapet%20-%202019.141.17%20-%20Metropolitan%20Museum%20of%20Art.jpg?width=500",
-    "qid": "Q78638850",
-    "wikidata": "https://www.wikidata.org/wiki/Q78638850",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q78638850",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Channel of Gravelines, Grand Fort-Philippe",
-    "year": "1890",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20016.jpg?width=500",
-    "qid": "Q26492621",
-    "wikidata": "https://www.wikidata.org/wiki/Q26492621",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26492621",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -6201,43 +5096,6 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "Bathers at Asnières (Study II)",
-    "year": "1883",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Bathers%20at%20Asni%C3%A8res%20PC%2091.jpg?width=500",
-    "qid": "Q26691800",
-    "wikidata": "https://www.wikidata.org/wiki/Q26691800",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26691800",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
     "title": "La Grande Jatte (Study VI)",
     "year": "1884",
     "location": "National Gallery",
@@ -6287,80 +5145,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26691811",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Le Bec du Hoc, Grandcamp",
-    "year": "1885",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat-Le%20Bec%20du%20Hoc%20%C3%A0%20Grandcamp.jpg?width=500",
-    "qid": "Q26705602",
-    "wikidata": "https://www.wikidata.org/wiki/Q26705602",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26705602",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Rainbow: Study for 'Bathers at Asnières'",
-    "year": "1883",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20The%20Rainbow%20Study%20for%20Bathers%20at%20Asni%C3%A8res.jpg?width=500",
-    "qid": "Q26708470",
-    "wikidata": "https://www.wikidata.org/wiki/Q26708470",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26708470",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -6602,43 +5386,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study for \"Bathers at Asnières\"",
-    "year": "1880",
-    "location": "Cleveland Museum of Art",
-    "city": "Cleveland",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20%22Bathers%20at%20Asni%C3%A8res%22%20-%201958.51%20-%20Cleveland%20Museum%20of%20Art.jpg?width=500",
-    "qid": "Q60465161",
-    "wikidata": "https://www.wikidata.org/wiki/Q60465161",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q60465161",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.561758,
      47.353045
     ]
@@ -6713,43 +5460,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
-     50.9375
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Massif figure in a landscape",
-    "year": "1882",
-    "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Figure%20massive%20dans%20un%20paysage%20%C3%A0%20Barbizon%20PC%2027.jpg?width=500",
-    "qid": "Q116143435",
-    "wikidata": "https://www.wikidata.org/wiki/Q116143435",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q116143435",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -96.800893,
      32.78756
     ]
@@ -6768,43 +5478,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79173183",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     149.136388888,
-     -35.300277777
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study for Le Bec du Hoc, Grandcamp",
-    "year": "1885",
-    "location": "National Gallery of Australia",
-    "city": "Canberra",
-    "country": "Australia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Le%20Bec%20du%20Hoc%2C%20Grandcamp%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q50734518",
-    "wikidata": "https://www.wikidata.org/wiki/Q50734518",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q50734518",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -7089,43 +5762,6 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "Boy Sitting in a Meadow",
-    "year": "1882",
-    "location": "Kelvingrove Art Gallery and Museum",
-    "city": "Glasgow City",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20001.jpg?width=500",
-    "qid": "Q87842421",
-    "wikidata": "https://www.wikidata.org/wiki/Q87842421",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q87842421",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.290636382,
-     55.868608412
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
     "title": "House among Trees",
     "year": "1883",
     "location": "Kelvingrove Art Gallery and Museum",
@@ -7268,107 +5904,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Rue St. Vincent, Paris, in Spring",
-    "year": "1884",
-    "location": "Fitzwilliam Museum",
-    "city": "Cambridge",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Rue%20Saint-Vincent.jpg?width=500",
-    "qid": "Q50816044",
-    "wikidata": "https://www.wikidata.org/wiki/Q50816044",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q50816044",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.119444,
-     52.200278
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study for 'A Sunday on the Island of La Grand Jatte': Couple Walking",
-    "year": "",
-    "location": "Fitzwilliam Museum",
-    "city": "Cambridge",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20A%20Sunday%20on%20the%20Island%20of%20La%20Grand%20Jatte%20-%20Couple%20Walking%20PC%20140.jpg?width=500",
-    "qid": "Q119145067",
-    "wikidata": "https://www.wikidata.org/wiki/Q119145067",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q119145067",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -2.979666,
-     53.410068
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Ville d'Avray, white houses",
-    "year": "1882",
-    "location": "Walker Art Gallery",
-    "city": "Liverpool",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20062.jpg?width=500",
-    "qid": "Q107351629",
-    "wikidata": "https://www.wikidata.org/wiki/Q107351629",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107351629",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -72.930958,
      41.30839
     ]
@@ -7461,43 +5996,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49261336",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     139.021145,
-     35.256711
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Low Tide at Grandcamp",
-    "year": "1885",
-    "location": "Pola Museum of Art",
-    "city": "Sengokuhara",
-    "country": "Japan",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Low%20Tide%20at%20Grandcamp%20PC%20155.jpg?width=500",
-    "qid": "Q79790954",
-    "wikidata": "https://www.wikidata.org/wiki/Q79790954",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q79790954",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -7702,80 +6200,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Channel at Gravelines, Petit-Fort-Philippe",
-    "year": "1890",
-    "location": "The Nelson-Atkins Museum of Art",
-    "city": "Kansas City",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20The%20Channel%20at%20Gravelines%2C%20Petit-Fort-Philippe%20PC%20208.jpg?width=500",
-    "qid": "Q64540662",
-    "wikidata": "https://www.wikidata.org/wiki/Q64540662",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q64540662",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -94.580960249,
-     39.044969557
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study for \"Bathers at Asnières\"",
-    "year": "1883",
-    "location": "The Nelson-Atkins Museum of Art",
-    "city": "Kansas City",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20%C3%89tude%20pour%20Une%20baignade%20%C3%A0%20Asni%C3%A8res%20PC%2096.jpg?width=500",
-    "qid": "Q64578123",
-    "wikidata": "https://www.wikidata.org/wiki/Q64578123",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q64578123",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.307402777,
      47.049561111
     ]
@@ -7868,117 +6292,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q85225383",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -2.6053,
-     51.4561
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Sunset",
-    "year": "1881",
-    "location": "Bristol City Museum & Art Gallery",
-    "city": "City of Bristol",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Sunset%20PC%209.jpg?width=500",
-    "qid": "Q90735791",
-    "wikidata": "https://www.wikidata.org/wiki/Q90735791",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q90735791",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -91.657,
-     44.059
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Landscape, Ile de la Grande-Jatte",
-    "year": "1884",
-    "location": "Minnesota Marine Art Museum",
-    "city": "Winona",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Paysage%2C%20L%20Ile%20de%20la%20Grande-Jatte%20PC130.jpg?width=500",
-    "qid": "Q96098657",
-    "wikidata": "https://www.wikidata.org/wiki/Q96098657",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q96098657",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.634444,
-     43.310278
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Banks of the Seine near Courbevoie",
-    "year": "1883",
-    "location": "The Hyde Collection",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/George%20Seurat%20-%20River%27s%20Edge%20PC%2077.jpg?width=500",
-    "qid": "Q110894272",
-    "wikidata": "https://www.wikidata.org/wiki/Q110894272",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q110894272",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -8201,80 +6514,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28039625",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Seascape at Port-en-Bessin, Normandy",
-    "year": "1888",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20046.jpg?width=500",
-    "qid": "Q20189963",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189963",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189963",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Seascape (Gravelines)",
-    "year": "1890",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seascape%20%28Gravelines%29%20A17554.jpg?width=500",
-    "qid": "Q20190227",
-    "wikidata": "https://www.wikidata.org/wiki/Q20190227",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20190227",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -8571,80 +6810,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18684436",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.08027778,
-     48.29972222
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Banlieue",
-    "year": "1881",
-    "location": "Musée d'Art moderne de Troyes",
-    "city": "Troyes",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20007.jpg?width=500",
-    "qid": "Q3899880",
-    "wikidata": "https://www.wikidata.org/wiki/Q3899880",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3899880",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.08027778,
-     48.29972222
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Anglers, Study for la Grande Jatte",
-    "year": "1883",
-    "location": "Musée d'Art moderne de Troyes",
-    "city": "Troyes",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Pescatori.jpg?width=500",
-    "qid": "Q3900691",
-    "wikidata": "https://www.wikidata.org/wiki/Q3900691",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3900691",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",

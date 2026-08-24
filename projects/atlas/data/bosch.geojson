@@ -1081,27 +1081,28 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.02472,
-     52.23167
+     21.024722222,
+     52.231666666
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
-    "title": "Christ descent into Hell",
+    "title": "Descent into Hell",
     "year": "c. 1550",
     "location": "National Museum in Warsaw",
-    "attribution": "generally accepted",
-    "medium": "Oil on panel",
-    "dimensions": "13.7 x 10.2 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Jheronimus_Bosch_-_Descent_into_Hell_-_M.Ob.1610_MNW_-_National_Museum_in_Warsaw.jpg/500px-Jheronimus_Bosch_-_Descent_into_Hell_-_M.Ob.1610_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Hieronymus Bosch",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "national-museum-in-warsaw",
     "city": "Śródmieście",
-    "country": "Poland"
+    "country": "Poland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jheronimus%20Bosch%20-%20Descent%20into%20Hell%20-%20M.Ob.1610%20MNW%20-%20National%20Museum%20in%20Warsaw.jpg?width=500",
+    "qid": "Q104532210",
+    "wikidata": "https://www.wikidata.org/wiki/Q104532210",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104532210",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "dimensions": "13.7 x 10.2 cm",
+    "medium": "Oil on panel"
    }
   },
   {
@@ -2517,33 +2518,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26925956",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     21.024722222,
-     52.231666666
-    ]
-   },
-   "properties": {
-    "painter": "Hieronymus Bosch",
-    "title": "Descent into Hell",
-    "year": "",
-    "location": "National Museum in Warsaw",
-    "city": "Śródmieście",
-    "country": "Poland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jheronimus%20Bosch%20-%20Descent%20into%20Hell%20-%20M.Ob.1610%20MNW%20-%20National%20Museum%20in%20Warsaw.jpg?width=500",
-    "qid": "Q104532210",
-    "wikidata": "https://www.wikidata.org/wiki/Q104532210",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q104532210",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }

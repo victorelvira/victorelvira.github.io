@@ -341,29 +341,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33333,
-     48.85694
+     2.333277777,
+     48.856805555
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Mercury, Herse and Aglaulus",
-    "year": "1624–1626 c.",
-    "city": "Paris",
+    "title": "Mercure, Hersé et Aglaure",
+    "year": "1625",
+    "location": "Beaux-Arts de Paris",
+    "city": "",
     "country": "France",
-    "location": "École nationale supérieure des Beaux-Arts",
     "attribution": "generally accepted",
-    "dimensions": "53,5 x 77,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Poussin_Mercure_Hers%C3%A9_et_Aglaure_ENSBA.jpg/500px-Poussin_Mercure_Hers%C3%A9_et_Aglaure_ENSBA.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Mercure%20Hers%C3%A9%20et%20Aglaure%20ENSBA.jpg?width=500",
+    "qid": "Q106351850",
+    "wikidata": "https://www.wikidata.org/wiki/Q106351850",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106351850",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "ecole-nationale-superieure-des-beaux-arts"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "53,5 x 77,5 cm"
    }
   },
   {
@@ -463,29 +471,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Joshua's Victory over the Amalekites",
-    "year": "1625–1626",
-    "city": "Saint Petersburg",
+    "title": "Victory of Joshua over the Amalekites",
+    "year": "1623",
     "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Nicolas%20-%20The%20Victory%20of%20Joshua%20over%20the%20Amalekites%20copy.jpg?width=500",
+    "qid": "Q27970568",
+    "wikidata": "https://www.wikidata.org/wiki/Q27970568",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27970568",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "97,5 x 134 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Poussin_Nicolas_-_The_Victory_of_Joshua_over_the_Amalekites_copy.jpg/500px-Poussin_Nicolas_-_The_Victory_of_Joshua_over_the_Amalekites_copy.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "creation_lon": 12.4964
    }
   },
   {
@@ -493,29 +502,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Bacchanale or Bacchus and Ariadne",
-    "year": "1625–1626",
+    "title": "Bacchanal",
+    "year": "1624",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
-    "attribution": "rejected",
-    "dimensions": "122 x 169 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bacchanale_-_Poussin_-_mus%C3%A9e_du_Prado.jpg/500px-Bacchanale_-_Poussin_-_mus%C3%A9e_du_Prado.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanale%20-%20Poussin%20-%20mus%C3%A9e%20du%20Prado.jpg?width=500",
+    "qid": "Q27700072",
+    "wikidata": "https://www.wikidata.org/wiki/Q27700072",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27700072",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "122 x 169 cm"
    }
   },
   {
@@ -615,29 +632,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.48528,
-     49.19389
+     2.485277777,
+     49.193944444
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Numa Pompilius and the nymph Egeria",
-    "year": "1625–1628 c.",
-    "city": "Chantilly",
+    "title": "Midas transformant en or le rameau d'une yeuse",
+    "year": "1631",
     "location": "Musée Condé",
+    "city": "Chantilly",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "100 x 75 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Midas_transformant_en_or_le_rameau_d%27une_yeuse_-_Poussin_-_mus%C3%A9e_Cond%C3%A9.jpg/500px-Midas_transformant_en_or_le_rameau_d%27une_yeuse_-_Poussin_-_mus%C3%A9e_Cond%C3%A9.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Midas%20transformant%20en%20or%20le%20rameau%20d%27une%20yeuse%20-%20Poussin%20-%20mus%C3%A9e%20Cond%C3%A9.jpg?width=500",
+    "qid": "Q50660618",
+    "wikidata": "https://www.wikidata.org/wiki/Q50660618",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50660618",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-conde",
-    "country": "France"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "100 x 75 cm"
    }
   },
   {
@@ -810,29 +835,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48953,
-     41.90278
+     12.489856069,
+     41.903324209
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Children's bacchanal",
+    "title": "Bacchanale d'enfants",
     "year": "1626",
+    "location": "Palazzo Barberini",
     "city": "Rome",
     "country": "Italy",
-    "location": "Galleria Nazionale d'Arte Antica",
     "attribution": "generally accepted",
-    "dimensions": "56 x 76 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Bacchanale_d%27enfants_-_Nicolas_Poussin_-_Palazzo_Barberini.jpg/500px-Bacchanale_d%27enfants_-_Nicolas_Poussin_-_Palazzo_Barberini.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanale%20d%27enfants%20-%20Nicolas%20Poussin%20-%20Palazzo%20Barberini.jpg?width=500",
+    "qid": "Q114029124",
+    "wikidata": "https://www.wikidata.org/wiki/Q114029124",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114029124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-nazionale-d-arte-antica"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "56 x 76 cm"
    }
   },
   {
@@ -840,29 +873,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48953,
-     41.90278
+     12.489856069,
+     41.903324209
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Children's bacchanal",
+    "title": "Bacchanale d'enfants",
     "year": "1626",
+    "location": "Palazzo Barberini",
     "city": "Rome",
     "country": "Italy",
-    "location": "Galleria Nazionale d'Arte Antica",
     "attribution": "generally accepted",
-    "dimensions": "74 x 85 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Nicolas_Poussin_-_Bacchanal_of_Putti_-_WGA18262.jpg/500px-Nicolas_Poussin_-_Bacchanal_of_Putti_-_WGA18262.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Bacchanal%20of%20Putti%20-%20WGA18262.jpg?width=500",
+    "qid": "Q114029123",
+    "wikidata": "https://www.wikidata.org/wiki/Q114029123",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114029123",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-nazionale-d-arte-antica"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "74 x 85 cm"
    }
   },
   {
@@ -929,29 +970,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Descent from the cross or The deposition from the cross",
-    "year": "1626 c.",
-    "city": "Saint Petersburg",
+    "title": "Descent from the Cross",
+    "year": "1630",
     "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
     "attribution": "generally accepted",
-    "dimensions": "119 × 98 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Nicolas_Poussin_-_Descente_de_croix.jpg/500px-Nicolas_Poussin_-_Descente_de_croix.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Descente%20de%20croix.jpg?width=500",
+    "qid": "Q27974876",
+    "wikidata": "https://www.wikidata.org/wiki/Q27974876",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27974876",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "119 × 98 cm"
    }
   },
   {
@@ -1019,29 +1068,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Nurture of Bacchus or A Little Bacchanal",
-    "year": "1626–1627 c.",
-    "city": "Paris",
-    "country": "France",
+    "title": "The Nurture of Bacchus",
+    "year": "1624",
     "location": "Louvre",
-    "attribution": "rejected",
-    "dimensions": "97 x 136 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Nicolas_Poussin_-_The_Nurture_of_Bacchus_-_WGA18285.jpg/500px-Nicolas_Poussin_-_The_Nurture_of_Bacchus_-_WGA18285.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Nurture%20of%20Bacchus%20-%20WGA18285.jpg?width=500",
+    "qid": "Q18761398",
+    "wikidata": "https://www.wikidata.org/wiki/Q18761398",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18761398",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "97 x 136 cm"
    }
   },
   {
@@ -1049,29 +1106,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Nurture of Bacchus or The Infancy of Bacchus",
-    "year": "1626–1627 c.",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "The Nurture of Bacchus",
+    "year": "1626",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "75 x 97 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/La_Nourriture_de_Bacchus_-_Nicolas_Poussin_-_National_Gallery_London.jpg/500px-La_Nourriture_de_Bacchus_-_Nicolas_Poussin_-_National_Gallery_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Nourriture%20de%20Bacchus%20-%20Nicolas%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
+    "qid": "Q26492452",
+    "wikidata": "https://www.wikidata.org/wiki/Q26492452",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26492452",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "75 x 97 cm"
    }
   },
   {
@@ -1207,89 +1272,113 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Bacchic scene or Nymph and satyr drinking",
-    "year": "1626–1628",
+    "title": "Bacchic Scene",
+    "year": "1626",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
-    "attribution": "copy",
-    "dimensions": "74 x 60 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nymphe_et_satyre_buvant_-_Poussin_-_Museo_del_Prado.jpg/500px-Nymphe_et_satyre_buvant_-_Poussin_-_Museo_del_Prado.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-del-prado"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     37.60603,
-     55.74703
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Bacchic scene or Nymph and satyr drinking",
-    "year": "1626–1628",
-    "city": "Moscow",
-    "country": "Russia",
-    "location": "Pushkin Museum",
-    "attribution": "copy",
-    "dimensions": "77 x 62 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Nymphe_et_satyr_-_Nicolas_Poussin_-_Mus%C3%A9e_Pouchkine_Moscou.jpg/500px-Nymphe_et_satyr_-_Nicolas_Poussin_-_Mus%C3%A9e_Pouchkine_Moscou.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "pushkin-museum"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.9631,
-     40.7794
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Midas washing himself in the source of the river Pactolus",
-    "year": "1626–1628 c.",
-    "city": "New York",
-    "country": "United States",
-    "location": "Metropolitan Museum of Art",
     "attribution": "generally accepted",
-    "dimensions": "97,5 x 72,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Midas_Washing_at_the_Source_of_the_Pactolus_MET_DP123854.jpg/500px-Midas_Washing_at_the_Source_of_the_Pactolus_MET_DP123854.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nymphe%20et%20satyre%20buvant%20-%20Poussin%20-%20Museo%20del%20Prado.jpg?width=500",
+    "qid": "Q27700175",
+    "wikidata": "https://www.wikidata.org/wiki/Q27700175",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27700175",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "74 x 60 cm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Scène bachique ou Nymphe et satyre buvant",
+    "year": "1626",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nymphe%20et%20satyr%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20Pouchkine%20Moscou.jpg?width=500",
+    "qid": "Q115946603",
+    "wikidata": "https://www.wikidata.org/wiki/Q115946603",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q115946603",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "77 x 62 cm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.963333333,
+     40.779444444
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Midas Washing at the Source of the Pactolus",
+    "year": "1627",
+    "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Midas%20Washing%20at%20the%20Source%20of%20the%20Pactolus%20MET%20DP123854.jpg?width=500",
+    "qid": "Q19911476",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911476",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911476",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "97,5 x 72,5 cm"
    }
   },
   {
@@ -1327,29 +1416,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Sleeping nymph surprised by satyrs or Venus surprised by satyrs",
+    "title": "Nymph with Satyrs",
     "year": "1627",
-    "city": "London",
-    "country": "United Kingdom",
     "location": "National Gallery",
-    "attribution": "rejected",
-    "dimensions": "66 x 50,8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Poussin_-_Nymphes_satyres.jpg/500px-Poussin_-_Nymphes_satyres.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20Nymphes%20satyres.jpg?width=500",
+    "qid": "Q26708051",
+    "wikidata": "https://www.wikidata.org/wiki/Q26708051",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26708051",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "66 x 50,8 cm"
    }
   },
   {
@@ -1357,28 +1454,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.74011,
-     52.3655
+     9.740111115,
+     52.36549544
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Poet's Inspiration or The Inspiration of Anacreon",
-    "year": "1627 c.",
-    "city": "Hanover",
-    "location": "Niedersächsisches Landesmuseum Hannover",
+    "title": "The Inspiration of Anacreon",
+    "year": "1628",
+    "location": "Landesmuseum Hannover",
+    "city": "Südstadt-Bult",
+    "country": "Germany",
     "attribution": "generally accepted",
-    "dimensions": "94 x 69,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Nicolas_Poussin_-_L%27Inspiration_du_po%C3%A8te_%28Nieders%C3%A4chsisches_Landesmuseum%29.jpg/500px-Nicolas_Poussin_-_L%27Inspiration_du_po%C3%A8te_%28Nieders%C3%A4chsisches_Landesmuseum%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20L%27Inspiration%20du%20po%C3%A8te%20%28Nieders%C3%A4chsisches%20Landesmuseum%29.jpg?width=500",
+    "qid": "Q11790075",
+    "wikidata": "https://www.wikidata.org/wiki/Q11790075",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11790075",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "niedersachsisches-landesmuseum-hannover"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "94 x 69,5 cm"
    }
   },
   {
@@ -1427,27 +1533,36 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.22778
+     53.227777777
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The shepherds of Arcadia (Et in Arcadia ego)",
-    "year": "1627–1628",
-    "city": "Chatsworth House",
-    "location": "Devonshire Collection",
+    "title": "Et in Arcadia ego",
+    "year": "1628",
+    "location": "Chatsworth House",
+    "city": "Bakewell",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "101 x 82 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Nicolas_Poussin_-_Et_in_Arcadia_ego_%28premi%C3%A8re_version%29.jpg/500px-Nicolas_Poussin_-_Et_in_Arcadia_ego_%28premi%C3%A8re_version%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Et%20in%20Arcadia%20ego%20%28premi%C3%A8re%20version%29.jpg?width=500",
+    "qid": "Q11919094",
+    "wikidata": "https://www.wikidata.org/wiki/Q11919094",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11919094",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "devonshire-collection"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "101 x 82 cm"
    }
   },
   {
@@ -2151,29 +2266,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Nymph riding a goat or Venus, faun and putti",
-    "year": "1631 c.",
-    "city": "Saint Petersburg",
+    "title": "Venus, Faun and Putti",
+    "year": "1631",
     "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
     "attribution": "generally accepted",
-    "dimensions": "72 x 56 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Nymphe_chevauchant_un_bouc_-_Nicolas_Poussin_-_The_Hermitage_Museum.jpg/500px-Nymphe_chevauchant_un_bouc_-_Nicolas_Poussin_-_The_Hermitage_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nymphe%20chevauchant%20un%20bouc%20-%20Nicolas%20Poussin%20-%20The%20Hermitage%20Museum.jpg?width=500",
+    "qid": "Q21725307",
+    "wikidata": "https://www.wikidata.org/wiki/Q21725307",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21725307",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "72 x 56 cm"
    }
   },
   {
@@ -2181,29 +2304,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Children and putti playing",
-    "year": "1631 c.",
-    "city": "Saint Petersburg",
+    "title": "Cupids and Geniuses",
+    "year": "1631",
     "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
     "attribution": "generally accepted",
-    "dimensions": "95 x 72 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Jeux_d%27enfants_et_putti_-_Nicolas_Poussin_-_Hermitage.jpg/500px-Jeux_d%27enfants_et_putti_-_Nicolas_Poussin_-_Hermitage.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeux%20d%27enfants%20et%20putti%20-%20Nicolas%20Poussin%20-%20Hermitage.jpg?width=500",
+    "qid": "Q21733138",
+    "wikidata": "https://www.wikidata.org/wiki/Q21733138",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21733138",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "95 x 72 cm"
    }
   },
   {
@@ -2615,29 +2746,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Rinaldo's Companions",
-    "year": "1633–1634 c.",
-    "city": "New York",
-    "country": "United States",
+    "title": "The Companions of Rinaldo",
+    "year": "1633",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "119 x 101 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/The_Companions_of_Rinaldo.jpg/500px-The_Companions_of_Rinaldo.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Companions%20of%20Rinaldo.jpg?width=500",
+    "qid": "Q20167018",
+    "wikidata": "https://www.wikidata.org/wiki/Q20167018",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20167018",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "119 x 101 cm"
    }
   },
   {
@@ -2713,30 +2852,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.39278,
-     43.65361
+     -79.392777777,
+     43.653611111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Venus presenting arms to Aeneas",
-    "year": "1633–1635 c.",
-    "city": "Toronto",
+    "title": "Venus, Mother of Aeneas, presenting him with Arms forged by Vulcan\"",
+    "year": "1637",
     "location": "Art Gallery of Ontario",
-    "attribution": "generally accepted",
-    "dimensions": "107 x 133 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/V%C3%A9nus_montrant_ses_armes_%C3%A0_%C3%89n%C3%A9e_-_Nicolas_Poussin_-_Toronto_AGO.jpg/500px-V%C3%A9nus_montrant_ses_armes_%C3%A0_%C3%89n%C3%A9e_-_Nicolas_Poussin_-_Toronto_AGO.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "art-gallery-of-ontario",
+    "city": "Toronto",
     "country": "Canada",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2a/22venus.html"
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/V%C3%A9nus%20montrant%20ses%20armes%20%C3%A0%20%C3%89n%C3%A9e%20-%20Nicolas%20Poussin%20-%20Toronto%20AGO.jpg?width=500",
+    "qid": "Q116241578",
+    "wikidata": "https://www.wikidata.org/wiki/Q116241578",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116241578",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "107 x 133 cm"
    }
   },
   {
@@ -2874,29 +3020,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The young Pyrrhus saved",
+    "title": "Rescue of Young King Pyrrhus",
     "year": "1634",
-    "city": "Paris",
-    "country": "France",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "116 x 160 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Le_jeune_Pyrrhus_sauv%C3%A9_-_1634_-_Nicolas_Poussin_-_Louvre_-_INV_7292_%3B_MR_2334.jpg/500px-Le_jeune_Pyrrhus_sauv%C3%A9_-_1634_-_Nicolas_Poussin_-_Louvre_-_INV_7292_%3B_MR_2334.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20jeune%20Pyrrhus%20sauv%C3%A9%20-%201634%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207292%20%3B%20MR%202334.jpg?width=500",
+    "qid": "Q19820170",
+    "wikidata": "https://www.wikidata.org/wiki/Q19820170",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19820170",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "116 x 160 cm"
    }
   },
   {
@@ -2904,29 +3058,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with ruins or Landscape with an ancient tomb and two figures",
-    "year": "1634 c.",
+    "title": "Landscape with Ruins",
+    "year": "1634",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "72 x 98 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Paysage_avec_ruines_-_Poussin_-_Museo_del_Prado.jpg/500px-Paysage_avec_ruines_-_Poussin_-_Museo_del_Prado.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20ruines%20-%20Poussin%20-%20Museo%20del%20Prado.jpg?width=500",
+    "qid": "Q27701706",
+    "wikidata": "https://www.wikidata.org/wiki/Q27701706",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27701706",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "72 x 98 cm"
    }
   },
   {
@@ -3003,29 +3165,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Hunt of Meleager and Atalanta or Leaving for a hunt",
-    "year": "1634–1638",
+    "title": "The Hunt of Meleager",
+    "year": "1634",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "160 x 360 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/La_chasse_de_M%C3%A9l%C3%A9agre%2C_Madrid%2C_mus%C3%A9e_du_Prado.jpg/500px-La_chasse_de_M%C3%A9l%C3%A9agre%2C_Madrid%2C_mus%C3%A9e_du_Prado.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20chasse%20de%20M%C3%A9l%C3%A9agre%2C%20Madrid%2C%20mus%C3%A9e%20du%20Prado.jpg?width=500",
+    "qid": "Q27700904",
+    "wikidata": "https://www.wikidata.org/wiki/Q27700904",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27700904",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "160 x 360 cm"
    }
   },
   {
@@ -3444,29 +3614,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.364722222,
+     52.508611111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with Juno and Argus",
-    "year": "1636–1637 c.",
-    "city": "Berlin",
+    "title": "Paysage avec Junon et Argus",
+    "year": "1624",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
     "attribution": "generally accepted",
-    "dimensions": "120 x 195 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Paysage_avec_Junon_et_Argus_-_Poussin_-_Gem%C3%A4ldegalerie_Berlin.jpg/500px-Paysage_avec_Junon_et_Argus_-_Poussin_-_Gem%C3%A4ldegalerie_Berlin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20Junon%20et%20Argus%20-%20Poussin%20-%20Gem%C3%A4ldegalerie%20Berlin.jpg?width=500",
+    "qid": "Q107438279",
+    "wikidata": "https://www.wikidata.org/wiki/Q107438279",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107438279",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "gemaldegalerie"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "120 x 195 cm"
    }
   },
   {
@@ -3537,30 +3715,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with Saint Jerome",
-    "year": "1637–1638",
+    "title": "Landscape with Saint Paul the Hermit",
+    "year": "1637",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "155 x 234 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Paysage_avec_saint_J%C3%A9r%C3%B4me%2C_Madrid%2C_mus%C3%A9e_du_Prado.jpg/500px-Paysage_avec_saint_J%C3%A9r%C3%B4me%2C_Madrid%2C_mus%C3%A9e_du_Prado.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20saint%20J%C3%A9r%C3%B4me%2C%20Madrid%2C%20mus%C3%A9e%20du%20Prado.jpg?width=500",
+    "qid": "Q27701562",
+    "wikidata": "https://www.wikidata.org/wiki/Q27701562",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27701562",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2a/13landsc.html"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "155 x 234 cm"
    }
   },
   {
@@ -3568,29 +3753,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with a man drinking",
-    "year": "1637–1638 c.",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Landscape with a Man scooping Water from a Stream",
+    "year": "1637",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "63 x 78 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Paysage_avec_homme_buvant_-_Poussin_-_National_Gallery_London.jpg/500px-Paysage_avec_homme_buvant_-_Poussin_-_National_Gallery_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20homme%20buvant%20-%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
+    "qid": "Q26699439",
+    "wikidata": "https://www.wikidata.org/wiki/Q26699439",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26699439",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "63 x 78 cm"
    }
   },
   {
@@ -3598,29 +3791,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with resting travellers",
-    "year": "1637–1638 c.",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Landscape with Travellers Resting",
+    "year": "1637",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "63 x 75 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Paysage_avec_des_voyageurs_au_repos_-_Poussin_-_National_Gallery_London.jpg/500px-Paysage_avec_des_voyageurs_au_repos_-_Poussin_-_National_Gallery_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20des%20voyageurs%20au%20repos%20-%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
+    "qid": "Q26692343",
+    "wikidata": "https://www.wikidata.org/wiki/Q26692343",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26692343",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "63 x 75 cm"
    }
   },
   {
@@ -3828,29 +4029,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.364722222,
+     52.508611111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Jupiter suckled by the goat Amalthea or The Feeding of Jupiter",
-    "year": "1640",
-    "city": "Berlin",
+    "title": "Jupiter enfant nourri par la chèvre Amalthée",
+    "year": "1639",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
     "attribution": "generally accepted",
-    "dimensions": "97 × 133 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Nicolas_Poussin_-_Jupiter_enfant_nourri_par_la_ch%C3%A8vre_Amalth%C3%A9e.jpg/500px-Nicolas_Poussin_-_Jupiter_enfant_nourri_par_la_ch%C3%A8vre_Amalth%C3%A9e.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Jupiter%20enfant%20nourri%20par%20la%20ch%C3%A8vre%20Amalth%C3%A9e.jpg?width=500",
+    "qid": "Q107438288",
+    "wikidata": "https://www.wikidata.org/wiki/Q107438288",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107438288",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "gemaldegalerie"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "97 × 133 cm"
    }
   },
   {
@@ -3966,29 +4175,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Institution of the Eucharist or Jesus Christ instituting the Eucharist",
+    "title": "The Institution of the Eucharist",
     "year": "1641",
-    "city": "Paris",
-    "country": "France",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "325 x 250 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Nicolas_Poussin_-_The_Institution_of_the_Eucharist_-_WGA18310.jpg/500px-Nicolas_Poussin_-_The_Institution_of_the_Eucharist_-_WGA18310.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Institution%20of%20the%20Eucharist%20-%20WGA18310.jpg?width=500",
+    "qid": "Q29784123",
+    "wikidata": "https://www.wikidata.org/wiki/Q29784123",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29784123",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "325 x 250 cm"
    }
   },
   {
@@ -3996,29 +4213,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Time and Truth or dit aussi Time defending Truth against the attacks of Envy and Discord",
+    "title": "Time defending Truth against the attacks of Envy and Discord",
     "year": "1641",
-    "city": "Paris",
-    "country": "France",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "297 cm in diameter",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Nicolas_Poussin_-_Le_Temps_soustrait_la_V%C3%A9rit%C3%A9_aux_atteintes_de_l%27Envie_et_de_la_Discorde.jpg/500px-Nicolas_Poussin_-_Le_Temps_soustrait_la_V%C3%A9rit%C3%A9_aux_atteintes_de_l%27Envie_et_de_la_Discorde.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Temps%20soustrait%20la%20V%C3%A9rit%C3%A9%20aux%20atteintes%20de%20l%27Envie%20et%20de%20la%20Discorde.jpg?width=500",
+    "qid": "Q29842241",
+    "wikidata": "https://www.wikidata.org/wiki/Q29842241",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29842241",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "297 cm in diameter"
    }
   },
   {
@@ -4026,29 +4251,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Miracle of saint Francis Xavier or Saint Francis Xavier bringing back to life the daughter of an inhabitant of Cangoxima in Japan",
-    "year": "1641–1642",
-    "city": "Paris",
-    "country": "France",
+    "title": "Miracle of Saint Francis Xavier",
+    "year": "1641",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "444 x 234 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Poussin_Miracle_de_saint_Fran%C3%A7ois_Xavier_Louvre.jpg/500px-Poussin_Miracle_de_saint_Fran%C3%A7ois_Xavier_Louvre.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Miracle%20de%20saint%20Fran%C3%A7ois%20Xavier%20Louvre.jpg?width=500",
+    "qid": "Q29842246",
+    "wikidata": "https://www.wikidata.org/wiki/Q29842246",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29842246",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "444 x 234 cm"
    }
   },
   {
@@ -4333,29 +4566,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Moses changing Aaron's rod into a snake",
-    "year": "1645–1648 c.",
-    "city": "Paris",
-    "country": "France",
+    "title": "Moses Turning Aaron's Staff into a Serpent",
+    "year": "1645",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "92 x 128 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mo%C3%AFse_changeant_en_serpent_la_verge_d%27Aaron_-_1646-1647_-_Nicolas_Poussin_-_Louvre_-_INV_7274_%3B_MR_2318.jpg/500px-Mo%C3%AFse_changeant_en_serpent_la_verge_d%27Aaron_-_1646-1647_-_Nicolas_Poussin_-_Louvre_-_INV_7274_%3B_MR_2318.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mo%C3%AFse%20changeant%20en%20serpent%20la%20verge%20d%27Aaron%20-%201646-1647%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207274%20%3B%20MR%202318.jpg?width=500",
+    "qid": "Q19820177",
+    "wikidata": "https://www.wikidata.org/wiki/Q19820177",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19820177",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "92 x 128 cm"
    }
   },
   {
@@ -4559,29 +4800,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with a Man Killed by a Snake or The effects of terror",
+    "title": "Landscape with a Man killed by a Snake",
     "year": "1648",
-    "city": "London",
-    "country": "United Kingdom",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "119 x 198,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nicolas_Poussin_-_Landscape_with_a_Man_Killed_by_a_Snake_-_WGA18320.jpg/500px-Nicolas_Poussin_-_Landscape_with_a_Man_Killed_by_a_Snake_-_WGA18320.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Landscape%20with%20a%20Man%20Killed%20by%20a%20Snake%20-%20WGA18320.jpg?width=500",
+    "qid": "Q26692856",
+    "wikidata": "https://www.wikidata.org/wiki/Q26692856",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26692856",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "119 x 198,5 cm"
    }
   },
   {
@@ -4622,29 +4871,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with Diogenes or Diogenes throwing away his bowl",
+    "title": "Landscape with Diogenes",
     "year": "1648",
-    "city": "Paris",
-    "country": "France",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "160 x 221 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Poussin%2C_Nicolas_-_Landscape_with_Diogenes_-_c._1647.jpg/500px-Poussin%2C_Nicolas_-_Landscape_with_Diogenes_-_c._1647.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20Landscape%20with%20Diogenes%20-%20c.%201647.jpg?width=500",
+    "qid": "Q19944031",
+    "wikidata": "https://www.wikidata.org/wiki/Q19944031",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19944031",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "160 x 221 cm"
    }
   },
   {
@@ -4827,29 +5084,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Saint Paul's ascension into heaven",
-    "year": "1649–1650",
-    "city": "Paris",
-    "country": "France",
+    "title": "The Ecstasy of St Paul",
+    "year": "1649",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "148 x 120 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Le_Ravissement_de_saint_Paul_-_Nicolas_Poussin_-_Mus%C3%A9e_du_Louvre_Peintures_INV_7288_%3B_MR_2325.jpg/500px-Le_Ravissement_de_saint_Paul_-_Nicolas_Poussin_-_Mus%C3%A9e_du_Louvre_Peintures_INV_7288_%3B_MR_2325.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Ravissement%20de%20saint%20Paul%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207288%20%3B%20MR%202325.jpg?width=500",
+    "qid": "Q29842254",
+    "wikidata": "https://www.wikidata.org/wiki/Q29842254",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29842254",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "148 x 120 cm"
    }
   },
   {
@@ -4964,29 +5229,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Holy Family with Saint John and Saint Elisabeth in a landscape",
-    "year": "c. 1650",
-    "city": "Paris",
-    "country": "France",
+    "title": "The Holy Family with Saint John and Saint Elizabeth in a Landscape",
+    "year": "1650",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "94 x 122 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/La_Sainte_Famille_avec_saint_Jean_et_sainte_%C3%89lisabeth_dans_un_paysage_-_1650-1651_-_Nicolas_Poussin_-_Louvre_-_INV_7280_%3B_MR_2341.jpg/500px-La_Sainte_Famille_avec_saint_Jean_et_sainte_%C3%89lisabeth_dans_un_paysage_-_1650-1651_-_Nicolas_Poussin_-_Louvre_-_INV_7280_%3B_MR_2341.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Sainte%20Famille%20avec%20saint%20Jean%20et%20sainte%20%C3%89lisabeth%20dans%20un%20paysage%20-%201650-1651%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207280%20%3B%20MR%202341.jpg?width=500",
+    "qid": "Q19820173",
+    "wikidata": "https://www.wikidata.org/wiki/Q19820173",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19820173",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "94 x 122 cm"
    }
   },
   {
@@ -5177,28 +5450,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.42056,
-     49.24556
+     1.42055556,
+     49.24555556
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Coriolanus",
-    "year": "1652–c. 1653",
+    "title": "Coriolan supplié par sa famille",
+    "year": "1652",
+    "location": "musée Nicolas-Poussin",
     "city": "Les Andelys",
-    "location": "Musée Nicolas Poussin",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "112 x 198,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Poussin_Coriolan_Les_Andelys.jpg/500px-Poussin_Coriolan_Les_Andelys.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Coriolan%20Les%20Andelys.jpg?width=500",
+    "qid": "Q106351765",
+    "wikidata": "https://www.wikidata.org/wiki/Q106351765",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106351765",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-nicolas-poussin"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "112 x 198,5 cm"
    }
   },
   {
@@ -5212,23 +5494,31 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Will of Eudamidas",
-    "year": "c. 1653",
-    "city": "Copenhagen Municipality",
+    "title": "The Testament of Eudamidas",
+    "year": "1644",
     "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
     "attribution": "generally accepted",
-    "dimensions": "110,5 x 138,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Eudamidas%27_testamente.jpg/500px-Eudamidas%27_testamente.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eudamidas%27%20testamente.jpg?width=500",
+    "qid": "Q20275988",
+    "wikidata": "https://www.wikidata.org/wiki/Q20275988",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20275988",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "statens-museum-for-kunst",
-    "country": "Denmark"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "110,5 x 138,5 cm"
    }
   },
   {
@@ -5460,29 +5750,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Holy Family",
+    "title": "Holy Family with St Elizabeth and St John the Baptist",
     "year": "1655",
-    "city": "Saint Petersburg",
     "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
     "attribution": "generally accepted",
-    "dimensions": "172 x 133,5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Nicolas_Poussin_-_The_Holy_Family_with_St_Elizabeth_and_John_the_Baptist_-_WGA18338.jpg/500px-Nicolas_Poussin_-_The_Holy_Family_with_St_Elizabeth_and_John_the_Baptist_-_WGA18338.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Holy%20Family%20with%20St%20Elizabeth%20and%20John%20the%20Baptist%20-%20WGA18338.jpg?width=500",
+    "qid": "Q21730872",
+    "wikidata": "https://www.wikidata.org/wiki/Q21730872",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21730872",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "172 x 133,5 cm"
    }
   },
   {
@@ -5559,29 +5857,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Holy Family with saints John, Elisabeth and Joseph praying",
-    "year": "1655",
-    "city": "Paris",
-    "country": "France",
+    "title": "The Holy Family with Saint John Saint Elizabeth and Saint Joseph Praying",
+    "year": "1656",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "68 x 51 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/La_Sainte_Famille_avec_saint_Jean%2C_sainte_Elisabeth_et_saint_Joseph_priant_-_Nicolas_Poussin_-_Louvre.jpg/500px-La_Sainte_Famille_avec_saint_Jean%2C_sainte_Elisabeth_et_saint_Joseph_priant_-_Nicolas_Poussin_-_Louvre.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Sainte%20Famille%20avec%20saint%20Jean%2C%20sainte%20Elisabeth%20et%20saint%20Joseph%20priant%20-%20Nicolas%20Poussin%20-%20Louvre.jpg?width=500",
+    "qid": "Q19820171",
+    "wikidata": "https://www.wikidata.org/wiki/Q19820171",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19820171",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "68 x 51 cm"
    }
   },
   {
@@ -5757,29 +6063,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The vision of saint Frances of Rome or Saint Frances of Rome announcing the end of the plague to Rome",
-    "year": "1657 c.",
-    "city": "Paris",
-    "country": "France",
+    "title": "Saint Frances Announcing the End of the Plague in Rome",
+    "year": "1657",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "125 x 102 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/La_Vision_de_sainte_Fran%C3%A7oise_Romaine_-_1657-1658_-_Nicolas_Poussin_-_Louvre_-_RF_1999_1.jpg/500px-La_Vision_de_sainte_Fran%C3%A7oise_Romaine_-_1657-1658_-_Nicolas_Poussin_-_Louvre_-_RF_1999_1.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Vision%20de%20sainte%20Fran%C3%A7oise%20Romaine%20-%201657-1658%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20RF%201999%201.jpg?width=500",
+    "qid": "Q15934821",
+    "wikidata": "https://www.wikidata.org/wiki/Q15934821",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15934821",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "125 x 102 cm"
    }
   },
   {
@@ -6157,84 +6471,24 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48953,
-     41.90278
+     12.489856069,
+     41.903324209
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Landscape with Hagar and the Angel",
-    "year": "1660–1665 c.",
+    "title": "Paysage avec Agar et l'ange",
+    "year": "1660",
+    "location": "Palazzo Barberini",
     "city": "Rome",
     "country": "Italy",
-    "location": "Galleria Nazionale d'Arte Antica",
     "attribution": "generally accepted",
-    "dimensions": "100 x 75 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nicolas_Poussin_-_Hagar_and_the_Angel_-_WGA18339.jpg/500px-Nicolas_Poussin_-_Hagar_and_the_Angel_-_WGA18339.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "galleria-nazionale-d-arte-antica"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.3358,
-     48.8611
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Apollo and Daphne or Apollo in love with Daphne",
-    "year": "1664",
-    "city": "Paris",
-    "country": "France",
-    "location": "Louvre",
-    "attribution": "generally accepted",
-    "dimensions": "155 x 200 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Nicolas_Poussin_-_Apollo_and_Daphne_-_WGA18345.jpg/500px-Nicolas_Poussin_-_Apollo_and_Daphne_-_WGA18345.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "louvre"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     37.60602901,
-     55.74702868
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Scène bachique ou Nymphe et satyre buvant",
-    "year": "1626",
-    "location": "Pushkin Museum of Fine Arts",
-    "city": "Khamovniki District",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nymphe%20et%20satyr%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20Pouchkine%20Moscou.jpg?width=500",
-    "qid": "Q115946603",
-    "wikidata": "https://www.wikidata.org/wiki/Q115946603",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Hagar%20and%20the%20Angel%20-%20WGA18339.jpg?width=500",
+    "qid": "Q114029125",
+    "wikidata": "https://www.wikidata.org/wiki/Q114029125",
     "_source": {
      "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q115946603",
+     "url": "https://www.wikidata.org/wiki/Q114029125",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -6246,7 +6500,46 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "dimensions": "100 x 75 cm"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Apollo in Love with Daphne",
+    "year": "1664",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Apollo%20and%20Daphne%20-%20WGA18345.jpg?width=500",
+    "qid": "Q19820169",
+    "wikidata": "https://www.wikidata.org/wiki/Q19820169",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19820169",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "155 x 200 cm"
    }
   },
   {
@@ -6297,80 +6590,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Paysage avec Junon et Argus",
-    "year": "1624",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20Junon%20et%20Argus%20-%20Poussin%20-%20Gem%C3%A4ldegalerie%20Berlin.jpg?width=500",
-    "qid": "Q107438279",
-    "wikidata": "https://www.wikidata.org/wiki/Q107438279",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107438279",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     13.364722222,
-     52.508611111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Jupiter enfant nourri par la chèvre Amalthée",
-    "year": "1639",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Jupiter%20enfant%20nourri%20par%20la%20ch%C3%A8vre%20Amalth%C3%A9e.jpg?width=500",
-    "qid": "Q107438288",
-    "wikidata": "https://www.wikidata.org/wiki/Q107438288",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107438288",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     13.364722222,
-     52.508611111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "The Abduction of the Euthanized Rinaldo",
     "year": "1637",
     "location": "Gemäldegalerie Berlin",
@@ -6383,43 +6602,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q134250169",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.333277777,
-     48.856805555
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Mercure, Hersé et Aglaure",
-    "year": "1625",
-    "location": "Beaux-Arts de Paris",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Mercure%20Hers%C3%A9%20et%20Aglaure%20ENSBA.jpg?width=500",
-    "qid": "Q106351850",
-    "wikidata": "https://www.wikidata.org/wiki/Q106351850",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q106351850",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -6624,43 +6806,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.392777777,
-     43.653611111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Venus, Mother of Aeneas, presenting him with Arms forged by Vulcan\"",
-    "year": "1637",
-    "location": "Art Gallery of Ontario",
-    "city": "Toronto",
-    "country": "Canada",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/V%C3%A9nus%20montrant%20ses%20armes%20%C3%A0%20%C3%89n%C3%A9e%20-%20Nicolas%20Poussin%20-%20Toronto%20AGO.jpg?width=500",
-    "qid": "Q116241578",
-    "wikidata": "https://www.wikidata.org/wiki/Q116241578",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q116241578",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.731666666,
      47.511111111
     ]
@@ -6679,117 +6824,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q91932551",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.489856069,
-     41.903324209
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Bacchanale d'enfants",
-    "year": "1626",
-    "location": "Palazzo Barberini",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Bacchanal%20of%20Putti%20-%20WGA18262.jpg?width=500",
-    "qid": "Q114029123",
-    "wikidata": "https://www.wikidata.org/wiki/Q114029123",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114029123",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.489856069,
-     41.903324209
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Bacchanale d'enfants",
-    "year": "1626",
-    "location": "Palazzo Barberini",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanale%20d%27enfants%20-%20Nicolas%20Poussin%20-%20Palazzo%20Barberini.jpg?width=500",
-    "qid": "Q114029124",
-    "wikidata": "https://www.wikidata.org/wiki/Q114029124",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114029124",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.489856069,
-     41.903324209
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Paysage avec Agar et l'ange",
-    "year": "1660",
-    "location": "Palazzo Barberini",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Hagar%20and%20the%20Angel%20-%20WGA18339.jpg?width=500",
-    "qid": "Q114029125",
-    "wikidata": "https://www.wikidata.org/wiki/Q114029125",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114029125",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -7344,43 +7378,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.42055556,
-     49.24555556
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Coriolan supplié par sa famille",
-    "year": "1652",
-    "location": "musée Nicolas-Poussin",
-    "city": "Les Andelys",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Coriolan%20Les%20Andelys.jpg?width=500",
-    "qid": "Q106351765",
-    "wikidata": "https://www.wikidata.org/wiki/Q106351765",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q106351765",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -1.1278,
      52.6292
     ]
@@ -7677,80 +7674,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Midas Washing at the Source of the Pactolus",
-    "year": "1627",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Midas%20Washing%20at%20the%20Source%20of%20the%20Pactolus%20MET%20DP123854.jpg?width=500",
-    "qid": "Q19911476",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911476",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911476",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Companions of Rinaldo",
-    "year": "1633",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Companions%20of%20Rinaldo.jpg?width=500",
-    "qid": "Q20167018",
-    "wikidata": "https://www.wikidata.org/wiki/Q20167018",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20167018",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.67388,
      50.10322
     ]
@@ -7848,43 +7771,6 @@
     "creation_place": "Paris",
     "creation_lat": 48.8567,
     "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     9.740111115,
-     52.36549544
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Inspiration of Anacreon",
-    "year": "1628",
-    "location": "Landesmuseum Hannover",
-    "city": "Südstadt-Bult",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20L%27Inspiration%20du%20po%C3%A8te%20%28Nieders%C3%A4chsisches%20Landesmuseum%29.jpg?width=500",
-    "qid": "Q11790075",
-    "wikidata": "https://www.wikidata.org/wiki/Q11790075",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11790075",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
     "_overrides": {
      "creation": {
       "at": "2026-08-24",
@@ -8269,43 +8155,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.57861,
-     55.68889
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Testament of Eudamidas",
-    "year": "1644",
-    "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
-    "country": "Denmark",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eudamidas%27%20testamente.jpg?width=500",
-    "qid": "Q20275988",
-    "wikidata": "https://www.wikidata.org/wiki/Q20275988",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20275988",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -118.475,
      34.0775
     ]
@@ -8417,43 +8266,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.61,
-     53.227777777
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Et in Arcadia ego",
-    "year": "1628",
-    "location": "Chatsworth House",
-    "city": "Bakewell",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Et%20in%20Arcadia%20ego%20%28premi%C3%A8re%20version%29.jpg?width=500",
-    "qid": "Q11919094",
-    "wikidata": "https://www.wikidata.org/wiki/Q11919094",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11919094",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      2.485277777,
      49.193944444
     ]
@@ -8472,43 +8284,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18688232",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     3.880191666,
-     43.611736111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Vénus et Adonis. Paysage de Grottaferrata (right half of Venus and Adonis)",
-    "year": "1625",
-    "location": "Musée Fabre",
-    "city": "Montpellier",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20Paysage%20au%20dieu%20fleuve.%20Paysage%20de%20Grottaferrata%2C%20Vers%201626%2C%202010.14.1.jpg?width=500",
-    "qid": "Q3564176",
-    "wikidata": "https://www.wikidata.org/wiki/Q3564176",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3564176",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -8583,80 +8358,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3620831",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Saint Frances Announcing the End of the Plague in Rome",
-    "year": "1657",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Vision%20de%20sainte%20Fran%C3%A7oise%20Romaine%20-%201657-1658%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20RF%201999%201.jpg?width=500",
-    "qid": "Q15934821",
-    "wikidata": "https://www.wikidata.org/wiki/Q15934821",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q15934821",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Nurture of Bacchus",
-    "year": "1624",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Nurture%20of%20Bacchus%20-%20WGA18285.jpg?width=500",
-    "qid": "Q18761398",
-    "wikidata": "https://www.wikidata.org/wiki/Q18761398",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18761398",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -8861,80 +8562,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Apollo in Love with Daphne",
-    "year": "1664",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Apollo%20and%20Daphne%20-%20WGA18345.jpg?width=500",
-    "qid": "Q19820169",
-    "wikidata": "https://www.wikidata.org/wiki/Q19820169",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19820169",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Rescue of Young King Pyrrhus",
-    "year": "1634",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20jeune%20Pyrrhus%20sauv%C3%A9%20-%201634%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207292%20%3B%20MR%202334.jpg?width=500",
-    "qid": "Q19820170",
-    "wikidata": "https://www.wikidata.org/wiki/Q19820170",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19820170",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      35.204166666,
      31.7725
     ]
@@ -9052,43 +8679,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Venus, Faun and Putti",
-    "year": "1631",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nymphe%20chevauchant%20un%20bouc%20-%20Nicolas%20Poussin%20-%20The%20Hermitage%20Museum.jpg?width=500",
-    "qid": "Q21725307",
-    "wikidata": "https://www.wikidata.org/wiki/Q21725307",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21725307",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "Moses Striking the Rock",
     "year": "1649",
     "location": "Hermitage Museum",
@@ -9101,329 +8691,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21726542",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Holy Family with St Elizabeth and St John the Baptist",
-    "year": "1655",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Holy%20Family%20with%20St%20Elizabeth%20and%20John%20the%20Baptist%20-%20WGA18338.jpg?width=500",
-    "qid": "Q21730872",
-    "wikidata": "https://www.wikidata.org/wiki/Q21730872",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21730872",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Cupids and Geniuses",
-    "year": "1631",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeux%20d%27enfants%20et%20putti%20-%20Nicolas%20Poussin%20-%20Hermitage.jpg?width=500",
-    "qid": "Q21733138",
-    "wikidata": "https://www.wikidata.org/wiki/Q21733138",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21733138",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Victory of Joshua over the Amalekites",
-    "year": "1623",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Nicolas%20-%20The%20Victory%20of%20Joshua%20over%20the%20Amalekites%20copy.jpg?width=500",
-    "qid": "Q27970568",
-    "wikidata": "https://www.wikidata.org/wiki/Q27970568",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27970568",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Descent from the Cross",
-    "year": "1630",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Descente%20de%20croix.jpg?width=500",
-    "qid": "Q27974876",
-    "wikidata": "https://www.wikidata.org/wiki/Q27974876",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27974876",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Bacchanal",
-    "year": "1624",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanale%20-%20Poussin%20-%20mus%C3%A9e%20du%20Prado.jpg?width=500",
-    "qid": "Q27700072",
-    "wikidata": "https://www.wikidata.org/wiki/Q27700072",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27700072",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Bacchic Scene",
-    "year": "1626",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nymphe%20et%20satyre%20buvant%20-%20Poussin%20-%20Museo%20del%20Prado.jpg?width=500",
-    "qid": "Q27700175",
-    "wikidata": "https://www.wikidata.org/wiki/Q27700175",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27700175",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Hunt of Meleager",
-    "year": "1634",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20chasse%20de%20M%C3%A9l%C3%A9agre%2C%20Madrid%2C%20mus%C3%A9e%20du%20Prado.jpg?width=500",
-    "qid": "Q27700904",
-    "wikidata": "https://www.wikidata.org/wiki/Q27700904",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27700904",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Landscape with Saint Paul the Hermit",
-    "year": "1637",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20saint%20J%C3%A9r%C3%B4me%2C%20Madrid%2C%20mus%C3%A9e%20du%20Prado.jpg?width=500",
-    "qid": "Q27701562",
-    "wikidata": "https://www.wikidata.org/wiki/Q27701562",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27701562",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Landscape with Ruins",
-    "year": "1634",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20ruines%20-%20Poussin%20-%20Museo%20del%20Prado.jpg?width=500",
-    "qid": "Q27701706",
-    "wikidata": "https://www.wikidata.org/wiki/Q27701706",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27701706",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -9523,43 +8790,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Nurture of Bacchus",
-    "year": "1626",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Nourriture%20de%20Bacchus%20-%20Nicolas%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
-    "qid": "Q26492452",
-    "wikidata": "https://www.wikidata.org/wiki/Q26492452",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26492452",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "Marriage",
     "year": "1638",
     "location": "National Gallery",
@@ -9572,117 +8802,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26511045",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Landscape with Travellers Resting",
-    "year": "1637",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20des%20voyageurs%20au%20repos%20-%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
-    "qid": "Q26692343",
-    "wikidata": "https://www.wikidata.org/wiki/Q26692343",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26692343",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Landscape with a Man killed by a Snake",
-    "year": "1648",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Landscape%20with%20a%20Man%20Killed%20by%20a%20Snake%20-%20WGA18320.jpg?width=500",
-    "qid": "Q26692856",
-    "wikidata": "https://www.wikidata.org/wiki/Q26692856",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26692856",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Landscape with a Man scooping Water from a Stream",
-    "year": "1637",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20homme%20buvant%20-%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
-    "qid": "Q26699439",
-    "wikidata": "https://www.wikidata.org/wiki/Q26699439",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26699439",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -9819,43 +8938,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Nymph with Satyrs",
-    "year": "1627",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20Nymphes%20satyres.jpg?width=500",
-    "qid": "Q26708051",
-    "wikidata": "https://www.wikidata.org/wiki/Q26708051",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26708051",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "Confirmation",
     "year": "1638",
     "location": "National Gallery",
@@ -9868,43 +8950,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26713323",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Eucharist",
-    "year": "1638",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Eucharist%20I%20%281637-1640%29%20Nicholas%20Poussin.jpg?width=500",
-    "qid": "Q26713336",
-    "wikidata": "https://www.wikidata.org/wiki/Q26713336",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26713336",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -10016,43 +9061,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28801569",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.485277777,
-     49.193944444
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Midas transformant en or le rameau d'une yeuse",
-    "year": "1631",
-    "location": "Musée Condé",
-    "city": "Chantilly",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Midas%20transformant%20en%20or%20le%20rameau%20d%27une%20yeuse%20-%20Poussin%20-%20mus%C3%A9e%20Cond%C3%A9.jpg?width=500",
-    "qid": "Q50660618",
-    "wikidata": "https://www.wikidata.org/wiki/Q50660618",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q50660618",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -10707,117 +9715,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Winter",
-    "year": "1662",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20L%27Hiver%20ou%20Le%20D%C3%A9luge%20-%201660-1664.jpg?width=500",
-    "qid": "Q25445132",
-    "wikidata": "https://www.wikidata.org/wiki/Q25445132",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q25445132",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Autumn",
-    "year": "1662",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Four-seasons-autumn.jpg?width=500",
-    "qid": "Q26251901",
-    "wikidata": "https://www.wikidata.org/wiki/Q26251901",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26251901",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Spring",
-    "year": "1662",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Printemps.jpg?width=500",
-    "qid": "Q26251915",
-    "wikidata": "https://www.wikidata.org/wiki/Q26251915",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26251915",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "Summer",
     "year": "1660",
     "location": "Louvre",
@@ -10830,154 +9727,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26251916",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Institution of the Eucharist",
-    "year": "1641",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Institution%20of%20the%20Eucharist%20-%20WGA18310.jpg?width=500",
-    "qid": "Q29784123",
-    "wikidata": "https://www.wikidata.org/wiki/Q29784123",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q29784123",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Time defending Truth against the attacks of Envy and Discord",
-    "year": "1641",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Temps%20soustrait%20la%20V%C3%A9rit%C3%A9%20aux%20atteintes%20de%20l%27Envie%20et%20de%20la%20Discorde.jpg?width=500",
-    "qid": "Q29842241",
-    "wikidata": "https://www.wikidata.org/wiki/Q29842241",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q29842241",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Miracle of Saint Francis Xavier",
-    "year": "1641",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Miracle%20de%20saint%20Fran%C3%A7ois%20Xavier%20Louvre.jpg?width=500",
-    "qid": "Q29842246",
-    "wikidata": "https://www.wikidata.org/wiki/Q29842246",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q29842246",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Ecstasy of St Paul",
-    "year": "1649",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Ravissement%20de%20saint%20Paul%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207288%20%3B%20MR%202325.jpg?width=500",
-    "qid": "Q29842254",
-    "wikidata": "https://www.wikidata.org/wiki/Q29842254",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q29842254",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",
@@ -11521,80 +10270,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Holy Family with Saint John Saint Elizabeth and Saint Joseph Praying",
-    "year": "1656",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Sainte%20Famille%20avec%20saint%20Jean%2C%20sainte%20Elisabeth%20et%20saint%20Joseph%20priant%20-%20Nicolas%20Poussin%20-%20Louvre.jpg?width=500",
-    "qid": "Q19820171",
-    "wikidata": "https://www.wikidata.org/wiki/Q19820171",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19820171",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Holy Family with Saint John and Saint Elizabeth in a Landscape",
-    "year": "1650",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Sainte%20Famille%20avec%20saint%20Jean%20et%20sainte%20%C3%89lisabeth%20dans%20un%20paysage%20-%201650-1651%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207280%20%3B%20MR%202341.jpg?width=500",
-    "qid": "Q19820173",
-    "wikidata": "https://www.wikidata.org/wiki/Q19820173",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19820173",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "The Blind of Jericho",
     "year": "1650",
     "location": "Louvre",
@@ -11607,80 +10282,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19820174",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Moses Turning Aaron's Staff into a Serpent",
-    "year": "1645",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mo%C3%AFse%20changeant%20en%20serpent%20la%20verge%20d%27Aaron%20-%201646-1647%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207274%20%3B%20MR%202318.jpg?width=500",
-    "qid": "Q19820177",
-    "wikidata": "https://www.wikidata.org/wiki/Q19820177",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19820177",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Landscape with Diogenes",
-    "year": "1648",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20Landscape%20with%20Diogenes%20-%20c.%201647.jpg?width=500",
-    "qid": "Q19944031",
-    "wikidata": "https://www.wikidata.org/wiki/Q19944031",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19944031",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Rome",

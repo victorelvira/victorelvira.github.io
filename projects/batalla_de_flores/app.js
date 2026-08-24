@@ -47,6 +47,9 @@ const state = {
   status: "all",
   rankedOnly: false,
   winnersOnly: false,
+  // Se pone al pulsar un codigo de fuente: la ficha se abre con el bloque de
+  // procedencia desplegado, que es justo lo que se ha ido a mirar.
+  abrirProcedencia: false,
   sort: { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } },
   openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
@@ -1745,13 +1748,37 @@ function bestSourceUrl(entry) {
   return [...urls].sort((a, b) => b.length - a.length)[0] || null;
 }
 
+/* Una fila por fuente, no un cajon con todas.
+ *
+ * Un dato puede venir de tres sitios a la vez (RES·FOTO·MAN) y antes la celda
+ * daba UN solo "fuente ↗", elegido por ser la URL mas larga: el lector no sabia
+ * a cual de las tres llevaba, y las otras dos no tenian enlace. Ahora cada
+ * fuente lleva el suyo.
+ *
+ * Las que no tienen enlace -las fotos cedidas por Santi son ficheros, no
+ * paginas; la semilla no registro de donde salio- se quedan sin flecha, que es
+ * la verdad. El codigo sigue abriendo la ficha, donde se explica cada una. */
 function sourceCell(entry) {
-  const url = bestSourceUrl(entry);
-  const tag = `<span class="tag" title="${esc(sourceLabel(entry.source_type))} (source_type: ${esc(entry.source_type || "")})">${esc(sourceShort(entry.source_type))}</span>`;
-  // En movil solo la flecha: "fuente ↗" se comia el ancho de la tabla.
-  return `<span class="src">${tag}${url
-    ? `<a href="${esc(url)}" target="_blank" rel="noopener" title="Ver la fuente"><span class="long">fuente </span>↗</a>`
-    : ""}</span>`;
+  const partes = sourceParts(entry).filter((part, i, list) => list.indexOf(part) === i);
+  const porFuente = new Map();
+  (entry.source_links || []).forEach(link => {
+    if (!porFuente.has(link.kind)) porFuente.set(link.kind, link.url);
+  });
+  // Sin desglose por fuente (datos viejos) se cae al comportamiento de antes.
+  const suelto = porFuente.size ? null : bestSourceUrl(entry);
+
+  return `<span class="src">${partes.map(part => {
+    const url = porFuente.get(part) || (partes.length === 1 ? suelto : null);
+    const code = SOURCE_SHORT[part] || part;
+    const label = SOURCE_LABEL[part] || part;
+    return `<span class="src-one">
+      <button class="tag tag-src" type="button" data-float="${esc(entry.id)}" data-prov="1"
+        title="${esc(label)} — pulsa para ver de dónde sale este dato">${esc(code)}</button>${url
+      ? `<a href="${esc(url)}" target="_blank" rel="noopener"
+           title="Ver la fuente: ${esc(label)}">↗</a>`
+      : `<span class="src-nolink" title="${esc(label)}: no es una página web, se explica en la ficha">·</span>`}
+    </span>`;
+  }).join("")}</span>`;
 }
 
 /* "A1.º" ordenado como texto daria A1, A10, A2. Se genera una clave
@@ -1798,11 +1825,27 @@ function thumbUrl(url) {
   return url.startsWith("batalla_de_flores/fotos/") ? url.replace(/\.jpg$/, "-mini.jpg") : url;
 }
 
-/* Credito de la imagen. Va pegado a cada foto y no solo en el pie de la pagina:
- * es de quien la hizo y quien la mira tiene que saberlo sin buscarlo. */
-function photoCredit(entry) {
-  return entry.image_credit
-    ? `<span class="credito">Foto cedida por ${esc(entry.image_credit)}</span>` : "";
+/* Credito de la imagen. Va pegado a CADA foto, no solo en el pie de la pagina:
+ * quien la mira tiene que saber de donde sale sin ir a buscarlo.
+ *
+ * Nunca devuelve vacio. Una carroza puede mezclar fotos de dos procedencias
+ * -unas cedidas por Santi y otras del archivo web-, asi que el credito se
+ * resuelve por FOTO, mirando su `image_ref`, y no por carroza. Antes solo se
+ * pintaba cuando habia `image_credit` explicito, y las 640 del archivo salian
+ * sin decir de donde venian. */
+function creditText(entry, url) {
+  const ref = (entry.image_refs || []).find(item => item.url === url);
+  const origen = ref?.origen || "";
+  if (entry.image_credit) return `Foto cedida por ${entry.image_credit}`;
+  if (origen.includes("Santi")) return `Foto cedida por ${origen}`;
+  if (origen) return "Del archivo de batalladeflores.net";
+  // Sin `image_ref` no hay de donde sacarlo, pero callarse tampoco vale: se
+  // dice que no consta, que es la verdad, y sale en Pendiente.
+  return "Procedencia sin registrar";
+}
+
+function photoCredit(entry, url) {
+  return `<span class="credito">${esc(creditText(entry, url))}</span>`;
 }
 
 /* ── visor de fotos ────────────────────────────────────────────────────────
@@ -1826,7 +1869,7 @@ function photoMeta(entry) {
     grupo: entry.group_canonical || "",
     anio: String(entry.year),
     puesto,
-    credito: entry.image_credit || "",
+    credito: "",  // se resuelve por foto en photoAttrs, no por carroza
     origen: entry.float_url || "",
   };
 }
@@ -1835,6 +1878,7 @@ function photoMeta(entry) {
  * al pulsar: el DOM ya sabe a que corresponde cada imagen. */
 function photoAttrs(entry, url) {
   const m = photoMeta(entry);
+  m.credito = creditText(entry, url);
   return `data-photo="${esc(url)}" data-nombre="${esc(m.nombre)}" data-grupo="${esc(m.grupo)}"
     data-anio="${esc(m.anio)}" data-puesto="${esc(m.puesto)}" data-credito="${esc(m.credito)}"
     data-origen="${esc(m.origen)}" data-ficha="${esc(entry.id)}"`;
@@ -1883,7 +1927,7 @@ function pintarVisor() {
       <span>${esc(d.anio)}</span>
       ${d.puesto ? `<span class="lb-puesto">${esc(d.puesto)}</span>` : ""}
     </span>
-    ${d.credito ? `<span class="lb-credito">Foto cedida por ${esc(d.credito)}</span>` : ""}
+    <span class="lb-credito">${esc(d.credito || "Procedencia sin registrar")}</span>
     <span class="lb-contador">${lb.indice + 1} de ${lb.fotos.length}</span>`;
   // Precarga de la siguiente: pasar fotos de 1600 px sin esto parpadea.
   const sig = lb.fotos[(lb.indice + 1) % lb.fotos.length];
@@ -1987,6 +2031,19 @@ function provenanceLine(label, entries, vacio) {
   const partes = countBySource(entries)
     .map(([part, n]) => `${esc(SOURCE_LABEL[part] || part)} (${n})`);
   return `<li><b>${label}:</b> ${entries.length}, de ${joinEs(partes)}.</li>`;
+}
+
+/* Leyenda de los codigos de fuente. Se pinta pegada a la tabla del palmares:
+ * la version larga vive en "De donde sale cada dato", pero eso queda una
+ * pantalla y media mas abajo y nadie ata los dos cabos. */
+function codesLegend(entries) {
+  const codes = new Map();
+  entries.forEach(entry => sourceParts(entry).forEach(part => {
+    if (SOURCE_SHORT[part]) codes.set(SOURCE_SHORT[part], SOURCE_LABEL[part]);
+  }));
+  if (!codes.size) return "";
+  return `<p class="codes codes-inline">Fuente: ${[...codes.entries()]
+    .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>`;
 }
 
 function provenanceBlock(entries, sources, edition) {
@@ -2130,7 +2187,8 @@ function renderEditionDetail(edition) {
               <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
             </tr>`).join("")}
         </tbody>
-      </table>` : (edition.status === "planned" ? "" :
+      </table>
+      ${codesLegend(shown)}` : (edition.status === "planned" ? "" :
         '<h3 class="section">Palmarés</h3><p class="empty">No hay palmarés estructurado para este año.</p>')}
 
     ${unranked.length ? `
@@ -2329,7 +2387,7 @@ function floatProvenance(entry) {
     .map(p => SOURCE_LABEL[p] || p);
 
   return `
-    <details class="proc-foto"${inferida ? " open" : ""}>
+    <details class="proc-foto"${inferida || state.abrirProcedencia ? " open" : ""}>
       <summary>De dónde sale todo esto${inferida
         ? ' <span class="proc-aviso">la foto está asignada por deducción</span>' : ""}</summary>
       <ul class="prov-list">
@@ -2395,7 +2453,7 @@ function renderFloatDetail(entry) {
                title="${esc(entry.name)} (${entry.year})">
               <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
             </button>
-            ${entry.image_credit ? `<figcaption>${photoCredit(entry)}</figcaption>` : ""}
+            <figcaption>${photoCredit(entry, url)}</figcaption>
           </figure>`).join("")}
       </div>`
       : '<p class="empty">El archivo no conserva imágenes de esta carroza.</p>'}
@@ -3207,7 +3265,11 @@ function bindEvents() {
     if (target.dataset.year) select("year", Number(target.dataset.year));
     else if (target.dataset.group) select("group", target.dataset.group);
     else if (target.dataset.route) select("route", target.dataset.route);
-    else if (target.dataset.float) select("float", target.dataset.float);
+    else if (target.dataset.float) {
+      state.abrirProcedencia = Boolean(target.dataset.prov);
+      select("float", target.dataset.float);
+      state.abrirProcedencia = false;
+    }
   });
 
   // popstate cubre el boton atras del navegador y el gesto de deslizar del

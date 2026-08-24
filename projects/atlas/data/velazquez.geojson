@@ -279,27 +279,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "San Juan en Patmos",
-    "year": "1619",
-    "location": "National Gallery of London",
+    "title": "Saint John the Evangelist on the Island of Patmos",
+    "year": "1618",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "135.5 × 102.2 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Diego_Vel%C3%A1zquez_018_%28John_the_Evangelist_from_Patmos%29.jpg/500px-Diego_Vel%C3%A1zquez_018_%28John_the_Evangelist_from_Patmos%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Seville",
-    "creation_lat": 37.3891,
-    "creation_lon": -5.9845,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20018%20%28John%20the%20Evangelist%20from%20Patmos%29.jpg?width=500",
+    "qid": "Q3463890",
+    "wikidata": "https://www.wikidata.org/wiki/Q3463890",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3463890",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-london"
+    "creation_place": "Seville",
+    "creation_lat": 37.388611,
+    "creation_lon": -5.995,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "135.5 × 102.2 cm"
    }
   },
   {
@@ -486,29 +496,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "La venerable madre Jerónima de la Fuente",
+    "title": "The Nun Jerónima de la Fuente",
     "year": "1620",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "162 × 107 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Madre_Jer%C3%B3nima_de_la_Fuente%2C_by_Diego_Vel%C3%A1zquez.jpg/500px-Madre_Jer%C3%B3nima_de_la_Fuente%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Seville",
-    "creation_lat": 37.3891,
-    "creation_lon": -5.9845,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madre%20Jer%C3%B3nima%20de%20la%20Fuente%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q7917255",
+    "wikidata": "https://www.wikidata.org/wiki/Q7917255",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q7917255",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Seville",
+    "creation_lat": 37.388611,
+    "creation_lon": -5.995,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "162 × 107 cm"
    }
   },
   {
@@ -702,27 +720,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Cristo contemplado por el alma cristiana",
-    "year": "1626–1628",
-    "location": "National Gallery of London",
+    "title": "Christ contemplated by the Christian Soul",
+    "year": "1626",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "165 × 206.4 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Velazquez-CristCol.jpg/500px-Velazquez-CristCol.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-CristCol.jpg?width=500",
+    "qid": "Q4473607",
+    "wikidata": "https://www.wikidata.org/wiki/Q4473607",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4473607",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-london"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "165 × 206.4 cm"
    }
   },
   {
@@ -730,29 +758,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Felipe IV",
-    "year": "1623–1628",
+    "title": "Philip IV in black suit",
+    "year": "1625",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "198 × 101.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Felipe_IV_de_negro.jpg/500px-Felipe_IV_de_negro.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Felipe%20IV%20de%20negro.jpg?width=500",
+    "qid": "Q3380049",
+    "wikidata": "https://www.wikidata.org/wiki/Q3380049",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3380049",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "198 × 101.5 cm"
    }
   },
   {
@@ -892,29 +928,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "La cena de Emaús",
-    "year": "1628–1629",
-    "city": "New York",
+    "title": "The Supper at Emmaus",
+    "year": "1618",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "123.2 × 132.7 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg/500px-La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20cena%20de%20Ema%C3%BAs%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q16025001",
+    "wikidata": "https://www.wikidata.org/wiki/Q16025001",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16025001",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "creation_place": "Seville",
+    "creation_lat": 37.388611,
+    "creation_lon": -5.995,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "123.2 × 132.7 cm"
    }
   },
   {
@@ -1117,29 +1161,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "A Sybil (Juana Pacheco?)",
-    "year": "1630–1631",
+    "title": "Sibyl",
+    "year": "1632",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "62 × 50 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/45_Dama%2C_Juana_Pacheco_%28Museo_del_Prado%2C_1630-31%29.jpg/500px-45_Dama%2C_Juana_Pacheco_%28Museo_del_Prado%2C_1630-31%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/45%20Dama%2C%20Juana%20Pacheco%20%28Museo%20del%20Prado%2C%201630-31%29.jpg?width=500",
+    "qid": "Q16038751",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038751",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038751",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "62 × 50 cm"
    }
   },
   {
@@ -1147,29 +1199,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.57,
-     48.14833
+     11.569985,
+     48.148291
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Retrato de hombre joven",
-    "year": "1630–1631",
+    "title": "Young Spanish Nobleman",
+    "year": "1629",
+    "location": "Alte Pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "location": "Alte Pinakothek",
     "attribution": "generally accepted",
-    "dimensions": "89.2 × 69.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Young_Spanish_Nobleman_by_Vel%C3%A1zquez_%281631%29_-_Alte_Pinakothek_-_Munich_-_Germany_2017.jpg/500px-Young_Spanish_Nobleman_by_Vel%C3%A1zquez_%281631%29_-_Alte_Pinakothek_-_Munich_-_Germany_2017.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Young%20Spanish%20Nobleman%20by%20Vel%C3%A1zquez%20%281631%29%20-%20Alte%20Pinakothek%20-%20Munich%20-%20Germany%202017.jpg?width=500",
+    "qid": "Q3399402",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399402",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399402",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "alte-pinakothek"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "89.2 × 69.5 cm"
    }
   },
   {
@@ -1305,29 +1365,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Don Diego del Corral y Arellano",
-    "year": "1631–1632",
+    "title": "Portrait of Don Diego de Corral y Arellano",
+    "year": "1632",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "205 × 116 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Don_Diego_del_Corral_y_Arellano%2C_por_Diego_Vel%C3%A1zquez.jpg/500px-Don_Diego_del_Corral_y_Arellano%2C_por_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Don%20Diego%20del%20Corral%20y%20Arellano%2C%20por%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q3035767",
+    "wikidata": "https://www.wikidata.org/wiki/Q3035767",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3035767",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "205 × 116 cm"
    }
   },
   {
@@ -2408,29 +2476,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Menipo",
-    "year": "1639–1641",
+    "title": "Menippus",
+    "year": "1638",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "178.5 × 93.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Diego_Vel%C3%A1zquez_022.jpg/500px-Diego_Vel%C3%A1zquez_022.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20022.jpg?width=500",
+    "qid": "Q3333210",
+    "wikidata": "https://www.wikidata.org/wiki/Q3333210",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3333210",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "178.5 × 93.5 cm"
    }
   },
   {
@@ -2871,29 +2947,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Ferdinando Brandani",
+    "title": "Portrait of Ferdinando Brandani",
     "year": "1650",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "50.5 × 47 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Ferdinando_Brandani_by_Diego_Vel%C3%A1zquez.jpg/500px-Ferdinando_Brandani_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferdinando%20Brandani%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q3220297",
+    "wikidata": "https://www.wikidata.org/wiki/Q3220297",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3220297",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "50.5 × 47 cm"
    }
   },
   {
@@ -2971,23 +3055,31 @@
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Camillo Massimi",
+    "title": "Portrait of Cardinal Camillo Massimi (1620-1677)",
     "year": "1650",
-    "city": "Wimborne Minster",
     "location": "Kingston Lacy",
+    "city": "Wimborne Minster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "73.6 × 58.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Camillo_Massimo_by_Diego_Vel%C3%A1zquez.jpg/500px-Camillo_Massimo_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camillo%20Massimo%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q2935136",
+    "wikidata": "https://www.wikidata.org/wiki/Q2935136",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2935136",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "kingston-lacy",
-    "country": "United Kingdom"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "73.6 × 58.5 cm"
    }
   },
   {
@@ -3025,29 +3117,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9631,
-     40.7794
+     -73.963333333,
+     40.779444444
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "María Teresa, infanta de España",
-    "year": "1651–1652",
-    "city": "New York",
+    "title": "María Teresa (1638–1683), Infanta of Spain",
+    "year": "1651",
     "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "34.3 × 40 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Velazquez-TeresaNY51.jpg/500px-Velazquez-TeresaNY51.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-TeresaNY51.jpg?width=500",
+    "qid": "Q19911687",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911687",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911687",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "34.3 × 40 cm"
    }
   },
   {
@@ -3311,29 +3411,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Mercurio y Argos",
+    "title": "Mercury and Argus",
     "year": "1659",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "128 × 250 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/F%C3%A1bula_de_Mercurio_y_Argos%2C_by_Diego_Vel%C3%A1zquez.jpg/500px-F%C3%A1bula_de_Mercurio_y_Argos%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/F%C3%A1bula%20de%20Mercurio%20y%20Argos%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q780930",
+    "wikidata": "https://www.wikidata.org/wiki/Q780930",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q780930",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "128 × 250 cm"
    }
   },
   {
@@ -3480,29 +3588,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Cabeza de hombre joven de perfil",
-    "year": "1618–1619",
+    "title": "Head of a Man in Profile",
+    "year": "1618",
+    "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage Museum",
-    "attribution": "disputed",
-    "dimensions": "39.5 × 35.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Hombre_de_perfil%2C_by_Diego_Vel%C3%A1zquez.jpg/500px-Hombre_de_perfil%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Seville",
-    "creation_lat": 37.3891,
-    "creation_lon": -5.9845,
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hombre%20de%20perfil%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q4503835",
+    "wikidata": "https://www.wikidata.org/wiki/Q4503835",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4503835",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum"
+    "creation_place": "Seville",
+    "creation_lat": 37.388611,
+    "creation_lon": -5.995,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "39.5 × 35.8 cm"
    }
   },
   {
@@ -3910,29 +4026,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48278,
-     41.89306
+     12.482777777,
+     41.893055555
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Portrait of a Clergyman (Self-portrait?)",
+    "title": "Portrait of Juan de Córdoba",
     "year": "1630",
+    "location": "Capitoline Museums",
     "city": "Rome",
     "country": "Italy",
-    "location": "Capitoline Museums",
-    "attribution": "disputed",
-    "dimensions": "67 × 50 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Portrait_d%27homme_%28Diego_Vel%C3%A1zquez%2C_1630%29.jpg/500px-Portrait_d%27homme_%28Diego_Vel%C3%A1zquez%2C_1630%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20d%27homme%20%28Diego%20Vel%C3%A1zquez%2C%201630%29.jpg?width=500",
+    "qid": "Q3937408",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937408",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937408",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "capitoline-museums"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "67 × 50 cm"
    }
   },
   {
@@ -4032,29 +4156,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6922,
-     40.4139
+     -3.692222222,
+     40.413888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Cristo en la cruz",
+    "title": "Crucifixion of Christ",
     "year": "1631",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
-    "attribution": "disputed",
-    "dimensions": "100 × 57 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Cristo_en_la_Cruz_%28Vel%C3%A1zquez%2C_1631%29.jpg/500px-Cristo_en_la_Cruz_%28Vel%C3%A1zquez%2C_1631%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cristo%20en%20la%20Cruz%20%28Vel%C3%A1zquez%2C%201631%29.jpg?width=500",
+    "qid": "Q3698263",
+    "wikidata": "https://www.wikidata.org/wiki/Q3698263",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3698263",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-del-prado"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "100 × 57 cm"
    }
   },
   {
@@ -4092,27 +4224,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "La tela real",
-    "year": "1636–1638",
-    "location": "National Gallery of London",
-    "attribution": "disputed",
-    "dimensions": "182 × 302 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Velazquez-TelaReal.jpg/500px-Velazquez-TelaReal.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "title": "Philip IV hunting Wild Boar (La Tela Real)",
+    "year": "1635",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-TelaReal.jpg?width=500",
+    "qid": "Q26705894",
+    "wikidata": "https://www.wikidata.org/wiki/Q26705894",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26705894",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-london"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "182 × 302 cm"
    }
   },
   {
@@ -4309,27 +4451,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Felipe IV",
-    "year": "1656–1657",
-    "location": "National Gallery of London",
-    "attribution": "disputed",
-    "dimensions": "64 × 53.75 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Philip_IV_of_Spain.jpg/500px-Philip_IV_of_Spain.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "title": "Philip IV of Spain",
+    "year": "1656",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20IV%20of%20Spain.jpg?width=500",
+    "qid": "Q26706561",
+    "wikidata": "https://www.wikidata.org/wiki/Q26706561",
     "_source": {
-     "source": "Wikipedia: List of works by Diego Velázquez",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26706561",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-london"
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "64 × 53.75 cm"
    }
   },
   {
@@ -4404,80 +4556,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Young Spanish Nobleman",
-    "year": "1629",
-    "location": "Alte Pinakothek",
-    "city": "Munich",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Young%20Spanish%20Nobleman%20by%20Vel%C3%A1zquez%20%281631%29%20-%20Alte%20Pinakothek%20-%20Munich%20-%20Germany%202017.jpg?width=500",
-    "qid": "Q3399402",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399402",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3399402",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Mercury and Argus",
-    "year": "1659",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/F%C3%A1bula%20de%20Mercurio%20y%20Argos%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q780930",
-    "wikidata": "https://www.wikidata.org/wiki/Q780930",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q780930",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -3.692222222,
      40.413888888
     ]
@@ -4496,43 +4574,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q956015",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Portrait of Don Diego de Corral y Arellano",
-    "year": "1632",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Don%20Diego%20del%20Corral%20y%20Arellano%2C%20por%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q3035767",
-    "wikidata": "https://www.wikidata.org/wiki/Q3035767",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3035767",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Madrid",
@@ -4589,80 +4630,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Portrait of Ferdinando Brandani",
-    "year": "1650",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferdinando%20Brandani%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q3220297",
-    "wikidata": "https://www.wikidata.org/wiki/Q3220297",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3220297",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Menippus",
-    "year": "1638",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20022.jpg?width=500",
-    "qid": "Q3333210",
-    "wikidata": "https://www.wikidata.org/wiki/Q3333210",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3333210",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.151666666,
      51.503472222
     ]
@@ -4686,43 +4653,6 @@
     "creation_place": "Seville",
     "creation_lat": 37.388611,
     "creation_lon": -5.995,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -2.03184,
-     50.81096
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Portrait of Cardinal Camillo Massimi (1620-1677)",
-    "year": "1650",
-    "location": "Kingston Lacy",
-    "city": "Wimborne Minster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camillo%20Massimo%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q2935136",
-    "wikidata": "https://www.wikidata.org/wiki/Q2935136",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q2935136",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
     "_overrides": {
      "creation": {
       "at": "2026-08-24",
@@ -4891,43 +4821,6 @@
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Philip IV in black suit",
-    "year": "1625",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Felipe%20IV%20de%20negro.jpg?width=500",
-    "qid": "Q3380049",
-    "wikidata": "https://www.wikidata.org/wiki/Q3380049",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3380049",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
     "title": "Saint Anthony Abbot and St. Paul, the first hermit",
     "year": "1634",
     "location": "Museo del Prado",
@@ -4996,117 +4889,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Crucifixion of Christ",
-    "year": "1631",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cristo%20en%20la%20Cruz%20%28Vel%C3%A1zquez%2C%201631%29.jpg?width=500",
-    "qid": "Q3698263",
-    "wikidata": "https://www.wikidata.org/wiki/Q3698263",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3698263",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Saint John the Evangelist on the Island of Patmos",
-    "year": "1618",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20018%20%28John%20the%20Evangelist%20from%20Patmos%29.jpg?width=500",
-    "qid": "Q3463890",
-    "wikidata": "https://www.wikidata.org/wiki/Q3463890",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3463890",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Seville",
-    "creation_lat": 37.388611,
-    "creation_lon": -5.995,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.482777777,
-     41.893055555
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Portrait of Juan de Córdoba",
-    "year": "1630",
-    "location": "Capitoline Museums",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20d%27homme%20%28Diego%20Vel%C3%A1zquez%2C%201630%29.jpg?width=500",
-    "qid": "Q3937408",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937408",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3937408",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.153022,
      51.517454
     ]
@@ -5125,43 +4907,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3399510",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.370833333,
-     39.479166666
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Self Portrait",
-    "year": "1650",
-    "location": "Museu de Belles Arts de València",
-    "city": "Valencia",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20Autorretrato%2045%20x%2038%20cm%20-%20Colecci%C3%B3n%20Real%20Academia%20de%20Bellas%20Artes%20de%20San%20Carlos%20-%20Museo%20de%20Bellas%20Artes%20de%20Valencia.jpg?width=500",
-    "qid": "Q3630736",
-    "wikidata": "https://www.wikidata.org/wiki/Q3630736",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3630736",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Madrid",
@@ -5446,43 +5191,6 @@
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Head of a Man in Profile",
-    "year": "1618",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hombre%20de%20perfil%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q4503835",
-    "wikidata": "https://www.wikidata.org/wiki/Q4503835",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q4503835",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Seville",
-    "creation_lat": 37.388611,
-    "creation_lon": -5.995,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
     "title": "Portrait of Philip IV, King of Spain",
     "year": "1640",
     "location": "Hermitage Museum",
@@ -5584,80 +5292,6 @@
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "The Nun Jerónima de la Fuente",
-    "year": "1620",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madre%20Jer%C3%B3nima%20de%20la%20Fuente%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q7917255",
-    "wikidata": "https://www.wikidata.org/wiki/Q7917255",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q7917255",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Seville",
-    "creation_lat": 37.388611,
-    "creation_lon": -5.995,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Sibyl",
-    "year": "1632",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/45%20Dama%2C%20Juana%20Pacheco%20%28Museo%20del%20Prado%2C%201630-31%29.jpg?width=500",
-    "qid": "Q16038751",
-    "wikidata": "https://www.wikidata.org/wiki/Q16038751",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16038751",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.692222222,
-     40.413888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
     "title": "The Fountain of the Tritons in the Island Garden, Aranjuez",
     "year": "1657",
     "location": "Museo del Prado",
@@ -5732,43 +5366,6 @@
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "The Supper at Emmaus",
-    "year": "1618",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20cena%20de%20Ema%C3%BAs%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q16025001",
-    "wikidata": "https://www.wikidata.org/wiki/Q16025001",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16025001",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Seville",
-    "creation_lat": 37.388611,
-    "creation_lon": -5.995,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
     "title": "Philip IV (1605–1665), King of Spain",
     "year": "1624",
     "location": "Metropolitan Museum of Art",
@@ -5781,43 +5378,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19911409",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "María Teresa (1638–1683), Infanta of Spain",
-    "year": "1651",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-TeresaNY51.jpg?width=500",
-    "qid": "Q19911687",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911687",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911687",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Madrid",
@@ -5930,117 +5490,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107447354",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Christ contemplated by the Christian Soul",
-    "year": "1626",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-CristCol.jpg?width=500",
-    "qid": "Q4473607",
-    "wikidata": "https://www.wikidata.org/wiki/Q4473607",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q4473607",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Philip IV hunting Wild Boar (La Tela Real)",
-    "year": "1635",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-TelaReal.jpg?width=500",
-    "qid": "Q26705894",
-    "wikidata": "https://www.wikidata.org/wiki/Q26705894",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26705894",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Philip IV of Spain",
-    "year": "1656",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20IV%20of%20Spain.jpg?width=500",
-    "qid": "Q26706561",
-    "wikidata": "https://www.wikidata.org/wiki/Q26706561",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26706561",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4169,
-    "creation_lon": -3.7033,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -6674,43 +6123,6 @@
    },
    "properties": {
     "painter": "Velázquez",
-    "title": "Kitchen Scene with the Supper in Emmaus",
-    "year": "1618",
-    "location": "National Gallery of Ireland",
-    "city": "Dublin City",
-    "country": "Ireland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20mulata%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
-    "qid": "Q64689806",
-    "wikidata": "https://www.wikidata.org/wiki/Q64689806",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q64689806",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Seville",
-    "creation_lat": 37.388611,
-    "creation_lon": -5.995,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -6.25255,
-     53.34091
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
     "title": "A Spanish Infanta in 17th Century Costume",
     "year": "",
     "location": "National Gallery of Ireland",
@@ -7255,33 +6667,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119823893",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.151666666,
-     51.503472222
-    ]
-   },
-   "properties": {
-    "painter": "Velázquez",
-    "title": "Portrait of a Man (possibly José Nieto)",
-    "year": "",
-    "location": "Apsley House",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20061.jpg?width=500",
-    "qid": "Q140590906",
-    "wikidata": "https://www.wikidata.org/wiki/Q140590906",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q140590906",
      "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }

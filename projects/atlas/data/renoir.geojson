@@ -7,29 +7,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.61167,
-     41.50889
+     -81.611666666,
+     41.508888888
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Mademoiselle Romaine Lacaux",
+    "title": "Romaine Lacaux",
     "year": "1864",
+    "location": "Cleveland Museum of Art",
     "city": "Cleveland",
     "country": "United States",
-    "location": "Cleveland Museum of Art",
     "attribution": "generally accepted",
-    "dimensions": "81.3 cm × 65 cm (32.0 in × 25.6 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Romaine_Lacaux%2C_by_Pierre-Auguste_Renoir%2C_Cleveland_Museum_of_Art%2C_1942.1065.jpg/500px-Romaine_Lacaux%2C_by_Pierre-Auguste_Renoir%2C_Cleveland_Museum_of_Art%2C_1942.1065.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Romaine%20Lacaux%2C%20by%20Pierre-Auguste%20Renoir%2C%20Cleveland%20Museum%20of%20Art%2C%201942.1065.jpg?width=500",
+    "qid": "Q15880875",
+    "wikidata": "https://www.wikidata.org/wiki/Q15880875",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15880875",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "cleveland-museum-of-art"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "81.3 cm × 65 cm (32.0 in × 25.6 in)"
    }
   },
   {
@@ -139,29 +147,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.655833333,
+     -23.561111111
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Jules Le Coeur and his dogs in the forest of Fontainebleau",
+    "title": "The Painter Le Coeur Hunting in the Forest of Fontainebleau",
     "year": "1866",
-    "city": "São Paulo",
     "location": "São Paulo Museum of Art",
+    "city": "São Paulo",
+    "country": "Brazil",
     "attribution": "generally accepted",
-    "dimensions": "112 cm × 90 cm (44 in × 35 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Pierre-Auguste_Renoir_-_Le_peintre_Jules_Le_Coeur_et_ses_chiens_dans_la_for%C3%AAt_de_Fontainebleau_%281866%29.jpg/500px-Pierre-Auguste_Renoir_-_Le_peintre_Jules_Le_Coeur_et_ses_chiens_dans_la_for%C3%AAt_de_Fontainebleau_%281866%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Le%20peintre%20Jules%20Le%20Coeur%20et%20ses%20chiens%20dans%20la%20for%C3%AAt%20de%20Fontainebleau%20%281866%29.jpg?width=500",
+    "qid": "Q49867702",
+    "wikidata": "https://www.wikidata.org/wiki/Q49867702",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q49867702",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "sao-paulo-museum-of-art",
-    "country": "Brazil"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "112 cm × 90 cm (44 in × 35 in)"
    }
   },
   {
@@ -595,29 +611,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Chalands sur la Seine (Barges on the Seine)",
+    "title": "Chalands sur la Seine",
     "year": "1869",
-    "city": "Paris",
-    "country": "France",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "47 cm × 64 cm (19 in × 25 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Pierre-Auguste_Renoir_-_Chalands_sur_la_Seine.jpg/500px-Pierre-Auguste_Renoir_-_Chalands_sur_la_Seine.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Chalands%20sur%20la%20Seine.jpg?width=500",
+    "qid": "Q17490987",
+    "wikidata": "https://www.wikidata.org/wiki/Q17490987",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17490987",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "47 cm × 64 cm (19 in × 25 in)"
    }
   },
   {
@@ -1363,29 +1387,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Torso: Effect of Sunlight",
-    "year": "1875-1876",
-    "city": "Paris",
-    "country": "France",
+    "title": "Torse, effet de soleil",
+    "year": "1875",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "81 cm × 65 cm (32 in × 26 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Torso_Effect_of_Sunlight_Renoir_1876.jpg/500px-Torso_Effect_of_Sunlight_Renoir_1876.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Torso%20Effect%20of%20Sunlight%20Renoir%201876.jpg?width=500",
+    "qid": "Q3879260",
+    "wikidata": "https://www.wikidata.org/wiki/Q3879260",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3879260",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-d-orsay"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "81 cm × 65 cm (32 in × 26 in)"
    }
   },
   {
@@ -1724,28 +1756,36 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Woman on a Stair",
+    "title": "Woman on a Staircase",
     "year": "1876",
+    "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage Museum",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Pierre-Auguste_Renoir_-_Woman_on_a_Stair.jpg/500px-Pierre-Auguste_Renoir_-_Woman_on_a_Stair.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Woman%20on%20a%20Stair.jpg?width=500",
+    "qid": "Q27976336",
+    "wikidata": "https://www.wikidata.org/wiki/Q27976336",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27976336",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   },
   {
@@ -3007,29 +3047,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Woman Arranging her Hair ( fr:Femme se coiffant )",
+    "title": "Woman Arranging her Hair",
     "year": "1887",
+    "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage Museum",
     "attribution": "generally accepted",
-    "dimensions": "65.3 cm × 54 cm (25.7 in × 21.3 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Pierre-Auguste_Renoir_-_Woman_Arranging_her_Hair.jpg/500px-Pierre-Auguste_Renoir_-_Woman_Arranging_her_Hair.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Woman%20Arranging%20her%20Hair.jpg?width=500",
+    "qid": "Q16038535",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038535",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038535",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum"
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "65.3 cm × 54 cm (25.7 in × 21.3 in)"
    }
   },
   {
@@ -3527,29 +3575,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32254,
-     48.86384
+     2.322538337,
+     48.863845351
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Nude woman lying down ( Femme nue couchée )",
-    "year": "1906",
-    "city": "Paris",
-    "country": "France",
+    "title": "Naked woman, lying",
+    "year": "1907",
     "location": "Musée de l'Orangerie",
+    "city": "1st arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Femme%20nue%20couch%C3%A9e%20%28Gabrielle%29.jpg?width=500",
+    "qid": "Q3742370",
+    "wikidata": "https://www.wikidata.org/wiki/Q3742370",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3742370",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "67 cm × 160 cm (26 in × 63 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pierre-Auguste_Renoir_-_Femme_nue_couch%C3%A9e_%28Gabrielle%29.jpg/500px-Pierre-Auguste_Renoir_-_Femme_nue_couch%C3%A9e_%28Gabrielle%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Cagnes-sur-Mer",
     "creation_lat": 43.6644,
-    "creation_lon": 7.1489,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-de-l-orangerie"
+    "creation_lon": 7.1489
    }
   },
   {
@@ -3629,29 +3678,30 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32653,
-     48.85997
+     2.326527,
+     48.859972
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "La Toilette : femme se peignant ( La Toilette: femme se peignant )",
+    "title": "La Toilette",
     "year": "1907",
-    "city": "Paris",
-    "country": "France",
     "location": "Musée d'Orsay",
+    "city": "7th arrondissement of Paris",
+    "country": "France",
     "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20032.jpg?width=500",
+    "qid": "Q3824626",
+    "wikidata": "https://www.wikidata.org/wiki/Q3824626",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3824626",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "dimensions": "55 cm × 46.5 cm (21.7 in × 18.3 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pierre-Auguste_Renoir_032.jpg/500px-Pierre-Auguste_Renoir_032.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
     "creation_place": "Cagnes-sur-Mer",
     "creation_lat": 43.6644,
-    "creation_lon": 7.1489,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-d-orsay"
+    "creation_lon": 7.1489
    }
   },
   {
@@ -5375,43 +5425,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20189652",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Girl with a Hoop",
-    "year": "1885",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir%20Washington%20September%202016-3.jpg?width=500",
-    "qid": "Q20189761",
-    "wikidata": "https://www.wikidata.org/wiki/Q20189761",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20189761",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -8143,33 +8156,6 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "In the Meadow",
-    "year": "1850",
-    "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20In%20the%20Meadow%20%281888%E2%80%9392%29%20MET%20DT1398.jpg?width=500",
-    "qid": "Q19905164",
-    "wikidata": "https://www.wikidata.org/wiki/Q19905164",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19905164",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.963333333,
-     40.779444444
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
     "title": "Madame Édouard Bernier (Marie-Octavie-Stéphanie Laurens, 1838–1920)",
     "year": "1871",
     "location": "Metropolitan Museum of Art",
@@ -8830,43 +8816,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
-     52.52081
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Children's Afternoon at Wargemont",
-    "year": "1884",
-    "location": "Alte Nationalgalerie",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Auguste%20Renoir%20-%20L%27apr%C3%A8s-midi%20des%20enfants%20%C3%A0%20Wargemont%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18683366",
-    "wikidata": "https://www.wikidata.org/wiki/Q18683366",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18683366",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.67388,
      50.10322
     ]
@@ -9273,33 +9222,6 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     18.078055555,
-     59.328611111
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Bathing Women",
-    "year": "1916",
-    "location": "Nationalmuseum",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Femmes%20au%20bain.jpg?width=500",
-    "qid": "Q18599143",
-    "wikidata": "https://www.wikidata.org/wiki/Q18599143",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18599143",
-     "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
   },
@@ -11823,33 +11745,6 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "La Toilette",
-    "year": "1907",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20032.jpg?width=500",
-    "qid": "Q3824626",
-    "wikidata": "https://www.wikidata.org/wiki/Q3824626",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3824626",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
     "title": "Le fragole",
     "year": "1908",
     "location": "Musée d'Orsay",
@@ -11863,43 +11758,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3828749",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Torse, effet de soleil",
-    "year": "1875",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Torso%20Effect%20of%20Sunlight%20Renoir%201876.jpg?width=500",
-    "qid": "Q3879260",
-    "wikidata": "https://www.wikidata.org/wiki/Q3879260",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3879260",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -12101,43 +11959,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3985182",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Portrait of Madame Charpentier",
-    "year": "1876",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Charpentier%20-%2001.jpg?width=500",
-    "qid": "Q11702934",
-    "wikidata": "https://www.wikidata.org/wiki/Q11702934",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11702934",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -12952,43 +12773,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28129790",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.172808,
-     39.960643
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Children on the Seashore, Guernsey (Enfants au bord de la mer à Guernesey)",
-    "year": "1883",
-    "location": "Barnes Foundation",
-    "city": "Philadelphia",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Children%20on%20the%20Seashore%2C%20Guernsey%20%28Enfants%20au%20bord%20de%20la%20mer%20%C3%A0%20Guernesey%29%20-%20BF10%20-%20Barnes%20Foundation.jpg?width=500",
-    "qid": "Q28129791",
-    "wikidata": "https://www.wikidata.org/wiki/Q28129791",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q28129791",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -14247,43 +14031,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.2136,
-     42.7078
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Sleeping Girl",
-    "year": "1880",
-    "location": "Clark Art Institute",
-    "city": "Massachusetts",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-August%20Renoir%20Sleeping%20Girl%20with%20a%20Cat.jpg?width=500",
-    "qid": "Q80569576",
-    "wikidata": "https://www.wikidata.org/wiki/Q80569576",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q80569576",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      139.021145,
      35.256711
     ]
@@ -14998,43 +14745,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.072222222,
-     36.746111111
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Paysage de printemps",
-    "year": "1877",
-    "location": "National Museum of Fine Arts of Algiers",
-    "city": "Algiers",
-    "country": "Algeria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20038.jpg?width=500",
-    "qid": "Q83647727",
-    "wikidata": "https://www.wikidata.org/wiki/Q83647727",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q83647727",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.95327,
      46.0043
     ]
@@ -15081,43 +14791,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q85224946",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.474706,
-     37.556422
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Young Girls Looking at an Album",
-    "year": "1892",
-    "location": "Virginia Museum of Fine Arts",
-    "city": "Richmond",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir%20-%20Young%20Girls%20Looking%20at%20an%20Album%20%28Jeunes%20Filles%20regardant%20un%20album%29%20c.%201892%20VMFA.jpg?width=500",
-    "qid": "Q85224949",
-    "wikidata": "https://www.wikidata.org/wiki/Q85224949",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q85224949",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -16268,43 +15941,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "The Painter Le Coeur Hunting in the Forest of Fontainebleau",
-    "year": "1866",
-    "location": "São Paulo Museum of Art",
-    "city": "São Paulo",
-    "country": "Brazil",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Le%20peintre%20Jules%20Le%20Coeur%20et%20ses%20chiens%20dans%20la%20for%C3%AAt%20de%20Fontainebleau%20%281866%29.jpg?width=500",
-    "qid": "Q49867702",
-    "wikidata": "https://www.wikidata.org/wiki/Q49867702",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q49867702",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      30.313611111,
      59.940555555
     ]
@@ -17323,43 +16959,6 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Woman with Fan (Femme à l'éventail)",
-    "year": "1886",
-    "location": "Barnes Foundation",
-    "city": "Philadelphia",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Woman%20with%20Fan%20%28Femme%20%C3%A0%20l%27%C3%A9ventail%29%20-%20BF938%20-%20Barnes%20Foundation.jpg?width=500",
-    "qid": "Q28129814",
-    "wikidata": "https://www.wikidata.org/wiki/Q28129814",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q28129814",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.172808,
-     39.960643
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
     "title": "View From Montmartre (Vue de Montmartre)",
     "year": "1892",
     "location": "Barnes Foundation",
@@ -17770,43 +17369,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17490968",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.326527,
-     48.859972
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Chalands sur la Seine",
-    "year": "1869",
-    "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Chalands%20sur%20la%20Seine.jpg?width=500",
-    "qid": "Q17490987",
-    "wikidata": "https://www.wikidata.org/wiki/Q17490987",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17490987",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },
@@ -22108,43 +21670,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Woman Arranging her Hair",
-    "year": "1887",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Woman%20Arranging%20her%20Hair.jpg?width=500",
-    "qid": "Q16038535",
-    "wikidata": "https://www.wikidata.org/wiki/Q16038535",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16038535",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      21.024722222,
      52.231666666
     ]
@@ -22458,43 +21983,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Romaine Lacaux",
-    "year": "1864",
-    "location": "Cleveland Museum of Art",
-    "city": "Cleveland",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Romaine%20Lacaux%2C%20by%20Pierre-Auguste%20Renoir%2C%20Cleveland%20Museum%20of%20Art%2C%201942.1065.jpg?width=500",
-    "qid": "Q15880875",
-    "wikidata": "https://www.wikidata.org/wiki/Q15880875",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q15880875",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.561758,
      47.353045
     ]
@@ -22602,33 +22090,6 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Naked woman, lying",
-    "year": "1907",
-    "location": "Musée de l'Orangerie",
-    "city": "1st arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Femme%20nue%20couch%C3%A9e%20%28Gabrielle%29.jpg?width=500",
-    "qid": "Q3742370",
-    "wikidata": "https://www.wikidata.org/wiki/Q3742370",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3742370",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.322538337,
-     48.863845351
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
     "title": "Naked Woman in a Landscape",
     "year": "1883",
     "location": "Musée de l'Orangerie",
@@ -22641,43 +22102,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3742371",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.322538337,
-     48.863845351
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Gabrielle and Jean",
-    "year": "1895",
-    "location": "Musée de l'Orangerie",
-    "city": "1st arrondissement of Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabrielle%20et%20Jean%2C%20by%20Pierre-Auguste%20Renoir%2C%20from%20C2RMF%20cropped.jpg?width=500",
-    "qid": "Q3756784",
-    "wikidata": "https://www.wikidata.org/wiki/Q3756784",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3756784",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -23351,43 +22775,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27971426",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Woman on a Staircase",
-    "year": "1876",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Woman%20on%20a%20Stair.jpg?width=500",
-    "qid": "Q27976336",
-    "wikidata": "https://www.wikidata.org/wiki/Q27976336",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27976336",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -26088,43 +25475,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q91932642",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -74.073370905,
-     4.596702536
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Paysage de l'Île-de-France",
-    "year": "1883",
-    "location": "Botero Museum",
-    "city": "Bogotá",
-    "country": "Colombia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Paisaje%20de%20L%27Ile%20de%20France.jpg?width=500",
-    "qid": "Q108333695",
-    "wikidata": "https://www.wikidata.org/wiki/Q108333695",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q108333695",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -28932,43 +28282,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Camille Monet und ihr Sohn Jean in Argenteuil",
-    "year": "1874",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Monet%20and%20her%20Son.jpg?width=500",
-    "qid": "Q139895039",
-    "wikidata": "https://www.wikidata.org/wiki/Q139895039",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q139895039",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.581,
      44.8374
     ]
@@ -30287,43 +29600,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60465147",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -81.611666666,
-     41.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Bathers Playing with a Crab",
-    "year": "1897",
-    "location": "Cleveland Museum of Art",
-    "city": "Cleveland",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bathers%20Playing%20with%20a%20Crab%2C%20by%20Pierre-Auguste%20Renoir%2C%20Cleveland%20Museum%20of%20Art%2C%201939.269.jpg?width=500",
-    "qid": "Q60514285",
-    "wikidata": "https://www.wikidata.org/wiki/Q60514285",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q60514285",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Paris",
@@ -31747,33 +31023,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.073370905,
-     4.596702536
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Vera Sergine Renoir",
-    "year": "1914",
-    "location": "Botero Museum",
-    "city": "Bogotá",
-    "country": "Colombia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir%20-%20Vera%20Sergine%20Renoir%2C%201914.jpg?width=500",
-    "qid": "Q66363872",
-    "wikidata": "https://www.wikidata.org/wiki/Q66363872",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q66363872",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -89.9176,
      35.106
     ]
@@ -32194,33 +31443,6 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -79.392777777,
-     43.653611111
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Le concert",
-    "year": "1918",
-    "location": "Art Gallery of Ontario",
-    "city": "Toronto",
-    "country": "Canada",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Le%20Concert.jpg?width=500",
-    "qid": "Q116241584",
-    "wikidata": "https://www.wikidata.org/wiki/Q116241584",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q116241584",
-     "note": "harvested: painting by this creator with an image and a documented collection"
     }
    }
   },

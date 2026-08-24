@@ -7,30 +7,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73833,
-     41.92167
+     8.73833333,
+     41.92166667
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Virgin and Child Supported by an Angel in a Garland",
-    "year": "1465–1467",
-    "city": "Ajaccio",
+    "title": "Madonna and Child with an Angel",
+    "year": "1465",
     "location": "Musée Fesch",
+    "city": "Ajaccio",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "115.2 × 70 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Botticelli_-_A_Virgem_e_o_Menino_com_um_anjo.jpg/500px-Botticelli_-_A_Virgem_e_o_Menino_com_um_anjo.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20-%20A%20Virgem%20e%20o%20Menino%20com%20um%20anjo.jpg?width=500",
+    "qid": "Q3213798",
+    "wikidata": "https://www.wikidata.org/wiki/Q3213798",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3213798",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-fesch",
-    "country": "France"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "115.2 × 70 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -73,31 +81,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.2589,
-     43.7769
+     11.258888888,
+     43.776944444
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "The Virgin and Child with Two Angels and the Young St. John the Baptist",
-    "year": "1465–1470",
+    "title": "Madonna and Child with Saint John the Baptist and Two Angels",
+    "year": "1470",
+    "location": "Galleria dell'Accademia",
     "city": "Florence",
     "country": "Italy",
-    "location": "Galleria dell'Accademia",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "85 × 62 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Botticelli%2C_The_Virgin_and_Child_with_Two_Angels_and_the_Young_St_John_the_Baptist.jpg/500px-Botticelli%2C_The_Virgin_and_Child_with_Two_Angels_and_the_Young_St_John_the_Baptist.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2C%20The%20Virgin%20and%20Child%20with%20Two%20Angels%20and%20the%20Young%20St%20John%20the%20Baptist.jpg?width=500",
+    "qid": "Q3213778",
+    "wikidata": "https://www.wikidata.org/wiki/Q3213778",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3213778",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-dell-accademia",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/04madonn.html"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "85 × 62 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -424,31 +439,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.2589,
-     43.7769
+     11.258888888,
+     43.776944444
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Madonna of the Sea",
-    "year": "1469–1470",
+    "title": "Virgin of the Sea",
+    "year": "1470",
+    "location": "Galleria dell'Accademia",
     "city": "Florence",
     "country": "Italy",
-    "location": "Galleria dell'Accademia",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "40 × 28 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Botticelli%2C_madonna_del_Mare.jpg/500px-Botticelli%2C_madonna_del_Mare.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2C%20madonna%20del%20Mare.jpg?width=500",
+    "qid": "Q3210267",
+    "wikidata": "https://www.wikidata.org/wiki/Q3210267",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3210267",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-dell-accademia",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/51madonn.html"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "40 × 28 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -531,30 +553,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3358,
-     48.8611
+     2.335833,
+     48.861111
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Madonna with Child and Five Angels",
-    "year": "c. 1470",
-    "city": "Paris",
-    "country": "France",
+    "title": "Madonna and Child with Five Angels",
+    "year": "1470",
     "location": "Louvre",
+    "city": "",
+    "country": "France",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "58 × 40 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Botticelli_Louvre_11.jpg/500px-Botticelli_Louvre_11.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Louvre%2011.jpg?width=500",
+    "qid": "Q18572522",
+    "wikidata": "https://www.wikidata.org/wiki/Q18572522",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18572522",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "louvre"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "58 × 40 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -797,30 +827,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1283,
-     51.5089
+     -0.128333333,
+     51.508888888
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Adoration of the Kings",
-    "year": "1470–1475",
-    "city": "London",
-    "country": "United Kingdom",
+    "title": "Adoration of the Magi of ca. 1470-1475",
+    "year": "1470",
     "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "diameter 130.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sandro_Botticelli_-_Adorazione_dei_Magi_-_National_Gallery_London.jpg/500px-Sandro_Botticelli_-_Adorazione_dei_Magi_-_National_Gallery_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Adorazione%20dei%20Magi%20-%20National%20Gallery%20London.jpg?width=500",
+    "qid": "Q18749685",
+    "wikidata": "https://www.wikidata.org/wiki/Q18749685",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18749685",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "diameter 130.8 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -1018,25 +1056,32 @@
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Portrait of a Lady",
-    "year": "c. 1475",
-    "city": "Altenburg",
+    "title": "Portrait of a Lady (with the attributes of the Saint Catherine of Alexandria)",
+    "year": "1475",
     "location": "Lindenau museum",
-    "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "53.2 × 37.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Sandro_botticelli_lindenau.jpg/500px-Sandro_botticelli_lindenau.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "lindenau-museum",
+    "city": "Altenburg",
     "country": "Germany",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/02lady.html"
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20botticelli%20lindenau.jpg?width=500",
+    "qid": "Q48445147",
+    "wikidata": "https://www.wikidata.org/wiki/Q48445147",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q48445147",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "53.2 × 37.8 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -1573,30 +1618,37 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.891388888
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "The Virgin Adoring the Child",
-    "year": "1480–1490",
-    "city": "Washington",
+    "year": "1490",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "National Gallery of Art",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "diameter 58.9 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Virgin_Adoring_the_Child_c1490_Sandro_Botticelli.jpg/500px-The_Virgin_Adoring_the_Child_c1490_Sandro_Botticelli.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Virgin%20Adoring%20the%20Child%20c1490%20Sandro%20Botticelli.jpg?width=500",
+    "qid": "Q20174377",
+    "wikidata": "https://www.wikidata.org/wiki/Q20174377",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20174377",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-gallery-of-art",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/9madonna.html"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "diameter 58.9 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -2078,30 +2130,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.364722222,
+     52.508611111
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Bardi Altarpiece ( The Virgin and Child Enthroned )",
-    "year": "1484",
-    "city": "Berlin",
+    "title": "Madonna Bardi",
+    "year": "1500",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "185 × 180 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Sandro_Botticelli_-_Madonna_with_Saints_-_Google_Art_Project.jpg/500px-Sandro_Botticelli_-_Madonna_with_Saints_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Madonna%20with%20Saints%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3210257",
+    "wikidata": "https://www.wikidata.org/wiki/Q3210257",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3210257",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "gemaldegalerie"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "185 × 180 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -2211,31 +2271,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.49214,
+     12.492144,
      41.91421
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Virgin and Child with Six Angels and the Baptist",
-    "year": "c. 1485",
-    "city": "Rome",
-    "country": "Italy",
+    "title": "Madonna and Child with six angels and Saint John the Baptist as Child",
+    "year": "1489",
     "location": "Galleria Borghese",
+    "city": "Roma Capitale",
+    "country": "Italy",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "diameter 170 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sandro_Botticelli_086.jpg/500px-Sandro_Botticelli_086.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20086.jpg?width=500",
+    "qid": "Q117842982",
+    "wikidata": "https://www.wikidata.org/wiki/Q117842982",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q117842982",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-borghese",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/42virgin.html"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "diameter 170 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -3048,31 +3115,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.2501,
+     11.25,
      43.7652
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Madonna and Child and the Young St John the Baptist",
-    "year": "1490–1495",
+    "year": "1505",
+    "location": "Galleria Palatina",
     "city": "Florence",
     "country": "Italy",
-    "location": "Palazzo Pitti",
     "attribution": "generally accepted",
-    "medium": "Tempera on canvas",
-    "dimensions": "134 × 92 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/MadonnaBambinoGiovanninoBotticelli.jpg/500px-MadonnaBambinoGiovanninoBotticelli.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/MadonnaBambinoGiovanninoBotticelli.jpg?width=500",
+    "qid": "Q3842521",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842521",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3842521",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "palazzo-pitti",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/06madonn.html"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "134 × 92 cm",
+    "medium": "Tempera on canvas"
    }
   },
   {
@@ -3080,31 +3154,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.181388888,
+     39.965833333
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Portrait of Lorenzo di Ser Piero Lorenzi",
-    "year": "1490–1495",
+    "title": "Portrait of Lorenzo de' Lorenzi",
+    "year": "1492",
     "location": "Philadelphia Museum of Art",
-    "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "50 × 36.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/BOTTICELLI_Portrait_Lorenzo_di_Ser_Piero_Lorenzi.jpg/500px-BOTTICELLI_Portrait_Lorenzo_di_Ser_Piero_Lorenzi.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/13lorenz.html"
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/BOTTICELLI%20Portrait%20Lorenzo%20di%20Ser%20Piero%20Lorenzi.jpg?width=500",
+    "qid": "Q20808470",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808470",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20808470",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "50 × 36.5 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -3524,30 +3605,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.313611111,
+     59.940555555
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "St. Jerome",
-    "year": "1498–1505",
+    "title": "St Jerome",
+    "year": "1450",
+    "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage Museum",
     "attribution": "generally accepted",
-    "medium": "Tempera on canvas",
-    "dimensions": "44.5 × 26 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Botticelli_Hermitage_91.jpg/500px-Botticelli_Hermitage_91.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Hermitage%2091.jpg?width=500",
+    "qid": "Q27968293",
+    "wikidata": "https://www.wikidata.org/wiki/Q27968293",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27968293",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "44.5 × 26 cm",
+    "medium": "Tempera on canvas"
    }
   },
   {
@@ -3703,31 +3792,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.6758,
-     45.7042
+     9.675609,
+     45.70386
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Christ Crowned with Thorns",
-    "year": "c. 1500",
-    "city": "Bergamo",
+    "title": "Man of Sorrows",
+    "year": "1500",
     "location": "Accademia Carrara",
-    "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "47.6 × 32.3 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Botticelli_01_Accademia_Carrara.jpg/500px-Botticelli_01_Accademia_Carrara.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "accademia-carrara",
+    "city": "Bergamo",
     "country": "Italy",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/08christ.html"
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2001%20Accademia%20Carrara.jpg?width=500",
+    "qid": "Q110714745",
+    "wikidata": "https://www.wikidata.org/wiki/Q110714745",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110714745",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "47.6 × 32.3 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -3735,30 +3831,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.4877,
-     41.8984
+     12.487892,
+     41.898332
     ]
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Transfiguration, St. Jerome, St. Augustine",
-    "year": "c. 1500",
+    "title": "The Transfiguration, St Jerome and St Augustine",
+    "year": "1500",
+    "location": "Palazzo Pallavicini-Rospigliosi",
     "city": "Rome",
     "country": "Italy",
-    "location": "Palazzo Pallavicini-Rospigliosi",
     "attribution": "generally accepted",
-    "medium": "Tempera on panel",
-    "dimensions": "27.5 × 35.5 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Botticelli_02_Galleria_Pallavicini.jpg/500px-Botticelli_02_Galleria_Pallavicini.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Florence",
-    "creation_lat": 43.7696,
-    "creation_lon": 11.2558,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2002%20Galleria%20Pallavicini.jpg?width=500",
+    "qid": "Q134548536",
+    "wikidata": "https://www.wikidata.org/wiki/Q134548536",
     "_source": {
-     "source": "Wikipedia: List of paintings by Sandro Botticelli",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134548536",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "palazzo-pallavicini-rospigliosi"
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "27.5 × 35.5 cm",
+    "medium": "Tempera on panel"
    }
   },
   {
@@ -4192,80 +4296,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna Bardi",
-    "year": "1500",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Madonna%20with%20Saints%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3210257",
-    "wikidata": "https://www.wikidata.org/wiki/Q3210257",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3210257",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Baptism of Saint Zenobius",
-    "year": "1500",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Zenobius%20London.jpg?width=500",
-    "qid": "Q3636752",
-    "wikidata": "https://www.wikidata.org/wiki/Q3636752",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3636752",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.885277777,
      52.36
     ]
@@ -4525,43 +4555,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.25,
-     43.7652
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child and the Young St John the Baptist",
-    "year": "1505",
-    "location": "Galleria Palatina",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/MadonnaBambinoGiovanninoBotticelli.jpg?width=500",
-    "qid": "Q3842521",
-    "wikidata": "https://www.wikidata.org/wiki/Q3842521",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3842521",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      9.185952,
      45.46378
     ]
@@ -4673,117 +4666,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73833333,
-     41.92166667
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child with an Angel",
-    "year": "1465",
-    "location": "Musée Fesch",
-    "city": "Ajaccio",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20-%20A%20Virgem%20e%20o%20Menino%20com%20um%20anjo.jpg?width=500",
-    "qid": "Q3213798",
-    "wikidata": "https://www.wikidata.org/wiki/Q3213798",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3213798",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child with the Young St. John the Baptist",
-    "year": "1500",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2004%20Louvre.jpg?width=500",
-    "qid": "Q9500247",
-    "wikidata": "https://www.wikidata.org/wiki/Q9500247",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q9500247",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.335833,
-     48.861111
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child with Five Angels",
-    "year": "1470",
-    "location": "Louvre",
-    "city": "",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Louvre%2011.jpg?width=500",
-    "qid": "Q18572522",
-    "wikidata": "https://www.wikidata.org/wiki/Q18572522",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18572522",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      2.335833,
      48.861111
     ]
@@ -4839,80 +4721,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q15141217",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.258888888,
-     43.776944444
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Virgin of the Sea",
-    "year": "1470",
-    "location": "Galleria dell'Accademia",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2C%20madonna%20del%20Mare.jpg?width=500",
-    "qid": "Q3210267",
-    "wikidata": "https://www.wikidata.org/wiki/Q3210267",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3210267",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.258888888,
-     43.776944444
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child with Saint John the Baptist and Two Angels",
-    "year": "1470",
-    "location": "Galleria dell'Accademia",
-    "city": "Florence",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2C%20The%20Virgin%20and%20Child%20with%20Two%20Angels%20and%20the%20Young%20St%20John%20the%20Baptist.jpg?width=500",
-    "qid": "Q3213778",
-    "wikidata": "https://www.wikidata.org/wiki/Q3213778",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3213778",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Florence",
@@ -5061,43 +4869,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103832503",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.313611111,
-     59.940555555
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "St Jerome",
-    "year": "1450",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Hermitage%2091.jpg?width=500",
-    "qid": "Q27968293",
-    "wikidata": "https://www.wikidata.org/wiki/Q27968293",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27968293",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Florence",
@@ -5352,43 +5123,6 @@
    },
    "properties": {
     "painter": "Botticelli",
-    "title": "Adoration of the Magi of ca. 1470-1475",
-    "year": "1470",
-    "location": "National Gallery",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Adorazione%20dei%20Magi%20-%20National%20Gallery%20London.jpg?width=500",
-    "qid": "Q18749685",
-    "wikidata": "https://www.wikidata.org/wiki/Q18749685",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18749685",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.128333333,
-     51.508888888
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
     "title": "An Allegory",
     "year": "1520",
     "location": "National Gallery",
@@ -5428,80 +5162,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20173854",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -77.02,
-     38.891388888
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "The Virgin Adoring the Child",
-    "year": "1490",
-    "location": "Galería Nacional de Arte",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Virgin%20Adoring%20the%20Child%20c1490%20Sandro%20Botticelli.jpg?width=500",
-    "qid": "Q20174377",
-    "wikidata": "https://www.wikidata.org/wiki/Q20174377",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20174377",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     9.675609,
-     45.70386
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Man of Sorrows",
-    "year": "1500",
-    "location": "Accademia Carrara",
-    "city": "Bergamo",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2001%20Accademia%20Carrara.jpg?width=500",
-    "qid": "Q110714745",
-    "wikidata": "https://www.wikidata.org/wiki/Q110714745",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q110714745",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Florence",
@@ -5632,43 +5292,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Portrait of Lorenzo de' Lorenzi",
-    "year": "1492",
-    "location": "Philadelphia Museum of Art",
-    "city": "Philadelphia",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/BOTTICELLI%20Portrait%20Lorenzo%20di%20Ser%20Piero%20Lorenzi.jpg?width=500",
-    "qid": "Q20808470",
-    "wikidata": "https://www.wikidata.org/wiki/Q20808470",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20808470",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      13.7369,
      51.0528
     ]
@@ -5724,80 +5347,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28497200",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.492144,
-     41.91421
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child with six angels and Saint John the Baptist as Child",
-    "year": "1489",
-    "location": "Galleria Borghese",
-    "city": "Roma Capitale",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20086.jpg?width=500",
-    "qid": "Q117842982",
-    "wikidata": "https://www.wikidata.org/wiki/Q117842982",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q117842982",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.4449,
-     50.9919
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Portrait of a Lady (with the attributes of the Saint Catherine of Alexandria)",
-    "year": "1475",
-    "location": "Lindenau museum",
-    "city": "Altenburg",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20botticelli%20lindenau.jpg?width=500",
-    "qid": "Q48445147",
-    "wikidata": "https://www.wikidata.org/wiki/Q48445147",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q48445147",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Florence",
@@ -6647,43 +6196,6 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q134545198",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.487892,
-     41.898332
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "The Transfiguration, St Jerome and St Augustine",
-    "year": "1500",
-    "location": "Palazzo Pallavicini-Rospigliosi",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2002%20Galleria%20Pallavicini.jpg?width=500",
-    "qid": "Q134548536",
-    "wikidata": "https://www.wikidata.org/wiki/Q134548536",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q134548536",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
     }
    }
   },

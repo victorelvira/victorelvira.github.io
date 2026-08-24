@@ -526,29 +526,37 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.364722222,
+     52.508611111
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
-    "title": "Saint Margareth and Saint Apollonia",
-    "year": "c. 1445–1455",
-    "city": "Berlin",
+    "title": "Saint Margaret and Saint Apollonia",
+    "year": "1450",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
-    "attribution": "workshop",
-    "dimensions": "51,5 × 27,5 cm.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Rogier_van_der_Weyden_-_Sts_Margaret_and_Apollonia_-_WGA25674.jpg/500px-Rogier_van_der_Weyden_-_Sts_Margaret_and_Apollonia_-_WGA25674.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Brussels",
-    "creation_lat": 50.8503,
-    "creation_lon": 4.3517,
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Sts%20Margaret%20and%20Apollonia%20-%20WGA25674.jpg?width=500",
+    "qid": "Q47074318",
+    "wikidata": "https://www.wikidata.org/wiki/Q47074318",
     "_source": {
-     "source": "Wikipedia: List of works by Rogier van der Weyden",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47074318",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "gemaldegalerie"
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "51,5 × 27,5 cm."
    }
   },
   {
@@ -1248,80 +1256,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
-    ]
-   },
-   "properties": {
-    "painter": "Rogier van der Weyden",
-    "title": "Saint Margaret and Saint Apollonia",
-    "year": "1450",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Bezirk Mitte",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Sts%20Margaret%20and%20Apollonia%20-%20WGA25674.jpg?width=500",
-    "qid": "Q47074318",
-    "wikidata": "https://www.wikidata.org/wiki/Q47074318",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q47074318",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.694925,
-     40.416041
-    ]
-   },
-   "properties": {
-    "painter": "Rogier van der Weyden",
-    "title": "Portrait of an Unknown Man",
-    "year": "1452",
-    "location": "Thyssen-Bornemisza Museum",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20026.jpg?width=500",
-    "qid": "Q27038656",
-    "wikidata": "https://www.wikidata.org/wiki/Q27038656",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27038656",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.128333333,
      51.508888888
     ]
@@ -1737,43 +1671,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21614520",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    }
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.394349,
-     51.208819
-    ]
-   },
-   "properties": {
-    "painter": "Rogier van der Weyden",
-    "title": "Croy family shield",
-    "year": "1460",
-    "location": "Royal Museum of Fine Arts Antwerp",
-    "city": "Antwerp",
-    "country": "Belgium",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Croyblazon.jpg?width=500",
-    "qid": "Q21614521",
-    "wikidata": "https://www.wikidata.org/wiki/Q21614521",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21614521",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Brussels",
