@@ -195,7 +195,15 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q3689716",
     "wikidata": "https://www.wikidata.org/wiki/Q3689716",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/mary_mag.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/mary_mag.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Conversion of the Magdalene",
+      "qid": "Q3689716",
+      "url": "https://www.wikidata.org/wiki/Q3689716"
+     }
+    ]
    }
   },
   {
@@ -229,7 +237,15 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q532486",
     "wikidata": "https://www.wikidata.org/wiki/Q532486",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/judith_m.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/judith_m.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Judith and Her Maidservant",
+      "qid": "Q532486",
+      "url": "https://www.wikidata.org/wiki/Q532486"
+     }
+    ]
    }
   },
   {
@@ -261,7 +277,15 @@
     },
     "museum_id": "musee-de-tesse",
     "qid": "Q29017022",
-    "wikidata": "https://www.wikidata.org/wiki/Q29017022"
+    "wikidata": "https://www.wikidata.org/wiki/Q29017022",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "An Allegory of Painting",
+      "qid": "Q29017022",
+      "url": "https://www.wikidata.org/wiki/Q29017022"
+     }
+    ]
    }
   },
   {
@@ -591,7 +615,15 @@
     "city": "Richmond",
     "country": "United States",
     "qid": "Q25218172",
-    "wikidata": "https://www.wikidata.org/wiki/Q25218172"
+    "wikidata": "https://www.wikidata.org/wiki/Q25218172",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Venus and Cupid (Sleeping Venus)",
+      "qid": "Q25218172",
+      "url": "https://www.wikidata.org/wiki/Q25218172"
+     }
+    ]
    }
   },
   {
@@ -1113,7 +1145,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q29017580 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Bathsheba",
+      "qid": "Q29017592",
+      "url": "https://www.wikidata.org/wiki/Q29017592"
+     }
+    ]
    }
   },
   {
@@ -1178,7 +1218,15 @@
     },
     "museum_id": "royal-collection",
     "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/susanna.html",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Susanna and the Elders",
+      "qid": "Q123821093",
+      "url": "https://www.wikidata.org/wiki/Q123821093"
+     }
+    ]
    }
   },
   {
@@ -1306,7 +1354,15 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "palazzo-pitti"
+    "museum_id": "palazzo-pitti",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "David and Bathsheba",
+      "qid": "Q29017580",
+      "url": "https://www.wikidata.org/wiki/Q29017580"
+     }
+    ]
    }
   },
   {
@@ -1624,7 +1680,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "David and Bathsheba"
+     }
+    ]
    }
   },
   {

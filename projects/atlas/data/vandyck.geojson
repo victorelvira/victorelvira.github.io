@@ -58,7 +58,15 @@
     },
     "museum_id": "alte-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Self-portrait",
+      "qid": "Q3630739",
+      "url": "https://www.wikidata.org/wiki/Q3630739"
+     }
+    ]
    }
   },
   {
@@ -172,7 +180,13 @@
      }
     },
     "dimensions": "119,7 × 87,9 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Self-portrait 1620–21"
+     }
+    ]
    }
   },
   {
@@ -274,7 +288,15 @@
     },
     "museum_id": "national-gallery-of-art",
     "city": "Washington",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Isabella Brant",
+      "qid": "Q3937571",
+      "url": "https://www.wikidata.org/wiki/Q3937571"
+     }
+    ]
    }
   },
   {
@@ -305,7 +327,15 @@
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "city": "Kassel",
-    "country": "Germany"
+    "country": "Germany",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Frans Snyders and his Wife",
+      "qid": "Q3937535",
+      "url": "https://www.wikidata.org/wiki/Q3937535"
+     }
+    ]
    }
   },
   {
@@ -338,7 +368,15 @@
     "museum_id": "petworth-house",
     "qid": "Q52252296",
     "wikidata": "https://www.wikidata.org/wiki/Q52252296",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Sir Robert Shirley (1581-1628)",
+      "qid": "Q52252296",
+      "url": "https://www.wikidata.org/wiki/Q52252296"
+     }
+    ]
    }
   },
   {
@@ -403,7 +441,13 @@
     "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463
+    "creation_lon": 8.9463,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of François Duquesnoy"
+     }
+    ]
    }
   },
   {
@@ -435,7 +479,13 @@
     "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463
+    "creation_lon": 8.9463,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Self-portrait 1622–23"
+     }
+    ]
    }
   },
   {
@@ -467,7 +517,13 @@
     "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463
+    "creation_lon": 8.9463,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of marchesa Lomellini with her children"
+     }
+    ]
    }
   },
   {
@@ -499,7 +555,13 @@
     "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463
+    "creation_lon": 8.9463,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Elena Cattaneo"
+     }
+    ]
    }
   },
   {
@@ -540,7 +602,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3937427 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Cardinal Guido Bentivoglio",
+      "qid": "Q3937427",
+      "url": "https://www.wikidata.org/wiki/Q3937427"
+     }
+    ]
    }
   },
   {
@@ -607,7 +677,13 @@
     "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463
+    "creation_lon": 8.9463,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Emanuele Filiberto, prince of Savoy"
+     }
+    ]
    }
   },
   {
@@ -639,7 +715,13 @@
     "medium": "Oil on canvas",
     "creation_place": "Genoa",
     "creation_lat": 44.4056,
-    "creation_lon": 8.9463
+    "creation_lon": 8.9463,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of a Genoese Noblewoman with her Son"
+     }
+    ]
    }
   },
   {
@@ -732,7 +814,15 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
-    "country": "Austria"
+    "country": "Austria",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Johannes Baptista Franck (ca. 1599-1663)",
+      "qid": "Q17342437",
+      "url": "https://www.wikidata.org/wiki/Q17342437"
+     }
+    ]
    }
   },
   {
@@ -772,7 +862,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3937774 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Equestrian portrait of Anton Giulio Brignole-Sale",
+      "qid": "Q3937774",
+      "url": "https://www.wikidata.org/wiki/Q3937774"
+     }
+    ]
    }
   },
   {
@@ -1032,7 +1130,13 @@
      }
     },
     "dimensions": "315 × 240 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of the duke of Arenberg"
+     }
+    ]
    }
   },
   {
@@ -1112,7 +1216,13 @@
      }
     },
     "dimensions": "130,8 × 118,5 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Jean-Charles della Faille"
+     }
+    ]
    }
   },
   {
@@ -1275,7 +1385,13 @@
      }
     },
     "dimensions": "148 × 113 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Martin Rijckaert"
+     }
+    ]
    }
   },
   {
@@ -1345,7 +1461,13 @@
      }
     },
     "dimensions": "193 × 119 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Gaston d'Orléans"
+     }
+    ]
    }
   },
   {
@@ -1415,7 +1537,13 @@
      }
     },
     "dimensions": "117.8 x 100.6 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Jacques Le Roy"
+     }
+    ]
    }
   },
   {
@@ -1454,7 +1582,13 @@
      }
     },
     "dimensions": "176 × 96 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Prince Charles Louis"
+     }
+    ]
    }
   },
   {
@@ -1493,7 +1627,13 @@
      }
     },
     "dimensions": "175 × 95,5 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Prince Rupert of the Rhine"
+     }
+    ]
    }
   },
   {
@@ -1584,7 +1724,15 @@
     },
     "museum_id": "national-gallery-of-art",
     "city": "Washington",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Philip, Lord Wharton",
+      "qid": "Q3937649",
+      "url": "https://www.wikidata.org/wiki/Q3937649"
+     }
+    ]
    }
   },
   {
@@ -1645,7 +1793,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Henry Percy, Baron Percy of Alnwick (1605-1659)",
+      "qid": "Q52253145",
+      "url": "https://www.wikidata.org/wiki/Q52253145"
+     }
+    ]
    }
   },
   {
@@ -1675,7 +1831,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Catherine Bruce, Mrs William Murray (d.1649)",
+      "qid": "Q52253133",
+      "url": "https://www.wikidata.org/wiki/Q52253133"
+     }
+    ]
    }
   },
   {
@@ -1705,7 +1869,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Lady Dorothy Percy, Countess of Leicester (1598-1659)",
+      "qid": "Q52252940",
+      "url": "https://www.wikidata.org/wiki/Q52252940"
+     }
+    ]
    }
   },
   {
@@ -1735,7 +1907,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Algernon Percy, 10th Earl of Northumberland (1602-1668) his First Wife Lady Anne Cecil (d.1637), and their Daughter, Lady Catherine Percy (1630-1638)",
+      "qid": "Q52253119",
+      "url": "https://www.wikidata.org/wiki/Q52253119"
+     }
+    ]
    }
   },
   {
@@ -1774,7 +1954,13 @@
      }
     },
     "dimensions": "107 x 106 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of the Cardinal-Infante Ferdinand of Austria"
+     }
+    ]
    }
   },
   {
@@ -1844,7 +2030,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3937577 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of James Stuart, Duke of Lennox and Richmond",
+      "qid": "Q3937577",
+      "url": "https://www.wikidata.org/wiki/Q3937577"
+     }
+    ]
    }
   },
   {
@@ -1883,7 +2077,13 @@
      }
     },
     "dimensions": "247,5 × 148,5 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of William Feilding, 1st Earl of Denbigh"
+     }
+    ]
    }
   },
   {
@@ -2062,7 +2262,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27981794 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of an old woman",
+      "qid": "Q27981794",
+      "url": "https://www.wikidata.org/wiki/Q27981794"
+     }
+    ]
    }
   },
   {
@@ -2132,7 +2340,13 @@
      }
     },
     "dimensions": "315 × 236 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Prince Tommaso Francesco of Savoia Carignano"
+     }
+    ]
    }
   },
   {
@@ -2302,7 +2516,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Henry Percy, 9th Earl of Northumberland KG (1564-1632), 'The Wizard Earl'",
+      "qid": "Q52252950",
+      "url": "https://www.wikidata.org/wiki/Q52252950"
+     }
+    ]
    }
   },
   {
@@ -2341,7 +2563,13 @@
      }
     },
     "dimensions": "123 × 96,5 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Philip Herbert, 4th Earl of Pembroke and His Family"
+     }
+    ]
    }
   },
   {
@@ -2477,7 +2705,15 @@
     },
     "museum_id": "alte-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a woman playing the viola-da-gamba, formerly identified as Margaret Lemon",
+      "qid": "Q16712383",
+      "url": "https://www.wikidata.org/wiki/Q16712383"
+     }
+    ]
    }
   },
   {
@@ -2537,7 +2773,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Mountjoy Blount, 1st Earl of Newport (1597-1665), Lord George Goring (1608-1657) and a Page",
+      "qid": "Q52253168",
+      "url": "https://www.wikidata.org/wiki/Q52253168"
+     }
+    ]
    }
   },
   {
@@ -2641,7 +2885,13 @@
      }
     },
     "dimensions": "132 × 152 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Prince Charles Louis and Prince Rupert"
+     }
+    ]
    }
   },
   {
@@ -2680,7 +2930,13 @@
      }
     },
     "dimensions": "132,1 × 149,9 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Dorothy Savage, Viscountess Andover and her sister Elizabeth, Lady Thimbleby"
+     }
+    ]
    }
   },
   {
@@ -2710,7 +2966,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Hon. Anne Boteler, Countess of Newport, later Countess of Portland (c.1610 – 1669)",
+      "qid": "Q52253109",
+      "url": "https://www.wikidata.org/wiki/Q52253109"
+     }
+    ]
    }
   },
   {
@@ -2740,7 +3004,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "petworth-house",
-    "city": "Petworth"
+    "city": "Petworth",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Anne Carr, Lady Russell",
+      "qid": "Q47992505",
+      "url": "https://www.wikidata.org/wiki/Q47992505"
+     }
+    ]
    }
   },
   {
@@ -2775,7 +3047,15 @@
     "country": "United Kingdom",
     "qid": "Q3937593",
     "wikidata": "https://www.wikidata.org/wiki/Q3937593",
-    "wga_url": "https://www.wga.hu/html/d/dyck_van/2portrai/stuarts.html"
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/2portrai/stuarts.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Lord John Stuart and His Brother, Lord Bernard Stuart",
+      "qid": "Q3937593",
+      "url": "https://www.wikidata.org/wiki/Q3937593"
+     }
+    ]
    }
   },
   {
@@ -2874,7 +3154,13 @@
      }
     },
     "dimensions": "136,2 x 109,2cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Lady Dorothy Sidney, Lady Spencer, Countess of Sunderland"
+     }
+    ]
    }
   },
   {
@@ -2913,7 +3199,13 @@
      }
     },
     "dimensions": "135 × 206,8 cm",
-    "medium": "Oil on canvas"
+    "medium": "Oil on canvas",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Madagascar Portrait (Arundel version)"
+     }
+    ]
    }
   },
   {
@@ -3152,7 +3444,15 @@
     "country": "France",
     "qid": "Q18939557",
     "wikidata": "https://www.wikidata.org/wiki/Q18939557",
-    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/venusvul.html"
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/venusvul.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Venus Asks Vulcan to Cast Arms for her Son Aeneas",
+      "qid": "Q18939557",
+      "url": "https://www.wikidata.org/wiki/Q18939557"
+     }
+    ]
    }
   },
   {
@@ -3186,7 +3486,15 @@
     "city": "London",
     "country": "United Kingdom",
     "qid": "Q21585380",
-    "wikidata": "https://www.wikidata.org/wiki/Q21585380"
+    "wikidata": "https://www.wikidata.org/wiki/Q21585380",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The shepherd Paris as personification of Artistic Judgement",
+      "qid": "Q21585380",
+      "url": "https://www.wikidata.org/wiki/Q21585380"
+     }
+    ]
    }
   },
   {
@@ -3282,7 +3590,15 @@
     "city": "Houston",
     "country": "United States",
     "qid": "Q88802733",
-    "wikidata": "https://www.wikidata.org/wiki/Q88802733"
+    "wikidata": "https://www.wikidata.org/wiki/Q88802733",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Rosalie in Glory",
+      "qid": "Q88802733",
+      "url": "https://www.wikidata.org/wiki/Q88802733"
+     }
+    ]
    }
   },
   {
@@ -3355,7 +3671,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27700068 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Pietà",
+      "qid": "Q27700068",
+      "url": "https://www.wikidata.org/wiki/Q27700068"
+     }
+    ]
    }
   },
   {
@@ -3421,7 +3745,15 @@
     "city": "Ponce",
     "country": "Puerto Rico",
     "qid": "Q88854788",
-    "wikidata": "https://www.wikidata.org/wiki/Q88854788"
+    "wikidata": "https://www.wikidata.org/wiki/Q88854788",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Rosalie speaks for the city of Palermo",
+      "qid": "Q88854788",
+      "url": "https://www.wikidata.org/wiki/Q88854788"
+     }
+    ]
    }
   },
   {
@@ -3454,7 +3786,15 @@
     "city": "Munich",
     "country": "Germany",
     "qid": "Q29902758",
-    "wikidata": "https://www.wikidata.org/wiki/Q29902758"
+    "wikidata": "https://www.wikidata.org/wiki/Q29902758",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Rosalia introduced to the Holy Trinity",
+      "qid": "Q29902758",
+      "url": "https://www.wikidata.org/wiki/Q29902758"
+     }
+    ]
    }
   },
   {
@@ -3526,7 +3866,15 @@
     "museum_id": "indianapolis-museum-of-art",
     "city": "Indianapolis",
     "qid": "Q16155993",
-    "wikidata": "https://www.wikidata.org/wiki/Q16155993"
+    "wikidata": "https://www.wikidata.org/wiki/Q16155993",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Entry of Christ into Jerusalem",
+      "qid": "Q16155993",
+      "url": "https://www.wikidata.org/wiki/Q16155993"
+     }
+    ]
    }
   },
   {
@@ -3879,7 +4227,15 @@
     "city": "Oxford",
     "country": "United Kingdom",
     "qid": "Q21716251",
-    "wikidata": "https://www.wikidata.org/wiki/Q21716251"
+    "wikidata": "https://www.wikidata.org/wiki/Q21716251",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Deposition",
+      "qid": "Q21716251",
+      "url": "https://www.wikidata.org/wiki/Q21716251"
+     }
+    ]
    }
   },
   {
@@ -3914,7 +4270,15 @@
     "country": "United Kingdom",
     "qid": "Q3948693",
     "wikidata": "https://www.wikidata.org/wiki/Q3948693",
-    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/emperor.html"
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/emperor.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Ambrose Barring Theodosius from Milan Cathedral",
+      "qid": "Q3948693",
+      "url": "https://www.wikidata.org/wiki/Q3948693"
+     }
+    ]
    }
   },
   {
@@ -3949,7 +4313,15 @@
     "country": "Spain",
     "qid": "Q3663792",
     "wikidata": "https://www.wikidata.org/wiki/Q3663792",
-    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/capture.html"
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/capture.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Betrayal of Christ (van Dyck, Madrid)",
+      "qid": "Q3663792",
+      "url": "https://www.wikidata.org/wiki/Q3663792"
+     }
+    ]
    }
   },
   {
@@ -4215,7 +4587,15 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q3949246",
-    "wikidata": "https://www.wikidata.org/wiki/Q3949246"
+    "wikidata": "https://www.wikidata.org/wiki/Q3949246",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Rosalie Interceding for the Plague-stricken of Palermo",
+      "qid": "Q3949246",
+      "url": "https://www.wikidata.org/wiki/Q3949246"
+     }
+    ]
    }
   },
   {
@@ -4284,7 +4664,15 @@
     "country": "Germany",
     "qid": "Q22329818",
     "wikidata": "https://www.wikidata.org/wiki/Q22329818",
-    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/depositi.html"
+    "wga_url": "https://www.wga.hu/html/d/dyck_van/3other/depositi.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Lamentation of Christ",
+      "qid": "Q22329818",
+      "url": "https://www.wikidata.org/wiki/Q22329818"
+     }
+    ]
    }
   },
   {
@@ -4317,7 +4705,15 @@
     "city": "Antwerp",
     "country": "Belgium",
     "qid": "Q21614703",
-    "wikidata": "https://www.wikidata.org/wiki/Q21614703"
+    "wikidata": "https://www.wikidata.org/wiki/Q21614703",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Lamentation over the Dead Christ",
+      "qid": "Q21614703",
+      "url": "https://www.wikidata.org/wiki/Q21614703"
+     }
+    ]
    }
   },
   {
@@ -4455,7 +4851,15 @@
     "city": "Munich",
     "country": "Germany",
     "qid": "Q3936370",
-    "wikidata": "https://www.wikidata.org/wiki/Q3936370"
+    "wikidata": "https://www.wikidata.org/wiki/Q3936370",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rest on the Flight to Egypt",
+      "qid": "Q3936370",
+      "url": "https://www.wikidata.org/wiki/Q3936370"
+     }
+    ]
    }
   },
   {
@@ -4489,7 +4893,15 @@
     "city": "Saint Petersburg",
     "country": "Russia",
     "qid": "Q65146651",
-    "wikidata": "https://www.wikidata.org/wiki/Q65146651"
+    "wikidata": "https://www.wikidata.org/wiki/Q65146651",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rest on the Flight into Egypt (Madonna with Partridges)",
+      "qid": "Q27974869",
+      "url": "https://www.wikidata.org/wiki/Q27974869"
+     }
+    ]
    }
   },
   {
@@ -4694,7 +5106,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Self-portrait (1617–18)"
+     }
+    ]
    }
   },
   {
@@ -4906,7 +5324,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937535",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Frans Snyders and his wife Margareta de Vos"
+     }
+    ]
    }
   },
   {
@@ -4970,7 +5394,14 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Self-portrait with a sunflower",
+      "ref": "https://en.wikipedia.org/wiki/Self-portrait_with_a_sunflower"
+     }
+    ]
    }
   },
   {
@@ -6370,7 +6801,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937571",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Isabella Brant"
+     }
+    ]
    }
   },
   {
@@ -6407,7 +6844,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Philip, Lord Wharton"
+     }
+    ]
    }
   },
   {
@@ -6825,7 +7268,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17342437",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Johannes Baptista Franck"
+     }
+    ]
    }
   },
   {
@@ -7340,7 +7789,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of a Young Woman with a Cello"
+     }
+    ]
    }
   },
   {
@@ -7451,7 +7906,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Maria de' Medici"
+     }
+    ]
    }
   },
   {
@@ -14068,7 +14529,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Lord George Stuart"
+     }
+    ]
    }
   },
   {
@@ -14105,7 +14572,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Sir Kenelm Digby in Armour"
+     }
+    ]
    }
   },
   {
@@ -16096,7 +16569,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of William Howard, 1st Viscount Stafford"
+     }
+    ]
    }
   },
   {
@@ -16207,7 +16686,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Anne Carr, Countess of Bedford"
+     }
+    ]
    }
   },
   {
@@ -16530,7 +17015,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Lady Dorothy Percy, Countess of Leicester"
+     }
+    ]
    }
   },
   {
@@ -16567,7 +17058,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Henry Percy, 9th Earl of Northumberland KG, 'The Wizard Earl'"
+     }
+    ]
    }
   },
   {
@@ -16641,7 +17138,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Hon. Anne Boteler, Countess of Newport"
+     }
+    ]
    }
   },
   {
@@ -16678,7 +17181,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Algernon Percy, 10th Earl of Northumberland his First Wife Lady Anne Cecil, and their Daughter, Lady Catherine Percy"
+     }
+    ]
    }
   },
   {
@@ -16715,7 +17224,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Catherine Bruce, Mrs William Murray"
+     }
+    ]
    }
   },
   {
@@ -16752,7 +17267,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Henry Percy, Baron Percy of Alnwick"
+     }
+    ]
    }
   },
   {
@@ -16789,7 +17310,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Mountjoy Blount, 1st Earl of Newport, Lord George Goring and a Page"
+     }
+    ]
    }
   },
   {
@@ -21152,7 +21679,14 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Lamentation",
+      "ref": "https://en.wikipedia.org/wiki/Deposition_(van_Dyck,_1629%E2%80%9330)"
+     }
+    ]
    }
   },
   {
@@ -26707,7 +27241,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q96190490",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Christ and The Adulteress"
+     }
+    ]
    }
   },
   {
@@ -27549,7 +28089,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q22329830",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Saint Martin Dividing his Cloak",
+      "ref": "https://en.wikipedia.org/wiki/Saint_Martin_Dividing_his_Cloak_(van_Dyck)"
+     }
+    ]
    }
   },
   {
@@ -28273,7 +28820,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q96190377",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Christ and the Adulteress"
+     }
+    ]
    }
   },
   {
@@ -29875,7 +30428,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of George, Lord Digby and William, Lord Russell"
+     }
+    ]
    }
   },
   {
@@ -33160,7 +33719,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q88851112",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Saint Rosalia Crowned by Angels",
+      "ref": "https://en.wikipedia.org/wiki/Saint_Rosalia_Crowned_by_Angels_(London)"
+     }
+    ]
    }
   },
   {

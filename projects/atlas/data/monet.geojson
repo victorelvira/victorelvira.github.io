@@ -190,7 +190,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Still life with flesh",
+      "qid": "Q3873319",
+      "url": "https://www.wikidata.org/wiki/Q3873319"
+     }
+    ]
    }
   },
   {
@@ -229,7 +237,13 @@
      }
     },
     "dimensions": "52 × 41.5 cm",
-    "medium": "W.15"
+    "medium": "W.15",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Head of a Woman"
+     }
+    ]
    }
   },
   {
@@ -268,7 +282,13 @@
      }
     },
     "dimensions": "65 × 80 cm",
-    "medium": "W.16"
+    "medium": "W.16",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Farmyard in Normandy"
+     }
+    ]
    }
   },
   {
@@ -388,7 +408,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20890806 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Seashore at Sainte-Adresse",
+      "qid": "Q20890806",
+      "url": "https://www.wikidata.org/wiki/Q20890806"
+     }
+    ]
    }
   },
   {
@@ -498,7 +526,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Walk",
+      "qid": "Q19011937",
+      "url": "https://www.wikidata.org/wiki/Q19011937"
+     }
+    ]
    }
   },
   {
@@ -529,7 +565,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rue de la Bavole, Honfleur",
+      "qid": "Q20538866",
+      "url": "https://www.wikidata.org/wiki/Q20538866"
+     }
+    ]
    }
   },
   {
@@ -568,7 +612,13 @@
      }
     },
     "dimensions": "58 × 63 cm",
-    "medium": "W.34"
+    "medium": "W.34",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Le Rue de la Bavole at Honfleur"
+     }
+    ]
    }
   },
   {
@@ -638,7 +688,13 @@
      }
     },
     "dimensions": "41 × 73 cm",
-    "medium": "W.39"
+    "medium": "W.39",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "La Pointe de la Hève, Honfleur"
+     }
+    ]
    }
   },
   {
@@ -777,7 +833,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "norton-simon-museum",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Mouth of the Seine",
+      "qid": "Q50807964",
+      "url": "https://www.wikidata.org/wiki/Q50807964"
+     }
+    ]
    }
   },
   {
@@ -817,7 +881,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q28776277 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "La Pointe de la Hève at Low Tide",
+      "qid": "Q28776277",
+      "url": "https://www.wikidata.org/wiki/Q28776277"
+     }
+    ]
    }
   },
   {
@@ -998,7 +1070,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50434661 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Pavé de Chailly in the Fontainebleau forest",
+      "qid": "Q50434661",
+      "url": "https://www.wikidata.org/wiki/Q50434661"
+     }
+    ]
    }
   },
   {
@@ -1106,7 +1186,13 @@
      }
     },
     "dimensions": "93.5 × 69.5 cm",
-    "medium": "W.61"
+    "medium": "W.61",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Strollers (study for Luncheon on the Grass )"
+     }
+    ]
    }
   },
   {
@@ -1140,7 +1226,15 @@
     },
     "museum_id": "pushkin-museum",
     "qid": "Q1167912",
-    "wikidata": "https://www.wikidata.org/wiki/Q1167912"
+    "wikidata": "https://www.wikidata.org/wiki/Q1167912",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Luncheon on the Grass (study for № 63)",
+      "qid": "Q50434651",
+      "url": "https://www.wikidata.org/wiki/Q50434651"
+     }
+    ]
    }
   },
   {
@@ -1174,7 +1268,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q1167912",
-    "wikidata": "https://www.wikidata.org/wiki/Q1167912"
+    "wikidata": "https://www.wikidata.org/wiki/Q1167912",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Déjeuner sur l'herbe",
+      "qid": "Q17492904",
+      "url": "https://www.wikidata.org/wiki/Q17492904"
+     }
+    ]
    }
   },
   {
@@ -1247,7 +1349,13 @@
      }
     },
     "dimensions": "231 × 151 cm",
-    "medium": "W.65"
+    "medium": "W.65",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille (also known as The Woman in a Green Dress )"
+     }
+    ]
    }
   },
   {
@@ -1286,7 +1394,13 @@
      }
     },
     "dimensions": "81 × 55 cm",
-    "medium": "W.66 Oil on wood"
+    "medium": "W.66 Oil on wood",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille (Replica)"
+     }
+    ]
    }
   },
   {
@@ -1385,7 +1499,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Blossoming Garden, Sainte-Adresse",
+      "qid": "Q17491735",
+      "url": "https://www.wikidata.org/wiki/Q17491735"
+     }
+    ]
    }
   },
   {
@@ -1456,7 +1578,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "scottish-national-gallery"
+    "museum_id": "scottish-national-gallery",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "A Seascape, Shipping by Moonlight",
+      "qid": "Q18683374",
+      "url": "https://www.wikidata.org/wiki/Q18683374"
+     }
+    ]
    }
   },
   {
@@ -1566,7 +1696,13 @@
      }
     },
     "dimensions": "38 × 46 cm",
-    "medium": "W.74"
+    "medium": "W.74",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Bateaux de pêche, Honfleur"
+     }
+    ]
    }
   },
   {
@@ -1631,7 +1767,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fogg-museum",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Road toward the Farm Saint-Siméon, Honfleur",
+      "qid": "Q70781190",
+      "url": "https://www.wikidata.org/wiki/Q70781190"
+     }
+    ]
    }
   },
   {
@@ -1732,7 +1876,13 @@
      }
     },
     "dimensions": "91 × 62 cm",
-    "medium": "W.85"
+    "medium": "W.85",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Garden of the Princess"
+     }
+    ]
    }
   },
   {
@@ -1771,7 +1921,13 @@
      }
     },
     "dimensions": "49 × 64 cm",
-    "medium": "W.86"
+    "medium": "W.86",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Stormy Seascape"
+     }
+    ]
    }
   },
   {
@@ -1802,7 +1958,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "norton-simon-museum",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Entrance to the Port of Le Havre",
+      "qid": "Q50807790",
+      "url": "https://www.wikidata.org/wiki/Q50807790"
+     }
+    ]
    }
   },
   {
@@ -1909,7 +2073,13 @@
      }
     },
     "dimensions": "57 × 80 cm",
-    "medium": "W.93"
+    "medium": "W.93",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Sainte-Adresse, Fishing Boats on the Shore"
+     }
+    ]
    }
   },
   {
@@ -1948,7 +2118,13 @@
      }
     },
     "dimensions": "54 × 79 cm",
-    "medium": "W.93a"
+    "medium": "W.93a",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Taking a Walk on the Cliffs of Sainte-Adresse"
+     }
+    ]
    }
   },
   {
@@ -2102,7 +2278,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20188693 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Jean Monet in his cradle",
+      "qid": "Q20188693",
+      "url": "https://www.wikidata.org/wiki/Q20188693"
+     }
+    ]
    }
   },
   {
@@ -2141,7 +2325,13 @@
      }
     },
     "dimensions": "65 × 81 cm",
-    "medium": "W.105"
+    "medium": "W.105",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Ice Floes on the Seine at Bougival"
+     }
+    ]
    }
   },
   {
@@ -2206,7 +2396,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q20268615",
-    "wikidata": "https://www.wikidata.org/wiki/Q20268615"
+    "wikidata": "https://www.wikidata.org/wiki/Q20268615",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "On the Banks of the Seine, Bennecourt",
+      "qid": "Q20268615",
+      "url": "https://www.wikidata.org/wiki/Q20268615"
+     }
+    ]
    }
   },
   {
@@ -2245,7 +2443,13 @@
      }
     },
     "dimensions": "60 × 80 cm",
-    "medium": "W.112"
+    "medium": "W.112",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Sea at Sainte-Adresse"
+     }
+    ]
    }
   },
   {
@@ -2323,7 +2527,13 @@
      }
     },
     "dimensions": "100 × 80 cm",
-    "medium": "W.116"
+    "medium": "W.116",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Fishing Boats at Honfleur"
+     }
+    ]
    }
   },
   {
@@ -2361,7 +2571,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50807787 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stranded boat in Fécamp",
+      "qid": "Q50807787",
+      "url": "https://www.wikidata.org/wiki/Q50807787"
+     }
+    ]
    }
   },
   {
@@ -2400,7 +2618,13 @@
      }
     },
     "dimensions": "216 × 138 cm",
-    "medium": "W.121"
+    "medium": "W.121",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Madame Gaudibert"
+     }
+    ]
    }
   },
   {
@@ -2518,7 +2742,13 @@
      }
     },
     "dimensions": "66 × 131 cm",
-    "medium": "W.127"
+    "medium": "W.127",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rough Sea at Etretat"
+     }
+    ]
    }
   },
   {
@@ -2557,7 +2787,13 @@
      }
     },
     "dimensions": "81 × 60 cm",
-    "medium": "W.128"
+    "medium": "W.128",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Lane in Normandy"
+     }
+    ]
    }
   },
   {
@@ -2745,7 +2981,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3632885 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Bathers at La Grenouillère",
+      "qid": "Q3632885",
+      "url": "https://www.wikidata.org/wiki/Q3632885"
+     }
+    ]
    }
   },
   {
@@ -2784,7 +3028,13 @@
      }
     },
     "dimensions": "33 × 46 cm",
-    "medium": "W.137"
+    "medium": "W.137",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rowing Boats"
+     }
+    ]
    }
   },
   {
@@ -2863,7 +3113,13 @@
      }
     },
     "dimensions": "41 × 34 cm",
-    "medium": "W.142"
+    "medium": "W.142",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Jean Monet Wearing a Hat with a Pompom"
+     }
+    ]
    }
   },
   {
@@ -2972,7 +3228,13 @@
      }
     },
     "dimensions": "60 × 73.5 cm",
-    "medium": "W.151"
+    "medium": "W.151",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seine at Bougival, Evening (also known as Bougival )"
+     }
+    ]
    }
   },
   {
@@ -3082,7 +3344,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Breakwater at Trouville, Low Tide",
+      "qid": "Q50414871",
+      "url": "https://www.wikidata.org/wiki/Q50414871"
+     }
+    ]
    }
   },
   {
@@ -3121,7 +3391,13 @@
      }
     },
     "dimensions": "80 × 55 cm",
-    "medium": "W.155"
+    "medium": "W.155",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Hotel des Roches Noires, Trouville"
+     }
+    ]
    }
   },
   {
@@ -3160,7 +3436,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q24953806 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "La Plage à Trouville",
+      "qid": "Q67183663",
+      "url": "https://www.wikidata.org/wiki/Q67183663"
+     }
+    ]
    }
   },
   {
@@ -3191,7 +3475,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Beach at Trouville",
+      "qid": "Q24953806",
+      "url": "https://www.wikidata.org/wiki/Q24953806"
+     }
+    ]
    }
   },
   {
@@ -3261,7 +3553,13 @@
      }
     },
     "dimensions": "30 × 15 cm",
-    "medium": "W.161"
+    "medium": "W.161",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille on the Beach at Trouville"
+     }
+    ]
    }
   },
   {
@@ -3300,7 +3598,13 @@
      }
     },
     "dimensions": "38 × 46 cm",
-    "medium": "W.162"
+    "medium": "W.162",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "On the Beach at Trouville"
+     }
+    ]
    }
   },
   {
@@ -3339,7 +3643,13 @@
      }
     },
     "dimensions": "48 × 75 cm",
-    "medium": "W.163"
+    "medium": "W.163",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Meditation, Madame Monet Sitting on a Sofa"
+     }
+    ]
    }
   },
   {
@@ -3369,7 +3679,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "rhode-island-school-of-design-museum"
+    "museum_id": "rhode-island-school-of-design-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Hyde Park, London",
+      "qid": "Q64515048",
+      "url": "https://www.wikidata.org/wiki/Q64515048"
+     }
+    ]
    }
   },
   {
@@ -3408,7 +3726,13 @@
      }
     },
     "dimensions": "34 × 72 cm",
-    "medium": "W.165"
+    "medium": "W.165",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Green Park in London"
+     }
+    ]
    }
   },
   {
@@ -3528,7 +3852,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18748447 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Windmills Near Zaandam",
+      "qid": "Q18748447",
+      "url": "https://www.wikidata.org/wiki/Q18748447"
+     }
+    ]
    }
   },
   {
@@ -3727,7 +4059,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50774265 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "A windmill near Zaandam",
+      "qid": "Q50774265",
+      "url": "https://www.wikidata.org/wiki/Q50774265"
+     }
+    ]
    }
   },
   {
@@ -3766,7 +4106,13 @@
      }
     },
     "dimensions": "34 × 74 cm",
-    "medium": "W.179"
+    "medium": "W.179",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "View from the Voorzaan"
+     }
+    ]
    }
   },
   {
@@ -3797,7 +4143,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "van-gogh-museum"
+    "museum_id": "van-gogh-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Windmills near Zaandam",
+      "qid": "Q19838025",
+      "url": "https://www.wikidata.org/wiki/Q19838025"
+     }
+    ]
    }
   },
   {
@@ -3876,7 +4230,13 @@
      }
     },
     "dimensions": "47.5 × 73.5 cm",
-    "medium": "W.185"
+    "medium": "W.185",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Houses on the Zaan River at Zaandam"
+     }
+    ]
    }
   },
   {
@@ -4144,7 +4504,13 @@
      }
     },
     "dimensions": "53 × 73 cm",
-    "medium": "W.196"
+    "medium": "W.196",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Small Arm of the Seine at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -4212,7 +4578,13 @@
      }
     },
     "dimensions": "48 × 64 cm",
-    "medium": "W.203"
+    "medium": "W.203",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Lilacs, Grey Weather"
+     }
+    ]
    }
   },
   {
@@ -4319,7 +4691,13 @@
      }
     },
     "dimensions": "60 × 65 cm",
-    "medium": "W.206"
+    "medium": "W.206",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Robec Stream, Rouen"
+     }
+    ]
    }
   },
   {
@@ -4439,7 +4817,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27975121 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Seine at Rouen",
+      "qid": "Q27975121",
+      "url": "https://www.wikidata.org/wiki/Q27975121"
+     }
+    ]
    }
   },
   {
@@ -4509,7 +4895,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "shizuoka-prefectural-museum-of-art"
+    "museum_id": "shizuoka-prefectural-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Seine at Rouen",
+      "qid": "Q73393003",
+      "url": "https://www.wikidata.org/wiki/Q73393003"
+     }
+    ]
    }
   },
   {
@@ -4589,7 +4983,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17490740 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Argenteuil",
+      "qid": "Q20188741",
+      "url": "https://www.wikidata.org/wiki/Q20188741"
+     }
+    ]
    }
   },
   {
@@ -4628,7 +5030,13 @@
      }
     },
     "dimensions": "60 × 80.5 cm",
-    "medium": "W.225"
+    "medium": "W.225",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Basin at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -4667,7 +5075,13 @@
      }
     },
     "dimensions": "46 × 72 cm",
-    "medium": "W.226"
+    "medium": "W.226",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Argenteuil, Boats along the Bank"
+     }
+    ]
    }
   },
   {
@@ -4736,7 +5150,13 @@
      }
     },
     "dimensions": "47 × 65 cm",
-    "medium": "W.229"
+    "medium": "W.229",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Pleasure Boats"
+     }
+    ]
    }
   },
   {
@@ -4767,7 +5187,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Argenteuil",
+      "qid": "Q17490740",
+      "url": "https://www.wikidata.org/wiki/Q17490740"
+     }
+    ]
    }
   },
   {
@@ -4806,7 +5234,13 @@
      }
     },
     "dimensions": "51 × 65.5 cm",
-    "medium": "W.232"
+    "medium": "W.232",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Small Arm of the Seine at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -4840,7 +5274,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q3454959",
-    "wikidata": "https://www.wikidata.org/wiki/Q3454959"
+    "wikidata": "https://www.wikidata.org/wiki/Q3454959",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Régates à Argenteuil",
+      "qid": "Q3454959",
+      "url": "https://www.wikidata.org/wiki/Q3454959"
+     }
+    ]
    }
   },
   {
@@ -4919,7 +5361,13 @@
      }
     },
     "dimensions": "59.5 × 73.5 cm",
-    "medium": "W.238"
+    "medium": "W.238",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Jean Monet on His Horse Tricycle"
+     }
+    ]
    }
   },
   {
@@ -5027,7 +5475,13 @@
      }
     },
     "dimensions": "53 × 72 cm",
-    "medium": "W.244"
+    "medium": "W.244",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Tea Set"
+     }
+    ]
    }
   },
   {
@@ -5107,7 +5561,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q49221996 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Boulevard Héloise, Argenteuil",
+      "qid": "Q49221996",
+      "url": "https://www.wikidata.org/wiki/Q49221996"
+     }
+    ]
    }
   },
   {
@@ -5146,7 +5608,13 @@
      }
     },
     "dimensions": "54 × 73 cm",
-    "medium": "W.251"
+    "medium": "W.251",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Flood in Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -5185,7 +5653,13 @@
      }
     },
     "dimensions": "58.5 × 81 cm",
-    "medium": "W.254"
+    "medium": "W.254",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Mill at Orgemont, Snow"
+     }
+    ]
    }
   },
   {
@@ -5219,7 +5693,15 @@
     "city": "Cleveland",
     "country": "United States",
     "qid": "Q50772913",
-    "wikidata": "https://www.wikidata.org/wiki/Q50772913"
+    "wikidata": "https://www.wikidata.org/wiki/Q50772913",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Red Kerchief",
+      "qid": "Q50772913",
+      "url": "https://www.wikidata.org/wiki/Q50772913"
+     }
+    ]
    }
   },
   {
@@ -5259,7 +5741,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q106874627 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "La Porte d'Amont, Étretat",
+      "qid": "Q106874627",
+      "url": "https://www.wikidata.org/wiki/Q106874627"
+     }
+    ]
    }
   },
   {
@@ -5290,7 +5780,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Ships in a Harbor",
+      "qid": "Q20538892",
+      "url": "https://www.wikidata.org/wiki/Q20538892"
+     }
+    ]
    }
   },
   {
@@ -5360,7 +5858,13 @@
      }
     },
     "dimensions": "75 × 100 cm",
-    "medium": "W.261"
+    "medium": "W.261",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Le Havre Museum"
+     }
+    ]
    }
   },
   {
@@ -5490,7 +5994,15 @@
     "museum_id": "hermitage-museum",
     "country": "Russia",
     "qid": "Q10315096",
-    "wikidata": "https://www.wikidata.org/wiki/Q10315096"
+    "wikidata": "https://www.wikidata.org/wiki/Q10315096",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Landscape. Seine at Asnieres",
+      "qid": "Q10315096",
+      "url": "https://www.wikidata.org/wiki/Q10315096"
+     }
+    ]
    }
   },
   {
@@ -5529,7 +6041,13 @@
      }
     },
     "dimensions": "60 × 100 cm",
-    "medium": "W.271"
+    "medium": "W.271",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Springtime"
+     }
+    ]
    }
   },
   {
@@ -5558,7 +6076,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "johannesburg-art-gallery"
+    "museum_id": "johannesburg-art-gallery",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Springtime",
+      "qid": "Q60606924",
+      "url": "https://www.wikidata.org/wiki/Q60606924"
+     }
+    ]
    }
   },
   {
@@ -5597,7 +6123,13 @@
      }
     },
     "dimensions": "50 × 65 cm",
-    "medium": "W.274"
+    "medium": "W.274",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Les Coquelicots"
+     }
+    ]
    }
   },
   {
@@ -5636,7 +6168,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q64517633 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "A Walk in the Meadows at Argenteuil",
+      "qid": "Q64517633",
+      "url": "https://www.wikidata.org/wiki/Q64517633"
+     }
+    ]
    }
   },
   {
@@ -5713,7 +6253,13 @@
      }
     },
     "dimensions": "60 × 80 cm",
-    "medium": "W.281"
+    "medium": "W.281",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Bench"
+     }
+    ]
    }
   },
   {
@@ -5824,7 +6370,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Luncheon",
+      "qid": "Q18922918",
+      "url": "https://www.wikidata.org/wiki/Q18922918"
+     }
+    ]
    }
   },
   {
@@ -5863,7 +6417,13 @@
      }
     },
     "dimensions": "61 × 82.5 cm",
-    "medium": "W.286"
+    "medium": "W.286",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Garden at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -5902,7 +6462,13 @@
      }
     },
     "dimensions": "60 × 49.5 cm",
-    "medium": "W.287"
+    "medium": "W.287",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille Monet at the Window, Argentuile"
+     }
+    ]
    }
   },
   {
@@ -6021,7 +6587,13 @@
      }
     },
     "dimensions": "54 × 73 cm",
-    "medium": "W.291"
+    "medium": "W.291",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Autumn on the Seine at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -6052,7 +6624,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le boulevard des Capucines",
+      "qid": "Q2939683",
+      "url": "https://www.wikidata.org/wiki/Q2939683"
+     }
+    ]
    }
   },
   {
@@ -6086,7 +6666,15 @@
     },
     "museum_id": "nelson-atkins-museum-of-art",
     "qid": "Q129097749",
-    "wikidata": "https://www.wikidata.org/wiki/Q129097749"
+    "wikidata": "https://www.wikidata.org/wiki/Q129097749",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Boulevard des Capucines",
+      "qid": "Q4949676",
+      "url": "https://www.wikidata.org/wiki/Q4949676"
+     }
+    ]
    }
   },
   {
@@ -6116,7 +6704,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-art-moderne"
+    "museum_id": "musee-d-art-moderne",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Bassin du Commerce, Le Havre",
+      "qid": "Q90913879",
+      "url": "https://www.wikidata.org/wiki/Q90913879"
+     }
+    ]
    }
   },
   {
@@ -6226,7 +6822,13 @@
      }
     },
     "dimensions": "60 × 102 cm",
-    "medium": "W.297"
+    "medium": "W.297",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Old Outer Port of Le Havre"
+     }
+    ]
    }
   },
   {
@@ -6265,7 +6867,13 @@
      }
     },
     "dimensions": "55 × 62 cm",
-    "medium": "W.300"
+    "medium": "W.300",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Geldersekade of Amsterdam, Winter"
+     }
+    ]
    }
   },
   {
@@ -6304,7 +6912,13 @@
      }
     },
     "dimensions": "56 × 73 cm",
-    "medium": "W.301"
+    "medium": "W.301",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Amsterdam in the Snow"
+     }
+    ]
    }
   },
   {
@@ -6443,7 +7057,13 @@
      }
     },
     "dimensions": "54.5 × 65.5 cm",
-    "medium": "W.309"
+    "medium": "W.309",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Zuiderkerk, Amsterdam"
+     }
+    ]
    }
   },
   {
@@ -6554,7 +7174,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q112218689 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Pont sur la Seine à Argenteuil",
+      "qid": "Q30093031",
+      "url": "https://www.wikidata.org/wiki/Q30093031"
+     }
+    ]
    }
   },
   {
@@ -6633,7 +7261,13 @@
      }
     },
     "dimensions": "54.5 × 73.5 cm",
-    "medium": "W.318"
+    "medium": "W.318",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Railway Bridge at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -6664,7 +7298,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Railway Bridge at Argenteuil",
+      "qid": "Q3795191",
+      "url": "https://www.wikidata.org/wiki/Q3795191"
+     }
+    ]
    }
   },
   {
@@ -6695,7 +7337,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Railway Bridge at Argenteuil",
+      "qid": "Q47615867",
+      "url": "https://www.wikidata.org/wiki/Q47615867"
+     }
+    ]
    }
   },
   {
@@ -6756,7 +7406,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "artizon-museum"
+    "museum_id": "artizon-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Argenteuil",
+      "qid": "Q124254550",
+      "url": "https://www.wikidata.org/wiki/Q124254550"
+     }
+    ]
    }
   },
   {
@@ -6795,7 +7453,13 @@
      }
     },
     "dimensions": "50 × 64 cm",
-    "medium": "W.323"
+    "medium": "W.323",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Studio Boat"
+     }
+    ]
    }
   },
   {
@@ -6873,7 +7537,13 @@
      }
     },
     "dimensions": "49.5 × 65 cm",
-    "medium": "W.328"
+    "medium": "W.328",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Sunset on the Seine"
+     }
+    ]
    }
   },
   {
@@ -6946,7 +7616,13 @@
      }
     },
     "dimensions": "62 × 81 cm",
-    "medium": "W.334"
+    "medium": "W.334",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Pool seen from the Bridge, Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -6976,7 +7652,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "lucille-ellis-simon-foundation"
+    "museum_id": "lucille-ellis-simon-foundation",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "sailing boat in Petit-Gennevilliers",
+      "qid": "Q66821486",
+      "url": "https://www.wikidata.org/wiki/Q66821486"
+     }
+    ]
    }
   },
   {
@@ -7077,7 +7761,13 @@
      }
     },
     "dimensions": "73.5 × 56 cm",
-    "medium": "W.343"
+    "medium": "W.343",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Woman sitting on a bench"
+     }
+    ]
    }
   },
   {
@@ -7116,7 +7806,13 @@
      }
     },
     "dimensions": "73.5 × 60 cm",
-    "medium": "W.347"
+    "medium": "W.347",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Duck Pond"
+     }
+    ]
    }
   },
   {
@@ -7195,7 +7891,13 @@
      }
     },
     "dimensions": "50.5 × 65 cm",
-    "medium": "W.349"
+    "medium": "W.349",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Snow at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -7229,7 +7931,15 @@
     "museum_id": "national-museum-of-western-art",
     "country": "Japan",
     "qid": "Q7548371",
-    "wikidata": "https://www.wikidata.org/wiki/Q7548371"
+    "wikidata": "https://www.wikidata.org/wiki/Q7548371",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Snow in Argenteuil",
+      "qid": "Q19013403",
+      "url": "https://www.wikidata.org/wiki/Q19013403"
+     }
+    ]
    }
   },
   {
@@ -7263,7 +7973,15 @@
     },
     "museum_id": "musee-marmottan-monet",
     "qid": "Q50415955",
-    "wikidata": "https://www.wikidata.org/wiki/Q50415955"
+    "wikidata": "https://www.wikidata.org/wiki/Q50415955",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Train in the Snow",
+      "qid": "Q50415955",
+      "url": "https://www.wikidata.org/wiki/Q50415955"
+     }
+    ]
    }
   },
   {
@@ -7325,7 +8043,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Boulevard Saint-Denis, Argenteuil, in Winter",
+      "qid": "Q20538950",
+      "url": "https://www.wikidata.org/wiki/Q20538950"
+     }
+    ]
    }
   },
   {
@@ -7364,7 +8090,13 @@
      }
     },
     "dimensions": "55 × 68 cm",
-    "medium": "W.358"
+    "medium": "W.358",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "View of Argenteuil in the Snow"
+     }
+    ]
    }
   },
   {
@@ -7403,7 +8135,13 @@
      }
     },
     "dimensions": "60.5 × 81.5 cm",
-    "medium": "W.359"
+    "medium": "W.359",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Snow Effect, The Boulevard de Pontoise at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -7442,7 +8180,13 @@
      }
     },
     "dimensions": "53 × 64 cm",
-    "medium": "W.362"
+    "medium": "W.362",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Snow Effect with Setting Sun"
+     }
+    ]
    }
   },
   {
@@ -7481,7 +8225,13 @@
      }
     },
     "dimensions": "55 × 66 cm",
-    "medium": "W.364"
+    "medium": "W.364",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Coal Dockers"
+     }
+    ]
    }
   },
   {
@@ -7520,7 +8270,13 @@
      }
     },
     "dimensions": "60 × 80 cm",
-    "medium": "W.365"
+    "medium": "W.365",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "A Corner of the Apartment"
+     }
+    ]
    }
   },
   {
@@ -7559,7 +8315,13 @@
      }
     },
     "dimensions": "65 × 55 cm",
-    "medium": "W.366"
+    "medium": "W.366",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille Embroidering"
+     }
+    ]
    }
   },
   {
@@ -7589,7 +8351,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nacional-de-bellas-artes"
+    "museum_id": "museo-nacional-de-bellas-artes",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Pont d`Argenteuil (El Puente de Argenteuil)",
+      "qid": "Q27953870",
+      "url": "https://www.wikidata.org/wiki/Q27953870"
+     }
+    ]
    }
   },
   {
@@ -7730,7 +8500,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Meadow with Poplars",
+      "qid": "Q20538828",
+      "url": "https://www.wikidata.org/wiki/Q20538828"
+     }
+    ]
    }
   },
   {
@@ -7800,7 +8578,13 @@
      }
     },
     "dimensions": "60 × 81 cm",
-    "medium": "W.379a"
+    "medium": "W.379a",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Walk, Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -7839,7 +8623,13 @@
      }
     },
     "dimensions": "54 × 73.5 cm",
-    "medium": "W.380"
+    "medium": "W.380",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Poppy Field, Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -7873,7 +8663,15 @@
     "museum_id": "national-gallery-of-art",
     "country": "United States",
     "qid": "Q2395218",
-    "wikidata": "https://www.wikidata.org/wiki/Q2395218"
+    "wikidata": "https://www.wikidata.org/wiki/Q2395218",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Woman with a Parasol – Madame Monet and Her Son",
+      "qid": "Q2395218",
+      "url": "https://www.wikidata.org/wiki/Q2395218"
+     }
+    ]
    }
   },
   {
@@ -7944,7 +8742,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Madame Monet wearing a kimono",
+      "qid": "Q10322900",
+      "url": "https://www.wikidata.org/wiki/Q10322900"
+     }
+    ]
    }
   },
   {
@@ -7983,7 +8789,13 @@
      }
     },
     "dimensions": "60 × 105 cm",
-    "medium": "W.389"
+    "medium": "W.389",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Towpath at Argenteuil in the Snow"
+     }
+    ]
    }
   },
   {
@@ -8017,7 +8829,15 @@
     },
     "museum_id": "barnes-foundation",
     "qid": "Q28128626",
-    "wikidata": "https://www.wikidata.org/wiki/Q28128626"
+    "wikidata": "https://www.wikidata.org/wiki/Q28128626",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Studio Boat (Le Bateau-atelier)",
+      "qid": "Q28128626",
+      "url": "https://www.wikidata.org/wiki/Q28128626"
+     }
+    ]
    }
   },
   {
@@ -8056,7 +8876,13 @@
      }
     },
     "dimensions": "54 × 65 cm",
-    "medium": "W.393"
+    "medium": "W.393",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Studio Boat"
+     }
+    ]
    }
   },
   {
@@ -8095,7 +8921,13 @@
      }
     },
     "dimensions": "60 × 81 cm",
-    "medium": "W.398"
+    "medium": "W.398",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Parc Monceau, Paris"
+     }
+    ]
    }
   },
   {
@@ -8173,7 +9005,13 @@
      }
     },
     "dimensions": "54 × 73 cm",
-    "medium": "W.401"
+    "medium": "W.401",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Tuileries"
+     }
+    ]
    }
   },
   {
@@ -8283,7 +9121,13 @@
      }
     },
     "dimensions": "81 × 59 cm",
-    "medium": "W.410"
+    "medium": "W.410",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille Monet in the Garden at the House in Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -8323,7 +9167,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27969409 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Garden",
+      "qid": "Q27969409",
+      "url": "https://www.wikidata.org/wiki/Q27969409"
+     }
+    ]
    }
   },
   {
@@ -8362,7 +9214,13 @@
      }
     },
     "dimensions": "60 × 81.5 cm",
-    "medium": "W.414"
+    "medium": "W.414",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Garden, Gladioli"
+     }
+    ]
    }
   },
   {
@@ -8432,7 +9290,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3791331 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Turkeys",
+      "qid": "Q3791331",
+      "url": "https://www.wikidata.org/wiki/Q3791331"
+     }
+    ]
    }
   },
   {
@@ -8512,7 +9378,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3968022 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Pond at Montgeron",
+      "qid": "Q3968022",
+      "url": "https://www.wikidata.org/wiki/Q3968022"
+     }
+    ]
    }
   },
   {
@@ -8613,7 +9487,13 @@
      }
     },
     "dimensions": "75 × 100 cm",
-    "medium": "W.438"
+    "medium": "W.438",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Saint-Lazare Station"
+     }
+    ]
    }
   },
   {
@@ -8726,7 +9606,13 @@
      }
     },
     "dimensions": "53.5 × 72.5 cm",
-    "medium": "W.441"
+    "medium": "W.441",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Saint-Lazare Station"
+     }
+    ]
    }
   },
   {
@@ -8765,7 +9651,13 @@
      }
     },
     "dimensions": "64 × 81 cm",
-    "medium": "W.442"
+    "medium": "W.442",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Pont de l'Europe, Saint-Lazare Station"
+     }
+    ]
    }
   },
   {
@@ -8804,7 +9696,13 @@
      }
     },
     "dimensions": "60 × 80 cm",
-    "medium": "W.445"
+    "medium": "W.445",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Track Coming out of Saint-Lazare Station"
+     }
+    ]
    }
   },
   {
@@ -8873,7 +9771,13 @@
      }
     },
     "dimensions": "54 × 65 cm",
-    "medium": "W.453"
+    "medium": "W.453",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Argenteuil, Flowers by the Riverbank"
+     }
+    ]
    }
   },
   {
@@ -8912,7 +9816,13 @@
      }
     },
     "dimensions": "52 × 63 cm",
-    "medium": "W.455"
+    "medium": "W.455",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Isle Grande Jatte or Springtime through the Branches"
+     }
+    ]
    }
   },
   {
@@ -9042,7 +9952,13 @@
      }
     },
     "dimensions": "73 × 54.5 cm",
-    "medium": "W.466"
+    "medium": "W.466",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "At the Parc Monceau"
+     }
+    ]
    }
   },
   {
@@ -9081,7 +9997,13 @@
      }
     },
     "dimensions": "80 × 48.5 cm",
-    "medium": "W.469"
+    "medium": "W.469",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Rue Montorgueil 30th of June 1878"
+     }
+    ]
    }
   },
   {
@@ -9120,7 +10042,13 @@
      }
     },
     "dimensions": "76 × 52 cm",
-    "medium": "W.470"
+    "medium": "W.470",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Rue Saint-Denis, 30th of June 1878"
+     }
+    ]
    }
   },
   {
@@ -9189,7 +10117,13 @@
      }
     },
     "dimensions": "65 × 55 cm",
-    "medium": "65 × 55"
+    "medium": "65 × 55",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Church at Vetheuil, Snow"
+     }
+    ]
    }
   },
   {
@@ -9268,7 +10202,13 @@
      }
     },
     "dimensions": "50 x 61",
-    "medium": "50 x 61"
+    "medium": "50 x 61",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Small Arm of the Seine at Vetheuil"
+     }
+    ]
    }
   },
   {
@@ -9339,7 +10279,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19906243 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Chrysanths",
+      "qid": "Q17491064",
+      "url": "https://www.wikidata.org/wiki/Q17491064"
+     }
+    ]
    }
   },
   {
@@ -9408,7 +10356,13 @@
      }
     },
     "dimensions": "65 x 80",
-    "medium": "65 x 80"
+    "medium": "65 x 80",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Banks of the Seine, Lavacourt"
+     }
+    ]
    }
   },
   {
@@ -9447,7 +10401,13 @@
      }
     },
     "dimensions": "46 x 37",
-    "medium": "46 x 37"
+    "medium": "46 x 37",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Michel Monet"
+     }
+    ]
    }
   },
   {
@@ -9558,7 +10518,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19857354 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil in Winter",
+      "qid": "Q19857354",
+      "url": "https://www.wikidata.org/wiki/Q19857354"
+     }
+    ]
    }
   },
   {
@@ -9589,7 +10557,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Entrance to the Village of Vétheuil in Winter",
+      "qid": "Q20538945",
+      "url": "https://www.wikidata.org/wiki/Q20538945"
+     }
+    ]
    }
   },
   {
@@ -9628,7 +10604,13 @@
      }
     },
     "dimensions": "52.5 x 71.5",
-    "medium": "52.5 x 71.5"
+    "medium": "52.5 x 71.5",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Village Street, Vetheuil in Winter"
+     }
+    ]
    }
   },
   {
@@ -9658,7 +10640,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hugh-lane-gallery"
+    "museum_id": "hugh-lane-gallery",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Lavacourt under Snow",
+      "qid": "Q3827992",
+      "url": "https://www.wikidata.org/wiki/Q3827992"
+     }
+    ]
    }
   },
   {
@@ -9697,7 +10687,13 @@
      }
     },
     "dimensions": "54 x 65",
-    "medium": "54 x 65"
+    "medium": "54 x 65",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Winter on the Seine, Lavacourt"
+     }
+    ]
    }
   },
   {
@@ -9768,7 +10764,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Flowering Plum Trees",
+      "qid": "Q28777011",
+      "url": "https://www.wikidata.org/wiki/Q28777011"
+     }
+    ]
    }
   },
   {
@@ -9807,7 +10811,13 @@
      }
     },
     "dimensions": "48.5 x 64.5",
-    "medium": "48.5 x 64.5"
+    "medium": "48.5 x 64.5",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Cottage"
+     }
+    ]
    }
   },
   {
@@ -9956,7 +10966,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q10271033 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Church at Vétheuil",
+      "qid": "Q90598726",
+      "url": "https://www.wikidata.org/wiki/Q90598726"
+     }
+    ]
    }
   },
   {
@@ -10036,7 +11054,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q83306238 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q20421336",
+      "url": "https://www.wikidata.org/wiki/Q20421336"
+     }
+    ]
    }
   },
   {
@@ -10076,7 +11102,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19905448 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil en été",
+      "qid": "Q116241579",
+      "url": "https://www.wikidata.org/wiki/Q116241579"
+     }
+    ]
    }
   },
   {
@@ -10115,7 +11149,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q67220750 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Meadow",
+      "qid": "Q67220750",
+      "url": "https://www.wikidata.org/wiki/Q67220750"
+     }
+    ]
    }
   },
   {
@@ -10146,7 +11188,15 @@
     },
     "museum_id": "musee-des-beaux-arts-de-rouen",
     "city": "Rouen",
-    "country": "France"
+    "country": "France",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Seine at Vétheuil",
+      "qid": "Q17492316",
+      "url": "https://www.wikidata.org/wiki/Q17492316"
+     }
+    ]
    }
   },
   {
@@ -10176,7 +11226,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "frick-art-historical-center"
+    "museum_id": "frick-art-historical-center",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Banks of the Seine at Lavacourt",
+      "qid": "Q73554969",
+      "url": "https://www.wikidata.org/wiki/Q73554969"
+     }
+    ]
    }
   },
   {
@@ -10216,7 +11274,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18621166 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "View of the Seine, Lavacourt",
+      "qid": "Q106875235",
+      "url": "https://www.wikidata.org/wiki/Q106875235"
+     }
+    ]
    }
   },
   {
@@ -10256,7 +11322,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q2381272 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Camille Monet on her deathbed",
+      "qid": "Q2381272",
+      "url": "https://www.wikidata.org/wiki/Q2381272"
+     }
+    ]
    }
   },
   {
@@ -10287,7 +11361,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kimbell-art-museum"
+    "museum_id": "kimbell-art-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Still Life with a Honeydew Melon",
+      "qid": "Q108479165",
+      "url": "https://www.wikidata.org/wiki/Q108479165"
+     }
+    ]
    }
   },
   {
@@ -10326,7 +11408,13 @@
      }
     },
     "dimensions": "68 x 90",
-    "medium": "68 x 90"
+    "medium": "68 x 90",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Fruit Basket with Apples and Grapes"
+     }
+    ]
    }
   },
   {
@@ -10365,7 +11453,13 @@
      }
     },
     "dimensions": "65 x 81.5",
-    "medium": "65 x 81.5"
+    "medium": "65 x 81.5",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Still Life – Apples and Grapes"
+     }
+    ]
    }
   },
   {
@@ -10404,7 +11498,13 @@
      }
     },
     "dimensions": "68 x 90",
-    "medium": "68 x 90"
+    "medium": "68 x 90",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Pheasants and Plovers"
+     }
+    ]
    }
   },
   {
@@ -10483,7 +11583,13 @@
      }
     },
     "dimensions": "55 x 81",
-    "medium": "55 x 81"
+    "medium": "55 x 81",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Winter Sun, Lavacourt"
+     }
+    ]
    }
   },
   {
@@ -10545,7 +11651,15 @@
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "city": "Lille",
-    "country": "France"
+    "country": "France",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Debacle at Vétheuil, View of Lavacourt",
+      "qid": "Q17491946",
+      "url": "https://www.wikidata.org/wiki/Q17491946"
+     }
+    ]
    }
   },
   {
@@ -10614,7 +11728,13 @@
      }
     },
     "dimensions": "60 x 99",
-    "medium": "60 x 99"
+    "medium": "60 x 99",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Breakup of Ice, Grey Weather"
+     }
+    ]
    }
   },
   {
@@ -10792,7 +11912,13 @@
      }
     },
     "dimensions": "61 x 100",
-    "medium": "61 x 100"
+    "medium": "61 x 100",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Breakup of Ice"
+     }
+    ]
    }
   },
   {
@@ -11041,7 +12167,13 @@
      }
     },
     "dimensions": "58.5 x 72.5",
-    "medium": "58.5 x 72.5"
+    "medium": "58.5 x 72.5",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Road from Vétheuil"
+     }
+    ]
    }
   },
   {
@@ -11183,7 +12315,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kelvingrove-art-gallery-and-museum"
+    "museum_id": "kelvingrove-art-gallery-and-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q50818928",
+      "url": "https://www.wikidata.org/wiki/Q50818928"
+     }
+    ]
    }
   },
   {
@@ -11285,7 +12425,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Seine at Vétheuil",
+      "qid": "Q19912575",
+      "url": "https://www.wikidata.org/wiki/Q19912575"
+     }
+    ]
    }
   },
   {
@@ -11316,7 +12464,15 @@
     },
     "museum_id": "los-angeles-county-museum-of-art",
     "city": "Los Angeles",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "View of Vétheuil",
+      "qid": "Q20881698",
+      "url": "https://www.wikidata.org/wiki/Q20881698"
+     }
+    ]
    }
   },
   {
@@ -11347,7 +12503,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil in Summer",
+      "qid": "Q19905448",
+      "url": "https://www.wikidata.org/wiki/Q19905448"
+     }
+    ]
    }
   },
   {
@@ -11438,7 +12602,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "alte-nationalgalerie"
+    "museum_id": "alte-nationalgalerie",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "View of Vétheuil",
+      "qid": "Q50115235",
+      "url": "https://www.wikidata.org/wiki/Q50115235"
+     }
+    ]
    }
   },
   {
@@ -11467,7 +12639,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "portland-museum-of-art"
+    "museum_id": "portland-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Seine at Vétheuil",
+      "qid": "Q84260775",
+      "url": "https://www.wikidata.org/wiki/Q84260775"
+     }
+    ]
    }
   },
   {
@@ -11546,7 +12726,13 @@
      }
     },
     "dimensions": "81 x 60",
-    "medium": "81 x 60"
+    "medium": "81 x 60",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Woman Sitting under the Willows"
+     }
+    ]
    }
   },
   {
@@ -11624,7 +12810,13 @@
      }
     },
     "dimensions": "51 x 40",
-    "medium": "51 x 40"
+    "medium": "51 x 40",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Monsieur Coqueret (Father)"
+     }
+    ]
    }
   },
   {
@@ -11704,7 +12896,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20538887 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Cliffs of the Petites Dalles",
+      "qid": "Q20538887",
+      "url": "https://www.wikidata.org/wiki/Q20538887"
+     }
+    ]
    }
   },
   {
@@ -11814,7 +13014,13 @@
      }
     },
     "dimensions": "100 x 73",
-    "medium": "100 x 73"
+    "medium": "100 x 73",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Jerusalem Artichokes"
+     }
+    ]
    }
   },
   {
@@ -11892,7 +13098,13 @@
      }
     },
     "dimensions": "46 x 37",
-    "medium": "46 x 37"
+    "medium": "46 x 37",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Jean Monet"
+     }
+    ]
    }
   },
   {
@@ -11954,7 +13166,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Chrysanthemums",
+      "qid": "Q19906243",
+      "url": "https://www.wikidata.org/wiki/Q19906243"
+     }
+    ]
    }
   },
   {
@@ -12064,7 +13284,13 @@
      }
     },
     "dimensions": "67 x 80",
-    "medium": "67 x 80"
+    "medium": "67 x 80",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Fecamp, by the Sea"
+     }
+    ]
    }
   },
   {
@@ -12103,7 +13329,13 @@
      }
     },
     "dimensions": "65.5 x 82",
-    "medium": "65.5 x 82"
+    "medium": "65.5 x 82",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Sea at Fecamp"
+     }
+    ]
    }
   },
   {
@@ -12255,7 +13487,13 @@
      }
     },
     "dimensions": "14.4 x 22.6",
-    "medium": "14.4 x 22.6"
+    "medium": "14.4 x 22.6",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Vetheuil"
+     }
+    ]
    }
   },
   {
@@ -12334,7 +13572,13 @@
      }
     },
     "dimensions": "73 x 100",
-    "medium": "73 x 100"
+    "medium": "73 x 100",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seine at Vetheuil"
+     }
+    ]
    }
   },
   {
@@ -12516,7 +13760,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20188856 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Artist's Garden at Vétheuil",
+      "qid": "Q20188856",
+      "url": "https://www.wikidata.org/wiki/Q20188856"
+     }
+    ]
    }
   },
   {
@@ -12556,7 +13808,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q21712145 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Hut in Trouville, Low Tide",
+      "qid": "Q21712145",
+      "url": "https://www.wikidata.org/wiki/Q21712145"
+     }
+    ]
    }
   },
   {
@@ -12667,7 +13927,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Flower Beds at Vétheuil",
+      "qid": "Q20538895",
+      "url": "https://www.wikidata.org/wiki/Q20538895"
+     }
+    ]
    }
   },
   {
@@ -12707,7 +13975,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q79790764 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Gladiolus",
+      "qid": "Q79790767",
+      "url": "https://www.wikidata.org/wiki/Q79790767"
+     }
+    ]
    }
   },
   {
@@ -12738,7 +14014,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pola-museum-of-art",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Gladiolus",
+      "qid": "Q79790764",
+      "url": "https://www.wikidata.org/wiki/Q79790764"
+     }
+    ]
    }
   },
   {
@@ -12926,7 +14210,13 @@
      }
     },
     "dimensions": "60 x 81",
-    "medium": "W.716"
+    "medium": "W.716",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Low Tide at Pourville"
+     }
+    ]
    }
   },
   {
@@ -12965,7 +14255,13 @@
      }
     },
     "dimensions": "60 x 81",
-    "medium": "W.719"
+    "medium": "W.719",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliff near Dieppe"
+     }
+    ]
    }
   },
   {
@@ -13121,7 +14417,13 @@
      }
     },
     "dimensions": "65 x 81",
-    "medium": "W.727"
+    "medium": "W.727",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Church at Varengeville, against the Sunset"
+     }
+    ]
    }
   },
   {
@@ -13160,7 +14462,13 @@
      }
     },
     "dimensions": "60 x 81",
-    "medium": "W.728"
+    "medium": "W.728",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Church at Varengeville and the Gorge of Les Moutiers"
+     }
+    ]
    }
   },
   {
@@ -13238,7 +14546,13 @@
      }
     },
     "dimensions": "60 x 81",
-    "medium": "W.731"
+    "medium": "W.731",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Customs House, Morning Effect"
+     }
+    ]
    }
   },
   {
@@ -13277,7 +14591,13 @@
      }
     },
     "dimensions": "60 x 78",
-    "medium": "W.732"
+    "medium": "W.732",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Fisherman's Cottage at Varengeville"
+     }
+    ]
    }
   },
   {
@@ -13456,7 +14776,13 @@
      }
     },
     "dimensions": "65 x 81",
-    "medium": "W.740"
+    "medium": "W.740",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rising Tide in Pourville"
+     }
+    ]
    }
   },
   {
@@ -13495,7 +14821,13 @@
      }
     },
     "dimensions": "60 x 81",
-    "medium": "W.743"
+    "medium": "W.743",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Customs House"
+     }
+    ]
    }
   },
   {
@@ -13529,7 +14861,15 @@
     "city": "Vienna",
     "country": "Austria",
     "qid": "Q27665416",
-    "wikidata": "https://www.wikidata.org/wiki/Q27665416"
+    "wikidata": "https://www.wikidata.org/wiki/Q27665416",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Père Paul",
+      "qid": "Q27665416",
+      "url": "https://www.wikidata.org/wiki/Q27665416"
+     }
+    ]
    }
   },
   {
@@ -13569,7 +14909,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q70781263 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Eugénie Graff (Madame Paul)",
+      "qid": "Q70781263",
+      "url": "https://www.wikidata.org/wiki/Q70781263"
+     }
+    ]
    }
   },
   {
@@ -13670,7 +15018,13 @@
      }
     },
     "dimensions": "60 x 100",
-    "medium": "W.754"
+    "medium": "W.754",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliff at Pourville"
+     }
+    ]
    }
   },
   {
@@ -13784,7 +15138,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q7723379",
-    "wikidata": "https://www.wikidata.org/wiki/Q7723379"
+    "wikidata": "https://www.wikidata.org/wiki/Q7723379",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Cliff Walk at Pourville",
+      "qid": "Q7723379",
+      "url": "https://www.wikidata.org/wiki/Q7723379"
+     }
+    ]
    }
   },
   {
@@ -13846,7 +15208,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Road at La Cavée, Pourville",
+      "qid": "Q20538835",
+      "url": "https://www.wikidata.org/wiki/Q20538835"
+     }
+    ]
    }
   },
   {
@@ -13885,7 +15255,13 @@
      }
     },
     "dimensions": "60 x 81",
-    "medium": "W.768"
+    "medium": "W.768",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Fishing Nets at Pourville"
+     }
+    ]
    }
   },
   {
@@ -14184,7 +15560,13 @@
      }
     },
     "dimensions": "65 x 81",
-    "medium": "W.797"
+    "medium": "W.797",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The \"Fonds\" at Varengeville"
+     }
+    ]
    }
   },
   {
@@ -14487,7 +15869,13 @@
      }
     },
     "dimensions": "73 x 100",
-    "medium": "W.820"
+    "medium": "W.820",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliff and Porte d'Aval in Stormy Weather"
+     }
+    ]
    }
   },
   {
@@ -14521,7 +15909,15 @@
     "city": "Lyon",
     "country": "France",
     "qid": "Q131741852",
-    "wikidata": "https://www.wikidata.org/wiki/Q131741852"
+    "wikidata": "https://www.wikidata.org/wiki/Q131741852",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Etretat, Rough Seas",
+      "qid": "Q7620298",
+      "url": "https://www.wikidata.org/wiki/Q7620298"
+     }
+    ]
    }
   },
   {
@@ -14710,7 +16106,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20268564 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Boats on the beach at Etretat",
+      "qid": "Q72691311",
+      "url": "https://www.wikidata.org/wiki/Q72691311"
+     }
+    ]
    }
   },
   {
@@ -15068,7 +16472,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q70140611 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Bordighera",
+      "qid": "Q3236083",
+      "url": "https://www.wikidata.org/wiki/Q3236083"
+     }
+    ]
    }
   },
   {
@@ -15100,7 +16512,13 @@
     "medium": "W.855",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Strada Romana, Bordighera"
+     }
+    ]
    }
   },
   {
@@ -15132,7 +16550,13 @@
     "medium": "W.857",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Villas in Bordighera"
+     }
+    ]
    }
   },
   {
@@ -15172,7 +16596,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q79132471 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Valle Buona, Near Bordighera",
+      "qid": "Q79132471",
+      "url": "https://www.wikidata.org/wiki/Q79132471"
+     }
+    ]
    }
   },
   {
@@ -15242,7 +16674,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50415983 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Valley of Sasso. Sunlight effect",
+      "qid": "Q50415983",
+      "url": "https://www.wikidata.org/wiki/Q50415983"
+     }
+    ]
    }
   },
   {
@@ -15361,7 +16801,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50697752 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Under the lemon trees",
+      "qid": "Q50697752",
+      "url": "https://www.wikidata.org/wiki/Q50697752"
+     }
+    ]
    }
   },
   {
@@ -15393,7 +16841,13 @@
     "medium": "W.874",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Small Country Farm in Bordighera"
+     }
+    ]
    }
   },
   {
@@ -15539,7 +16993,13 @@
     "medium": "W.883",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Castle at Dolceacqua"
+     }
+    ]
    }
   },
   {
@@ -15611,7 +17071,13 @@
     "medium": "W.886",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of an English Painter, Bordighera"
+     }
+    ]
    }
   },
   {
@@ -15705,7 +17171,13 @@
     "medium": "W.890",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Corniche of Monaco"
+     }
+    ]
    }
   },
   {
@@ -15833,7 +17305,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Cap Martin, near Menton",
+      "qid": "Q20538843",
+      "url": "https://www.wikidata.org/wiki/Q20538843"
+     }
+    ]
    }
   },
   {
@@ -15982,7 +17462,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q72979794 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Rock Needle and the Porte d'Aval",
+      "qid": "Q94636831",
+      "url": "https://www.wikidata.org/wiki/Q94636831"
+     }
+    ]
    }
   },
   {
@@ -16256,7 +17744,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poppy Field. Around Giverny",
+      "qid": "Q17490991",
+      "url": "https://www.wikidata.org/wiki/Q17490991"
+     }
+    ]
    }
   },
   {
@@ -16398,7 +17894,13 @@
     "medium": "W.1011",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliff and Porte d'Amont, Morning Effect"
+     }
+    ]
    }
   },
   {
@@ -16430,7 +17932,13 @@
     "medium": "W.1012",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Beach and the Falaise d'Amont"
+     }
+    ]
    }
   },
   {
@@ -16501,7 +18009,13 @@
     "medium": "W.1015a",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Etretat, End of the Day"
+     }
+    ]
    }
   },
   {
@@ -16634,7 +18148,15 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Boats on the Beach at Étretat",
+      "qid": "Q20268564",
+      "url": "https://www.wikidata.org/wiki/Q20268564"
+     }
+    ]
    }
   },
   {
@@ -16674,7 +18196,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20266369 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Departure of the Boats, Étretat",
+      "qid": "Q20266369",
+      "url": "https://www.wikidata.org/wiki/Q20266369"
+     }
+    ]
    }
   },
   {
@@ -16825,7 +18355,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3952520 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Cliffs at Étretat",
+      "qid": "Q3232513",
+      "url": "https://www.wikidata.org/wiki/Q3232513"
+     }
+    ]
    }
   },
   {
@@ -17025,7 +18563,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pushkin-museum"
+    "museum_id": "pushkin-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Cliffs at Étretat",
+      "qid": "Q3952520",
+      "url": "https://www.wikidata.org/wiki/Q3952520"
+     }
+    ]
    }
   },
   {
@@ -17057,7 +18603,13 @@
     "medium": "W.1047",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Étretat, the Porte d'Aval: Fishing Boats Leaving the Harbour"
+     }
+    ]
    }
   },
   {
@@ -17089,7 +18641,13 @@
     "medium": "W.1049",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Rock Needle Seen through the Porte d'Aval"
+     }
+    ]
    }
   },
   {
@@ -17119,7 +18677,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "shimane-art-museum"
+    "museum_id": "shimane-art-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Rock Needle and the Porte d'Aval",
+      "qid": "Q72979794",
+      "url": "https://www.wikidata.org/wiki/Q72979794"
+     }
+    ]
    }
   },
   {
@@ -17222,7 +18788,13 @@
     "medium": "W.1059",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Willows, Giverny"
+     }
+    ]
    }
   },
   {
@@ -17515,7 +19087,13 @@
     "medium": "W.1074",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "View of Giverny"
+     }
+    ]
    }
   },
   {
@@ -17606,7 +19184,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Meadow at Giverny",
+      "qid": "Q20538853",
+      "url": "https://www.wikidata.org/wiki/Q20538853"
+     }
+    ]
    }
   },
   {
@@ -17672,7 +19258,15 @@
     },
     "museum_id": "caracas-museum-of-contemporary-art",
     "qid": "Q3952498",
-    "wikidata": "https://www.wikidata.org/wiki/Q3952498"
+    "wikidata": "https://www.wikidata.org/wiki/Q3952498",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Les pyramides à Port-Coton",
+      "qid": "Q108354260",
+      "url": "https://www.wikidata.org/wiki/Q108354260"
+     }
+    ]
    }
   },
   {
@@ -17767,7 +19361,13 @@
     "medium": "W.1091",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rocks at Port Coton, The Lion Rock"
+     }
+    ]
    }
   },
   {
@@ -17799,7 +19399,13 @@
     "medium": "W.1094",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Coming into Port-Goulphar, Belle-Ile"
+     }
+    ]
    }
   },
   {
@@ -17831,7 +19437,13 @@
     "medium": "W.1095",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Belle-Ile, Rocks at Port-Goulphar"
+     }
+    ]
    }
   },
   {
@@ -17863,7 +19475,13 @@
     "medium": "W.1100",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Cote Sauvage"
+     }
+    ]
    }
   },
   {
@@ -17966,7 +19584,13 @@
     "medium": "W.1108",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Port Donnant, Belle Ile"
+     }
+    ]
    }
   },
   {
@@ -18006,7 +19630,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q65965438 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Belle-Île",
+      "qid": "Q65965438",
+      "url": "https://www.wikidata.org/wiki/Q65965438"
+     }
+    ]
    }
   },
   {
@@ -18038,7 +19670,13 @@
     "medium": "W.1112",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Belle-Ile, Rain Effect"
+     }
+    ]
    }
   },
   {
@@ -18069,7 +19707,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-modern-art",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grotte de Port-Domois",
+      "qid": "Q71715439",
+      "url": "https://www.wikidata.org/wiki/Q71715439"
+     }
+    ]
    }
   },
   {
@@ -18101,7 +19747,13 @@
     "medium": "W.1116",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Storm off the Belle-Ile Coast"
+     }
+    ]
    }
   },
   {
@@ -18133,7 +19785,13 @@
     "medium": "W.1118",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Raging Sea"
+     }
+    ]
    }
   },
   {
@@ -18165,7 +19823,13 @@
     "medium": "W.1122",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Poly, Fisherman at Kervillaouen"
+     }
+    ]
    }
   },
   {
@@ -18285,7 +19949,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20881116 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "In the Woods at Giverny: Blanche Hoschedé at Her Easel with Suzanne Hoschedé Reading",
+      "qid": "Q20881116",
+      "url": "https://www.wikidata.org/wiki/Q20881116"
+     }
+    ]
    }
   },
   {
@@ -18317,7 +19989,13 @@
     "medium": "W.1133",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Stroller (Suzanne Hoschede) (also known as Taking a Walk)"
+     }
+    ]
    }
   },
   {
@@ -18349,7 +20027,13 @@
     "medium": "W.1135",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Sunlight Effect under the Poplars"
+     }
+    ]
    }
   },
   {
@@ -18381,7 +20065,13 @@
     "medium": "W.1137",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Field of Yellow Irises"
+     }
+    ]
    }
   },
   {
@@ -18533,7 +20223,13 @@
     "medium": "W.1151",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "In the \"Norvegienne\""
+     }
+    ]
    }
   },
   {
@@ -18564,7 +20260,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "On the Boat",
+      "qid": "Q19016163",
+      "url": "https://www.wikidata.org/wiki/Q19016163"
+     }
+    ]
    }
   },
   {
@@ -18596,7 +20300,13 @@
     "medium": "W.1153",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Blue Row Boat"
+     }
+    ]
    }
   },
   {
@@ -18636,7 +20346,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50415974 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The row boat",
+      "qid": "Q50415974",
+      "url": "https://www.wikidata.org/wiki/Q50415974"
+     }
+    ]
    }
   },
   {
@@ -18920,7 +20638,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20538857 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Antibes Seen from the Plateau Notre-Dame",
+      "qid": "Q20538857",
+      "url": "https://www.wikidata.org/wiki/Q20538857"
+     }
+    ]
    }
   },
   {
@@ -18952,7 +20678,13 @@
     "medium": "W.1175",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "View from the Cap d'Antibes"
+     }
+    ]
    }
   },
   {
@@ -18992,7 +20724,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20538862 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "At Cap d'Antibes, Mistral wind",
+      "qid": "Q20538862",
+      "url": "https://www.wikidata.org/wiki/Q20538862"
+     }
+    ]
    }
   },
   {
@@ -19024,7 +20764,13 @@
     "medium": "W.1182",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The \"Big Blue\" at Antibes (also known as The Sea at Antibes )"
+     }
+    ]
    }
   },
   {
@@ -19095,7 +20841,13 @@
     "medium": "W.1185",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "At Cap d'Antibes"
+     }
+    ]
    }
   },
   {
@@ -19236,7 +20988,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q68041446 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Meadow at Giverny",
+      "qid": "Q68041446",
+      "url": "https://www.wikidata.org/wiki/Q68041446"
+     }
+    ]
    }
   },
   {
@@ -19339,7 +21099,13 @@
     "medium": "W.1209",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Bend in the River Epte"
+     }
+    ]
    }
   },
   {
@@ -19410,7 +21176,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-modern-art",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grainstacks at Giverny the Evening Sun",
+      "qid": "Q48092399",
+      "url": "https://www.wikidata.org/wiki/Q48092399"
+     }
+    ]
    }
   },
   {
@@ -19442,7 +21216,13 @@
     "medium": "W.1215",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Grainstacks, White Frost, Sunrise"
+     }
+    ]
    }
   },
   {
@@ -19624,7 +21404,13 @@
     "medium": "W.1224",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Valley of the Creuse"
+     }
+    ]
    }
   },
   {
@@ -19656,7 +21442,13 @@
     "medium": "W.1225",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Valley of the Creuse, Evening Effect"
+     }
+    ]
    }
   },
   {
@@ -19859,7 +21651,13 @@
     "medium": "W.1234",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Bridge at Vervy"
+     }
+    ]
    }
   },
   {
@@ -19889,7 +21687,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "mie-prefectural-art-museum"
+    "museum_id": "mie-prefectural-art-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le village de La Roche-Blond au soleil couchant",
+      "qid": "Q115902260",
+      "url": "https://www.wikidata.org/wiki/Q115902260"
+     }
+    ]
    }
   },
   {
@@ -19921,7 +21727,13 @@
     "medium": "W.1238",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Village of La Coche-Blond, Evening"
+     }
+    ]
    }
   },
   {
@@ -20095,7 +21907,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19869038 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Field of Poppies",
+      "qid": "Q83901250",
+      "url": "https://www.wikidata.org/wiki/Q83901250"
+     }
+    ]
    }
   },
   {
@@ -20175,7 +21995,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20267913 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poppy Field (Giverny)",
+      "qid": "Q20267913",
+      "url": "https://www.wikidata.org/wiki/Q20267913"
+     }
+    ]
    }
   },
   {
@@ -20206,7 +22034,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "country": "Russia",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poppy Field",
+      "qid": "Q19869038",
+      "url": "https://www.wikidata.org/wiki/Q19869038"
+     }
+    ]
    }
   },
   {
@@ -20240,7 +22076,15 @@
     "city": "Strasbourg",
     "country": "France",
     "qid": "Q47510174",
-    "wikidata": "https://www.wikidata.org/wiki/Q47510174"
+    "wikidata": "https://www.wikidata.org/wiki/Q47510174",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Champ d'avoine aux coquelicots",
+      "qid": "Q47510174",
+      "url": "https://www.wikidata.org/wiki/Q47510174"
+     }
+    ]
    }
   },
   {
@@ -20311,7 +22155,15 @@
     },
     "museum_id": "columbus-museum-of-art",
     "city": "Ohio [129]",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Seine at Port-Villez",
+      "qid": "Q20854513",
+      "url": "https://www.wikidata.org/wiki/Q20854513"
+     }
+    ]
    }
   },
   {
@@ -20345,7 +22197,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Haystacks, end of Summer",
+      "qid": "Q17494280",
+      "url": "https://www.wikidata.org/wiki/Q17494280"
+     }
+    ]
    }
   },
   {
@@ -20379,7 +22239,15 @@
     "museum_id": "hill-stead-museum",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grainstacks, in Bright Sunlight",
+      "qid": "Q84729388",
+      "url": "https://www.wikidata.org/wiki/Q84729388"
+     }
+    ]
    }
   },
   {
@@ -20413,7 +22281,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stacks of Wheat (End of Summer)",
+      "qid": "Q47774422",
+      "url": "https://www.wikidata.org/wiki/Q47774422"
+     }
+    ]
    }
   },
   {
@@ -20447,7 +22323,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stacks of Wheat (End of Day, Autumn)",
+      "qid": "Q20268626",
+      "url": "https://www.wikidata.org/wiki/Q20268626"
+     }
+    ]
    }
   },
   {
@@ -20481,7 +22365,15 @@
     "museum_id": "national-gallery-of-australia",
     "country": "Australia",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Haystacks, midday",
+      "qid": "Q48610629",
+      "url": "https://www.wikidata.org/wiki/Q48610629"
+     }
+    ]
    }
   },
   {
@@ -20513,7 +22405,15 @@
     },
     "museum_id": "shelburne-museum",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grainstacks, Snow Effect",
+      "qid": "Q48091831",
+      "url": "https://www.wikidata.org/wiki/Q48091831"
+     }
+    ]
    }
   },
   {
@@ -20547,7 +22447,15 @@
     },
     "museum_id": "national-galleries-of-scotland",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Haystacks: Snow Effect",
+      "qid": "Q18683354",
+      "url": "https://www.wikidata.org/wiki/Q18683354"
+     }
+    ]
    }
   },
   {
@@ -20581,7 +22489,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stacks of Wheat (Sunset, Snow Effect)",
+      "qid": "Q20268630",
+      "url": "https://www.wikidata.org/wiki/Q20268630"
+     }
+    ]
    }
   },
   {
@@ -20615,7 +22531,15 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Haystacks (Effect of Snow and Sun)",
+      "qid": "Q19905211",
+      "url": "https://www.wikidata.org/wiki/Q19905211"
+     }
+    ]
    }
   },
   {
@@ -20649,7 +22573,15 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grainstack (Snow Effect)",
+      "qid": "Q20538871",
+      "url": "https://www.wikidata.org/wiki/Q20538871"
+     }
+    ]
    }
   },
   {
@@ -20683,7 +22615,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stack of Wheat (Snow Effect, Overcast Day)",
+      "qid": "Q20267583",
+      "url": "https://www.wikidata.org/wiki/Q20267583"
+     }
+    ]
    }
   },
   {
@@ -20717,7 +22657,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stack of Wheat",
+      "qid": "Q20268689",
+      "url": "https://www.wikidata.org/wiki/Q20268689"
+     }
+    ]
    }
   },
   {
@@ -20751,7 +22699,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Stack of Wheat (Thaw, Sunset)",
+      "qid": "Q20266903",
+      "url": "https://www.wikidata.org/wiki/Q20266903"
+     }
+    ]
    }
   },
   {
@@ -20785,7 +22741,15 @@
     "city": "Minneapolis",
     "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grainstack, Sun in the Mist",
+      "qid": "Q20891432",
+      "url": "https://www.wikidata.org/wiki/Q20891432"
+     }
+    ]
    }
   },
   {
@@ -20853,7 +22817,15 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q557000",
-    "wikidata": "https://www.wikidata.org/wiki/Q557000"
+    "wikidata": "https://www.wikidata.org/wiki/Q557000",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Grainstack (Sunset)",
+      "qid": "Q20538838",
+      "url": "https://www.wikidata.org/wiki/Q20538838"
+     }
+    ]
    }
   },
   {
@@ -20886,7 +22858,15 @@
     },
     "museum_id": "moa-museum-of-art",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Peupliers près de Giverny, temps couvert",
+      "qid": "Q49473320",
+      "url": "https://www.wikidata.org/wiki/Q49473320"
+     }
+    ]
    }
   },
   {
@@ -20954,7 +22934,15 @@
     "city": "Philadelphia",
     "country": "United States",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poplars on the Bank of the Epte River",
+      "qid": "Q20809479",
+      "url": "https://www.wikidata.org/wiki/Q20809479"
+     }
+    ]
    }
   },
   {
@@ -20988,7 +22976,15 @@
     },
     "museum_id": "tate-britain",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poplars on the Epte",
+      "qid": "Q25410258",
+      "url": "https://www.wikidata.org/wiki/Q25410258"
+     }
+    ]
    }
   },
   {
@@ -21022,7 +23018,15 @@
     "museum_id": "national-museum-of-western-art",
     "country": "Japan",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poplars in the Sun",
+      "qid": "Q19056877",
+      "url": "https://www.wikidata.org/wiki/Q19056877"
+     }
+    ]
    }
   },
   {
@@ -21056,7 +23060,15 @@
     "city": "Philadelphia",
     "country": "United States",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poplars",
+      "qid": "Q18683906",
+      "url": "https://www.wikidata.org/wiki/Q18683906"
+     }
+    ]
    }
   },
   {
@@ -21090,7 +23102,15 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Four Trees",
+      "qid": "Q19905131",
+      "url": "https://www.wikidata.org/wiki/Q19905131"
+     }
+    ]
    }
   },
   {
@@ -21124,7 +23144,15 @@
     },
     "museum_id": "national-galleries-of-scotland",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Poplars on the Epte",
+      "qid": "Q3905455",
+      "url": "https://www.wikidata.org/wiki/Q3905455"
+     }
+    ]
    }
   },
   {
@@ -21158,7 +23186,15 @@
     "museum_id": "fitzwilliam-museum",
     "country": "United Kingdom",
     "qid": "Q733458",
-    "wikidata": "https://www.wikidata.org/wiki/Q733458"
+    "wikidata": "https://www.wikidata.org/wiki/Q733458",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Les Peupliers",
+      "qid": "Q49469526",
+      "url": "https://www.wikidata.org/wiki/Q49469526"
+     }
+    ]
    }
   },
   {
@@ -21221,7 +23257,13 @@
     "medium": "W.1317",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Cour d'Albane"
+     }
+    ]
    }
   },
   {
@@ -21253,7 +23295,13 @@
     "medium": "W.1319",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Portal, Harmony in Brown"
+     }
+    ]
    }
   },
   {
@@ -21285,7 +23333,13 @@
     "medium": "W.1321",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rouen Cathedral, the Portal, Grey Weather"
+     }
+    ]
    }
   },
   {
@@ -21317,7 +23371,13 @@
     "medium": "W.1323",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rouen Cathedral, Symphony in Grey and Rose"
+     }
+    ]
    }
   },
   {
@@ -21388,7 +23448,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17436671 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral: The Portal (Sunlight)",
+      "qid": "Q17436671",
+      "url": "https://www.wikidata.org/wiki/Q17436671"
+     }
+    ]
    }
   },
   {
@@ -21451,7 +23519,13 @@
     "medium": "W.1327",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rouen Cathedral Portal, Sunlight, at the End of the Day"
+     }
+    ]
    }
   },
   {
@@ -21491,7 +23565,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17436687 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal",
+      "qid": "Q17436675",
+      "url": "https://www.wikidata.org/wiki/Q17436675"
+     }
+    ]
    }
   },
   {
@@ -21531,7 +23613,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17436693 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral",
+      "qid": "Q17436674",
+      "url": "https://www.wikidata.org/wiki/Q17436674"
+     }
+    ]
    }
   },
   {
@@ -21563,7 +23653,13 @@
     "medium": "W.1335",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Ice Floes at Bennecourt"
+     }
+    ]
    }
   },
   {
@@ -21635,7 +23731,13 @@
     "medium": "W.1340",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Ice breaking-up near Bennecourt"
+     }
+    ]
    }
   },
   {
@@ -21699,7 +23801,15 @@
     "city": "Rouen",
     "country": "France",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal and Tower d'Albane, Cloudy Weather",
+      "qid": "Q17436706",
+      "url": "https://www.wikidata.org/wiki/Q17436706"
+     }
+    ]
    }
   },
   {
@@ -21733,7 +23843,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal and Tower Saint-Romain, Morning Light",
+      "qid": "Q3820706",
+      "url": "https://www.wikidata.org/wiki/Q3820706"
+     }
+    ]
    }
   },
   {
@@ -21767,7 +23885,15 @@
     "museum_id": "beyeler-foundation",
     "country": "Switzerland",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal, Morning Light",
+      "qid": "Q17436697",
+      "url": "https://www.wikidata.org/wiki/Q17436697"
+     }
+    ]
    }
   },
   {
@@ -21801,7 +23927,15 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal and Tower d'Albane, Dawn",
+      "qid": "Q17436696",
+      "url": "https://www.wikidata.org/wiki/Q17436696"
+     }
+    ]
    }
   },
   {
@@ -21903,7 +24037,15 @@
     "museum_id": "museum-folkwang",
     "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
-    "country": "Germany"
+    "country": "Germany",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal, Morning Fog",
+      "qid": "Q17436681",
+      "url": "https://www.wikidata.org/wiki/Q17436681"
+     }
+    ]
    }
   },
   {
@@ -21937,7 +24079,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal, Morning Sun",
+      "qid": "Q3820704",
+      "url": "https://www.wikidata.org/wiki/Q3820704"
+     }
+    ]
    }
   },
   {
@@ -21971,7 +24121,15 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Façade",
+      "qid": "Q20538924",
+      "url": "https://www.wikidata.org/wiki/Q20538924"
+     }
+    ]
    }
   },
   {
@@ -22037,7 +24195,15 @@
     "museum_id": "clark-art-institute",
     "country": "United States",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, the Façade in Sunlight",
+      "qid": "Q17436689",
+      "url": "https://www.wikidata.org/wiki/Q17436689"
+     }
+    ]
    }
   },
   {
@@ -22071,7 +24237,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q637414",
-    "wikidata": "https://www.wikidata.org/wiki/Q637414"
+    "wikidata": "https://www.wikidata.org/wiki/Q637414",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Rouen Cathedral, Portal and Tower Saint-Romain in the Sun",
+      "qid": "Q3820705",
+      "url": "https://www.wikidata.org/wiki/Q3820705"
+     }
+    ]
    }
   },
   {
@@ -22131,7 +24305,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum"
+    "museum_id": "princeton-university-art-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Meadow at Giverny",
+      "qid": "Q106775625",
+      "url": "https://www.wikidata.org/wiki/Q106775625"
+     }
+    ]
    }
   },
   {
@@ -22293,7 +24475,13 @@
     "medium": "W.1379",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seine at Port-Villez, Evening Effect"
+     }
+    ]
    }
   },
   {
@@ -22354,7 +24542,13 @@
     "medium": "W.1384",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Small Haystacks of Giverny, Sun Effect"
+     }
+    ]
    }
   },
   {
@@ -22455,7 +24649,13 @@
     "medium": "W.1391",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Church of Vernon in the Mist"
+     }
+    ]
    }
   },
   {
@@ -22518,7 +24718,13 @@
     "medium": "W.1397",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Sandviken Village in the Snow"
+     }
+    ]
    }
   },
   {
@@ -22579,7 +24785,13 @@
     "medium": "W.1404",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Houses in the Snow and Mount Kolsaas"
+     }
+    ]
    }
   },
   {
@@ -22611,7 +24823,13 @@
     "medium": "W.1406",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Mount Kolsaas, Norway"
+     }
+    ]
    }
   },
   {
@@ -23025,7 +25243,13 @@
     "medium": "W.1450",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Petit-Ailly, Varengeville, Full Sun"
+     }
+    ]
    }
   },
   {
@@ -23126,7 +25350,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20266927 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Customs House at Varengeville",
+      "qid": "Q20266927",
+      "url": "https://www.wikidata.org/wiki/Q20266927"
+     }
+    ]
    }
   },
   {
@@ -23217,7 +25449,13 @@
     "medium": "W.1466",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "At Val Saint-Nicolas near Dieppe, Morning"
+     }
+    ]
    }
   },
   {
@@ -23249,7 +25487,13 @@
     "medium": "W.1467",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Steep Cliff near Dieppe"
+     }
+    ]
    }
   },
   {
@@ -23349,7 +25593,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19200679 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Branch of the Seine near Giverny (Mist), from the series \"Mornings on the Seine\"",
+      "qid": "Q20269967",
+      "url": "https://www.wikidata.org/wiki/Q20269967"
+     }
+    ]
    }
   },
   {
@@ -23411,7 +25663,13 @@
     "medium": "W.1477",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Morning on the Seine"
+     }
+    ]
    }
   },
   {
@@ -23443,7 +25701,13 @@
     "medium": "W.1478",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Arm of the Seine near Giverny at Sunrise"
+     }
+    ]
    }
   },
   {
@@ -23474,7 +25738,15 @@
     },
     "museum_id": "hiroshima-museum-of-art",
     "city": "Motomachi",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Morning on the Seine",
+      "qid": "Q83179679",
+      "url": "https://www.wikidata.org/wiki/Q83179679"
+     }
+    ]
    }
   },
   {
@@ -23514,7 +25786,19 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19912384 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Morning on the Seine"
+     },
+     {
+      "source": "Wikidata",
+      "title": "Morning on the Seine, near Giverny",
+      "qid": "Q20538935",
+      "url": "https://www.wikidata.org/wiki/Q20538935"
+     }
+    ]
    }
   },
   {
@@ -23545,7 +25829,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Morning on the Seine near Giverny",
+      "qid": "Q19912384",
+      "url": "https://www.wikidata.org/wiki/Q19912384"
+     }
+    ]
    }
   },
   {
@@ -23575,7 +25867,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-historical-association"
+    "museum_id": "white-house-historical-association",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Morning on the Seine, Good Weather",
+      "qid": "Q108343702",
+      "url": "https://www.wikidata.org/wiki/Q108343702"
+     }
+    ]
    }
   },
   {
@@ -23638,7 +25938,13 @@
     "medium": "W.1491",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "L'île aux Orties, Near Vernon"
+     }
+    ]
    }
   },
   {
@@ -23778,7 +26084,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Morning on the Seine",
+      "qid": "Q19200679",
+      "url": "https://www.wikidata.org/wiki/Q19200679"
+     }
+    ]
    }
   },
   {
@@ -23874,7 +26188,15 @@
     },
     "museum_id": "murauchi-art-museum",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge",
+      "qid": "Q96270444",
+      "url": "https://www.wikidata.org/wiki/Q96270444"
+     }
+    ]
    }
   },
   {
@@ -23907,7 +26229,15 @@
     },
     "museum_id": "menard-art-museum",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge",
+      "qid": "Q67585046",
+      "url": "https://www.wikidata.org/wiki/Q67585046"
+     }
+    ]
    }
   },
   {
@@ -23941,7 +26271,15 @@
     "museum_id": "national-museum-of-western-art",
     "country": "Japan",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing-Cross Bridge in London",
+      "qid": "Q19186378",
+      "url": "https://www.wikidata.org/wiki/Q19186378"
+     }
+    ]
    }
   },
   {
@@ -24009,7 +26347,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge, London",
+      "qid": "Q20268079",
+      "url": "https://www.wikidata.org/wiki/Q20268079"
+     }
+    ]
    }
   },
   {
@@ -24043,7 +26389,15 @@
     "city": "Cardiff",
     "country": "Wales",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge",
+      "qid": "Q67197624",
+      "url": "https://www.wikidata.org/wiki/Q67197624"
+     }
+    ]
    }
   },
   {
@@ -24076,7 +26430,15 @@
     "museum_id": "indianapolis-museum-of-art",
     "city": "Indianapolis",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge",
+      "qid": "Q27895187",
+      "url": "https://www.wikidata.org/wiki/Q27895187"
+     }
+    ]
    }
   },
   {
@@ -24143,7 +26505,15 @@
     "museum_id": "baltimore-museum-of-art",
     "city": "Baltimore",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge, reflets sur la Tamise",
+      "qid": "Q67188271",
+      "url": "https://www.wikidata.org/wiki/Q67188271"
+     }
+    ]
    }
   },
   {
@@ -24243,7 +26613,15 @@
     "city": "Lyon",
     "country": "France",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge, The Thames",
+      "qid": "Q55647663",
+      "url": "https://www.wikidata.org/wiki/Q55647663"
+     }
+    ]
    }
   },
   {
@@ -24310,7 +26688,15 @@
     },
     "museum_id": "mohamed-mahmoud-khalil-museum",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing-cross-bridge and Kleopatra's needle",
+      "qid": "Q84056666",
+      "url": "https://www.wikidata.org/wiki/Q84056666"
+     }
+    ]
    }
   },
   {
@@ -24378,7 +26764,15 @@
     "museum_id": "fogg-museum",
     "country": "United States",
     "qid": "Q5074352",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352"
+    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Charing Cross Bridge: Fog on the Thames",
+      "qid": "Q70781289",
+      "url": "https://www.wikidata.org/wiki/Q70781289"
+     }
+    ]
    }
   },
   {
@@ -24448,7 +26842,13 @@
     "medium": "W.1557",
     "creation_place": "London",
     "creation_lat": 51.5074,
-    "creation_lon": -0.1278
+    "creation_lon": -0.1278,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge, Grey Weather"
+     }
+    ]
    }
   },
   {
@@ -24527,7 +26927,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q38623358 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo-Bridge",
+      "qid": "Q50699803",
+      "url": "https://www.wikidata.org/wiki/Q50699803"
+     }
+    ]
    }
   },
   {
@@ -24559,7 +26967,13 @@
     "medium": "W.1561",
     "creation_place": "London",
     "creation_lat": 51.5074,
-    "creation_lon": -0.1278
+    "creation_lon": -0.1278,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge, Misty Morning"
+     }
+    ]
    }
   },
   {
@@ -24591,7 +27005,13 @@
     "medium": "W.1564",
     "creation_place": "London",
     "creation_lat": 51.5074,
-    "creation_lon": -0.1278
+    "creation_lon": -0.1278,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge, at Dusk"
+     }
+    ]
    }
   },
   {
@@ -24622,7 +27042,15 @@
     },
     "museum_id": "denver-art-museum",
     "city": "Denver",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge, Sunlight Effect",
+      "qid": "Q28777026",
+      "url": "https://www.wikidata.org/wiki/Q28777026"
+     }
+    ]
    }
   },
   {
@@ -24713,7 +27141,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "worcester-art-museum",
-    "city": "Massachusetts"
+    "city": "Massachusetts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge",
+      "qid": "Q38623358",
+      "url": "https://www.wikidata.org/wiki/Q38623358"
+     }
+    ]
    }
   },
   {
@@ -24776,7 +27212,13 @@
     "medium": "W.1573",
     "creation_place": "London",
     "creation_lat": 51.5074,
-    "creation_lon": -0.1278
+    "creation_lon": -0.1278,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge, Sunlight in the Fog"
+     }
+    ]
    }
   },
   {
@@ -24806,7 +27248,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "davis-museum-and-cultural-center"
+    "museum_id": "davis-museum-and-cultural-center",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge",
+      "qid": "Q68609035",
+      "url": "https://www.wikidata.org/wiki/Q68609035"
+     }
+    ]
    }
   },
   {
@@ -24835,7 +27285,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "caracas-museum-of-contemporary-art"
+    "museum_id": "caracas-museum-of-contemporary-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le pont de Waterloo, effet de soleil dans la brume",
+      "qid": "Q108354259",
+      "url": "https://www.wikidata.org/wiki/Q108354259"
+     }
+    ]
    }
   },
   {
@@ -24896,7 +27354,13 @@
     "medium": "W.1580",
     "creation_place": "London",
     "creation_lat": 51.5074,
-    "creation_lon": -0.1278
+    "creation_lon": -0.1278,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge"
+     }
+    ]
    }
   },
   {
@@ -24959,7 +27423,13 @@
     "medium": "W.1583",
     "creation_place": "London",
     "creation_lat": 51.5074,
-    "creation_lon": -0.1278
+    "creation_lon": -0.1278,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge at Sunset, Pink Effect"
+     }
+    ]
    }
   },
   {
@@ -25030,7 +27500,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q28777026 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge, Sunlight Effect",
+      "qid": "Q20267465",
+      "url": "https://www.wikidata.org/wiki/Q20267465"
+     }
+    ]
    }
   },
   {
@@ -25059,7 +27537,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "art-gallery-of-hamilton"
+    "museum_id": "art-gallery-of-hamilton",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge, Sunlight Effect",
+      "qid": "Q82836155",
+      "url": "https://www.wikidata.org/wiki/Q82836155"
+     }
+    ]
    }
   },
   {
@@ -25089,7 +27575,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "carnegie-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge, London",
+      "qid": "Q42882613",
+      "url": "https://www.wikidata.org/wiki/Q42882613"
+     }
+    ]
    }
   },
   {
@@ -25120,7 +27614,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Waterloo Bridge in London",
+      "qid": "Q19198168",
+      "url": "https://www.wikidata.org/wiki/Q19198168"
+     }
+    ]
    }
   },
   {
@@ -25154,7 +27656,15 @@
     },
     "museum_id": "brooklyn-museum",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Houses of Parliament, Sunlight Effect (Le Parlement, effet de soleil)",
+      "qid": "Q28777013",
+      "url": "https://www.wikidata.org/wiki/Q28777013"
+     }
+    ]
    }
   },
   {
@@ -25188,7 +27698,15 @@
     "museum_id": "national-gallery-of-art",
     "country": "United States",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Houses of Parliament, Sunset",
+      "qid": "Q20190858",
+      "url": "https://www.wikidata.org/wiki/Q20190858"
+     }
+    ]
    }
   },
   {
@@ -25222,7 +27740,15 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Houses of Parliament, London",
+      "qid": "Q20267587",
+      "url": "https://www.wikidata.org/wiki/Q20267587"
+     }
+    ]
    }
   },
   {
@@ -25256,7 +27782,15 @@
     "museum_id": "high-museum-of-art",
     "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Parlement, symphonie en bleu",
+      "qid": "Q117435339",
+      "url": "https://www.wikidata.org/wiki/Q117435339"
+     }
+    ]
    }
   },
   {
@@ -25324,7 +27858,15 @@
     },
     "museum_id": "musee-marmottan-monet",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "London. Parliament. Reflections on the Thames",
+      "qid": "Q47781362",
+      "url": "https://www.wikidata.org/wiki/Q47781362"
+     }
+    ]
    }
   },
   {
@@ -25390,7 +27932,15 @@
     },
     "museum_id": "museum-of-modern-art-andre-malraux-muma",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Parlement de Londres, effet de brouillard",
+      "qid": "Q56812706",
+      "url": "https://www.wikidata.org/wiki/Q56812706"
+     }
+    ]
    }
   },
   {
@@ -25424,7 +27974,15 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Houses of Parliament (Effect of Fog)",
+      "qid": "Q19912126",
+      "url": "https://www.wikidata.org/wiki/Q19912126"
+     }
+    ]
    }
   },
   {
@@ -25458,7 +28016,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "London, the Houses of Parliament, Sunlight Opening in Fog",
+      "qid": "Q17493907",
+      "url": "https://www.wikidata.org/wiki/Q17493907"
+     }
+    ]
    }
   },
   {
@@ -25524,7 +28090,15 @@
     },
     "museum_id": "pushkin-museum",
     "qid": "Q468623",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623"
+    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Seagulls, the River Thames and the Houses of Parliament",
+      "qid": "Q50433805",
+      "url": "https://www.wikidata.org/wiki/Q50433805"
+     }
+    ]
    }
   },
   {
@@ -25595,7 +28169,13 @@
     "medium": "W.1622",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Iris Garden at Giverny"
+     }
+    ]
    }
   },
   {
@@ -25629,7 +28209,15 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q3794124",
-    "wikidata": "https://www.wikidata.org/wiki/Q3794124"
+    "wikidata": "https://www.wikidata.org/wiki/Q3794124",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The artist's garden at Giverny",
+      "qid": "Q3794124",
+      "url": "https://www.wikidata.org/wiki/Q3794124"
+     }
+    ]
    }
   },
   {
@@ -25700,7 +28288,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19199277 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q50433790",
+      "url": "https://www.wikidata.org/wiki/Q50433790"
+     }
+    ]
    }
   },
   {
@@ -25730,7 +28326,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "von-der-heydt-museum"
+    "museum_id": "von-der-heydt-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q67183653",
+      "url": "https://www.wikidata.org/wiki/Q67183653"
+     }
+    ]
    }
   },
   {
@@ -25761,7 +28365,15 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q20271473",
+      "url": "https://www.wikidata.org/wiki/Q20271473"
+     }
+    ]
    }
   },
   {
@@ -25832,7 +28444,15 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q20269469",
+      "url": "https://www.wikidata.org/wiki/Q20269469"
+     }
+    ]
    }
   },
   {
@@ -25863,7 +28483,15 @@
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "city": "Lille",
-    "country": "France"
+    "country": "France",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vetheuil in the morning",
+      "qid": "Q50432908",
+      "url": "https://www.wikidata.org/wiki/Q50432908"
+     }
+    ]
    }
   },
   {
@@ -25894,7 +28522,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-western-art",
-    "country": "Japan"
+    "country": "Japan",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vétheuil",
+      "qid": "Q19199277",
+      "url": "https://www.wikidata.org/wiki/Q19199277"
+     }
+    ]
    }
   },
   {
@@ -25926,7 +28562,13 @@
     "medium": "W.1650",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Pathway in Monet's Garden at Giverny"
+     }
+    ]
    }
   },
   {
@@ -25958,7 +28600,13 @@
     "medium": "W.1736",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
-    "creation_lon": 12.3155
+    "creation_lon": 12.3155,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Grand Canal"
+     }
+    ]
    }
   },
   {
@@ -25989,7 +28637,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "beyeler-foundation",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Grand Canal",
+      "qid": "Q19564337",
+      "url": "https://www.wikidata.org/wiki/Q19564337"
+     }
+    ]
    }
   },
   {
@@ -26023,7 +28679,13 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q19564337",
-    "wikidata": "https://www.wikidata.org/wiki/Q19564337"
+    "wikidata": "https://www.wikidata.org/wiki/Q19564337",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Grand Canal and Santa Maria della Salute"
+     }
+    ]
    }
   },
   {
@@ -26055,7 +28717,13 @@
     "medium": "W.1743",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
-    "creation_lon": 12.3155
+    "creation_lon": 12.3155,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Doges' Palace"
+     }
+    ]
    }
   },
   {
@@ -26127,7 +28795,13 @@
     "medium": "W.1749",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
-    "creation_lon": 12.3155
+    "creation_lon": 12.3155,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "San Giorgio Maggiore"
+     }
+    ]
    }
   },
   {
@@ -26192,7 +28866,15 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19914267",
-    "wikidata": "https://www.wikidata.org/wiki/Q19914267"
+    "wikidata": "https://www.wikidata.org/wiki/Q19914267",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Doge's Palace Seen from San Giorgio Maggiore",
+      "qid": "Q19914267",
+      "url": "https://www.wikidata.org/wiki/Q19914267"
+     }
+    ]
    }
   },
   {
@@ -26232,7 +28914,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q49447496 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Venice, Palazzo Dario",
+      "qid": "Q20268687",
+      "url": "https://www.wikidata.org/wiki/Q20268687"
+     }
+    ]
    }
   },
   {
@@ -26263,7 +28953,15 @@
     },
     "museum_id": "national-museum-cardiff",
     "city": "Cardiff",
-    "country": "Wales"
+    "country": "Wales",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Palazzo Dario",
+      "qid": "Q67197627",
+      "url": "https://www.wikidata.org/wiki/Q67197627"
+     }
+    ]
    }
   },
   {
@@ -26295,7 +28993,13 @@
     "medium": "W.1764",
     "creation_place": "Venice",
     "creation_lat": 45.4408,
-    "creation_lon": 12.3155
+    "creation_lon": 12.3155,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Palazzo da Mula"
+     }
+    ]
    }
   },
   {
@@ -26334,7 +29038,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q114413855 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le Palais Contarini",
+      "qid": "Q66486301",
+      "url": "https://www.wikidata.org/wiki/Q66486301"
+     }
+    ]
    }
   },
   {
@@ -26508,7 +29220,13 @@
     "medium": "W.1779",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Flowered Arches at Giverny"
+     }
+    ]
    }
   },
   {
@@ -26579,7 +29297,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19883731 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Agapanthes",
+      "qid": "Q50415959",
+      "url": "https://www.wikidata.org/wiki/Q50415959"
+     }
+    ]
    }
   },
   {
@@ -26611,7 +29337,13 @@
     "medium": "W.1821",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Water-Lilies and Agapanthus"
+     }
+    ]
    }
   },
   {
@@ -26794,7 +29526,13 @@
     "medium": "W.1832",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Irises"
+     }
+    ]
    }
   },
   {
@@ -26857,7 +29595,13 @@
     "medium": "W.1839",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Yellow Irises"
+     }
+    ]
    }
   },
   {
@@ -26889,7 +29633,13 @@
     "medium": "W.1841",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Irises"
+     }
+    ]
    }
   },
   {
@@ -26921,7 +29671,13 @@
     "medium": "W.1843",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Self Portrait"
+     }
+    ]
    }
   },
   {
@@ -27053,7 +29809,13 @@
     "medium": "W.1848",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Weeping Willow and Water-Lily Pond"
+     }
+    ]
    }
   },
   {
@@ -27161,7 +29923,15 @@
     },
     "museum_id": "musee-marmottan-monet",
     "qid": "Q50532779",
-    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Weeping Willow",
+      "qid": "Q50415952",
+      "url": "https://www.wikidata.org/wiki/Q50415952"
+     }
+    ]
    }
   },
   {
@@ -27195,7 +29965,15 @@
     },
     "museum_id": "musee-marmottan-monet",
     "qid": "Q50532779",
-    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Weeping Willow",
+      "qid": "Q105099585",
+      "url": "https://www.wikidata.org/wiki/Q105099585"
+     }
+    ]
    }
   },
   {
@@ -27229,7 +30007,15 @@
     },
     "museum_id": "kimbell-art-museum",
     "qid": "Q50532779",
-    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Weeping Willow",
+      "qid": "Q2450237",
+      "url": "https://www.wikidata.org/wiki/Q2450237"
+     }
+    ]
    }
   },
   {
@@ -27263,7 +30049,15 @@
     },
     "museum_id": "musee-marmottan-monet",
     "qid": "Q50532779",
-    "wikidata": "https://www.wikidata.org/wiki/Q50532779"
+    "wikidata": "https://www.wikidata.org/wiki/Q50532779",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Weeping Willow",
+      "qid": "Q105099583",
+      "url": "https://www.wikidata.org/wiki/Q105099583"
+     }
+    ]
    }
   },
   {
@@ -27303,7 +30097,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q24046494 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Glycines",
+      "qid": "Q63952039",
+      "url": "https://www.wikidata.org/wiki/Q63952039"
+     }
+    ]
    }
   },
   {
@@ -27396,7 +30198,15 @@
     },
     "museum_id": "kunstmuseum-den-haag",
     "city": "The Hague",
-    "country": "Netherlands"
+    "country": "Netherlands",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Wisteria",
+      "qid": "Q24046494",
+      "url": "https://www.wikidata.org/wiki/Q24046494"
+     }
+    ]
    }
   },
   {
@@ -27427,7 +30237,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "allen-memorial-art-museum",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Wisteria",
+      "qid": "Q67515679",
+      "url": "https://www.wikidata.org/wiki/Q67515679"
+     }
+    ]
    }
   },
   {
@@ -27499,7 +30317,13 @@
     "medium": "W.1913",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Japanese Bridge"
+     }
+    ]
    }
   },
   {
@@ -27530,7 +30354,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Japanese Bridge",
+      "qid": "Q105099626",
+      "url": "https://www.wikidata.org/wiki/Q105099626"
+     }
+    ]
    }
   },
   {
@@ -27562,7 +30394,13 @@
     "medium": "W.1916",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Footbridge over the Water-Lily Pond"
+     }
+    ]
    }
   },
   {
@@ -27593,7 +30431,15 @@
     },
     "museum_id": "sao-paulo-museum-of-art",
     "city": "São Paulo",
-    "country": "Brazil"
+    "country": "Brazil",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Japanese Bridge",
+      "qid": "Q49864671",
+      "url": "https://www.wikidata.org/wiki/Q49864671"
+     }
+    ]
    }
   },
   {
@@ -27655,7 +30501,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "beyeler-foundation",
-    "country": "Switzerland"
+    "country": "Switzerland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Japanese bridge",
+      "qid": "Q28797613",
+      "url": "https://www.wikidata.org/wiki/Q28797613"
+     }
+    ]
    }
   },
   {
@@ -27686,7 +30540,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "van-gogh-museum"
+    "museum_id": "van-gogh-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Japanese bridge",
+      "qid": "Q28797613",
+      "url": "https://www.wikidata.org/wiki/Q28797613"
+     }
+    ]
    }
   },
   {
@@ -27748,7 +30610,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Japanese Bridge",
+      "qid": "Q105099593",
+      "url": "https://www.wikidata.org/wiki/Q105099593"
+     }
+    ]
    }
   },
   {
@@ -27841,7 +30711,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Japanese Bridge",
+      "qid": "Q105099595",
+      "url": "https://www.wikidata.org/wiki/Q105099595"
+     }
+    ]
    }
   },
   {
@@ -27873,7 +30751,13 @@
     "medium": "W.1930",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Japanese Bridge"
+     }
+    ]
    }
   },
   {
@@ -27904,7 +30788,15 @@
     },
     "museum_id": "minneapolis-institute-of-art",
     "city": "Minneapolis",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Japanese Bridge",
+      "qid": "Q20890879",
+      "url": "https://www.wikidata.org/wiki/Q20890879"
+     }
+    ]
    }
   },
   {
@@ -27967,7 +30859,13 @@
     "medium": "W.1933",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Japanese Bridge"
+     }
+    ]
    }
   },
   {
@@ -28007,7 +30905,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q105099591 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The rose-way in Giverny",
+      "qid": "Q50415971",
+      "url": "https://www.wikidata.org/wiki/Q50415971"
+     }
+    ]
    }
   },
   {
@@ -28038,7 +30944,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Path under the Rose Trees",
+      "qid": "Q105099591",
+      "url": "https://www.wikidata.org/wiki/Q105099591"
+     }
+    ]
    }
   },
   {
@@ -28070,7 +30984,13 @@
     "medium": "W.1938",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Path under the Rose Trees"
+     }
+    ]
    }
   },
   {
@@ -28102,7 +31022,13 @@
     "medium": "W.1939",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Path under the Rose Trees"
+     }
+    ]
    }
   },
   {
@@ -28133,7 +31059,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Weeping Willow",
+      "qid": "Q17495596",
+      "url": "https://www.wikidata.org/wiki/Q17495596"
+     }
+    ]
    }
   },
   {
@@ -28207,7 +31141,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q105099607 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The artist's house seen from the rose garden",
+      "qid": "Q105099607",
+      "url": "https://www.wikidata.org/wiki/Q105099607"
+     }
+    ]
    }
   },
   {
@@ -28238,7 +31180,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-marmottan-monet"
+    "museum_id": "musee-marmottan-monet",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Artist's House Seen from the Rose Garden",
+      "qid": "Q105099590",
+      "url": "https://www.wikidata.org/wiki/Q105099590"
+     }
+    ]
    }
   },
   {
@@ -28371,7 +31321,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "albertina"
+    "museum_id": "albertina",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The House among the Roses",
+      "qid": "Q50377086",
+      "url": "https://www.wikidata.org/wiki/Q50377086"
+     }
+    ]
    }
   },
   {
@@ -28411,7 +31369,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50377086 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The House among the Roses",
+      "qid": "Q21712160",
+      "url": "https://www.wikidata.org/wiki/Q21712160"
+     }
+    ]
    }
   },
   {
@@ -28443,7 +31409,13 @@
     "medium": "W.1959",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The House Seen through the Roses"
+     }
+    ]
    }
   },
   {
@@ -28475,7 +31447,13 @@
     "medium": "W.1963",
     "creation_place": "Giverny",
     "creation_lat": 49.0759,
-    "creation_lon": 1.5339
+    "creation_lon": 1.5339,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Rose Bush"
+     }
+    ]
    }
   },
   {
@@ -28529,7 +31507,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17491281",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Poplars, Wind Effect",
+      "ref": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)"
+     }
+    ]
    }
   },
   {
@@ -28711,7 +31696,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17436696",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rouen Cathedral, the Portal and the tour d'Albane, Morning Effect",
+      "ref": "https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)"
+     }
+    ]
    }
   },
   {
@@ -28819,7 +31811,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17490991",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Poppy Field at Giverny"
+     }
+    ]
    }
   },
   {
@@ -28856,7 +31854,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Garden in Flower"
+     }
+    ]
    }
   },
   {
@@ -28920,7 +31924,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18023036",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Study of Rocks; Creuse (also known as Le Bloc )",
+      "ref": "https://en.wikipedia.org/wiki/Study_of_Rocks;_Creuse"
+     }
+    ]
    }
   },
   {
@@ -29011,7 +32022,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18224556",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape at Giverny"
+     }
+    ]
    }
   },
   {
@@ -29048,7 +32065,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Breakup of the Ice, Lavacourt"
+     }
+    ]
    }
   },
   {
@@ -29129,7 +32152,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26689479",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Grand Canal"
+     }
+    ]
    }
   },
   {
@@ -29193,7 +32222,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Vetheuil, Flowering Plum Trees"
+     }
+    ]
    }
   },
   {
@@ -29547,7 +32582,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Bridge at Chatou"
+     }
+    ]
    }
   },
   {
@@ -29766,7 +32807,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Seascape, Night Effect"
+     }
+    ]
    }
   },
   {
@@ -29911,7 +32958,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26846568",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliff at Pourville, Sunset"
+     }
+    ]
    }
   },
   {
@@ -29992,7 +33045,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q22338327",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "View at Rouelles, Le Havre",
+      "ref": "https://en.wikipedia.org/wiki/View_from_Rouelles"
+     }
+    ]
    }
   },
   {
@@ -30174,7 +33234,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20180111",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Grainstacks in the Morning, Snow Effect",
+      "ref": "https://en.wikipedia.org/wiki/Haystacks_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -30211,7 +33278,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Flowers and Fruit"
+     }
+    ]
    }
   },
   {
@@ -30578,7 +33651,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Road by Saint-Siméon Farm"
+     }
+    ]
    }
   },
   {
@@ -30615,7 +33694,14 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Snow at Argenteuil",
+      "ref": "https://en.wikipedia.org/wiki/Snow_at_Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -30642,7 +33728,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19016163",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Young Girls in a Row Boat"
+     }
+    ]
    }
   },
   {
@@ -30669,7 +33761,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19056877",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Three Trees in Summer",
+      "ref": "https://en.wikipedia.org/wiki/Poplars_(Monet_series)"
+     }
+    ]
    }
   },
   {
@@ -30696,7 +33795,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19186378",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Charing Cross Bridge",
+      "ref": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -30723,7 +33829,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19198168",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge, London"
+     }
+    ]
    }
   },
   {
@@ -30932,7 +34044,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Still Life with Meat"
+     }
+    ]
    }
   },
   {
@@ -31114,7 +34232,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Lavacourt, Sun and Snow"
+     }
+    ]
    }
   },
   {
@@ -31215,7 +34339,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Poppy Field near Vetheuil"
+     }
+    ]
    }
   },
   {
@@ -31306,7 +34436,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Relaxing in the Garden, Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -31343,7 +34479,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Entrance to the Port of Trouville"
+     }
+    ]
    }
   },
   {
@@ -31589,7 +34731,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48977647",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Houses of Parliament, Fog Effect",
+      "ref": "https://en.wikipedia.org/wiki/Houses_of_Parliament_series_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -31616,7 +34765,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50432908",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Vetheuil, Grey Effect"
+     }
+    ]
    }
   },
   {
@@ -31680,7 +34835,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48092399",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Grainstacks at Giverny, Sunset"
+     }
+    ]
    }
   },
   {
@@ -31734,7 +34895,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48976445",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Palazzo Ducale"
+     }
+    ]
    }
   },
   {
@@ -31771,7 +34938,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camille Monet in Japanese Costume"
+     }
+    ]
    }
   },
   {
@@ -31808,7 +34981,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Trade Basin, Le Havre"
+     }
+    ]
    }
   },
   {
@@ -32091,7 +35270,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Apple Trees near Vetheuil"
+     }
+    ]
    }
   },
   {
@@ -32199,7 +35384,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q76630321",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Village of Giverny under the Snow"
+     }
+    ]
    }
   },
   {
@@ -32590,7 +35781,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79790753",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rio della Salute"
+     }
+    ]
    }
   },
   {
@@ -32681,7 +35878,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q78654632",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Antibes Seen from the Salis Gardens"
+     }
+    ]
    }
   },
   {
@@ -32826,7 +36029,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Bridge at Argenteuil"
+     }
+    ]
    }
   },
   {
@@ -32863,7 +36072,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Apple Trees in Blossom by the Water"
+     }
+    ]
    }
   },
   {
@@ -33230,7 +36445,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q78833083",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Houses in the Snow, Norway"
+     }
+    ]
    }
   },
   {
@@ -33368,7 +36589,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliff at Fecamp"
+     }
+    ]
    }
   },
   {
@@ -33486,7 +36713,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q10326430",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Cliffs to the East of Pourville"
+     }
+    ]
    }
   },
   {
@@ -33604,7 +36837,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q67188271",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Charing Cross Bridge, Reflections on the Thames",
+      "ref": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -33641,7 +36881,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Beach at Trouville"
+     }
+    ]
    }
   },
   {
@@ -33668,7 +36914,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64174087",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Garden at Giverny"
+     }
+    ]
    }
   },
   {
@@ -33941,7 +37193,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Hyde Park"
+     }
+    ]
    }
   },
   {
@@ -34015,7 +37273,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Vetheuil, Prairie inondée"
+     }
+    ]
    }
   },
   {
@@ -34069,7 +37333,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q66502276",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Villas at Bordighera"
+     }
+    ]
    }
   },
   {
@@ -34143,7 +37413,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Road to the Farm of Saint-Simeon"
+     }
+    ]
    }
   },
   {
@@ -34170,7 +37446,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q71715439",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Grotto of Port-Domois"
+     }
+    ]
    }
   },
   {
@@ -34298,7 +37580,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q52152294",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Charing Cross Bridge",
+      "ref": "https://en.wikipedia.org/wiki/Charing_Cross_Bridge_series_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -34453,7 +37742,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Orchard in Flower"
+     }
+    ]
    }
   },
   {
@@ -34507,7 +37802,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50819798",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Aiguille and the Porte d'Aval"
+     }
+    ]
    }
   },
   {
@@ -34544,7 +37845,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "L'Entrée du port de Le Havre"
+     }
+    ]
    }
   },
   {
@@ -34581,7 +37888,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Mouth of the Seine at Honfleur"
+     }
+    ]
    }
   },
   {
@@ -34618,7 +37931,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Road to Vetheuil, Snow Effect"
+     }
+    ]
    }
   },
   {
@@ -34891,7 +38210,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60389924",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Leicester Square at Night"
+     }
+    ]
    }
   },
   {
@@ -34982,7 +38307,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Meadow with Poplars (also known as Poplars near Argenteuil)"
+     }
+    ]
    }
   },
   {
@@ -35019,7 +38350,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Path at La Cavee, Pourville"
+     }
+    ]
    }
   },
   {
@@ -35046,7 +38383,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20538838",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Grainstack at Sunset",
+      "ref": "https://en.wikipedia.org/wiki/Haystacks_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -35073,7 +38417,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20538843",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Coastal Road at Cap Martin, near Menton"
+     }
+    ]
    }
   },
   {
@@ -35110,7 +38460,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Le Rue de la Bavole at Honfleur"
+     }
+    ]
    }
   },
   {
@@ -35137,7 +38493,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20538871",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Grainstack in the Morning, Snow Effect",
+      "ref": "https://en.wikipedia.org/wiki/Haystacks_(Monet)"
+     }
+    ]
    }
   },
   {
@@ -35174,7 +38537,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Study of Boats (also known as Ships in Harbor)"
+     }
+    ]
    }
   },
   {
@@ -35211,7 +38580,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Flowers at Vetheuil"
+     }
+    ]
    }
   },
   {
@@ -35329,7 +38704,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Entering the Village of Vetheuil in Winter"
+     }
+    ]
    }
   },
   {
@@ -35366,7 +38747,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Boulevard St-Denis, Argenteuil, Snow Effect"
+     }
+    ]
    }
   },
   {
@@ -35693,7 +39080,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "La Seine à Lavacourt"
+     }
+    ]
    }
   },
   {
@@ -35720,7 +39113,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q73190299",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Panorama of Vernon"
+     }
+    ]
    }
   },
   {
@@ -36064,7 +39463,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115902260",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Village of La Roche-Blond, Sunset"
+     }
+    ]
    }
   },
   {
@@ -36620,7 +40025,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Hamlet of Chantemesle at the Foot of the Rock"
+     }
+    ]
    }
   },
   {
@@ -36981,7 +40392,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124156632",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Esterel Mountains"
+     }
+    ]
    }
   },
   {
@@ -37018,7 +40435,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Plain of Colombes, White Frost"
+     }
+    ]
    }
   },
   {
@@ -37163,7 +40586,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q123537562",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "La Côtelette"
+     }
+    ]
    }
   },
   {
@@ -37190,7 +40619,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q98910166",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Autumn at Jeufosse"
+     }
+    ]
    }
   },
   {
@@ -37675,7 +41110,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105099586",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Yellow Irises and Malva"
+     }
+    ]
    }
   },
   {
@@ -38319,7 +41760,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q95689722",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Japanese Bridge"
+     }
+    ]
    }
   },
   {
@@ -38629,7 +42076,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q108343702",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Morning on the Seine"
+     }
+    ]
    }
   },
   {
@@ -38683,7 +42136,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106925109",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Houses in the Snow, Norway"
+     }
+    ]
    }
   },
   {
@@ -39054,7 +42513,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q108354259",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Waterloo Bridge, Fog, Sunlight Effect"
+     }
+    ]
    }
   },
   {
@@ -39081,7 +42546,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q108354260",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The \"Pyramids\" at Port-Coton",
+      "ref": "https://en.wikipedia.org/wiki/The_Pyramides_at_Port-Coton,_Rough_Sea"
+     }
+    ]
    }
   },
   {
@@ -39162,7 +42634,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q108161580",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Weeping Willow and Water-Lily Pond"
+     }
+    ]
    }
   },
   {
@@ -39519,7 +42997,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Still Life with Spanish Melon"
+     }
+    ]
    }
   },
   {
@@ -39721,7 +43205,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q108479173",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Frost at Giverny"
+     }
+    ]
    }
   },
   {

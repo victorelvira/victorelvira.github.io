@@ -26,7 +26,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2"
+    "museum_id": "musee-des-beaux-arts-2",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Denys l'aréopagite couronné par un ange",
+      "qid": "Q105444134",
+      "url": "https://www.wikidata.org/wiki/Q105444134"
+     }
+    ]
    }
   },
   {
@@ -160,7 +168,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "palazzo-corsini"
+    "museum_id": "palazzo-corsini",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le triomphe d'Ovide",
+      "qid": "Q114029163",
+      "url": "https://www.wikidata.org/wiki/Q114029163"
+     }
+    ]
    }
   },
   {
@@ -333,7 +349,15 @@
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "qid": "Q19925236",
-    "wikidata": "https://www.wikidata.org/wiki/Q19925236"
+    "wikidata": "https://www.wikidata.org/wiki/Q19925236",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Sleeping Venus with Cupid",
+      "qid": "Q19925236",
+      "url": "https://www.wikidata.org/wiki/Q19925236"
+     }
+    ]
    }
   },
   {
@@ -371,7 +395,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "53,5 x 77,5 cm"
+    "dimensions": "53,5 x 77,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Mercury, Herse and Aglaulus"
+     }
+    ]
    }
   },
   {
@@ -494,7 +524,13 @@
     "dimensions": "97,5 x 134 cm",
     "creation_place": "Rome",
     "creation_lat": 41.9028,
-    "creation_lon": 12.4964
+    "creation_lon": 12.4964,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Joshua's Victory over the Amalekites"
+     }
+    ]
    }
   },
   {
@@ -532,7 +568,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "122 x 169 cm"
+    "dimensions": "122 x 169 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Bacchanale or Bacchus and Ariadne"
+     }
+    ]
    }
   },
   {
@@ -565,7 +607,15 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q124004799",
-    "wikidata": "https://www.wikidata.org/wiki/Q124004799"
+    "wikidata": "https://www.wikidata.org/wiki/Q124004799",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Cephalus and Aurora",
+      "qid": "Q18688231",
+      "url": "https://www.wikidata.org/wiki/Q18688231"
+     }
+    ]
    }
   },
   {
@@ -662,7 +712,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "100 x 75 cm"
+    "dimensions": "100 x 75 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Numa Pompilius and the nymph Egeria"
+     }
+    ]
    }
   },
   {
@@ -695,7 +751,15 @@
     "museum_id": "musee-conde",
     "country": "France",
     "qid": "Q3224378",
-    "wikidata": "https://www.wikidata.org/wiki/Q3224378"
+    "wikidata": "https://www.wikidata.org/wiki/Q3224378",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Massacre of the Innocents",
+      "qid": "Q3224378",
+      "url": "https://www.wikidata.org/wiki/Q3224378"
+     }
+    ]
    }
   },
   {
@@ -827,7 +891,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q115933723 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Apollo and Daphne",
+      "qid": "Q28801553",
+      "url": "https://www.wikidata.org/wiki/Q28801553"
+     }
+    ]
    }
   },
   {
@@ -865,7 +937,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "56 x 76 cm"
+    "dimensions": "56 x 76 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Children's bacchanal"
+     }
+    ]
    }
   },
   {
@@ -903,7 +981,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "74 x 85 cm"
+    "dimensions": "74 x 85 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Children's bacchanal"
+     }
+    ]
    }
   },
   {
@@ -1000,7 +1084,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "119 × 98 cm"
+    "dimensions": "119 × 98 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Descent from the cross or The deposition from the cross"
+     }
+    ]
    }
   },
   {
@@ -1098,7 +1188,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "97 x 136 cm"
+    "dimensions": "97 x 136 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Nurture of Bacchus or A Little Bacchanal"
+     }
+    ]
    }
   },
   {
@@ -1136,7 +1232,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "75 x 97 cm"
+    "dimensions": "75 x 97 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Nurture of Bacchus or The Infancy of Bacchus"
+     }
+    ]
    }
   },
   {
@@ -1195,7 +1297,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "brighton"
+    "museum_id": "brighton",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Virgin and Child in a Garland of Flowers",
+      "qid": "Q96615154",
+      "url": "https://www.wikidata.org/wiki/Q96615154"
+     }
+    ]
    }
   },
   {
@@ -1302,7 +1412,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "74 x 60 cm"
+    "dimensions": "74 x 60 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Bacchic scene or Nymph and satyr drinking"
+     }
+    ]
    }
   },
   {
@@ -1340,7 +1456,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "77 x 62 cm"
+    "dimensions": "77 x 62 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Bacchic scene or Nymph and satyr drinking"
+     }
+    ]
    }
   },
   {
@@ -1378,7 +1500,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "97,5 x 72,5 cm"
+    "dimensions": "97,5 x 72,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Midas washing himself in the source of the river Pactolus"
+     }
+    ]
    }
   },
   {
@@ -1446,7 +1574,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "66 x 50,8 cm"
+    "dimensions": "66 x 50,8 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Sleeping nymph surprised by satyrs or Venus surprised by satyrs"
+     }
+    ]
    }
   },
   {
@@ -1484,7 +1618,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "94 x 69,5 cm"
+    "dimensions": "94 x 69,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Poet's Inspiration or The Inspiration of Anacreon"
+     }
+    ]
    }
   },
   {
@@ -1562,7 +1702,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "101 x 82 cm"
+    "dimensions": "101 x 82 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The shepherds of Arcadia (Et in Arcadia ego)"
+     }
+    ]
    }
   },
   {
@@ -1762,7 +1908,15 @@
     "museum_id": "national-museum-of-canada",
     "qid": "Q3850323",
     "wikidata": "https://www.wikidata.org/wiki/Q3850323",
-    "wga_url": "https://www.wga.hu/html/p/poussin/1/04martyr.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/1/04martyr.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Martyrdom of Saint Erasmus",
+      "qid": "Q59542375",
+      "url": "https://www.wikidata.org/wiki/Q59542375"
+     }
+    ]
    }
   },
   {
@@ -1792,7 +1946,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pinacoteca-vaticana"
+    "museum_id": "pinacoteca-vaticana",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Martyrdom of Saint Erasmus",
+      "qid": "Q3850323",
+      "url": "https://www.wikidata.org/wiki/Q3850323"
+     }
+    ]
    }
   },
   {
@@ -2028,7 +2190,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q71328906 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Moses Sweetening the Bitter Waters of Marah",
+      "qid": "Q71328906",
+      "url": "https://www.wikidata.org/wiki/Q71328906"
+     }
+    ]
    }
   },
   {
@@ -2088,7 +2258,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "metropolitan-museum-of-art"
+    "museum_id": "metropolitan-museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Rest on the Flight into Egypt",
+      "qid": "Q19911624",
+      "url": "https://www.wikidata.org/wiki/Q19911624"
+     }
+    ]
    }
   },
   {
@@ -2118,7 +2296,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Triumph of David",
+      "qid": "Q27700123",
+      "url": "https://www.wikidata.org/wiki/Q27700123"
+     }
+    ]
    }
   },
   {
@@ -2156,7 +2342,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19911624 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Le repos pendant la fuite en Egypte",
+      "qid": "Q91932551",
+      "url": "https://www.wikidata.org/wiki/Q91932551"
+     }
+    ]
    }
   },
   {
@@ -2296,7 +2490,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "72 x 56 cm"
+    "dimensions": "72 x 56 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Nymph riding a goat or Venus, faun and putti"
+     }
+    ]
    }
   },
   {
@@ -2334,7 +2534,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "95 x 72 cm"
+    "dimensions": "95 x 72 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Children and putti playing"
+     }
+    ]
    }
   },
   {
@@ -2438,7 +2644,15 @@
     "museum_id": "museo-del-prado",
     "qid": "Q14914880",
     "wikidata": "https://www.wikidata.org/wiki/Q14914880",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2a/24parnas.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/2a/24parnas.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Parnassus",
+      "qid": "Q14914880",
+      "url": "https://www.wikidata.org/wiki/Q14914880"
+     }
+    ]
    }
   },
   {
@@ -2608,7 +2822,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19925212 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Adoration of the Magi",
+      "qid": "Q19925212",
+      "url": "https://www.wikidata.org/wiki/Q19925212"
+     }
+    ]
    }
   },
   {
@@ -2776,7 +2998,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "119 x 101 cm"
+    "dimensions": "119 x 101 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Rinaldo's Companions"
+     }
+    ]
    }
   },
   {
@@ -2815,7 +3043,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18522881 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Landscape with a Man Frightened by a Snake",
+      "qid": "Q18522881",
+      "url": "https://www.wikidata.org/wiki/Q18522881"
+     }
+    ]
    }
   },
   {
@@ -2882,7 +3118,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "107 x 133 cm"
+    "dimensions": "107 x 133 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Venus presenting arms to Aeneas"
+     }
+    ]
    }
   },
   {
@@ -3050,7 +3292,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "116 x 160 cm"
+    "dimensions": "116 x 160 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The young Pyrrhus saved"
+     }
+    ]
    }
   },
   {
@@ -3088,7 +3336,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "72 x 98 cm"
+    "dimensions": "72 x 98 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with ruins or Landscape with an ancient tomb and two figures"
+     }
+    ]
    }
   },
   {
@@ -3127,7 +3381,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19318315 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint John Baptising the People",
+      "qid": "Q19318315",
+      "url": "https://www.wikidata.org/wiki/Q19318315"
+     }
+    ]
    }
   },
   {
@@ -3157,7 +3419,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Hymenaios disguised",
+      "qid": "Q49876338",
+      "url": "https://www.wikidata.org/wiki/Q49876338"
+     }
+    ]
    }
   },
   {
@@ -3195,7 +3465,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "160 x 360 cm"
+    "dimensions": "160 x 360 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Hunt of Meleager and Atalanta or Leaving for a hunt"
+     }
+    ]
    }
   },
   {
@@ -3288,7 +3564,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Birth of Venus",
+      "qid": "Q18688230",
+      "url": "https://www.wikidata.org/wiki/Q18688230"
+     }
+    ]
    }
   },
   {
@@ -3411,7 +3695,15 @@
     "museum_id": "belvoir-castle",
     "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Marriage",
+      "qid": "Q26511045",
+      "url": "https://www.wikidata.org/wiki/Q26511045"
+     }
+    ]
    }
   },
   {
@@ -3444,7 +3736,15 @@
     "museum_id": "fitzwilliam-museum",
     "country": "United Kingdom",
     "qid": "Q19593667",
-    "wikidata": "https://www.wikidata.org/wiki/Q19593667"
+    "wikidata": "https://www.wikidata.org/wiki/Q19593667",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Extreme Unction",
+      "qid": "Q19593667",
+      "url": "https://www.wikidata.org/wiki/Q19593667"
+     }
+    ]
    }
   },
   {
@@ -3477,7 +3777,15 @@
     "museum_id": "belvoir-castle",
     "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Confirmation",
+      "qid": "Q26713323",
+      "url": "https://www.wikidata.org/wiki/Q26713323"
+     }
+    ]
    }
   },
   {
@@ -3543,7 +3851,15 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q7457394",
-    "wikidata": "https://www.wikidata.org/wiki/Q7457394"
+    "wikidata": "https://www.wikidata.org/wiki/Q7457394",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Eucharist",
+      "qid": "Q26713336",
+      "url": "https://www.wikidata.org/wiki/Q26713336"
+     }
+    ]
    }
   },
   {
@@ -3644,7 +3960,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "120 x 195 cm"
+    "dimensions": "120 x 195 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with Juno and Argus"
+     }
+    ]
    }
   },
   {
@@ -3677,7 +3999,15 @@
     },
     "museum_id": "louvre",
     "qid": "Q18572435",
-    "wikidata": "https://www.wikidata.org/wiki/Q18572435"
+    "wikidata": "https://www.wikidata.org/wiki/Q18572435",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Camille Delivers the Schoolmaster of Falerii to His Pupils",
+      "qid": "Q18572435",
+      "url": "https://www.wikidata.org/wiki/Q18572435"
+     }
+    ]
    }
   },
   {
@@ -3745,7 +4075,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "155 x 234 cm"
+    "dimensions": "155 x 234 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with Saint Jerome"
+     }
+    ]
    }
   },
   {
@@ -3783,7 +4119,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "63 x 78 cm"
+    "dimensions": "63 x 78 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with a man drinking"
+     }
+    ]
    }
   },
   {
@@ -3821,7 +4163,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "63 x 75 cm"
+    "dimensions": "63 x 75 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with resting travellers"
+     }
+    ]
    }
   },
   {
@@ -3918,7 +4266,15 @@
     "museum_id": "musee-conde",
     "country": "France",
     "qid": "Q3527390",
-    "wikidata": "https://www.wikidata.org/wiki/Q3527390"
+    "wikidata": "https://www.wikidata.org/wiki/Q3527390",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Theseus Finds His Father's Sword",
+      "qid": "Q3527390",
+      "url": "https://www.wikidata.org/wiki/Q3527390"
+     }
+    ]
    }
   },
   {
@@ -4021,7 +4377,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-des-beaux-arts-2",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2a/22venus.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/2a/22venus.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Vénus présente à Énée les armes forgées par Vulcain",
+      "qid": "Q105444135",
+      "url": "https://www.wikidata.org/wiki/Q105444135"
+     }
+    ]
    }
   },
   {
@@ -4059,7 +4423,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "97 × 133 cm"
+    "dimensions": "97 × 133 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Jupiter suckled by the goat Amalthea or The Feeding of Jupiter"
+     }
+    ]
    }
   },
   {
@@ -4205,7 +4575,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "325 x 250 cm"
+    "dimensions": "325 x 250 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Institution of the Eucharist or Jesus Christ instituting the Eucharist"
+     }
+    ]
    }
   },
   {
@@ -4243,7 +4619,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "297 cm in diameter"
+    "dimensions": "297 cm in diameter",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Time and Truth or dit aussi Time defending Truth against the attacks of Envy and Discord"
+     }
+    ]
    }
   },
   {
@@ -4281,7 +4663,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "444 x 234 cm"
+    "dimensions": "444 x 234 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Miracle of saint Francis Xavier or Saint Francis Xavier bringing back to life the daughter of an inhabitant of Cangoxima in Japan"
+     }
+    ]
    }
   },
   {
@@ -4349,7 +4737,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "sarasota"
+    "museum_id": "sarasota",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Ecstasy of Saint Paul",
+      "qid": "Q79394524",
+      "url": "https://www.wikidata.org/wiki/Q79394524"
+     }
+    ]
    }
   },
   {
@@ -4379,7 +4775,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland"
+    "museum_id": "national-gallery-of-scotland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Sacrament of Confirmation",
+      "qid": "Q27971314",
+      "url": "https://www.wikidata.org/wiki/Q27971314"
+     }
+    ]
    }
   },
   {
@@ -4409,7 +4813,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland"
+    "museum_id": "national-gallery-of-scotland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Sacrament of Baptism",
+      "qid": "Q27971313",
+      "url": "https://www.wikidata.org/wiki/Q27971313"
+     }
+    ]
    }
   },
   {
@@ -4439,7 +4851,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland"
+    "museum_id": "national-gallery-of-scotland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Sacrament of Penance",
+      "qid": "Q27971318",
+      "url": "https://www.wikidata.org/wiki/Q27971318"
+     }
+    ]
    }
   },
   {
@@ -4469,7 +4889,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland"
+    "museum_id": "national-gallery-of-scotland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Sacrament of Ordination",
+      "qid": "Q27971321",
+      "url": "https://www.wikidata.org/wiki/Q27971321"
+     }
+    ]
    }
   },
   {
@@ -4499,7 +4927,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland"
+    "museum_id": "national-gallery-of-scotland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Sacrament of the Holy Eucharist",
+      "qid": "Q27968275",
+      "url": "https://www.wikidata.org/wiki/Q27968275"
+     }
+    ]
    }
   },
   {
@@ -4529,7 +4965,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland"
+    "museum_id": "national-gallery-of-scotland",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Sacrament of Marriage",
+      "qid": "Q27971316",
+      "url": "https://www.wikidata.org/wiki/Q27971316"
+     }
+    ]
    }
   },
   {
@@ -4558,7 +5002,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hartford-connecticut"
+    "museum_id": "hartford-connecticut",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Crucifixion",
+      "qid": "Q87367824",
+      "url": "https://www.wikidata.org/wiki/Q87367824"
+     }
+    ]
    }
   },
   {
@@ -4596,7 +5048,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "92 x 128 cm"
+    "dimensions": "92 x 128 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Moses changing Aaron's rod into a snake"
+     }
+    ]
    }
   },
   {
@@ -4665,7 +5123,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19820175 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Moses Saved from the River",
+      "qid": "Q19820175",
+      "url": "https://www.wikidata.org/wiki/Q19820175"
+     }
+    ]
    }
   },
   {
@@ -4830,7 +5296,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "119 x 198,5 cm"
+    "dimensions": "119 x 198,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with a Man Killed by a Snake or The effects of terror"
+     }
+    ]
    }
   },
   {
@@ -4901,7 +5373,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "160 x 221 cm"
+    "dimensions": "160 x 221 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with Diogenes or Diogenes throwing away his bowl"
+     }
+    ]
    }
   },
   {
@@ -5005,7 +5483,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q107441462 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Self-Portrait",
+      "qid": "Q107441462",
+      "url": "https://www.wikidata.org/wiki/Q107441462"
+     }
+    ]
    }
   },
   {
@@ -5036,7 +5522,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "wga_url": "https://www.wga.hu/html/p/poussin/3/18selfpo.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/3/18selfpo.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Self-portrait",
+      "qid": "Q16690724",
+      "url": "https://www.wikidata.org/wiki/Q16690724"
+     }
+    ]
    }
   },
   {
@@ -5076,7 +5570,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q29842255 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Assumption of the Virgin",
+      "qid": "Q29842255",
+      "url": "https://www.wikidata.org/wiki/Q29842255"
+     }
+    ]
    }
   },
   {
@@ -5114,7 +5616,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "148 x 120 cm"
+    "dimensions": "148 x 120 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Saint Paul's ascension into heaven"
+     }
+    ]
    }
   },
   {
@@ -5221,7 +5729,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20178698 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Holy Family with the Infant Saint John the Baptist and Saint Elizabeth",
+      "qid": "Q70781004",
+      "url": "https://www.wikidata.org/wiki/Q70781004"
+     }
+    ]
    }
   },
   {
@@ -5259,7 +5775,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "94 x 122 cm"
+    "dimensions": "94 x 122 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Holy Family with Saint John and Saint Elisabeth in a landscape"
+     }
+    ]
    }
   },
   {
@@ -5288,7 +5810,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-wales-london"
+    "museum_id": "national-museum-of-wales-london",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Finding of Moses",
+      "qid": "Q26707990",
+      "url": "https://www.wikidata.org/wiki/Q26707990"
+     }
+    ]
    }
   },
   {
@@ -5379,7 +5909,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2"
+    "museum_id": "musee-des-beaux-arts-2",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "L'Orage",
+      "qid": "Q105444132",
+      "url": "https://www.wikidata.org/wiki/Q105444132"
+     }
+    ]
    }
   },
   {
@@ -5480,7 +6018,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "112 x 198,5 cm"
+    "dimensions": "112 x 198,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Coriolanus"
+     }
+    ]
    }
   },
   {
@@ -5518,7 +6062,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "110,5 x 138,5 cm"
+    "dimensions": "110,5 x 138,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Will of Eudamidas"
+     }
+    ]
    }
   },
   {
@@ -5596,7 +6146,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27749562 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Noli me tangere",
+      "qid": "Q27749562",
+      "url": "https://www.wikidata.org/wiki/Q27749562"
+     }
+    ]
    }
   },
   {
@@ -5780,7 +6338,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "172 x 133,5 cm"
+    "dimensions": "172 x 133,5 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Holy Family"
+     }
+    ]
    }
   },
   {
@@ -5810,7 +6374,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "john-and-mable-ringling-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Holy Family with the Infant Saint John the Baptist",
+      "qid": "Q79403765",
+      "url": "https://www.wikidata.org/wiki/Q79403765"
+     }
+    ]
    }
   },
   {
@@ -5849,7 +6421,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19911493 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saints Peter and John Healing the Lame Man",
+      "qid": "Q19911493",
+      "url": "https://www.wikidata.org/wiki/Q19911493"
+     }
+    ]
    }
   },
   {
@@ -5887,7 +6467,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "68 x 51 cm"
+    "dimensions": "68 x 51 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Holy Family with saints John, Elisabeth and Joseph praying"
+     }
+    ]
    }
   },
   {
@@ -5917,7 +6503,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Baptism of Christ",
+      "qid": "Q20809818",
+      "url": "https://www.wikidata.org/wiki/Q20809818"
+     }
+    ]
    }
   },
   {
@@ -5947,7 +6541,15 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hermitage"
+    "museum_id": "hermitage",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Holy Family in Egypt",
+      "qid": "Q61743781",
+      "url": "https://www.wikidata.org/wiki/Q61743781"
+     }
+    ]
    }
   },
   {
@@ -6055,7 +6657,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q26713676 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Annunciation",
+      "qid": "Q26713676",
+      "url": "https://www.wikidata.org/wiki/Q26713676"
+     }
+    ]
    }
   },
   {
@@ -6093,7 +6703,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "125 x 102 cm"
+    "dimensions": "125 x 102 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The vision of saint Frances of Rome or Saint Frances of Rome announcing the end of the plague to Rome"
+     }
+    ]
    }
   },
   {
@@ -6126,7 +6742,15 @@
     "museum_id": "musee-des-beaux-arts-2",
     "qid": "Q970808",
     "wikidata": "https://www.wikidata.org/wiki/Q970808",
-    "country": "France"
+    "country": "France",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Flight into Egypt",
+      "qid": "Q970808",
+      "url": "https://www.wikidata.org/wiki/Q970808"
+     }
+    ]
    }
   },
   {
@@ -6165,7 +6789,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q106354474 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The lamentation over the dead Christ",
+      "qid": "Q106354474",
+      "url": "https://www.wikidata.org/wiki/Q106354474"
+     }
+    ]
    }
   },
   {
@@ -6334,7 +6966,15 @@
     },
     "museum_id": "louvre",
     "qid": "Q7735033",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033"
+    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Spring",
+      "qid": "Q26251915",
+      "url": "https://www.wikidata.org/wiki/Q26251915"
+     }
+    ]
    }
   },
   {
@@ -6400,7 +7040,15 @@
     },
     "museum_id": "louvre",
     "qid": "Q7735033",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033"
+    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Autumn",
+      "qid": "Q26251901",
+      "url": "https://www.wikidata.org/wiki/Q26251901"
+     }
+    ]
    }
   },
   {
@@ -6433,7 +7081,15 @@
     },
     "museum_id": "louvre",
     "qid": "Q7735033",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033"
+    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Winter",
+      "qid": "Q25445132",
+      "url": "https://www.wikidata.org/wiki/Q25445132"
+     }
+    ]
    }
   },
   {
@@ -6501,7 +7157,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "100 x 75 cm"
+    "dimensions": "100 x 75 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Landscape with Hagar and the Angel"
+     }
+    ]
    }
   },
   {
@@ -6539,7 +7201,13 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "dimensions": "155 x 200 cm"
+    "dimensions": "155 x 200 cm",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Apollo and Daphne or Apollo in love with Daphne"
+     }
+    ]
    }
   },
   {
@@ -6650,7 +7318,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Crucifixion or Calvary"
+     }
+    ]
    }
   },
   {
@@ -6724,7 +7398,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Saint Paul's ascension to heaven"
+     }
+    ]
    }
   },
   {
@@ -6761,7 +7441,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Sainte Famille"
+     }
+    ]
    }
   },
   {
@@ -6835,7 +7521,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Rest on the Flight into Egypt"
+     }
+    ]
    }
   },
   {
@@ -6973,7 +7665,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The infant Moses trampling pharaoh's crown"
+     }
+    ]
    }
   },
   {
@@ -7047,7 +7745,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Holy Family"
+     }
+    ]
    }
   },
   {
@@ -7084,7 +7788,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Camillus and the schoolmaster of Falerii"
+     }
+    ]
    }
   },
   {
@@ -7232,7 +7942,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Triumph of a poet or Triumph of Ovid"
+     }
+    ]
    }
   },
   {
@@ -7269,7 +7985,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Virgin and Child"
+     }
+    ]
    }
   },
   {
@@ -7306,7 +8028,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Storm"
+     }
+    ]
    }
   },
   {
@@ -7333,7 +8061,13 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105444134",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Saint Denis the Areopagite crowned by an angel"
+     }
+    ]
    }
   },
   {
@@ -7370,7 +8104,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Venus presenting arms to Aeneas"
+     }
+    ]
    }
   },
   {
@@ -7814,7 +8554,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Triumph of Neptune or The Birth of Venus (Richelieu Bacchanals I)"
+     }
+    ]
    }
   },
   {
@@ -7851,7 +8597,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Saint John baptising Christ"
+     }
+    ]
    }
   },
   {
@@ -8628,7 +9380,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Hymen disguised as a woman at a sacrifice to Priapus or Dance in honour of Priapus"
+     }
+    ]
    }
   },
   {
@@ -8813,7 +9571,14 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments I : Marriage (2)",
+      "ref": "https://en.wikipedia.org/wiki/Seven_Sacraments_(Poussin)"
+     }
+    ]
    }
   },
   {
@@ -8924,7 +9689,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Moses saved from the river"
+     }
+    ]
    }
   },
   {
@@ -8961,7 +9732,14 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments I : Confirmation (4)",
+      "ref": "https://en.wikipedia.org/wiki/Seven_Sacraments_(Poussin)"
+     }
+    ]
    }
   },
   {
@@ -9072,7 +9850,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Adoration of the Shepherds"
+     }
+    ]
    }
   },
   {
@@ -9442,7 +10226,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Eucharist (6)"
+     }
+    ]
    }
   },
   {
@@ -9479,7 +10269,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Moses making water pour from the rock or The striking of the rock"
+     }
+    ]
    }
   },
   {
@@ -9516,7 +10312,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Baptism (3)"
+     }
+    ]
    }
   },
   {
@@ -9553,7 +10355,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Confirmation (2)"
+     }
+    ]
    }
   },
   {
@@ -9590,7 +10398,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Marriage (7)"
+     }
+    ]
    }
   },
   {
@@ -9627,7 +10441,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Confession (4)"
+     }
+    ]
    }
   },
   {
@@ -9664,7 +10484,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Ordination or Commissioning (5)"
+     }
+    ]
    }
   },
   {
@@ -9701,7 +10527,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Extreme Unction (1)"
+     }
+    ]
    }
   },
   {
@@ -9997,7 +10829,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Bacchic scene or Nymph riding a satyr"
+     }
+    ]
    }
   },
   {
@@ -10071,7 +10909,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "The Rest on the Flight into Egypt"
+     }
+    ]
    }
   },
   {
@@ -10145,7 +10989,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Holy Family"
+     }
+    ]
    }
   },
   {

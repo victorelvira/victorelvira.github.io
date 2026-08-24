@@ -34,7 +34,15 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q83295755",
     "wikidata": "https://www.wikidata.org/wiki/Q83295755",
-    "wga_url": "https://www.wga.hu/html/b/bronzino/3/e_pieta.html"
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/e_pieta.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Pietà with Saint Mary Magdalene",
+      "qid": "Q83295755",
+      "url": "https://www.wikidata.org/wiki/Q83295755"
+     }
+    ]
    }
   },
   {
@@ -143,7 +151,15 @@
     "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q18683039",
     "wikidata": "https://www.wikidata.org/wiki/Q18683039",
-    "wga_url": "https://www.wga.hu/html/b/bronzino/3/sebastia.html"
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/sebastia.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Sebastian",
+      "qid": "Q18683039",
+      "url": "https://www.wikidata.org/wiki/Q18683039"
+     }
+    ]
    }
   },
   {
@@ -287,7 +303,15 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q50973173",
     "wikidata": "https://www.wikidata.org/wiki/Q50973173",
-    "wga_url": "https://www.wga.hu/html/b/bronzino/3/adorati3.html"
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/adorati3.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Adoration of the Shepherds",
+      "qid": "Q50973173",
+      "url": "https://www.wikidata.org/wiki/Q50973173"
+     }
+    ]
    }
   },
   {
@@ -736,7 +760,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q117215371 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Cosimo I de' Medici in armour",
+      "qid": "Q105296824",
+      "url": "https://www.wikidata.org/wiki/Q105296824"
+     }
+    ]
    }
   },
   {
@@ -866,7 +898,15 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q118190483",
-    "wikidata": "https://www.wikidata.org/wiki/Q118190483"
+    "wikidata": "https://www.wikidata.org/wiki/Q118190483",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Holy Family with St. Anne and the Infant St. John",
+      "qid": "Q27979302",
+      "url": "https://www.wikidata.org/wiki/Q27979302"
+     }
+    ]
    }
   },
   {
@@ -1012,7 +1052,15 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q107447067 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a Young Man",
+      "qid": "Q26706099",
+      "url": "https://www.wikidata.org/wiki/Q26706099"
+     }
+    ]
    }
   },
   {
@@ -1051,7 +1099,13 @@
      }
     },
     "dimensions": "117 x 86 cm",
-    "medium": "Oil on panel"
+    "medium": "Oil on panel",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Lodovico Capponi"
+     }
+    ]
    }
   },
   {
@@ -1090,7 +1144,13 @@
      }
     },
     "dimensions": "38 x 48 cm",
-    "medium": "Oil on panel"
+    "medium": "Oil on panel",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Don Garcia de' Medici"
+     }
+    ]
    }
   },
   {
@@ -1727,7 +1787,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Cosimo I de' Medici"
+     }
+    ]
    }
   },
   {
@@ -2578,7 +2644,13 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Eleonora of Toledo"
+     }
+    ]
    }
   },
   {

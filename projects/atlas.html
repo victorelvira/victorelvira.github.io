@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.45.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.46.1">
 </head>
 <body>
   <nav id="navbar">
@@ -56,6 +56,7 @@
       <button type="button" id="v-mapview" class="view-btn active" title="Map with the list of works beside it">🗺 Map &amp; list</button>
       <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
       <button type="button" id="v-game" class="view-btn" title="Guess the painting — a multiple-choice quiz">🎮 Game</button>
+      <button type="button" id="v-chart" class="view-btn" title="Every painter's output across the years">📈 Timeline</button>
     </span>
     <span id="mapopts" title="What the map plots">
       <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
@@ -132,9 +133,22 @@
         <button type="button" class="gbtn" data-diff="hard">Hard</button>
       </span>
       <span id="game-score" class="g-score"></span>
-      <button type="button" id="game-restart" class="gbtn" title="Reset the score">↺ Reset</button>
+      <span id="game-records" class="g-records" title="Your streak, best streak, and % correct today and all-time (saved on this device)"></span>
+      <button type="button" id="game-restart" class="gbtn" title="Reset this session's score (records are kept)">↺ Reset</button>
     </div>
     <div id="game-stage"></div>
+  </section>
+
+  <section id="chartview" hidden>
+    <div id="chart-bar">
+      <span class="g-seg" id="chart-group" title="How to order / group the painters">
+        <button type="button" class="gbtn active" data-cg="individual">Individual</button>
+        <button type="button" class="gbtn" data-cg="period">By period</button>
+        <button type="button" class="gbtn" data-cg="school">By school</button>
+      </span>
+      <span id="chart-legend" class="chart-legend">Each dot = a year · bigger = more works that year</span>
+    </div>
+    <div id="chart-scroll"></div>
   </section>
 
   <div id="sheet" hidden>
@@ -189,7 +203,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.45.2"></script>
+  <script src="atlas/app.js?v=0.46.1"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

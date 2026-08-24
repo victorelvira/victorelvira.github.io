@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.45.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 23:14";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.46.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 23:27";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1030,6 +1030,7 @@ function renderWorksGallery() {
 
 function setTableView(on) {
   if (typeof setGameView === "function") setGameView(false);   // leaving/entering table exits the game
+  if (typeof setChartView === "function") setChartView(false); // …and the timeline
   view.table = on;
   if (on) {                                   // always land on the Works tab
     tableMode = "works";
@@ -1671,6 +1672,7 @@ function gInfoHTML(p, kind) {
 function gAnswer(i) {
   if (G.answered || !G.q) return; G.answered = true;
   const q = G.q, chosen = q.options[i]; G.total++; if (chosen.correct) G.right++;
+  gRecordAnswer(chosen.correct);
   const stage = document.getElementById("game-stage");
   const sel = q.kind === "pick" ? ".g-pick" : ".g-opt";
   const btns = stage.querySelectorAll(sel);
@@ -1684,7 +1686,36 @@ function gAnswer(i) {
   if (info) info.innerHTML = gInfoHTML(q.work, q.kind);   // fills the reserved column; empty→invisible via CSS
   gScore();
 }
-function gScore() { const el = document.getElementById("game-score"); if (el) el.textContent = G.total ? `${G.right} / ${G.total}` : ""; }
+// ── records, saved on this device (localStorage) — streak + % correct today and all-time ──
+const GS_KEY = "atlasGameStats";
+function gLoadStats() {
+  let s; try { s = JSON.parse(localStorage.getItem(GS_KEY) || "{}"); } catch (e) { s = {}; }
+  s.all = s.all || { right: 0, total: 0 }; s.bestStreak = s.bestStreak || 0;
+  s.day = s.day || { date: "", right: 0, total: 0 };
+  return s;
+}
+let GSTATS = gLoadStats(), gStreak = 0;
+const gToday = () => new Date().toISOString().slice(0, 10);
+const gPct = (r, t) => t ? Math.round(100 * r / t) : 0;
+function gRecordAnswer(correct) {
+  GSTATS.all.total++; if (correct) GSTATS.all.right++;
+  const t = gToday(); if (GSTATS.day.date !== t) GSTATS.day = { date: t, right: 0, total: 0 };
+  GSTATS.day.total++; if (correct) GSTATS.day.right++;
+  gStreak = correct ? gStreak + 1 : 0;
+  if (gStreak > GSTATS.bestStreak) GSTATS.bestStreak = gStreak;
+  try { localStorage.setItem(GS_KEY, JSON.stringify(GSTATS)); } catch (e) {}
+}
+function gScore() {
+  const el = document.getElementById("game-score");
+  if (el) el.innerHTML = G.total ? `<b>${G.right} / ${G.total}</b> · ${gPct(G.right, G.total)}%` : "";
+  const rec = document.getElementById("game-records");
+  if (rec) {
+    if (GSTATS.day.date !== gToday()) GSTATS.day = { date: gToday(), right: 0, total: 0 };   // roll over at midnight
+    rec.innerHTML = GSTATS.all.total
+      ? `🔥 ${gStreak}<i>streak</i> <b>·</b> ${GSTATS.bestStreak}<i>best</i> <b>·</b> ${gPct(GSTATS.day.right, GSTATS.day.total)}%<i>today</i> <b>·</b> ${gPct(GSTATS.all.right, GSTATS.all.total)}%<i>all-time</i>`
+      : "";
+  }
+}
 
 function setGameView(on) {
   const g = document.getElementById("game"); if (!g) return;
@@ -1692,6 +1723,7 @@ function setGameView(on) {
   document.body.classList.toggle("show-game", on);
   document.getElementById("v-game").classList.toggle("active", on);
   if (on) {
+    if (typeof setChartView === "function") setChartView(false);   // game and timeline are exclusive
     view.table = false; view.map = false;
     document.getElementById("table").hidden = true;
     document.getElementById("main").hidden = true;
@@ -1716,9 +1748,84 @@ function setGameView(on) {
     G.diff = b.dataset.diff; g.querySelectorAll("#game-diff .gbtn").forEach(x => x.classList.toggle("active", x === b));
     gNewQuestion();
   });
-  document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gScore(); gNewQuestion(); });
+  document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gStreak = 0; gScore(); gNewQuestion(); });
   document.getElementById("game-stage").addEventListener("click", e => {
     const opt = e.target.closest(".g-opt, .g-pick"); if (opt) { gAnswer(+opt.dataset.i); return; }
     if (e.target.closest(".g-next")) gNewQuestion();
+  });
+})();
+
+// ══ Timeline: every painter's output across the years ═════════════════════════════════════════
+// One row per painter (ordered by birth year); a dot at each year the painter has works, its size
+// ∝ how many that year. Group by period or school (same buckets as the painter selector).
+let chartGroup = "individual";   // "individual" | "period" | "school"
+function chartData() {
+  const by = new Map();
+  for (const w of works) {
+    const slug = GAME_SLUG_OF_NAME[w.p.painter]; if (!slug) continue;
+    const y = yearNum(w.p); if (y == null || y < 1200 || y > 2000) continue;
+    let e = by.get(slug);
+    if (!e) { e = { slug, name: w.p.painter, born: bornOf(slug), color: colorFor(w.p.painter), years: new Map(), total: 0 }; by.set(slug, e); }
+    e.years.set(y, (e.years.get(y) || 0) + 1); e.total++;
+  }
+  return [...by.values()];
+}
+function renderChart() {
+  const host = document.getElementById("chart-scroll"); if (!host) return;
+  const data = chartData();
+  if (!data.length) { host.innerHTML = `<div class="g-empty">No dated works.</div>`; return; }
+  let minY = 9999, maxY = -9999, maxC = 1;
+  for (const p of data) for (const [y, c] of p.years) { if (y < minY) minY = y; if (y > maxY) maxY = y; if (c > maxC) maxC = c; }
+  minY = Math.floor(minY / 10) * 10; maxY = Math.ceil(maxY / 10) * 10;
+  const keysOf = chartGroup === "school" ? schoolsOf : erasOf;
+  const groups = chartGroup === "individual"
+    ? [{ label: null, painters: data.slice().sort((a, z) => a.born - z.born) }]
+    : (chartGroup === "period" ? ERAS : SCHOOLS).map(g => ({ label: g.label,
+        painters: data.filter(p => keysOf(p.slug).includes(g.key)).sort((a, z) => a.born - z.born) })).filter(g => g.painters.length);
+  const rowH = 17, padL = 176, padT = 30, padR = 24, yw = 6.2;
+  const rows = [];
+  for (const g of groups) { if (g.label) rows.push({ header: g.label }); for (const p of g.painters) rows.push({ p }); }
+  const W = padL + (maxY - minY) * yw + padR, H = padT + rows.length * rowH + 16;
+  const X = y => padL + (y - minY) * yw;
+  const parts = [`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="system-ui,sans-serif">`];
+  for (let yr = minY; yr <= maxY; yr += 20)
+    parts.push(`<line x1="${X(yr)}" y1="${padT - 6}" x2="${X(yr)}" y2="${H - 12}" stroke="#eee"/><text x="${X(yr)}" y="${padT - 11}" font-size="10" fill="#aaa" text-anchor="middle">${yr}</text>`);
+  let ry = padT;
+  for (const r of rows) {
+    if (r.header) { parts.push(`<text x="8" y="${ry + 13}" font-size="11" font-weight="700" fill="#6a5c45" text-transform="uppercase">${esc(r.header)}</text>`); ry += rowH; continue; }
+    const p = r.p, cy = ry + rowH / 2;
+    parts.push(`<line x1="${padL}" y1="${cy}" x2="${W - padR}" y2="${cy}" stroke="#f5f2eb"/>`);
+    parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="10.5" fill="#333" text-anchor="end">${esc(p.name)} <tspan fill="#b3aa9c">${p.born < 9999 ? p.born : ""}</tspan></text>`);
+    for (const [yr, c] of p.years) {
+      const rad = (1.6 + 5 * Math.sqrt(c / maxC)).toFixed(1);
+      parts.push(`<circle cx="${X(yr)}" cy="${cy}" r="${rad}" fill="${p.color}" fill-opacity=".78"><title>${esc(p.name)} · ${yr} · ${c} work${c > 1 ? "s" : ""}</title></circle>`);
+    }
+    ry += rowH;
+  }
+  parts.push("</svg>");
+  host.innerHTML = parts.join("");
+}
+function setChartView(on) {
+  const sec = document.getElementById("chartview"); if (!sec) return;
+  sec.hidden = !on;
+  document.body.classList.toggle("show-chart", on);
+  document.getElementById("v-chart").classList.toggle("active", on);
+  if (on) {
+    view.table = false; view.map = false;
+    for (const id of ["table", "main", "game"]) document.getElementById(id).hidden = true;
+    document.getElementById("mapopts").hidden = true;
+    document.body.classList.remove("show-game", "show-table");
+    for (const id of ["v-table", "v-mapview", "v-game"]) document.getElementById(id).classList.remove("active");
+    renderChart();
+  }
+}
+(function wireChart() {
+  const sec = document.getElementById("chartview"); if (!sec) return;
+  document.getElementById("v-chart").addEventListener("click", () => setChartView(true));
+  document.getElementById("chart-group").addEventListener("click", e => {
+    const b = e.target.closest("[data-cg]"); if (!b) return;
+    chartGroup = b.dataset.cg;
+    sec.querySelectorAll("#chart-group .gbtn").forEach(x => x.classList.toggle("active", x === b));
+    renderChart();
   });
 })();
