@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.46.1">
+  <link rel="stylesheet" href="atlas/style.css?v=0.46.2">
 </head>
 <body>
   <nav id="navbar">
@@ -134,7 +134,8 @@
       </span>
       <span id="game-score" class="g-score"></span>
       <span id="game-records" class="g-records" title="Your streak, best streak, and % correct today and all-time (saved on this device)"></span>
-      <button type="button" id="game-restart" class="gbtn" title="Reset this session's score (records are kept)">↺ Reset</button>
+      <button type="button" id="game-restart" class="gbtn" title="Reset this session's score (records are kept)">↺ Session</button>
+      <button type="button" id="game-reset-all" class="gbtn" title="Erase your saved records (streak, today, all-time)">⌫ Records</button>
     </div>
     <div id="game-stage"></div>
   </section>
@@ -146,7 +147,11 @@
         <button type="button" class="gbtn" data-cg="period">By period</button>
         <button type="button" class="gbtn" data-cg="school">By school</button>
       </span>
-      <span id="chart-legend" class="chart-legend">Each dot = a year · bigger = more works that year</span>
+      <span class="g-seg" id="chart-zoom" title="Compress or stretch the year axis">
+        <button type="button" class="gbtn" data-z="out">－ Compress</button>
+        <button type="button" class="gbtn" data-z="in">＋ Stretch</button>
+      </span>
+      <span id="chart-legend" class="chart-legend">Each dot = a year · bigger = more works</span>
     </div>
     <div id="chart-scroll"></div>
   </section>
@@ -203,7 +208,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.46.1"></script>
+  <script src="atlas/app.js?v=0.46.2"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

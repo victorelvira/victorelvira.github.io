@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.46.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 23:27";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.46.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 23:31";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -253,6 +253,10 @@ const BORN = {
   delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904,
 };
 const bornOf = slug => BORN[slug] || 9999;
+
+// death year per painter (Wikidata P570) — for the Timeline life-span labels
+const DIED = { artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1851, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1510, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
+const diedOf = slug => DIED[slug] || null;
 
 // short label per painter for the selector button (the first name is often wrong — "Ignacio"
 // for Zuloaga, "Giovanni" for Bellini/Tiepolo). Falls back to the first word.
@@ -1749,6 +1753,11 @@ function setGameView(on) {
     gNewQuestion();
   });
   document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gStreak = 0; gScore(); gNewQuestion(); });
+  document.getElementById("game-reset-all").addEventListener("click", () => {
+    if (!confirm("Erase your saved records (streak, today, all-time)?")) return;
+    try { localStorage.removeItem(GS_KEY); } catch (e) {}
+    GSTATS = gLoadStats(); gStreak = 0; G.right = 0; G.total = 0; gScore();
+  });
   document.getElementById("game-stage").addEventListener("click", e => {
     const opt = e.target.closest(".g-opt, .g-pick"); if (opt) { gAnswer(+opt.dataset.i); return; }
     if (e.target.closest(".g-next")) gNewQuestion();
@@ -1759,6 +1768,12 @@ function setGameView(on) {
 // One row per painter (ordered by birth year); a dot at each year the painter has works, its size
 // ∝ how many that year. Group by period or school (same buckets as the painter selector).
 let chartGroup = "individual";   // "individual" | "period" | "school"
+let chartYW = 6.2;               // px per year on the x-axis (the compress/expand control changes it)
+const CHART_GROUP_COLORS = ["#7a4a2b", "#2e6b6b", "#7b3fb0", "#b8862d", "#3a6ea5", "#a03050", "#4a7a3a", "#8a5a8a"];
+function lifeSpan(slug) {
+  const b = BORN[slug], d = DIED[slug];
+  return b ? `${b}–${d || ""}` : "";
+}
 function chartData() {
   const by = new Map();
   for (const w of works) {
@@ -1774,31 +1789,41 @@ function renderChart() {
   const host = document.getElementById("chart-scroll"); if (!host) return;
   const data = chartData();
   if (!data.length) { host.innerHTML = `<div class="g-empty">No dated works.</div>`; return; }
+  // rows: one per painter (individual), or one per period/school SUMMING all its painters (aggregate)
+  let rows;
+  if (chartGroup === "individual") {
+    rows = data.slice().sort((a, z) => a.born - z.born).map(p =>
+      ({ label: p.name, sub: lifeSpan(p.slug), color: p.color, years: p.years }));
+  } else {
+    const keysOf = chartGroup === "school" ? schoolsOf : erasOf;
+    rows = (chartGroup === "period" ? ERAS : SCHOOLS).map((g, gi) => {
+      const members = data.filter(p => keysOf(p.slug).includes(g.key));
+      if (!members.length) return null;
+      const years = new Map();
+      for (const p of members) for (const [y, c] of p.years) years.set(y, (years.get(y) || 0) + c);
+      return { label: g.label, sub: `${members.length} painters`, color: CHART_GROUP_COLORS[gi % CHART_GROUP_COLORS.length], years };
+    }).filter(Boolean);
+  }
   let minY = 9999, maxY = -9999, maxC = 1;
-  for (const p of data) for (const [y, c] of p.years) { if (y < minY) minY = y; if (y > maxY) maxY = y; if (c > maxC) maxC = c; }
+  for (const r of rows) for (const [y, c] of r.years) { if (y < minY) minY = y; if (y > maxY) maxY = y; if (c > maxC) maxC = c; }
   minY = Math.floor(minY / 10) * 10; maxY = Math.ceil(maxY / 10) * 10;
-  const keysOf = chartGroup === "school" ? schoolsOf : erasOf;
-  const groups = chartGroup === "individual"
-    ? [{ label: null, painters: data.slice().sort((a, z) => a.born - z.born) }]
-    : (chartGroup === "period" ? ERAS : SCHOOLS).map(g => ({ label: g.label,
-        painters: data.filter(p => keysOf(p.slug).includes(g.key)).sort((a, z) => a.born - z.born) })).filter(g => g.painters.length);
-  const rowH = 17, padL = 176, padT = 30, padR = 24, yw = 6.2;
-  const rows = [];
-  for (const g of groups) { if (g.label) rows.push({ header: g.label }); for (const p of g.painters) rows.push({ p }); }
+  const agg = chartGroup !== "individual";
+  const rowH = agg ? 30 : 17, padL = 214, padT = 30, padR = 24, yw = chartYW;
   const W = padL + (maxY - minY) * yw + padR, H = padT + rows.length * rowH + 16;
   const X = y => padL + (y - minY) * yw;
+  const gridStep = yw < 3 ? 50 : yw < 5 ? 40 : 20;
   const parts = [`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="system-ui,sans-serif">`];
-  for (let yr = minY; yr <= maxY; yr += 20)
+  for (let yr = Math.ceil(minY / gridStep) * gridStep; yr <= maxY; yr += gridStep)
     parts.push(`<line x1="${X(yr)}" y1="${padT - 6}" x2="${X(yr)}" y2="${H - 12}" stroke="#eee"/><text x="${X(yr)}" y="${padT - 11}" font-size="10" fill="#aaa" text-anchor="middle">${yr}</text>`);
   let ry = padT;
   for (const r of rows) {
-    if (r.header) { parts.push(`<text x="8" y="${ry + 13}" font-size="11" font-weight="700" fill="#6a5c45" text-transform="uppercase">${esc(r.header)}</text>`); ry += rowH; continue; }
-    const p = r.p, cy = ry + rowH / 2;
+    const cy = ry + rowH / 2;
     parts.push(`<line x1="${padL}" y1="${cy}" x2="${W - padR}" y2="${cy}" stroke="#f5f2eb"/>`);
-    parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="10.5" fill="#333" text-anchor="end">${esc(p.name)} <tspan fill="#b3aa9c">${p.born < 9999 ? p.born : ""}</tspan></text>`);
-    for (const [yr, c] of p.years) {
-      const rad = (1.6 + 5 * Math.sqrt(c / maxC)).toFixed(1);
-      parts.push(`<circle cx="${X(yr)}" cy="${cy}" r="${rad}" fill="${p.color}" fill-opacity=".78"><title>${esc(p.name)} · ${yr} · ${c} work${c > 1 ? "s" : ""}</title></circle>`);
+    parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="${agg ? 12 : 10.5}" font-weight="${agg ? 700 : 400}" fill="#333" text-anchor="end">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">${esc(r.sub)}</tspan></text>`);
+    const rmax = agg ? 9 : 5;
+    for (const [yr, c] of r.years) {
+      const rad = (1.6 + rmax * Math.sqrt(c / maxC)).toFixed(1);
+      parts.push(`<circle cx="${X(yr)}" cy="${cy}" r="${rad}" fill="${r.color}" fill-opacity=".78"><title>${esc(r.label)} · ${yr} · ${c} work${c > 1 ? "s" : ""}</title></circle>`);
     }
     ry += rowH;
   }
@@ -1826,6 +1851,11 @@ function setChartView(on) {
     const b = e.target.closest("[data-cg]"); if (!b) return;
     chartGroup = b.dataset.cg;
     sec.querySelectorAll("#chart-group .gbtn").forEach(x => x.classList.toggle("active", x === b));
+    renderChart();
+  });
+  document.getElementById("chart-zoom").addEventListener("click", e => {
+    const b = e.target.closest("[data-z]"); if (!b) return;
+    chartYW = Math.max(1.4, Math.min(14, chartYW * (b.dataset.z === "in" ? 1.4 : 0.7)));
     renderChart();
   });
 })();
