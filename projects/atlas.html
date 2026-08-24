@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.43.5">
+  <link rel="stylesheet" href="atlas/style.css?v=0.44.1">
 </head>
 <body>
   <nav id="navbar">
@@ -55,6 +55,7 @@
     <span id="view-tabs">
       <button type="button" id="v-mapview" class="view-btn active" title="Map with the list of works beside it">🗺 Map &amp; list</button>
       <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
+      <button type="button" id="v-game" class="view-btn" title="Guess the painting — a multiple-choice quiz">🎮 Game</button>
     </span>
     <span id="mapopts" title="What the map plots">
       <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
@@ -116,6 +117,26 @@
     </div>
   </section>
 
+  <section id="game" hidden>
+    <div id="game-bar">
+      <span class="g-seg" id="game-mode" title="What to guess">
+        <button type="button" class="gbtn active" data-gmode="mixed">🎲 Mixed</button>
+        <button type="button" class="gbtn" data-gmode="author">Author</button>
+        <button type="button" class="gbtn" data-gmode="date">Date</button>
+        <button type="button" class="gbtn" data-gmode="where">Where</button>
+        <button type="button" class="gbtn" data-gmode="painting">Painting</button>
+      </span>
+      <span class="g-seg" id="game-diff" title="Harder = closer options; Hard gives 5 choices">
+        <button type="button" class="gbtn active" data-diff="easy">Easy</button>
+        <button type="button" class="gbtn" data-diff="medium">Medium</button>
+        <button type="button" class="gbtn" data-diff="hard">Hard</button>
+      </span>
+      <span id="game-score" class="g-score"></span>
+      <button type="button" id="game-restart" class="gbtn" title="Reset the score">↺ Reset</button>
+    </div>
+    <div id="game-stage"></div>
+  </section>
+
   <div id="sheet" hidden>
     <button id="sheet-close" type="button" aria-label="Close">✕</button>
     <div id="sheet-body"></div>
@@ -168,7 +189,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.43.5"></script>
+  <script src="atlas/app.js?v=0.44.1"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

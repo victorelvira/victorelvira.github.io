@@ -968,6 +968,26 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .review-box b { color: var(--alerta); }
 .review-box ul { margin: 4px 0 0; padding-left: 16px; color: var(--ink); }
 .review-box p { margin: 8px 0 0; color: var(--muted); }
+
+/* Citas de hemeroteca. El texto del periodico va en cursiva y con su enlace al
+ * escaneo: es la prueba, no un adorno, asi que se lee entero y se puede abrir. */
+.cite-head { margin: 9px 0 0; font-weight: 600; color: var(--ink) !important; }
+.cite-list {
+  margin: 5px 0 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.cite-list li {
+  padding: 6px 9px; border-radius: 6px;
+  background: var(--panel); border: 1px solid var(--line-soft);
+  font-size: 12px; line-height: 1.5; color: var(--ink);
+  font-style: italic;
+}
+.cite-list li b { font-style: normal; color: var(--ink); }
+.cite-list a {
+  font-style: normal; white-space: nowrap; font-weight: 600;
+  color: var(--t-year);
+}
+.open-list .cite-list { margin: 6px 0 2px; }
 .pill.know {
   padding: 5px 12px; font-size: 12.5px;
   border-color: var(--alerta-borde); background: var(--alerta-bg); color: var(--alerta);
@@ -993,6 +1013,11 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .prov-urls { margin-top: 7px; }
 .prov-urls li { margin-bottom: 5px; }
 .prov-urls small { display: block; color: var(--muted); font-size: 10.5px; word-break: break-all; }
+
+.fecha-desfile {
+  display: block; margin-bottom: -4px;
+  color: var(--muted); font-size: 12px; letter-spacing: 0.02em;
+}
 
 /* ── visor de fotos ───────────────────────────────────────────────────────
  * Encima de la aplicacion, no en otra pestaña. */
@@ -1051,6 +1076,21 @@ body.lb-abierto { overflow: hidden; }
   .lb-nav { width: 36px; height: 36px; font-size: 22px; }
   .lb-figura img { max-height: calc(100vh - 170px); }
 }
+
+/* Procedencia de una carroza, plegada. Abierta de oficio solo cuando la foto
+ * esta asignada por deduccion, que es cuando conviene mirarla. */
+.proc-foto { margin: 12px 0 4px; font-size: 12.5px; }
+.proc-foto summary {
+  cursor: pointer; padding: 6px 0; color: var(--muted);
+  border-top: 1px solid var(--line-soft);
+}
+.proc-foto summary:hover { color: var(--ink); }
+.proc-aviso {
+  margin-left: 5px; padding: 1px 8px; border-radius: 999px;
+  background: var(--alerta-bg); color: var(--alerta); font-size: 11px;
+}
+.proc-foto .prov-list { margin-top: 4px; }
+.proc-foto small { color: var(--muted); font-size: 11.5px; }
 
 /* Credito de la foto, bajo cada imagen. Discreto pero siempre presente: es de
  * quien la hizo. */

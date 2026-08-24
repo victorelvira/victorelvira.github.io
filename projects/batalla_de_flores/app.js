@@ -128,6 +128,8 @@ const SOURCE_LABEL = {
   press_photo: "Prensa (pie de foto)",
   press_clipping: "Recorte de prensa",
   photo_archive: "Archivo fotográfico cedido",
+  book: "Libro del Centenario (Oruña Fuentes, 2008)",
+  press_history: "Hemeroteca histórica",
 };
 
 /* Version corta para las tablas del panel de detalle, que es estrecho.
@@ -141,6 +143,8 @@ const SOURCE_SHORT = {
   press_photo: "PRE",
   press_clipping: "REC",
   photo_archive: "FOTO",
+  book: "LIBRO",
+  press_history: "HEMER",
 };
 
 function sourceShort(sourceType) {
@@ -876,18 +880,42 @@ function prizeCell(entry) {
     <small class="cell-sub">${esc(entry.group_canonical || "")}</small>`;
 }
 
+/* Citas de hemeroteca de una carroza: el medio, lo que decia LITERALMENTE, y el
+ * enlace al escaneo en batalladeflores.net.
+ *
+ * Sin la cita, "las fuentes no coinciden" es una afirmacion nuestra que hay que
+ * creerse. Con ella, cualquiera abre el recorte y juzga por su cuenta, que es la
+ * unica manera de que esto sea un archivo y no una opinion. */
+function pressCitations(entry) {
+  return (entry.source_refs || []).filter(ref => ref.kind === "press_history" && ref.texto);
+}
+
+function citationList(refs) {
+  if (!refs.length) return "";
+  return `<ul class="cite-list">${refs.map(ref => `
+    <li><b>${esc(ref.cita)}</b>: ${esc(ref.texto)}${ref.url
+      ? ` <a href="${esc(ref.url)}" target="_blank" rel="noopener">ver el recorte ↗</a>`
+      : ""}</li>`).join("")}</ul>`;
+}
+
 /* Inventario de lo que no sabemos. Va en Estadisticas con el mismo rango que
  * el resto: un archivo que solo ensena lo que tiene tapa sus huecos. */
 function openQuestions() {
   const disputed = [];
   const conflicting = [];
+  const hemeroteca = [];
   state.editions.forEach(edition => {
     (edition.floats || []).forEach(entry => {
+      const citas = pressCitations(entry);
       (entry.needs_review || []).forEach(reason => {
-        const row = { year: edition.year, name: entry.name, reason, id: entry.id };
+        const row = { year: edition.year, name: entry.name, reason, id: entry.id, citas };
         // Una atribucion en disputa marca las DOS entradas, pero es un solo caso:
         // listarlo dos veces doblaria el recuento y daria sensacion de caos.
-        const target = reason.startsWith("El archivo atribuye") ? disputed : conflicting;
+        // La hemeroteca va en su propio cajon: no es que dos scrapings se
+        // contradigan, es que un periodico de la epoca dice otra cosa, y eso se
+        // resuelve leyendo el recorte, no arreglando el codigo.
+        const target = citas.length ? hemeroteca
+          : reason.startsWith("El archivo atribuye") ? disputed : conflicting;
         // El motivo es identico en las dos mitades del conflicto (normalize.py
         // ordena los nombres), asi que basta con el para no contarlo dos veces.
         if (!target.some(other => other.year === row.year && other.reason === row.reason)) {
@@ -902,7 +930,7 @@ function openQuestions() {
   const noPalmares = state.editions.filter(edition =>
     edition.status === "published" && !(edition.floats || []).some(entry => entry.position != null));
 
-  return { disputed, conflicting, incomplete, noPalmares };
+  return { disputed, conflicting, hemeroteca, incomplete, noPalmares };
 }
 
 /* Pestana propia, no un apendice de Estadisticas: que un archivo diga lo que no
@@ -917,7 +945,8 @@ function askButton(id, label) {
 
 function renderPendingTab() {
   const q = openQuestions();
-  const total = q.disputed.length + q.conflicting.length + q.incomplete.length + q.noPalmares.length;
+  const total = q.disputed.length + q.conflicting.length + q.hemeroteca.length
+    + q.incomplete.length + q.noPalmares.length;
   els.indexCount.textContent = `${num(total)} cuestiones abiertas`;
   // Buscar "1954" aqui no filtra nada: los controles se esconden en esta vista.
   document.querySelector(".controls")?.setAttribute("hidden", "");
@@ -958,6 +987,21 @@ function renderPendingTab() {
         <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
           ${esc(row.name)} — ${esc(row.reason.replace("Las fuentes no coinciden en el puesto: ", ""))}
           ${askButton(`year:${row.year}`, `${row.year} · ${row.name} · puesto`)}</li>`)}
+      ${q.hemeroteca.length ? `
+      <div class="open-block">
+        <h4>📰 La prensa de la época dice otra cosa <span class="open-count">${q.hemeroteca.length}</span></h4>
+        <p class="open-note">Al vaciar los 37 recortes de hemeroteca que había en el archivo de
+        batalladeflores.net —Mundo Gráfico, ABC, La Voz, La Unión Ilustrada— salieron estas
+        discrepancias con lo que ya teníamos. <b>No hemos elegido versión.</b> Las dos constan, el
+        puesto se ha dejado como estaba y aquí está lo que dice el periódico, palabra por palabra,
+        con enlace al recorte para que cualquiera lo compruebe.</p>
+        <ul class="open-list">${q.hemeroteca.map(row => `
+          <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+            <button class="link t-float" type="button" data-float="${esc(row.id)}">${esc(row.name)}</button>
+            — ${esc(row.reason)}
+            ${citationList(row.citas)}
+            ${askButton(`year:${row.year}`, `${row.year} · ${row.name} · hemeroteca`)}</li>`).join("")}</ul>
+      </div>` : ""}
       ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
         <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
           ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}
@@ -1882,6 +1926,8 @@ const SOURCE_FAMILY = {
   official_result: "oficial",
   official_result_summary: "oficial",
   press_clipping: "prensa",
+  book: "libro",
+  press_history: "prensa",
   press_photo: "prensa",
   // La capa manual NO es una familia: es transcripcion nuestra de esas mismas
   // fuentes, asi que no puede "confirmar" nada de forma independiente.
@@ -1948,7 +1994,9 @@ function provenanceBlock(entries, sources, edition) {
         })() : `
         ${provenanceLine("Participantes", entries, "no consta ninguna carroza.")}
         ${ranked.length === entries.length && entries.length
-          ? `<li><b>Clasificación:</b> las ${entries.length} tienen puesto, de las mismas fuentes.</li>`
+          ? `<li><b>Clasificación:</b> ${entries.length === 1
+              ? "la única carroza tiene puesto"
+              : `las ${entries.length} tienen puesto`}, de las mismas fuentes.</li>`
           : provenanceLine("Clasificación", ranked, "ninguna carroza tiene puesto.")}
         ${cruzadas.length ? `<li><b>Confirmado por más de una fuente:</b> ${cruzadas.length}
           carroza${cruzadas.length === 1 ? "" : "s"} ${cruzadas.length === 1 ? "aparece" : "aparecen"}
@@ -2001,6 +2049,10 @@ function renderEditionDetail(edition) {
 
   els.detail.innerHTML = `
     <div class="detail-head edition-head">
+      ${edition.parade_date_text
+        // Encima del año y en gris: la fecha acompaña, no compite con el año.
+        ? `<span class="fecha-desfile" title="Fuente: ${esc(edition.parade_date_source || "")}">${
+            esc(edition.parade_date_text.replace(/ de \d{4}$/, ""))}</span>` : ""}
       <h2>${edition.year}</h2>
       <span class="discs">
         ${edition.edition_number
@@ -2142,12 +2194,40 @@ function renderAbout() {
     <p>El grueso del archivo histórico procede de
     <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>,
     un trabajo de recopilación excelente, más de un siglo documentado carroza a
-    carroza, sin el cual esta página no existiría. Los resultados recientes salen
-    de las notas oficiales del Ayuntamiento de Laredo. Aquí no se copia su
-    contenido: se estructura en una base de datos derivada, y
-    <b>cada carroza enlaza a la página concreta de la que sale</b>.</p>
+    carroza, sin el cual esta página no existiría. A eso se suman las notas oficiales
+    del Ayuntamiento de Laredo, recortes de prensa, el libro del Centenario de
+    Alfonso Oruña Fuentes y lo que aportan los propios carrocistas.</p>
+    <p>Aquí no se copia el contenido de nadie: se estructura en una base de datos derivada, y
+    <b>cada carroza dice de qué fuente concreta sale</b> —con enlace cuando lo hay, y con la
+    cita exacta cuando es un libro o un recorte—. Al final de cada edición hay un bloque
+    <b>«De dónde sale cada dato»</b> que lo desglosa, y lo que no está claro se marca en vez
+    de resolverse por las bravas.</p>
     <p>Las imágenes se muestran enlazadas desde el servidor original y
     pertenecen a sus autores.</p>
+
+    <h3 class="section">De dónde salen las fotos</h3>
+    <p>Las imágenes <b>no son mías</b>. La mayoría llegan a través de
+    <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>
+    y del archivo personal de <b>Santi Fernández</b>, que las ha ido reuniendo durante años,
+    en muchos casos cedidas por los propios carrocistas y por vecinos de Laredo. Eso significa
+    que <b>de bastantes no se conoce al autor original</b>.</p>
+    <p>Cada foto se publica diciendo por dónde ha llegado. Aquí no se reclama la autoría de
+    ninguna, ni se cede a terceros, ni se explota comercialmente: es un archivo consultable de
+    una fiesta declarada de Interés Turístico Nacional.</p>
+
+    <h3 class="section">Si una foto es tuya</h3>
+    <p>Si reconoces una imagen como tuya y quieres que <b>se retire</b>, que <b>aparezca tu
+    nombre</b> o que se corrija a quién se atribuye, dilo con el botón <b>¿Algo mal?</b> de esa
+    misma ficha, o escribe a
+    <a href="mailto:victor.elvira.arregui@gmail.com">victor.elvira.arregui@gmail.com</a>.
+    <b>Se retira sin discutir y sin pedir explicaciones</b>, y luego ya hablamos si quieres.
+    Lo mismo vale para cualquier dato personal que no quieras que aparezca.</p>
+
+    <h3 class="section">Qué puedes hacer con esto</h3>
+    <p>Los <b>datos</b> —qué carroza desfiló, quién la hizo, en qué puesto quedó— son hechos,
+    y los hechos no son de nadie: úsalos. Se agradece citar de dónde vienen, que es justo lo
+    que esta página se esfuerza en dejar claro dato a dato. Las <b>fotos</b> son otra cosa: no
+    son mías y no puedo darte permiso sobre ellas, así que pide a quien corresponda.</p>
 
     <h3 class="section">¿Qué falta, y por qué?</h3>
     <ul class="plain">
@@ -2180,8 +2260,13 @@ function renderAbout() {
       <b>Ficha técnica</b>
       <ul>
         <li>Versión ${esc(state.dataset.version || "–")}, generada el ${esc(state.dataset.built_at || "–")}.</li>
-        <li>Web estática sin dependencias; los mapas se dibujan sobre datos de
-        OpenStreetMap (ODbL).</li>
+        <li>Web estática; los mapas se dibujan sobre datos de OpenStreetMap (ODbL)
+        y se muestran con Leaflet (BSD).</li>
+        <li>Sin publicidad y sin venta de datos. Para saber cuánta gente entra se usan
+        GoatCounter —que no pone cookies— junto a Google Analytics y StatCounter, que sí
+        las ponen.</li>
+        <li>Cada dato lleva su fuente y su nivel de procedencia; cada foto, por dónde
+        ha llegado.</li>
       </ul>
     </div>`;
   els.detail.scrollTop = 0;
@@ -2199,6 +2284,44 @@ function fieldSize(entry) {
     && other.position != null).length;
 }
 
+/* De dónde sale cada cosa de una carroza. Son tres preguntas distintas y la
+ * tercera es la que nadie suele responder:
+ *
+ *   - el dato (puesto, grupo): de qué fuente
+ *   - la foto: de quién es
+ *   - y por qué esa foto es de ESTA carroza, que a menudo es una inferencia
+ *     nuestra a partir del nombre del fichero, no algo que diga la fuente.
+ *
+ * Va plegado: quien mira una carroza quiere ver la carroza. Quien duda, abre. */
+function floatProvenance(entry) {
+  const refs = entry.image_refs || [];
+  const inferida = refs.some(r => r.asignada_por !== "fuente");
+  const fuentes = (entry.source_type || "").split("+").filter(Boolean)
+    .map(p => SOURCE_LABEL[p] || p);
+
+  return `
+    <details class="proc-foto"${inferida ? " open" : ""}>
+      <summary>De dónde sale todo esto${inferida
+        ? ' <span class="proc-aviso">la foto está asignada por deducción</span>' : ""}</summary>
+      <ul class="prov-list">
+        <li><b>El puesto y el grupo:</b> ${fuentes.length ? esc(joinEs(fuentes)) : "sin fuente registrada"}.
+          ${(entry.source_refs || []).filter(r => r.kind !== "press_history")
+            .map(r => esc(r.cita)).filter(Boolean)
+            .map(c => `<br><small>${c}</small>`).join("")}</li>
+        ${pressCitations(entry).length ? `<li><b>En la prensa de la época:</b>
+          ${citationList(pressCitations(entry))}</li>` : ""}
+        ${refs.length ? refs.map(r => `
+          <li><b>La foto:</b> ${esc(r.origen)}.
+            <br><small>Que sea de esta carroza: ${esc(r.asignacion)}.</small>
+            ${r.pagina ? `<br><small><a href="${esc(r.pagina)}" target="_blank" rel="noopener">ver la página de origen ↗</a></small>` : ""}
+          </li>`).join("")
+        : entry.image_urls?.length
+          ? "<li><b>La foto:</b> del archivo de batalladeflores.net.</li>"
+          : ""}
+      </ul>
+    </details>`;
+}
+
 function renderFloatDetail(entry) {
   const edition = state.editions.find(item => item.year === entry.year);
   const prizes = prizeChips(entry);
@@ -2211,6 +2334,8 @@ function renderFloatDetail(entry) {
     ${(entry.needs_review || []).length ? `<div class="review-box">
       <b>Dato sin aclarar</b>
       <ul>${entry.needs_review.map(reason => `<li>${esc(reason)}</li>`).join("")}</ul>
+      ${pressCitations(entry).length ? `<p class="cite-head">Lo que dice la hemeroteca,
+        palabra por palabra:</p>${citationList(pressCitations(entry))}` : ""}
       <p>Si sabes cuál es la versión buena, <button class="link t-float" type="button"
          id="open-report-from-float">cuéntanoslo</button>.</p>
     </div>` : ""}
@@ -2245,6 +2370,8 @@ function renderFloatDetail(entry) {
           </figure>`).join("")}
       </div>`
       : '<p class="empty">El archivo no conserva imágenes de esta carroza.</p>'}
+
+    ${floatProvenance(entry)}
 
     ${(entry.notes || []).length
       ? `<h3 class="section">Notas</h3><ul class="plain">${entry.notes.map(note => `<li>${esc(note)}</li>`).join("")}</ul>`

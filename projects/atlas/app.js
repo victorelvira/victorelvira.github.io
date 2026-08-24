@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.43.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 20:30";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.44.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 21:43";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1029,6 +1029,7 @@ function renderWorksGallery() {
 })();
 
 function setTableView(on) {
+  if (typeof setGameView === "function") setGameView(false);   // leaving/entering table exits the game
   view.table = on;
   if (on) {                                   // always land on the Works tab
     tableMode = "works";
@@ -1118,15 +1119,15 @@ let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 
 // Grouping by museum is carried by COLOUR, not by boxes: every thumbnail of a museum shares one
 // soft pastel, cycling through this 6-colour palette so no two adjacent museums collide. The tiles
-// flow in one continuous grid (the next museum starts right where the previous ended — no gaps),
-// and a run of same-coloured tiles reads as one museum even across row wraps. The museum name rides
-// on top of that museum's FIRST thumbnail.
-const MUS_PASTELS = ["#efe6d6", "#e2ecdf", "#e4e8f1", "#f1e5e0", "#ece4ef", "#dfeceb"];
+// flow in one continuous grid with NO gap between them, so a museum's tiles merge their coloured
+// grounds into one continuous field (the museum "background"); the picture cards sit on top in a
+// lighter tone of the same colour. The next museum's colour abuts directly — no gaps, no labels.
+const MUS_PASTELS = ["#e8dcc2", "#d7e3d3", "#d6dced", "#eed9d0", "#e3d6e8", "#d3e3df"];
 
 // gallery tile — lazy thumbnail (click → lightbox) + caption (click → the work "ficha").
 // `vis` is the index array the caption click resolves against (panelVis or the table's own).
-// `grp` (optional) carries museum grouping: { color, label|null, count } — label only on the
-// museum's first tile → a name ribbon over the image; color tints the whole tile.
+// `grp` (optional) = { color }: the museum's ground colour, painted on the whole cell; the inner
+// .gcard (image + caption) is a lighter card floating on that ground.
 function tileHTML(w, vis, grp) {
   const i = vis.length; vis.push(w);
   const p = w.p;
@@ -1136,24 +1137,23 @@ function tileHTML(w, vis, grp) {
     : `<span class="th ph"></span>`;
   const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
   const style = grp && grp.color ? ` style="background:${grp.color}"` : "";
-  const ribbon = grp && grp.label
-    ? `<div class="mlabel"><span class="mn">${esc(grp.label)}</span><span class="n">${grp.count}</span></div>` : "";
-  return `<li class="gcell${grp && grp.label ? " mstart" : ""}" data-i="${i}" title="${esc(cap)}"${style}>` +
-    `${ribbon}${img}${share}<div class="gmeta">` +
+  const nameTag = grp && grp.label ? `<div class="mlabel">${esc(grp.label)}</div>` : "";
+  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}>${share}${nameTag}` +
+    `<div class="gcard">${img}<div class="gmeta">` +
     `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
-    `</div></li>`;
+    `</div></div></li>`;
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
 
-// flatten museum groups into a stream of tiles, each tagged with its museum's pastel + (first only)
-// its name. One continuous grid, so museums run back-to-back with no gaps; colour marks the sets.
+// flatten museum groups into a stream of tiles, each tagged with its museum's colour. One continuous
+// grid, so museums run back-to-back with no gaps; a run of same-coloured cells reads as one museum.
 function groupedTileStream(ordered) {
   const stream = [];
   ordered.forEach((g, gi) => {
     const color = MUS_PASTELS[gi % MUS_PASTELS.length];
-    const label = g.location + (g.city ? ` · ${g.city}` : "");
-    g.items.forEach((w, wi) => stream.push({ w, grp: { color, label: wi === 0 ? label : null, count: g.items.length } }));
+    const label = g.location + (g.city ? ` · ${g.city}` : "");   // shown over the museum's FIRST tile
+    g.items.forEach((w, wi) => stream.push({ w, grp: { color, label: wi === 0 ? label : "" } }));
   });
   return stream;
 }
@@ -1553,3 +1553,150 @@ document.getElementById("locate").addEventListener("click", () => {
     showBanner("Could not get your location: " + esc(err.message));
   }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
 });
+
+// ══ Game: guess the painting — author / date / where / which picture ═══════════════════════════
+// Multiple choice. Difficulty = how CLOSE the wrong options are (Easy: very different; Hard: same
+// era/school/city + 5 choices instead of 3). All questions are generated live from `works`, reusing
+// ERA_OF / SCHOOL_OF / yearNum to pick "far" vs "near" distractors.
+const GAME_NAME_OF_SLUG = Object.fromEntries(PAINTERS.map(p => [p.slug, p.name]));
+const GAME_SLUG_OF_NAME = Object.fromEntries(PAINTERS.map(p => [p.name, p.slug]));
+const gSlugOf = p => GAME_SLUG_OF_NAME[p.painter];
+const G_NOPTS = { easy: 3, medium: 3, hard: 5 };   // Hard shows 5 choices instead of 3
+const G = { diff: "easy", mode: "mixed", right: 0, total: 0, q: null, answered: false };
+
+function gShuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function gPick(a) { return a[Math.floor(Math.random() * a.length)]; }
+function gTierTake(tiers, n) {   // take n distinct items, exhausting each tier (shuffled) in order
+  const out = [];
+  for (const t of tiers) { for (const s of gShuffle(t)) { if (out.length >= n) break; if (!out.includes(s)) out.push(s); } if (out.length >= n) break; }
+  return out;
+}
+function gPool() { return works.filter(w => w.p && w.p.image && w.p.painter && gSlugOf(w.p)); }
+
+function gAuthorQ() {
+  const pl = gPool(); const p = gPick(pl).p; const cs = gSlugOf(p);
+  const slugs = [...new Set(pl.map(w => gSlugOf(w.p)))].filter(s => s && s !== cs);
+  const cE = erasOf(cs), cS = schoolsOf(cs);
+  const sE = s => erasOf(s).some(e => cE.includes(e)), sS = s => schoolsOf(s).some(e => cS.includes(e));
+  const near = slugs.filter(s => sE(s) && sS(s));
+  const mid = slugs.filter(s => (sE(s) || sS(s)) && !(sE(s) && sS(s)));
+  const far = slugs.filter(s => !sE(s) && !sS(s));
+  const tiers = G.diff === "hard" ? [near, mid, far] : G.diff === "medium" ? [mid, near, far] : [far, mid, near];
+  const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
+  const opts = [{ text: p.painter, correct: true }, ...ds.map(s => ({ text: GAME_NAME_OF_SLUG[s], correct: false }))];
+  return { kind: "img", image: p.image, prompt: "Who painted this?", options: gShuffle(opts), answer: p.painter };
+}
+
+function gDateQ() {
+  const pl = gPool().filter(w => yearNum(w.p) != null); const p = gPick(pl).p; const y = yearNum(p);
+  const [lo, hi] = G.diff === "hard" ? [8, 20] : G.diff === "medium" ? [24, 55] : [70, 220];
+  const seen = new Set([y]); const opts = [{ text: String(y), correct: true }]; let guard = 0;
+  while (opts.length < G_NOPTS[G.diff] && guard++ < 400) {
+    const off = (Math.random() < .5 ? -1 : 1) * (lo + Math.floor(Math.random() * (hi - lo + 1)));
+    const yy = y + off; if (yy < 1250 || yy > 1985 || seen.has(yy)) continue; seen.add(yy);
+    opts.push({ text: String(yy), correct: false });
+  }
+  return { kind: "img", image: p.image, options: gShuffle(opts), answer: String(y),
+    prompt: `When was this painted?<span class="g-clue">${esc(p.painter)}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
+}
+
+function gWhereQ() {
+  const pl = gPool().filter(w => w.p.location); const p = gPick(pl).p;
+  const lab = v => v.location + (v.city ? `, ${v.city}` : "");
+  const seen = new Set([p.location]); const venues = [];
+  for (const w of pl) { const q = w.p; if (seen.has(q.location)) continue; seen.add(q.location); venues.push({ location: q.location, city: q.city || "", country: q.country || "" }); }
+  const dc = venues.filter(v => v.country && v.country !== p.country);
+  const sc = venues.filter(v => v.country === p.country && v.city !== p.city);
+  const city = venues.filter(v => v.city && v.city === p.city);
+  const tiers = G.diff === "hard" ? [city, sc, dc] : G.diff === "medium" ? [sc, dc, city] : [dc, sc, city];
+  const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
+  const opts = [{ text: lab(p), correct: true }, ...ds.map(v => ({ text: lab(v), correct: false }))];
+  return { kind: "img", image: p.image, options: gShuffle(opts), answer: lab(p),
+    prompt: `Where is it now?<span class="g-clue">${esc(p.painter)}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
+}
+
+function gPaintingQ() {
+  const pl = gPool(); const p = gPick(pl).p; const cs = gSlugOf(p); const cE = erasOf(cs);
+  const others = pl.filter(w => w.p !== p && w.p.image);
+  const samePainter = others.filter(w => gSlugOf(w.p) === cs);
+  const sameEra = others.filter(w => gSlugOf(w.p) !== cs && erasOf(gSlugOf(w.p)).some(e => cE.includes(e)));
+  const far = others.filter(w => gSlugOf(w.p) !== cs && !erasOf(gSlugOf(w.p)).some(e => cE.includes(e)));
+  const tiers = G.diff === "hard" ? [samePainter, sameEra, far] : G.diff === "medium" ? [sameEra, far, samePainter] : [far, sameEra];
+  const chosen = []; const usedImg = new Set([p.image]);
+  for (const t of tiers) { for (const w of gShuffle(t)) { if (chosen.length >= G_NOPTS[G.diff] - 1) break; if (usedImg.has(w.p.image)) continue; usedImg.add(w.p.image); chosen.push(w); } if (chosen.length >= G_NOPTS[G.diff] - 1) break; }
+  const opts = [{ img: p.image, correct: true }, ...chosen.map(w => ({ img: w.p.image, correct: false }))];
+  const clue = `${esc(p.painter)}${p.year ? `, ${esc(p.year)}` : ""}${p.location ? ` — ${esc(p.location)}` : ""}`;
+  return { kind: "pick", prompt: `Which one is <b>${clue}</b>?`, options: gShuffle(opts) };
+}
+
+function gNewQuestion() {
+  const mode = G.mode === "mixed" ? gPick(["author", "date", "where", "painting"]) : G.mode;
+  try { G.q = mode === "author" ? gAuthorQ() : mode === "date" ? gDateQ() : mode === "where" ? gWhereQ() : gPaintingQ(); }
+  catch (e) { G.q = gAuthorQ(); }
+  G.answered = false; gRender();
+}
+
+function gRender() {
+  const stage = document.getElementById("game-stage"); if (!stage) return;
+  if (!gPool().length) { stage.innerHTML = `<div class="g-empty">Loading works…</div>`; return; }
+  const q = G.q; let h = "";
+  if (q.kind === "img") h += `<div class="g-figure"><img src="${esc(q.image)}" alt=""></div>`;
+  h += `<div class="g-prompt">${q.prompt}</div>`;
+  if (q.kind === "pick") h += `<div class="g-picks">` + q.options.map((o, i) => `<button class="g-pick" type="button" data-i="${i}"><img src="${esc(o.img)}" alt="" loading="lazy"></button>`).join("") + `</div>`;
+  else h += `<div class="g-options">` + q.options.map((o, i) => `<button class="g-opt" type="button" data-i="${i}">${esc(o.text)}</button>`).join("") + `</div>`;
+  h += `<div class="g-foot"><span class="g-feedback"></span><button class="g-next" type="button" hidden>Next →</button></div>`;
+  stage.innerHTML = h;
+}
+
+function gAnswer(i) {
+  if (G.answered || !G.q) return; G.answered = true;
+  const q = G.q, chosen = q.options[i]; G.total++; if (chosen.correct) G.right++;
+  const stage = document.getElementById("game-stage");
+  const sel = q.kind === "pick" ? ".g-pick" : ".g-opt";
+  const btns = stage.querySelectorAll(sel);
+  btns.forEach((b, idx) => { b.disabled = true; if (q.options[idx].correct) b.classList.add("correct"); });
+  if (!chosen.correct) btns[i].classList.add("wrong");
+  const fb = stage.querySelector(".g-feedback");
+  fb.textContent = chosen.correct ? "✓ Correct" : (q.answer ? `✗ ${q.answer}` : "✗ Not that one");
+  fb.className = "g-feedback " + (chosen.correct ? "ok" : "no");
+  stage.querySelector(".g-next").hidden = false;
+  gScore();
+}
+function gScore() { const el = document.getElementById("game-score"); if (el) el.textContent = G.total ? `${G.right} / ${G.total}` : ""; }
+
+function setGameView(on) {
+  const g = document.getElementById("game"); if (!g) return;
+  g.hidden = !on;
+  document.body.classList.toggle("show-game", on);
+  document.getElementById("v-game").classList.toggle("active", on);
+  if (on) {
+    view.table = false; view.map = false;
+    document.getElementById("table").hidden = true;
+    document.getElementById("main").hidden = true;
+    document.getElementById("mapopts").hidden = true;
+    document.getElementById("v-table").classList.remove("active");
+    document.getElementById("v-mapview").classList.remove("active");
+    gScore();
+    if (!G.q) gNewQuestion(); else gRender();
+  }
+}
+
+(function wireGame() {
+  const g = document.getElementById("game"); if (!g) return;
+  document.getElementById("v-game").addEventListener("click", () => setGameView(true));
+  document.getElementById("game-mode").addEventListener("click", e => {
+    const b = e.target.closest("[data-gmode]"); if (!b) return;
+    G.mode = b.dataset.gmode; g.querySelectorAll("#game-mode .gbtn").forEach(x => x.classList.toggle("active", x === b));
+    gNewQuestion();
+  });
+  document.getElementById("game-diff").addEventListener("click", e => {
+    const b = e.target.closest("[data-diff]"); if (!b) return;
+    G.diff = b.dataset.diff; g.querySelectorAll("#game-diff .gbtn").forEach(x => x.classList.toggle("active", x === b));
+    gNewQuestion();
+  });
+  document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gScore(); gNewQuestion(); });
+  document.getElementById("game-stage").addEventListener("click", e => {
+    const opt = e.target.closest(".g-opt, .g-pick"); if (opt) { gAnswer(+opt.dataset.i); return; }
+    if (e.target.closest(".g-next")) gNewQuestion();
+  });
+})();
