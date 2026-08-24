@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.42.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 10:26";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.42.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 16:41";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1324,6 +1324,10 @@ function closeWorkCard() {
     history.replaceState(null, "", location.pathname + location.hash);   // drop ?w= when closed
 }
 document.getElementById("wc-close").addEventListener("click", closeWorkCard);
+// Escape closes the zoomed image first (it sits in front); only then the ficha
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && document.getElementById("lightbox").hidden) closeWorkCard();
+});
 // fly the map to a work (resolve the full work object — table/ficha may hold a {p}-only wrapper)
 function flyToWork(w) {
   const full = (w && works.find(x => x.p === w.p)) || w;
@@ -1338,7 +1342,6 @@ workCard.addEventListener("click", e => {
   if (e.target.closest(".wc-map") && wcWork) { const w = wcWork; closeWorkCard(); flyToWork(w); return; }
   if (e.target === workCard) closeWorkCard();
 });
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeWorkCard(); });
 
 // ── sharing: a link that reopens the atlas on this exact painting (or museum) ──
 let toastT = 0;

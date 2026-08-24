@@ -304,14 +304,17 @@ body.resizing #map { pointer-events: none; }
 .gallery .grp { grid-column: 1 / -1; }   /* venue dividers span the full row */
 .gallery .sentinel { grid-column: 1 / -1; }
 .gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden; position: relative;
-  border: 1px solid var(--line); background: #fff; display: flex; flex-direction: column; }
+  border: 1px solid var(--line); background: #fff; display: block; }
 .gshare { position: absolute; top: 5px; right: 5px; z-index: 2; width: 27px; height: 27px; padding: 0;
   border: 0; border-radius: 999px; background: rgba(255,255,255,.92); cursor: pointer; font-size: 13px;
   line-height: 27px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.28); opacity: 0; transition: opacity .12s; }
 .gcell:hover .gshare, .gcell:focus-within .gshare { opacity: 1; }
 .gshare:hover { background: #fff; }
 @media (hover: none) { .gshare { opacity: .92; } }   /* touch: always visible */
-.gcell .th { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block;
+/* id-scoped so it beats the list-row thumbnail rule (#worklist .th { 46px }) — the gallery image
+   must fill the tile, not sit tiny with dead space around it */
+#worklist.gallery .gcell .th, #table-gallery .gcell .th {
+  width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block;
   cursor: zoom-in; background: #efe9df; }
 .gcell span.th.ph { background: repeating-linear-gradient(45deg,#efe9df,#efe9df 6px,#e7ded1 6px,#e7ded1 12px); }
 .gcell .gmeta { padding: 4px 7px 6px; min-width: 0; }
@@ -348,7 +351,7 @@ body.resizing #map { pointer-events: none; }
 #worklist .near-row .micon { flex: 0 0 auto; }
 #worklist .near-row .mname { font-size: 13px; font-weight: 600; line-height: 1.2; }
 #worklist .near-row .msub { color: var(--muted); font-size: 12px; margin-top: 1px; }
-#worklist li:not(.grp):not(.empty) {
+#worklist li:not(.grp):not(.empty):not(.gcell) {
   display: flex; gap: 10px; align-items: center; cursor: pointer;
   padding: 8px 12px; border-bottom: 1px solid #f0ece3;
 }
@@ -370,7 +373,7 @@ body.resizing #map { pointer-events: none; }
 
 /* lightbox — the painting at full size */
 #lightbox {
-  position: fixed; inset: 0; z-index: 2000; display: flex;
+  position: fixed; inset: 0; z-index: 2600; display: flex;   /* above the ficha (2000) — zoom stays in front, ficha waits behind */
   align-items: center; justify-content: center;
   background: rgba(20,15,10,.92); padding: 24px;
 }
