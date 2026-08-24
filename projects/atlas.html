@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.43.0">
+  <link rel="stylesheet" href="atlas/style.css?v=0.43.1">
 </head>
 <body>
   <nav id="navbar">
@@ -99,6 +99,8 @@
       </span>
       <span id="table-count" class="t-count"></span>
       <span id="table-view">
+        <label id="tv-group" class="subtick" title="Group the pictures by museum — each museum's works run together, introduced by a small label, with no wasted rows">
+          <input type="checkbox" checked> ⛪ by museum</label>
         <input id="tv-thumb" type="range" min="72" max="260" value="150" title="Thumbnail size">
         <button type="button" id="tv-grid" class="pvbtn active" title="Picture grid">▦ Pictures</button>
         <button type="button" id="tv-list" class="pvbtn" title="Detailed sortable list">☰ List</button>
@@ -165,7 +167,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.43.0"></script>
+  <script src="atlas/app.js?v=0.43.1"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

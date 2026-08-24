@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.43.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 18:29";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.43.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 18:53";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -957,41 +957,75 @@ function renderMuseumsTable() {
 }
 
 // ── Works table in gallery mode: the same tiles as the map panel, streamed with lazy images ──
-let tableGallery = true, tGalVis = [], tGalRows = [], tGalCursor = 0;   // Pictures grid by default
+// Optionally grouped by museum. Grouping uses an *inline* flow (flex-wrap): each museum's works
+// run together, introduced by a small label card, so museums never force a full-width row break
+// and no grid cells are wasted at the tail of a small museum.
+let tableGallery = true, tGalGroup = true, tGalVis = [], tGalQueue = [], tGalCursor = 0;
 const TGAL_CHUNK = 60;
+// build a flat render plan {grp}|{p} grouped by museum, museums by city then name, works by year
+function tGalBuildGrouped(rows) {
+  const groups = new Map();
+  for (const p of rows) {
+    const k = museumKey(p);
+    if (!groups.has(k)) groups.set(k, { location: p.location || "Unknown", city: p.city || "", items: [] });
+    groups.get(k).items.push(p);
+  }
+  const ordered = [...groups.values()].sort((a, z) =>
+    (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
+  const q = [];
+  for (const g of ordered) {
+    g.items.sort((a, z) => (yearNum(a) || 9999) - (yearNum(z) || 9999));
+    q.push({ grp: { location: g.location, city: g.city, count: g.items.length } });
+    for (const p of g.items) q.push({ p });
+  }
+  return q;
+}
 function tGalAppend() {
   const g = document.getElementById("table-gallery");
-  const end = Math.min(tGalCursor + TGAL_CHUNK, tGalRows.length);
+  const end = Math.min(tGalCursor + TGAL_CHUNK, tGalQueue.length);
   let html = "";
-  for (; tGalCursor < end; tGalCursor++) html += tileHTML({ p: tGalRows[tGalCursor] }, tGalVis);
+  for (; tGalCursor < end; tGalCursor++) {
+    const e = tGalQueue[tGalCursor];
+    if (e.grp) html += `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
+      `<span class="n">${e.grp.count}</span></li>`;
+    else html += tileHTML(e, tGalVis);   // e = { p: props }
+  }
   g.insertAdjacentHTML("beforeend", html);
 }
 function renderWorksGallery() {
   document.getElementById("works-table").hidden = true;
   const g = document.getElementById("table-gallery"); g.hidden = false;
-  tGalRows = tableRows();
+  const rows = tableRows();
   document.getElementById("table-count").textContent =
-    `${tGalRows.length.toLocaleString()} work${tGalRows.length === 1 ? "" : "s"}`;
+    `${rows.length.toLocaleString()} work${rows.length === 1 ? "" : "s"}`;
+  g.classList.toggle("grouped", tGalGroup);
+  tGalQueue = tGalGroup ? tGalBuildGrouped(rows) : rows.map(p => ({ p }));
   tGalVis = []; tGalCursor = 0; g.innerHTML = "";
   g.style.setProperty("--thumb", document.getElementById("tv-thumb").value + "px");
   tGalAppend();
 }
 (function wireTableView() {
   const slider = document.getElementById("tv-thumb");
+  const grpTick = document.getElementById("tv-group");
   const setMode = on => {
     tableGallery = on;
     document.getElementById("tv-grid").classList.toggle("active", on);
     document.getElementById("tv-list").classList.toggle("active", !on);
     slider.hidden = !on;
+    grpTick.hidden = !on;                       // "by museum" tick only applies to the picture grid
     if (view.table && tableMode === "works") renderTable();
   };
   document.getElementById("tv-list").addEventListener("click", () => setMode(false));
   document.getElementById("tv-grid").addEventListener("click", () => setMode(true));
+  grpTick.querySelector("input").addEventListener("change", e => {
+    tGalGroup = e.target.checked;
+    if (view.table && tableMode === "works" && tableGallery) renderWorksGallery();
+  });
   slider.addEventListener("input", () =>
     document.getElementById("table-gallery").style.setProperty("--thumb", slider.value + "px"));
   document.getElementById("table-wrap").addEventListener("scroll", e => {
     const el = e.target;
-    if (tableGallery && tableMode === "works" && tGalCursor < tGalRows.length &&
+    if (tableGallery && tableMode === "works" && tGalCursor < tGalQueue.length &&
         el.scrollTop + el.clientHeight >= el.scrollHeight - 700) tGalAppend();
   });
   document.getElementById("table-gallery").addEventListener("click", e => {
