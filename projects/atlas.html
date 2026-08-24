@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.42.8">
+  <link rel="stylesheet" href="atlas/style.css?v=0.43.0">
 </head>
 <body>
   <nav id="navbar">
@@ -83,8 +83,8 @@
         <span id="panel-head">Works in view</span>
         <span id="panel-view">
           <input id="thumb-size" type="range" min="72" max="240" value="112" title="Thumbnail size" hidden>
-          <button type="button" id="pv-list" class="pvbtn active" title="List view">☰</button>
-          <button type="button" id="pv-grid" class="pvbtn" title="Gallery view">▦</button>
+          <button type="button" id="pv-list" class="pvbtn active" title="List view">☰ List</button>
+          <button type="button" id="pv-grid" class="pvbtn" title="Thumbnails">▦ Miniature</button>
         </span>
       </div>
       <ul id="worklist"></ul>
@@ -101,7 +101,7 @@
       <span id="table-view">
         <input id="tv-thumb" type="range" min="72" max="260" value="150" title="Thumbnail size">
         <button type="button" id="tv-grid" class="pvbtn active" title="Picture grid">▦ Pictures</button>
-        <button type="button" id="tv-list" class="pvbtn" title="Detailed table">☰ Table</button>
+        <button type="button" id="tv-list" class="pvbtn" title="Detailed sortable list">☰ List</button>
       </span>
     </div>
     <div id="table-wrap">
@@ -165,7 +165,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.42.8"></script>
+  <script src="atlas/app.js?v=0.43.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

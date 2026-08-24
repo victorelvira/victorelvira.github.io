@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.42.8";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 17:21";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.43.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 18:29";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1126,9 +1126,8 @@ function appendPanelChunk() {
   for (; panelCursor < end; panelCursor++) {
     const e = panelQueue[panelCursor];
     if (e.grp) {
-      if (panelMode === "gallery") continue;   // gallery is a flat grid — museum is on each tile
       html += `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
-        `<span class="n">${e.grp.count}</span></li>`;
+        `<span class="n">${e.grp.count}</span></li>`;   // grouped by museum in both list and gallery
     } else {
       html += panelMode === "gallery" ? panelCellHTML(e.w) : panelRowHTML(e.w);
     }

@@ -302,7 +302,14 @@ body.resizing #map { pointer-events: none; }
 .gallery { list-style: none; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--thumb, 112px), 1fr));
   gap: 6px; padding: 8px; align-content: start; }
 .gallery[hidden] { display: none; }   /* the class's display:grid otherwise beats the [hidden] attribute */
-.gallery .grp { grid-column: 1 / -1; }   /* venue dividers span the full row */
+/* venue divider inside the gallery — as thin as possible so the thumbnails dominate.
+   id-scoped (#worklist / #table-gallery) so it beats the heavy list-mode "#worklist .grp" bar. */
+#worklist.gallery .grp, #table-gallery .grp {
+  grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline;
+  gap: 8px; padding: 7px 3px 1px; background: none; border: 0;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+#worklist.gallery .grp:first-child, #table-gallery .grp:first-child { padding-top: 1px; }
+#worklist.gallery .grp .n, #table-gallery .grp .n { font-weight: 600; }
 .gallery .sentinel { grid-column: 1 / -1; }
 .gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden; position: relative;
   border: 1px solid var(--line); background: #fff; display: block; }
