@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.46.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 23:31";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.46.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 23:34";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1807,8 +1807,10 @@ function renderChart() {
   let minY = 9999, maxY = -9999, maxC = 1;
   for (const r of rows) for (const [y, c] of r.years) { if (y < minY) minY = y; if (y > maxY) maxY = y; if (c > maxC) maxC = c; }
   minY = Math.floor(minY / 10) * 10; maxY = Math.ceil(maxY / 10) * 10;
+  // Aggregate rows are tall with the (long) group name ON TOP of the dots, so it can't run off the
+  // left edge. Individual rows keep the short painter name right-aligned in a left gutter.
   const agg = chartGroup !== "individual";
-  const rowH = agg ? 30 : 17, padL = 214, padT = 30, padR = 24, yw = chartYW;
+  const rowH = agg ? 40 : 17, padL = agg ? 12 : 230, padT = 30, padR = 24, yw = chartYW;
   const W = padL + (maxY - minY) * yw + padR, H = padT + rows.length * rowH + 16;
   const X = y => padL + (y - minY) * yw;
   const gridStep = yw < 3 ? 50 : yw < 5 ? 40 : 20;
@@ -1817,9 +1819,12 @@ function renderChart() {
     parts.push(`<line x1="${X(yr)}" y1="${padT - 6}" x2="${X(yr)}" y2="${H - 12}" stroke="#eee"/><text x="${X(yr)}" y="${padT - 11}" font-size="10" fill="#aaa" text-anchor="middle">${yr}</text>`);
   let ry = padT;
   for (const r of rows) {
-    const cy = ry + rowH / 2;
+    const cy = agg ? ry + 27 : ry + rowH / 2;   // aggregate: dots on a baseline below the top label
     parts.push(`<line x1="${padL}" y1="${cy}" x2="${W - padR}" y2="${cy}" stroke="#f5f2eb"/>`);
-    parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="${agg ? 12 : 10.5}" font-weight="${agg ? 700 : 400}" fill="#333" text-anchor="end">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">${esc(r.sub)}</tspan></text>`);
+    if (agg)
+      parts.push(`<text x="${padL}" y="${ry + 13}" font-size="12.5" font-weight="700" fill="#333">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">· ${esc(r.sub)}</tspan></text>`);
+    else
+      parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="10.5" fill="#333" text-anchor="end">${esc(r.label)} <tspan fill="#b3aa9c">${esc(r.sub)}</tspan></text>`);
     const rmax = agg ? 9 : 5;
     for (const [yr, c] of r.years) {
       const rad = (1.6 + rmax * Math.sqrt(c / maxC)).toFixed(1);
