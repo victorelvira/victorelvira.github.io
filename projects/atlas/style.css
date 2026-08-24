@@ -301,6 +301,7 @@ body.resizing #map { pointer-events: none; }
 
 .gallery { list-style: none; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--thumb, 112px), 1fr));
   gap: 6px; padding: 8px; align-content: start; }
+.gallery[hidden] { display: none; }   /* the class's display:grid otherwise beats the [hidden] attribute */
 .gallery .grp { grid-column: 1 / -1; }   /* venue dividers span the full row */
 .gallery .sentinel { grid-column: 1 / -1; }
 .gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden; position: relative;
@@ -316,7 +317,13 @@ body.resizing #map { pointer-events: none; }
 #worklist.gallery .gcell .th, #table-gallery .gcell .th {
   width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block;
   cursor: zoom-in; background: #efe9df; }
-.gcell span.th.ph { background: repeating-linear-gradient(45deg,#efe9df,#efe9df 6px,#e7ded1 6px,#e7ded1 12px); }
+/* graceful "no image" placeholder — a faint framed-picture glyph + label */
+.th.ph { background: #efe9df; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 3px; text-align: center; color: #a4977f; }
+.th.ph::before { content: "🖼"; filter: grayscale(1); opacity: .42; line-height: 1; font-size: 17px; }
+.th.ph::after { content: "No image"; font-size: 8.5px; text-transform: uppercase; letter-spacing: .04em; opacity: .85; }
+.gcell .th.ph::before { font-size: 34px; }
+.gcell .th.ph::after { font-size: 11px; }
 .gcell .gmeta { padding: 4px 7px 6px; min-width: 0; }
 .gcell .gm1 { font-size: 11.5px; font-weight: 600; color: var(--ink); line-height: 1.25;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

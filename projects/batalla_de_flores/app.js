@@ -127,6 +127,7 @@ const SOURCE_LABEL = {
   manual_seed: "Transcrito a mano",
   press_photo: "Prensa (pie de foto)",
   press_clipping: "Recorte de prensa",
+  photo_archive: "Archivo fotográfico cedido",
 };
 
 /* Version corta para las tablas del panel de detalle, que es estrecho.
@@ -139,6 +140,7 @@ const SOURCE_SHORT = {
   manual_seed: "MAN",
   press_photo: "PRE",
   press_clipping: "REC",
+  photo_archive: "FOTO",
 };
 
 function sourceShort(sourceType) {
@@ -287,7 +289,9 @@ function renderNocheMagica() {
 function renderStats() {
   const summary = state.dataset.summary || {};
   els.stats.innerHTML = [
-    `<span><b>${num(summary.edition_count)}</b> ediciones</span>`,
+    // La cifra oficial, no el numero de filas: nuestros registros abarcan anos
+    // en los que no hubo desfile y otros de los que no sabemos nada.
+    `<span><b>${num(summary.official_edition_count || summary.edition_count)}</b> ediciones</span>`,
     `<span><b>${num(summary.float_count)}</b> carrozas</span>`,
     `<span><b>${num(summary.group_count)}</b> grupos</span>`,
   ].join("");
@@ -526,7 +530,7 @@ function renderFloatGrid(rows) {
     const active = state.selection?.kind === "float" && state.selection.id === entry.id;
     return `
       <button class="tile${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
-        <img src="${esc(entry.image_urls[0])}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+        <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
         ${winnerBadge(entry)}
         <span class="tile-name">${esc(entry.name)}</span>
         <span class="tile-meta">${entry.year}${entry.position != null
@@ -987,7 +991,9 @@ function renderStatsTab() {
   els.indexBody.innerHTML = `
     <div class="stats-block">
       <div class="kpis">
-        <div class="kpi"><span>${num(summary.edition_count)}</span><small>ediciones</small></div>
+        <div class="kpi"><span>${num(summary.official_edition_count || summary.edition_count)}</span>
+          <small>ediciones${summary.official_edition_count
+            ? `, la última la <b>${summary.official_edition_count}.ª</b>` : ""}</small></div>
         <div class="kpi"><span>${topFloats}</span><small>carrozas, el récord${
           recordYears.length > 1 ? ", igualado en" : " en"} ${listYears(recordYears)}</small></div>
         <div class="kpi"><span>${topGroup.wins}</span><small>victorias de ${esc(topGroup.canonical_name)}</small></div>
@@ -1642,37 +1648,31 @@ function nocheMagicaBlock(edition) {
     <p class="chart-note mapa-pie">Pulsa una marca para ver quién monta allí, cómo llegar o
     compartir la ubicación. El botón <b>◎</b> te sitúa en el mapa.</p>
 
-    <table class="palmares">
-      <colgroup><col class="c-src"><col><col><col></colgroup>
-      <thead><tr>
-        <th>N.º</th><th>Grupo</th>
-        <th class="nm-col">Carrozas</th><th class="nm-col">Dónde monta</th>
-      </tr></thead>
-      <tbody>
-        ${nm.grupos.map(fila => {
-          const sitio = sitios.get(fila.sitio);
-          const carrozas = [fila.a ? `${fila.a} en A` : "", fila.b ? `${fila.b} en B` : ""]
-            .filter(Boolean).join(" · ");
-          const enlace = sitio
-            ? `<a href="https://www.openstreetmap.org/?mlat=${sitio.lat}&mlon=${sitio.lon}#map=18/${sitio.lat}/${sitio.lon}"
-                target="_blank" rel="noopener" title="${esc(sitio.nombre)}">${esc(sitio.corto || sitio.nombre)} ↗</a>`
-            : "–";
-          // En movil no caben cuatro columnas: carrozas y ubicacion bajan al
-          // hueco del grupo y las columnas propias se ocultan por CSS.
-          return `<tr>
-            <td class="pos"><span class="nm-num">${fila.orden}</span></td>
-            <td class="name">${fila.group_canonical
+    <ol class="nm-lista">
+      ${nm.grupos.map(fila => {
+        const sitio = sitios.get(fila.sitio);
+        const carrozas = [fila.a ? `${fila.a} en A` : "", fila.b ? `${fila.b} en B` : ""]
+          .filter(Boolean).join(" · ");
+        const enlace = sitio
+          ? `<a href="https://www.openstreetmap.org/?mlat=${sitio.lat}&mlon=${sitio.lon}#map=18/${sitio.lat}/${sitio.lon}"
+              target="_blank" rel="noopener" title="${esc(sitio.nombre)}">${esc(sitio.corto || sitio.nombre)} ↗</a>`
+          : "sin ubicación publicada";
+        // Lista y no tabla: son siete filas de dos datos, y con `table-layout:
+        // fixed` la columna del numero se quedaba con un tercio del panel
+        // partiendo cada nombre en tres lineas.
+        return `<li>
+          <span class="nm-num">${fila.orden}</span>
+          <span class="nm-datos">
+            <b>${fila.group_canonical
               ? `<button class="link t-group" type="button"
                   data-group="${esc(slugifyGroup(fila.group_canonical))}"
                   title="Ver la trayectoria de ${esc(fila.group_canonical)}">${esc(fila.grupo)}</button>`
-              : esc(fila.grupo)}
-              <small class="nm-movil">${esc(carrozas)} · ${enlace}</small></td>
-            <td class="nm-col">${esc(carrozas)}</td>
-            <td class="nm-col">${enlace}</td>
-          </tr>`;
-        }).join("")}
-      </tbody>
-    </table>`;
+              : esc(fila.grupo)}</b>
+            <small>${esc(carrozas)} · ${enlace}</small>
+          </span>
+        </li>`;
+      }).join("")}
+    </ol>`;
 }
 
 /* ── detalle: edicion ───────────────────────────────────────────────────── */
@@ -1730,6 +1730,20 @@ function prizeChips(entry) {
   return prizes.join(" · ");
 }
 
+/* Miniatura para las cuadriculas. Las fotos cedidas se generan en dos tamanos
+ * y la version de 1600 px no pinta nada en un recuadro de 150: son 400 KB por
+ * casilla. Las del archivo web son URLs remotas y ahi no hay eleccion. */
+function thumbUrl(url) {
+  return url.startsWith("batalla_de_flores/fotos/") ? url.replace(/\.jpg$/, "-mini.jpg") : url;
+}
+
+/* Credito de la imagen. Va pegado a cada foto y no solo en el pie de la pagina:
+ * es de quien la hizo y quien la mira tiene que saberlo sin buscarlo. */
+function photoCredit(entry) {
+  return entry.image_credit
+    ? `<span class="credito">Foto cedida por ${esc(entry.image_credit)}</span>` : "";
+}
+
 function renderGallery(entries) {
   const images = entries.flatMap(entry =>
     (entry.image_urls || []).map(url => ({ url, entry }))).slice(0, 24);
@@ -1740,10 +1754,12 @@ function renderGallery(entries) {
       ${images.map(({ url, entry }) => `
         <figure class="shot">
           <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}, imagen alojada en batalladeflores.net">
-            <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}${
+               entry.image_credit ? `, foto de ${esc(entry.image_credit)}` : ", imagen alojada en batalladeflores.net"}">
+            <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
           </a>
-          <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small></figcaption>
+          <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small>
+            ${photoCredit(entry)}</figcaption>
         </figure>`).join("")}
     </div>`;
 }
@@ -1816,6 +1832,19 @@ function provenanceBlock(entries, sources, edition) {
     <div class="provenance">
       <b>De dónde sale cada dato</b>
       <ul class="prov-list">
+        ${edition?.status === "planned" ? (() => {
+          // Una edicion sin celebrar no tiene datos "que falten": es que todavia
+          // no existen. Decir "no consta ninguna carroza" ahi parece un fallo de
+          // la pagina cuando es el estado correcto del mundo.
+          const nm = state.dataset.noche_magica;
+          const anuncio = nm && nm.year === edition.year
+            ? `Se conocen los <b>${nm.grupos.length} grupos</b> y las
+               <b>${nm.float_count} carrozas</b> que van a desfilar, publicados por el
+               Ayuntamiento. Los nombres de las carrozas y la clasificación se sabrán
+               el día del desfile.`
+            : "Todavía no se ha celebrado.";
+          return `<li><b>Edición aún por celebrar:</b> ${anuncio}</li>`;
+        })() : `
         ${provenanceLine("Participantes", entries, "no consta ninguna carroza.")}
         ${ranked.length === entries.length && entries.length
           ? `<li><b>Clasificación:</b> las ${entries.length} tienen puesto, de las mismas fuentes.</li>`
@@ -1827,7 +1856,7 @@ function provenanceBlock(entries, sources, edition) {
           que coinciden en el dato.</li>` : ""}
         ${dudosas.length ? `<li class="prov-warn"><b>Inconsistencias detectadas:</b> ${dudosas.length}
           en esta edición. Están marcadas con <span class="review-mark">?</span> en la tabla.</li>` : ""}
-        ${huecos.length ? `<li class="prov-warn"><b>Lo que falta:</b> ${esc(huecos[0])}</li>` : ""}
+        ${huecos.length ? `<li class="prov-warn"><b>Lo que falta:</b> ${esc(huecos[0])}</li>` : ""}`}
       </ul>
       ${codes.size ? `<p class="codes">${[...codes.entries()]
         .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>` : ""}
@@ -1907,7 +1936,7 @@ function renderEditionDetail(edition) {
             <tr>
               ${withPhotos ? `<td class="c-photo">${(entry.image_urls || []).length
                 ? `<button class="thumb" type="button" data-float="${esc(entry.id)}"
-                     data-tip="${esc(entry.name)}"><img src="${esc(entry.image_urls[0])}"
+                     data-tip="${esc(entry.name)}"><img src="${esc(thumbUrl(entry.image_urls[0]))}"
                      alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer"></button>`
                 : ""}</td>` : ""}
               <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.position === 1
@@ -1920,7 +1949,8 @@ function renderEditionDetail(edition) {
               <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
             </tr>`).join("")}
         </tbody>
-      </table>` : '<h3 class="section">Palmarés</h3><p class="empty">No hay palmarés estructurado para este año.</p>'}
+      </table>` : (edition.status === "planned" ? "" :
+        '<h3 class="section">Palmarés</h3><p class="empty">No hay palmarés estructurado para este año.</p>')}
 
     ${unranked.length ? `
       <h3 class="section">Otras carrozas documentadas (${unranked.length})</h3>
@@ -1943,12 +1973,17 @@ function renderEditionDetail(edition) {
         </tbody>
       </table>` : ""}
 
+    ${edition.status === "planned" ? nocheMagicaBlock(edition) : ""}
+
     ${(() => {
       // Los huecos conocidos no son una nota mas al final: son lo que hay que
       // saber antes de leer el palmares, y la mejor peticion de ayuda posible.
+      // El aviso rojo es para huecos DE VERDAD. Una nota que explique de donde
+      // salio un dato -aunque diga "no aparece en ninguna fuente publicada"- no
+      // es un hueco: es trazabilidad, y va en Notas.
       const gaps = (edition.notes || []).filter(note =>
-        note.includes("faltan al menos") || note.includes("no aparece en ninguna fuente")
-        || note.includes("no publicó") || note.includes("no el palmarés"));
+        note.includes("faltan al menos") || note.includes("faltan ")
+        || note.includes("nunca la clasificación"));
       const rest = (edition.notes || []).filter(note => !gaps.includes(note));
       return `
         ${gaps.length ? `<div class="review-box">
@@ -1960,7 +1995,7 @@ function renderEditionDetail(edition) {
           <ul class="plain">${rest.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : ""}`;
     })()}
 
-    ${nocheMagicaBlock(edition)}
+    ${edition.status === "planned" ? "" : nocheMagicaBlock(edition)}
 
     ${renderGallery(entries.filter(entry => !ranked.includes(entry)))}
 
@@ -1988,9 +2023,12 @@ function renderAbout() {
 
     <p class="about-lead">Un archivo interactivo de la <b>Batalla de Flores de Laredo</b>,
     declarada Fiesta de Interés Turístico Nacional, que reúne
-    ${num(summary.edition_count)} ediciones desde 1908 con
+    ${num(summary.official_edition_count || summary.edition_count)} ediciones desde 1908 con
     ${num(summary.float_count)} carrozas y ${num(summary.group_count)} grupos
     carrocistas, cada una con la fuente de la que sale.</p>
+    <p class="about-note">La numeración de las ediciones es la oficial del Ayuntamiento: 2026 es
+    la ${summary.official_edition_count}.ª. Aquí hay fichas de ${num(summary.edition_count)} años,
+    porque se incluyen también los que no hubo desfile y aquellos de los que no ha quedado nada.</p>
 
     <h3 class="section">No es la web oficial</h3>
     <p>Es un proyecto personal y sin ánimo de lucro, hecho por afición a la fiesta.
@@ -2099,9 +2137,11 @@ function renderFloatDetail(entry) {
         ${entry.image_urls.map(url => `
           <figure class="shot">
             <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-               title="${esc(entry.name)} (${entry.year}), imagen alojada en batalladeflores.net">
+               title="${esc(entry.name)} (${entry.year})${entry.image_credit
+                 ? `, foto de ${esc(entry.image_credit)}` : ", imagen alojada en batalladeflores.net"}">
               <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
             </a>
+            ${entry.image_credit ? `<figcaption>${photoCredit(entry)}</figcaption>` : ""}
           </figure>`).join("")}
       </div>`
       : '<p class="empty">El archivo no conserva imágenes de esta carroza.</p>'}

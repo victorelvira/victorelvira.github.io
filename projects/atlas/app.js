@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.42.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 16:41";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.42.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 17:09";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1111,7 +1111,7 @@ function panelRowHTML(w) {
   const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
   const thumb = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
-    : `<span class="th"></span>`;
+    : `<span class="th ph"></span>`;
   return `<li data-i="${i}">${thumb}<div>` +
     `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;

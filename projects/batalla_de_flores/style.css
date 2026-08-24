@@ -994,6 +994,12 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .prov-urls li { margin-bottom: 5px; }
 .prov-urls small { display: block; color: var(--muted); font-size: 10.5px; word-break: break-all; }
 
+/* Credito de la foto, bajo cada imagen. Discreto pero siempre presente: es de
+ * quien la hizo. */
+.about-note { margin: -4px 0 10px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+.credito { display: block; margin-top: 2px; color: var(--muted); font-size: 10.5px; font-style: italic; }
+
 /* Mapa de Leaflet de la Noche Magica. */
 .mapa-montaje {
   height: 300px; margin: 4px 0 2px;
@@ -1026,6 +1032,21 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 .montaje-pin { fill: #2f7d4f; stroke: #fffaf5; stroke-width: 2; }
 .montaje-num { fill: #fff; font-size: 9.5px; font-weight: 700; text-anchor: middle; }
 .montaje { cursor: help; }
+/* Lista de grupos de la Noche Magica. Cada fila: numero de salida a la
+ * izquierda y, al lado, grupo con sus carrozas y su ubicacion debajo. */
+.nm-lista { list-style: none; margin: 4px 0 2px; padding: 0; }
+.nm-lista li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--line-soft);
+}
+.nm-lista li:last-child { border-bottom: 0; }
+.nm-datos { flex: 1; min-width: 0; }
+.nm-datos b { display: block; font-size: 13.5px; font-weight: 600; line-height: 1.3; }
+.nm-datos small {
+  display: block; margin-top: 2px; color: var(--muted);
+  font-size: 12px; line-height: 1.45;
+}
+
 .nm-num {
   display: inline-flex; align-items: center; justify-content: center;
   width: 20px; height: 20px; border-radius: 50%;
@@ -1034,13 +1055,9 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
 
 /* Tabla de la Noche Magica: cuatro columnas en escritorio, dos en movil con el
  * resto debajo del nombre del grupo. */
-.nm-movil { display: block; margin-top: 2px; color: var(--muted); font-weight: 400; font-size: 11.5px; }
-.nm-movil a { word-break: normal; }
 @media (min-width: 620px) {
-  .nm-movil { display: none; }
 }
 @media (max-width: 619px) {
-  .nm-col { display: none; }
 }
 
 /* Mapa ampliable. touch-action:none para que el navegador no se quede el
