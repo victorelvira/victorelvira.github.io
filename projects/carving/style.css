@@ -267,3 +267,11 @@ body {
   .grid { grid-template-columns: repeat(auto-fill, minmax(138px, 1fr)); gap: 10px; }
   #works-table .hide-s { display: none; }
 }
+
+/* language toggle — small, in the identity bar, never competing with the title */
+#navbar .langbtn {
+  margin-left: 10px; font: inherit; font-size: 11px; font-weight: 600;
+  padding: 1px 9px; border: 1px solid #4a3f34; border-radius: 999px;
+  background: transparent; color: #cbbfae; cursor: pointer; white-space: nowrap;
+}
+#navbar .langbtn:hover { background: #3a2f26; color: #fff; }

@@ -16,8 +16,8 @@
  * carving.html on every change, or browsers will serve stale files.
  */
 
-const DATA_V = "0.3.2";
-const BUILD_AT = "2026-08-23 21:40";
+const DATA_V = "0.4.2";
+const BUILD_AT = "2026-08-24 00:20";
 
 // Gallery/table batch size. Kept at 60 rather than 120 because every card is a
 // remote image: browsers open ~6 connections per host, so a 120-card batch
@@ -43,6 +43,9 @@ const state = {
 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
+/* One number formatter for the whole UI. Spanish groups with dots and English
+   with commas; mixing raw numbers into the same row of chips looked broken. */
+const num = n => Number(n).toLocaleString(LANG === "es" ? "es-ES" : "en-GB");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -52,9 +55,10 @@ const roman = n => ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", 
   "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI"][n] || n;
 function dateLabel(it) {
   const [a, b] = it.y || [];
-  if (!a) return "undated";
+  if (!a) return t("date.undated");
   const ca = Math.ceil(a / 100), cb = Math.ceil(b / 100);
-  return ca === cb ? `${roman(ca)}th c.` : `${roman(ca)}–${roman(cb)}th c.`;
+  return ca === cb ? t("date.century", { c: roman(ca) })
+                   : t("date.centuries", { a: roman(ca), b: roman(cb) });
 }
 /* Palissy records are addressed by notice reference; museum records carry
    their own absolute URL. Always send the visitor to the original record. */
@@ -62,7 +66,7 @@ const recordURL = it => it.u || (state.meta.notice_base + it.i);
 
 const SOURCE_LABEL = {
   palissy: "French churches", vam: "V&A", met: "The Met", cleveland: "Cleveland",
-  wikidata: "Wikidata / Commons",
+  wikidata: "Wikidata / Commons", arco: "Italian catalogue",
 };
 
 /* ── filtering — the single source of truth for all three views ── */
@@ -197,7 +201,7 @@ function renderPanel() {
     .slice(0, 160);
   const total = groups.reduce((s, g) => s + g.items.length, 0);
   $("#panel-head").textContent =
-    total ? `${total.toLocaleString("en")} carvings in view` : "Carvings in view";
+    total ? t("panel.count", { n: num(total) }) : t("panel.head");
   $("#worklist").innerHTML = groups.length ? groups.map(p => `
     <li class="venue">${esc(p.place || "—")}<span class="vsub">${esc(p.commune)} · ${p.items.length}</span></li>
     ${p.items.map(it => `
@@ -205,7 +209,7 @@ function renderPanel() {
         <img class="th" loading="lazy" src="${esc(it.img)}" alt="">
         <span class="it"><b>${esc(it.t)}</b><span>${esc(dateLabel(it))}${it.a ? " · " + esc(it.a) : ""}</span></span>
       </li>`).join("")}`).join("")
-    : `<li class="empty">Nothing here — pan the map or relax the filters.</li>`;
+    : `<li class="empty">${esc(t("panel.empty"))}</li>`;
 }
 
 /* ── gallery ── */
@@ -227,21 +231,21 @@ function renderGallery() {
         <span>${esc(it.m)}</span>
       </span>
     </button>`).join("")
-    : `<p class="empty">No carving matches these filters.</p>`;
+    : `<p class="empty">${esc(t("gallery.empty"))}</p>`;
   $("#more").hidden = slice.length >= vis.length;
-  $("#more").textContent = `Show more (${(vis.length - slice.length).toLocaleString("en")} left)`;
+  $("#more").textContent = t("more", { n: num(vis.length - slice.length) });
 }
 
 /* ── table ── */
 const COLS = [
-  { k: "img", label: "", sort: null },
-  { k: "t", label: "Carving" },
-  { k: "k", label: "Type" },
-  { k: "y", label: "Date", cls: "num", val: it => it.y[0] || 9999 },
-  { k: "p", label: "Where", cls: "hide-s" },
-  { k: "m", label: "Commune" },
-  { k: "a", label: "Carver", cls: "hide-s" },
-  { k: "s", label: "Score", cls: "num" },
+  { k: "img", key: "", sort: null },
+  { k: "t", key: "col.carving" },
+  { k: "k", key: "col.type" },
+  { k: "y", key: "col.date", cls: "num", val: it => it.y[0] || 9999 },
+  { k: "p", key: "col.where", cls: "hide-s" },
+  { k: "m", key: "col.commune" },
+  { k: "a", key: "col.carver", cls: "hide-s" },
+  { k: "s", key: "col.score", cls: "num" },
 ];
 let sortKey = "s", sortDir = -1;
 
@@ -254,13 +258,13 @@ function renderTable() {
   });
   const slice = vis.slice(0, state.shown);
   $("#works-table thead").innerHTML = "<tr>" + COLS.map(c =>
-    `<th data-k="${c.k}" class="${c.cls || ""}">${c.label}` +
+    `<th data-k="${c.k}" class="${c.cls || ""}">${c.key ? esc(t(c.key)) : ""}` +
     (c.k === sortKey ? ` <span class="ar">${sortDir > 0 ? "▲" : "▼"}</span>` : "") + "</th>").join("") + "</tr>";
   $("#works-table tbody").innerHTML = slice.map(it => `
     <tr data-id="${it.i}">
       <td><img class="tth" loading="lazy" src="${esc(it.img)}" alt=""></td>
       <td>${esc(it.t)}</td>
-      <td>${esc(it.k)}</td>
+      <td>${esc(tv(it.k))}</td>
       <td class="num">${esc(dateLabel(it))}</td>
       <td class="hide-s">${esc(it.p || "—")}</td>
       <td>${esc(it.m)}</td>
@@ -268,7 +272,7 @@ function renderTable() {
       <td class="num">${it.s}</td>
     </tr>`).join("");
   $("#more-table").hidden = slice.length >= vis.length;
-  $("#more-table").textContent = `Show more (${(vis.length - slice.length).toLocaleString("en")} left)`;
+  $("#more-table").textContent = t("more", { n: num(vis.length - slice.length) });
 }
 
 /* ── record sheet ── */
@@ -284,19 +288,19 @@ function openSheet(id) {
         <p class="sub">${esc(it.p || "")}${it.m ? " · " + esc(it.m) : ""}</p>
         ${(it.f || []).length ? `<div class="tags">${it.f.map(f => `<span class="tag">${esc(f)}</span>`).join("")}</div>` : ""}
         <dl class="facts">
-          ${fact("Type", it.k)}
-          ${fact("Form", it.fm)}
-          ${fact("Date", dateLabel(it))}
-          ${fact("Carver", it.a)}
-          ${fact("Where", SOURCE_LABEL[it.src] || it.src)}
-          ${fact("Département", it.d)}
-          ${fact("Placed", it.e)}
-          ${fact("Photographs", it.n)}
+          ${fact(t("sheet.type"), tv(it.k))}
+          ${fact(t("sheet.form"), tv(it.fm))}
+          ${fact(t("sheet.date"), dateLabel(it))}
+          ${fact(t("sheet.carver"), it.a)}
+          ${fact(t("sheet.where"), tv(SOURCE_LABEL[it.src] || it.src))}
+          ${fact(t("sheet.dept"), it.d)}
+          ${fact(t("sheet.placed"), it.e)}
+          ${fact(t("sheet.photos"), it.n)}
         </dl>
-        ${it.ic ? `<p class="sub">Iconography: ${esc(it.ic)}</p>` : ""}
-        <a class="gobtn" href="${recordURL(it)}" target="_blank" rel="noopener">Full record ↗</a>
-        <p class="credit">Photograph ${esc(it.cr || state.meta.credit)}. Linked from the source, not redistributed.<br>
-        Collection: ${esc(SOURCE_LABEL[it.src] || it.src)}${it.r === "cc0" ? " · image released CC0" : ""}</p>
+        ${it.ic ? `<p class="sub">${esc(t("sheet.iconography"))}: ${esc(it.ic)}</p>` : ""}
+        <a class="gobtn" href="${recordURL(it)}" target="_blank" rel="noopener">${esc(t("sheet.record"))}</a>
+        <p class="credit">${esc(t("sheet.photo", { credit: it.cr || state.meta.credit }))}<br>
+        ${esc(t("sheet.collection"))}: ${esc(tv(SOURCE_LABEL[it.src] || it.src))}${it.r === "cc0" ? esc(t("sheet.cc0")) : ""}</p>
       </div>
     </div>`;
   $("#sheet").hidden = false;
@@ -307,24 +311,24 @@ function buildChips() {
   const bySrc = {};
   for (const it of state.items) bySrc[it.src] = (bySrc[it.src] || 0) + 1;
   $("#sources").innerHTML = Object.entries(bySrc).sort((a, b) => b[1] - a[1])
-    .map(([k, n]) => `<button class="chip src" data-src="${esc(k)}" type="button">${esc(SOURCE_LABEL[k] || k)} <span class="n">${n.toLocaleString("en")}</span></button>`).join("");
+    .map(([k, n]) => `<button class="chip src" data-src="${esc(k)}" type="button">${esc(tv(SOURCE_LABEL[k] || k))} <span class="n">${num(n)}</span></button>`).join("");
 
   const count = (key, val) => state.items.filter(it =>
     key === "k" ? it.k === val : (it.f || []).includes(val)).length;
   const kinds = [...new Set(state.items.map(i => i.k))]
     .sort((a, b) => count("k", b) - count("k", a));
   $("#kinds").innerHTML = kinds.map(k =>
-    `<button class="chip" data-kind="${esc(k)}" type="button">${esc(k)} <span class="n">${count("k", k)}</span></button>`).join("");
+    `<button class="chip" data-kind="${esc(k)}" type="button">${esc(tv(k))} <span class="n">${num(count("k", k))}</span></button>`).join("");
   const forms = [...new Set(state.items.map(i => i.fm).filter(Boolean))]
     .sort((a, b) => state.items.filter(i => i.fm === b).length
                   - state.items.filter(i => i.fm === a).length);
   $("#forms").innerHTML = forms.map(f =>
-    `<button class="chip" data-form="${esc(f)}" type="button">${esc(f)} <span class="n">${state.items.filter(i => i.fm === f).length.toLocaleString("en")}</span></button>`).join("");
+    `<button class="chip" data-form="${esc(f)}" type="button">${esc(tv(f))} <span class="n">${num(state.items.filter(i => i.fm === f).length)}</span></button>`).join("");
 
   const fins = [...new Set(state.items.flatMap(i => i.f || []))]
     .sort((a, b) => count("f", b) - count("f", a));
   $("#finishes").innerHTML = fins.map(f =>
-    `<button class="chip" data-fin="${esc(f)}" type="button">${esc(f)} <span class="n">${count("f", f)}</span></button>`).join("");
+    `<button class="chip" data-fin="${esc(f)}" type="button">${esc(tv(f))} <span class="n">${num(count("f", f))}</span></button>`).join("");
 }
 
 function buildTimeline() {
@@ -352,7 +356,7 @@ function buildTimeline() {
     const l = (a - lo) / (hi - lo) * 100, r = (b - lo) / (hi - lo) * 100;
     $("#tl-fill").style.left = l + "%";
     $("#tl-fill").style.width = (r - l) + "%";
-    $("#tl-label").textContent = state.yearWideOpen ? "all dates" : `${a}–${b}`;
+    $("#tl-label").textContent = state.yearWideOpen ? t("alldates") : `${a}–${b}`;
     refresh();
   };
   mn.oninput = mx.oninput = sync;
@@ -362,8 +366,8 @@ function buildTimeline() {
 /* ── one refresh for every view ── */
 function refresh() {
   const n = visible().length;
-  $("#result-count").textContent =
-    `${n.toLocaleString("en")} of ${state.items.length.toLocaleString("en")}`;
+  $("#result-count").textContent = t("count", {
+    n: num(n), total: num(state.items.length) });
   if (state.view === "map") buildMarkers();
   else if (state.view === "gallery") renderGallery();
   else renderTable();
@@ -463,6 +467,15 @@ function wire() {
     else $("#sheet").hidden = true;
   });
 
+  // Language toggle. Remembered per browser; nothing else about the visitor is
+  // stored. Switching relabels everything in place — no reload, no refetch —
+  // because only the UI and the controlled vocabulary are translated; the data
+  // itself is language-neutral apart from the titles, which stay in their
+  // original language by design (see i18n.js).
+  $("#lang").onclick = () => {
+    setLang(LANG === "en" ? "es" : "en");
+  };
+
   // Shared convention: the brand reloads the project to its clean default view.
   document.querySelector(".brand").addEventListener("click", e => {
     e.preventDefault();
@@ -471,18 +484,45 @@ function wire() {
   });
 }
 
+function renderStats() {
+  const places = new Set(state.items.map(i => i.p + "|" + i.m)).size;
+  $("#stats").textContent = t("stats", { n: num(state.items.length), p: num(places) });
+}
+
+function setLang(lang) {
+  LANG = lang;
+  try { localStorage.setItem("carving.lang", lang); } catch (e) { /* private mode */ }
+  applyStatic();
+  renderStats();
+  $("#build").textContent = `v${DATA_V} · ${BUILD_AT}`;
+  buildChips();
+  // Re-tick the chips that were active before the relabel.
+  for (const c of $$("#kinds .chip")) c.classList.toggle("on", state.kinds.has(c.dataset.kind));
+  for (const c of $$("#finishes .chip")) c.classList.toggle("on", state.finishes.has(c.dataset.fin));
+  for (const c of $$("#forms .chip")) c.classList.toggle("on", state.forms.has(c.dataset.form));
+  for (const c of $$("#sources .chip")) c.classList.toggle("on", state.sources.has(c.dataset.src));
+  $("#tl-min").dispatchEvent(new Event("input"));   // relabels the slider, then refreshes
+}
+
+function initialLang() {
+  try {
+    const saved = localStorage.getItem("carving.lang");
+    if (saved === "en" || saved === "es") return saved;
+  } catch (e) { /* private mode */ }
+  return (navigator.language || "en").toLowerCase().startsWith("es") ? "es" : "en";
+}
+
 /* ── boot ── */
 (async function init() {
+  LANG = initialLang();
+  applyStatic();
   $("#build").textContent = `v${DATA_V} · ${BUILD_AT}`;
   const res = await fetch(`carving/data/carvings.json?v=${DATA_V}`);
   const data = await res.json();
   state.items = data.items;
   state.meta = data.meta;
 
-  const places = new Set(state.items.map(i => i.p + "|" + i.m)).size;
-  $("#stats").textContent =
-    `${state.items.length.toLocaleString("en")} carvings · ${places.toLocaleString("en")} places`;
-
+  renderStats();
   initMap();
   buildChips();
   buildTimeline();   // calls refresh() through sync()

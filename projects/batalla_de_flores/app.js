@@ -1744,6 +1744,108 @@ function photoCredit(entry) {
     ? `<span class="credito">Foto cedida por ${esc(entry.image_credit)}</span>` : "";
 }
 
+/* ── visor de fotos ────────────────────────────────────────────────────────
+ *
+ * Se abre ENCIMA de la aplicacion. Antes cada foto era un enlace con
+ * target="_blank": sacaba al visitante a batalladeflores.net o a un JPEG suelto
+ * y perdia donde estaba mirando.
+ *
+ * La galeria es lo que haya pintado en el panel de detalle en ese momento: en
+ * una edicion, las carrozas de ese ano; en un grupo, las suyas. No hay que
+ * decidir nada, basta con recorrer el DOM en orden. */
+const lb = { fotos: [], indice: 0 };
+
+/* Los cuatro datos que siempre acompanan a una foto. */
+function photoMeta(entry) {
+  const puesto = entry.position != null
+    ? `${entry.category ? `${entry.category} · ` : ""}${entry.position}.º`
+    : "";
+  return {
+    nombre: entry.name,
+    grupo: entry.group_canonical || "",
+    anio: String(entry.year),
+    puesto,
+    credito: entry.image_credit || "",
+    origen: entry.float_url || "",
+  };
+}
+
+/* Se guardan en el propio elemento para no tener que buscar la carroza otra vez
+ * al pulsar: el DOM ya sabe a que corresponde cada imagen. */
+function photoAttrs(entry, url) {
+  const m = photoMeta(entry);
+  return `data-photo="${esc(url)}" data-nombre="${esc(m.nombre)}" data-grupo="${esc(m.grupo)}"
+    data-anio="${esc(m.anio)}" data-puesto="${esc(m.puesto)}" data-credito="${esc(m.credito)}"
+    data-origen="${esc(m.origen)}"`;
+}
+
+function abrirVisor(elemento) {
+  lb.fotos = [...document.querySelectorAll("#detail [data-photo]")];
+  lb.indice = Math.max(0, lb.fotos.indexOf(elemento));
+  document.getElementById("lightbox").hidden = false;
+  document.body.classList.add("lb-abierto");
+  pintarVisor();
+  track("foto/abrir", "Ver foto", true);
+}
+
+function cerrarVisor() {
+  document.getElementById("lightbox").hidden = true;
+  document.body.classList.remove("lb-abierto");
+}
+
+function moverVisor(paso) {
+  if (!lb.fotos.length) return;
+  lb.indice = (lb.indice + paso + lb.fotos.length) % lb.fotos.length;
+  pintarVisor();
+}
+
+function pintarVisor() {
+  const el = lb.fotos[lb.indice];
+  if (!el) return cerrarVisor();
+  const d = el.dataset;
+  document.getElementById("lb-img").src = d.photo;
+  document.getElementById("lb-img").alt = d.nombre;
+  document.getElementById("lb-pie").innerHTML = `
+    <span class="lb-nombre">${esc(d.nombre)}</span>
+    <span class="lb-datos">
+      ${d.grupo ? `<b>${esc(d.grupo)}</b>` : ""}
+      <span>${esc(d.anio)}</span>
+      ${d.puesto ? `<span class="lb-puesto">${esc(d.puesto)}</span>` : ""}
+    </span>
+    ${d.credito ? `<span class="lb-credito">Foto cedida por ${esc(d.credito)}</span>` : ""}
+    <span class="lb-contador">${lb.indice + 1} de ${lb.fotos.length}</span>`;
+  // Precarga de la siguiente: pasar fotos de 1600 px sin esto parpadea.
+  const sig = lb.fotos[(lb.indice + 1) % lb.fotos.length];
+  if (sig) new Image().src = sig.dataset.photo;
+  document.querySelectorAll(".lb-nav").forEach(b => { b.hidden = lb.fotos.length < 2; });
+}
+
+function setupVisor() {
+  document.getElementById("lb-close").addEventListener("click", cerrarVisor);
+  document.getElementById("lb-prev").addEventListener("click", () => moverVisor(-1));
+  document.getElementById("lb-next").addEventListener("click", () => moverVisor(1));
+  document.getElementById("lightbox").addEventListener("click", event => {
+    // Pulsar el fondo cierra; sobre la foto o los botones, no.
+    if (event.target.id === "lightbox") cerrarVisor();
+  });
+  document.addEventListener("keydown", event => {
+    if (document.getElementById("lightbox").hidden) return;
+    if (event.key === "Escape") cerrarVisor();
+    if (event.key === "ArrowLeft") moverVisor(-1);
+    if (event.key === "ArrowRight") moverVisor(1);
+  });
+  // Deslizar en el movil.
+  let x0 = null;
+  const caja = document.getElementById("lightbox");
+  caja.addEventListener("touchstart", e => { x0 = e.changedTouches[0].clientX; }, { passive: true });
+  caja.addEventListener("touchend", e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) moverVisor(dx < 0 ? 1 : -1);
+    x0 = null;
+  }, { passive: true });
+}
+
 function renderGallery(entries) {
   const images = entries.flatMap(entry =>
     (entry.image_urls || []).map(url => ({ url, entry }))).slice(0, 24);
@@ -1753,11 +1855,10 @@ function renderGallery(entries) {
     <div class="gallery">
       ${images.map(({ url, entry }) => `
         <figure class="shot">
-          <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}${
-               entry.image_credit ? `, foto de ${esc(entry.image_credit)}` : ", imagen alojada en batalladeflores.net"}">
+          <button type="button" class="shot-btn" ${photoAttrs(entry, url)}
+             title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}">
             <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
-          </a>
+          </button>
           <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small>
             ${photoCredit(entry)}</figcaption>
         </figure>`).join("")}
@@ -1935,7 +2036,7 @@ function renderEditionDetail(edition) {
           ${shown.map(entry => `
             <tr>
               ${withPhotos ? `<td class="c-photo">${(entry.image_urls || []).length
-                ? `<button class="thumb" type="button" data-float="${esc(entry.id)}"
+                ? `<button class="thumb" type="button" ${photoAttrs(entry, entry.image_urls[0])}
                      data-tip="${esc(entry.name)}"><img src="${esc(thumbUrl(entry.image_urls[0]))}"
                      alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer"></button>`
                 : ""}</td>` : ""}
@@ -2136,11 +2237,10 @@ function renderFloatDetail(entry) {
       <div class="gallery gallery-big">
         ${entry.image_urls.map(url => `
           <figure class="shot">
-            <a href="${esc(entry.float_url || url)}" target="_blank" rel="noopener"
-               title="${esc(entry.name)} (${entry.year})${entry.image_credit
-                 ? `, foto de ${esc(entry.image_credit)}` : ", imagen alojada en batalladeflores.net"}">
-              <img src="${esc(url)}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
-            </a>
+            <button type="button" class="shot-btn" ${photoAttrs(entry, url)}
+               title="${esc(entry.name)} (${entry.year})">
+              <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+            </button>
             ${entry.image_credit ? `<figcaption>${photoCredit(entry)}</figcaption>` : ""}
           </figure>`).join("")}
       </div>`
@@ -2836,6 +2936,9 @@ function bindEvents() {
       return;
     }
 
+    const foto = event.target.closest("[data-photo]");
+    if (foto) { abrirVisor(foto); return; }
+
     if (event.target.closest("#share-pending")) {
       shareUrl(`${location.origin}${location.pathname}#/pendiente`,
         "Batalla de Flores de Laredo · lo que queda por resolver",
@@ -2972,6 +3075,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     bindEvents();
     setupTooltip();
     setupReport();
+    setupVisor();
     applyFilters();
     renderNocheMagica();
 

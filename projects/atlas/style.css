@@ -317,13 +317,15 @@ body.resizing #map { pointer-events: none; }
 #worklist.gallery .gcell .th, #table-gallery .gcell .th {
   width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block;
   cursor: zoom-in; background: #efe9df; }
-/* graceful "no image" placeholder — a faint framed-picture glyph + label */
+/* graceful "no image" placeholder — a faint framed-picture glyph centred, "NO IMAGE" below it */
 .th.ph { background: #efe9df; display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 3px; text-align: center; color: #a4977f; }
-.th.ph::before { content: "🖼"; filter: grayscale(1); opacity: .42; line-height: 1; font-size: 17px; }
-.th.ph::after { content: "No image"; font-size: 8.5px; text-transform: uppercase; letter-spacing: .04em; opacity: .85; }
-.gcell .th.ph::before { font-size: 34px; }
-.gcell .th.ph::after { font-size: 11px; }
+  justify-content: center; gap: 5px; text-align: center; color: #a4977f; }
+.th.ph::before { content: "🖼"; filter: grayscale(1); opacity: .45; line-height: 1; font-size: 20px; }
+.th.ph::after { content: "No image"; font-size: 8.5px; text-transform: uppercase; letter-spacing: .05em; opacity: .85; }
+.gcell .th.ph::before { font-size: 52px; }
+.gcell .th.ph::after { font-size: 11px; letter-spacing: .08em; }
+/* the gallery image rule forces display:block on .th — restore flex on the placeholder so it centres */
+#worklist.gallery .gcell .th.ph, #table-gallery .gcell .th.ph { display: flex; }
 .gcell .gmeta { padding: 4px 7px 6px; min-width: 0; }
 .gcell .gm1 { font-size: 11.5px; font-weight: 600; color: var(--ink); line-height: 1.25;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

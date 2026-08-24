@@ -15,18 +15,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="carving/vendor/leaflet.css">
   <link rel="stylesheet" href="carving/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="carving/style.css?v=0.3.2">
+  <link rel="stylesheet" href="carving/style.css?v=0.4.2">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
-    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
-    <span id="build" class="build" title="Version and last update"></span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html" data-i18n="nav.other">other interactive projects</a>
+    <button id="lang" class="langbtn" type="button" data-i18n="lang.switch">Español</button>
+    <span id="build" class="build" data-i18n-title="nav.build"></span>
   </nav>
 
   <header id="bar">
-    <a class="brand" href="carving.html" title="Reload the atlas (clears filters)">
+    <a class="brand" href="carving.html" data-i18n-title="brand.reload">
       <svg class="mark" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
         <path d="M14.8 2.6l6.6 6.6-2.5 2.5-6.6-6.6z" fill="#6b4423"/>
         <path d="M12.3 5.1l6.6 6.6-1.3 1.3-6.6-6.6z" fill="#c9a227"/>
@@ -35,8 +36,8 @@
         <path d="M6.2 15.4l.9 3.6 3.6.9-1.9 1.9c-2.6.6-4.9-1.4-4.5-4z" fill="#8a5a2b"/>
       </svg>
       <div>
-        <strong>Interactive Atlas of Wood Carving</strong>
-        <small>where the carvings are</small>
+        <strong data-i18n="brand.title">Interactive Atlas of Wood Carving</strong>
+        <small data-i18n="brand.tagline">where the carvings are</small>
       </div>
     </a>
     <div id="stats" class="stats">…</div>
@@ -44,13 +45,13 @@
 
   <div id="modes">
     <span id="view-tabs">
-      <button type="button" class="view-btn active" data-view="map" title="Map with the list of carvings beside it">🗺 Map &amp; list</button>
-      <button type="button" class="view-btn" data-view="gallery" title="Browse every carving as a photo grid">▦ Gallery</button>
-      <button type="button" class="view-btn" data-view="table" title="Browse every carving as a sortable table">☰ Table</button>
+      <button type="button" class="view-btn active" data-view="map" data-i18n="view.map" data-i18n-title="view.map.t">🗺 Map &amp; list</button>
+      <button type="button" class="view-btn" data-view="gallery" data-i18n="view.gallery" data-i18n-title="view.gallery.t">▦ Gallery</button>
+      <button type="button" class="view-btn" data-view="table" data-i18n="view.table" data-i18n-title="view.table.t">☰ Table</button>
     </span>
-    <input id="search" type="search" placeholder="Search — title, church, commune, carver…" autocomplete="off" aria-label="Search">
+    <input id="search" type="search" data-i18n-ph="search.ph" autocomplete="off" aria-label="Search">
     <span id="result-count" class="t-count"></span>
-    <button id="clear-filters" class="chip btn" type="button">Clear</button>
+    <button id="clear-filters" class="chip btn" type="button" data-i18n="clear">Clear</button>
   </div>
 
   <div id="filters">
@@ -62,11 +63,11 @@
     <span class="fsep"></span>
     <span id="finishes" class="chips" aria-label="Finish"></span>
     <span class="fsep"></span>
-    <label class="chip toggle" title="Only carvings whose maker is named in the record — about 7% of the corpus, because devotional carving is largely anonymous workshop art"><input type="checkbox" id="named-only"><span>Named carver</span></label>
+    <label class="chip toggle" data-i18n-title="named.t"><input type="checkbox" id="named-only"><span data-i18n="named">Named carver</span></label>
   </div>
 
   <div id="timeline">
-    <span class="tl-cap">Carved</span>
+    <span class="tl-cap" data-i18n="carved">Carved</span>
     <div class="tl-range">
       <div class="tl-track"></div>
       <div id="tl-fill" class="tl-fill"></div>
@@ -79,21 +80,21 @@
   <div id="main">
     <div id="map"></div>
     <aside id="panel">
-      <div id="panel-head">Carvings in view</div>
+      <div id="panel-head" data-i18n="panel.head">Carvings in view</div>
       <ul id="worklist"></ul>
     </aside>
   </div>
 
   <section id="gallery" hidden>
     <div id="grid" class="grid"></div>
-    <button id="more" class="more" type="button" hidden>Show more</button>
+    <button id="more" class="more" type="button" hidden></button>
   </section>
 
   <section id="table" hidden>
     <div id="table-wrap">
       <table id="works-table"><thead></thead><tbody></tbody></table>
     </div>
-    <button id="more-table" class="more" type="button" hidden>Show more</button>
+    <button id="more-table" class="more" type="button" hidden></button>
   </section>
 
   <div id="sheet" hidden>
@@ -108,13 +109,14 @@
 
   <footer id="foot">
     <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
-    · Data: <a href="https://www.pop.culture.gouv.fr/" target="_blank" rel="noopener">Base Palissy, Ministère de la Culture</a>
-    · Photographs are linked from their source, never redistributed
+    · <span data-i18n="foot.data">Data</span>: <a href="https://www.pop.culture.gouv.fr/" target="_blank" rel="noopener">Base Palissy</a>, <a href="https://dati.beniculturali.it/" target="_blank" rel="noopener">ArCo</a>, <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+    · <span data-i18n="foot.linked">Photographs are linked from their source, never redistributed</span>
   </footer>
 
   <script src="carving/vendor/leaflet.js"></script>
   <script src="carving/vendor/leaflet.markercluster.js"></script>
-  <script src="carving/app.js?v=0.3.2"></script>
+  <script src="carving/i18n.js?v=0.4.2"></script>
+  <script src="carving/app.js?v=0.4.2"></script>
   <script data-goatcounter="https://victorelvira.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>

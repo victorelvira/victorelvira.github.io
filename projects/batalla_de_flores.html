@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#b6465f">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=7ca28f0a">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=202bfb73">
 </head>
 <body>
   <nav id="navbar">
@@ -92,6 +92,18 @@
   <script data-goatcounter="https://victorelvira.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
+  <!-- Visor de fotos. Se abre encima de la aplicación: abrir pestaña nueva
+       sacaba al visitante del sitio y perdía dónde estaba mirando. -->
+  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto">
+    <button id="lb-close" class="lb-close" type="button" aria-label="Cerrar">✕</button>
+    <button id="lb-prev" class="lb-nav lb-prev" type="button" aria-label="Anterior">‹</button>
+    <button id="lb-next" class="lb-nav lb-next" type="button" aria-label="Siguiente">›</button>
+    <figure class="lb-figura">
+      <img id="lb-img" alt="">
+      <figcaption id="lb-pie" class="lb-pie"></figcaption>
+    </figure>
+  </div>
+
   <!-- Formulario de corrección. Se abre desde el botón «¿Algo mal?» de cada
        ficha, con el contexto ya relleno. -->
   <div id="report-back" class="report-back" hidden>
@@ -131,7 +143,7 @@
     </form>
   </div>
 
-  <script src="batalla_de_flores/app.js?v=d5abf299"></script>
+  <script src="batalla_de_flores/app.js?v=4b315c4f"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
