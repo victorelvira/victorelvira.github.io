@@ -186,6 +186,18 @@ a { color: inherit; }
 .controls select:focus-visible { outline: 2px solid var(--rose); outline-offset: 1px; }
 
 .toggle { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); white-space: nowrap; }
+/* El mismo toggle, pero dentro de la barra de la pestana Carrozas: ahi convive
+ * con botones, asi que se le da su caja para que no flote suelto. */
+.tool-toggle {
+  padding: 3px 9px 3px 7px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--panel); font-size: 12px; cursor: pointer;
+}
+.tool-toggle:hover { border-color: var(--gold); }
+.tool-toggle:has(input:checked) {
+  border-color: var(--gold); background: #fdf6e8; color: var(--gold); font-weight: 600;
+}
+.tool-toggle svg { width: 13px; height: 13px; vertical-align: -2px; }
+.tool-toggle span { display: inline-flex; align-items: center; gap: 4px; }
 
 .ghost {
   font: inherit; padding: 4px 10px; cursor: pointer;
@@ -1045,6 +1057,14 @@ body.lb-abierto { overflow: hidden; }
   border-radius: 0 0 6px 6px; color: #fff; text-align: left;
 }
 .lb-nombre { display: block; font-size: 15px; font-weight: 700; line-height: 1.25; }
+/* El nombre del pie es la salida del carrusel hacia la ficha: se ve que se
+   puede pulsar, pero sin gritar, que la protagonista es la foto. */
+.lb-link {
+  border: 0; padding: 0; background: none; cursor: pointer;
+  color: inherit; font: inherit; text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, .35);
+}
+.lb-link:hover { border-bottom-color: currentColor; }
 .lb-datos { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 2px; font-size: 12.5px; opacity: 0.92; }
 .lb-datos b { font-weight: 600; }
 .lb-puesto {

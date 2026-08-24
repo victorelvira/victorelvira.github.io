@@ -46,6 +46,7 @@ const state = {
   decade: "all",
   status: "all",
   rankedOnly: false,
+  winnersOnly: false,
   sort: { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } },
   openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
@@ -216,6 +217,10 @@ function filteredFloats() {
   const visibleYears = new Set(state.filtered.map(edition => edition.year));
   return state.floats.filter(entry =>
     visibleYears.has(entry.year)
+    // "Ganadora" es el 1.er puesto, sea de la categoria que sea: en los anos de
+    // categoria unica hay una, y desde que se parte en A y B hay dos. Filtrar
+    // solo la A dejaria fuera media historia de la fiesta.
+    && (!state.winnersOnly || entry.position === 1)
     && (!state.category || entry.category === state.category)
     && (!query || entry.search.includes(query)));
 }
@@ -508,6 +513,17 @@ function gridSort(hidden = false) {
       title="Invertir el orden">${dir === 1 ? "↑" : "↓"}</button></span>`;
 }
 
+/* Filtro de ganadoras. Va en la barra de la pestana y no en los controles
+ * generales de arriba porque solo tiene sentido aqui: en Ediciones o en Grupos
+ * no hay nada que filtrar por puesto. */
+function winnersToggle() {
+  return `
+    <label class="toggle tool-toggle" title="Solo las que ganaron su categoría">
+      <input class="winners-only" type="checkbox"${state.winnersOnly ? " checked" : ""}>
+      <span>${ICON_TROPHY} Solo ganadoras</span>
+    </label>`;
+}
+
 function viewToggle() {
   return `
     <div class="view-toggle">
@@ -522,7 +538,7 @@ function viewToggle() {
  * 318 en blanco esto parecia roto, y el contador ya avisa de cuantas quedan. */
 function renderFloatGrid(rows) {
   const withPhoto = rows.filter(entry => (entry.image_urls || []).length);
-  els.indexTools.innerHTML = `${viewToggle()}${gridSort()}${categoryNote()}`;
+  els.indexTools.innerHTML = `${viewToggle()}${gridSort()}${winnersToggle()}${categoryNote()}`;
   els.indexCount.textContent = `${num(withPhoto.length)} con foto`;
 
   if (!withPhoto.length) {
@@ -533,7 +549,8 @@ function renderFloatGrid(rows) {
   els.indexBody.innerHTML = `<div class="float-grid">${sortRows("floats", withPhoto).map(entry => {
     const active = state.selection?.kind === "float" && state.selection.id === entry.id;
     return `
-      <button class="tile${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
+      <button class="tile${active ? " is-active" : ""}" type="button"
+              ${photoAttrs(entry, entry.image_urls[0])}>
         <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
         ${winnerBadge(entry)}
         <span class="tile-name">${esc(entry.name)}</span>
@@ -547,7 +564,7 @@ function renderFloatList() {
   const rows = filteredFloats();
   if (state.floatView === "grid") return renderFloatGrid(rows);
 
-  els.indexTools.innerHTML = `${viewToggle()}${gridSort(true)}${categoryNote()}`;
+  els.indexTools.innerHTML = `${viewToggle()}${gridSort(true)}${winnersToggle()}${categoryNote()}`;
   setCount(rows.length, state.floats.length, "carrozas");
   if (!rows.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna carroza encaja con la búsqueda.</p>';
@@ -1820,11 +1837,18 @@ function photoAttrs(entry, url) {
   const m = photoMeta(entry);
   return `data-photo="${esc(url)}" data-nombre="${esc(m.nombre)}" data-grupo="${esc(m.grupo)}"
     data-anio="${esc(m.anio)}" data-puesto="${esc(m.puesto)}" data-credito="${esc(m.credito)}"
-    data-origen="${esc(m.origen)}"`;
+    data-origen="${esc(m.origen)}" data-ficha="${esc(entry.id)}"`;
 }
 
+/* La galeria depende de DONDE se pulso.
+ *
+ * En el panel de detalle son las fotos de esa edicion o ese grupo. En la
+ * cuadricula de Carrozas son TODAS las que haya filtradas, que es lo que
+ * convierte la pestana en un carrusel: con el tick de ganadoras puesto,
+ * pasas una a una todas las ganadoras de la historia. */
 function abrirVisor(elemento) {
-  lb.fotos = [...document.querySelectorAll("#detail [data-photo]")];
+  const ambito = elemento.closest("#index-body") ? "#index-body" : "#detail";
+  lb.fotos = [...document.querySelectorAll(`${ambito} [data-photo]`)];
   lb.indice = Math.max(0, lb.fotos.indexOf(elemento));
   document.getElementById("lightbox").hidden = false;
   document.body.classList.add("lb-abierto");
@@ -1850,7 +1874,10 @@ function pintarVisor() {
   document.getElementById("lb-img").src = d.photo;
   document.getElementById("lb-img").alt = d.nombre;
   document.getElementById("lb-pie").innerHTML = `
-    <span class="lb-nombre">${esc(d.nombre)}</span>
+    ${d.ficha
+      ? `<button class="lb-nombre lb-link" type="button" data-lb-ficha="${esc(d.ficha)}"
+           title="Abrir la ficha de esta carroza">${esc(d.nombre)} ›</button>`
+      : `<span class="lb-nombre">${esc(d.nombre)}</span>`}
     <span class="lb-datos">
       ${d.grupo ? `<b>${esc(d.grupo)}</b>` : ""}
       <span>${esc(d.anio)}</span>
@@ -2094,7 +2121,8 @@ function renderEditionDetail(edition) {
                 : ""}</td>` : ""}
               <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.position === 1
                 ? `${ICON_TROPHY}` : ""}${cats.length > 1 || !entry.category ? "" : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
-              <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}${reviewMark(entry)}${prizeChips(entry)
+              <td class="name" data-sort="${esc(normalizeText(entry.name))}"><button class="link t-float"
+                type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>${reviewMark(entry)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
                 ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
@@ -2117,7 +2145,8 @@ function renderEditionDetail(edition) {
         <tbody>
           ${unranked.map(entry => `
             <tr>
-              <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
+              <td class="name" data-sort="${esc(normalizeText(entry.name))}"><button class="link t-float"
+                type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>${reviewMark(entry)}</td>
               <td class="group" data-sort="${esc(normalizeText(entry.group_canonical))}">${entry.group_canonical
                 ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
                 : "–"}</td>
@@ -2983,7 +3012,7 @@ function closeDetail() {
 }
 
 function resetToStart() {
-  state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false; state.category = null;
+  state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false; state.winnersOnly = false; state.category = null;
   els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
   state.sort = { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } };
   state.openDecade = null;
@@ -3005,7 +3034,7 @@ function bindEvents() {
   els.status.addEventListener("change", event => { state.status = event.target.value; refresh(); });
   els.rankedOnly.addEventListener("change", event => { state.rankedOnly = event.target.checked; refresh(); });
   els.clearFilters.addEventListener("click", () => {
-    state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false;
+    state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false; state.winnersOnly = false;
     state.category = null;
     els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
     refresh();
@@ -3014,6 +3043,11 @@ function bindEvents() {
   els.tabs.forEach(tab => tab.addEventListener("click", () => setMode(tab.dataset.mode)));
 
   els.indexTools.addEventListener("change", event => {
+    if (event.target.classList.contains("winners-only")) {
+      state.winnersOnly = event.target.checked;
+      renderFloatList();
+      return;
+    }
     if (!event.target.classList.contains("grid-sort")) return;
     const key = event.target.value;
     state.sort.floats = { key, dir: SORTS.floats[key].type === "text" ? 1 : -1 };
@@ -3063,7 +3097,14 @@ function bindEvents() {
       return;
     }
 
-    const foto = event.target.closest("[data-photo]");
+      const fichaVisor = event.target.closest("[data-lb-ficha]");
+    if (fichaVisor) {
+      cerrarVisor();
+      select("float", fichaVisor.dataset.lbFicha);
+      return;
+    }
+
+  const foto = event.target.closest("[data-photo]");
     if (foto) { abrirVisor(foto); return; }
 
     if (event.target.closest("#share-pending")) {
