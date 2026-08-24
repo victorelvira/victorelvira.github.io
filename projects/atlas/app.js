@@ -82,10 +82,11 @@ const PAINTERS = [
   { slug: "guardi", name: "Francesco Guardi", file: "atlas/data/guardi.geojson" },
   { slug: "zuloaga", name: "Ignacio Zuloaga", file: "atlas/data/zuloaga.geojson" },
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
+  { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.46.7";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 00:08";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.47.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 00:22";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -157,7 +158,7 @@ const PALETTE = [
   "#a03f6a", "#3f6a3f", "#6a3f3f", "#3f3f6a", "#6a6a2f", "#2f6a6a", "#8f7a5a", "#5a5a8f",
   "#b0692f", "#2f8fb0", "#7a9c3f", "#9c3f7a", "#3f9c7a", "#9c6a3f", "#5f3f9c", "#3f7a9c",
   "#6a8f4a", "#b0417a", "#417a8f", "#8f6a41", "#7a41b0", "#41a06a", "#a0552f", "#4a6a8f",
-  "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a",
+  "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a", "#c9a227",
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -205,7 +206,7 @@ const ERA_OF = {
   carracci: "3", reni: "3",
   canaletto: "4", tiepolo: "4", guardi: "4", turner: "4", friedrich: "4", delacroix: "4",
   zuloaga: "5",
-  dali: "6", miro: "6",
+  dali: "6", miro: "6", klimt: "6",
 };
 const erasOf = slug => [].concat(ERA_OF[slug] || []);
 
@@ -213,7 +214,7 @@ const erasOf = slug => [].concat(ERA_OF[slug] || []);
 const SCHOOLS = [
   { key: "it", label: "Italian" }, { key: "es", label: "Spanish" }, { key: "fr", label: "French" },
   { key: "nl", label: "Dutch" }, { key: "fl", label: "Flemish / Netherlandish" },
-  { key: "de", label: "German" }, { key: "en", label: "English" }, { key: "mx", label: "Mexican" },
+  { key: "de", label: "German" }, { key: "en", label: "English" }, { key: "mx", label: "Mexican" }, { key: "at", label: "Austrian" },
 ];
 const SCHOOL_OF = {
   duccio: "it", giotto: "it", masaccio: "it", fraangelico: "it", piero: "it", botticelli: "it",
@@ -231,7 +232,7 @@ const SCHOOL_OF = {
   // added 2026-08-22
   bellini: "it", canaletto: "it", tiepolo: "it", uccello: "it", lippi: "it", perugino: "it",
   bronzino: "it", carracci: "it", reni: "it", guardi: "it",
-  turner: "en", friedrich: "de", delacroix: "fr", zuloaga: "es", dali: "es", miro: "es",
+  turner: "en", friedrich: "de", delacroix: "fr", zuloaga: "es", dali: "es", miro: "es", klimt: "at",
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 
@@ -250,12 +251,12 @@ const BORN = {
   // added 2026-08-22
   uccello: 1397, lippi: 1406, bellini: 1430, perugino: 1448, bronzino: 1503, carracci: 1560,
   reni: 1575, tiepolo: 1696, canaletto: 1697, guardi: 1712, friedrich: 1774, turner: 1775,
-  delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904,
+  delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904, klimt: 1862,
 };
 const bornOf = slug => BORN[slug] || 9999;
 
 // death year per painter (Wikidata P570) — for the Timeline life-span labels
-const DIED = { artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
+const DIED = { klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
 const diedOf = slug => DIED[slug] || null;
 
 // short label per painter for the selector button (the first name is often wrong — "Ignacio"
@@ -277,7 +278,7 @@ const NICK = {
   turner: "Turner", bellini: "Bellini", friedrich: "Friedrich", canaletto: "Canaletto",
   delacroix: "Delacroix", tiepolo: "Tiepolo", uccello: "Uccello", lippi: "Lippi",
   perugino: "Perugino", bronzino: "Bronzino", carracci: "Carracci", reni: "Reni",
-  guardi: "Guardi", zuloaga: "Zuloaga", dali: "Dalí", miro: "Miró",
+  guardi: "Guardi", zuloaga: "Zuloaga", dali: "Dalí", miro: "Miró", klimt: "Klimt",
 };
 const nickOf = p => NICK[p.slug] || (p.name || "").split(" ")[0];
 let painterGroupBy = "period";   // "period" | "school"
@@ -1305,7 +1306,7 @@ document.getElementById("worklist").addEventListener("click", e => {
 (function wirePanelResize() {
   const handle = document.getElementById("panel-resize");
   if (!handle) return;
-  const MIN = 240, MAX = 720, root = document.documentElement;
+  const MIN = 240, MAX = 1040, root = document.documentElement;   // wider panel cap → the map can shrink more
   const saved = parseInt(localStorage.getItem("atlasPanelW") || "", 10);
   if (saved >= MIN && saved <= MAX) root.style.setProperty("--panel-w", saved + "px");
   let dragging = false, raf = 0;
