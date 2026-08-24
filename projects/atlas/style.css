@@ -302,15 +302,24 @@ body.resizing #map { pointer-events: none; }
 .gallery { list-style: none; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--thumb, 112px), 1fr));
   gap: 6px; padding: 8px; align-content: start; }
 .gallery[hidden] { display: none; }   /* the class's display:grid otherwise beats the [hidden] attribute */
-/* venue divider inside the gallery — as thin as possible so the thumbnails dominate.
-   id-scoped (#worklist / #table-gallery) so it beats the heavy list-mode "#worklist .grp" bar. */
-#worklist.gallery .grp, #table-gallery .grp {
-  grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline;
-  gap: 8px; padding: 7px 3px 1px; background: none; border: 0;
-  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
-#worklist.gallery .grp:first-child, #table-gallery .grp:first-child { padding-top: 1px; }
-#worklist.gallery .grp .n, #table-gallery .grp .n { font-weight: 600; }
 .gallery .sentinel { grid-column: 1 / -1; }
+
+/* ── museum "sets": venue name on top, thumbnails below, one tinted ground per museum ──
+   In grouped gallery the outer list is a plain block of stacked sets; the thumbnails live in a
+   nested .mgrid. Any leftover space at the tail of a museum is just the set's tinted padding —
+   it reads as intentional, never as a broken gap. Alternating tints keep neighbours distinct. */
+#worklist.gallery, #table-gallery.grouped:not([hidden]) { display: block; padding: 6px; }
+.mset { list-style: none; margin: 0 0 8px; padding: 5px 7px 8px; border-radius: 10px;
+  background: #f4eee2; border: 1px solid #e8dfcb; }
+.mset.alt { background: #eeecf1; border-color: #e1dfe7; }
+.mset:last-of-type { margin-bottom: 0; }
+.mhead { display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  padding: 3px 4px 6px; font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .03em; color: #6a5c45; line-height: 1.2; }
+.mhead .mn { overflow: hidden; text-overflow: ellipsis; }
+.mhead .n { flex: 0 0 auto; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.mgrid { list-style: none; margin: 0; padding: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb, 112px), 1fr)); gap: 6px; }
 .gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden; position: relative;
   border: 1px solid var(--line); background: #fff; display: block; }
 .gshare { position: absolute; top: 5px; right: 5px; z-index: 2; width: 27px; height: 27px; padding: 0;
@@ -333,19 +342,6 @@ body.resizing #map { pointer-events: none; }
 .gcell .th.ph::after { font-size: 11px; letter-spacing: .08em; }
 /* the gallery image rule forces display:block on .th — restore flex on the placeholder so it centres */
 #worklist.gallery .gcell .th.ph, #table-gallery .gcell .th.ph { display: flex; }
-/* table gallery grouped by museum — inline flow so museums never waste a row.
-   flex-wrap (not grid): thumbnails keep a fixed width, each museum introduced by a small
-   label card that flows in the same line; the next museum starts right after, no gaps. */
-#table-gallery.grouped { display: flex; flex-wrap: wrap; align-content: flex-start; }
-#table-gallery.grouped .gcell { flex: 0 0 auto; width: var(--thumb, 150px); }
-#table-gallery.grouped .grp {
-  flex: 0 0 auto; align-self: stretch; width: 96px; box-sizing: border-box;
-  display: flex; flex-direction: column; justify-content: center; gap: 3px;
-  padding: 8px 10px; margin: 0; background: none; border: 0; border-left: 3px solid #d8cbb2;
-  font-weight: 700; font-size: 11.5px; line-height: 1.22; letter-spacing: 0;
-  text-transform: none; color: var(--ink); }
-#table-gallery.grouped .grp .n { color: var(--muted); font-weight: 600; font-size: 10px;
-  font-variant-numeric: tabular-nums; }
 /* the "⛪ by museum" sub-toggle in the table bar */
 .subtick { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: var(--muted);
   cursor: pointer; white-space: nowrap; user-select: none; }
@@ -385,7 +381,7 @@ body.resizing #map { pointer-events: none; }
 #worklist .near-row .micon { flex: 0 0 auto; }
 #worklist .near-row .mname { font-size: 13px; font-weight: 600; line-height: 1.2; }
 #worklist .near-row .msub { color: var(--muted); font-size: 12px; margin-top: 1px; }
-#worklist li:not(.grp):not(.empty):not(.gcell) {
+#worklist li:not(.grp):not(.empty):not(.gcell):not(.mset) {
   display: flex; gap: 10px; align-items: center; cursor: pointer;
   padding: 8px 12px; border-bottom: 1px solid #f0ece3;
 }

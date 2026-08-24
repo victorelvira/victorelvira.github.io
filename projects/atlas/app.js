@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.43.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 18:53";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.43.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 19:02";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -957,38 +957,40 @@ function renderMuseumsTable() {
 }
 
 // ── Works table in gallery mode: the same tiles as the map panel, streamed with lazy images ──
-// Optionally grouped by museum. Grouping uses an *inline* flow (flex-wrap): each museum's works
-// run together, introduced by a small label card, so museums never force a full-width row break
-// and no grid cells are wasted at the tail of a small museum.
-let tableGallery = true, tGalGroup = true, tGalVis = [], tGalQueue = [], tGalCursor = 0;
+// Optionally grouped by museum, using the same "museum set" blocks as the panel (name on top,
+// thumbnails below, one tinted ground per museum). Ungrouped falls back to a dense flat grid.
+let tableGallery = true, tGalGroup = true, tGalVis = [];
+let tGalGroups = [], tGalGroupCursor = 0;   // grouped mode: museum sets
+let tGalFlat = [], tGalCursor = 0;          // ungrouped mode: flat tiles
 const TGAL_CHUNK = 60;
-// build a flat render plan {grp}|{p} grouped by museum, museums by city then name, works by year
-function tGalBuildGrouped(rows) {
+// group the filtered works by museum → sets ({location, city, items:[{p}]}), by city then name
+function tGalBuildGroups(rows) {
   const groups = new Map();
   for (const p of rows) {
     const k = museumKey(p);
     if (!groups.has(k)) groups.set(k, { location: p.location || "Unknown", city: p.city || "", items: [] });
-    groups.get(k).items.push(p);
+    groups.get(k).items.push({ p });
   }
   const ordered = [...groups.values()].sort((a, z) =>
     (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
-  const q = [];
-  for (const g of ordered) {
-    g.items.sort((a, z) => (yearNum(a) || 9999) - (yearNum(z) || 9999));
-    q.push({ grp: { location: g.location, city: g.city, count: g.items.length } });
-    for (const p of g.items) q.push({ p });
-  }
-  return q;
+  for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
+  return ordered;
+}
+function tGalHasMore() {
+  return tGalGroup ? tGalGroupCursor < tGalGroups.length : tGalCursor < tGalFlat.length;
 }
 function tGalAppend() {
   const g = document.getElementById("table-gallery");
-  const end = Math.min(tGalCursor + TGAL_CHUNK, tGalQueue.length);
   let html = "";
-  for (; tGalCursor < end; tGalCursor++) {
-    const e = tGalQueue[tGalCursor];
-    if (e.grp) html += `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
-      `<span class="n">${e.grp.count}</span></li>`;
-    else html += tileHTML(e, tGalVis);   // e = { p: props }
+  if (tGalGroup) {
+    let added = 0;
+    for (; tGalGroupCursor < tGalGroups.length && added < TGAL_CHUNK; tGalGroupCursor++) {
+      html += msetHTML(tGalGroups[tGalGroupCursor], tGalVis, tGalGroupCursor);
+      added += tGalGroups[tGalGroupCursor].items.length;
+    }
+  } else {
+    const end = Math.min(tGalCursor + TGAL_CHUNK, tGalFlat.length);
+    for (; tGalCursor < end; tGalCursor++) html += tileHTML(tGalFlat[tGalCursor], tGalVis);
   }
   g.insertAdjacentHTML("beforeend", html);
 }
@@ -999,8 +1001,9 @@ function renderWorksGallery() {
   document.getElementById("table-count").textContent =
     `${rows.length.toLocaleString()} work${rows.length === 1 ? "" : "s"}`;
   g.classList.toggle("grouped", tGalGroup);
-  tGalQueue = tGalGroup ? tGalBuildGrouped(rows) : rows.map(p => ({ p }));
-  tGalVis = []; tGalCursor = 0; g.innerHTML = "";
+  if (tGalGroup) { tGalGroups = tGalBuildGroups(rows); tGalGroupCursor = 0; }
+  else { tGalFlat = rows.map(p => ({ p })); tGalCursor = 0; }
+  tGalVis = []; g.innerHTML = "";
   g.style.setProperty("--thumb", document.getElementById("tv-thumb").value + "px");
   tGalAppend();
 }
@@ -1025,7 +1028,7 @@ function renderWorksGallery() {
     document.getElementById("table-gallery").style.setProperty("--thumb", slider.value + "px"));
   document.getElementById("table-wrap").addEventListener("scroll", e => {
     const el = e.target;
-    if (tableGallery && tableMode === "works" && tGalCursor < tGalQueue.length &&
+    if (tableGallery && tableMode === "works" && tGalHasMore() &&
         el.scrollTop + el.clientHeight >= el.scrollHeight - 700) tGalAppend();
   });
   document.getElementById("table-gallery").addEventListener("click", e => {
@@ -1117,8 +1120,10 @@ function buildTimeline(min, max) {
 // Only a few thumbnails are ever near the viewport, so this stays smooth on mobile while
 // still reaching every work — nothing is dropped. Lazy <img> means only visible thumbs fetch.
 const PANEL_CHUNK = 80;
-let panelQueue = [];    // flat render plan: {grp} headers and {w} work rows, in display order
+let panelQueue = [];    // list mode: flat render plan {grp} headers + {w} work rows
 let panelCursor = 0;
+let panelGroups = [];   // gallery mode: museum sets ({location, city, items}), streamed whole
+let panelGroupCursor = 0;
 let panelIO = null;
 let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 
@@ -1139,6 +1144,19 @@ function tileHTML(w, vis) {
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
 
+// a museum "set" for gallery mode: the venue name on TOP, then its thumbnails in a nested grid,
+// the whole block sharing ONE tinted ground so any trailing space reads as the set's own padding,
+// never as a broken gap. `idx` alternates the tint so two adjacent museums stay visually distinct.
+// Used by both the map panel and the table's picture grid (items are objects carrying `.p`).
+function msetHTML(g, vis, idx) {
+  let cells = "";
+  for (const w of g.items) cells += tileHTML(w, vis);
+  return `<li class="mset${idx % 2 ? " alt" : ""}">` +
+    `<div class="mhead"><span class="mn">${esc(g.location)}${g.city ? ` · ${esc(g.city)}` : ""}</span>` +
+    `<span class="n">${g.items.length}</span></div>` +
+    `<ul class="mgrid">${cells}</ul></li>`;
+}
+
 function panelRowHTML(w) {
   const i = panelVis.length; panelVis.push(w);
   const p = w.p;
@@ -1151,23 +1169,31 @@ function panelRowHTML(w) {
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;
 }
 
+function panelHasMore() {
+  return panelMode === "gallery" ? panelGroupCursor < panelGroups.length : panelCursor < panelQueue.length;
+}
 function appendPanelChunk() {
   const ul = document.getElementById("worklist");
   const oldSentinel = ul.querySelector(".sentinel");
   if (oldSentinel) oldSentinel.remove();
-  const end = Math.min(panelCursor + PANEL_CHUNK, panelQueue.length);
   let html = "";
-  for (; panelCursor < end; panelCursor++) {
-    const e = panelQueue[panelCursor];
-    if (e.grp) {
-      html += `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
-        `<span class="n">${e.grp.count}</span></li>`;   // grouped by museum in both list and gallery
-    } else {
-      html += panelMode === "gallery" ? panelCellHTML(e.w) : panelRowHTML(e.w);
+  if (panelMode === "gallery") {                   // museum sets, streamed whole (by work count)
+    let added = 0;
+    for (; panelGroupCursor < panelGroups.length && added < PANEL_CHUNK; panelGroupCursor++) {
+      html += msetHTML(panelGroups[panelGroupCursor], panelVis, panelGroupCursor);
+      added += panelGroups[panelGroupCursor].items.length;
+    }
+  } else {                                          // list mode: flat rows with venue header bars
+    const end = Math.min(panelCursor + PANEL_CHUNK, panelQueue.length);
+    for (; panelCursor < end; panelCursor++) {
+      const e = panelQueue[panelCursor];
+      html += e.grp
+        ? `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span><span class="n">${e.grp.count}</span></li>`
+        : panelRowHTML(e.w);
     }
   }
   ul.insertAdjacentHTML("beforeend", html);
-  if (panelCursor < panelQueue.length) {           // more to come → sentinel + observe
+  if (panelHasMore()) {                             // more to come → sentinel + observe
     ul.insertAdjacentHTML("beforeend", `<li class="sentinel" aria-hidden="true"></li>`);
     const s = ul.querySelector(".sentinel");
     if (!panelIO) panelIO = new IntersectionObserver(
@@ -1207,10 +1233,12 @@ function renderPanel() {
     ul.innerHTML = `<li class="empty">Pan or zoom the map — the works in view are listed here.</li>`;
     return;
   }
-  // flatten to a render plan, then stream it in chunks
-  panelQueue = [];
+  // build both render plans (cheap); appendPanelChunk streams whichever the mode needs
+  for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
+  panelGroups = ordered;        // gallery mode → museum sets
+  panelGroupCursor = 0;
+  panelQueue = [];              // list mode → flat rows with header bars
   for (const g of ordered) {
-    g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
     panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length } });
     for (const w of g.items) panelQueue.push({ w });
   }
@@ -1252,7 +1280,7 @@ document.getElementById("worklist").addEventListener("click", e => {
   ["panel", "main"].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener("scroll", () => {
-      if (!state.near && panelCursor < panelQueue.length &&
+      if (!state.near && panelHasMore() &&
           el.scrollTop + el.clientHeight >= el.scrollHeight - 700) appendPanelChunk();
     });
   });
