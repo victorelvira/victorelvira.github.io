@@ -149,6 +149,11 @@ body {
 /* the map's own options (Now in / Painted in) — secondary, and only shown in the map view */
 #mapopts { display: inline-flex; gap: 6px; align-items: center; }
 #mapopts[hidden] { display: none; }
+/* one common free-text filter, right-aligned, applies to every view */
+#modes #filter { margin-left: auto; flex: 0 1 300px; min-width: 150px;
+  padding: 6px 13px; font: inherit; font-size: 13px;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; }
+@media (max-width: 640px) { #modes #filter { flex: 1 1 100%; margin-left: 0; order: 3; } }
 .mode-btn {
   font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);

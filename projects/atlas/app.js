@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.41.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 09:47";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.42.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 10:26";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -334,7 +334,7 @@ const places = [];   // {marker, kind, feats, lat, lon, shown}
 const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
 let panelVis = [];   // works currently listed in the panel
 const state = { mode: "current", museum: true, church: true, private: true,
-                acceptedOnly: true, museumFilter: null, near: null,
+                acceptedOnly: true, museumFilter: null, near: null, q: "",
                 yearMin: -Infinity, yearMax: Infinity, painters: {} };
 
 // museum index (derived from the works): each venue with its painters + work count
@@ -365,12 +365,19 @@ function inYear(p) {
   const y = yearNum(p);                       // unknown-date works stay visible
   return y == null || (y >= state.yearMin && y <= state.yearMax);
 }
+// a common free-text filter (title / painter / museum / city / country / year / medium),
+// accent-insensitive, shared by every view via passesAll + tablePass
+function matchesQ(p) {
+  if (!state.q) return true;
+  return [p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
+    .some(v => deacc(v).includes(state.q));
+}
 function passesAll(p) {
   const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"];   // no venue type on map 2
   const painterOk = state.painters[p.painter] !== false;
   const attrOk = !state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution);
   const museumOk = !state.museumFilter || museumKey(p) === state.museumFilter;
-  return painterOk && kindOk && attrOk && museumOk && inYear(p);
+  return painterOk && kindOk && attrOk && museumOk && inYear(p) && matchesQ(p);
 }
 // active coordinate per map: current location, or where it was painted (map 2)
 function activeCoord(f) {
@@ -831,14 +838,10 @@ function tablePass(p) {
   return state.painters[p.painter] !== false
     && (!state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution))
     && (!state.museumFilter || museumKey(p) === state.museumFilter)
-    && inYear(p);
+    && inYear(p) && matchesQ(p);
 }
-function tableSearch() { return (document.getElementById("table-search")?.value || "").toLowerCase().trim(); }
 function tableRows() {
-  const q = tableSearch();
-  let rows = allFeatures.map(f => f.properties).filter(tablePass);
-  if (q) rows = rows.filter(p => [p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
-    .some(v => (v || "").toString().toLowerCase().includes(q)));
+  const rows = allFeatures.map(f => f.properties).filter(tablePass);   // tablePass includes the text filter
   const k = tableSort.key, num = TABLE_COLS.find(c => c.key === k)?.num;
   rows.sort((a, b) => {
     const va = num ? (yearNum(a) ?? -1e9) : (a[k] || "").toString().toLowerCase();
@@ -849,7 +852,6 @@ function tableRows() {
 }
 // aggregate the same filtered works by venue → one row per museum
 function museumRows() {
-  const q = tableSearch();
   const m = new Map();
   for (const f of allFeatures) {
     const p = f.properties;
@@ -859,8 +861,7 @@ function museumRows() {
       lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0], painters: new Set(), count: 0 });
     const e = m.get(k); e.painters.add(p.painter); e.count++;
   }
-  let rows = [...m.values()].map(r => (r.npainters = r.painters.size, r));
-  if (q) rows = rows.filter(r => [r.location, r.city, r.country].some(v => (v || "").toLowerCase().includes(q)));
+  const rows = [...m.values()].map(r => (r.npainters = r.painters.size, r));
   const k = museumSort.key, num = MUSEUM_COLS.find(c => c.key === k)?.num;
   rows.sort((a, b) => {
     const va = num ? (a[k] || 0) : (a[k] || "").toLowerCase();
@@ -1021,11 +1022,18 @@ function setTableView(on) {
 }
 document.getElementById("v-table").addEventListener("click", () => setTableView(true));
 document.getElementById("v-mapview").addEventListener("click", () => setTableView(false));
-document.getElementById("table-search").addEventListener("input", renderTable);
+// one common free-text filter — applies to the map, the list/gallery AND the table at once
+{
+  let qt = 0;
+  document.getElementById("filter").addEventListener("input", e => {
+    const v = deacc(e.target.value.trim());
+    clearTimeout(qt);
+    qt = setTimeout(() => { state.q = v; refresh(); }, 140);   // debounce: refresh rebuilds markers
+  });
+}
 document.querySelectorAll("#table-tabs .ttab").forEach(b => b.addEventListener("click", () => {
   tableMode = b.dataset.tmode;
   document.querySelectorAll("#table-tabs .ttab").forEach(x => x.classList.toggle("active", x === b));
-  document.getElementById("table-search").value = "";
   document.getElementById("table-wrap").scrollTop = 0;
   renderTable();
 }));

@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.41.0">
+  <link rel="stylesheet" href="atlas/style.css?v=0.42.0">
 </head>
 <body>
   <nav id="navbar">
@@ -60,6 +60,8 @@
       <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
       <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
     </span>
+    <input id="filter" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off"
+           title="Filters every view: map, list and table">
   </div>
 
   <div id="timeline">
@@ -95,7 +97,6 @@
         <button type="button" class="ttab active" data-tmode="works">Works</button>
         <button type="button" class="ttab" data-tmode="museums">Museums</button>
       </span>
-      <input id="table-search" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off">
       <span id="table-count" class="t-count"></span>
       <span id="table-view">
         <input id="tv-thumb" type="range" min="72" max="260" value="150" title="Thumbnail size">
@@ -164,7 +165,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.41.0"></script>
+  <script src="atlas/app.js?v=0.42.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
