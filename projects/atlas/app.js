@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.43.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 19:42";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.43.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 20:30";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -957,14 +957,13 @@ function renderMuseumsTable() {
 }
 
 // ── Works table in gallery mode: the same tiles as the map panel, streamed with lazy images ──
-// Optionally grouped by museum, using the same "museum set" blocks as the panel (name on top,
-// thumbnails below, one tinted ground per museum). Ungrouped falls back to a dense flat grid.
+// Optionally grouped by museum — same continuous-grid, colour-per-museum model as the panel:
+// one flat tile stream, each tile tagged with its museum's pastel + (first only) its name.
 let tableGallery = true, tGalGroup = true, tGalVis = [];
-let tGalGroups = [], tGalGroupCursor = 0;   // grouped mode: museum sets
-let tGalFlat = [], tGalCursor = 0;          // ungrouped mode: flat tiles
+let tGalFlat = [], tGalCursor = 0;   // flat stream of {w, grp?}
 const TGAL_CHUNK = 60;
-// group the filtered works by museum → sets ({location, city, items:[{p}]}), by city then name
-function tGalBuildGroups(rows) {
+function tGalBuildStream(rows) {
+  if (!tGalGroup) return rows.map(p => ({ w: { p } }));   // ungrouped → plain tiles
   const groups = new Map();
   for (const p of rows) {
     const k = museumKey(p);
@@ -974,24 +973,14 @@ function tGalBuildGroups(rows) {
   const ordered = [...groups.values()].sort((a, z) =>
     (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
   for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
-  return ordered;
+  return groupedTileStream(ordered);
 }
-function tGalHasMore() {
-  return tGalGroup ? tGalGroupCursor < tGalGroups.length : tGalCursor < tGalFlat.length;
-}
+function tGalHasMore() { return tGalCursor < tGalFlat.length; }
 function tGalAppend() {
   const g = document.getElementById("table-gallery");
+  const end = Math.min(tGalCursor + TGAL_CHUNK, tGalFlat.length);
   let html = "";
-  if (tGalGroup) {
-    let added = 0;
-    for (; tGalGroupCursor < tGalGroups.length && added < TGAL_CHUNK; tGalGroupCursor++) {
-      html += msetHTML(tGalGroups[tGalGroupCursor], tGalVis, tGalGroupCursor);
-      added += tGalGroups[tGalGroupCursor].items.length;
-    }
-  } else {
-    const end = Math.min(tGalCursor + TGAL_CHUNK, tGalFlat.length);
-    for (; tGalCursor < end; tGalCursor++) html += tileHTML(tGalFlat[tGalCursor], tGalVis);
-  }
+  for (; tGalCursor < end; tGalCursor++) { const it = tGalFlat[tGalCursor]; html += tileHTML(it.w, tGalVis, it.grp); }
   g.insertAdjacentHTML("beforeend", html);
 }
 function renderWorksGallery() {
@@ -1001,8 +990,7 @@ function renderWorksGallery() {
   document.getElementById("table-count").textContent =
     `${rows.length.toLocaleString()} work${rows.length === 1 ? "" : "s"}`;
   g.classList.toggle("grouped", tGalGroup);
-  if (tGalGroup) { tGalGroups = tGalBuildGroups(rows); tGalGroupCursor = 0; }
-  else { tGalFlat = rows.map(p => ({ p })); tGalCursor = 0; }
+  tGalFlat = tGalBuildStream(rows); tGalCursor = 0;
   tGalVis = []; g.innerHTML = "";
   g.style.setProperty("--thumb", document.getElementById("tv-thumb").value + "px");
   tGalAppend();
@@ -1122,17 +1110,24 @@ function buildTimeline(min, max) {
 const PANEL_CHUNK = 80;
 let panelQueue = [];    // list mode: flat render plan {grp} headers + {w} work rows
 let panelCursor = 0;
-let panelGroups = [];   // gallery + grouped: museum sets ({location, city, items}), streamed whole
-let panelGroupCursor = 0;
-let panelFlat = [];     // gallery + ungrouped: a flat list of works
+let panelFlat = [];     // gallery: a flat stream of {w, grp?} tiles (grp carries museum colour+label)
 let panelFlatCursor = 0;
 let panelGalGroup = true;   // "⛪ by museum" toggle for the miniature view
 let panelIO = null;
 let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 
+// Grouping by museum is carried by COLOUR, not by boxes: every thumbnail of a museum shares one
+// soft pastel, cycling through this 6-colour palette so no two adjacent museums collide. The tiles
+// flow in one continuous grid (the next museum starts right where the previous ended — no gaps),
+// and a run of same-coloured tiles reads as one museum even across row wraps. The museum name rides
+// on top of that museum's FIRST thumbnail.
+const MUS_PASTELS = ["#efe6d6", "#e2ecdf", "#e4e8f1", "#f1e5e0", "#ece4ef", "#dfeceb"];
+
 // gallery tile — lazy thumbnail (click → lightbox) + caption (click → the work "ficha").
 // `vis` is the index array the caption click resolves against (panelVis or the table's own).
-function tileHTML(w, vis) {
+// `grp` (optional) carries museum grouping: { color, label|null, count } — label only on the
+// museum's first tile → a name ribbon over the image; color tints the whole tile.
+function tileHTML(w, vis, grp) {
   const i = vis.length; vis.push(w);
   const p = w.p;
   const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
@@ -1140,24 +1135,27 @@ function tileHTML(w, vis) {
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
   const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
-  return `<li class="gcell" data-i="${i}" title="${esc(cap)}">${img}${share}<div class="gmeta">` +
+  const style = grp && grp.color ? ` style="background:${grp.color}"` : "";
+  const ribbon = grp && grp.label
+    ? `<div class="mlabel"><span class="mn">${esc(grp.label)}</span><span class="n">${grp.count}</span></div>` : "";
+  return `<li class="gcell${grp && grp.label ? " mstart" : ""}" data-i="${i}" title="${esc(cap)}"${style}>` +
+    `${ribbon}${img}${share}<div class="gmeta">` +
     `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
     `</div></li>`;
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
 
-// a museum "set" for gallery mode: the venue name on TOP, then its thumbnails in a nested grid,
-// the whole block sharing ONE tinted ground so any trailing space reads as the set's own padding,
-// never as a broken gap. `idx` alternates the tint so two adjacent museums stay visually distinct.
-// Used by both the map panel and the table's picture grid (items are objects carrying `.p`).
-function msetHTML(g, vis, idx) {
-  let cells = "";
-  for (const w of g.items) cells += tileHTML(w, vis);
-  return `<li class="mset${idx % 2 ? " alt" : ""}">` +
-    `<div class="mhead"><span class="mn">${esc(g.location)}${g.city ? ` · ${esc(g.city)}` : ""}</span>` +
-    `<span class="n">${g.items.length}</span></div>` +
-    `<ul class="mgrid">${cells}</ul></li>`;
+// flatten museum groups into a stream of tiles, each tagged with its museum's pastel + (first only)
+// its name. One continuous grid, so museums run back-to-back with no gaps; colour marks the sets.
+function groupedTileStream(ordered) {
+  const stream = [];
+  ordered.forEach((g, gi) => {
+    const color = MUS_PASTELS[gi % MUS_PASTELS.length];
+    const label = g.location + (g.city ? ` · ${g.city}` : "");
+    g.items.forEach((w, wi) => stream.push({ w, grp: { color, label: wi === 0 ? label : null, count: g.items.length } }));
+  });
+  return stream;
 }
 
 function panelRowHTML(w) {
@@ -1173,24 +1171,19 @@ function panelRowHTML(w) {
 }
 
 function panelHasMore() {
-  if (panelMode === "gallery")
-    return panelGalGroup ? panelGroupCursor < panelGroups.length : panelFlatCursor < panelFlat.length;
-  return panelCursor < panelQueue.length;
+  return panelMode === "gallery" ? panelFlatCursor < panelFlat.length : panelCursor < panelQueue.length;
 }
 function appendPanelChunk() {
   const ul = document.getElementById("worklist");
   const oldSentinel = ul.querySelector(".sentinel");
   if (oldSentinel) oldSentinel.remove();
   let html = "";
-  if (panelMode === "gallery" && panelGalGroup) {  // museum sets, streamed whole (by work count)
-    let added = 0;
-    for (; panelGroupCursor < panelGroups.length && added < PANEL_CHUNK; panelGroupCursor++) {
-      html += msetHTML(panelGroups[panelGroupCursor], panelVis, panelGroupCursor);
-      added += panelGroups[panelGroupCursor].items.length;
-    }
-  } else if (panelMode === "gallery") {            // ungrouped: a dense flat grid of thumbnails
+  if (panelMode === "gallery") {                   // one continuous grid; grp (if any) tints per museum
     const end = Math.min(panelFlatCursor + PANEL_CHUNK, panelFlat.length);
-    for (; panelFlatCursor < end; panelFlatCursor++) html += panelCellHTML(panelFlat[panelFlatCursor]);
+    for (; panelFlatCursor < end; panelFlatCursor++) {
+      const it = panelFlat[panelFlatCursor];
+      html += tileHTML(it.w, panelVis, it.grp);
+    }
   } else {                                          // list mode: flat rows with venue header bars
     const end = Math.min(panelCursor + PANEL_CHUNK, panelQueue.length);
     for (; panelCursor < end; panelCursor++) {
@@ -1243,9 +1236,9 @@ function renderPanel() {
   }
   // build the render plans (cheap); appendPanelChunk streams whichever the mode needs
   for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
-  panelGroups = ordered;        // gallery + grouped → museum cards
-  panelGroupCursor = 0;
-  panelFlat = ordered.flatMap(g => g.items);   // gallery + ungrouped → flat grid
+  panelFlat = panelGalGroup                    // gallery: one continuous tile stream
+    ? groupedTileStream(ordered)               //   grouped → each tile tagged with its museum colour
+    : ordered.flatMap(g => g.items).map(w => ({ w }));   // ungrouped → plain tiles
   panelFlatCursor = 0;
   panelQueue = [];              // list mode → flat rows with header bars
   for (const g of ordered) {
