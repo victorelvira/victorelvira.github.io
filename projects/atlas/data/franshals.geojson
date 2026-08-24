@@ -7449,7 +7449,7 @@
     "location": "Louvre",
     "city": "",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Paulus%20van%20Beresteyn%20-%20Louvre%20RF%20424.jpg?width=500",
     "qid": "Q17627408",
     "wikidata": "https://www.wikidata.org/wiki/Q17627408",
@@ -7457,6 +7457,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17627408",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8370,7 +8378,7 @@
     "location": "Minneapolis Institute of Art",
     "city": "Minneapolis",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/School%20of%20Frans%20Hals%20-%20The%20Laughing%20Toper%20-%2083.6.2%20-%20Minneapolis%20Institute%20of%20Arts.jpg?width=500",
     "qid": "Q20891406",
     "wikidata": "https://www.wikidata.org/wiki/Q20891406",
@@ -8378,6 +8386,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20891406",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

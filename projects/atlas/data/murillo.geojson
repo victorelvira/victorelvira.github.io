@@ -4558,7 +4558,7 @@
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "156 × 126 cm",
@@ -4574,7 +4574,15 @@
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q9396638",
-    "wga_url": "https://www.wga.hu/html/m/murillo/2/201muril.html"
+    "wga_url": "https://www.wga.hu/html/m/murillo/2/201muril.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -5329,7 +5337,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieja%20hilando%2C%20copia%20de%20un%20original%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695348",
     "wikidata": "https://www.wikidata.org/wiki/Q59695348",
@@ -5337,6 +5345,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59695348",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -5800,7 +5816,7 @@
     "location": "Walker Art Gallery",
     "city": "Liverpool",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20%281617-1682%29%20%28after%29%20-%20Virgin%20and%20Child%20-%20WAG%201352%20-%20Walker%20Art%20Gallery.jpg?width=500",
     "qid": "Q54918010",
     "wikidata": "https://www.wikidata.org/wiki/Q54918010",
@@ -5808,6 +5824,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q54918010",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6002,7 +6026,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Magdalena%20penitente%2C%20copia%20de%20un%20original%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695504",
     "wikidata": "https://www.wikidata.org/wiki/Q59695504",
@@ -6010,6 +6034,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59695504",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6029,7 +6061,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%2C%20de%20un%20disc%C3%ADpulo%20de%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695536",
     "wikidata": "https://www.wikidata.org/wiki/Q59695536",
@@ -6037,6 +6069,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59695536",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6056,7 +6096,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Ni%C3%B1o%20Jes%C3%BAs%20dormido%20sobre%20la%20cruz%2C%20de%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695537",
     "wikidata": "https://www.wikidata.org/wiki/Q59695537",
@@ -6064,6 +6104,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59695537",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6083,7 +6131,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%2C%20de%20un%20disc%C3%ADpulo%20de%20Bartolom%C3%A9%20Esteban%20Murillo.%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695538",
     "wikidata": "https://www.wikidata.org/wiki/Q59695538",
@@ -6091,6 +6139,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59695538",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6147,7 +6203,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabeza%20de%20San%20Pablo%2C%20copia%20de%20un%20original%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695599",
     "wikidata": "https://www.wikidata.org/wiki/Q59695599",
@@ -6155,6 +6211,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59695599",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6238,7 +6302,7 @@
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20verkondiging%20aan%20Maria%20Rijksmuseum%20SK-A-4704.jpeg?width=500",
     "qid": "Q17340675",
     "wikidata": "https://www.wikidata.org/wiki/Q17340675",
@@ -6246,6 +6310,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17340675",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -7278,7 +7350,7 @@
     "location": "Musée Condé",
     "city": "Chantilly",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chantilly%20%2860%29%2C%20mus%C3%A9e%20Cond%C3%A9%2C%20Bartolomeo-Esteban%20Murillo%2C%20Saint%20Joseph%20et%20l%27Enfant%20J%C3%A9sus.jpg?width=500",
     "qid": "Q106472264",
     "wikidata": "https://www.wikidata.org/wiki/Q106472264",
@@ -7286,6 +7358,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106472264",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8052,7 +8132,7 @@
     "location": "Brighton Museum & Art Gallery",
     "city": "Brighton and Hove",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20%281617-1682%29%20%28after%29%20-%20Mary%20Magdalene%20-%20FA000601%20-%20Brighton%20Museum%20%5E%20Art%20Gallery.jpg?width=500",
     "qid": "Q119051336",
     "wikidata": "https://www.wikidata.org/wiki/Q119051336",
@@ -8060,6 +8140,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119051336",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1840, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8702,7 +8790,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Francisco%20de%20Paula%2C%20de%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59710112",
     "wikidata": "https://www.wikidata.org/wiki/Q59710112",
@@ -8710,6 +8798,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59710112",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8729,7 +8825,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabeza%20de%20San%20Juan%20Bautista%2C%20atribuida%20a%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59710113",
     "wikidata": "https://www.wikidata.org/wiki/Q59710113",
@@ -8737,6 +8833,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59710113",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8830,7 +8934,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%20con%20cascada%2C%20atribuido%20a%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59780105",
     "wikidata": "https://www.wikidata.org/wiki/Q59780105",
@@ -8838,6 +8942,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59780105",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8857,7 +8969,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20caballero%2C%20de%20un%20disc%C3%ADpulo%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59979814",
     "wikidata": "https://www.wikidata.org/wiki/Q59979814",
@@ -8865,6 +8977,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59979814",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8884,7 +9004,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Murillo%20-%20San%20Francisco%20de%20Paula%2C%20P000990.jpg?width=500",
     "qid": "Q59979854",
     "wikidata": "https://www.wikidata.org/wiki/Q59979854",
@@ -8892,6 +9012,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59979854",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -10123,7 +10251,7 @@
     "location": "Guernsey Museum and Art Gallery",
     "city": "Saint Peter Port",
     "country": "Guernsey",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20%281617-1682%29%20%28school%20of%29%20-%20The%20Visitation%20-%20GUELI%20%2C%20GMAG%201973%20-%20Guernsey%20Museum%20and%20Art%20Gallery.jpg?width=500",
     "qid": "Q119864036",
     "wikidata": "https://www.wikidata.org/wiki/Q119864036",
@@ -10131,6 +10259,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119864036",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1800, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

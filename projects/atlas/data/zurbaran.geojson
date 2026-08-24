@@ -7809,7 +7809,7 @@
     "country": "Spain",
     "location": "Museo de Bellas Artes de Badajoz",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "184 × 103 cm",
@@ -7829,6 +7829,12 @@
      "creation": {
       "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1598–1664) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
     "museum_id": "museo-de-bellas-artes-de-badajoz",

@@ -1295,7 +1295,7 @@
     "location": "Alte Pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Weyden-MadonnaLucca-Munic.jpg?width=500",
     "qid": "Q29909050",
     "wikidata": "https://www.wikidata.org/wiki/Q29909050",
@@ -1303,6 +1303,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29909050",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1484, after death (1399–1464) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2334,7 +2342,7 @@
     "location": "Gemäldegalerie Berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20of%20Philip%20the%20Good%20-%20WGA25727.jpg?width=500",
     "qid": "Q107438502",
     "wikidata": "https://www.wikidata.org/wiki/Q107438502",
@@ -2342,6 +2350,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107438502",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1515, after death (1399–1464) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

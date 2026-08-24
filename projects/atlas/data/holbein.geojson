@@ -4594,7 +4594,7 @@
     "location": "Leiden University",
     "city": "Leiden",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Desiderius%20Erasmus%2C%20humanist%20Icones%204.tiff?width=500",
     "qid": "Q114807928",
     "wikidata": "https://www.wikidata.org/wiki/Q114807928",
@@ -4602,6 +4602,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q114807928",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1501, after death (1497–1543) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6038,7 +6046,7 @@
     "location": "Royal Museum of Fine Arts Antwerp",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20%28II%29%20-%20Bildnis%20eines%20Mannes%20%28KMSKA%29.jpg?width=500",
     "qid": "Q21614441",
     "wikidata": "https://www.wikidata.org/wiki/Q21614441",
@@ -6046,6 +6054,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21614441",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1497–1543) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

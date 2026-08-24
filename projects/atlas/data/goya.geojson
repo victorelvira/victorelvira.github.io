@@ -16463,7 +16463,7 @@
     "location": "São Paulo Museum of Art",
     "city": "São Paulo",
     "country": "Brazil",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20goya%2C%20ritratto%20di%20don%20juan%20antonio%20llorente%2C%201809-13%2C%2002.JPG?width=500",
     "qid": "Q49873216",
     "wikidata": "https://www.wikidata.org/wiki/Q49873216",
@@ -16471,6 +16471,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49873216",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1850, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -16802,7 +16810,7 @@
     "location": "National Museum of Art, Architecture and Design",
     "city": "Oslo",
     "country": "Norway",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20-%20Portrait%20of%20a%20Picador%20-%20NG.M.01402%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
     "qid": "Q55424311",
     "wikidata": "https://www.wikidata.org/wiki/Q55424311",
@@ -16810,6 +16818,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55424311",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1900, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -16949,7 +16965,7 @@
     "location": "Upton House",
     "city": "Ratley and Upton",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20%281746-1828%29%20%28imitator%20of%29%20-%20Don%20Francisco%20Bayeu%20y%20Subias%20%281734%E2%80%931795%29%20%28after%20an%20original%20painting%20from%201786%29%20-%20446824%20-%20National%20Trust.jpg?width=500",
     "qid": "Q52301433",
     "wikidata": "https://www.wikidata.org/wiki/Q52301433",
@@ -16957,6 +16973,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q52301433",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1849, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -17120,7 +17144,7 @@
     "location": "Juan B. Castagnino Fine Arts Museum",
     "city": "Rosario",
     "country": "Argentina",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20%28atribuido%29%20-%20Palomas%20y%20pollos.jpg?width=500",
     "qid": "Q55582991",
     "wikidata": "https://www.wikidata.org/wiki/Q55582991",
@@ -17131,7 +17155,15 @@
     },
     "creation_place": "Zaragoza",
     "creation_lat": 41.6488,
-    "creation_lon": -0.8891
+    "creation_lon": -0.8891,
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -20503,7 +20535,7 @@
     "location": "Marquess of la Romana",
     "city": "",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20visita%20del%20fraile%20por%20Francisco%20de%20Goya.jpg?width=500",
     "qid": "Q110271705",
     "wikidata": "https://www.wikidata.org/wiki/Q110271705",
@@ -20511,6 +20543,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q110271705",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1850, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

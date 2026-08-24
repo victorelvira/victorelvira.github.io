@@ -1633,7 +1633,7 @@
     "country": "France",
     "location": "Museum of Fine Arts of Lyon",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on panel",
     "dimensions": "325 × 265 cm",
@@ -1651,6 +1651,12 @@
      "creation": {
       "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1450, after death (1448–1523) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
@@ -4721,7 +4727,7 @@
     "location": "National Gallery",
     "city": "City of Westminster",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sassoferrato%20%281609-1685%29%20%28attributed%20to%29%20-%20The%20Baptism%20of%20Christ%20%28after%20Pietro%20Perugino%29%20-%20NG1431%20-%20National%20Gallery.jpg?width=500",
     "qid": "Q26706720",
     "wikidata": "https://www.wikidata.org/wiki/Q26706720",
@@ -4729,6 +4735,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26706720",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1835, after death (1448–1523) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

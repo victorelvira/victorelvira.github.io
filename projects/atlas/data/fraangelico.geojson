@@ -538,7 +538,7 @@
     "country": "France",
     "location": "Louvre",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Panel",
     "dimensions": "213 × 211 cm",
@@ -555,7 +555,15 @@
     },
     "museum_id": "louvre",
     "qid": "Q1215717",
-    "wga_url": "https://www.wga.hu/html/a/angelico/12/20louvre.html"
+    "wga_url": "https://www.wga.hu/html/a/angelico/12/20louvre.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -575,7 +583,7 @@
     "country": "Italy",
     "location": "Museum of San Marco",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Panel",
     "dimensions": "220 × 227 cm",
@@ -591,7 +599,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-san-marco",
-    "qid": "Q1215809"
+    "qid": "Q1215809",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1080,7 +1096,7 @@
     "country": "Italy",
     "location": "Museum of San Marco",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Panel",
     "dimensions": "275 × 285 cm",
@@ -1097,7 +1113,15 @@
     },
     "museum_id": "museum-of-san-marco",
     "qid": "Q2529591",
-    "wga_url": "https://www.wga.hu/html/a/angelico/08/6trinita.html"
+    "wga_url": "https://www.wga.hu/html/a/angelico/08/6trinita.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -2210,7 +2234,7 @@
     "country": "Italy",
     "location": "Uffizi Gallery",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Panel",
     "dimensions": "134 × 59 cm",
@@ -2225,7 +2249,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q3842724"
+    "qid": "Q3842724",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

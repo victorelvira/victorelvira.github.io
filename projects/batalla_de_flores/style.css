@@ -172,10 +172,18 @@ a { color: inherit; }
   padding: 9px 12px; border-bottom: 1px solid var(--line-soft); background: #fffaf5;
 }
 
+/* Buscador y selectores tienen que salir del mismo molde: misma letra y misma
+   altura. No basta con darles el mismo padding, porque el `select` ignora el
+   `line-height` declarado y usa `normal`, asi que su caja interior salia de 20 px
+   y la del buscador de 16,9: 30 px contra 26,9 en pantalla. Se fija la altura de
+   los tres en una variable y se acabo la discusion. */
+:root { --control-h: 30px; }
+
 .controls input[type="search"],
 .controls select {
   font: inherit; font-size: 12.5px;
   padding: 4px 8px; line-height: 1.35;
+  min-height: var(--control-h);
   border: 1px solid var(--line);
   border-radius: 6px;
   background: #fff;
@@ -184,6 +192,10 @@ a { color: inherit; }
 .controls input[type="search"] { width: 200px; }
 .controls input[type="search"]:focus-visible,
 .controls select:focus-visible { outline: 2px solid var(--rose); outline-offset: 1px; }
+/* La barra entera a un solo tamano. "Limpiar" y "Con palmares" iban a 14 px
+   heredados y desentonaban al lado de los tres controles. */
+.controls .ghost, .controls .toggle { font-size: 12.5px; }
+.controls .ghost { min-height: var(--control-h); }
 
 .toggle { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); white-space: nowrap; }
 /* El mismo toggle, pero dentro de la barra de la pestana Carrozas: ahi convive
@@ -752,6 +764,9 @@ table.palmares tr:hover td { background: #fffaf5; }
 /* La fuente que no es una página web: un punto apagado en lugar de la flecha,
    para que se vea que ahí no falta un enlace, es que no lo hay. */
 .src-nolink { color: var(--line); font-size: 11.5px; cursor: help; }
+/* Fuente citada pero no enlazable (el libro). No es un hueco: es una cita, y
+   se marca como tal para que no parezca que falta un enlace. */
+.src-cita { color: var(--gold); font-size: 10px; cursor: help; }
 .tag-src:hover { border-color: var(--sky); color: var(--sky); background: #f2f7fa; }
 .tag-src:focus-visible { outline: 2px solid var(--sky); outline-offset: 1px; }
 
@@ -1023,6 +1038,20 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
   color: var(--t-year);
 }
 .open-list .cite-list { margin: 6px 0 2px; }
+
+/* La lista de "Por confirmar" dentro de una edición: misma información que la
+   pestaña Pendiente, pero incrustada donde el lector la necesita. */
+.open-list-edicion { list-style: none; padding: 0; margin: 6px 0 0; }
+.open-list-edicion li {
+  padding: 7px 10px; margin-bottom: 6px;
+  border: 1px solid var(--alerta-borde); border-left: 3px solid var(--alerta);
+  border-radius: 8px; background: var(--alerta-bg);
+  font-size: 12.5px; line-height: 1.5;
+}
+.open-list-edicion .cite-list li {
+  border: 1px solid var(--line-soft); border-left-width: 1px;
+  background: var(--panel); font-style: italic;
+}
 .pill.know {
   padding: 5px 12px; font-size: 12.5px;
   border-color: var(--alerta-borde); background: var(--alerta-bg); color: var(--alerta);
@@ -1344,6 +1373,11 @@ body.lb-abierto { overflow: hidden; }
   .report input[type="text"], .report input:not([type]), .report input[type="email"],
   .report textarea,
   .controls input[type="search"] { font-size: 16px; }
+  /* Con 16 px el buscador crece a 31,6 y descuadraba la fila. Se sube la altura
+     comun para que los tres vuelvan a medir lo mismo. El tamano de letra SI
+     difiere aqui y es a proposito: por debajo de 16 px iOS hace zoom al enfocar
+     el campo y descoloca la pagina entera. */
+  :root { --control-h: 32px; }
   /* Solo el tamano de letra. El ancho lo gobierna la regla de arriba
      (flex:1, min-width:140px): con width:100% el buscador ocupaba la linea
      entera y mandaba el selector y "Limpiar" a la siguiente. */

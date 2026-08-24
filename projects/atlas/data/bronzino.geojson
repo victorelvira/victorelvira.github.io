@@ -2669,7 +2669,7 @@
     "location": "Amsterdam Museum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Portret%20van%20een%20heer%20-%20SA%203342%20-%20Amsterdam%20Museum.jpg?width=500",
     "qid": "Q17531832",
     "wikidata": "https://www.wikidata.org/wiki/Q17531832",
@@ -2677,6 +2677,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17531832",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1503–1572) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

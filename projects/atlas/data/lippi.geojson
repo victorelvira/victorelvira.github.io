@@ -2693,7 +2693,7 @@
     "country": "Italy",
     "location": "Uffizi Gallery",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Tempera",
     "dimensions": "355 × 255 cm",
@@ -2709,7 +2709,15 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3889213",
-    "wga_url": "https://www.wga.hu/html/l/lippi/flippino/2/1palaott.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/flippino/2/1palaott.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1486, after death (1406–1469) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

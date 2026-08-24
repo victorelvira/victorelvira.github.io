@@ -1756,7 +1756,7 @@
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Canvas",
     "dimensions": "77.1 × 94.4 cm",
@@ -1773,7 +1773,15 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3212033",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/06/1presen.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/06/1presen.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1400, before birth (1431–1506) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

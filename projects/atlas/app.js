@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.46.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 23:34";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.46.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 23:52";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -255,7 +255,7 @@ const BORN = {
 const bornOf = slug => BORN[slug] || 9999;
 
 // death year per painter (Wikidata P570) — for the Timeline life-span labels
-const DIED = { artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1851, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1510, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
+const DIED = { artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
 const diedOf = slug => DIED[slug] || null;
 
 // short label per painter for the selector button (the first name is often wrong — "Ignacio"
@@ -1769,22 +1769,26 @@ function setGameView(on) {
 // ∝ how many that year. Group by period or school (same buckets as the painter selector).
 let chartGroup = "individual";   // "individual" | "period" | "school"
 let chartYW = 6.2;               // px per year on the x-axis (the compress/expand control changes it)
+let chartRows = [];              // the rendered rows — the hover tooltip reads from these
 const CHART_GROUP_COLORS = ["#7a4a2b", "#2e6b6b", "#7b3fb0", "#b8862d", "#3a6ea5", "#a03050", "#4a7a3a", "#8a5a8a"];
 function lifeSpan(slug) {
   const b = BORN[slug], d = DIED[slug];
   return b ? `${b}–${d || ""}` : "";
 }
-function chartData() {
+function chartData() {   // per painter: years = Map(year → array of work titles that year)
   const by = new Map();
   for (const w of works) {
     const slug = GAME_SLUG_OF_NAME[w.p.painter]; if (!slug) continue;
+    if (w.p.attribution && !ATTR_ACCEPTED.has(w.p.attribution)) continue;   // Timeline = autograph output only (drops copies/disputed)
     const y = yearNum(w.p); if (y == null || y < 1200 || y > 2000) continue;
     let e = by.get(slug);
-    if (!e) { e = { slug, name: w.p.painter, born: bornOf(slug), color: colorFor(w.p.painter), years: new Map(), total: 0 }; by.set(slug, e); }
-    e.years.set(y, (e.years.get(y) || 0) + 1); e.total++;
+    if (!e) { e = { slug, name: w.p.painter, born: bornOf(slug), color: colorFor(w.p.painter), years: new Map() }; by.set(slug, e); }
+    let arr = e.years.get(y); if (!arr) { arr = []; e.years.set(y, arr); }
+    arr.push(w.p.title || "");
   }
   return [...by.values()];
 }
+function chartCellCount(r, cell) { return r.kind === "painter" ? cell.length : [...cell.values()].reduce((s, c) => s + c, 0); }
 function renderChart() {
   const host = document.getElementById("chart-scroll"); if (!host) return;
   const data = chartData();
@@ -1793,19 +1797,23 @@ function renderChart() {
   let rows;
   if (chartGroup === "individual") {
     rows = data.slice().sort((a, z) => a.born - z.born).map(p =>
-      ({ label: p.name, sub: lifeSpan(p.slug), color: p.color, years: p.years }));
+      ({ kind: "painter", label: p.name, sub: lifeSpan(p.slug), color: p.color, years: p.years }));
   } else {
     const keysOf = chartGroup === "school" ? schoolsOf : erasOf;
     rows = (chartGroup === "period" ? ERAS : SCHOOLS).map((g, gi) => {
       const members = data.filter(p => keysOf(p.slug).includes(g.key));
       if (!members.length) return null;
-      const years = new Map();
-      for (const p of members) for (const [y, c] of p.years) years.set(y, (years.get(y) || 0) + c);
-      return { label: g.label, sub: `${members.length} painters`, color: CHART_GROUP_COLORS[gi % CHART_GROUP_COLORS.length], years };
+      const years = new Map();   // year → Map(painterName → count)
+      for (const p of members) for (const [y, arr] of p.years) {
+        let m = years.get(y); if (!m) { m = new Map(); years.set(y, m); }
+        m.set(p.name, (m.get(p.name) || 0) + arr.length);
+      }
+      return { kind: "group", label: g.label, sub: `${members.length} painters`, color: CHART_GROUP_COLORS[gi % CHART_GROUP_COLORS.length], years };
     }).filter(Boolean);
   }
+  chartRows = rows;   // the hover tooltip reads titles / painter-breakdown from here
   let minY = 9999, maxY = -9999, maxC = 1;
-  for (const r of rows) for (const [y, c] of r.years) { if (y < minY) minY = y; if (y > maxY) maxY = y; if (c > maxC) maxC = c; }
+  for (const r of rows) for (const [y, cell] of r.years) { const c = chartCellCount(r, cell); if (y < minY) minY = y; if (y > maxY) maxY = y; if (c > maxC) maxC = c; }
   minY = Math.floor(minY / 10) * 10; maxY = Math.ceil(maxY / 10) * 10;
   // Aggregate rows are tall with the (long) group name ON TOP of the dots, so it can't run off the
   // left edge. Individual rows keep the short painter name right-aligned in a left gutter.
@@ -1825,10 +1833,11 @@ function renderChart() {
       parts.push(`<text x="${padL}" y="${ry + 13}" font-size="12.5" font-weight="700" fill="#333">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">· ${esc(r.sub)}</tspan></text>`);
     else
       parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="10.5" fill="#333" text-anchor="end">${esc(r.label)} <tspan fill="#b3aa9c">${esc(r.sub)}</tspan></text>`);
-    const rmax = agg ? 9 : 5;
-    for (const [yr, c] of r.years) {
+    const rmax = agg ? 9 : 5, ri = rows.indexOf(r);
+    for (const [yr, cell] of r.years) {
+      const c = chartCellCount(r, cell);
       const rad = (1.6 + rmax * Math.sqrt(c / maxC)).toFixed(1);
-      parts.push(`<circle cx="${X(yr)}" cy="${cy}" r="${rad}" fill="${r.color}" fill-opacity=".78"><title>${esc(r.label)} · ${yr} · ${c} work${c > 1 ? "s" : ""}</title></circle>`);
+      parts.push(`<circle class="chart-dot" cx="${X(yr)}" cy="${cy}" r="${rad}" fill="${r.color}" fill-opacity=".78" data-r="${ri}" data-y="${yr}"/>`);
     }
     ry += rowH;
   }
@@ -1863,4 +1872,35 @@ function setChartView(on) {
     chartYW = Math.max(1.4, Math.min(14, chartYW * (b.dataset.z === "in" ? 1.4 : 0.7)));
     renderChart();
   });
+  // rich hover tooltip: for a painter dot, the work titles that year; for a group dot, the
+  // per-painter breakdown that year.
+  const tip = document.createElement("div"); tip.id = "chart-tip"; tip.hidden = true; document.body.appendChild(tip);
+  function tipHTML(r, cell, yr) {
+    const total = chartCellCount(r, cell);
+    let h = `<div class="ct-h"><b>${esc(r.label)}</b> · ${yr}</div><div class="ct-n">${total} work${total > 1 ? "s" : ""}</div><ul>`;
+    if (r.kind === "painter") {
+      const t = cell.slice().sort();
+      h += t.slice(0, 7).map(x => `<li>${esc(x || "Untitled")}</li>`).join("");
+      if (t.length > 7) h += `<li class="ct-more">…and ${t.length - 7} more</li>`;
+    } else {
+      const e = [...cell.entries()].sort((a, b) => b[1] - a[1]);
+      h += e.slice(0, 8).map(([n, c]) => `<li>${esc(n)} <span class="ct-c">${c}</span></li>`).join("");
+      if (e.length > 8) h += `<li class="ct-more">…and ${e.length - 8} more painters</li>`;
+    }
+    return h + "</ul>";
+  }
+  const host = document.getElementById("chart-scroll");
+  host.addEventListener("mousemove", e => {
+    const dot = e.target.closest(".chart-dot");
+    if (!dot) { tip.hidden = true; return; }
+    const r = chartRows[+dot.dataset.r], cell = r && r.years.get(+dot.dataset.y);
+    if (!cell) { tip.hidden = true; return; }
+    tip.innerHTML = tipHTML(r, cell, +dot.dataset.y); tip.hidden = false;
+    const pad = 14, tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = e.clientX + pad, y = e.clientY + pad;
+    if (x + tw > innerWidth - 6) x = e.clientX - pad - tw;
+    if (y + th > innerHeight - 6) y = e.clientY - pad - th;
+    tip.style.left = Math.max(6, x) + "px"; tip.style.top = Math.max(6, y) + "px";
+  });
+  host.addEventListener("mouseleave", () => { tip.hidden = true; });
 })();

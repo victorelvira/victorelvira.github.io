@@ -2796,7 +2796,7 @@
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "dimensions": "29 × 39 cm",
     "genre": "religious art",
@@ -2809,7 +2809,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q50321650"
+    "qid": "Q50321650",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1623, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -3232,7 +3240,7 @@
     "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anonymous%20-%20An%20Allegory%20of%20Virtue%20%28unfinished%29%20-%20NG%202584%20-%20National%20Galleries%20of%20Scotland.jpg?width=500",
     "qid": "Q27968269",
     "wikidata": "https://www.wikidata.org/wiki/Q27968269",
@@ -3240,6 +3248,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27968269",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1555, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -3664,7 +3680,7 @@
     "location": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte",
     "city": "Oldenburg",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Schedoni%20Maddalena%20penitente.jpg?width=500",
     "qid": "Q119129948",
     "wikidata": "https://www.wikidata.org/wiki/Q119129948",
@@ -3672,6 +3688,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119129948",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1611, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -3718,7 +3742,7 @@
     "location": "Brighton Museum & Art Gallery",
     "city": "Brighton and Hove",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20%28c.1489-1534%29%20%28copy%20after%29%20-%20Madonna%20and%20Child%20-%20FA000426%20-%20Brighton%20Museum%20%5E%20Art%20Gallery.jpg?width=500",
     "qid": "Q119938269",
     "wikidata": "https://www.wikidata.org/wiki/Q119938269",
@@ -3726,6 +3750,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119938269",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -3772,7 +3804,7 @@
     "location": "Holburne Museum",
     "city": "Bath",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20%28c.1489-1534%29%20%28style%20of%29%20-%20Saint%20Agnes%20-%20A207%20-%20Holburne%20Museum.jpg?width=500",
     "qid": "Q118876825",
     "wikidata": "https://www.wikidata.org/wiki/Q118876825",
@@ -3780,6 +3812,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876825",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1725, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

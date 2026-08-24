@@ -560,7 +560,7 @@
     "city": "Valencia",
     "country": "Spain",
     "location": "Museu de Belles Arts de València",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on panel",
     "dimensions": "163 × 382 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Tr%C3%ADptico_de_la_Passi%C3%B3n_Museo_de_Bellas_Artes_de_Valecia.jpg/500px-Tr%C3%ADptico_de_la_Passi%C3%B3n_Museo_de_Bellas_Artes_de_Valecia.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -569,7 +569,15 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museu-de-belles-arts-de-valencia"
+    "museum_id": "museu-de-belles-arts-de-valencia",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -657,7 +665,7 @@
     "city": "Cologne",
     "country": "Germany",
     "location": "Wallraf-Richartz Museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "66 × 43 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/BoschAdorationOfTheChildPainting.jpg/500px-BoschAdorationOfTheChildPainting.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -670,7 +678,15 @@
     "museum_id": "wallraf-richartz-museum",
     "qid": "Q2346030",
     "wikidata": "https://www.wikidata.org/wiki/Q2346030",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/15adorat.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/15adorat.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1560, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -688,7 +704,7 @@
     "year": "c. 1568",
     "city": "'s-Hertogenbosch",
     "location": "Noordbrabants Museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bosch_copyist_The_adoration_of_the_Child.jpg/500px-Bosch_copyist_The_adoration_of_the_Child.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -700,7 +716,15 @@
     "museum_id": "noordbrabants-museum",
     "qid": "Q2346030",
     "wikidata": "https://www.wikidata.org/wiki/Q2346030",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/15adorat.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/15adorat.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1568, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -904,7 +928,7 @@
     "year": "c. 1530–1540",
     "city": "Boston",
     "location": "Museum of Fine Arts",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "74 × 81 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Jheronimus_Bosch_or_follower_001.jpg/500px-Jheronimus_Bosch_or_follower_001.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -917,7 +941,15 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q680128",
     "wikidata": "https://www.wikidata.org/wiki/Q680128",
-    "country": "United States"
+    "country": "United States",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1013,7 +1045,7 @@
     "year": "c. 1530–1540",
     "city": "Spain",
     "location": "El Escorial",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "165 × 195 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Crowned_with_Thorns_Bosch.jpg/500px-Crowned_with_Thorns_Bosch.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1026,7 +1058,15 @@
     "museum_id": "el-escorial",
     "qid": "Q732277",
     "wikidata": "https://www.wikidata.org/wiki/Q732277",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/12thorns.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/12thorns.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1148,7 +1188,7 @@
     "location": "National Museum in Warsaw",
     "city": "Śródmieście",
     "country": "Poland",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jheronimus%20Bosch%20-%20Descent%20into%20Hell%20-%20M.Ob.1610%20MNW%20-%20National%20Museum%20in%20Warsaw.jpg?width=500",
     "qid": "Q104532210",
     "wikidata": "https://www.wikidata.org/wiki/Q104532210",
@@ -1164,7 +1204,15 @@
       "source": "Wikipedia list",
       "title": "Christ descent into Hell"
      }
-    ]
+    ],
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1396,7 +1444,7 @@
     "city": "Madrid",
     "country": "Spain",
     "location": "Museo del Prado",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "70 × 51 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Temptation_of_St_Anthony_%28Bosch%29.jpg/500px-The_Temptation_of_St_Anthony_%28Bosch%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1409,7 +1457,15 @@
     "museum_id": "museo-del-prado",
     "qid": "Q2512728",
     "wikidata": "https://www.wikidata.org/wiki/Q2512728",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/07anthon.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/07anthon.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1646,7 +1702,7 @@
     "city": "Munich",
     "country": "Germany",
     "location": "Alte Pinakothek",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "60 × 114 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Last_Judgement.jpg/500px-Last_Judgement.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1667,7 +1723,15 @@
       "qid": "Q1995698",
       "url": "https://www.wikidata.org/wiki/Q1995698"
      }
-    ]
+    ],
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1685,7 +1749,7 @@
     "year": "c. 1530–1540",
     "city": "Saint-Germain-en-Laye",
     "location": "Musée Municipal",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "53 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Conjurer_Bosch.jpg/500px-Conjurer_Bosch.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1698,7 +1762,15 @@
     "museum_id": "musee-municipal",
     "qid": "Q2155289",
     "wikidata": "https://www.wikidata.org/wiki/Q2155289",
-    "wga_url": "https://www.wga.hu/html/b/bosch/1early/11magici.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/1early/11magici.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1957,7 +2029,7 @@
     "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ%20in%20Limbo.jpg?width=500",
     "qid": "Q2248238",
     "wikidata": "https://www.wikidata.org/wiki/Q2248238",
@@ -1965,6 +2037,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2248238",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2092,7 +2172,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Jheronimus%20Bosch%20006%20colour.jpg?width=500",
     "qid": "Q41152420",
     "wikidata": "https://www.wikidata.org/wiki/Q41152420",
@@ -2100,6 +2180,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q41152420",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2235,7 +2323,7 @@
     "location": "Centraal Museum",
     "city": "Utrecht",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Follower%20of%20Jheronimus%20Bosch%20002.jpg?width=500",
     "qid": "Q2551113",
     "wikidata": "https://www.wikidata.org/wiki/Q2551113",
@@ -2243,6 +2331,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2551113",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1525, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2289,7 +2385,7 @@
     "location": "Museo Lázaro Galdiano",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Follower%20of%20Jheronimus%20Bosch%20037.jpg?width=500",
     "qid": "Q14942621",
     "wikidata": "https://www.wikidata.org/wiki/Q14942621",
@@ -2297,6 +2393,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q14942621",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2316,7 +2420,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bosch%20follower%20Christ%20and%20the%20Woman%20Taken%20in%20Adultery.jpg?width=500",
     "qid": "Q20808456",
     "wikidata": "https://www.wikidata.org/wiki/Q20808456",
@@ -2324,6 +2428,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20808456",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1549, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2343,7 +2455,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bosch%20follower%20Christ%20in%20Limbo%20Philadelphia.jpg?width=500",
     "qid": "Q20808457",
     "wikidata": "https://www.wikidata.org/wiki/Q20808457",
@@ -2351,6 +2463,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20808457",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2370,7 +2490,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Follower%20of%20Jheronimus%20Bosch%2C%20Retinue%20of%20the%20Magi.jpg?width=500",
     "qid": "Q20808458",
     "wikidata": "https://www.wikidata.org/wiki/Q20808458",
@@ -2378,6 +2498,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20808458",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2397,7 +2525,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jheronimus%20Bosch%20Two%20Shepherds.jpg?width=500",
     "qid": "Q20808465",
     "wikidata": "https://www.wikidata.org/wiki/Q20808465",
@@ -2405,6 +2533,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20808465",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2505,7 +2641,7 @@
     "location": "Palais des Beaux-Arts de Lille",
     "city": "Lille",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Concert%20in%20the%20Egg.jpg?width=500",
     "qid": "Q2510869",
     "wikidata": "https://www.wikidata.org/wiki/Q2510869",
@@ -2513,6 +2649,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2510869",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1560, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2532,7 +2676,7 @@
     "location": "Musée des Beaux-Arts de Valenciennes",
     "city": "Valenciennes",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Jacques%20et%20le%20magicien%20Hermogene.jpg?width=500",
     "qid": "Q2875363",
     "wikidata": "https://www.wikidata.org/wiki/Q2875363",
@@ -2540,6 +2684,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2875363",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2640,7 +2792,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Jheronimus%20Bosch%20The%20Garden%20of%20Eden.jpg?width=500",
     "qid": "Q59771020",
     "wikidata": "https://www.wikidata.org/wiki/Q59771020",
@@ -2648,6 +2800,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59771020",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1401, before birth (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2667,7 +2827,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Jheronimus%20Bosch%20005.jpg?width=500",
     "qid": "Q60048738",
     "wikidata": "https://www.wikidata.org/wiki/Q60048738",
@@ -2675,6 +2835,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60048738",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1401, before birth (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2721,7 +2889,7 @@
     "location": "Gemäldegalerie Berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Follower%20of%20Jheronimus%20Bosch%20014.jpg?width=500",
     "qid": "Q107438845",
     "wikidata": "https://www.wikidata.org/wiki/Q107438845",
@@ -2729,6 +2897,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107438845",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2802,7 +2978,7 @@
     "location": "National Gallery of Ireland",
     "city": "Dublin City",
     "country": "Ireland",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Descent%20into%20Limbo%20%28follower%20of%20Bosch%2C%20Dublin%29.jpg?width=500",
     "qid": "Q77896453",
     "wikidata": "https://www.wikidata.org/wiki/Q77896453",
@@ -2810,6 +2986,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77896453",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2937,7 +3121,7 @@
     "location": "Castle Huis Bergh",
     "city": "Montferland",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jheronimus%20Bosch%20-%20Paneelschildering%20%22De%20opstanding%20van%20Jezus%22%20op%20eikenhout%2C%20navolger%20van%20Jheronimus%20Bosch%2C%20tweede%20helft%2016e%20eeuw%20-%200057%20-%20Huis%20Bergh.jpg?width=500",
     "qid": "Q117359454",
     "wikidata": "https://www.wikidata.org/wiki/Q117359454",
@@ -2945,6 +3129,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q117359454",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1586, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -2964,7 +3156,7 @@
     "location": "Castle Huis Bergh",
     "city": "Montferland",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jheronimus%20Bosch%20-%20Paneelschildering%20%22De%20bruiloft%20te%20Kana%22%20olieverf%20op%20eikenhout%2C%20navolger%20van%20Jheronimus%20Bosch%2C%20ca.%201550%20-%200058%20-%20Huis%20Bergh.jpg?width=500",
     "qid": "Q117359572",
     "wikidata": "https://www.wikidata.org/wiki/Q117359572",
@@ -2972,6 +3164,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q117359572",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

@@ -945,12 +945,16 @@ function openQuestions() {
     });
   });
 
+  // La existencia misma de la edición puede estar en duda. Es una cuestión
+  // abierta como cualquier otra y vive en la misma base de datos.
+  const sinConfirmar = state.editions.filter(edition => edition.status === "unknown");
+
   const incomplete = state.editions.filter(edition =>
     (edition.notes || []).some(note => note.includes("faltan al menos")));
   const noPalmares = state.editions.filter(edition =>
     edition.status === "published" && !(edition.floats || []).some(entry => entry.position != null));
 
-  return { disputed, conflicting, hemeroteca, incomplete, noPalmares };
+  return { disputed, conflicting, hemeroteca, sinConfirmar, incomplete, noPalmares };
 }
 
 /* Pestana propia, no un apendice de Estadisticas: que un archivo diga lo que no
@@ -966,7 +970,7 @@ function askButton(id, label) {
 function renderPendingTab() {
   const q = openQuestions();
   const total = q.disputed.length + q.conflicting.length + q.hemeroteca.length
-    + q.incomplete.length + q.noPalmares.length;
+    + q.sinConfirmar.length + q.incomplete.length + q.noPalmares.length;
   els.indexCount.textContent = `${num(total)} cuestiones abiertas`;
   // Buscar "1954" aqui no filtra nada: los controles se esconden en esta vista.
   document.querySelector(".controls")?.setAttribute("hidden", "");
@@ -1022,6 +1026,10 @@ function renderPendingTab() {
             ${citationList(row.citas)}
             ${askButton(`year:${row.year}`, `${row.year} · ${row.name} · hemeroteca`)}</li>`).join("")}</ul>
       </div>` : ""}
+      ${bloque("❔", "Años de los que no sabemos ni si hubo desfile", q.sinConfirmar, edition => `
+        <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
+          ${esc(edition.notes?.[0] || "Sin confirmar.")}
+          ${askButton(`year:${edition.year}`, `Edición ${edition.year} · ¿hubo Batalla?`)}</li>`)}
       ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
         <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
           ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}
@@ -1776,7 +1784,14 @@ function sourceCell(entry) {
         title="${esc(label)} — pulsa para ver de dónde sale este dato">${esc(code)}</button>${url
       ? `<a href="${esc(url)}" target="_blank" rel="noopener"
            title="Ver la fuente: ${esc(label)}">↗</a>`
-      : `<span class="src-nolink" title="${esc(label)}: no es una página web, se explica en la ficha">·</span>`}
+      : (() => {
+          // Una fuente sin URL no es una fuente coja: un libro se cita, no se
+          // enlaza. Se enseña SU cita -autor, título, página-, no un hueco.
+          const ref = (entry.source_refs || []).find(r => r.kind === part && r.cita);
+          return ref
+            ? `<span class="src-cita" title="${esc(ref.cita)}${ref.pagina ? `, p. ${esc(String(ref.pagina))}` : ""}">▣</span>`
+            : `<span class="src-nolink" title="${esc(label)}: sin página ni cita registrada">·</span>`;
+        })()}
     </span>`;
   }).join("")}</span>`;
 }
@@ -2046,6 +2061,45 @@ function codesLegend(entries) {
     .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>`;
 }
 
+/* Lo que queda por confirmar EN ESTA EDICIÓN.
+ *
+ * No es una lista nueva: es la misma base de datos que alimenta la pestaña
+ * "Pendiente", filtrada por año. Una cuestión abierta se escribe una vez y sale
+ * en los dos sitios: en el inventario general y donde el lector se la va a
+ * encontrar. Si solo estuviera en la pestaña, quien mira 1930 no se entera de
+ * que ese podio está en disputa. */
+function pendingForYear(year) {
+  const q = openQuestions();
+  const filas = [];
+  q.sinConfirmar.filter(e => e.year === year).forEach(e => filas.push({
+    icono: "❔", texto: e.notes?.[0] || "Está por confirmar que se celebrara.",
+  }));
+  q.hemeroteca.filter(r => r.year === year).forEach(r => filas.push({
+    icono: "📰", texto: `<b>${esc(r.name)}</b> — ${esc(r.reason)}`,
+    extra: citationList(r.citas), crudo: true,
+  }));
+  q.disputed.filter(r => r.year === year).forEach(r => filas.push({
+    icono: "🏷️", texto: `<b>${esc(r.name)}</b> — ${esc(r.reason)}`, crudo: true,
+  }));
+  q.conflicting.filter(r => r.year === year).forEach(r => filas.push({
+    icono: "↕️", texto: `<b>${esc(r.name)}</b> — ${esc(r.reason)}`, crudo: true,
+  }));
+  q.incomplete.filter(e => e.year === year).forEach(e => filas.push({
+    icono: "📉", texto: e.notes.find(n => n.includes("faltan al menos")) || "",
+  }));
+  q.noPalmares.filter(e => e.year === year).forEach(e => filas.push({
+    icono: "🕳️", texto: "No se ha localizado la clasificación de esta edición.",
+  }));
+  if (!filas.length) return "";
+  return `
+    <h3 class="section">Por confirmar <span class="open-count">${filas.length}</span></h3>
+    <ul class="open-list open-list-edicion">${filas.map(f => `
+      <li>${f.icono} ${f.crudo ? f.texto : esc(f.texto)}${f.extra || ""}</li>`).join("")}</ul>
+    <p class="chart-note">Están también en la pestaña
+      <button class="link t-float" type="button" data-goto-pending="1">❓ Pendiente</button>,
+      con el resto de lo que falta por cerrar en el archivo.</p>`;
+}
+
 function provenanceBlock(entries, sources, edition) {
   const ranked = entries.filter(entry => entry.position != null);
   const cruzadas = entries.filter(entry => families(entry).size > 1);
@@ -2242,6 +2296,8 @@ function renderEditionDetail(edition) {
     ${route?.geometry ? `
       <h3 class="section">Recorrido</h3>
       ${renderRouteMap(route.id, { variant: "thumbstrip" })}` : ""}
+
+    ${pendingForYear(edition.year)}
 
     ${provenanceBlock(entries, edition.source_urls || [], edition)}
   `;
@@ -3155,7 +3211,9 @@ function bindEvents() {
       return;
     }
 
-      const fichaVisor = event.target.closest("[data-lb-ficha]");
+      if (event.target.closest("[data-goto-pending]")) { setMode("pending"); return; }
+
+    const fichaVisor = event.target.closest("[data-lb-ficha]");
     if (fichaVisor) {
       cerrarVisor();
       select("float", fichaVisor.dataset.lbFicha);

@@ -5582,7 +5582,7 @@
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-taller-tela%20real-prado.jpg?width=500",
     "qid": "Q59712074",
     "wikidata": "https://www.wikidata.org/wiki/Q59712074",
@@ -5599,6 +5599,12 @@
       "at": "2026-08-24",
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     },
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1601, after death (1599–1660) → later copy / not autograph at this date (Timeline anomaly)"
      }
     }
    }
@@ -6415,7 +6421,7 @@
     "location": "National Gallery of Ireland",
     "city": "Dublin City",
     "country": "Ireland",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Menippus%20.PNG?width=500",
     "qid": "Q77939027",
     "wikidata": "https://www.wikidata.org/wiki/Q77939027",
@@ -6423,6 +6429,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77939027",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1869, after death (1599–1660) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

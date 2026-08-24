@@ -3020,7 +3020,7 @@
     "country": "Russia",
     "location": "Hermitage Museum",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "106 × 78 cm",
@@ -3034,7 +3034,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q11743755"
+    "qid": "Q11743755",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -6546,7 +6554,7 @@
     "country": "Belgium",
     "location": "Onze-Lieve-Vrouwekathedraal",
     "kind": "church",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on panel",
     "dimensions": "458 × 297 cm",
@@ -6562,7 +6570,15 @@
     },
     "museum_id": "onze-lieve-vrouwekathedraal",
     "qid": "Q2067336",
-    "wga_url": "https://www.wga.hu/html/r/rubens/11religi/08assum2.html"
+    "wga_url": "https://www.wga.hu/html/r/rubens/11religi/08assum2.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1501, before birth (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -17817,7 +17833,7 @@
     "location": "National Gallery of Armenia",
     "city": "Yerevan",
     "country": "Armenia",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens.%20Silenus%20march.jpg?width=500",
     "qid": "Q28860864",
     "wikidata": "https://www.wikidata.org/wiki/Q28860864",
@@ -17825,6 +17841,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28860864",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -19536,7 +19560,7 @@
     "location": "Royal Museum of Fine Arts Antwerp",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Naar%20Peter%20Paul%20Rubens%20-%20De%20bewening%20van%20Christus%20-%20319%20-%20Royal%20Museum%20of%20Fine%20Arts%20Antwerp.jpg?width=500",
     "qid": "Q21614599",
     "wikidata": "https://www.wikidata.org/wiki/Q21614599",
@@ -19544,6 +19568,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21614599",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1656, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -19563,7 +19595,7 @@
     "location": "Royal Museum of Fine Arts Antwerp",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Calvarie%20-%20581%20-%20Royal%20Museum%20of%20Fine%20Arts%20Antwerp.tiff?width=500",
     "qid": "Q21614923",
     "wikidata": "https://www.wikidata.org/wiki/Q21614923",
@@ -19571,6 +19603,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21614923",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1675, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -20616,7 +20656,7 @@
     "location": "Royal Museum of Fine Arts Antwerp",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20Zuidelijke%20Nederlanden%20%28historische%20regio%29%2017de%20eeuw%20naar%20Peter%20Paul%20Rubens%20-%20Portret%20van%20een%20jonge%20Dominicaner%20monnik%20-%20712%20-%20Royal%20Museum%20of%20Fine%20Arts%20Antwerp.jpg?width=500",
     "qid": "Q21615087",
     "wikidata": "https://www.wikidata.org/wiki/Q21615087",
@@ -20624,6 +20664,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21615087",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1649, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -21982,7 +22030,7 @@
     "location": "Nationalmuseum",
     "city": "Stockholm",
     "country": "Sweden",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury%20Departing%20from%20Antwerp.%20Fragment%20of%20a%20larger%20painting%20%28Peter%20Paul%20Rubens%29%20-%20Nationalmuseum%20-%2017600.tif?width=500",
     "qid": "Q106365421",
     "wikidata": "https://www.wikidata.org/wiki/Q106365421",
@@ -21990,6 +22038,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106365421",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1667, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -22194,7 +22250,7 @@
     "location": "National Gallery Prague",
     "city": "",
     "country": "Czech Republic",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caesar%E2%80%99s%20Triumph%2C%20by%20Peter%20Paul%20Rubens%20and%20Erasmus%20Quellinus%20II.jpg?width=500",
     "qid": "Q105232448",
     "wikidata": "https://www.wikidata.org/wiki/Q105232448",
@@ -22202,6 +22258,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105232448",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -22591,7 +22655,7 @@
     "location": "National Gallery of Ireland",
     "city": "Dublin City",
     "country": "Ireland",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Feast%20of%20Herod%20.PNG?width=500",
     "qid": "Q77880726",
     "wikidata": "https://www.wikidata.org/wiki/Q77880726",
@@ -22599,6 +22663,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77880726",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1660, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -22803,7 +22875,7 @@
     "location": "Palais des Beaux-Arts de Lille",
     "city": "Lille",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lille%20PdBA%20rubens%20st%20bonaventure.jpg?width=500",
     "qid": "Q73122306",
     "wikidata": "https://www.wikidata.org/wiki/Q73122306",
@@ -22811,6 +22883,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q73122306",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -22830,7 +22910,7 @@
     "location": "Palais des Beaux-Arts de Lille",
     "city": "Lille",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lille%20Pdba%20Rubens%20st%20francois.JPG?width=500",
     "qid": "Q73122650",
     "wikidata": "https://www.wikidata.org/wiki/Q73122650",
@@ -22838,6 +22918,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q73122650",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -23271,7 +23359,7 @@
     "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20Cyrus%20Brought%20to%20Queen%20Tomyris%2C%20Peter%20Paul%20Rubens.jpg?width=500",
     "qid": "Q20555596",
     "wikidata": "https://www.wikidata.org/wiki/Q20555596",
@@ -23279,6 +23367,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20555596",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1909, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -23436,7 +23532,7 @@
     "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrifice%20of%20the%20Old%20Covenant%20Rubens.jpg?width=500",
     "qid": "Q20555718",
     "wikidata": "https://www.wikidata.org/wiki/Q20555718",
@@ -23444,6 +23540,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20555718",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -23823,7 +23927,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20264635.jpg?width=500",
     "qid": "Q20809978",
     "wikidata": "https://www.wikidata.org/wiki/Q20809978",
@@ -23831,6 +23935,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809978",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1699, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -23877,7 +23989,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%2023613.jpg?width=500",
     "qid": "Q20809982",
     "wikidata": "https://www.wikidata.org/wiki/Q20809982",
@@ -23885,6 +23997,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809982",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1655, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -23941,7 +24061,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20na%201636%20naar%20Peter%20Paul%20Rubens%20-%20De%20val%20van%20Icarus%20%28Ovidius%2C%20Metamorfosen%2C%20VIII%2C%20183-235%29%20-%20Cat.%20665%20-%20Philadelphia%20Museum%20of%20Art.jpg?width=500",
     "qid": "Q20809990",
     "wikidata": "https://www.wikidata.org/wiki/Q20809990",
@@ -23949,6 +24069,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809990",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1710, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -23968,7 +24096,7 @@
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20na%201626%20naar%20Peter%20Paul%20Rubens%20-%20De%20ontmoeting%20van%20Abram%20%28Abraham%29%20en%20Melchisedek%2C%20de%20hogepriester-koning%20van%20Salem%20%28Genesis%2014-18-24%29%20-%20Cat.%20661%20-%20Philadelphia%20Museum%20of%20Art.jpg?width=500",
     "qid": "Q20809991",
     "wikidata": "https://www.wikidata.org/wiki/Q20809991",
@@ -23976,6 +24104,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809991",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1662, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -24133,7 +24269,7 @@
     "location": "Statens Museum for Kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Daniel%20in%20the%20Lions%27%20Den%20-%20KMSst384%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
     "qid": "Q20278345",
     "wikidata": "https://www.wikidata.org/wiki/Q20278345",
@@ -24141,6 +24277,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20278345",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1711, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -24197,7 +24341,7 @@
     "location": "Statens Museum for Kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20A%20Monk%20-%20KMS1426%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
     "qid": "Q20354835",
     "wikidata": "https://www.wikidata.org/wiki/Q20354835",
@@ -24205,6 +24349,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20354835",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1683, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -24399,7 +24551,7 @@
     "location": "Statens Museum for Kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Den%20of%20Lions%20-%20KMSst47%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
     "qid": "Q20411605",
     "wikidata": "https://www.wikidata.org/wiki/Q20411605",
@@ -24407,6 +24559,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20411605",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1664, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -24426,7 +24586,7 @@
     "location": "Statens Museum for Kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Portrait%20of%20a%20Lady%20-%20KMS1413%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
     "qid": "Q20441208",
     "wikidata": "https://www.wikidata.org/wiki/Q20441208",
@@ -24434,6 +24594,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20441208",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1741, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -24453,7 +24621,7 @@
     "location": "Statens Museum for Kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Portrait%20of%20a%20Lady%20-%20KMS1396%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
     "qid": "Q20491255",
     "wikidata": "https://www.wikidata.org/wiki/Q20491255",
@@ -24461,6 +24629,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20491255",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1741, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -25701,7 +25877,7 @@
     "location": "Rubenshuis",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20en%20Justus%20van%20Egmont%20-%20De%20verzoening%20van%20de%20Romeinen%20met%20de%20Sabijnen%20-%20RH.S.220%20-%20Rubenshuis.tiff?width=500",
     "qid": "Q111051467",
     "wikidata": "https://www.wikidata.org/wiki/Q111051467",
@@ -25709,6 +25885,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111051467",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1655, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -26902,7 +27086,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240984.jpg?width=500",
     "qid": "Q112065602",
     "wikidata": "https://www.wikidata.org/wiki/Q112065602",
@@ -26910,6 +27094,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065602",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -26929,7 +27121,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242072.jpg?width=500",
     "qid": "Q112066278",
     "wikidata": "https://www.wikidata.org/wiki/Q112066278",
@@ -26937,6 +27129,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112066278",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -26956,7 +27156,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241149.jpg?width=500",
     "qid": "Q112175965",
     "wikidata": "https://www.wikidata.org/wiki/Q112175965",
@@ -26964,6 +27164,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112175965",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -26983,7 +27191,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240581.jpg?width=500",
     "qid": "Q112176223",
     "wikidata": "https://www.wikidata.org/wiki/Q112176223",
@@ -26991,6 +27199,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112176223",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27010,7 +27226,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240600.jpg?width=500",
     "qid": "Q112176231",
     "wikidata": "https://www.wikidata.org/wiki/Q112176231",
@@ -27018,6 +27234,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112176231",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27037,7 +27261,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241062.jpg?width=500",
     "qid": "Q112176283",
     "wikidata": "https://www.wikidata.org/wiki/Q112176283",
@@ -27045,6 +27269,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112176283",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27064,7 +27296,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241076.jpg?width=500",
     "qid": "Q112176321",
     "wikidata": "https://www.wikidata.org/wiki/Q112176321",
@@ -27072,6 +27304,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112176321",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27091,7 +27331,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240398.jpg?width=500",
     "qid": "Q112176353",
     "wikidata": "https://www.wikidata.org/wiki/Q112176353",
@@ -27099,6 +27339,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112176353",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27118,7 +27366,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240667.jpg?width=500",
     "qid": "Q112178170",
     "wikidata": "https://www.wikidata.org/wiki/Q112178170",
@@ -27126,6 +27374,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112178170",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27145,7 +27401,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240707.jpg?width=500",
     "qid": "Q112178181",
     "wikidata": "https://www.wikidata.org/wiki/Q112178181",
@@ -27153,6 +27409,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112178181",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27172,7 +27436,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240718.jpg?width=500",
     "qid": "Q112178223",
     "wikidata": "https://www.wikidata.org/wiki/Q112178223",
@@ -27180,6 +27444,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112178223",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27199,7 +27471,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241000.jpg?width=500",
     "qid": "Q112180315",
     "wikidata": "https://www.wikidata.org/wiki/Q112180315",
@@ -27207,6 +27479,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112180315",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27226,7 +27506,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241033.jpg?width=500",
     "qid": "Q112180320",
     "wikidata": "https://www.wikidata.org/wiki/Q112180320",
@@ -27234,6 +27514,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112180320",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27253,7 +27541,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240745.jpg?width=500",
     "qid": "Q112180332",
     "wikidata": "https://www.wikidata.org/wiki/Q112180332",
@@ -27261,6 +27549,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112180332",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27280,7 +27576,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240822.jpg?width=500",
     "qid": "Q112180342",
     "wikidata": "https://www.wikidata.org/wiki/Q112180342",
@@ -27288,6 +27584,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112180342",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27307,7 +27611,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241263.jpg?width=500",
     "qid": "Q112180348",
     "wikidata": "https://www.wikidata.org/wiki/Q112180348",
@@ -27315,6 +27619,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112180348",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27334,7 +27646,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241187.jpg?width=500",
     "qid": "Q112183915",
     "wikidata": "https://www.wikidata.org/wiki/Q112183915",
@@ -27342,6 +27654,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112183915",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27361,7 +27681,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241907.jpg?width=500",
     "qid": "Q112183940",
     "wikidata": "https://www.wikidata.org/wiki/Q112183940",
@@ -27369,6 +27689,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112183940",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27388,7 +27716,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241909.jpg?width=500",
     "qid": "Q112184106",
     "wikidata": "https://www.wikidata.org/wiki/Q112184106",
@@ -27396,6 +27724,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184106",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27415,7 +27751,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241911.jpg?width=500",
     "qid": "Q112184125",
     "wikidata": "https://www.wikidata.org/wiki/Q112184125",
@@ -27423,6 +27759,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184125",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27442,7 +27786,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241927.jpg?width=500",
     "qid": "Q112184146",
     "wikidata": "https://www.wikidata.org/wiki/Q112184146",
@@ -27450,6 +27794,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184146",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27469,7 +27821,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241938.jpg?width=500",
     "qid": "Q112184234",
     "wikidata": "https://www.wikidata.org/wiki/Q112184234",
@@ -27477,6 +27829,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184234",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27496,7 +27856,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241947.jpg?width=500",
     "qid": "Q112184306",
     "wikidata": "https://www.wikidata.org/wiki/Q112184306",
@@ -27504,6 +27864,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184306",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27523,7 +27891,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241960.jpg?width=500",
     "qid": "Q112184328",
     "wikidata": "https://www.wikidata.org/wiki/Q112184328",
@@ -27531,6 +27899,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184328",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27550,7 +27926,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241961.jpg?width=500",
     "qid": "Q112184432",
     "wikidata": "https://www.wikidata.org/wiki/Q112184432",
@@ -27558,6 +27934,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184432",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27577,7 +27961,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240916.jpg?width=500",
     "qid": "Q112184444",
     "wikidata": "https://www.wikidata.org/wiki/Q112184444",
@@ -27585,6 +27969,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184444",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27604,7 +27996,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240938.jpg?width=500",
     "qid": "Q112184467",
     "wikidata": "https://www.wikidata.org/wiki/Q112184467",
@@ -27612,6 +28004,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184467",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27631,7 +28031,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242006.jpg?width=500",
     "qid": "Q112184522",
     "wikidata": "https://www.wikidata.org/wiki/Q112184522",
@@ -27639,6 +28039,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184522",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27658,7 +28066,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242023.jpg?width=500",
     "qid": "Q112184533",
     "wikidata": "https://www.wikidata.org/wiki/Q112184533",
@@ -27666,6 +28074,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184533",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27685,7 +28101,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242028.jpg?width=500",
     "qid": "Q112184712",
     "wikidata": "https://www.wikidata.org/wiki/Q112184712",
@@ -27693,6 +28109,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184712",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27712,7 +28136,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242038.jpg?width=500",
     "qid": "Q112184732",
     "wikidata": "https://www.wikidata.org/wiki/Q112184732",
@@ -27720,6 +28144,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184732",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27739,7 +28171,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242043.jpg?width=500",
     "qid": "Q112184798",
     "wikidata": "https://www.wikidata.org/wiki/Q112184798",
@@ -27747,6 +28179,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184798",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27766,7 +28206,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242051.jpg?width=500",
     "qid": "Q112184825",
     "wikidata": "https://www.wikidata.org/wiki/Q112184825",
@@ -27774,6 +28214,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184825",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27793,7 +28241,7 @@
     "location": "Museum Plantin-Moretus",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242054.jpg?width=500",
     "qid": "Q112184848",
     "wikidata": "https://www.wikidata.org/wiki/Q112184848",
@@ -27801,6 +28249,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112184848",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27857,7 +28313,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241935.jpg?width=500",
     "qid": "Q112065115",
     "wikidata": "https://www.wikidata.org/wiki/Q112065115",
@@ -27865,6 +28321,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065115",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27884,7 +28348,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241928.jpg?width=500",
     "qid": "Q112065209",
     "wikidata": "https://www.wikidata.org/wiki/Q112065209",
@@ -27892,6 +28356,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065209",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27911,7 +28383,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241910.jpg?width=500",
     "qid": "Q112065432",
     "wikidata": "https://www.wikidata.org/wiki/Q112065432",
@@ -27919,6 +28391,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065432",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27938,7 +28418,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241957.jpg?width=500",
     "qid": "Q112065468",
     "wikidata": "https://www.wikidata.org/wiki/Q112065468",
@@ -27946,6 +28426,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065468",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27965,7 +28453,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240942.jpg?width=500",
     "qid": "Q112065553",
     "wikidata": "https://www.wikidata.org/wiki/Q112065553",
@@ -27973,6 +28461,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065553",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -27992,7 +28488,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242016.jpg?width=500",
     "qid": "Q112065571",
     "wikidata": "https://www.wikidata.org/wiki/Q112065571",
@@ -28000,6 +28496,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112065571",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28019,7 +28523,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240990.jpg?width=500",
     "qid": "Q112066096",
     "wikidata": "https://www.wikidata.org/wiki/Q112066096",
@@ -28027,6 +28531,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112066096",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28046,7 +28558,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242032.jpg?width=500",
     "qid": "Q112066116",
     "wikidata": "https://www.wikidata.org/wiki/Q112066116",
@@ -28054,6 +28566,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112066116",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28073,7 +28593,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242052.jpg?width=500",
     "qid": "Q112066148",
     "wikidata": "https://www.wikidata.org/wiki/Q112066148",
@@ -28081,6 +28601,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112066148",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28100,7 +28628,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241179.jpg?width=500",
     "qid": "Q112066229",
     "wikidata": "https://www.wikidata.org/wiki/Q112066229",
@@ -28108,6 +28636,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112066229",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28127,7 +28663,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242061.jpg?width=500",
     "qid": "Q112066395",
     "wikidata": "https://www.wikidata.org/wiki/Q112066395",
@@ -28135,6 +28671,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112066395",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28154,7 +28698,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240402.jpg?width=500",
     "qid": "Q112128200",
     "wikidata": "https://www.wikidata.org/wiki/Q112128200",
@@ -28162,6 +28706,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112128200",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28181,7 +28733,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240302.jpg?width=500",
     "qid": "Q112144966",
     "wikidata": "https://www.wikidata.org/wiki/Q112144966",
@@ -28189,6 +28741,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112144966",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1730, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28208,7 +28768,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240421.jpg?width=500",
     "qid": "Q112153033",
     "wikidata": "https://www.wikidata.org/wiki/Q112153033",
@@ -28216,6 +28776,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112153033",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28235,7 +28803,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241097.jpg?width=500",
     "qid": "Q112153145",
     "wikidata": "https://www.wikidata.org/wiki/Q112153145",
@@ -28243,6 +28811,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112153145",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28262,7 +28838,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242030.jpg?width=500",
     "qid": "Q112153556",
     "wikidata": "https://www.wikidata.org/wiki/Q112153556",
@@ -28270,6 +28846,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112153556",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -28289,7 +28873,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241995.jpg?width=500",
     "qid": "Q112154609",
     "wikidata": "https://www.wikidata.org/wiki/Q112154609",
@@ -28297,6 +28881,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112154609",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -29036,7 +29628,7 @@
     "location": "Bavarian State Painting Collections",
     "city": "Munich",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%28Kopie%20nach%29%20-%20Tomyris%20l%C3%A4sst%20das%20Haupt%20des%20Cyrus%20in%20Blut%20tauchen%20%28nach%20dem%20Stich%20von%20Paulus%20Pontius%29%20-%206206%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=500",
     "qid": "Q29965015",
     "wikidata": "https://www.wikidata.org/wiki/Q29965015",
@@ -29044,6 +29636,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29965015",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30792,7 +31392,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241942.jpg?width=500",
     "qid": "Q112154699",
     "wikidata": "https://www.wikidata.org/wiki/Q112154699",
@@ -30800,6 +31400,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112154699",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30819,7 +31427,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241917.jpg?width=500",
     "qid": "Q112154808",
     "wikidata": "https://www.wikidata.org/wiki/Q112154808",
@@ -30827,6 +31435,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112154808",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30846,7 +31462,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241931.jpg?width=500",
     "qid": "Q112155015",
     "wikidata": "https://www.wikidata.org/wiki/Q112155015",
@@ -30854,6 +31470,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112155015",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30873,7 +31497,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240673.jpg?width=500",
     "qid": "Q112157481",
     "wikidata": "https://www.wikidata.org/wiki/Q112157481",
@@ -30881,6 +31505,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112157481",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30900,7 +31532,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241933.jpg?width=500",
     "qid": "Q112157549",
     "wikidata": "https://www.wikidata.org/wiki/Q112157549",
@@ -30908,6 +31540,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112157549",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30927,7 +31567,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240774.jpg?width=500",
     "qid": "Q112157587",
     "wikidata": "https://www.wikidata.org/wiki/Q112157587",
@@ -30935,6 +31575,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112157587",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30954,7 +31602,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241912.jpg?width=500",
     "qid": "Q112157680",
     "wikidata": "https://www.wikidata.org/wiki/Q112157680",
@@ -30962,6 +31610,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112157680",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -30981,7 +31637,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241925.jpg?width=500",
     "qid": "Q112157776",
     "wikidata": "https://www.wikidata.org/wiki/Q112157776",
@@ -30989,6 +31645,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112157776",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -31008,7 +31672,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20240977.jpg?width=500",
     "qid": "Q112163561",
     "wikidata": "https://www.wikidata.org/wiki/Q112163561",
@@ -31016,6 +31680,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112163561",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -31035,7 +31707,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241025.jpg?width=500",
     "qid": "Q112164416",
     "wikidata": "https://www.wikidata.org/wiki/Q112164416",
@@ -31043,6 +31715,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112164416",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -31062,7 +31742,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241080.jpg?width=500",
     "qid": "Q112164484",
     "wikidata": "https://www.wikidata.org/wiki/Q112164484",
@@ -31070,6 +31750,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112164484",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -31089,7 +31777,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20241107.jpg?width=500",
     "qid": "Q112166377",
     "wikidata": "https://www.wikidata.org/wiki/Q112166377",
@@ -31097,6 +31785,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112166377",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -31116,7 +31812,7 @@
     "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20242074.jpg?width=500",
     "qid": "Q112166466",
     "wikidata": "https://www.wikidata.org/wiki/Q112166466",
@@ -31124,6 +31820,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112166466",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1751, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -32361,7 +33065,7 @@
     "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Resurrection%20of%20Christ%20Rubens.jpg?width=500",
     "qid": "Q61744107",
     "wikidata": "https://www.wikidata.org/wiki/Q61744107",
@@ -32369,6 +33073,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q61744107",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -33683,7 +34395,7 @@
     "location": "Los Angeles County Museum of Art",
     "city": "Los Angeles",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Crowning%20of%20Roxana%20LACMA%20AC1992.152.143.jpg?width=500",
     "qid": "Q20879049",
     "wikidata": "https://www.wikidata.org/wiki/Q20879049",
@@ -33691,6 +34403,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20879049",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -34218,7 +34938,7 @@
     "location": "Cooper Gallery",
     "city": "Barnsley",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28school%20of%29%20-%20The%20Reception%20of%20Saint%20Bavo%2C%20the%20Patron%20Saint%20of%20Ghent%20-%20CP-TR%20259%20-%20Cooper%20Gallery.jpg?width=500",
     "qid": "Q118985393",
     "wikidata": "https://www.wikidata.org/wiki/Q118985393",
@@ -34226,6 +34946,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118985393",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -34245,7 +34973,7 @@
     "location": "São Paulo Museum of Art",
     "city": "São Paulo",
     "country": "Brazil",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20O%20Arquiduque%20Alberto%20VII%20da%20%C3%81ustria.jpg?width=500",
     "qid": "Q49876836",
     "wikidata": "https://www.wikidata.org/wiki/Q49876836",
@@ -34253,6 +34981,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49876836",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -34272,7 +35008,7 @@
     "location": "Städel Museum",
     "city": "Frankfurt",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Frans%20Francken%20the%20Elder%20%281542-1616%29%20%28SM%20sg513%29.png?width=500",
     "qid": "Q64788140",
     "wikidata": "https://www.wikidata.org/wiki/Q64788140",
@@ -34280,6 +35016,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64788140",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1670, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -34521,7 +35265,7 @@
     "location": "Barnes Foundation",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20King%20David%20Playing%20the%20Harp%20-%20BF812%20-%20Barnes%20Foundation.jpg?width=500",
     "qid": "Q28130709",
     "wikidata": "https://www.wikidata.org/wiki/Q28130709",
@@ -34529,6 +35273,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28130709",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -35844,7 +36596,7 @@
     "location": "Snijders&Rockox House",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%28school%29%20-%20Portret%20van%20Nicolaas%20Rockox%20-%20Snijders%5ERockox%20House%20%28BALaT%2044223%29.jpg?width=500",
     "qid": "Q120669727",
     "wikidata": "https://www.wikidata.org/wiki/Q120669727",
@@ -35852,6 +36604,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q120669727",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -35952,7 +36712,7 @@
     "location": "Astley Hall",
     "city": "Chorley",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Adoration%20of%20the%20Magi%20-%201979-112%20-%20Astley%20Hall.jpg?width=500",
     "qid": "Q119858177",
     "wikidata": "https://www.wikidata.org/wiki/Q119858177",
@@ -35960,6 +36720,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119858177",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -36373,7 +37141,7 @@
     "location": "Ashmolean Museum",
     "city": "Oxford",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Apotheosis%20of%20James%20I%20-%20WA1855.169%20-%20Ashmolean%20Museum.jpg?width=500",
     "qid": "Q119499301",
     "wikidata": "https://www.wikidata.org/wiki/Q119499301",
@@ -36381,6 +37149,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119499301",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -37441,7 +38217,7 @@
     "location": "Northampton Museum and Art Gallery",
     "city": "Northampton",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Espousal%20of%20Mary%20and%20Joseph%20-%201952-53.38%20-%20Northampton%20Museum%20and%20Art%20Gallery.jpg?width=500",
     "qid": "Q118885693",
     "wikidata": "https://www.wikidata.org/wiki/Q118885693",
@@ -37449,6 +38225,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118885693",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1656, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -37781,7 +38565,7 @@
     "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Succession%20of%20the%20Popes%20-%20modello.png?width=500",
     "qid": "Q111364147",
     "wikidata": "https://www.wikidata.org/wiki/Q111364147",
@@ -37789,6 +38573,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111364147",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -38704,7 +39496,7 @@
     "location": "Ducal Museum Gotha",
     "city": "Gotha",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20061.jpg?width=500",
     "qid": "Q111357364",
     "wikidata": "https://www.wikidata.org/wiki/Q111357364",
@@ -38712,6 +39504,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111357364",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -38842,7 +39642,7 @@
     "location": "Musée des Beaux-Arts de Tournai",
     "city": "Tournai",
     "country": "Belgium",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Historiography%20or%20Divine%20Wisdom%20-%20bozzetto.jpg?width=500",
     "qid": "Q111358837",
     "wikidata": "https://www.wikidata.org/wiki/Q111358837",
@@ -38850,6 +39650,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111358837",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -39387,7 +40195,7 @@
     "location": "Walters Art Museum",
     "city": "Baltimore",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Peter%20Paul%20Rubens%20-%20Section%20from%20%22The%20Government%20of%20the%20Queen%22%20-%20Walters%20371.jpg?width=500",
     "qid": "Q18749393",
     "wikidata": "https://www.wikidata.org/wiki/Q18749393",
@@ -39395,6 +40203,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18749393",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1850, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -41560,7 +42376,7 @@
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Workshop%20of%20Peter%20Paul%20Rubens%20004.jpg?width=500",
     "qid": "Q17328406",
     "wikidata": "https://www.wikidata.org/wiki/Q17328406",
@@ -41568,6 +42384,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17328406",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -41587,7 +42411,7 @@
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Peter%20Paul%20Rubens%20008.jpg?width=500",
     "qid": "Q17329919",
     "wikidata": "https://www.wikidata.org/wiki/Q17329919",
@@ -41595,6 +42419,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17329919",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -43142,7 +43974,7 @@
     "location": "Santa Maria Zobenigo",
     "city": "Venice",
     "country": "Italy",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Virgin%20and%20Child%20with%20the%20Infant%20St%20John%20-%20WGA20252.jpg?width=500",
     "qid": "Q111719757",
     "wikidata": "https://www.wikidata.org/wiki/Q111719757",
@@ -43150,6 +43982,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111719757",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -44723,7 +45563,7 @@
     "location": "Museo Nacional de San Carlos",
     "city": "Cuauhtémoc",
     "country": "Mexico",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Retrato%20de%20hombre%20con%20abrigo%20de%20pieles.jpg?width=500",
     "qid": "Q111728188",
     "wikidata": "https://www.wikidata.org/wiki/Q111728188",
@@ -44731,6 +45571,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111728188",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -44959,7 +45807,7 @@
     "location": "Towneley Hall Art Gallery And Museum",
     "city": "Burnley",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20Salome%20with%20the%20Head%20of%20John%20the%20Baptist%20-%20BURGM-paoil276%20-%20Towneley%20Hall%20Art%20Gallery%20And%20Museum.jpg?width=500",
     "qid": "Q119940731",
     "wikidata": "https://www.wikidata.org/wiki/Q119940731",
@@ -44967,6 +45815,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119940731",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1900, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -44986,7 +45842,7 @@
     "location": "Towneley Hall Art Gallery And Museum",
     "city": "Burnley",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Descent%20from%20the%20Cross%20-%20BURGM-paoil5%20-%20Towneley%20Hall%20Art%20Gallery%20And%20Museum.jpg?width=500",
     "qid": "Q119940743",
     "wikidata": "https://www.wikidata.org/wiki/Q119940743",
@@ -44994,6 +45850,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119940743",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45077,7 +45941,7 @@
     "location": "National Museum of Fine Arts, Argentina",
     "city": "Buenos Aires",
     "country": "Argentina",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alegor%C3%ADa%20de%20la%20Fortuna%20y%20la%20Virtud%20-%20Peter%20Paul%20Rubens.jpg?width=500",
     "qid": "Q25317667",
     "wikidata": "https://www.wikidata.org/wiki/Q25317667",
@@ -45085,6 +45949,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q25317667",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45215,7 +46087,7 @@
     "location": "Museum of Fine Arts, Budapest",
     "city": "Budapest district XIV",
     "country": "Hungary",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20na%201625%20naar%20Peter%20Paul%20Rubens%20-%20De%20kerkelijke%20hi%C3%ABrarchie%20in%20aanbidding%20-%20903%20-%20Museum%20of%20Fine%20Arts%2C%20Budapest.jpg?width=500",
     "qid": "Q50888358",
     "wikidata": "https://www.wikidata.org/wiki/Q50888358",
@@ -45223,6 +46095,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50888358",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1712, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45242,7 +46122,7 @@
     "location": "Museum of Fine Arts, Budapest",
     "city": "Budapest district XIV",
     "country": "Hungary",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20na%201635%20naar%20Peter%20Paul%20Rubens%20-%20Briseis%20wordt%20aan%20Achilles%20teruggegeven%20-%2051.2981%20-%20Museum%20of%20Fine%20Arts%2C%20Budapest.jpg?width=500",
     "qid": "Q50909297",
     "wikidata": "https://www.wikidata.org/wiki/Q50909297",
@@ -45250,6 +46130,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50909297",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1667, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45417,7 +46305,7 @@
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Triumph%20of%20Divine%20Love%20%28panel%203%20of%207%29%20-%20230%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50812813",
     "wikidata": "https://www.wikidata.org/wiki/Q50812813",
@@ -45425,6 +46313,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50812813",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45444,7 +46340,7 @@
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Meeting%20of%20Abraham%20and%20Melchisedek%20%28panel%207%20of%207%29%20-%20231%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50812816",
     "wikidata": "https://www.wikidata.org/wiki/Q50812816",
@@ -45452,6 +46348,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50812816",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45545,7 +46449,7 @@
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Defenders%20of%20the%20Eucharist%20%28panel%205%20of%207%29%20-%20241%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50819505",
     "wikidata": "https://www.wikidata.org/wiki/Q50819505",
@@ -45553,6 +46457,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50819505",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45609,7 +46521,7 @@
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Four%20Evangelists%20%28panel%201%20of%207%29%20-%20242%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50820707",
     "wikidata": "https://www.wikidata.org/wiki/Q50820707",
@@ -45617,6 +46529,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50820707",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45636,7 +46556,7 @@
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Triumph%20of%20the%20Eucharist%20over%20Philosophy%20and%20Science%20%28panel%206%20of%207%29%20-%20243%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50820708",
     "wikidata": "https://www.wikidata.org/wiki/Q50820708",
@@ -45644,6 +46564,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50820708",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45700,7 +46628,7 @@
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Victory%20of%20the%20Eucharist%20over%20Heresy%20%28panel%202%20of%207%29%20-%20229%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50820711",
     "wikidata": "https://www.wikidata.org/wiki/Q50820711",
@@ -45708,6 +46636,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50820711",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -45920,7 +46856,7 @@
     "location": "Gemäldegalerie Alte Meister",
     "city": "Kassel",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Woman%20with%20a%20Mirror%20-%20WGA20336.jpg?width=500",
     "qid": "Q55864314",
     "wikidata": "https://www.wikidata.org/wiki/Q55864314",
@@ -45928,6 +46864,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55864314",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1644, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -46169,7 +47113,7 @@
     "location": "Slovak National Gallery",
     "city": "Bratislava",
     "country": "Slovakia",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Kaj%C3%BAca%20sa%20M%C3%A1ria%20Magdal%C3%A9na%20-%20O%203926%20-%20Slovak%20National%20Gallery.jpg?width=500",
     "qid": "Q50702052",
     "wikidata": "https://www.wikidata.org/wiki/Q50702052",
@@ -46177,6 +47121,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50702052",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1675, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -46529,7 +47481,7 @@
     "location": "Staatliche Kunstsammlungen Dresden",
     "city": "Dresden",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20and%20Jan%20Boeckhorst%20-%20The%20escape%20of%20Cloelia%20from%20the%20camp%20of%20Porsenna.jpg?width=500",
     "qid": "Q50324008",
     "wikidata": "https://www.wikidata.org/wiki/Q50324008",
@@ -46537,6 +47489,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50324008",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

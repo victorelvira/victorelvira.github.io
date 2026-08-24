@@ -11028,7 +11028,7 @@
     "location": "National Museum of Art, Architecture and Design",
     "city": "Oslo",
     "country": "Norway",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Degas%20-%20Lady%20with%20a%20Dog%20-%20NG.M.01170%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
     "qid": "Q55432365",
     "wikidata": "https://www.wikidata.org/wiki/Q55432365",
@@ -11036,6 +11036,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55432365",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1800, before birth (1834–1917) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

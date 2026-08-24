@@ -16021,7 +16021,7 @@
     "location": "Israel Museum",
     "city": "Jerusalem",
     "country": "Israel",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre%20Auguste%20Renoir%20-%20Portrait%20of%20Mme.%20Paulin%20-%20Google%20Art%20Project.jpg?width=500",
     "qid": "Q28810347",
     "wikidata": "https://www.wikidata.org/wiki/Q28810347",
@@ -16029,6 +16029,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28810347",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1800, before birth (1841–1919) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

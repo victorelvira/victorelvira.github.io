@@ -1870,7 +1870,7 @@
     "country": "Spain",
     "location": "Museo del Prado",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "211 × 143 cm",
@@ -1885,7 +1885,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q6057322"
+    "qid": "Q6057322",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1600–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -5618,7 +5626,7 @@
     "location": "McLean Museum and Art Gallery",
     "city": "Inverclyde",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20%281604-1682%29%20%28after%29%20-%20The%20Flight%20into%20Egypt%20-%201977.843%20-%20McLean%20Museum%20and%20Art%20Gallery.jpg?width=500",
     "qid": "Q119859305",
     "wikidata": "https://www.wikidata.org/wiki/Q119859305",
@@ -5626,6 +5634,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119859305",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1850, after death (1600–1682) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

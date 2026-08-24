@@ -2073,7 +2073,7 @@
     "country": "United States",
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "dimensions": "23.8 × 16.5 cm",
     "genre": "religious art",
@@ -2087,7 +2087,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q6728394"
+    "qid": "Q6728394",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 2000, after death (1255–1319) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

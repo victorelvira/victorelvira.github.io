@@ -758,7 +758,7 @@
     "country": "Italy",
     "location": "Castelvecchio Museum",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Panel",
     "dimensions": "73 × 55 cm",
@@ -772,7 +772,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "castelvecchio-museum",
-    "qid": "Q128783484"
+    "qid": "Q128783484",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -5808,7 +5816,7 @@
     "location": "Musée du Petit Palais",
     "city": "Avignon",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20bellini%20%28scuola%29%2C%20madonna%20col%20bambino%20tra%20i%20ss.%20giovanni%20battista%20e%20girolamo%2C%2001.jpg?width=500",
     "qid": "Q115669946",
     "wikidata": "https://www.wikidata.org/wiki/Q115669946",
@@ -5816,6 +5824,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115669946",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -5835,7 +5851,7 @@
     "location": "Musée du Petit Palais",
     "city": "Avignon",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Petit%20Palais%20%28Avignon%29%20giovanni%20bellini%20la%20circoncision.jpg?width=500",
     "qid": "Q115674321",
     "wikidata": "https://www.wikidata.org/wiki/Q115674321",
@@ -5843,6 +5859,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115674321",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -6155,7 +6179,7 @@
     "location": "Glasgow Museums Resource Centre",
     "city": "Glasgow City",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Bellini%20%281431-1436-1516%29%20%28follower%20of%29%20-%20Virgin%20and%20Child%20Enthroned%20with%20Saints%20Peter%2C%20John%20the%20Baptist%2C%20John%20the%20Evangelist%2C%20Sebastian%2C%20and%20-%20188%20-%20Glasgow%20Museums%20Resource%20Centre.jpg?width=500",
     "qid": "Q118680656",
     "wikidata": "https://www.wikidata.org/wiki/Q118680656",
@@ -6163,6 +6187,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118680656",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1525, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

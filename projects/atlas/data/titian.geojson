@@ -5675,7 +5675,7 @@
     "location": "National Gallery",
     "city": "City of Westminster",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Navolger%20van%20Giorgione%20-%20Nimfen%20en%20kinderen%20in%20een%20landschap%20met%20herders%20-%20NG1695%20-%20National%20Gallery.jpg?width=500",
     "qid": "Q26699539",
     "wikidata": "https://www.wikidata.org/wiki/Q26699539",
@@ -5683,6 +5683,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26699539",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1488–1576) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

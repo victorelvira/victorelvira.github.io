@@ -2009,7 +2009,7 @@
     "country": "France",
     "location": "Nantes Museum of Arts",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "93 × 82.2 cm",
@@ -2025,7 +2025,15 @@
     },
     "museum_id": "nantes-museum-of-arts",
     "qid": "Q9335245",
-    "wga_url": "https://www.wga.hu/html/l/la_tour/georges/2/05dream.html"
+    "wga_url": "https://www.wga.hu/html/l/la_tour/georges/2/05dream.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1593–1652) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

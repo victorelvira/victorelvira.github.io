@@ -3509,7 +3509,7 @@
     "location": "Royal Chapel of Granada",
     "city": "Granada",
     "country": "Spain",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20055.jpg?width=500",
     "qid": "Q44196674",
     "wikidata": "https://www.wikidata.org/wiki/Q44196674",
@@ -3517,6 +3517,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44196674",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -3563,7 +3571,7 @@
     "location": "Staatliche Kunstsammlungen Dresden",
     "city": "Dresden",
     "country": "Germany",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoine%20bastard%20of%20burgundy%20memling.jpg?width=500",
     "qid": "Q44243189",
     "wikidata": "https://www.wikidata.org/wiki/Q44243189",
@@ -3571,6 +3579,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44243189",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -4022,7 +4038,7 @@
     "location": "Plume Library",
     "city": "Maldon",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20%281430-1440-1494%29%20%28follower%20of%29%20-%20Salvator%20Mundi%20-%20X.1.2%20-%20Plume%20Library.jpg?width=500",
     "qid": "Q118679861",
     "wikidata": "https://www.wikidata.org/wiki/Q118679861",
@@ -4030,6 +4046,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118679861",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

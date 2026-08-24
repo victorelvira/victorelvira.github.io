@@ -401,7 +401,7 @@
     "country": "Germany",
     "location": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Poplar panel",
     "genre": "religious art",
@@ -417,7 +417,15 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3705918",
-    "wga_url": "https://www.wga.hu/html/m/masaccio/z_panels/tondo.html"
+    "wga_url": "https://www.wga.hu/html/m/masaccio/z_panels/tondo.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1401–1428) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

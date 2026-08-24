@@ -3818,7 +3818,7 @@
     "country": "Germany",
     "location": "Städel Museum",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "194 × 318.5 cm",
@@ -3832,7 +3832,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "stadel-museum",
-    "qid": "Q59342381"
+    "qid": "Q59342381",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1441, before birth (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -4966,7 +4974,7 @@
     "location": "Waddesdon Manor",
     "city": "Waddesdon",
     "country": "United Kingdom",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20%281696-1770%29%20%28after%29%20-%20The%20Banquet%20of%20Cleopatra%20%28detail%29%20-%203627%20-%20Waddesdon%20Manor.jpg?width=500",
     "qid": "Q119950875",
     "wikidata": "https://www.wikidata.org/wiki/Q119950875",
@@ -4974,6 +4982,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119950875",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1825, after death (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8395,7 +8411,7 @@
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20De%20vlucht%20naar%20Egypte.jpg?width=500",
     "qid": "Q17334337",
     "wikidata": "https://www.wikidata.org/wiki/Q17334337",
@@ -8403,6 +8419,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17334337",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, before birth (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },
@@ -8533,7 +8557,7 @@
     "location": "Walters Art Museum",
     "city": "Baltimore",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20Beheading%20of%20a%20Martyr%20-%20Walters%20371171.jpg?width=500",
     "qid": "Q18748553",
     "wikidata": "https://www.wikidata.org/wiki/Q18748553",
@@ -8541,6 +8565,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18748553",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1850, after death (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

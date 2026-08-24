@@ -177,7 +177,7 @@
     "country": "Italy",
     "location": "Galleria Borghese",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "genre": "religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea%20del%20sarto%2C%20predella%20con%20la%20piet%C3%A0%20e%20santi%2C%201507-09%20ca.%2001.jpg?width=420",
@@ -189,7 +189,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q106575258"
+    "qid": "Q106575258",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1262,7 +1270,7 @@
     "country": "United States",
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "66.7 × 50.5 cm",
@@ -1276,7 +1284,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19912405"
+    "qid": "Q19912405",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

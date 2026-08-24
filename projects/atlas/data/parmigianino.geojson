@@ -2418,7 +2418,7 @@
     "country": "Italy",
     "location": "Uffizi Gallery",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on panel",
     "dimensions": "219 × 132 cm",
@@ -2435,7 +2435,15 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q867403",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/longneck.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/longneck.html",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1503–1540) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

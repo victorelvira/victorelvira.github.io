@@ -11899,7 +11899,7 @@
     "location": "Eugène-Delacroix National Museum",
     "city": "6th arrondissement of Paris",
     "country": "France",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Hercule%20ramenant%20Alceste%20du%20fond%20des%20Enfers%2C%20%C3%A9tude%20pour%20le%20d%C3%A9cor%20du%20Salon%20de%20la%20Paix%20de%20l%E2%80%99H%C3%B4tel%20de%20Ville%20de%20Paris%2C%20Vers%201852.jpg?width=500",
     "qid": "Q115674033",
     "wikidata": "https://www.wikidata.org/wiki/Q115674033",
@@ -11907,6 +11907,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115674033",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1875, after death (1798–1863) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

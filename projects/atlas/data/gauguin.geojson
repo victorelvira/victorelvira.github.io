@@ -13061,7 +13061,7 @@
     "location": "Galería Nacional de Arte",
     "city": "Washington, D.C.",
     "country": "United States",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Autoportrait%20d%C3%A9di%C3%A9%20%C3%A0%20Carri%C3%A8re%20%281888%20ou%201889%29.jpg?width=500",
     "qid": "Q20189971",
     "wikidata": "https://www.wikidata.org/wiki/Q20189971",
@@ -13069,6 +13069,14 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20189971",
      "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1778, before birth (1848–1903) → later copy / not autograph at this date (Timeline anomaly)"
+     }
     }
    }
   },

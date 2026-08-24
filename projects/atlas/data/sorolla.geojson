@@ -2569,7 +2569,7 @@
     "country": "Mexico",
     "location": "Museo Soumaya",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on panel",
     "dimensions": "16.5 × 14.8 cm",
@@ -2581,7 +2581,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q21712266"
+    "qid": "Q21712266",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1870, after death (1863–1923) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

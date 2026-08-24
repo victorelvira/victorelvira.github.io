@@ -12017,7 +12017,7 @@
     "city": "Paris",
     "country": "France",
     "location": "Musee Carnavalet",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "medium": "53 x 80",
     "dimensions": "53 x 80",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Monet_w575_sunset_at_lavacourt.jpg/500px-Monet_w575_sunset_at_lavacourt.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -12026,7 +12026,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-carnavalet"
+    "museum_id": "musee-carnavalet",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1800, before birth (1840–1926) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -27341,7 +27349,7 @@
     "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Waterloo-Br%C3%BCcke%20-%201903.jpeg?width=500",
     "qid": "Q3795194",
     "wikidata": "https://www.wikidata.org/wiki/Q3795194",
@@ -27360,7 +27368,15 @@
       "source": "Wikipedia list",
       "title": "Waterloo Bridge"
      }
-    ]
+    ],
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 2000, after death (1840–1926) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

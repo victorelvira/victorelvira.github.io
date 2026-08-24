@@ -995,7 +995,7 @@
     "country": "France",
     "location": "Louvre",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Gold, pine, tempera",
     "dimensions": "277 × 225 cm",
@@ -1009,7 +1009,15 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "louvre",
-    "qid": "Q3005511"
+    "qid": "Q3005511",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1400, after death (1267–1337) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
