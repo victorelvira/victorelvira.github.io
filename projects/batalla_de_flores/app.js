@@ -554,7 +554,7 @@ function renderFloatGrid(rows) {
     return `
       <button class="tile${active ? " is-active" : ""}" type="button"
               ${photoAttrs(entry, entry.image_urls[0])}>
-        <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+        <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy">
         ${winnerBadge(entry)}
         <span class="tile-name">${esc(entry.name)}</span>
         <span class="tile-meta">${entry.year}${entry.position != null
@@ -1987,7 +1987,7 @@ function renderGallery(entries) {
         <figure class="shot">
           <button type="button" class="shot-btn" ${photoAttrs(entry, url)}
              title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}">
-            <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+            <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy">
           </button>
           <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small>
             ${photoCredit(entry)}</figcaption>
@@ -2228,7 +2228,7 @@ function renderEditionDetail(edition) {
               ${withPhotos ? `<td class="c-photo">${(entry.image_urls || []).length
                 ? `<button class="thumb" type="button" ${photoAttrs(entry, entry.image_urls[0])}
                      data-tip="${esc(entry.name)}"><img src="${esc(thumbUrl(entry.image_urls[0]))}"
-                     alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer"></button>`
+                     alt="${esc(entry.name)}" loading="lazy"></button>`
                 : ""}</td>` : ""}
               <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.position === 1
                 ? `${ICON_TROPHY}` : ""}${cats.length > 1 || !entry.category ? "" : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
@@ -2457,6 +2457,8 @@ function floatProvenance(entry) {
           <li><b>La foto:</b> ${esc(r.origen)}.
             <br><small>Que sea de esta carroza: ${esc(r.asignacion)}.</small>
             ${r.pagina ? `<br><small><a href="${esc(r.pagina)}" target="_blank" rel="noopener">ver la página de origen ↗</a></small>` : ""}
+            ${r.original ? `<br><small>Se sirve desde aquí una copia, para no cargarle el tráfico a
+              su servidor. <a href="${esc(r.original)}" target="_blank" rel="noopener">ver el original ↗</a></small>` : ""}
           </li>`).join("")
         : entry.image_urls?.length
           ? "<li><b>La foto:</b> del archivo de batalladeflores.net.</li>"
@@ -2507,7 +2509,7 @@ function renderFloatDetail(entry) {
           <figure class="shot">
             <button type="button" class="shot-btn" ${photoAttrs(entry, url)}
                title="${esc(entry.name)} (${entry.year})">
-              <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy" referrerpolicy="no-referrer">
+              <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy">
             </button>
             <figcaption>${photoCredit(entry, url)}</figcaption>
           </figure>`).join("")}
