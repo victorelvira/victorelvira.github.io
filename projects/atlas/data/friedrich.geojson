@@ -470,7 +470,16 @@
     },
     "museum_id": "milwaukee-art-museum",
     "city": "Milwaukee",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q18602472",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602472",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18602472 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -496,7 +505,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "joslyn-art-museum",
-    "city": "Omaha"
+    "city": "Omaha",
+    "qid": "Q18602471",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602471",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18602471 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -767,7 +785,16 @@
     },
     "museum_id": "hamburger-kunsthalle",
     "city": "Hamburg-Mitte",
-    "country": "Germany"
+    "country": "Germany",
+    "qid": "Q18603114",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603114",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18603114 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1133,7 +1160,16 @@
     },
     "museum_id": "art-gallery-of-ontario",
     "city": "Toronto",
-    "country": "Canada"
+    "country": "Canada",
+    "qid": "Q18602536",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602536",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18602536 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1674,7 +1710,16 @@
     },
     "museum_id": "virginia-museum-of-fine-arts",
     "city": "Richmond",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q16038721",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038721",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q16038721 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2064,7 +2109,16 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "city": "Madrid",
-    "country": "Spain"
+    "country": "Spain",
+    "qid": "Q18602616",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602616",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18602616 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2421,6 +2475,4796 @@
     "museum_id": "dallas-museum-of-art",
     "city": "Dallas",
     "country": "United States"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Giant Mountains (View of the Small Sturmhaube from Warmbrunn)",
+    "year": "1810",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Blick%20von%20Warmbrunn%20auf%20die%20Kleine%20Sturmhaube.jpg?width=500",
+    "qid": "Q18602584",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602584",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602584",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Swans in the reeds at the first dawn",
+    "year": "1832",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Schw%C3%A4ne%20im%20Schilf%20beim%20ersten%20Morgenrot.jpg?width=500",
+    "qid": "Q18603190",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603190",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603190",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Sea Shore (Fishing-Nets)",
+    "year": "1835",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Strand%20mit%20Fischernetzen%20%28ca.1835%29.jpg?width=500",
+    "qid": "Q18603193",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603193",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603193",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.295833,
+     52.521111
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Flat Countryside",
+    "year": "1822",
+    "location": "Charlottenburg Palace",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%20-%20Flat%20Countryside%20%28Isle%20of%20Ruegen%20or%20near%20Greifswald%29.jpg?width=500",
+    "qid": "Q18602604",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602604",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602604",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Oaktree in the Snow",
+    "year": "1829",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Eichbaum%20im%20Schnee.jpg?width=500",
+    "qid": "Q18602544",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602544",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602544",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Inside the forest in the moonlight",
+    "year": "1820",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Waldinneres%20bei%20Mondschein.jpg?width=500",
+    "qid": "Q18602607",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602607",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602607",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Monastery ruin Eldena",
+    "year": "1824",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Klosterruine%20Eldena%20bei%20Greifswald%20%281824%29%20-%20Caspar%20David%20Friedrich%20%28Alte%20Nationalgalerie%2C%20Berlin%29.jpg?width=500",
+    "qid": "Q18602609",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602609",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602609",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Seashore by Moonlight",
+    "year": "1825",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Meeresk%C3%BCste%20bei%20Mondschein%201830.jpg?width=500",
+    "qid": "Q18602610",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602610",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602610",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Riesengebirge Mountains",
+    "year": "1830",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Riesengebirge%20-%20Nationalgalerie%20Berlin.jpg?width=500",
+    "qid": "Q18602619",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602619",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602619",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Wreck in the Moonlight",
+    "year": "1835",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wreck%20in%20the%20Moonlight.jpg?width=500",
+    "qid": "Q18603192",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603192",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603192",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountains in the Rising Fog",
+    "year": "1835",
+    "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Landscape%20with%20the%20Rosenberg%20in%20the%20Bohemian%20Mountains%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18602553",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602553",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602553",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Evergreens by the Waterfall",
+    "year": "1828",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Tannen%20am%20Wasserfall.jpg?width=500",
+    "qid": "Q18602537",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602537",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602537",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Sea Shore in Moonlight",
+    "year": "1835",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20K%C3%BCste%20bei%20Mondschein%202.jpg?width=500",
+    "qid": "Q18602552",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602552",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602552",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Augustus Bridge in Dresden",
+    "year": "1820",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20Augustusbr%C3%BCcke%20in%20Dresden.jpg?width=500",
+    "qid": "Q18602597",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602597",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602597",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Meadows near Greifswald",
+    "year": "1821",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wiesen%20bei%20Greifswald%20%281821-1822%29%20-%20Caspar%20David%20Friedrich%20%28Hamburger%20Kunsthalle%29.jpg?width=500",
+    "qid": "Q18602602",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602602",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602602",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Drifting Clouds",
+    "year": "1820",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Ziehende%20Wolken%20-%20ca.1820%20-%20Hamburger%20Kunsthalle.jpg?width=500",
+    "qid": "Q18603128",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603128",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603128",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Early Snow",
+    "year": "1827",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Fr%C3%BChschnee.jpg?width=500",
+    "qid": "Q18603181",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603181",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603181",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Sturzacker",
+    "year": "1830",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Sturzacker%20%28ca.%201830%29.jpg?width=500",
+    "qid": "Q18603184",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603184",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603184",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountain landscape in Bohemia",
+    "year": "1830",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Riesengebirgslandschaft%20%28C%20D%20Friedrich%29.jpg?width=500",
+    "qid": "Q18603185",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603185",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603185",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.694925,
+     40.416041
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Fishing boat between two rocks on the beach of the Baltic Sea",
+    "year": "1830",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Barco%20de%20pesca%20entre%20dos%20rocas%20en%20una%20playa%20del%20Mar%20B%C3%A1ltico%2C%20por%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q18602620",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602620",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602620",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Northern Landscape, Spring",
+    "year": "1825",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Nordische%20Landschaft%2C%20Fr%C3%BChling.jpg?width=500",
+    "qid": "Q18603175",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603175",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603175",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.380833333,
+     48.191388888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Rocky ravine in the Elbe Sandstone Mountains",
+    "year": "1822",
+    "location": "Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rocky%20Landscape%20in%20the%20Elbe%20Sandstone%20Mountains%20-%20Caspar%20David%20Friedrich%20-%20Google%20Cultural%20Institute.jpg?width=500",
+    "qid": "Q18602603",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602603",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602603",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.380833333,
+     48.191388888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Sea beach in the fog",
+    "year": "1807",
+    "location": "Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Meeresstrand%20im%20Nebel%20%28ca.1807%29.jpg?width=500",
+    "qid": "Q18602629",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602629",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602629",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.380833333,
+     48.191388888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Seashore with fisherman",
+    "year": "1807",
+    "location": "Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Meeresstrand%20mit%20Fischer%20%28ca.1807%29.jpg?width=500",
+    "qid": "Q18602630",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602630",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602630",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.740111115,
+     52.36549544
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Morning",
+    "year": "1816",
+    "location": "Landesmuseum Hannover",
+    "city": "Südstadt-Bult",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CDFriedrich-Am%20Morgen%20ausfahrende%20Boote.jpg?width=500",
+    "qid": "Q18602623",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602623",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602623",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.740111115,
+     52.36549544
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Daytime cycle: The Afternoon",
+    "year": "1821",
+    "location": "Landesmuseum Hannover",
+    "city": "Südstadt-Bult",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Tageszeitenzyklus%2C%20Der%20Nachmittag%20%281821-22%29.jpg?width=500",
+    "qid": "Q18603141",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603141",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603141",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.740111115,
+     52.36549544
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Daytime cycle: The Morning",
+    "year": "1830",
+    "location": "Landesmuseum Hannover",
+    "city": "Südstadt-Bult",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Tageszeitenzyklus%2C%20Der%20Morgen%20%281821-22%29.jpg?width=500",
+    "qid": "Q18603142",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603142",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603142",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.740111115,
+     52.36549544
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Daytime cycle: The Midday",
+    "year": "1821",
+    "location": "Landesmuseum Hannover",
+    "city": "Südstadt-Bult",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Tageszeitenzyklus%2C%20Der%20Mittag%20%281821-22%29.jpg?width=500",
+    "qid": "Q18603152",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603152",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603152",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.77333,
+     51.2343
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "View of the Baltic Sea",
+    "year": "1820",
+    "location": "Museum Kunstpalast",
+    "city": "Pempelfort",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Blick%20auf%20die%20Ostsee.jpg?width=500",
+    "qid": "Q18602595",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602595",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602595",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.04465,
+     52.40037
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "View of a harbour",
+    "year": "1814",
+    "location": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg",
+    "city": "Potsdam",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Ansicht%20eines%20Hafens.jpg?width=500",
+    "qid": "Q18602586",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602586",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602586",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.04465,
+     52.40037
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Cross Beside The Baltic",
+    "year": "1813",
+    "location": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg",
+    "city": "Potsdam",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Kreuz%20an%20der%20Ostsee%20%28Schloss%20Carlottenburg%2C%20Neuer%20Pavillon%29.jpg?width=500",
+    "qid": "Q18602636",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602636",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602636",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.0342,
+     50.9756
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Forest in late autumn",
+    "year": "1835",
+    "location": "Angermuseum",
+    "city": "Erfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Wald%20im%20Sp%C3%A4therbst.jpg?width=500",
+    "qid": "Q18602549",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602549",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602549",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.375661869,
+     51.342449702
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Seapiece by Moonlight",
+    "year": "1827",
+    "location": "Museum der bildenden Künste",
+    "city": "Leipzig",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/See%20in%20the%20moonlight%20by%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q18602614",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602614",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602614",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Rest during the hay harvest",
+    "year": "1834",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rast%20bei%20der%20Heuernte.jpg?width=500",
+    "qid": "Q18602547",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602547",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602547",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Landscape with bridge",
+    "year": "1800",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landschaft%20mit%20Br%C3%BCcke.jpg?width=500",
+    "qid": "Q18602626",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602626",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602626",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Evening on the Baltic Sea",
+    "year": "1831",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Abend%20am%20Ostseestrand.jpg?width=500",
+    "qid": "Q18603183",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603183",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603183",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4,
+     49.0119
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Churchyard gate",
+    "year": "1822",
+    "location": "Staatliche Kunsthalle Karlsruhe",
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Kirchhofpforte%20%281822%29.jpg?width=500",
+    "qid": "Q104524726",
+    "wikidata": "https://www.wikidata.org/wiki/Q104524726",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104524726",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "After the Storm",
+    "year": "1817",
+    "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%2C%20Efter%20stormen%2C%201817%2C%20KMS8817%2C%20Statens%20Museum%20for%20Kunst.jpg?width=500",
+    "qid": "Q28484759",
+    "wikidata": "https://www.wikidata.org/wiki/Q28484759",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28484759",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.2894,
+     48.3086
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Uttenwalder Grund",
+    "year": "1825",
+    "location": "Lentos Art Museum",
+    "city": "Linz",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Uttewalder%20Grund.jpg?width=500",
+    "qid": "Q18603178",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603178",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603178",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.729,
+     47.5004
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Woman on the beach of Ruegen",
+    "year": "1818",
+    "location": "Kunst Museum Winterthur | Reinhart am Stadtgarten",
+    "city": "Winterthur",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Frau%20am%20Strand%20von%20R%C3%BCgen%20%28ca.1818%29.jpg?width=500",
+    "qid": "Q18603120",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603120",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603120",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.813611,
+     53.072778
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Rocky Valley",
+    "year": "1813",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Felsenschlucht%20%28Das%20Grab%20des%20Arminius%29.jpg?width=500",
+    "qid": "Q18602585",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602585",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602585",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.813611,
+     53.072778
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Cemetery Gate",
+    "year": "1825",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Churchyard%20Gate%20by%20Friedrich.jpg?width=500",
+    "qid": "Q18602612",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602612",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602612",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.958611,
+     50.9375
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Evening on the River",
+    "year": "1820",
+    "location": "Wallraf–Richartz Museum",
+    "city": "Altstadt-Nord",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Abend%20am%20Fluss.jpg?width=500",
+    "qid": "Q18603132",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603132",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603132",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.475,
+     34.0775
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Walk at Dusk",
+    "year": "1837",
+    "location": "J. Paul Getty Museum",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20A%20Walk%20at%20Dusk%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18602622",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602622",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602622",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Spruce thicket in the snow",
+    "year": "1828",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20074.jpg?width=500",
+    "qid": "Q18602539",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602539",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602539",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Giant Mountains Landscape with Rising Fog",
+    "year": "1819",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Riesengebirge%20Landscape%20with%20Rising%20Fog%20-%20WGA8257.jpg?width=500",
+    "qid": "Q18602594",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602594",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602594",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Ruins at dusk (Church ruin in the forest)",
+    "year": "1831",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Ruinen%20in%20der%20Abendd%C3%A4mmerung%20%28ca%201831%29.jpg?width=500",
+    "qid": "Q30063730",
+    "wikidata": "https://www.wikidata.org/wiki/Q30063730",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30063730",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Marshy beach",
+    "year": "1832",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Sumpfiger%20Strand%20%28ca.%201832%29.jpg?width=500",
+    "qid": "Q30068924",
+    "wikidata": "https://www.wikidata.org/wiki/Q30068924",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30068924",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Flat country shank at Bay of Greifswald",
+    "year": "1830",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20017.jpg?width=500",
+    "qid": "Q18602618",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602618",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602618",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.677545081,
+     50.111225951
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The evening star",
+    "year": "1830",
+    "location": "Goethe House",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Der%20Abendstern%20%28ca.1830%29.jpg?width=500",
+    "qid": "Q18603187",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603187",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603187",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Rock Canyon in the Harz",
+    "year": "1811",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Felsenschlucht%20im%20Harz.jpg?width=500",
+    "qid": "Q18602635",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602635",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602635",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.729166666,
+     59.911666666
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Riesengebirge Landscape",
+    "year": "1835",
+    "location": "National Museum of Art, Architecture and Design",
+    "city": "Oslo",
+    "country": "Norway",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Mountain%20in%20Riesengebirge%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18603196",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603196",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603196",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.4325,
+     50.101111
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Northern Sea in the Moonlight",
+    "year": "1823",
+    "location": "National Gallery Prague",
+    "city": "",
+    "country": "Czech Republic",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Northern%20Sea%20in%20the%20Moonlight%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18602605",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602605",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602605",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Cloud study",
+    "year": "1798",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20%28zugeschr%29%20-%20Wolkenstudie.jpg?width=500",
+    "qid": "Q18602624",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602624",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602624",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Woman on the stairs",
+    "year": "1825",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Frau%20auf%20der%20Treppe.jpg?width=500",
+    "qid": "Q18603171",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603171",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603171",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Woman with the Candlestick",
+    "year": "1825",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Frau%20mit%20Kerzenleuchter.jpg?width=500",
+    "qid": "Q18603174",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603174",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603174",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.365,
+     32.748611111
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountain Peak with Drifting Clouds",
+    "year": "1835",
+    "location": "Museo de Arte Kimbell",
+    "city": "Fort Worth",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Berggipfel%20mit%20ziehenden%20Wolken%20%281835%29.jpg?width=500",
+    "qid": "Q18603197",
+    "wikidata": "https://www.wikidata.org/wiki/Q18603197",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18603197",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.294491,
+     38.639306
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Sunburst in the Riesengebirge",
+    "year": "1835",
+    "location": "Saint Louis Art Museum",
+    "city": "St. Louis",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Sunburst%20in%20the%20Riesengebirge%20-%201-2019%20-%20Saint%20Louis%20Art%20Museum.jpg?width=500",
+    "qid": "Q64877060",
+    "wikidata": "https://www.wikidata.org/wiki/Q64877060",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64877060",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.186875,
+     48.780227777
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Bohemian Landscape",
+    "year": "1808",
+    "location": "Staatsgalerie Stuttgart",
+    "city": "Stuttgart",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20B%C3%B6hmische%20Landschaft%2C%20ca.1808.jpg?width=500",
+    "qid": "Q18602632",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602632",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602632",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.5647,
+     48.1423
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Paysage dans le massif des Géants",
+    "year": "1798",
+    "location": "Glaspalast",
+    "city": "Maxvorstadt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20Riesengebirgslandschaft.jpg?width=500",
+    "qid": "Q18602576",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602576",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602576",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Ruins of Eldena",
+    "year": "1824",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Die%20Ruine%20des%20Klosters%20Eldena%20%28ca.1824%29.jpg?width=500",
+    "qid": "Q18602450",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602450",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602450",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Landscape of Rügen near Putbus",
+    "year": "1824",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20R%C3%BCgenlandschaft%20bei%20Putbus.jpg?width=500",
+    "qid": "Q18602452",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602452",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602452",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Ruins of Teplitz Castle",
+    "year": "1828",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RuinsofTeplitzCastle1828.jpg?width=500",
+    "qid": "Q18602454",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602454",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602454",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "View of Schmiedebergerkamm",
+    "year": "1837",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Blick%20auf%20den%20Schmiedebergerkamm.jpg?width=500",
+    "qid": "Q18602459",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602459",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602459",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.00417,
+     51.4417
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Woman in Front of the Setting Sun",
+    "year": "1818",
+    "location": "Museum Folkwang",
+    "city": "Stadtbezirk II (Essen)",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Frau%20vor%20untergehender%20Sonne.jpg?width=500",
+    "qid": "Q15971584",
+    "wikidata": "https://www.wikidata.org/wiki/Q15971584",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15971584",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Memories of the Giant Mountains",
+    "year": "1835",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20016.jpg?width=500",
+    "qid": "Q4126323",
+    "wikidata": "https://www.wikidata.org/wiki/Q4126323",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4126323",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Ruins of the Oybin",
+    "year": "1835",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20011.jpg?width=500",
+    "qid": "Q4292427",
+    "wikidata": "https://www.wikidata.org/wiki/Q4292427",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4292427",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "On a Sailing Ship",
+    "year": "1818",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/On%20a%20Sailing%20Ship%20by%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q4310993",
+    "wikidata": "https://www.wikidata.org/wiki/Q4310993",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4310993",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Morning in the Mountains",
+    "year": "1820",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Morning%20in%20the%20Mountains.jpg?width=500",
+    "qid": "Q4478994",
+    "wikidata": "https://www.wikidata.org/wiki/Q4478994",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4478994",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Night in a Harbour",
+    "year": "1818",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20034.jpg?width=500",
+    "qid": "Q18602479",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602479",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602479",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     21.024722222,
+     52.231666666
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Giant Mountains at sunset",
+    "year": "1810",
+    "location": "National Museum in Warsaw",
+    "city": "Śródmieście",
+    "country": "Poland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%20Giant%20Mountains%20at%20sunset.jpg?width=500",
+    "qid": "Q18602438",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602438",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602438",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Snowy cottage",
+    "year": "1827",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Verschneite%20H%C3%BCtte%20%281827%29.jpg?width=500",
+    "qid": "Q2517970",
+    "wikidata": "https://www.wikidata.org/wiki/Q2517970",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2517970",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Picture in Remembrance of Johann Emanuel Bremer",
+    "year": "1817",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Ged%C3%A4chtnisbild%20f%C3%BCr%20Johann%20Emanuel%20Bremer.jpg?width=500",
+    "qid": "Q18602477",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602477",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602477",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Fog in the Elbe Valley",
+    "year": "1821",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Fog%20in%20the%20Elbe%20Valley%20-%20WGA8261.jpg?width=500",
+    "qid": "Q18602482",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602482",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602482",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.463,
+     51.5166
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Winter Landscape with church",
+    "year": "1811",
+    "location": "Museum of Art and Cultural History (Dortmund)",
+    "city": "Dortmund",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Winterlandschaft%20mit%20Kirche%20%28Dortmund%29.jpg?width=500",
+    "qid": "Q18602469",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602469",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602469",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Hill and Ploughed Field near Dresden",
+    "year": "1825",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hill%20and%20Ploughed%20Field%20near%20Dresden%20by%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q18602489",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602489",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602489",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mist",
+    "year": "1820",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Nebelschwaden%20%28Hamburger%20Kunsthalle%29.jpg?width=500",
+    "qid": "Q15077732",
+    "wikidata": "https://www.wikidata.org/wiki/Q15077732",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15077732",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Wreck in the Sea of Ice",
+    "year": "1798",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20044.jpg?width=500",
+    "qid": "Q16038520",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038520",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038520",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Winter Landscape",
+    "year": "1811",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Winterlandschaft%20%28London%29.jpg?width=500",
+    "qid": "Q18602470",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602470",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602470",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "New Moon above the Riesengebirge Mountains",
+    "year": "1810",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Neumond%20%C3%BCber%20dem%20Riesengebirge.jpg?width=500",
+    "qid": "Q18602437",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602437",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602437",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.380833333,
+     48.191388888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Nightly cloudy sky / Evening",
+    "year": "1824",
+    "location": "Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Abendlicher%20Wolkenhimmel%20-%202379%20-%20%C3%96sterreichische%20Galerie%20Belvedere.jpg?width=500",
+    "qid": "Q18602486",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602486",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602486",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.740111115,
+     52.36549544
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Portrait of an older man",
+    "year": "1809",
+    "location": "Landesmuseum Hannover",
+    "city": "Südstadt-Bult",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Friedrich%27s%20Father.jpg?width=500",
+    "qid": "Q18602448",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602448",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602448",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.326,
+     50.973
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Rügen landscape with bay",
+    "year": "1802",
+    "location": "Klassik Stiftung Weimar",
+    "city": "Weimar",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20R%C3%BCgenlandschaft%20mit%20Meeresbucht%20%281802%29.jpg?width=500",
+    "qid": "Q18602439",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602439",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602439",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.326,
+     50.973
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Landscape On Rügen With Rainbow",
+    "year": "1809",
+    "location": "Klassik Stiftung Weimar",
+    "city": "Weimar",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Landschaft%20auf%20R%C3%BCgen%20mit%20Regenbogen.jpg?width=500",
+    "qid": "Q18602445",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602445",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602445",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.5647,
+     48.1423
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Monk in the Snow",
+    "year": "1808",
+    "location": "Glaspalast",
+    "city": "Maxvorstadt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20Winterlandschaft%20mit%20der%20Ruine%20des%20Klosters%20Eldena.jpg?width=500",
+    "qid": "Q18602442",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602442",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602442",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.77333,
+     51.2343
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Cross and cathedral in the mountains",
+    "year": "1812",
+    "location": "Museum Kunstpalast",
+    "city": "Pempelfort",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20The%20Cross%20in%20the%20Mountains%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q16038489",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038489",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038489",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Bushes in the snow",
+    "year": "1827",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Geb%C3%BCsch%20im%20Schnee.jpg?width=500",
+    "qid": "Q16027856",
+    "wikidata": "https://www.wikidata.org/wiki/Q16027856",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16027856",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Cemetery Entrance",
+    "year": "1825",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20The%20Cemetery%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q16038517",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038517",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038517",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Rocks",
+    "year": "1811",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Felspartie%20im%20Harz%20%281811%29.jpg?width=500",
+    "qid": "Q16038528",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038528",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038528",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Dolmen in Autumn",
+    "year": "1820",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20H%C3%BCnengrab%20im%20Herbst%20%28ca.1820%29.jpg?width=500",
+    "qid": "Q16038735",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038735",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038735",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "View of the Elbe Valley",
+    "year": "1807",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Ausblick%20in%20das%20Elbtal%20%281807%29.jpg?width=500",
+    "qid": "Q16038768",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038768",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038768",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Doorway in Meissen",
+    "year": "1827",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Toreingang%20in%20Mei%C3%9Fen.jpg?width=500",
+    "qid": "Q18602491",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602491",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602491",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.375661869,
+     51.342449702
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Graveyard under Snow",
+    "year": "1826",
+    "location": "Museum der bildenden Künste",
+    "city": "Leipzig",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Friedhof%20im%20Schnee%20%28MbK%29.jpg?width=500",
+    "qid": "Q18602490",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602490",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602490",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.375661869,
+     51.342449702
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Chalk Cliffs at Ruegen",
+    "year": "1820",
+    "location": "Museum der bildenden Künste",
+    "city": "Leipzig",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Kreidefelsen%20auf%20R%C3%BCgen%20%28ca.1825%29.jpg?width=500",
+    "qid": "Q18602456",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602456",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602456",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4,
+     49.0119
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Reefs by the Seashore",
+    "year": "1824",
+    "location": "Staatliche Kunsthalle Karlsruhe",
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Felsenriff%20am%20Meeresstrand%20%281824%29.jpg?width=500",
+    "qid": "Q18602488",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602488",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602488",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.731666666,
+     47.511111111
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Landscape in the Riesengebirge",
+    "year": "1798",
+    "location": "Museum collection Am Römerholz",
+    "city": "Winterthur",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich12.jpg?width=500",
+    "qid": "Q18602449",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602449",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602449",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7444,
+     51.0519
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Bohemian Landscape with Mount Milleschauer",
+    "year": "1808",
+    "location": "Albertinum",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20B%C3%B6hmische%20Landschaft%20mit%20dem%20Milleschauer.jpg?width=500",
+    "qid": "Q16038674",
+    "wikidata": "https://www.wikidata.org/wiki/Q16038674",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16038674",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.49324,
+     51.3093
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountainous River Landscape, night",
+    "year": "1830",
+    "location": "Neue Galerie",
+    "city": "Kassel",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mountainous%20River%20Landscape%20by%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q18602431",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602431",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602431",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.49324,
+     51.3093
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountainous River Landscape, morning",
+    "year": "1830",
+    "location": "Neue Galerie",
+    "city": "Kassel",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Mountainous%20river%20landscape.jpg?width=500",
+    "qid": "Q18602453",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602453",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602453",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.332222222,
+     50.980277777
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Hutten's Grave",
+    "year": "1823",
+    "location": "Schloss Weimar",
+    "city": "Weimar",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Huttens%20Grab.jpg?width=500",
+    "qid": "Q745415",
+    "wikidata": "https://www.wikidata.org/wiki/Q745415",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q745415",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Ruins of Eldena",
+    "year": "1825",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Ruins%20of%20Eldena%20%281825%29%20-%20Caspar%20David%20Friedrich%20%28Georg%20Sch%C3%A4fer%20Museum%29.jpg?width=500",
+    "qid": "Q18602461",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602461",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602461",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "View of Greifswald from the east",
+    "year": "1818",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/ViewofGreifswaldfromEast1818.jpg?width=500",
+    "qid": "Q18602462",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602462",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602462",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Cathedral",
+    "year": "1818",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/TheCathedral1818.jpg?width=500",
+    "qid": "Q18602480",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602480",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602480",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Vision of the Christian Church",
+    "year": "1820",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Vision%20der%20christlichen%20Kirche%20%281920%29.jpg?width=500",
+    "qid": "Q18602481",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602481",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602481",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.729166666,
+     59.911666666
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Greifswald in moonlight",
+    "year": "1817",
+    "location": "National Museum of Art, Architecture and Design",
+    "city": "Oslo",
+    "country": "Norway",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Greifswald%20in%20Moonlight%20-%20NG.M.00387%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
+    "qid": "Q9276284",
+    "wikidata": "https://www.wikidata.org/wiki/Q9276284",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q9276284",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.70572,
+     50.94354
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Cross in the Mountains",
+    "year": "1822",
+    "location": "Ducal Museum Gotha",
+    "city": "Gotha",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Kreuz%20im%20Gebirge%20%28Schloss%20Friedenstein%29.jpg?width=500",
+    "qid": "Q18602484",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602484",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602484",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The ruins of Eldena in the Giant Mountains",
+    "year": "1830",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Klosterruine%20Eldena%20und%20Riesengebirge%20%28C%20D%20Friedrich%29.jpg?width=500",
+    "qid": "Q17422064",
+    "wikidata": "https://www.wikidata.org/wiki/Q17422064",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17422064",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Bohemian Landscape",
+    "year": "1828",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20B%C3%B6hmische%20Landschaft%20%281828%29.jpg?width=500",
+    "qid": "Q18602436",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602436",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602436",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountains in morning fog",
+    "year": "1810",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Gebirge%20im%20Morgennebel%20%28ca.1810%29.jpg?width=500",
+    "qid": "Q18602458",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602458",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602458",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3825,
+     54.0947
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Marketplace in Greifswald",
+    "year": "1818",
+    "location": "Pomeranian State Museum",
+    "city": "Greifswald",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Der%20Greifswalder%20Markt.jpg?width=500",
+    "qid": "Q18602463",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602463",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602463",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Monastery cemetery in snow",
+    "year": "1819",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Klosterfriedhof%20im%20Schnee%20%28Farbe%29.jpg?width=500",
+    "qid": "Q18602444",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602444",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602444",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.5647,
+     48.1423
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Evening Hour",
+    "year": "1818",
+    "location": "Glaspalast",
+    "city": "Maxvorstadt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20Abendstunde.jpg?width=500",
+    "qid": "Q18602478",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602478",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602478",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Summer (Landscape with couple)",
+    "year": "1807",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20The%20Summer%20-%20WGA8235.jpg?width=500",
+    "qid": "Q11753188",
+    "wikidata": "https://www.wikidata.org/wiki/Q11753188",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11753188",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.9246,
+     50.8377
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Segelschiff",
+    "year": "1815",
+    "location": "Art Collections Chemnitz",
+    "city": "Zentrum",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Segelschiff.jpg?width=500",
+    "qid": "Q4346085",
+    "wikidata": "https://www.wikidata.org/wiki/Q4346085",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4346085",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.2992,
+     52.5213
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Garden Terrace",
+    "year": "1811",
+    "location": "Neuer Pavillon",
+    "city": "Charlottenburg-Wilmersdorf",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Gartenterrasse%20%28Schlossterrasse%2C%20Blick%20von%20der%20Terrasse%20des%20Schlosses%20Erdmannsdorf%29.jpg?width=500",
+    "qid": "Q17123291",
+    "wikidata": "https://www.wikidata.org/wiki/Q17123291",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17123291",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.4183,
+     53.6264
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Winter landscape",
+    "year": "1811",
+    "location": "Staatliches Museum Schwerin",
+    "city": "Mecklenburg-Vorpommern",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Winter%20Landscape%20by%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q18602473",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602473",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602473",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Seaside moonlight",
+    "year": "1818",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Meeresk%C3%BCste%20im%20Mondlicht%2C%201818.jpg?width=500",
+    "qid": "Q18602446",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602446",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602446",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.554722222,
+     47.468888888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Ruin of the gate of the monastery to the Holy Cross, Meißen",
+    "year": "1824",
+    "location": "Musée des Beaux-Arts d'Angers",
+    "city": "Angers",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%2C%20Ruine%20der%20Pforte%20des%20Klosters%20zum%20Heiligen%20Kreuz%2C%20Mei%C3%9Fen.jpg?width=500",
+    "qid": "Q18602447",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602447",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602447",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.554722222,
+     47.468888888
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "West facade of the Eldena ruins",
+    "year": "1806",
+    "location": "Musée des Beaux-Arts d'Angers",
+    "city": "Angers",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20065.jpg?width=500",
+    "qid": "Q18602466",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602466",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602466",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.335999,
+     50.724241
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Morning mist in the mountains",
+    "year": "1808",
+    "location": "Thuringian State Museum Heidecksburg",
+    "city": "",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20%E2%80%93%20Morgennebel%20im%20Gebirge.jpg?width=500",
+    "qid": "Q18602468",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602468",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602468",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Hochgebirge (Schweizer Landschaft)",
+    "year": "1824",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-Hochgebirge%20%28Schweizer%20Landschaft%29%20-%20um%201824%20-%20ehemals%20Nationalgalerie%20Berlin%2C%201945%20verbrannt.jpg?width=500",
+    "qid": "Q124515642",
+    "wikidata": "https://www.wikidata.org/wiki/Q124515642",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124515642",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.744444388,
+     51.051944388
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Two Hikers on the Beach",
+    "year": "",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Zwei%20Wanderer%20am%20Meer%20-%20ehemals%20Galerie%20Neue%20Meister%20Dresden%20seit%201945%20verschollen.jpg?width=500",
+    "qid": "Q124513965",
+    "wikidata": "https://www.wikidata.org/wiki/Q124513965",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124513965",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Mountain chapel in the mist",
+    "year": "1811",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Gebirgskapelle%20im%20Nebel%20-%20Kriegsverlust%20Nationalgalerie%20BerlinLA461345%2076318.jpg?width=500",
+    "qid": "Q131158979",
+    "wikidata": "https://www.wikidata.org/wiki/Q131158979",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131158979",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.003055555,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Eisschollen",
+    "year": "1821",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Studien2-zum-eismeer-friedrich.JPG?width=500",
+    "qid": "Q138710508",
+    "wikidata": "https://www.wikidata.org/wiki/Q138710508",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q138710508",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.04465,
+     52.40037
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Landscape with windmills",
+    "year": "1820",
+    "location": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg",
+    "city": "Potsdam",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landschaft%20mit%20Windm%C3%BChlen%20%28Caspar%20David%20Friedrich%29-WUS03177.jpg?width=500",
+    "qid": "Q133215181",
+    "wikidata": "https://www.wikidata.org/wiki/Q133215181",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q133215181",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.958611,
+     50.9375
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Elbschiff im Frühnebel",
+    "year": "",
+    "location": "Wallraf–Richartz Museum",
+    "city": "Altstadt-Nord",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Elbschiff%20im%20Fruehnebel%20%28C%20D%20Friedrich%29.jpg?width=500",
+    "qid": "Q138734488",
+    "wikidata": "https://www.wikidata.org/wiki/Q138734488",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q138734488",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.6896,
+     53.8701
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Coastline in the evening light",
+    "year": "1817",
+    "location": "Museum Behnhaus Drägerhaus",
+    "city": "Lübeck's Old City",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20K%C3%BCstenlandschaft%20im%20Abendlicht.jpg?width=500",
+    "qid": "Q137872873",
+    "wikidata": "https://www.wikidata.org/wiki/Q137872873",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q137872873",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Evening by the Baltic Sea",
+    "year": "1826",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%2C%20Abend%20an%20der%20Ostsee%2C%20um%201826%2C%20MGS-20160312-001.jpg?width=500",
+    "qid": "Q126326879",
+    "wikidata": "https://www.wikidata.org/wiki/Q126326879",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q126326879",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.2361,
+     50.0439
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Burning house and Gothic church",
+    "year": "1810",
+    "location": "Museum Georg Schäfer",
+    "city": "Schweinfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%20-%20Brennendes%20Haus%20und%20gotische%20Kirche%2C%20um%201810.jpg?width=500",
+    "qid": "Q140393116",
+    "wikidata": "https://www.wikidata.org/wiki/Q140393116",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q140393116",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.398353,
+     52.52081
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Northern Lights",
+    "year": "1835",
+    "location": "Alte Nationalgalerie",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Aurora%20boreal%20-%20Caspar%20David%20Friedrich.jpg?width=500",
+    "qid": "Q132775617",
+    "wikidata": "https://www.wikidata.org/wiki/Q132775617",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q132775617",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   }
  ]

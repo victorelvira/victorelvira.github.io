@@ -1190,6 +1190,33 @@
     "wikidata": "https://www.wikidata.org/wiki/Q3739200",
     "wga_url": "https://www.wga.hu/html/v/vermeer/03c/2710flut.html"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.099121,
+     42.33818
+    ]
+   },
+   "properties": {
+    "painter": "Vermeer",
+    "title": "The Concert",
+    "year": "1663",
+    "location": "Isabella Stewart Gardner Museum",
+    "city": "Boston",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vermeer%20The%20Concert.jpg?width=500",
+    "qid": "Q1169395",
+    "wikidata": "https://www.wikidata.org/wiki/Q1169395",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1169395",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
   }
  ]
 }

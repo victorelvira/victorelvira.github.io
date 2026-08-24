@@ -57,7 +57,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-fine-arts-of-algiers",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/102david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/102david.html",
+    "qid": "Q83647672",
+    "wikidata": "https://www.wikidata.org/wiki/Q83647672",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q83647672 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -379,7 +388,16 @@
     },
     "museum_id": "musee-thomas-henry",
     "country": "France",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/107david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/107david.html",
+    "qid": "Q83385172",
+    "wikidata": "https://www.wikidata.org/wiki/Q83385172",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q83385172 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1464,7 +1482,16 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "qid": "Q3387593",
+    "wikidata": "https://www.wikidata.org/wiki/Q3387593",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3387593 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1599,7 +1626,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fogg-museum",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q70781074",
+    "wikidata": "https://www.wikidata.org/wiki/Q70781074",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q70781074 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2037,7 +2073,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q15615000",
+    "wikidata": "https://www.wikidata.org/wiki/Q15615000",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q15615000 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2437,7 +2482,16 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "detroit-institute-of-arts"
+    "museum_id": "detroit-institute-of-arts",
+    "qid": "Q64566895",
+    "wikidata": "https://www.wikidata.org/wiki/Q64566895",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q64566895 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2468,7 +2522,2031 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "detroit-institute-of-arts"
+    "museum_id": "detroit-institute-of-arts",
+    "qid": "Q64567000",
+    "wikidata": "https://www.wikidata.org/wiki/Q64567000",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q64567000 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.120277777,
+     48.804722222
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "The Tennis Court Oath",
+    "year": "1791",
+    "location": "Palace of Versailles",
+    "city": "Versailles",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Louis%20David%20-%20Le%20serment%20du%20Jeu%20de%20Paume%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3227124",
+    "wikidata": "https://www.wikidata.org/wiki/Q3227124",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3227124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.120277777,
+     48.804722222
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Coronation of Emperor Napoleon I and Coronation of the Empress Josephine",
+    "year": "1808",
+    "location": "Palace of Versailles",
+    "city": "Versailles",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Louis%20David%20-%20Le%20couronnement%20de%20l%27Empereur%20et%20de%20l%27Imp%C3%A9ratrice%2C%202%20d%C3%A9cembre%201804%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683217",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683217",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683217",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.475,
+     34.0775
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Suzanne Le Peletier de Saint-Fargeau",
+    "year": "1804",
+    "location": "Getty Center",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Suzanne%20Le%20Peletier%20de%20Saint-Fargeau%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20184330",
+    "wikidata": "https://www.wikidata.org/wiki/Q20184330",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20184330",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Self-portrait with three collars",
+    "year": "1791",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Louis%20David%20auto%20portrait%20Florence.jpg?width=500",
+    "qid": "Q2872721",
+    "wikidata": "https://www.wikidata.org/wiki/Q2872721",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2872721",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571114,
+     48.149887
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Anne-Marie-Louise Thélusson, Countess of Sorcy",
+    "year": "1790",
+    "location": "Neue Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Portrait.JPG?width=500",
+    "qid": "Q3399477",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399477",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399477",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of the Comtesse Vilain XIIII and her Daughter Louise",
+    "year": "1816",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtesse%20Vilain%20XIIII%20JLDavid.jpg?width=500",
+    "qid": "Q26531795",
+    "wikidata": "https://www.wikidata.org/wiki/Q26531795",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26531795",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.616499,
+     39.296425
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of an Elderly Lady",
+    "year": "1820",
+    "location": "Walters Art Museum",
+    "city": "Baltimore",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20of%20an%20Elderly%20Lady%20-%20Walters%2037392.jpg?width=500",
+    "qid": "Q18748604",
+    "wikidata": "https://www.wikidata.org/wiki/Q18748604",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18748604",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.380833333,
+     48.191388888
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Napoleon Crossing the Alps",
+    "year": "1800",
+    "location": "Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Napoleon%20at%20the%20Great%20St.%20Bernard%20-%20Jacques-Louis%20David%20-%20Google%20Cultural%20Institute.jpg?width=500",
+    "qid": "Q19801102",
+    "wikidata": "https://www.wikidata.org/wiki/Q19801102",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19801102",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.967222222,
+     40.771111111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "The Comtesse Daru",
+    "year": "1810",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtesse%20Daru%20-%20David%201810.jpg?width=500",
+    "qid": "Q3399476",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399476",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399476",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.166848,
+     48.8708
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Napoleon Crossing the Alps",
+    "year": "1800",
+    "location": "Château de Malmaison",
+    "city": "Rueil-Malmaison",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Napoleon%20crossing%20the%20Alps%20-%20Malmaison2.jpg?width=500",
+    "qid": "Q19801071",
+    "wikidata": "https://www.wikidata.org/wiki/Q19801071",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19801071",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.114358,
+     42.37409
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Emmanuel Joseph Sieyès (1748-1836)",
+    "year": "1817",
+    "location": "Fogg Museum",
+    "city": "Cambridge",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Emmanuel%20Joseph%20Siey%C3%A8s%2C%20by%20Jacques%20Louis%20David.jpg?width=500",
+    "qid": "Q3399461",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399461",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399461",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     18.078055555,
+     59.328611111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "The Lictors Returning to Brutus the Bodies of his Sons. Study",
+    "year": "1789",
+    "location": "Nationalmuseum",
+    "city": "Stockholm",
+    "country": "Sweden",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Lictors%20Returning%20to%20Brutus%20the%20Bodies%20of%20his%20Sons.%20Study%20%28Jacques%20Louis%20David%29%20-%20Nationalmuseum%20-%2019743.tif?width=500",
+    "qid": "Q18599452",
+    "wikidata": "https://www.wikidata.org/wiki/Q18599452",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18599452",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.02305556,
+     47.24027778
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Pierre-Louis Prieur de la Marne",
+    "year": "1791",
+    "location": "Musée des Beaux-Arts et d'Archéologie de Besançon",
+    "city": "Besançon",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Prieur%20de%20la%20Marne.png?width=500",
+    "qid": "Q18916886",
+    "wikidata": "https://www.wikidata.org/wiki/Q18916886",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18916886",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Man in a Hat",
+    "year": "",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Louis%20David%20-%20Man%20met%20hoed%20-%201017%20-%20Royal%20Museum%20of%20Fine%20Arts%20Antwerp.tiff?width=500",
+    "qid": "Q21618051",
+    "wikidata": "https://www.wikidata.org/wiki/Q21618051",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21618051",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.359166666,
+     34.063333333
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Jean-Pierre Delahaye",
+    "year": "1815",
+    "location": "Los Angeles County Museum of Art",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20of%20Jean-Pierre%20Delahaye%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20880049",
+    "wikidata": "https://www.wikidata.org/wiki/Q20880049",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20880049",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.500842,
+     37.784466
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Laure-Emilie-Felicite David, La Baronne Meunier",
+    "year": "1812",
+    "location": "Legion of Honor",
+    "city": "San Francisco",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Laura-Emile-Felicite%20David%2C%20Baronne%20Meunier%2C%20by%20Jacques-Louis%20David%2C%20France%2C%201812%2C%20oil%20on%20canvas%20-%20California%20Palace%20of%20the%20Legion%20of%20Honor%20-%20DSC07762.JPG?width=500",
+    "qid": "Q20198797",
+    "wikidata": "https://www.wikidata.org/wiki/Q20198797",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20198797",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.500842,
+     37.784466
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "The Fortune Teller (La Bonne Aventure)",
+    "year": "1824",
+    "location": "Legion of Honor",
+    "city": "San Francisco",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20The%20Fortune%20Teller%20%28La%20Bonne%20Aventure%29%2C%201824.jpg?width=500",
+    "qid": "Q20199097",
+    "wikidata": "https://www.wikidata.org/wiki/Q20199097",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20199097",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.094722,
+     49.444722
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Le Geôlier",
+    "year": "1794",
+    "location": "Musée des Beaux-Arts de Rouen",
+    "city": "Rouen",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Geolier%20Rouen%20David.jpg?width=500",
+    "qid": "Q13838300",
+    "wikidata": "https://www.wikidata.org/wiki/Q13838300",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q13838300",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.2034853,
+     48.01026486
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait d'un homme et de ses enfants",
+    "year": "1800",
+    "location": "Musée de Tessé",
+    "city": "Le Mans",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20conventionnel%20Michel%20G%C3%A9rard%20et%20sa%20famille.jpg?width=500",
+    "qid": "Q3399398",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399398",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399398",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.07972222,
+     48.30111111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Antoinette Gabrielle Danton",
+    "year": "1793",
+    "location": "Musée des Beaux-Arts de Troyes",
+    "city": "Troyes",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoinette%20Gabrielle%20Charpentier%20Danton.jpg?width=500",
+    "qid": "Q28976720",
+    "wikidata": "https://www.wikidata.org/wiki/Q28976720",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28976720",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.336111111,
+     48.860194444
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Madame Emilie Seriziat and her Son",
+    "year": "1795",
+    "location": "Room 702",
+    "city": "1st arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madame-Seriziat%20Jacques-Louis-David%201795.jpg?width=500",
+    "qid": "Q3399409",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399409",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399409",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait d'Alexandre Lenoir",
+    "year": "1816",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexandre%20Lenoir%20by%20Jacques%20Louis%20David.jpg?width=500",
+    "qid": "Q3399374",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399374",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399374",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Mr. and Mrs. Antoine Mongez",
+    "year": "1812",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20Mongez-David.jpg?width=500",
+    "qid": "Q19008799",
+    "wikidata": "https://www.wikidata.org/wiki/Q19008799",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19008799",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Madame Charles-Pierre Pecoul",
+    "year": "1784",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Genevi%C3%A8ve%20Jacqueline%20Pecoul%20par%20David.jpg?width=500",
+    "qid": "Q19008821",
+    "wikidata": "https://www.wikidata.org/wiki/Q19008821",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19008821",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Catherine-Marie-Jeanne Tallard",
+    "year": "1795",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%201754%20Marie%20Jeanne%20Tallard%2007265%20recadr%C3%A9.JPG?width=500",
+    "qid": "Q19008978",
+    "wikidata": "https://www.wikidata.org/wiki/Q19008978",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19008978",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.698906,
+     45.429535
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait Pierre Sériziat",
+    "year": "1790",
+    "location": "National Gallery of Canada",
+    "city": "Ottawa",
+    "country": "Canada",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Pierre%20S%C3%A9riziat.jpg?width=500",
+    "qid": "Q59493931",
+    "wikidata": "https://www.wikidata.org/wiki/Q59493931",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q59493931",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Monsieur Meyer",
+    "year": "1795",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20of%20Gaspar%20Mayer%20-%20WGA6074.jpg?width=500",
+    "qid": "Q29862493",
+    "wikidata": "https://www.wikidata.org/wiki/Q29862493",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29862493",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Vue des Jardins du Luxembourg",
+    "year": "1794",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20des%20Jardins%20du%20Luxembourg%20%281794%29%20Jacques%20Louis%20David.png?width=500",
+    "qid": "Q29862500",
+    "wikidata": "https://www.wikidata.org/wiki/Q29862500",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29862500",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait présumé de Le Goazre de Kervélégan",
+    "year": "1790",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Filippo%20Mazzei.jpg?width=500",
+    "qid": "Q29862503",
+    "wikidata": "https://www.wikidata.org/wiki/Q29862503",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29862503",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.358238,
+     50.84168
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of a boy",
+    "year": "",
+    "location": "Royal Museums of Fine Arts of Belgium",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portait%20d%27un%20jeune%20gar%C3%A7on.jpg?width=500",
+    "qid": "Q122209589",
+    "wikidata": "https://www.wikidata.org/wiki/Q122209589",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q122209589",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.4525,
+     43.525555555
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait de jeune garçon",
+    "year": "1786",
+    "location": "Musée Granet",
+    "city": "Aix-en-Provence",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20de%20jeune%20gar%C3%A7on.jpg?width=500",
+    "qid": "Q114827620",
+    "wikidata": "https://www.wikidata.org/wiki/Q114827620",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114827620",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.4525,
+     43.525555555
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Première idée pour le vieil Horace de \"Serment des Horaces\"",
+    "year": "1775",
+    "location": "Musée Granet",
+    "city": "Aix-en-Provence",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Louis%20David%20-%20Premi%C3%A8re%20id%C3%A9e%20pour%20le%20vieil%20Horace%2002.jpg?width=500",
+    "qid": "Q125175539",
+    "wikidata": "https://www.wikidata.org/wiki/Q125175539",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q125175539",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.02305556,
+     47.24027778
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait de l'abbé Henri Grégoire",
+    "year": "1791",
+    "location": "Musée des Beaux-Arts et d'Archéologie de Besançon",
+    "city": "Besançon",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Abb%C3%A9%20Gr%C3%A9goire%20Europ%C3%A9ana.jpg?width=500",
+    "qid": "Q124128076",
+    "wikidata": "https://www.wikidata.org/wiki/Q124128076",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124128076",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.02305556,
+     47.24027778
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait de Michel Gérard",
+    "year": "1791",
+    "location": "Musée des Beaux-Arts et d'Archéologie de Besançon",
+    "city": "Besançon",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Portrait%20de%20Michel%20G%C3%A9rard.jpg?width=500",
+    "qid": "Q130646814",
+    "wikidata": "https://www.wikidata.org/wiki/Q130646814",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130646814",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.1125,
+     34.129166666
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Rabaut Saint-Etienne",
+    "year": "1791",
+    "location": "The Huntington Library, Art Museum, and Botanical Gardens",
+    "city": "San Marino",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Paul%20Rabaut%20de%20Saint-%C3%89tienne.jpg?width=500",
+    "qid": "Q113957814",
+    "wikidata": "https://www.wikidata.org/wiki/Q113957814",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q113957814",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.880191666,
+     43.611736111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Tête  de  femme  et  main  d'homme",
+    "year": "1806",
+    "location": "Musée Fabre",
+    "city": "Montpellier",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ad%C3%A9la%C3%AFde%20de%20Pyvart%20de%20Chastull%C3%A9%20%281769-1814%29.jpg?width=500",
+    "qid": "Q117230985",
+    "wikidata": "https://www.wikidata.org/wiki/Q117230985",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q117230985",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.880191666,
+     43.611736111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Tête de jeune homme au diadème",
+    "year": "1780",
+    "location": "Musée Fabre",
+    "city": "Montpellier",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20T%C3%AAte%20de%20jeune%20homme%20au%20diad%C3%A8me%2C%201780.jpg?width=500",
+    "qid": "Q117599801",
+    "wikidata": "https://www.wikidata.org/wiki/Q117599801",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q117599801",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.7324,
+     45.1945
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Étude de tête de femme, dite La Folle",
+    "year": "1780",
+    "location": "Museum of Grenoble",
+    "city": "Grenoble",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20La%20Folle%20Grenoble.jpg?width=500",
+    "qid": "Q130304462",
+    "wikidata": "https://www.wikidata.org/wiki/Q130304462",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130304462",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.351667,
+     44.016944
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Musée Ingres-Bourdelle - Bélisaire reconnu par un soldat - Jacques-Louis David",
+    "year": "1781",
+    "location": "Musée Ingres Bourdelle",
+    "city": "Montauban",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Ingres-Bourdelle%20-%20B%C3%A9lisaire%20reconnu%20par%20un%20soldat%20-%20Jacques-Louis%20David%20-%20Joconde06070000088.jpg?width=500",
+    "qid": "Q112056866",
+    "wikidata": "https://www.wikidata.org/wiki/Q112056866",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112056866",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.61694444,
+     50.72555556
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Juliette Récamier (1777-1849).",
+    "year": "1810",
+    "location": "château-musée de Boulogne-sur-Mer",
+    "city": "Boulogne-sur-Mer",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Juliette%20R%C3%A9camier%20%281777-1849%29%20D.jpg?width=500",
+    "qid": "Q116272514",
+    "wikidata": "https://www.wikidata.org/wiki/Q116272514",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116272514",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Le Christ en croix",
+    "year": "1782",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Le%20Christ%20en%20croix%2C%201782.jpg?width=500",
+    "qid": "Q115670627",
+    "wikidata": "https://www.wikidata.org/wiki/Q115670627",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q115670627",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.042194,
+     47.320917
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Saint Roch implorant la Vierge pour les pestiférés (esquisse)",
+    "year": "1780",
+    "location": "Musée Magnin",
+    "city": "Dijon",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Saint%20Roch%20implorant%20la%20Vierge%20pour%20les%20pestif%C3%A9r%C3%A9s%20%28esquisse%29%2C%201780.jpg?width=500",
+    "qid": "Q134881435",
+    "wikidata": "https://www.wikidata.org/wiki/Q134881435",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134881435",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.362745,
+     48.857375
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Jean-Sylvain Bailly (1736-1793), maire de Paris",
+    "year": "1790",
+    "location": "Musée Carnavalet",
+    "city": "3rd arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Jean-Sylvain%20Bailly%20%281736-1793%29%2C%20maire%20de%20Paris%20-%20P688%20-%20Mus%C3%A9e%20Carnavalet.jpg?width=500",
+    "qid": "Q104371539",
+    "wikidata": "https://www.wikidata.org/wiki/Q104371539",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104371539",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.362745,
+     48.857375
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait de Louis-Michel Le Peletier de Saint-Fargeau (1760-1793), sur son lit de mort",
+    "year": "1793",
+    "location": "Musée Carnavalet",
+    "city": "3rd arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20de%20Louis-Michel%20Le%20Peletier%20de%20Saint-Fargeau%20%281760-1793%29%2C%20sur%20son%20lit%20de%20mort%20-%20P1752%20-%20Mus%C3%A9e%20Carnavalet.jpg?width=500",
+    "qid": "Q104371540",
+    "wikidata": "https://www.wikidata.org/wiki/Q104371540",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104371540",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.362745,
+     48.857375
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Tennis Court Oath",
+    "year": "1791",
+    "location": "Musée Carnavalet",
+    "city": "3rd arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Serment%20du%20Jeu%20de%20paume%2C%20le%2020%20juin%201789%20-%20P67%20-%20mus%C3%A9e%20Carnavalet%20-%200.jpg?width=500",
+    "qid": "Q104372703",
+    "wikidata": "https://www.wikidata.org/wiki/Q104372703",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104372703",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.362745,
+     48.857375
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait de Pierre Sériziat (1757-1847), beau-frère de David",
+    "year": "1795",
+    "location": "Musée Carnavalet",
+    "city": "3rd arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20de%20Pierre%20S%C3%A9riziat%20%281757-1847%29%2C%20beau-fr%C3%A8re%20de%20David%20-%20P733%20-%20Mus%C3%A9e%20Carnavalet.jpg?width=500",
+    "qid": "Q104372705",
+    "wikidata": "https://www.wikidata.org/wiki/Q104372705",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104372705",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.731666666,
+     47.511111111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Baroness Pauline Jeanin",
+    "year": "1810",
+    "location": "Museum collection Am Römerholz",
+    "city": "Winterthur",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20daughter%20Pauline%20Jeanne%20in%201812.jpg?width=500",
+    "qid": "Q91932533",
+    "wikidata": "https://www.wikidata.org/wiki/Q91932533",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q91932533",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.114358,
+     42.37409
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Emperor Napoleon I",
+    "year": "1807",
+    "location": "Fogg Museum",
+    "city": "Cambridge",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20%E2%80%93%20Emperor%20Napoleon%20I%20%281769-1821%29%20%E2%80%93%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q70781085",
+    "wikidata": "https://www.wikidata.org/wiki/Q70781085",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q70781085",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.114358,
+     42.37409
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Calliope Mourning Homer",
+    "year": "1812",
+    "location": "Fogg Museum",
+    "city": "Cambridge",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Circle%20of%20Jacques-Louis%20David%20-%20Calliope%20Mourning%20Homer%20-%201943.231%20-%20Fogg%20Museum.jpg?width=500",
+    "qid": "Q70781089",
+    "wikidata": "https://www.wikidata.org/wiki/Q70781089",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q70781089",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.571944444,
+     55.6725
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of the Comte de Turenne",
+    "year": "1816",
+    "location": "Ny Carlsberg Glyptotek",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Henri%20Am%C3%A9d%C3%A9e%20Mercure%20de%20Turenne%20d%27Aynac%20%281776-1852%29.jpg?width=500",
+    "qid": "Q76424121",
+    "wikidata": "https://www.wikidata.org/wiki/Q76424121",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q76424121",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.514444,
+     50.441111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait de Lazare Hoche",
+    "year": "1793",
+    "location": "Khanenko Museum",
+    "city": "Kyiv",
+    "country": "Ukraine",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lazare%20Hoche%20par%20David.jpg?width=500",
+    "qid": "Q95139183",
+    "wikidata": "https://www.wikidata.org/wiki/Q95139183",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q95139183",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.2136,
+     42.7078
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Comte Henri-Amédée-Mercure de Turenne-d'Aynac",
+    "year": "1816",
+    "location": "Clark Art Institute",
+    "city": "Massachusetts",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Comte%20Henri-Am%C3%A9d%C3%A9e-Mercure%20de%20Turenne-d%27Aynac%20-%201999.2%20-%20Clark%20Art%20Institute.tiff?width=500",
+    "qid": "Q104773765",
+    "wikidata": "https://www.wikidata.org/wiki/Q104773765",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104773765",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3375,
+     48.87861111
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Napoléon, tête couronnée",
+    "year": "1807",
+    "location": "Fondation Dosne-Thiers",
+    "city": "9th arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Napol%C3%A9on-t%C3%A9te-couronn%C3%A9e-Jacques-Louis-David.jpg?width=500",
+    "qid": "Q97158607",
+    "wikidata": "https://www.wikidata.org/wiki/Q97158607",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q97158607",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.92733,
+     43.1264
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait à mi-corps des princesses Zénaïde et Charlotte Bonaparte",
+    "year": "1822",
+    "location": "Musée d'Art de Toulon",
+    "city": "Toulon",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20des%20princesses%20Z%C3%A9na%C3%AFde%20et%20Charlotte%20Bonaparte.jpg?width=500",
+    "qid": "Q96812965",
+    "wikidata": "https://www.wikidata.org/wiki/Q96812965",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q96812965",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.12197,
+     48.8044
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "Portrait of Bertrand Barère de Vieuzac",
+    "year": "1790",
+    "location": "Musée de l'Histoire de France",
+    "city": "Versailles",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Barere-Jacques%20Louis%20David.png?width=500",
+    "qid": "Q98431807",
+    "wikidata": "https://www.wikidata.org/wiki/Q98431807",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q98431807",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   }
  ]

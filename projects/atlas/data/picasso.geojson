@@ -9247,6 +9247,33 @@
     "museum_id": "unterlinden-museum",
     "qid": "Q99519296"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.736111111,
+     48.579444444
+    ]
+   },
+   "properties": {
+    "painter": "Pablo Picasso",
+    "title": "Personnage cueillant des fleurs",
+    "year": "1958",
+    "location": "Strasbourg Museum of Modern and Contemporary Art",
+    "city": "Strasbourg",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%20Mus%C3%A9e%20d%27art%20moderne%20et%20contemporain%20f%C3%A9vrier%202014%2007.jpg?width=500",
+    "qid": "Q112679010",
+    "wikidata": "https://www.wikidata.org/wiki/Q112679010",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112679010",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
   }
  ]
 }

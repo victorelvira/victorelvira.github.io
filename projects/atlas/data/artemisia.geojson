@@ -655,7 +655,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "palazzo-pitti",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/orazio/madonna.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/orazio/madonna.html",
+    "qid": "Q3842443",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842443",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3842443 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -684,7 +693,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "nottingham-castle",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/susanna.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/susanna.html",
+    "qid": "Q123821093",
+    "wikidata": "https://www.wikidata.org/wiki/Q123821093",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q123821093 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -713,7 +731,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-nazionale-di-capodimonte",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/orazio/annunc.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/orazio/annunc.html",
+    "qid": "Q29018074",
+    "wikidata": "https://www.wikidata.org/wiki/Q29018074",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q29018074 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -743,7 +770,16 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q133801954",
+    "wikidata": "https://www.wikidata.org/wiki/Q133801954",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q133801954 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -838,7 +874,16 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "palazzo-zevallos"
+    "museum_id": "palazzo-zevallos",
+    "qid": "Q29021527",
+    "wikidata": "https://www.wikidata.org/wiki/Q29021527",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q29021527 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1059,7 +1104,16 @@
     },
     "museum_id": "columbus-museum-of-art",
     "city": "Ohio [129]",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q29017580",
+    "wikidata": "https://www.wikidata.org/wiki/Q29017580",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q29017580 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1349,6 +1403,958 @@
     "country": "Italy",
     "qid": "Q30605361",
     "wikidata": "https://www.wikidata.org/wiki/Q30605361"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Minerva",
+    "year": "1635",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Minerva%20-%20WGA8568.jpg?width=500",
+    "qid": "Q29016638",
+    "wikidata": "https://www.wikidata.org/wiki/Q29016638",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29016638",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48061,
+     41.90541
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Portrait of a Lady Holding a Fan",
+    "year": "1620",
+    "location": "Sovereign Military Order of Malta",
+    "city": "",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Lady%20with%20a%20Fan%20by%20Artemisia%20Gentileschi%20ca.%201620-1625.jpg?width=500",
+    "qid": "Q91095575",
+    "wikidata": "https://www.wikidata.org/wiki/Q91095575",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q91095575",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "The Triumph of Galatea",
+    "year": "1650",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Triumph%20of%20Galatea%20by%20Bernardo%20Cavallino%20or%20Artemisia%20Gentileschi%20ca.%201650.jpg?width=500",
+    "qid": "Q20177361",
+    "wikidata": "https://www.wikidata.org/wiki/Q20177361",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20177361",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -5.993095562,
+     37.385742159
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Repentant Mary Magdalene",
+    "year": "1625",
+    "location": "Seville Cathedral",
+    "city": "Seville",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20%E2%80%94%20Conversione%20della%20Maddalena%20%28Maria%20Maddalena%20penitente.jpg?width=500",
+    "qid": "Q29016818",
+    "wikidata": "https://www.wikidata.org/wiki/Q29016818",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29016818",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -72.673086,
+     41.763711
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Self-Portrait as a Lute Player",
+    "year": "1616",
+    "location": "Wadsworth Atheneum Museum of Art",
+    "city": "Hartford",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Autoritratto%20come%20suonatrice%20di%20liuto%20%28ca.%201615-18%29.jpg?width=500",
+    "qid": "Q23010133",
+    "wikidata": "https://www.wikidata.org/wiki/Q23010133",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23010133",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.04465,
+     52.40037
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Bathsheba",
+    "year": "1645",
+    "location": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg",
+    "city": "Potsdam",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Bathsheba%20-%20WGA08558.jpg?width=500",
+    "qid": "Q19863040",
+    "wikidata": "https://www.wikidata.org/wiki/Q19863040",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19863040",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.559801111,
+     27.381467222
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Saint Cecilia",
+    "year": "1640",
+    "location": "John and Mable Ringling Museum of Art",
+    "city": "Sarasota",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Cecilia%2C%20ca.%201640s%2C%20SN134.jpg?width=500",
+    "qid": "Q79402323",
+    "wikidata": "https://www.wikidata.org/wiki/Q79402323",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q79402323",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     19.07678,
+     47.51587
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Salome with the Head of Saint John the Baptist",
+    "year": "1615",
+    "location": "Museum of Fine Arts, Budapest",
+    "city": "Budapest district XIV",
+    "country": "Hungary",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salome%20with%20the%20Head%20of%20Saint%20John%20the%20Baptist%20by%20Artemisia%20Gentileschi%20ca.%201610-1615.jpg?width=500",
+    "qid": "Q29023889",
+    "wikidata": "https://www.wikidata.org/wiki/Q29023889",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29023889",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.729166666,
+     59.911666666
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Judith and her maidservant with the head of Holofernes",
+    "year": "1608",
+    "location": "National Museum of Art, Architecture and Design",
+    "city": "Oslo",
+    "country": "Norway",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Orazio%20Gentileschi%2C%20Artemisia%20Gentileschi%20-%20Judith%20and%20her%20Maidservant%20with%20the%20Head%20of%20Holofernes%20-%20NG.M.02073%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
+    "qid": "Q29044280",
+    "wikidata": "https://www.wikidata.org/wiki/Q29044280",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29044280",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.729166666,
+     59.911666666
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Mary Magdalene penitent",
+    "year": "1640",
+    "location": "National Museum of Art, Architecture and Design",
+    "city": "Oslo",
+    "country": "Norway",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Mary%20Magdalene%20penitent%20-%20NG.M.00236%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
+    "qid": "Q55431936",
+    "wikidata": "https://www.wikidata.org/wiki/Q55431936",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q55431936",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.20462,
+     19.44066
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Saint Lucy",
+    "year": "1642",
+    "location": "Museo Soumaya",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Lucy%20by%20Artemisia%20Gentileschi%20ca.%201642-1644.jpg?width=500",
+    "qid": "Q27862974",
+    "wikidata": "https://www.wikidata.org/wiki/Q27862974",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27862974",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.381111111,
+     40.628611111
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Penitent Magdalene",
+    "year": "1629",
+    "location": "Museum Correale",
+    "city": "Sorrento",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Maddalena%20penitente%20Artemisia.jpg?width=500",
+    "qid": "Q29022638",
+    "wikidata": "https://www.wikidata.org/wiki/Q29022638",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29022638",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.471891,
+     41.894234
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Saint Cecilia",
+    "year": "1620",
+    "location": "Galleria Spada",
+    "city": "Rome",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Cecilia%20by%20Artemisia%20Gentileschi.jpg?width=500",
+    "qid": "Q3948947",
+    "wikidata": "https://www.wikidata.org/wiki/Q3948947",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3948947",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.39974,
+     43.71565
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Clío, musa de la historia",
+    "year": "1632",
+    "location": "Palazzo Giuli Rosselmini Gualandi",
+    "city": "Pisa",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clio%2C%20muse%20de%20l%27Histoire%2C%20par%20Artemisia%20Gentileschi.webp?width=500",
+    "qid": "Q29016692",
+    "wikidata": "https://www.wikidata.org/wiki/Q29016692",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29016692",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -106.490109,
+     31.758506
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "St. Catherine of Alexandria",
+    "year": "1620",
+    "location": "El Paso Museum of Art",
+    "city": "El Paso",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20%27Saint%20Catherine%20of%20Alexandria%27%2C%20oil%20on%20canvas%20painting%2C%20c.%201620%2C%20El%20Paso%20Museum%20of%20Art.jpg?width=500",
+    "qid": "Q29023829",
+    "wikidata": "https://www.wikidata.org/wiki/Q29023829",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29023829",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.98777,
+     39.964384
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Bathsheba",
+    "year": "1637",
+    "location": "Columbus Museum of Art",
+    "city": "Columbus",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20and%20Bathsheba%20by%20Artemisia%20Gentileschi.jpg?width=500",
+    "qid": "Q29017592",
+    "wikidata": "https://www.wikidata.org/wiki/Q29017592",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29017592",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.6175,
+     44.839166666
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Cleopatra",
+    "year": "1620",
+    "location": "Ferrara",
+    "city": "Province of Ferrara",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20Cleopatra%20Ferrara.jpg?width=500",
+    "qid": "Q3680519",
+    "wikidata": "https://www.wikidata.org/wiki/Q3680519",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3680519",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5,
+     42.5
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Bathsheba",
+    "year": "1640",
+    "location": "Italy",
+    "city": "",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Bathsheba%20at%20Her%20Bath%20%28ca.%201640-1645%29.jpg?width=500",
+    "qid": "Q29015025",
+    "wikidata": "https://www.wikidata.org/wiki/Q29015025",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29015025",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.208333333
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Bathsheba",
+    "year": "1640",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bathsheba%20at%20Her%20Bath%20by%20Artemisia%20Gentileschi%20ca.%201640-1645%20%28Vienna%29.jpg?width=500",
+    "qid": "Q29016299",
+    "wikidata": "https://www.wikidata.org/wiki/Q29016299",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29016299",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.729166666,
+     59.911666666
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Judith and her Maidservant with the Head of Holofernes",
+    "year": "1639",
+    "location": "National Museum of Art, Architecture and Design",
+    "city": "Oslo",
+    "country": "Norway",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Judith%20and%20her%20Maidservant%20with%20the%20Head%20of%20Holofernes%20-%20NMK.LAAN.2022.0028%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
+    "qid": "Q114417791",
+    "wikidata": "https://www.wikidata.org/wiki/Q114417791",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114417791",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.1023,
+     47.9962
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Judith carrying the head of Holofernes",
+    "year": "1635",
+    "location": "Musée des Beaux-Arts de Quimper",
+    "city": "Quimper",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Judith%20portant%20la%20t%C3%AAte%20d%27Holopherne%2C%20par%20Artemisia%20Gentileschi.jpg?width=500",
+    "qid": "Q112860995",
+    "wikidata": "https://www.wikidata.org/wiki/Q112860995",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112860995",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -2.878763306,
+     55.997100461
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Bathsheba, c. 1650-52",
+    "year": "1651",
+    "location": "Gosford House",
+    "city": "East Lothian",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gentileschi%20-%20Bathsheba%2C%20c.%201650-52.jpg?width=500",
+    "qid": "Q104905034",
+    "wikidata": "https://www.wikidata.org/wiki/Q104905034",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q104905034",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1375,
+     51.5072
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Bathsheba at Her Bath",
+    "year": "1637",
+    "location": "Matthiesen Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia%20Gentileschi%20-%20Bathsheba%20at%20Her%20Bath%20%28ca.%201636-1638%29.jpg?width=500",
+    "qid": "Q123785856",
+    "wikidata": "https://www.wikidata.org/wiki/Q123785856",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123785856",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Naples",
+    "creation_lat": 40.8358,
+    "creation_lon": 14.2486,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.668055555,
+     50.641111111
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Tête d'héroïne",
+    "year": "1620",
+    "location": "Belgium",
+    "city": "",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2025-07-13%20Artemisia%20011.jpg?width=500",
+    "qid": "Q133734437",
+    "wikidata": "https://www.wikidata.org/wiki/Q133734437",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q133734437",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "David avec la tête de Goliath",
+    "year": "1610",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20avec%20la%20t%C3%AAte%20de%20Goliath%2C%20par%20Artemisia%20Gentileschi.jpg?width=500",
+    "qid": "Q133725486",
+    "wikidata": "https://www.wikidata.org/wiki/Q133725486",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q133725486",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.365,
+     32.748611111
+    ]
+   },
+   "properties": {
+    "painter": "Artemisia Gentileschi",
+    "title": "Penitent Mary Magdalene",
+    "year": "1625",
+    "location": "Museo de Arte Kimbell",
+    "city": "Fort Worth",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Marie%20Madeleine%20p%C3%A9nitente.jpg?width=500",
+    "qid": "Q130333490",
+    "wikidata": "https://www.wikidata.org/wiki/Q130333490",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130333490",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   }
  ]

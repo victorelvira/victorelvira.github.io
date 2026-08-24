@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.44.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 22:11";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.45.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 22:45";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1648,7 +1648,7 @@ function gRender() {
   stage.innerHTML = fig +
     `<div class="g-answer"><div class="g-prompt">${q.prompt}</div>${body}` +
     `<div class="g-foot"><span class="g-feedback"></span><button class="g-next" type="button" hidden>Next →</button></div></div>` +
-    `<aside class="g-info" hidden></aside>`;
+    `<aside class="g-info"></aside>`;   // always in the layout (reserves its column) — invisible while empty
 }
 
 // after answering, show whatever we know about the work: title, painter · year, where, size,
@@ -1681,7 +1681,7 @@ function gAnswer(i) {
   fb.className = "g-feedback " + (chosen.correct ? "ok" : "no");
   stage.querySelector(".g-next").hidden = false;
   const info = stage.querySelector(".g-info");
-  if (info) { info.innerHTML = gInfoHTML(q.work, q.kind); info.hidden = false; }
+  if (info) info.innerHTML = gInfoHTML(q.work, q.kind);   // fills the reserved column; empty→invisible via CSS
   gScore();
 }
 function gScore() { const el = document.getElementById("game-score"); if (el) el.textContent = G.total ? `${G.right} / ${G.total}` : ""; }

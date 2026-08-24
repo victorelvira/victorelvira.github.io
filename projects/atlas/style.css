@@ -684,7 +684,7 @@ body.show-game #timeline, body.show-game #filter { display: none; }
 .g-foot { justify-content: flex-start; }
 .g-info { flex: 0 1 260px; max-width: 300px; align-self: stretch; background: #fff; border: 1px solid var(--line);
   border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 6px rgba(0,0,0,.05); }
-.g-info[hidden] { display: none; }
+.g-info:empty { border: 0; background: transparent; box-shadow: none; padding: 0; }  /* reserve the column, stay invisible until answered */
 .gi-h { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 9px; }
 .gi-img { width: 100%; border-radius: 8px; margin-bottom: 11px; background: #efe9df; display: block; }
 .gi-title { font-size: 16px; font-weight: 700; line-height: 1.25; color: var(--ink); }

@@ -1085,7 +1085,16 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts"
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q257048",
+    "wikidata": "https://www.wikidata.org/wiki/Q257048",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q257048 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1464,7 +1473,16 @@
     },
     "museum_id": "frick-collection",
     "city": "New York",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q19857193",
+    "wikidata": "https://www.wikidata.org/wiki/Q19857193",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q19857193 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1500,6 +1518,356 @@
     "qid": "Q7766701",
     "wikidata": "https://www.wikidata.org/wiki/Q7766701",
     "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/22other.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.604444444,
+     51.483888888
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "The Massacre of the Innocents",
+    "year": "1566",
+    "location": "Windsor Castle",
+    "city": "Windsor and Maidenhead",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20the%20Elder%20-%20Massacre%20of%20the%20Innocents%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q1134250",
+    "wikidata": "https://www.wikidata.org/wiki/Q1134250",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1134250",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Head of Peasant",
+    "year": "1568",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20the%20Elder%20-%20Portrait%20of%20an%20old%20woman.jpg?width=500",
+    "qid": "Q3985190",
+    "wikidata": "https://www.wikidata.org/wiki/Q3985190",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3985190",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.292,
+     48.2901
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Road to Calvary",
+    "year": "1550",
+    "location": "Führermuseum",
+    "city": "Linz",
+    "country": "German Reich",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20d.%20%C3%84.%20Brueghel%20%281525-1569%29%20-%20Kreuztragung%20-%201746%20-%20F%C3%BChrermuseum.jpg?width=500",
+    "qid": "Q111644838",
+    "wikidata": "https://www.wikidata.org/wiki/Q111644838",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111644838",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "The Strife of Lent with Shrove-Tide",
+    "year": "1555",
+    "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20d.%C3%86.%20-%20The%20Strife%20of%20Lent%20with%20Shrove-Tide%20-%20KMS1639%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
+    "qid": "Q20426804",
+    "wikidata": "https://www.wikidata.org/wiki/Q20426804",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20426804",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Landscape with Pilgrims",
+    "year": "1540",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landschap%20met%20pelgrims%2C%20Pieter%20Bruegel%20I%2C%20Koninklijk%20Museum%20voor%20Schone%20Kunsten%20Antwerpen%2C%205098.jpg?width=500",
+    "qid": "Q22076691",
+    "wikidata": "https://www.wikidata.org/wiki/Q22076691",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22076691",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.405316,
+     51.215517
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Twelve Flemish proverbs",
+    "year": "1558",
+    "location": "Museum Mayer van den Bergh",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20the%20Elder%20-%20Twelve%20Proverbs%20-%20WGA03372.jpg?width=500",
+    "qid": "Q3712512",
+    "wikidata": "https://www.wikidata.org/wiki/Q3712512",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3712512",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.404852,
+     50.091609
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "The Hay Harvest (early summer June/July)",
+    "year": "1565",
+    "location": "Lobkowicz Palace",
+    "city": "Hradčany",
+    "country": "Czech Republic",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Die%20Heuernte.jpg?width=500",
+    "qid": "Q1213437",
+    "wikidata": "https://www.wikidata.org/wiki/Q1213437",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1213437",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.4616,
+     52.1083
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Death of the Virgin",
+    "year": "1564",
+    "location": "Upton House",
+    "city": "Ratley and Upton",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20the%20Elder%20-%20Death%20of%20the%20Virgin%20-%20WGA03468.jpg?width=500",
+    "qid": "Q3863232",
+    "wikidata": "https://www.wikidata.org/wiki/Q3863232",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3863232",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.358241,
+     50.84168
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Adoration of the Magi",
+    "year": "1556",
+    "location": "Oldmasters Museum",
+    "city": "Brussels",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anbetung%20der%20K%C3%B6nige%20%28Bruegel%2C%20um%201564%29.jpg?width=500",
+    "qid": "Q3605524",
+    "wikidata": "https://www.wikidata.org/wiki/Q3605524",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3605524",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.31978,
+     48.86137
+    ]
+   },
+   "properties": {
+    "painter": "Pieter Bruegel the Elder",
+    "title": "Landscape with Rabbit Hunt",
+    "year": "1560",
+    "location": "Fondation Custodia",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20I%20-%20Landscape%20with%20Rabbit%20Hunt.jpg?width=500",
+    "qid": "Q137796207",
+    "wikidata": "https://www.wikidata.org/wiki/Q137796207",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q137796207",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
    }
   }
  ]

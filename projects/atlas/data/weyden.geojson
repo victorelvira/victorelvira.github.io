@@ -612,7 +612,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "thyssen-bornemisza-museum",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/06man.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/06man.html",
+    "qid": "Q27897806",
+    "wikidata": "https://www.wikidata.org/wiki/Q27897806",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q27897806 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -841,7 +850,16 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "gemaldegalerie",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/08c_bold.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/08c_bold.html",
+    "qid": "Q47008576",
+    "wikidata": "https://www.wikidata.org/wiki/Q47008576",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q47008576 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1011,6 +1029,1783 @@
     "museum_id": "philadelphia-museum-of-art",
     "qid": "Q5189814",
     "wikidata": "https://www.wikidata.org/wiki/Q5189814"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.147778,
+     40.589167
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Crucifixion of Scheut",
+    "year": "1454",
+    "location": "Royal Monastery of San Lorenzo de El Escorial",
+    "city": "San Lorenzo de El Escorial",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Weyden%20Christ%20on%20the%20Cross%20with%20Mary%20and%20St%20John.jpg?width=500",
+    "qid": "Q18430656",
+    "wikidata": "https://www.wikidata.org/wiki/Q18430656",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18430656",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.203880555
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Right wing of a diptych: St. Katharina",
+    "year": "1440",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20032.jpg?width=500",
+    "qid": "Q27978127",
+    "wikidata": "https://www.wikidata.org/wiki/Q27978127",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27978127",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.313611111,
+     59.940555555
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "St Luke Drawing the Virgin",
+    "year": "1440",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20014.jpg?width=500",
+    "qid": "Q21733236",
+    "wikidata": "https://www.wikidata.org/wiki/Q21733236",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21733236",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Columba-Altar: Darbringung im Tempel",
+    "year": "1455",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20010.jpg?width=500",
+    "qid": "Q29898800",
+    "wikidata": "https://www.wikidata.org/wiki/Q29898800",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29898800",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "St Luke Drawing the Portrait of the Madonna",
+    "year": "1484",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Weyden-MadonnaLucca-Munic.jpg?width=500",
+    "qid": "Q29909050",
+    "wikidata": "https://www.wikidata.org/wiki/Q29909050",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29909050",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "St Columba altarpiece: Annunciation",
+    "year": "1455",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20St%20Columba%20Altarpiece%20%28left%20panel%29%20-%20WGA25657.jpg?width=500",
+    "qid": "Q29954816",
+    "wikidata": "https://www.wikidata.org/wiki/Q29954816",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29954816",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Saint Margaret and Saint Apollonia",
+    "year": "1450",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Sts%20Margaret%20and%20Apollonia%20-%20WGA25674.jpg?width=500",
+    "qid": "Q47074318",
+    "wikidata": "https://www.wikidata.org/wiki/Q47074318",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47074318",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.694925,
+     40.416041
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of an Unknown Man",
+    "year": "1452",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20026.jpg?width=500",
+    "qid": "Q27038656",
+    "wikidata": "https://www.wikidata.org/wiki/Q27038656",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27038656",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Magdalen Reading",
+    "year": "1435",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Magdalen%20Reading%20Rogier.jpg?width=500",
+    "qid": "Q3039856",
+    "wikidata": "https://www.wikidata.org/wiki/Q3039856",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3039856",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Exhumation of Saint Hubert",
+    "year": "1430",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20and%20workshop%20-%20Exhumation%20of%20St%20Hubert%20NG%20783.jpg?width=500",
+    "qid": "Q26492587",
+    "wikidata": "https://www.wikidata.org/wiki/Q26492587",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26492587",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -9.154166666,
+     38.736666666
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Bust of the Catherine (?)",
+    "year": "1435",
+    "location": "Calouste Gulbenkian Museum",
+    "city": "Avenidas Novas",
+    "country": "Portugal",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%281399of1400-1464%29%20-%20Buste%20van%20Ste.%20Catharina%20-%20Lissabon%20Museu%20Calouste%20Gulbenkian%2021-10-2010%2013-11-07.jpg?width=500",
+    "qid": "Q27940576",
+    "wikidata": "https://www.wikidata.org/wiki/Q27940576",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27940576",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -9.154166666,
+     38.736666666
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Bust of Saint Joseph",
+    "year": "1435",
+    "location": "Calouste Gulbenkian Museum",
+    "city": "Avenidas Novas",
+    "country": "Portugal",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20St%20Joseph%20-%20WGA25722.jpg?width=500",
+    "qid": "Q47044600",
+    "wikidata": "https://www.wikidata.org/wiki/Q47044600",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47044600",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.314305555,
+     52.080388888
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Lamentation of Christ",
+    "year": "1460",
+    "location": "Mauritshuis",
+    "city": "The Hague",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/En%20atelier%20Rogier%20van%20der%20Weyden%20-%20The%20Lamentation%20of%20Christ%20-%20264%20-%20Mauritshuis.jpg?width=500",
+    "qid": "Q17275914",
+    "wikidata": "https://www.wikidata.org/wiki/Q17275914",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17275914",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623888888,
+     41.879444444
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of Jean Gros",
+    "year": "1457",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20of%20Jean%20Gros%20-%201933.1051a%20-%20Art%20Institute%20of%20Chicago.jpg?width=500",
+    "qid": "Q58018933",
+    "wikidata": "https://www.wikidata.org/wiki/Q58018933",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q58018933",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.358238,
+     50.84168
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Fragment with group of men",
+    "year": "1424",
+    "location": "Royal Museums of Fine Arts of Belgium",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Group%20of%20Men%20-%20WGA25724.jpg?width=500",
+    "qid": "Q47074260",
+    "wikidata": "https://www.wikidata.org/wiki/Q47074260",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47074260",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.611666666,
+     41.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Crucifixion with a Carthusian Monk",
+    "year": "1460",
+    "location": "Cleveland Museum of Art",
+    "city": "Cleveland",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clevelandart%201931.449.jpg?width=500",
+    "qid": "Q60513422",
+    "wikidata": "https://www.wikidata.org/wiki/Q60513422",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q60513422",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.116912,
+     51.510734
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of a Man (Guillaume Fillastre?)",
+    "year": "1430",
+    "location": "Courtauld Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20of%20a%20Man%20%28Guillaume%20Fillastre%3F%29%20-%20WGA25700.jpg?width=500",
+    "qid": "Q47038442",
+    "wikidata": "https://www.wikidata.org/wiki/Q47038442",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47038442",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.064722222,
+     42.359444444
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "St Jerome and the Lion",
+    "year": "1450",
+    "location": "Detroit Institute of Arts",
+    "city": "Detroit",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Jerome%20in%20the%20desert%20-%20XVth%20cent%20-%20Detroit%20Institut%20of%20Art%20%2846.359%29.jpg?width=500",
+    "qid": "Q55172016",
+    "wikidata": "https://www.wikidata.org/wiki/Q55172016",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q55172016",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.1125,
+     34.129166666
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Diptych of Philip de Croy - Virgin and Child",
+    "year": "1460",
+    "location": "The Huntington Library, Art Museum, and Botanical Gardens",
+    "city": "San Marino",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madonna%20and%20Child%20Rogier%20van%20der%20Weyden.jpg?width=500",
+    "qid": "Q22963141",
+    "wikidata": "https://www.wikidata.org/wiki/Q22963141",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22963141",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of Philippe de Croy",
+    "year": "1450",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Croyblazon.jpg?width=500",
+    "qid": "Q21614520",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614520",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614520",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Croy family shield",
+    "year": "1460",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Croyblazon.jpg?width=500",
+    "qid": "Q21614521",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614521",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614521",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Seven Sacraments (central panel)",
+    "year": "1440",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Christ%20on%20the%20Cross%20and%20the%20Eucharist%2C%201440-1445%2C%20393.tif?width=500",
+    "qid": "Q21614693",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614693",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614693",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Seven Sacraments (left panel)",
+    "year": "1440",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Baptism%2C%20Confirmation%20and%20Confession%2C%201440-1445%2C%20394.tif?width=500",
+    "qid": "Q21614694",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614694",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614694",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Seven Sacraments (right panel)",
+    "year": "1440",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20The%20Ordinatio%2C%20Marriage%20and%20Extreme%20Unction%2C%201440-1445%2C%20395.tif?width=500",
+    "qid": "Q21614695",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614695",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614695",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Annunciation",
+    "year": "1450",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Annunciation%20-%20WGA25596.jpg?width=500",
+    "qid": "Q21614696",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614696",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614696",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of a Tournament Judge",
+    "year": "1450",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20of%20a%20Man%20-%20WGA25725.jpg?width=500",
+    "qid": "Q21614867",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614867",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614867",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68618,
+     45.07412
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Annunciation Triptych",
+    "year": "1434",
+    "location": "Galleria Sabauda",
+    "city": "Turin",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Annunciation%20Triptych%20-%20WGA25590.jpg?width=500",
+    "qid": "Q3999110",
+    "wikidata": "https://www.wikidata.org/wiki/Q3999110",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3999110",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.88583,
+     50.84958
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Madonna and Child in a Landscape",
+    "year": "1460",
+    "location": "Museum Godshuis Belle",
+    "city": "Ypres",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Madonna%20and%20Child%20in%20a%20Landscape.jpg?width=500",
+    "qid": "Q27680457",
+    "wikidata": "https://www.wikidata.org/wiki/Q27680457",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27680457",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.704444444,
+     50.878888888
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Holy Trinity",
+    "year": "1430",
+    "location": "M Leuven",
+    "city": "Leuven",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Holy%20Trinity%2C%20workshop%20of%20Rogier%20van%20der%20Weyden%2C%20c.%201430-1440%20-%20Museum%20M%20-%20Leuven%2C%20Belgium%20-%20DSC05222.JPG?width=500",
+    "qid": "Q22259840",
+    "wikidata": "https://www.wikidata.org/wiki/Q22259840",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22259840",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Annunciation",
+    "year": "1435",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20The%20Annunciation%20-%20WGA25591.jpg?width=500",
+    "qid": "Q29648480",
+    "wikidata": "https://www.wikidata.org/wiki/Q29648480",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29648480",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Adoration of the Magi",
+    "year": "1455",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20St%20Columba%20Altarpiece%20%28central%20panel%29.jpg?width=500",
+    "qid": "Q11821338",
+    "wikidata": "https://www.wikidata.org/wiki/Q11821338",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11821338",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.1125,
+     34.129166666
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Diptych of Philip de Croÿ with The Virgin and Child",
+    "year": "1460",
+    "location": "The Huntington Library, Art Museum, and Botanical Gardens",
+    "city": "San Marino",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20diptic%20Croy.jpg?width=500",
+    "qid": "Q3399462",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399462",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399462",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.139444444,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Philip the Good (1396–1467)",
+    "year": "1454",
+    "location": "Burlington House",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28after%29%20-%20Philip%20the%20Good%20%281396%E2%80%931467%29%20-%20LDSAL%20322%2C%20Scharf%20XIII%20-%20Burlington%20House.jpg?width=500",
+    "qid": "Q118630541",
+    "wikidata": "https://www.wikidata.org/wiki/Q118630541",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118630541",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.361664,
+     49.186067
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "La Vierge et l'Enfant",
+    "year": "1460",
+    "location": "Musée des Beaux-Arts de Caen",
+    "city": "Caen",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20Diptych%20of%20Laurent%20Froimont%20%28left%20wing%29%20-%20WGA25697.jpg?width=500",
+    "qid": "Q121362824",
+    "wikidata": "https://www.wikidata.org/wiki/Q121362824",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q121362824",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.93212,
+     44.41125
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Deposition",
+    "year": "",
+    "location": "Palazzo Rosso",
+    "city": "Genoa",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Deposizione%20di%20Rogier%20van%20Der%20Weyden.JPG?width=500",
+    "qid": "Q140392213",
+    "wikidata": "https://www.wikidata.org/wiki/Q140392213",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q140392213",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.4616,
+     52.1083
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Calling of Andrew and Simon Peter (possibly a left wing of an altarpiece)",
+    "year": "",
+    "location": "Upton House",
+    "city": "Ratley and Upton",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28follower%20of%29%20-%20The%20Calling%20of%20Saint%20Andrew%20and%20Another%20Disciple%20of%20Saint%20John%20the%20Baptist%20-%20446747%20-%20National%20Trust.jpg?width=500",
+    "qid": "Q119450429",
+    "wikidata": "https://www.wikidata.org/wiki/Q119450429",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119450429",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of Philip the Good, Duke of Burgundy",
+    "year": "1515",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20of%20Philip%20the%20Good%20-%20WGA25727.jpg?width=500",
+    "qid": "Q107438502",
+    "wikidata": "https://www.wikidata.org/wiki/Q107438502",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107438502",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Madonna and Child",
+    "year": "1439",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%2C%20%28Werkstatt%29%20-%20Maria%20mit%20dem%20Kind%2C%20Inventar-Nr.%20549A.jpg?width=500",
+    "qid": "Q107438513",
+    "wikidata": "https://www.wikidata.org/wiki/Q107438513",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107438513",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Bladelin Triptych Nativity (central panel)",
+    "year": "1445",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Bladelin%20Triptych%20-%20The%20Nativity.jpg?width=500",
+    "qid": "Q110275988",
+    "wikidata": "https://www.wikidata.org/wiki/Q110275988",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110275988",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.358238,
+     50.84168
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of Jean Froimont. Verso: Saint Lawrence",
+    "year": "1448",
+    "location": "Royal Museums of Fine Arts of Belgium",
+    "city": "Brussels-Capital Region",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Portrait%20Diptych%20of%20Laurent%20Froimont%20%28right%20wing%29%20-%20WGA25698.jpg?width=500",
+    "qid": "Q116296300",
+    "wikidata": "https://www.wikidata.org/wiki/Q116296300",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116296300",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.307726421,
+     55.830936581
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Annunciation",
+    "year": "",
+    "location": "Burrell Collection",
+    "city": "Glasgow City",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28follower%20of%29%20-%20The%20Annunciation%20-%2035.640%20-%20Burrell%20Collection.jpg?width=500",
+    "qid": "Q118630024",
+    "wikidata": "https://www.wikidata.org/wiki/Q118630024",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118630024",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Madonna with child",
+    "year": "1450",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Amiens%2C%20Mus%C3%A9e%20de%20Picardie%2C%20Anonyme%20%28Pays-Bas%20m%C3%A9ridionaux%29%20%2C%20Vierge%20allaitant%20l%27Enfant%20%28huile%20sur%20bois%2C%20vers%201500%29.jpg?width=500",
+    "qid": "Q111650834",
+    "wikidata": "https://www.wikidata.org/wiki/Q111650834",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111650834",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Diptych of Philippe de Croy",
+    "year": "1460",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20Diptych%20of%20Philippe%20de%20Croy%2C%201460%2C%20254-254bis.tif?width=500",
+    "qid": "Q64776891",
+    "wikidata": "https://www.wikidata.org/wiki/Q64776891",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64776891",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.38555556,
+     50.60277778
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Madonna with child, Revers: Emblem \"Graces a Dieu\"",
+    "year": "1455",
+    "location": "Musée des Beaux-Arts de Tournai",
+    "city": "Tournai",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20weyden%2C%20madonna%20col%20bambino%2C%201455-60%20ca.%2001%20%28cropped%29.jpg?width=500",
+    "qid": "Q112233065",
+    "wikidata": "https://www.wikidata.org/wiki/Q112233065",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112233065",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.25255,
+     53.34091
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Saint Luke Portraying the Virgin",
+    "year": "1431",
+    "location": "National Gallery of Ireland",
+    "city": "Dublin City",
+    "country": "Ireland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Luke%20Portraying%20the%20Virgin%20P1778.jpg?width=500",
+    "qid": "Q77948375",
+    "wikidata": "https://www.wikidata.org/wiki/Q77948375",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77948375",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.25255,
+     53.34091
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "The Arms of Philippe de Bourgogne",
+    "year": "1431",
+    "location": "National Gallery of Ireland",
+    "city": "Dublin City",
+    "country": "Ireland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Arms%20of%20Philippe%20de%20Bourgogne%20.PNG?width=500",
+    "qid": "Q78001796",
+    "wikidata": "https://www.wikidata.org/wiki/Q78001796",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q78001796",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.10257,
+     51.5219
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Weston Triptych (Christ) (triptych, right wing, outside)",
+    "year": "",
+    "location": "Museum of the Order of St John",
+    "city": "",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28school%20of%29%20-%20Weston%20Triptych%20%28Christ%29%20%28triptych%2C%20right%20wing%2C%20outside%29%20-%20LDOSJ1876A%20-%20Museum%20of%20the%20Order%20of%20St%20John.jpg?width=500",
+    "qid": "Q118629835",
+    "wikidata": "https://www.wikidata.org/wiki/Q118629835",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118629835",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.10257,
+     51.5219
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Weston Triptych (triptych, left wing, inside)",
+    "year": "",
+    "location": "Museum of the Order of St John",
+    "city": "",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28school%20of%29%20-%20Weston%20Triptych%20%28triptych%2C%20left%20wing%2C%20inside%29%20-%20LDOSJ1876C%20-%20Museum%20of%20the%20Order%20of%20St%20John.jpg?width=500",
+    "qid": "Q118629837",
+    "wikidata": "https://www.wikidata.org/wiki/Q118629837",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118629837",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.10257,
+     51.5219
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Weston Triptych (triptych, right wing, inside)",
+    "year": "",
+    "location": "Museum of the Order of St John",
+    "city": "",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28school%20of%29%20-%20Weston%20Triptych%20%28triptych%2C%20right%20wing%2C%20inside%29%20-%20LDOSJ1876D%20-%20Museum%20of%20the%20Order%20of%20St%20John.jpg?width=500",
+    "qid": "Q118629839",
+    "wikidata": "https://www.wikidata.org/wiki/Q118629839",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118629839",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.10257,
+     51.5219
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Weston Triptych (John the Baptist) (triptych, left wing, outside)",
+    "year": "",
+    "location": "Museum of the Order of St John",
+    "city": "",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28school%20of%29%20-%20Weston%20Triptych%20%28John%20the%20Baptist%29%20%28triptych%2C%20left%20wing%2C%20outside%29%20-%20LDOSJ1876B%20-%20Museum%20of%20the%20Order%20of%20St%20John.jpg?width=500",
+    "qid": "Q118629894",
+    "wikidata": "https://www.wikidata.org/wiki/Q118629894",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118629894",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.117712,
+     51.511568
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Branch of Holly (verso)",
+    "year": "",
+    "location": "Courtauld Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28workshop%20of%29%20-%20Branch%20of%20Holly%20%28verso%29%20-%20P.1987.XX.486.v%20-%20Courtauld%20Gallery.jpg?width=500",
+    "qid": "Q118630338",
+    "wikidata": "https://www.wikidata.org/wiki/Q118630338",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118630338",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
    }
   }
  ]
