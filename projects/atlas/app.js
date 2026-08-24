@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.44.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 21:43";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.44.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 22:11";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1584,7 +1584,7 @@ function gAuthorQ() {
   const tiers = G.diff === "hard" ? [near, mid, far] : G.diff === "medium" ? [mid, near, far] : [far, mid, near];
   const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
   const opts = [{ text: p.painter, correct: true }, ...ds.map(s => ({ text: GAME_NAME_OF_SLUG[s], correct: false }))];
-  return { kind: "img", image: p.image, prompt: "Who painted this?", options: gShuffle(opts), answer: p.painter };
+  return { kind: "img", image: p.image, prompt: "Who painted this?", options: gShuffle(opts), answer: p.painter, work: p };
 }
 
 function gDateQ() {
@@ -1596,7 +1596,7 @@ function gDateQ() {
     const yy = y + off; if (yy < 1250 || yy > 1985 || seen.has(yy)) continue; seen.add(yy);
     opts.push({ text: String(yy), correct: false });
   }
-  return { kind: "img", image: p.image, options: gShuffle(opts), answer: String(y),
+  return { kind: "img", image: p.image, options: gShuffle(opts), answer: String(y), work: p,
     prompt: `When was this painted?<span class="g-clue">${esc(p.painter)}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
 }
 
@@ -1611,7 +1611,7 @@ function gWhereQ() {
   const tiers = G.diff === "hard" ? [city, sc, dc] : G.diff === "medium" ? [sc, dc, city] : [dc, sc, city];
   const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
   const opts = [{ text: lab(p), correct: true }, ...ds.map(v => ({ text: lab(v), correct: false }))];
-  return { kind: "img", image: p.image, options: gShuffle(opts), answer: lab(p),
+  return { kind: "img", image: p.image, options: gShuffle(opts), answer: lab(p), work: p,
     prompt: `Where is it now?<span class="g-clue">${esc(p.painter)}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
 }
 
@@ -1626,7 +1626,7 @@ function gPaintingQ() {
   for (const t of tiers) { for (const w of gShuffle(t)) { if (chosen.length >= G_NOPTS[G.diff] - 1) break; if (usedImg.has(w.p.image)) continue; usedImg.add(w.p.image); chosen.push(w); } if (chosen.length >= G_NOPTS[G.diff] - 1) break; }
   const opts = [{ img: p.image, correct: true }, ...chosen.map(w => ({ img: w.p.image, correct: false }))];
   const clue = `${esc(p.painter)}${p.year ? `, ${esc(p.year)}` : ""}${p.location ? ` — ${esc(p.location)}` : ""}`;
-  return { kind: "pick", prompt: `Which one is <b>${clue}</b>?`, options: gShuffle(opts) };
+  return { kind: "pick", prompt: `Which one is <b>${clue}</b>?`, options: gShuffle(opts), work: p };
 }
 
 function gNewQuestion() {
@@ -1639,13 +1639,33 @@ function gNewQuestion() {
 function gRender() {
   const stage = document.getElementById("game-stage"); if (!stage) return;
   if (!gPool().length) { stage.innerHTML = `<div class="g-empty">Loading works…</div>`; return; }
-  const q = G.q; let h = "";
-  if (q.kind === "img") h += `<div class="g-figure"><img src="${esc(q.image)}" alt=""></div>`;
-  h += `<div class="g-prompt">${q.prompt}</div>`;
-  if (q.kind === "pick") h += `<div class="g-picks">` + q.options.map((o, i) => `<button class="g-pick" type="button" data-i="${i}"><img src="${esc(o.img)}" alt="" loading="lazy"></button>`).join("") + `</div>`;
-  else h += `<div class="g-options">` + q.options.map((o, i) => `<button class="g-opt" type="button" data-i="${i}">${esc(o.text)}</button>`).join("") + `</div>`;
-  h += `<div class="g-foot"><span class="g-feedback"></span><button class="g-next" type="button" hidden>Next →</button></div>`;
-  stage.innerHTML = h;
+  const q = G.q;
+  stage.className = "g-kind-" + q.kind;   // wide layout differs for image vs pick questions
+  const fig = q.kind === "img" ? `<div class="g-figure"><img src="${esc(q.image)}" alt=""></div>` : "";
+  const body = q.kind === "pick"
+    ? `<div class="g-picks">` + q.options.map((o, i) => `<button class="g-pick" type="button" data-i="${i}"><img src="${esc(o.img)}" alt="" loading="lazy"></button>`).join("") + `</div>`
+    : `<div class="g-options">` + q.options.map((o, i) => `<button class="g-opt" type="button" data-i="${i}">${esc(o.text)}</button>`).join("") + `</div>`;
+  stage.innerHTML = fig +
+    `<div class="g-answer"><div class="g-prompt">${q.prompt}</div>${body}` +
+    `<div class="g-foot"><span class="g-feedback"></span><button class="g-next" type="button" hidden>Next →</button></div></div>` +
+    `<aside class="g-info" hidden></aside>`;
+}
+
+// after answering, show whatever we know about the work: title, painter · year, where, size,
+// and a Wikipedia link if the record carries one — "everything we have".
+function gInfoHTML(p, kind) {
+  if (!p) return "";
+  const wp = p.wikipedia_en || p.wikipedia || p.wiki;
+  const where = [p.location, p.city, p.country].filter(Boolean).join(", ");
+  let h = `<div class="gi-h">About this painting</div>`;
+  if (kind === "pick" && p.image) h += `<img class="gi-img" src="${esc(p.image)}" alt="">`;
+  h += `<div class="gi-title">${esc(p.title || "Untitled")}</div>`;
+  const by = [p.painter, p.year].filter(Boolean).join(" · ");
+  if (by) h += `<div class="gi-row">${esc(by)}</div>`;
+  if (where) h += `<div class="gi-row">📍 ${esc(where)}</div>`;
+  if (p.medium || p.dimensions) h += `<div class="gi-row gi-dim">${[p.medium, p.dimensions].filter(Boolean).map(esc).join(" · ")}</div>`;
+  if (wp) h += `<a class="gi-link" href="${esc(wp)}" target="_blank" rel="noopener">Wikipedia ↗</a>`;
+  return h;
 }
 
 function gAnswer(i) {
@@ -1660,6 +1680,8 @@ function gAnswer(i) {
   fb.textContent = chosen.correct ? "✓ Correct" : (q.answer ? `✗ ${q.answer}` : "✗ Not that one");
   fb.className = "g-feedback " + (chosen.correct ? "ok" : "no");
   stage.querySelector(".g-next").hidden = false;
+  const info = stage.querySelector(".g-info");
+  if (info) { info.innerHTML = gInfoHTML(q.work, q.kind); info.hidden = false; }
   gScore();
 }
 function gScore() { const el = document.getElementById("game-score"); if (el) el.textContent = G.total ? `${G.right} / ${G.total}` : ""; }

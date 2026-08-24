@@ -672,3 +672,28 @@ button.pop-museum:hover .pm-arrow { color: #6a4a2a; }
 .g-next { font: inherit; font-size: 15px; font-weight: 700; padding: 9px 22px; border: 0; border-radius: 999px; background: var(--ink); color: #fff; cursor: pointer; }
 .g-empty { color: var(--muted); padding: 40px; }
 body.show-game #timeline, body.show-game #filter { display: none; }
+
+/* Game — wide layout: painting | options | info-on-answer; stacks on narrow screens */
+#game-stage { flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: center;
+  max-width: 1180px; gap: 24px; padding: 24px 18px 48px; }
+.g-figure { flex: 1 1 300px; max-width: 440px; margin: 0; align-self: flex-start; }
+.g-answer { flex: 1 1 300px; max-width: 460px; display: flex; flex-direction: column; gap: 15px; align-items: stretch; }
+.g-answer .g-prompt { text-align: left; }
+.g-kind-pick .g-answer { flex: 1 1 460px; max-width: 640px; }
+.g-options { max-width: none; }
+.g-foot { justify-content: flex-start; }
+.g-info { flex: 0 1 260px; max-width: 300px; align-self: stretch; background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 6px rgba(0,0,0,.05); }
+.g-info[hidden] { display: none; }
+.gi-h { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 9px; }
+.gi-img { width: 100%; border-radius: 8px; margin-bottom: 11px; background: #efe9df; display: block; }
+.gi-title { font-size: 16px; font-weight: 700; line-height: 1.25; color: var(--ink); }
+.gi-row { font-size: 13.5px; color: var(--ink); margin-top: 6px; line-height: 1.35; }
+.gi-dim { color: var(--muted); font-size: 12.5px; }
+.gi-link { display: inline-block; margin-top: 13px; font-size: 13.5px; font-weight: 700; color: #2a4d8f; text-decoration: none; }
+.gi-link:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+  #game-stage { flex-direction: column; align-items: center; gap: 16px; }
+  .g-figure, .g-answer, .g-info { max-width: 460px; width: 100%; flex-basis: auto; }
+  .g-answer .g-prompt, .g-foot { text-align: center; justify-content: center; }
+}
