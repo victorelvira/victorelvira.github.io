@@ -149,11 +149,12 @@ body {
 /* the map's own options (Now in / Painted in) — secondary, and only shown in the map view */
 #mapopts { display: inline-flex; gap: 6px; align-items: center; }
 #mapopts[hidden] { display: none; }
-/* one common free-text filter, right-aligned, applies to every view */
-#modes #filter { margin-left: auto; flex: 0 1 300px; min-width: 150px;
+/* one common free-text filter — placed to the LEFT of the view tabs (order:-1), applies to every view */
+#modes #filter { order: -1; flex: 0 1 300px; min-width: 150px;
   padding: 6px 13px; font: inherit; font-size: 13px;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; }
-@media (max-width: 640px) { #modes #filter { flex: 1 1 100%; margin-left: 0; order: 3; } }
+/* mobile: the filter can't sit beside the tabs — give it its own full-width row on top */
+@media (max-width: 640px) { #modes #filter { flex: 1 1 100%; } }
 .mode-btn {
   font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
@@ -304,22 +305,26 @@ body.resizing #map { pointer-events: none; }
 .gallery[hidden] { display: none; }   /* the class's display:grid otherwise beats the [hidden] attribute */
 .gallery .sentinel { grid-column: 1 / -1; }
 
-/* ── museum "sets": venue name on top, thumbnails below, one tinted ground per museum ──
-   In grouped gallery the outer list is a plain block of stacked sets; the thumbnails live in a
-   nested .mgrid. Any leftover space at the tail of a museum is just the set's tinted padding —
-   it reads as intentional, never as a broken gap. Alternating tints keep neighbours distinct. */
-#worklist.gallery, #table-gallery.grouped:not([hidden]) { display: block; padding: 6px; }
-.mset { list-style: none; margin: 0 0 8px; padding: 5px 7px 8px; border-radius: 10px;
+/* ── museum "sets" as full-width continuous bands: venue name on top, thumbnails below on ONE
+   tinted ground ── The thumbnails fill each row (auto-fill grid, tracks stretch to 1fr, so no
+   white gaps mid-row); when a museum spans several rows the SAME tinted ground continues under
+   all of them. Any leftover at the very end of a museum is that same tint — continuous, never a
+   white hole. Alternating tints keep neighbours distinct. Changing --thumb (the size slider)
+   reflows the columns live, so everything re-fits automatically. */
+.gallery.grouped { display: block; padding: 6px; }
+.gallery.grouped[hidden] { display: none; }
+.mset { list-style: none; margin: 0 0 8px; padding: 5px 8px 8px; border-radius: 10px;
   background: #f4eee2; border: 1px solid #e8dfcb; }
 .mset.alt { background: #eeecf1; border-color: #e1dfe7; }
-.mset:last-of-type { margin-bottom: 0; }
+.mset:last-child { margin-bottom: 0; }
 .mhead { display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
   padding: 3px 4px 6px; font-size: 11px; font-weight: 700; text-transform: uppercase;
   letter-spacing: .03em; color: #6a5c45; line-height: 1.2; }
-.mhead .mn { overflow: hidden; text-overflow: ellipsis; }
+.mhead .mn { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mhead .n { flex: 0 0 auto; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
 .mgrid { list-style: none; margin: 0; padding: 0; display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--thumb, 112px), 1fr)); gap: 6px; }
+.gallery.grouped .sentinel { height: 1px; }
 .gcell { padding: 0; margin: 0; border-radius: 7px; overflow: hidden; position: relative;
   border: 1px solid var(--line); background: #fff; display: block; }
 .gshare { position: absolute; top: 5px; right: 5px; z-index: 2; width: 27px; height: 27px; padding: 0;

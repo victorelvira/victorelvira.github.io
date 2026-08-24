@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.43.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.43.4">
 </head>
 <body>
   <nav id="navbar">
@@ -82,6 +82,7 @@
       <div id="panel-top">
         <span id="panel-head">Works in view</span>
         <span id="panel-view">
+          <label id="pv-group" class="subtick" title="Group the miniatures by museum" hidden><input type="checkbox" checked> ⛪ by museum</label>
           <input id="thumb-size" type="range" min="72" max="240" value="112" title="Thumbnail size" hidden>
           <button type="button" id="pv-list" class="pvbtn active" title="List view">☰ List</button>
           <button type="button" id="pv-grid" class="pvbtn" title="Thumbnails">▦ Miniature</button>
@@ -167,7 +168,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.43.2"></script>
+  <script src="atlas/app.js?v=0.43.4"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

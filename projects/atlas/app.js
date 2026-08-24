@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.43.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 19:02";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.43.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-24 19:42";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1122,8 +1122,11 @@ function buildTimeline(min, max) {
 const PANEL_CHUNK = 80;
 let panelQueue = [];    // list mode: flat render plan {grp} headers + {w} work rows
 let panelCursor = 0;
-let panelGroups = [];   // gallery mode: museum sets ({location, city, items}), streamed whole
+let panelGroups = [];   // gallery + grouped: museum sets ({location, city, items}), streamed whole
 let panelGroupCursor = 0;
+let panelFlat = [];     // gallery + ungrouped: a flat list of works
+let panelFlatCursor = 0;
+let panelGalGroup = true;   // "⛪ by museum" toggle for the miniature view
 let panelIO = null;
 let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 
@@ -1170,19 +1173,24 @@ function panelRowHTML(w) {
 }
 
 function panelHasMore() {
-  return panelMode === "gallery" ? panelGroupCursor < panelGroups.length : panelCursor < panelQueue.length;
+  if (panelMode === "gallery")
+    return panelGalGroup ? panelGroupCursor < panelGroups.length : panelFlatCursor < panelFlat.length;
+  return panelCursor < panelQueue.length;
 }
 function appendPanelChunk() {
   const ul = document.getElementById("worklist");
   const oldSentinel = ul.querySelector(".sentinel");
   if (oldSentinel) oldSentinel.remove();
   let html = "";
-  if (panelMode === "gallery") {                   // museum sets, streamed whole (by work count)
+  if (panelMode === "gallery" && panelGalGroup) {  // museum sets, streamed whole (by work count)
     let added = 0;
     for (; panelGroupCursor < panelGroups.length && added < PANEL_CHUNK; panelGroupCursor++) {
       html += msetHTML(panelGroups[panelGroupCursor], panelVis, panelGroupCursor);
       added += panelGroups[panelGroupCursor].items.length;
     }
+  } else if (panelMode === "gallery") {            // ungrouped: a dense flat grid of thumbnails
+    const end = Math.min(panelFlatCursor + PANEL_CHUNK, panelFlat.length);
+    for (; panelFlatCursor < end; panelFlatCursor++) html += panelCellHTML(panelFlat[panelFlatCursor]);
   } else {                                          // list mode: flat rows with venue header bars
     const end = Math.min(panelCursor + PANEL_CHUNK, panelQueue.length);
     for (; panelCursor < end; panelCursor++) {
@@ -1233,16 +1241,19 @@ function renderPanel() {
     ul.innerHTML = `<li class="empty">Pan or zoom the map — the works in view are listed here.</li>`;
     return;
   }
-  // build both render plans (cheap); appendPanelChunk streams whichever the mode needs
+  // build the render plans (cheap); appendPanelChunk streams whichever the mode needs
   for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
-  panelGroups = ordered;        // gallery mode → museum sets
+  panelGroups = ordered;        // gallery + grouped → museum cards
   panelGroupCursor = 0;
+  panelFlat = ordered.flatMap(g => g.items);   // gallery + ungrouped → flat grid
+  panelFlatCursor = 0;
   panelQueue = [];              // list mode → flat rows with header bars
   for (const g of ordered) {
     panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length } });
     for (const w of g.items) panelQueue.push({ w });
   }
   panelCursor = 0;
+  ul.classList.toggle("grouped", panelMode === "gallery" && panelGalGroup);
   ul.innerHTML = "";
   appendPanelChunk();
 }
@@ -1261,16 +1272,22 @@ document.getElementById("worklist").addEventListener("click", e => {
 (function wirePanelView() {
   const ul = document.getElementById("worklist");
   const slider = document.getElementById("thumb-size");
+  const grpTick = document.getElementById("pv-group");
   const setMode = m => {
     panelMode = m;
     ul.classList.toggle("gallery", m === "gallery");
     document.getElementById("pv-list").classList.toggle("active", m === "list");
     document.getElementById("pv-grid").classList.toggle("active", m === "gallery");
     slider.hidden = m !== "gallery";
+    grpTick.hidden = m !== "gallery";             // "by museum" tick only applies to the miniature grid
     if (!state.near) renderPanel();               // re-render the same in-view works in the new mode
   };
   document.getElementById("pv-list").addEventListener("click", () => setMode("list"));
   document.getElementById("pv-grid").addEventListener("click", () => setMode("gallery"));
+  grpTick.querySelector("input").addEventListener("change", e => {
+    panelGalGroup = e.target.checked;
+    if (!state.near) renderPanel();
+  });
   const applySize = () => ul.style.setProperty("--thumb", slider.value + "px");
   slider.addEventListener("input", applySize);
   applySize();
