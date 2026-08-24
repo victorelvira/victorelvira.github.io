@@ -84,8 +84,8 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "atlas/data/dali.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.46.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-24 23:52";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.46.7";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 00:08";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1690,34 +1690,41 @@ function gAnswer(i) {
   if (info) info.innerHTML = gInfoHTML(q.work, q.kind);   // fills the reserved column; empty→invisible via CSS
   gScore();
 }
-// ── records, saved on this device (localStorage) — streak + % correct today and all-time ──
+// ── records, saved on this device (localStorage), kept SEPARATELY per difficulty (Lorena) ──
 const GS_KEY = "atlasGameStats";
+function gBlankLevel() { return { all: { right: 0, total: 0 }, best: 0, day: { date: "", right: 0, total: 0 } }; }
 function gLoadStats() {
   let s; try { s = JSON.parse(localStorage.getItem(GS_KEY) || "{}"); } catch (e) { s = {}; }
-  s.all = s.all || { right: 0, total: 0 }; s.bestStreak = s.bestStreak || 0;
-  s.day = s.day || { date: "", right: 0, total: 0 };
-  return s;
+  const out = {};
+  for (const d of ["easy", "medium", "hard"]) {
+    const v = s[d] || {};
+    out[d] = { all: v.all || { right: 0, total: 0 }, best: v.best || 0, day: v.day || { date: "", right: 0, total: 0 } };
+  }
+  return out;
 }
-let GSTATS = gLoadStats(), gStreak = 0;
+let GSTATS = gLoadStats(), gStreak = 0;   // gStreak = current streak at the current difficulty
 const gToday = () => new Date().toISOString().slice(0, 10);
 const gPct = (r, t) => t ? Math.round(100 * r / t) : 0;
 function gRecordAnswer(correct) {
-  GSTATS.all.total++; if (correct) GSTATS.all.right++;
-  const t = gToday(); if (GSTATS.day.date !== t) GSTATS.day = { date: t, right: 0, total: 0 };
-  GSTATS.day.total++; if (correct) GSTATS.day.right++;
+  const s = GSTATS[G.diff];
+  s.all.total++; if (correct) s.all.right++;
+  const t = gToday(); if (s.day.date !== t) s.day = { date: t, right: 0, total: 0 };
+  s.day.total++; if (correct) s.day.right++;
   gStreak = correct ? gStreak + 1 : 0;
-  if (gStreak > GSTATS.bestStreak) GSTATS.bestStreak = gStreak;
+  if (gStreak > s.best) s.best = gStreak;
   try { localStorage.setItem(GS_KEY, JSON.stringify(GSTATS)); } catch (e) {}
 }
 function gScore() {
   const el = document.getElementById("game-score");
   if (el) el.innerHTML = G.total ? `<b>${G.right} / ${G.total}</b> · ${gPct(G.right, G.total)}%` : "";
   const rec = document.getElementById("game-records");
+  const s = GSTATS[G.diff];
   if (rec) {
-    if (GSTATS.day.date !== gToday()) GSTATS.day = { date: gToday(), right: 0, total: 0 };   // roll over at midnight
-    rec.innerHTML = GSTATS.all.total
-      ? `🔥 ${gStreak}<i>streak</i> <b>·</b> ${GSTATS.bestStreak}<i>best</i> <b>·</b> ${gPct(GSTATS.day.right, GSTATS.day.total)}%<i>today</i> <b>·</b> ${gPct(GSTATS.all.right, GSTATS.all.total)}%<i>all-time</i>`
-      : "";
+    if (s.day.date !== gToday()) s.day = { date: gToday(), right: 0, total: 0 };   // roll over at midnight
+    const lvl = `<span class="grec-lvl">${G.diff}</span>`;
+    rec.innerHTML = s.all.total
+      ? `${lvl} 🔥 ${gStreak}<i>streak</i> <b>·</b> ${s.best}<i>best</i> <b>·</b> ${gPct(s.day.right, s.day.total)}%<i>today</i> <b>·</b> ${gPct(s.all.right, s.all.total)}%<i>all-time</i>`
+      : `${lvl} <span class="grec-none">no games yet</span>`;
   }
 }
 
@@ -1750,7 +1757,8 @@ function setGameView(on) {
   document.getElementById("game-diff").addEventListener("click", e => {
     const b = e.target.closest("[data-diff]"); if (!b) return;
     G.diff = b.dataset.diff; g.querySelectorAll("#game-diff .gbtn").forEach(x => x.classList.toggle("active", x === b));
-    gNewQuestion();
+    G.right = 0; G.total = 0; gStreak = 0;   // each difficulty is its own run + its own record
+    gScore(); gNewQuestion();
   });
   document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gStreak = 0; gScore(); gNewQuestion(); });
   document.getElementById("game-reset-all").addEventListener("click", () => {

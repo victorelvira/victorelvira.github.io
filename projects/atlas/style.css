@@ -746,3 +746,6 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 #chart-tip li { line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 280px; }
 #chart-tip .ct-c { color: var(--muted); font-variant-numeric: tabular-nums; }
 #chart-tip .ct-more { color: var(--muted); font-style: italic; }
+
+.g-records .grec-lvl { text-transform: uppercase; font-weight: 700; font-size: 10px; letter-spacing: .04em; color: #6a4a2a; background: #efe6d6; border-radius: 999px; padding: 1px 7px; margin-right: 2px; }
+.g-records .grec-none { font-style: italic; opacity: .7; }
