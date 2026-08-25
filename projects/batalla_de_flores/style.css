@@ -462,8 +462,24 @@ table.palmares.ajustable td.pos { width: var(--col-puesto, 62px); }
    está mal medida. */
 table.palmares.ajustable th { white-space: nowrap; }
 table.palmares th.c-photo { text-align: left; }
+/* «Carroza» tenía que tener su anchura como las demás.
+   Era la única sin regla, así que absorbía todo lo que las otras ganaban al
+   arrastrarlas y se podía aplastar hasta desaparecer: ensanchabas «Fuentes» y
+   el nombre de la carroza se quedaba en dos letras y puntos suspensivos. */
+table.palmares.ajustable th[data-col="carroza"],
+table.palmares.ajustable td.name { width: var(--col-carroza, auto); }
 table.palmares.ajustable th[data-col="grupo"],
 table.palmares.ajustable td.group { width: var(--col-grupo, auto); }
+
+/* Y un suelo para todas. Con `table-layout: fixed` el `min-width` de una celda
+   no se respeta, así que el suelo se pone en la TABLA: si la suma de columnas
+   baja de aquí, la tabla deja de encoger y el panel se desliza. Encoger es
+   preferible a aplastar, pero solo hasta que se deja de leer. */
+/* El mínimo real lo calcula `setupColumnasAjustables` sumando lo que necesita
+   cada columna; aquí solo queda el suelo de emergencia por si el JS no corre. */
+table.palmares.ajustable { min-width: 340px; }
+/* Y si la tabla no cabe, el panel se desliza en vez de recortarla. */
+.pane-detail .pane-body { overflow-x: auto; }
 table.palmares.ajustable th[data-col="fuentes"],
 table.palmares.ajustable td:last-child { width: var(--col-fuentes, 116px); }
 /* La miniatura llena su celda, no mide lo suyo.

@@ -1121,7 +1121,17 @@ function openQuestions() {
   const noPalmares = state.editions.filter(edition =>
     edition.status === "published" && !(edition.floats || []).some(entry => entry.position != null));
 
-  return { disputed, conflicting, hemeroteca, imposibles, sinConfirmar, incomplete, noPalmares };
+  // Tres huecos que faltaban en esta lista y son los más grandes del archivo.
+  // «Pendiente» decía la verdad de lo que miraba, pero no miraba lo que más
+  // falta: la fecha de casi la mitad de las ediciones.
+  const sinFecha = state.editions.filter(edition =>
+    !edition.parade_date && edition.status !== "cancelled" && edition.status !== "not_held");
+  const sinFoto = state.editions.filter(edition =>
+    edition.status === "published"
+    && !(edition.floats || []).some(entry => (entry.image_urls || []).length));
+
+  return { disputed, conflicting, hemeroteca, imposibles, sinConfirmar, incomplete,
+           noPalmares, sinFecha, sinFoto };
 }
 
 /* Pestana propia, no un apendice de Estadisticas: que un archivo diga lo que no
@@ -1137,7 +1147,8 @@ function askButton(id, label) {
 function renderPendingTab() {
   const q = openQuestions();
   const total = q.disputed.length + q.conflicting.length + q.hemeroteca.length
-    + q.imposibles.length + q.sinConfirmar.length + q.incomplete.length + q.noPalmares.length;
+    + q.imposibles.length + q.sinConfirmar.length + q.incomplete.length + q.noPalmares.length
+    + q.sinFecha.length + q.sinFoto.length;
   els.indexCount.textContent = `${num(total)} cuestiones abiertas`;
   // Buscar "1954" aqui no filtra nada: los controles se esconden en esta vista.
   document.querySelector(".controls")?.setAttribute("hidden", "");
@@ -1154,6 +1165,18 @@ function renderPendingTab() {
       o que no cuadra. Si conoces la respuesta a alguno, dínoslo con el botón de su línea.</p>
       <div class="chips"><button id="share-pending" class="share" type="button"
         title="Compartir esta lista">${ICON_SHARE}Compartir esta lista</button></div>
+
+      ${bloque("📅", "Ediciones de las que no sabemos el día", q.sinFecha, ed => `
+        <li><button class="link t-year" type="button" data-year="${ed.year}">${ed.year}</button>
+          — sabemos el año, no el día. Un cartel, un programa o un recorte de prensa
+          de aquella semana lo resuelve.
+          ${askButton(`fecha-${ed.year}`, `Fecha del desfile de ${ed.year}`)}</li>`)}
+
+      ${bloque("📷", "Ediciones celebradas sin una sola foto", q.sinFoto, ed => `
+        <li><button class="link t-year" type="button" data-year="${ed.year}">${ed.year}</button>
+          — se celebró y no conservamos ninguna imagen${ed.year >= 2000
+            ? ", y es reciente: seguro que alguien tiene fotos" : ""}.
+          ${askButton(`fotos-${ed.year}`, `Fotos de la Batalla de ${ed.year}`)}</li>`)}
 
       <div class="open-block">
         <h4>🏆 Carrocistas repartidos entre varios nombres</h4>
@@ -2289,9 +2312,52 @@ function setupColumnasAjustables() {
     Object.assign(ANCHOS, JSON.parse(localStorage.getItem("anchos-columna") || "{}"));
   } catch { /* si está corrupto, se empieza de cero */ }
 
+  // Ninguna columna puede bajar de aquí, aunque el arrastre lo pida o aunque
+  // venga guardado de antes con un valor imposible. El mínimo del arrastre se
+  // calcula del título, pero eso solo protege a la columna que arrastras: la de
+  // al lado se llevaba el estrujón sin defensa ninguna.
+  const SUELO = { foto: 34, puesto: 52, carroza: 96, grupo: 80, fuentes: 74 };
+
+  // El suelo se pone en la TABLA, no en las celdas.
+  //
+  // Con `table-layout: fixed`, el `min-width` de un `td` se ignora: el navegador
+  // reparte lo que haya y las columnas sin anchura fija absorben el estrujón
+  // hasta desaparecer. Ensanchar «Fuentes» a 300 px dejaba «Carroza» y «Grupo»
+  // en CERO píxeles, literalmente.
+  //
+  // Así que se le da a la tabla un ancho mínimo igual a la suma de lo que cada
+  // columna necesita —lo que el usuario haya fijado, o su suelo—. Por debajo de
+  // eso la tabla ya no encoge: se desliza el panel. Encoger está bien hasta que
+  // se deja de leer.
   const aplicar = () => {
     Object.entries(ANCHOS).forEach(([col, px]) => {
-      document.documentElement.style.setProperty(`--col-${col}`, `${px}px`);
+      document.documentElement.style.setProperty(
+        `--col-${col}`, `${Math.max(px, SUELO[col] || 40)}px`);
+    });
+    // Y ahora se MIDE, en vez de calcular.
+    //
+    // Sumar los suelos no bastaba: las columnas que el usuario no ha tocado
+    // miden lo que el navegador les dé, que suele ser más que su suelo, y al
+    // sumar de menos la tabla se quedaba corta y las aplastaba igual. Aquí se
+    // mira lo que ha quedado, se rescata a la que se haya caído por debajo de su
+    // mínimo dándole anchura explícita, y se vuelve a medir.
+    document.querySelectorAll("table.palmares.ajustable").forEach(tabla => {
+      tabla.style.minWidth = "";
+      for (let vuelta = 0; vuelta < 2; vuelta++) {
+        let rescatada = false;
+        tabla.querySelectorAll("th[data-col]").forEach(th => {
+          const col = th.dataset.col;
+          const suelo = SUELO[col] || 40;
+          if (th.getBoundingClientRect().width < suelo - 0.5) {
+            document.documentElement.style.setProperty(`--col-${col}`, `${suelo}px`);
+            rescatada = true;
+          }
+        });
+        if (!rescatada) break;
+      }
+      const suma = [...tabla.querySelectorAll("th[data-col]")]
+        .reduce((total, th) => total + th.getBoundingClientRect().width, 0);
+      tabla.style.minWidth = `${Math.ceil(suma)}px`;
     });
   };
   aplicar();
@@ -2320,7 +2386,7 @@ function setupColumnasAjustables() {
   });
   window.addEventListener("mousemove", evento => {
     if (!activo) return;
-    const nuevo = Math.max(activo.minimo,
+    const nuevo = Math.max(activo.minimo, SUELO[activo.col] || 40,
       Math.round(activo.ancho0 + evento.clientX - activo.x0));
     ANCHOS[activo.col] = nuevo;
     document.documentElement.style.setProperty(`--col-${activo.col}`, `${nuevo}px`);
@@ -2329,6 +2395,7 @@ function setupColumnasAjustables() {
     if (!activo) return;
     activo = null;
     document.body.classList.remove("redimensionando");
+    aplicar();   // recalcula el mínimo de la tabla con el ancho recién fijado
     localStorage.setItem("anchos-columna", JSON.stringify(ANCHOS));
   });
 }
