@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.53.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.55.1">
 </head>
 <body>
   <nav id="navbar">
@@ -176,18 +176,24 @@
           <button type="button" class="gbtn" data-cb="color">Colour</button>
         </span>
         <span class="galaxy-mini">
-          <label id="galaxy-titles" title="Show titles next to every dot"><input type="checkbox" data-lab="title"> 🏷 Titles</label>
-          <span class="gm-sep" id="galaxy-names" title="Painter names on the map"><span class="gm-cap">names</span>
-            <button type="button" class="minibtn active" data-names="off">off</button>
-            <button type="button" class="minibtn" data-names="dots" title="A small name on every dot">dots</button>
-            <button type="button" class="minibtn" data-names="centroid" title="One big name at the middle of each painter's cluster">centre</button>
+          <label id="galaxy-titles" title="Write each painting's title next to its dot"><input type="checkbox" data-lab="title"> 🏷 Painting titles</label>
+          <span class="gm-sep" id="galaxy-names"><span class="gm-cap">Painter names:</span>
+            <button type="button" class="minibtn active" data-names="off" title="No painter names">none</button>
+            <button type="button" class="minibtn" data-names="dots" title="A small painter name on every dot">on each dot</button>
+            <button type="button" class="minibtn" data-names="centroid" title="One big painter name at the middle of their cluster">one per painter</button>
           </span>
         </span>
-        <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan</span>
+        <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover to preview · <b>click to pin</b> · scroll/pinch zoom · drag to pan</span>
       </div>
       <span id="galaxy-legend" class="galaxy-legend"></span>
     </div>
-    <div id="galaxy-scroll"><div id="galaxy-plane"></div><canvas id="galaxy-canvas" hidden></canvas></div>
+    <div id="galaxy-body">
+      <div id="galaxy-scroll"><div id="galaxy-plane"></div><canvas id="galaxy-canvas" hidden></canvas></div>
+      <aside id="gx-side" hidden>
+        <button type="button" id="gx-side-x" title="Close" aria-label="Close">✕</button>
+        <div id="gx-side-body"></div>
+      </aside>
+    </div>
     <details id="galaxy-method">
       <summary>How this is built — methodology</summary>
       <div class="gm-body">
@@ -258,7 +264,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.53.2"></script>
+  <script src="atlas/app.js?v=0.55.1"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

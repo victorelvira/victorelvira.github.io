@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.53.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 16:20";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.55.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 15:21";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -595,6 +595,7 @@ fetch("atlas/data/all.geojson?v=" + DATA_V)
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     buildMarkers();
     deepLink();                        // ?w=<qid> opens that painting's ficha; ?m=<id> its museum
+    if (typeof applyGalaxyURL === "function") applyGalaxyURL();   // ?view=…&gcb/gnm/gt/g3 → open that view + galaxy settings
     map.on("moveend", renderPanel);
     // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
@@ -1063,8 +1064,8 @@ function setTableView(on) {
   if (on) renderTable();
   else setView();
 }
-document.getElementById("v-table").addEventListener("click", () => setTableView(true));
-document.getElementById("v-mapview").addEventListener("click", () => setTableView(false));
+document.getElementById("v-table").addEventListener("click", () => { setTableView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
+document.getElementById("v-mapview").addEventListener("click", () => { setTableView(false); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
 // one common free-text filter — applies to the map, the list/gallery AND the table at once
 {
   let qt = 0;
@@ -1283,11 +1284,13 @@ function revealMuseumInPanel(key) {
   const target = ul.querySelector(sel);
   if (!target) return;                               // ungrouped gallery has no headers — nothing to scroll to
   const pr = panel.getBoundingClientRect(), tr = target.getBoundingClientRect();
-  panel.scrollTo({ top: panel.scrollTop + (tr.top - pr.top) - 6, behavior: "smooth" });
+  const head = document.getElementById("panel-top");           // sticky header sits over the top of the list
+  const headH = head ? head.offsetHeight : 0;                  // …offset by its height so the museum isn't hidden under it
+  panel.scrollTo({ top: panel.scrollTop + (tr.top - pr.top) - headH - 8, behavior: "smooth" });
   clearTimeout(_revealT);
   ul.querySelectorAll(".grp-flash").forEach(x => x.classList.remove("grp-flash"));
   target.classList.add("grp-flash");
-  _revealT = setTimeout(() => target.classList.remove("grp-flash"), 1800);
+  _revealT = setTimeout(() => target.classList.remove("grp-flash"), 3600);
 }
 
 document.getElementById("worklist").addEventListener("click", e => {
@@ -1950,7 +1953,7 @@ function setGameView(on) {
 
 (function wireGame() {
   const g = document.getElementById("game"); if (!g) return;
-  document.getElementById("v-game").addEventListener("click", () => setGameView(true));
+  document.getElementById("v-game").addEventListener("click", () => { setGameView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
   document.getElementById("game-mode").addEventListener("click", e => {
     const b = e.target.closest("[data-gmode]"); if (!b) return;
     G.mode = b.dataset.gmode; g.querySelectorAll("#game-mode .gbtn").forEach(x => x.classList.toggle("active", x === b));
@@ -2101,7 +2104,7 @@ function setChartView(on) {
 }
 (function wireChart() {
   const sec = document.getElementById("chartview"); if (!sec) return;
-  document.getElementById("v-chart").addEventListener("click", () => setChartView(true));
+  document.getElementById("v-chart").addEventListener("click", () => { setChartView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
   document.getElementById("chart-group").addEventListener("click", e => {
     const b = e.target.closest("[data-cg]"); if (!b) return;
     chartGroup = b.dataset.cg;
@@ -2192,6 +2195,39 @@ function setAuthorFocus(slug) {
   _gxFocusStyle.textContent = rule;
 }
 function clearAuthorFocus() { setAuthorFocus(null); }
+
+// ── unified galaxy focus (2-D + 3-D) + right-side info dock ──
+// Hover a dot OR a painter name → light up that painter (grey the rest). Click → pin it until you click
+// empty space (reset) or another painter. Hover fills the right dock with the painting; click anchors it.
+let gxFocusSlug = null, gxFocusPinned = false, gxAnchored = null;
+function setGxFocus(slug, pin) {
+  slug = slug || null;
+  if (pin != null) gxFocusPinned = pin;
+  if (slug === gxFocusSlug) return;
+  gxFocusSlug = slug;
+  setAuthorFocus(slug);                                  // 2-D CSS spotlight
+  if (galaxy3D && window._draw3D) window._draw3D();      // 3-D redraw reads gxFocusSlug
+}
+function gxSideFill(w) {
+  const p = w.p, body = document.getElementById("gx-side-body"); if (!body) return;
+  const venue = [p.location, p.city, p.country].filter(Boolean).join(", ");
+  const row = (k, v) => v ? `<div class="gxs-row"><span class="k">${k}</span><span>${esc(v)}</span></div>` : "";
+  const links = linksRow(p);
+  body.innerHTML =
+    (p.image ? `<img class="gxs-img" src="${esc(fullImage(p.image))}" alt="" onerror="this.style.display='none'">` : "") +
+    `<div class="gxs-title">${esc(p.title || "Untitled")}</div>` +
+    `<div class="gxs-painter"><span class="pdot" style="background:${colorFor(p.painter)}"></span>${esc(p.painter || "")}</div>` +
+    row("Date", p.year) + row("Where", venue) + row("Technique", p.medium) + row("Size", p.dimensions) +
+    (links ? `<div class="gxs-links">${links}</div>` : "") +
+    `<div class="gxs-hint">${gxAnchored ? "Pinned — ✕ or click empty space to reset" : "Click the dot to pin it here"}</div>`;
+}
+function gxSidePreview(w) { if (gxAnchored || !w) return; const el = document.getElementById("gx-side"); if (!el) return; el.hidden = false; el.classList.remove("anchored"); gxSideFill(w); }
+function gxSideAnchor(w) { if (!w) return; gxAnchored = w.p.qid; const el = document.getElementById("gx-side"); el.hidden = false; el.classList.add("anchored"); gxSideFill(w); }
+function gxSideHide() { if (gxAnchored) return; const el = document.getElementById("gx-side"); if (el) el.hidden = true; }
+function gxReset() {
+  gxAnchored = null; gxFocusPinned = false; setGxFocus(null);
+  const el = document.getElementById("gx-side"); if (el) { el.classList.remove("anchored"); el.hidden = true; }
+}
 function renderGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane) return;
   if (!galaxyCoords) {
@@ -2203,7 +2239,6 @@ function renderGalaxy() {
 }
 function drawGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane || !galaxyCoords) return;
-  if (typeof clearAuthorFocus === "function") clearAuthorFocus();   // drop any stale author greying
   if (!galaxyByQid) { galaxyByQid = new Map(); for (const w of works) if (w.p.qid) galaxyByQid.set(w.p.qid, w); }
   const S = 1800, PAD = 46;
   plane.style.width = (S + PAD * 2) + "px"; plane.style.height = (S + PAD * 2) + "px";
@@ -2263,9 +2298,50 @@ function setGalaxyView(on) {
     if (window._galaxyFit) setTimeout(window._galaxyFit, 50);
   }
 }
+function galaxyRedraw() { galaxyLegend(); if (galaxy3D) { if (window._draw3D) window._draw3D(); } else if (galaxyCoords) drawGalaxy(); }
+
+// ── shareable URL: reflect the active view + the galaxy's settings in the address bar ──
+function syncGalaxyURL() {
+  const sp = new URLSearchParams(location.search);
+  ["view", "gcb", "gnm", "gt", "g3"].forEach(k => sp.delete(k));
+  const b = document.body.classList;
+  const v = b.contains("show-galaxy") ? "similar" : b.contains("show-chart") ? "timeline"
+    : b.contains("show-game") ? "game" : b.contains("show-table") ? "table" : null;
+  if (v) sp.set("view", v);
+  if (v === "similar") {
+    if (galaxyColorBy !== "school") sp.set("gcb", galaxyColorBy);
+    if (galaxyNames !== "off") sp.set("gnm", galaxyNames);
+    if (galaxyTitles) sp.set("gt", "1");
+    if (galaxy3D) sp.set("g3", "1");
+  }
+  const qs = sp.toString();
+  history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+}
+function applyGalaxyURL() {
+  const sp = new URLSearchParams(location.search);
+  const cb = sp.get("gcb");
+  if (cb && ["author", "period", "school", "color"].includes(cb)) {
+    galaxyColorBy = cb;
+    document.querySelectorAll("#galaxy-colorby .gbtn").forEach(x => x.classList.toggle("active", x.dataset.cb === cb));
+  }
+  const nm = sp.get("gnm");
+  if (nm && ["off", "dots", "centroid"].includes(nm)) {
+    galaxyNames = nm;
+    document.querySelectorAll("#galaxy-names .minibtn").forEach(x => x.classList.toggle("active", x.dataset.names === nm));
+  }
+  if (sp.get("gt") === "1") { galaxyTitles = true; const t = document.querySelector('#galaxy-titles input'); if (t) t.checked = true; }
+  const v = sp.get("view");
+  if (v === "similar") {
+    setGalaxyView(true);
+    if (sp.get("g3") === "1") window._setGalaxy3D && window._setGalaxy3D(true);
+  } else if (v === "timeline" && typeof setChartView === "function") setChartView(true);
+  else if (v === "game" && typeof setGameView === "function") setGameView(true);
+  else if (v === "table") setTableView(true);
+}
+
 (function wireGalaxy() {
   const el = document.getElementById("v-galaxy"); if (!el) return;
-  el.addEventListener("click", () => setGalaxyView(true));
+  el.addEventListener("click", () => { setGalaxyView(true); syncGalaxyURL(); });
   const plane = document.getElementById("galaxy-plane");
   document.getElementById("galaxy-colorby").addEventListener("click", e => {
     const b = e.target.closest("[data-cb]"); if (!b) return;
@@ -2293,32 +2369,24 @@ function setGalaxyView(on) {
     names.querySelectorAll(".minibtn").forEach(x => x.classList.toggle("active", x === b));
     galaxyRedraw(); syncGalaxyURL();
   });
+  // click a dot → pin its painter + anchor the painting in the right dock; a name → pin the painter;
+  // empty space → reset. (Drag is swallowed by the pan handler's capture-phase click guard.)
   plane.addEventListener("click", e => {
-    const d = e.target.closest(".gx-dot"); if (!d) return;
-    const w = works.find(x => x.p.qid === d.dataset.qid); if (w) openWorkCard(w);
-  });
-  // hover a dot → show the painting + facts (one thumbnail loaded on demand, keeps the galaxy light)
-  const tip = document.createElement("div"); tip.id = "gx-tip"; tip.hidden = true; document.body.appendChild(tip);
-  plane.addEventListener("mousemove", e => {
     const d = e.target.closest(".gx-dot");
-    if (!d) { tip.hidden = true; tip.dataset.qid = ""; clearAuthorFocus(); return; }
-    // hover focus: grey other painters' dots (Author mode) and/or spotlight this painter's name (zones on)
-    setAuthorFocus(d.dataset.a || "");
-    const w = galaxyByQid && galaxyByQid.get(d.dataset.qid); if (!w) return;
-    const p = w.p;
-    if (tip.dataset.qid !== d.dataset.qid) {
-      tip.dataset.qid = d.dataset.qid;
-      tip.innerHTML = `<img src="${esc(p.image)}" alt="" onerror="this.remove()"><div class="gt-b"><b>${esc(p.painter || "")}</b>` +
-        `<div>${esc(p.title || "Untitled")}${p.year ? " · " + esc(p.year) : ""}</div>` +
-        `<div class="gt-w">${esc([p.location, p.city].filter(Boolean).join(", "))}</div></div>`;
-    }
-    tip.hidden = false;
-    let x = e.clientX + 16, y = e.clientY + 16;
-    if (x + 230 > innerWidth) x = e.clientX - 16 - 230;
-    if (y + 210 > innerHeight) y = e.clientY - 16 - 210;
-    tip.style.left = Math.max(6, x) + "px"; tip.style.top = Math.max(6, y) + "px";
+    if (d) { setGxFocus(d.dataset.a || "", true); gxSideAnchor(galaxyByQid.get(d.dataset.qid)); return; }
+    const z = e.target.closest(".gx-zone");
+    if (z) { setGxFocus(z.dataset.a || "", true); return; }
+    gxReset();
   });
-  plane.addEventListener("mouseleave", () => { tip.hidden = true; tip.dataset.qid = ""; clearAuthorFocus(); });
+  // hover a dot → preview it in the dock + light its painter; hover a name → light that painter
+  plane.addEventListener("mousemove", e => {
+    const d = e.target.closest(".gx-dot"), z = e.target.closest(".gx-zone");
+    if (d) { if (!gxFocusPinned) setGxFocus(d.dataset.a || ""); gxSidePreview(galaxyByQid.get(d.dataset.qid)); }
+    else if (z) { if (!gxFocusPinned) setGxFocus(z.dataset.a || ""); }
+    else { if (!gxFocusPinned) setGxFocus(null); gxSideHide(); }
+  });
+  plane.addEventListener("mouseleave", () => { if (!gxFocusPinned) setGxFocus(null); gxSideHide(); });
+  const sx = document.getElementById("gx-side-x"); if (sx) sx.addEventListener("click", gxReset);
 })();
 
 // ── collapse the top bars + game painting-size slider (mobile room, Víctor) ──
@@ -2374,26 +2442,42 @@ function setGalaxyView(on) {
   const canvas = document.getElementById("galaxy-canvas");
   if (!scroll || !canvas) return;
   const ctx = canvas.getContext("2d");
-  let coords3d = null, pts = null;          // pts: [{x,y,z (−0.5..0.5), col, w}]
+  let coords3d = null, pts = null, zones = null;   // pts: [{x,y,z, col, aSlug, w}]; zones: painter medians
   let rx = 0.5, ry = 0.6, zoom = 1;         // rotation + zoom
   let W = 0, H = 0, DPR = 1;
-  const tip = () => document.getElementById("gx-tip");
+  const med = a => { const s = a.slice().sort((x, y) => x - y), k = s.length >> 1; return s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2; };
 
   function colorOfPoint(p) {
     if (galaxyColorBy === "color") return `rgb(${p.rgb[0]},${p.rgb[1]},${p.rgb[2]})`;
     return galaxyColorOf(p.w);
+  }
+  function zoneColorOf(z) {   // match the dots' colour under the current mode
+    if (galaxyColorBy === "color") return z.n ? `rgb(${Math.round(z.r / z.n)},${Math.round(z.g / z.n)},${Math.round(z.b / z.n)})` : "#999";
+    return galaxyColorOf(z.w);
   }
   function buildPoints() {
     if (!galaxyByQid) { galaxyByQid = new Map(); for (const w of works) if (w.p.qid) galaxyByQid.set(w.p.qid, w); }
     pts = [];
     for (const [qid, c] of Object.entries(coords3d)) {
       const w = galaxyByQid.get(qid); if (!w) continue;
-      pts.push({ x: c[0] / 1000 - 0.5, y: c[1] / 1000 - 0.5, z: c[2] / 1000 - 0.5, rgb: [c[3], c[4], c[5]], w, qid });
+      pts.push({ x: c[0] / 1000 - 0.5, y: c[1] / 1000 - 0.5, z: c[2] / 1000 - 0.5, rgb: [c[3], c[4], c[5]], w, qid, aSlug: GAME_SLUG_OF_NAME[w.p.painter] || "" });
     }
-    recolor();
+    buildZones(); recolor();
+  }
+  function buildZones() {   // one median position per painter (for the centre names)
+    const m = new Map();
+    for (const p of pts) {
+      const pn = p.w.p.painter; if (!pn) continue;
+      let o = m.get(pn);
+      if (!o) { o = { xs: [], ys: [], zs: [], r: 0, g: 0, b: 0, n: 0, w: p.w, slug: p.aSlug, name: pn }; m.set(pn, o); }
+      o.xs.push(p.x); o.ys.push(p.y); o.zs.push(p.z); o.r += p.rgb[0]; o.g += p.rgb[1]; o.b += p.rgb[2]; o.n++;
+    }
+    zones = [];
+    for (const o of m.values()) if (o.n >= 2) zones.push({ x: med(o.xs), y: med(o.ys), z: med(o.zs), r: o.r, g: o.g, b: o.b, n: o.n, w: o.w, slug: o.slug, name: o.name });
   }
   function recolor() { if (pts) for (const p of pts) p.col = colorOfPoint(p); }
-  window._galaxy3Drecolor = () => { recolor(); draw(); };
+  window._draw3D = () => { recolor(); draw(); };
+  window._galaxy3Drecolor = window._draw3D;
 
   function resize() {
     const r = scroll.getBoundingClientRect(); if (!r.width || !r.height) return false;
@@ -2421,13 +2505,36 @@ function setGalaxyView(on) {
     for (const q of proj) {
       const r = Math.max(0.6, 2.1 * q.persp * Math.sqrt(zoom));
       const near = (q.d + 0.6);                               // fade the far side a touch for depth
-      ctx.globalAlpha = Math.max(0.35, Math.min(1, near));
-      ctx.fillStyle = q.p.col;
+      const other = gxFocusSlug && q.p.aSlug !== gxFocusSlug; // grey the other painters when one is focused
+      ctx.globalAlpha = other ? 0.5 : Math.max(0.35, Math.min(1, near));
+      ctx.fillStyle = other ? "#7c766b" : q.p.col;
       ctx.beginPath(); ctx.arc(q.sx, q.sy, r, 0, 6.2832); ctx.fill();
     }
     ctx.globalAlpha = 1;
+    _lastZones = [];
+    if (galaxyNames === "centroid" && zones) {                // painter names at their 3-D medians
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.font = "700 14px system-ui, -apple-system, sans-serif";
+      for (const z of zones) {
+        const q = project(z);
+        ctx.globalAlpha = gxFocusSlug ? (z.slug === gxFocusSlug ? 1 : 0.07) : 0.5;
+        ctx.fillStyle = zoneColorOf(z);
+        ctx.fillText(z.name, q.sx, q.sy);
+        _lastZones.push({ sx: q.sx, sy: q.sy, slug: z.slug, w: z.w, name: z.name });
+      }
+      ctx.globalAlpha = 1;
+    }
   }
-  let _lastProj = null;
+  let _lastProj = null, _lastZones = null;
+  function pickZone(mx, my) {                                 // nearest painter-name label to the cursor
+    if (!_lastZones) return null;
+    let best = null, bd = 1e9;
+    for (const z of _lastZones) {
+      const halfW = 4 + z.name.length * 4, dx = Math.abs(z.sx - mx), dy = Math.abs(z.sy - my);
+      if (dx < halfW && dy < 10) { const d = dx + dy; if (d < bd) { bd = d; best = z; } }
+    }
+    return best;
+  }
   function pick(mx, my) {                                     // nearest projected point to the cursor
     if (!_lastProj) return null;
     let best = null, bd = 100;
@@ -2440,14 +2547,16 @@ function setGalaxyView(on) {
 
   window._setGalaxy3D = (on) => {
     galaxy3D = on;
-    document.getElementById("galaxy-3d").classList.toggle("active", on);
+    if (typeof gxReset === "function") gxReset();          // drop any focus/anchored dock when switching mode
+    document.querySelectorAll("#galaxy-dim [data-dim]").forEach(x => x.classList.toggle("active", (x.dataset.dim === "3d") === on));
     plane.hidden = on; canvas.hidden = !on;
-    document.getElementById("galaxy-labels").style.opacity = on ? ".4" : "";   // labels don't apply in 3-D
-    const gn = document.getElementById("galaxy-names"); if (gn) gn.style.opacity = on ? ".4" : "";
+    // per-dot labels are 2-D only (too many to draw while rotating) → hide them in 3-D; names "at centre" stays
+    const tl = document.getElementById("galaxy-titles"); if (tl) tl.style.display = on ? "none" : "";
+    const db = document.querySelector('#galaxy-names [data-names="dots"]'); if (db) db.style.display = on ? "none" : "";
     const hint = document.getElementById("galaxy-hint");
     if (hint) hint.innerHTML = on
-      ? `<b>3-D</b> · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · <b>drag to rotate</b> · scroll to zoom · hover a dot · click to open`
-      : `Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan`;
+      ? `<b>3-D</b> · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · <b>drag to rotate</b> · scroll to zoom · hover to preview · <b>click to pin</b>`
+      : `Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · hover to preview · <b>click to pin</b> · scroll zoom · drag to pan`;
     if (!on) { if (galaxyCoords) drawGalaxy(); return; }
     const start = () => {
       if (!resize()) { setTimeout(start, 90); return; }
@@ -2469,31 +2578,27 @@ function setGalaxyView(on) {
       ry += dx * 0.008; rx += dy * 0.008;
       rx = Math.max(-1.4, Math.min(1.4, rx));
       draw();
-    } else {                                                  // hover → tip
-      const r = canvas.getBoundingClientRect(), q = pick(e.clientX - r.left, e.clientY - r.top), t = tip();
-      if (!q) { t.hidden = true; t.dataset.qid = ""; return; }
-      const p = q.p.w.p;
-      if (t.dataset.qid !== q.p.qid) {
-        t.dataset.qid = q.p.qid;
-        t.innerHTML = `<img src="${esc(p.image)}" alt="" onerror="this.remove()"><div class="gt-b"><b>${esc(p.painter || "")}</b>` +
-          `<div>${esc(p.title || "Untitled")}${p.year ? " · " + esc(p.year) : ""}</div>` +
-          `<div class="gt-w">${esc([p.location, p.city].filter(Boolean).join(", "))}</div></div>`;
-      }
-      t.hidden = false;
-      let x = e.clientX + 16, y = e.clientY + 16;
-      if (x + 230 > innerWidth) x = e.clientX - 16 - 230;
-      if (y + 210 > innerHeight) y = e.clientY - 16 - 210;
-      t.style.left = Math.max(6, x) + "px"; t.style.top = Math.max(6, y) + "px";
+    } else {                                                  // hover → dock preview + light this painter
+      const r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+      const q = pick(mx, my), zq = q ? null : pickZone(mx, my);
+      canvas.style.cursor = "default";
+      if (q) { if (!gxFocusPinned) setGxFocus(q.p.aSlug); gxSidePreview(q.p.w); }
+      else if (zq) { if (!gxFocusPinned) setGxFocus(zq.slug); }
+      else { if (!gxFocusPinned) setGxFocus(null); gxSideHide(); }
     }
   });
   const end = e => { drag = false; };
   canvas.addEventListener("pointerup", e => { end(e); });
   canvas.addEventListener("pointercancel", end);
-  canvas.addEventListener("mouseleave", () => { const t = tip(); if (t) { t.hidden = true; t.dataset.qid = ""; } });
+  canvas.addEventListener("mouseleave", () => { if (!gxFocusPinned) setGxFocus(null); gxSideHide(); });
   canvas.addEventListener("click", e => {
     if (moved) { moved = false; return; }                     // that was a rotate, not a pick
-    const r = canvas.getBoundingClientRect(), q = pick(e.clientX - r.left, e.clientY - r.top);
-    if (q) openWorkCard(q.p.w);
+    const r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+    const q = pick(mx, my);
+    if (q) { setGxFocus(q.p.aSlug, true); gxSideAnchor(q.p.w); return; }
+    const zq = pickZone(mx, my);
+    if (zq) { setGxFocus(zq.slug, true); return; }
+    gxReset();
   });
   canvas.addEventListener("wheel", e => { e.preventDefault(); e.stopPropagation(); zoom = Math.max(0.3, Math.min(6, zoom * Math.exp(-e.deltaY * 0.0016))); draw(); }, { passive: false });
   window.addEventListener("resize", () => { if (galaxy3D && resize()) draw(); });

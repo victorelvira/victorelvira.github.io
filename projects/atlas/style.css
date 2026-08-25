@@ -363,8 +363,8 @@ body.resizing #map { pointer-events: none; }
 #worklist .grp.more { justify-content: center; color: var(--muted); font-weight: 600; font-size: 11.5px;
   text-transform: none; background: #f3ece0; }
 /* flash a museum section when you click its marker on the map */
-#worklist .grp.grp-flash { animation: grpFlash 1.8s ease-out; }
-#worklist .gcell.grp-flash { animation: grpFlashTile 1.8s ease-out; position: relative; z-index: 1; }
+#worklist .grp.grp-flash { animation: grpFlash 3.6s ease-out; }
+#worklist .gcell.grp-flash { animation: grpFlashTile 3.6s ease-out; position: relative; z-index: 1; }
 @keyframes grpFlash {
   0%, 30% { background: #f7e3b8; box-shadow: inset 3px 0 0 #c8891f; }
   100% { background: #faf6ef; box-shadow: inset 0 0 0 transparent; }
@@ -789,8 +789,15 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 #galaxy-legend:empty { display: none; }
 #galaxy-labels { display: inline-flex; gap: 10px; align-items: center; }
 #galaxy-labels label { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); cursor: pointer; }
-#galaxy-names { display: inline-flex; align-items: center; gap: 2px; }
-.g-seg-cap { font-size: 12px; color: var(--muted); margin-right: 4px; }
+/* labels/names — deliberately smaller & quieter than the main colour selector */
+.galaxy-mini { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); opacity: .9; }
+.galaxy-mini label { display: inline-flex; align-items: center; gap: 3px; cursor: pointer; }
+#galaxy-names { display: inline-flex; align-items: center; gap: 3px; }
+.gm-cap { color: var(--muted); margin-right: 2px; }
+.minibtn { border: 1px solid var(--line); background: #efe9df; color: var(--muted); cursor: pointer;
+  font: inherit; font-size: 10.5px; padding: 1px 6px; border-radius: 5px; }
+.minibtn.active { background: #6a4a2a; color: #fff; border-color: #6a4a2a; }
+.minibtn:not(.active):hover { background: #f6f0e6; }
 /* tiny grey labels beside each dot (optional, can get busy — that's expected) */
 /* one big translucent painter name at the cluster's median (a soft watermark behind the dots) */
 .gx-zone { position: absolute; transform: translate(-50%, -50%); font-weight: 800;
@@ -800,13 +807,32 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 .gx-lab { position: absolute; transform: translateY(-50%); font-size: 8.5px; line-height: 1.05; color: #6b6257;
   white-space: nowrap; pointer-events: none; text-shadow: 0 0 2px #fff, 0 0 2px #fff; max-width: 120px;
   overflow: hidden; text-overflow: ellipsis; }
-#galaxy-scroll { flex: 1; overflow: hidden; position: relative; cursor: grab; touch-action: none; }
+#galaxy-body { flex: 1; min-height: 0; display: flex; }
+#galaxy-scroll { flex: 1; min-width: 0; overflow: hidden; position: relative; cursor: grab; touch-action: none; }
+/* right dock: the hovered painting (preview), locked on click with an ✕ */
+#gx-side { flex: 0 0 330px; width: 330px; overflow-y: auto; border-left: 1px solid var(--line);
+  background: var(--card, #fff); position: relative; }
+#gx-side[hidden] { display: none; }
+#gx-side.anchored { box-shadow: inset 3px 0 0 #c8891f; }
+#gx-side-x { position: absolute; top: 8px; right: 8px; z-index: 2; width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; font-size: 14px; line-height: 1;
+  display: none; align-items: center; justify-content: center; }
+#gx-side.anchored #gx-side-x { display: flex; }
+#gx-side-x:hover { background: #f3ece0; }
+#gx-side-body { padding: 14px 14px 20px; }
+.gxs-img { width: 100%; border-radius: 8px; display: block; background: #efe9df; margin-bottom: 10px; }
+.gxs-title { font-weight: 700; font-size: 15px; line-height: 1.25; margin-bottom: 2px; }
+.gxs-painter { color: var(--muted); font-size: 13px; margin-bottom: 10px; display: inline-flex; align-items: center; gap: 6px; }
+.gxs-row { display: flex; gap: 8px; font-size: 12.5px; margin: 3px 0; }
+.gxs-row .k { color: var(--muted); flex: 0 0 74px; }
+.gxs-hint { color: var(--muted); font-size: 12px; margin-top: 14px; font-style: italic; }
+.gxs-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 #galaxy-plane { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
 #galaxy-canvas { position: absolute; inset: 0; cursor: grab; touch-action: none; }
 #galaxy-canvas:active { cursor: grabbing; }
 #galaxy-canvas[hidden] { display: none; }
 .gx-dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%);
-  cursor: pointer; box-shadow: 0 0 0 .5px rgba(0,0,0,.22); }
+  cursor: default; box-shadow: 0 0 0 .5px rgba(0,0,0,.22); }
 .gx-dot:hover { transform: translate(-50%, -50%) scale(2.1); z-index: 20; box-shadow: 0 0 0 2px #fff, 0 2px 8px rgba(0,0,0,.4); }
 /* hover card: the painting itself, loaded only on demand */
 #gx-tip { position: fixed; z-index: 3000; pointer-events: none; width: 220px; background: #fff;
