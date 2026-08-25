@@ -85,9 +85,107 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "0.60.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 19:15";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.62.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 21:20";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
+
+// ── languages ────────────────────────────────────────────────────────────────────────────────
+// The Atlas is written in English and translated at runtime, keyed by the English string itself:
+// anything the dictionary does not cover simply stays in English instead of coming out blank. Three
+// kinds of text need three different treatments:
+//   · the page's own markup  → translateDOM() walks it once and remembers the original, so you can
+//     switch back and forth without reloading;
+//   · text this file builds  → t("…") at the point of writing;
+//   · names of real things   → museums come from Wikidata (artatlas/data/museum_i18n.json), painters
+//     and countries from small tables in the dictionary. A name is not a string to translate: it is
+//     what the place calls itself.
+const I18N_LANGS = [["en", "EN"], ["es", "ES"]];
+let LANG = "en", DICT = null;
+
+function t(s) { return (DICT && DICT.ui[s]) || s; }
+function tu(s) { return (DICT && DICT.units && DICT.units[s]) || s; }   // works / locations / countries
+function pName(n) { return (DICT && DICT.painters && DICT.painters[n]) || n || ""; }
+function cName(n) { return (DICT && DICT.countries && DICT.countries[n]) || n || ""; }
+// the museum's own name in the reader's language, falling back to the one in the data
+function locName(p) {
+  if (!p) return "";
+  if (LANG !== "en" && p.museum_id && musI18n) {
+    const n = musI18n[p.museum_id];
+    if (n && n[LANG]) return n[LANG];
+  }
+  return p.location || "";
+}
+
+function translateDOM(root) {
+  const scope = root || document.body;
+  const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => (n.parentElement && /^(script|style)$/i.test(n.parentElement.tagName))
+      ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const n of nodes) {
+    if (n.__en === undefined) n.__en = n.nodeValue;     // remember the English once, forever
+    const key = n.__en.trim();
+    if (!key) continue;
+    const tr = DICT && DICT.ui[key];
+    n.nodeValue = tr ? n.__en.replace(key, tr) : n.__en;
+  }
+  scope.querySelectorAll("[title],[placeholder],[aria-label]").forEach(el => {
+    for (const a of ["title", "placeholder", "aria-label"]) {
+      if (!el.hasAttribute(a)) continue;
+      const store = "__en_" + a;
+      if (el[store] === undefined) el[store] = el.getAttribute(a);
+      el.setAttribute(a, (DICT && DICT.ui[el[store]]) || el[store]);
+    }
+  });
+  // paragraphs cut up by inline links cannot be translated phrase by phrase — swap them whole
+  const blocks = (DICT && DICT.blocks) || {};
+  document.querySelectorAll("[data-i18n-block]").forEach(el => {
+    if (el.__enHTML === undefined) el.__enHTML = el.innerHTML;
+    el.innerHTML = blocks[el.dataset.i18nBlock] || el.__enHTML;
+  });
+}
+
+function syncLangUI() {
+  document.querySelectorAll("#langsel .langbtn")
+    .forEach(b => b.classList.toggle("active", b.dataset.lang === LANG));
+}
+
+function setLang(lang, opts) {
+  const rerender = !opts || opts.rerender !== false;
+  const apply = () => {
+    LANG = lang;
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("atlasLang", lang); } catch (e) { /* private mode */ }
+    translateDOM();
+    syncLangUI();
+    if (rerender && typeof refresh === "function" && places.length) {
+      if (typeof buildPainterSelect === "function") buildPainterSelect();
+      refresh();
+      if (typeof view !== "undefined" && view.table && typeof renderTable === "function") renderTable();
+    }
+  };
+  if (lang === "en") { DICT = null; apply(); return; }
+  if (DICT && DICT.lang === lang) { apply(); return; }
+  fetch(`artatlas/i18n/${lang}.json?v=` + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { if (!d) return; DICT = d; loadMuseumNames(); apply(); })
+    .catch(() => { /* dictionary missing → stay in English, nothing breaks */ });
+}
+
+// ?lang=es wins (a shared link keeps its language), then what you chose last, then the browser's
+(function initLang() {
+  let want = new URLSearchParams(location.search).get("lang");
+  if (!want) { try { want = localStorage.getItem("atlasLang"); } catch (e) { /* ignore */ } }
+  if (!want && (navigator.language || "").toLowerCase().startsWith("es")) want = "es";
+  const known = I18N_LANGS.map(l => l[0]);
+  if (want && known.includes(want) && want !== "en") setLang(want, { rerender: false });
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("#langsel .langbtn");
+    if (b) setLang(b.dataset.lang);
+  });
+})();
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
   e.preventDefault();
@@ -373,10 +471,31 @@ function inYear(p) {
 }
 // a common free-text filter (title / painter / museum / city / country / year / medium),
 // accent-insensitive, shared by every view via passesAll + tablePass
+// A museum has one name here and another on its own door: we show "Museum of Fine Arts of Seville",
+// Seville shows "Museo de Bellas Artes de Sevilla". Wikidata knows both (see i18n/), so the filter
+// accepts either — you find a museum by typing it the way you know it, in any of our languages.
+// Loaded once, lazily: it is only needed the first time somebody types.
+let musI18n = null, musI18nSearch = new Map();
+function loadMuseumNames() {
+  if (musI18n) return;
+  musI18n = {};                                   // set immediately so we only ever fetch once
+  fetch("artatlas/data/museum_i18n.json?v=" + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d) return;
+      musI18n = d.m || {};
+      for (const [mid, names] of Object.entries(musI18n))
+        musI18nSearch.set(mid, deacc(Object.values(names).join(" ")));
+      if (state.q) refresh();                     // the answer arrived after they typed: redo it
+    })
+    .catch(() => {});
+}
 function matchesQ(p) {
   if (!state.q) return true;
-  return [p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
-    .some(v => deacc(v).includes(state.q));
+  if ([p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
+      .some(v => deacc(v).includes(state.q))) return true;
+  const other = p.museum_id && musI18nSearch.get(p.museum_id);   // the museum in another language
+  return !!other && other.includes(state.q);
 }
 function passesAll(p) {
   const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"];   // no venue type on map 2
@@ -413,7 +532,7 @@ function disputedMark(p) {
 function painterTag(p) {
   if (!p.painter) return "";
   const c = colorFor(p.painter);
-  return `<span class="pby"><span class="pdot" style="background:${c}"></span>${esc(p.painter)}</span>`;
+  return `<span class="pby"><span class="pdot" style="background:${c}"></span>${esc(pName(p.painter))}</span>`;
 }
 
 // colour = painter (red overrides for lost/stolen); dashed ring = holds a disputed work
@@ -467,15 +586,15 @@ function placePopup(feats) {
   let head;
   if (painted) {
     head = `<div class="hd"><div class="nm">${esc(p0.creation_place || "Unknown")}</div>` +
-      `<div class="meta">painted here · ${n} work${n > 1 ? "s" : ""}</div>` +
+      `<div class="meta">${t("painted here")} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
       `${provLine(p0, HEAD_SKIP_PAINTED)}</div>`;
   } else {
     const kindTxt = KIND_LABEL[p0.kind] || "";
     const where = [p0.city, p0.country].filter(Boolean).join(", ");
     // the venue name is a button → opens this museum in the side list (filters to it)
     head = `<div class="hd"><button type="button" class="nm pop-museum" data-museum="${esc(museumKey(p0))}"` +
-      ` title="Show all works of this venue in the list">${esc(p0.location || "Location")}<span class="pm-arrow"> ↗</span></button>` +
-      `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} work${n > 1 ? "s" : ""}</div>` +
+      ` title="Show all works of this venue in the list">${esc(locName(p0) || t("Location"))}<span class="pm-arrow"> ↗</span></button>` +
+      `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
 
@@ -526,7 +645,7 @@ function refresh() {
       pl.marker.setIcon(pinIcon(colorCounts, vis.length, { disputed }));
       pl.marker.setPopupContent(placePopup(vis));
       // hover label: the venue (map 1) or the place it was painted (map 2), + count
-      const label = painted ? (vis[0].properties.creation_place || "") : (vis[0].properties.location || "");
+      const label = painted ? (vis[0].properties.creation_place || "") : locName(vis[0].properties);
       if (label) pl.marker.bindTooltip(`${label} · ${vis.length}`, { direction: "top", offset: [0, -12] });
       if (!pl.shown) { cluster.addLayer(pl.marker); pl.shown = true; }
       shownPlaces++; workCount += vis.length;
@@ -535,7 +654,7 @@ function refresh() {
   }
   cluster.refreshClusters();
   document.getElementById("stats").textContent =
-    `${workCount} works · ${shownPlaces} locations · ${countries.size} countries`;
+    `${workCount} ${tu(workCount === 1 ? "work" : "works")} · ${shownPlaces} ${tu(shownPlaces === 1 ? "location" : "locations")} · ${countries.size} ${tu(countries.size === 1 ? "country" : "countries")}`;
   if (state.near) renderNearMe(); else renderPanel();
   if (typeof view !== "undefined" && view.table) renderTable();
 }
@@ -648,14 +767,14 @@ function buildPainterSelect() {
   const box = document.getElementById("painters");
   if (!box) return;
   box.innerHTML =
-    `<button id="painters-btn" class="chip" type="button" aria-expanded="false">All painters ▾</button>` +
+    `<button id="painters-btn" class="chip" type="button" aria-expanded="false">${t("All painters ▾")}</button>` +
     `<div id="painters-pop" class="pop" hidden>` +
     `<input id="painters-search" class="pop-search" placeholder="Search painters or museums…" autocomplete="off">` +
     `<div class="pop-actions">` +
-    `<span id="grp-toggle"><button type="button" data-grp="period" class="active">Period</button>` +
-    `<button type="button" data-grp="school">School</button></span>` +
-    `<button type="button" data-act="all">All</button>` +
-    `<button type="button" data-act="none">None</button></div>` +
+    `<span id="grp-toggle"><button type="button" data-grp="period" class="active">${t("Period")}</button>` +
+    `<button type="button" data-grp="school">${t("School")}</button></span>` +
+    `<button type="button" data-act="all">${t("All")}</button>` +
+    `<button type="button" data-act="none">${t("None")}</button></div>` +
     `<ul id="painters-list" class="pop-list"></ul></div>`;
 
   const btn = document.getElementById("painters-btn");
@@ -725,11 +844,11 @@ function renderPainterList() {
         if (!inGroup.length) continue;
         const allOn = inGroup.every(p => state.painters[p.name] !== false);
         html += `<li class="pop-h grp">` +
-          `<label class="grp-tick" title="Tick/untick the whole ${esc(g.label)} group">` +
+          `<label class="grp-tick" title="${esc(t("Tick/untick the whole group"))}">` +
           `<input type="checkbox" data-grp-tick="${esc(g.key)}"${allOn ? " checked" : ""}>` +
-          `<span>${esc(g.label)}</span></label>` +
+          `<span>${esc(t(g.label))}</span></label>` +
           `<button type="button" class="grp-only" data-grp-only="${esc(g.key)}" ` +
-          `title="Show only the ${esc(g.label)} painters">only</button></li>` +
+          `title="${esc(t("Show only these painters"))}">${esc(t("only"))}</button></li>` +
           inGroup.map(painterRow).join("");
       }
     }
@@ -799,10 +918,10 @@ function renderMuseumChip() {
 function updatePainterBtn() {
   const btn = document.getElementById("painters-btn");
   const sel = PAINTERS.filter(p => state.painters[p.name] !== false);
-  const label = sel.length === PAINTERS.length ? `All ${PAINTERS.length} painters`
-    : sel.length === 0 ? "No painters"
-      : sel.length <= 3 ? sel.map(nickOf).join(", ")
-        : `${sel.length} painters`;
+  const label = sel.length === PAINTERS.length ? `${t("All")} ${PAINTERS.length} ${tu("painters")}`
+    : sel.length === 0 ? t("No painters")
+      : sel.length <= 3 ? sel.map(p => pName(nickOf(p))).join(", ")
+        : `${sel.length} ${tu("painters")}`;
   btn.textContent = "🎨 " + label + " ▾";
 }
 
@@ -891,9 +1010,9 @@ function museumRows() {
 }
 function headHTML(cols, sort) {
   return "<tr>" + cols.map(c => {
-    if (c.sortable === false) return `<th class="th-${c.key}">${esc(c.label)}</th>`;
+    if (c.sortable === false) return `<th class="th-${c.key}">${esc(t(c.label))}</th>`;
     const arrow = sort.key === c.key ? (sort.dir === 1 ? " ▲" : " ▼") : "";
-    return `<th class="th-${c.key} sortable" data-key="${c.key}">${esc(c.label)}<span class="ar">${arrow}</span></th>`;
+    return `<th class="th-${c.key} sortable" data-key="${c.key}">${esc(t(c.label))}<span class="ar">${arrow}</span></th>`;
   }).join("") + "</tr>";
 }
 function wireSort(thead, sort) {
@@ -920,24 +1039,24 @@ function renderWorksTable() {
   const rows = tableRows();
   tableRowCache = rows;
   document.getElementById("table-count").textContent =
-    `${rows.length.toLocaleString()} work${rows.length === 1 ? "" : "s"}`;
+    `${rows.length.toLocaleString()} ${tu(rows.length === 1 ? "work" : "works")}`;
   tbody.innerHTML = rows.map((p, i) => {
     const thumb = p.image
       ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc((p.title || "") + " — " + (p.location || ""))}" alt="" loading="lazy">`
       : `<span class="tth ph"></span>`;
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
-      ? `<span class="tag att">${esc(p.attribution)}</span>` : esc(p.attribution || "");
+      ? `<span class="tag att">${esc(t(p.attribution))}</span>` : esc(t(p.attribution || ""));
     return `<tr data-ri="${i}">` +
       `<td class="c-img">${thumb}</td>` +
-      `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${esc(p.painter)}</td>` +
+      `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${esc(pName(p.painter))}</td>` +
       `<td class="c-title">${esc(p.title || "Untitled")}</td>` +
       `<td class="c-year">${esc(p.year || "")}</td>` +
       `<td class="c-medium">${esc(p.medium || "")}</td>` +
       `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
       `<td class="c-attr">${att}</td>` +
-      `<td class="c-loc">${esc(p.location || "")}</td>` +
+      `<td class="c-loc">${esc(locName(p))}</td>` +
       `<td class="c-city">${esc(p.city || "")}</td>` +
-      `<td class="c-country">${esc(p.country || "")}</td>` +
+      `<td class="c-country">${esc(cName(p.country))}</td>` +
       `<td class="c-links">${linksRow(p)}</td>` +
       "</tr>";
   }).join("");
@@ -963,7 +1082,7 @@ function renderMuseumsTable() {
     `<tr data-rk="${esc(r.key)}">` +
     `<td class="c-title">🏛 ${esc(r.location)}</td>` +
     `<td class="c-city">${esc(r.city)}</td>` +
-    `<td class="c-country">${esc(r.country)}</td>` +
+    `<td class="c-country">${esc(cName(r.country))}</td>` +
     `<td class="c-num">${r.count}</td>` +
     `<td class="c-num">${r.npainters}</td>` +
     "</tr>").join("");
@@ -986,7 +1105,7 @@ function tGalBuildStream(rows) {
   const groups = new Map();
   for (const p of rows) {
     const k = museumKey(p);
-    if (!groups.has(k)) groups.set(k, { location: p.location || "Unknown", city: p.city || "", items: [], key: k });
+    if (!groups.has(k)) groups.set(k, { location: locName(p) || t("Unknown"), city: p.city || "", items: [], key: k });
     groups.get(k).items.push({ p });
   }
   const ordered = [...groups.values()].sort((a, z) =>
@@ -1008,7 +1127,7 @@ function renderWorksGallery() {
   const g = document.getElementById("table-gallery"); g.hidden = false;
   const rows = tableRows();
   document.getElementById("table-count").textContent =
-    `${rows.length.toLocaleString()} work${rows.length === 1 ? "" : "s"}`;
+    `${rows.length.toLocaleString()} ${tu(rows.length === 1 ? "work" : "works")}`;
   g.classList.toggle("grouped", tGalGroup);
   tGalFlat = tGalBuildStream(rows); tGalCursor = 0;
   tGalVis = []; g.innerHTML = "";
@@ -1085,6 +1204,7 @@ document.getElementById("v-mapview").addEventListener("click", () => { setTableV
   };
   box.addEventListener("input", e => {
     const v = deacc(e.target.value.trim());
+    loadMuseumNames();                            // first keystroke → fetch the museum name table
     syncClear();
     clearTimeout(qt);
     qt = setTimeout(() => { state.q = v; refresh(); }, 140);   // debounce: refresh rebuilds markers
@@ -1189,8 +1309,8 @@ function tileHTML(w, vis, grp) {
   const musAttr = grp && grp.mus != null ? ` data-mus="${grp.mus}"` : "";
   return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}${musAttr}>${share}${nameTag}` +
     `<div class="gcard">${img}<div class="gmeta">` +
-    `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
-    (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
+    `<div class="gm1">${esc(pName(p.painter))}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
+    (p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
@@ -1372,7 +1492,7 @@ function renderPanel() {
   for (const w of vis) {
     const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
     if (!groups.has(k)) groups.set(k, {
-      location: painted ? (w.p.creation_place || "Unknown") : (w.p.location || "Location"),
+      location: painted ? (w.p.creation_place || t("Unknown")) : (locName(w.p) || t("Location")),
       city: painted ? "" : (w.p.city || ""), items: [], key: k,   // key = place, to scroll here from a marker
     });
     groups.get(k).items.push(w);
@@ -1381,12 +1501,12 @@ function renderPanel() {
     (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
 
   document.getElementById("panel-head").textContent =
-    `${vis.length} work${vis.length === 1 ? "" : "s"}${bounded ? " in view" : ""}`;
+    `${vis.length} ${tu(vis.length === 1 ? "work" : "works")}${bounded ? " " + tu("in view") : ""}`;
 
   const ul = document.getElementById("worklist");
   panelVis = [];
   if (!vis.length) {
-    ul.innerHTML = `<li class="empty">Pan or zoom the map — the works in view are listed here.</li>`;
+    ul.innerHTML = `<li class="empty">${t("Pan or zoom the map — the works in view are listed here.")}</li>`;
     return;
   }
   // build the render plans (cheap); appendPanelChunk streams whichever the mode needs
@@ -1584,7 +1704,7 @@ function renderSubject(qid) {
   const host = document.getElementById("wc-subject"); if (!host || !qid) return;
   const items = subjectMatches(qid);
   if (!items.length) return;
-  host.innerHTML = `<div class="wc-sim-h">More on this subject</div><div class="wc-sim-row">` +
+  host.innerHTML = `<div class="wc-sim-h">${t("More on this subject")}</div><div class="wc-sim-row">` +
     items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
 }
 
@@ -1640,7 +1760,7 @@ async function renderForYou(curQid) {
     usedImg.add(x.p.image); out.push(x); if (out.length >= 6) break;
   }
   if (out.length < 3) return;
-  host.innerHTML = `<div class="wc-sim-h">More you might like <span class="wc-sim-sub">· based on what you've viewed</span></div><div class="wc-sim-row">` +
+  host.innerHTML = `<div class="wc-sim-h">${t("More you might like")} <span class="wc-sim-sub">· ${t("based on what you've viewed")}</span></div><div class="wc-sim-row">` +
     out.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
 }
 
@@ -1676,10 +1796,10 @@ async function renderSimilar(qid) {
       arr.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`
     : "";
   const painterLine = nearPainters.length
-    ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h">Painters nearest this work</span>` +
+    ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h">${t("Painters nearest this work")}</span>` +
       nearPainters.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("") + `</div>`
     : "";
-  const out = thumbRow("Visually closest — same painter", same) + thumbRow("Visually closest — other painters", other) + painterLine;
+  const out = thumbRow(t("Visually closest — same painter"), same) + thumbRow(t("Visually closest — other painters"), other) + painterLine;
   if (out) host.innerHTML = out;
 }
 function openWorkCard(w) {
@@ -1691,20 +1811,20 @@ function openWorkCard(w) {
     ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
     : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;
   const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
-  const venue = [p.location, p.city, p.country].filter(Boolean).join(", ");
+  const venue = [locName(p), p.city, cName(p.country)].filter(Boolean).join(", ");
   const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
     ? esc(p.attribution) + (p.attribution_note ? ` — <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
   const links = linksRow(p);
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
     `<div class="wc-info"><h3 class="wc-title">${esc(p.title || "Untitled")}</h3>` +
-    row("Painter", painterTag(p)) + row("Date", esc(p.year || "")) +
-    row("Where", esc(venue) + (p.placeless ? ` <span class="wc-noplace">not on the map — no public address</span>` : "")) +
-    row("Technique", esc(p.medium || "")) + row("Size", esc(p.dimensions || "")) + row("Attribution", attr) +
+    row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
+    row(t("Where"), esc(venue) + (p.placeless ? ` <span class="wc-noplace">${t("not on the map — no public address")}</span>` : "")) +
+    row(t("Technique"), esc(p.medium || "")) + row(t("Size"), esc(p.dimensions || "")) + row(t("Attribution"), attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
-    `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button>` +
-    (p.placeless ? "" : `<button type="button" class="wc-map">📍 On the map</button>`) +
-    `<span class="wc-hint">or just copy the address bar</span></div>` +
+    `<div class="wc-actions"><button type="button" class="wc-share">${t("🔗 Share")}</button>` +
+    (p.placeless ? "" : `<button type="button" class="wc-map">${t("📍 On the map")}</button>`) +
+    `<span class="wc-hint">${t("or just copy the address bar")}</span></div>` +
     `<div class="wc-aff" id="wc-affinity"></div>` +
     `<div class="wc-similar" id="wc-subject"></div>` +
     `<div class="wc-similar" id="wc-similar"></div>` +
@@ -1825,7 +1945,7 @@ function clearNearMe() {
   const btn = document.getElementById("locate");
   if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
   if (nearCircle) { map.removeLayer(nearCircle); nearCircle = null; }
-  btn.textContent = "📍 Near me"; btn.classList.remove("active"); btn.disabled = false;
+  btn.textContent = t("📍 Near me"); btn.classList.remove("active"); btn.disabled = false;
   state.near = null;
   if (nearMePrevView) { map.setView(nearMePrevView.center, nearMePrevView.zoom); nearMePrevView = null; }
   refresh();                                    // restore the normal viewport list
@@ -1859,7 +1979,7 @@ function renderNearMe() {                        // owns the side panel while ne
     const km = v.d < 1 ? `${Math.round(v.d * 1000)} m` : `${v.d < 10 ? v.d.toFixed(1) : Math.round(v.d)} km`;
     html += `<li class="near-row" data-lat="${v.lat}" data-lon="${v.lon}"><span class="micon">🏛</span><div>` +
       `<div class="mname">${esc(v.location)}</div>` +
-      `<div class="msub">${esc([v.city, v.country].filter(Boolean).join(", "))} · ${v.count} work${v.count === 1 ? "" : "s"} · <b>${km}</b></div></div></li>`;
+      `<div class="msub">${esc([v.city, cName(v.country)].filter(Boolean).join(", "))} · ${v.count} ${tu(v.count === 1 ? "work" : "works")} · <b>${km}</b></div></div></li>`;
   }
   const ul = document.getElementById("worklist"); ul.innerHTML = html;
   ul.querySelectorAll(".rchip").forEach(b => b.addEventListener("click", () => setNearRadius(+b.dataset.r)));
@@ -1874,7 +1994,7 @@ document.getElementById("locate").addEventListener("click", () => {
   const btn = document.getElementById("locate");
   if (state.near) { clearNearMe(); return; }                // toggle off → restore
   if (!navigator.geolocation) { showBanner("Geolocation is not available in this browser."); return; }
-  btn.textContent = "📍 Locating…"; btn.disabled = true;
+  btn.textContent = t("📍 Locating…"); btn.disabled = true;
   navigator.geolocation.getCurrentPosition(pos => {
     btn.disabled = false;
     const { latitude: lat, longitude: lon } = pos.coords;
@@ -1884,10 +2004,10 @@ document.getElementById("locate").addEventListener("click", () => {
     const vs = nearVenues(lat, lon);
     const d0 = vs.length ? vs[0].d : Infinity;
     state.near = { lat, lon, radiusKm: NEAR_RADII.find(r => r >= d0) || NEAR_RADII[NEAR_RADII.length - 1] };
-    btn.textContent = "📍 Near me"; btn.classList.add("active");
+    btn.textContent = t("📍 Near me"); btn.classList.add("active");
     renderNearMe();
   }, err => {
-    btn.textContent = "📍 Near me"; btn.disabled = false;
+    btn.textContent = t("📍 Near me"); btn.disabled = false;
     showBanner("Could not get your location: " + esc(err.message));
   }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
 });
@@ -1944,7 +2064,7 @@ function gDateQ() {
     opts.push({ text: String(yy), correct: false });
   }
   return { kind: "img", image: p.image, options: gShuffle(opts), answer: String(y), work: p,
-    prompt: `When was this painted?<span class="g-clue">${esc(p.painter)}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
+    prompt: `${t("When was this painted?")}<span class="g-clue">${esc(pName(p.painter))}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
 }
 
 function gWhereQ() {
@@ -1959,7 +2079,7 @@ function gWhereQ() {
   const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
   const opts = [{ text: lab(p), correct: true }, ...ds.map(v => ({ text: lab(v), correct: false }))];
   return { kind: "img", image: p.image, options: gShuffle(opts), answer: lab(p), work: p,
-    prompt: `Where is it now?<span class="g-clue">${esc(p.painter)}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
+    prompt: `${t("Where is it now?")}<span class="g-clue">${esc(pName(p.painter))}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
 }
 
 function gPaintingQ() {
@@ -1972,8 +2092,8 @@ function gPaintingQ() {
   const chosen = []; const usedImg = new Set([p.image]);
   for (const t of tiers) { for (const w of gShuffle(t)) { if (chosen.length >= G_NOPTS[G.diff] - 1) break; if (usedImg.has(w.p.image)) continue; usedImg.add(w.p.image); chosen.push(w); } if (chosen.length >= G_NOPTS[G.diff] - 1) break; }
   const opts = [{ img: p.image, correct: true }, ...chosen.map(w => ({ img: w.p.image, correct: false }))];
-  const clue = `${esc(p.painter)}${p.year ? `, ${esc(p.year)}` : ""}${p.location ? ` — ${esc(p.location)}` : ""}`;
-  return { kind: "pick", prompt: `Which one is <b>${clue}</b>?`, options: gShuffle(opts), work: p };
+  const clue = `${esc(pName(p.painter))}${p.year ? `, ${esc(p.year)}` : ""}${p.location ? ` — ${esc(locName(p))}` : ""}`;
+  return { kind: "pick", prompt: t("Which one is X?").replace("X", `<b>${clue}</b>`), options: gShuffle(opts), work: p };
 }
 
 function gNewQuestion() {
@@ -2179,7 +2299,7 @@ function renderChart() {
         let m = years.get(y); if (!m) { m = new Map(); years.set(y, m); }
         m.set(p.name, (m.get(p.name) || 0) + arr.length);
       }
-      return { kind: "group", label: g.label, sub: `${members.length} painters`, color: CHART_GROUP_COLORS[gi % CHART_GROUP_COLORS.length], years };
+      return { kind: "group", label: t(g.label), sub: `${members.length} ${tu("painters")}`, color: CHART_GROUP_COLORS[gi % CHART_GROUP_COLORS.length], years };
     }).filter(Boolean);
   }
   chartRows = rows;   // the hover tooltip reads titles / painter-breakdown from here
@@ -2259,7 +2379,7 @@ function setChartView(on) {
   const tip = document.createElement("div"); tip.id = "chart-tip"; tip.hidden = true; document.body.appendChild(tip);
   function tipHTML(r, cell, yr) {
     const total = chartCellCount(r, cell);
-    let h = `<div class="ct-h"><b>${esc(r.label)}</b> · ${yr}</div><div class="ct-n">${total} work${total > 1 ? "s" : ""}</div><ul>`;
+    let h = `<div class="ct-h"><b>${esc(r.label)}</b> · ${yr}</div><div class="ct-n">${total} ${tu(total === 1 ? "work" : "works")}</div><ul>`;
     if (r.kind === "painter") {
       const t = cell.slice().sort();
       h += t.slice(0, 7).map(x => `<li>${esc(x || "Untitled")}</li>`).join("");
@@ -2311,7 +2431,7 @@ function galaxyLegend() {
   if (galaxyColorBy === "author") { host.innerHTML = `<span class="gl-note">coloured by painter</span>`; return; }
   if (galaxyColorBy === "color") { host.innerHTML = `<span class="gl-note">each dot = the painting's own dominant colour</span>`; return; }
   const defs = galaxyColorBy === "period" ? ERAS : SCHOOLS;
-  host.innerHTML = defs.map((g, i) => `<span class="gl-chip"><i style="background:${CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]}"></i>${esc(g.label)}</span>`).join("");
+  host.innerHTML = defs.map((g, i) => `<span class="gl-chip"><i style="background:${CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]}"></i>${esc(t(g.label))}</span>`).join("");
 }
 // Author mode: hovering a dot greys out every other author, so that painter's constellation stands out.
 // Done with ONE rewritten CSS rule (not 8k DOM writes per hover).
@@ -2348,7 +2468,7 @@ function setGxFocus(slug, pin) {
 }
 function gxSideFill(w) {
   const p = w.p, body = document.getElementById("gx-side-body"); if (!body) return;
-  const venue = [p.location, p.city, p.country].filter(Boolean).join(", ");
+  const venue = [locName(p), p.city, cName(p.country)].filter(Boolean).join(", ");
   const row = (k, v) => v ? `<div class="gxs-row"><span class="k">${k}</span><span>${esc(v)}</span></div>` : "";
   const links = linksRow(p);
   body.innerHTML =
@@ -2693,8 +2813,8 @@ function applyGalaxyURL() {
     const db = document.querySelector('#galaxy-names [data-names="dots"]'); if (db) db.style.display = on ? "none" : "";
     const hint = document.getElementById("galaxy-hint");
     if (hint) hint.innerHTML = on
-      ? `<b>3-D</b> · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · <b>drag to rotate</b> · scroll to zoom · hover to preview · <b>click to pin</b>`
-      : `Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · hover to preview · <b>click to pin</b> · scroll zoom · drag to pan`;
+      ? `<b>3-D</b> · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> ${tu("works")} · <b>${t("drag to rotate")}</b> · ${t("scroll to zoom")} · ${t("hover to preview")} · <b>${t("click to pin")}</b>`
+      : `${t("Dots by")} <b>${t("visual similarity")}</b> (CLIP) · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> ${tu("works")} · ${t("hover to preview")} · <b>${t("click to pin")}</b> · ${t("scroll zoom")} · ${t("drag to pan")}`;
     if (!on) { if (galaxyCoords) drawGalaxy(); return; }
     const start = () => {
       if (!resize()) { setTimeout(start, 90); return; }

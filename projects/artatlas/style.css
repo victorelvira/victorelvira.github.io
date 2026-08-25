@@ -934,3 +934,13 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 
 /* a work with no address (private collection, stolen): named in the ficha, absent from the map */
 .wc-noplace { color: var(--muted); font-size: 11.5px; font-style: italic; white-space: nowrap; }
+
+/* language switch — two letters in the top identity bar, quiet until you need it */
+.langsel { display: inline-flex; gap: 2px; margin-left: auto; margin-right: 10px; }
+.langbtn { border: 1px solid rgba(255,255,255,.28); background: transparent; color: #d8d2c6;
+  font: inherit; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; line-height: 1;
+  padding: 3px 6px; border-radius: 4px; cursor: pointer; }
+.langbtn:first-child { border-radius: 4px 0 0 4px; }
+.langbtn:last-child { border-radius: 0 4px 4px 0; margin-left: -3px; }
+.langbtn:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+.langbtn.active { background: #f0ece3; border-color: #f0ece3; color: #3a2317; }
