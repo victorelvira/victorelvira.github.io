@@ -703,6 +703,18 @@ table.palmares td.c-photo .thumb img {
 }
 .cartel-mini:hover img { border-color: var(--rose); }
 
+/* Las curiosidades. Cada una con su procedencia debajo, porque una curiosidad
+   sin fuente es una anécdota, y aquí no publicamos anécdotas. */
+.curiosidades { margin: 4px 0 0; padding-left: 18px; line-height: 1.5; }
+.curiosidades li { margin-bottom: 8px; }
+.curiosidades small {
+  display: block; margin-top: 2px; color: var(--muted);
+  font-size: 11px; line-height: 1.4;
+}
+/* Las fuentes de la fecha, una por línea y sin viñeta doble. */
+.prov-fuentes { margin: 3px 0 0; padding-left: 14px; }
+.prov-fuentes li { margin-bottom: 2px; }
+
 .fecha-rara {
   margin: 6px 0; padding: 7px 10px;
   border: 1px solid var(--line-soft); border-left: 3px solid var(--gold);
@@ -1618,6 +1630,13 @@ body.lb-abierto { overflow: hidden; }
 
 /* Informe de procedencia: una linea por tipo de dato. */
 .prov-list { margin: 4px 0 0; padding-left: 16px; line-height: 1.5; }
+/* La cita literal que justifica una fuente. Va debajo y en cursiva: es lo que
+   dice el documento, no lo que decimos nosotros. */
+.prov-cita {
+  display: block; margin: 3px 0 2px; padding-left: 8px;
+  border-left: 2px solid var(--line); color: var(--muted);
+  font-size: 11.5px; font-style: italic; line-height: 1.4;
+}
 .prov-list li { margin-bottom: 3px; }
 .prov-list b { color: var(--ink); }
 .prov-warn { color: var(--alerta); }

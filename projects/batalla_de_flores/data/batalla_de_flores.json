@@ -23,7 +23,7 @@
     "fotos": 778,
     "afirmaciones": 3802,
     "afirmaciones_corroboradas": 443,
-    "ediciones_con_fecha": 35,
+    "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
     "year_max": 2026,
@@ -38,7 +38,19 @@
       "coverage": "partial",
       "parade_date": "1908-08-30",
       "parade_date_text": "domingo 30 de agosto de 1908",
-      "parade_date_source": "batalladeflores.net, página de palmarés de 1908: «La primera edición de la Batalla de Flores se celebró el 30 de agosto de 1908» — lo confirma además: batalladeflores.net, página de palmarés de la edición 1908",
+      "parade_date_source": "batalladeflores.net, página de palmarés de 1908: «La primera edición de la Batalla de Flores se celebró el 30 de agosto de 1908»",
+      "parade_date_url": "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-1908/",
+      "parade_date_nota": null,
+      "parade_date_sources": [
+        {
+          "nombre": "batalladeflores.net, página de palmarés de 1908: «La primera edición de la Batalla de Flores se celebró el 30 de agosto de 1908»",
+          "enlace": "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-1908/"
+        },
+        {
+          "nombre": "batalladeflores.net, página de palmarés de la edición 1908",
+          "enlace": null
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 1,
@@ -298,7 +310,23 @@
       "documentadas": 1,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "Esta edición cayó en domingo, no en viernes. El último viernes de agosto de 1908 fue el 28."
+      "curiosidades": [
+        {
+          "de_donde_sale": "la fecha del desfile",
+          "valor": "1908-08-30",
+          "fuentes": [
+            {
+              "nombre": "batalladeflores.net, página de palmarés de 1908: «La primera edición de la Batalla de Flores se celebró el 30 de agosto de 1908»",
+              "enlace": "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-1908/"
+            },
+            {
+              "nombre": "batalladeflores.net, página de palmarés de la edición 1908",
+              "enlace": null
+            }
+          ],
+          "texto": "Cayó en domingo, no en viernes. El último viernes de agosto de 1908 fue el 28."
+        }
+      ]
     },
     {
       "year": 1909,
@@ -309,6 +337,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 2,
@@ -830,7 +861,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1910,
@@ -841,6 +872,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 0,
@@ -1380,7 +1414,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1911,
@@ -1391,6 +1425,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 0,
@@ -1802,7 +1839,7 @@
       "documentadas": 2,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1912,
@@ -1813,6 +1850,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -2508,7 +2548,7 @@
       "documentadas": 5,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1913,
@@ -2519,6 +2559,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -3208,7 +3251,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1914,
@@ -3219,6 +3262,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 1,
@@ -3878,7 +3924,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1915,
@@ -3889,6 +3935,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 0,
@@ -4428,7 +4477,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1916,
@@ -4439,6 +4488,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 1,
@@ -4750,7 +4802,7 @@
       "documentadas": 1,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1917,
@@ -4761,6 +4813,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 1,
@@ -5368,7 +5423,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1918,
@@ -5379,6 +5434,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 1,
@@ -5994,7 +6052,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1919,
@@ -6005,6 +6063,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 0,
@@ -6544,7 +6605,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1920,
@@ -6555,6 +6616,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -7542,7 +7606,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 8 pero solo se conservan 5 carrozas, así que faltan al menos 3 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1921,
@@ -7553,6 +7617,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 0,
@@ -8092,7 +8159,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1922,
@@ -8103,6 +8170,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 0,
@@ -8642,7 +8712,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1923,
@@ -8653,6 +8723,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 1,
@@ -9426,7 +9499,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1924,
@@ -9437,6 +9510,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 3,
@@ -10803,7 +10879,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1924 — «Casa de campo» y «Una casa en Lugo». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "El palmarés llega hasta el puesto 10 pero solo se conservan 7 carrozas, así que faltan al menos 3 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1925,
@@ -10814,6 +10890,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 3,
@@ -11559,7 +11638,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1926,
@@ -11570,6 +11649,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 3,
@@ -12555,7 +12637,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 5 pero solo se conservan 4 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1927,
@@ -12566,6 +12648,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 5,
@@ -14285,7 +14370,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 4.º puesto de 1927 — «Regadera» y «Regadera monumental». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1928,
@@ -14296,6 +14381,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -15436,7 +15524,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 4.º puesto de 1928 — «Escudo Laredo» y «Escudo de Laredo». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Mismo título, mismo año y mismo grupo en 2 fichas: «Escudo Laredo» (4) y «Escudo de Laredo» (4). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1929,
@@ -15447,6 +15535,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 2,
@@ -16474,7 +16565,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1930,
@@ -16485,6 +16576,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -18031,7 +18125,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 5.º puesto de 1930 — «Zapato Luis XV» y «Zapato de Luis XV». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Mismo título, mismo año y mismo grupo en 2 fichas: «Zapato Luis XV» (5) y «Zapato de Luis XV» (5). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1931,
@@ -18042,6 +18136,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 6,
@@ -19447,7 +19544,7 @@
       "documentadas": 8,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1932,
@@ -19458,6 +19555,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -21317,7 +21417,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1932 — «Surtidor de Agua» y «Surtidor de Agua en un Jardín». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 4.º puesto de 1932 — «Carabela» y «Carabela Santa María». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1933,
@@ -21328,6 +21428,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -22689,7 +22792,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1933 — «Corte Abderraman» y «Corte de Abderrahman III». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1934,
@@ -22700,6 +22803,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -23659,7 +23765,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1934 — «Triunfo Costa Esmeralda» y «Triunfo de la Costa Esmeralda». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Mismo título, mismo año y mismo grupo en 2 fichas: «Triunfo Costa Esmeralda» (2) y «Triunfo de la Costa Esmeralda» (2). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1935,
@@ -23670,6 +23776,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -24707,7 +24816,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 5 pero solo se conservan 4 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1936,
@@ -24718,6 +24827,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -24733,7 +24845,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1937,
@@ -24744,6 +24856,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -24759,7 +24874,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1938,
@@ -24770,6 +24885,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -24785,7 +24903,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1939,
@@ -24796,6 +24914,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -24811,7 +24932,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1940,
@@ -24822,6 +24943,14 @@
       "parade_date": "1940-08-25",
       "parade_date_text": "domingo 25 de agosto de 1940",
       "parade_date_source": "Oruña Fuentes, «Batalla de Flores de Laredo. 100 años de historia viva» (2008)",
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [
+        {
+          "nombre": "Oruña Fuentes, «Batalla de Flores de Laredo. 100 años de historia viva» (2008)",
+          "enlace": null
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -24991,7 +25120,19 @@
       "documentadas": 1,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "Esta edición cayó en domingo, no en viernes. El último viernes de agosto de 1940 fue el 30."
+      "curiosidades": [
+        {
+          "de_donde_sale": "la fecha del desfile",
+          "valor": "1940-08-25",
+          "fuentes": [
+            {
+              "nombre": "Oruña Fuentes, «Batalla de Flores de Laredo. 100 años de historia viva» (2008)",
+              "enlace": null
+            }
+          ],
+          "texto": "Cayó en domingo, no en viernes. El último viernes de agosto de 1940 fue el 30."
+        }
+      ]
     },
     {
       "year": 1941,
@@ -25002,6 +25143,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 3,
@@ -25781,7 +25925,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1942,
@@ -25792,6 +25936,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 0,
@@ -26331,7 +26478,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1943,
@@ -26342,6 +26489,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -27383,7 +27533,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 7 pero solo se conservan 5 carrozas, así que faltan al menos 2 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1944,
@@ -27394,6 +27544,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -28267,7 +28420,7 @@
       "notes_derivadas": [
         "Mismo título, mismo año y mismo grupo en 2 fichas: «Rincón de Parque» (3) y «Rincón del Parque» (sin puesto). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1945,
@@ -28278,6 +28431,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -29483,7 +29639,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1945 — «Arte y Alegria» y «Tren Neptuno». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1945 — «Mariposa de Seda» y «Rincón de Ensueño». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1946,
@@ -29494,6 +29650,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -30175,7 +30334,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1946 — «Monumento Conmemorativo» y «Romanticismo». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1947,
@@ -30186,6 +30345,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -31226,7 +31388,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1947 — «Joyero» y «Una Tarde en Aranjuez». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1947 — «Palacio Asiático» y «Sinfonía Pastoril». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1948,
@@ -31237,6 +31399,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 4,
@@ -32705,7 +32870,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 6.º puesto de 1948 — «Arco de Santa Ana de Durango» y «El Arco de Santa Ana». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "El palmarés llega hasta el puesto 13 pero solo se conservan 7 carrozas, así que faltan al menos 6 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1949,
@@ -32716,6 +32881,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 3,
@@ -33991,7 +34159,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 7 pero solo se conservan 6 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1950,
@@ -34002,6 +34170,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 4,
@@ -35574,7 +35745,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1950 — «Imperio de Carlos» y «Imperio de Carlos I». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Desfilaron 25 carrozas y aquí constan 7: faltan 18."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1951,
@@ -35585,6 +35756,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -36899,7 +37073,7 @@
         "Esto no puede ser: 3 carrozas figuran en el 1.º puesto de 1951 — «Aladino», «Aladino y La Lámpara Maravillosa» y «Sueño de Navidad». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1951 — «El Templo del Amor» y «Fantasía Mejicana». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1952,
@@ -36910,6 +37084,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -37827,7 +38004,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 9 pero solo se conservan 5 carrozas, así que faltan al menos 4 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1953,
@@ -37838,6 +38015,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -39311,7 +39491,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1953 — «Color, Arte y Belleza» y «Diana Cazadora». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1953 — «Al Martirio por la Fé» y «Carnaval de Venecia». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1954,
@@ -39322,6 +39502,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 5,
@@ -40728,7 +40911,7 @@
         "Mismo título, mismo año y mismo grupo en 2 fichas: «El parque de la paloma» (5) y «Parque de la Paloma» (9). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir.",
         "El palmarés llega hasta el puesto 9 pero solo se conservan 6 carrozas, así que faltan al menos 3 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1955,
@@ -40739,6 +40922,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 2,
@@ -41614,7 +41800,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1955 — «Estío» y «Reflejo Veneciano». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1956,
@@ -41625,6 +41811,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -43152,7 +43341,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1956 — «Alicia en el País de las Maravillas» y «Cisnes y Flores». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1956 — «Mariposas y Pensamientos» y «Trineo». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1957,
@@ -43163,6 +43352,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 7,
@@ -45512,7 +45704,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 5.º puesto de 1957 — «Laredo en el Nodo» y «Laredo en en NO-DO». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "El palmarés llega hasta el puesto 13 pero solo se conservan 12 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1958,
@@ -45523,6 +45715,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 3,
@@ -46627,7 +46822,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1958 — «Fantasía Cervantina» y «Olimpiada». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1958 — «Idilio Chino» y «Motivo Pictórico». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1959,
@@ -46638,6 +46833,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 5,
@@ -47940,7 +48138,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1959 — «Melodía y Color de España» y «Romanticismo». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1959 — «Alegoría Hípica» y «Heráldica». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1960,
@@ -47951,6 +48149,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -48794,7 +48995,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1961,
@@ -48805,6 +49006,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -49480,7 +49684,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1962,
@@ -49491,6 +49695,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 4,
@@ -50572,7 +50779,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 6 pero solo se conservan 5 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1963,
@@ -50583,6 +50790,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -51634,7 +51844,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 3 carrozas figuran en el 3.º puesto de 1963 — «Dulce Primavera», «Laredo en mi Espejo» y «Laredo en mi Espejo». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1964,
@@ -51645,6 +51855,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 5,
@@ -52791,7 +53004,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1964 — «Felicidad» y «Nido de Mariposas». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "El palmarés llega hasta el puesto 8 pero solo se conservan 5 carrozas, así que faltan al menos 3 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1965,
@@ -52802,6 +53015,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 6,
@@ -54442,7 +54658,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1965 — «Reina de la Fiesta» y «Sueño Adorado». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1965 — «Alegoría Veneciana» y «Trono para una Reina». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1966,
@@ -54453,6 +54669,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 8,
@@ -56541,7 +56760,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1966 — «Andalucía» y «Feria Sevillana». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 3 carrozas figuran en el 2.º puesto de 1966 — «Amaltea», «Isabel de Castilla» y «Isabel de Castilla y sus Damas». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1967,
@@ -56552,6 +56771,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 3,
@@ -57665,7 +57887,7 @@
       "documentadas": 5,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1968,
@@ -57676,6 +57898,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 7,
@@ -59204,17 +59429,25 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1968 — «Fantasía Oriental» y «Mi España». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1968 — «5 Continentes» y «Alegoría Primaveral». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1969,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1969",
+      "edition_number": 60,
+      "edition_label": "60ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1969-08-28",
+      "parade_date_text": "jueves 28 de agosto de 1969",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1969 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1969.jpg",
+      "parade_date_nota": "«60 EDICION | GRAN BATALLA DE FLORES | LAREDO costa esmeralda | 28 agosto 69 | FIESTA DE INTERES TURISTICO | [firma] Urumba - Universal Publicidad»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1969 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1969.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 5,
@@ -60624,7 +60857,19 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 9 pero solo se conservan 6 carrozas, así que faltan al menos 3 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [
+        {
+          "de_donde_sale": "la fecha del desfile",
+          "valor": "1969-08-28",
+          "fuentes": [
+            {
+              "nombre": "Cartel anunciador de la Batalla de Flores de 1969 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+              "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1969.jpg"
+            }
+          ],
+          "texto": "Cayó en jueves, no en viernes. El último viernes de agosto de 1969 fue el 29."
+        }
+      ],
       "cartel": {
         "anio": 1969,
         "url": "batalla_de_flores/fotos/carteles/cartel-1969.jpg",
@@ -60637,13 +60882,21 @@
     },
     {
       "year": 1970,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1970",
+      "edition_number": 61,
+      "edition_label": "61ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1970-08-28",
+      "parade_date_text": "viernes 28 de agosto de 1970",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1970 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1970.jpg",
+      "parade_date_nota": "«GRAN BATALLA DE FLORES | 28 AGOSTO 1970 | LAREDO ESPAÑA | 61 EDICION | FIESTA DE INTERES TURISTICO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1970 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1970.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 3,
@@ -61607,7 +61860,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 5 pero solo se conservan 4 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1970,
         "url": "batalla_de_flores/fotos/carteles/cartel-1970.jpg",
@@ -61627,6 +61880,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -62456,7 +62712,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1971 — «Capricho Luminoso» y «Capricho Lumisono». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1972,
@@ -62464,9 +62720,17 @@
       "edition_label": "Batalla de Flores 1972",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1972-08-25",
+      "parade_date_text": "viernes 25 de agosto de 1972",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1972 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1972.jpg",
+      "parade_date_nota": "«laredo | gran batalla de flores | 25 de agosto de 1972»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1972 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1972.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 2,
@@ -63330,7 +63594,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1972,
         "url": "batalla_de_flores/fotos/carteles/cartel-1972.jpg",
@@ -63350,6 +63614,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 3,
@@ -64197,17 +64464,25 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 5 pero solo se conservan 4 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1974,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1974",
+      "edition_number": 65,
+      "edition_label": "65ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1974-08-30",
+      "parade_date_text": "viernes 30 de agosto de 1974",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1974 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1974.jpg",
+      "parade_date_nota": "«65 EDICION | GRAN BATALLA DE FLORES | LAREDO costa esmeralda | 30 agosto 1974 | FIESTA DE INTERES TURISTICO | [escudo de Laredo] | [firma] Urumba - Universal Publicidad»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1974 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1974.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 4,
@@ -65193,7 +65468,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1974,
         "url": "batalla_de_flores/fotos/carteles/cartel-1974.jpg",
@@ -65213,6 +65488,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 5,
       "float_page_count": 3,
@@ -65970,17 +66248,25 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1976,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1976",
+      "edition_number": 67,
+      "edition_label": "67ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1976-08-27",
+      "parade_date_text": "viernes 27 de agosto de 1976",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1976 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1976.jpg",
+      "parade_date_nota": "«gran batalla de flores | 27 de agosto de 1976 | 67 edición | LAREDO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1976 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1976.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -66998,7 +67284,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 6 pero solo se conservan 5 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1976,
         "url": "batalla_de_flores/fotos/carteles/cartel-1976.jpg",
@@ -67011,13 +67297,21 @@
     },
     {
       "year": 1977,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1977",
+      "edition_number": 68,
+      "edition_label": "68ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1977-08-26",
+      "parade_date_text": "viernes 26 de agosto de 1977",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1977 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1977.jpg",
+      "parade_date_nota": "«gran batalla de flores | 26 de agosto de 1977 | 68 edición | LAREDO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1977 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1977.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -68049,7 +68343,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 7 pero solo se conservan 5 carrozas, así que faltan al menos 2 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1977,
         "url": "batalla_de_flores/fotos/carteles/cartel-1977.jpg",
@@ -68062,13 +68356,21 @@
     },
     {
       "year": 1978,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1978",
+      "edition_number": 69,
+      "edition_label": "69ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1978-08-25",
+      "parade_date_text": "viernes 25 de agosto de 1978",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1978 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1978.jpg",
+      "parade_date_nota": "«gran batalla de flores | 25 de agosto de 1978 | 69 edición | LAREDO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1978 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1978.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -69525,7 +69827,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1978 — «Ilusión Infantil» y «Ilusión Infantil (La Abeja Maya)». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "El palmarés llega hasta el puesto 9 pero solo se conservan 7 carrozas, así que faltan al menos 2 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1978,
         "url": "batalla_de_flores/fotos/carteles/cartel-1978.jpg",
@@ -69538,13 +69840,21 @@
     },
     {
       "year": 1979,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1979",
+      "edition_number": 70,
+      "edition_label": "70ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1979-08-24",
+      "parade_date_text": "viernes 24 de agosto de 1979",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1979 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1979.jpg",
+      "parade_date_nota": "«gran batalla de flores | 24 de agosto de 1979 | 70 aniversario | LAREDO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1979 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1979.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 3,
@@ -70296,7 +70606,19 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [
+        {
+          "de_donde_sale": "la fecha del desfile",
+          "valor": "1979-08-24",
+          "fuentes": [
+            {
+              "nombre": "Cartel anunciador de la Batalla de Flores de 1979 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+              "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1979.jpg"
+            }
+          ],
+          "texto": "Fue viernes, pero no el último de agosto: se celebró el 24 y el último viernes era el 31. Aquel agosto tuvo 5 viernes."
+        }
+      ],
       "cartel": {
         "anio": 1979,
         "url": "batalla_de_flores/fotos/carteles/cartel-1979.jpg",
@@ -70309,13 +70631,21 @@
     },
     {
       "year": 1980,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1980",
+      "edition_number": 71,
+      "edition_label": "71ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1980-08-29",
+      "parade_date_text": "viernes 29 de agosto de 1980",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1980 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1980.jpg",
+      "parade_date_nota": "«gran batalla de flores | 29 de agosto de 1980 | 71 aniversario | LAREDO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1980 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1980.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -71295,7 +71625,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 6 pero solo se conservan 4 carrozas, así que faltan al menos 2 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1980,
         "url": "batalla_de_flores/fotos/carteles/cartel-1980.jpg",
@@ -71308,13 +71638,21 @@
     },
     {
       "year": 1981,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1981",
+      "edition_number": 72,
+      "edition_label": "72ª Batalla de Flores",
       "status": "published",
       "coverage": "strong",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1981-08-28",
+      "parade_date_text": "viernes 28 de agosto de 1981",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1981 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1981.jpg",
+      "parade_date_nota": "«gran batalla de flores | 28 agosto 1981 | 72 aniversario | LAREDO | APARISI 81»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1981 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1981.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -72523,7 +72861,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1981 — «El Gallo Rojo» y «Gallo Rojo». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Mismo título, mismo año y mismo grupo en 2 fichas: «El Gallo Rojo» (1) y «Gallo Rojo» (1). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1981,
         "url": "batalla_de_flores/fotos/carteles/cartel-1981.jpg",
@@ -72536,13 +72874,21 @@
     },
     {
       "year": 1982,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1982",
+      "edition_number": 73,
+      "edition_label": "73ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1982-08-27",
+      "parade_date_text": "viernes 27 de agosto de 1982",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1982 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1982.jpg",
+      "parade_date_nota": "«gran batalla de flores | 27 agosto 1982 | 73 aniversario | LAREDO | APARISI 81»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1982 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1982.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -73512,7 +73858,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1982,
         "url": "batalla_de_flores/fotos/carteles/cartel-1982.jpg",
@@ -73525,13 +73871,21 @@
     },
     {
       "year": 1983,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1983",
+      "edition_number": 74,
+      "edition_label": "74ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1983-08-26",
+      "parade_date_text": "viernes 26 de agosto de 1983",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1983 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1983.jpg",
+      "parade_date_nota": "«gran batalla de flores | 26 agosto 1983 | 74 aniversario | LAREDO | APARISI 81»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1983 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1983.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 3,
       "float_page_count": 1,
@@ -74153,7 +74507,7 @@
       "documentadas": 3,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1983,
         "url": "batalla_de_flores/fotos/carteles/cartel-1983.jpg",
@@ -74166,13 +74520,21 @@
     },
     {
       "year": 1984,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1984",
+      "edition_number": 75,
+      "edition_label": "75ª Batalla de Flores",
       "status": "published",
       "coverage": "strong",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1984-08-31",
+      "parade_date_text": "viernes 31 de agosto de 1984",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1984 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1984.jpg",
+      "parade_date_nota": "«31 de agosto | 1984 | 75 Edición | gran batalla de flores | LAREDO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1984 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1984.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -75741,7 +76103,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1984 — «Marina» y «Marina». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 5.º puesto de 1984 — «Alegoría Floral» y «Alegoría Floral». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1984,
         "url": "batalla_de_flores/fotos/carteles/cartel-1984.jpg",
@@ -75754,13 +76116,21 @@
     },
     {
       "year": 1985,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1985",
+      "edition_number": 76,
+      "edition_label": "76ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1985-08-30",
+      "parade_date_text": "viernes 30 de agosto de 1985",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1985 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1985.jpg",
+      "parade_date_nota": "«76 EDICION | LAREDO | 30 AGOSTO 1985 | BATALLA DE FLORES | [logo nao de Laredo] | ORGANIZA EL AYUNTAMIENTO»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1985 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1985.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -77140,7 +77510,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1985 — «Cenicienta» y «Cenicienta». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "El palmarés llega hasta el puesto 11 pero solo se conservan 7 carrozas, así que faltan al menos 4 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1985,
         "url": "batalla_de_flores/fotos/carteles/cartel-1985.jpg",
@@ -77153,13 +77523,21 @@
     },
     {
       "year": 1986,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1986",
+      "edition_number": 77,
+      "edition_label": "77ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1986-08-29",
+      "parade_date_text": "viernes 29 de agosto de 1986",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1986 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1986.jpg",
+      "parade_date_nota": "«BATALLA DE FLORES | LAREDO | 77 EDICION | 29 AGOSTO 1986 | ORGANIZA: EL EXCMO. AYUNTAMIENTO DE LAREDO | [firma] Albo»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1986 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1986.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 8,
@@ -79034,7 +79412,7 @@
         "Esto no puede ser: 3 carrozas figuran en el 2.º puesto de 1986 — «Egipto», «Fuente oriental» y «Puente Oriental». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "El palmarés llega hasta el puesto 11 pero solo se conservan 10 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1986,
         "url": "batalla_de_flores/fotos/carteles/cartel-1986.jpg",
@@ -79047,13 +79425,21 @@
     },
     {
       "year": 1987,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1987",
+      "edition_number": 78,
+      "edition_label": "78ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1987-08-28",
+      "parade_date_text": "viernes 28 de agosto de 1987",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1987 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1987.jpg",
+      "parade_date_nota": "«Batalla de Flores | 28 de agosto 87 | Laredo | 78 edición | ORGANIZA: EXCMO. AYUNTAMIENTO DE LAREDO | [firma] Albo»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1987 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1987.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -80289,7 +80675,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 7 pero solo se conservan 5 carrozas, así que faltan al menos 2 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1987,
         "url": "batalla_de_flores/fotos/carteles/cartel-1987.jpg",
@@ -80302,13 +80688,21 @@
     },
     {
       "year": 1988,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 1988",
+      "edition_number": 79,
+      "edition_label": "79ª Batalla de Flores",
       "status": "published",
       "coverage": "strong",
-      "parade_date": null,
-      "parade_date_text": null,
-      "parade_date_source": null,
+      "parade_date": "1988-08-26",
+      "parade_date_text": "viernes 26 de agosto de 1988",
+      "parade_date_source": "Cartel anunciador de la Batalla de Flores de 1988 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1988.jpg",
+      "parade_date_nota": "«79 Edición  26 de Agosto de 1988 | Laredo | Batalla de Flores | Organiza el Excmo. Ayuntamiento de Laredo»",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 1988 — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1988.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 7,
@@ -81832,7 +82226,7 @@
       "documentadas": 6,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1988,
         "url": "batalla_de_flores/fotos/carteles/cartel-1988.jpg",
@@ -81852,6 +82246,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -83117,7 +83514,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 3.º puesto de 1989 — «Fantasía Estival» y «Nacida Libre». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1989,
         "url": "batalla_de_flores/fotos/carteles/cartel-1989.jpg",
@@ -83137,6 +83534,14 @@
       "parade_date": "1990-08-31",
       "parade_date_text": "viernes 31 de agosto de 1990",
       "parade_date_source": "Cartel oficial de la 81ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1990.jpg",
+      "parade_date_nota": "«31 AGOSTO 1990 · 81 EDICION» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 81ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1990.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 8,
@@ -84869,7 +85274,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 9 pero solo se conservan 8 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1990,
         "url": "batalla_de_flores/fotos/carteles/cartel-1990.jpg",
@@ -84889,6 +85294,14 @@
       "parade_date": "1991-08-30",
       "parade_date_text": "viernes 30 de agosto de 1991",
       "parade_date_source": "Cartel oficial de la 82ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1991.jpg",
+      "parade_date_nota": "«30 DE AGOSTO 1991 · 82 EDICIÓN» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 82ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1991.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -86048,7 +86461,7 @@
       "documentadas": 5,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1991,
         "url": "batalla_de_flores/fotos/carteles/cartel-1991.jpg",
@@ -86068,6 +86481,14 @@
       "parade_date": "1992-08-28",
       "parade_date_text": "viernes 28 de agosto de 1992",
       "parade_date_source": "Cartel oficial de la 83ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1992.jpg",
+      "parade_date_nota": "«28 DE AGOSTO DE 1992 · 83 EDICION» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 83ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1992.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -87639,7 +88060,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 6.º puesto de 1992 — «Nuevos Horizontes» y «Nuevos Orizontes». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1992,
         "url": "batalla_de_flores/fotos/carteles/cartel-1992.jpg",
@@ -87659,6 +88080,14 @@
       "parade_date": "1993-08-27",
       "parade_date_text": "viernes 27 de agosto de 1993",
       "parade_date_source": "Cartel oficial de la 84ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1993.jpg",
+      "parade_date_nota": "«84 EDICION · 27 DE AGOSTO DE 1993» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 84ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1993.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 7,
@@ -89236,7 +89665,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 9 pero solo se conservan 7 carrozas, así que faltan al menos 2 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1993,
         "url": "batalla_de_flores/fotos/carteles/cartel-1993.jpg",
@@ -89256,6 +89685,14 @@
       "parade_date": "1994-08-26",
       "parade_date_text": "viernes 26 de agosto de 1994",
       "parade_date_source": "Cartel oficial de la 85ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1994.jpg",
+      "parade_date_nota": "«85 Edición · 26 AGOSTO 1994» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 85ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1994.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 8,
@@ -90801,7 +91238,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 8 pero solo se conservan 7 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1994,
         "url": "batalla_de_flores/fotos/carteles/cartel-1994.jpg",
@@ -90821,6 +91258,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -92008,7 +92448,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 7 pero solo se conservan 6 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 1996,
@@ -92019,6 +92459,14 @@
       "parade_date": "1996-08-30",
       "parade_date_text": "viernes 30 de agosto de 1996",
       "parade_date_source": "Cartel oficial de la 87ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1996.jpg",
+      "parade_date_nota": "«87 Edición · 30 de Agosto de 1996» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 87ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1996.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -93124,7 +93572,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 9 pero solo se conservan 6 carrozas, así que faltan al menos 3 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1996,
         "url": "batalla_de_flores/fotos/carteles/cartel-1996.jpg",
@@ -93144,6 +93592,14 @@
       "parade_date": "1997-08-29",
       "parade_date_text": "viernes 29 de agosto de 1997",
       "parade_date_source": "Cartel oficial de la 88ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1997.jpg",
+      "parade_date_nota": "«98 EDICION [sic, se lee 88] · 29 de Agosto de 1997» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 88ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1997.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 4,
@@ -93957,7 +94413,7 @@
       "documentadas": 4,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1997,
         "url": "batalla_de_flores/fotos/carteles/cartel-1997.jpg",
@@ -93977,6 +94433,14 @@
       "parade_date": "1998-08-28",
       "parade_date_text": "viernes 28 de agosto de 1998",
       "parade_date_source": "Cartel oficial de la 89ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1998.jpg",
+      "parade_date_nota": "«89 Edicion · 28 de Agosto de 1998» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 89ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel1998.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 5,
@@ -95239,7 +95703,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 1.º puesto de 1998 — «Esplendor Hindú» y «Reflejo Luminoso». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el 2.º puesto de 1998 — «Luz para Ver» y «Sueño de Una Niña». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 1998,
         "url": "batalla_de_flores/fotos/carteles/cartel-1998.jpg",
@@ -95259,6 +95723,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 9,
@@ -97187,17 +97654,29 @@
       "documentadas": 11,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2000,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 2000",
+      "edition_number": 91,
+      "edition_label": "91ª Batalla de Flores",
       "status": "published",
       "coverage": "strong",
       "parade_date": "2000-08-25",
       "parade_date_text": "viernes 25 de agosto de 2000",
       "parade_date_source": "BOC nº 240, martes 7 de diciembre de 1999 — Dirección General de Trabajo, calendario de fiestas locales de los municipios de Cantabria para el año 2000 (BOC-1999-389307), anexo",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=118",
+      "parade_date_nota": "«Laredo | La Batalla de Flores | 25 | Agosto» · La Batalla es fiesta local de Laredo y el BOC la nombra por su nombre, con día y mes. Método validado: para 2008, 2009 y 2010 el BOC coincide exactamente con las fechas que el proyecto ya tenía por prensa.",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 240, martes 7 de diciembre de 1999 — Dirección General de Trabajo, calendario de fiestas locales de los municipios de Cantabria para el año 2000 (BOC-1999-389307), anexo",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=118"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2000",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2000.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 7,
@@ -98463,7 +98942,7 @@
       "documentadas": 7,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2000,
         "url": "batalla_de_flores/fotos/carteles/cartel-2000.jpg",
@@ -98476,13 +98955,25 @@
     },
     {
       "year": 2001,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 2001",
+      "edition_number": 92,
+      "edition_label": "92ª Batalla de Flores",
       "status": "published",
       "coverage": "strong",
       "parade_date": "2001-08-31",
       "parade_date_text": "viernes 31 de agosto de 2001",
       "parade_date_source": "BOC nº 248, jueves 28 de diciembre de 2000 — Relación de fiestas locales de los municipios de Cantabria para el año 2001 (BOC-2000-13446), anexo",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=14871",
+      "parade_date_nota": "«Laredo | La Batalla de Flores | 31 | Agosto» · Las dos correcciones de errores posteriores a este anuncio (BOC-2001-652 y BOC-2001-664) afectan a Ruiloba, no a Laredo: la fecha se mantiene.",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 248, jueves 28 de diciembre de 2000 — Relación de fiestas locales de los municipios de Cantabria para el año 2001 (BOC-2000-13446), anexo",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=14871"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2001",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2001.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -100140,7 +100631,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 4.º puesto de 2001 — «Festejo Andino» y «Festejo Andino». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2001,
         "url": "batalla_de_flores/fotos/carteles/cartel-2001.jpg",
@@ -100160,6 +100651,18 @@
       "parade_date": "2002-08-30",
       "parade_date_text": "viernes 30 de agosto de 2002",
       "parade_date_source": "BOC nº 248, miércoles 26 de diciembre de 2001 — Relación de fiestas locales de Cantabria para el año 2002 (BOC-2001-13764), anexo; lo confirma BOC nº 37, 22 de febrero de 2002 (BOC-2002-1970)",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=28867",
+      "parade_date_nota": "«LAREDO | Batalla de Flores | 30 | Agosto» — y en BOC-2002-1970: «figuraba ya como fiesta local en el Ayuntamiento de Laredo la de 30 de agosto, celebración de la Batalla de Flores» · Dos documentos oficiales independientes coinciden en el 30 de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 248, miércoles 26 de diciembre de 2001 — Relación de fiestas locales de Cantabria para el año 2002 (BOC-2001-13764), anexo; lo confirma BOC nº 37, 22 de febrero de 2002 (BOC-2002-1970)",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=28867"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2002",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2002.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 7,
@@ -103143,7 +103646,7 @@
       "notes_derivadas": [
         "El palmarés llega hasta el puesto 14 pero solo se conservan 13 carrozas, así que faltan al menos 1 en el archivo."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2002,
         "url": "batalla_de_flores/fotos/carteles/cartel-2002.jpg",
@@ -103163,6 +103666,14 @@
       "parade_date": "2003-08-29",
       "parade_date_text": "viernes 29 de agosto de 2003",
       "parade_date_source": "Cartel oficial de la 94ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel2003.jpg",
+      "parade_date_nota": "«94 edición · 29 de Agosto de 2003» · La fecha va impresa en el cartel. Verificado: cayó en viernes y fue el último viernes de agosto.",
+      "parade_date_sources": [
+        {
+          "nombre": "Cartel oficial de la 94ª Batalla de Flores de Laredo, editado por el Ayuntamiento de Laredo — leído por un modelo de lenguaje sobre la imagen del cartel, no transcrito por una persona",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/cartel2003.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 7,
@@ -105110,7 +105621,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el 6.º puesto de 2003 — «Belleza de la Mar» y «Bellezas de la mar». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2003,
         "url": "batalla_de_flores/fotos/carteles/cartel-2003.jpg",
@@ -105123,13 +105634,25 @@
     },
     {
       "year": 2004,
-      "edition_number": null,
-      "edition_label": "Batalla de Flores 2004",
+      "edition_number": 95,
+      "edition_label": "95ª Batalla de Flores",
       "status": "published",
       "coverage": "strong",
       "parade_date": "2004-08-27",
       "parade_date_text": "viernes 27 de agosto de 2004",
       "parade_date_source": "BOC nº 242, miércoles 17 de diciembre de 2003 — Relación de fiestas laborables locales para el año 2004 (BOC-2003-14413), anexo (página 10560)",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=59445",
+      "parade_date_nota": "«LAREDO | Batalla de Flores | 27 | Agosto» · El anexo es una tabla escaneada; leída sobre la página renderizada del PDF oficial.",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 242, miércoles 17 de diciembre de 2003 — Relación de fiestas laborables locales para el año 2004 (BOC-2003-14413), anexo (página 10560)",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=59445"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2004",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2004.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 7,
       "float_page_count": 6,
@@ -106307,7 +106830,7 @@
       "documentadas": 6,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2004,
         "url": "batalla_de_flores/fotos/carteles/cartel-2004.jpg",
@@ -106327,6 +106850,18 @@
       "parade_date": "2005-08-26",
       "parade_date_text": "viernes 26 de agosto de 2005",
       "parade_date_source": "BOC nº 244, martes 21 de diciembre de 2004 — Relación de fiestas laborables locales para el año 2005 (BOC-2004-14834), anexo (página 12294)",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=74865",
+      "parade_date_nota": "«LAREDO | Batalla de Flores | 26 | Agosto»",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 244, martes 21 de diciembre de 2004 — Relación de fiestas laborables locales para el año 2005 (BOC-2004-14834), anexo (página 12294)",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=74865"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2005",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2005.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -109114,7 +109649,7 @@
       "documentadas": 13,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2005,
         "url": "batalla_de_flores/fotos/carteles/cartel-2005.jpg",
@@ -109134,6 +109669,18 @@
       "parade_date": "2006-08-25",
       "parade_date_text": "viernes 25 de agosto de 2006",
       "parade_date_source": "BOC nº 247, miércoles 28 de diciembre de 2005 — Resolución disponiendo la publicación de la relación de fiestas nacionales, autonómicas y locales retribuidas y no recuperables para el año 2006, anexo (página 14198)",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=91799",
+      "parade_date_nota": "«LAREDO | Batalla de Flores | 25 | Agosto»",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 247, miércoles 28 de diciembre de 2005 — Resolución disponiendo la publicación de la relación de fiestas nacionales, autonómicas y locales retribuidas y no recuperables para el año 2006, anexo (página 14198)",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=91799"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2006",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2006.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 9,
       "float_page_count": 7,
@@ -112425,7 +112972,7 @@
       "documentadas": 14,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2006,
         "url": "batalla_de_flores/fotos/carteles/cartel-2006.jpg",
@@ -112445,6 +112992,18 @@
       "parade_date": "2007-08-31",
       "parade_date_text": "viernes 31 de agosto de 2007",
       "parade_date_source": "BOC nº 246, miércoles 27 de diciembre de 2006 — Fiestas laborales de ámbito nacional, autonómicas y locales para 2007 (BOC-2006-16830), anexo (página 15515)",
+      "parade_date_url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=108750",
+      "parade_date_nota": "«LAREDO | Batalla de flores | 31 | Agosto» · La corrección de errores posterior (BOC-2007-570, 22/01/2007) sólo afecta a Liendo; la fecha de Laredo se mantiene.",
+      "parade_date_sources": [
+        {
+          "nombre": "BOC nº 246, miércoles 27 de diciembre de 2006 — Fiestas laborales de ámbito nacional, autonómicas y locales para 2007 (BOC-2006-16830), anexo (página 15515)",
+          "enlace": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=108750"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2007",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2007.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 8,
@@ -116490,7 +117049,7 @@
       "documentadas": 18,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2007,
         "url": "batalla_de_flores/fotos/carteles/cartel-2007.jpg",
@@ -116503,13 +117062,25 @@
     },
     {
       "year": 2008,
-      "edition_number": 100,
-      "edition_label": "100ª Batalla de Flores",
+      "edition_number": 99,
+      "edition_label": "99ª Batalla de Flores",
       "status": "published",
       "coverage": "partial",
       "parade_date": "2008-08-29",
       "parade_date_text": "viernes 29 de agosto de 2008",
       "parade_date_source": "ABC, 29 de agosto de 2008: «Más de una veintena de carrozas […] recorrerán hoy las calles de este municipio costero a partir de las cinco y media de la tarde» — lo confirma además: BOC nº 245, miércoles 19 de diciembre de 2007 (BOC-2007-16934), anexo; y ABC, 29 de agosto de 2008",
+      "parade_date_url": "https://www.batalladeflores.net/wp-content/uploads/2013/09/ABC29-08-2008.jpg",
+      "parade_date_nota": null,
+      "parade_date_sources": [
+        {
+          "nombre": "ABC, 29 de agosto de 2008: «Más de una veintena de carrozas […] recorrerán hoy las calles de este municipio costero a partir de las cinco y media de la tarde» — lo confirma además: BOC nº 245, miércoles 19 de diciembre de 2007 (BOC-2007-16934), anexo; y ABC, 29 de agosto de 2008",
+          "enlace": "https://www.batalladeflores.net/wp-content/uploads/2013/09/ABC29-08-2008.jpg"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2008",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2008.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 8,
@@ -120522,7 +121093,7 @@
         "Esto no puede ser: 2 carrozas figuran en el 11.º puesto de 2008 — «Es de Laredo es…pero no es panchonera» y «Son de Laredo Son». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Desfilaron 23 carrozas y aquí constan 15: faltan 8."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2008,
         "url": "batalla_de_flores/fotos/carteles/cartel-2008.jpg",
@@ -120542,6 +121113,18 @@
       "parade_date": "2009-08-28",
       "parade_date_text": "viernes 28 de agosto de 2009",
       "parade_date_source": "El Mundo Cantabria, 29 de agosto de 2009 (recorte 2009.jpg); lo confirma ABC del mismo día: «Un total de 20 carrozas se enfrentaron ayer» — lo confirma además: BOC nº 250, lunes 29 de diciembre de 2008 (BOC-2008-17161), anexo; y El Mundo Cantabria, 29 de agosto de 2009",
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [
+        {
+          "nombre": "El Mundo Cantabria, 29 de agosto de 2009 (recorte 2009.jpg); lo confirma ABC del mismo día: «Un total de 20 carrozas se enfrentaron ayer» — lo confirma además: BOC nº 250, lunes 29 de diciembre de 2008 (BOC-2008-17161), anexo; y El Mundo Cantabria, 29 de agosto de 2009",
+          "enlace": null
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2009",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2009.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 8,
@@ -125799,7 +126382,7 @@
       "documentadas": 20,
       "desfilaron": 20,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2009,
         "url": "batalla_de_flores/fotos/carteles/cartel-2009.jpg",
@@ -125819,6 +126402,18 @@
       "parade_date": "2010-08-27",
       "parade_date_text": "viernes 27 de agosto de 2010",
       "parade_date_source": "El Mundo Cantabria, 28 de agosto de 2010 (recorte 2010.jpg) — lo confirma además: BOC nº 242, viernes 18 de diciembre de 2009 (BOC-2009-17908), anexo; y Ayuntamiento de Laredo, nota de 27 de agosto de 2010",
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [
+        {
+          "nombre": "El Mundo Cantabria, 28 de agosto de 2010 (recorte 2010.jpg) — lo confirma además: BOC nº 242, viernes 18 de diciembre de 2009 (BOC-2009-17908), anexo; y Ayuntamiento de Laredo, nota de 27 de agosto de 2010",
+          "enlace": null
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2010",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2010.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 9,
@@ -130303,7 +130898,7 @@
       "documentadas": 19,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2010,
         "url": "batalla_de_flores/fotos/carteles/cartel-2010.jpg",
@@ -130323,6 +130918,18 @@
       "parade_date": "2011-08-26",
       "parade_date_text": "viernes 26 de agosto de 2011",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa de 25 de agosto de 2011 («Nacho Diego asistirá mañana a la Batalla de Flores de Laredo»); lo confirma la nota de 27 de agosto de 2011",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=401",
+      "parade_date_nota": "«El presidente de Cantabria, Ignacio Diego, asistirá mañana a la Batalla de Flores de Laredo, Fiesta de Interés Turístico Nacional que este año celebra su 102 edición» — y en la nota del 27: «La gran Batalla de Flores de Laredo demostró ayer con creces porqué ha sido reconocida como Fiesta de Interés Turístico Nacional» · Dos notas municipales, una del día anterior («mañana») y otra del día siguiente («ayer»), apuntan a la misma fecha: 26/08/2011. Ninguna dice el día de la semana. Segundo enlace: https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=404",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa de 25 de agosto de 2011 («Nacho Diego asistirá mañana a la Batalla de Flores de Laredo»); lo confirma la nota de 27 de agosto de 2011",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=401"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2011",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2011.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 10,
@@ -134424,7 +135031,7 @@
       "documentadas": 19,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2011,
         "url": "batalla_de_flores/fotos/carteles/cartel-2011.jpg",
@@ -134444,6 +135051,18 @@
       "parade_date": "2012-08-31",
       "parade_date_text": "viernes 31 de agosto de 2012",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa de 1 de septiembre de 2012",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=981",
+      "parade_date_nota": "«La carroza “Violette” de Abelardo Landera Puente oficializó hoy sábado su triunfo en la 103 Batalla de Flores de Laredo obtenido provisionalmente durante el desfile celebrado el viernes» · Autoverificable por partida doble: la nota es del sábado 1 de septiembre («hoy sábado», y el 01/09/2012 fue sábado) y sitúa el desfile «el viernes» anterior, que es el 31 de agosto. Ese año hubo reclamación: «Berberisca» recurrió y el jurado se reunió de madrugada, pero «Violette» mantuvo el primer premio.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa de 1 de septiembre de 2012",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=981"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2012",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2012.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 10,
@@ -138680,7 +139299,7 @@
       "documentadas": 20,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2012,
         "url": "batalla_de_flores/fotos/carteles/cartel-2012.jpg",
@@ -138700,6 +139319,18 @@
       "parade_date": "2013-08-30",
       "parade_date_text": "viernes 30 de agosto de 2013",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa de 30 de agosto de 2013",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=1450",
+      "parade_date_nota": "«La carroza “Florida” de la agrupación Come Golayu que lo ha hechu güela”, se ha alzado con el triunfo en la 104 edición de la Batalla de Flores celebrada esta tarde en la Alameda Miramar de Laredo» · «Esta tarde» en una nota fechada el 30/08/2013 fija el desfile ese mismo día.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa de 30 de agosto de 2013",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=1450"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2013",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2013.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 10,
@@ -143024,7 +143655,7 @@
       "documentadas": 20,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2013,
         "url": "batalla_de_flores/fotos/carteles/cartel-2013.jpg",
@@ -143044,6 +143675,18 @@
       "parade_date": "2014-08-29",
       "parade_date_text": "viernes 29 de agosto de 2014",
       "parade_date_source": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES» (fecha del evento: 29 de agosto de 2014); y batalladeflores.net, «Todo listo para la 105 edición de la Batalla de Flores»",
+      "parade_date_url": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=1247",
+      "parade_date_nota": "«29 de Agosto de 2014 | Alameda Miramar | 17:00 hrs.» — y en batalladeflores.net: «Un total de 16 carrozas participarán el próximo viernes, 29 de agosto, en la 105 edición de la Batalla de Flores» · Dos fuentes independientes; la de batalladeflores.net da además el día de la semana.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES» (fecha del evento: 29 de agosto de 2014); y batalladeflores.net, «Todo listo para la 105 edición de la Batalla de Flores»",
+          "enlace": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=1247"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2014",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2014.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 10,
       "float_page_count": 9,
@@ -146808,7 +147451,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el A5.º puesto de 2014 — «Artemis» y «Presumida». Son de GRUPOS DISTINTOS, así que no se pueden juntar sin más: o hubo empate o una de las dos atribuciones está equivocada. **Hace falta una fuente que lo aclare** —el acta del Ayuntamiento, un recorte de prensa o alguien que lo recuerde—: no se resuelve mirando los datos que ya tenemos. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2014,
         "url": "batalla_de_flores/fotos/carteles/cartel-2014.jpg",
@@ -146828,6 +147471,18 @@
       "parade_date": "2015-08-28",
       "parade_date_text": "viernes 28 de agosto de 2015",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa «Joyas Florales», 28 de agosto de 2015",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2133",
+      "parade_date_nota": "«Los cabezudos, charangas y peñas han despertado los ánimos desde tempranas horas de la mañana de este viernes, 28 de Agosto.» · La nota dice fecha y día de la semana; coincide con la ficha de agenda municipal (28 de agosto de 2015).",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa «Joyas Florales», 28 de agosto de 2015",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2133"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2015",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2015.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 6,
       "float_page_count": 5,
@@ -151274,7 +151929,7 @@
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el A1.º puesto de 2015 — «Extravagansa» y «Extravaganza». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2015,
         "url": "batalla_de_flores/fotos/carteles/cartel-2015.jpg",
@@ -151294,6 +151949,18 @@
       "parade_date": "2016-08-26",
       "parade_date_text": "viernes 26 de agosto de 2016",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa de 25 de agosto de 2016",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2559",
+      "parade_date_nota": "«Mañana, viernes 26 de agosto, Laredo celebra su fiesta grande: la Batalla de Flores de Laredo, declarada Fiesta de Interés Turístico Nacional.» · Nota de la víspera: dice fecha y día de la semana. La nota de resultados del día siguiente (26/08/2016) es coherente.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa de 25 de agosto de 2016",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2559"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2016",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2016.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 4,
       "float_page_count": 3,
@@ -154429,7 +155096,7 @@
         "Esto no puede ser: 2 carrozas figuran en el A2.º puesto de 2016 — «Alea Iacta Est» y «Alea Iacta Est (La suerte está echada)». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Esto no puede ser: 2 carrozas figuran en el B2.º puesto de 2016 — «Misterios» y «Misterios, S.A.». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2017,
@@ -154440,6 +155107,18 @@
       "parade_date": "2017-08-25",
       "parade_date_text": "viernes 25 de agosto de 2017",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa de 14 de agosto de 2017; y batalladeflores.net, convocatoria del Premio al Arte de la 108 edición",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=3009",
+      "parade_date_nota": "«108 EDICIÓN DE LA BATALLA DE FLORES DE LAREDO. 25 AGOSTO 2017» — y en batalladeflores.net: «108 EDICIÓN DE LA BATALLA DE FLORES. 25 DE AGOSTO DE 2017» · Dos fuentes independientes con la misma fecha. Ninguna dice el día de la semana. La nota de resultados es del propio 25/08/2017 y menciona la exposición de carrozas del sábado 26.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa de 14 de agosto de 2017; y batalladeflores.net, convocatoria del Premio al Arte de la 108 edición",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=3009"
+        },
+        {
+          "nombre": "Cartel anunciador de la Batalla de Flores de 2017",
+          "enlace": "batalla_de_flores/fotos/carteles/cartel-2017.jpg"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 8,
       "float_page_count": 6,
@@ -159842,7 +160521,7 @@
         "Esto no puede ser: 2 carrozas figuran en el B6.º puesto de 2017 — «PEQUEÑA NOBLEZA» y «Pequeña Nobleza». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
         "Mismo título, mismo año y mismo grupo en 2 fichas: «PEQUEÑA NOBLEZA» (B6) y «Pequeña Nobleza» (B6). Casi con seguridad son la misma carroza escrita de dos maneras. Sin decidir."
       ],
-      "fecha_fuera_de_costumbre": "",
+      "curiosidades": [],
       "cartel": {
         "anio": 2017,
         "url": "batalla_de_flores/fotos/carteles/cartel-2017.jpg",
@@ -159862,6 +160541,14 @@
       "parade_date": "2018-08-24",
       "parade_date_text": "viernes 24 de agosto de 2018",
       "parade_date_source": "Ayuntamiento de Laredo, nota de prensa de 15 de agosto de 2018; y ficha de agenda «BATALLA DE FLORES 2018» (fecha del evento: 24 de agosto de 2018)",
+      "parade_date_url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=3406",
+      "parade_date_nota": "«El programa de la 109 Edición de la Batalla de Flores de Laredo, que este año se celebrará el viernes, 24 de agosto, en el Circuito de la Alameda Miramar, a partir de las 17.30 h.» · EXCEPCIÓN AL PATRÓN: en 2018 el último viernes de agosto fue el 31, y sin embargo el desfile se celebró el 24. Dos fuentes municipales independientes lo dicen. Es la prueba de que el patrón no se puede usar para calcular. Segundo enlace: https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=2280",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, nota de prensa de 15 de agosto de 2018; y ficha de agenda «BATALLA DE FLORES 2018» (fecha del evento: 24 de agosto de 2018)",
+          "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=3406"
+        }
+      ],
       "archive_present": true,
       "archive_total_posts": 2,
       "float_page_count": 2,
@@ -162864,7 +163551,19 @@
       "documentadas": 15,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": "Esta edición no fue el último viernes de agosto: se celebró el 24 y el último viernes era el 31."
+      "curiosidades": [
+        {
+          "de_donde_sale": "la fecha del desfile",
+          "valor": "2018-08-24",
+          "fuentes": [
+            {
+              "nombre": "Ayuntamiento de Laredo, nota de prensa de 15 de agosto de 2018; y ficha de agenda «BATALLA DE FLORES 2018» (fecha del evento: 24 de agosto de 2018)",
+              "enlace": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=3406"
+            }
+          ],
+          "texto": "Fue viernes, pero no el último de agosto: se celebró el 24 y el último viernes era el 31. Aquel agosto tuvo 5 viernes."
+        }
+      ]
     },
     {
       "year": 2019,
@@ -162875,6 +163574,14 @@
       "parade_date": "2019-08-30",
       "parade_date_text": "viernes 30 de agosto de 2019",
       "parade_date_source": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES» (fecha del evento: 30 de agosto de 2019)",
+      "parade_date_url": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=2667",
+      "parade_date_nota": "«30 | Agosto | Viernes | BATALLA DE FLORES | LUGAR: Alameda Miramar | HORA: A Las 17:00 Hrs.» y, más abajo, «Jueves 29: LA NOCHE MÁGICA […] Viernes 30: DESFILE DE CARROZAS DE LA BATALLA DE FLORES» · La misma ficha distingue Noche Mágica (jueves 29) y desfile (viernes 30), así que no hay confusión posible entre ambos. OJO: la nota municipal de resultados de 2019 es del 3 de septiembre y habla del recuento («Tras la comprobación de las votaciones realizada ayer»), no del desfile.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES» (fecha del evento: 30 de agosto de 2019)",
+          "enlace": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=2667"
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -165179,7 +165886,7 @@
       "documentadas": 9,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2020,
@@ -165190,6 +165897,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -165207,7 +165917,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2021,
@@ -165218,6 +165928,9 @@
       "parade_date": null,
       "parade_date_text": null,
       "parade_date_source": null,
+      "parade_date_url": null,
+      "parade_date_nota": null,
+      "parade_date_sources": [],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -165235,7 +165948,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2022,
@@ -165246,6 +165959,14 @@
       "parade_date": "2022-08-26",
       "parade_date_text": "viernes 26 de agosto de 2022",
       "parade_date_source": "Ayuntamiento de Laredo, programa oficial «Batalla de Flores 2022 Laredo» (PDF), sección del programa de agosto",
+      "parade_date_url": "https://www.laredo.es/09/archivos/programa--batalla-flores-20221661254327.pdf",
+      "parade_date_nota": "«Viernes 26 — GRAN BATALLA DE FLORES. 111 EDICIÓN. Fiesta local. Fiesta de Interés Turístico Nacional. […] 17:30h GRAN DESFILE DE CARROZAS ENGALANADAS con miles de flores por el CIRCUITO DE MIRAMAR.» · El mismo programa sitúa la exposición de carrozas el sábado 27, lo que encaja. La nota municipal de resultados es del sábado 27/08/2022.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, programa oficial «Batalla de Flores 2022 Laredo» (PDF), sección del programa de agosto",
+          "enlace": "https://www.laredo.es/09/archivos/programa--batalla-flores-20221661254327.pdf"
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -167908,7 +168629,7 @@
       "notes_derivadas": [
         "Tenemos una foto titulada «Block creation» (B3.º, Grupo alegoria) y ninguna carroza de esta edición se llama así: puede ser una que nos falta o la misma con otro título."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2023,
@@ -167919,6 +168640,14 @@
       "parade_date": "2023-08-25",
       "parade_date_text": "viernes 25 de agosto de 2023",
       "parade_date_source": "Ayuntamiento de Laredo, ficha de agenda «NOCHE MÁGICA DE LAS FLORES» (fecha del evento: 24 de agosto de 2023)",
+      "parade_date_url": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3488",
+      "parade_date_nota": "«…las carrozas que participaran al día siguiente en el desfile de la BATALLA DE FLORES (25 de Agosto)» · La ficha es de la Noche Mágica (24 de agosto) pero nombra explícitamente la fecha del desfile del día siguiente. Coherente con la ficha de exposición de carrozas del 26 de agosto y con la nota de resultados del 25/08/2023.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, ficha de agenda «NOCHE MÁGICA DE LAS FLORES» (fecha del evento: 24 de agosto de 2023)",
+          "enlace": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3488"
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -170667,7 +171396,7 @@
       "documentadas": 12,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2024,
@@ -170678,6 +171407,14 @@
       "parade_date": "2024-08-30",
       "parade_date_text": "viernes 30 de agosto de 2024",
       "parade_date_source": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES 2024 (FIESTA LOCAL)»; y ficha «SEMANA GRANDE DE LA BATALLA DE FLORES»",
+      "parade_date_url": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3211",
+      "parade_date_nota": "«VIERNES 30 DE AGOSTO, FIESTA LOCAL» — y en la ficha de la Semana Grande: «Del 26 de agosto al 1 de septiembre, Laredo celebrará la SEMANA GRANDE, con un amplio programa de actividades, que tiene como día grande la BATALLA DE FLORES (30 de agosto)» · Dos fichas municipales coinciden. Lo corrobora la agencia EFE (Infobae, 30/08/2024): «ha arrasado este viernes en la Batalla de Flores». Segundo enlace: https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3698",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES 2024 (FIESTA LOCAL)»; y ficha «SEMANA GRANDE DE LA BATALLA DE FLORES»",
+          "enlace": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3211"
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -173880,7 +174617,7 @@
       "notes_derivadas": [
         "Tenemos una foto de «Tweety» sin colgar: la carroza está en el palmarés, pero las fuentes no coinciden en el grupo («Grupo pejino» en la foto, «Spartans» en el archivo). Está pendiente de confirmar."
       ],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2025,
@@ -173891,6 +174628,14 @@
       "parade_date": "2025-08-29",
       "parade_date_text": "viernes 29 de agosto de 2025",
       "parade_date_source": "Ayuntamiento de Laredo, ficha de agenda «114 EDICIÓN BATALLA DE FLORES»",
+      "parade_date_url": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3796",
+      "parade_date_nota": "«Un total de 11 carrozas participarán en la 114ª edición de la Batalla de Flores, que se celebrará el viernes 29 de agosto de 2025.» · OJO: la nota municipal de balance es del 1 de septiembre de 2025 y dice «Laredo cerró ayer la segunda Semana Grande de su historia»: esa fecha NO es la del desfile.",
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, ficha de agenda «114 EDICIÓN BATALLA DE FLORES»",
+          "enlace": "https://www.laredo.es/09/agenda_ampliada.php?id_Agenda=3796"
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -176593,7 +177338,7 @@
       "documentadas": 11,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     },
     {
       "year": 2026,
@@ -176603,7 +177348,19 @@
       "coverage": "official_partial",
       "parade_date": "2026-08-28",
       "parade_date_text": "viernes 28 de agosto de 2026",
-      "parade_date_source": "Ayuntamiento de Laredo, agenda de la Noche Mágica — lo confirma además: Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES (DESFILE DE CARROZAS)»",
+      "parade_date_source": "Ayuntamiento de Laredo, agenda de la Noche Mágica",
+      "parade_date_url": "https://www.laredo.es/",
+      "parade_date_nota": null,
+      "parade_date_sources": [
+        {
+          "nombre": "Ayuntamiento de Laredo, agenda de la Noche Mágica",
+          "enlace": "https://www.laredo.es/"
+        },
+        {
+          "nombre": "Ayuntamiento de Laredo, ficha de agenda «BATALLA DE FLORES (DESFILE DE CARROZAS)»",
+          "enlace": null
+        }
+      ],
       "archive_present": false,
       "archive_total_posts": 0,
       "float_page_count": 0,
@@ -176624,7 +177381,7 @@
       "result_count": 0,
       "desfilaron": null,
       "notes_derivadas": [],
-      "fecha_fuera_de_costumbre": ""
+      "curiosidades": []
     }
   ],
   "groups": [
@@ -180295,7 +181052,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.39.0",
+  "version": "2.43.1",
   "about": {
     "url": "https://labatallaendatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -180313,7 +181070,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-26 00:50",
+  "built_at": "2026-08-26 01:15",
   "map_features": [
     {
       "id": "route_origin_1908",

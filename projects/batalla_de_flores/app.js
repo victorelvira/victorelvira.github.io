@@ -115,6 +115,16 @@ const TIERS = [
   ["tier-none", "Sin datos"],
 ];
 
+/* El mismo estado, dicho corto. La rejilla tiene celdas de 60 px y la ficha una
+ * línea entera: no cabe lo mismo en las dos, y forzarlo desigualaba la rejilla.
+ * Coincide a propósito con los nombres de la leyenda que hay justo debajo. */
+const ESTADO_CORTO = {
+  not_held: "Sin datos",
+  unknown: "Sin datos",
+  cancelled: "Cancelada",
+  planned: "Prevista",
+};
+
 function coverageTier(edition) {
   // La proxima edicion no es un hueco documental: no ha pasado todavia. Va en
   // naranja para que no se confunda con las canceladas ni con las vacias.
@@ -410,7 +420,16 @@ function renderYearGrid() {
                     type="button" data-year="${edition.year}"
                     title="${esc(edition.edition_label || edition.year)} · ${esc(COVERAGE_LABEL[edition.coverage] || "")}">
               <span class="year-num">${edition.year}</span>
-              <span class="year-meta">${count ? `${count} carroza${count === 1 ? "" : "s"}` : STATUS_LABEL[edition.status] || "–"}</span>
+              <span class="year-meta">${count
+                ? `${count} carroza${count === 1 ? "" : "s"}`
+                // En la rejilla, la etiqueta corta. «Hueco documental» son
+                // dieciséis caracteres contra los diez de «5 carrozas», y esa
+                // celda salía visiblemente más ancha que sus vecinas, dejando la
+                // rejilla desigual. Además la leyenda de abajo ya lo llamaba
+                // «Sin datos»: eran dos nombres para lo mismo en la misma
+                // pantalla. El nombre largo sigue en la ficha, que es donde hay
+                // sitio para explicarse.
+                : (ESTADO_CORTO[edition.status] || STATUS_LABEL[edition.status] || "–")}</span>
               <span class="year-bar"></span>
             </button>`;
         }).join("")}
@@ -2750,8 +2769,27 @@ function provenanceBlock(entries, sources, edition) {
     <div class="provenance">
       <b>De dónde sale cada dato</b>
       <ul class="prov-list">
-        ${edition?.parade_date_text ? `<li><b>La fecha del desfile:</b>
-          ${esc(edition.parade_date_text)}, según ${esc(edition.parade_date_source || "sin fuente registrada")}.</li>` : ""}
+        ${edition?.parade_date_text ? (() => {
+          // Cuántas fuentes lo sostienen, y CADA UNA con su enlace.
+          //
+          // Antes decía «según X» con un solo nombre, aunque hubiera dos: la
+          // segunda fuente se perdía en la ficha igual que se perdía en el libro
+          // mayor. Y la corroboración es el dato más valioso del archivo —el 81%
+          // viene de un solo sitio—, así que esconderla era esconder lo bueno.
+          const fuentes = edition.parade_date_sources && edition.parade_date_sources.length
+            ? edition.parade_date_sources
+            : [{ nombre: edition.parade_date_source || "sin origen registrado",
+                 enlace: edition.parade_date_url }];
+          const lista = fuentes.map(f => `<li>${esc(f.nombre)}${f.enlace
+            ? ` <a href="${esc(f.enlace)}" target="_blank" rel="noopener">↗</a>` : ""}</li>`).join("");
+          const cuantas = fuentes.length === 1
+            ? "Lo dice una fuente"
+            : `Lo confirman <b>${fuentes.length} fuentes independientes</b>`;
+          const cita = edition.parade_date_nota
+            ? `<div class="prov-cita">${esc(edition.parade_date_nota)}</div>` : "";
+          return `<li><b>La fecha del desfile:</b> ${esc(edition.parade_date_text)}.
+            ${cuantas}:<ul class="prov-fuentes">${lista}</ul>${cita}</li>`;
+        })() : ""}
         ${edition?.cartel ? `<li><b>El cartel:</b> procede de
           ${esc(edition.cartel.origen)} —
           <a href="${esc(edition.cartel.original)}" target="_blank" rel="noopener">el
@@ -2785,16 +2823,24 @@ function provenanceBlock(entries, sources, edition) {
           en esta edición. Están marcadas con <span class="review-mark">?</span> en la tabla.</li>` : ""}
         ${huecos.length ? `<li class="prov-warn"><b>Lo que falta:</b> ${esc(huecos[0])}</li>` : ""}`}
       </ul>
-      ${codes.size ? `<p class="codes">${[...codes.entries()]
-        .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>` : ""}
+      ${/* Aquí NO va la leyenda de códigos. Este bloque escribe las fuentes con
+            su nombre entero —«Resultado oficial», «Fotos cedidas por Santi
+            Fernández»—, así que explicar que OFI significa «Resultado oficial»
+            es explicar una abreviatura que no aparece en ninguna parte. La
+            leyenda vive donde se usan los códigos: debajo de la tabla del
+            palmarés, en cuya columna FUENTES sí salen. */ ""}
       ${sources.length ? `<ul class="plain prov-urls">${sources.map(url => {
         // Un enlace a un .jpg de prensa no se explica solo: se etiqueta.
         const etiqueta = /\.jpe?g$/i.test(url) ? "📰 Ver el recorte de prensa original"
           : url.includes("revista-de-prensa") ? "Página de revista de prensa"
           : url.includes("laredo.es") ? "Nota del Ayuntamiento"
           : "Archivo de batalladeflores.net";
-        return `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(etiqueta)}</a>
-          <small>${esc(url)}</small></li>`;
+        // Sin repetir la URL debajo en texto plano: el enlace ya la lleva, y
+        // verla escrita entera no añade nada salvo ruido y una línea que se
+        // parte por la mitad en el móvil. Se deja en el `title` para quien
+        // quiera saber a dónde va antes de pulsar.
+        return `<li><a href="${esc(url)}" target="_blank" rel="noopener"
+          title="${esc(url)}">${esc(etiqueta)} ↗</a></li>`;
       }).join("")}</ul>`
         : '<p style="margin:6px 0 0">Sin URL de fuente asociada.</p>'}
     </div>`;
@@ -2929,11 +2975,6 @@ function renderEditionDetail(edition) {
       </span>
     </div>
     ${navEdicion}
-    ${edition.fecha_fuera_de_costumbre
-      // Solo sale cuando la edición se sale de la costumbre. Las 23 que caen en
-      // el último viernes de agosto no dicen nada: contarlo en todas sería
-      // ruido, y el interés está justo en las tres que no.
-      ? `<p class="fecha-rara">📅 ${esc(edition.fecha_fuera_de_costumbre)}</p>` : ""}
     <div class="chips">
       ${edition.status !== "published"
         ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
@@ -3034,6 +3075,18 @@ function renderEditionDetail(edition) {
       ${renderRouteMap(route.id, { variant: "thumbstrip" })}` : ""}
 
     ${photoThanks(entries)}
+
+    ${(edition.curiosidades || []).length ? `
+      <h3 class="section">Curiosidades</h3>
+      <ul class="curiosidades">
+        ${edition.curiosidades.map(c => `<li>
+          ${esc(c.texto)}
+          <small>Se deduce de ${esc(c.de_donde_sale)}, que afirman
+          ${joinEs((c.fuentes || []).map(f => f.enlace
+            ? `<a href="${esc(f.enlace)}" target="_blank" rel="noopener">${esc(f.nombre)} ↗</a>`
+            : esc(f.nombre))) || "fuentes sin registrar"}.</small>
+        </li>`).join("")}
+      </ul>` : ""}
 
     ${pendingForYear(edition.year)}
 
