@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.47.0">
+  <link rel="stylesheet" href="atlas/style.css?v=0.48.2">
 </head>
 <body>
   <nav id="navbar">
@@ -57,6 +57,7 @@
       <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
       <button type="button" id="v-game" class="view-btn" title="Guess the painting — a multiple-choice quiz">🎮 Game</button>
       <button type="button" id="v-chart" class="view-btn" title="Every painter's output across the years">📈 Timeline</button>
+      <button type="button" id="v-galaxy" class="view-btn" title="Paintings arranged by visual similarity (AI)">🌌 Similar</button>
     </span>
     <span id="mapopts" title="What the map plots">
       <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
@@ -64,6 +65,7 @@
     </span>
     <input id="filter" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off"
            title="Filters every view: map, list and table">
+    <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
   </div>
 
   <div id="timeline">
@@ -132,6 +134,7 @@
         <button type="button" class="gbtn" data-diff="medium">Medium</button>
         <button type="button" class="gbtn" data-diff="hard">Hard</button>
       </span>
+      <input id="game-fig" type="range" min="22" max="62" value="46" title="Painting size — shrink it so everything fits on a phone">
       <span id="game-score" class="g-score"></span>
       <span id="game-records" class="g-records" title="Your streak, best streak, and % correct today and all-time (saved on this device)"></span>
       <button type="button" id="game-restart" class="gbtn" title="Reset this session's score (records are kept)">↺ Session</button>
@@ -154,6 +157,13 @@
       <span id="chart-legend" class="chart-legend">Each dot = a year · bigger = more works</span>
     </div>
     <div id="chart-scroll"></div>
+  </section>
+
+  <section id="galaxyview" hidden>
+    <div id="galaxy-bar">
+      <span class="chart-legend">Paintings placed by <b>visual similarity</b> (CLIP AI) — nearby = alike in style/subject. Preview on <b id="galaxy-n">…</b> works · scroll / pinch to zoom · drag to pan · double-click to reset · click a work to open it.</span>
+    </div>
+    <div id="galaxy-scroll"><div id="galaxy-plane"></div></div>
   </section>
 
   <div id="sheet" hidden>
@@ -208,7 +218,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.47.0"></script>
+  <script src="atlas/app.js?v=0.48.2"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

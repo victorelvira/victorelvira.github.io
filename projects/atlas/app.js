@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.47.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 00:22";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.48.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 11:02";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -158,11 +158,12 @@ const PALETTE = [
   "#a03f6a", "#3f6a3f", "#6a3f3f", "#3f3f6a", "#6a6a2f", "#2f6a6a", "#8f7a5a", "#5a5a8f",
   "#b0692f", "#2f8fb0", "#7a9c3f", "#9c3f7a", "#3f9c7a", "#9c6a3f", "#5f3f9c", "#3f7a9c",
   "#6a8f4a", "#b0417a", "#417a8f", "#8f6a41", "#7a41b0", "#41a06a", "#a0552f", "#4a6a8f",
-  "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a", "#c9a227",
+  "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a", "#5a8f7b",
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
 const painterColors = Object.fromEntries(PAINTERS.map((p, i) => [p.name, PALETTE[i % PALETTE.length]]));
+painterColors["Gustav Klimt"] = "#c9a227";   // Klimt gold — explicit so palette insertion order can't steal it
 function colorFor(name) { return painterColors[name] || MULTI_COLOR; }
 
 // a {colour: count} map → a CSS background: solid for one painter, a pie (conic-gradient) for several
@@ -1036,6 +1037,7 @@ function renderWorksGallery() {
 function setTableView(on) {
   if (typeof setGameView === "function") setGameView(false);   // leaving/entering table exits the game
   if (typeof setChartView === "function") setChartView(false); // …and the timeline
+  if (typeof setGalaxyView === "function") setGalaxyView(false); // …and the similarity galaxy
   view.table = on;
   if (on) {                                   // always land on the Works tab
     tableMode = "works";
@@ -1369,6 +1371,25 @@ document.addEventListener("click", e => {
 // ── work "ficha": the full record for one painting (image + facts + links) ──
 const workCard = document.getElementById("work-card");
 let wcWork = null;
+// "Visually similar" — CLIP nearest-neighbour QIDs, precomputed in atlas/data/sim_neighbors.json
+let simNeighbors = null;
+async function loadSimNeighbors() {
+  if (simNeighbors) return simNeighbors;
+  try { simNeighbors = await (await fetch("atlas/data/sim_neighbors.json?v=" + DATA_V)).json(); }
+  catch (e) { simNeighbors = {}; }
+  return simNeighbors;
+}
+async function renderSimilar(qid) {
+  if (!qid) return;
+  const nb = await loadSimNeighbors(); const ids = nb[qid];
+  const host = document.getElementById("wc-similar");
+  if (!host || !ids || !ids.length) return;
+  const byQid = new Map(); for (const x of works) if (x.p.qid) byQid.set(x.p.qid, x);
+  const items = ids.map(id => byQid.get(id)).filter(x => x && x.p.image).slice(0, 6);
+  if (!items.length) return;
+  host.innerHTML = `<div class="wc-sim-h">Visually similar</div><div class="wc-sim-row">` +
+    items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
+}
 function openWorkCard(w) {
   if (!w) return;
   wcWork = w;
@@ -1390,8 +1411,10 @@ function openWorkCard(w) {
     (links ? `<div class="wc-links">${links}</div>` : "") +
     `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button>` +
     `<button type="button" class="wc-map">📍 On the map</button>` +
-    `<span class="wc-hint">or just copy the address bar</span></div></div>`;
+    `<span class="wc-hint">or just copy the address bar</span></div>` +
+    `<div class="wc-similar" id="wc-similar"></div></div>`;
   workCard.hidden = false;
+  renderSimilar(p.qid);   // "visually similar" (CLIP neighbours) — fills in async when available
   // reflect the open painting in the address bar → copying the URL shares this exact work
   if (p.qid) history.replaceState(null, "", location.pathname + "?w=" + p.qid + location.hash);
 }
@@ -1417,6 +1440,8 @@ function flyToWork(w) {
 workCard.addEventListener("click", e => {
   if (e.target.closest(".wc-share") && wcWork) { shareWork(wcWork.p); return; }
   if (e.target.closest(".wc-map") && wcWork) { const w = wcWork; closeWorkCard(); flyToWork(w); return; }
+  const sim = e.target.closest(".wc-sim");
+  if (sim) { const x = works.find(y => y.p.qid === sim.dataset.qid); if (x) openWorkCard(x); return; }  // hop to a similar work
   if (e.target === workCard) closeWorkCard();
 });
 
@@ -1569,6 +1594,15 @@ const GAME_SLUG_OF_NAME = Object.fromEntries(PAINTERS.map(p => [p.name, p.slug])
 const gSlugOf = p => GAME_SLUG_OF_NAME[p.painter];
 const G_NOPTS = { easy: 3, medium: 3, hard: 5 };   // Hard shows 5 choices instead of 3
 const G = { diff: "easy", mode: "mixed", right: 0, total: 0, q: null, answered: false };
+// each difficulty keeps its OWN in-progress game (score + pending question) so switching level and
+// back can't re-roll an unanswered question to dodge it (Lorena). Only answering or Reset moves on.
+const gStash = { easy: null, medium: null, hard: null };
+function gSaveLevel(d) { gStash[d] = { right: G.right, total: G.total, q: G.q, answered: G.answered, streak: gStreak }; }
+function gLoadLevel(d) {
+  const s = gStash[d];
+  if (s) { G.right = s.right; G.total = s.total; G.q = s.q; G.answered = s.answered; gStreak = s.streak; }
+  else { G.right = 0; G.total = 0; G.q = null; G.answered = false; gStreak = 0; }
+}
 
 function gShuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function gPick(a) { return a[Math.floor(Math.random() * a.length)]; }
@@ -1736,6 +1770,7 @@ function setGameView(on) {
   document.getElementById("v-game").classList.toggle("active", on);
   if (on) {
     if (typeof setChartView === "function") setChartView(false);   // game and timeline are exclusive
+    if (typeof setGalaxyView === "function") setGalaxyView(false);
     view.table = false; view.map = false;
     document.getElementById("table").hidden = true;
     document.getElementById("main").hidden = true;
@@ -1756,10 +1791,13 @@ function setGameView(on) {
     gNewQuestion();
   });
   document.getElementById("game-diff").addEventListener("click", e => {
-    const b = e.target.closest("[data-diff]"); if (!b) return;
+    const b = e.target.closest("[data-diff]"); if (!b || b.dataset.diff === G.diff) return;
+    gSaveLevel(G.diff);                     // stash the current level's game (incl. any pending question)
     G.diff = b.dataset.diff; g.querySelectorAll("#game-diff .gbtn").forEach(x => x.classList.toggle("active", x === b));
-    G.right = 0; G.total = 0; gStreak = 0;   // each difficulty is its own run + its own record
-    gScore(); gNewQuestion();
+    gLoadLevel(G.diff);                     // resume the target level where you left it
+    gScore();
+    if (!G.q || G.answered) gNewQuestion();  // fresh question only if none pending / already answered
+    else gRender();                          // otherwise restore the unanswered question — no dodging
   });
   document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gStreak = 0; gScore(); gNewQuestion(); });
   document.getElementById("game-reset-all").addEventListener("click", () => {
@@ -1859,10 +1897,11 @@ function setChartView(on) {
   document.body.classList.toggle("show-chart", on);
   document.getElementById("v-chart").classList.toggle("active", on);
   if (on) {
+    if (typeof setGalaxyView === "function") setGalaxyView(false);
     view.table = false; view.map = false;
     for (const id of ["table", "main", "game"]) document.getElementById(id).hidden = true;
     document.getElementById("mapopts").hidden = true;
-    document.body.classList.remove("show-game", "show-table");
+    document.body.classList.remove("show-game", "show-table", "show-galaxy");
     for (const id of ["v-table", "v-mapview", "v-game"]) document.getElementById(id).classList.remove("active");
     renderChart();
   }
@@ -1912,4 +1951,97 @@ function setChartView(on) {
     tip.style.left = Math.max(6, x) + "px"; tip.style.top = Math.max(6, y) + "px";
   });
   host.addEventListener("mouseleave", () => { tip.hidden = true; });
+})();
+
+// ══ Similarity "galaxy": paintings laid out in 2-D by CLIP visual similarity (precomputed) ═══════
+let galaxyCoords = null, galaxyDrawn = false;
+async function renderGalaxy() {
+  const plane = document.getElementById("galaxy-plane"); if (!plane) return;
+  if (!galaxyCoords) {
+    try { galaxyCoords = await (await fetch("atlas/data/sim_coords.json?v=" + DATA_V)).json(); }
+    catch (e) { plane.innerHTML = `<div class="g-empty" style="padding:40px">Similarity map not built yet.</div>`; return; }
+  }
+  if (galaxyDrawn) return;
+  const byQid = new Map(); for (const w of works) if (w.p.qid) byQid.set(w.p.qid, w);
+  const S = 1800, PAD = 46;
+  plane.style.width = (S + PAD * 2) + "px"; plane.style.height = (S + PAD * 2) + "px";
+  let html = "", n = 0;
+  for (const [qid, xy] of Object.entries(galaxyCoords)) {
+    const w = byQid.get(qid); if (!w || !w.p.image) continue;
+    const x = (PAD + xy[0] / 1000 * S).toFixed(0), y = (PAD + xy[1] / 1000 * S).toFixed(0);
+    html += `<div class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px" title="${esc((w.p.painter || "") + " — " + (w.p.title || ""))}"><img src="${esc(w.p.image)}" alt="" loading="lazy"></div>`;
+    n++;
+  }
+  plane.innerHTML = html; galaxyDrawn = true;
+  document.getElementById("galaxy-n").textContent = n;
+  if (window._galaxyFit) requestAnimationFrame(window._galaxyFit);
+}
+function setGalaxyView(on) {
+  const sec = document.getElementById("galaxyview"); if (!sec) return;
+  sec.hidden = !on;
+  document.body.classList.toggle("show-galaxy", on);
+  document.getElementById("v-galaxy").classList.toggle("active", on);
+  if (on) {
+    view.table = false; view.map = false;
+    for (const id of ["table", "main", "game", "chartview"]) document.getElementById(id).hidden = true;
+    document.getElementById("mapopts").hidden = true;
+    document.body.classList.remove("show-game", "show-table", "show-chart");
+    for (const id of ["v-table", "v-mapview", "v-game", "v-chart"]) document.getElementById(id).classList.remove("active");
+    renderGalaxy();
+    if (window._galaxyFit) setTimeout(window._galaxyFit, 50);
+  }
+}
+(function wireGalaxy() {
+  const el = document.getElementById("v-galaxy"); if (!el) return;
+  el.addEventListener("click", () => setGalaxyView(true));
+  document.getElementById("galaxy-plane").addEventListener("click", e => {
+    const d = e.target.closest(".gx-dot"); if (!d) return;
+    const w = works.find(x => x.p.qid === d.dataset.qid); if (w) openWorkCard(w);
+  });
+})();
+
+// ── collapse the top bars + game painting-size slider (mobile room, Víctor) ──
+(function () {
+  const btn = document.getElementById("chrome-toggle");
+  if (btn) btn.addEventListener("click", () => {
+    const on = document.body.classList.toggle("chrome-collapsed");
+    btn.textContent = on ? "⌄" : "⌃";
+    btn.title = on ? "Show the top bars" : "Collapse the top bars for more room";
+    if (typeof map !== "undefined") setTimeout(() => map.invalidateSize(), 60);
+  });
+  const fig = document.getElementById("game-fig");
+  if (fig) fig.addEventListener("input", () => document.documentElement.style.setProperty("--game-fig", fig.value + "vh"));
+})();
+
+// ── Galaxy pan/zoom: wheel + drag (PC), pinch (touch), double-click to re-fit ──
+(function () {
+  const scroll = document.getElementById("galaxy-scroll"), plane = document.getElementById("galaxy-plane");
+  if (!scroll || !plane) return;
+  let scale = 1, tx = 0, ty = 0;
+  const clamp = s => Math.max(0.2, Math.min(9, s));
+  const apply = () => { plane.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${scale.toFixed(3)})`; };
+  function zoomAt(px, py, f) { const ns = clamp(scale * f); tx = px - (px - tx) * (ns / scale); ty = py - (py - ty) * (ns / scale); scale = ns; apply(); }
+  scroll.addEventListener("wheel", e => { e.preventDefault(); const r = scroll.getBoundingClientRect(); zoomAt(e.clientX - r.left, e.clientY - r.top, Math.exp(-e.deltaY * 0.0016)); }, { passive: false });
+  const P = new Map(); let moved = false, pdist = 0;
+  const list = () => [...P.values()];
+  const dist = () => { const a = list(); return Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y); };
+  const mid = () => { const a = list(), r = scroll.getBoundingClientRect(); return [(a[0].x + a[1].x) / 2 - r.left, (a[0].y + a[1].y) / 2 - r.top]; };
+  scroll.addEventListener("pointerdown", e => { scroll.setPointerCapture(e.pointerId); P.set(e.pointerId, { x: e.clientX, y: e.clientY }); moved = false; if (P.size === 2) pdist = dist(); scroll.style.cursor = "grabbing"; });
+  scroll.addEventListener("pointermove", e => {
+    const p = P.get(e.pointerId); if (!p) return;
+    const dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+    if (P.size === 1) { tx += dx; ty += dy; if (Math.abs(dx) + Math.abs(dy) > 2) moved = true; apply(); }
+    else if (P.size === 2) { const nd = dist(), [mx, my] = mid(); if (pdist) zoomAt(mx, my, nd / pdist); pdist = nd; moved = true; }
+  });
+  const up = e => { P.delete(e.pointerId); if (P.size < 2) pdist = 0; if (!P.size) scroll.style.cursor = "grab"; };
+  scroll.addEventListener("pointerup", up); scroll.addEventListener("pointercancel", up);
+  plane.addEventListener("click", e => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);   // don't open a ficha after a drag
+  scroll.addEventListener("dblclick", () => window._galaxyFit && window._galaxyFit());
+  window._galaxyFit = (tries = 0) => {
+    const r = scroll.getBoundingClientRect(), pw = plane.offsetWidth || 1892;
+    if ((!pw || !r.width || !r.height) && tries < 12) { setTimeout(() => window._galaxyFit(tries + 1), 90); return; }
+    if (!pw || !r.width) return;
+    scale = clamp(Math.min(r.width, r.height) / pw * 0.92);
+    tx = (r.width - pw * scale) / 2; ty = (r.height - pw * scale) / 2; apply();
+  };
 })();
