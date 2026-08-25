@@ -756,10 +756,22 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 #galaxy-bar { padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--bar); }
 #galaxy-scroll { flex: 1; overflow: hidden; position: relative; cursor: grab; touch-action: none; }
 #galaxy-plane { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
-.gx-dot { position: absolute; width: 40px; height: 40px; transform: translate(-50%, -50%); border-radius: 4px;
-  overflow: hidden; border: 1px solid rgba(0,0,0,.15); background: #efe9df; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,.25); }
-.gx-dot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gx-dot:hover { transform: translate(-50%, -50%) scale(2.6); z-index: 60; box-shadow: 0 6px 20px rgba(0,0,0,.4); border-color: #fff; }
+.gx-dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%);
+  cursor: pointer; box-shadow: 0 0 0 .5px rgba(0,0,0,.22); }
+.gx-dot:hover { transform: translate(-50%, -50%) scale(2.1); z-index: 20; box-shadow: 0 0 0 2px #fff, 0 2px 8px rgba(0,0,0,.4); }
+/* hover card: the painting itself, loaded only on demand */
+#gx-tip { position: fixed; z-index: 3000; pointer-events: none; width: 220px; background: #fff;
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: 0 6px 22px rgba(0,0,0,.3); }
+#gx-tip[hidden] { display: none; }
+#gx-tip img { width: 100%; height: 150px; object-fit: cover; display: block; background: #efe9df; }
+#gx-tip .gt-b { padding: 8px 11px; font-size: 12.5px; line-height: 1.35; }
+#gx-tip .gt-b b { font-size: 13px; }
+#gx-tip .gt-w { color: var(--muted); font-size: 11.5px; margin-top: 2px; }
+/* facet legend in the galaxy bar */
+.galaxy-legend { display: inline-flex; flex-wrap: wrap; gap: 3px 11px; align-items: center; }
+.gl-chip { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
+.gl-chip i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.gl-note { font-size: 11px; color: var(--muted); font-style: italic; }
 body.show-galaxy #timeline, body.show-galaxy #filter, body.show-galaxy #mapopts,
 body.show-galaxy #painters, body.show-galaxy .filters, body.show-galaxy .stats { display: none; }
 

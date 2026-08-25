@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.48.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 11:02";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.48.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 11:16";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1954,26 +1954,47 @@ function setChartView(on) {
 })();
 
 // ══ Similarity "galaxy": paintings laid out in 2-D by CLIP visual similarity (precomputed) ═══════
-let galaxyCoords = null, galaxyDrawn = false;
-async function renderGalaxy() {
+let galaxyCoords = null, galaxyByQid = null, galaxyColorBy = "school";
+const CLUSTER_PALETTE = ["#c0392b", "#2a4d8f", "#2e7d5b", "#c8a24a", "#7b3fb0", "#e07b39", "#3a8fb0", "#a0518f", "#6a8f2a", "#8a5a3a", "#d04a7a", "#4aa0a0"];
+let _eraIdx = null, _schoolIdx = null;
+function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals whether it clusters
+  if (galaxyColorBy === "author") return colorFor(w.p.painter);
+  if (!_eraIdx) { _eraIdx = Object.fromEntries(ERAS.map((g, i) => [g.key, i])); _schoolIdx = Object.fromEntries(SCHOOLS.map((g, i) => [g.key, i])); }
+  const slug = GAME_SLUG_OF_NAME[w.p.painter];
+  const key = galaxyColorBy === "period" ? erasOf(slug)[0] : schoolsOf(slug)[0];
+  const idx = galaxyColorBy === "period" ? _eraIdx[key] : _schoolIdx[key];
+  return idx != null ? CLUSTER_PALETTE[idx % CLUSTER_PALETTE.length] : "#bbb";
+}
+function galaxyLegend() {
+  const host = document.getElementById("galaxy-legend"); if (!host) return;
+  if (galaxyColorBy === "author") { host.innerHTML = `<span class="gl-note">coloured by painter</span>`; return; }
+  const defs = galaxyColorBy === "period" ? ERAS : SCHOOLS;
+  host.innerHTML = defs.map((g, i) => `<span class="gl-chip"><i style="background:${CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]}"></i>${esc(g.label)}</span>`).join("");
+}
+function renderGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane) return;
   if (!galaxyCoords) {
-    try { galaxyCoords = await (await fetch("atlas/data/sim_coords.json?v=" + DATA_V)).json(); }
-    catch (e) { plane.innerHTML = `<div class="g-empty" style="padding:40px">Similarity map not built yet.</div>`; return; }
+    fetch("atlas/data/sim_coords.json?v=" + DATA_V).then(r => r.json()).then(c => { galaxyCoords = c; drawGalaxy(); })
+      .catch(() => { plane.innerHTML = `<div class="g-empty" style="padding:40px">Similarity map not built yet.</div>`; });
+    return;
   }
-  if (galaxyDrawn) return;
-  const byQid = new Map(); for (const w of works) if (w.p.qid) byQid.set(w.p.qid, w);
+  drawGalaxy();
+}
+function drawGalaxy() {
+  const plane = document.getElementById("galaxy-plane"); if (!plane || !galaxyCoords) return;
+  if (!galaxyByQid) { galaxyByQid = new Map(); for (const w of works) if (w.p.qid) galaxyByQid.set(w.p.qid, w); }
   const S = 1800, PAD = 46;
   plane.style.width = (S + PAD * 2) + "px"; plane.style.height = (S + PAD * 2) + "px";
   let html = "", n = 0;
   for (const [qid, xy] of Object.entries(galaxyCoords)) {
-    const w = byQid.get(qid); if (!w || !w.p.image) continue;
+    const w = galaxyByQid.get(qid); if (!w) continue;
     const x = (PAD + xy[0] / 1000 * S).toFixed(0), y = (PAD + xy[1] / 1000 * S).toFixed(0);
-    html += `<div class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px" title="${esc((w.p.painter || "") + " — " + (w.p.title || ""))}"><img src="${esc(w.p.image)}" alt="" loading="lazy"></div>`;
+    html += `<i class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px;background:${galaxyColorOf(w)}"></i>`;
     n++;
   }
-  plane.innerHTML = html; galaxyDrawn = true;
+  plane.innerHTML = html;
   document.getElementById("galaxy-n").textContent = n;
+  galaxyLegend();
   if (window._galaxyFit) requestAnimationFrame(window._galaxyFit);
 }
 function setGalaxyView(on) {
@@ -1994,10 +2015,37 @@ function setGalaxyView(on) {
 (function wireGalaxy() {
   const el = document.getElementById("v-galaxy"); if (!el) return;
   el.addEventListener("click", () => setGalaxyView(true));
-  document.getElementById("galaxy-plane").addEventListener("click", e => {
+  const plane = document.getElementById("galaxy-plane");
+  document.getElementById("galaxy-colorby").addEventListener("click", e => {
+    const b = e.target.closest("[data-cb]"); if (!b) return;
+    galaxyColorBy = b.dataset.cb;
+    document.querySelectorAll("#galaxy-colorby .gbtn").forEach(x => x.classList.toggle("active", x === b));
+    if (galaxyCoords) drawGalaxy();
+  });
+  plane.addEventListener("click", e => {
     const d = e.target.closest(".gx-dot"); if (!d) return;
     const w = works.find(x => x.p.qid === d.dataset.qid); if (w) openWorkCard(w);
   });
+  // hover a dot → show the painting + facts (one thumbnail loaded on demand, keeps the galaxy light)
+  const tip = document.createElement("div"); tip.id = "gx-tip"; tip.hidden = true; document.body.appendChild(tip);
+  plane.addEventListener("mousemove", e => {
+    const d = e.target.closest(".gx-dot");
+    if (!d) { tip.hidden = true; tip.dataset.qid = ""; return; }
+    const w = galaxyByQid && galaxyByQid.get(d.dataset.qid); if (!w) return;
+    const p = w.p;
+    if (tip.dataset.qid !== d.dataset.qid) {
+      tip.dataset.qid = d.dataset.qid;
+      tip.innerHTML = `<img src="${esc(p.image)}" alt="" onerror="this.remove()"><div class="gt-b"><b>${esc(p.painter || "")}</b>` +
+        `<div>${esc(p.title || "Untitled")}${p.year ? " · " + esc(p.year) : ""}</div>` +
+        `<div class="gt-w">${esc([p.location, p.city].filter(Boolean).join(", "))}</div></div>`;
+    }
+    tip.hidden = false;
+    let x = e.clientX + 16, y = e.clientY + 16;
+    if (x + 230 > innerWidth) x = e.clientX - 16 - 230;
+    if (y + 210 > innerHeight) y = e.clientY - 16 - 210;
+    tip.style.left = Math.max(6, x) + "px"; tip.style.top = Math.max(6, y) + "px";
+  });
+  plane.addEventListener("mouseleave", () => { tip.hidden = true; tip.dataset.qid = ""; });
 })();
 
 // ── collapse the top bars + game painting-size slider (mobile room, Víctor) ──
