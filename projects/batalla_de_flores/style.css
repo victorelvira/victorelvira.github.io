@@ -1330,7 +1330,13 @@ body.lb-abierto { overflow: hidden; }
 }
 .noche-magica[hidden] { display: none; }
 .nm-flor { font-size: 15px; line-height: 1; }
-.nm-texto { flex: 1 1 220px; min-width: 0; }
+.nm-texto {
+  flex: 1 1 220px; min-width: 0;
+  border: 0; background: none; padding: 0; margin: 0;
+  font: inherit; color: inherit; text-align: left; cursor: pointer;
+}
+.nm-texto:hover b { text-decoration: underline; }
+.nm-texto:focus-visible { outline: 2px solid var(--leaf); outline-offset: 2px; border-radius: 4px; }
 .nm-texto b { color: #143d22; }
 .nm-ir {
   flex: none; padding: 4px 11px; cursor: pointer; white-space: nowrap;

@@ -313,7 +313,8 @@ function renderNocheMagica() {
   caja.hidden = false;
   caja.innerHTML = `
     <span class="nm-flor">🌺</span>
-    <span class="nm-texto"><b>${titular}</b> · ${detalle}</span>
+    <button class="nm-texto" type="button" data-year="${nm.year}"
+      title="${esDiaDesfile ? "Ver la edición" : "Ver el mapa y los locales"}"><b>${titular}</b> · ${detalle}</button>
     <button class="nm-ir" type="button" data-year="${nm.year}">${
       esDiaDesfile ? "Ver la edición →" : "Ver el mapa →"}</button>`;
 }
