@@ -968,6 +968,12 @@ table.palmares tr:hover td { background: #fffaf5; }
   font-size: 12px; color: var(--muted); line-height: 1.45;
 }
 .alias-note b { color: var(--ink); font-weight: 600; }
+/* El texto de «¿Qué es esta página?» viene de un Markdown, así que llega como
+   párrafos y listas normales y necesita su propio espaciado. */
+.about-texto p { margin: 0 0 10px; line-height: 1.55; }
+.about-texto p:first-of-type { font-size: 14px; color: var(--ink); }
+.about-texto ul { margin: 0 0 10px; padding-left: 18px; line-height: 1.55; }
+.about-texto li { margin-bottom: 4px; }
 /* `hidden` a secas pierde contra cualquier regla de `display`, y esta caja
    tiene padding y borde propios: sin esto se plegaba pero seguía ocupando. */
 .alias-note[hidden] { display: none; }

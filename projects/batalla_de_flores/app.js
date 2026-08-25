@@ -35,6 +35,7 @@ const state = {
   statsZoom: 1,           // 1 | 2 | 4: ensancha el grafico de barras y lo hace scrollable
   carrerasZoom: 1,        // factor sobre "todo a la vista" en el grafico de trayectorias
   carrerasCentro: null,   // que punto del siglo se esta mirando, de 0 a 1
+  about: "",              // el texto de «¿Qué es esta página?», de que_es_esto.json
   editionCategory: "todas",  // "todas" | "A" | "B" — qué se ve en el palmarés
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
@@ -3086,120 +3087,30 @@ function bloqueConvenciones() {
 const DEMO_EN_PRUEBAS = false;
 
 function renderAbout() {
-  const summary = state.dataset.summary || {};
+  // El texto ya no vive aquí: se escribe en `data/que_es_esto.md` y lo convierte
+  // `scripts/build_que_es.py`. Estaba metido en una plantilla de JavaScript en
+  // medio de este fichero, y editarlo era buscar el párrafo entre el código y
+  // rezar por no romper una comilla. Un texto que da miedo tocar es un texto que
+  // se queda viejo.
+  //
+  // Aquí solo se ponen los dos bloques que NO son prosa y que el Markdown no
+  // puede escribir: la leyenda de colores y las convenciones editoriales.
+  const texto = (state.about || "")
+    .replace(":::colores:::", `
+      <p class="legend-types">
+        <span class="t-year">un año</span>
+        <span class="t-group">un grupo</span>
+        <span class="t-float">una carroza</span>
+        <span class="t-route">un recorrido</span>
+      </p>`)
+    .replace(":::convenciones:::", bloqueConvenciones());
+
   els.detail.innerHTML = `
     <div class="detail-head">
       <h2 style="font-size:22px">¿Qué es esta página?</h2>
     </div>
     <div class="chips">${shareButton()}</div>
-
-    <p class="about-lead">Un archivo interactivo de la <b>Batalla de Flores de Laredo</b>,
-    declarada Fiesta de Interés Turístico Nacional, que reúne
-    ${num(summary.official_edition_count || summary.edition_count)} ediciones desde 1908 con
-    ${num(summary.float_count)} carrozas y ${num(summary.group_count)} grupos
-    carrocistas, cada una con la fuente de la que sale.</p>
-    <p class="about-note">La numeración de las ediciones es la oficial del Ayuntamiento: 2026 es
-    la ${summary.official_edition_count}.ª. Aquí hay fichas de ${num(summary.edition_count)} años,
-    porque se incluyen también los que no hubo desfile y aquellos de los que no ha quedado nada.</p>
-
-    <h3 class="section">No es la web oficial</h3>
-    <p>Es un proyecto personal y sin ánimo de lucro, hecho por afición a la fiesta.
-    No representa al Ayuntamiento ni a la organización. Para información oficial
-    (fechas, inscripciones, programa) acude a
-    <a href="https://www.laredo.es/09/fiestas_flores.php" target="_blank" rel="noopener">laredo.es</a>
-    o a <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>.</p>
-    ${DEMO_EN_PRUEBAS ? `<p>Otra página no oficial con información muy útil es
-    <a href="https://batalladefloresdemo.netlify.app/" target="_blank" rel="noopener">batalladefloresdemo.netlify.app</a>.</p>` : ""}
-
-    <h3 class="section">De dónde salen los datos</h3>
-    <p>El grueso del archivo histórico procede de
-    <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>,
-    un trabajo de recopilación excelente, más de un siglo documentado carroza a
-    carroza, sin el cual esta página no existiría. A eso se suman las notas oficiales
-    del Ayuntamiento de Laredo, recortes de prensa, el libro del Centenario de
-    Alfonso Oruña Fuentes y lo que aportan los propios carrocistas.</p>
-    <p>Aquí no se copia el contenido de nadie: se estructura en una base de datos derivada, y
-    <b>cada carroza dice de qué fuente concreta sale</b> —con enlace cuando lo hay, y con la
-    cita exacta cuando es un libro o un recorte—. Al final de cada edición hay un bloque
-    <b>«De dónde sale cada dato»</b> que lo desglosa, y lo que no está claro se marca en vez
-    de resolverse por las bravas.</p>
-    <p class="descarga">Y está entero en una tabla:
-    <a href="batalla_de_flores/data/afirmaciones.csv" download>afirmaciones.csv</a>
-    — una fila por <b>cada fuente que afirma algo</b>, con qué dice, de dónde sale y su
-    enlace. Se abre en cualquier hoja de cálculo. Si dos fuentes coinciden salen las dos
-    filas, y <b>lo que perdió una discrepancia también está</b>, marcado como descartado:
-    esconder la fuente equivocada sería quedarse con media historia.</p>
-    <p>Las imágenes <b>las servimos nosotros</b>, desde esta web. Antes se enlazaban al
-    servidor de batalladeflores.net, así que cada visita aquí le gastaba a Santi su ancho
-    de banda sin que él pudiera ni saberlo. Servirlas no cambia de quién son: cada una
-    sigue diciendo de dónde viene y enlazando al original.</p>
-
-    <h3 class="section">De dónde salen las fotos</h3>
-    <p>Las imágenes <b>no son mías</b>. La mayoría llegan a través de
-    <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>
-    y del archivo personal de <b>Santi Fernández</b>, que las ha ido reuniendo durante años,
-    en muchos casos cedidas por los propios carrocistas y por vecinos de Laredo. Eso significa
-    que <b>de bastantes no se conoce al autor original</b>.</p>
-    <p>Cada foto se publica diciendo por dónde ha llegado. Aquí no se reclama la autoría de
-    ninguna, ni se cede a terceros, ni se explota comercialmente: es un archivo consultable de
-    una fiesta declarada de Interés Turístico Nacional.</p>
-
-    <h3 class="section">Si una foto es tuya</h3>
-    <p>Si reconoces una imagen como tuya y quieres que <b>se retire</b>, que <b>aparezca tu
-    nombre</b> o que se corrija a quién se atribuye, dilo con el botón <b>¿Algo mal?</b> de esa
-    misma ficha, o escribe a
-    <a href="mailto:victor.elvira.arregui@gmail.com">victor.elvira.arregui@gmail.com</a>.
-    <b>Se retira sin discutir y sin pedir explicaciones</b>, y luego ya hablamos si quieres.
-    Lo mismo vale para cualquier dato personal que no quieras que aparezca.</p>
-
-    <h3 class="section">Qué puedes hacer con esto</h3>
-    <p>Los <b>datos</b> —qué carroza desfiló, quién la hizo, en qué puesto quedó— son hechos,
-    y los hechos no son de nadie: úsalos. Se agradece citar de dónde vienen, que es justo lo
-    que esta página se esfuerza en dejar claro dato a dato. Las <b>fotos</b> son otra cosa: no
-    son mías y no puedo darte permiso sobre ellas, así que pide a quien corresponda.</p>
-
-    <h3 class="section">¿Qué falta, y por qué?</h3>
-    <ul class="plain">
-      <li><b>2018</b> es el único año celebrado del que falta el palmarés. Se sabe que
-      desfilaron 15 carrozas de ocho grupos, pero ni el archivo ni el Ayuntamiento
-      publicaron los resultados. <b>Se sigue buscando</b>: si guardas un recorte, una
-      foto o el programa de aquella edición, encaja aquí.</li>
-      <li><b>2020 y 2021</b> no se celebraron por la pandemia; entre 1936 y 1939 tampoco.</li>
-      <li>Los años más antiguos tienen fichas sueltas, no palmarés completos.</li>
-    </ul>
-    <p class="muted">Cada edición dice en su ficha de dónde viene lo que muestra, así
-    que los huecos se ven en lugar de disimularse.</p>
-
-    <h3 class="section">Cómo moverse</h3>
-    <p>Cada tipo de dato tiene su color, y lo que lleva color se puede pinchar:</p>
-    <p class="legend-types">
-      <span class="t-year">un año</span>
-      <span class="t-group">un grupo</span>
-      <span class="t-float">una carroza</span>
-      <span class="t-route">un recorrido</span>
-    </p>
-
-    <h3 class="section">¿Ves un error?</h3>
-    <p>Es muy posible que lo haya: mucho de esto viene de parsear páginas antiguas,
-    y hay años en los que las propias fuentes se contradicen. Cada ficha lleva un
-    botón <b>¿Algo mal?</b> para avisar del dato incorrecto o aportar el que falta;
-    si puedes adjuntar una foto o un recorte de prensa, mucho mejor.</p>
-
-    <div class="provenance">
-      <b>Ficha técnica</b>
-      <ul>
-        <li>Versión ${esc(state.dataset.version || "–")}, generada el ${esc(state.dataset.built_at || "–")}.</li>
-        <li>Web estática; los mapas se dibujan sobre datos de OpenStreetMap (ODbL)
-        y se muestran con Leaflet (BSD).</li>
-        <li>Sin publicidad y sin venta de datos. Para saber cuánta gente entra se usan
-        GoatCounter —que no pone cookies— junto a Google Analytics y StatCounter, que sí
-        las ponen.</li>
-        <li>Cada dato lleva su fuente y su nivel de procedencia; cada foto, por dónde
-        ha llegado.</li>
-      </ul>
-    </div>
-
-    ${bloqueConvenciones()}`;
+    <div class="about-texto">${texto}</div>`;
   els.detail.scrollTop = 0;
   activarMapasZoom();
 }
@@ -4297,6 +4208,18 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     }));
 
     state.floats = buildFloatIndex(state.editions);
+
+    // El texto de «¿Qué es esta página?» va en su propio fichero para poder
+    // editarse sin tocar código. Se pide aparte y sin bloquear: si no llega, la
+    // web funciona igual y solo esa ficha sale vacía.
+    fetch(`batalla_de_flores/data/que_es_esto.json?v=${encodeURIComponent(dataset.version || "")}`)
+      .then(r => (r.ok ? r.json() : null))
+      .then(d => {
+        if (!d) return;
+        state.about = d.html || "";
+        if (state.selection && state.selection.kind === "about") renderDetail();
+      })
+      .catch(() => { /* sin texto, pero la web entera no se cae por esto */ });
 
     renderStats();
     renderFilterOptions();
