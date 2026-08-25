@@ -703,7 +703,16 @@ body.show-game #timeline, body.show-game #filter { display: none; }
 #chartview[hidden] { display: none; }
 #chart-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--bar); }
 .chart-legend { color: var(--muted); font-size: 12px; }
-#chart-scroll { flex: 1; overflow: auto; padding: 4px 8px 16px; }
+#chart-body { flex: 1; min-height: 0; position: relative; }
+#chart-scroll { position: absolute; inset: 0; overflow: auto; }
+/* frozen left column of painter names (Excel-style freeze) — synced vertically, fixed horizontally */
+#chart-names { position: absolute; left: 0; top: 0; bottom: 0; width: 224px; overflow: hidden; pointer-events: none;
+  z-index: 3; background: linear-gradient(to right, var(--bar) 84%, rgba(255,255,255,0)); border-right: 1px solid var(--line); }
+#chart-names[hidden] { display: none; }
+#chart-names-inner { position: absolute; top: 0; left: 0; right: 0; will-change: transform; }
+#chart-names .cn { position: absolute; right: 12px; transform: translateY(-50%); font-size: 10.5px; color: #333;
+  white-space: nowrap; text-align: right; max-width: 206px; overflow: hidden; text-overflow: ellipsis; }
+#chart-names .cn em { color: #b3aa9c; font-style: normal; }
 #chart-scroll svg { display: block; }
 #chart-scroll circle { cursor: default; }
 body.show-chart #timeline, body.show-chart #filter, body.show-chart #mapopts { display: none; }
@@ -790,3 +799,15 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 .wc-sim { padding: 0; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; background: #efe9df; cursor: pointer; width: 74px; height: 74px; flex: 0 0 auto; }
 .wc-sim img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .wc-sim:hover { border-color: #c8b48c; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+
+/* game painting-mode: 🔍 full-image + hover preview */
+.g-pick { position: relative; }
+.g-zoom { position: absolute; top: 5px; right: 5px; z-index: 2; width: 24px; height: 24px; border-radius: 999px;
+  background: rgba(255,255,255,.92); font-size: 12px; line-height: 24px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  opacity: 0; transition: opacity .12s; cursor: zoom-in; }
+.g-pick:hover .g-zoom { opacity: 1; }
+@media (hover: none) { .g-zoom { opacity: .95; } }
+#g-preview { position: fixed; z-index: 3200; pointer-events: none; background: #1a1410; padding: 5px; border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.5); }
+#g-preview[hidden] { display: none; }
+#g-preview img { max-width: 290px; max-height: 290px; display: block; border-radius: 4px; }

@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.48.4">
+  <link rel="stylesheet" href="atlas/style.css?v=0.48.6">
 </head>
 <body>
   <nav id="navbar">
@@ -156,7 +156,10 @@
       </span>
       <span id="chart-legend" class="chart-legend">Each dot = a year · bigger = more works</span>
     </div>
-    <div id="chart-scroll"></div>
+    <div id="chart-body">
+      <div id="chart-scroll"></div>
+      <div id="chart-names" aria-hidden="true"><div id="chart-names-inner"></div></div>
+    </div>
   </section>
 
   <section id="galaxyview" hidden>
@@ -224,7 +227,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.48.4"></script>
+  <script src="atlas/app.js?v=0.48.6"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

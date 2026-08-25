@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.48.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 11:20";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.48.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 11:31";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1683,7 +1683,7 @@ function gRender() {
   stage.className = "g-kind-" + q.kind;   // wide layout differs for image vs pick questions
   const fig = q.kind === "img" ? `<div class="g-figure"><img src="${esc(q.image)}" alt=""></div>` : "";
   const body = q.kind === "pick"
-    ? `<div class="g-picks">` + q.options.map((o, i) => `<button class="g-pick" type="button" data-i="${i}"><img src="${esc(o.img)}" alt="" loading="lazy"></button>`).join("") + `</div>`
+    ? `<div class="g-picks">` + q.options.map((o, i) => `<button class="g-pick" type="button" data-i="${i}"><img src="${esc(o.img)}" data-full="${esc(fullImage(o.img))}" alt="" loading="lazy"><span class="g-zoom" title="See the full painting">🔍</span></button>`).join("") + `</div>`
     : `<div class="g-options">` + q.options.map((o, i) => `<button class="g-opt" type="button" data-i="${i}">${esc(o.text)}</button>`).join("") + `</div>`;
   stage.innerHTML = fig +
     `<div class="g-answer"><div class="g-prompt">${q.prompt}</div>${body}` +
@@ -1805,10 +1805,27 @@ function setGameView(on) {
     try { localStorage.removeItem(GS_KEY); } catch (e) {}
     GSTATS = gLoadStats(); gStreak = 0; G.right = 0; G.total = 0; gScore();
   });
-  document.getElementById("game-stage").addEventListener("click", e => {
+  const stage = document.getElementById("game-stage");
+  stage.addEventListener("click", e => {
+    const zoom = e.target.closest(".g-zoom");   // 🔍 → full painting (works on mobile tap too), never selects
+    if (zoom) { e.stopPropagation(); const im = zoom.parentElement.querySelector("img"); if (im) openLightbox(im.dataset.full || im.src, ""); return; }
     const opt = e.target.closest(".g-opt, .g-pick"); if (opt) { gAnswer(+opt.dataset.i); return; }
     if (e.target.closest(".g-next")) gNewQuestion();
   });
+  // PC: hover a picture option → floating preview of the FULL (uncropped) painting
+  const prev = document.createElement("div"); prev.id = "g-preview"; prev.hidden = true; document.body.appendChild(prev);
+  stage.addEventListener("mousemove", e => {
+    const pk = e.target.closest(".g-pick");
+    if (!pk) { prev.hidden = true; prev.dataset.src = ""; return; }
+    const im = pk.querySelector("img"); if (!im) return;
+    if (prev.dataset.src !== im.src) { prev.dataset.src = im.src; prev.innerHTML = `<img src="${esc(im.src)}" alt="">`; }
+    prev.hidden = false;
+    let x = e.clientX + 18, y = e.clientY + 18;
+    if (x + 300 > innerWidth) x = e.clientX - 18 - 300;
+    if (y + 300 > innerHeight) y = e.clientY - 18 - 300;
+    prev.style.left = Math.max(6, x) + "px"; prev.style.top = Math.max(6, y) + "px";
+  });
+  stage.addEventListener("mouseleave", () => { prev.hidden = true; prev.dataset.src = ""; });
 })();
 
 // ══ Timeline: every painter's output across the years ═════════════════════════════════════════
@@ -1872,18 +1889,16 @@ function renderChart() {
   const parts = [`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="system-ui,sans-serif">`];
   for (let yr = Math.ceil(minY / gridStep) * gridStep; yr <= maxY; yr += gridStep)
     parts.push(`<line x1="${X(yr)}" y1="${padT - 6}" x2="${X(yr)}" y2="${H - 12}" stroke="#eee"/><text x="${X(yr)}" y="${padT - 11}" font-size="10" fill="#aaa" text-anchor="middle">${yr}</text>`);
-  let ry = padT;
+  let ry = padT, namesHTML = "";
   for (const r of rows) {
     const cy = agg ? ry + 27 : ry + rowH / 2;   // aggregate: dots on a baseline below the top label
     parts.push(`<line x1="${padL}" y1="${cy}" x2="${W - padR}" y2="${cy}" stroke="#f5f2eb"/>`);
-    const yrs = [...r.years.keys()], fx = X(Math.min(...yrs)), lx = X(Math.max(...yrs));
-    if (agg) {   // group name ABOVE where its dots begin (so it's aligned with them, not stranded far left)
+    const fx = X(Math.min(...r.years.keys()));
+    if (agg) {   // group name ABOVE where its dots begin (aligned with them, not stranded far left)
       const nx = Math.max(padL, Math.min(fx, W - padR - 260));
       parts.push(`<text x="${nx.toFixed(0)}" y="${ry + 13}" font-size="12.5" font-weight="700" fill="#333">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">· ${esc(r.sub)}</tspan></text>`);
-    } else {
-      parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="10.5" fill="#333" text-anchor="end">${esc(r.label)} <tspan fill="#b3aa9c">${esc(r.sub)}</tspan></text>`);
-      for (let x = fx; x <= lx; x += 520)   // faint repeated name so you keep track when scrolled right
-        parts.push(`<text x="${(x + 5).toFixed(0)}" y="${(cy - 5).toFixed(1)}" font-size="8.5" fill="#d6cebf">${esc(r.label)}</text>`);
+    } else {   // painter name lives in the FROZEN left column (see #chart-names), not in the scrolling SVG
+      namesHTML += `<span class="cn" style="top:${cy.toFixed(1)}px">${esc(r.label)} <em>${esc(r.sub)}</em></span>`;
     }
     const rmax = agg ? 9 : 5, ri = rows.indexOf(r);
     for (const [yr, cell] of r.years) {
@@ -1895,6 +1910,13 @@ function renderChart() {
   }
   parts.push("</svg>");
   host.innerHTML = parts.join("");
+  // frozen left column of painter names (individual only) — Excel-style, synced vertically on scroll
+  const namesEl = document.getElementById("chart-names"), inner = document.getElementById("chart-names-inner");
+  if (namesEl && inner) {
+    namesEl.hidden = agg;
+    inner.style.height = H + "px"; inner.style.transform = `translateY(${-host.scrollTop}px)`;
+    inner.innerHTML = agg ? "" : namesHTML;
+  }
 }
 function setChartView(on) {
   const sec = document.getElementById("chartview"); if (!sec) return;
@@ -1943,6 +1965,10 @@ function setChartView(on) {
     return h + "</ul>";
   }
   const host = document.getElementById("chart-scroll");
+  host.addEventListener("scroll", e => {   // keep the frozen name column in vertical sync
+    const inner = document.getElementById("chart-names-inner");
+    if (inner) inner.style.transform = `translateY(${-e.target.scrollTop}px)`;
+  });
   host.addEventListener("mousemove", e => {
     const dot = e.target.closest(".chart-dot");
     if (!dot) { tip.hidden = true; return; }
