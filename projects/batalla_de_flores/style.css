@@ -809,9 +809,11 @@ table.palmares tr:hover td { background: #fffaf5; }
 .dato-src a:hover { text-decoration: underline; }
 
 .dato-duda {
-  color: var(--alerta); font-weight: 700; font-size: 10px; cursor: help;
-  border: 1px solid var(--alerta-borde); border-radius: 3px; padding: 0 3px;
+  color: var(--alerta); font-weight: 700; font-size: 10px; cursor: pointer;
+  border: 1px solid var(--alerta-borde); border-radius: 3px; padding: 0 4px;
+  background: var(--alerta-bg); font-family: inherit; line-height: 1.5;
 }
+.dato-duda:hover { background: #f8d5d2; border-color: var(--alerta); }
 /* Las gracias por las fotos: una vez por edición, con tono de reconocimiento
    y no de auditoría. */
 .gracias {
@@ -820,6 +822,19 @@ table.palmares tr:hover td { background: #fffaf5; }
   font-size: 12.5px; color: var(--muted); line-height: 1.5;
 }
 .gracias b { color: var(--ink); }
+
+/* Tablas de convenciones: qué nombre dice la fuente y cuál mostramos. */
+.conv { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 6px; }
+.conv td { padding: 3px 6px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+.conv .conv-flecha { color: var(--muted); width: 18px; text-align: center; }
+.conv .conv-n { color: var(--muted); text-align: right; white-space: nowrap; font-size: 11px; }
+
+/* Galería de lo que no sabemos: se distingue a simple vista de la documentada
+   para que nadie la confunda con carrozas identificadas. */
+.gallery-anon .shot img { filter: saturate(.82); }
+.gallery-anon .shot { border: 1px dashed var(--line); border-radius: 8px; padding: 4px; }
+.gallery-anon figcaption { font-size: 10px; line-height: 1.35; }
+.gallery-anon .ask { margin-top: 3px; font-size: 10px; padding: 2px 6px; }
 
 /* Dos preguntas, dos líneas. Arriba de quién es la foto; debajo, por qué
    decimos que es de esta carroza. La segunda se marca cuando la conclusión es
@@ -1075,6 +1090,7 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
   border: 1px solid var(--alerta-borde); border-radius: 50%;
   background: var(--alerta-bg); color: var(--alerta);
   font-size: 10px; font-weight: 700; line-height: 1; vertical-align: 1px;
+  cursor: pointer; font-family: inherit; vertical-align: super;
 }
 .review-mark:hover { background: #f8d5d2; }
 

@@ -603,7 +603,7 @@ function renderFloatList() {
         ${sortHeader("floats", "year", "Año", "col-num")}
         ${sortHeader("floats", "category", "Cat.", "col-num col-cat")}
         ${sortHeader("floats", "position", "Puesto", "col-num")}
-        <span class="col-src">Fuente</span>
+        <span class="col-src">Fuentes</span>
         <span aria-hidden="true"></span>
       </div>
       ${sortRows("floats", rows).map(entry => {
@@ -971,14 +971,25 @@ function openQuestions() {
 
   // La existencia misma de la edición puede estar en duda. Es una cuestión
   // abierta como cualquier otra y vive en la misma base de datos.
+  // Lo que no puede ser verdad -dos primeros premios en la misma categoría- no
+  // es un hueco: es un error, y va antes que nada.
+  const imposibles = [];
+  state.editions.forEach(edition => (edition.floats || []).forEach(entry => {
+    (entry.needs_review || []).forEach(reason => {
+      if (!reason.startsWith("Esto no puede ser")) return;
+      if (imposibles.some(o => o.year === edition.year && o.reason === reason)) return;
+      imposibles.push({ year: edition.year, name: entry.name, reason, id: entry.id });
+    });
+  }));
+
   const sinConfirmar = state.editions.filter(edition => edition.status === "unknown");
 
   const incomplete = state.editions.filter(edition =>
-    (edition.notes || []).some(note => note.includes("faltan al menos")));
+    (edition.notes_derivadas || []).some(note => note.includes("faltan")));
   const noPalmares = state.editions.filter(edition =>
     edition.status === "published" && !(edition.floats || []).some(entry => entry.position != null));
 
-  return { disputed, conflicting, hemeroteca, sinConfirmar, incomplete, noPalmares };
+  return { disputed, conflicting, hemeroteca, imposibles, sinConfirmar, incomplete, noPalmares };
 }
 
 /* Pestana propia, no un apendice de Estadisticas: que un archivo diga lo que no
@@ -994,7 +1005,7 @@ function askButton(id, label) {
 function renderPendingTab() {
   const q = openQuestions();
   const total = q.disputed.length + q.conflicting.length + q.hemeroteca.length
-    + q.sinConfirmar.length + q.incomplete.length + q.noPalmares.length;
+    + q.imposibles.length + q.sinConfirmar.length + q.incomplete.length + q.noPalmares.length;
   els.indexCount.textContent = `${num(total)} cuestiones abiertas`;
   // Buscar "1954" aqui no filtra nada: los controles se esconden en esta vista.
   document.querySelector(".controls")?.setAttribute("hidden", "");
@@ -1027,6 +1038,10 @@ function renderPendingTab() {
           data-ask-label="Carrocistas repartidos entre varios nombres">${ICON_FLAG}¿Conoces el dato?</button></p>
       </div>
 
+      ${bloque("⛔", "Datos que no pueden ser ciertos", q.imposibles, row => `
+        <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
+          ${esc(row.reason)}
+          ${askButton(`year:${row.year}`, `${row.year} · puestos repetidos`)}</li>`)}
       ${bloque("🏷️", "Carrozas con dos grupos distintos", q.disputed, row => `
         <li><button class="link t-year" type="button" data-year="${row.year}">${row.year}</button>
           ${esc(row.name)} — ${esc(row.reason.replace("El archivo atribuye esta carroza a dos grupos: ", ""))}
@@ -1056,7 +1071,7 @@ function renderPendingTab() {
           ${askButton(`year:${edition.year}`, `Edición ${edition.year} · ¿hubo Batalla?`)}</li>`)}
       ${bloque("📉", "Ediciones a las que les faltan carrozas", q.incomplete, edition => `
         <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
-          ${esc((edition.notes.find(n => n.includes("faltan al menos")) || ""))}
+          ${esc((edition.notes_derivadas || []).find(n => n.includes("faltan")) || "")}
           ${askButton(`year:${edition.year}`, `Edición ${edition.year} · faltan carrozas`)}</li>`)}
       ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
         <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
@@ -1824,24 +1839,43 @@ function auditCell(entry) {
         ? `<a href="${esc(f.url)}" target="_blank" rel="noopener" title="${esc(ayuda)}">↗</a>`
         : `<span class="src-nolink" title="${esc(ayuda)} — sin página que enlazar">·</span>`;
     }).join("");
-    const dudoso = (claim.disputa || []).length
-      ? ` <span class="dato-duda" title="Otra fuente dice algo distinto. Sin resolver.">?</span>` : "";
+    const otras = (claim.disputa || [])
+      .map(d => `«${d.valor}» según ${joinEs(d.fuentes.map(f => SOURCE_LABEL[f.kind] || f.kind))}`);
+    const dudoso = otras.length
+      ? ` <button class="dato-duda" type="button" data-float="${esc(entry.id)}" data-prov="1"
+          title="${esc(`Otra fuente dice ${joinEs(otras)}. `
+            + ((entry.needs_review || []).some(r => r.includes("Se muestra el de"))
+                ? "Se ha elegido una y la otra queda registrada: pulsa para ver por qué."
+                : "Sin resolver: pulsa para ver las dos."))}"
+          >?</button>` : "";
     bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
       data-float="${esc(entry.id)}" data-prov="1"
       title="De dónde sale ${esc(DATO_LABEL[code])}">${code}</button>${enlaces}${dudoso}</span>`);
   });
 
-  (entry.image_refs || []).forEach(ref => {
-    const porPagina = ref.por === "pagina" && ref.evidencia;
-    bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
-      data-float="${esc(entry.id)}" data-prov="1"
-      title="${esc(porPagina
-        ? "La foto: la web la publica en la ficha de esta carroza"
-        : `La foto: identificada por el nombre del fichero «${ref.evidencia || ""}»`)}"
-      >${porPagina ? "FOT" : "ARC"}</button>${porPagina
-        ? `<a href="${esc(ref.evidencia)}" target="_blank" rel="noopener" title="Ver la página donde se publica">↗</a>`
-        : `<span class="src-nolink" title="No hay página que enlazar: la identifica el nombre del fichero">·</span>`}</span>`);
-  });
+  const refs = entry.image_refs || [];
+  if (refs.length) {
+    const porPagina = refs.filter(r => r.por === "pagina" && r.evidencia);
+    const porFichero = refs.filter(r => !(r.por === "pagina" && r.evidencia));
+    const cuenta = n => (refs.length > 1 ? ` ×${n}` : "");
+    if (porPagina.length) {
+      bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
+        data-float="${esc(entry.id)}" data-prov="1"
+        title="${esc(`${porPagina.length} foto${porPagina.length === 1 ? "" : "s"}: la web `
+          + `las publica en la ficha de esta carroza`)}">FOT${cuenta(porPagina.length)}</button>`
+        + `<a href="${esc(porPagina[0].evidencia)}" target="_blank" rel="noopener"
+             title="Ver la página donde se publican">↗</a></span>`);
+    }
+    if (porFichero.length) {
+      const nombres = porFichero.slice(0, 3).map(r => r.evidencia).filter(Boolean).join(" · ");
+      bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
+        data-float="${esc(entry.id)}" data-prov="1"
+        title="${esc(`${porFichero.length} foto${porFichero.length === 1 ? "" : "s"} `
+          + `identificada${porFichero.length === 1 ? "" : "s"} por el nombre del fichero: ${nombres}`)}"
+        >ARC${cuenta(porFichero.length)}</button>`
+        + `<span class="src-nolink" title="No hay página que enlazar: las identifica el nombre del fichero">·</span></span>`);
+    }
+  }
 
   return `<span class="src">${bloques.join("")}</span>`;
 }
@@ -1893,8 +1927,9 @@ function winnerBadge(entry, inline = false) {
 function reviewMark(entry) {
   const reasons = entry.needs_review || [];
   if (!reasons.length) return "";
-  return `<sup class="review-mark" data-tip="${esc(reasons.join(" · "))}"
-    title="Dato sin aclarar">?</sup>`;
+  return `<button class="review-mark" type="button" data-float="${esc(entry.id)}" data-prov="1"
+    data-tip="${esc(reasons.join(" · "))}"
+    title="${esc(reasons.join(" · "))} — pulsa para verlo entero">?</button>`;
 }
 
 function prizeChips(entry) {
@@ -2079,12 +2114,54 @@ function setupVisor() {
   }, { passive: true });
 }
 
+/* Las fotos de las que sabemos el año pero no la carroza.
+ *
+ * Van DESPUÉS de las documentadas y en su propio apartado, no mezcladas: son
+ * carrozas que desfilaron y de las que no tenemos ficha. Enseñarlas sin decirlo
+ * sería hacerlas pasar por identificadas; esconderlas sería fingir que el
+ * archivo está completo.
+ *
+ * El visor las recorre a continuación de las documentadas -están en el mismo
+ * panel- así que se pasa de unas a otras sin salir. */
+function renderGallerySinIdentificar(edition) {
+  const fotos = edition.unassigned_images || [];
+  if (!fotos.length) return "";
+  return `
+    <h3 class="section">Sin identificar (${fotos.length})</h3>
+    <p class="chart-note">Estas fotos son de ${edition.year}, pero no sabemos de qué carroza.
+    Si reconoces alguna, es justo lo que nos falta.</p>
+    <div class="gallery gallery-anon">
+      ${fotos.map(f => `
+        <figure class="shot">
+          <button type="button" class="shot-btn" data-photo="${esc(f.url)}"
+            data-nombre="Carroza sin identificar" data-grupo="" data-anio="${edition.year}"
+            data-puesto="" data-credito="Del archivo de batalladeflores.net"
+            data-asigna="No sabemos de qué carroza es: el nombre del fichero («${esc(f.fichero || "")}») dice el año pero no el título"
+            data-asigna-prop="deducción" data-origen="${esc(f.pagina || "")}"
+            title="Carroza sin identificar de ${edition.year}">
+            <img src="${esc(thumbUrl(f.url))}" alt="Carroza sin identificar de ${edition.year}" loading="lazy">
+          </button>
+          <figcaption>
+            <span class="credito">Del archivo de batalladeflores.net</span>
+            <span class="asigna asigna-deducida">no sabemos qué carroza es</span>
+            <button class="ask" type="button" data-ask="year:${edition.year}"
+              data-ask-label="${edition.year} · foto sin identificar (${esc(f.fichero || "")})"
+              >${ICON_FLAG}<span>¿sabes cuál es?</span></button>
+          </figcaption>
+        </figure>`).join("")}
+    </div>`;
+}
+
 function renderGallery(entries) {
-  const images = entries.flatMap(entry =>
-    (entry.image_urls || []).map(url => ({ url, entry }))).slice(0, 24);
+  const TOPE = 60;
+  const todas = entries.flatMap(entry =>
+    (entry.image_urls || []).map(url => ({ url, entry })));
+  const images = todas.slice(0, TOPE);
   if (!images.length) return "";
   return `
-    <h3 class="section">Imágenes (${images.length})</h3>
+    <h3 class="section">Imágenes (${todas.length})</h3>
+    ${todas.length > TOPE ? `<p class="chart-note">Se muestran las primeras ${TOPE};
+      el resto están en la ficha de cada carroza.</p>` : ""}
     <div class="gallery">
       ${images.map(({ url, entry }) => `
         <figure class="shot">
@@ -2173,7 +2250,7 @@ function codesLegend(entries) {
     ARC: "la foto, identificada por el nombre del fichero (sin página que enlazar)",
   };
   const orden = ["POS", "GRU", "VES", "ART", "PTS", "FOT", "ARC"];
-  return `<p class="codes codes-inline">Cada flecha lleva a la fuente de <b>ese</b> dato:
+  return `<p class="codes codes-inline">Cada flecha lleva a la fuente de ese dato:
     ${orden.filter(c => usados.has(c))
       .map(c => `<span class="tag">${c}</span> ${esc(texto[c])}`).join(" · ")}</p>`;
 }
@@ -2208,6 +2285,9 @@ function pendingForYear(year) {
   q.sinConfirmar.filter(e => e.year === year).forEach(e => filas.push({
     icono: "❔", texto: e.notes?.[0] || "Está por confirmar que se celebrara.",
   }));
+  q.imposibles.filter(r => r.year === year).forEach(r => filas.push({
+    icono: "⛔", texto: esc(r.reason), crudo: true,
+  }));
   q.hemeroteca.filter(r => r.year === year).forEach(r => filas.push({
     icono: "📰", texto: `<b>${esc(r.name)}</b> — ${esc(r.reason)}`,
     extra: citationList(r.citas), crudo: true,
@@ -2218,6 +2298,7 @@ function pendingForYear(year) {
   q.conflicting.filter(r => r.year === year).forEach(r => filas.push({
     icono: "↕️", texto: `<b>${esc(r.name)}</b> — ${esc(r.reason)}`, crudo: true,
   }));
+  (state.huecosDeEdicion || []).forEach(texto => filas.push({ icono: "📉", texto }));
   q.incomplete.filter(e => e.year === year).forEach(e => filas.push({
     icono: "📉", texto: e.notes.find(n => n.includes("faltan al menos")) || "",
   }));
@@ -2238,9 +2319,7 @@ function provenanceBlock(entries, sources, edition) {
   const ranked = entries.filter(entry => entry.position != null);
   const cruzadas = entries.filter(entry => families(entry).size > 1);
   const dudosas = entries.filter(entry => (entry.needs_review || []).length);
-  const huecos = (edition?.notes || []).filter(note =>
-    note.includes("faltan") || note.includes("no aparece en ninguna fuente")
-    || note.includes("no el palmarés"));
+  const huecos = edition?.notes_derivadas || [];
 
   const codes = new Map();
   entries.forEach(entry => sourceParts(entry).forEach(part => {
@@ -2359,7 +2438,7 @@ function renderEditionDetail(edition) {
           <th data-sort-type="text">Puesto</th>
           <th data-sort-type="text">Carroza</th>
           <th data-sort-type="text">Grupo</th>
-          <th data-sort-type="text">Fuente</th>
+          <th data-sort-type="text">Fuentes</th>
         </tr></thead>
         <tbody>
           ${shown.map(entry => `
@@ -2393,7 +2472,7 @@ function renderEditionDetail(edition) {
         <thead><tr>
           <th data-sort-type="text">Carroza</th>
           <th data-sort-type="text">Grupo</th>
-          <th data-sort-type="text">Fuente</th>
+          <th data-sort-type="text">Fuentes</th>
         </tr></thead>
         <tbody>
           ${unranked.map(entry => `
@@ -2416,23 +2495,20 @@ function renderEditionDetail(edition) {
       // El aviso rojo es para huecos DE VERDAD. Una nota que explique de donde
       // salio un dato -aunque diga "no aparece en ninguna fuente publicada"- no
       // es un hueco: es trazabilidad, y va en Notas.
-      const gaps = (edition.notes || []).filter(note =>
-        note.includes("faltan al menos") || note.includes("faltan ")
-        || note.includes("nunca la clasificación"));
-      const rest = (edition.notes || []).filter(note => !gaps.includes(note));
-      return `
-        ${gaps.length ? `<div class="review-box">
-          <b>Faltan datos de esta edición</b>
-          <ul>${gaps.map(note => `<li>${esc(note)}</li>`).join("")}</ul>
-          <p><button class="pill know" type="button" id="open-report-from-edition">${ICON_FLAG}¿Conoces el dato?</button></p>
-        </div>` : ""}
-        ${rest.length ? `<h3 class="section">Notas</h3>
-          <ul class="plain">${rest.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : ""}`;
+      // Dos listas separadas: `notes` cuenta cosas que pasaron y no se tocan;
+      // `notes_derivadas` describe lo que le falta al archivo y se rehace en
+      // cada build a partir del estado final.
+      const gaps = edition.notes_derivadas || [];
+      const rest = edition.notes || [];
+      state.huecosDeEdicion = gaps;
+      return rest.length ? `<h3 class="section">Notas</h3>
+          <ul class="plain">${rest.map(note => `<li>${esc(note)}</li>`).join("")}</ul>` : "";
     })()}
 
     ${edition.status === "planned" ? "" : nocheMagicaBlock(edition)}
 
-    ${renderGallery(entries.filter(entry => !ranked.includes(entry)))}
+    ${renderGallery(entries)}
+    ${renderGallerySinIdentificar(edition)}
 
     ${route?.geometry ? `
       <h3 class="section">Recorrido</h3>
@@ -2452,6 +2528,73 @@ function renderEditionDetail(edition) {
 
 /* Va por el mismo carril que las demas fichas (seleccion + hash + capa en
  * movil), asi que hereda la cruz de cerrar y se puede enlazar: #/info */
+/* Las convenciones se cargan aparte y solo al abrirlas: son un dato de
+ * trastienda que casi nadie mira, y no tiene sentido que pese en la carga de
+ * todo el mundo. */
+function cargarConvenciones() {
+  if (state.convenciones !== undefined) return Promise.resolve(state.convenciones);
+  state.convenciones = null;
+  return fetch("batalla_de_flores/data/convenciones.json")
+    .then(r => (r.ok ? r.json() : null))
+    .then(d => { state.convenciones = d; if (state.selection?.kind === "about") renderAbout(); return d; })
+    .catch(() => null);
+}
+
+/* Qué hemos tocado nosotros. Un archivo que dice de dónde viene cada dato tiene
+ * que decir también en qué lo ha modificado: si no, la procedencia es media
+ * verdad. Se genera de los propios datos, así que no se puede quedar vieja. */
+function bloqueConvenciones() {
+  const c = state.convenciones;
+  if (!c) { cargarConvenciones(); return ""; }
+  const pierden = (c.pliegues || []).filter(p => p.pierde_a_alguien);
+  const normaliza = (c.pliegues || []).filter(p => !p.pierde_a_alguien);
+  const suma = lista => lista.reduce((n, p) => n + p.carrozas, 0);
+  const tabla = lista => `<table class="conv"><tbody>${lista.map(p => `
+    <tr><td>${esc(p.de)}</td><td class="conv-flecha">→</td>
+        <td><b>${esc(p.a)}</b></td><td class="conv-n">${p.carrozas}</td></tr>`).join("")}</tbody></table>`;
+
+  return `
+    <h3 class="section">Qué hemos decidido nosotros</h3>
+    <p>Decir de dónde viene cada dato obliga a decir también <b>en qué lo hemos
+    tocado</b>. Esto es esa lista, y se genera sola de los datos: no puede quedarse
+    vieja.</p>
+
+    <details class="proc-foto">
+      <summary>Nombres de agrupación unificados
+        <span class="proc-aviso">${suma(normaliza)} carrozas</span></summary>
+      <p class="chart-note">El mismo grupo escrito de otra manera: se quita el prefijo
+      legal o se unifica la grafía. No cambia quién firmó la carroza.</p>
+      ${tabla(normaliza.slice(0, 24))}
+    </details>
+
+    ${pierden.length ? `<details class="proc-foto" open>
+      <summary>Carrozas firmadas por varios de las que solo queda uno
+        <span class="proc-aviso">${suma(pierden)} carrozas · sin decidir</span></summary>
+      <p class="chart-note"><b>Esto no es unificar: es cambiar quién firmó la carroza.</b>
+      Pasa porque el plegado de nombres es automático y se queda con el primero que
+      encuentra. Cada una va marcada con <span class="review-mark">?</span> en su ficha.
+      Está pendiente de revisar una a una.</p>
+      ${tabla(pierden)}
+    </details>` : ""}
+
+    <details class="proc-foto">
+      <summary>Cuando dos fuentes se contradicen
+        <span class="proc-aviso">${(c.resueltas_por_autoridad || []).length} resueltas ·
+        ${c.disputas_abiertas} abiertas</span></summary>
+      <p class="chart-note">El nivel dice cómo llegó el dato; no dice quién está mejor
+      situado para saberlo. Para eso manda el orden:
+      <b>libro del Centenario</b> › <b>nota del Ayuntamiento</b> › <b>prensa de la
+      época</b> › <b>archivo de batalladeflores.net</b> › <b>semilla del proyecto</b>.
+      La versión que pierde <b>no se borra</b>: queda registrada con su fuente.</p>
+      ${(c.resueltas_por_autoridad || []).length ? `<table class="conv"><tbody>
+        ${c.resueltas_por_autoridad.map(r => `<tr>
+          <td>${r.año} · ${esc(r.carroza)}</td><td class="conv-flecha">→</td>
+          <td><b>${esc(r.puesto)}</b></td>
+          <td class="conv-n">antes ${esc(r.descartado)}</td></tr>`).join("")}
+      </tbody></table>` : ""}
+    </details>`;
+}
+
 function renderAbout() {
   const summary = state.dataset.summary || {};
   els.detail.innerHTML = `
@@ -2554,7 +2697,9 @@ function renderAbout() {
         <li>Cada dato lleva su fuente y su nivel de procedencia; cada foto, por dónde
         ha llegado.</li>
       </ul>
-    </div>`;
+    </div>
+
+    ${bloqueConvenciones()}`;
   els.detail.scrollTop = 0;
   activarMapasZoom();
 }
@@ -2890,7 +3035,7 @@ function renderGroupDetail(group) {
         <th data-sort-type="num">Año</th>
         <th data-sort-type="text">Carroza</th>
         <th data-sort-type="text">Pos.</th>
-        <th data-sort-type="text">Fuente</th>
+        <th data-sort-type="text">Fuentes</th>
       </tr></thead>
       <tbody>
         ${entries.map(entry => `

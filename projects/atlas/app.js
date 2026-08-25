@@ -1438,6 +1438,41 @@ async function renderAffinity(name) {
       `<span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("");
 }
 
+// ── "More you might like" (#4) — a per-device taste feed: aggregate the visual neighbours of the works
+// you've opened this session/before, minus what you've already seen. No account, no backend — localStorage.
+function recordSeen(qid) {
+  if (!qid) return;
+  try {
+    let s = JSON.parse(localStorage.getItem("atlasSeen") || "[]");
+    s = s.filter(x => x !== qid); s.unshift(qid); s = s.slice(0, 60);
+    localStorage.setItem("atlasSeen", JSON.stringify(s));
+  } catch (e) {}
+}
+async function renderForYou(curQid) {
+  const host = document.getElementById("wc-foryou"); if (!host) return;
+  let seen = []; try { seen = JSON.parse(localStorage.getItem("atlasSeen") || "[]"); } catch (e) {}
+  const prior = seen.filter(q => q !== curQid).slice(0, 20);
+  if (prior.length < 2) return;                        // need a little history before this is meaningful
+  const nb = await loadSimNeighbors(); if (!nb) return;
+  const seenSet = new Set(seen);
+  const skip = new Set([curQid, ...(nb[curQid] || [])]);   // don't just echo THIS work's "visually similar"
+  const score = new Map();
+  for (const q of prior) for (const n of (nb[q] || [])) {
+    if (seenSet.has(n) || skip.has(n)) continue;
+    score.set(n, (score.get(n) || 0) + 1);               // a work near several of your views ranks higher
+  }
+  const byQid = new Map(); for (const x of works) if (x.p.qid) byQid.set(x.p.qid, x);
+  const ranked = [...score.entries()].sort((a, b) => b[1] - a[1]);
+  const out = [], usedImg = new Set();
+  for (const [q] of ranked) {
+    const x = byQid.get(q); if (!x || !x.p.image || usedImg.has(x.p.image)) continue;
+    usedImg.add(x.p.image); out.push(x); if (out.length >= 6) break;
+  }
+  if (out.length < 3) return;
+  host.innerHTML = `<div class="wc-sim-h">More you might like <span class="wc-sim-sub">· based on what you've viewed</span></div><div class="wc-sim-row">` +
+    out.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
+}
+
 // "Visually similar" — CLIP nearest-neighbour QIDs, precomputed in atlas/data/sim_neighbors.json
 let simNeighbors = null;
 async function loadSimNeighbors() {
@@ -1481,11 +1516,14 @@ function openWorkCard(w) {
     `<span class="wc-hint">or just copy the address bar</span></div>` +
     `<div class="wc-aff" id="wc-affinity"></div>` +
     `<div class="wc-similar" id="wc-subject"></div>` +
-    `<div class="wc-similar" id="wc-similar"></div></div>`;
+    `<div class="wc-similar" id="wc-similar"></div>` +
+    `<div class="wc-similar" id="wc-foryou"></div></div>`;
   workCard.hidden = false;
   renderAffinity(p.painter); // "painters like this one" (style affinity) — fills in async
   renderSubject(p.qid);   // "more on this subject" (shared title words) — instant, no embeddings
   renderSimilar(p.qid);   // "visually similar" (CLIP neighbours) — fills in async when available
+  renderForYou(p.qid);    // "more you might like" — from your browsing history (localStorage)
+  recordSeen(p.qid);      // remember this view for future "for you" suggestions
   // reflect the open painting in the address bar → copying the URL shares this exact work
   if (p.qid) history.replaceState(null, "", location.pathname + "?w=" + p.qid + location.hash);
 }
@@ -2077,6 +2115,7 @@ function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals wh
 function galaxyLegend() {
   const host = document.getElementById("galaxy-legend"); if (!host) return;
   if (galaxyColorBy === "author") { host.innerHTML = `<span class="gl-note">coloured by painter</span>`; return; }
+  if (galaxyColorBy === "color") { host.innerHTML = `<span class="gl-note">each dot = the painting's own dominant colour</span>`; return; }
   const defs = galaxyColorBy === "period" ? ERAS : SCHOOLS;
   host.innerHTML = defs.map((g, i) => `<span class="gl-chip"><i style="background:${CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]}"></i>${esc(g.label)}</span>`).join("");
 }
@@ -2098,7 +2137,8 @@ function drawGalaxy() {
   for (const [qid, xy] of Object.entries(galaxyCoords)) {
     const w = galaxyByQid.get(qid); if (!w) continue;
     const x = (PAD + xy[0] / 1000 * S).toFixed(0), y = (PAD + xy[1] / 1000 * S).toFixed(0);
-    html += `<i class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px;background:${galaxyColorOf(w)}"></i>`;
+    const fill = (galaxyColorBy === "color" && xy.length >= 5) ? `rgb(${xy[2]},${xy[3]},${xy[4]})` : galaxyColorOf(w);
+    html += `<i class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px;background:${fill}"></i>`;
     n++;
   }
   plane.innerHTML = html;
