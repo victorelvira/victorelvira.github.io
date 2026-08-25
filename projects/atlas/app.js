@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.51.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 13:30";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.52.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 14:15";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1518,10 +1518,29 @@ async function renderSimilar(qid) {
   const host = document.getElementById("wc-similar");
   if (!host || !ids || !ids.length) return;
   const byQid = new Map(); for (const x of works) if (x.p.qid) byQid.set(x.p.qid, x);
-  const items = ids.map(id => byQid.get(id)).filter(x => x && x.p.image).slice(0, 6);
-  if (!items.length) return;
-  host.innerHTML = `<div class="wc-sim-h">Visually similar</div><div class="wc-sim-row">` +
-    items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
+  const me = byQid.get(qid); const myPainter = me ? me.p.painter : null;
+  const neigh = ids.map(id => byQid.get(id)).filter(x => x && x.p.image);
+  // split the visual neighbours into "same painter" and "other painters", 3 each
+  const same = [], other = [], usedImg = new Set([me && me.p.image]);
+  for (const x of neigh) {
+    if (usedImg.has(x.p.image)) continue; usedImg.add(x.p.image);
+    if (myPainter && x.p.painter === myPainter) { if (same.length < 3) same.push(x); }
+    else if (other.length < 3) other.push(x);
+    if (same.length >= 3 && other.length >= 3) break;
+  }
+  // top-3 distinct painters whose work sits nearest this one (excluding its own painter)
+  const nearPainters = [], seenP = new Set([myPainter]);
+  for (const x of neigh) { const pn = x.p.painter; if (!pn || seenP.has(pn)) continue; seenP.add(pn); nearPainters.push(pn); if (nearPainters.length >= 3) break; }
+  const thumbRow = (label, arr) => arr.length
+    ? `<div class="wc-sim-h">${label}</div><div class="wc-sim-row">` +
+      arr.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`
+    : "";
+  const painterLine = nearPainters.length
+    ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h">Painters nearest this work</span>` +
+      nearPainters.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("") + `</div>`
+    : "";
+  const out = thumbRow("Visually closest — same painter", same) + thumbRow("Visually closest — other painters", other) + painterLine;
+  if (out) host.innerHTML = out;
 }
 function openWorkCard(w) {
   if (!w) return;
@@ -2151,6 +2170,19 @@ function galaxyLegend() {
   const defs = galaxyColorBy === "period" ? ERAS : SCHOOLS;
   host.innerHTML = defs.map((g, i) => `<span class="gl-chip"><i style="background:${CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]}"></i>${esc(g.label)}</span>`).join("");
 }
+// Author mode: hovering a dot greys out every other author, so that painter's constellation stands out.
+// Done with ONE rewritten CSS rule (not 8k DOM writes per hover).
+let _gxFocusStyle = null, _gxFocusSlug = null;
+function setAuthorFocus(slug) {
+  if (_gxFocusSlug === slug) return;
+  _gxFocusSlug = slug;
+  if (!_gxFocusStyle) { _gxFocusStyle = document.createElement("style"); document.head.appendChild(_gxFocusStyle); }
+  _gxFocusStyle.textContent = slug
+    ? `#galaxy-plane .gx-dot:not([data-a="${slug}"]){background:#d5d0c7 !important;opacity:.28;box-shadow:none}` +
+      `#galaxy-plane .gx-dot[data-a="${slug}"]{opacity:1;z-index:5}`
+    : "";
+}
+function clearAuthorFocus() { setAuthorFocus(null); }
 function renderGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane) return;
   if (!galaxyCoords) {
@@ -2162,6 +2194,7 @@ function renderGalaxy() {
 }
 function drawGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane || !galaxyCoords) return;
+  if (typeof clearAuthorFocus === "function") clearAuthorFocus();   // drop any stale author greying
   if (!galaxyByQid) { galaxyByQid = new Map(); for (const w of works) if (w.p.qid) galaxyByQid.set(w.p.qid, w); }
   const S = 1800, PAD = 46;
   plane.style.width = (S + PAD * 2) + "px"; plane.style.height = (S + PAD * 2) + "px";
@@ -2170,7 +2203,8 @@ function drawGalaxy() {
     const w = galaxyByQid.get(qid); if (!w) continue;
     const x = (PAD + xy[0] / 1000 * S).toFixed(0), y = (PAD + xy[1] / 1000 * S).toFixed(0);
     const fill = (galaxyColorBy === "color" && xy.length >= 5) ? `rgb(${xy[2]},${xy[3]},${xy[4]})` : galaxyColorOf(w);
-    html += `<i class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px;background:${fill}"></i>`;
+    const aSlug = GAME_SLUG_OF_NAME[w.p.painter] || "";
+    html += `<i class="gx-dot" data-qid="${qid}" data-a="${aSlug}" style="left:${x}px;top:${y}px;background:${fill}"></i>`;
     if (galaxyLabels.title || galaxyLabels.author) {
       const parts = [];
       if (galaxyLabels.title) parts.push(w.p.title || "Untitled");
@@ -2224,7 +2258,9 @@ function setGalaxyView(on) {
   const tip = document.createElement("div"); tip.id = "gx-tip"; tip.hidden = true; document.body.appendChild(tip);
   plane.addEventListener("mousemove", e => {
     const d = e.target.closest(".gx-dot");
-    if (!d) { tip.hidden = true; tip.dataset.qid = ""; return; }
+    if (!d) { tip.hidden = true; tip.dataset.qid = ""; clearAuthorFocus(); return; }
+    // in Author mode, grey out every other painter so this one's constellation pops
+    if (galaxyColorBy === "author") setAuthorFocus(d.dataset.a || ""); else clearAuthorFocus();
     const w = galaxyByQid && galaxyByQid.get(d.dataset.qid); if (!w) return;
     const p = w.p;
     if (tip.dataset.qid !== d.dataset.qid) {
@@ -2239,7 +2275,7 @@ function setGalaxyView(on) {
     if (y + 210 > innerHeight) y = e.clientY - 16 - 210;
     tip.style.left = Math.max(6, x) + "px"; tip.style.top = Math.max(6, y) + "px";
   });
-  plane.addEventListener("mouseleave", () => { tip.hidden = true; tip.dataset.qid = ""; });
+  plane.addEventListener("mouseleave", () => { tip.hidden = true; tip.dataset.qid = ""; clearAuthorFocus(); });
 })();
 
 // ── collapse the top bars + game painting-size slider (mobile room, Víctor) ──
