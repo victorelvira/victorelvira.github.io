@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.52.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 14:15";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.52.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 15:05";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -2152,7 +2152,7 @@ function setChartView(on) {
 
 // ══ Similarity "galaxy": paintings laid out in 2-D by CLIP visual similarity (precomputed) ═══════
 let galaxyCoords = null, galaxyByQid = null, galaxyColorBy = "school";
-let galaxyLabels = { title: false, author: false };   // optional small grey labels beside each dot
+let galaxyLabels = { title: false, author: false, zones: false };   // per-dot labels + big per-painter names
 const CLUSTER_PALETTE = ["#c0392b", "#2a4d8f", "#2e7d5b", "#c8a24a", "#7b3fb0", "#e07b39", "#3a8fb0", "#a0518f", "#6a8f2a", "#8a5a3a", "#d04a7a", "#4aa0a0"];
 let _eraIdx = null, _schoolIdx = null;
 function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals whether it clusters
@@ -2178,8 +2178,8 @@ function setAuthorFocus(slug) {
   _gxFocusSlug = slug;
   if (!_gxFocusStyle) { _gxFocusStyle = document.createElement("style"); document.head.appendChild(_gxFocusStyle); }
   _gxFocusStyle.textContent = slug
-    ? `#galaxy-plane .gx-dot:not([data-a="${slug}"]){background:#d5d0c7 !important;opacity:.28;box-shadow:none}` +
-      `#galaxy-plane .gx-dot[data-a="${slug}"]{opacity:1;z-index:5}`
+    ? `#galaxy-plane .gx-dot:not([data-a="${slug}"]){background:#7c766b !important;opacity:.85}` +
+      `#galaxy-plane .gx-dot[data-a="${slug}"]{opacity:1;z-index:5;box-shadow:0 0 0 1.5px #fff,0 1px 5px rgba(0,0,0,.5)}`
     : "";
 }
 function clearAuthorFocus() { setAuthorFocus(null); }
@@ -2214,7 +2214,23 @@ function drawGalaxy() {
     }
     n++;
   }
-  plane.innerHTML = html;
+  // one big translucent painter name at the MEDIAN of each painter's cluster (drawn behind the dots)
+  let zonesHtml = "";
+  if (galaxyLabels.zones) {
+    const byA = new Map();
+    for (const [qid, xy] of Object.entries(galaxyCoords)) {
+      const w = galaxyByQid.get(qid); const pn = w && w.p.painter; if (!pn) continue;
+      if (!byA.has(pn)) byA.set(pn, { xs: [], ys: [] });
+      const o = byA.get(pn); o.xs.push(xy[0]); o.ys.push(xy[1]);
+    }
+    const med = a => { const s = a.slice().sort((p, q) => p - q), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+    for (const [pn, o] of byA) {
+      if (o.xs.length < 2) continue;
+      const zx = (PAD + med(o.xs) / 1000 * S).toFixed(0), zy = (PAD + med(o.ys) / 1000 * S).toFixed(0);
+      zonesHtml += `<span class="gx-zone" style="left:${zx}px;top:${zy}px;color:${colorFor(pn)}">${esc(pn)}</span>`;
+    }
+  }
+  plane.innerHTML = zonesHtml + html;
   document.getElementById("galaxy-n").textContent = n;
   galaxyLegend();
   if (window._galaxyFit) requestAnimationFrame(window._galaxyFit);
@@ -2297,7 +2313,8 @@ function setGalaxyView(on) {
   if (!scroll || !plane) return;
   let scale = 1, tx = 0, ty = 0;
   const clamp = s => Math.max(0.2, Math.min(9, s));
-  const apply = () => { plane.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${scale.toFixed(3)})`; };
+  const apply = () => { plane.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+    plane.style.setProperty("--gx-scale", scale.toFixed(3)); };   // painter-name labels counter-scale off this
   function zoomAt(px, py, f) { const ns = clamp(scale * f); tx = px - (px - tx) * (ns / scale); ty = py - (py - ty) * (ns / scale); scale = ns; apply(); }
   scroll.addEventListener("wheel", e => { e.preventDefault(); const r = scroll.getBoundingClientRect(); zoomAt(e.clientX - r.left, e.clientY - r.top, Math.exp(-e.deltaY * 0.0016)); }, { passive: false });
   const P = new Map(); let moved = false, pdist = 0;

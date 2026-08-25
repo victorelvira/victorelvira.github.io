@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.52.0">
+  <link rel="stylesheet" href="atlas/style.css?v=0.52.2">
 </head>
 <body>
   <nav id="navbar">
@@ -171,15 +171,32 @@
           <button type="button" class="gbtn active" data-cb="school">School</button>
           <button type="button" class="gbtn" data-cb="color">Colour</button>
         </span>
-        <span class="g-seg" id="galaxy-labels" title="Show small labels next to every dot">
+        <span class="g-seg" id="galaxy-labels" title="Show labels on the map">
           <label><input type="checkbox" data-lab="title"> 🏷 Titles</label>
           <label><input type="checkbox" data-lab="author"> ✍ Authors</label>
+          <label title="One big translucent name per painter, at the middle of their cluster"><input type="checkbox" data-lab="zones"> 🅰 Painter names</label>
         </span>
         <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan</span>
       </div>
       <span id="galaxy-legend" class="galaxy-legend"></span>
     </div>
     <div id="galaxy-scroll"><div id="galaxy-plane"></div></div>
+    <details id="galaxy-method">
+      <summary>How this is built — methodology</summary>
+      <div class="gm-body">
+        <p>Every painting is passed through a <b>CLIP</b> image model (ViT-B/32, open-source) that turns the
+        picture into a 512-number vector capturing what it <em>looks like</em> — composition, palette, subject,
+        handling — with no captions or labels involved. Two works are “similar” when their vectors point the same
+        way (<b>cosine similarity</b>); that drives <em>Visually closest</em> and <em>Painters nearest this work</em>
+        in each painting’s card.</p>
+        <p>This map lays all embedded works out in 2-D with <b>t-SNE</b>, so visually alike paintings land near each
+        other. The dots can be coloured by painter, period or school — or by each work’s own <b>dominant colour</b>
+        (the average of its pixels), captured while embedding. <em>Painters nearest this work</em> and the
+        <em>“If you like … try”</em> chips average a painter’s vectors into one “fingerprint” and compare fingerprints.</p>
+        <p>Everything is computed <b>offline</b> and shipped as small precomputed files — the page itself runs no AI.
+        Coverage grows as more works are embedded. Images © their sources via Wikimedia Commons.</p>
+      </div>
+    </details>
   </section>
 
   <div id="sheet" hidden>
@@ -234,7 +251,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.52.0"></script>
+  <script src="atlas/app.js?v=0.52.2"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

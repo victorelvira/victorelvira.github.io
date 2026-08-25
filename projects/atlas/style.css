@@ -773,6 +773,16 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 /* Similarity galaxy */
 #galaxyview { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #f4efe6; }
 #galaxyview[hidden] { display: none; }
+#galaxy-method { flex: 0 0 auto; border-top: 1px solid var(--line); background: var(--bar); font-size: 11px; }
+#galaxy-method > summary { padding: 5px 16px; cursor: pointer; color: var(--muted); font-weight: 600;
+  list-style: none; user-select: none; font-size: 10.5px; text-transform: uppercase; letter-spacing: .03em; }
+#galaxy-method > summary::-webkit-details-marker { display: none; }
+#galaxy-method > summary::before { content: "▸ "; color: var(--muted); }
+#galaxy-method[open] > summary::before { content: "▾ "; }
+#galaxy-method[open] > summary { color: var(--ink); }
+#galaxy-method .gm-body { padding: 0 16px 10px; max-width: 860px; color: var(--muted); max-height: 30vh; overflow-y: auto; }
+#galaxy-method .gm-body p { margin: 0 0 6px; line-height: 1.45; }
+#galaxy-method .gm-body b { color: var(--ink); }
 #galaxy-bar { padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--bar);
   display: flex; flex-direction: column; gap: 7px; }
 .galaxy-controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
@@ -780,6 +790,11 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 #galaxy-labels { display: inline-flex; gap: 10px; align-items: center; }
 #galaxy-labels label { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); cursor: pointer; }
 /* tiny grey labels beside each dot (optional, can get busy — that's expected) */
+/* one big translucent painter name at the cluster's median (a soft watermark behind the dots) */
+.gx-zone { position: absolute; transform: translate(-50%, -50%); font-weight: 800;
+  font-size: calc(16px / var(--gx-scale, 1));   /* counter-scale so names stay readable at any zoom */
+  white-space: nowrap; pointer-events: none; opacity: .5; letter-spacing: .01em; z-index: 0;
+  text-shadow: 0 1px 3px rgba(255,255,255,.9), 0 0 2px rgba(255,255,255,.9); }
 .gx-lab { position: absolute; transform: translateY(-50%); font-size: 8.5px; line-height: 1.05; color: #6b6257;
   white-space: nowrap; pointer-events: none; text-shadow: 0 0 2px #fff, 0 0 2px #fff; max-width: 120px;
   overflow: hidden; text-overflow: ellipsis; }
