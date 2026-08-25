@@ -52,6 +52,7 @@ const state = {
   // entra directo por un enlace con # -desde el historial de Chrome, o desde
   // WhatsApp- no hay nada detrás, y volver atrás saca de la web.
   historialPropio: false,
+  vengoDe: null,          // la ficha desde la que se abrió la actual
   sort: { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } },
   openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
@@ -642,6 +643,22 @@ let tipEl = null;
  * sobre la pagina para siempre. */
 function hideTooltip() {
   if (tipEl) tipEl.hidden = true;
+}
+
+/* Enseña el tooltip pegado a un elemento, no al cursor.
+ *
+ * Hace falta porque en un móvil no hay `hover` NI se ven los `title`: un chip
+ * que solo se explica al pasar por encima está mudo en la mitad de los
+ * dispositivos. Al tocarlo, el texto sale encima del propio chip. */
+function mostrarTipEn(elemento) {
+  if (!tipEl || !elemento.dataset.tip) return;
+  tipEl.innerHTML = elemento.dataset.tip;
+  tipEl.hidden = false;
+  const caja = elemento.getBoundingClientRect();
+  const x = Math.min(caja.left, window.innerWidth - tipEl.offsetWidth - 8);
+  const arriba = caja.top - tipEl.offsetHeight - 8;
+  tipEl.style.left = `${Math.max(8, x)}px`;
+  tipEl.style.top = `${arriba < 8 ? caja.bottom + 8 : arriba}px`;
 }
 
 function setupTooltip() {
@@ -1956,9 +1973,11 @@ function auditCell(entry) {
                 ? "Se ha elegido una y la otra queda registrada: pulsa para ver por qué."
                 : "Sin resolver: pulsa para ver las dos."))}"
           >?</button>` : "";
+    // El chip NO lleva a ninguna parte: dice de dónde sale el dato y ya. Antes
+    // abría la ficha de la carroza, que es abandonar la edición que estabas
+    // mirando para ir a leer lo mismo. Se explica solo, en el sitio.
     bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
-      data-float="${esc(entry.id)}" data-prov="1"
-      title="De dónde sale ${esc(DATO_LABEL[code])}">${code}</button>${enlaces}${dudoso}</span>`);
+      data-tip="De dónde sale ${esc(DATO_LABEL[code])}">${code}</button>${enlaces}${dudoso}</span>`);
   });
 
   const refs = entry.image_refs || [];
@@ -1968,8 +1987,7 @@ function auditCell(entry) {
     const cuenta = n => (refs.length > 1 ? ` ×${n}` : "");
     if (porPagina.length) {
       bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
-        data-float="${esc(entry.id)}" data-prov="1"
-        title="${esc(`${porPagina.length} foto${porPagina.length === 1 ? "" : "s"}: la web `
+        data-tip="${esc(`${porPagina.length} foto${porPagina.length === 1 ? "" : "s"}: la web `
           + `las publica en la ficha de esta carroza`)}">FOT${cuenta(porPagina.length)}</button>`
         + `<a href="${esc(porPagina[0].evidencia)}" target="_blank" rel="noopener"
              title="Ver la página donde se publican">↗</a></span>`);
@@ -1977,8 +1995,7 @@ function auditCell(entry) {
     if (porFichero.length) {
       const nombres = porFichero.slice(0, 3).map(r => r.evidencia).filter(Boolean).join(" · ");
       bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
-        data-float="${esc(entry.id)}" data-prov="1"
-        title="${esc(`${porFichero.length} foto${porFichero.length === 1 ? "" : "s"} `
+        data-tip="${esc(`${porFichero.length} foto${porFichero.length === 1 ? "" : "s"} `
           + `identificada${porFichero.length === 1 ? "" : "s"} por el nombre del fichero: ${nombres}`)}"
         >ARC${cuenta(porFichero.length)}</button>`
         + `<span class="src-nolink" title="No hay página que enlazar: las identifica el nombre del fichero">·</span></span>`);
@@ -2774,6 +2791,44 @@ function provenanceBlock(entries, sources, edition) {
     </div>`;
 }
 
+/* La fecha, exactamente tan ancha como el año que tiene debajo.
+ *
+ * No se puede hacer con CSS: «viernes 28 de agosto» tiene veinte caracteres y
+ * «2026» cuatro, así que el tamaño que los iguala depende de las dos cadenas y
+ * cambia con cada edición —«sábado 1 de septiembre» no mide lo mismo—.
+ *
+ * Se hace en dos pasos porque uno solo no clava: primero el cuerpo de letra,
+ * que acerca; luego el espaciado entre letras, que remata los píxeles que
+ * falten. Estirar con `scaleX` habría sido más corto y habría deformado la
+ * letra, que es lo que distingue esto de una fecha aplastada.
+ *
+ * El cuerpo va acotado: si la cadena es larguísima no se baja de 9 px, porque
+ * una línea que no se lee no es alineación, es un adorno. */
+function ajustarFechaAlAno() {
+  const bloque = document.querySelector(".anio-bloque");
+  const fecha = bloque?.querySelector(".fecha-desfile");
+  const anio = bloque?.querySelector("h2");
+  if (!fecha || !anio) return;
+
+  fecha.style.fontSize = "";
+  fecha.style.letterSpacing = "";
+  const objetivo = anio.getBoundingClientRect().width;
+  if (!objetivo) return;
+
+  const base = parseFloat(getComputedStyle(fecha).fontSize);
+  const anchoBase = fecha.getBoundingClientRect().width;
+  if (!anchoBase) return;
+
+  const cuerpo = Math.min(22, Math.max(9, base * (objetivo / anchoBase)));
+  fecha.style.fontSize = `${cuerpo.toFixed(2)}px`;
+
+  // El último ajuste, repartido entre los huecos. El espaciado también se pone
+  // detrás de la última letra, así que los huecos son tantos como caracteres.
+  const huecos = fecha.textContent.length;
+  const resto = objetivo - fecha.getBoundingClientRect().width;
+  if (huecos > 0) fecha.style.letterSpacing = `${(resto / huecos).toFixed(3)}px`;
+}
+
 function renderEditionDetail(edition) {
   const entries = edition.floats || [];
   // Por categoria y luego posicion: si no, A1 y B1 salian juntos y ordenados
@@ -2821,11 +2876,15 @@ function renderEditionDetail(edition) {
 
   els.detail.innerHTML = `
     <div class="detail-head edition-head">
+      <div class="anio-bloque">
       ${edition.parade_date_text
         // Encima del año y en gris: la fecha acompaña, no compite con el año.
+        // El ancho lo ajusta `ajustarFechaAlAno()` para que la línea mida
+        // exactamente lo que el año de debajo.
         ? `<span class="fecha-desfile" title="Fuente: ${esc(edition.parade_date_source || "")}">${
             esc(edition.parade_date_text.replace(/ de \d{4}$/, ""))}</span>` : ""}
       <h2>${edition.year}</h2>
+      </div>
       <span class="discs">
         ${edition.edition_number
           ? `<span class="disc disc-wide" title="${esc(edition.edition_label || "")}"><b>${edition.edition_number}ª</b>edición</span>`
@@ -2941,6 +3000,7 @@ function renderEditionDetail(edition) {
     ${provenanceBlock(entries, edition.source_urls || [], edition)}
   `;
   els.detail.scrollTop = 0;
+  ajustarFechaAlAno();
   activarMapasZoom();
 }
 
@@ -3441,20 +3501,29 @@ function renderGroupDetail(group) {
     ${detailHead(esc(group.canonical_name),
       { ids: { id: group.id_grupo || "", completo: null } })}
     ${(() => {
+      // Los otros nombres van DEBAJO de la frase que resume al grupo, y
+      // plegados. Iban encima y a la vista: lo primero que leías de «El Cantu»
+      // eran cuatro grafías distintas de su nombre, antes de saber cuántas
+      // carrozas sacó. El aviso es importante —es una decisión NUESTRA juntar
+      // esos nombres— pero es una nota al pie, no el titular.
       const otros = (group.aliases || []).filter(a => a !== group.canonical_name);
-      return otros.length ? `<p class="alias-note">También aparece en las fuentes como
-        ${joinEs(otros.map(a => `<b>«${esc(a)}»</b>`))}. Aquí van juntos porque hemos
-        decidido que son el mismo carrocista.</p>` : "";
-    })()}
-
+      const aviso = otros.length ? `<button class="alias-toggle" type="button"
+        aria-expanded="false" aria-controls="alias-panel"
+        title="Los otros nombres con los que aparece en las fuentes"
+        >${otros.length} nombre${otros.length === 1 ? "" : "s"} más ▾</button>` : "";
+      return `
     <p class="span-note">
       ${groupSubject(group.canonical_name)} desfiló
       entre <b>${group.first_year_seen}</b> y <b>${group.last_year_seen}</b>
       con <b>${num(group.float_count)}</b> carroza${group.float_count === 1 ? "" : "s"}${categories.length
         ? `, de las cuales ${categories.map(([cat, count]) =>
             `<b>${count}</b> en categoría ${esc(cat)}`).join(" y ")} (las categorías existen desde ${CATEGORIES_FROM})`
-        : ""}.
+        : ""}. ${aviso}
     </p>
+    ${otros.length ? `<p class="alias-note" id="alias-panel" hidden>También aparece en las
+      fuentes como ${joinEs(otros.map(a => `<b>«${esc(a)}»</b>`))}. Aquí van juntos porque
+      hemos decidido que son el mismo carrocista.</p>` : ""}`;
+    })()}
 
     <div class="kpis">
       <div class="kpi"><span>${num(group.years.length)}</span><small>ediciones</small></div>
@@ -3465,12 +3534,22 @@ function renderGroupDetail(group) {
 
     ${chartGroupTimeline(entries)}
 
-    ${renderGallery(entries)}
-
+    ${(() => {
+      // La lista va ANTES que la galería, y con su miniatura, igual que el
+      // palmarés de una edición. Antes se entraba a un carrocista y lo primero
+      // eran cuarenta fotos sueltas: bonito, pero no se sabía qué carroza era
+      // cuál ni de qué año. La tabla es la que responde eso.
+      //
+      // La galería se queda, al final: son las mismas fotos, pero mirar el
+      // trabajo de un carrocista todo junto y en grande es otra cosa distinta
+      // de leer su lista de años. Es redundante a propósito.
+      const conFoto = entries.some(e => (e.image_urls || []).length);
+      return `
     <h3 class="section">Carrozas</h3>
-    <table class="palmares">
-      <colgroup><col class="c-pos"><col><col class="c-pos"><col class="c-src"></colgroup>
+    <table class="palmares${conFoto ? " with-photo" : ""}">
+      <colgroup>${conFoto ? '<col class="c-photo">' : ""}<col class="c-pos"><col><col class="c-pos"><col class="c-src"></colgroup>
       <thead><tr>
+        ${conFoto ? '<th class="c-photo">Foto</th>' : ""}
         <th data-sort-type="num">Año</th>
         <th data-sort-type="text">Carroza</th>
         <th data-sort-type="text">Pos.</th>
@@ -3479,13 +3558,22 @@ function renderGroupDetail(group) {
       <tbody>
         ${entries.map(entry => `
           <tr>
+            ${conFoto ? `<td class="c-photo">${(entry.image_urls || []).length
+              ? `<button class="thumb" type="button" ${photoAttrs(entry, entry.image_urls[0])}
+                   data-tip="${esc(`${entry.name} · ${entry.year}`)}"><img
+                   src="${esc(thumbUrl(entry.image_urls[0]))}"
+                   alt="${esc(entry.name)}" loading="lazy"></button>`
+              : ""}</td>` : ""}
             <td class="pos" data-sort="${entry.year}"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
             <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
             <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
             <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
           </tr>`).join("")}
       </tbody>
-    </table>
+    </table>`;
+    })()}
+
+    ${renderGallery(entries)}
 
     <div class="provenance">
       <b>Normalización del nombre</b>
@@ -3820,6 +3908,15 @@ function track(path, title, event = false) {
 
 function select(kind, id, { updateHash = true, reveal = true } = {}) {
   const hadSelection = Boolean(state.selection);
+  // De dónde vengo, para que la X me devuelva ahí.
+  //
+  // El historial se mantiene plano a propósito (ver abajo), así que «atrás»
+  // sale al índice y la edición que estabas mirando se perdía: abrías una
+  // carroza desde el palmarés de 2017, cerrabas, y aparecías en la rejilla.
+  // Esto guarda UN paso, no una pila: la X te devuelve a la ficha de la que
+  // saliste y desde ahí ya cierra. Nunca más de una pulsación extra.
+  const previa = state.selection;
+  state.vengoDe = previa && (previa.kind !== kind || previa.id !== id) ? previa : null;
   state.selection = { kind, id };
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
@@ -3886,12 +3983,25 @@ function latestRankedEdition() {
 function clearSelection() {
   document.body.classList.remove("detail-open");
   state.selection = null;
+  // Al salir del todo no se vuelve de ningún sitio: si no se borra, la X de la
+  // siguiente ficha que se abra te mandaría a una que cerraste hace rato.
+  state.vengoDe = null;
   renderIndex();
   renderDetail();
 }
 
 function closeDetail() {
   if (!state.selection) return;
+  // Si esta ficha se abrió desde otra, la X vuelve a aquella en vez de cerrar
+  // del todo: es lo que espera quien estaba leyendo un palmarés y ha entrado a
+  // ver una carroza.
+  if (state.vengoDe) {
+    const volver = state.vengoDe;
+    state.vengoDe = null;
+    select(volver.kind, volver.id);
+    state.vengoDe = null;
+    return;
+  }
   // Si la ficha metio una entrada en el historial, la X retrocede: asi el boton
   // atras y la X dejan el historial igual y no se acumulan estados muertos.
   //
@@ -3989,6 +4099,18 @@ function bindEvents() {
   // Un unico delegador: sirve para el indice y para los enlaces del detalle.
   document.addEventListener("click", event => {
     hideTooltip();
+
+    const alias = event.target.closest(".alias-toggle");
+    if (alias) {
+      const panel = document.getElementById("alias-panel");
+      const abierto = alias.getAttribute("aria-expanded") === "true";
+      alias.setAttribute("aria-expanded", String(!abierto));
+      // La flecha gira con el estado: es la única señal de que hay algo debajo.
+      alias.textContent = alias.textContent.replace(abierto ? "▴" : "▾", abierto ? "▾" : "▴");
+      if (panel) panel.hidden = abierto;
+      return;
+    }
+
     const header = event.target.closest("[data-sort-by]");
     if (header) {
       const [mode, key] = header.dataset.sortBy.split(":");
@@ -4116,6 +4238,16 @@ function bindEvents() {
     if (view) {
       state.floatView = view.dataset.view;
       renderFloatList();
+      return;
+    }
+
+    // Antes que nada: un chip de fuente se explica y no lleva a ningún sitio.
+    // Va aquí arriba porque en la lista de carrozas la fila entera es un botón,
+    // y sin esto el clic se le escaparía a la fila y abriría la ficha igual.
+    const chip = event.target.closest(".tag-src");
+    if (chip) {
+      event.stopPropagation();
+      mostrarTipEn(chip);
       return;
     }
 
