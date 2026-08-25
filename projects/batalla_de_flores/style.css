@@ -550,6 +550,17 @@ table.palmares td.c-photo .thumb img {
 .view + .view { border-left: 1px solid var(--line); }
 .view.is-on { background: var(--t-year-bg); color: var(--t-year); }
 
+/* «Solo ganadoras» va suelto, no dentro de `.view-toggle`, así que se pone su
+   propio marco. Y en oro cuando está puesto: es el color de las ganadoras en
+   todos los gráficos, así que el botón dice de qué habla sin leerlo. */
+.solo-ganadoras {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px; border: 1px solid var(--line); border-radius: 7px;
+}
+.solo-ganadoras:hover { border-color: var(--gold); }
+.solo-ganadoras.is-on { background: #fdf4e0; border-color: var(--gold); color: #8a6410; }
+.solo-ganadoras .kpi-icon { width: 13px; height: 13px; fill: currentColor; }
+
 /* Cuadricula de fotos. */
 .float-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(122px, 1fr)); gap: 8px; }
 .tile {
@@ -1034,7 +1045,16 @@ ul.plain a { color: var(--sky); word-break: break-all; }
 
 /* El ancho fijo evita que los botones salten al cambiar de vista: «Fotos» y
    «Lista» no miden lo mismo y el desplegable de orden solo existe en fotos. */
-.tools { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+/* `wrap` y no `nowrap`: son cuatro controles y en un móvil no caben en una
+   línea. Sin esto el último —«Solo ganadoras»— se salía por la derecha y se
+   leía «Solo ganador…», que es justo el botón que costó encontrar. */
+/* Sin `margin-left: auto`: la barra iba empujada contra el borde derecho,
+   lejos de las pestañas y de la rejilla que gobierna, y por eso «Solo
+   ganadoras» no se veía. Los controles de una vista van donde está la vista. */
+.tools { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+/* Ninguno de los tres se parte por dentro: o cabe entero o baja de línea. */
+.tools > * { flex: none; }
+.solo-ganadoras { white-space: nowrap; }
 .view-toggle .view { min-width: 62px; justify-content: center; display: inline-flex; }
 .grid-sort { min-width: 96px; }
 .sort-slot { display: inline-flex; align-items: center; gap: 6px; }
@@ -1129,7 +1149,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .pane-head { padding: 6px 6px; }
   /* Fotos / Lista pegados a la izquierda, y el hueco del orden reservado para
      que no bailen al cambiar de vista. */
-  .tools { margin-left: 0; flex-basis: 100%; }
+  .tools { margin-left: 0; flex-basis: 100%; justify-content: flex-start; }
   .count { margin-left: auto; }
   /* Las cinco pestañas se pasaban por un pelo y saltaban a una segunda fila. */
   .tabs { gap: 3px; }

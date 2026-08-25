@@ -11,8 +11,6 @@ const els = {
   stats: document.getElementById("stats"),
   search: document.getElementById("search"),
   decade: document.getElementById("decade"),
-  status: document.getElementById("status"),
-  rankedOnly: document.getElementById("ranked-only"),
   clearFilters: document.getElementById("clear-filters"),
   tabs: document.querySelectorAll(".tab"),
   indexCount: document.getElementById("index-count"),
@@ -46,8 +44,6 @@ const state = {
   selection: null, // {kind: "year"|"group"|"route", id}
   query: "",
   decade: "all",
-  status: "all",
-  rankedOnly: false,
   winnersOnly: false,
   // Se pone al pulsar un codigo de fuente: la ficha se abre con el bloque de
   // procedencia desplegado, que es justo lo que se ha ido a mirar.
@@ -218,8 +214,6 @@ function applyFilters() {
   const query = normalizeText(state.query);
   state.filtered = state.editions.filter(edition => {
     if (state.decade !== "all" && Math.floor(edition.year / 10) * 10 !== Number(state.decade)) return false;
-    if (state.status !== "all" && edition.status !== state.status) return false;
-    if (state.rankedOnly && !(edition.result_count > 0)) return false;
     if (query && !edition.searchIndex.includes(query)) return false;
     return true;
   });
@@ -230,8 +224,8 @@ function applyFilters() {
 }
 
 function hayAlgunFiltro() {
-  return Boolean(state.query) || state.decade !== "all" || state.status !== "all"
-    || state.rankedOnly || state.winnersOnly || state.category;
+  return Boolean(state.query) || state.decade !== "all"
+    || state.winnersOnly || state.category;
 }
 
 /* Todas las carrozas en una sola lista, para la pestana de tabla. Se construye
@@ -347,10 +341,6 @@ function renderFilterOptions() {
   const decades = [...new Set(state.editions.map(edition => Math.floor(edition.year / 10) * 10))].sort();
   els.decade.innerHTML = ['<option value="all">Todas las décadas</option>']
     .concat(decades.map(decade => `<option value="${decade}">${decade}s</option>`)).join("");
-
-  const statuses = [...new Set(state.editions.map(edition => edition.status))];
-  els.status.innerHTML = ['<option value="all">Todos los estados</option>']
-    .concat(statuses.map(value => `<option value="${esc(value)}">${esc(STATUS_LABEL[value] || value)}</option>`)).join("");
 }
 
 function renderLegend() {
@@ -550,13 +540,21 @@ function gridSort(hidden = false) {
 
 /* Filtro de ganadoras. Va en la barra de la pestana y no en los controles
  * generales de arriba porque solo tiene sentido aqui: en Ediciones o en Grupos
- * no hay nada que filtrar por puesto. */
+ * no hay nada que filtrar por puesto.
+ *
+ * Es un boton y no una casilla, y va PEGADO a «Fotos / Lista».
+ *
+ * Como casilla, y de ultimo en una barra empujada al borde derecho, se reporto
+ * dos veces sin encontrarlo estando a la vista. Un control que decide QUE se
+ * enseña tiene que estar donde ya se esta mirando —junto al que decide COMO se
+ * enseña—, no en la otra punta. El orden de la fila lo dice: primero que ves
+ * (Fotos/Lista), luego cuales (ganadoras), y ya al final en que orden. */
 function winnersToggle() {
   return `
-    <label class="toggle tool-toggle" title="Solo las que ganaron su categoría">
-      <input class="winners-only" type="checkbox"${state.winnersOnly ? " checked" : ""}>
-      <span>${ICON_TROPHY} Solo ganadoras</span>
-    </label>`;
+    <button class="view solo-ganadoras${state.winnersOnly ? " is-on" : ""}" type="button"
+      data-winners="1" aria-pressed="${state.winnersOnly}"
+      title="Enseñar solo las carrozas que ganaron su categoría">
+      ${ICON_TROPHY} Solo ganadoras</button>`;
 }
 
 function viewToggle() {
@@ -573,7 +571,7 @@ function viewToggle() {
  * 318 en blanco esto parecia roto, y el contador ya avisa de cuantas quedan. */
 function renderFloatGrid(rows) {
   const withPhoto = rows.filter(entry => (entry.image_urls || []).length);
-  els.indexTools.innerHTML = `${viewToggle()}${gridSort()}${winnersToggle()}${categoryNote()}`;
+  els.indexTools.innerHTML = `${viewToggle()}${winnersToggle()}${gridSort()}${categoryNote()}`;
   els.indexCount.textContent = `${num(withPhoto.length)} con foto`;
 
   if (!withPhoto.length) {
@@ -599,7 +597,7 @@ function renderFloatList() {
   const rows = filteredFloats();
   if (state.floatView === "grid") return renderFloatGrid(rows);
 
-  els.indexTools.innerHTML = `${viewToggle()}${gridSort(true)}${winnersToggle()}${categoryNote()}`;
+  els.indexTools.innerHTML = `${viewToggle()}${winnersToggle()}${gridSort(true)}${categoryNote()}`;
   setCount(rows.length, state.floats.length, "carrozas");
   if (!rows.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna carroza encaja con la búsqueda.</p>';
@@ -3911,8 +3909,8 @@ function closeDetail() {
 }
 
 function resetToStart() {
-  state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false; state.winnersOnly = false; state.category = null;
-  els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
+  state.query = ""; state.decade = "all"; state.winnersOnly = false; state.category = null;
+  els.search.value = ""; els.decade.value = "all";
   state.sort = { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } };
   state.openDecade = null;
   clearSelection();
@@ -3930,12 +3928,10 @@ function resetToStart() {
 function bindEvents() {
   els.search.addEventListener("input", event => { state.query = event.target.value; refresh(); });
   els.decade.addEventListener("change", event => { state.decade = event.target.value; refresh(); });
-  els.status.addEventListener("change", event => { state.status = event.target.value; refresh(); });
-  els.rankedOnly.addEventListener("change", event => { state.rankedOnly = event.target.checked; refresh(); });
   els.clearFilters.addEventListener("click", () => {
-    state.query = ""; state.decade = "all"; state.status = "all"; state.rankedOnly = false; state.winnersOnly = false;
+    state.query = ""; state.decade = "all"; state.winnersOnly = false;
     state.category = null;
-    els.search.value = ""; els.decade.value = "all"; els.status.value = "all"; els.rankedOnly.checked = false;
+    els.search.value = ""; els.decade.value = "all";
     refresh();
   });
 
@@ -3950,12 +3946,14 @@ function bindEvents() {
     select("float", fila.dataset.float);
   });
 
-  els.indexTools.addEventListener("change", event => {
-    if (event.target.classList.contains("winners-only")) {
-      state.winnersOnly = event.target.checked;
+  els.indexTools.addEventListener("click", event => {
+    if (event.target.closest("[data-winners]")) {
+      state.winnersOnly = !state.winnersOnly;
       renderFloatList();
-      return;
     }
+  });
+
+  els.indexTools.addEventListener("change", event => {
     if (!event.target.classList.contains("grid-sort")) return;
     const key = event.target.value;
     state.sort.floats = { key, dir: SORTS.floats[key].type === "text" ? 1 : -1 };

@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://victorelvira.github.io/projects/batalla_de_flores/og.jpg?v=0136bc10">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=b6d5c785">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=73a17b2e">
 </head>
 <body>
   <nav id="navbar">
@@ -84,8 +84,14 @@
       <input id="search" type="search" placeholder="Carroza, grupo o año" autocomplete="off" aria-label="Buscar">
       <button id="clear-filters" class="ghost" type="button">Limpiar</button>
       <select id="decade" aria-label="Década"></select>
-      <select id="status" class="desk-only" aria-label="Estado de la edición"></select>
-      <label class="toggle desk-only"><input id="ranked-only" type="checkbox"><span>Con palmarés</span></label>
+      <!-- Aquí había dos filtros más, «Años con palmarés» y «Todos los estados».
+           Fuera los dos. El de palmarés escondía 7 años de 119 y la meta del
+           proyecto es justamente que no quede ninguno: un filtro que sirve para
+           mirar hacia otro lado. Y el de estado repartía 119 ediciones en cuatro
+           cajones de los que tres son casi vacíos —2 canceladas, 1 no celebrada,
+           1 prevista, y esa es obvia—, así que ocupaba una cuarta parte de la
+           barra para no separar nada. Lo que sí distingue el estado se ve mejor
+           donde ya estaba: en el color de cada año de la rejilla. -->
       </div>
 
       <div id="index-body" class="pane-body"></div>
@@ -167,7 +173,7 @@
     </form>
   </div>
 
-  <script src="batalla_de_flores/app.js?v=f3e4f200"></script>
+  <script src="batalla_de_flores/app.js?v=74513594"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
