@@ -30,7 +30,8 @@
     "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q16170276",
     "wikidata": "https://www.wikidata.org/wiki/Q16170276",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/13variou/0virgin.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/13variou/0virgin.html",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -60,7 +61,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q20173537",
-    "wikidata": "https://www.wikidata.org/wiki/Q20173537"
+    "wikidata": "https://www.wikidata.org/wiki/Q20173537",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -68,17 +70,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Crucifixion",
     "year": "c. 1425–1430",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "79 × 49 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Weyden_Crucifixion.jpg/500px-Weyden_Crucifixion.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -87,8 +89,9 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/14pieta/1crucifi.html"
+    "museum_id": "gemaldegalerie-berlin",
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/14pieta/1crucifi.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -121,7 +124,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q17036401",
-    "wikidata": "https://www.wikidata.org/wiki/Q17036401"
+    "wikidata": "https://www.wikidata.org/wiki/Q17036401",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -155,7 +159,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q568847",
     "wikidata": "https://www.wikidata.org/wiki/Q568847",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/01deposi/7deposit.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/01deposi/7deposit.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -189,7 +194,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q5316837",
     "wikidata": "https://www.wikidata.org/wiki/Q5316837",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/17other/2duran.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/17other/2duran.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -197,17 +203,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Portrait of a Woman",
     "year": "c. 1430–1435",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "47 × 32 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Rogier_van_der_Weyden_%281399_-_1464%29_-_Portrait_of_a_Young_Woman_with_a_White_Headdress_-_545D_-_Gem%C3%A4ldegalerie.jpg/500px-Rogier_van_der_Weyden_%281399_-_1464%29_-_Portrait_of_a_Young_Woman_with_a_White_Headdress_-_545D_-_Gem%C3%A4ldegalerie.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -220,7 +226,7 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3399411",
     "wikidata": "https://www.wikidata.org/wiki/Q3399411",
     "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/02lady.html",
@@ -231,7 +237,8 @@
       "qid": "Q3399411",
       "url": "https://www.wikidata.org/wiki/Q3399411"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -239,16 +246,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.0942,
-     42.3394
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Saint Luke Drawing the Virgin",
     "year": "c. 1435–1440",
-    "city": "Higginson bequest",
-    "location": "Boston Museum of Fine Arts",
+    "city": "Boston",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "138 × 111 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Weyden_madonna_1440.jpg/500px-Weyden_madonna_1440.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -261,10 +268,12 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "boston-museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q286096",
     "wikidata": "https://www.wikidata.org/wiki/Q286096",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/02stluke/4luke.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/02stluke/4luke.html",
+    "country": "United States",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -298,7 +307,8 @@
     "country": "Germany",
     "qid": "Q25444058",
     "wikidata": "https://www.wikidata.org/wiki/Q25444058",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/17other/3visitat.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/17other/3visitat.html",
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -327,7 +337,8 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "riggisberg"
+    "museum_id": "riggisberg",
+    "location_src": "Riggisberg"
    }
   },
   {
@@ -345,7 +356,7 @@
     "year": ".c. 1440–1445",
     "city": "Antwerp",
     "country": "Belgium",
-    "location": "Koninklijk Museum voor Schone Kunsten Antwerpen",
+    "location": "Royal Museum of Fine Arts Antwerp",
     "attribution": "generally accepted",
     "dimensions": "center panel: 200 × 97 cm, Both side panels: 119 × 63 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Seven_Sacraments_Rogier.jpg/500px-Seven_Sacraments_Rogier.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -358,9 +369,10 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "koninklijk-museum-voor-schone-kunsten-antwerpen",
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
     "qid": "Q434461",
-    "wikidata": "https://www.wikidata.org/wiki/Q434461"
+    "wikidata": "https://www.wikidata.org/wiki/Q434461",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -368,17 +380,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Triptych of Our Fair Lady , so called Miraflores Altarpiece",
     "year": ".c. 1440–1445",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "Three panels: 74 × 45 cm each.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Rogier_van_der_Weyden_-_The_Altar_of_Our_Lady_%28Miraflores_Altar%29_-_Google_Art_ProjectFXD.jpg/500px-Rogier_van_der_Weyden_-_The_Altar_of_Our_Lady_%28Miraflores_Altar%29_-_Google_Art_ProjectFXD.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -391,9 +403,10 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q323032",
-    "wikidata": "https://www.wikidata.org/wiki/Q323032"
+    "wikidata": "https://www.wikidata.org/wiki/Q323032",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -427,7 +440,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q1395192",
     "wikidata": "https://www.wikidata.org/wiki/Q1395192",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/06crucif/0crucifi.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/06crucif/0crucifi.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -435,17 +449,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Triptych with the Birth of Christ , so called Bladelin Triptych",
     "year": "c. 1445–1450",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "Center panel: 94 × 92 cm, Wings each: 94 × 42 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Middelburg_Altar_%28Bladelin_Altar%29_painted_by_Rogier_van_der_Weyden.jpg/500px-Middelburg_Altar_%28Bladelin_Altar%29_painted_by_Rogier_van_der_Weyden.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -458,9 +472,10 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q881025",
-    "wikidata": "https://www.wikidata.org/wiki/Q881025"
+    "wikidata": "https://www.wikidata.org/wiki/Q881025",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -493,7 +508,8 @@
     },
     "museum_id": "royal-library-of-belgium",
     "qid": "Q17015401",
-    "wikidata": "https://www.wikidata.org/wiki/Q17015401"
+    "wikidata": "https://www.wikidata.org/wiki/Q17015401",
+    "location_src": "Royal Library of Belgium"
    }
   },
   {
@@ -534,7 +550,8 @@
       "qid": "Q1169199",
       "url": "https://www.wikidata.org/wiki/Q1169199"
      }
-    ]
+    ],
+    "location_src": "Beaune"
    }
   },
   {
@@ -542,8 +559,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -578,7 +595,9 @@
       "source": "Wikipedia list",
       "title": "Saint Margareth and Saint Apollonia"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -619,7 +638,8 @@
       "qid": "Q24160",
       "url": "https://www.wikidata.org/wiki/Q24160"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -667,7 +687,8 @@
       "qid": "Q27038656",
       "url": "https://www.wikidata.org/wiki/Q27038656"
      }
-    ]
+    ],
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -709,7 +730,8 @@
       "qid": "Q874058",
       "url": "https://www.wikidata.org/wiki/Q874058"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -717,17 +739,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Triptych with scenes from the life of John the Baptist , so called Saint Johns Altarpiece",
     "year": "c. 1450–1455",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "Each panel ca. 77 × 48 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Berlin_van_der_Weyden_01.JPG/500px-Berlin_van_der_Weyden_01.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -740,9 +762,10 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q1698794",
-    "wikidata": "https://www.wikidata.org/wiki/Q1698794"
+    "wikidata": "https://www.wikidata.org/wiki/Q1698794",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -779,7 +802,8 @@
       "qid": "Q18430656",
       "url": "https://www.wikidata.org/wiki/Q18430656"
      }
-    ]
+    ],
+    "location_src": "El Escorial"
    }
   },
   {
@@ -813,7 +837,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q17066005",
     "wikidata": "https://www.wikidata.org/wiki/Q17066005",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/14pieta/2lamenta.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/14pieta/2lamenta.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -847,7 +872,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3399428",
     "wikidata": "https://www.wikidata.org/wiki/Q3399428",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/07este.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/07este.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -889,7 +915,8 @@
       "qid": "Q2439462",
       "url": "https://www.wikidata.org/wiki/Q2439462"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -897,17 +924,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Portrait of Charles the Bold",
     "year": "c. 1461–1462",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "workshop",
     "dimensions": "51 × 34 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Rogier_van_der_weyden%2C_ritratto_di_carlo_l%27ardito%2C_duca_di_borgogna_e_conte_di_Charolais%2C_1461-62_ca.JPG/500px-Rogier_van_der_weyden%2C_ritratto_di_carlo_l%27ardito%2C_duca_di_borgogna_e_conte_di_Charolais%2C_1461-62_ca.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -919,7 +946,7 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/08c_bold.html",
     "qid": "Q47008576",
     "wikidata": "https://www.wikidata.org/wiki/Q47008576",
@@ -929,7 +956,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q47008576 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -963,7 +991,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q7232256",
     "wikidata": "https://www.wikidata.org/wiki/Q7232256",
-    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/09anthon.html"
+    "wga_url": "https://www.wga.hu/html/w/weyden/rogier/16portra/09anthon.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -997,7 +1026,8 @@
     "qid": "Q15913463",
     "wikidata": "https://www.wikidata.org/wiki/Q15913463",
     "wga_url": "https://www.wga.hu/html/w/weyden/rogier/17other/7virgin.html",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -1013,9 +1043,9 @@
     "painter": "Rogier van der Weyden",
     "title": "Virgin and Child with four Saints , the so-called Medici Madonna",
     "year": "c. 1460–1464",
-    "city": "Frankfurt am Main",
+    "city": "Frankfurt",
     "country": "Germany",
-    "location": "Städel",
+    "location": "Städel Museum",
     "attribution": "generally accepted",
     "dimensions": "51 × 38 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Rogier_van_der_Weyden_021.jpg/500px-Rogier_van_der_Weyden_021.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1028,7 +1058,7 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "stadel",
+    "museum_id": "stadel-museum",
     "qid": "Q3276176",
     "wikidata": "https://www.wikidata.org/wiki/Q3276176",
     "wga_url": "https://www.wga.hu/html/w/weyden/rogier/17other/6medici.html",
@@ -1039,7 +1069,8 @@
       "qid": "Q3276176",
       "url": "https://www.wikidata.org/wiki/Q3276176"
      }
-    ]
+    ],
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -1081,7 +1112,8 @@
       "qid": "Q2604155",
       "url": "https://www.wikidata.org/wiki/Q2604155"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1089,8 +1121,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -1122,7 +1154,8 @@
       "qid": "Q5189814",
       "url": "https://www.wikidata.org/wiki/Q5189814"
      }
-    ]
+    ],
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -1130,8 +1163,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.147778,
-     40.589167
+     -4.14778,
+     40.58917
     ]
    },
    "properties": {
@@ -1165,7 +1198,9 @@
       "source": "Wikipedia list",
       "title": "The crucified Christ between the mourning Mary and Saint John , so called Crucifixion of Scheut"
      }
-    ]
+    ],
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
+    "location_src": "Royal Monastery of San Lorenzo de El Escorial"
    }
   },
   {
@@ -1174,7 +1209,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -1202,7 +1237,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1210,8 +1247,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1239,7 +1276,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1247,8 +1286,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -1276,7 +1315,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1284,8 +1325,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -1311,7 +1352,9 @@
       "was": "generally accepted",
       "note": "dated 1484, after death (1399–1464) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1319,8 +1362,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -1348,7 +1391,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1356,8 +1401,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1365,7 +1410,7 @@
     "title": "The Magdalen Reading",
     "year": "1435",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Magdalen%20Reading%20Rogier.jpg?width=500",
@@ -1385,7 +1430,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1393,8 +1440,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1402,7 +1449,7 @@
     "title": "The Exhumation of Saint Hubert",
     "year": "1430",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20and%20workshop%20-%20Exhumation%20of%20St%20Hubert%20NG%20783.jpg?width=500",
@@ -1422,7 +1469,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1430,8 +1479,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -9.154166666,
-     38.736666666
+     -9.15417,
+     38.73667
     ]
    },
    "properties": {
@@ -1465,7 +1514,9 @@
       "source": "Wikipedia list",
       "title": "Saint Catherine"
      }
-    ]
+    ],
+    "museum_id": "calouste-gulbenkian-museum",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -1473,8 +1524,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -9.154166666,
-     38.736666666
+     -9.15417,
+     38.73667
     ]
    },
    "properties": {
@@ -1502,7 +1553,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "calouste-gulbenkian-museum",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -1510,8 +1563,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.314305555,
-     52.080388888
+     4.3143,
+     52.0804
     ]
    },
    "properties": {
@@ -1539,7 +1592,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "mauritshuis",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -1547,8 +1602,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -1576,7 +1631,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -1584,7 +1641,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -1603,7 +1660,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q47074260",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1611,8 +1670,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -1640,7 +1699,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -1648,8 +1709,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.116912,
-     51.510734
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -1677,7 +1738,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -1685,8 +1748,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -1714,7 +1777,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -1723,7 +1788,7 @@
     "type": "Point",
     "coordinates": [
      -118.1125,
-     34.129166666
+     34.12917
     ]
    },
    "properties": {
@@ -1751,7 +1816,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
    }
   },
   {
@@ -1759,8 +1826,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1788,7 +1855,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1796,8 +1865,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1825,7 +1894,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1833,8 +1904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1862,7 +1933,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1870,8 +1943,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1899,7 +1972,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1907,8 +1982,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1936,7 +2011,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1944,8 +2021,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1973,7 +2050,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -2010,7 +2089,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-sabauda",
+    "location_src": "Galleria Sabauda"
    }
   },
   {
@@ -2047,7 +2128,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-godshuis-belle",
+    "location_src": "Museum Godshuis Belle"
    }
   },
   {
@@ -2055,8 +2138,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.704444444,
-     50.878888888
+     4.70444,
+     50.87889
     ]
    },
    "properties": {
@@ -2084,7 +2167,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "m-leuven",
+    "location_src": "M Leuven"
    }
   },
   {
@@ -2092,8 +2177,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -2101,7 +2186,7 @@
     "title": "Annunciation",
     "year": "1435",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20-%20The%20Annunciation%20-%20WGA25591.jpg?width=500",
@@ -2121,7 +2206,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2129,8 +2216,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -2158,7 +2245,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2167,7 +2256,7 @@
     "type": "Point",
     "coordinates": [
      -118.1125,
-     34.129166666
+     34.12917
     ]
    },
    "properties": {
@@ -2195,7 +2284,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
    }
   },
   {
@@ -2203,8 +2294,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.139444444,
-     51.508888888
+     -0.13944,
+     51.50889
     ]
    },
    "properties": {
@@ -2232,7 +2323,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "burlington-house",
+    "location_src": "Burlington House"
    }
   },
   {
@@ -2240,8 +2333,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.361664,
-     49.186067
+     -0.36166,
+     49.18607
     ]
    },
    "properties": {
@@ -2269,7 +2362,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-caen",
+    "location_src": "Musée des Beaux-Arts de Caen"
    }
   },
   {
@@ -2296,7 +2391,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q140392213",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palazzo-rosso",
+    "location_src": "Palazzo Rosso"
    }
   },
   {
@@ -2323,7 +2420,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119450429",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -2331,8 +2430,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2358,7 +2457,9 @@
       "was": "generally accepted",
       "note": "dated 1515, after death (1399–1464) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2366,8 +2467,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2395,7 +2496,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2403,8 +2506,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2432,7 +2535,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2440,7 +2545,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -2469,7 +2574,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -2477,8 +2584,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.307726421,
-     55.830936581
+     -4.30773,
+     55.83094
     ]
    },
    "properties": {
@@ -2496,7 +2603,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118630024",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "burrell-collection",
+    "location_src": "Burrell Collection"
    }
   },
   {
@@ -2504,8 +2613,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -2513,7 +2622,7 @@
     "title": "Madonna with child",
     "year": "1450",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Amiens%2C%20Mus%C3%A9e%20de%20Picardie%2C%20Anonyme%20%28Pays-Bas%20m%C3%A9ridionaux%29%20%2C%20Vierge%20allaitant%20l%27Enfant%20%28huile%20sur%20bois%2C%20vers%201500%29.jpg?width=500",
@@ -2533,7 +2642,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2541,8 +2652,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -2570,7 +2681,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -2578,8 +2691,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.38555556,
-     50.60277778
+     3.38556,
+     50.60278
     ]
    },
    "properties": {
@@ -2607,7 +2720,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-tournai",
+    "location_src": "Musée des Beaux-Arts de Tournai"
    }
   },
   {
@@ -2644,7 +2759,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -2681,7 +2798,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -2708,7 +2827,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118629835",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-the-order-of-st-john",
+    "location_src": "Museum of the Order of St John"
    }
   },
   {
@@ -2735,7 +2856,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118629837",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-the-order-of-st-john",
+    "location_src": "Museum of the Order of St John"
    }
   },
   {
@@ -2762,7 +2885,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118629839",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-the-order-of-st-john",
+    "location_src": "Museum of the Order of St John"
    }
   },
   {
@@ -2789,7 +2914,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118629894",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-the-order-of-st-john",
+    "location_src": "Museum of the Order of St John"
    }
   },
   {
@@ -2797,8 +2924,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -2806,7 +2933,7 @@
     "title": "Branch of Holly (verso)",
     "year": "",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20%28c.1399-1464%29%20%28workshop%20of%29%20-%20Branch%20of%20Holly%20%28verso%29%20-%20P.1987.XX.486.v%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -2816,7 +2943,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118630338",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   }
  ]

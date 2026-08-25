@@ -42,7 +42,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q11765899",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/21novirg.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/21novirg.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -58,9 +59,9 @@
     "painter": "Hans Memling",
     "title": "The Martyrdom of St Sebastian",
     "year": "1475",
-    "city": "Brussels",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
-    "location": "Oldmasters Museum",
+    "location": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -84,9 +85,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "oldmasters-museum",
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q11787908",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/07noseba.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/07noseba.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -129,7 +131,8 @@
     },
     "museum_id": "mauritshuis",
     "qid": "Q11824957",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/18portra.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/18portra.html",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -173,7 +176,8 @@
     },
     "museum_id": "memling-in-sint-jan",
     "qid": "Q11824958",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/16portra.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/16portra.html",
+    "location_src": "Memling in Sint-Jan"
    }
   },
   {
@@ -217,7 +221,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q11945393",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/07noporw.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/07noporw.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -259,7 +264,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q13562917"
+    "qid": "Q13562917",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -304,7 +310,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q14858463"
+    "qid": "Q14858463",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -348,7 +355,8 @@
      }
     },
     "museum_id": "frick-collection",
-    "qid": "Q15103953"
+    "qid": "Q15103953",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -392,7 +400,8 @@
      }
     },
     "museum_id": "stadel-museum",
-    "qid": "Q15880878"
+    "qid": "Q15880878",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -400,7 +409,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.2137,
+     -73.2136,
      42.7078
     ]
    },
@@ -408,7 +417,7 @@
     "painter": "Hans Memling",
     "title": "The Canon Gilles Joye",
     "year": "1472",
-    "city": "Williamstown",
+    "city": "Massachusetts",
     "country": "United States",
     "location": "Clark Art Institute",
     "kind": "museum",
@@ -435,7 +444,8 @@
     },
     "museum_id": "clark-art-institute",
     "qid": "Q16038703",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/06gijoye.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/06gijoye.html",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -477,7 +487,8 @@
      }
     },
     "museum_id": "national-museum-of-art-of-romania",
-    "qid": "Q16038709"
+    "qid": "Q16038709",
+    "location_src": "National Museum of Art of Romania"
    }
   },
   {
@@ -519,7 +530,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q16038739"
+    "qid": "Q16038739",
+    "location_src": "Louvre"
    }
   },
   {
@@ -562,7 +574,8 @@
     },
     "museum_id": "national-gallery-of-canada",
     "qid": "Q16038759",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/06novirg.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/06novirg.html",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -607,7 +620,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19894606",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/11mystic.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/11mystic.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -649,7 +663,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911422"
+    "qid": "Q19911422",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -692,7 +707,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19911463",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature5/31tlove1.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature5/31tlove1.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -734,7 +750,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911562"
+    "qid": "Q19911562",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -777,7 +794,8 @@
     },
     "museum_id": "museum-boijmans-van-beuningen",
     "qid": "Q19925783",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature5/31tlove.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature5/31tlove.html",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -820,7 +838,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q20182417",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/190portr.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/190portr.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -863,7 +882,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q21600894",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature6/33nopor1.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature6/33nopor1.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -897,7 +917,8 @@
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "qid": "Q21675048",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature4/26nomus2.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature4/26nomus2.html",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -940,7 +961,8 @@
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "qid": "Q21675201",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature4/26nomus3.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature4/26nomus3.html",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -983,7 +1005,8 @@
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "qid": "Q21675225",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature4/26nomus.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature4/26nomus.html",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1026,7 +1049,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q21968126",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature3/24nojov1.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature3/24nojov1.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1070,7 +1094,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q22443796"
+    "qid": "Q22443796",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1115,7 +1140,8 @@
      }
     },
     "museum_id": "sint-janshospitaal",
-    "qid": "Q2446971"
+    "qid": "Q2446971",
+    "location_src": "Sint-Janshospitaal"
    }
   },
   {
@@ -1161,7 +1187,8 @@
     },
     "museum_id": "galleria-sabauda",
     "qid": "Q2446983",
-    "wga_url": "https://www.wga.hu/html/m/memling/1early2/04passi8.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/1early2/04passi8.html",
+    "location_src": "Galleria Sabauda"
    }
   },
   {
@@ -1203,7 +1230,8 @@
      }
     },
     "museum_id": "groeningemuseum",
-    "qid": "Q24471153"
+    "qid": "Q24471153",
+    "location_src": "Groeningemuseum"
    }
   },
   {
@@ -1246,7 +1274,8 @@
      }
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
-    "qid": "Q24964420"
+    "qid": "Q24964420",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1288,7 +1317,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26493249"
+    "qid": "Q26493249",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1330,7 +1360,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26524042"
+    "qid": "Q26524042",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1373,7 +1404,8 @@
     },
     "museum_id": "museum-fur-angewandte-kunst",
     "qid": "Q27057232",
-    "wga_url": "https://www.wga.hu/html/m/memling/1early2/05nativi.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/1early2/05nativi.html",
+    "location_src": "Museum für Angewandte Kunst"
    }
   },
   {
@@ -1418,7 +1450,8 @@
      }
     },
     "museum_id": "memling-in-sint-jan",
-    "qid": "Q2711706"
+    "qid": "Q2711706",
+    "location_src": "Memling in Sint-Jan"
    }
   },
   {
@@ -1460,7 +1493,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q27628532"
+    "qid": "Q27628532",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1503,7 +1537,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q27697101",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/23virgin.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/23virgin.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1546,7 +1581,8 @@
      }
     },
     "museum_id": "palazzo-bianco",
-    "qid": "Q28803775"
+    "qid": "Q28803775",
+    "location_src": "Palazzo Bianco"
    }
   },
   {
@@ -1589,7 +1625,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29647643",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/08olive.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle1/08olive.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1632,7 +1669,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29648823",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle2/13nocel2.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle2/13nocel2.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1675,7 +1713,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29648827",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle2/13nocel1.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle2/13nocel1.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1718,7 +1757,8 @@
      }
     },
     "museum_id": "louvre",
-    "qid": "Q30099116"
+    "qid": "Q30099116",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1761,7 +1801,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q30938939",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/23nomate.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/23nomate.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1806,7 +1847,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3213791",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature5/33virgi2.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature5/33virgi2.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1850,7 +1892,8 @@
      }
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
-    "qid": "Q3428050"
+    "qid": "Q3428050",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1894,7 +1937,8 @@
      }
     },
     "museum_id": "groeningemuseum",
-    "qid": "Q3539574"
+    "qid": "Q3539574",
+    "location_src": "Groeningemuseum"
    }
   },
   {
@@ -1940,7 +1984,8 @@
     },
     "museum_id": "bavarian-state-painting-collections",
     "qid": "Q369913",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/17noadv2.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/17noadv2.html",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1984,7 +2029,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3842767",
-    "wga_url": "https://www.wga.hu/html/m/memling/5late/37noflo.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/5late/37noflo.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2030,7 +2076,8 @@
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "qid": "Q3937422",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/19coin.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/19coin.html",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -2076,7 +2123,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3937530",
-    "wga_url": "https://www.wga.hu/html/m/memling/5late/370nopor.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/5late/370nopor.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2121,7 +2169,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3937623"
+    "qid": "Q3937623",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2163,7 +2212,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3937669"
+    "qid": "Q3937669",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2207,7 +2257,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q3937745"
+    "qid": "Q3937745",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2252,7 +2303,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q4006168",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/20noyoun.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/20noyoun.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2268,7 +2320,7 @@
     "painter": "Hans Memling",
     "title": "The Man of Sorrows in the arms of the Virgin",
     "year": "1477",
-    "city": "Melbourne",
+    "city": "City of Melbourne",
     "country": "Australia",
     "location": "National Gallery of Victoria",
     "kind": "museum",
@@ -2296,7 +2348,8 @@
     },
     "museum_id": "national-gallery-of-victoria",
     "qid": "Q4009967",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/18nosorr.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/18nosorr.html",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -2314,7 +2367,7 @@
     "year": "1475",
     "city": "Granada",
     "country": "Spain",
-    "location": "Royal Chapel of Granada",
+    "location": "Royal Chapel",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2337,8 +2390,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "royal-chapel-of-granada",
-    "qid": "Q42969085"
+    "museum_id": "royal-chapel",
+    "qid": "Q42969085",
+    "location_src": "Royal Chapel"
    }
   },
   {
@@ -2380,7 +2434,8 @@
      }
     },
     "museum_id": "cincinnati-art-museum",
-    "qid": "Q43045231"
+    "qid": "Q43045231",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -2432,7 +2487,8 @@
       "qid": "Q43167375",
       "url": "https://www.wikidata.org/wiki/Q43167375"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2473,7 +2529,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q43198257"
+    "qid": "Q43198257",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -2518,7 +2575,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q43284760"
+    "qid": "Q43284760",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2534,9 +2592,9 @@
     "painter": "Hans Memling",
     "title": "Portrait of a Man",
     "year": "1472",
-    "city": "Brussels",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
-    "location": "Oldmasters Museum",
+    "location": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2559,8 +2617,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "oldmasters-museum",
-    "qid": "Q43420592"
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "qid": "Q43420592",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -2603,7 +2662,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q43558271",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/20young.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature1/20young.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -2647,7 +2707,8 @@
     },
     "museum_id": "museum-of-fine-arts-houston",
     "qid": "Q4373359",
-    "wga_url": "https://www.wga.hu/html/m/memling/1early1/04nooldw.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/1early1/04nooldw.html",
+    "location_src": "Museum of Fine Arts, Houston"
    }
   },
   {
@@ -2655,8 +2716,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -2690,7 +2751,8 @@
     },
     "museum_id": "kunstmuseum-basel",
     "qid": "Q44197780",
-    "wga_url": "https://www.wga.hu/html/m/memling/6copies/0245savo.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/6copies/0245savo.html",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -2733,7 +2795,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q44317207",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/21virgi.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/21virgi.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2741,8 +2804,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -2751,7 +2814,7 @@
     "year": "1465",
     "city": "Kansas City",
     "country": "United States",
-    "location": "Nelson-Atkins Museum of Art",
+    "location": "The Nelson-Atkins Museum of Art",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2774,9 +2837,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "nelson-atkins-museum-of-art",
+    "museum_id": "the-nelson-atkins-museum-of-art",
     "qid": "Q44413894",
-    "wga_url": "https://www.wga.hu/html/m/memling/1early1/01virgin.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/1early1/01virgin.html",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -2821,7 +2885,8 @@
      }
     },
     "museum_id": "national-museum-in-gdansk",
-    "qid": "Q701035"
+    "qid": "Q701035",
+    "location_src": "National Museum in Gdańsk"
    }
   },
   {
@@ -2864,7 +2929,8 @@
     },
     "museum_id": "sint-janshospitaal",
     "qid": "Q71828492",
-    "wga_url": "https://www.wga.hu/html/m/memling/2middle2/13john2.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/2middle2/13john2.html",
+    "location_src": "Sint-Janshospitaal"
    }
   },
   {
@@ -2909,7 +2975,8 @@
     },
     "museum_id": "staatsgalerie-stuttgart",
     "qid": "Q9169712",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/25nobath.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature2/25nobath.html",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -2951,7 +3018,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q9213727"
+    "qid": "Q9213727",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2995,7 +3063,8 @@
      }
     },
     "museum_id": "memling-in-sint-jan",
-    "qid": "Q9362084"
+    "qid": "Q9362084",
+    "location_src": "Memling in Sint-Jan"
    }
   },
   {
@@ -3040,7 +3109,8 @@
      }
     },
     "museum_id": "sint-janshospitaal",
-    "qid": "Q9362085"
+    "qid": "Q9362085",
+    "location_src": "Sint-Janshospitaal"
    }
   },
   {
@@ -3085,7 +3155,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q9392232",
-    "wga_url": "https://www.wga.hu/html/m/memling/3mature6/36noannu.html"
+    "wga_url": "https://www.wga.hu/html/m/memling/3mature6/36noannu.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3093,8 +3164,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -3112,7 +3183,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43283983",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3120,8 +3193,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3139,7 +3212,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30085944",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3147,8 +3222,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3166,7 +3241,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43295048",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3175,7 +3252,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -3193,7 +3270,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27979734",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3202,7 +3281,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -3220,7 +3299,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27979736",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3229,7 +3310,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -3247,7 +3328,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27979738",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3256,7 +3339,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -3274,7 +3357,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27979739",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3282,8 +3367,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -3291,7 +3376,7 @@
     "title": "Portrait of a young woman",
     "year": "1472",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/PORTRAIT%20OF%20A%20YOUNG%20WOMAN%20ATTRIBUTED%20TO%20HANS%20MEMLING.jpg?width=500",
@@ -3301,7 +3386,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43787024",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3309,8 +3396,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3318,7 +3405,7 @@
     "title": "Cranes with coat of arms",
     "year": "1480",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20triptic%20Pagagnotti%20revers%20ales.jpg?width=500",
@@ -3328,7 +3415,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43167375",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3355,7 +3444,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44212819",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-ancient-art",
+    "location_src": "National Museum of Ancient Art"
    }
   },
   {
@@ -3363,8 +3454,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -3382,7 +3473,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43199033",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -3399,7 +3492,7 @@
     "title": "An Unknown Man in Prayer",
     "year": "1485",
     "location": "National Trust",
-    "city": "",
+    "city": "Kingston Lacy",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20Portrait%20of%20a%20Young%20Man%20at%20Prayer%20-%20WGA14965.jpg?width=500",
@@ -3409,7 +3502,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43785118",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-trust",
+    "location_src": "National Trust"
    }
   },
   {
@@ -3417,8 +3512,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.328139,
-     45.431078
+     12.32814,
+     45.43108
     ]
    },
    "properties": {
@@ -3436,7 +3531,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43696527",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gallerie-dell-accademia",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -3444,7 +3541,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -3463,7 +3560,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43420060",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -3471,7 +3570,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.73483333,
+     18.73483,
      47.7975
     ]
    },
@@ -3490,7 +3589,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44145917",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christian-museum",
+    "location_src": "Christian Museum"
    }
   },
   {
@@ -3498,15 +3599,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.599036111,
-     37.175986111
+     -3.59904,
+     37.17599
     ]
    },
    "properties": {
     "painter": "Hans Memling",
     "title": "The Virgin Showing the Man of Sorrows",
     "year": "1500",
-    "location": "Royal Chapel of Granada",
+    "location": "Royal Chapel",
     "city": "Granada",
     "country": "Spain",
     "attribution": "copy or later version",
@@ -3525,7 +3626,9 @@
       "was": "generally accepted",
       "note": "dated 1500, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "royal-chapel",
+    "location_src": "Royal Chapel"
    }
   },
   {
@@ -3552,7 +3655,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111645123",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -3587,7 +3692,9 @@
       "was": "generally accepted",
       "note": "dated 1500, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3595,8 +3702,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3614,7 +3721,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29951331",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3622,8 +3731,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3641,7 +3750,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29952786",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3649,8 +3760,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3668,7 +3779,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29957984",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3676,8 +3789,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3695,7 +3808,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q42966401",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3711,8 +3826,8 @@
     "painter": "Hans Memling",
     "title": "Allegory of Chastity",
     "year": "1480",
-    "location": "Musée Jacquemart-André",
-    "city": "8th arrondissement of Paris",
+    "location": "Musée Jacquemart André",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20Allegory%20with%20a%20Virgin%20-%20WGA14896.jpg?width=500",
@@ -3722,7 +3837,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43932494",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-jacquemart-andre",
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -3730,8 +3847,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153022,
-     51.517454
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
@@ -3749,7 +3866,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44109370",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -3757,8 +3876,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.981556,
-     40.748803
+     -73.98156,
+     40.7488
     ]
    },
    "properties": {
@@ -3776,7 +3895,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q42590948",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-morgan-library-museum",
+    "location_src": "The Morgan Library & Museum"
    }
   },
   {
@@ -3784,8 +3905,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.981556,
-     40.748803
+     -73.98156,
+     40.7488
     ]
    },
    "properties": {
@@ -3803,7 +3924,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q42591370",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-morgan-library-museum",
+    "location_src": "The Morgan Library & Museum"
    }
   },
   {
@@ -3811,8 +3934,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.981556,
-     40.748803
+     -73.98156,
+     40.7488
     ]
    },
    "properties": {
@@ -3830,7 +3953,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44244584",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-morgan-library-museum",
+    "location_src": "The Morgan Library & Museum"
    }
   },
   {
@@ -3838,8 +3963,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.981556,
-     40.748803
+     -73.98156,
+     40.7488
     ]
    },
    "properties": {
@@ -3857,7 +3982,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q63386260",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-morgan-library-museum",
+    "location_src": "The Morgan Library & Museum"
    }
   },
   {
@@ -3884,7 +4011,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43281796",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-strasbourg",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -3892,8 +4021,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.226666666,
-     51.205277777
+     3.22667,
+     51.20528
     ]
    },
    "properties": {
@@ -3911,7 +4040,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q43296063",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "groeningemuseum",
+    "location_src": "Groeningemuseum"
    }
   },
   {
@@ -3919,15 +4050,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Hans Memling",
     "title": "A Jeering Crowd: fragment of a Mocking of Christ",
     "year": "1450",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3938,7 +4069,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27975137",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -3946,8 +4079,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3955,7 +4088,7 @@
     "title": "L'Ascension du Christ",
     "year": "1450",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Memling%20-%20Triptyque%20de%20la%20R%C3%A9surrection%20L%27Ascension%20du%20Christ%2C%20MI%20249.jpg?width=500",
@@ -3965,7 +4098,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q116284873",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3973,8 +4108,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3982,7 +4117,7 @@
     "title": "Le Martyre de saint Sébastien",
     "year": "1450",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Memling%20-%20Triptyque%20de%20la%20R%C3%A9surrection%20Le%20Martyre%20de%20saint%20S%C3%A9bastien%2C%20MI%20248.jpg?width=500",
@@ -3992,7 +4127,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q116284875",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4000,8 +4137,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780227777
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -4019,7 +4156,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q44083733",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "staatsgalerie-stuttgart",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -4027,7 +4166,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.678899,
+     0.6789,
      51.7316
     ]
    },
@@ -4054,7 +4193,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "plume-library",
+    "location_src": "Plume Library"
    }
   },
   {
@@ -4063,7 +4204,7 @@
     "type": "Point",
     "coordinates": [
      11.54931,
-     45.549023
+     45.54902
     ]
    },
    "properties": {
@@ -4081,7 +4222,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q42589069",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palazzo-chiericati-art-gallery",
+    "location_src": "Palazzo Chiericati Art Gallery"
    }
   },
   {
@@ -4089,8 +4232,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4108,7 +4251,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540022",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -4116,8 +4261,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4135,7 +4280,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540025",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -4143,8 +4290,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -4162,7 +4309,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3999120",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4170,8 +4319,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -4189,7 +4338,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21711379",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -4197,8 +4348,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -4216,7 +4367,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21711629",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -4224,8 +4377,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4233,7 +4386,7 @@
     "title": "Saint John the Baptist",
     "year": "1478",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20St%20John%20the%20Baptist.jpg?width=500",
@@ -4243,7 +4396,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26492663",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4252,7 +4407,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -4270,7 +4425,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20173944",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -4279,7 +4436,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -4297,7 +4454,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20174026",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -4306,7 +4465,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -4324,7 +4483,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20174056",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -4333,7 +4494,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -4351,7 +4512,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20174266",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -4359,8 +4522,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -4378,7 +4541,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20268117",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -4386,8 +4551,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -4405,7 +4570,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809442",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -4432,7 +4599,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20267400",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -4440,8 +4609,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5797575,
-     45.4991495
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -4459,7 +4628,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18523104",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "montreal-museum-of-fine-arts",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -4467,8 +4638,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4476,7 +4647,7 @@
     "title": "Saint John the Baptist",
     "year": "1470",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20Triptych%20The%20Rest%20on%20The%20Flight%20into%20Egypt%20Saint%20John.jpg?width=500",
@@ -4486,7 +4657,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19943594",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4494,8 +4667,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4503,7 +4676,7 @@
     "title": "Saint Mary Magdelene",
     "year": "1470",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20Triptych%20The%20Rest%20on%20The%20Flight%20into%20Egypt%20Sainte%20Madeleine.jpg?width=500",
@@ -4513,7 +4686,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19943601",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4521,8 +4696,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4530,7 +4705,7 @@
     "title": "The Flight into Egypt",
     "year": "1470",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20Hans%20Memling%20-%20Triptych%20The%20Rest%20on%20The%20Flight%20into%20Egypt-%20central%20panel%20-%20Louvre.jpg?width=500",
@@ -4540,7 +4715,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19943661",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4567,7 +4744,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121367780",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-rohan-strasbourg",
+    "location_src": "Palais Rohan, Strasbourg"
    }
   },
   {
@@ -4594,7 +4773,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121367833",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-rohan-strasbourg",
+    "location_src": "Palais Rohan, Strasbourg"
    }
   },
   {
@@ -4621,7 +4802,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121368097",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-rohan-strasbourg",
+    "location_src": "Palais Rohan, Strasbourg"
    }
   },
   {
@@ -4648,7 +4831,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121368226",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-rohan-strasbourg",
+    "location_src": "Palais Rohan, Strasbourg"
    }
   },
   {
@@ -4675,7 +4860,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121368351",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-rohan-strasbourg",
+    "location_src": "Palais Rohan, Strasbourg"
    }
   },
   {
@@ -4702,7 +4889,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121368389",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-rohan-strasbourg",
+    "location_src": "Palais Rohan, Strasbourg"
    }
   },
   {
@@ -4710,8 +4899,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -4729,7 +4918,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27330886",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4737,8 +4928,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -4756,7 +4947,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27344395",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -4764,8 +4957,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -4783,7 +4976,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27044262",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -4791,8 +4986,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4800,7 +4995,7 @@
     "title": "Saint John the Baptist",
     "year": "1480",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20035%20Pagagnotti%20esquerra.jpg?width=500",
@@ -4818,7 +5013,9 @@
       "qid": "Q26528063",
       "url": "https://www.wikidata.org/wiki/Q26528063"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4826,8 +5023,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4835,7 +5032,7 @@
     "title": "Saint John the Evangelist",
     "year": "1478",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20St%20John%20the%20Evangelist.jpg?width=500",
@@ -4845,7 +5042,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26705645",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4853,8 +5052,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4862,7 +5061,7 @@
     "title": "The Donne Triptych (central panel)",
     "year": "1478",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20The%20Donne%20Triptych%20%28centre%20panel%29%20-%20WGA14887.jpg?width=500",
@@ -4872,7 +5071,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26705657",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4880,8 +5081,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4889,7 +5090,7 @@
     "title": "Saint Lawrence",
     "year": "1480",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20035%20Pagagnotti%20dreta.jpg?width=500",
@@ -4899,7 +5100,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26706936",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4907,8 +5110,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4916,7 +5119,7 @@
     "title": "Saint Christopher",
     "year": "1480",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Memling-tripticDonne-tancat%20%28Saint%20Christopher%29.jpg?width=500",
@@ -4926,7 +5129,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q121502740",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4934,8 +5139,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4943,7 +5148,7 @@
     "title": "Resurrection of Jesus",
     "year": "1450",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20R%C3%A9surrection%20du%20Christ%20du%20Triptyque%20de%20la%20R%C3%A9surrection%20-%20Hans%20Memling%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20MI%20247.jpg?width=500",
@@ -4953,7 +5158,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q136502833",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4961,8 +5168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4970,7 +5177,7 @@
     "title": "A Young Man at Prayer",
     "year": "1475",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20-%20Young%20Man%20at%20Prayer.jpg?width=500",
@@ -4980,7 +5187,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26708428",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4988,8 +5197,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -5007,7 +5216,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27044235",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -5015,7 +5226,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -5034,7 +5245,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27036476",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -5061,7 +5274,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27044135",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-art-of-romania",
+    "location_src": "National Museum of Art of Romania"
    }
   },
   {
@@ -5088,7 +5303,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27044161",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "st-osyth-s-priory-the-abbot-s-lodging-and-south-wing-the-dar",
+    "location_src": "St Osyth's Priory: The Abbot's Lodging and South Wing, the Darcy Clock Tower and C18 House (formerly listed as the Convalescent Home)"
    }
   },
   {
@@ -5096,7 +5313,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     24.15061111,
+     24.15061,
      45.7965
     ]
    },
@@ -5115,7 +5332,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27044151",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "brukenthal-national-museum",
+    "location_src": "Brukenthal National Museum"
    }
   },
   {
@@ -5123,7 +5342,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     24.15061111,
+     24.15061,
      45.7965
     ]
    },
@@ -5142,7 +5361,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27044155",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "brukenthal-national-museum",
+    "location_src": "Brukenthal National Museum"
    }
   }
  ]

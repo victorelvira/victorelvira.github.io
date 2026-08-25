@@ -44,7 +44,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q102223204"
+    "qid": "Q102223204",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -62,7 +63,7 @@
     "year": "1613",
     "city": "Hartford",
     "country": "United States",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -84,8 +85,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "wadsworth-atheneum-museum-of-art",
-    "qid": "Q105436934"
+    "museum_id": "wadsworth-atheneum",
+    "qid": "Q105436934",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -127,7 +129,8 @@
      }
     },
     "museum_id": "glasgow",
-    "qid": "Q105582409"
+    "qid": "Q105582409",
+    "location_src": "Glasgow"
    }
   },
   {
@@ -135,15 +138,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.94651,
-     40.83352
+     -73.94643,
+     40.83327
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "Saint Paul",
     "year": "1630",
-    "city": "New York City",
+    "city": "Manhattan",
     "country": "United States",
     "location": "Hispanic Society of America",
     "kind": "museum",
@@ -169,7 +172,8 @@
      }
     },
     "museum_id": "hispanic-society-of-america",
-    "qid": "Q105607375"
+    "qid": "Q105607375",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -177,8 +181,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -209,7 +213,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q106353528"
+    "qid": "Q106353528",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -251,7 +256,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-of-cordoba",
-    "qid": "Q106368713"
+    "qid": "Q106368713",
+    "location_src": "Museum of Fine Arts of Córdoba"
    }
   },
   {
@@ -301,7 +307,8 @@
       "qid": "Q106606321",
       "url": "https://www.wikidata.org/wiki/Q106606321"
      }
-    ]
+    ],
+    "location_src": "Museum of Grenoble"
    }
   },
   {
@@ -334,7 +341,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "musee-des-beaux-arts-de-carcassonne",
-    "qid": "Q106649546"
+    "qid": "Q106649546",
+    "location_src": "Musée des Beaux-Arts de Carcassonne"
    }
   },
   {
@@ -375,7 +383,8 @@
      }
     },
     "museum_id": "museu-de-belles-arts-de-valencia",
-    "qid": "Q106690390"
+    "qid": "Q106690390",
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -383,15 +392,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "Hecate: Procession to a Witches Sabbath",
     "year": "1620",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "kind": "museum",
@@ -416,7 +425,8 @@
      }
     },
     "museum_id": "apsley-house",
-    "qid": "Q106712624"
+    "qid": "Q106712624",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -424,15 +434,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "Saint James the Great",
     "year": "1630",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "kind": "museum",
@@ -458,7 +468,8 @@
      }
     },
     "museum_id": "apsley-house",
-    "qid": "Q106714489"
+    "qid": "Q106714489",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -487,7 +498,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436704"
+    "qid": "Q107436704",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -517,7 +529,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436719"
+    "qid": "Q107436719",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -558,7 +571,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436948"
+    "qid": "Q107436948",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -589,7 +603,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436956"
+    "qid": "Q107436956",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -619,7 +634,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107437264"
+    "qid": "Q107437264",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -649,7 +665,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107441500"
+    "qid": "Q107441500",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -680,7 +697,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "aberdeen-archives-gallery-and-museums-collections",
-    "qid": "Q110683953"
+    "qid": "Q110683953",
+    "location_src": "Aberdeen Archives, Gallery and Museums collections"
    }
   },
   {
@@ -708,7 +726,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q110938447"
+    "qid": "Q110938447",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -750,7 +769,8 @@
      }
     },
     "museum_id": "fuhrermuseum",
-    "qid": "Q111648587"
+    "qid": "Q111648587",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -791,7 +811,8 @@
      }
     },
     "museum_id": "fuhrermuseum",
-    "qid": "Q111648588"
+    "qid": "Q111648588",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -841,7 +862,8 @@
       "qid": "Q111651219",
       "url": "https://www.wikidata.org/wiki/Q111651219"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -883,7 +905,8 @@
      }
     },
     "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
-    "qid": "Q111821904"
+    "qid": "Q111821904",
+    "location_src": "Royal Monastery of San Lorenzo de El Escorial"
    }
   },
   {
@@ -929,7 +952,8 @@
     },
     "museum_id": "museo-nazionale-di-san-martino",
     "qid": "Q112045236",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/visionbr.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/visionbr.html",
+    "location_src": "Museo Nazionale di San Martino"
    }
   },
   {
@@ -974,7 +998,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q112045366"
+    "qid": "Q112045366",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1019,7 +1044,8 @@
      }
     },
     "museum_id": "museo-nazionale-di-san-martino",
-    "qid": "Q112045368"
+    "qid": "Q112045368",
+    "location_src": "Museo Nazionale di San Martino"
    }
   },
   {
@@ -1060,7 +1086,8 @@
      }
     },
     "museum_id": "filangieri-civic-museum",
-    "qid": "Q112045374"
+    "qid": "Q112045374",
+    "location_src": "Filangieri Civic Museum"
    }
   },
   {
@@ -1090,7 +1117,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "naples-academy-of-fine-arts",
-    "qid": "Q112124754"
+    "qid": "Q112124754",
+    "location_src": "Naples Academy of Fine Arts"
    }
   },
   {
@@ -1132,7 +1160,8 @@
      }
     },
     "museum_id": "musee-de-picardie",
-    "qid": "Q113012939"
+    "qid": "Q113012939",
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -1174,7 +1203,8 @@
      }
     },
     "museum_id": "schwarzenberg-palace",
-    "qid": "Q114207355"
+    "qid": "Q114207355",
+    "location_src": "Schwarzenberg Palace"
    }
   },
   {
@@ -1215,7 +1245,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q114904600"
+    "qid": "Q114904600",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1256,7 +1287,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
-    "qid": "Q115675481"
+    "qid": "Q115675481",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -1298,7 +1330,8 @@
      }
     },
     "museum_id": "musee-de-picardie",
-    "qid": "Q116559328"
+    "qid": "Q116559328",
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -1340,7 +1373,8 @@
      }
     },
     "museum_id": "musee-de-picardie",
-    "qid": "Q116563362"
+    "qid": "Q116563362",
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -1381,7 +1415,8 @@
      }
     },
     "museum_id": "musee-de-picardie",
-    "qid": "Q116569592"
+    "qid": "Q116569592",
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -1431,7 +1466,8 @@
       "qid": "Q116789726",
       "url": "https://www.wikidata.org/wiki/Q116789726"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Rennes"
    }
   },
   {
@@ -1473,7 +1509,8 @@
      }
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q116981089"
+    "qid": "Q116981089",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -1514,7 +1551,8 @@
      }
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q117488177"
+    "qid": "Q117488177",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -1555,7 +1593,8 @@
      }
     },
     "museum_id": "musee-fabre",
-    "qid": "Q117750867"
+    "qid": "Q117750867",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -1600,7 +1639,8 @@
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q11787907",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/s_andrew.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/s_andrew.html",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -1608,8 +1648,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91528,
-     54.54194
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -1631,7 +1671,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "bowes-museum",
-    "qid": "Q118876934"
+    "qid": "Q118876934",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -1672,7 +1713,8 @@
      }
     },
     "museum_id": "national-museum-cardiff",
-    "qid": "Q118879259"
+    "qid": "Q118879259",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -1714,7 +1756,8 @@
      }
     },
     "museum_id": "kelvingrove-art-gallery-and-museum",
-    "qid": "Q118885794"
+    "qid": "Q118885794",
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -1755,7 +1798,8 @@
      }
     },
     "museum_id": "sheffield-galleries-and-museums-trust",
-    "qid": "Q118886454"
+    "qid": "Q118886454",
+    "location_src": "Sheffield Galleries and Museums Trust"
    }
   },
   {
@@ -1763,15 +1807,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.33928,
-     53.74342
+     -0.33912,
+     53.7434
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "A Philosopher",
     "year": "1630",
-    "city": "Kingston upon Hull",
+    "city": "City of Kingston upon Hull",
     "country": "United Kingdom",
     "location": "Ferens Art Gallery",
     "kind": "museum",
@@ -1796,7 +1840,8 @@
      }
     },
     "museum_id": "ferens-art-gallery",
-    "qid": "Q118887230"
+    "qid": "Q118887230",
+    "location_src": "Ferens Art Gallery"
    }
   },
   {
@@ -1804,15 +1849,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "Saint John the Baptist",
     "year": "1650",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "kind": "museum",
@@ -1838,7 +1883,8 @@
      }
     },
     "museum_id": "apsley-house",
-    "qid": "Q118896343"
+    "qid": "Q118896343",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -1879,7 +1925,8 @@
      }
     },
     "museum_id": "victoria-art-gallery",
-    "qid": "Q118897321"
+    "qid": "Q118897321",
+    "location_src": "Victoria Art Gallery"
    }
   },
   {
@@ -1910,7 +1957,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "hatchlands-park",
-    "qid": "Q119801258"
+    "qid": "Q119801258",
+    "location_src": "Hatchlands Park"
    }
   },
   {
@@ -1940,7 +1988,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "colchester-and-ipswich-museums-service",
-    "qid": "Q119801260"
+    "qid": "Q119801260",
+    "location_src": "Colchester and Ipswich Museums Service"
    }
   },
   {
@@ -1971,7 +2020,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "the-box",
-    "qid": "Q119801261"
+    "qid": "Q119801261",
+    "location_src": "The Box"
    }
   },
   {
@@ -2001,7 +2051,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "glasgow-museums-resource-centre",
-    "qid": "Q119801264"
+    "qid": "Q119801264",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -2016,7 +2067,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Christ Nailed to the Cross",
-    "city": "York",
+    "city": "City of York",
     "country": "United Kingdom",
     "location": "York Art Gallery",
     "kind": "museum",
@@ -2033,7 +2084,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "york-art-gallery",
-    "qid": "Q119862764"
+    "qid": "Q119862764",
+    "location_src": "York Art Gallery"
    }
   },
   {
@@ -2065,7 +2117,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "guernsey-museum-and-art-gallery",
-    "qid": "Q119864289"
+    "qid": "Q119864289",
+    "location_src": "Guernsey Museum and Art Gallery"
    }
   },
   {
@@ -2097,7 +2150,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "burrell-collection",
-    "qid": "Q119890256"
+    "qid": "Q119890256",
+    "location_src": "Burrell Collection"
    }
   },
   {
@@ -2128,7 +2182,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "wellcome-collection",
-    "qid": "Q119931910"
+    "qid": "Q119931910",
+    "location_src": "Wellcome Collection"
    }
   },
   {
@@ -2159,7 +2214,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "folkestone-museum",
-    "qid": "Q119950892"
+    "qid": "Q119950892",
+    "location_src": "Folkestone Museum"
    }
   },
   {
@@ -2191,7 +2247,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "perth-art-gallery",
-    "qid": "Q119950894"
+    "qid": "Q119950894",
+    "location_src": "Perth Art Gallery"
    }
   },
   {
@@ -2231,7 +2288,8 @@
      }
     },
     "museum_id": "national-museum-in-poznan",
-    "qid": "Q120185384"
+    "qid": "Q120185384",
+    "location_src": "National Museum in Poznań"
    }
   },
   {
@@ -2272,7 +2330,8 @@
      }
     },
     "museum_id": "museum-of-john-paul-ii-collection",
-    "qid": "Q120292597"
+    "qid": "Q120292597",
+    "location_src": "Museum of John Paul II Collection"
    }
   },
   {
@@ -2313,7 +2372,8 @@
      }
     },
     "museum_id": "national-museum-in-poznan",
-    "qid": "Q120334108"
+    "qid": "Q120334108",
+    "location_src": "National Museum in Poznań"
    }
   },
   {
@@ -2354,7 +2414,8 @@
      }
     },
     "museum_id": "archdiocesan-museum-in-katowice",
-    "qid": "Q120489449"
+    "qid": "Q120489449",
+    "location_src": "Archdiocesan Museum in Katowice"
    }
   },
   {
@@ -2394,7 +2455,8 @@
      }
     },
     "museum_id": "royal-palace-of-madrid",
-    "qid": "Q120635958"
+    "qid": "Q120635958",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -2425,7 +2487,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "liege-fine-arts-museum",
-    "qid": "Q120685358"
+    "qid": "Q120685358",
+    "location_src": "Liege Fine Arts Museum"
    }
   },
   {
@@ -2433,8 +2496,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2467,7 +2530,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q12110642"
+    "qid": "Q12110642",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2475,8 +2539,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2509,7 +2573,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q12150994"
+    "qid": "Q12150994",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2557,7 +2622,8 @@
       "qid": "Q124341842",
       "url": "https://www.wikidata.org/wiki/Q124341842"
      }
-    ]
+    ],
+    "location_src": "National Museum of Ancient Art"
    }
   },
   {
@@ -2598,7 +2664,8 @@
       "qid": "Q124435344",
       "url": "https://www.wikidata.org/wiki/Q124435344"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Chartres"
    }
   },
   {
@@ -2639,8 +2706,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
-    "qid": "Q124478748"
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini-2",
+    "qid": "Q124478748",
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
    }
   },
   {
@@ -2681,7 +2749,8 @@
      }
     },
     "museum_id": "franz-mayer-museum",
-    "qid": "Q124866293"
+    "qid": "Q124866293",
+    "location_src": "Franz Mayer Museum"
    }
   },
   {
@@ -2709,7 +2778,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museu-de-belles-arts-de-valencia",
-    "qid": "Q125330028"
+    "qid": "Q125330028",
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -2737,7 +2807,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "palazzo-bianco",
-    "qid": "Q125775011"
+    "qid": "Q125775011",
+    "location_src": "Palazzo Bianco"
    }
   },
   {
@@ -2777,7 +2848,8 @@
       "qid": "Q130646807",
       "url": "https://www.wikidata.org/wiki/Q130646807"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts et d'Archéologie de Besançon"
    }
   },
   {
@@ -2785,8 +2857,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -2817,7 +2889,8 @@
      }
     },
     "museum_id": "philadelphia-museum-of-art",
-    "qid": "Q130711130"
+    "qid": "Q130711130",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -2857,7 +2930,8 @@
      }
     },
     "museum_id": "galleria-sabauda",
-    "qid": "Q130724268"
+    "qid": "Q130724268",
+    "location_src": "Galleria Sabauda"
    }
   },
   {
@@ -2875,7 +2949,7 @@
     "year": "1647",
     "city": "Cologne",
     "country": "Germany",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2900,7 +2974,8 @@
     },
     "museum_id": "wallraf-richartz-museum",
     "qid": "Q131625694",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/st_paul.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/st_paul.html",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -2930,7 +3005,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "galleria-sabauda",
-    "qid": "Q134521129"
+    "qid": "Q134521129",
+    "location_src": "Galleria Sabauda"
    }
   },
   {
@@ -2972,7 +3048,8 @@
      }
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q135826807"
+    "qid": "Q135826807",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -2990,7 +3067,7 @@
     "year": "1638",
     "city": "Bayonne",
     "country": "France",
-    "location": "Musée Bonnat-Helleu",
+    "location": "Musée Bonnat",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -3013,7 +3090,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-bonnat-helleu",
+    "museum_id": "musee-bonnat",
     "qid": "Q136805759",
     "_merged": [
      {
@@ -3022,7 +3099,8 @@
       "qid": "Q136805759",
       "url": "https://www.wikidata.org/wiki/Q136805759"
      }
-    ]
+    ],
+    "location_src": "Musée Bonnat"
    }
   },
   {
@@ -3061,7 +3139,8 @@
       "qid": "Q136831233",
       "url": "https://www.wikidata.org/wiki/Q136831233"
      }
-    ]
+    ],
+    "location_src": "musée Saint-Germain"
    }
   },
   {
@@ -3102,7 +3181,8 @@
      }
     },
     "museum_id": "national-museum-of-abruzzo",
-    "qid": "Q136838432"
+    "qid": "Q136838432",
+    "location_src": "National Museum of Abruzzo"
    }
   },
   {
@@ -3152,7 +3232,8 @@
       "qid": "Q137274268",
       "url": "https://www.wikidata.org/wiki/Q137274268"
      }
-    ]
+    ],
+    "location_src": "Musée de l'hôtel Sandelin"
    }
   },
   {
@@ -3194,7 +3275,8 @@
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "qid": "Q137462200",
-    "wga_url": "https://www.wga.hu/html/s/saraceni/gregory.html"
+    "wga_url": "https://www.wga.hu/html/s/saraceni/gregory.html",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -3234,7 +3316,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-marseille",
-    "qid": "Q138414477"
+    "qid": "Q138414477",
+    "location_src": "Musée des beaux-arts de Marseille"
    }
   },
   {
@@ -3273,7 +3356,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-marseille",
-    "qid": "Q138416120"
+    "qid": "Q138416120",
+    "location_src": "Musée des beaux-arts de Marseille"
    }
   },
   {
@@ -3314,7 +3398,8 @@
      }
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q138828326"
+    "qid": "Q138828326",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -3353,7 +3438,8 @@
       "qid": "Q138828520",
       "url": "https://www.wikidata.org/wiki/Q138828520"
      }
-    ]
+    ],
+    "location_src": "Musée Ingres Bourdelle"
    }
   },
   {
@@ -3401,7 +3487,8 @@
       "qid": "Q138828606",
       "url": "https://www.wikidata.org/wiki/Q138828606"
      }
-    ]
+    ],
+    "location_src": "Fondazione Roberto Longhi"
    }
   },
   {
@@ -3443,7 +3530,8 @@
      }
     },
     "museum_id": "fondazione-roberto-longhi",
-    "qid": "Q138835852"
+    "qid": "Q138835852",
+    "location_src": "Fondazione Roberto Longhi"
    }
   },
   {
@@ -3485,7 +3573,8 @@
      }
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q138836770"
+    "qid": "Q138836770",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -3526,7 +3615,8 @@
      }
     },
     "museum_id": "museu-de-belles-arts-de-valencia",
-    "qid": "Q138840251"
+    "qid": "Q138840251",
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -3567,7 +3657,8 @@
      }
     },
     "museum_id": "museu-de-belles-arts-de-valencia",
-    "qid": "Q138840267"
+    "qid": "Q138840267",
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -3608,7 +3699,8 @@
      }
     },
     "museum_id": "museo-de-arte-de-ponce",
-    "qid": "Q140030277"
+    "qid": "Q140030277",
+    "location_src": "Museo de Arte de Ponce"
    }
   },
   {
@@ -3648,7 +3740,8 @@
      }
     },
     "museum_id": "museo-de-arte-de-ponce",
-    "qid": "Q140043847"
+    "qid": "Q140043847",
+    "location_src": "Museo de Arte de Ponce"
    }
   },
   {
@@ -3676,7 +3769,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "art-gallery-of-ontario",
-    "qid": "Q140435662"
+    "qid": "Q140435662",
+    "location_src": "Art Gallery of Ontario"
    }
   },
   {
@@ -3718,7 +3812,8 @@
      }
     },
     "museum_id": "iglesia-de-las-agustinas-recoletas",
-    "qid": "Q140473969"
+    "qid": "Q140473969",
+    "location_src": "Iglesia de las Agustinas Recoletas"
    }
   },
   {
@@ -3768,7 +3863,8 @@
       "qid": "Q141133779",
       "url": "https://www.wikidata.org/wiki/Q141133779"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Rennes"
    }
   },
   {
@@ -3818,7 +3914,8 @@
       "qid": "Q141133978",
       "url": "https://www.wikidata.org/wiki/Q141133978"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Rennes"
    }
   },
   {
@@ -3868,7 +3965,8 @@
       "qid": "Q141136816",
       "url": "https://www.wikidata.org/wiki/Q141136816"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts d'Angers"
    }
   },
   {
@@ -3918,7 +4016,8 @@
       "qid": "Q141137192",
       "url": "https://www.wikidata.org/wiki/Q141137192"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts d'Orléans"
    }
   },
   {
@@ -3963,7 +4062,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q15906986",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/blessing.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/blessing.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4008,7 +4108,8 @@
      }
     },
     "museum_id": "musee-fabre",
-    "qid": "Q15917669"
+    "qid": "Q15917669",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -4053,7 +4154,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q16070027",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/ixion.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/ixion.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4085,7 +4187,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "co-cathedral-of-saint-mary-of-the-assumption-and-saint-catel",
-    "qid": "Q17266109"
+    "qid": "Q17266109",
+    "location_src": "Co-Cathedral of Saint Mary of the Assumption and Saint Catellus of Castellamare"
    }
   },
   {
@@ -4129,7 +4232,8 @@
      }
     },
     "museum_id": "co-cathedral-of-saint-mary-of-the-assumption-and-saint-catel",
-    "qid": "Q17620085"
+    "qid": "Q17620085",
+    "location_src": "Co-Cathedral of Saint Mary of the Assumption and Saint Catellus of Castellamare"
    }
   },
   {
@@ -4173,7 +4277,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q17652393"
+    "qid": "Q17652393",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -4216,7 +4321,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-of-nancy",
-    "qid": "Q18043247"
+    "qid": "Q18043247",
+    "location_src": "Museum of Fine Arts of Nancy"
    }
   },
   {
@@ -4262,7 +4368,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q18170716",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/archimed.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/archimed.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4306,7 +4413,8 @@
      }
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q18203233"
+    "qid": "Q18203233",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -4351,7 +4459,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q18222990"
+    "qid": "Q18222990",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4395,7 +4504,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q18225106"
+    "qid": "Q18225106",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4411,7 +4521,7 @@
     "painter": "Ribera",
     "title": "Saint Bartholomew",
     "year": "1630",
-    "city": "Alabama [138]",
+    "city": "Birmingham",
     "country": "United States",
     "location": "Birmingham Museum of Art",
     "kind": "museum",
@@ -4437,7 +4547,8 @@
      }
     },
     "museum_id": "birmingham-museum-of-art",
-    "qid": "Q18573460"
+    "qid": "Q18573460",
+    "location_src": "Birmingham Museum of Art"
    }
   },
   {
@@ -4479,7 +4590,8 @@
      }
     },
     "museum_id": "walters-art-museum",
-    "qid": "Q18749022"
+    "qid": "Q18749022",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -4521,7 +4633,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18810276"
+    "qid": "Q18810276",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4563,7 +4676,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18925610"
+    "qid": "Q18925610",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4605,7 +4719,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18925619"
+    "qid": "Q18925619",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4645,7 +4760,8 @@
      }
     },
     "museum_id": "biblioteca-museu-victor-balaguer",
-    "qid": "Q19162887"
+    "qid": "Q19162887",
+    "location_src": "Biblioteca Museu Víctor Balaguer"
    }
   },
   {
@@ -4653,8 +4769,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5801,
-     45.4987
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -4686,7 +4802,8 @@
      }
     },
     "museum_id": "montreal-museum-of-fine-arts",
-    "qid": "Q19788073"
+    "qid": "Q19788073",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -4694,15 +4811,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.96375,
-     40.67131
+     -73.96363,
+     40.67121
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "Saint Joseph with the Flowering Rod",
     "year": "1630",
-    "city": "New York",
+    "city": "Brooklyn",
     "country": "United States",
     "location": "Brooklyn Museum",
     "kind": "museum",
@@ -4729,7 +4846,8 @@
      }
     },
     "museum_id": "brooklyn-museum",
-    "qid": "Q19858197"
+    "qid": "Q19858197",
+    "location_src": "Brooklyn Museum"
    }
   },
   {
@@ -4771,7 +4889,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911506"
+    "qid": "Q19911506",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4815,7 +4934,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19911538",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/holyfami.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/holyfami.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4861,7 +4981,8 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q20017050",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/lamentat.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/lamentat.html",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -4904,7 +5025,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20177130"
+    "qid": "Q20177130",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -4946,7 +5068,8 @@
      }
     },
     "museum_id": "getty-center",
-    "qid": "Q20179460"
+    "qid": "Q20179460",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -4987,7 +5110,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q20268799"
+    "qid": "Q20268799",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -5019,7 +5143,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20354224"
+    "qid": "Q20354224",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -5051,7 +5176,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20354556"
+    "qid": "Q20354556",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -5067,7 +5193,7 @@
     "painter": "Ribera",
     "title": "Martyrdom of St Lawrence",
     "year": "1620",
-    "city": "Melbourne",
+    "city": "City of Melbourne",
     "country": "Australia",
     "location": "National Gallery of Victoria",
     "kind": "museum",
@@ -5092,7 +5218,8 @@
      }
     },
     "museum_id": "national-gallery-of-victoria",
-    "qid": "Q20426600"
+    "qid": "Q20426600",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -5133,7 +5260,8 @@
      }
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20491418"
+    "qid": "Q20491418",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -5179,7 +5307,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q2052008",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/jacob_dr.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/jacob_dr.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5210,7 +5339,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20536569"
+    "qid": "Q20536569",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -5242,7 +5372,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q20540970"
+    "qid": "Q20540970",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5284,7 +5415,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q20540973"
+    "qid": "Q20540973",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5316,7 +5448,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q20540977"
+    "qid": "Q20540977",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5358,7 +5491,8 @@
      }
     },
     "museum_id": "sinebrychoff-art-museum",
-    "qid": "Q20792731"
+    "qid": "Q20792731",
+    "location_src": "Sinebrychoff Art Museum"
    }
   },
   {
@@ -5366,8 +5500,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -5399,7 +5533,8 @@
      }
     },
     "museum_id": "philadelphia-museum-of-art",
-    "qid": "Q20809920"
+    "qid": "Q20809920",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -5407,8 +5542,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -5441,7 +5576,8 @@
      }
     },
     "museum_id": "los-angeles-county-museum-of-art",
-    "qid": "Q20878982"
+    "qid": "Q20878982",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -5483,7 +5619,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q20964038"
+    "qid": "Q20964038",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5525,7 +5662,8 @@
      }
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
-    "qid": "Q21617409"
+    "qid": "Q21617409",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -5555,7 +5693,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "thyssen-bornemisza-museum",
-    "qid": "Q21711507"
+    "qid": "Q21711507",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -5563,8 +5702,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5597,7 +5736,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q21725298"
+    "qid": "Q21725298",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5605,8 +5745,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5638,7 +5778,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q21727680"
+    "qid": "Q21727680",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5646,8 +5787,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5680,7 +5821,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q21727934"
+    "qid": "Q21727934",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5688,8 +5830,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5723,7 +5865,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q21730811",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/jerome_b.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/jerome_b.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5765,7 +5908,8 @@
      }
     },
     "museum_id": "national-museum-in-warsaw",
-    "qid": "Q22085984"
+    "qid": "Q22085984",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -5798,7 +5942,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-museum-in-warsaw",
-    "qid": "Q22133398"
+    "qid": "Q22133398",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -5850,7 +5995,8 @@
       "qid": "Q22965617",
       "url": "https://www.wikidata.org/wiki/Q22965617"
      }
-    ]
+    ],
+    "location_src": "Collegiate Church of Osuna"
    }
   },
   {
@@ -5891,7 +6037,8 @@
      }
     },
     "museum_id": "national-museum-of-western-art",
-    "qid": "Q23949030"
+    "qid": "Q23949030",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -5936,7 +6083,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q24118"
+    "qid": "Q24118",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5978,7 +6126,8 @@
      }
     },
     "museum_id": "fondazione-roberto-longhi",
-    "qid": "Q24258873"
+    "qid": "Q24258873",
+    "location_src": "Fondazione Roberto Longhi"
    }
   },
   {
@@ -6020,7 +6169,8 @@
      }
     },
     "museum_id": "fondazione-roberto-longhi",
-    "qid": "Q24258875"
+    "qid": "Q24258875",
+    "location_src": "Fondazione Roberto Longhi"
    }
   },
   {
@@ -6062,7 +6212,8 @@
      }
     },
     "museum_id": "palazzo-abatellis",
-    "qid": "Q24579992"
+    "qid": "Q24579992",
+    "location_src": "Palazzo Abatellis"
    }
   },
   {
@@ -6104,7 +6255,8 @@
      }
     },
     "museum_id": "palazzo-abatellis",
-    "qid": "Q24580366"
+    "qid": "Q24580366",
+    "location_src": "Palazzo Abatellis"
    }
   },
   {
@@ -6145,7 +6297,8 @@
      }
     },
     "museum_id": "allen-memorial-art-museum",
-    "qid": "Q25432421"
+    "qid": "Q25432421",
+    "location_src": "Allen Memorial Art Museum"
    }
   },
   {
@@ -6187,7 +6340,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26492655"
+    "qid": "Q26492655",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6229,7 +6383,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26507808"
+    "qid": "Q26507808",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6271,7 +6426,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26693521"
+    "qid": "Q26693521",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6313,7 +6469,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27698909"
+    "qid": "Q27698909",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6355,7 +6512,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27699175"
+    "qid": "Q27699175",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6396,7 +6554,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27699263"
+    "qid": "Q27699263",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6438,7 +6597,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27699266"
+    "qid": "Q27699266",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6480,7 +6640,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27699356"
+    "qid": "Q27699356",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6522,7 +6683,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27699403"
+    "qid": "Q27699403",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6564,7 +6726,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27699406"
+    "qid": "Q27699406",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6606,7 +6769,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700105"
+    "qid": "Q27700105",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6648,7 +6812,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700126"
+    "qid": "Q27700126",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6689,7 +6854,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700127"
+    "qid": "Q27700127",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6731,7 +6897,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700135"
+    "qid": "Q27700135",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6773,7 +6940,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700146"
+    "qid": "Q27700146",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6815,7 +6983,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700230"
+    "qid": "Q27700230",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6856,7 +7025,8 @@
      }
     },
     "museum_id": "royal-palace-of-madrid",
-    "qid": "Q27700236"
+    "qid": "Q27700236",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -6899,7 +7069,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q27700246",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/trinity.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/trinity.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6941,7 +7112,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700276"
+    "qid": "Q27700276",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6983,7 +7155,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700281"
+    "qid": "Q27700281",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7024,7 +7197,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700930"
+    "qid": "Q27700930",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7066,7 +7240,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700951"
+    "qid": "Q27700951",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7109,7 +7284,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700984"
+    "qid": "Q27700984",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7151,7 +7327,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701011"
+    "qid": "Q27701011",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7192,7 +7369,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701018"
+    "qid": "Q27701018",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7233,7 +7411,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701053"
+    "qid": "Q27701053",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7276,7 +7455,8 @@
     },
     "museum_id": "royal-palace-of-madrid",
     "qid": "Q27701468",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/christop.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/christop.html",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -7318,7 +7498,8 @@
      }
     },
     "museum_id": "royal-palace-of-aranjuez",
-    "qid": "Q27701554"
+    "qid": "Q27701554",
+    "location_src": "Royal Palace of Aranjuez"
    }
   },
   {
@@ -7360,7 +7541,8 @@
      }
     },
     "museum_id": "royal-palace-of-madrid",
-    "qid": "Q27701644"
+    "qid": "Q27701644",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -7400,7 +7582,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701705"
+    "qid": "Q27701705",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7443,7 +7626,8 @@
     },
     "museum_id": "royal-palace-of-madrid",
     "qid": "Q27701715",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/st_john.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/st_john.html",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -7485,7 +7669,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701729"
+    "qid": "Q27701729",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7527,7 +7712,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701765"
+    "qid": "Q27701765",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7569,7 +7755,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27749096"
+    "qid": "Q27749096",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -7601,7 +7788,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-museum-of-fine-arts-argentina",
-    "qid": "Q27954667"
+    "qid": "Q27954667",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -7643,7 +7831,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q27955252"
+    "qid": "Q27955252",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -7651,15 +7840,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Ribera",
     "title": "The Martyrdom of Saint Sebastian",
     "year": "1700",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "kind": "museum",
@@ -7676,7 +7865,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "scottish-national-gallery",
-    "qid": "Q27967927"
+    "qid": "Q27967927",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -7684,8 +7874,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -7717,7 +7907,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q27977067"
+    "qid": "Q27977067",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -7748,7 +7939,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q27979500"
+    "qid": "Q27979500",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -7789,7 +7981,9 @@
      }
     },
     "museum_id": "royal-collection",
-    "qid": "Q28031511"
+    "qid": "Q28031511",
+    "city": "England",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -7833,7 +8027,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q28669741"
+    "qid": "Q28669741",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -7875,7 +8070,8 @@
      }
     },
     "museum_id": "bilbao-fine-arts-museum",
-    "qid": "Q28796863"
+    "qid": "Q28796863",
+    "location_src": "Bilbao Fine Arts Museum"
    }
   },
   {
@@ -7893,7 +8089,7 @@
     "year": "1632",
     "city": "Fort Worth",
     "country": "United States",
-    "location": "Museo d'arte Kimbell",
+    "location": "Kimbell Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -7916,8 +8112,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-d-arte-kimbell",
-    "qid": "Q28796864"
+    "museum_id": "kimbell-art-museum",
+    "qid": "Q28796864",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -7960,7 +8157,8 @@
     },
     "museum_id": "bilbao-fine-arts-museum",
     "qid": "Q28796865",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/sebastia.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/sebastia.html",
+    "location_src": "Bilbao Fine Arts Museum"
    }
   },
   {
@@ -7991,7 +8189,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "musei-di-strada-nuova",
-    "qid": "Q28808858"
+    "qid": "Q28808858",
+    "location_src": "Musei di Strada Nuova"
    }
   },
   {
@@ -8023,7 +8222,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "eglise-saint-etienne",
-    "qid": "Q29121628"
+    "qid": "Q29121628",
+    "location_src": "Église Saint Etienne"
    }
   },
   {
@@ -8065,7 +8265,8 @@
      }
     },
     "museum_id": "musee-d-art-et-d-histoire-de-langres",
-    "qid": "Q29187223"
+    "qid": "Q29187223",
+    "location_src": "Musée d'art et d'histoire de Langres"
    }
   },
   {
@@ -8105,7 +8306,8 @@
       "qid": "Q29269167",
       "url": "https://www.wikidata.org/wiki/Q29269167"
      }
-    ]
+    ],
+    "location_src": "Lavaur Cathedral"
    }
   },
   {
@@ -8153,7 +8355,8 @@
       "qid": "Q29899680",
       "url": "https://www.wikidata.org/wiki/Q29899680"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8202,7 +8405,8 @@
       "qid": "Q29917306",
       "url": "https://www.wikidata.org/wiki/Q29917306"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8241,7 +8445,8 @@
       "qid": "Q29920348",
       "url": "https://www.wikidata.org/wiki/Q29920348"
      }
-    ]
+    ],
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8282,7 +8487,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q29939496"
+    "qid": "Q29939496",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8323,7 +8529,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q30058426"
+    "qid": "Q30058426",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8364,7 +8571,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q30093952"
+    "qid": "Q30093952",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8413,7 +8621,8 @@
       "qid": "Q30096903",
       "url": "https://www.wikidata.org/wiki/Q30096903"
      }
-    ]
+    ],
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8462,7 +8671,8 @@
       "qid": "Q30097186",
       "url": "https://www.wikidata.org/wiki/Q30097186"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8504,7 +8714,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q35484087"
+    "qid": "Q35484087",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -8546,7 +8757,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q35501232"
+    "qid": "Q35501232",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -8591,7 +8803,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q3716086",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/duel.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/duel.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -8635,7 +8848,8 @@
      }
     },
     "museum_id": "museu-nacional-d-art-de-catalunya",
-    "qid": "Q3815174"
+    "qid": "Q3815174",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -8681,7 +8895,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q3842290",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/beardedw.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/beardedw.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -8726,7 +8941,8 @@
      }
     },
     "museum_id": "museo-nazionale-di-san-martino",
-    "qid": "Q3904402"
+    "qid": "Q3904402",
+    "location_src": "Museo Nazionale di San Martino"
    }
   },
   {
@@ -8771,7 +8987,8 @@
      }
     },
     "museum_id": "royal-chapel-of-the-treasure-of-san-gennaro",
-    "qid": "Q3947170"
+    "qid": "Q3947170",
+    "location_src": "Royal Chapel of the Treasure of San Gennaro"
    }
   },
   {
@@ -8779,8 +8996,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.2583,
-     40.85301
+     14.2486,
+     40.8358
     ]
    },
    "properties": {
@@ -8789,7 +9006,7 @@
     "year": "1616",
     "city": "Naples",
     "country": "Italy",
-    "location": "Picture gallery of the Girolamini",
+    "location": "Girolamini",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -8813,8 +9030,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "picture-gallery-of-the-girolamini",
-    "qid": "Q3948701"
+    "museum_id": "girolamini",
+    "qid": "Q3948701",
+    "location_src": "Girolamini"
    }
   },
   {
@@ -8855,8 +9073,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q4411306"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q4411306",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -8900,7 +9119,8 @@
      }
     },
     "museum_id": "museo-de-arte-de-indianapolis",
-    "qid": "Q4791095"
+    "qid": "Q4791095",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -8941,8 +9161,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q50323577"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q50323577",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -8983,9 +9204,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q50325018",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/diogenes.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/diogenes.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -9027,7 +9249,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50912292"
+    "qid": "Q50912292",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9068,7 +9291,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50932954"
+    "qid": "Q50932954",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9099,7 +9323,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50934571"
+    "qid": "Q50934571",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9130,7 +9355,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50943004"
+    "qid": "Q50943004",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9161,7 +9387,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50987581"
+    "qid": "Q50987581",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9204,7 +9431,8 @@
      }
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q51955232"
+    "qid": "Q51955232",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -9244,7 +9472,9 @@
      }
     },
     "museum_id": "national-trust",
-    "qid": "Q52209384"
+    "qid": "Q52209384",
+    "city": "Kingston Lacy",
+    "location_src": "National Trust"
    }
   },
   {
@@ -9287,7 +9517,8 @@
      }
     },
     "museum_id": "san-diego-museum-of-art",
-    "qid": "Q5241508"
+    "qid": "Q5241508",
+    "location_src": "San Diego Museum of Art"
    }
   },
   {
@@ -9328,9 +9559,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q55865077",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/dolorosa.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/dolorosa.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -9372,7 +9604,8 @@
      }
     },
     "museum_id": "goya-museum",
-    "qid": "Q56702481"
+    "qid": "Q56702481",
+    "location_src": "Goya Museum"
    }
   },
   {
@@ -9422,7 +9655,8 @@
       "qid": "Q56702535",
       "url": "https://www.wikidata.org/wiki/Q56702535"
      }
-    ]
+    ],
+    "location_src": "Goya Museum"
    }
   },
   {
@@ -9467,7 +9701,8 @@
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q5701552",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/apollo.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/apollo.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -9509,7 +9744,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q57081221"
+    "qid": "Q57081221",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -9552,7 +9788,8 @@
      }
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
-    "qid": "Q5967516"
+    "qid": "Q5967516",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -9593,7 +9830,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710361"
+    "qid": "Q59710361",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9635,7 +9873,8 @@
      }
     },
     "museum_id": "house-museum-of-christopher-columbus",
-    "qid": "Q59710362"
+    "qid": "Q59710362",
+    "location_src": "House museum of Christopher Columbus"
    }
   },
   {
@@ -9675,7 +9914,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710363"
+    "qid": "Q59710363",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9716,7 +9956,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710366"
+    "qid": "Q59710366",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9756,7 +9997,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710368"
+    "qid": "Q59710368",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9797,7 +10039,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710370"
+    "qid": "Q59710370",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9839,7 +10082,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710371"
+    "qid": "Q59710371",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9881,7 +10125,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710373"
+    "qid": "Q59710373",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9923,7 +10168,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710376"
+    "qid": "Q59710376",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9963,7 +10209,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59710415"
+    "qid": "Q59710415",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10003,7 +10250,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712010"
+    "qid": "Q59712010",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10045,7 +10293,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712014"
+    "qid": "Q59712014",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10087,7 +10336,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712018"
+    "qid": "Q59712018",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10129,7 +10379,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712020"
+    "qid": "Q59712020",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10171,7 +10422,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712021"
+    "qid": "Q59712021",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10213,7 +10465,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712023"
+    "qid": "Q59712023",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10254,7 +10507,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712024"
+    "qid": "Q59712024",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10295,7 +10549,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712025"
+    "qid": "Q59712025",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10337,7 +10592,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59712026"
+    "qid": "Q59712026",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10379,7 +10635,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59780112"
+    "qid": "Q59780112",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10419,7 +10676,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59825397"
+    "qid": "Q59825397",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10460,7 +10718,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59843422"
+    "qid": "Q59843422",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10501,7 +10760,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59843487"
+    "qid": "Q59843487",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10542,7 +10802,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59843918"
+    "qid": "Q59843918",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10583,7 +10844,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59979634"
+    "qid": "Q59979634",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10624,7 +10886,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q59979888"
+    "qid": "Q59979888",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10667,7 +10930,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q6004260"
+    "qid": "Q6004260",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10709,7 +10973,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q60465928"
+    "qid": "Q60465928",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -10750,7 +11015,8 @@
      }
     },
     "museum_id": "alava-foral-council",
-    "qid": "Q60660821"
+    "qid": "Q60660821",
+    "location_src": "Álava Foral Council"
    }
   },
   {
@@ -10791,7 +11057,8 @@
      }
     },
     "museum_id": "alava-foral-council",
-    "qid": "Q60661061"
+    "qid": "Q60661061",
+    "location_src": "Álava Foral Council"
    }
   },
   {
@@ -10832,7 +11099,8 @@
      }
     },
     "museum_id": "alava-foral-council",
-    "qid": "Q60661399"
+    "qid": "Q60661399",
+    "location_src": "Álava Foral Council"
    }
   },
   {
@@ -10878,7 +11146,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q6118296",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/1_andrew.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/1_andrew.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10886,8 +11155,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -10918,7 +11187,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q61747112"
+    "qid": "Q61747112",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -10959,7 +11229,8 @@
      }
     },
     "museum_id": "el-paso-museum-of-art",
-    "qid": "Q64520497"
+    "qid": "Q64520497",
+    "location_src": "El Paso Museum of Art"
    }
   },
   {
@@ -10967,8 +11238,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -11000,7 +11271,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "qid": "Q64521916"
+    "qid": "Q64521916",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -11008,8 +11280,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -11041,7 +11313,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "qid": "Q64537972"
+    "qid": "Q64537972",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -11083,7 +11356,8 @@
      }
     },
     "museum_id": "stadel-museum",
-    "qid": "Q64788627"
+    "qid": "Q64788627",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -11133,7 +11407,8 @@
       "qid": "Q66107831",
       "url": "https://www.wikidata.org/wiki/Q66107831"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Pau"
    }
   },
   {
@@ -11177,7 +11452,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q67203478"
+    "qid": "Q67203478",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -11185,8 +11461,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -11227,7 +11503,8 @@
       "qid": "Q72749989",
       "url": "https://www.wikidata.org/wiki/Q72749989"
      }
-    ]
+    ],
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -11273,7 +11550,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q728027",
-    "wga_url": "https://www.wga.hu/html/r/ribera/1/bartholo.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/1/bartholo.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -11290,7 +11568,7 @@
     "title": "Saint Sebastian",
     "city": "Le Havre",
     "country": "France",
-    "location": "MuMa Museum of modern art André Malraux",
+    "location": "Museum of modern art André Malraux - MuMa",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -11304,8 +11582,9 @@
      "url": "https://www.wikidata.org/wiki/Q75661175",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "muma-museum-of-modern-art-andre-malraux",
-    "qid": "Q75661175"
+    "museum_id": "museum-of-modern-art-andre-malraux-muma",
+    "qid": "Q75661175",
+    "location_src": "Museum of modern art André Malraux - MuMa"
    }
   },
   {
@@ -11320,7 +11599,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Joseph",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
@@ -11337,7 +11616,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-ireland",
-    "qid": "Q77885007"
+    "qid": "Q77885007",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -11352,7 +11632,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Aesop",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
@@ -11368,7 +11648,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-ireland",
-    "qid": "Q77939125"
+    "qid": "Q77939125",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -11383,7 +11664,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Onuphrius",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
@@ -11400,7 +11681,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-ireland",
-    "qid": "Q77940497"
+    "qid": "Q77940497",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -11408,8 +11690,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.5594,
-     41.6583
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -11440,7 +11722,8 @@
      }
     },
     "museum_id": "toledo-museum-of-art",
-    "qid": "Q78691682"
+    "qid": "Q78691682",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -11458,7 +11741,7 @@
     "year": "1638",
     "city": "Worcester",
     "country": "United States",
-    "location": "Museo de Arte de Worcester",
+    "location": "Worcester Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -11479,8 +11762,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-worcester",
-    "qid": "Q79004039"
+    "museum_id": "worcester-art-museum",
+    "qid": "Q79004039",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -11511,7 +11795,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "dallas-museum-of-art",
-    "qid": "Q79138564"
+    "qid": "Q79138564",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -11519,8 +11804,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.55916,
-     27.38307
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -11551,7 +11836,8 @@
      }
     },
     "museum_id": "john-and-mable-ringling-museum-of-art",
-    "qid": "Q79401100"
+    "qid": "Q79401100",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -11559,7 +11845,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.2042,
+     35.20417,
      31.7725
     ]
    },
@@ -11590,7 +11876,8 @@
      }
     },
     "museum_id": "israel-museum",
-    "qid": "Q80173215"
+    "qid": "Q80173215",
+    "location_src": "Israel Museum"
    }
   },
   {
@@ -11633,7 +11920,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q9343978",
-    "wga_url": "https://www.wga.hu/html/r/ribera/2/oldmoney.html"
+    "wga_url": "https://www.wga.hu/html/r/ribera/2/oldmoney.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -11676,7 +11964,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-strasbourg",
-    "qid": "Q97594325"
+    "qid": "Q97594325",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -11684,8 +11973,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.2583,
-     40.85301
+     14.2486,
+     40.8358
     ]
    },
    "properties": {
@@ -11694,7 +11983,7 @@
     "year": "1618",
     "city": "Naples",
     "country": "Italy",
-    "location": "Picture gallery of the Girolamini",
+    "location": "Girolamini",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -11720,8 +12009,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "picture-gallery-of-the-girolamini",
-    "qid": "Q98418769"
+    "museum_id": "girolamini",
+    "qid": "Q98418769",
+    "location_src": "Girolamini"
    }
   },
   {
@@ -11764,7 +12054,8 @@
      }
     },
     "museum_id": "certosa-di-san-martino",
-    "qid": "Q98545387"
+    "qid": "Q98545387",
+    "location_src": "Certosa di San Martino"
    }
   }
  ]

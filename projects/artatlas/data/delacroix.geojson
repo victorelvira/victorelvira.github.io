@@ -39,7 +39,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-rouen",
-    "qid": "Q105430127"
+    "qid": "Q105430127",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -77,7 +78,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q111555472"
+    "qid": "Q111555472",
+    "location_src": "Louvre"
    }
   },
   {
@@ -115,7 +117,8 @@
      }
     },
     "museum_id": "musee-ingres-bourdelle",
-    "qid": "Q111651025"
+    "qid": "Q111651025",
+    "location_src": "Musée Ingres Bourdelle"
    }
   },
   {
@@ -123,8 +126,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33494,
-     48.8605
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -133,7 +136,7 @@
     "year": "1827",
     "city": "Paris",
     "country": "France",
-    "location": "Room 700",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -156,9 +159,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "room-700",
+    "museum_id": "louvre",
     "qid": "Q1133821",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/2/206delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/2/206delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -204,7 +208,8 @@
       "qid": "Q115620024",
       "url": "https://www.wikidata.org/wiki/Q115620024"
      }
-    ]
+    ],
+    "location_src": "Matthiesen Gallery"
    }
   },
   {
@@ -242,7 +247,8 @@
      }
     },
     "museum_id": "musee-fabre",
-    "qid": "Q115663123"
+    "qid": "Q115663123",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -258,7 +264,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q115674928",
     "year": "1834",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -289,7 +295,8 @@
       "qid": "Q115674928",
       "url": "https://www.wikidata.org/wiki/Q115674928"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -305,7 +312,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q115675958",
     "year": "1834",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -336,7 +343,8 @@
       "qid": "Q115675958",
       "url": "https://www.wikidata.org/wiki/Q115675958"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -374,7 +382,9 @@
      }
     },
     "museum_id": "national-gallery-prague",
-    "qid": "Q117214121"
+    "qid": "Q117214121",
+    "city": "Holešovice",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -414,7 +424,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q11907350"
+    "qid": "Q11907350",
+    "location_src": "Louvre"
    }
   },
   {
@@ -456,7 +467,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q11938897",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/319delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/319delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -464,8 +476,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33494,
-     48.8605
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -474,7 +486,7 @@
     "year": "1834",
     "city": "Paris",
     "country": "France",
-    "location": "Room 700",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -497,9 +509,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "room-700",
+    "museum_id": "louvre",
     "qid": "Q1212737",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/308delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/308delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -507,8 +520,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -538,7 +551,8 @@
      }
     },
     "museum_id": "nationalmuseum",
-    "qid": "Q124804569"
+    "qid": "Q124804569",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -578,7 +592,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q132325364",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/313delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/313delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -594,7 +609,7 @@
     "painter": "Eugène Delacroix",
     "title": "George Sand",
     "year": "1838",
-    "city": "Copenhagen",
+    "city": "Gentofte Municipality",
     "country": "Denmark",
     "location": "Ordrupgaard",
     "kind": "museum",
@@ -618,7 +633,8 @@
     },
     "museum_id": "ordrupgaard",
     "qid": "Q132325846",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/312delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/312delac.html",
+    "location_src": "Ordrupgaard"
    }
   },
   {
@@ -657,7 +673,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q14575599"
+    "qid": "Q14575599",
+    "location_src": "Louvre"
    }
   },
   {
@@ -696,7 +713,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q14576177",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/511delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/511delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -704,8 +722,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -736,7 +754,8 @@
      }
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
-    "qid": "Q16011494"
+    "qid": "Q16011494",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -775,7 +794,8 @@
      }
     },
     "museum_id": "musee-des-augustins",
-    "qid": "Q16303802"
+    "qid": "Q16303802",
+    "location_src": "Musée des Augustins"
    }
   },
   {
@@ -791,9 +811,9 @@
     "painter": "Eugène Delacroix",
     "title": "Girl being mauled by a tiger",
     "year": "1856",
-    "city": "Stuttgart-Mitte",
+    "city": "Stuttgart",
     "country": "Germany",
-    "location": "Neue Staatsgalerie",
+    "location": "Staatsgalerie Stuttgart",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -814,8 +834,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "neue-staatsgalerie",
-    "qid": "Q1661143"
+    "museum_id": "staatsgalerie-stuttgart",
+    "qid": "Q1661143",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -823,8 +844,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -832,7 +853,7 @@
     "title": "Cromwell before the Coffin of Charles I",
     "year": "1831",
     "country": "France",
-    "location": "Department of Prints and Drawings of the Louvre",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -852,8 +873,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "department-of-prints-and-drawings-of-the-louvre",
-    "qid": "Q17176900"
+    "museum_id": "louvre",
+    "qid": "Q17176900",
+    "city": "Paris",
+    "location_src": "Louvre"
    }
   },
   {
@@ -895,7 +918,8 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q17280639",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/111delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/111delac.html",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -936,7 +960,8 @@
     },
     "museum_id": "art-institute-of-chicago",
     "qid": "Q17318501",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/513delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/513delac.html",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -952,7 +977,7 @@
     "painter": "Eugène Delacroix",
     "title": "Arab Horses fighting in a stable",
     "year": "1860",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "kind": "museum",
@@ -977,7 +1002,8 @@
     },
     "museum_id": "musee-d-orsay",
     "qid": "Q17491050",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/512delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/512delac.html",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -993,7 +1019,7 @@
     "painter": "Eugène Delacroix",
     "title": "Puma",
     "year": "1859",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "kind": "museum",
@@ -1016,7 +1042,8 @@
      }
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q17493275"
+    "qid": "Q17493275",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1056,7 +1083,8 @@
      }
     },
     "museum_id": "nantes-museum-of-arts",
-    "qid": "Q17627487"
+    "qid": "Q17627487",
+    "location_src": "Nantes Museum of Arts"
    }
   },
   {
@@ -1064,8 +1092,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -1094,7 +1122,8 @@
      }
     },
     "museum_id": "nationalmuseum",
-    "qid": "Q18599222"
+    "qid": "Q18599222",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -1103,7 +1132,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -1133,7 +1162,8 @@
      }
     },
     "museum_id": "musee-conde",
-    "qid": "Q18685062"
+    "qid": "Q18685062",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -1173,7 +1203,8 @@
     },
     "museum_id": "walters-art-museum",
     "qid": "Q18748474",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/504delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/504delac.html",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -1212,7 +1243,8 @@
      }
     },
     "museum_id": "walters-art-museum",
-    "qid": "Q18748477"
+    "qid": "Q18748477",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -1252,7 +1284,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q19015135",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/110delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/110delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1291,7 +1324,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q19636500"
+    "qid": "Q19636500",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -1330,7 +1364,8 @@
      }
     },
     "museum_id": "stadel-museum",
-    "qid": "Q19820263"
+    "qid": "Q19820263",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -1367,7 +1402,8 @@
      }
     },
     "museum_id": "van-gogh-museum",
-    "qid": "Q19838030"
+    "qid": "Q19838030",
+    "location_src": "Van Gogh Museum"
    }
   },
   {
@@ -1407,7 +1443,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911431"
+    "qid": "Q19911431",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1447,7 +1484,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19911558",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/2/212delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/2/212delac.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1488,7 +1526,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19911594",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/4/408delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/4/408delac.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1527,7 +1566,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911661"
+    "qid": "Q19911661",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1566,7 +1606,8 @@
      }
     },
     "museum_id": "musee-fabre",
-    "qid": "Q19923938"
+    "qid": "Q19923938",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -1574,8 +1615,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1606,7 +1647,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q19923949",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/4/409delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/4/409delac.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1645,7 +1687,8 @@
      }
     },
     "museum_id": "museum-boijmans-van-beuningen",
-    "qid": "Q19924943"
+    "qid": "Q19924943",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -1661,7 +1704,7 @@
     "painter": "Eugène Delacroix",
     "title": "A Corner of the Studio",
     "year": "1830",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -1684,7 +1727,8 @@
      }
     },
     "museum_id": "eugene-delacroix-national-museum",
-    "qid": "Q19962929"
+    "qid": "Q19962929",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -1723,7 +1767,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q20167046"
+    "qid": "Q20167046",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1761,7 +1806,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20184864"
+    "qid": "Q20184864",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1800,7 +1846,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20186329"
+    "qid": "Q20186329",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1839,7 +1886,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20188634"
+    "qid": "Q20188634",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1847,8 +1895,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -1878,7 +1926,8 @@
      }
     },
     "museum_id": "los-angeles-county-museum-of-art",
-    "qid": "Q20881009"
+    "qid": "Q20881009",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -1886,8 +1935,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.2742,
-     44.9586
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -1919,7 +1968,8 @@
     },
     "museum_id": "minneapolis-institute-of-art",
     "qid": "Q20891198",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/314delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/314delac.html",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -1955,7 +2005,8 @@
      }
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q21710978"
+    "qid": "Q21710978",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1963,8 +2014,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1994,7 +2045,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q21733212",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/512delad.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/512delad.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2036,7 +2088,8 @@
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
     "qid": "Q22965178",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/2/202delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/2/202delac.html",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -2044,8 +2097,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33494,
-     48.8605
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -2054,7 +2107,7 @@
     "year": "1822",
     "city": "Paris",
     "country": "France",
-    "location": "Room 700",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2077,9 +2130,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "room-700",
+    "museum_id": "louvre",
     "qid": "Q2354251",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/103delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/103delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2120,7 +2174,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q23912"
+    "qid": "Q23912",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2136,9 +2191,9 @@
     "painter": "Eugène Delacroix",
     "title": "Horses Coming Out of the Sea",
     "year": "1860",
-    "city": "Washington D.C.",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "Phillips Collection",
+    "location": "The Phillips Collection",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2159,8 +2214,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "phillips-collection",
-    "qid": "Q23940188"
+    "museum_id": "the-phillips-collection",
+    "qid": "Q23940188",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -2199,7 +2255,8 @@
      }
     },
     "museum_id": "national-museum-of-western-art",
-    "qid": "Q23948006"
+    "qid": "Q23948006",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -2236,7 +2293,8 @@
      }
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q24934064"
+    "qid": "Q24934064",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -2275,7 +2333,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26482905"
+    "qid": "Q26482905",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2314,7 +2373,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26693126"
+    "qid": "Q26693126",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2355,7 +2415,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q26706754",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/2/207delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/2/207delac.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2396,7 +2457,8 @@
     },
     "museum_id": "church-of-saint-sulpice",
     "qid": "Q26788979",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/508delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/508delac.html",
+    "location_src": "Church of Saint-Sulpice"
    }
   },
   {
@@ -2404,15 +2466,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Arabs playing chess",
     "year": "1847",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "kind": "museum",
@@ -2435,7 +2497,8 @@
      }
     },
     "museum_id": "scottish-national-gallery",
-    "qid": "Q27058606"
+    "qid": "Q27058606",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -2451,7 +2514,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q28016130",
     "year": "1834",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -2482,7 +2545,8 @@
       "qid": "Q28016130",
       "url": "https://www.wikidata.org/wiki/Q28016130"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -2490,8 +2554,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3368,
-     48.8597
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -2500,7 +2564,7 @@
     "year": "1850",
     "city": "Paris",
     "country": "France",
-    "location": "Galerie d'Apollon",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2520,9 +2584,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galerie-d-apollon",
+    "museum_id": "louvre",
     "qid": "Q28025470",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/501delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/501delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2562,7 +2627,8 @@
      }
     },
     "museum_id": "audrey-jones-beck-building",
-    "qid": "Q28036772"
+    "qid": "Q28036772",
+    "location_src": "Audrey Jones Beck Building"
    }
   },
   {
@@ -2603,7 +2669,8 @@
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q28782387",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/6/600delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/6/600delac.html",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -2643,7 +2710,8 @@
      }
     },
     "museum_id": "galerie-des-batailles",
-    "qid": "Q2890107"
+    "qid": "Q2890107",
+    "location_src": "Galerie des Batailles"
    }
   },
   {
@@ -2682,7 +2750,8 @@
      }
     },
     "museum_id": "church-saint-paul-saint-louis-of-paris",
-    "qid": "Q29211491"
+    "qid": "Q29211491",
+    "location_src": "church Saint-Paul-Saint-Louis of Paris"
    }
   },
   {
@@ -2715,7 +2784,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "eglise-saint-michel-de-nantua",
-    "qid": "Q29328965"
+    "qid": "Q29328965",
+    "location_src": "Église Saint-Michel de Nantua"
    }
   },
   {
@@ -2752,9 +2822,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "petit-palais",
+    "museum_id": "petit-palais-2",
     "qid": "Q29353383",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/310delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/310delac.html",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -2762,8 +2833,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33494,
-     48.8605
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -2772,7 +2843,7 @@
     "year": "1830",
     "city": "Paris",
     "country": "France",
-    "location": "Room 700",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2795,9 +2866,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "room-700",
+    "museum_id": "louvre",
     "qid": "Q29530",
-    "wga_url": "https://www.wga.hu/html/_m/d/delacroi/2/208delac.html"
+    "wga_url": "https://www.wga.hu/html/_m/d/delacroi/2/208delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2813,7 +2885,7 @@
     "painter": "Eugène Delacroix",
     "title": "The Education of the Virgin",
     "year": "1842",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -2836,7 +2908,8 @@
      }
     },
     "museum_id": "eugene-delacroix-national-museum",
-    "qid": "Q29647193"
+    "qid": "Q29647193",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -2875,7 +2948,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29654765",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/503delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/503delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2914,7 +2988,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857714"
+    "qid": "Q29857714",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2961,7 +3036,8 @@
       "qid": "Q29857724",
       "url": "https://www.wikidata.org/wiki/Q29857724"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -2999,7 +3075,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857732"
+    "qid": "Q29857732",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3037,7 +3114,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857741"
+    "qid": "Q29857741",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3075,7 +3153,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857756"
+    "qid": "Q29857756",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3113,7 +3192,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857761"
+    "qid": "Q29857761",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3121,8 +3201,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33494,
-     48.8605
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3131,7 +3211,7 @@
     "year": "1840",
     "city": "Paris",
     "country": "France",
-    "location": "Room 700",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -3151,9 +3231,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "room-700",
+    "museum_id": "louvre",
     "qid": "Q29857773",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/4/403delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/4/403delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3191,7 +3272,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857781"
+    "qid": "Q29857781",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3229,7 +3311,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857786"
+    "qid": "Q29857786",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3267,7 +3350,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857795"
+    "qid": "Q29857795",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3307,7 +3391,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857809"
+    "qid": "Q29857809",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3345,7 +3430,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857817"
+    "qid": "Q29857817",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3385,7 +3471,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29857821",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/317delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/317delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3423,7 +3510,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29857830"
+    "qid": "Q29857830",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3464,7 +3552,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29862352",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/2/201delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/2/201delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3503,7 +3592,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29862359"
+    "qid": "Q29862359",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3541,7 +3631,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29862362"
+    "qid": "Q29862362",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3581,7 +3672,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29862364"
+    "qid": "Q29862364",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3589,8 +3681,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33494,
-     48.8605
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3599,7 +3691,7 @@
     "year": "1840",
     "city": "Paris",
     "country": "France",
-    "location": "Room 700",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -3621,9 +3713,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "room-700",
+    "museum_id": "louvre",
     "qid": "Q3055367",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/4/401delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/4/401delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3662,7 +3755,8 @@
      }
     },
     "museum_id": "hiroshima-museum-of-art",
-    "qid": "Q30728180"
+    "qid": "Q30728180",
+    "location_src": "Hiroshima Museum of Art"
    }
   },
   {
@@ -3704,7 +3798,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3119110",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/106delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/106delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3746,7 +3841,8 @@
     },
     "museum_id": "musee-des-beaux-arts-de-bordeaux",
     "qid": "Q3181999",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/113delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/113delac.html",
+    "location_src": "Musée des Beaux-Arts de Bordeaux"
    }
   },
   {
@@ -3786,7 +3882,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-of-nancy",
-    "qid": "Q3206493"
+    "qid": "Q3206493",
+    "location_src": "Museum of Fine Arts of Nancy"
    }
   },
   {
@@ -3826,7 +3923,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q3208817"
+    "qid": "Q3208817",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3866,7 +3964,8 @@
      }
     },
     "museum_id": "musee-de-la-cohue",
-    "qid": "Q3221347"
+    "qid": "Q3221347",
+    "location_src": "musée de la Cohue"
    }
   },
   {
@@ -3875,7 +3974,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -3906,7 +4005,8 @@
      }
     },
     "museum_id": "musee-conde",
-    "qid": "Q3232008"
+    "qid": "Q3232008",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -3947,7 +4047,8 @@
     },
     "museum_id": "church-of-saint-sulpice",
     "qid": "Q3837491",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/5/506delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/5/506delac.html",
+    "location_src": "Church of Saint-Sulpice"
    }
   },
   {
@@ -3955,8 +4056,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3985,7 +4086,8 @@
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
-    "qid": "Q49871766"
+    "qid": "Q49871766",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3993,8 +4095,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -4023,7 +4125,8 @@
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
-    "qid": "Q49871824"
+    "qid": "Q49871824",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -4031,8 +4134,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -4061,7 +4164,8 @@
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
-    "qid": "Q49871847"
+    "qid": "Q49871847",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -4077,7 +4181,7 @@
     "painter": "Eugène Delacroix",
     "title": "Portrait of Frédéric Chopin and George Sand",
     "year": "1837",
-    "city": "Copenhagen",
+    "city": "Gentofte Municipality",
     "country": "Denmark",
     "location": "Ordrupgaard",
     "kind": "museum",
@@ -4101,7 +4205,8 @@
      }
     },
     "museum_id": "ordrupgaard",
-    "qid": "Q4992187"
+    "qid": "Q4992187",
+    "location_src": "Ordrupgaard"
    }
   },
   {
@@ -4109,15 +4214,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Seated Nude",
     "year": "1820",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Alte Nationalgalerie",
     "kind": "museum",
@@ -4140,7 +4245,8 @@
      }
     },
     "museum_id": "alte-nationalgalerie",
-    "qid": "Q50114016"
+    "qid": "Q50114016",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -4178,7 +4284,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q52449380"
+    "qid": "Q52449380",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -4186,8 +4293,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.73889,
-     59.91333
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
@@ -4196,7 +4303,7 @@
     "year": "1850",
     "city": "Oslo",
     "country": "Norway",
-    "location": "National Museum of Art",
+    "location": "National Museum of Norway",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -4216,9 +4323,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "national-museum-of-art",
+    "museum_id": "national-museum-of-norway",
     "qid": "Q55432472",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/4/412delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/4/412delac.html",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -4258,7 +4366,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q5573243",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/316delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/316delac.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4299,7 +4408,8 @@
     },
     "museum_id": "musee-des-beaux-arts-d-orleans",
     "qid": "Q5689366",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/104delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/104delac.html",
+    "location_src": "Musée des Beaux-Arts d'Orléans"
    }
   },
   {
@@ -4339,7 +4449,8 @@
     },
     "museum_id": "musee-fabre",
     "qid": "Q57020495",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/105delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/105delac.html",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -4378,7 +4489,8 @@
      }
     },
     "museum_id": "staatsgalerie-stuttgart",
-    "qid": "Q60041830"
+    "qid": "Q60041830",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -4396,7 +4508,7 @@
     "year": "1854",
     "city": "Hartford",
     "country": "United States",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -4415,8 +4527,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "wadsworth-atheneum-museum-of-art",
-    "qid": "Q60041883"
+    "museum_id": "wadsworth-atheneum",
+    "qid": "Q60041883",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -4455,7 +4568,8 @@
      }
     },
     "museum_id": "foundation-e-g-buhrle-collection",
-    "qid": "Q60042005"
+    "qid": "Q60042005",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -4495,7 +4609,8 @@
     },
     "museum_id": "ackland-art-museum",
     "qid": "Q60042068",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/3/315delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/3/315delac.html",
+    "location_src": "Ackland Art Museum"
    }
   },
   {
@@ -4503,7 +4618,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.292,
+     -76.2924,
      36.857
     ]
    },
@@ -4511,7 +4626,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q60390512",
     "year": "1851",
-    "city": "Norfolk",
+    "city": "Q49231",
     "country": "United States",
     "location": "Chrysler Museum of Art",
     "kind": "museum",
@@ -4541,7 +4656,8 @@
       "qid": "Q60390512",
       "url": "https://www.wikidata.org/wiki/Q60390512"
      }
-    ]
+    ],
+    "location_src": "Chrysler Museum of Art"
    }
   },
   {
@@ -4582,7 +4698,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
-    "qid": "Q6494773"
+    "qid": "Q6494773",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -4598,7 +4715,7 @@
     "painter": "Eugène Delacroix",
     "title": "Mademoiselle Rose",
     "year": "1821",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -4625,7 +4742,8 @@
     },
     "museum_id": "eugene-delacroix-national-museum",
     "qid": "Q6727098",
-    "wga_url": "https://www.wga.hu/html/d/delacroi/1/101delac.html"
+    "wga_url": "https://www.wga.hu/html/d/delacroi/1/101delac.html",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -4641,7 +4759,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q69778224",
     "year": "1821",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -4672,7 +4790,8 @@
       "qid": "Q69778224",
       "url": "https://www.wikidata.org/wiki/Q69778224"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -4688,7 +4807,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q69778236",
     "year": "1828",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -4719,7 +4838,8 @@
       "qid": "Q69778236",
       "url": "https://www.wikidata.org/wiki/Q69778236"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -4735,7 +4855,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q69778239",
     "year": "1834",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -4766,7 +4886,8 @@
       "qid": "Q69778239",
       "url": "https://www.wikidata.org/wiki/Q69778239"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -4782,7 +4903,7 @@
     "painter": "Eugène Delacroix",
     "title": "Romeo and Juliet at the tomb of the Capulets",
     "year": "1850",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -4804,7 +4925,8 @@
      }
     },
     "museum_id": "eugene-delacroix-national-museum",
-    "qid": "Q69778244"
+    "qid": "Q69778244",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -4820,7 +4942,7 @@
     "painter": "Eugène Delacroix",
     "title": "Q69778249",
     "year": "1845",
-    "city": "Paris",
+    "city": "6th arrondissement of Paris",
     "country": "France",
     "location": "Eugène-Delacroix National Museum",
     "kind": "museum",
@@ -4851,7 +4973,8 @@
       "qid": "Q69778249",
       "url": "https://www.wikidata.org/wiki/Q69778249"
      }
-    ]
+    ],
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -4869,7 +4992,7 @@
     "year": "1857",
     "city": "Fort Worth",
     "country": "United States",
-    "location": "Museo d'arte Kimbell",
+    "location": "Kimbell Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -4888,8 +5011,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-d-arte-kimbell",
-    "qid": "Q72753403"
+    "museum_id": "kimbell-art-museum",
+    "qid": "Q72753403",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -4927,7 +5051,8 @@
      }
     },
     "museum_id": "milwaukee-art-museum",
-    "qid": "Q73824179"
+    "qid": "Q73824179",
+    "location_src": "Milwaukee Art Museum"
    }
   },
   {
@@ -4943,7 +5068,7 @@
     "painter": "Eugène Delacroix",
     "title": "Demosthenes on the Seashore",
     "year": "1859",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
@@ -4964,7 +5089,8 @@
      }
     },
     "museum_id": "national-gallery-of-ireland",
-    "qid": "Q77992522"
+    "qid": "Q77992522",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -5003,7 +5129,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q78639585"
+    "qid": "Q78639585",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5019,7 +5146,7 @@
     "painter": "Eugène Delacroix",
     "title": "Babylonian Captivity",
     "year": "1842",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "location": "Palais Bourbon",
     "kind": "museum",
@@ -5043,7 +5170,8 @@
      }
     },
     "museum_id": "palais-bourbon",
-    "qid": "Q797932"
+    "qid": "Q797932",
+    "location_src": "Palais Bourbon"
    }
   },
   {
@@ -5051,15 +5179,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153,
-     51.5175
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "The Execution of the Doge Marino Faliero",
     "year": "1826",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Wallace Collection",
     "kind": "museum",
@@ -5082,7 +5210,8 @@
      }
     },
     "museum_id": "wallace-collection",
-    "qid": "Q88588043"
+    "qid": "Q88588043",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -5100,7 +5229,7 @@
     "year": "1853",
     "city": "Winterthur",
     "country": "Switzerland",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -5120,8 +5249,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museum-collection-am-romerholz",
-    "qid": "Q91932260"
+    "museum_id": "am-romerholz",
+    "qid": "Q91932260",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -5160,7 +5290,8 @@
      }
     },
     "museum_id": "staatliche-kunsthalle-karlsruhe",
-    "qid": "Q93162105"
+    "qid": "Q93162105",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -5199,7 +5330,8 @@
      }
     },
     "museum_id": "nottingham-castle-ducal-mansion",
-    "qid": "Q94995304"
+    "qid": "Q94995304",
+    "location_src": "Nottingham Castle Ducal Mansion"
    }
   },
   {
@@ -5246,7 +5378,8 @@
       "qid": "Q96941810",
       "url": "https://www.wikidata.org/wiki/Q96941810"
      }
-    ]
+    ],
+    "location_src": "Musée de la Cour d'Or"
    }
   },
   {
@@ -5293,7 +5426,8 @@
       "qid": "Q99450402",
       "url": "https://www.wikidata.org/wiki/Q99450402"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -5301,8 +5435,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5320,7 +5454,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20539426",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5328,8 +5464,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5357,7 +5493,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5365,8 +5503,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -5394,7 +5532,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -5402,8 +5542,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5411,7 +5551,7 @@
     "title": "Abel Widmer",
     "year": "1824",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Abel%20Widmer%2C%20about%201824.jpg?width=500",
@@ -5431,7 +5571,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5439,15 +5581,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Halbfigur einer Marokkanerin",
     "year": "",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -5458,7 +5600,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28002846",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -5466,15 +5610,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Jakob ringt mit dem Engel",
     "year": "1850",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -5495,7 +5639,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -5503,15 +5649,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Still-life of flowers",
     "year": "1834",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -5532,7 +5678,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -5540,8 +5688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -5569,7 +5717,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -5577,8 +5727,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -5606,7 +5756,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -5614,8 +5766,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -5643,7 +5795,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -5651,8 +5805,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.046805555,
-     38.911388888
+     -77.04681,
+     38.91139
     ]
    },
    "properties": {
@@ -5680,7 +5834,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-phillips-collection",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -5688,8 +5844,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.046805555,
-     38.911388888
+     -77.04681,
+     38.91139
     ]
    },
    "properties": {
@@ -5717,7 +5873,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-phillips-collection",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -5725,7 +5883,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -5734,7 +5892,7 @@
     "title": "A Vase of Flowers",
     "year": "1833",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eugene%20Delacroix%20-%20A%20Vase%20of%20Flowers%20-%20NG%202405%20-%20National%20Galleries%20of%20Scotland.jpg?width=500",
@@ -5754,7 +5912,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -5762,8 +5922,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     151.217222222,
-     -33.868611111
+     151.21722,
+     -33.86861
     ]
    },
    "properties": {
@@ -5791,7 +5951,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-gallery-of-new-south-wales",
+    "location_src": "Art Gallery of New South Wales"
    }
   },
   {
@@ -5799,8 +5961,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.7758498,
-     35.7153567
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -5808,7 +5970,7 @@
     "title": "Study for \"The Death of Sardanapalus\"",
     "year": "1850",
     "location": "National Museum of Western Art",
-    "city": "Ueno-kōen",
+    "city": "Tokyo",
     "country": "Japan",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Study%20for%20The%20Death%20of%20Sardanapalus.jpg?width=500",
@@ -5828,7 +5990,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -5836,8 +6000,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.7758498,
-     35.7153567
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -5845,7 +6009,7 @@
     "title": "Christ Carried Down to the Tomb",
     "year": "1859",
     "location": "National Museum of Western Art",
-    "city": "Ueno-kōen",
+    "city": "Tokyo",
     "country": "Japan",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne%20Delacroix%20-%20Christ%20Carried%20Down%20to%20the%20Tomb%20-%20Google%20Art%20Project.jpg?width=500",
@@ -5865,7 +6029,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -5874,7 +6040,7 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111
+     50.10111
     ]
    },
    "properties": {
@@ -5882,7 +6048,7 @@
     "title": "Rider Attacked by a Jaguar",
     "year": "1855",
     "location": "National Gallery Prague",
-    "city": "",
+    "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A9ne%20Delacroix%20-%20Rider%20Attacked%20by%20a%20Jaguar%20-%20Google%20Art%20Project.jpg?width=500",
@@ -5902,7 +6068,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -5910,8 +6078,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.390539,
-     29.725605
+     -95.39054,
+     29.72561
     ]
    },
    "properties": {
@@ -5939,7 +6107,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston"
    }
   },
   {
@@ -5947,8 +6117,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.390539,
-     29.725605
+     -95.39054,
+     29.72561
     ]
    },
    "properties": {
@@ -5976,7 +6146,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston"
    }
   },
   {
@@ -5984,8 +6156,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -6013,7 +6185,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -6021,8 +6195,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -6050,7 +6224,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -6058,8 +6234,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -6087,7 +6263,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -6095,8 +6273,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.559444444,
-     41.658333333
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -6124,7 +6302,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "toledo-museum-of-art",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -6161,7 +6341,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6198,7 +6380,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6235,7 +6419,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6272,7 +6458,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6309,7 +6497,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6346,7 +6536,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6383,7 +6575,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -6391,8 +6585,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -6420,7 +6614,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -6428,8 +6624,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.237622,
-     47.167281
+     0.23762,
+     47.16728
     ]
    },
    "properties": {
@@ -6457,7 +6653,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "le-carroi",
+    "location_src": "Le Carroi"
    }
   },
   {
@@ -6465,7 +6663,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     44.514167,
+     44.51417,
      40.17875
     ]
    },
@@ -6494,7 +6692,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-armenia",
+    "location_src": "National Gallery of Armenia"
    }
   },
   {
@@ -6502,8 +6702,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     24.93694444,
-     60.17166667
+     24.93694,
+     60.17167
     ]
    },
    "properties": {
@@ -6531,7 +6731,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "finnish-national-gallery",
+    "location_src": "Finnish National Gallery"
    }
   },
   {
@@ -6539,8 +6741,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6548,7 +6750,7 @@
     "title": "Cheval attaqué par une lionne",
     "year": "1840",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20CHEVAL%20ATTAQUE%20PAR%20UNE%20LIONNE%2C%201840%20vers.jpg?width=500",
@@ -6568,7 +6770,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6576,8 +6780,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6585,7 +6789,7 @@
     "title": "Saint George fighting the dragon",
     "year": "1847",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%A3o%20Jorge%20e%20o%20Drag%C3%A3o%20DELACROIX%201847.jpg?width=500",
@@ -6605,7 +6809,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6613,8 +6819,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6622,7 +6828,7 @@
     "title": "Hamlet et Horatio au cimetière",
     "year": "1859",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Hamlet%20et%20Horatio%20au%20cimeti%C3%A8re%2C%20Salon%20de%201859.jpg?width=500",
@@ -6642,7 +6848,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6650,8 +6858,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6659,7 +6867,7 @@
     "title": "Prise de Constantinople par les Croisés",
     "year": "1852",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Prise%20de%20Constantinople%20par%20les%20Crois%C3%A9s%20%2812%20avril%201204%29%20-%20Eug%C3%A8ne%20Delacroix%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20RF%201659.jpg?width=500",
@@ -6679,7 +6887,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6687,8 +6897,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6696,7 +6906,7 @@
     "title": "Turc fumant, assis sur un divan",
     "year": "1837",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turc%20fumant%2C%20assis%20sur%20un%20divan%20-%20Eug%C3%A8ne%20Delacroix%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20RF%201656.jpg?width=500",
@@ -6716,7 +6926,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6724,8 +6936,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.737961,
-     41.917495
+     8.73796,
+     41.9175
     ]
    },
    "properties": {
@@ -6743,7 +6955,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29188624",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ajaccio-cathedral",
+    "location_src": "Ajaccio Cathedral"
    }
   },
   {
@@ -6751,7 +6965,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -6780,7 +6994,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -6788,8 +7004,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.298056,
-     52.086111
+     4.29806,
+     52.08611
     ]
    },
    "properties": {
@@ -6817,7 +7033,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-mesdag-collection",
+    "location_src": "The Mesdag Collection"
    }
   },
   {
@@ -6825,7 +7043,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.683357,
+     -122.68336,
      45.51615
     ]
    },
@@ -6854,7 +7072,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "portland-art-museum",
+    "location_src": "Portland Art Museum"
    }
   },
   {
@@ -6862,7 +7082,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -6891,7 +7111,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -6899,7 +7121,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944444,
+     12.57194,
      55.6725
     ]
    },
@@ -6908,7 +7130,7 @@
     "title": "Lioness",
     "year": "1832",
     "location": "Ny Carlsberg Glyptotek",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lioness%20by%20Eug%C3%A8ne%20Delacroix%2C%201832%20-%20Ny%20Carlsberg%20Glyptotek%20-%20Copenhagen%20-%20DSC09399.JPG?width=500",
@@ -6928,7 +7150,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek"
    }
   },
   {
@@ -6936,7 +7160,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944444,
+     12.57194,
      55.6725
     ]
    },
@@ -6945,7 +7169,7 @@
     "title": "Hercules Throwing King Diomedes to his own Man-eating Horses",
     "year": "1850",
     "location": "Ny Carlsberg Glyptotek",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Hercules%20Throwing%20King%20Diomedes%20to%20his%20Man-eating%20Horses.jpg?width=500",
@@ -6965,7 +7189,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek"
    }
   },
   {
@@ -6973,7 +7199,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944444,
+     12.57194,
      55.6725
     ]
    },
@@ -6982,7 +7208,7 @@
     "title": "The Death of Charles the Bold at the Battle of Nancy",
     "year": "1828",
     "location": "Ny Carlsberg Glyptotek",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne%20Delacroix%20-%20Death%20of%20Charles%20the%20Bold%20at%20the%20Battle%20of%20Nancy.jpg?width=500",
@@ -7002,7 +7228,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek"
    }
   },
   {
@@ -7010,8 +7238,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.329079,
-     35.686304
+     139.32908,
+     35.6863
     ]
    },
    "properties": {
@@ -7039,7 +7267,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tokyo-fuji-art-museum",
+    "location_src": "Tokyo Fuji Art Museum"
    }
   },
   {
@@ -7047,8 +7277,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.329079,
-     35.686304
+     139.32908,
+     35.6863
     ]
    },
    "properties": {
@@ -7076,7 +7306,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tokyo-fuji-art-museum",
+    "location_src": "Tokyo Fuji Art Museum"
    }
   },
   {
@@ -7084,8 +7316,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.329079,
-     35.686304
+     139.32908,
+     35.6863
     ]
    },
    "properties": {
@@ -7113,7 +7345,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tokyo-fuji-art-museum",
+    "location_src": "Tokyo Fuji Art Museum"
    }
   },
   {
@@ -7121,8 +7355,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.946022,
-     41.260254
+     -95.94602,
+     41.26025
     ]
    },
    "properties": {
@@ -7150,7 +7384,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "joslyn-art-museum",
+    "location_src": "Joslyn Art Museum"
    }
   },
   {
@@ -7158,8 +7394,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.021145,
-     35.256711
+     139.02114,
+     35.25671
     ]
    },
    "properties": {
@@ -7187,7 +7423,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pola-museum-of-art",
+    "location_src": "Pola Museum of Art"
    }
   },
   {
@@ -7195,8 +7433,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294491,
-     38.639306
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -7224,7 +7462,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -7232,8 +7472,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.354984,
-     23.1314788
+     -82.35498,
+     23.13148
     ]
    },
    "properties": {
@@ -7251,7 +7491,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79055360",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-of-cuba",
+    "location_src": "National Museum of Fine Arts of Cuba"
    }
   },
   {
@@ -7288,7 +7530,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7325,7 +7569,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7362,7 +7608,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7399,7 +7647,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7436,7 +7686,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7473,7 +7725,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7510,7 +7764,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7518,7 +7774,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.875618,
+     -78.87562,
      42.93245
     ]
    },
@@ -7547,7 +7803,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "buffalo-akg-art-museum",
+    "location_src": "Buffalo AKG Art Museum"
    }
   },
   {
@@ -7555,8 +7813,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.739735,
-     42.275399
+     -83.73973,
+     42.2754
     ]
    },
    "properties": {
@@ -7584,7 +7842,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "university-of-michigan-museum-of-art",
+    "location_src": "University of Michigan Museum of Art"
    }
   },
   {
@@ -7592,8 +7852,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.0611729,
-     50.6309226
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -7621,7 +7881,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palais-des-beaux-arts-de-lille",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -7629,8 +7891,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.072222222,
-     36.746111111
+     3.07222,
+     36.74611
     ]
    },
    "properties": {
@@ -7648,7 +7910,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q83647679",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-of-algiers",
+    "location_src": "National Museum of Fine Arts of Algiers"
    }
   },
   {
@@ -7656,15 +7920,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.102616,
-     49.485043
+     0.10262,
+     49.48504
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Paysage à Champrosay",
     "year": "1849",
-    "location": "MuMa Museum of modern art André Malraux",
+    "location": "Museum of modern art André Malraux - MuMa",
     "city": "Le Havre",
     "country": "France",
     "attribution": "generally accepted",
@@ -7685,7 +7949,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-modern-art-andre-malraux-muma",
+    "location_src": "Museum of modern art André Malraux - MuMa"
    }
   },
   {
@@ -7712,7 +7978,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q84056469",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "mohamed-mahmoud-khalil-museum",
+    "location_src": "Mohamed Mahmoud Khalil Museum"
    }
   },
   {
@@ -7720,8 +7988,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.927827,
-     52.450331
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
@@ -7749,7 +8017,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barber-institute-of-fine-arts",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -7786,7 +8056,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "santa-barbara-museum-of-art",
+    "location_src": "Santa Barbara Museum of Art"
    }
   },
   {
@@ -7794,8 +8066,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.636378,
-     42.318502
+     -72.63638,
+     42.3185
     ]
    },
    "properties": {
@@ -7823,7 +8095,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "smith-college-museum-of-art",
+    "location_src": "Smith College Museum of Art"
    }
   },
   {
@@ -7860,7 +8134,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -7868,8 +8144,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7897,7 +8173,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -7905,8 +8183,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7934,7 +8212,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -7942,8 +8222,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7951,7 +8231,7 @@
     "title": "Basket of Flowers",
     "year": "1848",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Basket%20of%20Flowers%20MET%20DP-1422-001.jpg?width=500",
@@ -7971,7 +8251,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7979,8 +8261,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7988,7 +8270,7 @@
     "title": "Hamlet and His Mother",
     "year": "1849",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamlet%20and%20His%20Mother%20MET%20DT2001.jpg?width=500",
@@ -8008,7 +8290,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -8016,8 +8300,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -8025,7 +8309,7 @@
     "title": "Madame Henri François Riesener (Félicité Longrois, 1786–1847)",
     "year": "1835",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madame%20Henri%20Fran%C3%A7ois%20Riesener%20%28F%C3%A9licit%C3%A9%20Longrois%2C%201786%E2%80%931847%29%20MET%20DT2004.jpg?width=500",
@@ -8045,7 +8329,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -8082,7 +8368,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -8090,7 +8378,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -8119,7 +8407,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -8127,8 +8417,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.616499,
-     39.296425
+     -76.6165,
+     39.29642
     ]
    },
    "properties": {
@@ -8156,7 +8446,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "walters-art-museum",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -8164,8 +8456,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.616499,
-     39.296425
+     -76.6165,
+     39.29642
     ]
    },
    "properties": {
@@ -8193,7 +8485,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "walters-art-museum",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -8202,7 +8496,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8230,7 +8524,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8239,7 +8535,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8267,7 +8563,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8275,8 +8573,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8304,7 +8602,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8312,8 +8612,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8341,7 +8641,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8349,8 +8651,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963631,
-     40.671206
+     -73.96363,
+     40.67121
     ]
    },
    "properties": {
@@ -8378,7 +8680,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "brooklyn-museum",
+    "location_src": "Brooklyn Museum"
    }
   },
   {
@@ -8386,8 +8690,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963631,
-     40.671206
+     -73.96363,
+     40.67121
     ]
    },
    "properties": {
@@ -8415,7 +8719,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "brooklyn-museum",
+    "location_src": "Brooklyn Museum"
    }
   },
   {
@@ -8423,8 +8729,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -8452,7 +8758,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -8468,7 +8776,7 @@
     "painter": "Eugène Delacroix",
     "title": "Moroccan Horseman Crossing a Ford",
     "year": "1850",
-    "location": "J. Paul Getty Museum",
+    "location": "Getty Center",
     "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8489,7 +8797,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -8497,7 +8807,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -8526,7 +8836,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -8534,7 +8846,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.468694444,
+     -122.46869,
      37.7715
     ]
    },
@@ -8563,7 +8875,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -8571,7 +8885,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -8600,7 +8914,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -8637,7 +8953,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -8645,16 +8963,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833333,
-     48.861111111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Une cour à Tanger",
     "year": "",
-    "location": "Department of Prints and Drawings of the Louvre",
-    "city": "",
+    "location": "Louvre",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne%20Ferdinand%20Victor%20Delacroix%20027.jpg?width=500",
@@ -8664,7 +8982,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19923952",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -8672,8 +8992,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -8701,7 +9021,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -8709,8 +9031,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -8738,7 +9060,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -8775,7 +9099,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -8783,8 +9109,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571114,
-     48.149887
+     11.57111,
+     48.14989
     ]
    },
    "properties": {
@@ -8812,7 +9138,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -8820,8 +9148,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571114,
-     48.149887
+     11.57111,
+     48.14989
     ]
    },
    "properties": {
@@ -8849,7 +9177,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -8857,8 +9187,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571114,
-     48.149887
+     11.57111,
+     48.14989
     ]
    },
    "properties": {
@@ -8886,7 +9216,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -8894,8 +9226,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571114,
-     48.149887
+     11.57111,
+     48.14989
     ]
    },
    "properties": {
@@ -8923,7 +9255,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -8931,8 +9265,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571114,
-     48.149887
+     11.57111,
+     48.14989
     ]
    },
    "properties": {
@@ -8960,7 +9294,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -8969,7 +9305,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8997,7 +9333,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -9005,8 +9343,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -9034,7 +9372,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -9042,8 +9382,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -9071,7 +9411,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -9079,8 +9421,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -9108,7 +9450,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -9116,8 +9460,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -9145,7 +9489,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -9153,8 +9499,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -9182,7 +9528,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -9190,8 +9538,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -9219,7 +9567,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -9227,8 +9577,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -9256,7 +9606,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -9264,8 +9616,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -9293,7 +9645,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -9301,8 +9655,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -9330,7 +9684,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -9338,15 +9694,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.256379,
-     43.768997
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Self portrait",
     "year": "1860",
-    "location": "Vasari Corridor",
+    "location": "Uffizi Gallery",
     "city": "Florence",
     "country": "Italy",
     "attribution": "generally accepted",
@@ -9367,7 +9723,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -9375,8 +9733,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.318681,
-     48.862072
+     2.31868,
+     48.86207
     ]
    },
    "properties": {
@@ -9404,7 +9762,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palais-bourbon",
+    "location_src": "Palais Bourbon"
    }
   },
   {
@@ -9412,8 +9772,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -9441,7 +9801,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -9449,15 +9811,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Lévrier",
     "year": "1859",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -9478,7 +9840,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -9486,15 +9850,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Lion mauling a dead Arab",
     "year": "1847",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -9515,7 +9879,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -9523,15 +9889,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Painting",
     "year": "1848",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -9552,7 +9918,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -9560,8 +9928,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.023333333,
-     38.897777777
+     -77.02333,
+     38.89778
     ]
    },
    "properties": {
@@ -9589,7 +9957,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "smithsonian-american-art-museum",
+    "location_src": "Smithsonian American Art Museum"
    }
   },
   {
@@ -9597,8 +9967,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -9626,7 +9996,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -9634,8 +10006,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -9663,7 +10035,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -9671,8 +10045,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -9700,7 +10074,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -9708,8 +10084,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -9737,7 +10113,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -9745,8 +10123,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -9774,7 +10152,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -9782,8 +10162,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -9811,7 +10191,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -9819,7 +10201,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -9848,7 +10230,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -9885,7 +10269,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -9893,8 +10279,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.97538889,
-     46.62508333
+     1.97539,
+     46.62508
     ]
    },
    "properties": {
@@ -9922,7 +10308,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "house-of-george-sand",
+    "location_src": "House of George Sand"
    }
   },
   {
@@ -9959,7 +10347,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -9996,7 +10386,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rhode-island-school-of-design-museum",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -10033,7 +10425,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-tours",
+    "location_src": "Musée des Beaux-Arts de Tours"
    }
   },
   {
@@ -10041,8 +10435,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.0611729,
-     50.6309226
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -10070,7 +10464,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palais-des-beaux-arts-de-lille",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -10078,8 +10474,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.0611729,
-     50.6309226
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -10097,7 +10493,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q135913564",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-des-beaux-arts-de-lille",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -10124,7 +10522,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q137261165",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-de-la-cohue",
+    "location_src": "musée de la Cohue"
    }
   },
   {
@@ -10132,8 +10532,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10141,7 +10541,7 @@
     "title": "Étude de babouches",
     "year": "1832",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20ETUDE%20DE%20BABOUCHES%2C%201832.jpg?width=500",
@@ -10161,7 +10561,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10169,8 +10571,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10178,7 +10580,7 @@
     "title": "Pirates africains enlevant une jeune femme",
     "year": "1852",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Pirates%20africains%20enlevant%20une%20jeune%20femme%20%28c%C3%B4tes%20de%20la%20mer%20M%C3%A9diterran%C3%A9e%29%2C%201852.jpg?width=500",
@@ -10198,7 +10600,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10206,8 +10610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10215,7 +10619,7 @@
     "title": "La Mort de Sardanapale, esquisse",
     "year": "1826",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Mort%20de%20Sardanapale%2C%20esquisse%20-%20Eug%C3%A8ne%20Delacroix%20-%20Muse%20du%20Louvre%20Peintures%20RF%202488.jpg?width=500",
@@ -10235,7 +10639,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10243,8 +10649,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10252,7 +10658,7 @@
     "title": "Bataille de Taillebourg gagnée par saint Louis",
     "year": "1837",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne%20Delacroix%20-%20The%20Battle%20of%20Taillebourg%20%28draft%29%20-%20WGA6190.jpg?width=500",
@@ -10272,7 +10678,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10280,8 +10688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10289,7 +10697,7 @@
     "title": "The Blacksmith",
     "year": "1850",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Le%20mar%C3%A9chal%20ferrant%2C%20dit%20aussi%20Arabes%20ferrant%20un%20cheval%2C%20Vers%201853-1860.jpg?width=500",
@@ -10309,7 +10717,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10317,8 +10727,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.120277777,
-     48.804722222
+     2.12028,
+     48.80472
     ]
    },
    "properties": {
@@ -10346,7 +10756,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palace-of-versailles",
+    "location_src": "Palace of Versailles"
    }
   },
   {
@@ -10383,7 +10795,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wawel-castle",
+    "location_src": "Wawel Castle"
    }
   },
   {
@@ -10391,8 +10805,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.773333333,
-     50.291944444
+     2.77333,
+     50.29194
     ]
    },
    "properties": {
@@ -10420,7 +10834,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-d-arras",
+    "location_src": "Musée des Beaux-Arts d'Arras"
    }
   },
   {
@@ -10428,8 +10844,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -157.848708,
-     21.303898
+     -157.84871,
+     21.3039
     ]
    },
    "properties": {
@@ -10457,7 +10873,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "honolulu-museum-of-art",
+    "location_src": "Honolulu Museum of Art"
    }
   },
   {
@@ -10465,8 +10883,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -10474,7 +10892,7 @@
     "title": "Three Arab Horsemen at an Encampment",
     "year": "1835",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Three%20Arab%20Horsemen%20at%20an%20Encampment%20MET%20DP860294.jpg?width=500",
@@ -10494,7 +10912,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -10502,8 +10922,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -10511,7 +10931,7 @@
     "title": "Goetz von Berlichingen Being Dressed in Armor by His Page George",
     "year": "1826",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/G%C3%B6etz%20von%20Berlichingen%20Being%20Dressed%20in%20Armor%20by%20His%20Page%20George%20MET%20DP162299.jpg?width=500",
@@ -10531,7 +10951,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -10539,7 +10961,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -10568,7 +10990,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -10576,7 +11000,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -10605,7 +11029,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -10613,15 +11039,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Tigre buvant",
     "year": "1854",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -10642,7 +11068,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -10650,15 +11078,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Circassien tenant son cheval par la bride",
     "year": "1858",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -10679,7 +11107,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -10687,8 +11117,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.730394267,
-     47.501517502
+     8.73039,
+     47.50152
     ]
    },
    "properties": {
@@ -10716,7 +11146,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "building-of-the-winterthur-museum-of-art",
+    "location_src": "Building of the Winterthur Museum of Art"
    }
   },
   {
@@ -10724,8 +11156,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -10753,7 +11185,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -10761,8 +11195,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -10790,7 +11224,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -10798,8 +11234,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -10827,7 +11263,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -10835,8 +11273,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -10864,7 +11302,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -10872,8 +11312,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -10891,7 +11331,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124288369",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -10899,8 +11341,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -10928,7 +11370,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -10936,8 +11380,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -10965,7 +11409,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -10973,8 +11419,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -11002,7 +11448,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -11010,8 +11458,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -11039,7 +11487,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -11047,8 +11497,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -11076,7 +11526,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -11084,8 +11536,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -11113,7 +11565,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -11121,7 +11575,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -11130,7 +11584,7 @@
     "title": "L'incrédulité de saint Thomas",
     "year": "1846",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Der%20ungl%C3%A4ubige%20Thomas%2C%20um%201846.jpg?width=500",
@@ -11150,7 +11604,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -11158,8 +11614,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -11187,7 +11643,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "location_src": "Ordrupgaard"
    }
   },
   {
@@ -11195,8 +11653,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5797575,
-     45.4991495
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -11224,7 +11682,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "montreal-museum-of-fine-arts",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -11261,7 +11721,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-bordeaux",
+    "location_src": "Musée des Beaux-Arts de Bordeaux"
    }
   },
   {
@@ -11298,7 +11760,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-bordeaux",
+    "location_src": "Musée des Beaux-Arts de Bordeaux"
    }
   },
   {
@@ -11335,7 +11799,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-bordeaux",
+    "location_src": "Musée des Beaux-Arts de Bordeaux"
    }
   },
   {
@@ -11343,8 +11809,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -112.072655,
-     33.466749
+     -112.07265,
+     33.46675
     ]
    },
    "properties": {
@@ -11372,7 +11838,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "phoenix-art-museum",
+    "location_src": "Phoenix Art Museum"
    }
   },
   {
@@ -11381,7 +11849,7 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111
+     50.10111
     ]
    },
    "properties": {
@@ -11389,7 +11857,7 @@
     "title": "Count Palatiano in Suliot Costume",
     "year": "1826",
     "location": "National Gallery Prague",
-    "city": "",
+    "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Count%20Palatiano%20in%20Suliot%20Costume%2C%201826.jpg?width=500",
@@ -11409,7 +11877,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -11417,8 +11887,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -11446,7 +11916,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -11454,8 +11926,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -11483,7 +11955,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -11491,8 +11965,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -11520,7 +11994,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -11528,8 +12004,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -11557,7 +12033,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -11565,8 +12043,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -11594,7 +12072,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -11602,8 +12082,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -11631,7 +12111,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -11639,8 +12121,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -11668,7 +12150,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -11676,8 +12160,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -11705,7 +12189,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -11713,8 +12199,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -11742,7 +12228,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -11750,8 +12238,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -11779,7 +12267,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -11816,7 +12306,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -11853,7 +12345,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -11880,7 +12374,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115670683",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -11915,7 +12411,9 @@
       "was": "generally accepted",
       "note": "dated 1875, after death (1798–1863) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -11952,7 +12450,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "eugene-delacroix-national-museum",
+    "location_src": "Eugène-Delacroix National Museum"
    }
   },
   {
@@ -11989,7 +12489,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -12026,7 +12528,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -12034,8 +12538,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.07555556,
-     50.37472222
+     3.07556,
+     50.37472
     ]
    },
    "properties": {
@@ -12063,7 +12567,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-de-la-chartreuse-de-douai",
+    "location_src": "Musée de la Chartreuse de Douai"
    }
   },
   {
@@ -12071,8 +12577,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -12080,7 +12586,7 @@
     "title": "Bacchante endormie dans un paysage",
     "year": "1837",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Bacchante%20endormie.jpg?width=500",
@@ -12100,7 +12606,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -12108,8 +12616,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     19.93375556,
-     50.06173889
+     19.93376,
+     50.06174
     ]
    },
    "properties": {
@@ -12137,7 +12645,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "jagiellonian-university-museum",
+    "location_src": "Jagiellonian University Museum"
    }
   },
   {
@@ -12174,7 +12684,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "matthiesen-gallery",
+    "location_src": "Matthiesen Gallery"
    }
   },
   {
@@ -12182,8 +12694,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1582969,
-     51.5193981
+     -0.1583,
+     51.5194
     ]
    },
    "properties": {
@@ -12201,7 +12713,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124807717",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "schorr-collection",
+    "location_src": "Schorr Collection"
    }
   },
   {
@@ -12209,8 +12723,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.833611111,
-     45.766944444
+     4.83361,
+     45.76694
     ]
    },
    "properties": {
@@ -12238,7 +12752,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-lyon",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -12246,15 +12762,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "After the Shipereck (Barge of Don Juan - dead body thrown to the sea)",
     "year": "1844",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -12275,7 +12791,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -12283,7 +12801,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -12312,7 +12830,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -12320,7 +12840,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -12349,7 +12869,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -12357,8 +12879,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.443333333,
-     46.951111111
+     7.44333,
+     46.95111
     ]
    },
    "properties": {
@@ -12386,7 +12908,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-bern",
+    "location_src": "Kunstmuseum Bern"
    }
   },
   {
@@ -12394,8 +12918,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -12423,7 +12947,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -12431,8 +12957,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -12460,7 +12986,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -12468,8 +12996,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -12497,7 +13025,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -12505,8 +13035,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -12534,7 +13064,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -12542,8 +13074,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -12571,7 +13103,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -12579,8 +13113,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -12608,7 +13142,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -12645,7 +13181,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -12682,7 +13220,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -12690,8 +13230,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.362745,
-     48.857375
+     2.36274,
+     48.85737
     ]
    },
    "properties": {
@@ -12719,7 +13259,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-carnavalet",
+    "location_src": "Musée Carnavalet"
    }
   },
   {
@@ -12756,7 +13298,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -12783,7 +13327,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104523728",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -12791,15 +13337,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Combat entre un lion et un tigre",
     "year": "1854",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -12820,7 +13366,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -12828,15 +13376,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Fantasia",
     "year": "1847",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -12857,7 +13405,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -12865,15 +13415,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "La Grèce expire sur les ruines de Missolonghi",
     "year": "1850",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -12894,7 +13444,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -12902,15 +13454,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Le Tasse dans la maison des fous",
     "year": "1839",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -12931,7 +13483,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -12939,15 +13493,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Samson et Dalila",
     "year": "1849",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -12968,7 +13522,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -12976,15 +13532,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Scène de la guerre entre Turcs et Grecs",
     "year": "1826",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -13005,7 +13561,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -13013,15 +13571,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Tobie et l'ange",
     "year": "1863",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -13042,7 +13600,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -13050,8 +13610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -13079,7 +13639,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "location_src": "Ordrupgaard"
    }
   },
   {
@@ -13087,7 +13649,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -13106,7 +13668,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106864453",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -13115,7 +13679,7 @@
     "type": "Point",
     "coordinates": [
      23.77825,
-     37.986722222
+     37.98672
     ]
    },
    "properties": {
@@ -13143,7 +13707,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-athens",
+    "location_src": "National Gallery of Athens"
    }
   },
   {
@@ -13151,8 +13717,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.333716397,
-     48.863033562
+     2.33372,
+     48.86303
     ]
    },
    "properties": {
@@ -13160,7 +13726,7 @@
     "title": "L'Empereur Justinien composant ses instituts",
     "year": "1826",
     "location": "Musée des Arts Décoratifs",
-    "city": "1st arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20L%27empereur%20Justinien%20composant%20ses%20instituts.jpg?width=500",
@@ -13180,7 +13746,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-arts-decoratifs",
+    "location_src": "Musée des Arts Décoratifs"
    }
   },
   {
@@ -13188,8 +13756,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153022,
-     51.517454
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
@@ -13217,7 +13785,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -13226,7 +13796,7 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111
+     50.10111
     ]
    },
    "properties": {
@@ -13234,7 +13804,7 @@
     "title": "Tiger and Lion",
     "year": "1850",
     "location": "National Gallery Prague",
-    "city": "",
+    "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Delacroix%20-%20Tiger%20and%20Lion%2C%201850.jpg?width=500",
@@ -13254,7 +13824,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -13291,7 +13863,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -13328,7 +13902,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "st-gallen-museum-of-art",
+    "location_src": "St. Gallen Museum of Art"
    }
   },
   {
@@ -13337,7 +13913,7 @@
     "type": "Point",
     "coordinates": [
      6.1225,
-     49.61305556
+     49.61306
     ]
    },
    "properties": {
@@ -13365,7 +13941,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "villa-vauban",
+    "location_src": "Villa Vauban"
    }
   },
   {
@@ -13402,7 +13980,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum"
    }
   },
   {
@@ -13429,7 +14009,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106769752",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum"
    }
   },
   {
@@ -13437,8 +14019,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.0611729,
-     50.6309226
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -13466,7 +14048,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palais-des-beaux-arts-de-lille",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -13474,8 +14058,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -13503,7 +14087,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-rouen",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -13540,7 +14126,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "beaverbrook-art-gallery",
+    "location_src": "Beaverbrook Art Gallery"
    }
   },
   {
@@ -13577,7 +14165,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-art-and-history-2",
+    "location_src": "Museum of Art and History"
    }
   },
   {
@@ -13614,7 +14204,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-art-and-history-2",
+    "location_src": "Museum of Art and History"
    }
   },
   {
@@ -13651,7 +14243,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-reims",
+    "location_src": "Museum of Fine Arts of Reims"
    }
   },
   {
@@ -13688,7 +14282,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-reims",
+    "location_src": "Museum of Fine Arts of Reims"
    }
   },
   {
@@ -13725,7 +14321,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-reims",
+    "location_src": "Museum of Fine Arts of Reims"
    }
   },
   {
@@ -13762,7 +14360,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-reims",
+    "location_src": "Museum of Fine Arts of Reims"
    }
   },
   {
@@ -13770,8 +14370,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.2168,
-     41.2937
+     -82.21678,
+     41.29371
     ]
    },
    "properties": {
@@ -13779,7 +14379,7 @@
     "title": "La Décollation de saint Jean Baptiste",
     "year": "1838",
     "location": "Allen Memorial Art Museum",
-    "city": "Ohio",
+    "city": "Oberlin",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Attributed%20to%20Delacroix%20-%20Andrieu%20-%20The%20Beheading%20of%20St.%20John%20the%20Baptist%2C%20ca.%201838.jpg?width=500",
@@ -13799,7 +14399,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "allen-memorial-art-museum",
+    "location_src": "Allen Memorial Art Museum"
    }
   },
   {
@@ -13807,8 +14409,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -13836,7 +14438,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -13844,8 +14448,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -13873,7 +14477,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -13881,8 +14487,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -13910,7 +14516,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -13918,8 +14526,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.903611,
-     52.480278
+     -1.90361,
+     52.48028
     ]
    },
    "properties": {
@@ -13947,7 +14555,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "birmingham-museums-trust",
+    "location_src": "Birmingham Museums Trust"
    }
   },
   {
@@ -13984,7 +14594,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bristol-city-museum-art-gallery",
+    "location_src": "Bristol City Museum & Art Gallery"
    }
   },
   {
@@ -13992,7 +14604,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     136.919869,
+     136.91987,
      35.17105
     ]
    },
@@ -14021,7 +14633,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yamazaki-mazak-museum-of-art",
+    "location_src": "Yamazaki Mazak Museum of Art"
    }
   },
   {
@@ -14029,16 +14643,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.863611
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "Portrait de Talma en Néron",
     "year": "1852",
-    "location": "Salle Richelieu",
-    "city": "1st arrondissement of Paris",
+    "location": "Louvre",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Talma%20as%20Nero%20in%20Britannicus%20by%20Racine%20-%20Delacroix%20-%20zeno.jpg?width=500",
@@ -14058,7 +14672,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -14066,8 +14682,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14095,7 +14711,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14103,8 +14721,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14132,7 +14750,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14140,8 +14760,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14169,7 +14789,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14177,8 +14799,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14206,7 +14828,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14214,8 +14838,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14243,7 +14867,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14251,8 +14877,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14280,7 +14906,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14288,8 +14916,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -14317,7 +14945,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -14325,15 +14955,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Eugène Delacroix",
     "title": "After the Shipereck (Barge of Don Juan - Dead Body Thrown To The Sea)",
     "year": "",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -14344,7 +14974,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q140374435",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -14352,8 +14984,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.362745,
-     48.857375
+     2.36274,
+     48.85737
     ]
    },
    "properties": {
@@ -14381,7 +15013,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-carnavalet",
+    "location_src": "Musée Carnavalet"
    }
   },
   {
@@ -14418,7 +15052,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-art-and-history-2",
+    "location_src": "Museum of Art and History"
    }
   },
   {
@@ -14455,7 +15091,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bristol-city-museum-art-gallery",
+    "location_src": "Bristol City Museum & Art Gallery"
    }
   }
  ]

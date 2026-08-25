@@ -44,7 +44,8 @@
     },
     "museum_id": "doria-pamphilj-gallery",
     "qid": "Q106262020",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/1/madchild.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/1/madchild.html",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -85,7 +86,8 @@
      }
     },
     "museum_id": "getty-center",
-    "qid": "Q112078318"
+    "qid": "Q112078318",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -126,7 +128,8 @@
      }
     },
     "museum_id": "musee-fabre",
-    "qid": "Q117832511"
+    "qid": "Q117832511",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -168,7 +171,8 @@
      }
     },
     "museum_id": "william-morris-gallery",
-    "qid": "Q119456605"
+    "qid": "Q119456605",
+    "location_src": "William Morris Gallery"
    }
   },
   {
@@ -200,7 +204,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "musee-des-beaux-arts-de-rennes",
-    "qid": "Q123510136"
+    "qid": "Q123510136",
+    "location_src": "Musée des Beaux-Arts de Rennes"
    }
   },
   {
@@ -232,7 +237,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "musee-des-beaux-arts-de-rennes",
-    "qid": "Q123551011"
+    "qid": "Q123551011",
+    "location_src": "Musée des Beaux-Arts de Rennes"
    }
   },
   {
@@ -268,7 +274,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q1595032"
+    "qid": "Q1595032",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -286,7 +293,7 @@
     "year": "1528",
     "city": "Fort Worth",
     "country": "United States",
-    "location": "Museo d'arte Kimbell",
+    "location": "Kimbell Art Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -311,8 +318,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-d-arte-kimbell",
-    "qid": "Q1896483"
+    "museum_id": "kimbell-art-museum",
+    "qid": "Q1896483",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -330,7 +338,7 @@
     "year": "1524",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -354,8 +362,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q19966608"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q19966608",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -397,7 +406,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26713754"
+    "qid": "Q26713754",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -439,7 +449,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q28020401"
+    "qid": "Q28020401",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -455,7 +466,7 @@
     "painter": "Parmigianino",
     "title": "Portrait of a Young Nobleman",
     "year": "1531",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Buckingham Palace",
     "kind": "museum",
@@ -480,7 +491,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "qid": "Q28035519"
+    "qid": "Q28035519",
+    "location_src": "Buckingham Palace"
    }
   },
   {
@@ -488,8 +500,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -516,7 +528,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "detroit-institute-of-arts",
-    "qid": "Q282277"
+    "qid": "Q282277",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -558,7 +571,8 @@
      }
     },
     "museum_id": "bavarian-state-painting-collections",
-    "qid": "Q29839542"
+    "qid": "Q29839542",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -597,7 +611,8 @@
       "qid": "Q30057024",
       "url": "https://www.wikidata.org/wiki/Q30057024"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -643,7 +658,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3275305",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/v_jerome.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/v_jerome.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -687,7 +703,8 @@
      }
     },
     "museum_id": "saint-dominic-monastery-taggia",
-    "qid": "Q3605537"
+    "qid": "Q3605537",
+    "location_src": "Saint Dominic monastery (Taggia)"
    }
   },
   {
@@ -722,7 +739,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q3636746"
+    "qid": "Q3636746",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -768,7 +786,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q3689725",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/conversi.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/conversi.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -813,7 +832,8 @@
      }
     },
     "museum_id": "fuhrermuseum",
-    "qid": "Q3739205"
+    "qid": "Q3739205",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -858,7 +878,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3839035"
+    "qid": "Q3839035",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -866,8 +887,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -903,7 +924,8 @@
     },
     "museum_id": "courtauld-gallery",
     "qid": "Q3842425",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/virgin_c.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/virgin_c.html",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -945,7 +967,8 @@
      }
     },
     "museum_id": "palazzetto-eucherio-sanvitale",
-    "qid": "Q3842495"
+    "qid": "Q3842495",
+    "location_src": "Palazzetto Eucherio Sanvitale"
    }
   },
   {
@@ -988,8 +1011,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q3842680"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q3842680",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1034,7 +1058,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3842736",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/mad_sain.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/mad_sain.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1078,7 +1103,8 @@
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q3842737"
+    "qid": "Q3842737",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -1122,7 +1148,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3851962"
+    "qid": "Q3851962",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1167,7 +1194,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3851963",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/mysticma.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/mysticma.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1211,7 +1239,8 @@
     },
     "museum_id": "hampton-court-palace",
     "qid": "Q3858368",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/pallas_a.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/pallas_a.html",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -1246,7 +1275,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "doughty-house",
-    "qid": "Q3873235"
+    "qid": "Q3873235",
+    "location_src": "Doughty House"
    }
   },
   {
@@ -1290,7 +1320,8 @@
      }
     },
     "museum_id": "doria-pamphilj-gallery",
-    "qid": "Q3873239"
+    "qid": "Q3873239",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -1332,8 +1363,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q3889233"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q3889233",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1368,7 +1400,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "santa-maria-addolorata",
-    "qid": "Q3889239"
+    "qid": "Q3889239",
+    "location_src": "Santa Maria Addolorata"
    }
   },
   {
@@ -1410,7 +1443,8 @@
      }
     },
     "museum_id": "doughty-house",
-    "qid": "Q3937392"
+    "qid": "Q3937392",
+    "location_src": "Doughty House"
    }
   },
   {
@@ -1426,7 +1460,7 @@
     "painter": "Parmigianino",
     "title": "Portrait of a Man Reading a Book",
     "year": "1530",
-    "city": "York",
+    "city": "City of York",
     "country": "United Kingdom",
     "location": "York Art Gallery",
     "kind": "museum",
@@ -1454,7 +1488,8 @@
      }
     },
     "museum_id": "york-art-gallery",
-    "qid": "Q3937415"
+    "qid": "Q3937415",
+    "location_src": "York Art Gallery"
    }
   },
   {
@@ -1498,7 +1533,8 @@
     },
     "museum_id": "galleria-borghese",
     "qid": "Q3937424",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/port_man.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/port_man.html",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -1543,7 +1579,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q3937480"
+    "qid": "Q3937480",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1588,7 +1625,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3937503"
+    "qid": "Q3937503",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1633,7 +1671,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3937542"
+    "qid": "Q3937542",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1678,7 +1717,8 @@
      }
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q3937595"
+    "qid": "Q3937595",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -1723,7 +1763,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q3937655"
+    "qid": "Q3937655",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1766,7 +1807,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q3937704"
+    "qid": "Q3937704",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -1810,7 +1852,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3937763"
+    "qid": "Q3937763",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1853,7 +1896,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q3937792"
+    "qid": "Q3937792",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1899,7 +1943,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q3944466",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/egypt.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/egypt.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1943,7 +1988,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3944485"
+    "qid": "Q3944485",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1985,7 +2031,8 @@
      }
     },
     "museum_id": "san-petronio-basilica",
-    "qid": "Q3947911"
+    "qid": "Q3947911",
+    "location_src": "San Petronio Basilica"
    }
   },
   {
@@ -2018,7 +2065,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
-    "qid": "Q3948034"
+    "qid": "Q3948034",
+    "location_src": "San Giovanni Evangelista"
    }
   },
   {
@@ -2051,7 +2099,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
-    "qid": "Q3948651"
+    "qid": "Q3948651",
+    "location_src": "San Giovanni Evangelista"
    }
   },
   {
@@ -2084,7 +2133,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "sanctuary-of-santa-maria-della-steccata",
-    "qid": "Q3948950"
+    "qid": "Q3948950",
+    "location_src": "Sanctuary of Santa Maria della Steccata"
    }
   },
   {
@@ -2120,7 +2170,8 @@
     },
     "museum_id": "stadel-museum",
     "qid": "Q3949270",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/virgin_a.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/virgin_a.html",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -2153,7 +2204,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
-    "qid": "Q3949310"
+    "qid": "Q3949310",
+    "location_src": "San Giovanni Evangelista"
    }
   },
   {
@@ -2186,7 +2238,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-giovanni-evangelista",
-    "qid": "Q3949373"
+    "qid": "Q3949373",
+    "location_src": "San Giovanni Evangelista"
    }
   },
   {
@@ -2227,7 +2280,8 @@
      }
     },
     "museum_id": "galleria-spada",
-    "qid": "Q3998159"
+    "qid": "Q3998159",
+    "location_src": "Galleria Spada"
    }
   },
   {
@@ -2272,7 +2326,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q4006164"
+    "qid": "Q4006164",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2309,7 +2364,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q699319",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/convex.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/convex.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2327,7 +2383,7 @@
     "year": "1540",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2352,8 +2408,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q866489"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q866489",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -2371,7 +2428,7 @@
     "year": "1533",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2397,8 +2454,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q866500"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q866500",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -2443,7 +2501,8 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1503–1540) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2488,7 +2547,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q867678"
+    "qid": "Q867678",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -2534,7 +2594,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q892604",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/1/cupid.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/1/cupid.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   }
  ]

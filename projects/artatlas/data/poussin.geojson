@@ -34,7 +34,8 @@
       "qid": "Q105444134",
       "url": "https://www.wikidata.org/wiki/Q105444134"
      }
-    ]
+    ],
+    "location_src": "musée des beaux-arts"
    }
   },
   {
@@ -72,7 +73,8 @@
       "note": "Wikipedia: 'executed in 1622 by Nicolas Poussin, his first known surviving work'; acquired by the Musee des Beaux-Arts de Lyon in 2016. Undisputed autograph."
      }
     },
-    "country": "France"
+    "country": "France",
+    "location_src": "musée des beaux-arts"
    }
   },
   {
@@ -108,7 +110,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q106348454 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Sint-Pancratiuskerk church"
    }
   },
   {
@@ -138,7 +141,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -156,7 +160,7 @@
     "year": "1624–1625 c.",
     "city": "Florence",
     "country": "Italy",
-    "location": "Palazzo Corsini",
+    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "attribution": "generally accepted",
     "dimensions": "148 x 176 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Triomphe_d%27Ovide_-_Poussin_-_Palazzo_Corsini.jpg/500px-Triomphe_d%27Ovide_-_Poussin_-_Palazzo_Corsini.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -168,7 +172,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "palazzo-corsini",
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "_merged": [
      {
       "source": "Wikidata",
@@ -176,7 +180,8 @@
       "qid": "Q114029163",
       "url": "https://www.wikidata.org/wiki/Q114029163"
      }
-    ]
+    ],
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
    }
   },
   {
@@ -192,7 +197,7 @@
     "painter": "Nicolas Poussin",
     "title": "Rinaldo and Armida",
     "year": "1624–1625 c. (or 1630 ?)",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
@@ -216,7 +221,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q23929182 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -248,7 +254,8 @@
     },
     "museum_id": "york",
     "qid": "Q124004799",
-    "wikidata": "https://www.wikidata.org/wiki/Q124004799"
+    "wikidata": "https://www.wikidata.org/wiki/Q124004799",
+    "location_src": "York"
    }
   },
   {
@@ -257,7 +264,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -287,7 +294,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q28796951 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -295,8 +303,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.4877,
-     41.8984
+     12.48789,
+     41.89833
     ]
    },
    "properties": {
@@ -316,7 +324,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "palazzo-pallavicini-rospigliosi"
+    "museum_id": "palazzo-pallavicini-rospigliosi",
+    "location_src": "Palazzo Pallavicini-Rospigliosi"
    }
   },
   {
@@ -347,7 +356,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q19925236",
     "wikidata": "https://www.wikidata.org/wiki/Q19925236",
     "_merged": [
@@ -357,7 +366,8 @@
       "qid": "Q19925236",
       "url": "https://www.wikidata.org/wiki/Q19925236"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -365,8 +375,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.333277777,
-     48.856805555
+     2.33328,
+     48.85681
     ]
    },
    "properties": {
@@ -401,7 +411,9 @@
       "source": "Wikipedia list",
       "title": "Mercury, Herse and Aglaulus"
      }
-    ]
+    ],
+    "museum_id": "beaux-arts-de-paris",
+    "location_src": "Beaux-Arts de Paris"
    }
   },
   {
@@ -417,7 +429,7 @@
     "painter": "Nicolas Poussin",
     "title": "Rinaldo and Armida",
     "year": "1625 c.",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -432,7 +444,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "wga_url": "https://www.wga.hu/html/p/poussin/1/07rinaldo.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/1/07rinaldo.html",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -462,7 +475,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pinacoteca-vaticana"
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -478,7 +492,7 @@
     "painter": "Nicolas Poussin",
     "title": "Joshua's Victory over the Amorites",
     "year": "1625–1626",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -493,7 +507,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "wga_url": "https://www.wga.hu/html/p/poussin/1/06joshua.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/1/06joshua.html",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -501,8 +516,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -530,7 +545,9 @@
       "source": "Wikipedia list",
       "title": "Joshua's Victory over the Amalekites"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -538,8 +555,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -574,7 +591,9 @@
       "source": "Wikipedia list",
       "title": "Bacchanale or Bacchus and Ariadne"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -615,7 +634,8 @@
       "qid": "Q18688231",
       "url": "https://www.wikidata.org/wiki/Q18688231"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -623,16 +643,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.40721,
-     41.82678
+     -71.40754,
+     41.8269
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Venus and Adonis",
     "year": "1625–1626 (vers)",
-    "city": "Providence (Rhode Island)",
-    "location": "Rhode Island School of Design Museum of Art",
+    "city": "Providence",
+    "location": "Rhode Island School of Design Museum",
     "attribution": "generally accepted",
     "dimensions": "75 x 100 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Poussin_-_Venus_et_Adonis_-_Poussin_-_RISofD_Museum_of_Art.jpg/500px-Poussin_-_Venus_et_Adonis_-_Poussin_-_RISofD_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -644,7 +664,9 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "rhode-island-school-of-design-museum-of-art"
+    "museum_id": "rhode-island-school-of-design-museum",
+    "country": "United States",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -674,7 +696,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -682,8 +705,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -718,7 +741,9 @@
       "source": "Wikipedia list",
       "title": "Numa Pompilius and the nymph Egeria"
      }
-    ]
+    ],
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -727,7 +752,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -759,7 +784,8 @@
       "qid": "Q3224378",
       "url": "https://www.wikidata.org/wiki/Q3224378"
      }
-    ]
+    ],
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -791,7 +817,8 @@
     },
     "museum_id": "musee-des-beaux-arts-2-2",
     "qid": "Q98507865",
-    "wikidata": "https://www.wikidata.org/wiki/Q98507865"
+    "wikidata": "https://www.wikidata.org/wiki/Q98507865",
+    "location_src": "musée des Beaux-Arts"
    }
   },
   {
@@ -799,7 +826,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.2042,
+     35.20417,
      31.7725
     ]
    },
@@ -821,7 +848,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "israel-museum",
-    "country": "Israel"
+    "country": "Israel",
+    "location_src": "Israel Museum"
    }
   },
   {
@@ -851,7 +879,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-fabre",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -899,7 +928,8 @@
       "qid": "Q28801553",
       "url": "https://www.wikidata.org/wiki/Q28801553"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -907,8 +937,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489856069,
-     41.903324209
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -943,7 +973,9 @@
       "source": "Wikipedia list",
       "title": "Children's bacchanal"
      }
-    ]
+    ],
+    "museum_id": "palazzo-barberini",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -951,8 +983,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489856069,
-     41.903324209
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -987,7 +1019,9 @@
       "source": "Wikipedia list",
       "title": "Children's bacchanal"
      }
-    ]
+    ],
+    "museum_id": "palazzo-barberini",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -1017,7 +1051,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "alte-pinakothek"
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1046,7 +1081,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthaus"
+    "museum_id": "kunsthaus",
+    "location_src": "Kunsthaus"
    }
   },
   {
@@ -1054,8 +1090,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1090,7 +1126,9 @@
       "source": "Wikipedia list",
       "title": "Descent from the cross or The deposition from the cross"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1099,7 +1137,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -1120,7 +1158,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-conde",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -1128,17 +1167,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Helios and Phaeton with Saturn and the Four Seasons or Apollo loaning his chariot to Phaeton",
     "year": "1626–1627 c.",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "122 x 153 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Nicolas_Poussin_-_Helios_and_Phaeton_with_Saturn_and_the_Four_Seasons.jpg/500px-Nicolas_Poussin_-_Helios_and_Phaeton_with_Saturn_and_the_Four_Seasons.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1150,7 +1189,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie"
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1158,8 +1198,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -1167,7 +1207,7 @@
     "title": "The Nurture of Bacchus",
     "year": "1624",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Nurture%20of%20Bacchus%20-%20WGA18285.jpg?width=500",
@@ -1194,7 +1234,9 @@
       "source": "Wikipedia list",
       "title": "The Nurture of Bacchus or A Little Bacchanal"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1202,8 +1244,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1211,7 +1253,7 @@
     "title": "The Nurture of Bacchus",
     "year": "1626",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Nourriture%20de%20Bacchus%20-%20Nicolas%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
@@ -1238,7 +1280,9 @@
       "source": "Wikipedia list",
       "title": "The Nurture of Bacchus or The Infancy of Bacchus"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1268,7 +1312,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "dulwich-picture-gallery-and-paris"
+    "museum_id": "dulwich-picture-gallery-and-paris",
+    "location_src": "Dulwich Picture Gallery and Paris"
    }
   },
   {
@@ -1305,7 +1350,8 @@
       "qid": "Q96615154",
       "url": "https://www.wikidata.org/wiki/Q96615154"
      }
-    ]
+    ],
+    "location_src": "Brighton"
    }
   },
   {
@@ -1344,7 +1390,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q106351493 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Musée Thomas-Henry"
    }
   },
   {
@@ -1352,8 +1399,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -1374,7 +1421,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "nationalmuseum"
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -1382,8 +1430,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -1418,7 +1466,9 @@
       "source": "Wikipedia list",
       "title": "Bacchic scene or Nymph and satyr drinking"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1426,15 +1476,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Scène bachique ou Nymphe et satyre buvant",
     "year": "1626",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -1462,7 +1512,9 @@
       "source": "Wikipedia list",
       "title": "Bacchic scene or Nymph and satyr drinking"
      }
-    ]
+    ],
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -1470,8 +1522,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -1479,7 +1531,7 @@
     "title": "Midas Washing at the Source of the Pactolus",
     "year": "1627",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Midas%20Washing%20at%20the%20Source%20of%20the%20Pactolus%20MET%20DP123854.jpg?width=500",
@@ -1506,7 +1558,9 @@
       "source": "Wikipedia list",
       "title": "Midas washing himself in the source of the river Pactolus"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1536,7 +1590,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-fesch",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée Fesch"
    }
   },
   {
@@ -1544,8 +1599,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1553,7 +1608,7 @@
     "title": "Nymph with Satyrs",
     "year": "1627",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20Nymphes%20satyres.jpg?width=500",
@@ -1580,7 +1635,9 @@
       "source": "Wikipedia list",
       "title": "Sleeping nymph surprised by satyrs or Venus surprised by satyrs"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1588,15 +1645,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.740111115,
-     52.36549544
+     9.74011,
+     52.3655
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Inspiration of Anacreon",
     "year": "1628",
-    "location": "Landesmuseum Hannover",
+    "location": "Lower Saxony State Museum",
     "city": "Südstadt-Bult",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -1624,7 +1681,9 @@
       "source": "Wikipedia list",
       "title": "The Poet's Inspiration or The Inspiration of Anacreon"
      }
-    ]
+    ],
+    "museum_id": "lower-saxony-state-museum",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -1640,7 +1699,7 @@
     "painter": "Nicolas Poussin",
     "title": "Acis and Galatea",
     "year": "1627–1628",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "attribution": "generally accepted",
@@ -1664,7 +1723,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q77982950 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -1673,7 +1733,7 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.227777777
+     53.22778
     ]
    },
    "properties": {
@@ -1708,7 +1768,9 @@
       "source": "Wikipedia list",
       "title": "The shepherds of Arcadia (Et in Arcadia ego)"
      }
-    ]
+    ],
+    "museum_id": "chatsworth-house",
+    "location_src": "Chatsworth House"
    }
   },
   {
@@ -1738,7 +1800,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1771,7 +1834,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q5817081",
-    "wikidata": "https://www.wikidata.org/wiki/Q5817081"
+    "wikidata": "https://www.wikidata.org/wiki/Q5817081",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1805,7 +1869,8 @@
     "country": "United States",
     "qid": "Q20890835",
     "wikidata": "https://www.wikidata.org/wiki/Q20890835",
-    "wga_url": "https://www.wga.hu/html/p/poussin/1/03deathg.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/1/03deathg.html",
+    "location_src": "Institute of Arts"
    }
   },
   {
@@ -1845,7 +1910,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18761428 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Louvre"
    }
   },
   {
@@ -1863,7 +1929,7 @@
     "year": "1628",
     "city": "Paris",
     "country": "France",
-    "location": "Musée du Petit Palais",
+    "location": "Petit Palais",
     "attribution": "rejected",
     "dimensions": "97 x 132 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Le_Massacre_des_innocents_-_Nicolas_Poussin_-_Petit_Palais_-_1626-1627.jpg/500px-Le_Massacre_des_innocents_-_Nicolas_Poussin_-_Petit_Palais_-_1626-1627.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1875,7 +1941,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-petit-palais"
+    "museum_id": "petit-palais-2",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -1916,7 +1983,8 @@
       "qid": "Q59542375",
       "url": "https://www.wikidata.org/wiki/Q59542375"
      }
-    ]
+    ],
+    "location_src": "National Museum of Canada"
    }
   },
   {
@@ -1954,7 +2022,8 @@
       "qid": "Q3850323",
       "url": "https://www.wikidata.org/wiki/Q3850323"
      }
-    ]
+    ],
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -1988,7 +2057,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q10901792",
     "wikidata": "https://www.wikidata.org/wiki/Q10901792",
-    "wga_url": "https://www.wga.hu/html/p/poussin/1/08midas1.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/1/08midas1.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2018,7 +2088,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "institute-of-arts"
+    "museum_id": "institute-of-arts",
+    "location_src": "Institute of Arts"
    }
   },
   {
@@ -2057,7 +2128,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20552745 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -2090,7 +2162,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q3204226",
-    "wikidata": "https://www.wikidata.org/wiki/Q3204226"
+    "wikidata": "https://www.wikidata.org/wiki/Q3204226",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2120,7 +2193,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2151,7 +2225,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "staatliche-kunsthalle",
-    "wga_url": "https://www.wga.hu/html/p/poussin/1/10holyfa.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/1/10holyfa.html",
+    "location_src": "Staatliche Kunsthalle"
    }
   },
   {
@@ -2198,7 +2273,8 @@
       "qid": "Q71328906",
       "url": "https://www.wikidata.org/wiki/Q71328906"
      }
-    ]
+    ],
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -2214,7 +2290,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Return from Egypt",
     "year": "1629–1630 c.",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
@@ -2228,7 +2304,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "dulwich-picture-gallery"
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -2266,7 +2343,8 @@
       "qid": "Q19911624",
       "url": "https://www.wikidata.org/wiki/Q19911624"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2304,7 +2382,8 @@
       "qid": "Q27700123",
       "url": "https://www.wikidata.org/wiki/Q27700123"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2320,8 +2399,8 @@
     "painter": "Nicolas Poussin",
     "title": "The Rest on the Flight into Egypt",
     "year": "1630 c.",
-    "city": "Winterthour",
-    "location": "Musée Oskar Reinhart « Am Römerholz »",
+    "city": "Winterthur",
+    "location": "Oskar Reinhart Collection 'Am Römerholz'",
     "attribution": "generally accepted",
     "dimensions": "88 x 67 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Le_Repos_pendant_la_fuite_en_%C3%89gypte_-_Poussin_-_Winterthur.jpg/500px-Le_Repos_pendant_la_fuite_en_%C3%89gypte_-_Poussin_-_Winterthur.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2333,7 +2412,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-oskar-reinhart-am-romerholz",
+    "museum_id": "oskar-reinhart-collection-am-romerholz",
     "qid": "Q19911624",
     "wikidata": "https://www.wikidata.org/wiki/Q19911624",
     "_overrides": {
@@ -2350,7 +2429,8 @@
       "qid": "Q91932551",
       "url": "https://www.wikidata.org/wiki/Q91932551"
      }
-    ]
+    ],
+    "location_src": "Oskar Reinhart Collection 'Am Römerholz'"
    }
   },
   {
@@ -2390,7 +2470,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20177097 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2398,8 +2479,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2419,7 +2500,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "country": "Russia",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2452,7 +2534,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q3900760",
-    "wikidata": "https://www.wikidata.org/wiki/Q3900760"
+    "wikidata": "https://www.wikidata.org/wiki/Q3900760",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2460,8 +2543,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2496,7 +2579,9 @@
       "source": "Wikipedia list",
       "title": "Nymph riding a goat or Venus, faun and putti"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2504,8 +2589,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2540,7 +2625,9 @@
       "source": "Wikipedia list",
       "title": "Children and putti playing"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2570,7 +2657,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2578,8 +2666,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2610,7 +2698,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17325512 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2652,7 +2741,8 @@
       "qid": "Q14914880",
       "url": "https://www.wikidata.org/wiki/Q14914880"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2668,7 +2758,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Triumph of David",
     "year": "1631–1633 c.",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
@@ -2692,7 +2782,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27700123 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -2722,7 +2813,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2752,7 +2844,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -2768,7 +2861,7 @@
     "painter": "Nicolas Poussin",
     "title": "The miraculous translation of saint Rita of Cascia or The Virgin protecting Spoleto",
     "year": "1633 c.",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
@@ -2782,7 +2875,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "dulwich-picture-gallery"
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -2812,7 +2906,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "wga_url": "https://www.wga.hu/html/p/poussin/2/11adorat.html",
     "qid": "Q19925212",
     "wikidata": "https://www.wikidata.org/wiki/Q19925212",
@@ -2830,7 +2924,8 @@
       "qid": "Q19925212",
       "url": "https://www.wikidata.org/wiki/Q19925212"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2863,7 +2958,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q21820707",
-    "wikidata": "https://www.wikidata.org/wiki/Q21820707"
+    "wikidata": "https://www.wikidata.org/wiki/Q21820707",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2871,15 +2967,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153,
-     51.5175
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "A Dance to the Music of Time",
     "year": "1633–1634 c.",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Wallace Collection",
     "attribution": "generally accepted",
@@ -2897,7 +2993,8 @@
     "museum_id": "wallace-collection",
     "qid": "Q2513438",
     "wikidata": "https://www.wikidata.org/wiki/Q2513438",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2a/22dance.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/2a/22dance.html",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -2930,7 +3027,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q27096409",
-    "wikidata": "https://www.wikidata.org/wiki/Q27096409"
+    "wikidata": "https://www.wikidata.org/wiki/Q27096409",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2960,7 +3058,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "getty-center"
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -2968,8 +3067,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -2977,7 +3076,7 @@
     "title": "The Companions of Rinaldo",
     "year": "1633",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Companions%20of%20Rinaldo.jpg?width=500",
@@ -3004,7 +3103,9 @@
       "source": "Wikipedia list",
       "title": "Rinaldo's Companions"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3051,7 +3152,8 @@
       "qid": "Q18522881",
       "url": "https://www.wikidata.org/wiki/Q18522881"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -3067,9 +3169,9 @@
     "painter": "Nicolas Poussin",
     "title": "Children playing",
     "year": "1633–1635 c.",
-    "city": "Lisbon",
+    "city": "Avenidas Novas",
     "country": "Portugal",
-    "location": "Museu Calouste Gulbenkian",
+    "location": "Calouste Gulbenkian Museum",
     "attribution": "generally accepted",
     "dimensions": "52 x 39 cm",
     "notable": true,
@@ -3080,7 +3182,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museu-calouste-gulbenkian"
+    "museum_id": "calouste-gulbenkian-museum",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -3088,8 +3191,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.392777777,
-     43.653611111
+     -79.39278,
+     43.65361
     ]
    },
    "properties": {
@@ -3124,7 +3227,9 @@
       "source": "Wikipedia list",
       "title": "Venus presenting arms to Aeneas"
      }
-    ]
+    ],
+    "museum_id": "art-gallery-of-ontario",
+    "location_src": "Art Gallery of Ontario"
    }
   },
   {
@@ -3132,15 +3237,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.92773,
-     52.45042
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Tancred and Erminia",
     "year": "1634 c. (or 1638–1639)",
-    "city": "Birmingham",
+    "city": "Edgbaston",
     "location": "Barber Institute of Fine Arts",
     "attribution": "generally accepted",
     "dimensions": "75 x 100 cm",
@@ -3155,7 +3260,8 @@
     },
     "museum_id": "barber-institute-of-fine-arts",
     "country": "United Kingdom",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2/05tancred.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/2/05tancred.html",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -3188,7 +3294,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q27096409",
-    "wikidata": "https://www.wikidata.org/wiki/Q27096409"
+    "wikidata": "https://www.wikidata.org/wiki/Q27096409",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3204,7 +3311,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Crossing of the Red Sea",
     "year": "1634",
-    "city": "Melbourne",
+    "city": "City of Melbourne",
     "location": "National Gallery of Victoria",
     "attribution": "generally accepted",
     "dimensions": "155,6 x 215,3 cm",
@@ -3221,7 +3328,8 @@
     "museum_id": "national-gallery-of-victoria",
     "country": "Australia",
     "qid": "Q7728193",
-    "wikidata": "https://www.wikidata.org/wiki/Q7728193"
+    "wikidata": "https://www.wikidata.org/wiki/Q7728193",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -3254,7 +3362,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q377810",
-    "wikidata": "https://www.wikidata.org/wiki/Q377810"
+    "wikidata": "https://www.wikidata.org/wiki/Q377810",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3262,8 +3371,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3271,7 +3380,7 @@
     "title": "Rescue of Young King Pyrrhus",
     "year": "1634",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20jeune%20Pyrrhus%20sauv%C3%A9%20-%201634%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207292%20%3B%20MR%202334.jpg?width=500",
@@ -3298,7 +3407,9 @@
       "source": "Wikipedia list",
       "title": "The young Pyrrhus saved"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3306,8 +3417,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -3342,7 +3453,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with ruins or Landscape with an ancient tomb and two figures"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3389,7 +3502,8 @@
       "qid": "Q19318315",
       "url": "https://www.wikidata.org/wiki/Q19318315"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -3427,7 +3541,8 @@
       "qid": "Q49876338",
       "url": "https://www.wikidata.org/wiki/Q49876338"
      }
-    ]
+    ],
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -3435,8 +3550,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -3471,7 +3586,9 @@
       "source": "Wikipedia list",
       "title": "The Hunt of Meleager and Atalanta or Leaving for a hunt"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3504,7 +3621,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q6120296",
-    "wikidata": "https://www.wikidata.org/wiki/Q6120296"
+    "wikidata": "https://www.wikidata.org/wiki/Q6120296",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3534,7 +3652,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3572,7 +3691,8 @@
       "qid": "Q18688230",
       "url": "https://www.wikidata.org/wiki/Q18688230"
      }
-    ]
+    ],
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -3602,7 +3722,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3632,7 +3753,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3640,8 +3762,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -3650,7 +3772,7 @@
     "year": "1635–1636",
     "city": "Kansas City",
     "country": "United States",
-    "location": "Nelson-Atkins Museum of Art",
+    "location": "The Nelson-Atkins Museum of Art",
     "attribution": "copy",
     "dimensions": "128,3 x 151,1 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Le_Triomphe_de_Bacchus%2C_1635_-_1636%2C_Kansas_City%2C_The_Nelson-Atkins_Museum_of_Arts.jpg/500px-Le_Triomphe_de_Bacchus%2C_1635_-_1636%2C_Kansas_City%2C_The_Nelson-Atkins_Museum_of_Arts.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3662,7 +3784,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "nelson-atkins-museum-of-art"
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -3703,7 +3826,8 @@
       "qid": "Q26511045",
       "url": "https://www.wikidata.org/wiki/Q26511045"
      }
-    ]
+    ],
+    "location_src": "Belvoir Castle"
    }
   },
   {
@@ -3744,7 +3868,8 @@
       "qid": "Q19593667",
       "url": "https://www.wikidata.org/wiki/Q19593667"
      }
-    ]
+    ],
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -3785,7 +3910,8 @@
       "qid": "Q26713323",
       "url": "https://www.wikidata.org/wiki/Q26713323"
      }
-    ]
+    ],
+    "location_src": "Belvoir Castle"
    }
   },
   {
@@ -3794,7 +3920,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -3818,7 +3944,8 @@
     },
     "museum_id": "kimbell-art-museum",
     "qid": "Q7457394",
-    "wikidata": "https://www.wikidata.org/wiki/Q7457394"
+    "wikidata": "https://www.wikidata.org/wiki/Q7457394",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -3859,7 +3986,8 @@
       "qid": "Q26713336",
       "url": "https://www.wikidata.org/wiki/Q26713336"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3892,7 +4020,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q7457394",
-    "wikidata": "https://www.wikidata.org/wiki/Q7457394"
+    "wikidata": "https://www.wikidata.org/wiki/Q7457394",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3908,7 +4037,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Feeding of Jupiter or The Infancy of Jupiter",
     "year": "1636–1637 c.",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
@@ -3922,7 +4051,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "dulwich-picture-gallery"
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -3930,8 +4060,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -3966,7 +4096,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with Juno and Argus"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4007,7 +4139,8 @@
       "qid": "Q18572435",
       "url": "https://www.wikidata.org/wiki/Q18572435"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -4037,7 +4170,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4045,8 +4179,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4081,7 +4215,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with Saint Jerome"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4089,8 +4225,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4098,7 +4234,7 @@
     "title": "Landscape with a Man scooping Water from a Stream",
     "year": "1637",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20homme%20buvant%20-%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
@@ -4125,7 +4261,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with a man drinking"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4133,8 +4271,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4142,7 +4280,7 @@
     "title": "Landscape with Travellers Resting",
     "year": "1637",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20avec%20des%20voyageurs%20au%20repos%20-%20Poussin%20-%20National%20Gallery%20London.jpg?width=500",
@@ -4169,7 +4307,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with resting travellers"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4203,7 +4343,8 @@
     "museum_id": "louvre",
     "qid": "Q9387720",
     "wikidata": "https://www.wikidata.org/wiki/Q9387720",
-    "wga_url": "https://www.wga.hu/html/p/poussin/2a/23gather.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/2a/23gather.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4233,7 +4374,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4242,7 +4384,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -4274,7 +4416,8 @@
       "qid": "Q3527390",
       "url": "https://www.wikidata.org/wiki/Q3527390"
      }
-    ]
+    ],
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -4307,7 +4450,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q15805858",
-    "wikidata": "https://www.wikidata.org/wiki/Q15805858"
+    "wikidata": "https://www.wikidata.org/wiki/Q15805858",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4315,8 +4459,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.68612,
-     45.07405
+     7.68618,
+     45.07412
     ]
    },
    "properties": {
@@ -4325,7 +4469,7 @@
     "year": "1638–1640 c.",
     "city": "Turin",
     "country": "Italy",
-    "location": "Sabauda Gallery",
+    "location": "Galleria Sabauda",
     "attribution": "generally accepted",
     "dimensions": "220 x 145 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Poussin_-_Sainte_Marguerite_-_Galleria_Sabauda.jpg/500px-Poussin_-_Sainte_Marguerite_-_Galleria_Sabauda.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4337,7 +4481,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "sabauda-gallery",
+    "museum_id": "galleria-sabauda",
     "qid": "Q114081377",
     "wikidata": "https://www.wikidata.org/wiki/Q114081377",
     "_overrides": {
@@ -4346,7 +4490,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q114081377 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Galleria Sabauda"
    }
   },
   {
@@ -4385,7 +4530,8 @@
       "qid": "Q105444135",
       "url": "https://www.wikidata.org/wiki/Q105444135"
      }
-    ]
+    ],
+    "location_src": "musée des beaux-arts"
    }
   },
   {
@@ -4393,8 +4539,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -4429,7 +4575,9 @@
       "source": "Wikipedia list",
       "title": "Jupiter suckled by the goat Amalthea or The Feeding of Jupiter"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4445,7 +4593,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Continence of Scipio",
     "year": "1640",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -4468,7 +4616,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3207778 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -4476,17 +4625,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Landscape with saint Matthew",
     "year": "1640",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "99 x 135 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nicolas_Poussin_-_Paysage_avec_saint_Matthieu.jpg/500px-Nicolas_Poussin_-_Paysage_avec_saint_Matthieu.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4498,7 +4647,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie"
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4537,7 +4687,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20275938 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -4545,8 +4696,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4554,7 +4705,7 @@
     "title": "The Institution of the Eucharist",
     "year": "1641",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Institution%20of%20the%20Eucharist%20-%20WGA18310.jpg?width=500",
@@ -4581,7 +4732,9 @@
       "source": "Wikipedia list",
       "title": "The Institution of the Eucharist or Jesus Christ instituting the Eucharist"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4589,8 +4742,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4598,7 +4751,7 @@
     "title": "Time defending Truth against the attacks of Envy and Discord",
     "year": "1641",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Temps%20soustrait%20la%20V%C3%A9rit%C3%A9%20aux%20atteintes%20de%20l%27Envie%20et%20de%20la%20Discorde.jpg?width=500",
@@ -4625,7 +4778,9 @@
       "source": "Wikipedia list",
       "title": "Time and Truth or dit aussi Time defending Truth against the attacks of Envy and Discord"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4633,8 +4788,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4642,7 +4797,7 @@
     "title": "Miracle of Saint Francis Xavier",
     "year": "1641",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Miracle%20de%20saint%20Fran%C3%A7ois%20Xavier%20Louvre.jpg?width=500",
@@ -4669,7 +4824,9 @@
       "source": "Wikipedia list",
       "title": "The Miracle of saint Francis Xavier or Saint Francis Xavier bringing back to life the daughter of an inhabitant of Cangoxima in Japan"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4708,7 +4865,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q50807979 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Institute of Arts"
    }
   },
   {
@@ -4745,7 +4903,8 @@
       "qid": "Q79394524",
       "url": "https://www.wikidata.org/wiki/Q79394524"
      }
-    ]
+    ],
+    "location_src": "Sarasota"
    }
   },
   {
@@ -4783,7 +4942,8 @@
       "qid": "Q27971314",
       "url": "https://www.wikidata.org/wiki/Q27971314"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4821,7 +4981,8 @@
       "qid": "Q27971313",
       "url": "https://www.wikidata.org/wiki/Q27971313"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4859,7 +5020,8 @@
       "qid": "Q27971318",
       "url": "https://www.wikidata.org/wiki/Q27971318"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4897,7 +5059,8 @@
       "qid": "Q27971321",
       "url": "https://www.wikidata.org/wiki/Q27971321"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4935,7 +5098,8 @@
       "qid": "Q27968275",
       "url": "https://www.wikidata.org/wiki/Q27968275"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4973,7 +5137,8 @@
       "qid": "Q27971316",
       "url": "https://www.wikidata.org/wiki/Q27971316"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -5010,7 +5175,8 @@
       "qid": "Q87367824",
       "url": "https://www.wikidata.org/wiki/Q87367824"
      }
-    ]
+    ],
+    "location_src": "Hartford (Connecticut)"
    }
   },
   {
@@ -5018,8 +5184,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -5027,7 +5193,7 @@
     "title": "Moses Turning Aaron's Staff into a Serpent",
     "year": "1645",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mo%C3%AFse%20changeant%20en%20serpent%20la%20verge%20d%27Aaron%20-%201646-1647%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207274%20%3B%20MR%202318.jpg?width=500",
@@ -5054,7 +5220,9 @@
       "source": "Wikipedia list",
       "title": "Moses changing Aaron's rod into a snake"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5084,7 +5252,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5131,7 +5300,8 @@
       "qid": "Q19820175",
       "url": "https://www.wikidata.org/wiki/Q19820175"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -5161,7 +5331,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art"
+    "museum_id": "museum-of-art",
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -5191,7 +5362,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5199,8 +5371,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.17917,
-     51.48167
+     -3.1773,
+     51.4858
     ]
    },
    "properties": {
@@ -5208,7 +5380,7 @@
     "title": "Landscape with the funeral of Phocion",
     "year": "1648",
     "city": "Cardiff",
-    "location": "National Museum of Wales",
+    "location": "National Museum Cardiff",
     "attribution": "generally accepted",
     "dimensions": "117,5 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Nicolas_Poussin_-_Paysage_avec_l%27enterrement_de_Phocion_.jpg/500px-Nicolas_Poussin_-_Paysage_avec_l%27enterrement_de_Phocion_.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5221,10 +5393,12 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-wales",
+    "museum_id": "national-museum-cardiff",
     "qid": "Q7735465",
     "wikidata": "https://www.wikidata.org/wiki/Q7735465",
-    "wga_url": "https://www.wga.hu/html/p/poussin/3/34phoci1.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/3/34phoci1.html",
+    "country": "Wales",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -5232,8 +5406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.97972,
-     53.41
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -5258,7 +5432,8 @@
     "country": "United Kingdom",
     "qid": "Q6485133",
     "wikidata": "https://www.wikidata.org/wiki/Q6485133",
-    "wga_url": "https://www.wga.hu/html/p/poussin/3/35phoci3.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/3/35phoci3.html",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -5266,8 +5441,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5275,7 +5450,7 @@
     "title": "Landscape with a Man killed by a Snake",
     "year": "1648",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Landscape%20with%20a%20Man%20Killed%20by%20a%20Snake%20-%20WGA18320.jpg?width=500",
@@ -5302,7 +5477,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with a Man Killed by a Snake or The effects of terror"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5335,7 +5512,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q6485124",
-    "wikidata": "https://www.wikidata.org/wiki/Q6485124"
+    "wikidata": "https://www.wikidata.org/wiki/Q6485124",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5343,8 +5521,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -5352,7 +5530,7 @@
     "title": "Landscape with Diogenes",
     "year": "1648",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20Landscape%20with%20Diogenes%20-%20c.%201647.jpg?width=500",
@@ -5379,7 +5557,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with Diogenes or Diogenes throwing away his bowl"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5413,7 +5593,8 @@
     "museum_id": "louvre",
     "qid": "Q2502068",
     "wikidata": "https://www.wikidata.org/wiki/Q2502068",
-    "wga_url": "https://www.wga.hu/html/p/poussin/3/36solomo.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/3/36solomo.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5421,8 +5602,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5443,7 +5624,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "country": "Russia",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5451,17 +5633,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Self portrait",
     "year": "1649",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "78 x 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Nicolas_Poussin_079.jpg/500px-Nicolas_Poussin_079.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5473,7 +5655,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "wga_url": "https://www.wga.hu/html/p/poussin/3/18selfpo.html",
     "qid": "Q107441462",
     "wikidata": "https://www.wikidata.org/wiki/Q107441462",
@@ -5491,7 +5673,8 @@
       "qid": "Q107441462",
       "url": "https://www.wikidata.org/wiki/Q107441462"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5530,7 +5713,8 @@
       "qid": "Q16690724",
       "url": "https://www.wikidata.org/wiki/Q16690724"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -5578,7 +5762,8 @@
       "qid": "Q29842255",
       "url": "https://www.wikidata.org/wiki/Q29842255"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -5586,8 +5771,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -5595,7 +5780,7 @@
     "title": "The Ecstasy of St Paul",
     "year": "1649",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Ravissement%20de%20saint%20Paul%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207288%20%3B%20MR%202325.jpg?width=500",
@@ -5622,7 +5807,9 @@
       "source": "Wikipedia list",
       "title": "Saint Paul's ascension into heaven"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5661,7 +5848,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q59538177 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -5691,7 +5879,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5699,8 +5888,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11436,
+     42.37409
     ]
    },
    "properties": {
@@ -5708,7 +5897,7 @@
     "title": "Holy Family",
     "year": "1650–c. 1651",
     "city": "Cambridge",
-    "location": "Fogg Art Museum",
+    "location": "Fogg Museum",
     "attribution": "generally accepted",
     "dimensions": "97,8 × 129,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nicolas_Poussin_-_Sainte_Famille_%28aux_neuf_figures%29.jpg/500px-Nicolas_Poussin_-_Sainte_Famille_%28aux_neuf_figures%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5720,7 +5909,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fogg-art-museum",
+    "museum_id": "fogg-museum",
     "qid": "Q20178698",
     "wikidata": "https://www.wikidata.org/wiki/Q20178698",
     "_overrides": {
@@ -5737,7 +5926,9 @@
       "qid": "Q70781004",
       "url": "https://www.wikidata.org/wiki/Q70781004"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -5745,8 +5936,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -5754,7 +5945,7 @@
     "title": "The Holy Family with Saint John and Saint Elizabeth in a Landscape",
     "year": "1650",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Sainte%20Famille%20avec%20saint%20Jean%20et%20sainte%20%C3%89lisabeth%20dans%20un%20paysage%20-%201650-1651%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20INV%207280%20%3B%20MR%202341.jpg?width=500",
@@ -5781,7 +5972,9 @@
       "source": "Wikipedia list",
       "title": "The Holy Family with Saint John and Saint Elisabeth in a landscape"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -5789,8 +5982,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.17917,
-     51.48167
+     -3.1773,
+     51.4858
     ]
    },
    "properties": {
@@ -5798,7 +5991,7 @@
     "title": "Moses saved from the river",
     "year": "1651",
     "city": "Cardiff",
-    "location": "National Museum of Wales / London",
+    "location": "National Museum Cardiff",
     "attribution": "generally accepted",
     "dimensions": "116 x 177,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Poussin%2C_Finding_of_Moses%2C_1651.jpg/500px-Poussin%2C_Finding_of_Moses%2C_1651.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5810,7 +6003,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-wales-london",
+    "museum_id": "national-museum-cardiff",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5818,7 +6011,9 @@
       "qid": "Q26707990",
       "url": "https://www.wikidata.org/wiki/Q26707990"
      }
-    ]
+    ],
+    "country": "Wales",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -5849,7 +6044,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "stadel-museum",
-    "wga_url": "https://www.wga.hu/html/p/poussin/4/05landsc.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/4/05landsc.html",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -5879,7 +6075,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "getty-center"
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -5917,7 +6114,8 @@
       "qid": "Q105444132",
       "url": "https://www.wikidata.org/wiki/Q105444132"
      }
-    ]
+    ],
+    "location_src": "musée des beaux-arts"
    }
   },
   {
@@ -5947,7 +6145,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5980,7 +6179,8 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q2235027",
-    "wikidata": "https://www.wikidata.org/wiki/Q2235027"
+    "wikidata": "https://www.wikidata.org/wiki/Q2235027",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -5988,8 +6188,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.42055556,
-     49.24555556
+     1.42056,
+     49.24556
     ]
    },
    "properties": {
@@ -6024,7 +6224,9 @@
       "source": "Wikipedia list",
       "title": "Coriolanus"
      }
-    ]
+    ],
+    "museum_id": "musee-nicolas-poussin",
+    "location_src": "musée Nicolas-Poussin"
    }
   },
   {
@@ -6068,7 +6270,9 @@
       "source": "Wikipedia list",
       "title": "The Will of Eudamidas"
      }
-    ]
+    ],
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6107,7 +6311,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q9191521 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Louvre"
    }
   },
   {
@@ -6154,7 +6359,8 @@
       "qid": "Q27749562",
       "url": "https://www.wikidata.org/wiki/Q27749562"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6170,8 +6376,8 @@
     "painter": "Nicolas Poussin",
     "title": "Nativity",
     "year": "c. 1653",
-    "city": "Oberschleissheim , now the schloss Schleissheim",
-    "location": "Bayerische Staatsgemäldesammlungen",
+    "city": "Munich",
+    "location": "Bavarian State Painting Collections",
     "attribution": "generally accepted",
     "dimensions": "46 x 39,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Nativit%C3%A9_-_Poussin_-_Alte_Pinakothek_M%C3%BCnchen.jpg/500px-Nativit%C3%A9_-_Poussin_-_Alte_Pinakothek_M%C3%BCnchen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6183,7 +6389,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "bayerische-staatsgemaldesammlungen",
+    "museum_id": "bavarian-state-painting-collections",
     "qid": "Q28801561",
     "wikidata": "https://www.wikidata.org/wiki/Q28801561",
     "_overrides": {
@@ -6192,7 +6398,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q28801561 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "Germany",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -6231,7 +6439,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q9380048 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -6261,7 +6470,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6269,8 +6479,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6300,7 +6510,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q5849316 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6308,8 +6519,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6344,7 +6555,9 @@
       "source": "Wikipedia list",
       "title": "Holy Family"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6352,8 +6565,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.55916,
-     27.38307
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -6382,7 +6595,8 @@
       "qid": "Q79403765",
       "url": "https://www.wikidata.org/wiki/Q79403765"
      }
-    ]
+    ],
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -6429,7 +6643,8 @@
       "qid": "Q19911493",
       "url": "https://www.wikidata.org/wiki/Q19911493"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -6437,8 +6652,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6446,7 +6661,7 @@
     "title": "The Holy Family with Saint John Saint Elizabeth and Saint Joseph Praying",
     "year": "1656",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Sainte%20Famille%20avec%20saint%20Jean%2C%20sainte%20Elisabeth%20et%20saint%20Joseph%20priant%20-%20Nicolas%20Poussin%20-%20Louvre.jpg?width=500",
@@ -6473,7 +6688,9 @@
       "source": "Wikipedia list",
       "title": "Holy Family with saints John, Elisabeth and Joseph praying"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6511,7 +6728,8 @@
       "qid": "Q20809818",
       "url": "https://www.wikidata.org/wiki/Q20809818"
      }
-    ]
+    ],
+    "location_src": "Museum of Art"
    }
   },
   {
@@ -6549,7 +6767,8 @@
       "qid": "Q61743781",
       "url": "https://www.wikidata.org/wiki/Q61743781"
      }
-    ]
+    ],
+    "location_src": "Hermitage"
    }
   },
   {
@@ -6588,7 +6807,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q30227280 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -6596,8 +6816,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11436,
+     42.37409
     ]
    },
    "properties": {
@@ -6605,7 +6825,7 @@
     "title": "The Birth of Bacchus",
     "year": "1657",
     "city": "Cambridge",
-    "location": "Fogg Art Museum",
+    "location": "Fogg Museum",
     "attribution": "generally accepted",
     "dimensions": "123 x 179 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Nicolas_Poussin_-_The_Infant_Bacchus_Entrusted_to_the_Nymphs_of_Nysa%2C_The_Death_of_Echo_and_Narcissus_-_1942.167_-_Fogg_Museum.jpg/500px-Nicolas_Poussin_-_The_Infant_Bacchus_Entrusted_to_the_Nymphs_of_Nysa%2C_The_Death_of_Echo_and_Narcissus_-_1942.167_-_Fogg_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6617,7 +6837,9 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fogg-art-museum"
+    "museum_id": "fogg-museum",
+    "country": "United States",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -6665,7 +6887,8 @@
       "qid": "Q26713676",
       "url": "https://www.wikidata.org/wiki/Q26713676"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6673,8 +6896,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6682,7 +6905,7 @@
     "title": "Saint Frances Announcing the End of the Plague in Rome",
     "year": "1657",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Vision%20de%20sainte%20Fran%C3%A7oise%20Romaine%20-%201657-1658%20-%20Nicolas%20Poussin%20-%20Louvre%20-%20RF%201999%201.jpg?width=500",
@@ -6709,7 +6932,9 @@
       "source": "Wikipedia list",
       "title": "The vision of saint Frances of Rome or Saint Frances of Rome announcing the end of the plague to Rome"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6750,7 +6975,8 @@
       "qid": "Q970808",
       "url": "https://www.wikidata.org/wiki/Q970808"
      }
-    ]
+    ],
+    "location_src": "musée des beaux-arts"
    }
   },
   {
@@ -6766,7 +6992,7 @@
     "painter": "Nicolas Poussin",
     "title": "Lamentation over the dead Christ",
     "year": "1657–1658 c.",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "attribution": "generally accepted",
@@ -6797,7 +7023,8 @@
       "qid": "Q106354474",
       "url": "https://www.wikidata.org/wiki/Q106354474"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -6805,8 +7032,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6827,7 +7054,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "country": "Russia"
+    "country": "Russia",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6861,7 +7089,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19911450",
     "wikidata": "https://www.wikidata.org/wiki/Q19911450",
-    "wga_url": "https://www.wga.hu/html/p/poussin/4/40landsc.html"
+    "wga_url": "https://www.wga.hu/html/p/poussin/4/40landsc.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -6870,7 +7099,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -6894,7 +7123,8 @@
     "museum_id": "musee-conde",
     "country": "France",
     "qid": "Q3373686",
-    "wikidata": "https://www.wikidata.org/wiki/Q3373686"
+    "wikidata": "https://www.wikidata.org/wiki/Q3373686",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -6910,7 +7140,7 @@
     "painter": "Nicolas Poussin",
     "title": "Landscape with Hercules and Cacus",
     "year": "1659–1661 c.",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -6933,7 +7163,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q84492948 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -6974,7 +7205,8 @@
       "qid": "Q26251915",
       "url": "https://www.wikidata.org/wiki/Q26251915"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -7007,7 +7239,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q7735033",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033"
+    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7048,7 +7281,8 @@
       "qid": "Q26251901",
       "url": "https://www.wikidata.org/wiki/Q26251901"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -7089,7 +7323,8 @@
       "qid": "Q25445132",
       "url": "https://www.wikidata.org/wiki/Q25445132"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -7119,7 +7354,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fitzwilliam-museum",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -7127,8 +7363,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489856069,
-     41.903324209
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -7163,7 +7399,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with Hagar and the Angel"
      }
-    ]
+    ],
+    "museum_id": "palazzo-barberini",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -7171,8 +7409,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7180,7 +7418,7 @@
     "title": "Apollo in Love with Daphne",
     "year": "1664",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Apollo%20and%20Daphne%20-%20WGA18345.jpg?width=500",
@@ -7207,7 +7445,9 @@
       "source": "Wikipedia list",
       "title": "Apollo and Daphne or Apollo in love with Daphne"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7215,8 +7455,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7224,7 +7464,7 @@
     "title": "The Agony in the Garden",
     "year": "1626",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Agony%20in%20the%20Garden%20-%20MET%20DP-23235-001.jpg?width=500",
@@ -7244,7 +7484,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7252,8 +7494,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -7281,7 +7523,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -7289,15 +7533,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Crucifixion",
     "year": "1646",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -7324,7 +7568,9 @@
       "source": "Wikipedia list",
       "title": "Crucifixion or Calvary"
      }
-    ]
+    ],
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -7361,7 +7607,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-nancy",
+    "location_src": "Museum of Fine Arts of Nancy"
    }
   },
   {
@@ -7369,8 +7617,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -7404,7 +7652,9 @@
       "source": "Wikipedia list",
       "title": "Saint Paul's ascension to heaven"
      }
-    ]
+    ],
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -7412,8 +7662,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -7447,7 +7697,9 @@
       "source": "Wikipedia list",
       "title": "Sainte Famille"
      }
-    ]
+    ],
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -7484,7 +7736,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -7492,15 +7746,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Le repos pendant la fuite en Egypte",
     "year": "1629",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -7527,7 +7781,9 @@
       "source": "Wikipedia list",
       "title": "The Rest on the Flight into Egypt"
      }
-    ]
+    ],
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -7535,8 +7791,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -7554,7 +7810,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115950149",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -7562,8 +7820,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -7591,7 +7849,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -7599,8 +7859,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -7628,7 +7888,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -7636,7 +7898,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.596719,
+     -0.59672,
      51.98295
     ]
    },
@@ -7671,7 +7933,9 @@
       "source": "Wikipedia list",
       "title": "The infant Moses trampling pharaoh's crown"
      }
-    ]
+    ],
+    "museum_id": "woburn-abbey",
+    "location_src": "Woburn Abbey"
    }
   },
   {
@@ -7679,8 +7943,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.559444444,
-     41.658333333
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -7708,7 +7972,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "toledo-museum-of-art",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -7716,8 +7982,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -7751,7 +8017,9 @@
       "source": "Wikipedia list",
       "title": "Holy Family"
      }
-    ]
+    ],
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -7759,8 +8027,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -7794,7 +8062,9 @@
       "source": "Wikipedia list",
       "title": "Camillus and the schoolmaster of Falerii"
      }
-    ]
+    ],
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -7831,7 +8101,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -7868,7 +8140,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -7876,8 +8150,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73833333,
-     41.92166667
+     8.73833,
+     41.92167
     ]
    },
    "properties": {
@@ -7905,7 +8179,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fesch",
+    "location_src": "Musée Fesch"
    }
   },
   {
@@ -7913,7 +8189,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.466925,
+     12.46659,
      41.89333
     ]
    },
@@ -7921,7 +8197,7 @@
     "painter": "Nicolas Poussin",
     "title": "Le triomphe d'Ovide",
     "year": "1624",
-    "location": "Palazzo Corsini",
+    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
@@ -7948,7 +8224,9 @@
       "source": "Wikipedia list",
       "title": "Triumph of a poet or Triumph of Ovid"
      }
-    ]
+    ],
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini-2",
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
    }
   },
   {
@@ -7956,7 +8234,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.138041,
+     -0.13804,
      50.8237
     ]
    },
@@ -7991,7 +8269,9 @@
       "source": "Wikipedia list",
       "title": "Virgin and Child"
      }
-    ]
+    ],
+    "museum_id": "brighton-museum-art-gallery",
+    "location_src": "Brighton Museum & Art Gallery"
    }
   },
   {
@@ -7999,8 +8279,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -8034,7 +8314,9 @@
       "source": "Wikipedia list",
       "title": "The Storm"
      }
-    ]
+    ],
+    "museum_id": "musee-des-beaux-arts-de-rouen",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -8042,8 +8324,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -8067,7 +8349,9 @@
       "source": "Wikipedia list",
       "title": "Saint Denis the Areopagite crowned by an angel"
      }
-    ]
+    ],
+    "museum_id": "musee-des-beaux-arts-de-rouen",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -8075,8 +8359,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -8110,7 +8394,9 @@
       "source": "Wikipedia list",
       "title": "Venus presenting arms to Aeneas"
      }
-    ]
+    ],
+    "museum_id": "musee-des-beaux-arts-de-rouen",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -8147,7 +8433,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "leicester-museum-art-gallery",
+    "location_src": "Leicester Museum & Art Gallery"
    }
   },
   {
@@ -8184,7 +8472,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-du-grand-siecle",
+    "location_src": "Musée du Grand Siècle"
    }
   },
   {
@@ -8192,8 +8482,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -8221,7 +8511,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -8230,7 +8522,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8258,7 +8550,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8266,8 +8560,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -8295,7 +8589,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -8303,8 +8599,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -8332,7 +8628,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -8340,8 +8638,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -8369,7 +8667,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -8377,8 +8677,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -8386,7 +8686,7 @@
     "title": "The Abduction of the Sabine Women",
     "year": "1633",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20L%27Enl%C3%A8vement%20des%20Sabines%20%281634-5%29.jpg?width=500",
@@ -8406,7 +8706,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -8443,7 +8745,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -8451,8 +8755,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -8460,7 +8764,7 @@
     "title": "A Bacchanalian Revel Before a Term",
     "year": "1632",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Bacchanal%20before%20a%20Statue%20of%20Pan%20-%20WGA18284.jpg?width=500",
@@ -8480,7 +8784,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -8489,7 +8795,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8517,7 +8823,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8525,8 +8833,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8560,7 +8868,9 @@
       "source": "Wikipedia list",
       "title": "The Triumph of Neptune or The Birth of Venus (Richelieu Bacchanals I)"
      }
-    ]
+    ],
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8568,8 +8878,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8603,7 +8913,9 @@
       "source": "Wikipedia list",
       "title": "Saint John baptising Christ"
      }
-    ]
+    ],
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8640,7 +8952,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -8677,7 +8991,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -8714,7 +9030,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -8751,7 +9069,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -8759,8 +9079,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -8788,7 +9108,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -8796,8 +9118,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -8825,7 +9147,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -8833,8 +9157,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -8862,7 +9186,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -8899,7 +9225,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -8915,7 +9243,7 @@
     "painter": "Nicolas Poussin",
     "title": "Landscape with a Calm (Un Tem[p]s calme et serein)",
     "year": "1651",
-    "location": "J. Paul Getty Museum",
+    "location": "Getty Center",
     "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8936,7 +9264,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -8952,7 +9282,7 @@
     "painter": "Nicolas Poussin",
     "title": "Saint John Baptizing in the River Jordan",
     "year": "1630",
-    "location": "J. Paul Getty Museum",
+    "location": "Getty Center",
     "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8973,7 +9303,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -8981,8 +9313,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -9010,7 +9342,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -9018,8 +9352,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -9047,7 +9381,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -9055,8 +9391,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9064,7 +9400,7 @@
     "title": "Et in Arcadia ego",
     "year": "1638",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Les%20Bergers%20d%27Arcadie%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207300%20%3B%20MR%202339.jpg?width=500",
@@ -9084,7 +9420,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9092,8 +9430,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9101,7 +9439,7 @@
     "title": "The Apparition of the Virgin to Saint James the Great",
     "year": "1629",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Apparition%20de%20la%20Vierge%20%C3%A0%20saint%20Jacques%20le%20Majeur%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207285%20%3B%20MR%202328.jpg?width=500",
@@ -9121,7 +9459,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9129,8 +9469,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9138,7 +9478,7 @@
     "title": "Bacchanal with a Lute Player",
     "year": "1627",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanale%20%C3%A0%20la%20joueuse%20de%20guitare%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207296%20%3B%20B%201278%20%3B%20MR%202345%20-%20photo%202.jpg?width=500",
@@ -9158,7 +9498,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9166,8 +9508,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9175,7 +9517,7 @@
     "title": "Concert of Cupids",
     "year": "1627",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20Concert%20d%27amours%2C%20INV%207299.jpg?width=500",
@@ -9195,7 +9537,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9203,8 +9547,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9212,7 +9556,7 @@
     "title": "The Death of Sapphira",
     "year": "1652",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%2C%20La%20Mort%20de%20Saphire.jpg?width=500",
@@ -9232,7 +9576,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9240,8 +9586,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9249,7 +9595,7 @@
     "title": "Eliezer and Rebecca",
     "year": "1648",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eli%C3%A9zer%20et%20R%C3%A9becca%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207270%20%3B%20MR%202315.jpg?width=500",
@@ -9269,7 +9615,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9277,8 +9625,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9286,7 +9634,7 @@
     "title": "Moses Saved from the River",
     "year": "1638",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mo%C3%AFse%20sauv%C3%A9%20des%20eaux%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207271%20%3B%20MR%202332.jpg?width=500",
@@ -9306,7 +9654,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9314,7 +9664,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.204166666,
+     35.20417,
      31.7725
     ]
    },
@@ -9343,7 +9693,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "israel-museum",
+    "location_src": "Israel Museum"
    }
   },
   {
@@ -9351,8 +9703,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -9386,7 +9738,9 @@
       "source": "Wikipedia list",
       "title": "Hymen disguised as a woman at a sacrifice to Priapus or Dance in honour of Priapus"
      }
-    ]
+    ],
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -9394,8 +9748,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -9423,7 +9777,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -9431,8 +9787,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -9460,7 +9816,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -9468,8 +9826,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -9497,7 +9855,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -9505,8 +9865,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -9534,7 +9894,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -9542,8 +9904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -9551,7 +9913,7 @@
     "title": "Marriage",
     "year": "1638",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Marriage%20I%20%28c1637-1640%29%20Nicolas%20Poussin.jpg?width=500",
@@ -9578,7 +9940,9 @@
       "title": "The Seven Sacraments I : Marriage (2)",
       "ref": "https://en.wikipedia.org/wiki/Seven_Sacraments_(Poussin)"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -9586,8 +9950,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -9595,7 +9959,7 @@
     "title": "The Triumph of Pan",
     "year": "1636",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Triumph%20of%20Pan%2C%201636.jpg?width=500",
@@ -9615,7 +9979,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -9623,8 +9989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -9632,7 +9998,7 @@
     "title": "Landscape with a Man washing his Feet at a Fountain",
     "year": "1648",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20with%20a%20Man%20washing%20his%20Feet%20at%20a%20Fountain%20-%20National%20Gallery%20NG40.jpg?width=500",
@@ -9652,7 +10018,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -9660,8 +10028,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -9669,7 +10037,7 @@
     "title": "The Finding of Moses",
     "year": "1651",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Finding%20of%20Moses%2C%201651.jpg?width=500",
@@ -9695,7 +10063,9 @@
       "source": "Wikipedia list",
       "title": "Moses saved from the river"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -9703,8 +10073,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -9712,7 +10082,7 @@
     "title": "Confirmation",
     "year": "1638",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Confirmation%20I%20%281637-1640%29%20Nicolas%20Poussin.jpg?width=500",
@@ -9739,7 +10109,9 @@
       "title": "The Seven Sacraments I : Confirmation (4)",
       "ref": "https://en.wikipedia.org/wiki/Seven_Sacraments_(Poussin)"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -9747,8 +10119,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -9756,7 +10128,7 @@
     "title": "Ordination",
     "year": "1638",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20The%20Sacrament%20of%20Ordination%20%28Christ%20Presenting%20the%20Keys%20to%20Saint%20Peter%29%20-%20Google%20Art%20Project.jpg?width=500",
@@ -9776,7 +10148,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -9784,8 +10158,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -9813,7 +10187,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -9821,8 +10197,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -9856,7 +10232,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Shepherds"
      }
-    ]
+    ],
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -9864,8 +10242,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -9893,7 +10271,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -9901,8 +10281,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -9930,7 +10310,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -9938,8 +10320,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -9967,7 +10349,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -9975,8 +10359,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -10004,7 +10388,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -10012,8 +10398,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -10041,7 +10427,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -10049,7 +10437,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -10078,7 +10466,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -10086,7 +10476,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -10115,7 +10505,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -10123,8 +10515,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -10152,7 +10544,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -10160,15 +10554,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Mystic Marriage of Saint Catherine",
     "year": "1628",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10189,7 +10583,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10197,15 +10593,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of the Holy Eucharist",
     "year": "1647",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10232,7 +10628,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Eucharist (6)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10240,15 +10638,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Moses Striking the Rock",
     "year": "1633",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10275,7 +10673,9 @@
       "source": "Wikipedia list",
       "title": "Moses making water pour from the rock or The striking of the rock"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10283,15 +10683,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Baptism",
     "year": "1646",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10318,7 +10718,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Baptism (3)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10326,15 +10728,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Confirmation",
     "year": "1645",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10361,7 +10763,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Confirmation (2)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10369,15 +10773,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Marriage",
     "year": "1647",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10404,7 +10808,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Marriage (7)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10412,15 +10818,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Penance",
     "year": "1647",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10447,7 +10853,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Confession (4)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10455,15 +10863,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Ordination",
     "year": "1647",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10490,7 +10898,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Ordination or Commissioning (5)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10498,15 +10908,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Extreme Unction",
     "year": "1644",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10533,7 +10943,9 @@
       "source": "Wikipedia list",
       "title": "The Seven Sacraments II : Extreme Unction (1)"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -10541,8 +10953,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10550,7 +10962,7 @@
     "title": "Summer",
     "year": "1660",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20L%27%C3%89t%C3%A9%20ou%20Ruth%20et%20Booz.jpg?width=500",
@@ -10570,7 +10982,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10578,8 +10992,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -10587,7 +11001,7 @@
     "title": "Moïse enfant foulant aux pieds la couronne de Pharaon",
     "year": "1637",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mo%C3%AFse%20enfant%20foulant%20aux%20pieds%20la%20couronne%20de%20Pharaon%20-%20Nicolas%20Poussin%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%207273%20%3B%20MR%202317.jpg?width=500",
@@ -10607,7 +11021,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -10615,15 +11031,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Victory of Joshua over the Amorites",
     "year": "1625",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -10644,7 +11060,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -10652,8 +11070,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.317777777,
-     51.106111111
+     -2.31778,
+     51.10611
     ]
    },
    "properties": {
@@ -10681,7 +11099,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stourhead",
+    "location_src": "Stourhead"
    }
   },
   {
@@ -10689,8 +11109,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -10718,7 +11138,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -10726,8 +11148,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -10755,7 +11177,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -10763,8 +11187,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -10792,7 +11216,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -10835,7 +11261,9 @@
       "source": "Wikipedia list",
       "title": "Bacchic scene or Nymph riding a satyr"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -10843,7 +11271,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -10872,7 +11300,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -10880,8 +11310,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -10915,7 +11345,9 @@
       "source": "Wikipedia list",
       "title": "The Rest on the Flight into Egypt"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -10923,8 +11355,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -10952,7 +11384,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -10960,7 +11394,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -10995,7 +11429,9 @@
       "source": "Wikipedia list",
       "title": "Holy Family"
      }
-    ]
+    ],
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -11003,8 +11439,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -11032,7 +11468,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -11040,7 +11478,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.39277778,
+     2.39278,
      47.085
     ]
    },
@@ -11069,7 +11507,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-du-berry",
+    "location_src": "Musée du Berry"
    }
   },
   {
@@ -11086,7 +11526,7 @@
     "title": "The Lamentation",
     "year": "1626",
     "location": "National Trust",
-    "city": "",
+    "city": "Kingston Lacy",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20%281594-1665%29%20%28attributed%20to%29%20-%20The%20Lamentation%20-%201166168%20-%20National%20Trust.jpg?width=500",
@@ -11106,7 +11546,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-trust",
+    "location_src": "National Trust"
    }
   },
   {
@@ -11114,8 +11556,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -11123,7 +11565,7 @@
     "title": "The Blind of Jericho",
     "year": "1650",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20Les%20Aveugles%20de%20J%C3%A9richo%2C%201650%2C%20INV%207281%20%3B%20MR%202320.jpg?width=500",
@@ -11143,7 +11585,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   }
  ]

@@ -38,7 +38,8 @@
       "qid": "Q20273723",
       "url": "https://www.wikidata.org/wiki/Q20273723"
      }
-    ]
+    ],
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -82,7 +83,10 @@
       "qid": "Q83647672",
       "url": "https://www.wikidata.org/wiki/Q83647672"
      }
-    ]
+    ],
+    "city": "Algiers",
+    "country": "Algeria",
+    "location_src": "National Museum of Fine Arts of Algiers"
    }
   },
   {
@@ -114,7 +118,8 @@
     "museum_id": "louvre",
     "qid": "Q2984817",
     "wikidata": "https://www.wikidata.org/wiki/Q2984817",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/103david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/103david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -144,7 +149,9 @@
     },
     "museum_id": "musees-de-sens",
     "qid": "Q18649388",
-    "wikidata": "https://www.wikidata.org/wiki/Q18649388"
+    "wikidata": "https://www.wikidata.org/wiki/Q18649388",
+    "country": "France",
+    "location_src": "Musées de Sens"
    }
   },
   {
@@ -175,7 +182,8 @@
     "museum_id": "dallas-museum-of-art",
     "country": "United States",
     "qid": "Q3026259",
-    "wikidata": "https://www.wikidata.org/wiki/Q3026259"
+    "wikidata": "https://www.wikidata.org/wiki/Q3026259",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -204,7 +212,7 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "petit-palais",
+    "museum_id": "petit-palais-2",
     "qid": "Q3210841",
     "wikidata": "https://www.wikidata.org/wiki/Q3210841",
     "wga_url": "https://www.wga.hu/html/d/david_j/1/104david.html",
@@ -215,7 +223,8 @@
       "qid": "Q104445378",
       "url": "https://www.wikidata.org/wiki/Q104445378"
      }
-    ]
+    ],
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -247,7 +256,8 @@
     "museum_id": "ecole-nationale-superieure-des-beaux-arts",
     "qid": "Q3590926",
     "wikidata": "https://www.wikidata.org/wiki/Q3590926",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/105david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/105david.html",
+    "location_src": "École nationale supérieure des Beaux-Arts"
    }
   },
   {
@@ -255,8 +265,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.88,
-     43.612
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -264,7 +274,7 @@
     "title": "Hector",
     "year": "1778",
     "city": "Montpellier",
-    "location": "Fabre Museum",
+    "location": "Musée Fabre",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "123 × 172 cm",
@@ -278,7 +288,7 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fabre-museum",
+    "museum_id": "musee-fabre",
     "qid": "Q117225365",
     "wikidata": "https://www.wikidata.org/wiki/Q117225365",
     "_merged": [
@@ -288,7 +298,9 @@
       "qid": "Q117225365",
       "url": "https://www.wikidata.org/wiki/Q117225365"
      }
-    ]
+    ],
+    "country": "France",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -304,7 +316,7 @@
     "painter": "Jacques-Louis David",
     "title": "The Funeral Games of Patroclus",
     "year": "1778",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "attribution": "generally accepted",
@@ -330,7 +342,8 @@
       "qid": "Q3232845",
       "url": "https://www.wikidata.org/wiki/Q3232845"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -371,7 +384,8 @@
       "qid": "Q97013120",
       "url": "https://www.wikidata.org/wiki/Q97013120"
      }
-    ]
+    ],
+    "location_src": "Museum of Baron Gerard"
    }
   },
   {
@@ -404,7 +418,8 @@
     },
     "museum_id": "musee-de-la-civilisation",
     "qid": "Q52365481",
-    "wikidata": "https://www.wikidata.org/wiki/Q52365481"
+    "wikidata": "https://www.wikidata.org/wiki/Q52365481",
+    "location_src": "Musée de la civilisation"
    }
   },
   {
@@ -445,7 +460,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q83385172 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Musée Thomas-Henry"
    }
   },
   {
@@ -480,7 +496,8 @@
     "qid": "Q3464047",
     "wikidata": "https://www.wikidata.org/wiki/Q3464047",
     "wga_url": "https://www.wga.hu/html/d/david_j/1/108david.html",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -514,7 +531,8 @@
     },
     "museum_id": "cleveland-museum-of-art",
     "qid": "Q60516167",
-    "wikidata": "https://www.wikidata.org/wiki/Q60516167"
+    "wikidata": "https://www.wikidata.org/wiki/Q60516167",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -548,7 +566,8 @@
     "museum_id": "museum-of-the-palace-of-king-john-iii-in-wilanow",
     "qid": "Q2749266",
     "wikidata": "https://www.wikidata.org/wiki/Q2749266",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/110david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/110david.html",
+    "location_src": "Museum of the Palace of King John III in Wilanow"
    }
   },
   {
@@ -556,8 +575,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -583,7 +602,8 @@
     "country": "France",
     "qid": "Q2698149",
     "wikidata": "https://www.wikidata.org/wiki/Q2698149",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/109david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/109david.html",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -617,7 +637,8 @@
     "museum_id": "church-of-st-vincent",
     "qid": "Q3221339",
     "wikidata": "https://www.wikidata.org/wiki/Q3221339",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/112david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/112david.html",
+    "location_src": "Church of St Vincent"
    }
   },
   {
@@ -625,7 +646,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.87563,
+     -78.87562,
      42.93245
     ]
    },
@@ -634,7 +655,7 @@
     "title": "Portrait of Jacques-François Desmaisons",
     "year": "1782",
     "city": "Buffalo",
-    "location": "Albright Knox Art Gallery",
+    "location": "Buffalo AKG Art Museum",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "91.44 x 72.39",
@@ -648,10 +669,12 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "albright-knox-art-gallery",
+    "museum_id": "buffalo-akg-art-museum",
     "qid": "Q77469175",
     "wikidata": "https://www.wikidata.org/wiki/Q77469175",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/111david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/111david.html",
+    "country": "United States",
+    "location_src": "Buffalo AKG Art Museum"
    }
   },
   {
@@ -686,7 +709,8 @@
     "museum_id": "louvre",
     "qid": "Q3208369",
     "wikidata": "https://www.wikidata.org/wiki/Q3208369",
-    "wga_url": "https://www.wga.hu/html/d/david_j/1/113david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/1/113david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -694,8 +718,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.88,
-     43.612
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -703,7 +727,7 @@
     "title": "Portrait of Alphonse Leroy",
     "year": "1783",
     "city": "Montpellier",
-    "location": "Fabre Museum",
+    "location": "Musée Fabre",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "72 × 91 cm",
@@ -717,9 +741,11 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fabre-museum",
+    "museum_id": "musee-fabre",
     "qid": "Q3399505",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399505"
+    "wikidata": "https://www.wikidata.org/wiki/Q3399505",
+    "country": "France",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -761,7 +787,8 @@
       "qid": "Q15615004",
       "url": "https://www.wikidata.org/wiki/Q15615004"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -769,8 +796,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -778,7 +805,7 @@
     "title": "Portrait of Madame Charles-Pierre Pecoul",
     "year": "1784",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Genevi%C3%A8ve%20Jacqueline%20Pecoul%20par%20David.jpg?width=500",
@@ -806,7 +833,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Geneviève Jacqueline Pecoul"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -849,7 +878,8 @@
       "qid": "Q29862495",
       "url": "https://www.wikidata.org/wiki/Q29862495"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -884,7 +914,8 @@
     "museum_id": "louvre",
     "qid": "Q476458",
     "wikidata": "https://www.wikidata.org/wiki/Q476458",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/203david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/203david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -919,7 +950,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q1752990",
     "wikidata": "https://www.wikidata.org/wiki/Q1752990",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/205david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/205david.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -962,7 +994,8 @@
       "qid": "Q2254945",
       "url": "https://www.wikidata.org/wiki/Q2254945"
      }
-    ]
+    ],
+    "location_src": "Musée des Arts Décoratifs"
    }
   },
   {
@@ -997,7 +1030,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q613928",
     "wikidata": "https://www.wikidata.org/wiki/Q613928",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/207david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/207david.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1032,7 +1066,8 @@
     "museum_id": "louvre",
     "qid": "Q2533791",
     "wikidata": "https://www.wikidata.org/wiki/Q2533791",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/208david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/208david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1075,7 +1110,8 @@
       "qid": "Q13897790",
       "url": "https://www.wikidata.org/wiki/Q13897790"
      }
-    ]
+    ],
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -1083,8 +1119,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571114,
-     48.149887
+     11.57111,
+     48.14989
     ]
    },
    "properties": {
@@ -1120,7 +1156,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Anne-Marie-Louise Thélusson, Countess of Sorcy"
      }
-    ]
+    ],
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -1155,7 +1193,8 @@
     "museum_id": "louvre",
     "qid": "Q3399481",
     "wikidata": "https://www.wikidata.org/wiki/Q3399481",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/211david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/211david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1188,7 +1227,8 @@
     "museum_id": "musee-des-beaux-arts",
     "qid": "Q97516112",
     "wikidata": "https://www.wikidata.org/wiki/Q97516112",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée des Beaux-Arts"
    }
   },
   {
@@ -1222,7 +1262,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q2872714",
-    "wikidata": "https://www.wikidata.org/wiki/Q2872714"
+    "wikidata": "https://www.wikidata.org/wiki/Q2872714",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1257,7 +1298,8 @@
     "museum_id": "art-institute-of-chicago",
     "qid": "Q3399482",
     "wikidata": "https://www.wikidata.org/wiki/Q3399482",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/212david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/212david.html",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -1292,7 +1334,8 @@
     "museum_id": "louvre",
     "qid": "Q3399448",
     "wikidata": "https://www.wikidata.org/wiki/Q3399448",
-    "wga_url": "https://www.wga.hu/html/d/david_j/2/215david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/2/215david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1334,7 +1377,8 @@
       "qid": "Q66839349",
       "url": "https://www.wikidata.org/wiki/Q66839349"
      }
-    ]
+    ],
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1342,8 +1386,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.07972222,
-     48.30111111
+     4.07972,
+     48.30111
     ]
    },
    "properties": {
@@ -1379,7 +1423,9 @@
       "source": "Wikipedia list",
       "title": "Antoinette Gabrielle Charpentier Danton"
      }
-    ]
+    ],
+    "museum_id": "musee-des-beaux-arts-de-troyes",
+    "location_src": "Musée des Beaux-Arts de Troyes"
    }
   },
   {
@@ -1414,7 +1460,8 @@
     "country": "Belgium",
     "qid": "Q636537",
     "wikidata": "https://www.wikidata.org/wiki/Q636537",
-    "wga_url": "https://www.wga.hu/html/d/david_j/3/302david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/3/302david.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1454,7 +1501,8 @@
       "qid": "Q2872714",
       "url": "https://www.wikidata.org/wiki/Q2872714"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -1488,7 +1536,8 @@
     "museum_id": "calvet-museum",
     "qid": "Q3210859",
     "wikidata": "https://www.wikidata.org/wiki/Q3210859",
-    "wga_url": "https://www.wga.hu/html/d/david_j/3/303david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/3/303david.html",
+    "location_src": "Calvet Museum"
    }
   },
   {
@@ -1496,8 +1545,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -1505,7 +1554,7 @@
     "title": "Vue des Jardins du Luxembourg",
     "year": "1794",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20des%20Jardins%20du%20Luxembourg%20%281794%29%20Jacques%20Louis%20David.png?width=500",
@@ -1533,7 +1582,9 @@
       "source": "Wikipedia list",
       "title": "View of the Luxembourg Gardens"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1568,7 +1619,8 @@
     "museum_id": "louvre",
     "qid": "Q3399458",
     "wikidata": "https://www.wikidata.org/wiki/Q3399458",
-    "wga_url": "https://www.wga.hu/html/d/david_j/3/308david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/3/308david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1603,7 +1655,8 @@
     "museum_id": "national-gallery",
     "qid": "Q3399429",
     "wikidata": "https://www.wikidata.org/wiki/Q3399429",
-    "wga_url": "https://www.wga.hu/html/d/david_j/3/305david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/3/305david.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1651,7 +1704,8 @@
       "qid": "Q3387593",
       "url": "https://www.wikidata.org/wiki/Q3387593"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -1686,7 +1740,8 @@
     "museum_id": "louvre",
     "qid": "Q1314013",
     "wikidata": "https://www.wikidata.org/wiki/Q1314013",
-    "wga_url": "https://www.wga.hu/html/d/david_j/3/313david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/3/313david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1720,7 +1775,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q3399485",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399485"
+    "wikidata": "https://www.wikidata.org/wiki/Q3399485",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1755,7 +1811,8 @@
     "museum_id": "louvre",
     "qid": "Q2619037",
     "wikidata": "https://www.wikidata.org/wiki/Q2619037",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/401david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/401david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1763,8 +1820,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11436,
+     42.37409
     ]
    },
    "properties": {
@@ -1795,7 +1852,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q70781074 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -1829,7 +1887,8 @@
     },
     "museum_id": "chateau-de-malmaison",
     "qid": "Q59201",
-    "wikidata": "https://www.wikidata.org/wiki/Q59201"
+    "wikidata": "https://www.wikidata.org/wiki/Q59201",
+    "location_src": "Château de Malmaison"
    }
   },
   {
@@ -1863,7 +1922,8 @@
     "museum_id": "timken-museum-of-art",
     "country": "United States",
     "qid": "Q3399419",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399419"
+    "wikidata": "https://www.wikidata.org/wiki/Q3399419",
+    "location_src": "Timken Museum of Art"
    }
   },
   {
@@ -1871,8 +1931,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -1897,7 +1957,8 @@
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "qid": "Q3399447",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399447"
+    "wikidata": "https://www.wikidata.org/wiki/Q3399447",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -1905,8 +1966,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -1928,7 +1989,8 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "philadelphia-museum-of-art"
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -1963,7 +2025,8 @@
     "museum_id": "louvre",
     "qid": "Q3399514",
     "wikidata": "https://www.wikidata.org/wiki/Q3399514",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/410david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/410david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1998,7 +2061,8 @@
     "museum_id": "louvre",
     "qid": "Q1231009",
     "wikidata": "https://www.wikidata.org/wiki/Q1231009",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2006,8 +2070,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2033,7 +2097,8 @@
     "country": "Russia",
     "qid": "Q3473161",
     "wikidata": "https://www.wikidata.org/wiki/Q3473161",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/411david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/411david.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2066,7 +2131,8 @@
     "museum_id": "museum-of-the-history-of-france",
     "qid": "Q1231009",
     "wikidata": "https://www.wikidata.org/wiki/Q1231009",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html",
+    "location_src": "Museum of the History of France"
    }
   },
   {
@@ -2099,7 +2165,8 @@
     },
     "museum_id": "versailles",
     "qid": "Q3208312",
-    "wikidata": "https://www.wikidata.org/wiki/Q3208312"
+    "wikidata": "https://www.wikidata.org/wiki/Q3208312",
+    "location_src": "Versailles"
    }
   },
   {
@@ -2141,7 +2208,8 @@
       "qid": "Q3399490",
       "url": "https://www.wikidata.org/wiki/Q3399490"
      }
-    ]
+    ],
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -2176,7 +2244,8 @@
     "country": "United States",
     "qid": "Q1313605",
     "wikidata": "https://www.wikidata.org/wiki/Q1313605",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/412david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/412david.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2218,7 +2287,8 @@
       "qid": "Q29862474",
       "url": "https://www.wikidata.org/wiki/Q29862474"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -2258,7 +2328,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q15615000 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2266,8 +2337,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -2292,7 +2363,8 @@
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "qid": "Q72379091",
-    "wikidata": "https://www.wikidata.org/wiki/Q72379091"
+    "wikidata": "https://www.wikidata.org/wiki/Q72379091",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -2327,7 +2399,8 @@
     "museum_id": "louvre",
     "qid": "Q972295",
     "wikidata": "https://www.wikidata.org/wiki/Q972295",
-    "wga_url": "https://www.wga.hu/html/d/david_j/4/415david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/4/415david.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2369,7 +2442,8 @@
       "qid": "Q19911964",
       "url": "https://www.wikidata.org/wiki/Q19911964"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2377,8 +2451,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -2386,7 +2460,7 @@
     "title": "Portrait of the Comtesse Vilain XIIII and her Daughter Louise",
     "year": "1816",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtesse%20Vilain%20XIIII%20JLDavid.jpg?width=500",
@@ -2414,7 +2488,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of the Countess Vilain XIIII and her Daughter Louise"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2448,7 +2524,8 @@
     },
     "museum_id": "cleveland-museum-of-art",
     "qid": "Q3201883",
-    "wikidata": "https://www.wikidata.org/wiki/Q3201883"
+    "wikidata": "https://www.wikidata.org/wiki/Q3201883",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -2483,7 +2560,8 @@
     "museum_id": "getty-center",
     "qid": "Q3230385",
     "wikidata": "https://www.wikidata.org/wiki/Q3230385",
-    "wga_url": "https://www.wga.hu/html/d/david_j/5/504david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/5/504david.html",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -2513,7 +2591,8 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "louvre"
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2522,7 +2601,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -2547,7 +2626,8 @@
     },
     "museum_id": "kimbell-art-museum",
     "qid": "Q3207608",
-    "wikidata": "https://www.wikidata.org/wiki/Q3207608"
+    "wikidata": "https://www.wikidata.org/wiki/Q3207608",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -2589,7 +2669,8 @@
       "qid": "Q2961038",
       "url": "https://www.wikidata.org/wiki/Q2961038"
      }
-    ]
+    ],
+    "location_src": "Getty Center"
    }
   },
   {
@@ -2624,7 +2705,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q835286",
     "wikidata": "https://www.wikidata.org/wiki/Q835286",
-    "wga_url": "https://www.wga.hu/html/d/david_j/5/505david.html"
+    "wga_url": "https://www.wga.hu/html/d/david_j/5/505david.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -2657,7 +2739,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q29643408",
-    "wikidata": "https://www.wikidata.org/wiki/Q29643408"
+    "wikidata": "https://www.wikidata.org/wiki/Q29643408",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2665,8 +2748,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2697,7 +2780,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q64566895 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2705,8 +2789,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2737,7 +2821,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q64567000 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2745,8 +2830,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.120277777,
-     48.804722222
+     2.12028,
+     48.80472
     ]
    },
    "properties": {
@@ -2774,7 +2859,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palace-of-versailles",
+    "location_src": "Palace of Versailles"
    }
   },
   {
@@ -2782,8 +2869,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.120277777,
-     48.804722222
+     2.12028,
+     48.80472
     ]
    },
    "properties": {
@@ -2811,7 +2898,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palace-of-versailles",
+    "location_src": "Palace of Versailles"
    }
   },
   {
@@ -2848,7 +2937,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -2856,8 +2947,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -2885,7 +2976,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2893,8 +2986,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.616499,
-     39.296425
+     -76.6165,
+     39.29642
     ]
    },
    "properties": {
@@ -2922,7 +3015,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "walters-art-museum",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -2930,15 +3025,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
     "title": "Napoleon Crossing the Alps",
     "year": "1800",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -2959,7 +3054,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -2967,16 +3064,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.967222222,
-     40.771111111
+     -73.9672,
+     40.7711
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
     "title": "The Comtesse Daru",
     "year": "1810",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
+    "location": "Frick Collection",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtesse%20Daru%20-%20David%201810.jpg?width=500",
@@ -2996,7 +3093,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "frick-collection",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -3004,8 +3103,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.166848,
-     48.8708
+     2.16694,
+     48.87083
     ]
    },
    "properties": {
@@ -3013,7 +3112,7 @@
     "title": "Napoleon Crossing the Alps",
     "year": "1800",
     "location": "Château de Malmaison",
-    "city": "Rueil-Malmaison",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Napoleon%20crossing%20the%20Alps%20-%20Malmaison2.jpg?width=500",
@@ -3033,7 +3132,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chateau-de-malmaison",
+    "location_src": "Château de Malmaison"
    }
   },
   {
@@ -3041,7 +3142,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -3070,7 +3171,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -3078,8 +3181,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -3107,7 +3210,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -3115,8 +3220,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.02305556,
-     47.24027778
+     6.02306,
+     47.24028
     ]
    },
    "properties": {
@@ -3144,7 +3249,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-et-d-archeologie-de-besancon",
+    "location_src": "Musée des Beaux-Arts et d'Archéologie de Besançon"
    }
   },
   {
@@ -3152,8 +3259,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -3171,7 +3278,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21618051",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -3179,8 +3288,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.359166666,
-     34.063333333
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -3208,7 +3317,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -3216,8 +3327,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.500842,
-     37.784466
+     -122.50084,
+     37.78447
     ]
    },
    "properties": {
@@ -3245,7 +3356,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "legion-of-honor",
+    "location_src": "Legion of Honor"
    }
   },
   {
@@ -3253,8 +3366,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.500842,
-     37.784466
+     -122.50084,
+     37.78447
     ]
    },
    "properties": {
@@ -3282,7 +3395,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "legion-of-honor",
+    "location_src": "Legion of Honor"
    }
   },
   {
@@ -3290,8 +3405,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -3319,7 +3434,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-rouen",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -3327,8 +3444,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.2034853,
-     48.01026486
+     0.20346,
+     48.01026
     ]
    },
    "properties": {
@@ -3356,7 +3473,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-de-tesse",
+    "location_src": "Musée de Tessé"
    }
   },
   {
@@ -3364,16 +3483,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.336111111,
-     48.860194444
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
     "title": "Portrait of Madame Emilie Seriziat and her Son",
     "year": "1795",
-    "location": "Room 702",
-    "city": "1st arrondissement of Paris",
+    "location": "Louvre",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madame-Seriziat%20Jacques-Louis-David%201795.jpg?width=500",
@@ -3393,7 +3512,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3401,8 +3522,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3410,7 +3531,7 @@
     "title": "Portrait d'Alexandre Lenoir",
     "year": "1816",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexandre%20Lenoir%20by%20Jacques%20Louis%20David.jpg?width=500",
@@ -3430,7 +3551,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3438,8 +3561,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3447,7 +3570,7 @@
     "title": "Mr. and Mrs. Antoine Mongez",
     "year": "1812",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20Mongez-David.jpg?width=500",
@@ -3467,7 +3590,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3475,8 +3600,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3484,7 +3609,7 @@
     "title": "Catherine-Marie-Jeanne Tallard",
     "year": "1795",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%201754%20Marie%20Jeanne%20Tallard%2007265%20recadr%C3%A9.JPG?width=500",
@@ -3504,7 +3629,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3512,8 +3639,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -3541,7 +3668,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -3549,8 +3678,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3558,7 +3687,7 @@
     "title": "Monsieur Meyer",
     "year": "1795",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portrait%20of%20Gaspar%20Mayer%20-%20WGA6074.jpg?width=500",
@@ -3578,7 +3707,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3586,8 +3717,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3595,7 +3726,7 @@
     "title": "Portrait présumé de Le Goazre de Kervélégan",
     "year": "1790",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Filippo%20Mazzei.jpg?width=500",
@@ -3615,7 +3746,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3623,7 +3756,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -3642,7 +3775,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q122209589",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -3651,7 +3786,7 @@
     "type": "Point",
     "coordinates": [
      5.4525,
-     43.525555555
+     43.52556
     ]
    },
    "properties": {
@@ -3679,7 +3814,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-granet",
+    "location_src": "Musée Granet"
    }
   },
   {
@@ -3688,7 +3825,7 @@
     "type": "Point",
     "coordinates": [
      5.4525,
-     43.525555555
+     43.52556
     ]
    },
    "properties": {
@@ -3716,7 +3853,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-granet",
+    "location_src": "Musée Granet"
    }
   },
   {
@@ -3724,8 +3863,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.02305556,
-     47.24027778
+     6.02306,
+     47.24028
     ]
    },
    "properties": {
@@ -3753,7 +3892,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-et-d-archeologie-de-besancon",
+    "location_src": "Musée des Beaux-Arts et d'Archéologie de Besançon"
    }
   },
   {
@@ -3761,8 +3902,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.02305556,
-     47.24027778
+     6.02306,
+     47.24028
     ]
    },
    "properties": {
@@ -3790,7 +3931,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-et-d-archeologie-de-besancon",
+    "location_src": "Musée des Beaux-Arts et d'Archéologie de Besançon"
    }
   },
   {
@@ -3799,7 +3942,7 @@
     "type": "Point",
     "coordinates": [
      -118.1125,
-     34.129166666
+     34.12917
     ]
    },
    "properties": {
@@ -3827,7 +3970,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
    }
   },
   {
@@ -3835,8 +3980,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -3864,7 +4009,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -3872,8 +4019,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -3901,7 +4048,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -3938,7 +4087,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-grenoble",
+    "location_src": "Museum of Grenoble"
    }
   },
   {
@@ -3946,8 +4097,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.351667,
-     44.016944
+     1.35167,
+     44.01694
     ]
    },
    "properties": {
@@ -3975,7 +4126,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-ingres-bourdelle",
+    "location_src": "Musée Ingres Bourdelle"
    }
   },
   {
@@ -3983,8 +4136,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.61694444,
-     50.72555556
+     1.61694,
+     50.72556
     ]
    },
    "properties": {
@@ -4012,7 +4165,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chateau-musee-de-boulogne-sur-mer",
+    "location_src": "château-musée de Boulogne-sur-Mer"
    }
   },
   {
@@ -4020,8 +4175,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4029,7 +4184,7 @@
     "title": "Le Christ en croix",
     "year": "1782",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Le%20Christ%20en%20croix%2C%201782.jpg?width=500",
@@ -4057,7 +4212,9 @@
       "qid": "Q3221339",
       "url": "https://www.wikidata.org/wiki/Q3221339"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4065,8 +4222,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.042194,
-     47.320917
+     5.04219,
+     47.32092
     ]
    },
    "properties": {
@@ -4094,7 +4251,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-magnin",
+    "location_src": "Musée Magnin"
    }
   },
   {
@@ -4102,8 +4261,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.362745,
-     48.857375
+     2.36274,
+     48.85737
     ]
    },
    "properties": {
@@ -4131,7 +4290,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-carnavalet",
+    "location_src": "Musée Carnavalet"
    }
   },
   {
@@ -4139,8 +4300,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.362745,
-     48.857375
+     2.36274,
+     48.85737
     ]
    },
    "properties": {
@@ -4168,7 +4329,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-carnavalet",
+    "location_src": "Musée Carnavalet"
    }
   },
   {
@@ -4176,8 +4339,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.362745,
-     48.857375
+     2.36274,
+     48.85737
     ]
    },
    "properties": {
@@ -4205,7 +4368,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-carnavalet",
+    "location_src": "Musée Carnavalet"
    }
   },
   {
@@ -4213,8 +4378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.362745,
-     48.857375
+     2.36274,
+     48.85737
     ]
    },
    "properties": {
@@ -4242,7 +4407,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-carnavalet",
+    "location_src": "Musée Carnavalet"
    }
   },
   {
@@ -4250,15 +4417,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
     "title": "Portrait of Baroness Pauline Jeanin",
     "year": "1810",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -4279,7 +4446,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -4287,7 +4456,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -4316,7 +4485,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -4324,7 +4495,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -4353,7 +4524,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -4361,7 +4534,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944444,
+     12.57194,
      55.6725
     ]
    },
@@ -4370,7 +4543,7 @@
     "title": "Portrait of the Comte de Turenne",
     "year": "1816",
     "location": "Ny Carlsberg Glyptotek",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Henri%20Am%C3%A9d%C3%A9e%20Mercure%20de%20Turenne%20d%27Aynac%20%281776-1852%29.jpg?width=500",
@@ -4390,7 +4563,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek"
    }
   },
   {
@@ -4398,8 +4573,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.514444,
-     50.441111
+     30.51444,
+     50.44111
     ]
    },
    "properties": {
@@ -4427,7 +4602,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "khanenko-museum",
+    "location_src": "Khanenko Museum"
    }
   },
   {
@@ -4464,7 +4641,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -4473,7 +4652,7 @@
     "type": "Point",
     "coordinates": [
      2.3375,
-     48.87861111
+     48.87861
     ]
    },
    "properties": {
@@ -4501,7 +4680,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fondation-dosne-thiers",
+    "location_src": "Fondation Dosne-Thiers"
    }
   },
   {
@@ -4538,7 +4719,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-art-de-toulon",
+    "location_src": "Musée d'Art de Toulon"
    }
   },
   {
@@ -4575,7 +4758,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-de-l-histoire-de-france",
+    "location_src": "Musée de l'Histoire de France"
    }
   }
  ]

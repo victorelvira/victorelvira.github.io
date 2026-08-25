@@ -41,7 +41,8 @@
       "qid": "Q2276130",
       "url": "https://www.wikidata.org/wiki/Q2276130"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -75,7 +76,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q1368767",
-    "wikidata": "https://www.wikidata.org/wiki/Q1368767"
+    "wikidata": "https://www.wikidata.org/wiki/Q1368767",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -110,7 +112,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q321303",
     "wikidata": "https://www.wikidata.org/wiki/Q321303",
-    "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -145,7 +148,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q321303",
     "wikidata": "https://www.wikidata.org/wiki/Q321303",
-    "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -187,7 +191,8 @@
       "qid": "Q2389534",
       "url": "https://www.wikidata.org/wiki/Q2389534"
      }
-    ]
+    ],
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -229,7 +234,8 @@
       "qid": "Q2844476",
       "url": "https://www.wikidata.org/wiki/Q2844476"
      }
-    ]
+    ],
+    "location_src": "Groeningemuseum"
    }
   },
   {
@@ -260,7 +266,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "groeningemuseum",
-    "country": "Belgium"
+    "country": "Belgium",
+    "location_src": "Groeningemuseum"
    }
   },
   {
@@ -295,7 +302,8 @@
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q2390224",
     "wikidata": "https://www.wikidata.org/wiki/Q2390224",
-    "wga_url": "https://www.wga.hu/html/b/bosch/6venice/st_julib.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/6venice/st_julib.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -330,7 +338,8 @@
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q2390224",
     "wikidata": "https://www.wikidata.org/wiki/Q2390224",
-    "wga_url": "https://www.wga.hu/html/b/bosch/6venice/st_julib.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/6venice/st_julib.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -365,7 +374,8 @@
     "museum_id": "museu-nacional-de-arte-antiga",
     "qid": "Q1217288",
     "wikidata": "https://www.wikidata.org/wiki/Q1217288",
-    "wga_url": "https://www.wga.hu/html/b/bosch/90anthon/1triptyc.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/90anthon/1triptyc.html",
+    "location_src": "Museu Nacional de Arte Antiga"
    }
   },
   {
@@ -400,7 +410,8 @@
     "museum_id": "museu-nacional-de-arte-antiga",
     "qid": "Q1217288",
     "wikidata": "https://www.wikidata.org/wiki/Q1217288",
-    "wga_url": "https://www.wga.hu/html/b/bosch/90anthon/1triptyc.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/90anthon/1triptyc.html",
+    "location_src": "Museu Nacional de Arte Antiga"
    }
   },
   {
@@ -408,15 +419,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.36528,
-     48.20139
+     16.3651,
+     48.20125
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "The Last Judgment",
     "year": "c. 1500–1505",
-    "city": "Austria",
+    "city": "Vienna",
     "location": "Academy of Fine Arts Vienna",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
@@ -434,7 +445,8 @@
     "museum_id": "academy-of-fine-arts-vienna",
     "country": "Austria",
     "qid": "Q1387483",
-    "wikidata": "https://www.wikidata.org/wiki/Q1387483"
+    "wikidata": "https://www.wikidata.org/wiki/Q1387483",
+    "location_src": "Academy of Fine Arts Vienna"
    }
   },
   {
@@ -468,7 +480,8 @@
     },
     "museum_id": "academy-of-fine-arts",
     "qid": "Q1387483",
-    "wikidata": "https://www.wikidata.org/wiki/Q1387483"
+    "wikidata": "https://www.wikidata.org/wiki/Q1387483",
+    "location_src": "Academy of Fine Arts"
    }
   },
   {
@@ -510,7 +523,8 @@
       "qid": "Q2213811",
       "url": "https://www.wikidata.org/wiki/Q2213811"
      }
-    ]
+    ],
+    "location_src": "El Escorial"
    }
   },
   {
@@ -541,7 +555,8 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -577,7 +592,8 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -611,7 +627,8 @@
     },
     "museum_id": "museum-boijmans-van-beuningen",
     "qid": "Q2284243",
-    "wikidata": "https://www.wikidata.org/wiki/Q2284243"
+    "wikidata": "https://www.wikidata.org/wiki/Q2284243",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -646,7 +663,8 @@
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q16944824",
     "wikidata": "https://www.wikidata.org/wiki/Q16944824",
-    "wga_url": "https://www.wga.hu/html/b/bosch/6venice/2hell1.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/6venice/2hell1.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -664,7 +682,7 @@
     "year": "c. 1560",
     "city": "Cologne",
     "country": "Germany",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "66 × 43 cm",
@@ -686,7 +704,8 @@
       "was": "generally accepted",
       "note": "dated 1560, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -724,7 +743,9 @@
       "was": "generally accepted",
       "note": "dated 1568, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "country": "Netherlands",
+    "location_src": "Noordbrabants Museum"
    }
   },
   {
@@ -766,7 +787,8 @@
       "qid": "Q2489939",
       "url": "https://www.wikidata.org/wiki/Q2489939"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -774,8 +796,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -800,7 +822,8 @@
     },
     "museum_id": "philadelphia-museum-of-art",
     "qid": "Q4680459",
-    "wikidata": "https://www.wikidata.org/wiki/Q4680459"
+    "wikidata": "https://www.wikidata.org/wiki/Q4680459",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -832,7 +855,8 @@
     },
     "museum_id": "national-trust",
     "wga_url": "https://www.wga.hu/html/b/bosch/91adorat/11centre.html",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "location_src": "National Trust"
    }
   },
   {
@@ -867,7 +891,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q2390211",
     "wikidata": "https://www.wikidata.org/wiki/Q2390211",
-    "wga_url": "https://www.wga.hu/html/b/bosch/1early/08crucif.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/1early/08crucif.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -910,7 +935,8 @@
       "qid": "Q2567058",
       "url": "https://www.wikidata.org/wiki/Q2567058"
      }
-    ]
+    ],
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -949,7 +975,8 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -984,7 +1011,8 @@
     "museum_id": "royal-palace-of-madrid",
     "qid": "Q2328603",
     "wikidata": "https://www.wikidata.org/wiki/Q2328603",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/14carryi.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/14carryi.html",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -1027,7 +1055,8 @@
       "qid": "Q2733729",
       "url": "https://www.wikidata.org/wiki/Q2733729"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1066,7 +1095,8 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "El Escorial"
    }
   },
   {
@@ -1074,8 +1104,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -1100,7 +1130,8 @@
     },
     "museum_id": "philadelphia-museum-of-art",
     "qid": "Q924482",
-    "wikidata": "https://www.wikidata.org/wiki/Q924482"
+    "wikidata": "https://www.wikidata.org/wiki/Q924482",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -1135,7 +1166,8 @@
     "museum_id": "stadel-museum",
     "qid": "Q430069",
     "wikidata": "https://www.wikidata.org/wiki/Q430069",
-    "wga_url": "https://www.wga.hu/html/b/bosch/1early/06ecce1d.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/1early/06ecce1d.html",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -1169,7 +1201,8 @@
     },
     "museum_id": "museum-boijmans-van-beuningen",
     "qid": "Q2329843",
-    "wikidata": "https://www.wikidata.org/wiki/Q2329843"
+    "wikidata": "https://www.wikidata.org/wiki/Q2329843",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -1177,8 +1210,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.024722222,
-     52.231666666
+     21.02472,
+     52.23167
     ]
    },
    "properties": {
@@ -1212,7 +1245,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-museum-in-warsaw",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -1247,7 +1282,8 @@
     "qid": "Q2566840",
     "wikidata": "https://www.wikidata.org/wiki/Q2566840",
     "wga_url": "https://www.wga.hu/html/b/bosch/5panels/09jerome.html",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -1282,7 +1318,8 @@
     "museum_id": "museum-boijmans-van-beuningen",
     "qid": "Q2565646",
     "wikidata": "https://www.wikidata.org/wiki/Q2565646",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/01christ.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/01christ.html",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -1317,7 +1354,8 @@
     "museum_id": "museo-lazaro-galdiano",
     "qid": "Q2453980",
     "wikidata": "https://www.wikidata.org/wiki/Q2453980",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/04stjohn.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/04stjohn.html",
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -1325,17 +1363,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "St. John the Evangelist on Patmos",
     "year": "c. 1490–1495",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "63 × 43.3 cm",
@@ -1349,10 +1387,11 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q2390197",
     "wikidata": "https://www.wikidata.org/wiki/Q2390197",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/05patmos.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/05patmos.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1360,17 +1399,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "Outside panel of St. John the Evangelist on Patmos",
     "year": "c. 1490–1495",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "diameter 39 cm.",
@@ -1383,7 +1422,8 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie"
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1391,8 +1431,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -1401,7 +1441,7 @@
     "year": "c. 1500–1510",
     "city": "Kansas City",
     "country": "United States",
-    "location": "Nelson-Atkins Museum of Art",
+    "location": "The Nelson-Atkins Museum of Art",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "38.6 x 25.1 cm",
@@ -1415,7 +1455,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "nelson-atkins-museum-of-art",
+    "museum_id": "the-nelson-atkins-museum-of-art",
     "qid": "Q22669126",
     "wikidata": "https://www.wikidata.org/wiki/Q22669126",
     "_merged": [
@@ -1425,7 +1465,8 @@
       "qid": "Q22669126",
       "url": "https://www.wikidata.org/wiki/Q22669126"
      }
-    ]
+    ],
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -1465,7 +1506,8 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1500,7 +1542,8 @@
     "museum_id": "louvre",
     "qid": "Q405814",
     "wikidata": "https://www.wikidata.org/wiki/Q405814",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/11shipfo.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/11shipfo.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1508,8 +1551,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -1543,7 +1586,8 @@
       "qid": "Q2091114",
       "url": "https://www.wikidata.org/wiki/Q2091114"
      }
-    ]
+    ],
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -1578,7 +1622,8 @@
     "museum_id": "national-gallery-of-art",
     "qid": "Q2203011",
     "wikidata": "https://www.wikidata.org/wiki/Q2203011",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/10deathm.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/10deathm.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1613,7 +1658,8 @@
     "museum_id": "museum-boijmans-van-beuningen",
     "qid": "Q2400652",
     "wikidata": "https://www.wikidata.org/wiki/Q2400652",
-    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/03wayfar.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/5panels/03wayfar.html",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -1648,7 +1694,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q2270768",
     "wikidata": "https://www.wikidata.org/wiki/Q2270768",
-    "wga_url": "https://www.wga.hu/html/b/bosch/1early/09folly.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/1early/09folly.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1683,7 +1730,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q2304870",
     "wikidata": "https://www.wikidata.org/wiki/Q2304870",
-    "wga_url": "https://www.wga.hu/html/b/bosch/2deadly/7deadly4.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/2deadly/7deadly4.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1731,7 +1779,8 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1770,7 +1819,8 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Musée Municipal"
    }
   },
   {
@@ -1805,7 +1855,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q5689364",
     "wikidata": "https://www.wikidata.org/wiki/Q5689364",
-    "wga_url": "https://www.wga.hu/html/b/bosch/1early/02fragme.html"
+    "wga_url": "https://www.wga.hu/html/b/bosch/1early/02fragme.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1848,7 +1899,8 @@
       "qid": "Q2536010",
       "url": "https://www.wikidata.org/wiki/Q2536010"
      }
-    ]
+    ],
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -1856,8 +1908,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.725277777,
-     51.053611111
+     3.72528,
+     51.05361
     ]
    },
    "properties": {
@@ -1875,7 +1927,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29064004",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ghent",
+    "location_src": "Ghent"
    }
   },
   {
@@ -1883,8 +1937,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1902,7 +1956,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540151",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -1910,8 +1966,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1929,7 +1985,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540153",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -1937,8 +1995,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1956,7 +2014,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540155",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -1964,8 +2024,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1983,7 +2043,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540157",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -1991,8 +2053,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -2010,7 +2072,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1852892",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -2019,7 +2083,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -2045,7 +2109,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2054,7 +2120,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -2072,7 +2138,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5108662",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2080,8 +2148,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2099,7 +2167,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2401792",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2107,8 +2177,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2126,7 +2196,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26332660",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2134,8 +2206,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2153,7 +2225,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26821398",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2161,8 +2235,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2188,7 +2262,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2196,8 +2272,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2215,7 +2291,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q14513912",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2223,8 +2301,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2250,7 +2328,9 @@
       "qid": "Q2390197",
       "url": "https://www.wikidata.org/wiki/Q2390197"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2258,8 +2338,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.340416666,
-     45.433666666
+     12.34042,
+     45.43367
     ]
    },
    "properties": {
@@ -2277,7 +2357,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16944498",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "doge-s-palace",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2285,8 +2367,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.340416666,
-     45.433666666
+     12.34042,
+     45.43367
     ]
    },
    "properties": {
@@ -2304,7 +2386,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18707135",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "doge-s-palace",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2312,8 +2396,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.125833,
-     52.083333
+     5.12583,
+     52.08333
     ]
    },
    "properties": {
@@ -2339,7 +2423,9 @@
       "was": "generally accepted",
       "note": "dated 1525, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "centraal-museum",
+    "location_src": "Centraal Museum"
    }
   },
   {
@@ -2347,8 +2433,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.328139,
-     45.431078
+     12.32814,
+     45.43108
     ]
    },
    "properties": {
@@ -2366,7 +2452,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9301386",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gallerie-dell-accademia",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -2374,8 +2462,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.685848,
-     40.436911
+     -3.68585,
+     40.43691
     ]
    },
    "properties": {
@@ -2401,7 +2489,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-lazaro-galdiano",
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -2409,8 +2499,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -2436,7 +2526,9 @@
       "was": "generally accepted",
       "note": "dated 1549, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -2444,8 +2536,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -2471,7 +2563,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -2479,8 +2573,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -2506,7 +2600,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -2514,8 +2610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -2541,7 +2637,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -2549,8 +2647,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -2568,7 +2666,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q1851182",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -2576,8 +2676,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -2595,7 +2695,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2261193",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -2622,7 +2724,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26678545",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -2630,8 +2734,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.0611729,
-     50.6309226
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -2657,7 +2761,9 @@
       "was": "generally accepted",
       "note": "dated 1560, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "palais-des-beaux-arts-de-lille",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -2692,7 +2798,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-valenciennes",
+    "location_src": "Musée des Beaux-Arts de Valenciennes"
    }
   },
   {
@@ -2700,8 +2808,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     174.766237,
-     -36.851354
+     174.76624,
+     -36.85135
     ]
    },
    "properties": {
@@ -2719,7 +2827,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27883390",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "auckland-art-gallery",
+    "location_src": "Auckland Art Gallery"
    }
   },
   {
@@ -2746,7 +2856,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2397537",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "chrysler-museum-of-art",
+    "location_src": "Chrysler Museum of Art"
    }
   },
   {
@@ -2754,8 +2866,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.30472,
-     51.68639
+     5.3047,
+     51.6864
     ]
    },
    "properties": {
@@ -2773,7 +2885,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26925956",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "noordbrabants-museum",
+    "location_src": "Noordbrabants Museum"
    }
   },
   {
@@ -2781,8 +2895,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2808,7 +2922,9 @@
       "was": "generally accepted",
       "note": "dated 1401, before birth (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2816,8 +2932,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2843,7 +2959,9 @@
       "was": "generally accepted",
       "note": "dated 1401, before birth (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2851,8 +2969,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2870,7 +2988,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60048739",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2878,8 +2998,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2905,7 +3025,9 @@
       "was": "generally accepted",
       "note": "dated 1750, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2913,8 +3035,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -2932,7 +3054,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55420717",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -2940,8 +3064,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -2959,7 +3083,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q114804420",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -2994,7 +3120,9 @@
       "was": "generally accepted",
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -3021,7 +3149,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118632112",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -3048,7 +3178,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118632172",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -3075,7 +3207,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119650979",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -3102,7 +3236,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118678738",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "leicester-museum-art-gallery",
+    "location_src": "Leicester Museum & Art Gallery"
    }
   },
   {
@@ -3110,8 +3246,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.241119,
-     51.874314
+     6.24112,
+     51.87431
     ]
    },
    "properties": {
@@ -3137,7 +3273,9 @@
       "was": "generally accepted",
       "note": "dated 1586, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "castle-huis-bergh",
+    "location_src": "Castle Huis Bergh"
    }
   },
   {
@@ -3145,8 +3283,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.241119,
-     51.874314
+     6.24112,
+     51.87431
     ]
    },
    "properties": {
@@ -3172,7 +3310,9 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "castle-huis-bergh",
+    "location_src": "Castle Huis Bergh"
    }
   },
   {
@@ -3199,7 +3339,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2104369",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "centre-for-old-arts-t-vliegend-peert",
+    "location_src": "Centre for Old Arts 't Vliegend Peert"
    }
   }
  ]

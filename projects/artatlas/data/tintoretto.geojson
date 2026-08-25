@@ -17,7 +17,7 @@
     "year": "1568",
     "city": "Fort Worth",
     "country": "United States",
-    "location": "Museo d'arte Kimbell",
+    "location": "Kimbell Art Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -40,8 +40,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-d-arte-kimbell",
-    "qid": "Q105742280"
+    "museum_id": "kimbell-art-museum",
+    "qid": "Q105742280",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -83,7 +84,8 @@
      }
     },
     "museum_id": "musee-d-art-et-d-histoire-de-narbonne",
-    "qid": "Q107690121"
+    "qid": "Q107690121",
+    "location_src": "Musée d'art et d'histoire de Narbonne"
    }
   },
   {
@@ -133,7 +135,8 @@
       "qid": "Q107695009",
       "url": "https://www.wikidata.org/wiki/Q107695009"
      }
-    ]
+    ],
+    "location_src": "Musée d'art et d'histoire de Narbonne"
    }
   },
   {
@@ -176,7 +179,8 @@
     },
     "museum_id": "madonna-dell-orto",
     "qid": "Q108331310",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2a/5moses.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2a/5moses.html",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -218,7 +222,8 @@
      }
     },
     "museum_id": "stift-haug-wurzburg",
-    "qid": "Q108760656"
+    "qid": "Q108760656",
+    "location_src": "Stift Haug, Würzburg"
    }
   },
   {
@@ -259,7 +264,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q110697909"
+    "qid": "Q110697909",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -292,7 +298,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "fuhrermuseum",
-    "qid": "Q111640314"
+    "qid": "Q111640314",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -325,7 +332,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "fuhrermuseum",
-    "qid": "Q111645066"
+    "qid": "Q111645066",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -369,7 +377,8 @@
      }
     },
     "museum_id": "national-museum-in-poznan",
-    "qid": "Q1125410"
+    "qid": "Q1125410",
+    "location_src": "National Museum in Poznań"
    }
   },
   {
@@ -411,7 +420,8 @@
      }
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q114273218"
+    "qid": "Q114273218",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -453,7 +463,8 @@
      }
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q114273581"
+    "qid": "Q114273581",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -495,7 +506,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q114647547"
+    "qid": "Q114647547",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -537,7 +549,8 @@
      }
     },
     "museum_id": "national-museum-of-art-of-romania",
-    "qid": "Q114860155"
+    "qid": "Q114860155",
+    "location_src": "National Museum of Art of Romania"
    }
   },
   {
@@ -545,8 +558,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.3339,
-     45.44088
+     12.33389,
+     45.44056
     ]
    },
    "properties": {
@@ -555,7 +568,7 @@
     "year": "1600",
     "city": "Venice",
     "country": "Italy",
-    "location": "Galleria Giorgio Franchetti alla Ca' d'Oro",
+    "location": "Ca' d'Oro",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -569,9 +582,10 @@
      "url": "https://www.wikidata.org/wiki/Q114894357",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "galleria-giorgio-franchetti-alla-ca-d-oro",
+    "museum_id": "ca-d-oro",
     "qid": "Q114894357",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/06priuli.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/06priuli.html",
+    "location_src": "Ca' d'Oro"
    }
   },
   {
@@ -613,7 +627,8 @@
     },
     "museum_id": "doge-s-palace",
     "qid": "Q115441585",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/1antico3.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/1antico3.html",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -663,7 +678,8 @@
       "qid": "Q115676508",
       "url": "https://www.wikidata.org/wiki/Q115676508"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts of Nancy"
    }
   },
   {
@@ -695,7 +711,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "milan",
-    "qid": "Q116207700"
+    "qid": "Q116207700",
+    "location_src": "Milan"
    }
   },
   {
@@ -737,7 +754,8 @@
      }
     },
     "museum_id": "church-of-san-giorgio-maggiore",
-    "qid": "Q116771885"
+    "qid": "Q116771885",
+    "location_src": "Church of San Giorgio Maggiore"
    }
   },
   {
@@ -779,7 +797,8 @@
      }
     },
     "museum_id": "church-of-san-giorgio-maggiore",
-    "qid": "Q116780072"
+    "qid": "Q116780072",
+    "location_src": "Church of San Giorgio Maggiore"
    }
   },
   {
@@ -824,7 +843,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q11753618"
+    "qid": "Q11753618",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -867,7 +887,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q11769022",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/3ground/5maryma.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/3ground/5maryma.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -910,7 +931,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q11769269",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/3ground/6maryeg.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/3ground/6maryeg.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -954,9 +976,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q11800904",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/7/3arsinoe.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/7/3arsinoe.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -999,7 +1022,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q11820510",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/1/01braze.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/1/01braze.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -1041,7 +1065,8 @@
      }
     },
     "museum_id": "national-museum-in-warsaw",
-    "qid": "Q11824966"
+    "qid": "Q11824966",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -1086,7 +1111,8 @@
     },
     "museum_id": "madonna-dell-orto",
     "qid": "Q11826430",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2a/1prese2.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2a/1prese2.html",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -1127,7 +1153,8 @@
      }
     },
     "museum_id": "doge-s-palace",
-    "qid": "Q118366485"
+    "qid": "Q118366485",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -1135,15 +1162,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.17194,
-     51.49667
+     -0.17162,
+     51.49685
     ]
    },
    "properties": {
     "painter": "Tintoretto",
     "title": "Self Portrait as a Young Man",
     "year": "1548",
-    "city": "London",
+    "city": "Royal Borough of Kensington and Chelsea",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "kind": "museum",
@@ -1169,7 +1196,8 @@
      }
     },
     "museum_id": "victoria-and-albert-museum",
-    "qid": "Q118874873"
+    "qid": "Q118874873",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -1211,7 +1239,8 @@
      }
     },
     "museum_id": "museu-nacional-d-art-de-catalunya",
-    "qid": "Q11945403"
+    "qid": "Q11945403",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -1253,7 +1282,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-caen",
-    "qid": "Q120098062"
+    "qid": "Q120098062",
+    "location_src": "Musée des Beaux-Arts de Caen"
    }
   },
   {
@@ -1294,7 +1324,8 @@
      }
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q120885253"
+    "qid": "Q120885253",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -1327,7 +1358,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "castelvecchio-museum",
-    "qid": "Q122169955"
+    "qid": "Q122169955",
+    "location_src": "Castelvecchio Museum"
    }
   },
   {
@@ -1342,9 +1374,9 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "The body of saint Mark is taken away by the christians",
-    "city": "Brussels",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
-    "location": "Oldmasters Museum",
+    "location": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -1357,8 +1389,9 @@
      "url": "https://www.wikidata.org/wiki/Q123557150",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "oldmasters-museum",
-    "qid": "Q123557150"
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "qid": "Q123557150",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1400,7 +1433,8 @@
      }
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q123747291"
+    "qid": "Q123747291",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1442,7 +1476,8 @@
      }
     },
     "museum_id": "palazzo-colonna",
-    "qid": "Q124039068"
+    "qid": "Q124039068",
+    "location_src": "Palazzo Colonna"
    }
   },
   {
@@ -1473,7 +1508,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q124252018"
+    "qid": "Q124252018",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -1515,7 +1551,8 @@
      }
     },
     "museum_id": "palazzo-mansi-national-museum",
-    "qid": "Q126134892"
+    "qid": "Q126134892",
+    "location_src": "Palazzo Mansi National Museum"
    }
   },
   {
@@ -1557,7 +1594,8 @@
      }
     },
     "museum_id": "madonna-dell-orto",
-    "qid": "Q130552363"
+    "qid": "Q130552363",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -1586,7 +1624,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q131422009"
+    "qid": "Q131422009",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -1626,7 +1665,8 @@
      }
     },
     "museum_id": "national-museum-of-art-of-romania",
-    "qid": "Q131450157"
+    "qid": "Q131450157",
+    "location_src": "National Museum of Art of Romania"
    }
   },
   {
@@ -1655,7 +1695,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q131501826"
+    "qid": "Q131501826",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -1697,7 +1738,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q131543624"
+    "qid": "Q131543624",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1740,7 +1782,8 @@
     },
     "museum_id": "madonna-dell-orto",
     "qid": "Q131557880",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2a/3vision.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2a/3vision.html",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -1781,7 +1824,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q131579657"
+    "qid": "Q131579657",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1823,7 +1867,8 @@
      }
     },
     "museum_id": "galleria-palatina",
-    "qid": "Q131604575"
+    "qid": "Q131604575",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -1852,7 +1897,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q131613873"
+    "qid": "Q131613873",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1892,7 +1938,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q131613891"
+    "qid": "Q131613891",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1921,7 +1968,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q131627554"
+    "qid": "Q131627554",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -1950,7 +1998,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "madonna-dell-orto",
-    "qid": "Q131674410"
+    "qid": "Q131674410",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -1980,7 +2029,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q131674411"
+    "qid": "Q131674411",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -2021,7 +2071,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q131675994"
+    "qid": "Q131675994",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -2050,7 +2101,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "st-catherine-s-church",
-    "qid": "Q131676057"
+    "qid": "Q131676057",
+    "location_src": "St. Catherine's Church"
    }
   },
   {
@@ -2078,7 +2130,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-trovaso",
-    "qid": "Q131676064"
+    "qid": "Q131676064",
+    "location_src": "San Trovaso"
    }
   },
   {
@@ -2117,7 +2170,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q131704285"
+    "qid": "Q131704285",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2145,7 +2199,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "doge-s-palace",
-    "qid": "Q131813151"
+    "qid": "Q131813151",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2173,7 +2228,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "doge-s-palace",
-    "qid": "Q131813153"
+    "qid": "Q131813153",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2215,7 +2271,8 @@
     },
     "museum_id": "doge-s-palace",
     "qid": "Q131851100",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/2colleg1.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/2colleg1.html",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2243,7 +2300,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "doge-s-palace",
-    "qid": "Q131851135"
+    "qid": "Q131851135",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2261,7 +2319,7 @@
     "year": "1578",
     "city": "Cologne",
     "country": "Germany",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2285,7 +2343,8 @@
      }
     },
     "museum_id": "wallraf-richartz-museum",
-    "qid": "Q131928013"
+    "qid": "Q131928013",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -2327,7 +2386,8 @@
      }
     },
     "museum_id": "san-trovaso",
-    "qid": "Q131937081"
+    "qid": "Q131937081",
+    "location_src": "San Trovaso"
    }
   },
   {
@@ -2355,7 +2415,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "madonna-dell-orto",
-    "qid": "Q132148051"
+    "qid": "Q132148051",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -2383,7 +2444,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q133281056"
+    "qid": "Q133281056",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -2426,7 +2488,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q133832267",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/21portra.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/21portra.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -2468,7 +2531,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q135398968"
+    "qid": "Q135398968",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -2500,7 +2564,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "castelvecchio-museum",
-    "qid": "Q136488574"
+    "qid": "Q136488574",
+    "location_src": "Castelvecchio Museum"
    }
   },
   {
@@ -2533,7 +2598,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "castelvecchio-museum",
-    "qid": "Q136488675"
+    "qid": "Q136488675",
+    "location_src": "Castelvecchio Museum"
    }
   },
   {
@@ -2566,7 +2632,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "robilant-voena",
-    "qid": "Q136661430"
+    "qid": "Q136661430",
+    "location_src": "Robilant+Voena"
    }
   },
   {
@@ -2607,7 +2674,8 @@
      }
     },
     "museum_id": "national-galleries-of-palazzo-spinola",
-    "qid": "Q138978014"
+    "qid": "Q138978014",
+    "location_src": "National Galleries of Palazzo Spinola"
    }
   },
   {
@@ -2650,7 +2718,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q15974333"
+    "qid": "Q15974333",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2695,7 +2764,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q16553687",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/1albergo/2/3pilate.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/1albergo/2/3pilate.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -2739,7 +2809,8 @@
     },
     "museum_id": "doge-s-palace",
     "qid": "Q16607688",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/1antico2.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/1antico2.html",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -2747,7 +2818,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -2782,7 +2853,8 @@
     },
     "museum_id": "rijksmuseum",
     "qid": "Q17335357",
-    "wga_url": "https://www.wga.hu/html/r/robusti/marietta/ot_strada.html"
+    "wga_url": "https://www.wga.hu/html/r/robusti/marietta/ot_strada.html",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -2826,7 +2898,8 @@
      }
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q18203184"
+    "qid": "Q18203184",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -2869,7 +2942,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q18573257",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/6parad.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/6parad.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2915,7 +2989,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q18573258",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/27selfpo.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/27selfpo.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2957,7 +3032,8 @@
      }
     },
     "museum_id": "louvre",
-    "qid": "Q18573260"
+    "qid": "Q18573260",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2999,7 +3075,8 @@
      }
     },
     "museum_id": "louvre",
-    "qid": "Q18573261"
+    "qid": "Q18573261",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3042,7 +3119,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q18687914",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/23morosi.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/23morosi.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3085,7 +3163,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q18687918"
+    "qid": "Q18687918",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -3127,7 +3206,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-et-d-archeologie-de-besancon",
-    "qid": "Q18917830"
+    "qid": "Q18917830",
+    "location_src": "Musée des Beaux-Arts et d'Archéologie de Besançon"
    }
   },
   {
@@ -3173,7 +3253,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q1984131",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/09george.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/09george.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3217,7 +3298,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q20068251",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/7tesorie.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/7tesorie.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -3258,7 +3340,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q20091568"
+    "qid": "Q20091568",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3301,7 +3384,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q20176777",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/26procur.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/26procur.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3343,7 +3427,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20176783"
+    "qid": "Q20176783",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3385,7 +3470,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q204243"
+    "qid": "Q204243",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -3428,7 +3514,8 @@
     },
     "museum_id": "museum-of-fine-arts-ghent-msk",
     "qid": "Q21675723",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/14cornar.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/14cornar.html",
+    "location_src": "Museum of Fine Arts Ghent (MSK)"
    }
   },
   {
@@ -3474,7 +3561,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q2273890",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/1mark4.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/1mark4.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -3520,7 +3608,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q2274267",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/7/5milky.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/7/5milky.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3566,7 +3655,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q2393412",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/7/2vulcan.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/7/2vulcan.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3608,7 +3698,8 @@
      }
     },
     "museum_id": "national-museum-of-western-art",
-    "qid": "Q23949102"
+    "qid": "Q23949102",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -3654,7 +3745,8 @@
     },
     "museum_id": "church-of-san-giorgio-maggiore",
     "qid": "Q2472983",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/3lastsup.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/3lastsup.html",
+    "location_src": "Church of San Giorgio Maggiore"
    }
   },
   {
@@ -3698,7 +3790,8 @@
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q25444052"
+    "qid": "Q25444052",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -3740,7 +3833,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27698068"
+    "qid": "Q27698068",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3782,7 +3876,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q27941989"
+    "qid": "Q27941989",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3824,7 +3919,9 @@
      }
     },
     "museum_id": "royal-collection",
-    "qid": "Q27957609"
+    "qid": "Q27957609",
+    "city": "England",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -3867,7 +3964,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q27957610"
+    "qid": "Q27957610",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3909,7 +4007,8 @@
      }
     },
     "museum_id": "novo-mesto-cathedral",
-    "qid": "Q28004358"
+    "qid": "Q28004358",
+    "location_src": "Novo Mesto Cathedral"
    }
   },
   {
@@ -3952,7 +4051,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q28019496",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/1_1540s/7nichola.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/1_1540s/7nichola.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3995,7 +4095,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q28019536",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/02beard.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/02beard.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -4027,7 +4128,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q28019543"
+    "qid": "Q28019543",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -4035,8 +4137,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -4072,7 +4174,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q2835885",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/04birth2.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/04birth2.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -4117,7 +4220,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
-    "qid": "Q28952743"
+    "qid": "Q28952743",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -4163,7 +4267,8 @@
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
     "qid": "Q3013303",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/7/7danae.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/7/7danae.html",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -4207,7 +4312,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q3754067"
+    "qid": "Q3754067",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -4252,7 +4358,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3937458",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/15cornar.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/15cornar.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -4297,7 +4404,8 @@
     },
     "museum_id": "pinacoteca-di-brera",
     "qid": "Q3937806",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/2mark1.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/2mark1.html",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -4338,7 +4446,8 @@
      }
     },
     "museum_id": "museo-d-arte-sacra-san-martino",
-    "qid": "Q3946912"
+    "qid": "Q3946912",
+    "location_src": "Museo d'Arte Sacra San Martino"
    }
   },
   {
@@ -4382,7 +4491,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q3947596",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/4mark.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/4mark.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -4428,7 +4538,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q3978277",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/6/06susan2.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/6/06susan2.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -4471,7 +4582,8 @@
     },
     "museum_id": "santa-maria-dell-umilta",
     "qid": "Q41607332",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/1lamenta.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/1lamenta.html",
+    "location_src": "Santa Maria dell'Umiltà"
    }
   },
   {
@@ -4514,7 +4626,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q4375065",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/1battle.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/1battle.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4559,7 +4672,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q490312"
+    "qid": "Q490312",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -4603,7 +4717,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q49167869",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/16sansov.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/16sansov.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4611,8 +4726,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -4646,7 +4761,8 @@
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
-    "qid": "Q49877451"
+    "qid": "Q49877451",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -4654,8 +4770,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -4696,7 +4812,8 @@
       "qid": "Q122155250",
       "url": "https://www.wikidata.org/wiki/Q122155250"
      }
-    ]
+    ],
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -4737,8 +4854,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q50323009"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q50323009",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4780,7 +4898,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50907415"
+    "qid": "Q50907415",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -4825,7 +4944,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q5791720",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4_1570s/2martmar.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4_1570s/2martmar.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -4869,7 +4989,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q5824121",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/11manlac.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/11manlac.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4914,7 +5035,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q5829623",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/1/11elisha.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/1/11elisha.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -4959,7 +5081,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q5946505",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/6/05joseph.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/6/05joseph.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5005,7 +5128,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q5963059",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/02creati.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/02creati.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -5050,7 +5174,8 @@
     },
     "museum_id": "doge-s-palace",
     "qid": "Q5996597",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/5parad6.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/5parad6.html",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -5100,7 +5225,8 @@
       "qid": "Q60577281",
       "url": "https://www.wikidata.org/wiki/Q60577281"
      }
-    ]
+    ],
+    "location_src": "Nantes Museum of Arts"
    }
   },
   {
@@ -5145,7 +5271,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q60841086",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/1visitat.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/1visitat.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -5189,7 +5316,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q63476054",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/24resur.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/24resur.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -5233,7 +5361,8 @@
     },
     "museum_id": "san-cassiano",
     "qid": "Q63476058",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/6cassia1.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/6cassia1.html",
+    "location_src": "San Cassiano"
    }
   },
   {
@@ -5277,7 +5406,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q63494892",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/23bapti.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/23bapti.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -5321,7 +5451,8 @@
     },
     "museum_id": "palazzo-chiericati-art-gallery",
     "qid": "Q63526863",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/1_1540s/5miracle.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/1_1540s/5miracle.html",
+    "location_src": "Palazzo Chiericati Art Gallery"
    }
   },
   {
@@ -5366,7 +5497,8 @@
     },
     "museum_id": "i-gesuiti",
     "qid": "Q63527354",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/05assump.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/05assump.html",
+    "location_src": "I Gesuiti"
    }
   },
   {
@@ -5410,7 +5542,8 @@
     },
     "museum_id": "church-of-saint-roch",
     "qid": "Q64623971",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3c/1roch.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3c/1roch.html",
+    "location_src": "Church of Saint Roch"
    }
   },
   {
@@ -5454,7 +5587,8 @@
     },
     "museum_id": "san-trovaso",
     "qid": "Q65130430",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4_1570s/4temptat.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4_1570s/4temptat.html",
+    "location_src": "San Trovaso"
    }
   },
   {
@@ -5498,7 +5632,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q65130621",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/30ascen.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/30ascen.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -5542,7 +5677,8 @@
      }
     },
     "museum_id": "san-silvestro-venice",
-    "qid": "Q65131308"
+    "qid": "Q65131308",
+    "location_src": "San Silvestro, Venice"
    }
   },
   {
@@ -5586,7 +5722,8 @@
     },
     "museum_id": "san-cassiano",
     "qid": "Q65131350",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/6cassia3.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3_1560s/6cassia3.html",
+    "location_src": "San Cassiano"
    }
   },
   {
@@ -5630,7 +5767,8 @@
      }
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q65132090"
+    "qid": "Q65132090",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -5638,8 +5776,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     20.4594,
-     44.8167
+     20.45965,
+     44.81677
     ]
    },
    "properties": {
@@ -5674,7 +5812,8 @@
      }
     },
     "museum_id": "national-museum-of-serbia",
-    "qid": "Q7232301"
+    "qid": "Q7232301",
+    "location_src": "National Museum of Serbia"
    }
   },
   {
@@ -5682,8 +5821,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -5716,7 +5855,8 @@
      }
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
-    "qid": "Q72936523"
+    "qid": "Q72936523",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -5762,7 +5902,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q75846",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/1_1540s/4washin.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/1_1540s/4washin.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5807,7 +5948,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q85860172",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/6/04abel.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/6/04abel.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -5851,7 +5993,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q9034188"
+    "qid": "Q9034188",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -5897,7 +6040,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q9068409",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/8/08soranz.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/8/08soranz.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -5941,7 +6085,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q9192552",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/1albergo/2/2ecce.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/1albergo/2/2ecce.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -5973,7 +6118,8 @@
     },
     "museum_id": "doge-s-palace",
     "qid": "Q9208339",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/5maggio2.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/5maggio2.html",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -6019,7 +6165,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q924655",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/3mark.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3a/3mark.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -6062,7 +6209,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q9249611",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/1albergo/2/1carry.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/1albergo/2/1carry.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -6108,7 +6256,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q9281692",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/6/03adamev.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/6/03adamev.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -6150,7 +6299,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q9291481"
+    "qid": "Q9291481",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -6192,7 +6342,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q9355684"
+    "qid": "Q9355684",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -6237,7 +6388,8 @@
     },
     "museum_id": "doge-s-palace",
     "qid": "Q9372115",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/1antico1.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/4a/1antico1.html",
+    "location_src": "Doge's Palace"
    }
   },
   {
@@ -6280,7 +6432,8 @@
     },
     "museum_id": "church-of-san-giorgio-maggiore",
     "qid": "Q9387722",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/2desert.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/5_1580s/2desert.html",
+    "location_src": "Church of San Giorgio Maggiore"
    }
   },
   {
@@ -6320,7 +6473,8 @@
      }
     },
     "museum_id": "scuola-grande-di-san-rocco",
-    "qid": "Q9390655"
+    "qid": "Q9390655",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -6364,7 +6518,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q9392235",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/3ground/1annunc.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/3b/3ground/1annunc.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -6407,7 +6562,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q9396557",
-    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/03camer2.html"
+    "wga_url": "https://www.wga.hu/html/t/tintoret/2_1550s/03camer2.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -6415,8 +6571,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -6444,7 +6600,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -6481,7 +6639,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -6518,7 +6678,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -6526,8 +6688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.09030833,
-     52.16516667
+     21.09031,
+     52.16517
     ]
    },
    "properties": {
@@ -6555,7 +6717,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palace-museum-in-wilanow",
+    "location_src": "Palace Museum in Wilanów"
    }
   },
   {
@@ -6563,8 +6727,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.328139,
-     45.431078
+     12.32814,
+     45.43108
     ]
    },
    "properties": {
@@ -6592,7 +6756,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gallerie-dell-accademia",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -6600,8 +6766,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.328139,
-     45.431078
+     12.32814,
+     45.43108
     ]
    },
    "properties": {
@@ -6619,7 +6785,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124256262",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gallerie-dell-accademia",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -6656,7 +6824,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6693,7 +6863,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6730,7 +6902,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6767,7 +6941,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6804,7 +6980,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6841,7 +7019,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6878,7 +7058,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6915,7 +7097,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6952,7 +7136,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -6989,7 +7175,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7026,7 +7214,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7063,7 +7253,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "herzog-anton-ulrich-museum",
+    "location_src": "Herzog Anton Ulrich Museum"
    }
   },
   {
@@ -7100,7 +7292,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "church-of-san-giorgio-maggiore",
+    "location_src": "Church of San Giorgio Maggiore"
    }
   },
   {
@@ -7137,7 +7331,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -7145,8 +7341,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5797575,
-     45.4991495
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -7174,7 +7370,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "montreal-museum-of-fine-arts",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -7182,8 +7380,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.714577,
-     40.423684
+     -3.71458,
+     40.42368
     ]
    },
    "properties": {
@@ -7211,7 +7409,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cerralbo-museum",
+    "location_src": "Cerralbo Museum"
    }
   },
   {
@@ -7219,8 +7419,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.325309,
-     45.436571
+     12.32531,
+     45.43657
     ]
    },
    "properties": {
@@ -7248,7 +7448,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scuola-grande-di-san-rocco",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -7256,8 +7458,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.325309,
-     45.436571
+     12.32531,
+     45.43657
     ]
    },
    "properties": {
@@ -7285,7 +7487,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scuola-grande-di-san-rocco",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -7293,8 +7497,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.02305556,
-     47.24027778
+     6.02306,
+     47.24028
     ]
    },
    "properties": {
@@ -7312,7 +7516,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q130646855",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-et-d-archeologie-de-besancon",
+    "location_src": "Musée des Beaux-Arts et d'Archéologie de Besançon"
    }
   },
   {
@@ -7349,7 +7555,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-in-wroc-aw",
+    "location_src": "National Museum in Wrocław"
    }
   },
   {
@@ -7358,7 +7566,7 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111
+     50.10111
     ]
    },
    "properties": {
@@ -7366,7 +7574,7 @@
     "title": "Saint Jerome",
     "year": "1550",
     "location": "National Gallery Prague",
-    "city": "",
+    "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20-%20St%20Jerome.JPG?width=500",
@@ -7386,7 +7594,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -7394,8 +7604,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.328667,
-     45.442889
+     12.32867,
+     45.44289
     ]
    },
    "properties": {
@@ -7423,7 +7633,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "san-marcuola",
+    "location_src": "San Marcuola"
    }
   },
   {
@@ -7431,8 +7643,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.2545,
-     51.7507
+     -1.25585,
+     51.7502
     ]
    },
    "properties": {
@@ -7460,7 +7672,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -7497,7 +7711,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "contini-bonacossi-collection",
+    "location_src": "Contini Bonacossi collection"
    }
   },
   {
@@ -7505,8 +7721,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.927827,
-     52.450331
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
@@ -7534,7 +7750,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barber-institute-of-fine-arts",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -7571,7 +7789,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bob-jones-university-museum-and-gallery",
+    "location_src": "Bob Jones University Museum and Gallery"
    }
   },
   {
@@ -7579,7 +7799,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.203089,
+     -0.20309,
      51.4986
     ]
    },
@@ -7608,7 +7828,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "leighton-house",
+    "location_src": "Leighton House"
    }
   },
   {
@@ -7616,8 +7838,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7625,7 +7847,7 @@
     "title": "Apollo and Diana Killing the Children of Niobe",
     "year": "1546",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20%28c.1518-1594%29%20%28workshop%20of%29%20-%20Apollo%20and%20Diana%20Killing%20the%20Children%20of%20Niobe%20-%20P.1978.PG.458%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -7645,7 +7867,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7653,8 +7877,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7662,7 +7886,7 @@
     "title": "Latona Changing the Lycian Peasants into Frogs",
     "year": "1546",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20%28c.1518-1594%29%20-%20Latona%20Changing%20the%20Lycian%20Peasants%20into%20Frogs%20-%20P.1978.PG.459%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -7682,7 +7906,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7690,8 +7916,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7699,7 +7925,7 @@
     "title": "Esther and Ahasuerus or Solomon and the Queen of Sheba",
     "year": "1545",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Esther%20and%20Ahasuerus%20or%20Solomon%20and%20the%20Queen%20of%20Sheba%2C%201545%2C%20P.1978.PG.457.jpg?width=500",
@@ -7719,7 +7945,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7727,8 +7955,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.156111111,
-     48.771666666
+     5.15611,
+     48.77167
     ]
    },
    "properties": {
@@ -7756,7 +7984,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-barrois",
+    "location_src": "Musée Barrois"
    }
   },
   {
@@ -7764,8 +7994,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -7793,7 +8023,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -7801,8 +8033,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -7830,7 +8062,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -7838,8 +8072,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7847,7 +8081,7 @@
     "title": "La Piscine probatique",
     "year": "1550",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20La%20Piscine%20probatique%2C%20MI%201182%20%3B%20D%20874%208%2C%20Mus%C3%A9e%20des%20Beaux-Arts%2C%20Rouen.jpg?width=500",
@@ -7867,7 +8101,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7875,8 +8111,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -7884,7 +8120,7 @@
     "title": "Christ Washing the Disciples' Feet",
     "year": "1600",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%2C%20Jacopo%20-%20Christ%20washing%20the%20Feet%20of%20the%20Disciples%20-%20National%20Gallery%20London.jpg?width=500",
@@ -7902,7 +8138,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -7910,7 +8148,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -7939,7 +8177,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -7947,7 +8187,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -7976,7 +8216,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -7984,7 +8226,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -8011,7 +8253,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -8019,7 +8263,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -8048,7 +8292,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -8056,7 +8302,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -8085,7 +8331,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -8093,7 +8341,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.810069,
+     -86.81007,
      33.52222
     ]
    },
@@ -8122,7 +8370,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "birmingham-museum-of-art",
+    "location_src": "Birmingham Museum of Art"
    }
   },
   {
@@ -8130,8 +8380,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -8139,7 +8389,7 @@
     "title": "Portrait of a Nobleman, His Hand on a Sword",
     "year": "1540",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20d%27un%20gentilhomme%2C%20la%20main%20sur%20l%27%C3%A9p%C3%A9e%20-%20Le%20Tintoret%20-%20Q18573200.jpg?width=500",
@@ -8159,7 +8409,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -8168,7 +8420,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8196,7 +8448,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8205,7 +8459,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8231,7 +8485,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8240,7 +8496,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8268,7 +8524,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8277,7 +8535,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8305,7 +8563,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8314,7 +8574,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8342,7 +8602,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8351,7 +8613,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8379,7 +8641,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8388,7 +8652,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8416,7 +8680,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8425,7 +8691,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8453,7 +8719,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8462,7 +8730,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8490,7 +8758,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8499,7 +8769,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8527,7 +8797,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8536,7 +8808,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8564,7 +8836,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8573,7 +8847,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8601,7 +8875,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8610,7 +8886,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8638,7 +8914,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8647,7 +8925,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8675,7 +8953,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8684,7 +8964,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8712,7 +8992,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8721,7 +9003,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8749,7 +9031,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8758,7 +9042,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8786,7 +9070,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8795,7 +9081,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8823,7 +9109,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8832,7 +9120,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8860,7 +9148,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8869,7 +9159,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8897,7 +9187,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8906,7 +9198,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -8934,7 +9226,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -8942,8 +9236,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -8971,7 +9265,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -8979,8 +9275,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -8998,7 +9294,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29964210",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -9006,8 +9304,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -9035,7 +9333,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -9043,8 +9343,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -9072,7 +9372,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -9080,8 +9382,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -9109,7 +9411,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -9117,8 +9421,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -9146,7 +9450,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -9154,8 +9460,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9181,7 +9487,9 @@
       "was": "generally accepted",
       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9189,8 +9497,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9216,7 +9524,9 @@
       "was": "generally accepted",
       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9224,8 +9534,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9253,7 +9563,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9261,8 +9573,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9288,7 +9600,9 @@
       "was": "generally accepted",
       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9296,8 +9610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9323,7 +9637,9 @@
       "was": "generally accepted",
       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9331,8 +9647,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9358,7 +9674,9 @@
       "was": "generally accepted",
       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9366,8 +9684,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9393,7 +9711,9 @@
       "was": "generally accepted",
       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9430,7 +9750,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -9438,8 +9760,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -9467,7 +9789,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -9475,8 +9799,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -9504,7 +9828,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -9512,8 +9838,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -9541,7 +9867,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -9549,8 +9877,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -9578,7 +9906,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -9586,8 +9916,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -9615,7 +9945,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -9652,7 +9984,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9689,7 +10023,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9726,7 +10062,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -9735,7 +10073,7 @@
     "type": "Point",
     "coordinates": [
      12.33087,
-     45.433726
+     45.43373
     ]
    },
    "properties": {
@@ -9761,7 +10099,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "santo-stefano-venice",
+    "location_src": "Santo Stefano, Venice"
    }
   },
   {
@@ -9769,8 +10109,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.335947,
-     45.433083
+     12.33595,
+     45.43308
     ]
    },
    "properties": {
@@ -9798,7 +10138,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "san-moise",
+    "location_src": "San Moisè"
    }
   },
   {
@@ -9807,7 +10149,7 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.227777777
+     53.22778
     ]
    },
    "properties": {
@@ -9835,7 +10177,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chatsworth-house",
+    "location_src": "Chatsworth House"
    }
   },
   {
@@ -9843,8 +10187,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -9872,7 +10216,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -9909,7 +10255,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kingston-lacy",
+    "location_src": "Kingston Lacy"
    }
   },
   {
@@ -9917,8 +10265,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -9946,7 +10294,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -9954,8 +10304,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.604444444,
-     51.483888888
+     -0.60444,
+     51.48389
     ]
    },
    "properties": {
@@ -9983,7 +10333,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "windsor-castle",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -9992,7 +10344,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -10020,7 +10372,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -10028,8 +10382,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -10057,7 +10411,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -10065,8 +10421,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -10094,7 +10450,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10102,8 +10460,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -10131,7 +10489,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10139,8 +10499,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -10168,7 +10528,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10176,8 +10538,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -10205,7 +10567,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10213,8 +10577,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -10242,7 +10606,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10250,8 +10616,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -10279,7 +10645,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -10287,8 +10655,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -10316,7 +10684,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -10324,8 +10694,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -10353,7 +10723,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -10361,8 +10733,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -10390,7 +10762,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -10398,8 +10772,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -10407,7 +10781,7 @@
     "title": "Jupiter and Semele",
     "year": "1545",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20%28c.1518-1594%29%20%28attributed%20to%29%20-%20Jupiter%20and%20Semele%20-%20NG1476%20-%20National%20Gallery.jpg?width=500",
@@ -10427,7 +10801,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -10435,8 +10811,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482777777,
-     41.893055555
+     12.48278,
+     41.89306
     ]
    },
    "properties": {
@@ -10464,7 +10840,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "capitoline-museums",
+    "location_src": "Capitoline Museums"
    }
   },
   {
@@ -10472,8 +10850,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482777777,
-     41.893055555
+     12.48278,
+     41.89306
     ]
    },
    "properties": {
@@ -10501,7 +10879,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "capitoline-museums",
+    "location_src": "Capitoline Museums"
    }
   },
   {
@@ -10509,8 +10889,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -10538,7 +10918,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -10546,8 +10928,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -10573,7 +10955,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -10581,8 +10965,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -10610,7 +10994,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -10618,8 +11004,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -10637,7 +11023,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28130928",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -10645,8 +11033,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10674,7 +11062,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10682,8 +11072,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10711,7 +11101,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10719,8 +11111,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10748,7 +11140,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10756,8 +11150,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10785,7 +11179,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10793,8 +11189,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10822,7 +11218,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10830,8 +11228,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10859,7 +11257,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10867,8 +11267,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10886,7 +11286,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29937250",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10894,8 +11296,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -10923,7 +11325,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10931,8 +11335,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -10950,7 +11354,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20540285",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -10958,8 +11364,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -10967,7 +11373,7 @@
     "title": "Doge Alvise Mocenigo (1507–1577) Presented to the Redeemer",
     "year": "1577",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Doge%20Alvise%20Mocenigo%20%281507%E2%80%931577%29%20Presented%20to%20the%20Redeemer%20MET%20DT216453.jpg?width=500",
@@ -10987,7 +11393,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -10995,8 +11403,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -11004,7 +11412,7 @@
     "title": "Portrait of a Young Man",
     "year": "1551",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Young%20Man%20MET%20DP136268.jpg?width=500",
@@ -11024,7 +11432,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -11033,7 +11443,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -11061,7 +11471,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -11070,7 +11482,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -11098,7 +11510,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -11107,7 +11521,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -11135,7 +11549,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -11144,7 +11560,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -11172,7 +11588,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -11181,7 +11599,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -11209,7 +11627,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -11217,8 +11637,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -11246,7 +11666,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -11283,7 +11705,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -11291,8 +11715,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -11320,7 +11744,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -11357,7 +11783,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chateau-de-chenonceau",
+    "location_src": "Château de Chenonceau"
    }
   },
   {
@@ -11394,7 +11822,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -11431,7 +11861,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -11439,8 +11871,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.343333333,
-     45.434722222
+     12.34333,
+     45.43472
     ]
    },
    "properties": {
@@ -11468,7 +11900,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "san-zaccaria",
+    "location_src": "San Zaccaria"
    }
   },
   {
@@ -11476,8 +11910,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.332472222,
-     45.446336111
+     12.33247,
+     45.44634
     ]
    },
    "properties": {
@@ -11505,7 +11939,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "madonna-dell-orto",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -11513,8 +11949,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.332472222,
-     45.446336111
+     12.33247,
+     45.44634
     ]
    },
    "properties": {
@@ -11542,7 +11978,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "madonna-dell-orto",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -11550,8 +11988,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.332472222,
-     45.446336111
+     12.33247,
+     45.44634
     ]
    },
    "properties": {
@@ -11579,7 +12017,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "madonna-dell-orto",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -11587,8 +12027,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.332472222,
-     45.446336111
+     12.33247,
+     45.44634
     ]
    },
    "properties": {
@@ -11616,7 +12056,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "madonna-dell-orto",
+    "location_src": "Madonna dell'Orto"
    }
   },
   {
@@ -11624,8 +12066,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.324354,
-     45.434086
+     12.32435,
+     45.43409
     ]
    },
    "properties": {
@@ -11643,7 +12085,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q135796630",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ca-rezzonico",
+    "location_src": "Ca' Rezzonico"
    }
   },
   {
@@ -11680,7 +12124,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-serbia",
+    "location_src": "National Museum of Serbia"
    }
   },
   {
@@ -11688,7 +12134,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.342402,
+     11.3424,
      44.49383
     ]
    },
@@ -11717,7 +12163,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bologna-city-art-collections",
+    "location_src": "Bologna City Art Collections"
    }
   },
   {
@@ -11754,7 +12202,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-querini-stampalia",
+    "location_src": "Pinacoteca Querini Stampalia"
    }
   },
   {
@@ -11770,7 +12220,7 @@
     "painter": "Tintoretto",
     "title": "Presentation of Jesus at the temple",
     "year": "1540",
-    "location": "Collection Bemberg",
+    "location": "Fondation Bemberg",
     "city": "Toulouse",
     "country": "France",
     "attribution": "generally accepted",
@@ -11791,7 +12241,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fondation-bemberg",
+    "location_src": "Fondation Bemberg"
    }
   },
   {
@@ -11807,7 +12259,7 @@
     "painter": "Tintoretto",
     "title": "Sophonisba",
     "year": "1559",
-    "location": "Collection Bemberg",
+    "location": "Fondation Bemberg",
     "city": "Toulouse",
     "country": "France",
     "attribution": "generally accepted",
@@ -11828,7 +12280,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fondation-bemberg",
+    "location_src": "Fondation Bemberg"
    }
   },
   {
@@ -11844,7 +12298,7 @@
     "painter": "Tintoretto",
     "title": "Portrait attributed to the noble Venetian Zuan Pietro Ghisi",
     "year": "1545",
-    "location": "Collection Bemberg",
+    "location": "Fondation Bemberg",
     "city": "Toulouse",
     "country": "France",
     "attribution": "generally accepted",
@@ -11865,7 +12319,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fondation-bemberg",
+    "location_src": "Fondation Bemberg"
    }
   },
   {
@@ -11881,7 +12337,7 @@
     "painter": "Tintoretto",
     "title": "Portrait of Scipione Venerio",
     "year": "1565",
-    "location": "Collection Bemberg",
+    "location": "Fondation Bemberg",
     "city": "Toulouse",
     "country": "France",
     "attribution": "generally accepted",
@@ -11902,7 +12358,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fondation-bemberg",
+    "location_src": "Fondation Bemberg"
    }
   },
   {
@@ -11910,8 +12368,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -11939,7 +12397,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -11976,7 +12436,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-strasbourg",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -12013,7 +12475,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-strasbourg",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -12021,7 +12485,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -12050,7 +12514,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -12058,7 +12524,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -12087,7 +12553,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -12095,8 +12563,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.338133,
-     47.607309
+     -122.33813,
+     47.60731
     ]
    },
    "properties": {
@@ -12124,7 +12592,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "seattle-art-museum",
+    "location_src": "Seattle Art Museum"
    }
   },
   {
@@ -12161,7 +12631,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -12198,7 +12670,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -12235,7 +12709,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "petworth-house",
+    "location_src": "Petworth House"
    }
   },
   {
@@ -12262,7 +12738,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64513035",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "rhode-island-school-of-design-museum",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -12299,7 +12777,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rhode-island-school-of-design-museum",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -12336,7 +12816,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -12345,7 +12827,7 @@
     "type": "Point",
     "coordinates": [
      -0.29808,
-     51.452086
+     51.45209
     ]
    },
    "properties": {
@@ -12373,7 +12855,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "doughty-house",
+    "location_src": "Doughty House"
    }
   },
   {
@@ -12381,8 +12865,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -12410,7 +12894,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -12418,8 +12904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -12447,7 +12933,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -12455,8 +12943,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -12484,7 +12972,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -12521,7 +13011,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -12529,8 +13021,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.190578,
-     45.463968
+     9.19058,
+     45.46397
     ]
    },
    "properties": {
@@ -12558,7 +13050,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "milan-cathedral",
+    "location_src": "Milan Cathedral"
    }
   },
   {
@@ -12566,7 +13060,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -12595,7 +13089,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -12603,7 +13099,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -12622,7 +13118,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103838679",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -12630,8 +13128,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -12659,7 +13157,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -12667,8 +13167,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -12676,7 +13176,7 @@
     "title": "The Finding of Moses",
     "year": "1550",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20002.jpg?width=500",
@@ -12696,7 +13196,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -12704,8 +13206,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -12713,7 +13215,7 @@
     "title": "The Miracle of the Loaves and Fishes",
     "year": "1545",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Miracle%20of%20the%20Loaves%20and%20Fishes%20MET%20DT5476.jpg?width=500",
@@ -12733,7 +13235,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -12741,8 +13245,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.313333333,
-     48.850555555
+     2.31333,
+     48.85056
     ]
    },
    "properties": {
@@ -12770,7 +13274,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "saint-francois-xavier-paris",
+    "location_src": "Saint-François-Xavier, Paris"
    }
   },
   {
@@ -12778,8 +13284,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -12807,7 +13313,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -12815,8 +13323,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -12844,7 +13352,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -12852,8 +13362,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -12881,7 +13391,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -12889,8 +13401,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -12918,7 +13430,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -12926,8 +13440,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -12955,7 +13469,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -12992,7 +13508,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hampton-castle",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -13009,7 +13527,7 @@
     "title": "Portrait of a Young Man",
     "year": "1545",
     "location": "Royal Collection",
-    "city": "",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Portrait%20of%20a%20Young%20Man%2C%20Dated%201545%2C%20RCIN%20402845.jpg?width=500",
@@ -13029,7 +13547,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-collection",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -13046,7 +13566,7 @@
     "title": "Portrait of Girolamo Pozzo",
     "year": "1550",
     "location": "Royal Collection",
-    "city": "",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20%281519-94%29%20-%20Portrait%20of%20Girolamo%20Pozzo%20-%20RCIN%20405756%20-%20Royal%20Collection.jpg?width=500",
@@ -13066,7 +13586,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-collection",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -13083,7 +13605,7 @@
     "title": "Head of a Man (Portrait Study)",
     "year": "1565",
     "location": "Royal Collection",
-    "city": "",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20%281519-94%29%20-%20Head%20of%20a%20Man%20%28Portrait%20Study%29%20-%20RCIN%20402994%20-%20Royal%20Collection.jpg?width=500",
@@ -13103,7 +13625,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-collection",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -13111,8 +13635,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.359166666,
-     34.063333333
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -13140,7 +13664,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -13177,7 +13703,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "obere-pfarre",
+    "location_src": "Obere Pfarre"
    }
   },
   {
@@ -13186,7 +13714,7 @@
     "type": "Point",
     "coordinates": [
      -58.39297,
-     -34.583986
+     -34.58399
     ]
    },
    "properties": {
@@ -13214,7 +13742,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-argentina",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -13223,7 +13753,7 @@
     "type": "Point",
     "coordinates": [
      -58.39297,
-     -34.583986
+     -34.58399
     ]
    },
    "properties": {
@@ -13251,7 +13781,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-argentina",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -13259,7 +13791,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     44.514167,
+     44.51417,
      40.17875
     ]
    },
@@ -13278,7 +13810,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28870208",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-armenia",
+    "location_src": "National Gallery of Armenia"
    }
   },
   {
@@ -13286,8 +13820,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -13295,7 +13829,7 @@
     "title": "Portrait d'homme",
     "year": "1565",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Atelier%20de%20-%20Portrait%20d%27homme%20barbu%2C%20MI%20881.jpg?width=500",
@@ -13315,7 +13849,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -13323,15 +13859,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.686536,
-     40.432539
+     -3.68654,
+     40.43254
     ]
    },
    "properties": {
     "painter": "Tintoretto",
     "title": "Twenty-five year old Youth with Fur-lined Coat",
     "year": "1550",
-    "location": "Fundación Banco Santander",
+    "location": "Colección Santander",
     "city": "Madrid",
     "country": "Spain",
     "attribution": "generally accepted",
@@ -13352,7 +13888,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "coleccion-santander",
+    "location_src": "Colección Santander"
    }
   }
  ]

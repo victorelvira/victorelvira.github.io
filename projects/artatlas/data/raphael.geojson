@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -41,7 +41,8 @@
       "qid": "Q677682",
       "url": "https://www.wikidata.org/wiki/Q677682"
      }
-    ]
+    ],
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -72,7 +73,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pinacoteca-comunale",
-    "country": "Italy"
+    "country": "Italy",
+    "location_src": "Pinacoteca Comunale"
    }
   },
   {
@@ -103,7 +105,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pinacoteca-comunale",
-    "country": "Italy"
+    "country": "Italy",
+    "location_src": "Pinacoteca Comunale"
    }
   },
   {
@@ -146,7 +149,8 @@
       "qid": "Q1778000",
       "url": "https://www.wikidata.org/wiki/Q1778000"
      }
-    ]
+    ],
+    "location_src": "Pinacoteca Comunale"
    }
   },
   {
@@ -188,7 +192,8 @@
       "qid": "Q3616853",
       "url": "https://www.wikidata.org/wiki/Q3616853"
      }
-    ]
+    ],
+    "location_src": "Pinacoteca Civica Tosio Martinengo"
    }
   },
   {
@@ -231,7 +236,8 @@
       "qid": "Q3616854",
       "url": "https://www.wikidata.org/wiki/Q3616854"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -274,7 +280,8 @@
       "qid": "Q3733689",
       "url": "https://www.wikidata.org/wiki/Q3733689"
      }
-    ]
+    ],
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -291,7 +298,7 @@
     "title": "1501–1502: Saint Sebastian",
     "year": "1501–1502",
     "city": "Bergamo",
-    "location": "Accademia Carrara di Belle Arti di Bergamo",
+    "location": "Accademia Carrara",
     "attribution": "generally accepted",
     "medium": "Oil on panel 45,1 x 36,5",
     "dimensions": "Oil on panel 45,1 x 36,5",
@@ -305,7 +312,7 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "accademia-carrara-di-belle-arti-di-bergamo",
+    "museum_id": "accademia-carrara",
     "qid": "Q2343939",
     "wikidata": "https://www.wikidata.org/wiki/Q2343939",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/01sebast.html",
@@ -316,7 +323,9 @@
       "qid": "Q2343939",
       "url": "https://www.wikidata.org/wiki/Q2343939"
      }
-    ]
+    ],
+    "country": "Italy",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -351,7 +360,8 @@
     "museum_id": "galleria-borghese",
     "qid": "Q2629715",
     "wikidata": "https://www.wikidata.org/wiki/Q2629715",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/05portra.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/05portra.html",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -359,17 +369,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1502: Madonna and Child between Saints Jerome and Francis [ Wikidata ]",
     "year": "c. 1502",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel 34 x 29",
     "dimensions": "Oil on panel 34 x 29",
@@ -382,7 +392,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie"
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -390,17 +401,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1502: Solly Madonna",
     "year": "c. 1502",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel 52 x 38",
     "dimensions": "Oil on panel 52 x 38",
@@ -414,10 +425,11 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q602813",
     "wikidata": "https://www.wikidata.org/wiki/Q602813",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/02solly.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/02solly.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -425,8 +437,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.1439,
-     34.1475
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -452,7 +464,8 @@
     "country": "United States",
     "qid": "Q2629134",
     "wikidata": "https://www.wikidata.org/wiki/Q2629134",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/06madonn.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/06madonn.html",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -495,7 +508,8 @@
       "qid": "Q598913",
       "url": "https://www.wikidata.org/wiki/Q598913"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -538,7 +552,8 @@
       "qid": "Q63110871",
       "url": "https://www.wikidata.org/wiki/Q63110871"
      }
-    ]
+    ],
+    "location_src": "National Museum of Ancient Art"
    }
   },
   {
@@ -580,7 +595,8 @@
       "qid": "Q74089447",
       "url": "https://www.wikidata.org/wiki/Q74089447"
      }
-    ]
+    ],
+    "location_src": "North Carolina Museum of Art"
    }
   },
   {
@@ -622,7 +638,8 @@
       "qid": "Q2344357",
       "url": "https://www.wikidata.org/wiki/Q2344357"
      }
-    ]
+    ],
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -664,7 +681,8 @@
       "qid": "Q116286717",
       "url": "https://www.wikidata.org/wiki/Q116286717"
      }
-    ]
+    ],
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -698,7 +716,8 @@
     },
     "museum_id": "vatican-museums",
     "qid": "Q2344357",
-    "wikidata": "https://www.wikidata.org/wiki/Q2344357"
+    "wikidata": "https://www.wikidata.org/wiki/Q2344357",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -732,7 +751,8 @@
     },
     "museum_id": "vatican-museums",
     "qid": "Q2344357",
-    "wikidata": "https://www.wikidata.org/wiki/Q2344357"
+    "wikidata": "https://www.wikidata.org/wiki/Q2344357",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -740,17 +760,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1503: Diotallevi Madonna",
     "year": "c. 1503",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel 69 x 50",
     "dimensions": "Oil on panel 69 x 50",
@@ -764,10 +784,11 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q323188",
     "wikidata": "https://www.wikidata.org/wiki/Q323188",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/06diotal.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/06diotal.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -796,7 +817,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "alte-pinakothek"
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -831,7 +853,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2713823",
     "wikidata": "https://www.wikidata.org/wiki/Q2713823",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/26apple.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/26apple.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -866,7 +889,8 @@
     "museum_id": "louvre",
     "qid": "Q2529918",
     "wikidata": "https://www.wikidata.org/wiki/Q2529918",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/25drago3.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/25drago3.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -901,7 +925,8 @@
     "museum_id": "louvre",
     "qid": "Q2415259",
     "wikidata": "https://www.wikidata.org/wiki/Q2415259",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/25drago2.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/25drago2.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -943,7 +968,8 @@
       "qid": "Q2444277",
       "url": "https://www.wikidata.org/wiki/Q2444277"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts (Budapest)"
    }
   },
   {
@@ -986,7 +1012,8 @@
       "qid": "Q2607072",
       "url": "https://www.wikidata.org/wiki/Q2607072"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1029,7 +1056,8 @@
       "qid": "Q2030685",
       "url": "https://www.wikidata.org/wiki/Q2030685"
      }
-    ]
+    ],
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -1037,8 +1065,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1064,7 +1092,8 @@
     "museum_id": "hermitage-museum",
     "qid": "Q919294",
     "wikidata": "https://www.wikidata.org/wiki/Q919294",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/23connes.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/23connes.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1107,7 +1136,8 @@
       "qid": "Q27033728",
       "url": "https://www.wikidata.org/wiki/Q27033728"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1150,7 +1180,8 @@
       "qid": "Q19911609",
       "url": "https://www.wikidata.org/wiki/Q19911609"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1193,7 +1224,8 @@
       "qid": "Q26705837",
       "url": "https://www.wikidata.org/wiki/Q26705837"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1201,8 +1233,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -1225,7 +1257,8 @@
     "museum_id": "isabella-stewart-gardner-museum",
     "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -1241,7 +1274,7 @@
     "painter": "Raphael",
     "title": "c. 1504: Saint Francis of Assisi",
     "year": "c. 1504",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
@@ -1268,7 +1301,8 @@
       "qid": "Q23929176",
       "url": "https://www.wikidata.org/wiki/Q23929176"
      }
-    ]
+    ],
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -1284,7 +1318,7 @@
     "painter": "Raphael",
     "title": "c. 1504: Saint Anthony of Padua",
     "year": "c. 1504",
-    "city": "London",
+    "city": "Dulwich",
     "location": "Dulwich Picture Gallery",
     "attribution": "generally accepted",
     "medium": "Oil on panel 25 x 16",
@@ -1311,7 +1345,8 @@
       "qid": "Q23929146",
       "url": "https://www.wikidata.org/wiki/Q23929146"
      }
-    ]
+    ],
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -1346,7 +1381,8 @@
     "museum_id": "national-gallery",
     "qid": "Q552040",
     "wikidata": "https://www.wikidata.org/wiki/Q552040",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/21knight.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/21knight.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1355,7 +1391,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -1381,7 +1417,8 @@
     "country": "France",
     "qid": "Q2360329",
     "wikidata": "https://www.wikidata.org/wiki/Q2360329",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/21graces.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/21graces.html",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -1416,7 +1453,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2627028",
     "wikidata": "https://www.wikidata.org/wiki/Q2627028",
-    "wga_url": "https://www.wga.hu/html/r/raphael/1early/061gonza.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/1early/061gonza.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1424,8 +1462,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.61917,
-     39.32611
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -1457,7 +1495,9 @@
       "qid": "Q3399384",
       "url": "https://www.wikidata.org/wiki/Q3399384"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -1491,7 +1531,8 @@
     },
     "museum_id": "palazzo-pitti",
     "qid": "Q2035209",
-    "wikidata": "https://www.wikidata.org/wiki/Q2035209"
+    "wikidata": "https://www.wikidata.org/wiki/Q2035209",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -1534,7 +1575,8 @@
       "qid": "Q2713620",
       "url": "https://www.wikidata.org/wiki/Q2713620"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1577,7 +1619,8 @@
       "qid": "Q3910086",
       "url": "https://www.wikidata.org/wiki/Q3910086"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1620,7 +1663,8 @@
       "qid": "Q2607050",
       "url": "https://www.wikidata.org/wiki/Q2607050"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1628,17 +1672,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1505: Terranuova Madonna",
     "year": "c. 1505",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel Diameter 88,5",
     "dimensions": "Oil on panel Diameter 88,5",
@@ -1652,10 +1696,11 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q560057",
     "wikidata": "https://www.wikidata.org/wiki/Q560057",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/26terran.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/26terran.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1689,7 +1734,8 @@
     "museum_id": "pinacoteca-civica-tosio-martinengo",
     "qid": "Q1131153",
     "wikidata": "https://www.wikidata.org/wiki/Q1131153",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/29christ.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/29christ.html",
+    "location_src": "Pinacoteca Civica Tosio Martinengo"
    }
   },
   {
@@ -1724,7 +1770,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2344505",
     "wikidata": "https://www.wikidata.org/wiki/Q2344505",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/33cardel.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/33cardel.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1767,7 +1814,8 @@
       "qid": "Q2452858",
       "url": "https://www.wikidata.org/wiki/Q2452858"
      }
-    ]
+    ],
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1810,7 +1858,8 @@
       "qid": "Q2276546",
       "url": "https://www.wikidata.org/wiki/Q2276546"
      }
-    ]
+    ],
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -1818,8 +1867,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1853,7 +1902,8 @@
       "qid": "Q2629419",
       "url": "https://www.wikidata.org/wiki/Q2629419"
      }
-    ]
+    ],
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1888,7 +1938,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q3013751",
     "wikidata": "https://www.wikidata.org/wiki/Q3013751",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/36montef.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/36montef.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1931,7 +1982,8 @@
       "qid": "Q2515309",
       "url": "https://www.wikidata.org/wiki/Q2515309"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1974,7 +2026,8 @@
       "qid": "Q2607055",
       "url": "https://www.wikidata.org/wiki/Q2607055"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2009,7 +2062,8 @@
     "museum_id": "galleria-borghese",
     "qid": "Q2344396",
     "wikidata": "https://www.wikidata.org/wiki/Q2344396",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/28unicor.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/1/28unicor.html",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -2017,8 +2071,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -2054,7 +2108,9 @@
       "source": "Wikipedia list",
       "title": "1506: The Holy Family With a Palm Tree [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -2096,7 +2152,8 @@
       "qid": "Q555821",
       "url": "https://www.wikidata.org/wiki/Q555821"
      }
-    ]
+    ],
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -2139,7 +2196,8 @@
       "qid": "Q2622161",
       "url": "https://www.wikidata.org/wiki/Q2622161"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2181,7 +2239,8 @@
       "qid": "Q1245388",
       "url": "https://www.wikidata.org/wiki/Q1245388"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2224,7 +2283,8 @@
       "qid": "Q2713671",
       "url": "https://www.wikidata.org/wiki/Q2713671"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2255,7 +2315,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2298,7 +2359,8 @@
       "qid": "Q2500226",
       "url": "https://www.wikidata.org/wiki/Q2500226"
      }
-    ]
+    ],
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -2333,7 +2395,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q2500226",
     "wikidata": "https://www.wikidata.org/wiki/Q2500226",
-    "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/37entom1.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/37entom1.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -2342,7 +2405,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -2375,7 +2438,8 @@
       "qid": "Q1986597",
       "url": "https://www.wikidata.org/wiki/Q1986597"
      }
-    ]
+    ],
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -2418,7 +2482,8 @@
       "qid": "Q2165279",
       "url": "https://www.wikidata.org/wiki/Q2165279"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2426,15 +2491,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1507: Bridgewater Madonna",
     "year": "c. 1507",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "attribution": "generally accepted",
@@ -2453,7 +2518,8 @@
     "museum_id": "scottish-national-gallery",
     "qid": "Q3842391",
     "wikidata": "https://www.wikidata.org/wiki/Q3842391",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/34bridge.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/34bridge.html",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -2496,7 +2562,8 @@
       "qid": "Q919861",
       "url": "https://www.wikidata.org/wiki/Q919861"
      }
-    ]
+    ],
+    "location_src": "Galleria Nazionale delle Marche"
    }
   },
   {
@@ -2531,7 +2598,8 @@
     "museum_id": "louvre",
     "qid": "Q2343778",
     "wikidata": "https://www.wikidata.org/wiki/Q2343778",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/34ardin.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/34ardin.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2566,7 +2634,8 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q3842604",
     "wikidata": "https://www.wikidata.org/wiki/Q3842604",
-    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/37baldac.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/37baldac.html",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -2574,17 +2643,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "1507–1508: Colonna Madonna",
     "year": "1507–1508",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel 52 x 38",
     "dimensions": "Oil on panel 52 x 38",
@@ -2598,10 +2667,11 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q327780",
     "wikidata": "https://www.wikidata.org/wiki/Q327780",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/00colonn.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/00colonn.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2644,7 +2714,8 @@
       "qid": "Q2535486",
       "url": "https://www.wikidata.org/wiki/Q2535486"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2687,7 +2758,8 @@
       "qid": "Q2607065",
       "url": "https://www.wikidata.org/wiki/Q2607065"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2730,7 +2802,8 @@
       "qid": "Q2283808",
       "url": "https://www.wikidata.org/wiki/Q2283808"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -2765,7 +2838,8 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q428274",
     "wikidata": "https://www.wikidata.org/wiki/Q428274",
-    "wga_url": "https://www.wga.hu/html/_m/r/raphael/5roma/3/02inghir.html"
+    "wga_url": "https://www.wga.hu/html/_m/r/raphael/5roma/3/02inghir.html",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -2773,8 +2847,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -2808,7 +2882,8 @@
       "qid": "Q103838699",
       "url": "https://www.wikidata.org/wiki/Q103838699"
      }
-    ]
+    ],
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -2851,7 +2926,8 @@
       "qid": "Q2503581",
       "url": "https://www.wikidata.org/wiki/Q2503581"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2886,7 +2962,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q549953",
     "wikidata": "https://www.wikidata.org/wiki/Q549953",
-    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/2/05disput.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/2/05disput.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -2921,7 +2998,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q186953",
     "wikidata": "https://www.wikidata.org/wiki/Q186953",
-    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/1/athens4.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/1/athens4.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -2930,7 +3008,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -2964,7 +3042,8 @@
       "qid": "Q2427320",
       "url": "https://www.wikidata.org/wiki/Q2427320"
      }
-    ]
+    ],
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -2972,8 +3051,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -2981,7 +3060,7 @@
     "title": "The Madonna and Child (The Mackintosh Madonna)",
     "year": "1509",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20-%20Mackintosh%20Madonna.JPG?width=500",
@@ -3009,7 +3088,9 @@
       "source": "Wikipedia list",
       "title": "1509–1511: Mackintosh Madonna [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3051,7 +3132,8 @@
       "qid": "Q2635552",
       "url": "https://www.wikidata.org/wiki/Q2635552"
      }
-    ]
+    ],
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3094,7 +3176,8 @@
       "qid": "Q254923",
       "url": "https://www.wikidata.org/wiki/Q254923"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3129,7 +3212,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q2535563",
     "wikidata": "https://www.wikidata.org/wiki/Q2535563",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/04cardin.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/04cardin.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3164,7 +3248,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q2715152",
     "wikidata": "https://www.wikidata.org/wiki/Q2715152",
-    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/3/parnassb.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/3/parnassb.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -3199,7 +3284,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q2568776",
     "wikidata": "https://www.wikidata.org/wiki/Q2568776",
-    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/4/4virtue1.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/1segnatu/4/4virtue1.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -3241,7 +3327,8 @@
       "qid": "Q11918714",
       "url": "https://www.wikidata.org/wiki/Q11918714"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3276,7 +3363,8 @@
     "museum_id": "basilica-of-sant-agostino",
     "qid": "Q3226022",
     "wikidata": "https://www.wikidata.org/wiki/Q3226022",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/08isaiah.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/08isaiah.html",
+    "location_src": "Basilica of Sant'Agostino"
    }
   },
   {
@@ -3311,7 +3399,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q2294201",
     "wikidata": "https://www.wikidata.org/wiki/Q2294201",
-    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/2eliodor/1expuls3.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/4stanze/2eliodor/1expuls3.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -3346,7 +3435,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q2610709",
     "wikidata": "https://www.wikidata.org/wiki/Q2610709",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/07folig2.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/07folig2.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -3381,7 +3471,8 @@
     "museum_id": "villa-farnesina",
     "qid": "Q2344368",
     "wikidata": "https://www.wikidata.org/wiki/Q2344368",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/05farne2.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/05farne2.html",
+    "location_src": "Villa Farnesina"
    }
   },
   {
@@ -3412,7 +3503,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "villa-farnesina"
+    "museum_id": "villa-farnesina",
+    "location_src": "Villa Farnesina"
    }
   },
   {
@@ -3446,7 +3538,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q686848",
-    "wikidata": "https://www.wikidata.org/wiki/Q686848"
+    "wikidata": "https://www.wikidata.org/wiki/Q686848",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3478,10 +3571,11 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q328079",
     "wikidata": "https://www.wikidata.org/wiki/Q328079",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/03sisti.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/03sisti.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -3511,8 +3605,8 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
-    "country": "France"
+    "country": "France",
+    "placeless": true
    }
   },
   {
@@ -3546,7 +3640,8 @@
     "museum_id": "walters-art-museum",
     "country": "United States",
     "qid": "Q1634134",
-    "wikidata": "https://www.wikidata.org/wiki/Q1634134"
+    "wikidata": "https://www.wikidata.org/wiki/Q1634134",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -3588,7 +3683,8 @@
       "qid": "Q2631335",
       "url": "https://www.wikidata.org/wiki/Q2631335"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3631,7 +3727,8 @@
       "qid": "Q966681",
       "url": "https://www.wikidata.org/wiki/Q966681"
      }
-    ]
+    ],
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -3666,7 +3763,8 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q2052275",
     "wikidata": "https://www.wikidata.org/wiki/Q2052275",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/04impan1.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/04impan1.html",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -3709,7 +3807,8 @@
       "qid": "Q2422889",
       "url": "https://www.wikidata.org/wiki/Q2422889"
      }
-    ]
+    ],
+    "location_src": "Czartoryski Museum"
    }
   },
   {
@@ -3744,7 +3843,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q2269330",
     "wikidata": "https://www.wikidata.org/wiki/Q2269330",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/08tenda.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/08tenda.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3779,7 +3879,8 @@
     "museum_id": "santa-maria-della-pace",
     "qid": "Q1639900",
     "wikidata": "https://www.wikidata.org/wiki/Q1639900",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/05sibyl2.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/05sibyl2.html",
+    "location_src": "Santa Maria della Pace"
    }
   },
   {
@@ -3822,7 +3923,8 @@
       "qid": "Q546977",
       "url": "https://www.wikidata.org/wiki/Q546977"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -3857,7 +3959,8 @@
     "country": "Italy",
     "qid": "Q1103801",
     "wikidata": "https://www.wikidata.org/wiki/Q1103801",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/06cecil.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/06cecil.html",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -3900,7 +4003,8 @@
       "qid": "Q2528106",
       "url": "https://www.wikidata.org/wiki/Q2528106"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3943,7 +4047,8 @@
       "qid": "Q2664637",
       "url": "https://www.wikidata.org/wiki/Q2664637"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3977,7 +4082,8 @@
     },
     "museum_id": "palazzo-pitti",
     "qid": "Q948034",
-    "wikidata": "https://www.wikidata.org/wiki/Q948034"
+    "wikidata": "https://www.wikidata.org/wiki/Q948034",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -4012,7 +4118,8 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q3399492",
     "wikidata": "https://www.wikidata.org/wiki/Q3399492",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/3/04bibbie.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/3/04bibbie.html",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -4047,7 +4154,8 @@
     "museum_id": "doria-pamphilj-gallery",
     "qid": "Q2535482",
     "wikidata": "https://www.wikidata.org/wiki/Q2535482",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/3/05double.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/3/05double.html",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -4055,8 +4163,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -4092,7 +4200,9 @@
       "source": "Wikipedia list",
       "title": "c. 1516: Madonna del Passeggio [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -4124,7 +4234,8 @@
     },
     "museum_id": "chigi-chapel",
     "qid": "Q3208003",
-    "wikidata": "https://www.wikidata.org/wiki/Q3208003"
+    "wikidata": "https://www.wikidata.org/wiki/Q3208003",
+    "location_src": "Chigi Chapel"
    }
   },
   {
@@ -4166,7 +4277,8 @@
       "qid": "Q3463874",
       "url": "https://www.wikidata.org/wiki/Q3463874"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -4208,7 +4320,8 @@
       "qid": "Q2467082",
       "url": "https://www.wikidata.org/wiki/Q2467082"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4243,7 +4356,8 @@
     "museum_id": "louvre",
     "qid": "Q738038",
     "wikidata": "https://www.wikidata.org/wiki/Q738038",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/03diadem.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/1/03diadem.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4285,7 +4399,8 @@
       "qid": "Q2420918",
       "url": "https://www.wikidata.org/wiki/Q2420918"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4320,7 +4435,8 @@
     "museum_id": "louvre",
     "qid": "Q2467141",
     "wikidata": "https://www.wikidata.org/wiki/Q2467141",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/01holyfb.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/01holyfb.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4355,7 +4471,8 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q1134281",
     "wikidata": "https://www.wikidata.org/wiki/Q1134281",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/08ezekie.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/08ezekie.html",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -4398,7 +4515,8 @@
       "qid": "Q594470",
       "url": "https://www.wikidata.org/wiki/Q594470"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -4440,7 +4558,8 @@
       "qid": "Q3464523",
       "url": "https://www.wikidata.org/wiki/Q3464523"
      }
-    ]
+    ],
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -4482,7 +4601,8 @@
       "qid": "Q2310025",
       "url": "https://www.wikidata.org/wiki/Q2310025"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -4516,7 +4636,8 @@
     "museum_id": "musee-des-beaux-arts-de-strasbourg",
     "country": "France",
     "qid": "Q786196",
-    "wikidata": "https://www.wikidata.org/wiki/Q786196"
+    "wikidata": "https://www.wikidata.org/wiki/Q786196",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -4559,7 +4680,8 @@
       "qid": "Q2610729",
       "url": "https://www.wikidata.org/wiki/Q2610729"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4602,7 +4724,8 @@
       "qid": "Q427390",
       "url": "https://www.wikidata.org/wiki/Q427390"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4645,7 +4768,8 @@
       "qid": "Q3399388",
       "url": "https://www.wikidata.org/wiki/Q3399388"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -4680,7 +4804,8 @@
     "museum_id": "louvre",
     "qid": "Q2275653",
     "wikidata": "https://www.wikidata.org/wiki/Q2275653",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/04double.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/04double.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4714,7 +4839,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q538243",
-    "wikidata": "https://www.wikidata.org/wiki/Q538243"
+    "wikidata": "https://www.wikidata.org/wiki/Q538243",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4757,7 +4883,8 @@
       "qid": "Q3212684",
       "url": "https://www.wikidata.org/wiki/Q3212684"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4765,8 +4892,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.49028,
-     41.90361
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -4800,7 +4927,8 @@
       "qid": "Q153441",
       "url": "https://www.wikidata.org/wiki/Q153441"
      }
-    ]
+    ],
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -4835,7 +4963,8 @@
     "museum_id": "vatican-museums",
     "qid": "Q2344437",
     "wikidata": "https://www.wikidata.org/wiki/Q2344437",
-    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/10trans5.html"
+    "wga_url": "https://www.wga.hu/html/r/raphael/5roma/5/10trans5.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -4843,8 +4972,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4872,7 +5001,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4880,7 +5011,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -4916,7 +5047,9 @@
       "title": "c. 1509: Portrait of Tommaso Inghirami",
       "ref": "https://en.wikipedia.org/wiki/Portrait_of_Tommaso_Inghirami"
      }
-    ]
+    ],
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -4924,8 +5057,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.252777777,
-     51.753333333
+     -1.25278,
+     51.75333
     ]
    },
    "properties": {
@@ -4943,7 +5076,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454634",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "all-souls-college",
+    "location_src": "All Souls College"
    }
   },
   {
@@ -4951,8 +5086,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -4970,7 +5105,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107436889",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4997,7 +5134,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118679310",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -5024,7 +5163,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454564",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -5051,7 +5192,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454577",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -5059,8 +5202,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.139444444,
-     51.509166666
+     -0.13944,
+     51.50917
     ]
    },
    "properties": {
@@ -5078,7 +5221,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118989231",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-academy-of-arts",
+    "location_src": "Royal Academy of Arts"
    }
   },
   {
@@ -5105,7 +5250,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111645124",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -5142,7 +5289,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -5169,7 +5318,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454610",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -5196,7 +5347,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454618",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -5223,7 +5376,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454620",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -5250,7 +5405,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454623",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -5277,7 +5434,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454626",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -5304,7 +5463,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454631",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -5320,7 +5481,7 @@
     "painter": "Raphael",
     "title": "The Virgin and Child",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5331,7 +5492,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454583",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -5347,7 +5510,7 @@
     "painter": "Raphael",
     "title": "The Transfiguration",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5358,7 +5521,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454593",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -5392,7 +5557,9 @@
       "title": "1502–1504: The Annunciation",
       "ref": "https://en.wikipedia.org/wiki/Oddi_Altarpiece_(Raphael)"
      }
-    ]
+    ],
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -5400,8 +5567,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5419,7 +5586,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29915268",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5427,8 +5596,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5446,7 +5615,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29954107",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5454,8 +5625,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5473,7 +5644,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30093401",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5481,8 +5654,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5500,7 +5673,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30095100",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5508,8 +5683,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91565514,
-     54.54173763
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -5527,7 +5702,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118679276",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bowes-museum",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -5535,8 +5712,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91565514,
-     54.54173763
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -5554,7 +5731,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454629",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bowes-museum",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -5562,8 +5741,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.636471,
-     43.724344
+     12.63647,
+     43.72434
     ]
    },
    "properties": {
@@ -5581,7 +5760,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103823905",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galleria-nazionale-delle-marche",
+    "location_src": "Galleria Nazionale delle Marche"
    }
   },
   {
@@ -5590,7 +5771,7 @@
     "type": "Point",
     "coordinates": [
      12.4675,
-     41.893611111
+     41.89361
     ]
    },
    "properties": {
@@ -5598,7 +5779,7 @@
     "title": "Venus and Jupiter",
     "year": "1517",
     "location": "Villa Farnesina",
-    "city": "Roma Capitale",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffael%2C%20Loggia%20di%20Psiche%2C%20Villa%20Farnesina%2C%20Rome%2011.jpg?width=500",
@@ -5618,7 +5799,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "villa-farnesina",
+    "location_src": "Villa Farnesina"
    }
   },
   {
@@ -5626,7 +5809,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.529722222,
+     -3.52972,
      50.7225
     ]
    },
@@ -5645,7 +5828,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454597",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "exeter-cathedral",
+    "location_src": "Exeter Cathedral"
    }
   },
   {
@@ -5672,7 +5857,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118896095",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "pollok-house",
+    "location_src": "Pollok House"
    }
   },
   {
@@ -5680,8 +5867,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -5699,7 +5886,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118632761",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -5707,8 +5896,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -5726,7 +5915,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119000914",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -5734,8 +5925,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -5753,7 +5944,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454587",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -5761,15 +5954,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.003979,
-     51.484468
+     -0.00556,
+     51.4811
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "Galatea",
     "year": "",
-    "location": "University of Greenwich",
+    "location": "Royal Museums Greenwich",
     "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5780,7 +5973,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118878179",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-greenwich",
+    "location_src": "Royal Museums Greenwich"
    }
   },
   {
@@ -5807,7 +6002,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77897131",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -5834,7 +6031,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77926299",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -5861,7 +6060,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77927440",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -5896,7 +6097,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "musee-d-art-et-d-histoire-de-narbonne",
+    "location_src": "Musée d'art et d'histoire de Narbonne"
    }
   },
   {
@@ -5923,7 +6126,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454608",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "armagh-county-museum",
+    "location_src": "Armagh County Museum"
    }
   },
   {
@@ -5950,7 +6155,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454605",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "beningbrough-hall",
+    "location_src": "Beningbrough Hall"
    }
   },
   {
@@ -5985,7 +6192,9 @@
       "was": "generally accepted",
       "note": "dated 1650, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "holburne-museum",
+    "location_src": "Holburne Museum"
    }
   },
   {
@@ -5993,8 +6202,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.634444,
-     43.310278
+     -73.63444,
+     43.31028
     ]
    },
    "properties": {
@@ -6022,7 +6231,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-hyde-collection",
+    "location_src": "The Hyde Collection"
    }
   },
   {
@@ -6030,8 +6241,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -6049,7 +6260,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20557290",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -6057,8 +6270,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -6076,7 +6289,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20557413",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -6085,7 +6300,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -6113,7 +6328,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -6121,8 +6338,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.456388888,
-     41.903611111
+     12.45639,
+     41.90361
     ]
    },
    "properties": {
@@ -6150,7 +6367,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "apostolic-palace",
+    "location_src": "Apostolic Palace"
    }
   },
   {
@@ -6158,8 +6377,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -6177,7 +6396,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3842585",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -6185,8 +6406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -6214,7 +6435,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -6222,8 +6445,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6231,7 +6454,7 @@
     "title": "Portrait of a Young Man",
     "year": "1512",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20%281483-1520%29%20%28imitator%20of%29%20-%20Portrait%20of%20a%20Young%20Man%20-%20NG2510%20-%20National%20Gallery.jpg?width=500",
@@ -6251,7 +6474,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6259,8 +6484,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6288,7 +6513,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6296,8 +6523,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6325,7 +6552,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6333,8 +6562,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6362,7 +6591,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6370,8 +6601,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6399,7 +6630,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6407,8 +6640,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6436,7 +6669,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6444,8 +6679,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6473,7 +6708,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6481,8 +6718,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6510,7 +6747,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6518,8 +6757,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6547,7 +6786,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6555,8 +6796,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6584,7 +6825,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6592,8 +6835,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6621,7 +6864,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6629,8 +6874,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -6658,7 +6903,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -6695,7 +6942,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -6703,8 +6952,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -6729,7 +6978,9 @@
       "title": "1500–1501: God the Father and the Virgin Mary",
       "ref": "https://en.wikipedia.org/wiki/Baronci_Altarpiece"
      }
-    ]
+    ],
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -6737,8 +6988,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -6766,7 +7017,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -6793,7 +7046,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20268553",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6820,7 +7075,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20425450",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6857,7 +7114,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -6894,7 +7153,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -6931,7 +7192,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -6939,7 +7202,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -6948,7 +7211,7 @@
     "title": "Pala Baglioni",
     "year": "1507",
     "location": "Galleria Borghese",
-    "city": "Roma Capitale",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rekonstruktion%20%27Pala%20Baglioni%27.jpg?width=500",
@@ -6968,7 +7231,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -6976,16 +7241,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.2557,
-     43.7681
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "Saint John the Baptist as a Boy",
     "year": "1518",
-    "location": "Tribuna of the Uffizi",
-    "city": "",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20the%20Baptist%20in%20the%20wilderness%20%28by%20Raffaello%20Sanzio%29%20%E2%80%93%20Tribuna%20degli%20Uffizi%2C%20Florence.jpg?width=500",
@@ -7005,7 +7270,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -7032,7 +7299,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3399400",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "liechtenstein-museum",
+    "location_src": "Liechtenstein Museum"
    }
   },
   {
@@ -7041,7 +7310,7 @@
     "type": "Point",
     "coordinates": [
      12.2385,
-     43.45430556
+     43.45431
     ]
    },
    "properties": {
@@ -7049,7 +7318,7 @@
     "title": "Standard of the Holy Trinity",
     "year": "1499",
     "location": "Citta di Castello Communal Art Gallery",
-    "city": "Città di Castello",
+    "city": "Castello",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/BandieraRV.jpg?width=500",
@@ -7059,7 +7328,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3498200",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "citta-di-castello-communal-art-gallery",
+    "location_src": "Citta di Castello Communal Art Gallery"
    }
   },
   {
@@ -7067,8 +7338,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7076,7 +7347,7 @@
     "title": "Ceres",
     "year": "1516",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A9r%C3%A8s%2C%20dite%20aussi%20L%27Abondance%20-%20Rapha%C3%ABl%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%20657.jpg?width=500",
@@ -7096,7 +7367,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7104,8 +7377,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7113,7 +7386,7 @@
     "title": "God the Father Blessing among the Angels",
     "year": "1514",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dieu%20le%20P%C3%A8re%20b%C3%A9nissant%20parmi%20les%20anges%20-%20Rapha%C3%ABl%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20RF%2048.jpg?width=500",
@@ -7133,7 +7406,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7170,7 +7445,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -7207,7 +7484,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -7244,7 +7523,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -7281,7 +7562,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -7318,7 +7601,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -7326,8 +7611,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780227777
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -7355,7 +7640,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatsgalerie-stuttgart",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -7363,15 +7650,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "Angel from Baronci Altarpiece",
     "year": "1501",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -7382,7 +7669,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q125936872",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -7390,8 +7679,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -7417,7 +7706,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -7425,8 +7716,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.3884514,
-     43.1115627
+     12.38845,
+     43.11156
     ]
    },
    "properties": {
@@ -7444,7 +7735,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131433288",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-umbria",
+    "location_src": "National Gallery of Umbria"
    }
   },
   {
@@ -7481,7 +7774,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "nizhniy-tagil-state-museum-of-fine-arts",
+    "location_src": "Nizhniy Tagil State Museum of Fine Arts"
    }
   },
   {
@@ -7516,7 +7811,9 @@
       "was": "generally accepted",
       "note": "dated 1525, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -7524,8 +7821,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.252777777,
-     51.753333333
+     -1.25278,
+     51.75333
     ]
    },
    "properties": {
@@ -7543,7 +7840,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454647",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "all-souls-college",
+    "location_src": "All Souls College"
    }
   },
   {
@@ -7570,7 +7869,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840767",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -7578,8 +7879,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.139444444,
-     51.509166666
+     -0.13944,
+     51.50917
     ]
    },
    "properties": {
@@ -7597,7 +7898,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840781",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-academy-of-arts",
+    "location_src": "Royal Academy of Arts"
    }
   },
   {
@@ -7605,8 +7908,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.139444444,
-     51.509166666
+     -0.13944,
+     51.50917
     ]
    },
    "properties": {
@@ -7624,7 +7927,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119861797",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-academy-of-arts",
+    "location_src": "Royal Academy of Arts"
    }
   },
   {
@@ -7651,7 +7956,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454663",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "corpus-christi-college",
+    "location_src": "Corpus Christi College"
    }
   },
   {
@@ -7659,8 +7966,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.715006,
-     51.146706
+     -2.71501,
+     51.14671
     ]
    },
    "properties": {
@@ -7678,7 +7985,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840777",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glastonbury-abbey",
+    "location_src": "Glastonbury Abbey"
    }
   },
   {
@@ -7713,7 +8022,9 @@
       "was": "generally accepted",
       "note": "dated 1700, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7740,7 +8051,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454673",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7767,7 +8080,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454678",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7794,7 +8109,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454687",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7821,7 +8138,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454690",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -7829,8 +8148,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.116666666,
-     52.208055555
+     0.11667,
+     52.20806
     ]
    },
    "properties": {
@@ -7848,7 +8167,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454697",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "st-john-s-college",
+    "location_src": "St John's College"
    }
   },
   {
@@ -7864,7 +8185,7 @@
     "painter": "Raphael",
     "title": "Baldassare Castiglione",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7875,7 +8196,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454676",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -7891,7 +8214,7 @@
     "painter": "Raphael",
     "title": "Jupiter and Juno",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7902,7 +8225,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454682",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -7918,7 +8243,7 @@
     "painter": "Raphael",
     "title": "Virgin and Child",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7929,7 +8254,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454686",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -7938,7 +8265,7 @@
     "type": "Point",
     "coordinates": [
      12.4675,
-     41.893611111
+     41.89361
     ]
    },
    "properties": {
@@ -7946,7 +8273,7 @@
     "title": "Cupid and The Three Graces",
     "year": "1517",
     "location": "Villa Farnesina",
-    "city": "Roma Capitale",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffael%2C%20Loggia%20di%20Psiche%2C%20Villa%20Farnesina%2C%20Rome%2009.jpg?width=500",
@@ -7966,7 +8293,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "villa-farnesina",
+    "location_src": "Villa Farnesina"
    }
   },
   {
@@ -7993,7 +8322,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454650",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "lambeth-palace",
+    "location_src": "Lambeth Palace"
    }
   },
   {
@@ -8002,7 +8333,7 @@
     "type": "Point",
     "coordinates": [
      -3.535,
-     50.736111111
+     50.73611
     ]
    },
    "properties": {
@@ -8020,7 +8351,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119940676",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "university-of-exeter",
+    "location_src": "University of Exeter"
    }
   },
   {
@@ -8028,8 +8361,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -8047,7 +8380,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454671",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -8055,8 +8390,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -8074,7 +8409,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119929246",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -8101,7 +8438,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840779",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "laing-art-gallery",
+    "location_src": "Laing Art Gallery"
    }
   },
   {
@@ -8109,7 +8448,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.138041,
+     -0.13804,
      50.8237
     ]
    },
@@ -8136,7 +8475,9 @@
       "was": "generally accepted",
       "note": "dated 1750, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "brighton-museum-art-gallery",
+    "location_src": "Brighton Museum & Art Gallery"
    }
   },
   {
@@ -8144,7 +8485,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.138041,
+     -0.13804,
      50.8237
     ]
    },
@@ -8163,7 +8504,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119940670",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "brighton-museum-art-gallery",
+    "location_src": "Brighton Museum & Art Gallery"
    }
   },
   {
@@ -8190,7 +8533,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454732",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ulster-museum",
+    "location_src": "Ulster Museum"
    }
   },
   {
@@ -8198,8 +8543,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.944444444,
-     51.623888888
+     -3.94444,
+     51.62389
     ]
    },
    "properties": {
@@ -8217,7 +8562,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454644",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glynn-vivian-art-gallery",
+    "location_src": "Glynn Vivian Art Gallery"
    }
   },
   {
@@ -8225,8 +8572,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.124167,
-     51.499444
+     -0.12417,
+     51.49944
     ]
    },
    "properties": {
@@ -8244,7 +8591,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454659",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "government-art-collection",
+    "location_src": "Government Art Collection"
    }
   },
   {
@@ -8279,7 +8628,9 @@
       "was": "generally accepted",
       "note": "dated 1900, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "holburne-museum",
+    "location_src": "Holburne Museum"
    }
   },
   {
@@ -8306,7 +8657,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454710",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-box",
+    "location_src": "The Box"
    }
   },
   {
@@ -8315,7 +8668,7 @@
     "type": "Point",
     "coordinates": [
      -1.46679,
-     53.379715
+     53.37971
     ]
    },
    "properties": {
@@ -8333,7 +8686,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119454693",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sheffield-galleries-and-museums-trust",
+    "location_src": "Sheffield Galleries and Museums Trust"
    }
   },
   {
@@ -8360,7 +8715,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119861211",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "william-morris-gallery",
+    "location_src": "William Morris Gallery"
    }
   },
   {
@@ -8368,8 +8725,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -8387,7 +8744,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119921363",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -8395,8 +8754,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.222583,
-     53.774037
+     -2.22258,
+     53.77404
     ]
    },
    "properties": {
@@ -8422,7 +8781,9 @@
       "was": "generally accepted",
       "note": "dated 1850, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "towneley-hall-art-gallery-and-museum",
+    "location_src": "Towneley Hall Art Gallery And Museum"
    }
   }
  ]

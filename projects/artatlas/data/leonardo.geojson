@@ -45,7 +45,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q1059211",
-    "wga_url": "https://www.wga.hu/html/v/verocchi/painting/baptism.html"
+    "wga_url": "https://www.wga.hu/html/v/verocchi/painting/baptism.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -53,8 +54,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -91,7 +92,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q1142058",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/5benois1.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/5benois1.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -135,7 +137,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q11935346",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/02/2virg_p2.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/02/2virg_p2.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -152,7 +155,7 @@
     "title": "The Virgin with the Child, with Cherries and a Cherry Tree in the Background",
     "city": "Oxford",
     "country": "United Kingdom",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -165,8 +168,9 @@
      "url": "https://www.wikidata.org/wiki/Q119840740",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "christ-church",
-    "qid": "Q119840740"
+    "museum_id": "christ-church-picture-gallery",
+    "qid": "Q119840740",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -198,7 +202,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "harris-manchester-college",
-    "qid": "Q119891464"
+    "qid": "Q119891464",
+    "location_src": "Harris Manchester College"
    }
   },
   {
@@ -244,7 +249,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q1217213",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/2annunc.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/2annunc.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -290,7 +296,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q12418",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/04/0monalis.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/04/0monalis.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -336,7 +343,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q1267893",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/4benci.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/4benci.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -375,7 +383,8 @@
      }
     },
     "museum_id": "biblioteca-ambrosiana",
-    "qid": "Q131414918"
+    "qid": "Q131414918",
+    "location_src": "Biblioteca Ambrosiana"
    }
   },
   {
@@ -383,8 +392,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -421,7 +430,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q1327676",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/03/3litta.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/03/3litta.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -467,7 +477,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q1638622",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/02/1adorati.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/02/1adorati.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -512,7 +523,8 @@
      }
     },
     "museum_id": "louvre-abu-dhabi",
-    "qid": "Q1892745"
+    "qid": "Q1892745",
+    "location_src": "Louvre Abu Dhabi"
    }
   },
   {
@@ -554,7 +566,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q20174114",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/4benci1.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/4benci1.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -562,8 +575,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.25638,
-     43.769
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -572,7 +585,7 @@
     "year": "1503",
     "city": "Florence",
     "country": "Italy",
-    "location": "Gabinetto dei disegni e delle stampe",
+    "location": "Uffizi Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -597,9 +610,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gabinetto-dei-disegni-e-delle-stampe",
+    "museum_id": "uffizi-gallery",
     "qid": "Q2045726",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/06anghia/1battle3.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/06anghia/1battle3.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -643,7 +657,8 @@
      }
     },
     "museum_id": "museum-boijmans-van-beuningen",
-    "qid": "Q2308934"
+    "qid": "Q2308934",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -689,7 +704,8 @@
     },
     "museum_id": "pinacoteca-ambrosiana",
     "qid": "Q2338404",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/03/1musicia.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/03/1musicia.html",
+    "location_src": "Pinacoteca Ambrosiana"
    }
   },
   {
@@ -732,7 +748,8 @@
     },
     "museum_id": "drumlanrig-castle",
     "qid": "Q27970282",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/05copies/1yarnwin.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/05copies/1yarnwin.html",
+    "location_src": "Drumlanrig Castle"
    }
   },
   {
@@ -777,7 +794,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3618186",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/7annunc2.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/7annunc2.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -819,7 +837,8 @@
     },
     "museum_id": "sforza-castle",
     "qid": "Q3800774",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/03/5ceilin1.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/03/5ceilin1.html",
+    "location_src": "Sforza Castle"
    }
   },
   {
@@ -860,7 +879,8 @@
      }
     },
     "museum_id": "santa-maria-delle-grazie",
-    "qid": "Q3937378"
+    "qid": "Q3937378",
+    "location_src": "Santa Maria delle Grazie"
    }
   },
   {
@@ -904,7 +924,8 @@
      }
     },
     "museum_id": "pinacoteca-di-brera",
-    "qid": "Q3985169"
+    "qid": "Q3985169",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -948,7 +969,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q4009972",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/02/3virg_l.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/02/3virg_l.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -994,7 +1016,8 @@
     },
     "museum_id": "czartoryski-museum",
     "qid": "Q474338",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/02/4ermine1.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/02/4ermine1.html",
+    "location_src": "Czartoryski Museum"
    }
   },
   {
@@ -1037,7 +1060,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q56280397",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/05copies/2yarnwi.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/05copies/2yarnwi.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1082,7 +1106,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q563727"
+    "qid": "Q563727",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1128,7 +1153,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q656434",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/03/2ferroni.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/03/2ferroni.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1173,7 +1199,8 @@
      }
     },
     "museum_id": "museum-of-the-ancient-people-of-lucania",
-    "qid": "Q6696013"
+    "qid": "Q6696013",
+    "location_src": "Museum of the Ancient People of Lucania"
    }
   },
   {
@@ -1219,7 +1246,8 @@
     },
     "museum_id": "bavarian-state-painting-collections",
     "qid": "Q698015",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/6carnat2.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/6carnat2.html",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1265,7 +1293,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q783215",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/04/6stjohn.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/04/6stjohn.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1283,7 +1312,7 @@
     "year": "1477",
     "city": "Worcester",
     "country": "United States",
-    "location": "Museo de Arte de Worcester",
+    "location": "Worcester Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -1303,8 +1332,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-worcester",
-    "qid": "Q79052262"
+    "museum_id": "worcester-art-museum",
+    "qid": "Q79052262",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -1322,7 +1352,7 @@
     "year": "1500",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -1348,9 +1378,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
+    "museum_id": "parma-national-gallery",
     "qid": "Q797902",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/04/2scapigl.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/04/2scapigl.html",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -1396,7 +1427,8 @@
     },
     "museum_id": "pinacoteca-vaticana",
     "qid": "Q972196",
-    "wga_url": "https://www.wga.hu/html/l/leonardo/01/8jerome.html"
+    "wga_url": "https://www.wga.hu/html/l/leonardo/01/8jerome.html",
+    "location_src": "Pinacoteca Vaticana"
    }
   }
  ]

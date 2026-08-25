@@ -32,7 +32,9 @@
     },
     "museum_id": "benaki-museum",
     "qid": "Q15711253",
-    "wikidata": "https://www.wikidata.org/wiki/Q15711253"
+    "wikidata": "https://www.wikidata.org/wiki/Q15711253",
+    "country": "Greece",
+    "location_src": "Benaki Museum"
    }
   },
   {
@@ -40,8 +42,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.685848,
-     40.436911
+     -3.68585,
+     40.43691
     ]
    },
    "properties": {
@@ -77,7 +79,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Magi"
      }
-    ]
+    ],
+    "museum_id": "museo-lazaro-galdiano",
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -121,7 +125,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Magi"
      }
-    ]
+    ],
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -159,7 +165,9 @@
       "qid": "Q9396918",
       "url": "https://www.wikidata.org/wiki/Q9396918"
      }
-    ]
+    ],
+    "country": "Greece",
+    "location_src": "Benaki Museum"
    }
   },
   {
@@ -200,7 +208,8 @@
       "qid": "Q3078569",
       "url": "https://www.wikidata.org/wiki/Q3078569"
      }
-    ]
+    ],
+    "location_src": "Cathedral of the Assumption"
    }
   },
   {
@@ -235,7 +244,8 @@
     "museum_id": "old-masters-gallery",
     "qid": "Q5393073",
     "wikidata": "https://www.wikidata.org/wiki/Q5393073",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0201grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0201grec.html",
+    "location_src": "Old Masters Gallery"
    }
   },
   {
@@ -243,8 +253,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.9216,
-     44.6485
+     10.92066,
+     44.64825
     ]
    },
    "properties": {
@@ -252,7 +262,7 @@
     "title": "Modena Triptych",
     "year": "c. 1567–1569",
     "city": "Modena",
-    "location": "Estense Gallery",
+    "location": "Galleria Estense",
     "attribution": "generally accepted",
     "medium": "Tempera on Wood",
     "dimensions": "37 × 23.8 24 × 18 cm",
@@ -266,9 +276,11 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "estense-gallery",
+    "museum_id": "galleria-estense",
     "qid": "Q3280557",
-    "wikidata": "https://www.wikidata.org/wiki/Q3280557"
+    "wikidata": "https://www.wikidata.org/wiki/Q3280557",
+    "country": "Italy",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -285,7 +297,7 @@
     "title": "Saint Francis Receiving the Stigmata",
     "year": "c. 1567 – 1570",
     "city": "Bergamo",
-    "location": "Accademia Carrara di Belle Arti di Bergamo",
+    "location": "Accademia Carrara",
     "attribution": "generally accepted",
     "medium": "oil on wood",
     "dimensions": "40.9 × 53.3 cm",
@@ -298,7 +310,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "accademia-carrara-di-belle-arti-di-bergamo",
+    "museum_id": "accademia-carrara",
     "wga_url": "https://www.wga.hu/html/g/greco_el/08/0804grec.html",
     "qid": "Q102046901",
     "wikidata": "https://www.wikidata.org/wiki/Q102046901",
@@ -308,7 +320,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q102046901 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "Italy",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -343,7 +357,8 @@
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q3208041",
     "wikidata": "https://www.wikidata.org/wiki/Q3208041",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0207grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0207grec.html",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -351,8 +366,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.05080556,
-     55.84477778
+     12.05081,
+     55.84478
     ]
    },
    "properties": {
@@ -388,7 +403,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Magi"
      }
-    ]
+    ],
+    "museum_id": "willumsens-museum",
+    "location_src": "Willumsens Museum"
    }
   },
   {
@@ -423,7 +440,8 @@
     "museum_id": "national-gallery-of-art",
     "qid": "Q5108852",
     "wikidata": "https://www.wikidata.org/wiki/Q5108852",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0211grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0211grec.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -465,7 +483,8 @@
       "qid": "Q5967017",
       "url": "https://www.wikidata.org/wiki/Q5967017"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -508,7 +527,8 @@
       "qid": "Q5965726",
       "url": "https://www.wikidata.org/wiki/Q5965726"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -546,7 +566,8 @@
       "qid": "Q102219837",
       "url": "https://www.wikidata.org/wiki/Q102219837"
      }
-    ]
+    ],
+    "location_src": "San Diego Museum of Art"
    }
   },
   {
@@ -586,7 +607,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q101568205 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "Greece",
+    "location_src": "Historical Museum of Crete"
    }
   },
   {
@@ -594,8 +617,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.2742,
-     44.9586
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -629,7 +652,8 @@
       "qid": "Q5108848",
       "url": "https://www.wikidata.org/wiki/Q5108848"
      }
-    ]
+    ],
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -664,7 +688,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q5966793",
     "wikidata": "https://www.wikidata.org/wiki/Q5966793",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/14/1409gred.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/14/1409gred.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -698,7 +723,8 @@
     "museum_id": "national-art-gallery",
     "qid": "Q6121364",
     "wikidata": "https://www.wikidata.org/wiki/Q6121364",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/01/0103grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/01/0103grec.html",
+    "location_src": "National Art Gallery"
    }
   },
   {
@@ -738,7 +764,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3937561 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -781,7 +808,8 @@
       "qid": "Q3929380",
       "url": "https://www.wikidata.org/wiki/Q3929380"
      }
-    ]
+    ],
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -816,7 +844,8 @@
     "museum_id": "frick-collection",
     "qid": "Q7232313",
     "wikidata": "https://www.wikidata.org/wiki/Q7232313",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/03/0305grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/03/0305grec.html",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -824,8 +853,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -859,7 +888,8 @@
       "qid": "Q6075225",
       "url": "https://www.wikidata.org/wiki/Q6075225"
      }
-    ]
+    ],
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -867,8 +897,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -904,7 +934,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Charles de Guise"
      }
-    ]
+    ],
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -944,7 +976,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q23948602 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Barbara Pyasetskaya-Johnson Collection"
    }
   },
   {
@@ -978,7 +1011,9 @@
     "museum_id": "parma-national-gallery",
     "qid": "Q21121895",
     "wikidata": "https://www.wikidata.org/wiki/Q21121895",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0212grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/02/0212grec.html",
+    "country": "Italy",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -1021,7 +1056,8 @@
       "qid": "Q5411596",
       "url": "https://www.wikidata.org/wiki/Q5411596"
      }
-    ]
+    ],
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -1062,7 +1098,8 @@
       "qid": "Q6553555",
       "url": "https://www.wikidata.org/wiki/Q6553555"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1097,7 +1134,8 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q9026835",
     "wikidata": "https://www.wikidata.org/wiki/Q9026835",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/06/0603grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/06/0603grec.html",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -1131,7 +1169,8 @@
     "museum_id": "palencia-cathedral",
     "qid": "Q3720171",
     "wikidata": "https://www.wikidata.org/wiki/Q3720171",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/06/0605grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/06/0605grec.html",
+    "location_src": "Palencia Cathedral"
    }
   },
   {
@@ -1173,7 +1212,8 @@
       "qid": "Q5557529",
       "url": "https://www.wikidata.org/wiki/Q5557529"
      }
-    ]
+    ],
+    "location_src": "College of Nosa Señora da Antiga"
    }
   },
   {
@@ -1215,7 +1255,8 @@
       "qid": "Q5658259",
       "url": "https://www.wikidata.org/wiki/Q5658259"
      }
-    ]
+    ],
+    "location_src": "San Lorenzo de El Escorial"
    }
   },
   {
@@ -1257,7 +1298,8 @@
       "qid": "Q2714617",
       "url": "https://www.wikidata.org/wiki/Q2714617"
      }
-    ]
+    ],
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -1265,8 +1307,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1297,7 +1339,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q16621909 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1328,7 +1371,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-santa-cruz"
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -1376,7 +1420,8 @@
       "qid": "Q9396800",
       "url": "https://www.wikidata.org/wiki/Q9396800"
      }
-    ]
+    ],
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -1410,7 +1455,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q10875359",
-    "wikidata": "https://www.wikidata.org/wiki/Q10875359"
+    "wikidata": "https://www.wikidata.org/wiki/Q10875359",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1445,7 +1491,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q6402081",
     "wikidata": "https://www.wikidata.org/wiki/Q6402081",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/07/0703grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/07/0703grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1480,7 +1527,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q8464346",
     "wikidata": "https://www.wikidata.org/wiki/Q8464346",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/08/0812grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/08/0812grec.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1522,7 +1570,8 @@
       "qid": "Q5949742",
       "url": "https://www.wikidata.org/wiki/Q5949742"
      }
-    ]
+    ],
+    "location_src": "San Lorenzo de El Escorial"
    }
   },
   {
@@ -1530,8 +1579,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91528,
-     54.54194
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -1557,7 +1606,8 @@
     "country": "United Kingdom",
     "qid": "Q9394999",
     "wikidata": "https://www.wikidata.org/wiki/Q9394999",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/07/0709grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/07/0709grec.html",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -1592,7 +1642,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q5560923",
     "wikidata": "https://www.wikidata.org/wiki/Q5560923",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/08/0808grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/08/0808grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1626,7 +1677,8 @@
     "museum_id": "walters-art-museum",
     "country": "United States",
     "qid": "Q16621943",
-    "wikidata": "https://www.wikidata.org/wiki/Q16621943"
+    "wikidata": "https://www.wikidata.org/wiki/Q16621943",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -1660,7 +1712,8 @@
     },
     "museum_id": "museum-of-santa-cruz",
     "qid": "Q16582179",
-    "wikidata": "https://www.wikidata.org/wiki/Q16582179"
+    "wikidata": "https://www.wikidata.org/wiki/Q16582179",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -1695,7 +1748,8 @@
     "museum_id": "church-of-santo-tome",
     "qid": "Q94802",
     "wikidata": "https://www.wikidata.org/wiki/Q94802",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/09/0908grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/09/0908grec.html",
+    "location_src": "Church of Santo Tomé"
    }
   },
   {
@@ -1738,7 +1792,8 @@
       "qid": "Q6106784",
       "url": "https://www.wikidata.org/wiki/Q6106784"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1780,7 +1835,8 @@
       "qid": "Q6116829",
       "url": "https://www.wikidata.org/wiki/Q6116829"
      }
-    ]
+    ],
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -1822,7 +1878,8 @@
       "qid": "Q6120418",
       "url": "https://www.wikidata.org/wiki/Q6120418"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1830,8 +1887,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1865,7 +1922,8 @@
       "qid": "Q9396559",
       "url": "https://www.wikidata.org/wiki/Q9396559"
      }
-    ]
+    ],
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1899,7 +1957,8 @@
     "museum_id": "museo-soumaya",
     "country": "Mexico",
     "qid": "Q18223938",
-    "wikidata": "https://www.wikidata.org/wiki/Q18223938"
+    "wikidata": "https://www.wikidata.org/wiki/Q18223938",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1934,7 +1993,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q6106770",
     "wikidata": "https://www.wikidata.org/wiki/Q6106770",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/08/0809grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/08/0809grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1969,7 +2029,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q6106772",
     "wikidata": "https://www.wikidata.org/wiki/Q6106772",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/10/1013grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/10/1013grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2011,7 +2072,8 @@
       "qid": "Q2680589",
       "url": "https://www.wikidata.org/wiki/Q2680589"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2054,7 +2116,8 @@
       "qid": "Q5791685",
       "url": "https://www.wikidata.org/wiki/Q5791685"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -2096,7 +2159,8 @@
       "qid": "Q11916108",
       "url": "https://www.wikidata.org/wiki/Q11916108"
      }
-    ]
+    ],
+    "location_src": "National Museum of Art of Catalonia"
    }
   },
   {
@@ -2138,7 +2202,8 @@
       "qid": "Q2842584",
       "url": "https://www.wikidata.org/wiki/Q2842584"
      }
-    ]
+    ],
+    "location_src": "National Museum of Art of Catalonia"
    }
   },
   {
@@ -2172,7 +2237,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q6034865",
-    "wikidata": "https://www.wikidata.org/wiki/Q6034865"
+    "wikidata": "https://www.wikidata.org/wiki/Q6034865",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2207,7 +2273,8 @@
     "country": "France",
     "qid": "Q11771318",
     "wikidata": "https://www.wikidata.org/wiki/Q11771318",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/10/1010grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/10/1010grec.html",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -2241,7 +2308,8 @@
     "museum_id": "musee-des-beaux-arts-de-pau",
     "country": "France",
     "qid": "Q16621950",
-    "wikidata": "https://www.wikidata.org/wiki/Q16621950"
+    "wikidata": "https://www.wikidata.org/wiki/Q16621950",
+    "location_src": "Musée des Beaux-Arts de Pau"
    }
   },
   {
@@ -2276,7 +2344,8 @@
     "museum_id": "tavera-hospital",
     "qid": "Q6116827",
     "wikidata": "https://www.wikidata.org/wiki/Q6116827",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/10/1005grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/10/1005grec.html",
+    "location_src": "Tavera Hospital"
    }
   },
   {
@@ -2319,7 +2388,8 @@
       "qid": "Q5841454",
       "url": "https://www.wikidata.org/wiki/Q5841454"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2361,7 +2431,8 @@
       "qid": "Q89189423",
       "url": "https://www.wikidata.org/wiki/Q89189423"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -2404,7 +2475,8 @@
       "qid": "Q5712837",
       "url": "https://www.wikidata.org/wiki/Q5712837"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2447,7 +2519,8 @@
       "qid": "Q5108849",
       "url": "https://www.wikidata.org/wiki/Q5108849"
      }
-    ]
+    ],
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -2482,7 +2555,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q883994",
     "wikidata": "https://www.wikidata.org/wiki/Q883994",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/11/1105grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/11/1105grec.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2524,7 +2598,8 @@
       "qid": "Q617629",
       "url": "https://www.wikidata.org/wiki/Q617629"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2532,8 +2607,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.37333,
-     39.4725
+     -0.37308,
+     39.47236
     ]
    },
    "properties": {
@@ -2542,7 +2617,7 @@
     "year": "1597",
     "city": "Valencia",
     "country": "Spain",
-    "location": "Museo del Patriarca",
+    "location": "Museu del Patriarca",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "138 × 108 cm",
@@ -2556,7 +2631,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-patriarca",
+    "museum_id": "museu-del-patriarca",
     "qid": "Q65058922",
     "wikidata": "https://www.wikidata.org/wiki/Q65058922",
     "_merged": [
@@ -2566,7 +2641,8 @@
       "qid": "Q84430070",
       "url": "https://www.wikidata.org/wiki/Q84430070"
      }
-    ]
+    ],
+    "location_src": "Museu del Patriarca"
    }
   },
   {
@@ -2609,7 +2685,8 @@
       "qid": "Q6163337",
       "url": "https://www.wikidata.org/wiki/Q6163337"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2640,7 +2717,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "toledo-cathedral"
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -2675,7 +2753,8 @@
     "museum_id": "national-gallery-of-art",
     "qid": "Q6119366",
     "wikidata": "https://www.wikidata.org/wiki/Q6119366",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/13/1304grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/13/1304grec.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2718,7 +2797,8 @@
       "qid": "Q5791681",
       "url": "https://www.wikidata.org/wiki/Q5791681"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2760,7 +2840,8 @@
       "qid": "Q6106760",
       "url": "https://www.wikidata.org/wiki/Q6106760"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts of Seville"
    }
   },
   {
@@ -2795,7 +2876,8 @@
     "museum_id": "capilla-mayor-del-hospital-de-la-caridad-de-illescas",
     "qid": "Q6118865",
     "wikidata": "https://www.wikidata.org/wiki/Q6118865",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1606grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1606grec.html",
+    "location_src": "Capilla Mayor del Hospital de la Caridad de Illescas"
    }
   },
   {
@@ -2837,7 +2919,8 @@
       "qid": "Q16621899",
       "url": "https://www.wikidata.org/wiki/Q16621899"
      }
-    ]
+    ],
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -2879,7 +2962,9 @@
       "qid": "Q69899942",
       "url": "https://www.wikidata.org/wiki/Q69899942"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -2914,7 +2999,8 @@
     "museum_id": "capilla-mayor-del-hospital-de-la-caridad-de-illescas",
     "qid": "Q5965524",
     "wikidata": "https://www.wikidata.org/wiki/Q5965524",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1604grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1604grec.html",
+    "location_src": "Capilla Mayor del Hospital de la Caridad de Illescas"
    }
   },
   {
@@ -2948,7 +3034,8 @@
     "museum_id": "santa-maria-la-mayor",
     "qid": "Q5967673",
     "wikidata": "https://www.wikidata.org/wiki/Q5967673",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/15/1501grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/15/1501grec.html",
+    "location_src": "Santa Maria la Mayor"
    }
   },
   {
@@ -2956,8 +3043,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -2982,7 +3069,8 @@
     "museum_id": "sao-paulo-museum-of-art",
     "country": "Brazil",
     "qid": "Q5395006",
-    "wikidata": "https://www.wikidata.org/wiki/Q5395006"
+    "wikidata": "https://www.wikidata.org/wiki/Q5395006",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3025,7 +3113,8 @@
       "qid": "Q3649313",
       "url": "https://www.wikidata.org/wiki/Q3649313"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3067,7 +3156,8 @@
       "qid": "Q16527161",
       "url": "https://www.wikidata.org/wiki/Q16527161"
      }
-    ]
+    ],
+    "location_src": "Instituto Valencia of Don Juan"
    }
   },
   {
@@ -3075,8 +3165,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.0273,
-     39.8628
+     -4.0293,
+     39.8559
     ]
    },
    "properties": {
@@ -3098,7 +3188,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-greco-museum"
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -3106,8 +3197,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -3115,7 +3206,7 @@
     "title": "Cardinal Fernando Niño de Guevara",
     "year": "1600",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cardinal%20Fernando%20Ni%C3%B1o%20de%20Guevara%20%281541%E2%80%931609%29%20MET%20DT854.jpg?width=500",
@@ -3136,7 +3227,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Cardinal (possibly Fernando Niño de Guevara)"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3171,7 +3264,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q48927682",
     "wikidata": "https://www.wikidata.org/wiki/Q48927682",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/14/1408gred.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/14/1408gred.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3214,7 +3308,8 @@
       "qid": "Q6106776",
       "url": "https://www.wikidata.org/wiki/Q6106776"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3222,8 +3317,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.370833333,
-     39.479166666
+     -0.37083,
+     39.47917
     ]
    },
    "properties": {
@@ -3252,7 +3347,9 @@
       "source": "Wikipedia list",
       "title": "Saint John the Baptist"
      }
-    ]
+    ],
+    "museum_id": "museu-de-belles-arts-de-valencia",
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -3287,7 +3384,8 @@
     "museum_id": "capilla-mayor-del-hospital-de-la-caridad-de-illescas",
     "qid": "Q5965719",
     "wikidata": "https://www.wikidata.org/wiki/Q5965719",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1601grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1601grec.html",
+    "location_src": "Capilla Mayor del Hospital de la Caridad de Illescas"
    }
   },
   {
@@ -3327,7 +3425,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q9396824 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3358,7 +3457,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "toledo-cathedral"
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3366,8 +3466,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -3396,7 +3496,9 @@
       "source": "Wikipedia list",
       "title": "Saint Luke (Toledo series)"
      }
-    ]
+    ],
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3430,7 +3532,8 @@
     },
     "museum_id": "toledo-cathedral",
     "qid": "Q5823887",
-    "wikidata": "https://www.wikidata.org/wiki/Q5823887"
+    "wikidata": "https://www.wikidata.org/wiki/Q5823887",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3469,7 +3572,8 @@
       "qid": "Q102159660",
       "url": "https://www.wikidata.org/wiki/Q102159660"
      }
-    ]
+    ],
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3477,8 +3581,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -3507,7 +3611,9 @@
       "source": "Wikipedia list",
       "title": "Saint Andrew (Toledo series)"
      }
-    ]
+    ],
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3515,8 +3621,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -3545,7 +3651,9 @@
       "source": "Wikipedia list",
       "title": "Saint Matthew (Toledo series)"
      }
-    ]
+    ],
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3553,8 +3661,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -3583,7 +3691,9 @@
       "source": "Wikipedia list",
       "title": "Saint Thaddeus (Saint Jude) (Toledo series)"
      }
-    ]
+    ],
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -3626,7 +3736,8 @@
       "qid": "Q5966323",
       "url": "https://www.wikidata.org/wiki/Q5966323"
      }
-    ]
+    ],
+    "location_src": "Capilla Mayor del Hospital de la Caridad de Illescas"
    }
   },
   {
@@ -3661,7 +3772,8 @@
     "museum_id": "capilla-mayor-del-hospital-de-la-caridad-de-illescas",
     "qid": "Q6461660",
     "wikidata": "https://www.wikidata.org/wiki/Q6461660",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1603grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/16/1603grec.html",
+    "location_src": "Capilla Mayor del Hospital de la Caridad de Illescas"
    }
   },
   {
@@ -3703,7 +3815,8 @@
       "qid": "Q16619520",
       "url": "https://www.wikidata.org/wiki/Q16619520"
      }
-    ]
+    ],
+    "location_src": "National Museum of Art of Romania"
    }
   },
   {
@@ -3746,7 +3859,8 @@
       "qid": "Q9068380",
       "url": "https://www.wikidata.org/wiki/Q9068380"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3754,8 +3868,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -3786,7 +3900,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q16526590 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -3821,7 +3936,8 @@
     "museum_id": "museum-of-santa-cruz",
     "qid": "Q5392381",
     "wikidata": "https://www.wikidata.org/wiki/Q5392381",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/20/2004grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/20/2004grec.html",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -3864,7 +3980,8 @@
       "qid": "Q5781032",
       "url": "https://www.wikidata.org/wiki/Q5781032"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3905,7 +4022,8 @@
       "qid": "Q9073676",
       "url": "https://www.wikidata.org/wiki/Q9073676"
      }
-    ]
+    ],
+    "location_src": "San Lorenzo de El Escorial"
    }
   },
   {
@@ -3913,8 +4031,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.0273,
-     39.8628
+     -4.0293,
+     39.8559
     ]
    },
    "properties": {
@@ -3940,7 +4058,8 @@
     "museum_id": "el-greco-museum",
     "qid": "Q6163991",
     "wikidata": "https://www.wikidata.org/wiki/Q6163991",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/19/1905grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/19/1905grec.html",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -3975,7 +4094,8 @@
     "museum_id": "tavera-hospital",
     "qid": "Q5693444",
     "wikidata": "https://www.wikidata.org/wiki/Q5693444",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/22/2202grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/22/2202grec.html",
+    "location_src": "Tavera Hospital"
    }
   },
   {
@@ -4017,7 +4137,8 @@
       "qid": "Q5823248",
       "url": "https://www.wikidata.org/wiki/Q5823248"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4059,7 +4180,8 @@
       "qid": "Q6121370",
       "url": "https://www.wikidata.org/wiki/Q6121370"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4067,8 +4189,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4097,7 +4219,9 @@
       "source": "Wikipedia list",
       "title": "Saint James the Elder (Almadrones series)"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4132,7 +4256,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q1220013",
     "wikidata": "https://www.wikidata.org/wiki/Q1220013",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/22/2208grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/22/2208grec.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4164,7 +4289,6 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection-2",
     "qid": "Q5965721",
     "wikidata": "https://www.wikidata.org/wiki/Q5965721",
     "wga_url": "https://www.wga.hu/html/g/greco_el/22/2203grec.html",
@@ -4175,7 +4299,8 @@
       "qid": "Q5965721",
       "url": "https://www.wikidata.org/wiki/Q5965721"
      }
-    ]
+    ],
+    "placeless": true
    }
   },
   {
@@ -4218,7 +4343,8 @@
       "qid": "Q949323",
       "url": "https://www.wikidata.org/wiki/Q949323"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -4252,7 +4378,8 @@
     },
     "museum_id": "tavera-hospital",
     "qid": "Q6106796",
-    "wikidata": "https://www.wikidata.org/wiki/Q6106796"
+    "wikidata": "https://www.wikidata.org/wiki/Q6106796",
+    "location_src": "Tavera Hospital"
    }
   },
   {
@@ -4295,7 +4422,8 @@
       "qid": "Q19856861",
       "url": "https://www.wikidata.org/wiki/Q19856861"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4336,7 +4464,8 @@
       "qid": "Q6118863",
       "url": "https://www.wikidata.org/wiki/Q6118863"
      }
-    ]
+    ],
+    "location_src": "El Escorial"
    }
   },
   {
@@ -4371,7 +4500,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q6119106",
     "wikidata": "https://www.wikidata.org/wiki/Q6119106",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/11/1103grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/11/1103grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4412,7 +4542,8 @@
       "qid": "Q6118783",
       "url": "https://www.wikidata.org/wiki/Q6118783"
      }
-    ]
+    ],
+    "location_src": "College of Nosa Señora da Antiga"
    }
   },
   {
@@ -4455,7 +4586,8 @@
       "qid": "Q5108847",
       "url": "https://www.wikidata.org/wiki/Q5108847"
      }
-    ]
+    ],
+    "location_src": "San Ginés"
    }
   },
   {
@@ -4490,7 +4622,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3809182",
     "wikidata": "https://www.wikidata.org/wiki/Q3809182",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/17/1712grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/17/1712grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4498,15 +4631,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.0633,
-     38.9142
+     -77.06333,
+     38.91417
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Visitation",
     "year": "1609–1613",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "Dumbarton Oaks",
     "attribution": "generally accepted",
@@ -4533,7 +4666,8 @@
       "qid": "Q11688008",
       "url": "https://www.wikidata.org/wiki/Q11688008"
      }
-    ]
+    ],
+    "location_src": "Dumbarton Oaks"
    }
   },
   {
@@ -4568,7 +4702,8 @@
     "museum_id": "national-gallery-of-art",
     "qid": "Q2255224",
     "wikidata": "https://www.wikidata.org/wiki/Q2255224",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/19/1912grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/19/1912grec.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -4577,7 +4712,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -4611,7 +4746,8 @@
       "qid": "Q2842448",
       "url": "https://www.wikidata.org/wiki/Q2842448"
      }
-    ]
+    ],
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -4652,7 +4788,8 @@
       "qid": "Q7589837",
       "url": "https://www.wikidata.org/wiki/Q7589837"
      }
-    ]
+    ],
+    "location_src": "Indianapolis Museum of Art"
    }
   },
   {
@@ -4682,7 +4819,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "indianapolis-museum-of-art"
+    "museum_id": "indianapolis-museum-of-art",
+    "location_src": "Indianapolis Museum of Art"
    }
   },
   {
@@ -4712,7 +4850,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "indianapolis-museum-of-art"
+    "museum_id": "indianapolis-museum-of-art",
+    "location_src": "Indianapolis Museum of Art"
    }
   },
   {
@@ -4754,7 +4893,8 @@
       "qid": "Q6119496",
       "url": "https://www.wikidata.org/wiki/Q6119496"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4762,8 +4902,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -4785,7 +4925,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "los-angeles-county-museum-of-art"
+    "museum_id": "los-angeles-county-museum-of-art",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -4794,7 +4935,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -4811,7 +4952,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kimbell-art-museum"
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -4854,7 +4996,8 @@
       "qid": "Q3784764",
       "url": "https://www.wikidata.org/wiki/Q3784764"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4862,8 +5005,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.0273,
-     39.8628
+     -4.0293,
+     39.8559
     ]
    },
    "properties": {
@@ -4885,7 +5028,8 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-greco-museum"
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -4925,7 +5069,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q46935975 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -4960,7 +5105,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1114913",
     "wikidata": "https://www.wikidata.org/wiki/Q1114913",
-    "wga_url": "https://www.wga.hu/html/g/greco_el/21/2109grec.html"
+    "wga_url": "https://www.wga.hu/html/g/greco_el/21/2109grec.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5003,7 +5149,8 @@
       "qid": "Q5956215",
       "url": "https://www.wikidata.org/wiki/Q5956215"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5036,7 +5183,8 @@
     },
     "museum_id": "diocese-museum",
     "qid": "Q5965731",
-    "wikidata": "https://www.wikidata.org/wiki/Q5965731"
+    "wikidata": "https://www.wikidata.org/wiki/Q5965731",
+    "location_src": "Diocese Museum"
    }
   },
   {
@@ -5063,7 +5211,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103058889",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "texas",
+    "location_src": "Texas"
    }
   },
   {
@@ -5071,8 +5221,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.187815,
-     45.471955
+     9.18782,
+     45.47196
     ]
    },
    "properties": {
@@ -5090,7 +5240,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102113269",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "pinacoteca-di-brera",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -5098,8 +5250,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.693333333,
-     40.792777777
+     -73.69333,
+     40.79278
     ]
    },
    "properties": {
@@ -5127,7 +5279,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "manhasset",
+    "location_src": "Manhasset"
    }
   },
   {
@@ -5135,8 +5289,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.685848,
-     40.436911
+     -3.68585,
+     40.43691
     ]
    },
    "properties": {
@@ -5154,7 +5308,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102255559",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-lazaro-galdiano",
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -5162,15 +5318,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "The Virgin and Child with Saint Anne",
     "year": "1600",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5181,7 +5337,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102047567",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -5189,8 +5347,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -5208,7 +5366,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79396327",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -5216,7 +5376,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -5235,7 +5395,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q79149873",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -5243,8 +5405,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.039879,
-     38.895851
+     -77.03988,
+     38.89585
     ]
    },
    "properties": {
@@ -5262,7 +5424,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102108945",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "corcoran-gallery-of-art",
+    "location_src": "Corcoran Gallery of Art"
    }
   },
   {
@@ -5299,7 +5463,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -5336,7 +5502,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -5373,7 +5541,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -5410,7 +5580,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -5418,7 +5590,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -5437,7 +5609,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102111954",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -5445,8 +5619,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -117.8067257,
-     34.1066756
+     -117.80673,
+     34.10668
     ]
    },
    "properties": {
@@ -5464,7 +5638,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102391252",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "san-dimas",
+    "location_src": "San Dimas"
    }
   },
   {
@@ -5472,8 +5648,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.714577,
-     40.423684
+     -3.71458,
+     40.42368
     ]
    },
    "properties": {
@@ -5491,7 +5667,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102228242",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cerralbo-museum",
+    "location_src": "Cerralbo Museum"
    }
   },
   {
@@ -5499,8 +5677,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -5518,7 +5696,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102158748",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -5526,8 +5706,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -5545,7 +5725,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102158919",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -5553,8 +5735,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -5572,7 +5754,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102159532",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -5580,8 +5764,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -5599,7 +5783,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102163155",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -5607,8 +5793,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -5626,7 +5812,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103705896",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -5634,8 +5822,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -5653,7 +5841,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103739947",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -5680,7 +5870,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102255376",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-decorative-arts",
+    "location_src": "National Museum of Decorative Arts"
    }
   },
   {
@@ -5688,8 +5880,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489856069,
-     41.903324209
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -5707,7 +5899,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q83178018",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palazzo-barberini",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -5715,8 +5909,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489856069,
-     41.903324209
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -5734,7 +5928,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q83194123",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palazzo-barberini",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -5761,7 +5957,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102332635",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -5770,7 +5968,7 @@
     "type": "Point",
     "coordinates": [
      -117.15043,
-     32.732158
+     32.73216
     ]
    },
    "properties": {
@@ -5788,7 +5986,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102157789",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "san-diego-museum-of-art",
+    "location_src": "San Diego Museum of Art"
    }
   },
   {
@@ -5796,8 +5996,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.251111111,
-     51.754166666
+     -1.25111,
+     51.75417
     ]
    },
    "properties": {
@@ -5815,7 +6015,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102311448",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "new-college",
+    "location_src": "New College"
    }
   },
   {
@@ -5842,7 +6044,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102069190",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-sculpture",
+    "location_src": "National Museum of Sculpture"
    }
   },
   {
@@ -5869,7 +6073,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102069440",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-sculpture",
+    "location_src": "National Museum of Sculpture"
    }
   },
   {
@@ -5896,7 +6102,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102069689",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-sculpture",
+    "location_src": "National Museum of Sculpture"
    }
   },
   {
@@ -5923,7 +6131,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102069858",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-sculpture",
+    "location_src": "National Museum of Sculpture"
    }
   },
   {
@@ -5950,7 +6160,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102070099",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-sculpture",
+    "location_src": "National Museum of Sculpture"
    }
   },
   {
@@ -5958,8 +6170,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.991388888,
-     39.796666666
+     -3.99139,
+     39.79667
     ]
    },
    "properties": {
@@ -5977,7 +6189,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102173891",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "burguillos-de-toledo",
+    "location_src": "Burguillos de Toledo"
    }
   },
   {
@@ -5985,15 +6199,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.024421,
-     39.865042
+     -4.0273,
+     39.8628
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Annunciation (Hospital de Tavera)",
     "year": "",
-    "location": "Hospital de Tavera",
+    "location": "Tavera Hospital",
     "city": "Toledo",
     "country": "Spain",
     "attribution": "generally accepted",
@@ -6004,7 +6218,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102210977",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "tavera-hospital",
+    "location_src": "Tavera Hospital"
    }
   },
   {
@@ -6012,8 +6228,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -6031,7 +6247,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102115585",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -6058,7 +6276,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102187903",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -6085,7 +6305,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102252989",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -6112,7 +6334,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102229114",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum"
    }
   },
   {
@@ -6128,7 +6352,7 @@
     "painter": "El Greco",
     "title": "Saint Jerome as Cardinal",
     "year": "1590",
-    "location": "Musée Bonnat-Helleu",
+    "location": "Musée Bonnat",
     "city": "Bayonne",
     "country": "France",
     "attribution": "generally accepted",
@@ -6139,7 +6363,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102254660",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-bonnat",
+    "location_src": "Musée Bonnat"
    }
   },
   {
@@ -6147,8 +6373,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6166,7 +6392,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102070864",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6174,8 +6402,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6193,7 +6421,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102070963",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6201,8 +6431,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6220,7 +6450,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102071050",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6228,8 +6460,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6247,7 +6479,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102071139",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6255,8 +6489,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6274,7 +6508,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102071389",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6282,8 +6518,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6301,7 +6537,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102071520",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6309,8 +6547,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.844485,
-     43.361928
+     -5.84448,
+     43.36193
     ]
    },
    "properties": {
@@ -6328,7 +6566,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102071595",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fine-arts-museum-of-asturias",
+    "location_src": "Fine Arts Museum of Asturias"
    }
   },
   {
@@ -6336,8 +6576,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.11472222,
-     42.37416667
+     -71.11472,
+     42.37417
     ]
    },
    "properties": {
@@ -6355,7 +6595,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102230174",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "harvard-art-museums",
+    "location_src": "Harvard Art Museums"
    }
   },
   {
@@ -6389,7 +6631,9 @@
       "title": "Portrait of Antonio de Covarrubias",
       "ref": "https://en.wikipedia.org/wiki/Portrait_of_Antonio_de_Covarrubias"
      }
-    ]
+    ],
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -6416,7 +6660,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102228092",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -6443,7 +6689,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102256095",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -6470,7 +6718,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102423026",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -6513,7 +6763,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Magi"
      }
-    ]
+    ],
+    "museum_id": "agnes-etherington-art-centre",
+    "location_src": "Agnes Etherington Art Centre"
    }
   },
   {
@@ -6540,7 +6792,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102227707",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "chrysler-museum-of-art",
+    "location_src": "Chrysler Museum of Art"
    }
   },
   {
@@ -6548,8 +6802,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.247951297,
-     43.298353655
+     -2.24795,
+     43.29835
     ]
    },
    "properties": {
@@ -6567,7 +6821,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q102177002",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "zuloaga-s-house-museum",
+    "location_src": "Zuloaga's House-Museum"
    }
   },
   {
@@ -6575,8 +6831,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6594,7 +6850,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5824027",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6602,8 +6860,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6621,7 +6879,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5943813",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6629,8 +6889,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6648,7 +6908,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5966352",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6656,8 +6918,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6675,7 +6937,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6071513",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6683,8 +6947,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6702,7 +6966,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6118477",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6710,8 +6976,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6729,7 +6995,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6119109",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6737,16 +7005,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.967222222,
-     40.771111111
+     -73.9672,
+     40.7711
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "St. Jerome",
     "year": "1609",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
+    "location": "Frick Collection",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/TitiaanElGeromeFrick.jpg?width=500",
@@ -6756,7 +7024,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6118934",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "frick-collection",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -6764,8 +7034,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -6783,7 +7053,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5824977",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -6810,7 +7082,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q5965648",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-art-of-romania",
+    "location_src": "National Museum of Art of Romania"
    }
   },
   {
@@ -6818,8 +7092,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.028685,
-     39.859363
+     -4.02869,
+     39.85936
     ]
    },
    "properties": {
@@ -6837,7 +7111,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q6119105",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "monastery-of-saint-dominic-of-silos",
+    "location_src": "Monastery of Saint Dominic of Silos"
    }
   },
   {
@@ -6864,7 +7140,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20179805",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -6872,8 +7150,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -6891,7 +7169,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20539241",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -6899,8 +7179,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6918,7 +7198,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19162891",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6926,8 +7208,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6945,7 +7227,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19162971",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6953,8 +7237,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -6972,7 +7256,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q65018328",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -6980,8 +7266,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -6999,7 +7285,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18225401",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -7007,8 +7295,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -7016,7 +7304,7 @@
     "title": "Saint Jerome as Cardinal",
     "year": "1590",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20St%20Jerome%20as%20Cardinal%20-%20WGA10546.jpg?width=500",
@@ -7026,7 +7314,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26523103",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -7034,8 +7324,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -7043,7 +7333,7 @@
     "title": "The Adoration of the Name of Jesus",
     "year": "1579",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20The%20Adoration%20of%20the%20Name%20of%20Jesus%20-%20WGA10433.jpg?width=500",
@@ -7053,7 +7343,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26705706",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -7062,7 +7354,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -7080,7 +7372,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20176850",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -7089,7 +7383,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -7107,7 +7401,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20176891",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -7115,8 +7411,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -7134,7 +7430,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20268562",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -7161,7 +7459,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29654455",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "goya-museum",
+    "location_src": "Goya Museum"
    }
   },
   {
@@ -7169,8 +7469,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.685848,
-     40.436911
+     -3.68585,
+     40.43691
     ]
    },
    "properties": {
@@ -7188,7 +7488,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q70595592",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-lazaro-galdiano",
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -7196,8 +7498,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -7215,7 +7517,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20808930",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -7223,8 +7527,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.046805555,
-     38.911388888
+     -77.04681,
+     38.91139
     ]
    },
    "properties": {
@@ -7242,7 +7546,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q23940142",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-phillips-collection",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -7250,8 +7556,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -7269,7 +7575,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q66622118",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -7277,8 +7585,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -7296,7 +7604,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60515970",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -7323,7 +7633,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20536722",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -7350,7 +7662,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q67574097",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunst-museum-winterthur-reinhart-am-stadtgarten",
+    "location_src": "Kunst Museum Winterthur | Reinhart am Stadtgarten"
    }
   },
   {
@@ -7359,7 +7673,7 @@
     "type": "Point",
     "coordinates": [
      -5.3275,
-     39.452777777
+     39.45278
     ]
    },
    "properties": {
@@ -7377,7 +7691,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q71571588",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-monastery-of-saint-mary-of-guadalupe",
+    "location_src": "Royal Monastery of Saint Mary of Guadalupe"
    }
   },
   {
@@ -7386,7 +7702,7 @@
     "type": "Point",
     "coordinates": [
      -5.3275,
-     39.452777777
+     39.45278
     ]
    },
    "properties": {
@@ -7404,7 +7720,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q71593660",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-monastery-of-saint-mary-of-guadalupe",
+    "location_src": "Royal Monastery of Saint Mary of Guadalupe"
    }
   },
   {
@@ -7412,8 +7730,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -7431,7 +7749,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28127579",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -7458,7 +7778,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50900161",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -7485,7 +7807,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50984848",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -7493,8 +7817,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -7512,7 +7836,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18599628",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -7520,8 +7846,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -7539,7 +7865,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622006",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -7547,8 +7875,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.39694444,
-     50.08888889
+     14.39694,
+     50.08889
     ]
    },
    "properties": {
@@ -7566,7 +7894,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28797650",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "schwarzenberg-palace",
+    "location_src": "Schwarzenberg Palace"
    }
   },
   {
@@ -7574,8 +7904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -7593,7 +7923,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18684100",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -7601,8 +7933,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -7620,7 +7952,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27955550",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -7628,8 +7962,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.185655,
-     39.826019
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -7647,7 +7981,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27896938",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-de-arte-de-indianapolis",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -7655,8 +7991,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -7674,7 +8010,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64516555",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -7682,7 +8020,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -7701,7 +8039,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20421808",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -7709,7 +8049,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -9.197777777,
+     -9.19778,
      38.7075
     ]
    },
@@ -7728,7 +8068,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20050452",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palace-of-ajuda",
+    "location_src": "Palace of Ajuda"
    }
   },
   {
@@ -7736,8 +8078,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     23.7193483,
-     37.9830099
+     23.71935,
+     37.98301
     ]
    },
    "properties": {
@@ -7755,7 +8097,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q66622410",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "municipal-gallery-of-athens",
+    "location_src": "Municipal Gallery of Athens"
    }
   },
   {
@@ -7782,7 +8126,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64513283",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "rhode-island-school-of-design-museum",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -7809,7 +8155,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q52301456",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -7817,8 +8165,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -7836,7 +8184,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622002",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -7863,7 +8213,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622000",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -7890,7 +8242,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622004",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -7917,7 +8271,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622083",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -7944,7 +8300,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q70476127",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -7952,8 +8310,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.500842,
-     37.784466
+     -122.50084,
+     37.78447
     ]
    },
    "properties": {
@@ -7971,7 +8329,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20199739",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "legion-of-honor",
+    "location_src": "Legion of Honor"
    }
   },
   {
@@ -7979,8 +8339,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.500842,
-     37.784466
+     -122.50084,
+     37.78447
     ]
    },
    "properties": {
@@ -7998,7 +8358,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20202611",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "legion-of-honor",
+    "location_src": "Legion of Honor"
    }
   },
   {
@@ -8025,7 +8387,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q60660417",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alava-foral-council",
+    "location_src": "Álava Foral Council"
    }
   },
   {
@@ -8033,8 +8397,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.985301478,
-     43.32476956
+     -1.9853,
+     43.32477
     ]
    },
    "properties": {
@@ -8052,7 +8416,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q31188989",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "san-telmo-museoa",
+    "location_src": "San Telmo Museoa"
    }
   },
   {
@@ -8079,7 +8445,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621992",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8106,7 +8474,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622017",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8133,7 +8503,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622042",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8160,7 +8532,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622047",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8187,7 +8561,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622068",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8214,7 +8590,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622075",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8223,7 +8601,7 @@
     "type": "Point",
     "coordinates": [
      -2.93785,
-     43.265973888
+     43.26597
     ]
    },
    "properties": {
@@ -8241,7 +8619,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621949",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bilbao-fine-arts-museum",
+    "location_src": "Bilbao Fine Arts Museum"
    }
   },
   {
@@ -8249,8 +8629,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -8268,7 +8648,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621942",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -8276,8 +8658,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.675609,
-     45.70386
+     9.6758,
+     45.7042
     ]
    },
    "properties": {
@@ -8305,7 +8687,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "accademia-carrara",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -8313,8 +8697,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -8332,7 +8716,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29952130",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8340,8 +8726,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.946022,
-     41.260254
+     -95.94602,
+     41.26025
     ]
    },
    "properties": {
@@ -8359,7 +8745,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621933",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "joslyn-art-museum",
+    "location_src": "Joslyn Art Museum"
    }
   },
   {
@@ -8367,8 +8755,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -8386,7 +8774,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621922",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -8394,8 +8784,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -8413,7 +8803,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621930",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -8440,7 +8832,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621925",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8448,8 +8842,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -58.381944444,
-     -34.599722222
+     -58.38194,
+     -34.59972
     ]
    },
    "properties": {
@@ -8467,7 +8861,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105617045",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "buenos-aires",
+    "location_src": "Buenos Aires"
    }
   },
   {
@@ -8475,8 +8871,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454444444,
-     41.906388888
+     12.4544,
+     41.9064
     ]
    },
    "properties": {
@@ -8494,7 +8890,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q138717328",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -8502,8 +8900,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.685848,
-     40.436911
+     -3.68585,
+     40.43691
     ]
    },
    "properties": {
@@ -8521,7 +8919,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105630374",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-lazaro-galdiano",
+    "location_src": "Museo Lázaro Galdiano"
    }
   },
   {
@@ -8529,8 +8929,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.435833333,
-     40.023611111
+     -4.43583,
+     40.02361
     ]
    },
    "properties": {
@@ -8548,7 +8948,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105514667",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "santa-olalla",
+    "location_src": "Santa Olalla"
    }
   },
   {
@@ -8556,7 +8958,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.002275,
+     21.00228,
      52.24215
     ]
    },
@@ -8575,7 +8977,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126884225",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-john-paul-ii-collection",
+    "location_src": "Museum of John Paul II Collection"
    }
   },
   {
@@ -8583,8 +8987,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.101361111,
-     57.148030555
+     -2.10136,
+     57.14803
     ]
    },
    "properties": {
@@ -8602,7 +9006,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840726",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "robert-gordon-university",
+    "location_src": "Robert Gordon University"
    }
   },
   {
@@ -8610,8 +9016,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -80.053355,
-     26.700651
+     -80.13111,
+     26.74694
     ]
    },
    "properties": {
@@ -8619,7 +9025,7 @@
     "title": "Christ Driving the Money Changers from the Temple",
     "year": "1610",
     "location": "Norton Museum of Art",
-    "city": "Florida",
+    "city": "West Palm Beach",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20Christ%20driving%20the%20Money%20Changers%20from%20the%20Temple%2C%20Norton%20Museum%20of%20Art.jpg?width=500",
@@ -8629,7 +9035,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105544435",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "norton-museum-of-art",
+    "location_src": "Norton Museum of Art"
    }
   },
   {
@@ -8637,8 +9045,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     25.13116667,
-     35.34180556
+     25.13117,
+     35.34181
     ]
    },
    "properties": {
@@ -8646,7 +9054,7 @@
     "title": "Baptism of Christ",
     "year": "1567",
     "location": "Historical Museum of Crete",
-    "city": "Heraklion Municipality",
+    "city": "Heraklion",
     "country": "Greece",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20Baptism%20of%20Christ%202004%20CKS%2006967%200091%20091243.jpg?width=500",
@@ -8666,7 +9074,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "historical-museum-of-crete",
+    "location_src": "Historical Museum of Crete"
    }
   },
   {
@@ -8674,8 +9084,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.133888888,
-     51.525944444
+     -0.13389,
+     51.52594
     ]
    },
    "properties": {
@@ -8693,7 +9103,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119931734",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wellcome-collection",
+    "location_src": "Wellcome Collection"
    }
   },
   {
@@ -8701,8 +9113,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.849845,
-     40.125519
+     -3.84985,
+     40.12552
     ]
    },
    "properties": {
@@ -8720,7 +9132,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105518358",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "santuario-de-la-virgen-de-la-caridad",
+    "location_src": "Santuario de la Virgen de la Caridad"
    }
   },
   {
@@ -8728,15 +9142,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Saint Jerome in Penitence",
     "year": "1597",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -8747,7 +9161,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621965",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -8782,7 +9198,9 @@
       "qid": "Q5823887",
       "url": "https://www.wikidata.org/wiki/Q5823887"
      }
-    ]
+    ],
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8790,8 +9208,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -8809,7 +9227,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621905",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -8817,8 +9237,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -8826,7 +9246,7 @@
     "title": "Saint Andrew",
     "year": "1610",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20andrew.jpg?width=500",
@@ -8836,7 +9256,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621885",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -8863,7 +9285,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621903",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -8871,8 +9295,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.352222222,
-     48.856666666
+     2.35222,
+     48.85667
     ]
    },
    "properties": {
@@ -8890,7 +9314,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104623725",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "paris",
+    "location_src": "Paris"
    }
   },
   {
@@ -8898,8 +9324,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.703333333,
-     40.416944444
+     -3.70333,
+     40.41694
     ]
    },
    "properties": {
@@ -8917,7 +9343,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104621099",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "madrid",
+    "location_src": "Madrid"
    }
   },
   {
@@ -8926,7 +9354,7 @@
     "type": "Point",
     "coordinates": [
      -2.935,
-     43.263055555
+     43.26306
     ]
    },
    "properties": {
@@ -8944,7 +9372,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104425833",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bilbao",
+    "location_src": "Bilbao"
    }
   },
   {
@@ -8953,7 +9383,7 @@
     "type": "Point",
     "coordinates": [
      -5.995,
-     37.388611111
+     37.38861
     ]
    },
    "properties": {
@@ -8971,7 +9401,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104444639",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "seville",
+    "location_src": "Seville"
    }
   },
   {
@@ -8979,8 +9411,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     28.041638888,
-     -26.204361111
+     28.04164,
+     -26.20436
     ]
    },
    "properties": {
@@ -8998,7 +9430,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104831977",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "johannesburg",
+    "location_src": "Johannesburg"
    }
   },
   {
@@ -9007,7 +9441,7 @@
     "type": "Point",
     "coordinates": [
      -2.93785,
-     43.265973888
+     43.26597
     ]
    },
    "properties": {
@@ -9025,7 +9459,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104623394",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bilbao-fine-arts-museum",
+    "location_src": "Bilbao Fine Arts Museum"
    }
   },
   {
@@ -9033,8 +9469,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -9052,7 +9488,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103822143",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -9060,8 +9498,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -85.667777777,
-     42.963333333
+     -85.66778,
+     42.96333
     ]
    },
    "properties": {
@@ -9079,7 +9517,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104708451",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "grand-rapids",
+    "location_src": "Grand Rapids"
    }
   },
   {
@@ -9087,8 +9527,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.443333333,
-     46.951111111
+     7.44333,
+     46.95111
     ]
    },
    "properties": {
@@ -9106,7 +9546,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104813439",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunstmuseum-bern",
+    "location_src": "Kunstmuseum Bern"
    }
   },
   {
@@ -9114,8 +9556,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -9133,7 +9575,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104090230",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -9141,8 +9585,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963631,
-     40.671206
+     -73.96363,
+     40.67121
     ]
    },
    "properties": {
@@ -9160,7 +9604,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104822812",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "brooklyn-museum",
+    "location_src": "Brooklyn Museum"
    }
   },
   {
@@ -9168,8 +9614,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.714577,
-     40.423684
+     -3.71458,
+     40.42368
     ]
    },
    "properties": {
@@ -9187,7 +9633,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104708158",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cerralbo-museum",
+    "location_src": "Cerralbo Museum"
    }
   },
   {
@@ -9195,8 +9643,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -9214,7 +9662,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103747955",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -9222,8 +9672,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -9241,7 +9691,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103754144",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -9249,8 +9701,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.023888888,
-     39.857083333
+     -4.02389,
+     39.85708
     ]
    },
    "properties": {
@@ -9268,7 +9720,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104477440",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "toledo-cathedral",
+    "location_src": "Toledo Cathedral"
    }
   },
   {
@@ -9295,7 +9749,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105494616",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -9322,7 +9778,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105494962",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -9330,8 +9788,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.177128,
-     51.485577
+     -3.17713,
+     51.48558
     ]
    },
    "properties": {
@@ -9349,7 +9807,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105358560",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "amgueddfa-cymru-museum-wales",
+    "location_src": "Amgueddfa Cymru – Museum Wales"
    }
   },
   {
@@ -9376,7 +9836,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104530548",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -9403,7 +9865,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104119814",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -9430,7 +9894,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104427949",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cuenca-cathedral",
+    "location_src": "Cuenca Cathedral"
    }
   },
   {
@@ -9438,8 +9904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.784382,
-     32.838419
+     -96.80889,
+     32.77917
     ]
    },
    "properties": {
@@ -9447,7 +9913,7 @@
     "title": "Saint Francis Kneeling in Meditation",
     "year": "1605",
     "location": "Meadows Museum",
-    "city": "Texas",
+    "city": "Dallas",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Francis%20Kneeling%20in%20Meditation%2C%20by%20El%20Greco%2C%20Spanish%2C%20c.%201605-1610%2C%20oil%20on%20canvas%20-%20Meadows%20Museum%20-%20Southern%20Methodist%20University%20-%20DSC05278.jpg?width=500",
@@ -9457,7 +9923,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104245413",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "meadows-museum",
+    "location_src": "Meadows Museum"
    }
   },
   {
@@ -9465,8 +9933,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.985301478,
-     43.32476956
+     -1.9853,
+     43.32477
     ]
    },
    "properties": {
@@ -9484,7 +9952,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104665912",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "san-telmo-museoa",
+    "location_src": "San Telmo Museoa"
    }
   },
   {
@@ -9492,8 +9962,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.62883611,
-     44.70047222
+     10.62884,
+     44.70047
     ]
    },
    "properties": {
@@ -9511,7 +9981,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104813265",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galleria-parmeggiani",
+    "location_src": "Galleria Parmeggiani"
    }
   },
   {
@@ -9520,7 +9992,7 @@
     "type": "Point",
     "coordinates": [
      -71.575,
-     42.611111111
+     42.61111
     ]
    },
    "properties": {
@@ -9538,7 +10010,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104713814",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "groton",
+    "location_src": "Groton"
    }
   },
   {
@@ -9546,8 +10020,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.373083,
-     39.472361
+     -0.37308,
+     39.47236
     ]
    },
    "properties": {
@@ -9565,7 +10039,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104813490",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museu-del-patriarca",
+    "location_src": "Museu del Patriarca"
    }
   },
   {
@@ -9592,7 +10068,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q103941949",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "mildred-lane-kemper-art-museum",
+    "location_src": "Mildred Lane Kemper Art Museum"
    }
   },
   {
@@ -9600,8 +10078,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -57.535694444,
-     -38.010416666
+     -57.53569,
+     -38.01042
     ]
    },
    "properties": {
@@ -9619,7 +10097,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104629781",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "villa-ortiz-basualdo",
+    "location_src": "Villa Ortiz Basualdo"
    }
   },
   {
@@ -9627,8 +10107,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.024385812,
-     39.8650148
+     -4.02439,
+     39.86501
     ]
    },
    "properties": {
@@ -9646,7 +10126,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104772685",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-fundacion-lerma",
+    "location_src": "Museo Fundación Lerma"
    }
   },
   {
@@ -9664,7 +10146,7 @@
     "year": "1580",
     "location": "Collection Stavros Niarchos",
     "city": "Paris",
-    "country": "France",
+    "country": "Greece",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieta%20el%20greco.jpg?width=500",
     "qid": "Q18226707",
@@ -9673,7 +10155,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18226707",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "collection-stavros-niarchos",
+    "location_src": "Collection Stavros Niarchos"
    }
   },
   {
@@ -9681,8 +10165,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.59638889,
-     40.99638889
+     -4.59639,
+     40.99639
     ]
    },
    "properties": {
@@ -9700,7 +10184,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q66622300",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "iglesia-parroquial-de-nuestra-senora-de-la-asuncion",
+    "location_src": "Iglesia Parroquial de Nuestra Señora de la Asunción"
    }
   },
   {
@@ -9708,8 +10194,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.634444,
-     43.310278
+     -73.63444,
+     43.31028
     ]
    },
    "properties": {
@@ -9727,7 +10213,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621985",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-hyde-collection",
+    "location_src": "The Hyde Collection"
    }
   },
   {
@@ -9735,8 +10223,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.177335026,
-     43.287117259
+     -2.17734,
+     43.28712
     ]
    },
    "properties": {
@@ -9754,7 +10242,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16622050",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "narros-palace",
+    "location_src": "Narros palace"
    }
   },
   {
@@ -9762,8 +10252,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.299516485,
-     36.531518791
+     -6.29952,
+     36.53152
     ]
    },
    "properties": {
@@ -9781,7 +10271,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621946",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "antiguo-hospital-de-nuestra-senora-del-carmen",
+    "location_src": "Antiguo Hospital de Nuestra Señora del Carmen"
    }
   },
   {
@@ -9789,15 +10281,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.686536,
-     40.432539
+     -3.68654,
+     40.43254
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Christ crucified with Toledo in the Background",
     "year": "1604",
-    "location": "Fundación Banco Santander",
+    "location": "Colección Santander",
     "city": "Madrid",
     "country": "Spain",
     "attribution": "generally accepted",
@@ -9808,7 +10300,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28780558",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "coleccion-santander",
+    "location_src": "Colección Santander"
    }
   },
   {
@@ -9816,8 +10310,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -9835,7 +10329,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621826",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -9843,8 +10339,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -9862,7 +10358,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q10396382",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -9870,8 +10368,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -9899,7 +10397,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -9907,8 +10407,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9933,7 +10433,9 @@
       "title": "Saint Bernardino of Siena",
       "ref": "https://en.wikipedia.org/wiki/Saint_Bernardino_of_Siena_(El_Greco)"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9941,8 +10443,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -9960,7 +10462,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16567893",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -9968,8 +10472,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -9987,7 +10491,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16573872",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -9996,7 +10502,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -10014,7 +10520,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16573878",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -10022,8 +10530,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -10041,7 +10549,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16536566",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -10049,8 +10559,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -98.456748,
-     29.485516
+     -98.45675,
+     29.48552
     ]
    },
    "properties": {
@@ -10068,7 +10578,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16556532",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "mcnay-art-museum",
+    "location_src": "McNay Art Museum"
    }
   },
   {
@@ -10076,8 +10588,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -10095,7 +10607,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590335",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -10103,8 +10617,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -10122,7 +10636,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621835",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -10130,8 +10646,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -10149,7 +10665,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16581524",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -10186,7 +10704,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -10194,8 +10714,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     23.74040833,
-     37.97593889
+     23.72806,
+     37.98417
     ]
    },
    "properties": {
@@ -10203,7 +10723,7 @@
     "title": "St Luke painting the Virgin",
     "year": "1560",
     "location": "Benaki Museum",
-    "city": "Athens Municipality",
+    "city": "Athens",
     "country": "Greece",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20St%20Luke%20Painting%20the%20Virgin%20-%20Google%20Art%20Project.jpg?width=500",
@@ -10219,7 +10739,9 @@
       "source": "Wikipedia list",
       "title": "Saint Luke Painting the Virgin and Child"
      }
-    ]
+    ],
+    "museum_id": "benaki-museum",
+    "location_src": "Benaki Museum"
    }
   },
   {
@@ -10246,7 +10768,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q9347431",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -10273,7 +10797,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621875",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -10281,15 +10807,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.802222222,
-     42.273055555
+     -71.80222,
+     42.27306
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "The Repentant Magdalen",
     "year": "1577",
-    "location": "Museo de Arte de Worcester",
+    "location": "Worcester Art Museum",
     "city": "Worcester",
     "country": "United States",
     "attribution": "generally accepted",
@@ -10300,7 +10826,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16589355",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "worcester-art-museum",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -10308,8 +10836,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5797575,
-     45.4991495
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -10327,7 +10855,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16580556",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "montreal-museum-of-fine-arts",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -10335,8 +10865,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -10354,7 +10884,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11838643",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -10362,8 +10894,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.69722222,
-     40.65583333
+     -4.69722,
+     40.65583
     ]
    },
    "properties": {
@@ -10389,7 +10921,9 @@
       "was": "generally accepted",
       "note": "dated 1700, after death (1541–1614) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "avila-cathedral",
+    "location_src": "Ávila Cathedral"
    }
   },
   {
@@ -10397,8 +10931,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -10416,7 +10950,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590359",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -10424,8 +10960,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -10443,7 +10979,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16589358",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -10451,8 +10989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -10470,7 +11008,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590362",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -10478,8 +11018,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -10497,7 +11037,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11838636",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -10505,8 +11047,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -10524,7 +11066,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16567899",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -10532,8 +11076,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.020569444,
-     39.860130555
+     -4.02057,
+     39.86013
     ]
    },
    "properties": {
@@ -10551,7 +11095,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16591039",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-santa-cruz",
+    "location_src": "Museum of Santa Cruz"
    }
   },
   {
@@ -10578,7 +11124,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590342",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -10594,7 +11142,7 @@
     "painter": "El Greco",
     "title": "Portrait of the duc de Benavente",
     "year": "1590",
-    "location": "Musée Bonnat-Helleu",
+    "location": "Musée Bonnat",
     "city": "Bayonne",
     "country": "France",
     "attribution": "generally accepted",
@@ -10605,7 +11153,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590337",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-bonnat",
+    "location_src": "Musée Bonnat"
    }
   },
   {
@@ -10632,7 +11182,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16590356",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-de-picardie",
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -10640,8 +11192,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.028685,
-     39.859363
+     -4.02869,
+     39.85936
     ]
    },
    "properties": {
@@ -10659,7 +11211,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11821339",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "monastery-of-saint-dominic-of-silos",
+    "location_src": "Monastery of Saint Dominic of Silos"
    }
   },
   {
@@ -10667,8 +11221,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.028685,
-     39.859363
+     -4.02869,
+     39.85936
     ]
    },
    "properties": {
@@ -10686,7 +11240,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11838457",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "monastery-of-saint-dominic-of-silos",
+    "location_src": "Monastery of Saint Dominic of Silos"
    }
   },
   {
@@ -10694,8 +11250,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.028685,
-     39.859363
+     -4.02869,
+     39.85936
     ]
    },
    "properties": {
@@ -10713,7 +11269,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11838644",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "monastery-of-saint-dominic-of-silos",
+    "location_src": "Monastery of Saint Dominic of Silos"
    }
   },
   {
@@ -10740,7 +11298,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16536552",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -10748,8 +11308,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.703333333,
-     40.416944444
+     -3.70333,
+     40.41694
     ]
    },
    "properties": {
@@ -10767,7 +11327,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16573875",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "madrid",
+    "location_src": "Madrid"
    }
   },
   {
@@ -10775,8 +11337,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.0611729,
-     50.6309226
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -10794,7 +11356,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q72545144",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "palais-des-beaux-arts-de-lille",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -10821,7 +11385,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q72106661",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "chapel-of-san-jose",
+    "location_src": "Chapel of San José"
    }
   },
   {
@@ -10848,7 +11414,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16588018",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -10875,7 +11443,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16621883",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "el-greco-museum",
+    "location_src": "El Greco Museum"
    }
   },
   {
@@ -10883,8 +11453,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.812736,
-     41.235067
+     1.81274,
+     41.23507
     ]
    },
    "properties": {
@@ -10902,7 +11472,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q11934553",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cau-ferrat-museum",
+    "location_src": "Cau Ferrat Museum"
    }
   },
   {
@@ -10910,8 +11482,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.373083,
-     39.472361
+     -0.37308,
+     39.47236
     ]
    },
    "properties": {
@@ -10929,7 +11501,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16589387",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museu-del-patriarca",
+    "location_src": "Museu del Patriarca"
    }
   },
   {
@@ -10966,7 +11540,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "muzeum-diecezjalne-w-siedlcach",
+    "location_src": "Muzeum Diecezjalne w Siedlcach"
    }
   }
  ]

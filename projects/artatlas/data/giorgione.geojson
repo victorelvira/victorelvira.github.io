@@ -28,7 +28,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107445912"
+    "qid": "Q107445912",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -36,8 +37,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.1439,
-     34.1475
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -70,7 +71,8 @@
      }
     },
     "museum_id": "norton-simon-museum",
-    "qid": "Q133503451"
+    "qid": "Q133503451",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -112,7 +114,8 @@
      }
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q137594811"
+    "qid": "Q137594811",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -158,7 +161,8 @@
     },
     "museum_id": "dome-of-castlefranco-veneto",
     "qid": "Q1720631",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/madon_fz.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/madon_fz.html",
+    "location_src": "Dome of Castlefranco Veneto"
    }
   },
   {
@@ -166,7 +170,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -200,7 +204,8 @@
      }
     },
     "museum_id": "rijksmuseum",
-    "qid": "Q17335702"
+    "qid": "Q17335702",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -242,7 +247,8 @@
      }
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20440585"
+    "qid": "Q20440585",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -284,7 +290,8 @@
      }
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20547967"
+    "qid": "Q20547967",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -299,9 +306,9 @@
    "properties": {
     "painter": "Giorgione",
     "title": "The Hour Glass",
-    "city": "Washington D.C.",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "location": "Phillips Collection",
+    "location": "The Phillips Collection",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -314,8 +321,9 @@
      "url": "https://www.wikidata.org/wiki/Q23946108",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "phillips-collection",
-    "qid": "Q23946108"
+    "museum_id": "the-phillips-collection",
+    "qid": "Q23946108",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -361,7 +369,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q2452374",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/solomon.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/solomon.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -369,8 +378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -407,7 +416,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q2537695",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/judith.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/judith.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -440,7 +450,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery",
-    "qid": "Q26699539"
+    "qid": "Q26699539",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -448,15 +459,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Giorgione",
     "title": "Portrait of An Archer",
     "year": "1508",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "kind": "museum",
@@ -482,7 +493,8 @@
      }
     },
     "museum_id": "scottish-national-gallery",
-    "qid": "Q27968196"
+    "qid": "Q27968196",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -527,7 +539,8 @@
     },
     "museum_id": "herzog-anton-ulrich-museum",
     "qid": "Q2872711",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/05selfpo.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/05selfpo.html",
+    "location_src": "Herzog Anton Ulrich Museum"
    }
   },
   {
@@ -561,7 +574,8 @@
     },
     "museum_id": "bavarian-state-painting-collections",
     "qid": "Q29477844",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/09young.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/09young.html",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -603,7 +617,8 @@
      }
     },
     "museum_id": "bavarian-state-painting-collections",
-    "qid": "Q29916352"
+    "qid": "Q29916352",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -646,7 +661,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3098667"
+    "qid": "Q3098667",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -690,7 +706,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3605531",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/adoratio.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/adoratio.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -736,7 +753,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3605563",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/shepherd.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/shepherd.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -781,7 +799,8 @@
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q3656034",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/07portra.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/07portra.html",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -825,7 +844,8 @@
     },
     "museum_id": "galleria-borghese",
     "qid": "Q3656454",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/singer.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/singer.html",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -870,7 +890,8 @@
     },
     "museum_id": "scuola-grande-di-san-rocco",
     "qid": "Q3697665",
-    "wga_url": "https://www.wga.hu/html/t/tiziano/01_1510s/01carryi.html"
+    "wga_url": "https://www.wga.hu/html/t/tiziano/01_1510s/01carryi.html",
+    "location_src": "Scuola Grande di San Rocco"
    }
   },
   {
@@ -913,7 +934,8 @@
      }
     },
     "museum_id": "museo-di-palazzo-venezia",
-    "qid": "Q3714154"
+    "qid": "Q3714154",
+    "location_src": "Museo di Palazzo Venezia"
    }
   },
   {
@@ -947,7 +969,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "casa-giorgione",
-    "qid": "Q3752977"
+    "qid": "Q3752977",
+    "location_src": "Casa Giorgione"
    }
   },
   {
@@ -991,7 +1014,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q3766873"
+    "qid": "Q3766873",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -999,8 +1023,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1026,7 +1050,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q3842552",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/virgin_c.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/virgin_c.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1069,7 +1094,8 @@
      }
     },
     "museum_id": "gallerie-dell-accademia",
-    "qid": "Q3879242"
+    "qid": "Q3879242",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -1114,7 +1140,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3924389",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/moses.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/moses.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1159,7 +1186,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937389",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/01youngm.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/01youngm.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1203,7 +1231,8 @@
     },
     "museum_id": "san-diego-museum-of-art",
     "qid": "Q3937411",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/04portma.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/04portma.html",
+    "location_src": "San Diego Museum of Art"
    }
   },
   {
@@ -1245,7 +1274,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3937417"
+    "qid": "Q3937417",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1289,7 +1319,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3937532"
+    "qid": "Q3937532",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1333,7 +1364,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3937736",
-    "wga_url": "https://www.wga.hu/html/c/cavazzol/warrior.html"
+    "wga_url": "https://www.wga.hu/html/c/cavazzol/warrior.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1377,7 +1409,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3944458",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/01holyfa.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/religion/01holyfa.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1420,7 +1453,8 @@
      }
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q3977127"
+    "qid": "Q3977127",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -1466,7 +1500,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3997388",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/tramonto.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/tramonto.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1511,7 +1546,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3998112",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/threeage.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/threeage.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -1555,7 +1591,8 @@
      }
     },
     "museum_id": "augusteum",
-    "qid": "Q3998923"
+    "qid": "Q3998923",
+    "location_src": "Augusteum"
    }
   },
   {
@@ -1601,7 +1638,8 @@
     },
     "museum_id": "palazzo-priuli-manfrin",
     "qid": "Q4009159",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/03woman.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/03woman.html",
+    "location_src": "Palazzo Priuli Manfrin"
    }
   },
   {
@@ -1645,9 +1683,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q500812",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/venus.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/venus.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1677,7 +1716,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50881662"
+    "qid": "Q50881662",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -1723,7 +1763,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q595707",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/02laura.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/02laura.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1764,7 +1805,8 @@
      }
     },
     "museum_id": "santa-maria-assunta-church",
-    "qid": "Q87533881"
+    "qid": "Q87533881",
+    "location_src": "Santa Maria Assunta church"
    }
   },
   {
@@ -1805,7 +1847,8 @@
      }
     },
     "museum_id": "santa-maria-assunta-church",
-    "qid": "Q87534049"
+    "qid": "Q87534049",
+    "location_src": "Santa Maria Assunta church"
    }
   },
   {
@@ -1851,7 +1894,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q877191",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/various/threephi.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/various/threephi.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1897,7 +1941,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q930137",
-    "wga_url": "https://www.wga.hu/html/g/giorgion/tempest/tempest6.html"
+    "wga_url": "https://www.wga.hu/html/g/giorgion/tempest/tempest6.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   }
  ]

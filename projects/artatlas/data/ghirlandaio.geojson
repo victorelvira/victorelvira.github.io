@@ -40,7 +40,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107435928"
+    "qid": "Q107435928",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -90,7 +91,8 @@
       "qid": "Q115676434",
       "url": "https://www.wikidata.org/wiki/Q115676434"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -122,7 +124,8 @@
     },
     "museum_id": "tornabuoni-chapel",
     "qid": "Q118671866",
-    "wga_url": "https://www.wga.hu/html//g/ghirland/domenico/6tornab/62tornab/1appear1.html"
+    "wga_url": "https://www.wga.hu/html//g/ghirland/domenico/6tornab/62tornab/1appear1.html",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -162,7 +165,8 @@
      }
     },
     "museum_id": "city-museum-of-rimini",
-    "qid": "Q132247328"
+    "qid": "Q132247328",
+    "location_src": "City Museum of Rimini"
    }
   },
   {
@@ -195,7 +199,8 @@
     },
     "museum_id": "tornabuoni-chapel",
     "qid": "Q140772089",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/61tornab/7death.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/61tornab/7death.html",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -228,7 +233,8 @@
     },
     "museum_id": "tornabuoni-chapel",
     "qid": "Q140772615",
-    "wga_url": "https://www.wga.hu/html//g/ghirland/domenico/6tornab/63tornab/2martyr.html"
+    "wga_url": "https://www.wga.hu/html//g/ghirland/domenico/6tornab/63tornab/2martyr.html",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -270,7 +276,8 @@
     },
     "museum_id": "collegiate-church-of-san-gimignano",
     "qid": "Q140772662",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/2s_fina/2obsequ.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/2s_fina/2obsequ.html",
+    "location_src": "Collegiate Church of San Gimignano"
    }
   },
   {
@@ -310,7 +317,8 @@
      }
     },
     "museum_id": "sassetti-chapel",
-    "qid": "Q140772739"
+    "qid": "Q140772739",
+    "location_src": "Sassetti Chapel"
    }
   },
   {
@@ -343,7 +351,8 @@
     },
     "museum_id": "tornabuoni-chapel",
     "qid": "Q140772889",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/62tornab/5preach.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/62tornab/5preach.html",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -376,7 +385,8 @@
     },
     "museum_id": "basilica-of-santa-maria-novella",
     "qid": "Q140773939",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/63tornab/7vault.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/63tornab/7vault.html",
+    "location_src": "Basilica of Santa Maria Novella"
    }
   },
   {
@@ -409,7 +419,8 @@
     },
     "museum_id": "tornabuoni-chapel",
     "qid": "Q140774531",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/62tornab/4naming.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/6tornab/62tornab/4naming.html",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -452,7 +463,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q15089686"
+    "qid": "Q15089686",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -494,7 +506,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18565939"
+    "qid": "Q18565939",
+    "location_src": "Louvre"
    }
   },
   {
@@ -537,7 +550,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19376279"
+    "qid": "Q19376279",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -545,15 +559,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Domenico Ghirlandaio",
     "title": "The Virgin Adoring the Christ Child",
     "year": "1470",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "kind": "museum",
@@ -579,7 +593,8 @@
      }
     },
     "museum_id": "scottish-national-gallery",
-    "qid": "Q20081867"
+    "qid": "Q20081867",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -619,7 +634,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20173996"
+    "qid": "Q20173996",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -661,7 +677,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20174171"
+    "qid": "Q20174171",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -707,7 +724,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q23915",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/08oldman.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/08oldman.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -753,7 +771,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q23946",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/09visita.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/09visita.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -769,7 +788,7 @@
     "painter": "Domenico Ghirlandaio",
     "title": "Portrait of a young woman",
     "year": "1490",
-    "city": "Lisbon",
+    "city": "Avenidas Novas",
     "country": "Portugal",
     "location": "Calouste Gulbenkian Museum",
     "kind": "museum",
@@ -797,7 +816,8 @@
     },
     "museum_id": "calouste-gulbenkian-museum",
     "qid": "Q25443881",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/081portra.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/081portra.html",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -843,7 +863,8 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q2623789",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/07tornab.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/07tornab.html",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -884,7 +905,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26492400"
+    "qid": "Q26492400",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -928,7 +950,8 @@
     },
     "museum_id": "fitzwilliam-museum",
     "qid": "Q31192784",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/13nativi.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/13nativi.html",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -974,7 +997,8 @@
     },
     "museum_id": "hospital-of-innocents",
     "qid": "Q3201479",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/8spedale/spedale.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/8spedale/spedale.html",
+    "location_src": "Hospital of Innocents"
    }
   },
   {
@@ -1016,7 +1040,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3605541",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/06tondo.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/06tondo.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1060,7 +1085,8 @@
     },
     "museum_id": "sassetti-chapel",
     "qid": "Q3605551",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/5sassett/shepherd/shepher2.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/5sassett/shepherd/shepher2.html",
+    "location_src": "Sassetti Chapel"
    }
   },
   {
@@ -1105,7 +1131,8 @@
     },
     "museum_id": "pinacoteca-e-museo-civico-di-volterra",
     "qid": "Q3697629",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/10heaven.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/10heaven.html",
+    "location_src": "Pinacoteca e Museo Civico di Volterra"
    }
   },
   {
@@ -1148,7 +1175,8 @@
     },
     "museum_id": "citta-di-castello-communal-art-gallery",
     "qid": "Q3797780",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/04corona.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/04corona.html",
+    "location_src": "Citta di Castello Communal Art Gallery"
    }
   },
   {
@@ -1192,7 +1220,8 @@
     },
     "museum_id": "eroli-museum",
     "qid": "Q3797781",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/03corona.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/03corona.html",
+    "location_src": "Eroli Museum"
    }
   },
   {
@@ -1236,7 +1265,8 @@
     },
     "museum_id": "lucca-cathedral",
     "qid": "Q3842757",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/01madonn.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/01madonn.html",
+    "location_src": "Lucca Cathedral"
    }
   },
   {
@@ -1280,7 +1310,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3944518",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/02madonn.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/02madonn.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1324,7 +1355,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3944520",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/05madon.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/05madon.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1367,7 +1399,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3946909"
+    "qid": "Q3946909",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1409,7 +1442,8 @@
      }
     },
     "museum_id": "galleria-dell-accademia",
-    "qid": "Q3949523"
+    "qid": "Q3949523",
+    "location_src": "Galleria dell'Accademia"
    }
   },
   {
@@ -1451,7 +1485,8 @@
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50900342",
-    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/02patmox.html"
+    "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/02patmox.html",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -1459,8 +1494,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1488,7 +1523,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -1496,8 +1533,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -1525,7 +1562,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1533,8 +1572,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -1562,7 +1601,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1570,8 +1611,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1599,7 +1640,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1607,8 +1650,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1636,7 +1679,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1644,8 +1689,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1673,7 +1718,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1681,8 +1728,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1710,7 +1757,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1718,8 +1767,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1737,7 +1786,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107437231",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1745,8 +1796,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1764,7 +1815,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107437235",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1772,8 +1825,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1791,7 +1844,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107437238",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1799,8 +1854,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1808,7 +1863,7 @@
     "title": "Portrait of a Young Man in Red",
     "year": "1480",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico%20Ghirlandaio%20%281449-1494%29%20-%20Portrait%20of%20a%20Young%20Man%20in%20Red%20-%20NG2489%20-%20National%20Gallery.jpg?width=500",
@@ -1828,7 +1883,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1836,8 +1893,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1845,7 +1902,7 @@
     "title": "A Legend of Saints Justus and Clement of Volterra",
     "year": "1479",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ghirlandaio%2C%20Domenico%20-%20Saints%20Justus%20and%20Clement.jpg?width=500",
@@ -1865,7 +1922,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1902,7 +1961,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -1939,7 +2000,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "lindenau-museum",
+    "location_src": "Lindenau museum"
    }
   },
   {
@@ -1976,7 +2039,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "collegiate-church-of-san-gimignano",
+    "location_src": "Collegiate Church of San Gimignano"
    }
   },
   {
@@ -1984,8 +2049,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2011,7 +2076,9 @@
       "was": "generally accepted",
       "note": "dated 1448, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2019,8 +2086,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2046,7 +2113,9 @@
       "was": "generally accepted",
       "note": "dated 1448, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2055,7 +2124,7 @@
     "type": "Point",
     "coordinates": [
      -118.1125,
-     34.129166666
+     34.12917
     ]
    },
    "properties": {
@@ -2083,7 +2152,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
    }
   },
   {
@@ -2092,7 +2163,7 @@
     "type": "Point",
     "coordinates": [
      -118.1125,
-     34.129166666
+     34.12917
     ]
    },
    "properties": {
@@ -2120,7 +2191,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
    }
   },
   {
@@ -2157,7 +2230,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -2165,8 +2240,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -2194,7 +2269,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -2231,7 +2308,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -2239,8 +2318,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -2268,7 +2347,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -2276,8 +2357,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -2305,7 +2386,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -2313,8 +2396,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.11472222,
-     42.37416667
+     -71.11472,
+     42.37417
     ]
    },
    "properties": {
@@ -2342,7 +2425,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "harvard-art-museums",
+    "location_src": "Harvard Art Museums"
    }
   },
   {
@@ -2350,8 +2435,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2379,7 +2464,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2387,8 +2474,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.3298413,
-     45.4307669
+     12.32984,
+     45.43077
     ]
    },
    "properties": {
@@ -2416,7 +2503,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cini-palace",
+    "location_src": "Cini Palace"
    }
   },
   {
@@ -2453,7 +2542,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wawel-castle",
+    "location_src": "Wawel Castle"
    }
   },
   {
@@ -2480,7 +2571,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119450963",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -2507,7 +2600,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119451010",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -2515,8 +2610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.256111111,
-     43.769444444
+     11.2561,
+     43.7694
     ]
    },
    "properties": {
@@ -2544,7 +2639,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-vecchio",
+    "location_src": "Palazzo Vecchio"
    }
   },
   {
@@ -2552,8 +2649,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.250833333,
-     43.770277777
+     11.25083,
+     43.77028
     ]
    },
    "properties": {
@@ -2581,7 +2678,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sassetti-chapel",
+    "location_src": "Sassetti Chapel"
    }
   },
   {
@@ -2618,7 +2717,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -2626,8 +2727,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91565514,
-     54.54173763
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -2645,7 +2746,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118630719",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bowes-museum",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -2653,8 +2756,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.250719,
-     43.770153
+     11.25072,
+     43.77015
     ]
    },
    "properties": {
@@ -2682,7 +2785,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "basilica-of-the-holy-trinity",
+    "location_src": "Basilica of the Holy Trinity"
    }
   },
   {
@@ -2690,8 +2795,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.250719,
-     43.770153
+     11.25072,
+     43.77015
     ]
    },
    "properties": {
@@ -2719,7 +2824,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "basilica-of-the-holy-trinity",
+    "location_src": "Basilica of the Holy Trinity"
    }
   },
   {
@@ -2727,7 +2834,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.185952,
+     9.18595,
      45.46378
     ]
    },
@@ -2754,7 +2861,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-ambrosiana",
+    "location_src": "Pinacoteca Ambrosiana"
    }
   },
   {
@@ -2791,7 +2900,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "niedersachsisches-landesmuseum-fur-kunst-und-kulturgeschicht",
+    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte"
    }
   },
   {
@@ -2828,7 +2939,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "niedersachsisches-landesmuseum-fur-kunst-und-kulturgeschicht",
+    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte"
    }
   },
   {
@@ -2836,8 +2949,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -2863,7 +2976,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -2871,8 +2986,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -2898,7 +3013,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -2906,8 +3023,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -2933,7 +3050,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -2941,8 +3060,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -2968,7 +3087,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -2976,8 +3097,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -3003,7 +3124,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -3011,8 +3134,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.249425,
-     43.775127777
+     11.24943,
+     43.77513
     ]
    },
    "properties": {
@@ -3038,7 +3161,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "tornabuoni-chapel",
+    "location_src": "Tornabuoni Chapel"
    }
   },
   {
@@ -3054,7 +3179,7 @@
     "painter": "Domenico Ghirlandaio",
     "title": "Tête d'une sainte femme avec une auréole",
     "year": "",
-    "location": "Musée Bonnat-Helleu",
+    "location": "Musée Bonnat",
     "city": "Bayonne",
     "country": "France",
     "attribution": "generally accepted",
@@ -3065,7 +3190,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q140786791",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-bonnat",
+    "location_src": "Musée Bonnat"
    }
   },
   {
@@ -3102,7 +3229,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ognissanti-church",
+    "location_src": "Ognissanti Church"
    }
   },
   {
@@ -3139,7 +3268,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ognissanti-church",
+    "location_src": "Ognissanti Church"
    }
   },
   {
@@ -3147,7 +3278,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.138041,
+     -0.13804,
      50.8237
     ]
    },
@@ -3174,7 +3305,9 @@
       "was": "generally accepted",
       "note": "dated 1850, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "brighton-museum-art-gallery",
+    "location_src": "Brighton Museum & Art Gallery"
    }
   },
   {
@@ -3182,8 +3315,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.150416,
-     43.795401
+     11.15042,
+     43.7954
     ]
    },
    "properties": {
@@ -3211,7 +3344,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "church-of-st-andrew-in-san-donnino",
+    "location_src": "Church of St. Andrew in San Donnino"
    }
   }
  ]

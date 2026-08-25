@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=0.56.0">
+  <link rel="stylesheet" href="artatlas/style.css?v=0.60.0">
 </head>
 <body>
   <nav id="navbar">
@@ -63,8 +63,11 @@
       <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
       <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
     </span>
-    <input id="filter" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off"
-           title="Filters every view: map, list and table">
+    <span id="filter-wrap">
+      <input id="filter" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off"
+             title="Filters every view: map, list and table">
+      <button type="button" id="filter-clear" title="Clear the filter (Esc)" aria-label="Clear the filter" hidden>✕</button>
+    </span>
     <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
   </div>
 
@@ -264,7 +267,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=0.56.0"></script>
+  <script src="artatlas/app.js?v=0.60.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

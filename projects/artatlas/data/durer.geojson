@@ -41,7 +41,8 @@
       "qid": "Q18683052",
       "url": "https://www.wikidata.org/wiki/Q18683052"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -83,7 +84,8 @@
       "qid": "Q3937468",
       "url": "https://www.wikidata.org/wiki/Q3937468"
      }
-    ]
+    ],
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -114,7 +116,8 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunsthalle"
+    "museum_id": "staatliche-kunsthalle",
+    "location_src": "Staatliche Kunsthalle"
    }
   },
   {
@@ -149,7 +152,8 @@
     "museum_id": "louvre",
     "qid": "Q2428778",
     "wikidata": "https://www.wikidata.org/wiki/Q2428778",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/01/04self22.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/01/04self22.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -180,7 +184,8 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "albertina"
+    "museum_id": "albertina",
+    "location_src": "Albertina"
    }
   },
   {
@@ -220,7 +225,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q2542197 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Kunsthalle"
    }
   },
   {
@@ -250,7 +256,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection-georg-schafer"
+    "placeless": true
    }
   },
   {
@@ -282,9 +288,10 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q1988321",
-    "wikidata": "https://www.wikidata.org/wiki/Q1988321"
+    "wikidata": "https://www.wikidata.org/wiki/Q1988321",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -327,7 +334,8 @@
       "qid": "Q3947309",
       "url": "https://www.wikidata.org/wiki/Q3947309"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -335,17 +343,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Portrait of Elector Frederick the Wise of Saxony",
     "year": "1496",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Tempera on canvas",
     "dimensions": "76 × 57 cm",
@@ -359,10 +367,11 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937522",
     "wikidata": "https://www.wikidata.org/wiki/Q3937522",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/01/08electo.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/01/08electo.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -394,9 +403,10 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q3613128",
-    "wikidata": "https://www.wikidata.org/wiki/Q3613128"
+    "wikidata": "https://www.wikidata.org/wiki/Q3613128",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -431,7 +441,8 @@
     "museum_id": "national-gallery-of-art",
     "qid": "Q3842403",
     "wikidata": "https://www.wikidata.org/wiki/Q3842403",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/02/07haller.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/02/07haller.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -469,7 +480,8 @@
       "qid": "Q1112111",
       "url": "https://www.wikidata.org/wiki/Q1112111"
      }
-    ]
+    ],
+    "location_src": "Frankfurt"
    }
   },
   {
@@ -477,8 +489,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -507,7 +519,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Young Woman with Her Hair Done Up (formerly believed to be a Fürleger)"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -542,7 +556,8 @@
     "museum_id": "national-gallery",
     "qid": "Q3937451",
     "wikidata": "https://www.wikidata.org/wiki/Q3937451",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/02/01father.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/02/01father.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -585,7 +600,8 @@
       "qid": "Q2388965",
       "url": "https://www.wikidata.org/wiki/Q2388965"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -619,7 +635,8 @@
     "museum_id": "germanisches-nationalmuseum",
     "country": "Germany",
     "qid": "Q3685122",
-    "wikidata": "https://www.wikidata.org/wiki/Q3685122"
+    "wikidata": "https://www.wikidata.org/wiki/Q3685122",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -650,7 +667,8 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "alte-pinakothek"
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -681,7 +699,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "accademia-carrara",
-    "country": "Italy"
+    "country": "Italy",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -722,7 +741,8 @@
       "qid": "Q3937563",
       "url": "https://www.wikidata.org/wiki/Q3937563"
      }
-    ]
+    ],
+    "location_src": "Schlossmuseum"
    }
   },
   {
@@ -760,7 +780,8 @@
       "qid": "Q3937525",
       "url": "https://www.wikidata.org/wiki/Q3937525"
      }
-    ]
+    ],
+    "location_src": "Schlossmuseum"
    }
   },
   {
@@ -791,7 +812,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "_merged": [
      {
       "source": "Wikidata",
@@ -799,7 +820,8 @@
       "qid": "Q3937514",
       "url": "https://www.wikidata.org/wiki/Q3937514"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -834,7 +856,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q2546309",
     "wikidata": "https://www.wikidata.org/wiki/Q2546309",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/03/1self28.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/03/1self28.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -868,7 +891,8 @@
     "museum_id": "germanisches-nationalmuseum",
     "country": "Germany",
     "qid": "Q3731240",
-    "wikidata": "https://www.wikidata.org/wiki/Q3731240"
+    "wikidata": "https://www.wikidata.org/wiki/Q3731240",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -903,7 +927,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q571122",
     "wikidata": "https://www.wikidata.org/wiki/Q571122",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/03/3paumg.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/03/3paumg.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -946,7 +971,8 @@
       "qid": "Q3685113",
       "url": "https://www.wikidata.org/wiki/Q3685113"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -980,7 +1006,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q1576172",
-    "wikidata": "https://www.wikidata.org/wiki/Q1576172"
+    "wikidata": "https://www.wikidata.org/wiki/Q1576172",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1014,7 +1041,8 @@
     "museum_id": "frankfurt",
     "qid": "Q3428032",
     "wikidata": "https://www.wikidata.org/wiki/Q3428032",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html",
+    "location_src": "Frankfurt"
    }
   },
   {
@@ -1049,7 +1077,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q3428032",
     "wikidata": "https://www.wikidata.org/wiki/Q3428032",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1065,7 +1094,7 @@
     "painter": "Albrecht Dürer",
     "title": "Studies of a Boy's Head Inclined to the Right Boy's Head Inclined to the Left",
     "year": "1506",
-    "city": "Paris",
+    "city": "13th arrondissement of Paris",
     "country": "France",
     "location": "Bibliothèque nationale de France",
     "attribution": "generally accepted",
@@ -1080,7 +1109,8 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "bibliotheque-nationale-de-france"
+    "museum_id": "bibliotheque-nationale-de-france",
+    "location_src": "Bibliothèque nationale de France"
    }
   },
   {
@@ -1115,7 +1145,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2628761",
     "wikidata": "https://www.wikidata.org/wiki/Q2628761",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/04/2adorat2.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/04/2adorat2.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1154,7 +1185,8 @@
       "qid": "Q50906843",
       "url": "https://www.wikidata.org/wiki/Q50906843"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -1189,7 +1221,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q3937735",
     "wikidata": "https://www.wikidata.org/wiki/Q3937735",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1197,8 +1230,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -1206,7 +1239,7 @@
     "title": "Salvator Mundi",
     "year": "1505",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salvator%20Mundi%2C%20by%20Albrecht%20D%C3%BCrer%2C%20MET.jpg?width=500",
@@ -1234,7 +1267,9 @@
       "source": "Wikipedia list",
       "title": "Salvator Mundi unfinished"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1269,7 +1304,8 @@
     "museum_id": "narodni-galerie",
     "qid": "Q1170194",
     "wikidata": "https://www.wikidata.org/wiki/Q1170194",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/05/03rose.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/03rose.html",
+    "location_src": "Národní galerie"
    }
   },
   {
@@ -1277,17 +1313,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Madonna with the Siskin",
     "year": "1506",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel (poplar)",
     "dimensions": "93.5 × 78.9 cm",
@@ -1300,7 +1336,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "wga_url": "https://www.wga.hu/html/d/durer/1/05/06siski.html",
     "qid": "Q386034",
     "wikidata": "https://www.wikidata.org/wiki/Q386034",
@@ -1310,7 +1346,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q386034 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1318,17 +1355,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Portrait of a Young Venetian Woman",
     "year": "1506",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel (poplar)",
     "dimensions": "28.5 × 21.5 cm",
@@ -1342,10 +1379,11 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937735",
     "wikidata": "https://www.wikidata.org/wiki/Q3937735",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1353,8 +1391,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.93225,
-     44.41119
+     8.93212,
+     44.41125
     ]
    },
    "properties": {
@@ -1386,7 +1424,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3937701 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Palazzo Rosso"
    }
   },
   {
@@ -1425,7 +1464,8 @@
       "qid": "Q3937478",
       "url": "https://www.wikidata.org/wiki/Q3937478"
      }
-    ]
+    ],
+    "location_src": "Berkshire"
    }
   },
   {
@@ -1460,7 +1500,8 @@
     "museum_id": "museo-nacional-thyssen-bornemisza",
     "qid": "Q2448065",
     "wikidata": "https://www.wikidata.org/wiki/Q2448065",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/05/07docto3.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/07docto3.html",
+    "location_src": "Museo Nacional Thyssen-Bornemisza"
    }
   },
   {
@@ -1494,7 +1535,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q4827756",
-    "wikidata": "https://www.wikidata.org/wiki/Q4827756"
+    "wikidata": "https://www.wikidata.org/wiki/Q4827756",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1502,8 +1544,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -1539,7 +1581,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Young Girl (with a Red Beret)"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1573,7 +1617,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q351300",
-    "wikidata": "https://www.wikidata.org/wiki/Q351300"
+    "wikidata": "https://www.wikidata.org/wiki/Q351300",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1608,7 +1653,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q664038",
     "wikidata": "https://www.wikidata.org/wiki/Q664038",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/06/6martyr.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/06/6martyr.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1616,8 +1662,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.68222,
-     50.11056
+     8.6825,
+     50.1097
     ]
    },
    "properties": {
@@ -1626,7 +1672,7 @@
     "year": "1508",
     "city": "Frankfurt",
     "country": "Germany",
-    "location": "Historical Museum",
+    "location": "Historical Museum Frankfurt",
     "attribution": "generally accepted",
     "medium": "Oil and tempera on panel",
     "dimensions": "189 × 138 central element",
@@ -1640,9 +1686,10 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "historical-museum",
+    "museum_id": "historical-museum-frankfurt",
     "qid": "Q323141",
-    "wikidata": "https://www.wikidata.org/wiki/Q323141"
+    "wikidata": "https://www.wikidata.org/wiki/Q323141",
+    "location_src": "Historical Museum Frankfurt"
    }
   },
   {
@@ -1690,7 +1737,8 @@
       "qid": "Q19925781",
       "url": "https://www.wikidata.org/wiki/Q19925781"
      }
-    ]
+    ],
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -1699,7 +1747,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -1728,7 +1776,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Trinity (Landauer Altar) with frame designed by Dürer"
      }
-    ]
+    ],
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1760,7 +1810,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthistorisches-museum",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/08/1pear.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/08/1pear.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1792,7 +1843,8 @@
     },
     "museum_id": "germanisches-nationalmuseum",
     "country": "Germany",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/08/2empero.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/08/2empero.html",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -1833,7 +1885,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19911578 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1881,7 +1934,8 @@
       "qid": "Q3842613",
       "url": "https://www.wikidata.org/wiki/Q3842613"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1913,7 +1967,8 @@
     },
     "museum_id": "germanisches-nationalmuseum",
     "country": "Germany",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/08/4wolgemu.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/08/4wolgemu.html",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -1953,7 +2008,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q20175457 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1961,8 +2017,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -1991,7 +2047,9 @@
       "source": "Wikipedia list",
       "title": "Apostles Philip and James"
      }
-    ]
+    ],
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2026,7 +2084,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q3976746",
     "wikidata": "https://www.wikidata.org/wiki/Q3976746",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/09/1lucrezi.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/1lucrezi.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2034,17 +2093,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Virgin Mary in Prayer",
     "year": "1518",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel (limewood)",
     "dimensions": "54.9 × 45.3 cm",
@@ -2057,7 +2116,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3842750",
     "wikidata": "https://www.wikidata.org/wiki/Q3842750",
     "_overrides": {
@@ -2074,7 +2133,8 @@
       "qid": "Q3842750",
       "url": "https://www.wikidata.org/wiki/Q3842750"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2117,7 +2177,8 @@
       "qid": "Q3948737",
       "url": "https://www.wikidata.org/wiki/Q3948737"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2151,7 +2212,8 @@
     "museum_id": "staatsgalerie-altdeutsche-meister",
     "qid": "Q738242",
     "wikidata": "https://www.wikidata.org/wiki/Q738242",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/09/4fugger.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/4fugger.html",
+    "location_src": "Staatsgalerie Altdeutsche Meister"
    }
   },
   {
@@ -2182,7 +2244,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "germanisches-nationalmuseum",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -2225,7 +2288,8 @@
       "qid": "Q3937442",
       "url": "https://www.wikidata.org/wiki/Q3937442"
      }
-    ]
+    ],
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2274,7 +2338,8 @@
       "qid": "Q115696852",
       "url": "https://www.wikidata.org/wiki/Q115696852"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -2305,7 +2370,8 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "bibliotheque-nationale-de-france-b-13-res"
+    "museum_id": "bibliotheque-nationale-de-france-b-13-res",
+    "location_src": "Bibliothèque nationale de France ( B-13 rés"
    }
   },
   {
@@ -2337,9 +2403,10 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q3937475",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937475"
+    "wikidata": "https://www.wikidata.org/wiki/Q3937475",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2347,8 +2414,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -2378,7 +2445,8 @@
       "qid": "Q103838809",
       "url": "https://www.wikidata.org/wiki/Q103838809"
      }
-    ]
+    ],
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -2413,7 +2481,8 @@
     "museum_id": "museum-nacional-de-arte-antiga",
     "qid": "Q1989202",
     "wikidata": "https://www.wikidata.org/wiki/Q1989202",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/09/8jerome1.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/8jerome1.html",
+    "location_src": "Museum Nacional de Arte Antiga"
    }
   },
   {
@@ -2452,7 +2521,8 @@
       "qid": "Q27697646",
       "url": "https://www.wikidata.org/wiki/Q27697646"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2482,7 +2552,8 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "muzeum-kolekcji-im"
+    "museum_id": "muzeum-kolekcji-im",
+    "location_src": "Muzeum Kolekcji im"
    }
   },
   {
@@ -2514,7 +2585,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/10/1madpear.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/1madpear.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2522,17 +2594,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Portrait of Jakob Muffel",
     "year": "1526",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel transferred to canvas",
     "dimensions": "49.7 × 37.2 cm",
@@ -2546,10 +2618,11 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937578",
     "wikidata": "https://www.wikidata.org/wiki/Q3937578",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/10/2muffel.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/2muffel.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2557,17 +2630,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Portrait of Hieronymus Holzschuher with cover",
     "year": "1526",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Oil on panel (limewood)",
     "dimensions": "51 × 37.1 cm",
@@ -2581,7 +2654,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937568",
     "wikidata": "https://www.wikidata.org/wiki/Q3937568",
     "wga_url": "https://www.wga.hu/html/d/durer/1/10/3holzsch.html",
@@ -2592,7 +2665,8 @@
       "qid": "Q3937568",
       "url": "https://www.wikidata.org/wiki/Q3937568"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2627,7 +2701,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q2130035",
     "wikidata": "https://www.wikidata.org/wiki/Q2130035",
-    "wga_url": "https://www.wga.hu/html/d/durer/1/10/4kleberg.html"
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/4kleberg.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2661,7 +2736,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q829270",
-    "wikidata": "https://www.wikidata.org/wiki/Q829270"
+    "wikidata": "https://www.wikidata.org/wiki/Q829270",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2702,7 +2778,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q74717565 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -2710,8 +2787,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -2729,7 +2806,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3947190",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2737,8 +2816,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -2756,7 +2835,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q4009969",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2765,7 +2846,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -2783,7 +2864,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q2598223",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2791,8 +2874,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -2810,7 +2893,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q16055586",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2843,7 +2928,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Young Woman with Her Hair Down (formerly believed to be a Fürleger)"
      }
-    ]
+    ],
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -2851,7 +2938,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -2878,7 +2965,9 @@
       "was": "generally accepted",
       "note": "dated 1562, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -2886,8 +2975,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.075556,
-     49.448333
+     11.07556,
+     49.44833
     ]
    },
    "properties": {
@@ -2905,7 +2994,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q3937632",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -2942,7 +3033,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kupferstichkabinett-berlin",
+    "location_src": "Kupferstichkabinett Berlin"
    }
   },
   {
@@ -2950,8 +3043,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.332222222,
-     50.980277777
+     11.33222,
+     50.98028
     ]
    },
    "properties": {
@@ -2975,7 +3068,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Felicitas Tucher (née Rieter) diptych, right wing"
      }
-    ]
+    ],
+    "museum_id": "schloss-weimar",
+    "location_src": "Schloss Weimar"
    }
   },
   {
@@ -2983,8 +3078,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.332222222,
-     50.980277777
+     11.33222,
+     50.98028
     ]
    },
    "properties": {
@@ -3009,7 +3104,9 @@
       "title": "Portrait of Hans Tucher diptych, left wing back side: Combined Coat-of-Arms of the Tucher and Rieter Families",
       "ref": "https://en.wikipedia.org/wiki/Tucher_von_Simmelsdorf"
      }
-    ]
+    ],
+    "museum_id": "schloss-weimar",
+    "location_src": "Schloss Weimar"
    }
   },
   {
@@ -3026,7 +3123,7 @@
     "title": "Burkard von Speyer",
     "year": "1506",
     "location": "Royal Collection",
-    "city": "",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Burkhard%20von%20Speyer%20-%20Google%20Art%20Project.jpg?width=500",
@@ -3052,7 +3149,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Burkard von Speyer"
      }
-    ]
+    ],
+    "museum_id": "royal-collection",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -3060,8 +3159,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.4032862,
-     51.311076
+     9.40329,
+     51.31108
     ]
    },
    "properties": {
@@ -3085,7 +3184,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Elsbeth Tucher (née Pusch) diptych, left wing with the Portrait of Nikolaus Tucher lost"
      }
-    ]
+    ],
+    "museum_id": "hessen-kassel-heritage",
+    "location_src": "Hessen Kassel Heritage"
    }
   },
   {
@@ -3093,8 +3194,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.348469,
-     44.667649
+     10.34847,
+     44.66765
     ]
    },
    "properties": {
@@ -3129,7 +3230,9 @@
       "title": "Virgin and Child before an Archway (Bagnacavallo Madonna)",
       "ref": "https://en.wikipedia.org/wiki/Bagnacavallo_Madonna"
      }
-    ]
+    ],
+    "museum_id": "fondazione-magnani-rocca",
+    "location_src": "Fondazione Magnani-Rocca"
    }
   },
   {
@@ -3138,7 +3241,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -3156,7 +3259,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27981718",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3164,8 +3269,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -3193,7 +3298,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3201,8 +3308,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -3230,7 +3337,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3238,8 +3347,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -3247,7 +3356,7 @@
     "title": "Head of a Young Woman",
     "year": "1522",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20a%20Young%20Woman%20MET%20DP809594.jpg?width=500",
@@ -3257,7 +3366,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20187871",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3265,8 +3376,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3274,7 +3385,7 @@
     "title": "Heavenly Scene",
     "year": "1495",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20durer%20heavenly%20body%20in%20the%20night%20sky.jpg?width=500",
@@ -3294,7 +3405,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3303,7 +3416,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -3321,7 +3434,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20174732",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -3329,8 +3444,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.368333333,
-     48.204722222
+     16.36833,
+     48.20472
     ]
    },
    "properties": {
@@ -3348,7 +3463,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18683053",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina"
    }
   },
   {
@@ -3385,7 +3502,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3412,7 +3531,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q22250338",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3449,7 +3570,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3486,7 +3609,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3523,7 +3648,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3560,7 +3687,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3597,7 +3726,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3624,7 +3755,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28797398",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -3659,7 +3792,9 @@
       "was": "generally accepted",
       "note": "dated 1611, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -3686,7 +3821,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20440793",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -3721,7 +3858,9 @@
       "was": "generally accepted",
       "note": "dated 1647, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -3729,8 +3868,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3748,7 +3887,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29473934",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3756,8 +3897,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3775,7 +3916,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29473936",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3783,8 +3926,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3810,7 +3953,9 @@
       "was": "generally accepted",
       "note": "dated 1599, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3818,8 +3963,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3837,7 +3982,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30082306",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3845,8 +3992,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3864,7 +4011,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30094305",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3872,8 +4021,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -3891,7 +4040,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q21614252",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -3918,7 +4069,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28801399",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "skokloster-castle",
+    "location_src": "Skokloster Castle"
    }
   },
   {
@@ -3926,7 +4079,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -3951,7 +4104,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Man in a Fur Coat (Rodrigo de Almada?)"
      }
-    ]
+    ],
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -3978,7 +4133,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124455099",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -3986,8 +4143,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -4005,7 +4162,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124454923",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4013,8 +4172,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -4032,7 +4191,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q116731747",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -4040,8 +4201,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -4059,7 +4220,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124291036",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -4067,8 +4230,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -4086,7 +4249,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124291055",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -4094,8 +4259,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -4113,7 +4278,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124291071",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -4121,8 +4288,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.375833333,
-     48.833611111
+     2.37583,
+     48.83361
     ]
    },
    "properties": {
@@ -4140,7 +4307,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124458968",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bibliotheque-nationale-de-france",
+    "location_src": "Bibliothèque nationale de France"
    }
   },
   {
@@ -4148,8 +4317,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.375833333,
-     48.833611111
+     2.37583,
+     48.83361
     ]
    },
    "properties": {
@@ -4167,7 +4336,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124458979",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bibliotheque-nationale-de-france",
+    "location_src": "Bibliothèque nationale de France"
    }
   },
   {
@@ -4175,8 +4346,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -4194,7 +4365,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126888237",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -4203,7 +4376,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -4221,7 +4394,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124454984",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -4258,7 +4433,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kupferstichkabinett-berlin",
+    "location_src": "Kupferstichkabinett Berlin"
    }
   },
   {
@@ -4266,8 +4443,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -4295,7 +4472,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -4303,7 +4482,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.138041,
+     -0.13804,
      50.8237
     ]
    },
@@ -4322,7 +4501,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119703809",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "brighton-museum-art-gallery",
+    "location_src": "Brighton Museum & Art Gallery"
    }
   },
   {
@@ -4349,7 +4530,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q125798877",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-jeanne-d-aboville",
+    "location_src": "Musée Jeanne-d'Aboville"
    }
   },
   {
@@ -4357,8 +4540,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.133888888,
-     51.525944444
+     -0.13389,
+     51.52594
     ]
    },
    "properties": {
@@ -4376,7 +4559,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119703810",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wellcome-collection",
+    "location_src": "Wellcome Collection"
    }
   },
   {
@@ -4384,8 +4569,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.133888888,
-     51.525944444
+     -0.13389,
+     51.52594
     ]
    },
    "properties": {
@@ -4403,7 +4588,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119931360",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wellcome-collection",
+    "location_src": "Wellcome Collection"
    }
   },
   {
@@ -4411,8 +4598,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.133888888,
-     51.525944444
+     -0.13389,
+     51.52594
     ]
    },
    "properties": {
@@ -4430,7 +4617,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119931564",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wellcome-collection",
+    "location_src": "Wellcome Collection"
    }
   },
   {
@@ -4438,8 +4627,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -4465,7 +4654,9 @@
       "was": "generally accepted",
       "note": "dated 1587, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -4502,7 +4693,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -4539,7 +4732,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "historical-museum-frankfurt",
+    "location_src": "Historical Museum Frankfurt"
    }
   },
   {
@@ -4566,7 +4761,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48554354",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "historical-museum-frankfurt",
+    "location_src": "Historical Museum Frankfurt"
    }
   },
   {
@@ -4574,8 +4771,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.368333333,
-     48.204722222
+     16.36833,
+     48.20472
     ]
    },
    "properties": {
@@ -4593,7 +4790,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q97940492",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina"
    }
   },
   {
@@ -4601,8 +4800,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.075556,
-     49.448333
+     11.07556,
+     49.44833
     ]
    },
    "properties": {
@@ -4620,7 +4819,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q69667374",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -4628,8 +4829,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.075556,
-     49.448333
+     11.07556,
+     49.44833
     ]
    },
    "properties": {
@@ -4647,7 +4848,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q69667738",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -4674,7 +4877,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q48447927",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -4682,8 +4887,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -4701,7 +4906,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q54805599",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -4709,7 +4916,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     17.108611111,
+     17.10861,
      48.14
     ]
    },
@@ -4728,7 +4935,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50752557",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "slovak-national-gallery",
+    "location_src": "Slovak National Gallery"
    }
   },
   {
@@ -4736,8 +4945,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -4755,7 +4964,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107443977",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4763,8 +4974,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.375833333,
-     48.833611111
+     2.37583,
+     48.83361
     ]
    },
    "properties": {
@@ -4782,7 +4993,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q112252084",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bibliotheque-nationale-de-france",
+    "location_src": "Bibliothèque nationale de France"
    }
   },
   {
@@ -4790,8 +5003,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.675609,
-     45.70386
+     9.6758,
+     45.7042
     ]
    },
    "properties": {
@@ -4809,7 +5022,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q115695271",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "accademia-carrara",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -4817,8 +5032,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.368333333,
-     48.204722222
+     16.36833,
+     48.20472
     ]
    },
    "properties": {
@@ -4836,7 +5051,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111822126",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina"
    }
   },
   {
@@ -4844,8 +5061,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.075556,
-     49.448333
+     11.07556,
+     49.44833
     ]
    },
    "properties": {
@@ -4863,7 +5080,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q110892303",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -4898,7 +5117,9 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -4906,8 +5127,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -4935,7 +5156,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -4943,7 +5166,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -4952,7 +5175,7 @@
     "title": "Jabach Altar: Piper and Drummer",
     "year": "1507",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20028.png?width=500",
@@ -4972,7 +5195,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -4980,8 +5205,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -4999,7 +5224,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q116731690",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5007,8 +5234,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.485277777,
-     52.156944444
+     4.48528,
+     52.15694
     ]
    },
    "properties": {
@@ -5026,7 +5253,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q114808013",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "leiden-university",
+    "location_src": "Leiden University"
    }
   },
   {
@@ -5034,8 +5263,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -5053,7 +5282,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q54833681",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   }
  ]

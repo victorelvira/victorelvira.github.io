@@ -8,7 +8,7 @@
     "type": "Point",
     "coordinates": [
      11.57111,
-     48.14972
+     48.14989
     ]
    },
    "properties": {
@@ -26,7 +26,8 @@
     },
     "museum_id": "neue-pinakothek",
     "city": "Munich",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -34,8 +35,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -65,7 +66,8 @@
       "qid": "Q1652361",
       "url": "https://www.wikidata.org/wiki/Q1652361"
      }
-    ]
+    ],
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -73,8 +75,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -104,7 +106,8 @@
       "qid": "Q884782",
       "url": "https://www.wikidata.org/wiki/Q884782"
      }
-    ]
+    ],
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -112,15 +115,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.740111115,
-     52.36549544
+     9.74011,
+     52.3655
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Portrait of an older man",
     "year": "1809",
-    "location": "Landesmuseum Hannover",
+    "location": "Lower Saxony State Museum",
     "city": "Südstadt-Bult",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -148,7 +151,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an older man [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "lower-saxony-state-museum",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -181,7 +186,9 @@
       "qid": "Q18602468",
       "url": "https://www.wikidata.org/wiki/Q18602468"
      }
-    ]
+    ],
+    "country": "Germany",
+    "location_src": "Heidecksburg"
    }
   },
   {
@@ -207,7 +214,8 @@
     },
     "museum_id": "germanisches-nationalmuseum",
     "city": "Nuremberg",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Germanisches Nationalmuseum"
    }
   },
   {
@@ -231,7 +239,10 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthalle-mannheim"
+    "museum_id": "kunsthalle-mannheim",
+    "city": "Mannheim",
+    "country": "Germany",
+    "location_src": "Kunsthalle Mannheim"
    }
   },
   {
@@ -239,8 +250,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -258,11 +269,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q693746",
     "wikidata": "https://www.wikidata.org/wiki/Q693746",
-    "wga_url": "https://www.wga.hu/html/f/friedric/1/105fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/1/105fried.html",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -270,8 +282,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -289,11 +301,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q334360",
     "wikidata": "https://www.wikidata.org/wiki/Q334360",
-    "wga_url": "https://www.wga.hu/html/f/friedric/1/106fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/1/106fried.html",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -302,7 +315,7 @@
     "type": "Point",
     "coordinates": [
      11.57111,
-     48.14972
+     48.14989
     ]
    },
    "properties": {
@@ -328,7 +341,8 @@
       "qid": "Q18602594",
       "url": "https://www.wikidata.org/wiki/Q18602594"
      }
-    ]
+    ],
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -337,7 +351,7 @@
     "type": "Point",
     "coordinates": [
      7.00417,
-     51.44167
+     51.4417
     ]
    },
    "properties": {
@@ -355,10 +369,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-folkwang",
-    "city": "Essen",
+    "city": "Stadtbezirk II (Essen)",
     "country": "Germany",
     "qid": "Q507120",
-    "wikidata": "https://www.wikidata.org/wiki/Q507120"
+    "wikidata": "https://www.wikidata.org/wiki/Q507120",
+    "location_src": "Museum Folkwang"
    }
   },
   {
@@ -366,15 +381,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Bohemian Landscape with Mount Milleschauer",
     "year": "1808",
-    "location": "Albertinum",
+    "location": "Galerie Neue Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -402,7 +417,9 @@
       "source": "Wikipedia list",
       "title": "Bohemian Landscape with Mount Milleschauer (in French)"
      }
-    ]
+    ],
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -430,7 +447,8 @@
     },
     "museum_id": "kunsthalle-karlsruhe",
     "qid": "Q1587929",
-    "wikidata": "https://www.wikidata.org/wiki/Q1587929"
+    "wikidata": "https://www.wikidata.org/wiki/Q1587929",
+    "location_src": "Kunsthalle Karlsruhe"
    }
   },
   {
@@ -438,8 +456,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -465,7 +483,8 @@
       "qid": "Q18602445",
       "url": "https://www.wikidata.org/wiki/Q18602445"
      }
-    ]
+    ],
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -473,8 +492,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -482,7 +501,7 @@
     "title": "Winter Landscape",
     "year": "1811",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Winterlandschaft%20%28London%29.jpg?width=500",
@@ -509,7 +528,9 @@
       "source": "Wikipedia list",
       "title": "Winter Landscape with church [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -535,7 +556,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "dayton-art-institute",
-    "city": "US"
+    "city": "Dayton",
+    "country": "United States",
+    "location_src": "Dayton Art Institute"
    }
   },
   {
@@ -579,7 +602,8 @@
       "qid": "Q18602472",
       "url": "https://www.wikidata.org/wiki/Q18602472"
      }
-    ]
+    ],
+    "location_src": "Milwaukee Art Museum"
    }
   },
   {
@@ -587,8 +611,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.946,
-     41.2603
+     -95.94602,
+     41.26025
     ]
    },
    "properties": {
@@ -605,7 +629,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "joslyn-art-museum",
-    "city": "Omaha",
+    "city": "Nebraska",
     "qid": "Q18602471",
     "wikidata": "https://www.wikidata.org/wiki/Q18602471",
     "_overrides": {
@@ -614,7 +638,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18602471 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "United States",
+    "location_src": "Joslyn Art Museum"
    }
   },
   {
@@ -622,8 +648,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -641,7 +667,8 @@
     },
     "museum_id": "galerie-neue-meister",
     "city": "Dresden",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -668,7 +695,8 @@
     },
     "museum_id": "museum-kunstpalast",
     "city": "Pempelfort",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Museum Kunstpalast"
    }
   },
   {
@@ -706,7 +734,8 @@
       "qid": "Q17493547",
       "url": "https://www.wikidata.org/wiki/Q17493547"
      }
-    ]
+    ],
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -733,7 +762,8 @@
     },
     "museum_id": "staatsgalerie-stuttgart",
     "city": "Stuttgart",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -741,15 +771,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.70444,
-     50.94583
+     10.7044,
+     50.9458
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Cross in the Mountains (in French)",
     "year": "1822",
-    "location": "Friedenstein Palace",
+    "location": "Friedenstein Castle",
     "attribution": "generally accepted",
     "dimensions": "71.7 x 128 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kreuzimgebirge.jpg/500px-Kreuzimgebirge.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -758,7 +788,10 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "friedenstein-palace"
+    "museum_id": "friedenstein-castle",
+    "city": "Gotha",
+    "country": "Germany",
+    "location_src": "Friedenstein Castle"
    }
   },
   {
@@ -793,7 +826,8 @@
       "qid": "Q18602636",
       "url": "https://www.wikidata.org/wiki/Q18602636"
      }
-    ]
+    ],
+    "location_src": "Sanssouci Palace"
    }
   },
   {
@@ -818,7 +852,8 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "schloss-charlottenburg"
+    "museum_id": "schloss-charlottenburg",
+    "location_src": "Schloss Charlottenburg"
    }
   },
   {
@@ -826,8 +861,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -845,11 +880,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q232084",
     "wikidata": "https://www.wikidata.org/wiki/Q232084",
-    "wga_url": "https://www.wga.hu/html/f/friedric/2/207friee.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/2/207friee.html",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -893,7 +929,9 @@
       "source": "Wikipedia list",
       "title": "@media screen{html.skin-theme-clientpref-night .mw-parser-output .sister-inline-image img[src*=\"Wiktionary-logo-en-v2.svg\"]{filter:invert(1)brightness(55%)contrast(250%)hue-rotate(180deg)}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .sister-inline-image img[src*=\"Wiktionary-logo-en-v2.svg\"]{filter:invert(1)brightness(55%)contrast(250%)hue-rotate(180deg)}} Media related to Coastline in the evening light at Wikimedia Commons"
      }
-    ]
+    ],
+    "museum_id": "museum-behnhaus-dragerhaus",
+    "location_src": "Museum Behnhaus Drägerhaus"
    }
   },
   {
@@ -929,7 +967,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18603114 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -937,8 +976,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5801,
-     45.4987
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -968,7 +1007,8 @@
       "qid": "Q17325449",
       "url": "https://www.wikidata.org/wiki/Q17325449"
      }
-    ]
+    ],
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -998,7 +1038,8 @@
     "city": "Hamburg-Mitte",
     "country": "Germany",
     "qid": "Q311243",
-    "wikidata": "https://www.wikidata.org/wiki/Q311243"
+    "wikidata": "https://www.wikidata.org/wiki/Q311243",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -1042,7 +1083,9 @@
       "source": "Wikipedia list",
       "title": "The Cathedral (Friedrich) [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -1051,7 +1094,7 @@
     "type": "Point",
     "coordinates": [
      11.57111,
-     48.14972
+     48.14989
     ]
    },
    "properties": {
@@ -1080,7 +1123,8 @@
       "qid": "Q17321856",
       "url": "https://www.wikidata.org/wiki/Q17321856"
      }
-    ]
+    ],
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -1108,7 +1152,8 @@
     },
     "museum_id": "kunstmuseum-winterthur",
     "qid": "Q1787143",
-    "wikidata": "https://www.wikidata.org/wiki/Q1787143"
+    "wikidata": "https://www.wikidata.org/wiki/Q1787143",
+    "location_src": "Kunstmuseum Winterthur"
    }
   },
   {
@@ -1117,7 +1162,7 @@
     "type": "Point",
     "coordinates": [
      7.00417,
-     51.44167
+     51.4417
     ]
    },
    "properties": {
@@ -1134,8 +1179,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-folkwang",
-    "city": "Essen",
-    "country": "Germany"
+    "city": "Stadtbezirk II (Essen)",
+    "country": "Germany",
+    "location_src": "Museum Folkwang"
    }
   },
   {
@@ -1143,8 +1189,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -1162,11 +1208,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q1545495",
     "wikidata": "https://www.wikidata.org/wiki/Q1545495",
-    "wga_url": "https://www.wga.hu/html/f/friedric/2/211friee.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/2/211friee.html",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -1174,8 +1221,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.2742,
-     44.9586
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -1193,7 +1240,8 @@
     },
     "museum_id": "minneapolis-institute-of-art",
     "city": "Minneapolis",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -1219,7 +1267,8 @@
     },
     "museum_id": "hamburger-kunsthalle",
     "city": "Hamburg-Mitte",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -1227,8 +1276,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -1245,7 +1294,8 @@
     },
     "museum_id": "galerie-neue-meister",
     "city": "Dresden",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -1253,8 +1303,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -1284,7 +1334,8 @@
       "qid": "Q232087",
       "url": "https://www.wikidata.org/wiki/Q232087"
      }
-    ]
+    ],
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -1300,7 +1351,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Port of Greifswald [ Wikidata ]",
     "year": "c. 1810 to 1820",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "attribution": "generally accepted",
     "dimensions": "94 x 74 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Caspar_David_Friedrich_Hafen_von_Greifswald.jpg/500px-Caspar_David_Friedrich_Hafen_von_Greifswald.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1319,7 +1370,8 @@
       "qid": "Q18602634",
       "url": "https://www.wikidata.org/wiki/Q18602634"
      }
-    ]
+    ],
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -1355,7 +1407,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18602536 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Art Gallery of Ontario"
    }
   },
   {
@@ -1371,7 +1424,7 @@
     "painter": "Caspar David Friedrich",
     "title": "River Bank in Fog",
     "year": "1821",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "attribution": "generally accepted",
     "dimensions": "22 x 33.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Caspar_David_Friedrich_-_Flussufer_im_Nebel_-_Wallraf-Richartz-Museum.jpg/500px-Caspar_David_Friedrich_-_Flussufer_im_Nebel_-_Wallraf-Richartz-Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1393,7 +1446,8 @@
       "qid": "Q18603131",
       "url": "https://www.wikidata.org/wiki/Q18603131"
      }
-    ]
+    ],
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -1401,8 +1455,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.94898,
-     40.44369
+     -79.949,
+     40.4437
     ]
    },
    "properties": {
@@ -1420,7 +1474,8 @@
     },
     "museum_id": "carnegie-museum-of-art",
     "city": "Pittsburgh",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Carnegie Museum of Art"
    }
   },
   {
@@ -1428,7 +1483,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.2137,
+     -73.2136,
      42.7078
     ]
    },
@@ -1436,7 +1491,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Drifting Clouds (Friedrich) [ Wikidata ]",
     "year": "c. 1820",
-    "location": "Sterling and Francine Clark Art Institute",
+    "location": "Clark Art Institute",
     "attribution": "generally accepted",
     "dimensions": "18.3 x 24.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Caspar_David_Friedrich_-_Drifting_Clouds_-_WGA8259.jpg/500px-Caspar_David_Friedrich_-_Drifting_Clouds_-_WGA8259.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1445,8 +1500,10 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "sterling-and-francine-clark-art-institute",
-    "city": "Williamstown"
+    "museum_id": "clark-art-institute",
+    "city": "Massachusetts",
+    "country": "United States",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -1473,9 +1530,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "lower-saxony-state-museum",
-    "city": "Hanover",
+    "city": "Südstadt-Bult",
     "qid": "Q16331419",
-    "wikidata": "https://www.wikidata.org/wiki/Q16331419"
+    "wikidata": "https://www.wikidata.org/wiki/Q16331419",
+    "country": "Germany",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -1501,7 +1560,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "lower-saxony-state-museum",
-    "city": "Hanover"
+    "city": "Südstadt-Bult",
+    "country": "Germany",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -1528,7 +1589,8 @@
     },
     "museum_id": "getty-center",
     "city": "Los Angeles",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -1536,8 +1598,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -1554,8 +1616,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
-    "country": "Germany"
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -1563,8 +1626,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1594,7 +1657,8 @@
       "qid": "Q18602483",
       "url": "https://www.wikidata.org/wiki/Q18602483"
      }
-    ]
+    ],
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1619,7 +1683,8 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunstmuseum-winterthur"
+    "museum_id": "kunstmuseum-winterthur",
+    "location_src": "Kunstmuseum Winterthur"
    }
   },
   {
@@ -1650,7 +1715,8 @@
     "country": "France",
     "qid": "Q24213",
     "wikidata": "https://www.wikidata.org/wiki/Q24213",
-    "wga_url": "https://www.wga.hu/html/f/friedric/3/303fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/3/303fried.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1680,7 +1746,9 @@
     "city": "Phoenix",
     "qid": "Q1198515",
     "wikidata": "https://www.wikidata.org/wiki/Q1198515",
-    "wga_url": "https://www.wga.hu/html/f/friedric/3/304fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/3/304fried.html",
+    "country": "United States",
+    "location_src": "Phoenix Art Museum"
    }
   },
   {
@@ -1689,7 +1757,7 @@
     "type": "Point",
     "coordinates": [
      11.57111,
-     48.14972
+     48.14989
     ]
    },
    "properties": {
@@ -1711,7 +1779,8 @@
     "country": "Germany",
     "qid": "Q1423223",
     "wikidata": "https://www.wikidata.org/wiki/Q1423223",
-    "wga_url": "https://www.wga.hu/html/f/friedric/3/305fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/3/305fried.html",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -1738,11 +1807,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "qid": "Q1451490",
     "wikidata": "https://www.wikidata.org/wiki/Q1451490",
-    "wga_url": "https://www.wga.hu/html/f/friedric/3/307fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/3/307fried.html",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -1769,7 +1839,8 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1796,7 +1867,8 @@
     },
     "museum_id": "dallas-museum-of-art",
     "city": "Dallas",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -1812,7 +1884,7 @@
     "painter": "Caspar David Friedrich",
     "title": "The Sea of Ice",
     "year": "1824",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "attribution": "generally accepted",
     "dimensions": "96.7 x 126.9 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Caspar_David_Friedrich_-_The_Sea_of_Ice_-_WGA8270.jpg/500px-Caspar_David_Friedrich_-_The_Sea_of_Ice_-_WGA8270.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1827,7 +1899,8 @@
     "country": "Germany",
     "qid": "Q194137",
     "wikidata": "https://www.wikidata.org/wiki/Q194137",
-    "wga_url": "https://www.wga.hu/html/f/friedric/3/309fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/3/309fried.html",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -1835,7 +1908,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -1871,7 +1944,9 @@
       "source": "Wikipedia list",
       "title": "Hill and Ploughed Field near Dresden [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -1879,8 +1954,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -1898,11 +1973,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q232087",
     "wikidata": "https://www.wikidata.org/wiki/Q232087",
-    "wga_url": "https://www.wga.hu/html/f/friedric/2/213fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/2/213fried.html",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -1938,7 +2014,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q16038721 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -1946,8 +2023,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.67389,
-     41.76333
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
@@ -1964,7 +2041,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "wadsworth-atheneum",
-    "city": "Hartford"
+    "city": "Hartford",
+    "country": "United States",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -1972,8 +2051,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -2008,7 +2087,9 @@
       "source": "Wikipedia list",
       "title": "Trees and Bushes in the Snow (in French)"
      }
-    ]
+    ],
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -2016,8 +2097,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -2043,7 +2124,8 @@
       "qid": "Q16038517",
       "url": "https://www.wikidata.org/wiki/Q16038517"
      }
-    ]
+    ],
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -2082,7 +2164,8 @@
       "qid": "Q17281208",
       "url": "https://www.wikidata.org/wiki/Q17281208"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2109,7 +2192,8 @@
     },
     "museum_id": "denver-art-museum",
     "city": "Denver",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Denver Art Museum"
    }
   },
   {
@@ -2117,8 +2201,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -2135,8 +2219,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
-    "country": "Germany"
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -2144,8 +2229,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.59417,
-     47.55417
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -2167,7 +2252,8 @@
     "country": "Switzerland",
     "qid": "Q1197913",
     "wikidata": "https://www.wikidata.org/wiki/Q1197913",
-    "wga_url": "https://www.wga.hu/html/f/friedric/4/403fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/4/403fried.html",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -2194,7 +2280,8 @@
     },
     "museum_id": "national-gallery-of-canada",
     "city": "Ottawa",
-    "country": "Canada"
+    "country": "Canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -2202,8 +2289,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -2220,8 +2307,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
-    "country": "Germany"
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -2256,7 +2344,8 @@
       "qid": "Q18602544",
       "url": "https://www.wikidata.org/wiki/Q18602544"
      }
-    ]
+    ],
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -2264,15 +2353,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Ships in Harbour, Evening",
     "year": "c. 1828",
-    "location": "Nelson-Atkins Museum of Art",
+    "location": "The Nelson-Atkins Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "76.5 x 88.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Caspar_David_Friedrich_-_Boats_in_the_Harbour_at_Evening_-_WGA08282.jpg/500px-Caspar_David_Friedrich_-_Boats_in_the_Harbour_at_Evening_-_WGA08282.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2282,12 +2371,13 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "nelson-atkins-museum-of-art",
+    "museum_id": "the-nelson-atkins-museum-of-art",
     "city": "Kansas City",
     "country": "United States",
     "qid": "Q999836",
     "wikidata": "https://www.wikidata.org/wiki/Q999836",
-    "wga_url": "https://www.wga.hu/html/f/friedric/4/407fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/4/407fried.html",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -2295,7 +2385,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -2331,7 +2421,9 @@
       "source": "Wikipedia list",
       "title": "The Evergreens by the Waterfall [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -2367,7 +2459,8 @@
       "qid": "Q18021530",
       "url": "https://www.wikidata.org/wiki/Q18021530"
      }
-    ]
+    ],
+    "location_src": "Museum am Ostwall"
    }
   },
   {
@@ -2403,7 +2496,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18602616 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -2440,7 +2534,8 @@
       "qid": "Q4531523",
       "url": "https://www.wikidata.org/wiki/Q4531523"
      }
-    ]
+    ],
+    "location_src": "Museum am Ostwall"
    }
   },
   {
@@ -2448,8 +2543,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.7444,
-     51.0519
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -2471,7 +2566,8 @@
     "country": "Germany",
     "qid": "Q3822640",
     "wikidata": "https://www.wikidata.org/wiki/Q3822640",
-    "wga_url": "https://www.wga.hu/html/f/friedric/4/410fried.html"
+    "wga_url": "https://www.wga.hu/html/f/friedric/4/410fried.html",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -2509,7 +2605,9 @@
       "qid": "Q18202267",
       "url": "https://www.wikidata.org/wiki/Q18202267"
      }
-    ]
+    ],
+    "country": "Germany",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -2543,7 +2641,8 @@
       "qid": "Q18603192",
       "url": "https://www.wikidata.org/wiki/Q18603192"
      }
-    ]
+    ],
+    "location_src": "Indianapolis Museum of Art"
    }
   },
   {
@@ -2581,7 +2680,8 @@
       "qid": "Q1214313",
       "url": "https://www.wikidata.org/wiki/Q1214313"
      }
-    ]
+    ],
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -2625,7 +2725,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with the Rosenberg in the Bohemian Mountains [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -2651,7 +2753,8 @@
     },
     "museum_id": "hamburger-kunsthalle",
     "city": "Hamburg-Mitte",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -2695,7 +2798,9 @@
       "source": "Wikipedia list",
       "title": "Forest in late autumn [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "angermuseum",
+    "location_src": "Angermuseum"
    }
   },
   {
@@ -2722,7 +2827,8 @@
     },
     "museum_id": "san-diego-museum-of-art",
     "city": "San Diego",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "San Diego Museum of Art"
    }
   },
   {
@@ -2730,8 +2836,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2766,7 +2872,9 @@
       "source": "Wikipedia list",
       "title": "The Dreamer (in French)"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2791,7 +2899,10 @@
      "source": "Wikipedia: List of works by Caspar David Friedrich",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthalle-mannheim"
+    "museum_id": "kunsthalle-mannheim",
+    "city": "Mannheim",
+    "country": "Germany",
+    "location_src": "Kunsthalle Mannheim"
    }
   },
   {
@@ -2830,7 +2941,8 @@
       "qid": "Q18602483",
       "url": "https://www.wikidata.org/wiki/Q18602483"
      }
-    ]
+    ],
+    "location_src": "North Carolina Museum of Art"
    }
   },
   {
@@ -2857,7 +2969,8 @@
     },
     "museum_id": "dallas-museum-of-art",
     "city": "Dallas",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -2865,15 +2978,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Giant Mountains (View of the Small Sturmhaube from Warmbrunn)",
     "year": "1810",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -2894,7 +3007,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -2902,8 +3017,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2931,7 +3046,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2939,8 +3056,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2968,7 +3085,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2976,8 +3095,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.295833,
-     52.521111
+     13.29583,
+     52.52111
     ]
    },
    "properties": {
@@ -3005,7 +3124,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "charlottenburg-palace",
+    "location_src": "Charlottenburg Palace"
    }
   },
   {
@@ -3013,7 +3134,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -3048,7 +3169,9 @@
       "source": "Wikipedia list",
       "title": "The Oaktree in the Snow [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -3056,7 +3179,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -3085,7 +3208,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -3093,7 +3218,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -3122,7 +3247,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -3130,7 +3257,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -3159,7 +3286,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -3167,7 +3296,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -3196,7 +3325,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -3204,7 +3335,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -3239,7 +3370,9 @@
       "source": "Wikipedia list",
       "title": "Wreck in the Moonlight [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -3247,7 +3380,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3276,7 +3409,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3284,7 +3419,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3313,7 +3448,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3321,7 +3458,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3350,7 +3487,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3358,7 +3497,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3387,7 +3526,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3395,7 +3536,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3424,7 +3565,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3432,7 +3575,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3461,7 +3604,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3469,7 +3614,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3498,7 +3643,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3506,8 +3653,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -3535,7 +3682,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -3544,7 +3693,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -3572,7 +3721,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -3580,15 +3731,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Rocky ravine in the Elbe Sandstone Mountains",
     "year": "1822",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -3609,7 +3760,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -3617,15 +3770,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Sea beach in the fog",
     "year": "1807",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -3646,7 +3799,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -3654,15 +3809,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Seashore with fisherman",
     "year": "1807",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -3689,7 +3844,9 @@
       "source": "Wikipedia list",
       "title": "Seashore with Fisherman [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -3697,15 +3854,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.740111115,
-     52.36549544
+     9.74011,
+     52.3655
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Morning",
     "year": "1816",
-    "location": "Landesmuseum Hannover",
+    "location": "Lower Saxony State Museum",
     "city": "Südstadt-Bult",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3726,7 +3883,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "lower-saxony-state-museum",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -3734,15 +3893,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.740111115,
-     52.36549544
+     9.74011,
+     52.3655
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Daytime cycle: The Afternoon",
     "year": "1821",
-    "location": "Landesmuseum Hannover",
+    "location": "Lower Saxony State Museum",
     "city": "Südstadt-Bult",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3763,7 +3922,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "lower-saxony-state-museum",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -3771,15 +3932,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.740111115,
-     52.36549544
+     9.74011,
+     52.3655
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Daytime cycle: The Morning",
     "year": "1830",
-    "location": "Landesmuseum Hannover",
+    "location": "Lower Saxony State Museum",
     "city": "Südstadt-Bult",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3800,7 +3961,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "lower-saxony-state-museum",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -3808,15 +3971,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.740111115,
-     52.36549544
+     9.74011,
+     52.3655
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Daytime cycle: The Midday",
     "year": "1821",
-    "location": "Landesmuseum Hannover",
+    "location": "Lower Saxony State Museum",
     "city": "Südstadt-Bult",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3837,7 +4000,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "lower-saxony-state-museum",
+    "location_src": "Lower Saxony State Museum"
    }
   },
   {
@@ -3874,7 +4039,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-kunstpalast",
+    "location_src": "Museum Kunstpalast"
    }
   },
   {
@@ -3911,7 +4078,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "prussian-palaces-and-gardens-foundation-berlin-brandenburg",
+    "location_src": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg"
    }
   },
   {
@@ -3954,7 +4123,9 @@
       "source": "Wikipedia list",
       "title": "The Cross beside the Baltic [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "prussian-palaces-and-gardens-foundation-berlin-brandenburg",
+    "location_src": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg"
    }
   },
   {
@@ -3962,8 +4133,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.375661869,
-     51.342449702
+     12.37566,
+     51.34245
     ]
    },
    "properties": {
@@ -3991,7 +4162,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-der-bildenden-kunste",
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -4028,7 +4201,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -4065,7 +4240,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -4102,7 +4279,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -4139,7 +4318,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -4176,7 +4357,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -4213,7 +4396,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "lentos-art-museum",
+    "location_src": "Lentos Art Museum"
    }
   },
   {
@@ -4250,7 +4435,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunst-museum-winterthur-reinhart-am-stadtgarten",
+    "location_src": "Kunst Museum Winterthur | Reinhart am Stadtgarten"
    }
   },
   {
@@ -4258,8 +4445,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -4287,7 +4474,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -4295,8 +4484,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -4324,7 +4513,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -4332,7 +4523,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -4341,7 +4532,7 @@
     "title": "Evening on the River",
     "year": "1820",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Abend%20am%20Fluss.jpg?width=500",
@@ -4361,7 +4552,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -4377,7 +4570,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Walk at Dusk",
     "year": "1837",
-    "location": "J. Paul Getty Museum",
+    "location": "Getty Center",
     "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
@@ -4398,7 +4591,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -4406,8 +4601,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -4435,7 +4630,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4443,8 +4640,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -4478,7 +4675,9 @@
       "source": "Wikipedia list",
       "title": "Giant Mountains Landscape with Rising Fog [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4486,8 +4685,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -4515,7 +4714,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4523,8 +4724,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -4552,7 +4753,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4589,7 +4792,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -4597,8 +4802,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.677545081,
-     50.111225951
+     8.67755,
+     50.11123
     ]
    },
    "properties": {
@@ -4626,7 +4831,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "goethe-house",
+    "location_src": "Goethe House"
    }
   },
   {
@@ -4663,7 +4870,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -4671,15 +4880,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Riesengebirge Landscape",
     "year": "1835",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -4700,7 +4909,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -4709,7 +4920,7 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111
+     50.10111
     ]
    },
    "properties": {
@@ -4717,7 +4928,7 @@
     "title": "Northern Sea in the Moonlight",
     "year": "1823",
     "location": "National Gallery Prague",
-    "city": "",
+    "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Northern%20Sea%20in%20the%20Moonlight%20-%20Google%20Art%20Project.jpg?width=500",
@@ -4737,7 +4948,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -4774,7 +4987,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -4811,7 +5026,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -4848,7 +5065,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -4857,14 +5076,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Mountain Peak with Drifting Clouds",
     "year": "1835",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -4885,7 +5104,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -4893,8 +5114,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294491,
-     38.639306
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -4922,7 +5143,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -4930,8 +5153,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780227777
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -4959,7 +5182,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatsgalerie-stuttgart",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -4996,7 +5221,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "glaspalast",
+    "location_src": "Glaspalast"
    }
   },
   {
@@ -5004,15 +5231,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "The Ruins of Eldena",
     "year": "1824",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -5033,7 +5260,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -5041,15 +5270,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Landscape of Rügen near Putbus",
     "year": "1824",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -5070,7 +5299,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -5078,15 +5309,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Ruins of Teplitz Castle",
     "year": "1828",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -5107,7 +5338,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -5115,15 +5348,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "View of Schmiedebergerkamm",
     "year": "1837",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -5144,7 +5377,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -5181,7 +5416,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-folkwang",
+    "location_src": "Museum Folkwang"
    }
   },
   {
@@ -5189,8 +5426,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5224,7 +5461,9 @@
       "source": "Wikipedia list",
       "title": "Memories of the Giant Mountains [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5232,8 +5471,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5261,7 +5500,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5269,8 +5510,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5298,7 +5539,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5306,8 +5549,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5335,7 +5578,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5343,8 +5588,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.024722222,
-     52.231666666
+     21.02472,
+     52.23167
     ]
    },
    "properties": {
@@ -5372,7 +5617,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-in-warsaw",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -5380,7 +5627,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -5409,7 +5656,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -5417,7 +5666,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -5446,7 +5695,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -5454,7 +5705,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -5483,7 +5734,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -5520,7 +5773,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-art-and-cultural-history-dortmund",
+    "location_src": "Museum of Art and Cultural History (Dortmund)"
    }
   },
   {
@@ -5528,7 +5783,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -5557,7 +5812,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -5565,7 +5822,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -5600,7 +5857,9 @@
       "source": "Wikipedia list",
       "title": "Wreck in the Ice-sea (in French)"
      }
-    ]
+    ],
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -5609,7 +5868,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -5637,7 +5896,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -5645,15 +5906,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Nightly cloudy sky / Evening",
     "year": "1824",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -5674,7 +5935,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -5711,7 +5974,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "klassik-stiftung-weimar",
+    "location_src": "Klassik Stiftung Weimar"
    }
   },
   {
@@ -5754,7 +6019,9 @@
       "source": "Wikipedia list",
       "title": "Landscape with Rainbow (Friedrich) [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "klassik-stiftung-weimar",
+    "location_src": "Klassik Stiftung Weimar"
    }
   },
   {
@@ -5791,7 +6058,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "glaspalast",
+    "location_src": "Glaspalast"
    }
   },
   {
@@ -5828,7 +6097,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-kunstpalast",
+    "location_src": "Museum Kunstpalast"
    }
   },
   {
@@ -5836,8 +6107,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -5871,7 +6142,9 @@
       "source": "Wikipedia list",
       "title": "The Cemetery Entrance (in French)"
      }
-    ]
+    ],
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -5879,8 +6152,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -5908,7 +6181,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -5916,8 +6191,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -5945,7 +6220,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -5953,8 +6230,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -5982,7 +6259,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -5990,8 +6269,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -6019,7 +6298,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -6027,8 +6308,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.375661869,
-     51.342449702
+     12.37566,
+     51.34245
     ]
    },
    "properties": {
@@ -6056,7 +6337,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-der-bildenden-kunste",
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -6064,8 +6347,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.375661869,
-     51.342449702
+     12.37566,
+     51.34245
     ]
    },
    "properties": {
@@ -6093,7 +6376,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-der-bildenden-kunste",
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -6130,7 +6415,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -6138,15 +6425,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Landscape in the Riesengebirge",
     "year": "1798",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -6167,7 +6454,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -6204,7 +6493,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-galerie",
+    "location_src": "Neue Galerie"
    }
   },
   {
@@ -6241,7 +6532,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neue-galerie",
+    "location_src": "Neue Galerie"
    }
   },
   {
@@ -6249,8 +6542,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.332222222,
-     50.980277777
+     11.33222,
+     50.98028
     ]
    },
    "properties": {
@@ -6278,7 +6571,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "schloss-weimar",
+    "location_src": "Schloss Weimar"
    }
   },
   {
@@ -6315,7 +6610,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -6352,7 +6649,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -6389,7 +6688,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -6397,15 +6698,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Greifswald in moonlight",
     "year": "1817",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -6426,7 +6727,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -6463,7 +6766,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ducal-museum-gotha",
+    "location_src": "Ducal Museum Gotha"
    }
   },
   {
@@ -6500,7 +6805,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -6537,7 +6844,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -6574,7 +6883,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -6611,7 +6922,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pomeranian-state-museum",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -6619,7 +6932,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -6648,7 +6961,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -6685,7 +7000,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "glaspalast",
+    "location_src": "Glaspalast"
    }
   },
   {
@@ -6693,8 +7010,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -6722,7 +7039,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -6765,7 +7084,9 @@
       "source": "Wikipedia list",
       "title": "Sailing Ship (Friedrich) [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "art-collections-chemnitz",
+    "location_src": "Art Collections Chemnitz"
    }
   },
   {
@@ -6802,7 +7123,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "neuer-pavillon",
+    "location_src": "Neuer Pavillon"
    }
   },
   {
@@ -6845,7 +7168,9 @@
       "source": "Wikipedia list",
       "title": "Winter Landscape (in French)"
      }
-    ]
+    ],
+    "museum_id": "staatliches-museum-schwerin",
+    "location_src": "Staatliches Museum Schwerin"
    }
   },
   {
@@ -6853,8 +7178,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6862,7 +7187,7 @@
     "title": "Seaside moonlight",
     "year": "1818",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Meeresk%C3%BCste%20im%20Mondlicht%2C%201818.jpg?width=500",
@@ -6882,7 +7207,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6890,8 +7217,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.554722222,
-     47.468888888
+     -0.55472,
+     47.46889
     ]
    },
    "properties": {
@@ -6919,7 +7246,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-d-angers",
+    "location_src": "Musée des Beaux-Arts d'Angers"
    }
   },
   {
@@ -6927,8 +7256,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.554722222,
-     47.468888888
+     -0.55472,
+     47.46889
     ]
    },
    "properties": {
@@ -6962,7 +7291,9 @@
       "source": "Wikipedia list",
       "title": "West Facade of the Eldena Ruins [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "musee-des-beaux-arts-d-angers",
+    "location_src": "Musée des Beaux-Arts d'Angers"
    }
   },
   {
@@ -6970,15 +7301,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.335999,
-     50.724241
+     11.339,
+     50.723
     ]
    },
    "properties": {
     "painter": "Caspar David Friedrich",
     "title": "Morning mist in the mountains",
     "year": "1808",
-    "location": "Thuringian State Museum Heidecksburg",
+    "location": "Heidecksburg",
     "city": "",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -7005,7 +7336,9 @@
       "source": "Wikipedia list",
       "title": "Morning mist in the Mountains [ Wikidata ]"
      }
-    ]
+    ],
+    "museum_id": "heidecksburg",
+    "location_src": "Heidecksburg"
    }
   },
   {
@@ -7013,7 +7346,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -7042,7 +7375,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -7050,8 +7385,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.744444388,
-     51.051944388
+     13.74444,
+     51.05194
     ]
    },
    "properties": {
@@ -7069,7 +7404,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q124513965",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister"
    }
   },
   {
@@ -7077,7 +7414,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -7106,7 +7443,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -7114,7 +7453,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -7143,7 +7482,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -7180,7 +7521,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "prussian-palaces-and-gardens-foundation-berlin-brandenburg",
+    "location_src": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg"
    }
   },
   {
@@ -7188,7 +7531,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -7197,7 +7540,7 @@
     "title": "Elbschiff im Frühnebel",
     "year": "",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Elbschiff%20im%20Fruehnebel%20%28C%20D%20Friedrich%29.jpg?width=500",
@@ -7207,7 +7550,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q138734488",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -7244,7 +7589,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -7281,7 +7628,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-georg-schafer",
+    "location_src": "Museum Georg Schäfer"
    }
   },
   {
@@ -7289,7 +7638,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.398353,
+     13.39835,
      52.52081
     ]
    },
@@ -7318,7 +7667,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-nationalgalerie",
+    "location_src": "Alte Nationalgalerie"
    }
   }
  ]

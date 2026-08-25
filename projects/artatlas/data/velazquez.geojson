@@ -17,7 +17,7 @@
     "year": "1617–1618",
     "city": "Berlin",
     "country": "Germany",
-    "location": "Staatliche Museen",
+    "location": "Berlin State Museums",
     "attribution": "generally accepted",
     "dimensions": "87 × 110 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diego_Vel%C3%A1zquez_-_The_Three_Musicians_-_Google_Art_Project.jpg/500px-Diego_Vel%C3%A1zquez_-_The_Three_Musicians_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -30,9 +30,10 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-museen",
+    "museum_id": "berlin-state-museums",
     "qid": "Q389198",
-    "wikidata": "https://www.wikidata.org/wiki/Q389198"
+    "wikidata": "https://www.wikidata.org/wiki/Q389198",
+    "location_src": "Berlin State Museums"
    }
   },
   {
@@ -66,7 +67,8 @@
     "museum_id": "hermitage",
     "qid": "Q2535473",
     "wikidata": "https://www.wikidata.org/wiki/Q2535473",
-    "wga_url": "https://www.wga.hu/html/v/velazque/01/0101velb.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/01/0101velb.html",
+    "location_src": "Hermitage"
    }
   },
   {
@@ -82,7 +84,7 @@
     "painter": "Velázquez",
     "title": "La mulata",
     "year": "c. 1620",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "attribution": "generally accepted",
@@ -107,7 +109,8 @@
       "qid": "Q64689806",
       "url": "https://www.wikidata.org/wiki/Q64689806"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -141,7 +144,8 @@
     "museum_id": "national-gallery-of-scotland",
     "qid": "Q2471800",
     "wikidata": "https://www.wikidata.org/wiki/Q2471800",
-    "wga_url": "https://www.wga.hu/html/v/velazque/01/0105vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/01/0105vela.html",
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -157,7 +161,7 @@
     "painter": "Velázquez",
     "title": "Christ in the House of Martha and Mary",
     "year": "1618",
-    "location": "National Gallery of London",
+    "location": "National Gallery",
     "attribution": "generally accepted",
     "dimensions": "60 × 103.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Cristo_en_casa_de_Marta_y_Mar%C3%ADa%2C_by_Diego_Vel%C3%A1zquez.jpg/500px-Cristo_en_casa_de_Marta_y_Mar%C3%ADa%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -170,10 +174,13 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-london",
+    "museum_id": "national-gallery",
     "qid": "Q1087226",
     "wikidata": "https://www.wikidata.org/wiki/Q1087226",
-    "wga_url": "https://www.wga.hu/html/v/velazque/01/0108vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/01/0108vela.html",
+    "city": "London",
+    "country": "United Kingdom",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -181,15 +188,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Dos jóvenes a la mesa",
     "year": "1622",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "attribution": "generally accepted",
@@ -211,7 +218,8 @@
       "qid": "Q3024980",
       "url": "https://www.wikidata.org/wiki/Q3024980"
      }
-    ]
+    ],
+    "location_src": "Apsley House"
    }
   },
   {
@@ -250,7 +258,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3464096 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Musée des Beaux-Arts d'Orléans"
    }
   },
   {
@@ -266,7 +275,7 @@
     "painter": "Velázquez",
     "title": "Immaculate Conception",
     "year": "1619",
-    "location": "National Gallery of London",
+    "location": "National Gallery",
     "attribution": "generally accepted",
     "dimensions": "135 × 101.6 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Virgin_Mary_-_Diego_Velazquez.jpg/500px-Virgin_Mary_-_Diego_Velazquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -278,7 +287,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-london",
+    "museum_id": "national-gallery",
     "qid": "Q3149023",
     "wikidata": "https://www.wikidata.org/wiki/Q3149023",
     "_overrides": {
@@ -287,7 +296,10 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3149023 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "city": "London",
+    "country": "United Kingdom",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -295,8 +307,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -304,7 +316,7 @@
     "title": "Saint John the Evangelist on the Island of Patmos",
     "year": "1618",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20018%20%28John%20the%20Evangelist%20from%20Patmos%29.jpg?width=500",
@@ -331,7 +343,9 @@
       "source": "Wikipedia list",
       "title": "San Juan en Patmos"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -365,7 +379,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q2273943",
     "wikidata": "https://www.wikidata.org/wiki/Q2273943",
-    "wga_url": "https://www.wga.hu/html/v/velazque/01/0107vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/01/0107vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -398,7 +413,8 @@
     },
     "museum_id": "museu-nacional-d-art-de-catalunya",
     "qid": "Q3075292",
-    "wikidata": "https://www.wikidata.org/wiki/Q3075292"
+    "wikidata": "https://www.wikidata.org/wiki/Q3075292",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -437,7 +453,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3546969 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -445,15 +462,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "The Waterseller of Seville",
     "year": "1620",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "attribution": "generally accepted",
@@ -471,7 +488,8 @@
     "museum_id": "apsley-house",
     "qid": "Q2627810",
     "wikidata": "https://www.wikidata.org/wiki/Q2627810",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0201vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0201vela.html",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -510,7 +528,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q4352285 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts of Seville"
    }
   },
   {
@@ -518,8 +537,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -554,7 +573,9 @@
       "source": "Wikipedia list",
       "title": "La venerable madre Jerónima de la Fuente"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -587,7 +608,8 @@
     },
     "museum_id": "coleccion-fernandez-araoz",
     "qid": "Q3547160",
-    "wikidata": "https://www.wikidata.org/wiki/Q3547160"
+    "wikidata": "https://www.wikidata.org/wiki/Q3547160",
+    "location_src": "Colección Fernández Araoz"
    }
   },
   {
@@ -617,7 +639,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -650,7 +673,8 @@
     },
     "museum_id": "museum-of-fine-arts",
     "qid": "Q3399444",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399444"
+    "wikidata": "https://www.wikidata.org/wiki/Q3399444",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -688,7 +712,8 @@
       "qid": "Q4352168",
       "url": "https://www.wikidata.org/wiki/Q4352168"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -726,7 +751,8 @@
       "qid": "Q4410475",
       "url": "https://www.wikidata.org/wiki/Q4410475"
      }
-    ]
+    ],
+    "location_src": "Meadows Museum"
    }
   },
   {
@@ -756,7 +782,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -764,8 +791,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -773,7 +800,7 @@
     "title": "Christ contemplated by the Christian Soul",
     "year": "1626",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-CristCol.jpg?width=500",
@@ -800,7 +827,9 @@
       "source": "Wikipedia list",
       "title": "Cristo contemplado por el alma cristiana"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -808,8 +837,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -844,7 +873,9 @@
       "source": "Wikipedia list",
       "title": "Felipe IV"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -878,7 +909,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3399483",
     "wikidata": "https://www.wikidata.org/wiki/Q3399483",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0205vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0205vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -912,7 +944,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1115403",
     "wikidata": "https://www.wikidata.org/wiki/Q1115403",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0207vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0207vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -942,7 +975,8 @@
     },
     "museum_id": "musee-des-beaux-arts-de-rouen",
     "city": "Rouen",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -976,7 +1010,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q123935",
     "wikidata": "https://www.wikidata.org/wiki/Q123935",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0210vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0210vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -984,8 +1019,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -993,7 +1028,7 @@
     "title": "The Supper at Emmaus",
     "year": "1618",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20cena%20de%20Ema%C3%BAs%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
@@ -1020,7 +1055,9 @@
       "source": "Wikipedia list",
       "title": "La cena de Emaús"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1054,7 +1091,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3292964",
     "wikidata": "https://www.wikidata.org/wiki/Q3292964",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0215vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0215vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1087,7 +1125,8 @@
     "museum_id": "san-lorenzo-de-el-escorial",
     "qid": "Q2273901",
     "wikidata": "https://www.wikidata.org/wiki/Q2273901",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0214vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0214vela.html",
+    "location_src": "San Lorenzo de El Escorial"
    }
   },
   {
@@ -1121,7 +1160,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q247282",
     "wikidata": "https://www.wikidata.org/wiki/Q247282",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0211vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0211vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1150,7 +1190,6 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
     "country": "France",
     "_merged": [
      {
@@ -1159,7 +1198,8 @@
       "qid": "Q4473883",
       "url": "https://www.wikidata.org/wiki/Q4473883"
      }
-    ]
+    ],
+    "placeless": true
    }
   },
   {
@@ -1189,7 +1229,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1223,7 +1264,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1133844",
     "wikidata": "https://www.wikidata.org/wiki/Q1133844",
-    "wga_url": "https://www.wga.hu/html/v/velazque/02/0216vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/02/0216vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1231,8 +1273,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -1267,7 +1309,9 @@
       "source": "Wikipedia list",
       "title": "A Sybil (Juana Pacheco?)"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1275,8 +1319,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -1311,7 +1355,9 @@
       "source": "Wikipedia list",
       "title": "Retrato de hombre joven"
      }
-    ]
+    ],
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1343,7 +1389,8 @@
     },
     "museum_id": "museum-of-the-orihuela-cathedral",
     "qid": "Q1113846",
-    "wikidata": "https://www.wikidata.org/wiki/Q1113846"
+    "wikidata": "https://www.wikidata.org/wiki/Q1113846",
+    "location_src": "Museum of the Orihuela Cathedral"
    }
   },
   {
@@ -1377,7 +1424,8 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q3138273",
     "wikidata": "https://www.wikidata.org/wiki/Q3138273",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0305vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0305vela.html",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -1393,7 +1441,7 @@
     "painter": "Velázquez",
     "title": "Philip IV in Brown and Silver",
     "year": "1631–1632",
-    "location": "National Gallery of London",
+    "location": "National Gallery",
     "attribution": "generally accepted",
     "dimensions": "199.5 × 113 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Felipe_IV_de_casta%C3%B1o_y_plata%2C_by_Diego_Vel%C3%A1zquez.jpg/500px-Felipe_IV_de_casta%C3%B1o_y_plata%2C_by_Diego_Vel%C3%A1zquez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1406,10 +1454,13 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-london",
+    "museum_id": "national-gallery",
     "qid": "Q1090371",
     "wikidata": "https://www.wikidata.org/wiki/Q1090371",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0302vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0302vela.html",
+    "city": "London",
+    "country": "United Kingdom",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1438,8 +1489,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
-    "country": "France"
+    "country": "France",
+    "placeless": true
    }
   },
   {
@@ -1447,8 +1498,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -1483,7 +1534,9 @@
       "source": "Wikipedia list",
       "title": "Don Diego del Corral y Arellano"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1517,7 +1570,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3038404",
     "wikidata": "https://www.wikidata.org/wiki/Q3038404",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0301vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0301vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1526,7 +1580,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -1558,7 +1612,8 @@
       "qid": "Q3035878",
       "url": "https://www.wikidata.org/wiki/Q3035878"
      }
-    ]
+    ],
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -1592,7 +1647,8 @@
     "museum_id": "dresden-gallery",
     "qid": "Q50324853",
     "wikidata": "https://www.wikidata.org/wiki/Q50324853",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0316vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0316vela.html",
+    "location_src": "Dresden Gallery"
    }
   },
   {
@@ -1626,7 +1682,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q2528741",
     "wikidata": "https://www.wikidata.org/wiki/Q2528741",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0307vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0307vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1634,15 +1691,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153,
-     51.5175
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Retrato del príncipe Baltasar Carlos",
     "year": "1632",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Wallace Collection",
     "attribution": "generally accepted",
@@ -1656,7 +1713,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "wallace-collection"
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -1686,7 +1744,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1716,7 +1775,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1750,7 +1810,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1114361",
     "wikidata": "https://www.wikidata.org/wiki/Q1114361",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0308vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0308vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1784,7 +1845,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1113824",
     "wikidata": "https://www.wikidata.org/wiki/Q1113824",
-    "wga_url": "https://www.wga.hu/html/v/velazque/05/0508vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/05/0508vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1831,7 +1893,8 @@
       "qid": "Q24237935",
       "url": "https://www.wikidata.org/wiki/Q24237935"
      }
-    ]
+    ],
+    "location_src": "Royal Collections Gallery"
    }
   },
   {
@@ -1865,7 +1928,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3380043",
     "wikidata": "https://www.wikidata.org/wiki/Q3380043",
-    "wga_url": "https://www.wga.hu/html/v/velazque/05/0502vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/05/0502vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1899,7 +1963,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3212195",
     "wikidata": "https://www.wikidata.org/wiki/Q3212195",
-    "wga_url": "https://www.wga.hu/html/v/velazque/05/0503vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/05/0503vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1933,7 +1998,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q288380",
     "wikidata": "https://www.wikidata.org/wiki/Q288380",
-    "wga_url": "https://www.wga.hu/html/v/velazque/05/0506vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/05/0506vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1967,7 +2033,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3076680",
     "wikidata": "https://www.wikidata.org/wiki/Q3076680",
-    "wga_url": "https://www.wga.hu/html/v/velazque/05/0505vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/05/0505vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2001,7 +2068,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1133881",
     "wikidata": "https://www.wikidata.org/wiki/Q1133881",
-    "wga_url": "https://www.wga.hu/html/v/velazque/05/0507vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/05/0507vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2043,7 +2111,8 @@
       "qid": "Q1133420",
       "url": "https://www.wikidata.org/wiki/Q1133420"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2077,7 +2146,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1133853",
     "wikidata": "https://www.wikidata.org/wiki/Q1133853",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0315vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0315vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2107,7 +2177,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2137,7 +2208,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2171,7 +2243,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3076965",
     "wikidata": "https://www.wikidata.org/wiki/Q3076965",
-    "wga_url": "https://www.wga.hu/html/v/velazque/03/0312vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/03/0312vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2213,7 +2286,8 @@
       "qid": "Q3210007",
       "url": "https://www.wikidata.org/wiki/Q3210007"
      }
-    ]
+    ],
+    "location_src": "Duke of Westminster Collection"
    }
   },
   {
@@ -2221,15 +2295,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153,
-     51.5175
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "The Lady with a Fan",
     "year": "1635",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Wallace Collection",
     "attribution": "generally accepted",
@@ -2247,7 +2321,8 @@
     "museum_id": "wallace-collection",
     "qid": "Q1211943",
     "wikidata": "https://www.wikidata.org/wiki/Q1211943",
-    "wga_url": "https://www.wga.hu/html/v/velazque/06/0615vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/06/0615vela.html",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -2281,7 +2356,8 @@
     "country": "United States",
     "qid": "Q3207931",
     "wikidata": "https://www.wikidata.org/wiki/Q3207931",
-    "wga_url": "https://www.wga.hu/html/v/velazque/06/0611vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/06/0611vela.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2315,7 +2391,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1113763",
     "wikidata": "https://www.wikidata.org/wiki/Q1113763",
-    "wga_url": "https://www.wga.hu/html/v/velazque/06/0604vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/06/0604vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2349,7 +2426,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q747914",
     "wikidata": "https://www.wikidata.org/wiki/Q747914",
-    "wga_url": "https://www.wga.hu/html/v/velazque/06/0605vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/06/0605vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2383,7 +2461,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3220569",
     "wikidata": "https://www.wikidata.org/wiki/Q3220569",
-    "wga_url": "https://www.wga.hu/html/v/velazque/06/0607vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/06/0607vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2413,7 +2492,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2421,8 +2501,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2446,7 +2526,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q3937426",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937426"
+    "wikidata": "https://www.wikidata.org/wiki/Q3937426",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2454,8 +2535,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.9216,
-     44.6485
+     10.92066,
+     44.64825
     ]
    },
    "properties": {
@@ -2479,7 +2560,8 @@
     "museum_id": "galleria-estense",
     "country": "Italy",
     "qid": "Q16038547",
-    "wikidata": "https://www.wikidata.org/wiki/Q16038547"
+    "wikidata": "https://www.wikidata.org/wiki/Q16038547",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -2518,7 +2600,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q24273181 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2526,15 +2609,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Retrato de hombre",
     "year": "1635–1645",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "attribution": "generally accepted",
@@ -2556,7 +2639,8 @@
       "qid": "Q118890786",
       "url": "https://www.wikidata.org/wiki/Q118890786"
      }
-    ]
+    ],
+    "location_src": "Apsley House"
    }
   },
   {
@@ -2596,7 +2680,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3591505 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2604,8 +2689,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -2640,7 +2725,9 @@
       "source": "Wikipedia list",
       "title": "Menipo"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2674,7 +2761,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1133875",
     "wikidata": "https://www.wikidata.org/wiki/Q1133875",
-    "wga_url": "https://www.wga.hu/html/v/velazque/06/0613vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/06/0613vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2722,7 +2810,8 @@
       "qid": "Q3630736",
       "url": "https://www.wikidata.org/wiki/Q3630736"
      }
-    ]
+    ],
+    "location_src": "Museu de Belles Arts de València"
    }
   },
   {
@@ -2730,15 +2819,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.94651,
-     40.83352
+     -73.94643,
+     40.83327
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Retrato de niña",
     "year": "1640",
-    "city": "New York City",
+    "city": "Manhattan",
     "location": "Hispanic Society of America",
     "attribution": "generally accepted",
     "dimensions": "51.5 × 41 cm",
@@ -2752,7 +2841,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hispanic-society-of-america",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -2786,7 +2876,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q1133457",
     "wikidata": "https://www.wikidata.org/wiki/Q1133457",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0702vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0702vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2820,7 +2911,8 @@
     "country": "United States",
     "qid": "Q3380051",
     "wikidata": "https://www.wikidata.org/wiki/Q3380051",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0705vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0705vela.html",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -2854,7 +2946,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q390713",
     "wikidata": "https://www.wikidata.org/wiki/Q390713",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0704vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0704vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2888,7 +2981,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q729194",
     "wikidata": "https://www.wikidata.org/wiki/Q729194",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0703vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0703vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2922,7 +3016,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3221859",
     "wikidata": "https://www.wikidata.org/wiki/Q3221859",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0708vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0708vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2937,7 +3032,7 @@
    "properties": {
     "painter": "Velázquez",
     "title": "Rokeby Venus",
-    "location": "National Gallery of London",
+    "location": "National Gallery",
     "attribution": "generally accepted",
     "dimensions": "122.5 × 177 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Diego_Vel%C3%A1zquez_-_Rokeby_Venus.jpg/500px-Diego_Vel%C3%A1zquez_-_Rokeby_Venus.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2950,10 +3045,13 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-london",
+    "museum_id": "national-gallery",
     "qid": "Q275349",
     "wikidata": "https://www.wikidata.org/wiki/Q275349",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0714vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0714vela.html",
+    "city": "London",
+    "country": "United Kingdom",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2987,7 +3085,8 @@
     "country": "United States",
     "qid": "Q4503570",
     "wikidata": "https://www.wikidata.org/wiki/Q4503570",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0706vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0706vela.html",
+    "location_src": "Meadows Museum"
    }
   },
   {
@@ -3017,7 +3116,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3047,7 +3147,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3055,7 +3155,8 @@
       "qid": "Q50324813",
       "url": "https://www.wikidata.org/wiki/Q50324813"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -3089,7 +3190,8 @@
     "country": "United States",
     "qid": "Q4717953",
     "wikidata": "https://www.wikidata.org/wiki/Q4717953",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0713vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0713vela.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3097,8 +3199,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -3133,7 +3235,9 @@
       "source": "Wikipedia list",
       "title": "Ferdinando Brandani"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3167,7 +3271,8 @@
     "museum_id": "doria-pamphilj-gallery",
     "qid": "Q1240092",
     "wikidata": "https://www.wikidata.org/wiki/Q1240092",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0711vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0711vela.html",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -3175,15 +3280,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Innocent X",
     "year": "1650",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "attribution": "generally accepted",
@@ -3197,7 +3302,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "apsley-house"
+    "museum_id": "apsley-house",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -3241,7 +3347,9 @@
       "source": "Wikipedia list",
       "title": "Camillo Massimi"
      }
-    ]
+    ],
+    "museum_id": "kingston-lacy",
+    "location_src": "Kingston Lacy"
    }
   },
   {
@@ -3249,15 +3357,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.94651,
-     40.83352
+     -73.94643,
+     40.83327
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "El cardenal Astalli",
     "year": "1650–1651",
-    "city": "New York City",
+    "city": "Manhattan",
     "location": "Hispanic Society of America",
     "attribution": "generally accepted",
     "dimensions": "61 × 48.5 cm",
@@ -3279,7 +3387,8 @@
       "qid": "Q24298304",
       "url": "https://www.wikidata.org/wiki/Q24298304"
      }
-    ]
+    ],
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -3287,8 +3396,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -3296,7 +3405,7 @@
     "title": "María Teresa (1638–1683), Infanta of Spain",
     "year": "1651",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-TeresaNY51.jpg?width=500",
@@ -3323,7 +3432,9 @@
       "source": "Wikipedia list",
       "title": "María Teresa, infanta de España"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3357,7 +3468,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q3204168",
     "wikidata": "https://www.wikidata.org/wiki/Q3204168",
-    "wga_url": "https://www.wga.hu/html/v/velazque/10/1005vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/10/1005vela.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3387,7 +3499,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3421,7 +3534,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q3212193",
     "wikidata": "https://www.wikidata.org/wiki/Q3212193",
-    "wga_url": "https://www.wga.hu/html/v/velazque/10/1004vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/10/1004vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3451,7 +3565,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3481,7 +3596,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthistorisches-museum"
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3515,7 +3631,8 @@
     "museum_id": "museo-del-prado",
     "qid": "Q208758",
     "wikidata": "https://www.wikidata.org/wiki/Q208758",
-    "wga_url": "https://www.wga.hu/html/v/velazque/08/0808vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/08/0808vela.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3557,7 +3674,8 @@
       "qid": "Q984058",
       "url": "https://www.wikidata.org/wiki/Q984058"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3587,7 +3705,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "meadows-museum",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Meadows Museum"
    }
   },
   {
@@ -3595,8 +3714,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -3631,7 +3750,9 @@
       "source": "Wikipedia list",
       "title": "Mercurio y Argos"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3665,7 +3786,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q2264914",
     "wikidata": "https://www.wikidata.org/wiki/Q2264914",
-    "wga_url": "https://www.wga.hu/html/v/velazque/10/1007vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/10/1007vela.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3699,7 +3821,8 @@
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q3225899",
     "wikidata": "https://www.wikidata.org/wiki/Q3225899",
-    "wga_url": "https://www.wga.hu/html/v/velazque/10/1012vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/10/1012vela.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3707,8 +3830,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -3737,7 +3860,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q24254964 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -3770,7 +3894,8 @@
     },
     "museum_id": "art-institute-of-chicago",
     "qid": "Q4274886",
-    "wikidata": "https://www.wikidata.org/wiki/Q4274886"
+    "wikidata": "https://www.wikidata.org/wiki/Q4274886",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -3778,8 +3903,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -3814,7 +3939,9 @@
       "source": "Wikipedia list",
       "title": "Cabeza de hombre joven de perfil"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -3848,7 +3975,8 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q3500414",
     "wikidata": "https://www.wikidata.org/wiki/Q3500414",
-    "wga_url": "https://www.wga.hu/html/v/velazque/01/0102vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/01/0102vela.html",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -3878,7 +4006,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "coleccion-villar-mir"
+    "museum_id": "coleccion-villar-mir",
+    "location_src": "Colección Villar-Mir"
    }
   },
   {
@@ -3908,7 +4037,8 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -3938,7 +4068,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "coleccion-paya"
+    "museum_id": "coleccion-paya",
+    "location_src": "Colección Payá"
    }
   },
   {
@@ -3946,8 +4077,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -3968,7 +4099,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "detroit-institute-of-arts"
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -3998,7 +4130,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "coleccion-de-los-duques-del-infantado"
+    "museum_id": "coleccion-de-los-duques-del-infantado",
+    "location_src": "Colección de los duques del Infantado"
    }
   },
   {
@@ -4028,7 +4161,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4036,8 +4170,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -4061,7 +4195,8 @@
     "museum_id": "sao-paulo-museum-of-art",
     "country": "Brazil",
     "qid": "Q4556666",
-    "wikidata": "https://www.wikidata.org/wiki/Q4556666"
+    "wikidata": "https://www.wikidata.org/wiki/Q4556666",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -4069,15 +4204,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.94651,
-     40.83352
+     -73.94643,
+     40.83327
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "El conde-duque de Olivares",
     "year": "1624–1626",
-    "city": "New York City",
+    "city": "Manhattan",
     "location": "Hispanic Society of America",
     "attribution": "disputed",
     "dimensions": "216 × 192.5 cm",
@@ -4091,7 +4226,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hispanic-society-of-america",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -4129,7 +4265,8 @@
       "qid": "Q6371667",
       "url": "https://www.wikidata.org/wiki/Q6371667"
      }
-    ]
+    ],
+    "location_src": "Colección Várez Fisa"
    }
   },
   {
@@ -4159,7 +4296,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-soumaya",
-    "country": "Mexico"
+    "country": "Mexico",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -4167,8 +4305,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.55916,
-     27.38307
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -4197,7 +4335,8 @@
       "qid": "Q4556657",
       "url": "https://www.wikidata.org/wiki/Q4556657"
      }
-    ]
+    ],
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -4230,7 +4369,8 @@
     },
     "museum_id": "cleveland-museum-of-art",
     "qid": "Q3220568",
-    "wikidata": "https://www.wikidata.org/wiki/Q3220568"
+    "wikidata": "https://www.wikidata.org/wiki/Q3220568",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -4238,8 +4378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482777777,
-     41.893055555
+     12.48278,
+     41.89306
     ]
    },
    "properties": {
@@ -4274,7 +4414,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Clergyman (Self-portrait?)"
      }
-    ]
+    ],
+    "museum_id": "capitoline-museums",
+    "location_src": "Capitoline Museums"
    }
   },
   {
@@ -4304,7 +4446,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "coleccion-pallavicini"
+    "museum_id": "coleccion-pallavicini",
+    "location_src": "Colección Pallavicini"
    }
   },
   {
@@ -4337,7 +4480,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "country": "United States",
     "qid": "Q6371404",
-    "wikidata": "https://www.wikidata.org/wiki/Q6371404"
+    "wikidata": "https://www.wikidata.org/wiki/Q6371404",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4366,7 +4510,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "otto-naumann",
-    "wga_url": "https://www.wga.hu/html/v/velazque/07/0710vela.html"
+    "wga_url": "https://www.wga.hu/html/v/velazque/07/0710vela.html",
+    "location_src": "Otto Naumann"
    }
   },
   {
@@ -4374,8 +4519,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4410,7 +4555,9 @@
       "source": "Wikipedia list",
       "title": "Cristo en la cruz"
      }
-    ]
+    ],
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4439,8 +4586,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
-    "country": "France"
+    "country": "France",
+    "placeless": true
    }
   },
   {
@@ -4448,8 +4595,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4457,7 +4604,7 @@
     "title": "Philip IV hunting Wild Boar (La Tela Real)",
     "year": "1635",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-TelaReal.jpg?width=500",
@@ -4484,7 +4631,9 @@
       "source": "Wikipedia list",
       "title": "La tela real"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4514,7 +4663,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-palace-of-madrid"
+    "museum_id": "royal-palace-of-madrid",
+    "location_src": "Royal Palace of Madrid"
    }
   },
   {
@@ -4543,8 +4693,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
-    "country": "France"
+    "country": "France",
+    "placeless": true
    }
   },
   {
@@ -4574,7 +4724,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "uffizi-gallery"
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4603,8 +4754,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
-    "country": "France"
+    "country": "France",
+    "placeless": true
    }
   },
   {
@@ -4643,7 +4794,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3937588 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4673,7 +4825,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "collection-of-the-dukes-of-alba"
+    "museum_id": "collection-of-the-dukes-of-alba",
+    "location_src": "Collection of the Dukes of Alba"
    }
   },
   {
@@ -4681,8 +4834,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4690,7 +4843,7 @@
     "title": "Philip IV of Spain",
     "year": "1656",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20IV%20of%20Spain.jpg?width=500",
@@ -4717,7 +4870,9 @@
       "source": "Wikipedia list",
       "title": "Felipe IV"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4747,7 +4902,8 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "thyssen-bornemisza-museum"
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -4756,7 +4912,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -4784,7 +4940,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -4792,8 +4950,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4821,7 +4979,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4829,8 +4989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4858,7 +5018,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4866,8 +5028,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.151666666,
-     51.503472222
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
@@ -4901,7 +5063,9 @@
       "source": "Wikipedia list",
       "title": "Dos jóvenes a la mesa"
      }
-    ]
+    ],
+    "museum_id": "apsley-house",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -4909,8 +5073,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.094722,
-     49.444722
+     1.09472,
+     49.44472
     ]
    },
    "properties": {
@@ -4938,7 +5102,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-rouen",
+    "location_src": "Musée des Beaux-Arts de Rouen"
    }
   },
   {
@@ -4947,7 +5113,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -4975,7 +5141,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -4983,8 +5151,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5012,7 +5180,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5020,8 +5190,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5049,7 +5219,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5057,8 +5229,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5086,7 +5258,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5094,8 +5268,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5123,7 +5297,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5131,8 +5307,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153022,
-     51.517454
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
@@ -5160,7 +5336,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -5197,7 +5375,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "spain",
+    "location_src": "Spain"
    }
   },
   {
@@ -5234,7 +5414,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -5277,7 +5459,9 @@
       "source": "Wikipedia list",
       "title": "Un caballero de la Orden de Santiago"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -5285,8 +5469,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5314,7 +5498,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5322,7 +5508,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -5351,7 +5537,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -5360,7 +5548,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -5388,7 +5576,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -5397,7 +5587,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -5425,7 +5615,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -5433,8 +5625,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5462,7 +5654,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5470,8 +5664,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5499,7 +5693,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5507,8 +5703,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5526,7 +5722,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30099627",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5534,8 +5732,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5563,7 +5761,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5571,8 +5771,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5606,7 +5806,9 @@
       "was": "generally accepted",
       "note": "dated 1601, after death (1599–1660) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5614,8 +5816,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -5623,7 +5825,7 @@
     "title": "Philip IV (1605–1665), King of Spain",
     "year": "1624",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20IV%20%281605%E2%80%931665%29%2C%20King%20of%20Spain%20MET%20DP239023.jpg?width=500",
@@ -5643,7 +5845,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5680,7 +5884,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -5688,8 +5894,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -5717,7 +5923,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5725,8 +5933,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -5744,7 +5952,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107447354",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5752,8 +5962,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5761,7 +5971,7 @@
     "title": "Portrait of Archbishop Fernando de Valdés",
     "year": "1640",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fernando%20de%20Vald%C3%A9s%20y%20Llanos.jpg?width=500",
@@ -5781,7 +5991,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5789,7 +6001,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.928902,
+     16.9289,
      52.40865
     ]
    },
@@ -5818,7 +6030,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-in-poznan",
+    "location_src": "National Museum in Poznań"
    }
   },
   {
@@ -5826,8 +6040,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -5855,7 +6069,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -5892,7 +6108,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "goya-museum",
+    "location_src": "Goya Museum"
    }
   },
   {
@@ -5900,8 +6118,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -5935,7 +6153,9 @@
       "source": "Wikipedia list",
       "title": "Felipe IV con jubón amarillo"
      }
-    ]
+    ],
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -5943,8 +6163,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.151666666,
-     51.503472222
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
@@ -5978,7 +6198,9 @@
       "source": "Wikipedia list",
       "title": "Retrato de hombre"
      }
-    ]
+    ],
+    "museum_id": "apsley-house",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -6015,7 +6237,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6052,7 +6276,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6060,8 +6286,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6089,7 +6315,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6098,7 +6326,7 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.227777777
+     53.22778
     ]
    },
    "properties": {
@@ -6126,7 +6354,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chatsworth-house",
+    "location_src": "Chatsworth House"
    }
   },
   {
@@ -6134,8 +6364,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -6163,7 +6393,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -6171,8 +6403,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.177128,
-     51.485577
+     -3.1773,
+     51.4858
     ]
    },
    "properties": {
@@ -6190,7 +6422,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118878024",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-cardiff",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -6227,7 +6461,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -6264,7 +6500,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pollok-house",
+    "location_src": "Pollok House"
    }
   },
   {
@@ -6301,7 +6539,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pollok-house",
+    "location_src": "Pollok House"
    }
   },
   {
@@ -6309,8 +6549,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.559444444,
-     41.658333333
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -6338,7 +6578,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "toledo-museum-of-art",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -6346,8 +6588,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.487892,
-     41.898332
+     12.48789,
+     41.89833
     ]
    },
    "properties": {
@@ -6375,7 +6617,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-pallavicini-rospigliosi",
+    "location_src": "Palazzo Pallavicini-Rospigliosi"
    }
   },
   {
@@ -6402,7 +6646,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77900217",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -6437,7 +6683,9 @@
       "was": "generally accepted",
       "note": "dated 1869, after death (1599–1660) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -6445,15 +6693,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -6.000126118,
-     37.39265415
+     -6.00013,
+     37.39265
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Portrait of Andrés Conde de Ribera",
     "year": "1635",
-    "location": "Museo de Bellas Artes de Sevilla",
+    "location": "Museum of Fine Arts of Seville",
     "city": "Seville",
     "country": "Spain",
     "attribution": "generally accepted",
@@ -6474,7 +6722,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-seville",
+    "location_src": "Museum of Fine Arts of Seville"
    }
   },
   {
@@ -6517,7 +6767,9 @@
       "source": "Wikipedia list",
       "title": "El cardenal Astalli"
      }
-    ]
+    ],
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -6554,7 +6806,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hispanic-society-of-america",
+    "location_src": "Hispanic Society of America"
    }
   },
   {
@@ -6562,8 +6816,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -6571,7 +6825,7 @@
     "title": "Portrait of Infanta Margarita Teresa",
     "year": "1653",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20la%20infanta%20Margarita%20%284%29%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
@@ -6591,7 +6845,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -6599,8 +6855,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.784382,
-     32.838419
+     -96.80889,
+     32.77917
     ]
    },
    "properties": {
@@ -6608,7 +6864,7 @@
     "title": "Portrait of King Philip IV",
     "year": "1623",
     "location": "Meadows Museum",
-    "city": "Texas",
+    "city": "Dallas",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20Felipe%20IV%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
@@ -6634,7 +6890,9 @@
       "source": "Wikipedia list",
       "title": "Felipe IV"
      }
-    ]
+    ],
+    "museum_id": "meadows-museum",
+    "location_src": "Meadows Museum"
    }
   },
   {
@@ -6642,8 +6900,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.784382,
-     32.838419
+     -96.80889,
+     32.77917
     ]
    },
    "properties": {
@@ -6651,7 +6909,7 @@
     "title": "Portrait of Queen Mariana",
     "year": "1655",
     "location": "Meadows Museum",
-    "city": "Texas",
+    "city": "Dallas",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Queen%20Mariana%2C%20by%20Velazquez%2C%20Spanish%2C%20c.%201656%2C%20oil%20on%20canvas%20-%20Meadows%20Museum%20-%20Southern%20Methodist%20University%20-%20DSC05309.jpg?width=500",
@@ -6671,7 +6929,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "meadows-museum",
+    "location_src": "Meadows Museum"
    }
   },
   {
@@ -6680,7 +6940,7 @@
     "type": "Point",
     "coordinates": [
      -0.3645,
-     43.297694444
+     43.29769
     ]
    },
    "properties": {
@@ -6708,7 +6968,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-pau",
+    "location_src": "Musée des Beaux-Arts de Pau"
    }
   },
   {
@@ -6716,7 +6978,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.990038888,
+     -5.99004,
      37.3851
     ]
    },
@@ -6745,7 +7007,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "focus-abengoa-foundation",
+    "location_src": "Focus-Abengoa Foundation"
    }
   },
   {
@@ -6782,7 +7046,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ickworth-house",
+    "location_src": "Ickworth House"
    }
   },
   {
@@ -6790,8 +7056,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6819,7 +7085,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6846,7 +7114,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119937433",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "university-of-southampton",
+    "location_src": "University of Southampton"
    }
   },
   {
@@ -6854,8 +7124,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -6873,7 +7143,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q123942082",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -6881,8 +7153,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.101361111,
-     57.148030555
+     -2.10136,
+     57.14803
     ]
    },
    "properties": {
@@ -6900,7 +7172,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119823899",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "robert-gordon-university",
+    "location_src": "Robert Gordon University"
    }
   },
   {
@@ -6927,7 +7201,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119823897",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "barrow-in-furness-town-hall",
+    "location_src": "Barrow-in-Furness Town Hall"
    }
   },
   {
@@ -6935,8 +7211,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.481924,
-     53.555282
+     -1.48192,
+     53.55528
     ]
    },
    "properties": {
@@ -6954,7 +7230,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119823893",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cooper-gallery",
+    "location_src": "Cooper Gallery"
    }
   },
   {
@@ -6991,7 +7269,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -6999,7 +7279,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.990038888,
+     -5.99004,
      37.3851
     ]
    },
@@ -7034,7 +7314,9 @@
       "source": "Wikipedia list",
       "title": "Imposición de la casulla a San Ildefonso"
      }
-    ]
+    ],
+    "museum_id": "focus-abengoa-foundation",
+    "location_src": "Focus-Abengoa Foundation"
    }
   }
  ]

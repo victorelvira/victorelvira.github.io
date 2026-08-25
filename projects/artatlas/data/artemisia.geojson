@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.821,
-     49.763
+     10.82049,
+     49.76274
     ]
    },
    "properties": {
@@ -31,7 +31,10 @@
     "museum_id": "schloss-wei-enstein",
     "qid": "Q3978274",
     "wikidata": "https://www.wikidata.org/wiki/Q3978274",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/susanna.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/susanna.html",
+    "city": "Bamberg Rural District",
+    "country": "Germany",
+    "location_src": "Schloss Weißenstein"
    }
   },
   {
@@ -47,7 +50,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "Judith Slaying Holofernes",
     "year": "1611–1612",
-    "location": "Museo Nazionale di Capodimonte",
+    "location": "Museo di Capodimonte",
     "attribution": "generally accepted",
     "dimensions": "158.8 x 125.5 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/500px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -60,10 +63,13 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nazionale-di-capodimonte",
+    "museum_id": "museo-di-capodimonte",
     "qid": "Q2247406",
     "wikidata": "https://www.wikidata.org/wiki/Q2247406",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/judit1.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/judit1.html",
+    "city": "Naples",
+    "country": "Italy",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -71,8 +77,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.29444,
-     38.63944
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -93,11 +99,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "saint-louis-art-museum",
-    "city": "St",
+    "city": "St. Louis",
     "country": "United States",
     "qid": "Q3701418",
     "wikidata": "https://www.wikidata.org/wiki/Q3701418",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/danae.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/danae.html",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -128,7 +135,10 @@
     },
     "museum_id": "casa-buonarroti",
     "qid": "Q3612415",
-    "wikidata": "https://www.wikidata.org/wiki/Q3612415"
+    "wikidata": "https://www.wikidata.org/wiki/Q3612415",
+    "city": "Florence",
+    "country": "Italy",
+    "location_src": "Casa Buonarroti"
    }
   },
   {
@@ -161,7 +171,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q55429769",
-    "wikidata": "https://www.wikidata.org/wiki/Q55429769"
+    "wikidata": "https://www.wikidata.org/wiki/Q55429769",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -203,7 +214,8 @@
       "qid": "Q3689716",
       "url": "https://www.wikidata.org/wiki/Q3689716"
      }
-    ]
+    ],
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -245,7 +257,8 @@
       "qid": "Q532486",
       "url": "https://www.wikidata.org/wiki/Q532486"
      }
-    ]
+    ],
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -285,7 +298,9 @@
       "qid": "Q29017022",
       "url": "https://www.wikidata.org/wiki/Q29017022"
      }
-    ]
+    ],
+    "country": "France",
+    "location_src": "Musée de Tessé"
    }
   },
   {
@@ -318,7 +333,8 @@
     "city": "Mexico City",
     "country": "Mexico",
     "qid": "Q18711755",
-    "wikidata": "https://www.wikidata.org/wiki/Q18711755"
+    "wikidata": "https://www.wikidata.org/wiki/Q18711755",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -352,7 +368,8 @@
     "country": "United States",
     "qid": "Q29021696",
     "wikidata": "https://www.wikidata.org/wiki/Q29021696",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/marymagd.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/marymagd.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -386,7 +403,8 @@
     "museum_id": "museum-of-fine-arts",
     "qid": "Q3762348",
     "wikidata": "https://www.wikidata.org/wiki/Q3762348",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/jaelsise.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/jaelsise.html",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -420,7 +438,8 @@
     "country": "Italy",
     "qid": "Q3769169",
     "wikidata": "https://www.wikidata.org/wiki/Q3769169",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/judith.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/judith.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -451,7 +470,8 @@
     },
     "museum_id": "burghley-house",
     "qid": "Q3978272",
-    "wikidata": "https://www.wikidata.org/wiki/Q3978272"
+    "wikidata": "https://www.wikidata.org/wiki/Q3978272",
+    "location_src": "Burghley House"
    }
   },
   {
@@ -483,7 +503,8 @@
     "museum_id": "palazzo-d-accursio",
     "qid": "Q3937737",
     "wikidata": "https://www.wikidata.org/wiki/Q3937737",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/condotti.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/condotti.html",
+    "location_src": "Palazzo d'Accursio"
    }
   },
   {
@@ -516,7 +537,8 @@
     },
     "museum_id": "collection-gerolamo-etro",
     "qid": "Q29016865",
-    "wikidata": "https://www.wikidata.org/wiki/Q29016865"
+    "wikidata": "https://www.wikidata.org/wiki/Q29016865",
+    "location_src": "Collection Gerolamo Etro"
    }
   },
   {
@@ -549,7 +571,8 @@
     },
     "museum_id": "church-of-sant-ambrogio-e-carlo-al-corso",
     "qid": "Q29021344",
-    "wikidata": "https://www.wikidata.org/wiki/Q29021344"
+    "wikidata": "https://www.wikidata.org/wiki/Q29021344",
+    "location_src": "Church of Sant'Ambrogio e Carlo al Corso"
    }
   },
   {
@@ -557,8 +580,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -582,7 +605,8 @@
     "city": "Detroit",
     "country": "United States",
     "qid": "Q3769173",
-    "wikidata": "https://www.wikidata.org/wiki/Q3769173"
+    "wikidata": "https://www.wikidata.org/wiki/Q3769173",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -623,7 +647,8 @@
       "qid": "Q25218172",
       "url": "https://www.wikidata.org/wiki/Q25218172"
      }
-    ]
+    ],
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -656,7 +681,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q3733425",
-    "wikidata": "https://www.wikidata.org/wiki/Q3733425"
+    "wikidata": "https://www.wikidata.org/wiki/Q3733425",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -696,7 +722,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3842443 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -734,7 +761,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q123821093 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Nottingham Castle"
    }
   },
   {
@@ -750,7 +778,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "Annunciation",
     "year": "1630",
-    "location": "Museo Nazionale di Capodimonte",
+    "location": "Museo di Capodimonte",
     "attribution": "generally accepted",
     "dimensions": "257 x 179 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Verk%C3%BCndigung_an_maria.jpg/500px-Verk%C3%BCndigung_an_maria.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -762,7 +790,7 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nazionale-di-capodimonte",
+    "museum_id": "museo-di-capodimonte",
     "wga_url": "https://www.wga.hu/html/g/gentiles/orazio/annunc.html",
     "qid": "Q29018074",
     "wikidata": "https://www.wikidata.org/wiki/Q29018074",
@@ -772,7 +800,10 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q29018074 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "city": "Naples",
+    "country": "Italy",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -811,7 +842,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q133801954 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -819,8 +851,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -844,7 +876,8 @@
     },
     "museum_id": "nationalmuseum",
     "qid": "Q104875925",
-    "wikidata": "https://www.wikidata.org/wiki/Q104875925"
+    "wikidata": "https://www.wikidata.org/wiki/Q104875925",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -852,8 +885,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.49028,
-     41.90361
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -877,7 +910,8 @@
     },
     "museum_id": "palazzo-barberini",
     "qid": "Q30606473",
-    "wikidata": "https://www.wikidata.org/wiki/Q30606473"
+    "wikidata": "https://www.wikidata.org/wiki/Q30606473",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -915,7 +949,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q29021527 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Palazzo Zevallos"
    }
   },
   {
@@ -946,7 +981,8 @@
     },
     "museum_id": "palazzo-blu",
     "qid": "Q103968",
-    "wikidata": "https://www.wikidata.org/wiki/Q103968"
+    "wikidata": "https://www.wikidata.org/wiki/Q103968",
+    "location_src": "Palazzo Blu"
    }
   },
   {
@@ -980,7 +1016,8 @@
     "country": "Spain",
     "qid": "Q18602467",
     "wikidata": "https://www.wikidata.org/wiki/Q18602467",
-    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/birth.html"
+    "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/birth.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -988,8 +1025,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.5594,
-     41.6583
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -1013,7 +1050,8 @@
     "city": "Toledo",
     "country": "United States",
     "qid": "Q29016921",
-    "wikidata": "https://www.wikidata.org/wiki/Q29016921"
+    "wikidata": "https://www.wikidata.org/wiki/Q29016921",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -1029,7 +1067,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "The Martyrdom of St Januarius in the Amphitheatre at Pozzuoli",
     "year": "c. 1636–1637",
-    "location": "Museo Nazionale di Capodimonte",
+    "location": "Museo di Capodimonte",
     "attribution": "generally accepted",
     "dimensions": "300 x 200 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/The_Martyrdom_of_St_Januarius_in_the_Amphitheatre_at_Pozzuoli.jpg/500px-The_Martyrdom_of_St_Januarius_in_the_Amphitheatre_at_Pozzuoli.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1042,9 +1080,12 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nazionale-di-capodimonte",
+    "museum_id": "museo-di-capodimonte",
     "qid": "Q3947174",
-    "wikidata": "https://www.wikidata.org/wiki/Q3947174"
+    "wikidata": "https://www.wikidata.org/wiki/Q3947174",
+    "city": "Naples",
+    "country": "Italy",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1060,7 +1101,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "Adoration of the Magi",
     "year": "c. 1636–1637",
-    "location": "Museo Nazionale di Capodimonte",
+    "location": "Museo di Capodimonte",
     "attribution": "generally accepted",
     "dimensions": "300 × 180 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Adoration_of_the_Magi_by_Artemisia_Gentileschi.jpg/500px-Adoration_of_the_Magi_by_Artemisia_Gentileschi.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1073,9 +1114,12 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nazionale-di-capodimonte",
+    "museum_id": "museo-di-capodimonte",
     "qid": "Q3605519",
-    "wikidata": "https://www.wikidata.org/wiki/Q3605519"
+    "wikidata": "https://www.wikidata.org/wiki/Q3605519",
+    "city": "Naples",
+    "country": "Italy",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1091,7 +1135,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "Saint Proculus of Pozzuoli and his mother Santa Nicaea",
     "year": "c. 1636–1637",
-    "location": "Museo Nazionale di Capodimonte",
+    "location": "Museo di Capodimonte",
     "attribution": "generally accepted",
     "dimensions": "300 × 180 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Artemisia_gentileschi%2C_i_santi_procolo_e_nicea%2C_1631_ca..JPG/500px-Artemisia_gentileschi%2C_i_santi_procolo_e_nicea%2C_1631_ca..JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1104,9 +1148,12 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nazionale-di-capodimonte",
+    "museum_id": "museo-di-capodimonte",
     "qid": "Q29019486",
-    "wikidata": "https://www.wikidata.org/wiki/Q29019486"
+    "wikidata": "https://www.wikidata.org/wiki/Q29019486",
+    "city": "Naples",
+    "country": "Italy",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1135,7 +1182,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "columbus-museum-of-art",
-    "city": "Ohio [129]",
+    "city": "Columbus",
     "country": "United States",
     "qid": "Q29017580",
     "wikidata": "https://www.wikidata.org/wiki/Q29017580",
@@ -1153,7 +1200,8 @@
       "qid": "Q29017592",
       "url": "https://www.wikidata.org/wiki/Q29017592"
      }
-    ]
+    ],
+    "location_src": "Columbus Museum of Art"
    }
   },
   {
@@ -1187,7 +1235,8 @@
     "qid": "Q3630745",
     "wikidata": "https://www.wikidata.org/wiki/Q3630745",
     "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/selfport.html",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -1226,7 +1275,8 @@
       "qid": "Q123821093",
       "url": "https://www.wikidata.org/wiki/Q123821093"
      }
-    ]
+    ],
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -1259,7 +1309,8 @@
     },
     "museum_id": "museo-di-capodimonte",
     "qid": "Q29021053",
-    "wikidata": "https://www.wikidata.org/wiki/Q29021053"
+    "wikidata": "https://www.wikidata.org/wiki/Q29021053",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1291,7 +1342,8 @@
     },
     "museum_id": "musee-de-la-castre",
     "qid": "Q29021098",
-    "wikidata": "https://www.wikidata.org/wiki/Q29021098"
+    "wikidata": "https://www.wikidata.org/wiki/Q29021098",
+    "location_src": "Musée de la Castre"
    }
   },
   {
@@ -1324,7 +1376,8 @@
     "city": "Mexico City",
     "country": "Mexico",
     "qid": "Q27830965",
-    "wikidata": "https://www.wikidata.org/wiki/Q27830965"
+    "wikidata": "https://www.wikidata.org/wiki/Q27830965",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1362,7 +1415,8 @@
       "qid": "Q29017580",
       "url": "https://www.wikidata.org/wiki/Q29017580"
      }
-    ]
+    ],
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -1393,7 +1447,10 @@
     },
     "museum_id": "moravian-gallery-in-brno",
     "qid": "Q3978273",
-    "wikidata": "https://www.wikidata.org/wiki/Q3978273"
+    "wikidata": "https://www.wikidata.org/wiki/Q3978273",
+    "city": "Brno",
+    "country": "Czech Republic",
+    "location_src": "Moravian Gallery in Brno"
    }
   },
   {
@@ -1425,7 +1482,8 @@
     "museum_id": "el-escorial",
     "city": "Spain",
     "qid": "Q29016943",
-    "wikidata": "https://www.wikidata.org/wiki/Q29016943"
+    "wikidata": "https://www.wikidata.org/wiki/Q29016943",
+    "location_src": "El Escorial"
    }
   },
   {
@@ -1458,7 +1516,8 @@
     "city": "Bologna",
     "country": "Italy",
     "qid": "Q30605361",
-    "wikidata": "https://www.wikidata.org/wiki/Q30605361"
+    "wikidata": "https://www.wikidata.org/wiki/Q30605361",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -1466,8 +1525,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -1495,7 +1554,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1532,7 +1593,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sovereign-military-order-of-malta",
+    "location_src": "Sovereign Military Order of Malta"
    }
   },
   {
@@ -1541,7 +1604,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1569,7 +1632,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1577,8 +1642,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -5.993095562,
-     37.385742159
+     -5.9931,
+     37.38574
     ]
    },
    "properties": {
@@ -1606,7 +1671,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "seville-cathedral",
+    "location_src": "Seville Cathedral"
    }
   },
   {
@@ -1614,15 +1681,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Artemisia Gentileschi",
     "title": "Self-Portrait as a Lute Player",
     "year": "1616",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -1643,7 +1710,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -1686,7 +1755,9 @@
       "source": "Wikipedia list",
       "title": "David and Bathsheba"
      }
-    ]
+    ],
+    "museum_id": "prussian-palaces-and-gardens-foundation-berlin-brandenburg",
+    "location_src": "Prussian Palaces and Gardens Foundation Berlin-Brandenburg"
    }
   },
   {
@@ -1694,8 +1765,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.559801111,
-     27.381467222
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -1723,7 +1794,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -1760,7 +1833,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -1768,15 +1843,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Artemisia Gentileschi",
     "title": "Judith and her maidservant with the head of Holofernes",
     "year": "1608",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -1787,7 +1862,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29044280",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -1795,15 +1872,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Artemisia Gentileschi",
     "title": "Mary Magdalene penitent",
     "year": "1640",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -1824,7 +1901,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -1861,7 +1940,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1869,8 +1950,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.381111111,
-     40.628611111
+     14.38111,
+     40.62861
     ]
    },
    "properties": {
@@ -1898,7 +1979,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-correale",
+    "location_src": "Museum Correale"
    }
   },
   {
@@ -1906,8 +1989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.471891,
-     41.894234
+     12.47189,
+     41.89423
     ]
    },
    "properties": {
@@ -1935,7 +2018,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-spada",
+    "location_src": "Galleria Spada"
    }
   },
   {
@@ -1972,7 +2057,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-giuli-rosselmini-gualandi",
+    "location_src": "Palazzo Giuli Rosselmini Gualandi"
    }
   },
   {
@@ -1980,8 +2067,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -106.490109,
-     31.758506
+     -106.49011,
+     31.75851
     ]
    },
    "properties": {
@@ -2009,7 +2096,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "el-paso-museum-of-art",
+    "location_src": "El Paso Museum of Art"
    }
   },
   {
@@ -2018,7 +2107,7 @@
     "type": "Point",
     "coordinates": [
      11.6175,
-     44.839166666
+     44.83917
     ]
    },
    "properties": {
@@ -2046,7 +2135,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ferrara",
+    "location_src": "Ferrara"
    }
   },
   {
@@ -2083,7 +2174,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "italy",
+    "location_src": "Italy"
    }
   },
   {
@@ -2092,7 +2185,7 @@
     "type": "Point",
     "coordinates": [
      16.3725,
-     48.208333333
+     48.20833
     ]
    },
    "properties": {
@@ -2120,7 +2213,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna"
    }
   },
   {
@@ -2128,15 +2223,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Artemisia Gentileschi",
     "title": "Judith and her Maidservant with the Head of Holofernes",
     "year": "1639",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -2157,7 +2252,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -2194,7 +2291,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-quimper",
+    "location_src": "Musée des Beaux-Arts de Quimper"
    }
   },
   {
@@ -2202,8 +2301,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.878763306,
-     55.997100461
+     -2.87876,
+     55.9971
     ]
    },
    "properties": {
@@ -2231,7 +2330,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gosford-house",
+    "location_src": "Gosford House"
    }
   },
   {
@@ -2268,7 +2369,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "matthiesen-gallery",
+    "location_src": "Matthiesen Gallery"
    }
   },
   {
@@ -2276,8 +2379,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.668055555,
-     50.641111111
+     4.66806,
+     50.64111
     ]
    },
    "properties": {
@@ -2305,7 +2408,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "belgium",
+    "location_src": "Belgium"
    }
   },
   {
@@ -2313,8 +2418,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -2342,7 +2447,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -2351,14 +2458,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Artemisia Gentileschi",
     "title": "Penitent Mary Magdalene",
     "year": "1625",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2379,7 +2486,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   }
  ]

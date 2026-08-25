@@ -41,8 +41,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "petit-palais",
-    "qid": "Q104443853"
+    "museum_id": "petit-palais-2",
+    "qid": "Q104443853",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -84,7 +85,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q107438253",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/07italia.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/07italia.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -92,8 +94,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -127,7 +129,8 @@
     },
     "museum_id": "courtauld-gallery",
     "qid": "Q110619780",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/08tivoli.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/08tivoli.html",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -177,7 +180,8 @@
       "qid": "Q115670477",
       "url": "https://www.wikidata.org/wiki/Q115670477"
      }
-    ]
+    ],
+    "location_src": "Musée départemental d'Art ancien et contemporain"
    }
   },
   {
@@ -220,7 +224,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q11747763",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/03cephal.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/03cephal.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -228,8 +233,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -261,7 +266,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q16038648"
+    "qid": "Q16038648",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -269,8 +275,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -303,7 +309,8 @@
      }
     },
     "museum_id": "nationalmuseum",
-    "qid": "Q18601319"
+    "qid": "Q18601319",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -345,7 +352,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18762387"
+    "qid": "Q18762387",
+    "location_src": "Louvre"
    }
   },
   {
@@ -387,7 +395,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18762436"
+    "qid": "Q18762436",
+    "location_src": "Louvre"
    }
   },
   {
@@ -431,7 +440,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q19574562"
+    "qid": "Q19574562",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -475,7 +485,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q19820182",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/01vaccin.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/01vaccin.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -519,7 +530,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q19820184",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/06cleopa.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/06cleopa.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -562,7 +574,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q19820185",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/05ulysse.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/05ulysse.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -604,7 +617,8 @@
      }
     },
     "museum_id": "frick-collection",
-    "qid": "Q19857348"
+    "qid": "Q19857348",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -647,7 +661,8 @@
      }
     },
     "museum_id": "doughty-house",
-    "qid": "Q19904837"
+    "qid": "Q19904837",
+    "location_src": "Doughty House"
    }
   },
   {
@@ -690,7 +705,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q19911726",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/09trojan.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/09trojan.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -733,7 +749,8 @@
      }
     },
     "museum_id": "olantigh",
-    "qid": "Q19911853"
+    "qid": "Q19911853",
+    "location_src": "Olantigh"
    }
   },
   {
@@ -776,7 +793,8 @@
     },
     "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538816",
-    "wga_url": "https://www.wga.hu/html/c/claude/3/10muses.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/3/10muses.html",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -784,8 +802,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -820,7 +838,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q21716886",
-    "wga_url": "https://www.wga.hu/html/c/claude/3/04rest.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/3/04rest.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -828,8 +847,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -862,7 +881,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q21725066"
+    "qid": "Q21725066",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -870,8 +890,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -904,7 +924,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q21725334"
+    "qid": "Q21725334",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -946,7 +967,8 @@
      }
     },
     "museum_id": "national-museum-of-western-art",
-    "qid": "Q23948769"
+    "qid": "Q23948769",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -989,7 +1011,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q26493116",
-    "wga_url": "https://www.wga.hu/html/c/claude/3/07delos.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/3/07delos.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1033,7 +1056,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q26503950",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/07rebecc.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/07rebecc.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1075,7 +1099,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26692403"
+    "qid": "Q26692403",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1116,7 +1141,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26707774"
+    "qid": "Q26707774",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1160,7 +1186,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700821"
+    "qid": "Q27700821",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1204,7 +1231,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27700831"
+    "qid": "Q27700831",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1247,7 +1275,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27701629"
+    "qid": "Q27701629",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1290,7 +1319,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q28795868",
-    "wga_url": "https://www.wga.hu/html/c/claude/3/06hagar.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/3/06hagar.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1332,7 +1362,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29855757"
+    "qid": "Q29855757",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1373,7 +1404,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29855760"
+    "qid": "Q29855760",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1414,7 +1446,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29855763"
+    "qid": "Q29855763",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1455,7 +1488,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q29855769"
+    "qid": "Q29855769",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1498,7 +1532,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q29855770",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/11paris.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/11paris.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1542,7 +1577,8 @@
     },
     "museum_id": "birmingham-museum-and-art-gallery",
     "qid": "Q30253189",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/02pontmo.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/02pontmo.html",
+    "location_src": "Birmingham Museum and Art Gallery"
    }
   },
   {
@@ -1586,7 +1622,8 @@
     },
     "museum_id": "holkham-hall",
     "qid": "Q30321664",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/12apollo.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/12apollo.html",
+    "location_src": "Holkham Hall"
    }
   },
   {
@@ -1629,7 +1666,8 @@
      }
     },
     "museum_id": "anglesey-abbey",
-    "qid": "Q30610514"
+    "qid": "Q30610514",
+    "location_src": "Anglesey Abbey"
    }
   },
   {
@@ -1672,7 +1710,8 @@
      }
     },
     "museum_id": "birmingham-museum-and-art-gallery",
-    "qid": "Q33110183"
+    "qid": "Q33110183",
+    "location_src": "Birmingham Museum and Art Gallery"
    }
   },
   {
@@ -1718,7 +1757,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3909309",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/05ursula.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/05ursula.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1763,7 +1803,8 @@
     },
     "museum_id": "ashmolean-museum",
     "qid": "Q4803790",
-    "wga_url": "https://www.wga.hu/html/c/claude/3/12sylvia.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/3/12sylvia.html",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -1806,7 +1847,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q51078137",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/02medici.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/02medici.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1850,7 +1892,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q6057319"
+    "qid": "Q6057319",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1893,7 +1936,8 @@
       "was": "generally accepted",
       "note": "dated 1600, after death (1600–1682) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1938,7 +1982,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q6057325",
-    "wga_url": "https://www.wga.hu/html/c/claude/1/04paola.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/1/04paola.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1982,7 +2027,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q6057328"
+    "qid": "Q6057328",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2024,7 +2070,8 @@
      }
     },
     "museum_id": "nivaagaard-museum",
-    "qid": "Q75135162"
+    "qid": "Q75135162",
+    "location_src": "Nivaagaard Museum"
    }
   },
   {
@@ -2069,7 +2116,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q7731855",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/10sheba.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/10sheba.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2113,7 +2161,8 @@
      }
     },
     "museum_id": "museo-de-arte-de-indianapolis",
-    "qid": "Q7734433"
+    "qid": "Q7734433",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -2121,15 +2170,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.92773,
-     52.45042
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
     "painter": "Claude Lorrain",
     "title": "A Pastoral Landscape",
     "year": "1645",
-    "city": "Birmingham",
+    "city": "Edgbaston",
     "country": "United Kingdom",
     "location": "Barber Institute of Fine Arts",
     "kind": "museum",
@@ -2154,7 +2203,8 @@
      }
     },
     "museum_id": "barber-institute-of-fine-arts",
-    "qid": "Q80989526"
+    "qid": "Q80989526",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -2196,7 +2246,8 @@
      }
     },
     "museum_id": "museum-of-grenoble",
-    "qid": "Q81182065"
+    "qid": "Q81182065",
+    "location_src": "Museum of Grenoble"
    }
   },
   {
@@ -2214,7 +2265,7 @@
     "year": "1639",
     "city": "Khamovniki District",
     "country": "Russia",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2238,8 +2289,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "pushkin-museum-of-fine-arts",
-    "qid": "Q87113703"
+    "museum_id": "pushkin-museum",
+    "qid": "Q87113703",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -2257,7 +2309,7 @@
     "year": "1655",
     "city": "Khamovniki District",
     "country": "Russia",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2281,9 +2333,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "pushkin-museum-of-fine-arts",
+    "museum_id": "pushkin-museum",
     "qid": "Q87113706",
-    "wga_url": "https://www.wga.hu/html/c/claude/2/12europa.html"
+    "wga_url": "https://www.wga.hu/html/c/claude/2/12europa.html",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -2301,7 +2354,7 @@
     "year": "1655",
     "city": "Khamovniki District",
     "country": "Russia",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2325,8 +2378,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "pushkin-museum-of-fine-arts",
-    "qid": "Q87772365"
+    "museum_id": "pushkin-museum",
+    "qid": "Q87772365",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -2334,8 +2388,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2363,7 +2417,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2371,8 +2427,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2400,7 +2456,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2417,7 +2475,7 @@
     "title": "A Classical Landscape with Cattle Crossing a Stream",
     "year": "1670",
     "location": "National Trust",
-    "city": "",
+    "city": "Kingston Lacy",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lorrain%20-%20A%20Classical%20Landscape%20with%20Cattle%20Crossing%20a%20Stream%2C%20c.1670.jpg?width=500",
@@ -2437,7 +2495,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-trust",
+    "location_src": "National Trust"
    }
   },
   {
@@ -2454,7 +2514,7 @@
     "title": "The Arrival of Aeneas at Pallanteum",
     "year": "1675",
     "location": "National Trust",
-    "city": "",
+    "city": "Kingston Lacy",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20%281604-1682%29%20-%20The%20Arrival%20of%20Aeneas%20at%20Pallanteum%20-%20515654%20-%20National%20Trust.jpg?width=500",
@@ -2474,7 +2534,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-trust",
+    "location_src": "National Trust"
    }
   },
   {
@@ -2491,7 +2553,7 @@
     "title": "A River Landscape with Jacob and Laban and his Daughters",
     "year": "1654",
     "location": "National Trust",
-    "city": "",
+    "city": "Kingston Lacy",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20Jacob%20Laban.jpg?width=500",
@@ -2511,7 +2573,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-trust",
+    "location_src": "National Trust"
    }
   },
   {
@@ -2519,15 +2583,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Claude Lorrain",
     "title": "Landscape with Saint George and the Dragon",
     "year": "1643",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2548,7 +2612,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -2585,7 +2651,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-nancy",
+    "location_src": "Museum of Fine Arts of Nancy"
    }
   },
   {
@@ -2622,7 +2690,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -2630,8 +2700,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -2659,7 +2729,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -2667,8 +2739,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -2696,7 +2768,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -2704,8 +2778,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -2733,7 +2807,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2741,8 +2817,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -2770,7 +2846,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2778,8 +2856,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -2807,7 +2885,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2815,8 +2895,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -2844,7 +2924,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2852,8 +2934,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -2881,7 +2963,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -2889,8 +2973,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2918,7 +3002,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2926,8 +3012,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2955,7 +3041,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2963,8 +3051,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.329079,
-     35.686304
+     139.32908,
+     35.6863
     ]
    },
    "properties": {
@@ -2992,7 +3080,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tokyo-fuji-art-museum",
+    "location_src": "Tokyo Fuji Art Museum"
    }
   },
   {
@@ -3000,8 +3090,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153022,
-     51.517454
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
@@ -3029,7 +3119,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -3037,8 +3129,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.946022,
-     41.260254
+     -95.94602,
+     41.26025
     ]
    },
    "properties": {
@@ -3066,7 +3158,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "joslyn-art-museum",
+    "location_src": "Joslyn Art Museum"
    }
   },
   {
@@ -3074,8 +3168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -3103,7 +3197,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -3111,8 +3207,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.70288889,
-     35.81019444
+     -78.70289,
+     35.81019
     ]
    },
    "properties": {
@@ -3140,7 +3236,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "location_src": "Museo de arte de Carolina del Norte"
    }
   },
   {
@@ -3149,14 +3247,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Claude Lorrain",
     "title": "Coast Scene with Europa and the Bull",
     "year": "1634",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -3177,7 +3275,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -3186,14 +3286,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Claude Lorrain",
     "title": "Pastoral Landscape",
     "year": "1677",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -3214,7 +3314,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -3222,8 +3324,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294491,
-     38.639306
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -3241,7 +3343,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q78748867",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -3249,8 +3353,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -3278,7 +3382,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -3315,7 +3421,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -3323,8 +3431,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -84.496944444,
-     39.113888888
+     -84.4969,
+     39.1139
     ]
    },
    "properties": {
@@ -3352,7 +3460,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cincinnati-art-museum",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -3360,8 +3470,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -3369,7 +3479,7 @@
     "title": "Paysage au soleil couchant",
     "year": "1650",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lorrain%20-%20PAYSAGE%20AU%20SOLEIL%20COUCHANT%2C%20INV%204723.jpg?width=500",
@@ -3389,7 +3499,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3426,7 +3538,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chrysler-museum-of-art",
+    "location_src": "Chrysler Museum of Art"
    }
   },
   {
@@ -3434,8 +3548,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.604444444,
-     51.483888888
+     -0.60444,
+     51.48389
     ]
    },
    "properties": {
@@ -3463,7 +3577,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "windsor-castle",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -3471,8 +3587,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -3500,7 +3616,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -3508,7 +3626,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3537,7 +3655,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3545,7 +3665,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -3574,7 +3694,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -3582,8 +3704,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -3611,7 +3733,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3619,8 +3743,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.365103,
-     48.201253
+     16.3651,
+     48.20125
     ]
    },
    "properties": {
@@ -3648,7 +3772,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "academy-of-fine-arts-vienna",
+    "location_src": "Academy of Fine Arts Vienna"
    }
   },
   {
@@ -3656,8 +3782,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.365103,
-     48.201253
+     16.3651,
+     48.20125
     ]
    },
    "properties": {
@@ -3685,7 +3811,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "academy-of-fine-arts-vienna",
+    "location_src": "Academy of Fine Arts Vienna"
    }
   },
   {
@@ -3722,7 +3850,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -3730,7 +3860,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -3739,7 +3869,7 @@
     "title": "Harbour Scene with Grieving Heliades",
     "year": "1640",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20-%20Harbour%20Scene%20with%20Grieving%20Heliades%20-%20WGA04986.jpg?width=500",
@@ -3759,7 +3889,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -3767,8 +3899,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -3796,7 +3928,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -3804,8 +3938,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -3823,7 +3957,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q105465009",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -3831,8 +3967,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.177128,
-     51.485577
+     -3.1773,
+     51.4858
     ]
    },
    "properties": {
@@ -3860,7 +3996,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-cardiff",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -3869,7 +4007,7 @@
     "type": "Point",
     "coordinates": [
      -118.1125,
-     34.129166666
+     34.12917
     ]
    },
    "properties": {
@@ -3897,7 +4035,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
    }
   },
   {
@@ -3934,7 +4074,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -3971,7 +4113,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -3979,8 +4123,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -4008,7 +4152,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -4016,8 +4162,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -4045,7 +4191,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -4053,8 +4201,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.0934389,
-     29.9864799
+     -90.09344,
+     29.98648
     ]
    },
    "properties": {
@@ -4082,7 +4230,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "new-orleans-museum-of-art",
+    "location_src": "New Orleans Museum of Art"
    }
   },
   {
@@ -4109,7 +4259,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q106774647",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum"
    }
   },
   {
@@ -4117,8 +4269,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.241388888,
-     53.478611111
+     -2.24139,
+     53.47861
     ]
    },
    "properties": {
@@ -4146,7 +4298,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "manchester-art-gallery",
+    "location_src": "Manchester Art Gallery"
    }
   },
   {
@@ -4154,8 +4308,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -97.737684,
-     30.280811
+     -97.73768,
+     30.28081
     ]
    },
    "properties": {
@@ -4183,7 +4337,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "blanton-museum-of-art",
+    "location_src": "Blanton Museum of Art"
    }
   },
   {
@@ -4191,8 +4347,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -66.616944444,
-     18.003888888
+     -66.61694,
+     18.00389
     ]
    },
    "properties": {
@@ -4220,7 +4376,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-de-arte-de-ponce",
+    "location_src": "Museo de Arte de Ponce"
    }
   },
   {
@@ -4228,8 +4386,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.28805556,
-     43.70222222
+     -72.28806,
+     43.70222
     ]
    },
    "properties": {
@@ -4257,7 +4415,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hood-museum-of-art",
+    "location_src": "Hood Museum of Art"
    }
   },
   {
@@ -4294,7 +4454,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "arnot-art-museum",
+    "location_src": "Arnot Art Museum"
    }
   },
   {
@@ -4331,7 +4493,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "david-owsley-museum-of-art-ball-state-university",
+    "location_src": "David Owsley Museum of Art Ball State University"
    }
   },
   {
@@ -4368,7 +4532,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dunedin-public-art-gallery",
+    "location_src": "Dunedin Public Art Gallery"
    }
   },
   {
@@ -4405,7 +4571,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "raclin-murphy-museum-of-art",
+    "location_src": "Raclin Murphy Museum of Art"
    }
   },
   {
@@ -4413,8 +4581,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255364,
-     43.76809
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -4442,7 +4610,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4469,7 +4639,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119756828",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "st-catharine-s-college",
+    "location_src": "St Catharine's College"
    }
   },
   {
@@ -4477,8 +4649,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -4506,7 +4678,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -4514,8 +4688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -4543,7 +4717,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -4551,7 +4727,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -4570,7 +4746,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q122209654",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -4578,8 +4756,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.151666666,
-     51.503472222
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
@@ -4597,7 +4775,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119756824",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "apsley-house",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -4634,7 +4814,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -4661,7 +4843,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119499367",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -4669,8 +4853,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.392777777,
-     43.653611111
+     -79.39278,
+     43.65361
     ]
    },
    "properties": {
@@ -4698,7 +4882,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-gallery-of-ontario",
+    "location_src": "Art Gallery of Ontario"
    }
   },
   {
@@ -4706,8 +4892,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -4735,7 +4921,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -4743,8 +4931,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -4772,7 +4960,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -4780,8 +4970,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91565514,
-     54.54173763
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -4799,7 +4989,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118877363",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bowes-museum",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -4807,8 +4999,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91565514,
-     54.54173763
+     -1.91566,
+     54.54174
     ]
    },
    "properties": {
@@ -4826,7 +5018,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118878177",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bowes-museum",
+    "location_src": "Bowes Museum"
    }
   },
   {
@@ -4835,7 +5029,7 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.227777777
+     53.22778
     ]
    },
    "properties": {
@@ -4863,7 +5057,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chatsworth-house",
+    "location_src": "Chatsworth House"
    }
   },
   {
@@ -4871,8 +5067,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -4900,7 +5096,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -4908,8 +5106,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.706078,
-     55.415783
+     -1.70608,
+     55.41578
     ]
    },
    "properties": {
@@ -4937,7 +5135,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alnwick-castle",
+    "location_src": "Alnwick Castle"
    }
   },
   {
@@ -4945,8 +5145,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -4964,7 +5164,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118998496",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -4972,7 +5174,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.803055555,
+     0.80306,
      52.95
     ]
    },
@@ -5001,7 +5203,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "holkham-hall",
+    "location_src": "Holkham Hall"
    }
   },
   {
@@ -5009,7 +5213,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.803055555,
+     0.80306,
      52.95
     ]
    },
@@ -5038,7 +5242,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "holkham-hall",
+    "location_src": "Holkham Hall"
    }
   },
   {
@@ -5046,7 +5252,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.803055555,
+     0.80306,
      52.95
     ]
    },
@@ -5075,7 +5281,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "holkham-hall",
+    "location_src": "Holkham Hall"
    }
   },
   {
@@ -5083,7 +5291,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.803055555,
+     0.80306,
      52.95
     ]
    },
@@ -5112,7 +5320,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "holkham-hall",
+    "location_src": "Holkham Hall"
    }
   },
   {
@@ -5120,7 +5330,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.803055555,
+     0.80306,
      52.95
     ]
    },
@@ -5149,7 +5359,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "holkham-hall",
+    "location_src": "Holkham Hall"
    }
   },
   {
@@ -5157,7 +5369,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.596719,
+     -0.59672,
      51.98295
     ]
    },
@@ -5186,7 +5398,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "woburn-abbey",
+    "location_src": "Woburn Abbey"
    }
   },
   {
@@ -5194,8 +5408,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -5223,7 +5437,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -5231,8 +5447,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -5260,7 +5476,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -5268,8 +5486,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.487892,
-     41.898332
+     12.48789,
+     41.89833
     ]
    },
    "properties": {
@@ -5297,7 +5515,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-pallavicini-rospigliosi",
+    "location_src": "Palazzo Pallavicini-Rospigliosi"
    }
   },
   {
@@ -5324,7 +5544,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q138608012",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "chateau-de-parentignat",
+    "location_src": "Château de Parentignat"
    }
   },
   {
@@ -5351,7 +5573,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119950876",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "weston-park",
+    "location_src": "Weston Park"
    }
   },
   {
@@ -5378,7 +5602,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119950881",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "weston-park",
+    "location_src": "Weston Park"
    }
   },
   {
@@ -5405,7 +5631,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119756826",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "astley-hall",
+    "location_src": "Astley Hall"
    }
   },
   {
@@ -5442,7 +5670,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cummer-museum-of-art-and-gardens",
+    "location_src": "Cummer Museum of Art and Gardens"
    }
   },
   {
@@ -5450,8 +5680,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.911416117,
-     55.540609995
+     -2.91142,
+     55.54061
     ]
    },
    "properties": {
@@ -5479,7 +5709,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bowhill-house",
+    "location_src": "Bowhill House"
    }
   },
   {
@@ -5487,8 +5719,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.911416117,
-     55.540609995
+     -2.91142,
+     55.54061
     ]
    },
    "properties": {
@@ -5516,7 +5748,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bowhill-house",
+    "location_src": "Bowhill House"
    }
   },
   {
@@ -5524,8 +5758,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.600469,
-     54.949874
+     -1.60047,
+     54.94987
     ]
    },
    "properties": {
@@ -5543,7 +5777,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119756834",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "shipley-art-gallery",
+    "location_src": "Shipley Art Gallery"
    }
   },
   {
@@ -5551,8 +5787,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.086388888,
-     53.963055555
+     -1.08639,
+     53.96306
     ]
    },
    "properties": {
@@ -5570,7 +5806,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118877048",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "york-art-gallery",
+    "location_src": "York Art Gallery"
    }
   },
   {
@@ -5578,8 +5816,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     138.53733333,
-     35.66038889
+     138.53733,
+     35.66039
     ]
    },
    "properties": {
@@ -5607,7 +5845,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yamanashi-prefectural-museum-of-art",
+    "location_src": "Yamanashi Prefectural Museum of Art"
    }
   },
   {
@@ -5642,7 +5882,9 @@
       "was": "generally accepted",
       "note": "dated 1850, after death (1600–1682) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "mclean-museum-and-art-gallery",
+    "location_src": "McLean Museum and Art Gallery"
    }
   },
   {
@@ -5679,7 +5921,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "corsham-court",
+    "location_src": "Corsham Court"
    }
   },
   {
@@ -5706,7 +5950,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119950877",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bridport-museum",
+    "location_src": "Bridport Museum"
    }
   },
   {
@@ -5733,7 +5979,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119756830",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "atkinson-art-gallery-and-library",
+    "location_src": "Atkinson Art Gallery and Library"
    }
   },
   {
@@ -5741,8 +5989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.187194444,
-     55.947388888
+     -3.18719,
+     55.94739
     ]
    },
    "properties": {
@@ -5760,7 +6008,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119932600",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "university-of-edinburgh-art-collection",
+    "location_src": "University of Edinburgh Art Collection"
    }
   },
   {
@@ -5797,7 +6047,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -5834,7 +6086,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -5871,7 +6125,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "buckingham-palace",
+    "location_src": "Buckingham Palace"
    }
   },
   {
@@ -5908,7 +6164,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "buckingham-palace",
+    "location_src": "Buckingham Palace"
    }
   },
   {
@@ -5916,8 +6174,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5945,7 +6203,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5953,8 +6213,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5982,7 +6242,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5990,8 +6252,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6019,7 +6281,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6027,8 +6291,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6056,7 +6320,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6064,8 +6330,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6093,7 +6359,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6101,8 +6369,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6130,7 +6398,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6138,8 +6408,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -6167,7 +6437,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -6175,8 +6447,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -6204,7 +6476,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -6212,8 +6486,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -6241,7 +6515,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -6249,8 +6525,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6278,7 +6554,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6286,8 +6564,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6315,7 +6593,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6323,8 +6603,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6352,7 +6632,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6360,8 +6642,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -6369,7 +6651,7 @@
     "title": "View of La Crescenza",
     "year": "1650",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20La%20Crescenza%20MET%20DT1579.jpg?width=500",
@@ -6389,7 +6671,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -6397,8 +6681,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -6406,7 +6690,7 @@
     "title": "Landscape with Erminia",
     "year": "1630",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tassi%20-%20Landscape%20with%20Erminia%2C%20ca.%201630.jpg?width=500",
@@ -6426,7 +6710,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -6434,8 +6720,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -6443,7 +6729,7 @@
     "title": "Landscape with Sheep",
     "year": "1648",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20with%20Sheep%20MET%20DT3291.jpg?width=500",
@@ -6463,7 +6749,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -6471,8 +6759,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -6480,7 +6768,7 @@
     "title": "Landscape with the Rest on the Flight into Egypt",
     "year": "1645",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20with%20the%20Rest%20on%20the%20Flight%20into%20Egypt%20MET%20DT3292.jpg?width=500",
@@ -6500,7 +6788,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -6537,7 +6827,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -6545,8 +6837,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -6574,7 +6866,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -6582,8 +6876,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6591,7 +6885,7 @@
     "title": "Landscape with a Goatherd and Goats",
     "year": "1637",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20-%20Landscape%20with%20a%20Goatherd%20and%20Goats%20-%20Google%20Art%20Project.jpg?width=500",
@@ -6611,7 +6905,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6619,8 +6915,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6628,7 +6924,7 @@
     "title": "Landscape with David at the Cave of Adullam",
     "year": "1658",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20016.jpg?width=500",
@@ -6648,7 +6944,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6656,8 +6954,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6665,7 +6963,7 @@
     "title": "Landscape with Narcissus and Echo",
     "year": "1644",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20with%20Narcissus%20and%20Echo.jpg?width=500",
@@ -6685,7 +6983,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6693,8 +6993,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6702,7 +7002,7 @@
     "title": "A View in Rome",
     "year": "1632",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20View%20in%20Rome.jpg?width=500",
@@ -6722,7 +7022,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6730,7 +7032,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -6759,7 +7061,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -6768,7 +7072,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -6796,7 +7100,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -6805,7 +7111,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -6833,7 +7139,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -6841,8 +7149,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -6870,7 +7178,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -6878,8 +7188,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -6907,7 +7217,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -6944,7 +7256,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6952,8 +7266,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -6981,7 +7295,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -6989,8 +7305,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     151.217222222,
-     -33.868611111
+     151.21722,
+     -33.86861
     ]
    },
    "properties": {
@@ -7018,7 +7334,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-gallery-of-new-south-wales",
+    "location_src": "Art Gallery of New South Wales"
    }
   },
   {
@@ -7026,8 +7344,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     138.603888888,
-     -34.920555555
+     138.60389,
+     -34.92056
     ]
    },
    "properties": {
@@ -7055,7 +7373,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-gallery-of-south-australia",
+    "location_src": "Art Gallery of South Australia"
    }
   },
   {
@@ -7092,7 +7412,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -7100,8 +7422,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.185655,
-     39.826019
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -7119,7 +7441,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27895778",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-de-arte-de-indianapolis",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -7127,8 +7451,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -7156,7 +7480,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -7164,8 +7490,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -7193,7 +7519,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -7230,7 +7558,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hampton-castle",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -7247,7 +7577,7 @@
     "title": "Landscape with Cattle Crossing a Stream",
     "year": "1644",
     "location": "Royal Collection",
-    "city": "",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20%281604-5-82%29%20-%20Landscape%20with%20Cattle%20Crossing%20a%20Stream%20-%20RCIN%20400546%20-%20Royal%20Collection.jpg?width=500",
@@ -7267,7 +7597,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-collection",
+    "location_src": "Royal Collection"
    }
   },
   {
@@ -7275,7 +7607,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -7294,7 +7626,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20420150",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -7302,8 +7636,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.390539,
-     29.725605
+     -95.39054,
+     29.72561
     ]
    },
    "properties": {
@@ -7321,7 +7655,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28042470",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston"
    }
   },
   {
@@ -7329,8 +7665,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.359166666,
-     34.063333333
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -7358,7 +7694,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -7366,8 +7704,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.559444444,
-     41.658333333
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -7395,7 +7733,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "toledo-museum-of-art",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -7403,15 +7743,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Claude Lorrain",
     "title": "Landscape with Apollo and the Muses",
     "year": "1652",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7432,7 +7772,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -7440,8 +7782,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.500842,
-     37.784466
+     -122.50084,
+     37.78447
     ]
    },
    "properties": {
@@ -7469,7 +7811,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "legion-of-honor",
+    "location_src": "Legion of Honor"
    }
   }
  ]

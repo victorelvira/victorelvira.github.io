@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -28,7 +28,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "isabella-stewart-gardner-museum",
-    "qid": "Q103831941"
+    "qid": "Q103831941",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -70,7 +71,8 @@
      }
     },
     "museum_id": "staatliche-kunsthalle-karlsruhe",
-    "qid": "Q104522115"
+    "qid": "Q104522115",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -86,7 +88,7 @@
     "painter": "Paolo Uccello",
     "title": "The Virgin and Child",
     "year": "1500",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Bode Museum",
     "kind": "museum",
@@ -102,7 +104,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "bode-museum",
-    "qid": "Q107441407"
+    "qid": "Q107441407",
+    "location_src": "Bode Museum"
    }
   },
   {
@@ -145,7 +148,8 @@
     },
     "museum_id": "prato-cathedral",
     "qid": "Q111822168",
-    "wga_url": "https://www.wga.hu/html/u/uccello/2prato/02prato.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/2prato/02prato.html",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -186,7 +190,8 @@
      }
     },
     "museum_id": "royal-castle-in-warsaw",
-    "qid": "Q121599908"
+    "qid": "Q121599908",
+    "location_src": "Royal Castle in Warsaw"
    }
   },
   {
@@ -214,7 +219,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-san-marco",
-    "qid": "Q131546444"
+    "qid": "Q131546444",
+    "location_src": "Museum of San Marco"
    }
   },
   {
@@ -258,7 +264,8 @@
      }
     },
     "museum_id": "ashmolean-museum",
-    "qid": "Q15974328"
+    "qid": "Q15974328",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -301,7 +308,8 @@
      }
     },
     "museum_id": "museo-de-arte-de-indianapolis",
-    "qid": "Q16596981"
+    "qid": "Q16596981",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -317,7 +325,7 @@
     "painter": "Paolo Uccello",
     "title": "St George slaying the dragon",
     "year": "1423",
-    "city": "Melbourne",
+    "city": "City of Melbourne",
     "country": "Australia",
     "location": "National Gallery of Victoria",
     "kind": "museum",
@@ -344,7 +352,8 @@
      }
     },
     "museum_id": "national-gallery-of-victoria",
-    "qid": "Q16599926"
+    "qid": "Q16599926",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -388,7 +397,8 @@
     },
     "museum_id": "galleria-nazionale-delle-marche",
     "qid": "Q16653993",
-    "wga_url": "https://www.wga.hu/html/u/uccello/5miracle/miracle6.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/5miracle/miracle6.html",
+    "location_src": "Galleria Nazionale delle Marche"
    }
   },
   {
@@ -431,7 +441,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q18564202",
-    "wga_url": "https://www.wga.hu/html/u/uccello/4battle/2battle3.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/4battle/2battle3.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -474,7 +485,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q18564226",
-    "wga_url": "https://www.wga.hu/html/u/uccello/4battle/3battle.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/4battle/3battle.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -516,7 +528,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q18564234",
-    "wga_url": "https://www.wga.hu/html/u/uccello/4battle/1battle1.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/4battle/1battle1.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -559,7 +572,8 @@
      }
     },
     "museum_id": "musee-jacquemart-andre",
-    "qid": "Q18891273"
+    "qid": "Q18891273",
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -601,7 +615,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19904862"
+    "qid": "Q19904862",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -644,7 +659,8 @@
      }
     },
     "museum_id": "palazzo-pretorio-museum",
-    "qid": "Q3637223"
+    "qid": "Q3637223",
+    "location_src": "Palazzo Pretorio Museum"
    }
   },
   {
@@ -689,7 +705,8 @@
     },
     "museum_id": "oxford",
     "qid": "Q3649296",
-    "wga_url": "https://www.wga.hu/html/u/uccello/6various/6hunt.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/6various/6hunt.html",
+    "location_src": "Oxford"
    }
   },
   {
@@ -735,7 +752,8 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q3698199",
-    "wga_url": "https://www.wga.hu/html/u/uccello/6various/3crucifi.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/6various/3crucifi.html",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -751,7 +769,7 @@
     "painter": "Paolo Uccello",
     "title": "Madonna and Child",
     "year": "1445",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
@@ -778,7 +796,8 @@
      }
     },
     "museum_id": "national-gallery-of-ireland",
-    "qid": "Q3842490"
+    "qid": "Q3842490",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -820,7 +839,8 @@
      }
     },
     "museum_id": "florence-cathedral",
-    "qid": "Q3873236"
+    "qid": "Q3873236",
+    "location_src": "Florence Cathedral"
    }
   },
   {
@@ -864,7 +884,8 @@
      }
     },
     "museum_id": "staatliche-kunsthalle-karlsruhe",
-    "qid": "Q38833937"
+    "qid": "Q38833937",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -907,7 +928,8 @@
     },
     "museum_id": "florence-cathedral",
     "qid": "Q3886134",
-    "wga_url": "https://www.wga.hu/html/u/uccello/3florenc/3clock.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/3florenc/3clock.html",
+    "location_src": "Florence Cathedral"
    }
   },
   {
@@ -951,7 +973,8 @@
     },
     "museum_id": "museo-diocesano-di-santo-stefano-al-ponte",
     "qid": "Q3910082",
-    "wga_url": "https://www.wga.hu/html/u/uccello/6various/2quarat3.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/6various/2quarat3.html",
+    "location_src": "Museo diocesano di Santo Stefano al Ponte"
    }
   },
   {
@@ -993,7 +1016,8 @@
      }
     },
     "museum_id": "florence-cathedral",
-    "qid": "Q3933559"
+    "qid": "Q3933559",
+    "location_src": "Florence Cathedral"
    }
   },
   {
@@ -1036,7 +1060,8 @@
      }
     },
     "museum_id": "contini-bonacossi-collection",
-    "qid": "Q3949271"
+    "qid": "Q3949271",
+    "location_src": "Contini Bonacossi collection"
    }
   },
   {
@@ -1077,7 +1102,8 @@
      }
     },
     "museum_id": "san-miniato-al-monte",
-    "qid": "Q3974449"
+    "qid": "Q3974449",
+    "location_src": "San Miniato al Monte"
    }
   },
   {
@@ -1121,7 +1147,8 @@
     },
     "museum_id": "galleria-dell-accademia",
     "qid": "Q3982380",
-    "wga_url": "https://www.wga.hu/html/u/uccello/6various/7hermits.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/6various/7hermits.html",
+    "location_src": "Galleria dell'Accademia"
    }
   },
   {
@@ -1129,8 +1156,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -1161,7 +1188,8 @@
      }
     },
     "museum_id": "yale-university-art-gallery",
-    "qid": "Q49284238"
+    "qid": "Q49284238",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -1199,7 +1227,8 @@
      }
     },
     "museum_id": "seattle-art-museum",
-    "qid": "Q77974865"
+    "qid": "Q77974865",
+    "location_src": "Seattle Art Museum"
    }
   },
   {
@@ -1244,7 +1273,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q780466",
-    "wga_url": "https://www.wga.hu/html/u/uccello/6various/5dragon2.html"
+    "wga_url": "https://www.wga.hu/html/u/uccello/6various/5dragon2.html",
+    "location_src": "National Gallery"
    }
   }
  ]

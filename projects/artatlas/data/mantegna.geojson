@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -41,7 +41,8 @@
      }
     },
     "museum_id": "isabella-stewart-gardner-museum",
-    "qid": "Q103833118"
+    "qid": "Q103833118",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -84,7 +85,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q111821771",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/chapel3.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/chapel3.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -130,7 +132,8 @@
     },
     "museum_id": "pinacoteca-di-brera",
     "qid": "Q1150402",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/cherubim.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/cherubim.html",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -171,7 +174,8 @@
      }
     },
     "museum_id": "new-york-historical",
-    "qid": "Q115608737"
+    "qid": "Q115608737",
+    "location_src": "New York Historical"
    }
   },
   {
@@ -200,7 +204,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pinacoteca-nazionale",
-    "qid": "Q118435234"
+    "qid": "Q118435234",
+    "location_src": "Pinacoteca Nazionale"
    }
   },
   {
@@ -230,7 +235,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q118495500"
+    "qid": "Q118495500",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -269,7 +275,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q118516800"
+    "qid": "Q118516800",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -308,7 +315,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q118516811"
+    "qid": "Q118516811",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -347,7 +355,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q118516826"
+    "qid": "Q118516826",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -355,8 +364,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -388,7 +397,8 @@
      }
     },
     "museum_id": "courtauld-gallery",
-    "qid": "Q118676331"
+    "qid": "Q118676331",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -396,15 +406,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1269,
-     51.5194
+     -0.12694,
+     51.51944
     ]
    },
    "properties": {
     "painter": "Mantegna",
     "title": "Three Studies for the Dead Christ",
     "year": "1450",
-    "city": "London",
+    "city": "London Borough of Camden",
     "country": "United Kingdom",
     "location": "British Museum",
     "kind": "museum",
@@ -428,7 +438,8 @@
      }
     },
     "museum_id": "british-museum",
-    "qid": "Q118918559"
+    "qid": "Q118918559",
+    "location_src": "British Museum"
    }
   },
   {
@@ -457,7 +468,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pinacoteca-di-brera",
-    "qid": "Q119353076"
+    "qid": "Q119353076",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -502,7 +514,8 @@
      }
     },
     "museum_id": "musee-jacquemart-andre",
-    "qid": "Q1239065"
+    "qid": "Q1239065",
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -543,7 +556,8 @@
     },
     "museum_id": "palazzo-ducale-mantua",
     "qid": "Q125753676",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/07/3sposi01a.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/07/3sposi01a.html",
+    "location_src": "Palazzo Ducale Mantua"
    }
   },
   {
@@ -584,7 +598,8 @@
     },
     "museum_id": "pinacoteca-nazionale",
     "qid": "Q125758347",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/christ.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/christ.html",
+    "location_src": "Pinacoteca Nazionale"
    }
   },
   {
@@ -624,7 +639,8 @@
     },
     "museum_id": "palazzo-ducale-mantua",
     "qid": "Q125758355",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/3/2sposi11.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/3/2sposi11.html",
+    "location_src": "Palazzo Ducale Mantua"
    }
   },
   {
@@ -663,7 +679,8 @@
      }
     },
     "museum_id": "getty-center",
-    "qid": "Q125758395"
+    "qid": "Q125758395",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -704,7 +721,8 @@
     },
     "museum_id": "palazzo-ducale-mantua",
     "qid": "Q125759296",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/07/2sposi03.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/07/2sposi03.html",
+    "location_src": "Palazzo Ducale Mantua"
    }
   },
   {
@@ -744,7 +762,8 @@
      }
     },
     "museum_id": "villa-medici",
-    "qid": "Q125790850"
+    "qid": "Q125790850",
+    "location_src": "Villa Medici"
    }
   },
   {
@@ -773,7 +792,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "camera-degli-sposi",
-    "qid": "Q131561677"
+    "qid": "Q131561677",
+    "location_src": "Camera degli Sposi"
    }
   },
   {
@@ -801,7 +821,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "basilica-of-san-zeno",
-    "qid": "Q132247331"
+    "qid": "Q132247331",
+    "location_src": "Basilica of San Zeno"
    }
   },
   {
@@ -845,7 +866,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q1751164"
+    "qid": "Q1751164",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -889,7 +911,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q18565594",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/stsebast.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/stsebast.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -933,7 +956,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q18683109"
+    "qid": "Q18683109",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -978,7 +1002,8 @@
      }
     },
     "museum_id": "basilica-of-san-zeno",
-    "qid": "Q2066739"
+    "qid": "Q2066739",
+    "location_src": "Basilica of San Zeno"
    }
   },
   {
@@ -1022,7 +1047,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q2405395",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/chapel11.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/chapel11.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1068,7 +1094,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q2413789",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/pallas.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/pallas.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1109,7 +1136,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26492748"
+    "qid": "Q26492748",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1150,7 +1178,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26530926"
+    "qid": "Q26530926",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1191,7 +1220,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26678247"
+    "qid": "Q26678247",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1231,7 +1261,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q27982635"
+    "qid": "Q27982635",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1279,7 +1310,8 @@
       "qid": "Q27982636",
       "url": "https://www.wikidata.org/wiki/Q27982636"
      }
-    ]
+    ],
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1321,7 +1353,8 @@
     },
     "museum_id": "hampton-court-palace",
     "qid": "Q28027826",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/triumphs.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/triumphs.html",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -1363,7 +1396,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q28027827"
+    "qid": "Q28027827",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -1405,7 +1439,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q28027828"
+    "qid": "Q28027828",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -1445,7 +1480,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28029283"
+    "qid": "Q28029283",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -1485,7 +1521,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28029284"
+    "qid": "Q28029284",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -1525,7 +1562,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28029286"
+    "qid": "Q28029286",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -1565,7 +1603,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28029288"
+    "qid": "Q28029288",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -1605,7 +1644,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28029289"
+    "qid": "Q28029289",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -1646,7 +1686,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28029290"
+    "qid": "Q28029290",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -1691,7 +1732,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3204269"
+    "qid": "Q3204269",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1736,7 +1778,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q3210265"
+    "qid": "Q3210265",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1781,7 +1824,8 @@
       "was": "generally accepted",
       "note": "dated 1400, before birth (1431–1506) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1826,7 +1870,8 @@
      }
     },
     "museum_id": "palazzo-dei-diamanti",
-    "qid": "Q3221334"
+    "qid": "Q3221334",
+    "location_src": "Palazzo dei Diamanti"
    }
   },
   {
@@ -1871,7 +1916,8 @@
      }
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q3221348"
+    "qid": "Q3221348",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -1917,7 +1963,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3225258",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/parnassu.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/parnassu.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1962,7 +2009,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3399399",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/08/1portrai.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/08/1portrai.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2007,7 +2055,8 @@
      }
     },
     "museum_id": "pinacoteca-del-castello-sforzesco",
-    "qid": "Q3428040"
+    "qid": "Q3428040",
+    "location_src": "Pinacoteca del Castello Sforzesco"
    }
   },
   {
@@ -2015,8 +2064,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -2051,7 +2100,8 @@
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
-    "qid": "Q3463920"
+    "qid": "Q3463920",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -2096,7 +2146,8 @@
     },
     "museum_id": "getty-center",
     "qid": "Q3605538",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/magi.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/magi.html",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -2142,7 +2193,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3605556",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/adoratio.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/adoratio.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2186,7 +2238,8 @@
      }
     },
     "museum_id": "basilica-of-sant-andrea",
-    "qid": "Q3636744"
+    "qid": "Q3636744",
+    "location_src": "Basilica of Sant'Andrea"
    }
   },
   {
@@ -2230,7 +2283,8 @@
      }
     },
     "museum_id": "civic-museum-il-correggio",
-    "qid": "Q3697586"
+    "qid": "Q3697586",
+    "location_src": "Civic Museum il Correggio"
    }
   },
   {
@@ -2275,7 +2329,8 @@
     },
     "museum_id": "verona",
     "qid": "Q3698197",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/sanzenop.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/sanzenop.html",
+    "location_src": "Verona"
    }
   },
   {
@@ -2283,8 +2338,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5801,
-     45.4987
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -2318,7 +2373,8 @@
      }
     },
     "museum_id": "montreal-museum-of-fine-arts",
-    "qid": "Q3707031"
+    "qid": "Q3707031",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -2362,7 +2418,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q3761425"
+    "qid": "Q3761425",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2370,8 +2427,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.5801,
-     45.4987
+     -73.57976,
+     45.49915
     ]
    },
    "properties": {
@@ -2405,7 +2462,8 @@
      }
     },
     "museum_id": "montreal-museum-of-fine-arts",
-    "qid": "Q3769156"
+    "qid": "Q3769156",
+    "location_src": "Montreal Museum of Fine Arts"
    }
   },
   {
@@ -2421,7 +2479,7 @@
     "painter": "Mantegna",
     "title": "Judith with the Head of Holofernes",
     "year": "1497",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "location": "National Gallery of Ireland",
     "kind": "museum",
@@ -2449,7 +2507,8 @@
      }
     },
     "museum_id": "national-gallery-of-ireland",
-    "qid": "Q3769174"
+    "qid": "Q3769174",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -2495,7 +2554,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3769182",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/judith.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/judith.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2540,7 +2600,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3842383"
+    "qid": "Q3842383",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2584,7 +2645,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3842392"
+    "qid": "Q3842392",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2630,7 +2692,8 @@
     },
     "museum_id": "museo-poldi-pezzoli",
     "qid": "Q3842421",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/virgin_c.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/virgin_c.html",
+    "location_src": "Museo Poldi Pezzoli"
    }
   },
   {
@@ -2674,7 +2737,8 @@
      }
     },
     "museum_id": "musee-jacquemart-andre",
-    "qid": "Q3842434"
+    "qid": "Q3842434",
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -2720,7 +2784,8 @@
     },
     "museum_id": "accademia-carrara",
     "qid": "Q3842487",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/madonna.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/madonna.html",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -2736,7 +2801,7 @@
     "painter": "Mantegna",
     "title": "Madonna and sleeping child",
     "year": "1457",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Bode Museum",
     "kind": "museum",
@@ -2766,7 +2831,8 @@
     },
     "museum_id": "bode-museum",
     "qid": "Q3842501",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/virgin_c.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/virgin_c.html",
+    "location_src": "Bode Museum"
    }
   },
   {
@@ -2811,7 +2877,8 @@
      }
     },
     "museum_id": "musee-jacquemart-andre",
-    "qid": "Q3842511"
+    "qid": "Q3842511",
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -2855,7 +2922,8 @@
      }
     },
     "museum_id": "galleria-sabauda",
-    "qid": "Q3842529"
+    "qid": "Q3842529",
+    "location_src": "Galleria Sabauda"
    }
   },
   {
@@ -2897,7 +2965,8 @@
      }
     },
     "museum_id": "church-of-the-eremitani",
-    "qid": "Q3850320"
+    "qid": "Q3850320",
+    "location_src": "Church of the Eremitani"
    }
   },
   {
@@ -2942,7 +3011,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-tours",
-    "qid": "Q3884943"
+    "qid": "Q3884943",
+    "location_src": "Musée des Beaux-Arts de Tours"
    }
   },
   {
@@ -2988,7 +3058,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3884945",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/03/7agony.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/03/7agony.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3034,7 +3105,8 @@
     },
     "museum_id": "museo-poldi-pezzoli",
     "qid": "Q3922632",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/03/2portrai.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/03/2portrai.html",
+    "location_src": "Museo Poldi Pezzoli"
    }
   },
   {
@@ -3078,7 +3150,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q3932055"
+    "qid": "Q3932055",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3122,7 +3195,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-tours",
-    "qid": "Q3933557"
+    "qid": "Q3933557",
+    "location_src": "Musée des Beaux-Arts de Tours"
    }
   },
   {
@@ -3168,7 +3242,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937431",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/cardinal.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/cardinal.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -3213,7 +3288,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3937495",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/06/6medici.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/06/6medici.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3258,7 +3334,8 @@
     },
     "museum_id": "museo-di-capodimonte",
     "qid": "Q3937533",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/06/3gonzaga.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/06/3gonzaga.html",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3301,8 +3378,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "petit-palais",
-    "qid": "Q3944464"
+    "museum_id": "petit-palais-2",
+    "qid": "Q3944464",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -3320,7 +3398,7 @@
     "year": "1485",
     "city": "Fort Worth",
     "country": "United States",
-    "location": "Museo d'arte Kimbell",
+    "location": "Kimbell Art Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -3345,8 +3423,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-d-arte-kimbell",
-    "qid": "Q3944468"
+    "museum_id": "kimbell-art-museum",
+    "qid": "Q3944468",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -3390,7 +3469,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3944484"
+    "qid": "Q3944484",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3434,9 +3514,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q3944493",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/holyfami.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/holyfami.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -3480,7 +3561,8 @@
      }
     },
     "museum_id": "castelvecchio-museum",
-    "qid": "Q3944497"
+    "qid": "Q3944497",
+    "location_src": "Castelvecchio Museum"
    }
   },
   {
@@ -3524,7 +3606,8 @@
      }
     },
     "museum_id": "basilica-of-sant-andrea",
-    "qid": "Q3944501"
+    "qid": "Q3944501",
+    "location_src": "Basilica of Sant'Andrea"
    }
   },
   {
@@ -3568,7 +3651,8 @@
      }
     },
     "museum_id": "pinacoteca-di-brera",
-    "qid": "Q3946841"
+    "qid": "Q3946841",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -3614,7 +3698,8 @@
     },
     "museum_id": "gallerie-dell-accademia",
     "qid": "Q3947210",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/s_george.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/s_george.html",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -3658,7 +3743,8 @@
     },
     "museum_id": "ca-d-oro",
     "qid": "Q3947946",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/sebastia.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/sebastia.html",
+    "location_src": "Ca' d'Oro"
    }
   },
   {
@@ -3702,7 +3788,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q3947948",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/sebastia.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/sebastia.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3747,7 +3834,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3948606"
+    "qid": "Q3948606",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3792,7 +3880,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3948849"
+    "qid": "Q3948849",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3834,7 +3923,8 @@
      }
     },
     "museum_id": "civic-museums-of-padua",
-    "qid": "Q3955724"
+    "qid": "Q3955724",
+    "location_src": "Civic Museums of Padua"
    }
   },
   {
@@ -3877,7 +3967,8 @@
      }
     },
     "museum_id": "cincinnati-art-museum",
-    "qid": "Q3960017"
+    "qid": "Q3960017",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -3918,7 +4009,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3963987"
+    "qid": "Q3963987",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3959,7 +4051,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q4000154"
+    "qid": "Q4000154",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4003,7 +4096,8 @@
      }
     },
     "museum_id": "stadel-museum",
-    "qid": "Q534108"
+    "qid": "Q534108",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -4046,7 +4140,8 @@
      }
     },
     "museum_id": "accademia-carrara",
-    "qid": "Q53996506"
+    "qid": "Q53996506",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -4092,7 +4187,8 @@
     },
     "museum_id": "pinacoteca-di-brera",
     "qid": "Q546297",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/dead_chr.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/dead_chr.html",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -4132,7 +4228,8 @@
      }
     },
     "museum_id": "italy",
-    "qid": "Q7588508"
+    "qid": "Q7588508",
+    "location_src": "Italy"
    }
   },
   {
@@ -4178,7 +4275,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q959537",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/1/death_vx.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/1/death_vx.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4224,7 +4322,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q965822",
-    "wga_url": "https://www.wga.hu/html/m/mantegna/2/mvictory.html"
+    "wga_url": "https://www.wga.hu/html/m/mantegna/2/mvictory.html",
+    "location_src": "Louvre"
    }
   }
  ]

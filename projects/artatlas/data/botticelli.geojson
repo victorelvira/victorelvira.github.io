@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73833333,
-     41.92166667
+     8.73833,
+     41.92167
     ]
    },
    "properties": {
@@ -44,7 +44,9 @@
       "source": "Wikipedia list",
       "title": "Virgin and Child Supported by an Angel in a Garland"
      }
-    ]
+    ],
+    "museum_id": "musee-fesch",
+    "location_src": "Musée Fesch"
    }
   },
   {
@@ -62,7 +64,7 @@
     "year": "1465–1467",
     "city": "Florence",
     "country": "Italy",
-    "location": "Ospedale degli Innocenti",
+    "location": "Hospital of Innocents",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "87 × 60 cm",
@@ -76,10 +78,11 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "ospedale-degli-innocenti",
+    "museum_id": "hospital-of-innocents",
     "qid": "Q580853",
     "wikidata": "https://www.wikidata.org/wiki/Q580853",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/01madonn.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/01madonn.html",
+    "location_src": "Hospital of Innocents"
    }
   },
   {
@@ -87,8 +90,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.258888888,
-     43.776944444
+     11.2589,
+     43.7769
     ]
    },
    "properties": {
@@ -124,7 +127,9 @@
       "source": "Wikipedia list",
       "title": "The Virgin and Child with Two Angels and the Young St. John the Baptist"
      }
-    ]
+    ],
+    "museum_id": "galleria-dell-accademia",
+    "location_src": "Galleria dell'Accademia"
    }
   },
   {
@@ -164,7 +169,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q15935036 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Louvre"
    }
   },
   {
@@ -199,7 +205,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2717478",
     "wikidata": "https://www.wikidata.org/wiki/Q2717478",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/03loggia.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/03loggia.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -216,7 +223,7 @@
     "title": "Madonna and Child",
     "year": "c. 1467",
     "city": "Paris",
-    "location": "Musée du Petit Palais",
+    "location": "Petit Palais",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "71 × 51 cm",
@@ -230,10 +237,11 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-du-petit-palais",
+    "museum_id": "petit-palais-2",
     "country": "France",
     "qid": "Q3213780",
-    "wikidata": "https://www.wikidata.org/wiki/Q3213780"
+    "wikidata": "https://www.wikidata.org/wiki/Q3213780",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -281,7 +289,8 @@
       "qid": "Q9500247",
       "url": "https://www.wikidata.org/wiki/Q9500247"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -289,8 +298,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.1439,
-     34.1475
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -312,7 +321,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "norton-simon-museum",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -355,7 +365,8 @@
       "qid": "Q2268013",
       "url": "https://www.wikidata.org/wiki/Q2268013"
      }
-    ]
+    ],
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -397,7 +408,8 @@
       "qid": "Q38516820",
       "url": "https://www.wikidata.org/wiki/Q38516820"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts"
    }
   },
   {
@@ -432,7 +444,8 @@
     "museum_id": "palazzo-pitti",
     "qid": "Q742801",
     "wikidata": "https://www.wikidata.org/wiki/Q742801",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/01youngm.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/01youngm.html",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -467,7 +480,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q3213773",
     "wikidata": "https://www.wikidata.org/wiki/Q3213773",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/06glory.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/06glory.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -475,8 +489,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.258888888,
-     43.776944444
+     11.2589,
+     43.7769
     ]
    },
    "properties": {
@@ -512,7 +526,9 @@
       "source": "Wikipedia list",
       "title": "Madonna of the Sea"
      }
-    ]
+    ],
+    "museum_id": "galleria-dell-accademia",
+    "location_src": "Galleria dell'Accademia"
    }
   },
   {
@@ -547,7 +563,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q1109340",
     "wikidata": "https://www.wikidata.org/wiki/Q1109340",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/09fortit.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/09fortit.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -587,7 +604,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q26493340 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery"
    }
   },
   {
@@ -595,8 +613,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -604,7 +622,7 @@
     "title": "Madonna and Child with Five Angels",
     "year": "1470",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Louvre%2011.jpg?width=500",
@@ -632,7 +650,9 @@
       "source": "Wikipedia list",
       "title": "Madonna with Child and Five Angels"
      }
-    ]
+    ],
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -667,7 +687,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q3213801",
     "wikidata": "https://www.wikidata.org/wiki/Q3213801",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/07rosega.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/07rosega.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -698,7 +719,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "uffizi-gallery"
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -706,8 +728,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -733,7 +755,8 @@
     "museum_id": "isabella-stewart-gardner-museum",
     "qid": "Q3210266",
     "wikidata": "https://www.wikidata.org/wiki/Q3210266",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/111madon.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/111madon.html",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -764,7 +787,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art"
+    "museum_id": "national-gallery-of-art",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -798,7 +822,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q7885787",
-    "wikidata": "https://www.wikidata.org/wiki/Q7885787"
+    "wikidata": "https://www.wikidata.org/wiki/Q7885787",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -832,7 +857,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q2267509",
-    "wikidata": "https://www.wikidata.org/wiki/Q2267509"
+    "wikidata": "https://www.wikidata.org/wiki/Q2267509",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -840,15 +866,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.17194,
-     51.49667
+     -0.17162,
+     51.49685
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Portrait of Esmeralda Brandini",
     "year": "1470–1475",
-    "city": "London",
+    "city": "Royal Borough of Kensington and Chelsea",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -867,7 +893,8 @@
     "museum_id": "victoria-and-albert-museum",
     "qid": "Q1113861",
     "wikidata": "https://www.wikidata.org/wiki/Q1113861",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/02lady.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/02lady.html",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -875,8 +902,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -884,7 +911,7 @@
     "title": "Adoration of the Magi of ca. 1470-1475",
     "year": "1470",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Adorazione%20dei%20Magi%20-%20National%20Gallery%20London.jpg?width=500",
@@ -912,7 +939,9 @@
       "source": "Wikipedia list",
       "title": "Adoration of the Kings"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -951,7 +980,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q134547872 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "United States",
+    "location_src": "Columbia Museum of Art"
    }
   },
   {
@@ -959,17 +990,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "St. Sebastian",
     "year": "1474",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "195 × 75 cm",
@@ -983,9 +1014,10 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q2303840",
-    "wikidata": "https://www.wikidata.org/wiki/Q2303840"
+    "wikidata": "https://www.wikidata.org/wiki/Q2303840",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1020,7 +1052,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q959174",
     "wikidata": "https://www.wikidata.org/wiki/Q959174",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/04medal.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/04medal.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1061,7 +1094,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q2405771 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -1096,7 +1130,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q488825",
     "wikidata": "https://www.wikidata.org/wiki/Q488825",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/20adorat.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/21/20adorat.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1141,7 +1176,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Lady"
      }
-    ]
+    ],
+    "museum_id": "lindenau-museum",
+    "location_src": "Lindenau museum"
    }
   },
   {
@@ -1182,7 +1219,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3399442 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -1222,7 +1260,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q26493330 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1253,7 +1292,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "art-institute-of-chicago"
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -1285,7 +1325,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "basilica-of-santa-maria-novella",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/4birth.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/21/4birth.html",
+    "location_src": "Basilica of Santa Maria Novella"
    }
   },
   {
@@ -1293,17 +1334,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Madonna and Child with Eight Angels",
     "year": "c. 1478",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "diameter 135 cm",
@@ -1316,8 +1357,9 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/1madonna.html"
+    "museum_id": "gemaldegalerie-berlin",
+    "wga_url": "https://www.wga.hu/html/b/botticel/22/1madonna.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1325,17 +1367,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Portrait of Giuliano de' Medici",
     "year": "1478",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "54 × 36 cm",
@@ -1349,10 +1391,11 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q2272723",
     "wikidata": "https://www.wikidata.org/wiki/Q2272723",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/07medici.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/07medici.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1392,7 +1435,8 @@
       "qid": "Q3399442",
       "url": "https://www.wikidata.org/wiki/Q3399442"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1424,7 +1468,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "wga_url": "https://www.wga.hu/html/b/botticel/1early/050adora.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/1early/050adora.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1440,7 +1485,7 @@
     "painter": "Botticelli",
     "title": "The Annunciation",
     "year": "c. 1479",
-    "city": "Glens Falls",
+    "city": "New York",
     "location": "The Hyde Collection",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
@@ -1473,7 +1518,8 @@
       "qid": "Q131450083",
       "url": "https://www.wikidata.org/wiki/Q131450083"
      }
-    ]
+    ],
+    "location_src": "The Hyde Collection"
    }
   },
   {
@@ -1508,7 +1554,8 @@
     "museum_id": "ognissanti",
     "qid": "Q1114329",
     "wikidata": "https://www.wikidata.org/wiki/Q1114329",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/5augustu.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/21/5augustu.html",
+    "location_src": "Ognissanti"
    }
   },
   {
@@ -1516,17 +1563,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Portrait of a Young Woman",
     "year": "after 1480",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "47.5 × 35 cm",
@@ -1539,8 +1586,9 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/03youngw.html"
+    "museum_id": "gemaldegalerie-berlin",
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/03youngw.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1548,8 +1596,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -1580,7 +1628,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q64514470 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -1615,7 +1664,8 @@
     "museum_id": "museo-poldi-pezzoli",
     "qid": "Q2269585",
     "wikidata": "https://www.wikidata.org/wiki/Q2269585",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/2libro.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/22/2libro.html",
+    "location_src": "Museo Poldi Pezzoli"
    }
   },
   {
@@ -1650,7 +1700,8 @@
     "museum_id": "national-gallery",
     "qid": "Q1760564",
     "wikidata": "https://www.wikidata.org/wiki/Q1760564",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/10youngm.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/10youngm.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1685,7 +1736,8 @@
     "museum_id": "stadel-museum",
     "qid": "Q4373363",
     "wikidata": "https://www.wikidata.org/wiki/Q4373363",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/08youngw.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/08youngw.html",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -1694,7 +1746,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1724,7 +1776,9 @@
      }
     },
     "dimensions": "diameter 58.9 cm",
-    "medium": "Tempera on panel"
+    "medium": "Tempera on panel",
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1756,7 +1810,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/6annunci.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/21/6annunci.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1788,7 +1843,8 @@
     },
     "museum_id": "sistine-chapel",
     "country": "Vatican City",
-    "wga_url": "https://www.wga.hu/html/b/botticel/4sistina/sixtus2.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/4sistina/sixtus2.html",
+    "location_src": "Sistine Chapel"
    }
   },
   {
@@ -1823,7 +1879,8 @@
     "country": "Vatican City",
     "qid": "Q2268688",
     "wikidata": "https://www.wikidata.org/wiki/Q2268688",
-    "wga_url": "https://www.wga.hu/html/b/botticel/4sistina/punishme/korah.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/4sistina/punishme/korah.html",
+    "location_src": "Sistine Chapel"
    }
   },
   {
@@ -1857,7 +1914,8 @@
     "museum_id": "sistine-chapel",
     "country": "Vatican City",
     "qid": "Q1131272",
-    "wikidata": "https://www.wikidata.org/wiki/Q1131272"
+    "wikidata": "https://www.wikidata.org/wiki/Q1131272",
+    "location_src": "Sistine Chapel"
    }
   },
   {
@@ -1891,7 +1949,8 @@
     "museum_id": "sistine-chapel",
     "country": "Vatican City",
     "qid": "Q2268725",
-    "wikidata": "https://www.wikidata.org/wiki/Q2268725"
+    "wikidata": "https://www.wikidata.org/wiki/Q2268725",
+    "location_src": "Sistine Chapel"
    }
   },
   {
@@ -1926,7 +1985,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2551625",
     "wikidata": "https://www.wikidata.org/wiki/Q2551625",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/30magnif.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/22/30magnif.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1961,7 +2021,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q549847",
     "wikidata": "https://www.wikidata.org/wiki/Q549847",
-    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/12primav.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/12primav.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1996,7 +2057,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2426058",
     "wikidata": "https://www.wikidata.org/wiki/Q2426058",
-    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/21pallas.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/21pallas.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2031,7 +2093,8 @@
     "museum_id": "national-gallery-of-art",
     "qid": "Q7232336",
     "wikidata": "https://www.wikidata.org/wiki/Q7232336",
-    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/11youngm.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/11youngm.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2074,7 +2137,8 @@
       "qid": "Q1131019",
       "url": "https://www.wikidata.org/wiki/Q1131019"
      }
-    ]
+    ],
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2105,7 +2169,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2136,7 +2201,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2171,7 +2237,8 @@
     "museum_id": "louvre",
     "qid": "Q1114881",
     "wikidata": "https://www.wikidata.org/wiki/Q1114881",
-    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/51lemmi.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/51lemmi.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2206,7 +2273,8 @@
     "museum_id": "louvre",
     "qid": "Q6287319",
     "wikidata": "https://www.wikidata.org/wiki/Q6287319",
-    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/52lemmi.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/52lemmi.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2214,8 +2282,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -2251,7 +2319,9 @@
       "source": "Wikipedia list",
       "title": "Bardi Altarpiece ( The Virgin and Child Enthroned )"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2283,7 +2353,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/6annunci.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/21/6annunci.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2318,7 +2389,8 @@
     "museum_id": "national-gallery",
     "qid": "Q2293953",
     "wikidata": "https://www.wikidata.org/wiki/Q2293953",
-    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/41venusm.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/41venusm.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2353,7 +2425,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q151047",
     "wikidata": "https://www.wikidata.org/wiki/Q151047",
-    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/33birth.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/5allegor/33birth.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2361,7 +2434,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -2370,7 +2443,7 @@
     "title": "Madonna and Child with six angels and Saint John the Baptist as Child",
     "year": "1489",
     "location": "Galleria Borghese",
-    "city": "Roma Capitale",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20086.jpg?width=500",
@@ -2398,7 +2471,9 @@
       "source": "Wikipedia list",
       "title": "Virgin and Child with Six Angels and the Baptist"
      }
-    ]
+    ],
+    "museum_id": "galleria-borghese",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -2406,8 +2481,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -2446,7 +2521,8 @@
       "qid": "Q49405586",
       "url": "https://www.wikidata.org/wiki/Q49405586"
      }
-    ]
+    ],
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -2454,8 +2530,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.61917,
-     39.32611
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -2479,7 +2555,9 @@
     "museum_id": "baltimore-museum-of-art",
     "city": "Baltimore",
     "qid": "Q16161113",
-    "wikidata": "https://www.wikidata.org/wiki/Q16161113"
+    "wikidata": "https://www.wikidata.org/wiki/Q16161113",
+    "country": "United States",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -2510,7 +2588,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "art-institute-of-chicago"
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -2545,7 +2624,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2269291",
     "wikidata": "https://www.wikidata.org/wiki/Q2269291",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/40pomegr.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/22/40pomegr.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2575,7 +2655,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum"
+    "museum_id": "national-museum",
+    "location_src": "National Museum"
    }
   },
   {
@@ -2606,7 +2687,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "uffizi-gallery"
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2638,7 +2720,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/2predell.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/2predell.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2670,7 +2753,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/4predell.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/4predell.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2702,7 +2786,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/5predell.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/5predell.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2734,7 +2819,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/6predell.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/3barnaba/6predell.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2775,7 +2861,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q1131263 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2807,7 +2894,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/21predel.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/21predel.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2839,7 +2927,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/22predel.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/22predel.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2871,7 +2960,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/21/6annunci.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/21/6annunci.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2903,7 +2993,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/24predel.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/24predel.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2935,7 +3026,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/25predel.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/8smarco/25predel.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2970,7 +3062,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q2714237",
     "wikidata": "https://www.wikidata.org/wiki/Q2714237",
-    "wga_url": "https://www.wga.hu/html/b/botticel/22/70cestel.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/22/70cestel.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2986,7 +3079,7 @@
     "painter": "Botticelli",
     "title": "The Annunciation",
     "year": "1490",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -3010,7 +3103,8 @@
       "qid": "Q28797591",
       "url": "https://www.wikidata.org/wiki/Q28797591"
      }
-    ]
+    ],
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -3051,7 +3145,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q735326 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3082,7 +3177,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-del-prado"
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -3113,7 +3209,8 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "liechtenstein-museum"
+    "museum_id": "liechtenstein-museum",
+    "location_src": "Liechtenstein Museum"
    }
   },
   {
@@ -3153,7 +3250,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q27955560 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -3161,8 +3259,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11436,
+     42.37409
     ]
    },
    "properties": {
@@ -3192,7 +3290,8 @@
       "qid": "Q106860038",
       "url": "https://www.wikidata.org/wiki/Q106860038"
      }
-    ]
+    ],
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -3227,7 +3326,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q1114823",
     "wikidata": "https://www.wikidata.org/wiki/Q1114823",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/04august.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/04august.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3266,7 +3366,9 @@
      }
     },
     "dimensions": "134 × 92 cm",
-    "medium": "Tempera on canvas"
+    "medium": "Tempera on canvas",
+    "museum_id": "galleria-palatina",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3274,8 +3376,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -3311,7 +3413,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Lorenzo di Ser Piero Lorenzi"
      }
-    ]
+    ],
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -3319,8 +3423,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3345,7 +3449,8 @@
     "city": "São Paulo",
     "country": "Brazil",
     "qid": "Q3213785",
-    "wikidata": "https://www.wikidata.org/wiki/Q3213785"
+    "wikidata": "https://www.wikidata.org/wiki/Q3213785",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3379,7 +3484,8 @@
     },
     "museum_id": "museo-stibbert",
     "qid": "Q140076644",
-    "wikidata": "https://www.wikidata.org/wiki/Q140076644"
+    "wikidata": "https://www.wikidata.org/wiki/Q140076644",
+    "location_src": "Museo Stibbert"
    }
   },
   {
@@ -3387,8 +3493,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -3422,7 +3528,8 @@
       "qid": "Q118632366",
       "url": "https://www.wikidata.org/wiki/Q118632366"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -3454,7 +3561,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "biblioteca-ambrosiana",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/07padigl.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/07padigl.html",
+    "location_src": "Biblioteca Ambrosiana"
    }
   },
   {
@@ -3494,7 +3602,8 @@
       "qid": "Q1114806",
       "url": "https://www.wikidata.org/wiki/Q1114806"
      }
-    ]
+    ],
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -3529,7 +3638,8 @@
     "museum_id": "uffizi-gallery",
     "qid": "Q1217187",
     "wikidata": "https://www.wikidata.org/wiki/Q1217187",
-    "wga_url": "https://www.wga.hu/html/b/botticel/90scenic/13calumn.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/90scenic/13calumn.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3564,7 +3674,8 @@
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3208203",
     "wikidata": "https://www.wikidata.org/wiki/Q3208203",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/051jerom.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/051jerom.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3599,7 +3710,8 @@
     "museum_id": "museo-poldi-pezzoli",
     "qid": "Q1115423",
     "wikidata": "https://www.wikidata.org/wiki/Q1115423",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/02lamenx.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/02lamenx.html",
+    "location_src": "Museo Poldi Pezzoli"
    }
   },
   {
@@ -3607,7 +3719,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -3631,7 +3743,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "rijksmuseum",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/11judith.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/11judith.html",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -3669,7 +3782,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q73916251 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Birmingham Museums & Art Gallery"
    }
   },
   {
@@ -3704,7 +3818,8 @@
     "country": "Italy",
     "qid": "Q1115413",
     "wikidata": "https://www.wikidata.org/wiki/Q1115413",
-    "wga_url": "https://www.wga.hu/html/b/botticel/90scenic/21virgin.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/90scenic/21virgin.html",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -3712,8 +3827,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09912,
+     42.33818
     ]
    },
    "properties": {
@@ -3739,7 +3854,8 @@
     "museum_id": "isabella-stewart-gardner-museum",
     "qid": "Q1115514",
     "wikidata": "https://www.wikidata.org/wiki/Q1115514",
-    "wga_url": "https://www.wga.hu/html/b/botticel/90scenic/32lucret.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/90scenic/32lucret.html",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -3747,8 +3863,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -3790,7 +3906,9 @@
       "source": "Wikipedia list",
       "title": "St. Jerome"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -3798,8 +3916,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -3839,7 +3957,8 @@
       "qid": "Q27968218",
       "url": "https://www.wikidata.org/wiki/Q27968218"
      }
-    ]
+    ],
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -3874,7 +3993,8 @@
     "museum_id": "national-gallery",
     "qid": "Q974674",
     "wikidata": "https://www.wikidata.org/wiki/Q974674",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/132nativi.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/132nativi.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3882,8 +4002,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.17917,
-     51.48167
+     -3.1773,
+     51.4858
     ]
    },
    "properties": {
@@ -3891,7 +4011,7 @@
     "title": "Virgin and Child with a Pomegranate",
     "year": "c. 1500",
     "city": "Cardiff",
-    "location": "National Museum of Wales",
+    "location": "National Museum Cardiff",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "64.8 × 41.9 cm",
@@ -3903,7 +4023,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-wales",
+    "museum_id": "national-museum-cardiff",
     "qid": "Q118675987",
     "wikidata": "https://www.wikidata.org/wiki/Q118675987",
     "_overrides": {
@@ -3912,7 +4032,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q118675987 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "Wales",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -3920,8 +4042,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11436,
+     42.37409
     ]
    },
    "properties": {
@@ -3929,7 +4051,7 @@
     "title": "Mystic Crucifixion",
     "year": "c. 1500",
     "city": "Cambridge",
-    "location": "Fogg Art Museum",
+    "location": "Fogg Museum",
     "attribution": "generally accepted",
     "medium": "Tempera and oil on canvas ( transferred from panel )",
     "dimensions": "72.39 × 51.44 cm",
@@ -3943,10 +4065,12 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fogg-art-museum",
+    "museum_id": "fogg-museum",
     "qid": "Q3005527",
     "wikidata": "https://www.wikidata.org/wiki/Q3005527",
-    "wga_url": "https://www.wga.hu/html/b/botticel/91late/09crucif.html"
+    "wga_url": "https://www.wga.hu/html/b/botticel/91late/09crucif.html",
+    "country": "United States",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -3954,8 +4078,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.675609,
-     45.70386
+     9.6758,
+     45.7042
     ]
    },
    "properties": {
@@ -3991,7 +4115,9 @@
       "source": "Wikipedia list",
       "title": "Christ Crowned with Thorns"
      }
-    ]
+    ],
+    "museum_id": "accademia-carrara",
+    "location_src": "Accademia Carrara"
    }
   },
   {
@@ -3999,8 +4125,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.487892,
-     41.898332
+     12.48789,
+     41.89833
     ]
    },
    "properties": {
@@ -4036,7 +4162,9 @@
       "source": "Wikipedia list",
       "title": "Transfiguration, St. Jerome, St. Augustine"
      }
-    ]
+    ],
+    "museum_id": "palazzo-pallavicini-rospigliosi",
+    "location_src": "Palazzo Pallavicini-Rospigliosi"
    }
   },
   {
@@ -4044,8 +4172,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6,
-     37.175
+     -3.59904,
+     37.17599
     ]
    },
    "properties": {
@@ -4076,7 +4204,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q3884942 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "Spain",
+    "location_src": "Royal Chapel"
    }
   },
   {
@@ -4114,7 +4244,8 @@
       "qid": "Q120985146",
       "url": "https://www.wikidata.org/wiki/Q120985146"
      }
-    ]
+    ],
+    "location_src": "North Carolina Museum of Art"
    }
   },
   {
@@ -4154,7 +4285,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q28039505 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -4194,7 +4326,8 @@
       "qid": "Q115652286",
       "url": "https://www.wikidata.org/wiki/Q115652286"
      }
-    ]
+    ],
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4236,7 +4369,8 @@
       "qid": "Q3636752",
       "url": "https://www.wikidata.org/wiki/Q3636752"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4278,7 +4412,8 @@
       "qid": "Q3998130",
       "url": "https://www.wikidata.org/wiki/Q3998130"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4312,7 +4447,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q21813258",
-    "wikidata": "https://www.wikidata.org/wiki/Q21813258"
+    "wikidata": "https://www.wikidata.org/wiki/Q21813258",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4320,17 +4456,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Last Miracle and the Death of St. Zenobius",
     "year": "1500–1505",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "66 × 182 cm",
@@ -4344,7 +4480,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
+    "museum_id": "gemaldegalerie-berlin",
     "qid": "Q21813258",
     "wikidata": "https://www.wikidata.org/wiki/Q21813258",
     "_merged": [
@@ -4354,7 +4490,8 @@
       "qid": "Q919490",
       "url": "https://www.wikidata.org/wiki/Q919490"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -4362,8 +4499,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -4391,7 +4528,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4399,8 +4538,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.255277777,
-     43.768333333
+     11.25528,
+     43.76833
     ]
    },
    "properties": {
@@ -4428,7 +4567,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -4436,8 +4577,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4465,7 +4606,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4473,8 +4616,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -4502,7 +4645,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -4510,7 +4655,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -4539,7 +4684,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -4547,8 +4694,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -4576,7 +4723,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -4584,8 +4733,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -4613,7 +4762,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -4621,8 +4772,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -4650,7 +4801,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -4658,8 +4811,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -4687,7 +4840,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -4731,7 +4886,9 @@
       "title": "Last Miracle and the Death of St. Zenobius",
       "ref": "https://en.wikipedia.org/wiki/Scenes_from_the_Life_of_Saint_Zenobius"
      }
-    ]
+    ],
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -4739,8 +4896,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -4768,7 +4925,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -4776,7 +4935,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.185952,
+     9.18595,
      45.46378
     ]
    },
@@ -4805,7 +4964,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-ambrosiana",
+    "location_src": "Pinacoteca Ambrosiana"
    }
   },
   {
@@ -4813,8 +4974,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -4842,7 +5003,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -4850,8 +5013,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.487892,
-     41.898332
+     12.48789,
+     41.89833
     ]
    },
    "properties": {
@@ -4879,7 +5042,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-pallavicini-rospigliosi",
+    "location_src": "Palazzo Pallavicini-Rospigliosi"
    }
   },
   {
@@ -4887,8 +5052,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -4896,7 +5061,7 @@
     "title": "Three Scenes from the Story of Esther",
     "year": "1470",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trois%20sc%C3%A8nes%20de%20l%27histoire%20d%27Esther%20-%20Filippino%20Lippi%20%3B%20Sandro%20Botticelli%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20RF%201972%2013.jpg?width=500",
@@ -4916,7 +5081,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -4959,7 +5126,9 @@
       "source": "Wikipedia list",
       "title": "The Story of Nastagio degli Onesti IV"
      }
-    ]
+    ],
+    "museum_id": "palazzo-pucci",
+    "location_src": "Palazzo Pucci"
    }
   },
   {
@@ -4967,15 +5136,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.329841305,
-     45.430766888
+     12.32984,
+     45.43077
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Judgement of Paris",
     "year": "1486",
-    "location": "Cini Palace Gallery",
+    "location": "Cini Palace",
     "city": "Venice",
     "country": "Italy",
     "attribution": "generally accepted",
@@ -4996,7 +5165,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cini-palace",
+    "location_src": "Cini Palace"
    }
   },
   {
@@ -5004,8 +5175,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.126944444,
-     51.519444444
+     -0.12694,
+     51.51944
     ]
    },
    "properties": {
@@ -5033,7 +5204,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "british-museum",
+    "location_src": "British Museum"
    }
   },
   {
@@ -5041,8 +5214,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5070,7 +5243,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5078,7 +5253,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -5107,7 +5282,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -5115,8 +5292,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.024722222,
-     52.231666666
+     21.02472,
+     52.23167
     ]
    },
    "properties": {
@@ -5144,7 +5321,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-in-warsaw",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -5152,8 +5331,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.394722222,
-     52.521944444
+     13.39472,
+     52.52194
     ]
    },
    "properties": {
@@ -5181,7 +5360,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bode-museum",
+    "location_src": "Bode Museum"
    }
   },
   {
@@ -5189,8 +5370,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -5198,7 +5379,7 @@
     "title": "Madonna and Child with Two Angels",
     "year": "1500",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madonna%20and%20Child%20with%20Two%20Angels%20MET%20EP256.jpg?width=500",
@@ -5218,7 +5399,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5226,8 +5409,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -5255,7 +5438,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5263,8 +5448,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -5282,7 +5467,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107436768",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5290,8 +5477,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -5309,7 +5496,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107437167",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5317,8 +5506,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -5336,7 +5525,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q107441770",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5344,8 +5535,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5353,7 +5544,7 @@
     "title": "An Allegory",
     "year": "1520",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Italian%20%28Florentine%29%20School%20-%20An%20Allegory%20-%20NG916%20-%20National%20Gallery.jpg?width=500",
@@ -5371,7 +5562,9 @@
       "was": "generally accepted",
       "note": "dated 1520, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5380,7 +5573,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -5414,7 +5607,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -5422,8 +5617,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.365103,
-     48.201253
+     16.3651,
+     48.20125
     ]
    },
    "properties": {
@@ -5451,7 +5646,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "academy-of-fine-arts-vienna",
+    "location_src": "Academy of Fine Arts Vienna"
    }
   },
   {
@@ -5488,7 +5685,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -5496,8 +5695,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -5525,7 +5724,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -5562,7 +5763,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -5599,7 +5802,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bodmer-foundation",
+    "location_src": "Bodmer Foundation"
    }
   },
   {
@@ -5607,8 +5812,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -5636,7 +5841,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -5644,8 +5851,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -5673,7 +5880,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -5681,8 +5890,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -5710,7 +5919,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -5718,8 +5929,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.185655,
-     39.826019
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -5747,7 +5958,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-de-arte-de-indianapolis",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -5763,8 +5976,8 @@
     "painter": "Botticelli",
     "title": "The Flight into Egypt",
     "year": "1510",
-    "location": "Musée Jacquemart-André",
-    "city": "8th arrondissement of Paris",
+    "location": "Musée Jacquemart André",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Huida%20a%20Egipto%2C%20Sandro%20Botticelli.jpg?width=500",
@@ -5784,7 +5997,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-jacquemart-andre",
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -5792,8 +6007,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -5821,7 +6036,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -5858,7 +6075,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -5866,8 +6085,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -5901,7 +6120,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -5909,15 +6130,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.80638889,
-     43.95263889
+     4.80639,
+     43.95264
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Vénus et trois putti",
     "year": "1500",
-    "location": "Musée du Petit Palais",
+    "location": "Petit Palais",
     "city": "Avignon",
     "country": "France",
     "attribution": "generally accepted",
@@ -5938,7 +6159,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "petit-palais",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -5946,15 +6169,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.80638889,
-     43.95263889
+     4.80639,
+     43.95264
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Madonna and Child with an Angel",
     "year": "1450",
-    "location": "Musée du Petit Palais",
+    "location": "Petit Palais",
     "city": "Avignon",
     "country": "France",
     "attribution": "copy or later version",
@@ -5981,7 +6204,9 @@
       "was": "generally accepted",
       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "petit-palais",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -5989,15 +6214,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Saint John the Baptist",
     "year": "",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -6008,7 +6233,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27965124",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -6016,15 +6243,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "The Virgin and Saint John the Baptist Adoring the Infant Christ",
     "year": "1477",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -6045,7 +6272,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -6082,7 +6311,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -6119,7 +6350,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -6127,8 +6360,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -84.496944444,
-     39.113888888
+     -84.4969,
+     39.1139
     ]
    },
    "properties": {
@@ -6156,7 +6389,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cincinnati-art-museum",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -6193,7 +6428,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bristol-city-museum-art-gallery",
+    "location_src": "Bristol City Museum & Art Gallery"
    }
   },
   {
@@ -6201,8 +6438,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.258888888,
-     43.776944444
+     11.2589,
+     43.7769
     ]
    },
    "properties": {
@@ -6230,7 +6467,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-dell-accademia",
+    "location_src": "Galleria dell'Accademia"
    }
   },
   {
@@ -6238,8 +6477,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -6247,7 +6486,7 @@
     "title": "The Trinity with Saint Mary Magdalene and Saint John the Baptist, the Archangel Raphael and Tobias",
     "year": "1487",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Trinity.jpg?width=500",
@@ -6274,7 +6513,9 @@
       "title": "Holy Trinity",
       "ref": "https://en.wikipedia.org/wiki/Holy_Trinity_(Botticelli)"
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -6282,8 +6523,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.178333333,
-     47.645833333
+     9.17833,
+     47.64583
     ]
    },
    "properties": {
@@ -6311,7 +6552,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kreuzlingen",
+    "location_src": "Kreuzlingen"
    }
   },
   {
@@ -6319,8 +6562,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -6338,7 +6581,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118680495",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -6346,8 +6591,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -6365,7 +6610,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119927836",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -6402,7 +6649,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -6410,8 +6659,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -84.496944444,
-     39.113888888
+     -84.4969,
+     39.1139
     ]
    },
    "properties": {
@@ -6429,7 +6678,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q117442973",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "cincinnati-art-museum",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -6437,8 +6688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -6464,7 +6715,9 @@
       "was": "generally accepted",
       "note": "dated 1425, before birth (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -6501,7 +6754,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "bob-jones-university-museum-and-gallery",
+    "location_src": "Bob Jones University Museum and Gallery"
    }
   },
   {
@@ -6509,8 +6764,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -6518,7 +6773,7 @@
     "title": "Noli me Tangere (predella, panel three)",
     "year": "1930",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20%281444-1445-1510%29%20%28copy%20after%29%20-%20Noli%20me%20Tangere%20%28predella%2C%20panel%20three%29%20-%20P.1947.Lf.41.3%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -6536,7 +6791,9 @@
       "was": "generally accepted",
       "note": "dated 1930, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -6544,8 +6801,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -6553,7 +6810,7 @@
     "title": "Last Moments of the Magdalene (predella, panel four)",
     "year": "1930",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20%281444-1445-1510%29%20-%20Last%20Moments%20of%20the%20Magdalene%20%28predella%2C%20panel%20four%29%20-%20P.1947.Lf.41.4%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -6571,7 +6828,9 @@
       "was": "generally accepted",
       "note": "dated 1930, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -6579,8 +6838,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -6588,7 +6847,7 @@
     "title": "Scenes from the Life of Mary Magdalene: Modern Copy after Sandro Botticelli (four predella panels)",
     "year": "1930",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20%281444-1445-1510%29%20%28copy%20after%29%20-%20Scenes%20from%20the%20Life%20of%20Mary%20Magdalene%2C%20Modern%20Copy%20after%20Sandro%20Botticelli%20%28four%20predella%20panels%29%20-%20P.1947.Lf.41%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -6606,7 +6865,9 @@
       "was": "generally accepted",
       "note": "dated 1930, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -6614,8 +6875,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -6623,7 +6884,7 @@
     "title": "Feast in the House of Simon (predella, panel two)",
     "year": "1930",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20%281444-1445-1510%29%20%28copy%20after%29%20-%20Feast%20in%20the%20House%20of%20Simon%20%28predella%2C%20panel%20two%29%20-%20P.1947.Lf.41.2%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -6641,7 +6902,9 @@
       "was": "generally accepted",
       "note": "dated 1930, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -6649,8 +6912,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.695262,
-     45.055412
+     9.69526,
+     45.05541
     ]
    },
    "properties": {
@@ -6678,7 +6941,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "piacenza-civic-museum",
+    "location_src": "Piacenza Civic Museum"
    }
   }
  ]

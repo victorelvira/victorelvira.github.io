@@ -43,7 +43,8 @@
      }
     },
     "museum_id": "palace-of-fine-arts",
-    "qid": "Q105530002"
+    "qid": "Q105530002",
+    "location_src": "Palace of Fine arts"
    }
   },
   {
@@ -85,7 +86,8 @@
      }
     },
     "museum_id": "anfiteatro-simon-bolivar",
-    "qid": "Q115329547"
+    "qid": "Q115329547",
+    "location_src": "Anfiteatro Simón Bolivar"
    }
   },
   {
@@ -93,8 +95,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -126,7 +128,8 @@
      }
     },
     "museum_id": "los-angeles-county-museum-of-art",
-    "qid": "Q20881087"
+    "qid": "Q20881087",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -144,7 +147,7 @@
     "year": "1954",
     "city": "Khamovniki District",
     "country": "Russia",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -164,8 +167,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "pushkin-museum-of-fine-arts",
-    "qid": "Q21512830"
+    "museum_id": "pushkin-museum",
+    "qid": "Q21512830",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -206,7 +210,8 @@
      }
     },
     "museum_id": "museum-of-latin-american-art-of-buenos-aires",
-    "qid": "Q21606628"
+    "qid": "Q21606628",
+    "location_src": "Museum of Latin American Art of Buenos Aires"
    }
   },
   {
@@ -247,7 +252,8 @@
      }
     },
     "museum_id": "museo-mural-diego-rivera",
-    "qid": "Q6135245"
+    "qid": "Q6135245",
+    "location_src": "Museo Mural Diego Rivera"
    }
   },
   {
@@ -255,7 +261,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     35.204166666,
+     35.20417,
      31.7725
     ]
    },
@@ -284,7 +290,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "israel-museum",
+    "location_src": "Israel Museum"
    }
   },
   {
@@ -292,8 +300,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -321,7 +329,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -329,8 +339,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -338,7 +348,7 @@
     "title": "The Café Terrace",
     "year": "1915",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20terraza%20del%20caf%C3%A9%2C%20Diego%20Rivera%2C%201915.jpg?width=500",
@@ -358,7 +368,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -366,8 +378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.977611111,
-     40.761444444
+     -73.9775,
+     40.7617
     ]
    },
    "properties": {
@@ -375,7 +387,7 @@
     "title": "Cubist Landscape",
     "year": "1912",
     "location": "Museum of Modern Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%20cubista%2C%20Diego%20Rivera%2C%201912.jpg?width=500",
@@ -395,7 +407,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -404,7 +418,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -432,7 +446,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -441,7 +457,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -469,7 +485,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -477,8 +495,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -506,7 +524,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -514,16 +534,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.127789,
-     51.491062
+     -0.12722,
+     51.49083
     ]
    },
    "properties": {
     "painter": "Diego Rivera",
     "title": "Still Life",
     "year": "1916",
-    "location": "Tate",
-    "city": "City of Westminster",
+    "location": "Tate Britain",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Naturaleza%20muerta%20%28Nature%20morte%29%2C%20Diego%20Rivera%2C%201916.jpg?width=500",
@@ -543,7 +563,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tate-britain",
+    "location_src": "Tate Britain"
    }
   },
   {
@@ -551,8 +573,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6939961,
-     40.40857143
+     -3.694,
+     40.40857
     ]
    },
    "properties": {
@@ -580,7 +602,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-nacional-centro-de-arte-reina-sofia",
+    "location_src": "Museo Nacional Centro de Arte Reina Sofía"
    }
   },
   {
@@ -588,8 +612,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.6939961,
-     40.40857143
+     -3.694,
+     40.40857
     ]
    },
    "properties": {
@@ -617,7 +641,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-nacional-centro-de-arte-reina-sofia",
+    "location_src": "Museo Nacional Centro de Arte Reina Sofía"
    }
   },
   {
@@ -625,15 +651,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.879722,
-     52.357778
+     4.87972,
+     52.35806
     ]
    },
    "properties": {
     "painter": "Diego Rivera",
     "title": "The Meager Table",
     "year": "1917",
-    "location": "Stedelijk Museum Amsterdam",
+    "location": "Stedelijk Museum",
     "city": "Amsterdam",
     "country": "Netherlands",
     "attribution": "generally accepted",
@@ -654,7 +680,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stedelijk-museum",
+    "location_src": "Stedelijk Museum"
    }
   },
   {
@@ -662,15 +690,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.879722,
-     52.357778
+     4.87972,
+     52.35806
     ]
    },
    "properties": {
     "painter": "Diego Rivera",
     "title": "Still Life with Green House",
     "year": "1917",
-    "location": "Stedelijk Museum Amsterdam",
+    "location": "Stedelijk Museum",
     "city": "Amsterdam",
     "country": "Netherlands",
     "attribution": "generally accepted",
@@ -691,7 +719,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "stedelijk-museum",
+    "location_src": "Stedelijk Museum"
    }
   },
   {
@@ -699,8 +729,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944444,
-     52.095833333
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -708,7 +738,7 @@
     "title": "Still Life with a Liqueur Bottle",
     "year": "1915",
     "location": "Kröller-Müller Museum",
-    "city": "Ede",
+    "city": "Otterlo",
     "country": "Netherlands",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Naturaleza%20muerta%20con%20botella%20de%20licor%2C%20Diego%20Rivera%2C%201915.jpg?width=500",
@@ -728,7 +758,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -736,8 +768,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.202653,
-     36.381854
+     -94.20265,
+     36.38185
     ]
    },
    "properties": {
@@ -765,7 +797,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "crystal-bridges-museum-of-american-art",
+    "location_src": "Crystal Bridges Museum of American Art"
    }
   },
   {
@@ -773,8 +807,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -802,7 +836,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -810,8 +846,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -839,7 +875,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -847,8 +885,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -876,7 +914,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -884,8 +924,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -913,7 +953,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -921,8 +963,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294491,
-     38.639306
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -950,7 +992,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -959,7 +1003,7 @@
     "type": "Point",
     "coordinates": [
      -58.39297,
-     -34.583986
+     -34.58399
     ]
    },
    "properties": {
@@ -987,7 +1031,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-argentina",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -995,8 +1041,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -99.13944444,
-     19.43638889
+     -99.13944,
+     19.43639
     ]
    },
    "properties": {
@@ -1024,7 +1070,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-nacional-de-arte",
+    "location_src": "Museo Nacional de Arte"
    }
   }
  ]

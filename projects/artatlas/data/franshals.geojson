@@ -30,7 +30,10 @@
     },
     "museum_id": "frans-hals-museum",
     "qid": "Q2145365",
-    "wikidata": "https://www.wikidata.org/wiki/Q2145365"
+    "wikidata": "https://www.wikidata.org/wiki/Q2145365",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -46,7 +49,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of a Woman Standing",
     "year": "c.1611",
-    "location": "Devonshire Collection",
+    "location": "Chatsworth House",
     "attribution": "generally accepted",
     "dimensions": "94.2 × 71.1 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Frans_Hals_-_Portrait_of_a_woman.jpg/500px-Frans_Hals_-_Portrait_of_a_woman.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -59,11 +62,13 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "devonshire-collection",
-    "city": "Chatsworth House",
+    "museum_id": "chatsworth-house",
+    "city": "Bakewell",
     "qid": "Q17646707",
     "wikidata": "https://www.wikidata.org/wiki/Q17646707",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/03portwo.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/03portwo.html",
+    "country": "United Kingdom",
+    "location_src": "Chatsworth House"
    }
   },
   {
@@ -71,8 +76,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.92773,
-     52.45042
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
@@ -92,8 +97,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barber-institute-of-fine-arts",
-    "city": "Birmingham",
-    "country": "United Kingdom"
+    "city": "Edgbaston",
+    "country": "United Kingdom",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -101,8 +107,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.96375,
-     40.67131
+     -73.96363,
+     40.67121
     ]
    },
    "properties": {
@@ -122,7 +128,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "brooklyn-museum",
-    "city": "New York",
+    "city": "Brooklyn",
     "country": "United States",
     "_merged": [
      {
@@ -131,7 +137,8 @@
       "qid": "Q17646925",
       "url": "https://www.wikidata.org/wiki/Q17646925"
      }
-    ]
+    ],
+    "location_src": "Brooklyn Museum"
    }
   },
   {
@@ -163,7 +170,10 @@
     "museum_id": "frans-hals-museum",
     "qid": "Q8242264",
     "wikidata": "https://www.wikidata.org/wiki/Q8242264",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/04nooff.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/04nooff.html",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -171,8 +181,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.94898,
-     40.44369
+     -79.949,
+     40.4437
     ]
    },
    "properties": {
@@ -204,7 +214,8 @@
       "qid": "Q17627174",
       "url": "https://www.wikidata.org/wiki/Q17627174"
      }
-    ]
+    ],
+    "location_src": "Carnegie Museum of Art"
    }
   },
   {
@@ -246,7 +257,8 @@
       "qid": "Q12088934",
       "url": "https://www.wikidata.org/wiki/Q12088934"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -277,7 +289,10 @@
     },
     "museum_id": "frans-hals-museum",
     "qid": "Q2202637",
-    "wikidata": "https://www.wikidata.org/wiki/Q2202637"
+    "wikidata": "https://www.wikidata.org/wiki/Q2202637",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -293,7 +308,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of a Woman Standing (Kassel)",
     "year": "1618–1620",
-    "location": "Museum Schloss Wilhelmshöhe",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "dimensions": "103 × 82.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Frans_Hals_045.jpg/500px-Frans_Hals_045.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -306,7 +321,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-schloss-wilhelmshohe",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q17647541",
     "wikidata": "https://www.wikidata.org/wiki/Q17647541",
     "_merged": [
@@ -316,7 +331,10 @@
       "qid": "Q17647541",
       "url": "https://www.wikidata.org/wiki/Q17647541"
      }
-    ]
+    ],
+    "city": "Kassel",
+    "country": "Germany",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -353,7 +371,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Man Standing (Kassel)"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -362,7 +382,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -387,7 +407,8 @@
     "country": "United States",
     "qid": "Q1196537",
     "wikidata": "https://www.wikidata.org/wiki/Q1196537",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/08romme1.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/08romme1.html",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -417,7 +438,8 @@
     },
     "museum_id": "musee-des-beaux-arts-de-dijon",
     "city": "Dijon",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -425,15 +447,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of Catharina Hooft with her Nurse",
     "year": "1619–1620",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "86 x 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Frans_Hals_-_Catharina_Hooft_with_her_Nurse_-_WGA11059.jpg/500px-Frans_Hals_-_Catharina_Hooft_with_her_Nurse_-_WGA11059.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -446,11 +468,12 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q527338",
-    "wikidata": "https://www.wikidata.org/wiki/Q527338"
+    "wikidata": "https://www.wikidata.org/wiki/Q527338",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -466,7 +489,7 @@
     "painter": "Frans Hals",
     "title": "Two singing boys with a lute and a music book",
     "year": "1620–1625",
-    "location": "Museum Schloss Wilhelmshöhe",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "dimensions": "76 x 52 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Frans_Hals_-_Two_Boys_Singing_-_WGA11077.jpg/500px-Frans_Hals_-_Two_Boys_Singing_-_WGA11077.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -479,10 +502,13 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-schloss-wilhelmshohe",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q17401759",
     "wikidata": "https://www.wikidata.org/wiki/Q17401759",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/02-1626/17no2boz.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/02-1626/17no2boz.html",
+    "city": "Kassel",
+    "country": "Germany",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -516,7 +542,8 @@
     "country": "France",
     "qid": "Q17627398",
     "wikidata": "https://www.wikidata.org/wiki/Q17627398",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/07dereem.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/07dereem.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -549,7 +576,8 @@
     "city": "Paris",
     "country": "France",
     "qid": "Q11776271",
-    "wikidata": "https://www.wikidata.org/wiki/Q11776271"
+    "wikidata": "https://www.wikidata.org/wiki/Q11776271",
+    "location_src": "Louvre"
    }
   },
   {
@@ -557,8 +585,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.5594,
-     41.6583
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -590,7 +618,8 @@
       "qid": "Q17627383",
       "url": "https://www.wikidata.org/wiki/Q17627383"
      }
-    ]
+    ],
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -598,7 +627,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -632,7 +661,8 @@
       "qid": "Q2311238",
       "url": "https://www.wikidata.org/wiki/Q2311238"
      }
-    ]
+    ],
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -641,7 +671,7 @@
     "type": "Point",
     "coordinates": [
      -1.61,
-     53.227777777
+     53.22778
     ]
    },
    "properties": {
@@ -669,7 +699,9 @@
       "source": "Wikipedia list",
       "title": "(Possibly) portrait of Isaac Massa"
      }
-    ]
+    ],
+    "museum_id": "chatsworth-house",
+    "location_src": "Chatsworth House"
    }
   },
   {
@@ -703,7 +735,8 @@
     "country": "United States",
     "qid": "Q17355822",
     "wikidata": "https://www.wikidata.org/wiki/Q17355822",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/14nojonk.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/14nojonk.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -711,8 +744,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153,
-     51.5175
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
@@ -733,10 +766,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "wallace-collection",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "qid": "Q16863608",
-    "wikidata": "https://www.wikidata.org/wiki/Q16863608"
+    "wikidata": "https://www.wikidata.org/wiki/Q16863608",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -744,15 +778,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Boy with flute",
     "year": "1623–1625",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "62 x 55 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Frans_Hals_Knabe_m_Fl%C3%B6te.JPG/500px-Frans_Hals_Knabe_m_Fl%C3%B6te.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -764,8 +798,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q17647822",
     "wikidata": "https://www.wikidata.org/wiki/Q17647822",
@@ -775,7 +809,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17647822 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -809,7 +844,8 @@
     "country": "France",
     "qid": "Q9850868",
     "wikidata": "https://www.wikidata.org/wiki/Q9850868",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/14buffoo.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/14buffoo.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -817,8 +853,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -848,7 +884,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17647883 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -881,7 +918,8 @@
     "city": "The Hague",
     "country": "Netherlands",
     "qid": "Q16859703",
-    "wikidata": "https://www.wikidata.org/wiki/Q16859703"
+    "wikidata": "https://www.wikidata.org/wiki/Q16859703",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -914,7 +952,8 @@
     "city": "The Hague",
     "country": "Netherlands",
     "qid": "Q16859798",
-    "wikidata": "https://www.wikidata.org/wiki/Q16859798"
+    "wikidata": "https://www.wikidata.org/wiki/Q16859798",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -946,7 +985,10 @@
     "museum_id": "staatliches-museum-schwerin",
     "qid": "Q17577635",
     "wikidata": "https://www.wikidata.org/wiki/Q17577635",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html",
+    "city": "Mecklenburg-Vorpommern",
+    "country": "Germany",
+    "location_src": "Staatliches Museum Schwerin"
    }
   },
   {
@@ -978,7 +1020,10 @@
     "museum_id": "staatliches-museum-schwerin",
     "qid": "Q17577635",
     "wikidata": "https://www.wikidata.org/wiki/Q17577635",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html",
+    "city": "Mecklenburg-Vorpommern",
+    "country": "Germany",
+    "location_src": "Staatliches Museum Schwerin"
    }
   },
   {
@@ -1017,7 +1062,10 @@
       "qid": "Q17566296",
       "url": "https://www.wikidata.org/wiki/Q17566296"
      }
-    ]
+    ],
+    "city": "City of London",
+    "country": "United Kingdom",
+    "location_src": "Guildhall Art Gallery"
    }
   },
   {
@@ -1058,7 +1106,8 @@
       "qid": "Q17579092",
       "url": "https://www.wikidata.org/wiki/Q17579092"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1099,7 +1148,8 @@
       "qid": "Q17609277",
       "url": "https://www.wikidata.org/wiki/Q17609277"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1139,7 +1189,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17813326 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1173,7 +1224,8 @@
     "country": "France",
     "qid": "Q3206722",
     "wikidata": "https://www.wikidata.org/wiki/Q3206722",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/32nogyps.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/32nogyps.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1203,7 +1255,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "city": "Moscow",
+    "city": "Khamovniki District",
     "country": "Russia",
     "qid": "Q16695525",
     "wikidata": "https://www.wikidata.org/wiki/Q16695525",
@@ -1214,7 +1266,8 @@
       "qid": "Q16695525",
       "url": "https://www.wikidata.org/wiki/Q16695525"
      }
-    ]
+    ],
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -1256,7 +1309,8 @@
       "qid": "Q880502",
       "url": "https://www.wikidata.org/wiki/Q880502"
      }
-    ]
+    ],
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1290,7 +1344,8 @@
     "country": "Netherlands",
     "qid": "Q14577860",
     "wikidata": "https://www.wikidata.org/wiki/Q14577860",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/16laughi.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/16laughi.html",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -1330,7 +1385,9 @@
       "qid": "Q17642214",
       "url": "https://www.wikidata.org/wiki/Q17642214"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Taft Museum of Art"
    }
   },
   {
@@ -1338,8 +1395,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -9.154166666,
-     38.736666666
+     -9.15417,
+     38.73667
     ]
    },
    "properties": {
@@ -1367,7 +1424,9 @@
       "source": "Wikipedia list",
       "title": "Portret van Sara Andriesdr Hessix"
      }
-    ]
+    ],
+    "museum_id": "calouste-gulbenkian-museum",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -1401,7 +1460,8 @@
     "country": "Canada",
     "qid": "Q3399387",
     "wikidata": "https://www.wikidata.org/wiki/Q3399387",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/02-1626/21massa.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/02-1626/21massa.html",
+    "location_src": "Art Gallery of Ontario"
    }
   },
   {
@@ -1442,7 +1502,8 @@
       "qid": "Q17815340",
       "url": "https://www.wikidata.org/wiki/Q17815340"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1483,7 +1544,8 @@
       "qid": "Q17813915",
       "url": "https://www.wikidata.org/wiki/Q17813915"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1491,15 +1553,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of Johannes Acronius",
     "year": "1627",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "19.4 x 17.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Frans_Hals_-_Portrait_of_Johannes_Acronius_Aeta_Suae_62_-_1627.jpg/500px-Frans_Hals_-_Portrait_of_Johannes_Acronius_Aeta_Suae_62_-_1627.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1512,11 +1574,12 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q832264",
-    "wikidata": "https://www.wikidata.org/wiki/Q832264"
+    "wikidata": "https://www.wikidata.org/wiki/Q832264",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1558,7 +1621,8 @@
       "qid": "Q3777363",
       "url": "https://www.wikidata.org/wiki/Q3777363"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1590,7 +1654,10 @@
     "museum_id": "frans-hals-museum",
     "qid": "Q16169050",
     "wikidata": "https://www.wikidata.org/wiki/Q16169050",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/29nohad.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/29nohad.html",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -1598,15 +1665,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of an unknown man",
     "year": "c.1627",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "20 × 14.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Frans_Hals_091_WGA_version.jpg/500px-Frans_Hals_091_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1618,8 +1685,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q18056753",
     "wikidata": "https://www.wikidata.org/wiki/Q18056753",
@@ -1629,7 +1696,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18056753 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1669,7 +1737,10 @@
       "qid": "Q16169064",
       "url": "https://www.wikidata.org/wiki/Q16169064"
      }
-    ]
+    ],
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -1702,7 +1773,8 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q17818220",
-    "wikidata": "https://www.wikidata.org/wiki/Q17818220"
+    "wikidata": "https://www.wikidata.org/wiki/Q17818220",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -1741,7 +1813,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17818628 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1772,7 +1845,8 @@
     },
     "museum_id": "hofje-van-mevrouw-van-aerden",
     "qid": "Q16170000",
-    "wikidata": "https://www.wikidata.org/wiki/Q16170000"
+    "wikidata": "https://www.wikidata.org/wiki/Q16170000",
+    "location_src": "Hofje van Mevrouw van Aerden"
    }
   },
   {
@@ -1813,7 +1887,8 @@
       "qid": "Q17644447",
       "url": "https://www.wikidata.org/wiki/Q17644447"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -1821,8 +1896,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -1843,7 +1918,8 @@
     },
     "museum_id": "yale-university-art-gallery",
     "city": "New Haven",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -1859,7 +1935,7 @@
     "painter": "Frans Hals",
     "title": "Laughing man with crock, known as ' Peeckelhaeringh '",
     "year": "c. 1628–1630",
-    "location": "Museum Schloss Wilhelmshöhe",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "dimensions": "75 x 61.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Frans_Hals_-_Peeckelhaeringh.jpg/500px-Frans_Hals_-_Peeckelhaeringh.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1872,7 +1948,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-schloss-wilhelmshohe",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q17020982",
     "wikidata": "https://www.wikidata.org/wiki/Q17020982",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/31peeckf.html",
@@ -1883,7 +1959,10 @@
       "qid": "Q17020982",
       "url": "https://www.wikidata.org/wiki/Q17020982"
      }
-    ]
+    ],
+    "city": "Kassel",
+    "country": "Germany",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1913,7 +1992,8 @@
     },
     "museum_id": "museum-der-bildenden-kunste",
     "city": "Leipzig",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -1921,7 +2001,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -1947,7 +2027,8 @@
     "country": "Netherlands",
     "qid": "Q650635",
     "wikidata": "https://www.wikidata.org/wiki/Q650635",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/30drink1.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/30drink1.html",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -1986,7 +2067,10 @@
       "qid": "Q18120961",
       "url": "https://www.wikidata.org/wiki/Q18120961"
      }
-    ]
+    ],
+    "city": "Pennsylvania",
+    "country": "United States",
+    "location_src": "Allentown Art Museum"
    }
   },
   {
@@ -1994,15 +2078,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of an unknown woman",
     "year": "1630–1633",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "75 × 58 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Frans_Hals_097_WGA_version.jpg/500px-Frans_Hals_097_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2014,9 +2098,10 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
-    "country": "Germany"
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2024,15 +2109,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of an unknown man",
     "year": "1630–1633",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "75 × 58 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Frans_Hals_096_WGA_version.jpg/500px-Frans_Hals_096_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2044,9 +2129,10 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
-    "country": "Germany"
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2054,8 +2140,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -2083,7 +2169,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Pieter Jacobsz. Olycan (1572–1658)"
      }
-    ]
+    ],
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -2091,15 +2179,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11436,
+     42.37409
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a preacher",
     "year": "c.1635",
-    "location": "Fogg Art Museum",
+    "location": "Fogg Museum",
     "attribution": "generally accepted",
     "dimensions": "62 x 52 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Frans_Hals_-_Portrait_of_a_preacher.jpg/500px-Frans_Hals_-_Portrait_of_a_preacher.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2111,7 +2199,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fogg-art-museum",
+    "museum_id": "fogg-museum",
     "city": "Cambridge",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/09-1666/78preach.html",
     "qid": "Q17816296",
@@ -2122,7 +2210,9 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17816296 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "country": "United States",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -2130,15 +2220,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Drinking woman ( Malle Babbe ) with an owl on her shoulder",
     "year": "1630–1635",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "75 x 64 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Frans_Hals_-_Malle_Babbe_-_WGA11105.jpg/500px-Frans_Hals_-_Malle_Babbe_-_WGA11105.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2151,12 +2241,13 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q474198",
     "wikidata": "https://www.wikidata.org/wiki/Q474198",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/04-1633/37malle1.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/04-1633/37malle1.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2186,7 +2277,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-ireland",
-    "city": "Dublin",
+    "city": "Dublin City",
     "country": "Ireland",
     "qid": "Q17854669",
     "wikidata": "https://www.wikidata.org/wiki/Q17854669",
@@ -2198,7 +2289,8 @@
       "qid": "Q17854669",
       "url": "https://www.wikidata.org/wiki/Q17854669"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -2232,7 +2324,8 @@
     "museum_id": "royal-museum-of-fine-arts",
     "qid": "Q17418641",
     "wikidata": "https://www.wikidata.org/wiki/Q17418641",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/34fish_b.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/34fish_b.html",
+    "location_src": "Royal Museum of Fine Arts"
    }
   },
   {
@@ -2240,8 +2333,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -2269,7 +2362,9 @@
       "source": "Wikipedia list",
       "title": "Violin playing man in a dune landscape"
      }
-    ]
+    ],
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -2277,7 +2372,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -2310,7 +2405,8 @@
       "qid": "Q17323911",
       "url": "https://www.wikidata.org/wiki/Q17323911"
      }
-    ]
+    ],
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -2318,7 +2414,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -2343,7 +2439,8 @@
     "city": "Amsterdam",
     "country": "Netherlands",
     "qid": "Q15429895",
-    "wikidata": "https://www.wikidata.org/wiki/Q15429895"
+    "wikidata": "https://www.wikidata.org/wiki/Q15429895",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -2375,7 +2472,10 @@
     "museum_id": "frans-hals-museum",
     "qid": "Q17522234",
     "wikidata": "https://www.wikidata.org/wiki/Q17522234",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/04-1633/42vooght.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/04-1633/42vooght.html",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -2406,7 +2506,10 @@
     },
     "museum_id": "frans-hals-museum",
     "qid": "Q15430593",
-    "wikidata": "https://www.wikidata.org/wiki/Q15430593"
+    "wikidata": "https://www.wikidata.org/wiki/Q15430593",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -2445,7 +2548,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18748034 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Musée des Beaux-Arts de Bordeaux"
    }
   },
   {
@@ -2477,7 +2581,10 @@
     "museum_id": "frans-hals-museum",
     "qid": "Q17030286",
     "wikidata": "https://www.wikidata.org/wiki/Q17030286",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/04-1633/37nohad.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/04-1633/37nohad.html",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -2485,8 +2592,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.32949,
-     35.68646
+     139.32908,
+     35.6863
     ]
    },
    "properties": {
@@ -2515,7 +2622,8 @@
       "qid": "Q17816172",
       "url": "https://www.wikidata.org/wiki/Q17816172"
      }
-    ]
+    ],
+    "location_src": "Tokyo Fuji Art Museum"
    }
   },
   {
@@ -2553,7 +2661,8 @@
       "qid": "Q17818728",
       "url": "https://www.wikidata.org/wiki/Q17818728"
      }
-    ]
+    ],
+    "location_src": "Museo Nacional de San Carlos"
    }
   },
   {
@@ -2582,7 +2691,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "city": "Kassel",
     "country": "Germany",
     "qid": "Q17564400",
@@ -2595,7 +2704,8 @@
       "qid": "Q17564429",
       "url": "https://www.wikidata.org/wiki/Q17564429"
      }
-    ]
+    ],
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2624,12 +2734,13 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "city": "Kassel",
     "country": "Germany",
     "qid": "Q17564400",
     "wikidata": "https://www.wikidata.org/wiki/Q17564400",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/46noport.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/46noport.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2668,7 +2779,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17855742 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2715,7 +2827,8 @@
       "qid": "Q17859670",
       "url": "https://www.wikidata.org/wiki/Q17859670"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2724,7 +2837,7 @@
     "type": "Point",
     "coordinates": [
      -0.1675,
-     51.5714
+     51.57139
     ]
    },
    "properties": {
@@ -2745,10 +2858,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kenwood-house",
-    "city": "London",
+    "city": "London Borough of Camden",
     "country": "United Kingdom",
     "qid": "Q357524",
-    "wikidata": "https://www.wikidata.org/wiki/Q357524"
+    "wikidata": "https://www.wikidata.org/wiki/Q357524",
+    "location_src": "Kenwood House"
    }
   },
   {
@@ -2781,7 +2895,8 @@
     "city": "Cleveland",
     "country": "United States",
     "qid": "Q16863608",
-    "wikidata": "https://www.wikidata.org/wiki/Q16863608"
+    "wikidata": "https://www.wikidata.org/wiki/Q16863608",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -2789,8 +2904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.61917,
-     39.32611
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -2818,7 +2933,9 @@
       "qid": "Q17863838",
       "url": "https://www.wikidata.org/wiki/Q17863838"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -2851,7 +2968,8 @@
     "city": "Budapest",
     "country": "Hungary",
     "qid": "Q541976",
-    "wikidata": "https://www.wikidata.org/wiki/Q541976"
+    "wikidata": "https://www.wikidata.org/wiki/Q541976",
+    "location_src": "Szépmüvészeti Múzeum"
    }
   },
   {
@@ -2881,7 +2999,8 @@
     },
     "museum_id": "timken-museum-of-art",
     "city": "San Diego",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Timken Museum of Art"
    }
   },
   {
@@ -2889,8 +3008,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2911,7 +3030,8 @@
     },
     "museum_id": "detroit-institute-of-arts",
     "city": "Detroit",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2950,7 +3070,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17276007 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -2988,7 +3109,8 @@
       "qid": "Q17863777",
       "url": "https://www.wikidata.org/wiki/Q17863777"
      }
-    ]
+    ],
+    "location_src": "Szépmüvészeti Múzeum"
    }
   },
   {
@@ -3022,7 +3144,8 @@
     "country": "United States",
     "qid": "Q17863946",
     "wikidata": "https://www.wikidata.org/wiki/Q17863946",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/49family.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/49family.html",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -3030,7 +3153,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -3064,7 +3187,8 @@
       "qid": "Q17342917",
       "url": "https://www.wikidata.org/wiki/Q17342917"
      }
-    ]
+    ],
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -3072,7 +3196,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -3097,7 +3221,8 @@
     "city": "Amsterdam",
     "country": "Netherlands",
     "qid": "Q16859678",
-    "wikidata": "https://www.wikidata.org/wiki/Q16859678"
+    "wikidata": "https://www.wikidata.org/wiki/Q16859678",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -3138,7 +3263,8 @@
       "qid": "Q17442480",
       "url": "https://www.wikidata.org/wiki/Q17442480"
      }
-    ]
+    ],
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -3179,7 +3305,8 @@
       "qid": "Q17866274",
       "url": "https://www.wikidata.org/wiki/Q17866274"
      }
-    ]
+    ],
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -3218,7 +3345,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17865722 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "San Diego Museum of Art"
    }
   },
   {
@@ -3226,7 +3354,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -3260,7 +3388,8 @@
       "qid": "Q5779800",
       "url": "https://www.wikidata.org/wiki/Q5779800"
      }
-    ]
+    ],
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -3299,7 +3428,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17907618 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3307,8 +3437,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.5968,
-     51.9831
+     -0.59672,
+     51.98295
     ]
    },
    "properties": {
@@ -3328,7 +3458,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "woburn-abbey",
-    "city": "England"
+    "city": "Woburn",
+    "country": "United Kingdom",
+    "location_src": "Woburn Abbey"
    }
   },
   {
@@ -3369,7 +3501,8 @@
       "qid": "Q17904794",
       "url": "https://www.wikidata.org/wiki/Q17904794"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3377,8 +3510,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -3402,7 +3535,8 @@
     "city": "Los Angeles",
     "country": "United States",
     "qid": "Q17434116",
-    "wikidata": "https://www.wikidata.org/wiki/Q17434116"
+    "wikidata": "https://www.wikidata.org/wiki/Q17434116",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -3410,8 +3544,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780227777
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -3439,7 +3573,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a woman facing right and holding a fan"
      }
-    ]
+    ],
+    "museum_id": "staatsgalerie-stuttgart",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -3479,7 +3615,8 @@
       "qid": "Q55560411",
       "url": "https://www.wikidata.org/wiki/Q55560411"
      }
-    ]
+    ],
+    "location_src": "Burned in Billy Rose mansion"
    }
   },
   {
@@ -3487,8 +3624,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -3516,7 +3653,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Aeltje Dircksdr. Pater (1597–1678)"
      }
-    ]
+    ],
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3546,7 +3685,8 @@
     },
     "museum_id": "stadel-museum",
     "city": "Frankfurt",
-    "country": "Germany"
+    "country": "Germany",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -3583,7 +3723,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown man"
      }
-    ]
+    ],
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -3616,7 +3758,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q17642974",
-    "wikidata": "https://www.wikidata.org/wiki/Q17642974"
+    "wikidata": "https://www.wikidata.org/wiki/Q17642974",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3624,8 +3767,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3649,7 +3792,8 @@
     "city": "São Paulo",
     "country": "Brazil",
     "qid": "Q17906604",
-    "wikidata": "https://www.wikidata.org/wiki/Q17906604"
+    "wikidata": "https://www.wikidata.org/wiki/Q17906604",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3657,8 +3801,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3690,7 +3834,8 @@
       "qid": "Q17906243",
       "url": "https://www.wikidata.org/wiki/Q17906243"
      }
-    ]
+    ],
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -3698,8 +3843,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -3728,7 +3873,8 @@
       "qid": "Q17905173",
       "url": "https://www.wikidata.org/wiki/Q17905173"
      }
-    ]
+    ],
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -3736,8 +3882,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.0781,
-     59.3286
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -3766,7 +3912,8 @@
       "qid": "Q17905390",
       "url": "https://www.wikidata.org/wiki/Q17905390"
      }
-    ]
+    ],
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -3807,7 +3954,8 @@
       "qid": "Q17907497",
       "url": "https://www.wikidata.org/wiki/Q17907497"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3815,7 +3963,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.8853,
+     4.88528,
      52.36
     ]
    },
@@ -3848,7 +3996,8 @@
       "qid": "Q17341971",
       "url": "https://www.wikidata.org/wiki/Q17341971"
      }
-    ]
+    ],
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -3856,8 +4005,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.55916,
-     27.38307
+     -82.5598,
+     27.38147
     ]
    },
    "properties": {
@@ -3889,7 +4038,8 @@
       "qid": "Q17643515",
       "url": "https://www.wikidata.org/wiki/Q17643515"
      }
-    ]
+    ],
+    "location_src": "John and Mable Ringling Museum of Art"
    }
   },
   {
@@ -3928,7 +4078,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17985858 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -3975,7 +4126,8 @@
       "qid": "Q17984085",
       "url": "https://www.wikidata.org/wiki/Q17984085"
      }
-    ]
+    ],
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -3983,8 +4135,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -4008,7 +4160,8 @@
     "city": "Detroit",
     "country": "United States",
     "qid": "Q17310899",
-    "wikidata": "https://www.wikidata.org/wiki/Q17310899"
+    "wikidata": "https://www.wikidata.org/wiki/Q17310899",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -4040,7 +4193,10 @@
     "museum_id": "frans-hals-museum",
     "qid": "Q17028345",
     "wikidata": "https://www.wikidata.org/wiki/Q17028345",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/06-1643/53nogeor.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/06-1643/53nogeor.html",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -4070,7 +4226,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -4078,16 +4235,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.967222222,
-     40.771111111
+     -73.9672,
+     40.7711
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of an elderly man",
     "year": "1630",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
+    "location": "Frick Collection",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Frick%20Portrait%20of%20an%20elderly%20man%201910.1.69.jpg?width=500",
@@ -4107,7 +4264,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown man"
      }
-    ]
+    ],
+    "museum_id": "frick-collection",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -4115,7 +4274,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -4124,7 +4283,7 @@
     "title": "Portrait of a woman, possibly Cornelia van der Meer",
     "year": "1640",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20102%20WGA%20version.jpg?width=500",
@@ -4144,7 +4303,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown woman, possibly Cornelia van der Meer"
      }
-    ]
+    ],
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -4152,7 +4313,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -4161,7 +4322,7 @@
     "title": "Portrait of a man, probably Nicolaes Noppen",
     "year": "1640",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20101%20WGA%20version.jpg?width=500",
@@ -4181,7 +4342,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown man, possibly Albert van Nierop"
      }
-    ]
+    ],
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -4221,7 +4384,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17986760 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4252,7 +4416,10 @@
     },
     "museum_id": "frans-hals-museum",
     "qid": "Q7587830",
-    "wikidata": "https://www.wikidata.org/wiki/Q7587830"
+    "wikidata": "https://www.wikidata.org/wiki/Q7587830",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -4268,7 +4435,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of an unknown woman",
     "year": "1640–1642",
-    "location": "Pommersches Landesmuseum",
+    "location": "Pomeranian State Museum",
     "attribution": "generally accepted",
     "dimensions": "78 x 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Frans_Hals_-_Portrait_of_a_seated_woman_holding_gloves_with_a_cartwheel_ruff.jpg/500px-Frans_Hals_-_Portrait_of_a_seated_woman_holding_gloves_with_a_cartwheel_ruff.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4280,7 +4447,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pommersches-landesmuseum",
+    "museum_id": "pomeranian-state-museum",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4288,7 +4455,10 @@
       "qid": "Q18120979",
       "url": "https://www.wikidata.org/wiki/Q18120979"
      }
-    ]
+    ],
+    "city": "Greifswald",
+    "country": "Germany",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -4304,7 +4474,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of a man",
     "year": "1640–1642",
-    "location": "Pommersches Landesmuseum",
+    "location": "Pomeranian State Museum",
     "attribution": "generally accepted",
     "dimensions": "79.2 x 65.3 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Frans_Hals_-_Portrait_of_a_man_with_a_hand_on_his_heart.jpg/500px-Frans_Hals_-_Portrait_of_a_man_with_a_hand_on_his_heart.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4316,7 +4486,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "pommersches-landesmuseum",
+    "museum_id": "pomeranian-state-museum",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html",
     "qid": "Q18009980",
     "wikidata": "https://www.wikidata.org/wiki/Q18009980",
@@ -4326,7 +4496,10 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18009980 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "city": "Greifswald",
+    "country": "Germany",
+    "location_src": "Pomeranian State Museum"
    }
   },
   {
@@ -4334,8 +4507,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -4363,7 +4536,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown woman"
      }
-    ]
+    ],
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -4371,8 +4546,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -4393,7 +4568,8 @@
     },
     "museum_id": "barnes-foundation",
     "city": "Philadelphia",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -4426,7 +4602,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q1938743",
-    "wikidata": "https://www.wikidata.org/wiki/Q1938743"
+    "wikidata": "https://www.wikidata.org/wiki/Q1938743",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4434,8 +4611,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -4459,7 +4636,8 @@
     "city": "New Haven",
     "country": "United States",
     "qid": "Q17987855",
-    "wikidata": "https://www.wikidata.org/wiki/Q17987855"
+    "wikidata": "https://www.wikidata.org/wiki/Q17987855",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -4467,7 +4645,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -4496,7 +4674,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Mr. Bodolphe"
      }
-    ]
+    ],
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -4534,7 +4714,8 @@
       "qid": "Q17985764",
       "url": "https://www.wikidata.org/wiki/Q17985764"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4567,7 +4748,8 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q5659093",
-    "wikidata": "https://www.wikidata.org/wiki/Q5659093"
+    "wikidata": "https://www.wikidata.org/wiki/Q5659093",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -4575,8 +4757,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.61917,
-     39.32611
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -4599,7 +4781,9 @@
     "museum_id": "baltimore-museum-of-art",
     "city": "Baltimore",
     "qid": "Q16165365",
-    "wikidata": "https://www.wikidata.org/wiki/Q16165365"
+    "wikidata": "https://www.wikidata.org/wiki/Q16165365",
+    "country": "United States",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -4607,8 +4791,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.67389,
-     41.76333
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
@@ -4639,7 +4823,9 @@
       "qid": "Q17643376",
       "url": "https://www.wikidata.org/wiki/Q17643376"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -4669,7 +4855,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "city": "Washington",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -4717,7 +4904,8 @@
       "qid": "Q18007392",
       "url": "https://www.wikidata.org/wiki/Q18007392"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -4755,7 +4943,8 @@
       "qid": "Q18009980",
       "url": "https://www.wikidata.org/wiki/Q18009980"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4785,7 +4974,8 @@
     },
     "museum_id": "national-gallery-of-scotland",
     "city": "Edinburgh",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4815,7 +5005,8 @@
     },
     "museum_id": "national-gallery-of-scotland",
     "city": "Edinburgh",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "location_src": "National Gallery of Scotland"
    }
   },
   {
@@ -4848,7 +5039,8 @@
     "city": "Washington",
     "country": "United States",
     "qid": "Q352438",
-    "wikidata": "https://www.wikidata.org/wiki/Q352438"
+    "wikidata": "https://www.wikidata.org/wiki/Q352438",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -4882,7 +5074,8 @@
     "country": "Spain",
     "qid": "Q18010880",
     "wikidata": "https://www.wikidata.org/wiki/Q18010880",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/07-1648/67famil1.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/07-1648/67famil1.html",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -4920,7 +5113,8 @@
       "qid": "Q18010861",
       "url": "https://www.wikidata.org/wiki/Q18010861"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4958,7 +5152,8 @@
       "qid": "Q18010010",
       "url": "https://www.wikidata.org/wiki/Q18010010"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -4996,7 +5191,8 @@
       "qid": "Q18010319",
       "url": "https://www.wikidata.org/wiki/Q18010319"
      }
-    ]
+    ],
+    "location_src": "Louvre"
    }
   },
   {
@@ -5034,7 +5230,8 @@
       "qid": "Q18032401",
       "url": "https://www.wikidata.org/wiki/Q18032401"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -5075,7 +5272,8 @@
       "qid": "Q17645192",
       "url": "https://www.wikidata.org/wiki/Q17645192"
      }
-    ]
+    ],
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -5113,7 +5311,9 @@
       "qid": "Q18010852",
       "url": "https://www.wikidata.org/wiki/Q18010852"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Taft Museum of Art"
    }
   },
   {
@@ -5151,7 +5351,9 @@
       "qid": "Q18010834",
       "url": "https://www.wikidata.org/wiki/Q18010834"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Taft Museum of Art"
    }
   },
   {
@@ -5192,7 +5394,8 @@
       "qid": "Q18011066",
       "url": "https://www.wikidata.org/wiki/Q18011066"
      }
-    ]
+    ],
+    "location_src": "Museum Catharijneconvent"
    }
   },
   {
@@ -5200,15 +5403,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.58084,
-     39.04531
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a Man",
     "year": "1650",
-    "location": "Nelson-Atkins Museum",
+    "location": "The Nelson-Atkins Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "104 x 90 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Frans_Hals_portrait_of_a_man_Nelson_Atkins.jpg/500px-Frans_Hals_portrait_of_a_man_Nelson_Atkins.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5220,8 +5423,11 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "nelson-atkins-museum",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html"
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html",
+    "city": "Kansas City",
+    "country": "United States",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -5261,7 +5467,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q18008940 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -5291,7 +5498,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-museum-of-fine-arts"
+    "museum_id": "royal-museum-of-fine-arts",
+    "location_src": "Royal Museum of Fine Arts"
    }
   },
   {
@@ -5329,7 +5537,8 @@
       "qid": "Q18011386",
       "url": "https://www.wikidata.org/wiki/Q18011386"
      }
-    ]
+    ],
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -5337,8 +5546,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.29444,
-     38.63944
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -5358,7 +5567,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "saint-louis-art-museum",
-    "city": "St",
+    "city": "St. Louis",
     "country": "United States",
     "_merged": [
      {
@@ -5366,7 +5575,8 @@
       "title": "Portrait of a Woman Standing",
       "ref": "https://en.wikipedia.org/wiki/Portrait_of_a_Woman_Standing"
      }
-    ]
+    ],
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -5404,7 +5614,8 @@
       "qid": "Q18011385",
       "url": "https://www.wikidata.org/wiki/Q18011385"
      }
-    ]
+    ],
+    "location_src": "Liechtenstein Museum"
    }
   },
   {
@@ -5446,7 +5657,8 @@
       "qid": "Q18059699",
       "url": "https://www.wikidata.org/wiki/Q18059699"
      }
-    ]
+    ],
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -5494,7 +5706,8 @@
       "qid": "Q18011393",
       "url": "https://www.wikidata.org/wiki/Q18011393"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5502,16 +5715,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.967222222,
-     40.771111111
+     -73.9672,
+     40.7711
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a painter",
     "year": "1650",
-    "location": "The Frick Collection",
-    "city": "Manhattan",
+    "location": "Frick Collection",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Portrait%20of%20a%20painter%201650s%20-%201906.1.71.jpg?width=500",
@@ -5531,7 +5744,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a man"
      }
-    ]
+    ],
+    "museum_id": "frick-collection",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -5539,8 +5754,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5571,7 +5786,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q6106780 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5609,7 +5825,8 @@
       "qid": "Q18011394",
       "url": "https://www.wikidata.org/wiki/Q18011394"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5617,8 +5834,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5648,7 +5865,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q17460127 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5656,8 +5874,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -5686,7 +5904,8 @@
       "qid": "Q18059542",
       "url": "https://www.wikidata.org/wiki/Q18059542"
      }
-    ]
+    ],
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -5694,15 +5913,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.3647,
-     52.5086
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of Tyman Oosdorp",
     "year": "c. 1656",
-    "location": "Gemäldegalerie",
+    "location": "Gemäldegalerie Berlin",
     "attribution": "generally accepted",
     "dimensions": "89 x 70 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Frans_Hals_116_WGA_version.jpg/500px-Frans_Hals_116_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5715,11 +5934,12 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "gemaldegalerie",
-    "city": "Berlin",
+    "museum_id": "gemaldegalerie-berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q17363969",
-    "wikidata": "https://www.wikidata.org/wiki/Q17363969"
+    "wikidata": "https://www.wikidata.org/wiki/Q17363969",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -5760,7 +5980,8 @@
       "qid": "Q17776399",
       "url": "https://www.wikidata.org/wiki/Q17776399"
      }
-    ]
+    ],
+    "location_src": "Art Gallery of Ontario"
    }
   },
   {
@@ -5768,8 +5989,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.33928,
-     53.74342
+     -0.33912,
+     53.7434
     ]
    },
    "properties": {
@@ -5790,7 +6011,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "ferens-art-gallery",
-    "city": "Kingston upon Hull",
+    "city": "City of Kingston upon Hull",
     "country": "United Kingdom",
     "qid": "Q18032231",
     "wikidata": "https://www.wikidata.org/wiki/Q18032231",
@@ -5802,7 +6023,8 @@
       "qid": "Q18032231",
       "url": "https://www.wikidata.org/wiki/Q18032231"
      }
-    ]
+    ],
+    "location_src": "Ferens Art Gallery"
    }
   },
   {
@@ -5840,7 +6062,8 @@
       "qid": "Q18025591",
       "url": "https://www.wikidata.org/wiki/Q18025591"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -5870,7 +6093,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "worcester-art-museum",
-    "city": "Massachusetts",
+    "city": "Worcester",
     "qid": "Q577489",
     "wikidata": "https://www.wikidata.org/wiki/Q577489",
     "_merged": [
@@ -5880,7 +6103,9 @@
       "qid": "Q18058930",
       "url": "https://www.wikidata.org/wiki/Q18058930"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -5911,7 +6136,8 @@
     "museum_id": "statens-museum-for-kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -5949,7 +6175,8 @@
       "qid": "Q18056778",
       "url": "https://www.wikidata.org/wiki/Q18056778"
      }
-    ]
+    ],
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -5987,7 +6214,8 @@
       "qid": "Q18056753",
       "url": "https://www.wikidata.org/wiki/Q18056753"
      }
-    ]
+    ],
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -6018,7 +6246,8 @@
     "museum_id": "mauritshuis",
     "city": "The Hague",
     "country": "Netherlands",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -6026,7 +6255,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -6055,7 +6284,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a man, possibly a minister"
      }
-    ]
+    ],
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -6096,7 +6327,8 @@
       "qid": "Q18059736",
       "url": "https://www.wikidata.org/wiki/Q18059736"
      }
-    ]
+    ],
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -6104,8 +6336,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.2545,
-     51.7507
+     -1.25585,
+     51.7502
     ]
    },
    "properties": {
@@ -6134,7 +6366,8 @@
       "qid": "Q18059588",
       "url": "https://www.wikidata.org/wiki/Q18059588"
      }
-    ]
+    ],
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -6142,8 +6375,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -6171,7 +6404,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a man in a gray cloak with wide brim hat perched at an angle on his head"
      }
-    ]
+    ],
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -6187,7 +6422,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of Isaac Massa with a large floppy hat",
     "year": "1661–1663",
-    "location": "Museum Schloss Wilhelmshöhe",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "dimensions": "79.5 × 66.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Frans_Hals_068.jpg/500px-Frans_Hals_068.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6199,7 +6434,10 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-schloss-wilhelmshohe"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "city": "Kassel",
+    "country": "Germany",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -6207,8 +6445,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -6236,7 +6474,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of Willem Croes (d.1666)"
      }
-    ]
+    ],
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -6278,7 +6518,8 @@
       "qid": "Q16038699",
       "url": "https://www.wikidata.org/wiki/Q16038699"
      }
-    ]
+    ],
+    "location_src": "Musée Jacquemart André"
    }
   },
   {
@@ -6286,15 +6527,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.5481,
-     47.3703
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a man with a tassle collar",
     "year": "1660–1666",
-    "location": "Kunsthaus Zurich",
+    "location": "Kunsthaus Zürich",
     "attribution": "generally accepted",
     "dimensions": "70 x 58.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Frans_Hals_-_portrait_of_a_man_with_a_tassle_collar.jpg/500px-Frans_Hals_-_portrait_of_a_man_with_a_tassle_collar.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6307,7 +6548,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthaus-zurich",
-    "city": "Zürich",
+    "city": "Zurich",
     "country": "Switzerland",
     "_merged": [
      {
@@ -6316,7 +6557,8 @@
       "qid": "Q18060374",
       "url": "https://www.wikidata.org/wiki/Q18060374"
      }
-    ]
+    ],
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -6356,7 +6598,10 @@
       "qid": "Q16166017",
       "url": "https://www.wikidata.org/wiki/Q16166017"
      }
-    ]
+    ],
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -6388,7 +6633,10 @@
     "museum_id": "frans-hals-museum",
     "qid": "Q5971284",
     "wikidata": "https://www.wikidata.org/wiki/Q5971284",
-    "wga_url": "https://www.wga.hu/html/h/hals/frans/09-1666/86regen3.html"
+    "wga_url": "https://www.wga.hu/html/h/hals/frans/09-1666/86regen3.html",
+    "city": "Haarlem",
+    "country": "Netherlands",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -6396,8 +6644,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -6415,7 +6663,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17859677",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -6423,8 +6673,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -6448,7 +6698,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a man facing left"
      }
-    ]
+    ],
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -6456,8 +6708,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -6475,7 +6727,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17861081",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -6484,7 +6738,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -6502,7 +6756,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18010001",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -6510,8 +6766,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.314305555,
-     52.080388888
+     4.3143,
+     52.0804
     ]
    },
    "properties": {
@@ -6529,7 +6785,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17818339",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "mauritshuis",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -6537,8 +6795,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -6556,7 +6814,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17818491",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -6564,8 +6824,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -6583,7 +6843,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18009990",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -6591,8 +6853,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.6195034,
-     39.3259955
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -6616,7 +6878,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a young woman aged 28"
      }
-    ]
+    ],
+    "museum_id": "baltimore-museum-of-art",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -6643,7 +6907,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17987076",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "veste-coburg",
+    "location_src": "Veste Coburg"
    }
   },
   {
@@ -6651,8 +6917,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.375661869,
-     51.342449702
+     12.37566,
+     51.34245
     ]
    },
    "properties": {
@@ -6670,7 +6936,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17818600",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-der-bildenden-kunste",
+    "location_src": "Museum der bildenden Künste"
    }
   },
   {
@@ -6678,8 +6946,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -6703,7 +6971,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a 56-year-old man, possibly Willem van Warmondt"
      }
-    ]
+    ],
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -6711,8 +6981,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -6730,7 +7000,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17985979",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -6738,8 +7010,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -6757,7 +7029,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17984082",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -6765,7 +7039,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358241,
+     4.35824,
      50.84168
     ]
    },
@@ -6773,8 +7047,8 @@
     "painter": "Frans Hals",
     "title": "Portrait of Johannes Hoornbeek",
     "year": "1645",
-    "location": "Oldmasters Museum",
-    "city": "Brussels",
+    "location": "Royal Museums of Fine Arts of Belgium",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20107%20WGA%20version.jpg?width=500",
@@ -6791,7 +7065,9 @@
       "title": "Portrait of Johannes Hoornbeeck",
       "ref": "https://en.wikipedia.org/wiki/Johannes_Hoornbeeck"
      }
-    ]
+    ],
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -6800,14 +7076,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a standing man",
     "year": "1644",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6824,7 +7100,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a standing man holding a glove"
      }
-    ]
+    ],
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -6857,7 +7135,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a 35-year-old woman with a millstone collar"
      }
-    ]
+    ],
+    "museum_id": "michaelis-collection",
+    "location_src": "Michaelis Collection"
    }
   },
   {
@@ -6865,8 +7145,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.071667,
-     59.326944
+     18.07167,
+     59.32694
     ]
    },
    "properties": {
@@ -6890,7 +7170,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown 38-year-old man"
      }
-    ]
+    ],
+    "museum_id": "royal-court-of-sweden",
+    "location_src": "Royal Court of Sweden"
    }
   },
   {
@@ -6898,8 +7180,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -70.262638,
-     43.653864
+     -70.26264,
+     43.65386
     ]
    },
    "properties": {
@@ -6917,7 +7199,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17854864",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "l-d-m-sweat-memorial-galleries",
+    "location_src": "L. D. M. Sweat Memorial Galleries"
    }
   },
   {
@@ -6925,8 +7209,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780227777
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -6950,7 +7234,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a man facing left"
      }
-    ]
+    ],
+    "museum_id": "staatsgalerie-stuttgart",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -6977,7 +7263,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17459905",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -6985,8 +7273,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -6994,7 +7282,7 @@
     "title": "Portrait of Paulus Verschuur",
     "year": "1643",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paulus%20Verschuur%20%281606%E2%80%931667%29%2C%20by%20Frans%20Hals.jpg?width=500",
@@ -7004,7 +7292,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17426156",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7012,8 +7302,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -7031,7 +7321,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17627376",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -7039,7 +7331,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -7058,7 +7350,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17323910",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -7066,7 +7360,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.885277777,
+     4.88528,
      52.36
     ]
    },
@@ -7085,7 +7379,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17342911",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum"
    }
   },
   {
@@ -7093,7 +7389,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -7112,7 +7408,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17627385",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -7146,7 +7444,9 @@
       "title": "Portrait of Isabella Coymans ( -1689)",
       "ref": "https://en.wikipedia.org/wiki/Isabella_Coymans"
      }
-    ]
+    ],
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -7154,8 +7454,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -7173,7 +7473,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17522211",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -7181,8 +7483,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -7200,7 +7502,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17522223",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -7208,8 +7512,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -7227,7 +7531,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17627428",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -7236,7 +7542,7 @@
     "type": "Point",
     "coordinates": [
      -0.1675,
-     51.571388888
+     51.57139
     ]
    },
    "properties": {
@@ -7254,7 +7560,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17642106",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kenwood-house",
+    "location_src": "Kenwood House"
    }
   },
   {
@@ -7262,8 +7570,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153022,
-     51.517454
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
@@ -7281,7 +7589,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q965124",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -7289,8 +7599,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -7308,7 +7618,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17644055",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -7335,7 +7647,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17647157",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -7343,8 +7657,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.927827,
-     52.450331
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
@@ -7362,7 +7676,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17646765",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "barber-institute-of-fine-arts",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -7370,8 +7686,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.7432724,
-     46.4826633
+     30.74327,
+     46.48266
     ]
    },
    "properties": {
@@ -7396,7 +7712,9 @@
       "title": "The evangelist Luke",
       "ref": "https://en.wikipedia.org/wiki/St._Luke,_by_Frans_Hals"
      }
-    ]
+    ],
+    "museum_id": "odesa-museum-of-western-and-eastern-art",
+    "location_src": "Odesa Museum of Western and Eastern Art"
    }
   },
   {
@@ -7404,8 +7722,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.7432724,
-     46.4826633
+     30.74327,
+     46.48266
     ]
    },
    "properties": {
@@ -7430,7 +7748,9 @@
       "title": "The evangelist Matthew",
       "ref": "https://en.wikipedia.org/wiki/St._Matthew,_by_Frans_Hals"
      }
-    ]
+    ],
+    "museum_id": "odesa-museum-of-western-and-eastern-art",
+    "location_src": "Odesa Museum of Western and Eastern Art"
    }
   },
   {
@@ -7438,8 +7758,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7447,7 +7767,7 @@
     "title": "Portrait of Paulus van Beresteyn",
     "year": "1700",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Paulus%20van%20Beresteyn%20-%20Louvre%20RF%20424.jpg?width=500",
@@ -7465,7 +7785,9 @@
       "was": "generally accepted",
       "note": "dated 1700, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7473,8 +7795,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.314305555,
-     52.080388888
+     4.3143,
+     52.0804
     ]
    },
    "properties": {
@@ -7492,7 +7814,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17275956",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "mauritshuis",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -7500,8 +7824,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.314305555,
-     52.080388888
+     4.3143,
+     52.0804
     ]
    },
    "properties": {
@@ -7519,7 +7843,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17405108",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "mauritshuis",
+    "location_src": "Mauritshuis"
    }
   },
   {
@@ -7528,7 +7854,7 @@
     "type": "Point",
     "coordinates": [
      14.39657,
-     50.090265
+     50.09027
     ]
    },
    "properties": {
@@ -7546,7 +7872,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q17679178",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "sternberg-palace",
+    "location_src": "Sternberg Palace"
    }
   },
   {
@@ -7580,7 +7908,9 @@
       "title": "Portrait of Conradus Viëtor",
       "ref": "https://en.wikipedia.org/wiki/Conradus_Vi%C3%ABtor"
      }
-    ]
+    ],
+    "museum_id": "luton-hoo",
+    "location_src": "Luton Hoo"
    }
   },
   {
@@ -7588,8 +7918,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -7607,7 +7937,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55652951",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -7615,8 +7947,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -7634,7 +7966,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18120439",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -7642,8 +7976,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -7667,7 +8001,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an old woman in ruff collar and diadem cap"
      }
-    ]
+    ],
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -7675,8 +8011,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.628333,
-     43.128333
+     -77.62833,
+     43.12833
     ]
    },
    "properties": {
@@ -7700,7 +8036,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Man"
      }
-    ]
+    ],
+    "museum_id": "university-of-rochester",
+    "location_src": "University of Rochester"
    }
   },
   {
@@ -7708,8 +8046,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.024722222,
-     52.231666666
+     21.02472,
+     52.23167
     ]
    },
    "properties": {
@@ -7727,7 +8065,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28822719",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-in-warsaw",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -7735,8 +8075,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.364722222,
-     52.508611111
+     13.36472,
+     52.50861
     ]
    },
    "properties": {
@@ -7754,7 +8094,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55654610",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -7762,7 +8104,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -7781,7 +8123,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q56242073",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -7814,7 +8158,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a scholar holding a book facing left"
      }
-    ]
+    ],
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -7841,7 +8187,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q63350572",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -7875,7 +8223,9 @@
       "title": "Portrait of a Man in a Wide-Brimmed Hat",
       "ref": "https://en.wikipedia.org/wiki/Portrait_of_a_Man_in_a_Wide-Brimmed_Hat"
      }
-    ]
+    ],
+    "museum_id": "friedenstein-castle",
+    "location_src": "Friedenstein Castle"
    }
   },
   {
@@ -7902,7 +8252,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q63350862",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "wilton-house",
+    "location_src": "Wilton House"
    }
   },
   {
@@ -7910,8 +8262,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.405316,
-     51.215517
+     4.40532,
+     51.21552
     ]
    },
    "properties": {
@@ -7929,7 +8281,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55657503",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-mayer-van-den-bergh",
+    "location_src": "Museum Mayer van den Bergh"
    }
   },
   {
@@ -7937,8 +8291,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -82.354984,
-     23.1314788
+     -82.35498,
+     23.13148
     ]
    },
    "properties": {
@@ -7956,7 +8310,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q61782203",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-of-cuba",
+    "location_src": "National Museum of Fine Arts of Cuba"
    }
   },
   {
@@ -7983,7 +8339,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q63346375",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "allentown-art-museum",
+    "location_src": "Allentown Art Museum"
    }
   },
   {
@@ -7992,7 +8350,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8010,7 +8368,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18030849",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8019,7 +8379,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8037,7 +8397,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19326496",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8045,8 +8407,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8064,7 +8426,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809111",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8072,8 +8436,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8091,7 +8455,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20809113",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8124,7 +8490,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown woman"
      }
-    ]
+    ],
+    "museum_id": "veste-coburg",
+    "location_src": "Veste Coburg"
    }
   },
   {
@@ -8132,8 +8500,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -8151,7 +8519,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18032437",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -8159,8 +8529,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.633598,
-     52.376609
+     4.6336,
+     52.37661
     ]
    },
    "properties": {
@@ -8184,7 +8554,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an unknown woman with gloves"
      }
-    ]
+    ],
+    "museum_id": "frans-hals-museum",
+    "location_src": "Frans Hals Museum"
    }
   },
   {
@@ -8218,7 +8590,9 @@
       "title": "A boy reading, possibly Nicolaes Hals , the son of the painter",
       "ref": "https://en.wikipedia.org/wiki/Nicolaes_Hals"
      }
-    ]
+    ],
+    "museum_id": "kunst-museum-winterthur-reinhart-am-stadtgarten",
+    "location_src": "Kunst Museum Winterthur | Reinhart am Stadtgarten"
    }
   },
   {
@@ -8226,8 +8600,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.185655,
-     39.826019
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -8245,7 +8619,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27897020",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-de-arte-de-indianapolis",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -8253,15 +8629,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a General",
     "year": "1620",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -8272,7 +8648,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q55432077",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -8280,7 +8658,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.468694444,
+     -122.46869,
      37.7715
     ]
    },
@@ -8305,7 +8683,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of a Gentleman in White (re-attributed in 2011)"
      }
-    ]
+    ],
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -8332,7 +8712,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18060138",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -8340,7 +8722,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -8359,7 +8741,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49194487",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -8367,8 +8751,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -8394,7 +8778,9 @@
       "was": "generally accepted",
       "note": "dated 1750, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -8403,14 +8789,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Fragment of a young boy",
     "year": "1621",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8428,7 +8814,9 @@
       "title": "Sitting boy, possible fragment of the portrait of the family Gijsbert Claesz van Campen",
       "ref": "https://en.wikipedia.org/wiki/Gijsbert_Claesz_van_Campen"
      }
-    ]
+    ],
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -8437,7 +8825,7 @@
     "type": "Point",
     "coordinates": [
      -58.39297,
-     -34.583986
+     -34.58399
     ]
    },
    "properties": {
@@ -8455,7 +8843,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27950108",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-argentina",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -8463,8 +8853,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -8472,7 +8862,7 @@
     "title": "The Itinerant Painter",
     "year": "1640",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Frans%20Hals%20-%20portrait%20of%20a%20young%20painter.jpg?width=500",
@@ -8482,7 +8872,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18118017",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -8490,8 +8882,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.28805556,
-     43.70222222
+     -72.28806,
+     43.70222
     ]
    },
    "properties": {
@@ -8515,7 +8907,9 @@
       "source": "Wikipedia list",
       "title": "Fragment of a male portrait"
      }
-    ]
+    ],
+    "museum_id": "hood-museum-of-art",
+    "location_src": "Hood Museum of Art"
    }
   },
   {
@@ -8542,7 +8936,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q18011067",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "greystoke-castle",
+    "location_src": "Greystoke Castle"
    }
   },
   {
@@ -8576,7 +8972,9 @@
       "title": "Portrait of Cornelis Guldewagen (1599–1663)",
       "ref": "https://en.wikipedia.org/wiki/Cornelis_Guldewagen"
      }
-    ]
+    ],
+    "museum_id": "krannert-art-museum",
+    "location_src": "Krannert Art Museum"
    }
   },
   {
@@ -8584,8 +8982,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.132222222,
-     51.506111111
+     -0.13222,
+     51.50611
     ]
    },
    "properties": {
@@ -8603,7 +9001,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118877942",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-society",
+    "location_src": "Royal Society"
    }
   },
   {
@@ -8630,7 +9030,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q116449720",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-de-picardie",
+    "location_src": "Musée de Picardie"
    }
   },
   {
@@ -8638,8 +9040,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.042194,
-     47.320917
+     5.04219,
+     47.32092
     ]
    },
    "properties": {
@@ -8657,7 +9059,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q128802160",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-magnin",
+    "location_src": "Musée Magnin"
    }
   },
   {
@@ -8665,8 +9069,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.610274464,
-     56.55435741
+     -2.61027,
+     56.55436
     ]
    },
    "properties": {
@@ -8684,7 +9088,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118886753",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hospitalfield-house",
+    "location_src": "Hospitalfield House"
    }
   },
   {
@@ -8692,8 +9098,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.187194444,
-     55.947388888
+     -3.18719,
+     55.94739
     ]
    },
    "properties": {
@@ -8711,7 +9117,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119720557",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "university-of-edinburgh-art-collection",
+    "location_src": "University of Edinburgh Art Collection"
    }
   },
   {
@@ -8719,8 +9127,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.024722222,
-     52.231666666
+     21.02472,
+     52.23167
     ]
    },
    "properties": {
@@ -8738,7 +9146,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104553271",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-museum-in-warsaw",
+    "location_src": "National Museum in Warsaw"
    }
   },
   {
@@ -8765,7 +9175,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111647917",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -8773,8 +9185,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -8792,7 +9204,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q66712441",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   }
  ]

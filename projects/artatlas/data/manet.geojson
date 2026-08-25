@@ -32,7 +32,8 @@
     "city": "Copenhagen",
     "country": "Denmark",
     "qid": "Q1192090",
-    "wikidata": "https://www.wikidata.org/wiki/Q1192090"
+    "wikidata": "https://www.wikidata.org/wiki/Q1192090",
+    "location_src": "Ny Carlsberg Glyptotek"
    }
   },
   {
@@ -65,7 +66,8 @@
     "city": "Lyon",
     "country": "France",
     "qid": "Q42319149",
-    "wikidata": "https://www.wikidata.org/wiki/Q42319149"
+    "wikidata": "https://www.wikidata.org/wiki/Q42319149",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -95,7 +97,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q126467",
     "wikidata": "https://www.wikidata.org/wiki/Q126467",
@@ -106,7 +108,8 @@
       "qid": "Q126467",
       "url": "https://www.wikidata.org/wiki/Q126467"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -139,7 +142,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q2024709",
-    "wikidata": "https://www.wikidata.org/wiki/Q2024709"
+    "wikidata": "https://www.wikidata.org/wiki/Q2024709",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -172,7 +176,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q1844748",
-    "wikidata": "https://www.wikidata.org/wiki/Q1844748"
+    "wikidata": "https://www.wikidata.org/wiki/Q1844748",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -188,7 +193,7 @@
     "painter": "Édouard Manet",
     "title": "The Surprised Nymph",
     "year": "1860",
-    "location": "Museo Nacional de Bellas Artes Buenos Aires",
+    "location": "National Museum of Fine Arts, Argentina",
     "attribution": "generally accepted",
     "dimensions": "146 × 114 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Edouard_Manet_085.jpg/500px-Edouard_Manet_085.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -201,9 +206,12 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nacional-de-bellas-artes-buenos-aires",
+    "museum_id": "national-museum-of-fine-arts-argentina",
     "qid": "Q3088614",
-    "wikidata": "https://www.wikidata.org/wiki/Q3088614"
+    "wikidata": "https://www.wikidata.org/wiki/Q3088614",
+    "city": "Buenos Aires",
+    "country": "Argentina",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -236,7 +244,8 @@
     "city": "Boston",
     "country": "United States",
     "qid": "Q39226",
-    "wikidata": "https://www.wikidata.org/wiki/Q39226"
+    "wikidata": "https://www.wikidata.org/wiki/Q39226",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -244,8 +253,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -280,7 +289,9 @@
       "source": "Wikipedia list",
       "title": "Lola of Valencia"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -296,7 +307,7 @@
     "painter": "Édouard Manet",
     "title": "Music in the Tuileries Gardens",
     "year": "1862",
-    "location": "National Gallery London",
+    "location": "National Gallery",
     "attribution": "generally accepted",
     "dimensions": "76 × 118 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/MANET_-_M%C3%BAsica_en_las_Tuller%C3%ADas_%28National_Gallery%2C_Londres%2C_1862%29.jpg/500px-MANET_-_M%C3%BAsica_en_las_Tuller%C3%ADas_%28National_Gallery%2C_Londres%2C_1862%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -309,7 +320,7 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-london",
+    "museum_id": "national-gallery",
     "qid": "Q210277",
     "wikidata": "https://www.wikidata.org/wiki/Q210277",
     "_merged": [
@@ -319,7 +330,10 @@
       "qid": "Q210277",
       "url": "https://www.wikidata.org/wiki/Q210277"
      }
-    ]
+    ],
+    "city": "London",
+    "country": "United Kingdom",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -350,7 +364,8 @@
     },
     "museum_id": "national-gallery-of-art-washington",
     "qid": "Q59815",
-    "wikidata": "https://www.wikidata.org/wiki/Q59815"
+    "wikidata": "https://www.wikidata.org/wiki/Q59815",
+    "location_src": "National Gallery of Art Washington"
    }
   },
   {
@@ -383,7 +398,8 @@
     "city": "Boston",
     "country": "United States",
     "qid": "Q20539197",
-    "wikidata": "https://www.wikidata.org/wiki/Q20539197"
+    "wikidata": "https://www.wikidata.org/wiki/Q20539197",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -416,7 +432,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q72650",
-    "wikidata": "https://www.wikidata.org/wiki/Q72650"
+    "wikidata": "https://www.wikidata.org/wiki/Q72650",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -449,7 +466,8 @@
     "city": "Karlsruhe",
     "country": "Germany",
     "qid": "Q1810341",
-    "wikidata": "https://www.wikidata.org/wiki/Q1810341"
+    "wikidata": "https://www.wikidata.org/wiki/Q1810341",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -457,8 +475,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -490,7 +508,8 @@
       "qid": "Q88311936",
       "url": "https://www.wikidata.org/wiki/Q88311936"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -520,7 +539,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q152509",
     "wikidata": "https://www.wikidata.org/wiki/Q152509",
@@ -531,7 +550,8 @@
       "qid": "Q152509",
       "url": "https://www.wikidata.org/wiki/Q152509"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -561,10 +581,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q737062",
-    "wikidata": "https://www.wikidata.org/wiki/Q737062"
+    "wikidata": "https://www.wikidata.org/wiki/Q737062",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -605,7 +626,8 @@
       "qid": "Q113262",
       "url": "https://www.wikidata.org/wiki/Q113262"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -636,7 +658,8 @@
     },
     "museum_id": "national-gallery-of-art-washington",
     "qid": "Q3203711",
-    "wikidata": "https://www.wikidata.org/wiki/Q3203711"
+    "wikidata": "https://www.wikidata.org/wiki/Q3203711",
+    "location_src": "National Gallery of Art Washington"
    }
   },
   {
@@ -677,7 +700,8 @@
       "qid": "Q3207826",
       "url": "https://www.wikidata.org/wiki/Q3207826"
      }
-    ]
+    ],
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -710,7 +734,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q2752079",
-    "wikidata": "https://www.wikidata.org/wiki/Q2752079"
+    "wikidata": "https://www.wikidata.org/wiki/Q2752079",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -743,7 +768,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q7744027",
-    "wikidata": "https://www.wikidata.org/wiki/Q7744027"
+    "wikidata": "https://www.wikidata.org/wiki/Q7744027",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -751,8 +777,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -776,7 +802,8 @@
     "city": "Philadelphia",
     "country": "United States",
     "qid": "Q154653",
-    "wikidata": "https://www.wikidata.org/wiki/Q154653"
+    "wikidata": "https://www.wikidata.org/wiki/Q154653",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -809,7 +836,8 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q942276",
-    "wikidata": "https://www.wikidata.org/wiki/Q942276"
+    "wikidata": "https://www.wikidata.org/wiki/Q942276",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -842,7 +870,8 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q20275577",
-    "wikidata": "https://www.wikidata.org/wiki/Q20275577"
+    "wikidata": "https://www.wikidata.org/wiki/Q20275577",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -872,10 +901,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q2984952",
-    "wikidata": "https://www.wikidata.org/wiki/Q2984952"
+    "wikidata": "https://www.wikidata.org/wiki/Q2984952",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -908,7 +938,8 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q2997933",
-    "wikidata": "https://www.wikidata.org/wiki/Q2997933"
+    "wikidata": "https://www.wikidata.org/wiki/Q2997933",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -941,7 +972,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q3224381",
-    "wikidata": "https://www.wikidata.org/wiki/Q3224381"
+    "wikidata": "https://www.wikidata.org/wiki/Q3224381",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -971,7 +1003,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q26250",
     "wikidata": "https://www.wikidata.org/wiki/Q26250",
@@ -982,7 +1014,8 @@
       "qid": "Q26250",
       "url": "https://www.wikidata.org/wiki/Q26250"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1023,7 +1056,8 @@
       "qid": "Q942523",
       "url": "https://www.wikidata.org/wiki/Q942523"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1054,7 +1088,10 @@
     },
     "museum_id": "kunsthalle-mannheim",
     "qid": "Q1212269",
-    "wikidata": "https://www.wikidata.org/wiki/Q1212269"
+    "wikidata": "https://www.wikidata.org/wiki/Q1212269",
+    "city": "Mannheim",
+    "country": "Germany",
+    "location_src": "Kunsthalle Mannheim"
    }
   },
   {
@@ -1084,10 +1121,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q2529703",
-    "wikidata": "https://www.wikidata.org/wiki/Q2529703"
+    "wikidata": "https://www.wikidata.org/wiki/Q2529703",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1117,10 +1155,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "calouste-gulbenkian-museum",
-    "city": "Lisbon",
+    "city": "Avenidas Novas",
     "country": "Portugal",
     "qid": "Q3231193",
-    "wikidata": "https://www.wikidata.org/wiki/Q3231193"
+    "wikidata": "https://www.wikidata.org/wiki/Q3231193",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -1150,10 +1189,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q3505997",
-    "wikidata": "https://www.wikidata.org/wiki/Q3505997"
+    "wikidata": "https://www.wikidata.org/wiki/Q3505997",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1183,10 +1223,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q775407",
-    "wikidata": "https://www.wikidata.org/wiki/Q775407"
+    "wikidata": "https://www.wikidata.org/wiki/Q775407",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1195,7 +1236,7 @@
     "type": "Point",
     "coordinates": [
      11.57111,
-     48.14972
+     48.14989
     ]
    },
    "properties": {
@@ -1219,7 +1260,8 @@
     "city": "Munich",
     "country": "Germany",
     "qid": "Q1245431",
-    "wikidata": "https://www.wikidata.org/wiki/Q1245431"
+    "wikidata": "https://www.wikidata.org/wiki/Q1245431",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -1249,10 +1291,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q3178376",
-    "wikidata": "https://www.wikidata.org/wiki/Q3178376"
+    "wikidata": "https://www.wikidata.org/wiki/Q3178376",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1282,10 +1325,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q2974978",
-    "wikidata": "https://www.wikidata.org/wiki/Q2974978"
+    "wikidata": "https://www.wikidata.org/wiki/Q2974978",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1293,8 +1337,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -1318,7 +1362,8 @@
     "city": "Philadelphia",
     "country": "United States",
     "qid": "Q3222563",
-    "wikidata": "https://www.wikidata.org/wiki/Q3222563"
+    "wikidata": "https://www.wikidata.org/wiki/Q3222563",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -1351,7 +1396,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q19905377",
-    "wikidata": "https://www.wikidata.org/wiki/Q19905377"
+    "wikidata": "https://www.wikidata.org/wiki/Q19905377",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1359,8 +1405,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.40721,
-     41.82678
+     -71.40754,
+     41.8269
     ]
    },
    "properties": {
@@ -1391,7 +1437,9 @@
       "qid": "Q43081847",
       "url": "https://www.wikidata.org/wiki/Q43081847"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -1424,7 +1472,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q2494850",
-    "wikidata": "https://www.wikidata.org/wiki/Q2494850"
+    "wikidata": "https://www.wikidata.org/wiki/Q2494850",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1457,7 +1506,8 @@
     "city": "Cardiff",
     "country": "Wales",
     "qid": "Q978841",
-    "wikidata": "https://www.wikidata.org/wiki/Q978841"
+    "wikidata": "https://www.wikidata.org/wiki/Q978841",
+    "location_src": "National Museum Cardiff"
    }
   },
   {
@@ -1487,7 +1537,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q2899286",
     "wikidata": "https://www.wikidata.org/wiki/Q2899286",
@@ -1498,7 +1548,8 @@
       "qid": "Q2899286",
       "url": "https://www.wikidata.org/wiki/Q2899286"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1506,8 +1557,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -1531,7 +1582,8 @@
     "city": "Philadelphia",
     "country": "United States",
     "qid": "Q3220354",
-    "wikidata": "https://www.wikidata.org/wiki/Q3220354"
+    "wikidata": "https://www.wikidata.org/wiki/Q3220354",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -1562,7 +1614,8 @@
     },
     "museum_id": "national-gallery-of-art-washington",
     "qid": "Q1212098",
-    "wikidata": "https://www.wikidata.org/wiki/Q1212098"
+    "wikidata": "https://www.wikidata.org/wiki/Q1212098",
+    "location_src": "National Gallery of Art Washington"
    }
   },
   {
@@ -1595,7 +1648,8 @@
     "city": "Frankfurt",
     "country": "Germany",
     "qid": "Q957664",
-    "wikidata": "https://www.wikidata.org/wiki/Q957664"
+    "wikidata": "https://www.wikidata.org/wiki/Q957664",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -1634,7 +1688,8 @@
       "qid": "Q1163504",
       "url": "https://www.wikidata.org/wiki/Q1163504"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art Washington"
    }
   },
   {
@@ -1650,7 +1705,7 @@
     "painter": "Édouard Manet",
     "title": "Argenteuil",
     "year": "1874",
-    "location": "Musée des Beaux-Arts Tournai",
+    "location": "Musée des Beaux-Arts de Tournai",
     "attribution": "generally accepted",
     "dimensions": "149 × 115 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Edouard_Manet_003.jpg/500px-Edouard_Manet_003.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1663,9 +1718,12 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-tournai",
+    "museum_id": "musee-des-beaux-arts-de-tournai",
     "qid": "Q2860945",
-    "wikidata": "https://www.wikidata.org/wiki/Q2860945"
+    "wikidata": "https://www.wikidata.org/wiki/Q2860945",
+    "city": "Tournai",
+    "country": "Belgium",
+    "location_src": "Musée des Beaux-Arts de Tournai"
    }
   },
   {
@@ -1673,8 +1731,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -1706,7 +1764,8 @@
       "qid": "Q131349978",
       "url": "https://www.wikidata.org/wiki/Q131349978"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -1715,7 +1774,7 @@
     "type": "Point",
     "coordinates": [
      11.57111,
-     48.14972
+     48.14989
     ]
    },
    "properties": {
@@ -1739,7 +1798,8 @@
     "city": "Munich",
     "country": "Germany",
     "qid": "Q2977843",
-    "wikidata": "https://www.wikidata.org/wiki/Q2977843"
+    "wikidata": "https://www.wikidata.org/wiki/Q2977843",
+    "location_src": "Neue Pinakothek"
    }
   },
   {
@@ -1772,7 +1832,8 @@
     "city": "New York",
     "country": "United States",
     "qid": "Q15290965",
-    "wikidata": "https://www.wikidata.org/wiki/Q15290965"
+    "wikidata": "https://www.wikidata.org/wiki/Q15290965",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1780,8 +1841,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -1805,7 +1866,8 @@
     "city": "Lille",
     "country": "France",
     "qid": "Q17495108",
-    "wikidata": "https://www.wikidata.org/wiki/Q17495108"
+    "wikidata": "https://www.wikidata.org/wiki/Q17495108",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -1813,8 +1875,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.2315,
-     44.3709
+     -73.2322,
+     44.3727
     ]
    },
    "properties": {
@@ -1842,7 +1904,10 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q79868509 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "city": "Shelburne",
+    "country": "United States",
+    "location_src": "Shelburne Museum"
    }
   },
   {
@@ -1850,8 +1915,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -1872,7 +1937,8 @@
     },
     "museum_id": "barnes-foundation",
     "city": "Philadelphia",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -1902,10 +1968,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q1551926",
-    "wikidata": "https://www.wikidata.org/wiki/Q1551926"
+    "wikidata": "https://www.wikidata.org/wiki/Q1551926",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1921,7 +1988,7 @@
     "painter": "Édouard Manet",
     "title": "Nana",
     "year": "1877",
-    "location": "Kunsthalle Hamburg",
+    "location": "Hamburger Kunsthalle",
     "attribution": "generally accepted",
     "dimensions": "154 × 115 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Edouard_Manet_037.jpg/500px-Edouard_Manet_037.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1934,10 +2001,12 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthalle-hamburg",
+    "museum_id": "hamburger-kunsthalle",
     "qid": "Q536024",
     "wikidata": "https://www.wikidata.org/wiki/Q536024",
-    "city": "Germany"
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -1976,7 +2045,8 @@
       "qid": "Q731639",
       "url": "https://www.wikidata.org/wiki/Q731639"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art Washington"
    }
   },
   {
@@ -2006,7 +2076,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q3206709",
     "wikidata": "https://www.wikidata.org/wiki/Q3206709",
@@ -2017,7 +2087,8 @@
       "qid": "Q3206709",
       "url": "https://www.wikidata.org/wiki/Q3206709"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2026,7 +2097,7 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.7486
+     32.74861
     ]
    },
    "properties": {
@@ -2058,7 +2129,8 @@
       "qid": "Q72753447",
       "url": "https://www.wikidata.org/wiki/Q72753447"
      }
-    ]
+    ],
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -2088,10 +2160,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q12900049",
-    "wikidata": "https://www.wikidata.org/wiki/Q12900049"
+    "wikidata": "https://www.wikidata.org/wiki/Q12900049",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2099,8 +2172,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -2121,10 +2194,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q481454",
-    "wikidata": "https://www.wikidata.org/wiki/Q481454"
+    "wikidata": "https://www.wikidata.org/wiki/Q481454",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -2140,7 +2214,7 @@
     "painter": "Édouard Manet",
     "title": "Chez le père Lathuille",
     "year": "1879",
-    "location": "Musée des Beaux-Arts Tournai",
+    "location": "Musée des Beaux-Arts de Tournai",
     "attribution": "generally accepted",
     "dimensions": "93 × 112 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Edouard_Manet_031.jpg/500px-Edouard_Manet_031.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2153,7 +2227,7 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-tournai",
+    "museum_id": "musee-des-beaux-arts-de-tournai",
     "qid": "Q1632817",
     "wikidata": "https://www.wikidata.org/wiki/Q1632817",
     "_merged": [
@@ -2163,7 +2237,10 @@
       "qid": "Q1632817",
       "url": "https://www.wikidata.org/wiki/Q1632817"
      }
-    ]
+    ],
+    "city": "Tournai",
+    "country": "Belgium",
+    "location_src": "Musée des Beaux-Arts de Tournai"
    }
   },
   {
@@ -2200,7 +2277,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q43315010 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Deji Art Museum"
    }
   },
   {
@@ -2233,7 +2311,8 @@
     "city": "Lyon",
     "country": "France",
     "qid": "Q23926235",
-    "wikidata": "https://www.wikidata.org/wiki/Q23926235"
+    "wikidata": "https://www.wikidata.org/wiki/Q23926235",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -2266,7 +2345,8 @@
     "city": "Baltimore",
     "country": "United States",
     "qid": "Q7720924",
-    "wikidata": "https://www.wikidata.org/wiki/Q7720924"
+    "wikidata": "https://www.wikidata.org/wiki/Q7720924",
+    "location_src": "Walters Art Museum"
    }
   },
   {
@@ -2282,7 +2362,7 @@
     "painter": "Édouard Manet",
     "title": "Corner of a Café-Concert",
     "year": "1879",
-    "location": "National Gallery London",
+    "location": "National Gallery",
     "attribution": "generally accepted",
     "dimensions": "97.1 × 77.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Edouard_Manet_006.jpg/500px-Edouard_Manet_006.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2295,9 +2375,12 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-london",
+    "museum_id": "national-gallery",
     "qid": "Q26689493",
-    "wikidata": "https://www.wikidata.org/wiki/Q26689493"
+    "wikidata": "https://www.wikidata.org/wiki/Q26689493",
+    "city": "London",
+    "country": "United Kingdom",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2327,7 +2410,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q15917726",
     "wikidata": "https://www.wikidata.org/wiki/Q15917726",
@@ -2338,7 +2421,8 @@
       "qid": "Q15917726",
       "url": "https://www.wikidata.org/wiki/Q15917726"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2346,8 +2430,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -2368,7 +2452,8 @@
     },
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -2384,7 +2469,7 @@
     "painter": "Édouard Manet",
     "title": "A Bundle of Asparagus",
     "year": "1880",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "attribution": "generally accepted",
     "dimensions": "46 x 55 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Edouard_Manet_Bunch_of_Asparagus.jpg/500px-Edouard_Manet_Bunch_of_Asparagus.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2401,7 +2486,8 @@
     "city": "Cologne",
     "country": "Germany",
     "qid": "Q18223037",
-    "wikidata": "https://www.wikidata.org/wiki/Q18223037"
+    "wikidata": "https://www.wikidata.org/wiki/Q18223037",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -2431,7 +2517,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q15973357",
     "wikidata": "https://www.wikidata.org/wiki/Q15973357",
@@ -2442,7 +2528,8 @@
       "qid": "Q15973357",
       "url": "https://www.wikidata.org/wiki/Q15973357"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2450,15 +2537,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.5481,
-     47.3703
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Escape of Rochefort",
     "year": "1881",
-    "location": "Kunsthaus Zurich",
+    "location": "Kunsthaus Zürich",
     "attribution": "generally accepted",
     "dimensions": "143 × 114 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/L%27Evasion_de_Rochefort_-_Edouard_Manet_%28Kunsthaus_Z%C3%BCrich%29.jpg/500px-L%27Evasion_de_Rochefort_-_Edouard_Manet_%28Kunsthaus_Z%C3%BCrich%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2472,7 +2559,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthaus-zurich",
-    "city": "Zürich",
+    "city": "Zurich",
     "country": "Switzerland",
     "qid": "Q3205630",
     "wikidata": "https://www.wikidata.org/wiki/Q3205630",
@@ -2483,7 +2570,8 @@
       "qid": "Q3205630",
       "url": "https://www.wikidata.org/wiki/Q3205630"
      }
-    ]
+    ],
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -2522,7 +2610,8 @@
       "qid": "Q18625546",
       "url": "https://www.wikidata.org/wiki/Q18625546"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Nancy"
    }
   },
   {
@@ -2530,15 +2619,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.6558,
-     -23.5611
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Portrait of Monsieur Pertuiset the Lion-Hunter",
     "year": "1881",
-    "location": "Museu de Arte de São Paulo",
+    "location": "São Paulo Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "150 × 170 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/%C3%89douard_Manet_-_Pertuiset%2C_le_chasseur_de_lions.jpg/500px-%C3%89douard_Manet_-_Pertuiset%2C_le_chasseur_de_lions.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2551,7 +2640,7 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museu-de-arte-de-sao-paulo",
+    "museum_id": "sao-paulo-museum-of-art",
     "qid": "Q3399437",
     "wikidata": "https://www.wikidata.org/wiki/Q3399437",
     "_merged": [
@@ -2561,7 +2650,10 @@
       "qid": "Q3399437",
       "url": "https://www.wikidata.org/wiki/Q3399437"
      }
-    ]
+    ],
+    "city": "São Paulo",
+    "country": "Brazil",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -2569,8 +2661,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -2594,7 +2686,8 @@
     "city": "London",
     "country": "United Kingdom",
     "qid": "Q1245354",
-    "wikidata": "https://www.wikidata.org/wiki/Q1245354"
+    "wikidata": "https://www.wikidata.org/wiki/Q1245354",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -2602,8 +2695,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -2624,10 +2717,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q106766601",
-    "wikidata": "https://www.wikidata.org/wiki/Q106766601"
+    "wikidata": "https://www.wikidata.org/wiki/Q106766601",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -2657,7 +2751,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-victoria",
-    "city": "Melbourne",
+    "city": "City of Melbourne",
     "country": "Australia",
     "qid": "Q106766601",
     "wikidata": "https://www.wikidata.org/wiki/Q106766601",
@@ -2668,7 +2762,8 @@
       "qid": "Q20423282",
       "url": "https://www.wikidata.org/wiki/Q20423282"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -2698,10 +2793,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "qid": "Q17494570",
-    "wikidata": "https://www.wikidata.org/wiki/Q17494570"
+    "wikidata": "https://www.wikidata.org/wiki/Q17494570",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2709,8 +2805,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.39806,
-     52.52083
+     13.39835,
+     52.52081
     ]
    },
    "properties": {
@@ -2731,10 +2827,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "city": "Berlin",
+    "city": "Bezirk Mitte",
     "country": "Germany",
     "qid": "Q23787839",
-    "wikidata": "https://www.wikidata.org/wiki/Q23787839"
+    "wikidata": "https://www.wikidata.org/wiki/Q23787839",
+    "location_src": "Alte Nationalgalerie"
    }
   },
   {
@@ -2742,15 +2839,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "The Bar",
     "year": "1878",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -2771,7 +2868,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -2779,15 +2878,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Portrait d'Antonin Proust",
     "year": "1879",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -2808,7 +2907,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -2816,7 +2917,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -2845,7 +2946,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -2853,8 +2956,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     132.458061111,
-     34.398669444
+     132.45806,
+     34.39867
     ]
    },
    "properties": {
@@ -2882,7 +2985,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hiroshima-museum-of-art",
+    "location_src": "Hiroshima Museum of Art"
    }
   },
   {
@@ -2890,7 +2995,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -2919,7 +3024,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -2927,8 +3034,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -98.456748,
-     29.485516
+     -98.45675,
+     29.48552
     ]
    },
    "properties": {
@@ -2956,7 +3063,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "mcnay-art-museum",
+    "location_src": "McNay Art Museum"
    }
   },
   {
@@ -2964,15 +3073,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.673086,
-     41.763711
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Plage de Berck-sur-mer à marée basse",
     "year": "1873",
-    "location": "Wadsworth Atheneum Museum of Art",
+    "location": "Wadsworth Atheneum",
     "city": "Hartford",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2993,7 +3102,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wadsworth-atheneum",
+    "location_src": "Wadsworth Atheneum"
    }
   },
   {
@@ -3030,7 +3141,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -3067,7 +3180,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -3075,15 +3190,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Embarkation to Folkestone",
     "year": "1869",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -3104,7 +3219,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -3112,15 +3229,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Marguerite de Conflans au capuchon",
     "year": "1873",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -3141,7 +3258,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -3149,15 +3268,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.731666666,
-     47.511111111
+     8.73167,
+     47.51111
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Roses et lilacs",
     "year": "1882",
-    "location": "Museum collection Am Römerholz",
+    "location": "Am Römerholz",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -3178,7 +3297,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "am-romerholz",
+    "location_src": "Am Römerholz"
    }
   },
   {
@@ -3186,8 +3307,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.735236159,
-     47.496489073
+     8.73524,
+     47.49649
     ]
    },
    "properties": {
@@ -3215,7 +3336,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "villa-flora",
+    "location_src": "Villa Flora"
    }
   },
   {
@@ -3223,8 +3346,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.116912,
-     51.510734
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -3252,7 +3375,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -3260,7 +3385,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -3289,7 +3414,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -3297,7 +3424,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -3326,7 +3453,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -3334,8 +3463,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -3363,7 +3492,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "location_src": "Ordrupgaard"
    }
   },
   {
@@ -3371,8 +3502,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.563333,
-     55.766944
+     12.56333,
+     55.76694
     ]
    },
    "properties": {
@@ -3400,7 +3531,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ordrupgaard",
+    "location_src": "Ordrupgaard"
    }
   },
   {
@@ -3408,7 +3541,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -3437,7 +3570,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -3445,8 +3580,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.307726421,
-     55.830936581
+     -4.30773,
+     55.83094
     ]
    },
    "properties": {
@@ -3474,7 +3609,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "burrell-collection",
+    "location_src": "Burrell Collection"
    }
   },
   {
@@ -3482,8 +3619,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.307726421,
-     55.830936581
+     -4.30773,
+     55.83094
     ]
    },
    "properties": {
@@ -3511,7 +3648,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "burrell-collection",
+    "location_src": "Burrell Collection"
    }
   },
   {
@@ -3519,8 +3658,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.307726421,
-     55.830936581
+     -4.30773,
+     55.83094
     ]
    },
    "properties": {
@@ -3548,7 +3687,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "burrell-collection",
+    "location_src": "Burrell Collection"
    }
   },
   {
@@ -3556,7 +3697,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.571944444,
+     12.57194,
      55.6725
     ]
    },
@@ -3565,7 +3706,7 @@
     "title": "Mademoiselle Isabelle Lemonnier",
     "year": "1880",
     "location": "Ny Carlsberg Glyptotek",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mademoiselle%20Isabelle%20Lemonnier%20by%20%C3%89douard%20Manet%2C%201879-1882%20-%20Ny%20Carlsberg%20Glyptotek%20-%20Copenhagen%20-%20DSC09422.JPG?width=500",
@@ -3585,7 +3726,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek"
    }
   },
   {
@@ -3593,8 +3736,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.329079,
-     35.686304
+     139.32908,
+     35.6863
     ]
    },
    "properties": {
@@ -3622,7 +3765,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "tokyo-fuji-art-museum",
+    "location_src": "Tokyo Fuji Art Museum"
    }
   },
   {
@@ -3659,7 +3804,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -3667,8 +3814,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.021145,
-     35.256711
+     139.02114,
+     35.25671
     ]
    },
    "properties": {
@@ -3696,7 +3843,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pola-museum-of-art",
+    "location_src": "Pola Museum of Art"
    }
   },
   {
@@ -3733,7 +3882,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hill-stead-museum",
+    "location_src": "Hill-Stead Museum"
    }
   },
   {
@@ -3770,7 +3921,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hill-stead-museum",
+    "location_src": "Hill-Stead Museum"
    }
   },
   {
@@ -3778,8 +3931,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.359166666,
-     34.063333333
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -3807,7 +3960,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "los-angeles-county-museum-of-art",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -3815,8 +3970,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294491,
-     38.639306
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -3844,7 +3999,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -3853,7 +4010,7 @@
     "type": "Point",
     "coordinates": [
      136.91978,
-     35.288899
+     35.2889
     ]
    },
    "properties": {
@@ -3881,7 +4038,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "menard-art-museum",
+    "location_src": "Menard Art Museum"
    }
   },
   {
@@ -3918,7 +4077,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "shelburne-museum",
+    "location_src": "Shelburne Museum"
    }
   },
   {
@@ -3955,7 +4116,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "shelburne-museum",
+    "location_src": "Shelburne Museum"
    }
   },
   {
@@ -3963,7 +4126,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.19972222,
+     9.19972,
      45.4725
     ]
    },
@@ -3992,7 +4155,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-d-arte-moderna-di-milano",
+    "location_src": "Galleria d'arte moderna di Milano"
    }
   },
   {
@@ -4000,8 +4165,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -4029,7 +4194,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -4037,8 +4204,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.927827,
-     52.450331
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
@@ -4066,7 +4233,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barber-institute-of-fine-arts",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -4103,7 +4272,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "chrysler-museum-of-art",
+    "location_src": "Chrysler Museum of Art"
    }
   },
   {
@@ -4140,7 +4311,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minnesota-marine-art-museum",
+    "location_src": "Minnesota Marine Art Museum"
    }
   },
   {
@@ -4148,8 +4321,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     140.332402,
-     38.255891
+     140.3324,
+     38.25589
     ]
    },
    "properties": {
@@ -4177,7 +4350,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yamagata-museum-of-art",
+    "location_src": "Yamagata Museum of Art"
    }
   },
   {
@@ -4185,8 +4360,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     140.46538611,
-     36.36779444
+     140.46539,
+     36.36779
     ]
    },
    "properties": {
@@ -4214,7 +4389,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-modern-art-ibaraki",
+    "location_src": "Museum of Modern Art, Ibaraki"
    }
   },
   {
@@ -4222,8 +4399,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -4231,7 +4408,7 @@
     "title": "Study for Le Déjeuner sur l'herbe",
     "year": "1865",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Study%20for%20Le%20D%C3%A9jeuner%20sur%20l%27herbe.jpg?width=500",
@@ -4258,7 +4435,9 @@
       "title": "Le déjeuner sur l'herbe",
       "ref": "https://en.wikipedia.org/wiki/Le_d%C3%A9jeuner_sur_l%27herbe"
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -4266,8 +4445,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.314552049,
-     48.866053193
+     2.31455,
+     48.86605
     ]
    },
    "properties": {
@@ -4295,7 +4474,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "location_src": "Musée des Beaux-Arts de la ville de Paris"
    }
   },
   {
@@ -4303,8 +4484,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -4332,7 +4513,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -4340,8 +4523,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -4369,7 +4552,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -4377,8 +4562,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4406,7 +4591,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4414,8 +4601,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4443,7 +4630,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4451,8 +4640,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4480,7 +4669,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4488,8 +4679,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4517,7 +4708,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4525,8 +4718,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4554,7 +4747,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4562,8 +4757,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4591,7 +4786,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4599,8 +4796,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4628,7 +4825,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4665,7 +4864,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-folkwang",
+    "location_src": "Museum Folkwang"
    }
   },
   {
@@ -4673,8 +4874,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -4682,7 +4883,7 @@
     "title": "The Monet Family in Their Garden at Argenteuil",
     "year": "1874",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20--The%20Monet%20Family%20in%20Their%20Garden%20at%20Argenteuil.jpg?width=500",
@@ -4702,7 +4903,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4710,8 +4913,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -4739,7 +4942,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -4747,8 +4952,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -4776,7 +4981,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -4784,8 +4991,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -4813,7 +5020,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -4821,7 +5030,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -4830,7 +5039,7 @@
     "title": "Le bateau noir à Berck",
     "year": "1873",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1873%20Manet%20Schwarzes%20Boot%20bei%20Berck%20anagoria.jpg?width=500",
@@ -4850,7 +5059,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -4858,7 +5069,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -4877,7 +5088,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q123286362",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -4885,7 +5098,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -4914,7 +5127,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -4922,7 +5137,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -4951,7 +5166,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -4959,15 +5176,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Portrait of the Italian painter Giuseppe De Nittis",
     "year": "1900",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "copy or later version",
@@ -4986,7 +5203,9 @@
       "was": "generally accepted",
       "note": "dated 1900, after death (1832–1883) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -5023,7 +5242,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-decorative-arts",
+    "location_src": "National Museum of Decorative Arts"
    }
   },
   {
@@ -5032,7 +5253,7 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111
+     50.10111
     ]
    },
    "properties": {
@@ -5040,7 +5261,7 @@
     "title": "Portrait of Antonio Proust",
     "year": "1855",
     "location": "National Gallery Prague",
-    "city": "",
+    "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Portrait%20of%20Antonio%20Proust%20-%20Google%20Art%20Project.jpg?width=500",
@@ -5060,7 +5281,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -5097,7 +5320,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -5134,7 +5359,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute"
    }
   },
   {
@@ -5142,8 +5369,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.336633,
-     35.679431
+     139.33663,
+     35.67943
     ]
    },
    "properties": {
@@ -5171,7 +5398,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "murauchi-art-museum",
+    "location_src": "Murauchi Art Museum"
    }
   },
   {
@@ -5208,7 +5437,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "spencer-museum-of-art",
+    "location_src": "Spencer Museum of Art"
    }
   },
   {
@@ -5216,8 +5447,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -5245,7 +5476,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -5253,8 +5486,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -5282,7 +5515,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -5290,8 +5525,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -5319,7 +5554,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -5356,7 +5593,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -5393,7 +5632,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -5401,8 +5642,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.177128,
-     51.485577
+     -3.17713,
+     51.48558
     ]
    },
    "properties": {
@@ -5430,7 +5671,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "amgueddfa-cymru-museum-wales",
+    "location_src": "Amgueddfa Cymru – Museum Wales"
    }
   },
   {
@@ -5438,8 +5681,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.177128,
-     51.485577
+     -3.17713,
+     51.48558
     ]
    },
    "properties": {
@@ -5467,7 +5710,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "amgueddfa-cymru-museum-wales",
+    "location_src": "Amgueddfa Cymru – Museum Wales"
    }
   },
   {
@@ -5475,7 +5720,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.19972222,
+     9.19972,
      45.4725
     ]
    },
@@ -5504,7 +5749,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-d-arte-moderna-di-milano",
+    "location_src": "Galleria d'arte moderna di Milano"
    }
   },
   {
@@ -5541,7 +5788,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "grey-art-gallery",
+    "location_src": "Grey Art Gallery"
    }
   },
   {
@@ -5549,15 +5798,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.1508991,
-     46.1977309
+     6.1509,
+     46.19773
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Berthe Morisot à la voilette",
     "year": "1872",
-    "location": "Musée du Petit Palais",
+    "location": "Petit Palais",
     "city": "Geneva",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -5578,7 +5827,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "petit-palais-2-2",
+    "location_src": "Petit Palais"
    }
   },
   {
@@ -5586,8 +5837,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -5615,7 +5866,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -5623,8 +5876,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -5652,7 +5905,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -5660,8 +5915,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.655833333,
-     -23.561111111
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -5689,7 +5944,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art"
    }
   },
   {
@@ -5697,8 +5954,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -157.848708,
-     21.303898
+     -157.84871,
+     21.3039
     ]
    },
    "properties": {
@@ -5726,7 +5983,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "honolulu-museum-of-art",
+    "location_src": "Honolulu Museum of Art"
    }
   },
   {
@@ -5734,8 +5993,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -5763,7 +6022,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -5771,8 +6032,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5780,7 +6041,7 @@
     "title": "Woman with a Cat",
     "year": "1880",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Femme%20au%20chat%20%28Portrait%20de%20Madame%20Manet%29.jpg?width=500",
@@ -5800,7 +6061,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5808,8 +6071,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5817,7 +6080,7 @@
     "title": "Eva Gonzalès",
     "year": "1870",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portr%C3%A4t%20der%20Eva%20Gonzal%C3%A9s%20im%20Atelier%20Manets%20%281870%29%20-%20Edouard%20Manet.jpg?width=500",
@@ -5837,7 +6100,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5845,8 +6110,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.443333333,
-     46.951111111
+     7.44333,
+     46.95111
     ]
    },
    "properties": {
@@ -5874,7 +6139,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-bern",
+    "location_src": "Kunstmuseum Bern"
    }
   },
   {
@@ -5882,8 +6149,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     19.0397733,
-     47.4962283
+     19.03977,
+     47.49623
     ]
    },
    "properties": {
@@ -5911,7 +6178,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hungarian-national-gallery",
+    "location_src": "Hungarian National Gallery"
    }
   },
   {
@@ -5919,15 +6188,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.380833333,
-     48.191388888
+     16.38083,
+     48.19139
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "L’inconnue",
     "year": "1880",
-    "location": "Belvedere",
+    "location": "Österreichische Galerie Belvedere",
     "city": "Landstraße",
     "country": "Austria",
     "attribution": "generally accepted",
@@ -5948,7 +6217,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere"
    }
   },
   {
@@ -5956,8 +6227,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -5985,7 +6256,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -5993,8 +6266,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -6022,7 +6295,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -6030,8 +6305,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6059,7 +6334,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6067,8 +6344,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6096,7 +6373,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6104,8 +6383,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6133,7 +6412,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6141,8 +6422,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6170,7 +6451,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6178,8 +6461,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6207,7 +6490,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6215,8 +6500,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.813611,
-     53.072778
+     8.81361,
+     53.07278
     ]
    },
    "properties": {
@@ -6244,7 +6529,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen"
    }
   },
   {
@@ -6252,7 +6539,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -6281,7 +6568,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -6289,8 +6578,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -6318,7 +6607,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -6326,8 +6617,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -6355,7 +6646,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -6363,7 +6656,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -6392,7 +6685,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -6429,7 +6724,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "carnegie-museum-of-art",
+    "location_src": "Carnegie Museum of Art"
    }
   },
   {
@@ -6437,15 +6734,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Madame Manet in the Conservatory",
     "year": "1879",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -6466,7 +6763,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -6474,15 +6773,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.729166666,
-     59.911666666
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "View of the 1867 Exposition Universelle",
     "year": "1867",
-    "location": "National Museum of Art, Architecture and Design",
+    "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
     "attribution": "generally accepted",
@@ -6503,7 +6802,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-norway",
+    "location_src": "National Museum of Norway"
    }
   },
   {
@@ -6511,8 +6812,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -104.989345,
-     39.737188
+     -104.98935,
+     39.73719
     ]
    },
    "properties": {
@@ -6540,7 +6841,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "denver-art-museum",
+    "location_src": "Denver Art Museum"
    }
   },
   {
@@ -6548,8 +6851,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -6577,7 +6880,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -6585,8 +6890,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.267383323,
-     48.859279605
+     2.26738,
+     48.85928
     ]
    },
    "properties": {
@@ -6614,7 +6919,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-marmottan-monet",
+    "location_src": "Musée Marmottan Monet"
    }
   },
   {
@@ -6622,8 +6929,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.390539,
-     29.725605
+     -95.39054,
+     29.72561
     ]
    },
    "properties": {
@@ -6651,7 +6958,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston"
    }
   },
   {
@@ -6659,8 +6968,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.390539,
-     29.725605
+     -95.39054,
+     29.72561
     ]
    },
    "properties": {
@@ -6678,7 +6987,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28093958",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston"
    }
   },
   {
@@ -6686,7 +6997,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -6715,7 +7026,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -6723,7 +7036,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -6752,7 +7065,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -6760,8 +7075,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.559444444,
-     41.658333333
+     -83.55944,
+     41.65833
     ]
    },
    "properties": {
@@ -6789,7 +7104,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "toledo-museum-of-art",
+    "location_src": "Toledo Museum of Art"
    }
   },
   {
@@ -6798,7 +7115,7 @@
     "type": "Point",
     "coordinates": [
      -58.39297,
-     -34.583986
+     -34.58399
     ]
    },
    "properties": {
@@ -6826,7 +7143,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-fine-arts-argentina",
+    "location_src": "National Museum of Fine Arts, Argentina"
    }
   },
   {
@@ -6834,8 +7153,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.4032862,
-     51.311076
+     9.40329,
+     51.31108
     ]
    },
    "properties": {
@@ -6863,7 +7182,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hessen-kassel-heritage",
+    "location_src": "Hessen Kassel Heritage"
    }
   },
   {
@@ -6871,8 +7192,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -6900,7 +7221,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -6908,8 +7231,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -6937,7 +7260,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -6945,15 +7270,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Still-life",
     "year": "",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -6964,7 +7289,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27968236",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -6972,8 +7299,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -84.496944444,
-     39.113888888
+     -84.4969,
+     39.1139
     ]
    },
    "properties": {
@@ -7001,7 +7328,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "cincinnati-art-museum",
+    "location_src": "Cincinnati Art Museum"
    }
   },
   {
@@ -7038,7 +7367,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre-abu-dhabi",
+    "location_src": "Louvre Abu Dhabi"
    }
   },
   {
@@ -7046,8 +7377,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.636378,
-     42.318502
+     -72.63638,
+     42.3185
     ]
    },
    "properties": {
@@ -7075,7 +7406,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "smith-college-museum-of-art",
+    "location_src": "Smith College Museum of Art"
    }
   },
   {
@@ -7083,8 +7416,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.186875,
-     48.780227777
+     9.18688,
+     48.78023
     ]
    },
    "properties": {
@@ -7112,7 +7445,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatsgalerie-stuttgart",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -7120,8 +7455,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7149,7 +7484,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -7157,8 +7494,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -7186,7 +7523,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -7194,8 +7533,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.880191666,
-     43.611736111
+     3.88019,
+     43.61174
     ]
    },
    "properties": {
@@ -7223,7 +7562,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-fabre",
+    "location_src": "Musée Fabre"
    }
   },
   {
@@ -7231,8 +7572,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7240,7 +7581,7 @@
     "title": "George Moore (1852–1933) at the Café",
     "year": "1878",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20George%20Moore%20Cafe.jpg?width=500",
@@ -7260,7 +7601,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7268,8 +7611,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7277,7 +7620,7 @@
     "title": "Still Life with Flowers, Fan, and Pearls",
     "year": "1861",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Pivoines%20dans%20un%20bock.jpg?width=500",
@@ -7297,7 +7640,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7305,8 +7650,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7314,7 +7659,7 @@
     "title": "Head of Jean-Baptiste Faure (1830–1914)",
     "year": "1882",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20Jean-Baptiste%20Faure%20%281830%E2%80%931914%29%20MET%20DT200593.jpg?width=500",
@@ -7334,7 +7679,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7342,8 +7689,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7351,7 +7698,7 @@
     "title": "Peonies",
     "year": "1864",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Vase%20de%20pivoines%20sur%20un%20plateau%20laqu%C3%A9.jpg?width=500",
@@ -7371,7 +7718,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7379,8 +7728,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7388,7 +7737,7 @@
     "title": "Fishing",
     "year": "1862",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20-%20La%20p%C3%AAche.jpg?width=500",
@@ -7408,7 +7757,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7416,8 +7767,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7425,7 +7776,7 @@
     "title": "Madame Édouard Manet (Suzanne Leenhoff, 1830–1906)",
     "year": "1873",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%2C%20Madame%20%C3%89douard%20Manet%20%28Suzanne%20Leenhoff%2C%201830%E2%80%931906%29%2C%20The%20Metropolitan%20Museum%20of%20Art.jpg?width=500",
@@ -7445,7 +7796,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7453,8 +7806,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7462,7 +7815,7 @@
     "title": "Jean-Baptiste Faure (1830–1914)",
     "year": "1882",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Portrait%20of%20Jean-Baptiste%20Faure.jpg?width=500",
@@ -7482,7 +7835,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7490,8 +7845,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7499,7 +7854,7 @@
     "title": "George Moore (1852–1933)",
     "year": "1879",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20Georges%20Moore.jpg?width=500",
@@ -7519,7 +7874,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7527,8 +7884,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7536,7 +7893,7 @@
     "title": "Strawberries",
     "year": "1882",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Strawberries.jpg?width=500",
@@ -7556,7 +7913,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7564,8 +7923,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7573,7 +7932,7 @@
     "title": "Mademoiselle Isabelle Lemonnier (1857–1926)",
     "year": "1878",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Jeune%20Fille%20%C3%A0%20la%20Rose.jpg?width=500",
@@ -7593,7 +7952,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7601,8 +7962,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7610,7 +7971,7 @@
     "title": "Mademoiselle Lucie Delabigne (1859–1910), Called Valtesse de la Bigne",
     "year": "1879",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mademoiselle%20Lucie%20Delabigne%20%281859%E2%80%931910%29%2C%20Called%20Valtesse%20de%20la%20Bigne%20MET%20DT221017.jpg?width=500",
@@ -7630,7 +7991,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7638,8 +8001,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -7647,7 +8010,7 @@
     "title": "Copy after Delacroix's \"Bark of Dante\"",
     "year": "1859",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Copy%20after%20Delacroix%27s%20%22Bark%20of%20Dante%22%20MET%20DT2005.jpg?width=500",
@@ -7667,7 +8030,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -7675,8 +8040,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.694925,
-     40.416041
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -7710,7 +8075,9 @@
       "source": "Wikipedia list",
       "title": "Summer or The Amazon or Horsewoman, Fullface"
      }
-    ]
+    ],
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -7718,8 +8085,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.977611111,
-     40.761444444
+     -73.9775,
+     40.7617
     ]
    },
    "properties": {
@@ -7727,7 +8094,7 @@
     "title": "Two Roses on a Tablecloth",
     "year": "1882",
     "location": "Museum of Modern Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89duard%20Manet%20-%20Nature%20Morte%2C%20Deux%20Roses.jpg?width=500",
@@ -7747,7 +8114,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -7755,8 +8124,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.443333333,
-     46.951111111
+     7.44333,
+     46.95111
     ]
    },
    "properties": {
@@ -7784,7 +8153,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunstmuseum-bern",
+    "location_src": "Kunstmuseum Bern"
    }
   },
   {
@@ -7792,8 +8163,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.958888888,
-     40.783055555
+     -73.95889,
+     40.78306
     ]
    },
    "properties": {
@@ -7821,7 +8192,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "solomon-r-guggenheim-museum",
+    "location_src": "Solomon R. Guggenheim Museum"
    }
   },
   {
@@ -7829,8 +8202,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.958888888,
-     40.783055555
+     -73.95889,
+     40.78306
     ]
    },
    "properties": {
@@ -7858,7 +8231,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "solomon-r-guggenheim-museum",
+    "location_src": "Solomon R. Guggenheim Museum"
    }
   },
   {
@@ -7866,8 +8241,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.958888888,
-     40.783055555
+     -73.95889,
+     40.78306
     ]
    },
    "properties": {
@@ -7895,7 +8270,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "solomon-r-guggenheim-museum",
+    "location_src": "Solomon R. Guggenheim Museum"
    }
   },
   {
@@ -7904,7 +8281,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -7932,7 +8309,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -7941,7 +8320,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -7969,7 +8348,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -7978,7 +8359,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8006,7 +8387,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8015,7 +8398,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8043,7 +8426,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8052,7 +8437,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8080,7 +8465,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8089,7 +8476,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8117,7 +8504,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8126,7 +8515,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8154,7 +8543,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8163,7 +8554,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8191,7 +8582,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8200,7 +8593,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8228,7 +8621,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8237,7 +8632,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8265,7 +8660,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8274,7 +8671,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -8302,7 +8699,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -8310,8 +8709,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.881111111,
-     52.358333333
+     4.8811,
+     52.3583
     ]
    },
    "properties": {
@@ -8339,7 +8738,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum"
    }
   },
   {
@@ -8347,8 +8748,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8376,7 +8777,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8384,8 +8787,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8413,7 +8816,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8421,8 +8826,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8450,7 +8855,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8458,8 +8865,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8487,7 +8894,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8495,8 +8904,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8524,7 +8933,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8532,8 +8943,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8561,7 +8972,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8569,8 +8982,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -8598,7 +9011,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -8606,8 +9021,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.368333333,
-     48.204722222
+     16.36833,
+     48.20472
     ]
    },
    "properties": {
@@ -8635,7 +9050,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina"
    }
   },
   {
@@ -8643,8 +9060,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8672,7 +9089,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8680,8 +9099,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8709,7 +9128,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8717,8 +9138,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8746,7 +9167,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8754,8 +9177,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8783,7 +9206,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8791,8 +9216,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8820,7 +9245,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8828,8 +9255,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8857,7 +9284,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8865,8 +9294,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -8894,7 +9323,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -8902,8 +9333,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.046805555,
-     38.911388888
+     -77.04681,
+     38.91139
     ]
    },
    "properties": {
@@ -8931,7 +9362,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-phillips-collection",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -8939,8 +9372,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963631,
-     40.671206
+     -73.96363,
+     40.67121
     ]
    },
    "properties": {
@@ -8968,7 +9401,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "brooklyn-museum",
+    "location_src": "Brooklyn Museum"
    }
   },
   {
@@ -9005,7 +9440,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "location_src": "Staatliche Kunstsammlungen Dresden"
    }
   },
   {
@@ -9013,8 +9450,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.443662,
-     34.059468
+     -118.44361,
+     34.05944
     ]
    },
    "properties": {
@@ -9042,7 +9479,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hammer-museum",
+    "location_src": "Hammer Museum"
    }
   },
   {
@@ -9050,8 +9489,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.473341,
-     51.914215
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -9079,7 +9518,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -9095,7 +9536,7 @@
     "painter": "Édouard Manet",
     "title": "Spring",
     "year": "1881",
-    "location": "J. Paul Getty Museum",
+    "location": "Getty Center",
     "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9116,7 +9557,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -9132,7 +9575,7 @@
     "painter": "Édouard Manet",
     "title": "Portrait of Madame Brunet",
     "year": "1860",
-    "location": "J. Paul Getty Museum",
+    "location": "Getty Center",
     "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9153,7 +9596,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -9161,7 +9606,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -9190,7 +9635,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -9198,8 +9645,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.14658,
-     51.2573
+     7.14667,
+     51.25722
     ]
    },
    "properties": {
@@ -9207,7 +9654,7 @@
     "title": "Le pêcheur",
     "year": "1862",
     "location": "Von der Heydt Museum",
-    "city": "Elberfeld",
+    "city": "Wuppertal",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Le%20p%C3%AAcheur.jpg?width=500",
@@ -9227,7 +9674,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "von-der-heydt-museum",
+    "location_src": "Von der Heydt Museum"
    }
   },
   {
@@ -9235,8 +9684,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.14658,
-     51.2573
+     7.14667,
+     51.25722
     ]
    },
    "properties": {
@@ -9244,7 +9693,7 @@
     "title": "The Thistle",
     "year": "1858",
     "location": "Von der Heydt Museum",
-    "city": "Elberfeld",
+    "city": "Wuppertal",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Chardons.jpg?width=500",
@@ -9264,7 +9713,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "von-der-heydt-museum",
+    "location_src": "Von der Heydt Museum"
    }
   },
   {
@@ -9272,8 +9723,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -9301,7 +9752,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -9309,8 +9762,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.77194444,
-     35.67888889
+     139.77194,
+     35.67889
     ]
    },
    "properties": {
@@ -9338,7 +9791,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "artizon-museum",
+    "location_src": "Artizon Museum"
    }
   },
   {
@@ -9346,8 +9801,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.77194444,
-     35.67888889
+     139.77194,
+     35.67889
     ]
    },
    "properties": {
@@ -9375,7 +9830,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "artizon-museum",
+    "location_src": "Artizon Museum"
    }
   },
   {
@@ -9383,8 +9840,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944444,
-     52.095833333
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -9392,7 +9849,7 @@
     "title": "Portrait d'Homme",
     "year": "1860",
     "location": "Kröller-Müller Museum",
-    "city": "Ede",
+    "city": "Otterlo",
     "country": "Netherlands",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20Portrait%20of%20a%20Man.jpg?width=500",
@@ -9412,7 +9869,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -9420,8 +9879,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.7758498,
-     35.7153567
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -9429,7 +9888,7 @@
     "title": "Boy in Flowers (Jacques Hoschedé)",
     "year": "1876",
     "location": "National Museum of Western Art",
-    "city": "Ueno-kōen",
+    "city": "Tokyo",
     "country": "Japan",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Boy%20in%20Flowers%20%28Jacques%20Hosched%C3%A9%29%20-%20Google%20Art%20Project.jpg?width=500",
@@ -9449,7 +9908,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -9457,8 +9918,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.7758498,
-     35.7153567
+     139.69222,
+     35.68972
     ]
    },
    "properties": {
@@ -9466,7 +9927,7 @@
     "title": "Portrait of Monsieur Brun",
     "year": "1879",
     "location": "National Museum of Western Art",
-    "city": "Ueno-kōen",
+    "city": "Tokyo",
     "country": "Japan",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Portrait%20of%20Monsieur%20Brun%20-%20Google%20Art%20Project.jpg?width=500",
@@ -9486,7 +9947,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-of-western-art",
+    "location_src": "National Museum of Western Art"
    }
   },
   {
@@ -9494,7 +9957,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.468694444,
+     -122.46869,
      37.7715
     ]
    },
@@ -9523,7 +9986,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -9531,7 +9996,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.468694444,
+     -122.46869,
      37.7715
     ]
    },
@@ -9560,7 +10025,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -9568,15 +10035,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     37.60602901,
-     55.74702868
+     37.60603,
+     55.74703
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Jeune Femme en rose",
     "year": "1879",
-    "location": "Pushkin Museum of Fine Arts",
+    "location": "Pushkin Museum",
     "city": "Khamovniki District",
     "country": "Russia",
     "attribution": "generally accepted",
@@ -9597,7 +10064,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum"
    }
   },
   {
@@ -9605,8 +10074,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833333,
-     48.861111111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -9614,7 +10083,7 @@
     "title": "Irma Brunner",
     "year": "1880",
     "location": "Louvre",
-    "city": "Saint-Germain-l'Auxerrois",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20La%20Viennoise%20Irma%20Brunner.jpg?width=500",
@@ -9634,7 +10103,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -9642,8 +10113,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9671,7 +10142,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9679,8 +10152,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9708,7 +10181,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9716,8 +10191,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9745,7 +10220,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9753,8 +10230,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9782,7 +10259,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9790,8 +10269,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9819,7 +10298,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9827,8 +10308,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9856,7 +10337,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9864,8 +10347,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9893,7 +10376,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9901,8 +10386,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -9930,7 +10415,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -9974,7 +10461,9 @@
       "title": "The Rue Mosnier with Flags",
       "ref": "https://en.wikipedia.org/wiki/The_Rue_Mosnier_with_Flags"
      }
-    ]
+    ],
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -10011,7 +10500,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-folkwang",
+    "location_src": "Museum Folkwang"
    }
   },
   {
@@ -10019,7 +10510,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.003055555,
+     10.00306,
      53.555
     ]
    },
@@ -10048,7 +10539,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle"
    }
   },
   {
@@ -10056,8 +10549,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -10065,7 +10558,7 @@
     "title": "At the Café",
     "year": "1878",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Im%20Caf%C3%A9-%20Cabaret%20von%20Reichshoffen%20%281878%29%20-%20Edouard%20Manet.jpg?width=500",
@@ -10085,7 +10578,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -10122,7 +10617,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -10159,7 +10656,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "ashmolean-museum",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -10167,8 +10666,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -10196,7 +10695,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -10204,8 +10705,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -10233,7 +10734,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -10241,8 +10744,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.833611111,
-     45.766944444
+     4.83361,
+     45.76694
     ]
    },
    "properties": {
@@ -10270,7 +10773,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-lyon",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -10278,8 +10783,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.833611111,
-     45.766944444
+     4.83361,
+     45.76694
     ]
    },
    "properties": {
@@ -10307,7 +10812,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-of-lyon",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -10315,8 +10822,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -10344,7 +10851,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -10352,8 +10861,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -10381,7 +10890,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -10389,8 +10900,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -10418,7 +10929,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -10426,8 +10939,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -10435,7 +10948,7 @@
     "title": "Madame Manet (Suzanne Leenhoff, 1830–1906) at Bellevue",
     "year": "1880",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Mme%20%C3%89douard%20Manet%20dans%20le%20Jardin%20de%20Bellevue.jpg?width=500",
@@ -10455,7 +10968,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -10463,8 +10978,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -9.154166666,
-     38.736666666
+     -9.15417,
+     38.73667
     ]
    },
    "properties": {
@@ -10492,7 +11007,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "calouste-gulbenkian-museum",
+    "location_src": "Calouste Gulbenkian Museum"
    }
   },
   {
@@ -10500,8 +11017,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -10519,7 +11036,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64582881",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -10556,7 +11075,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "brest-s-museum-of-fine-arts",
+    "location_src": "Brest’s Museum of Fine Arts"
    }
   },
   {
@@ -10593,7 +11114,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -10601,7 +11124,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.099121,
+     -71.09912,
      42.33818
     ]
    },
@@ -10630,7 +11153,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "location_src": "Isabella Stewart Gardner Museum"
    }
   },
   {
@@ -10638,7 +11163,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -10667,7 +11192,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -10675,7 +11202,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -10704,7 +11231,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -10712,8 +11241,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -10741,7 +11270,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -10778,7 +11309,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -10815,7 +11348,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rhode-island-school-of-design-museum",
+    "location_src": "Rhode Island School of Design Museum"
    }
   },
   {
@@ -10852,7 +11387,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum"
    }
   },
   {
@@ -10860,15 +11397,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.102616,
-     49.485043
+     0.10262,
+     49.48504
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Boats at Sea, Sunset",
     "year": "1868",
-    "location": "MuMa Museum of modern art André Malraux",
+    "location": "Museum of modern art André Malraux - MuMa",
     "city": "Le Havre",
     "country": "France",
     "attribution": "generally accepted",
@@ -10889,7 +11426,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-modern-art-andre-malraux-muma",
+    "location_src": "Museum of modern art André Malraux - MuMa"
    }
   },
   {
@@ -10897,8 +11436,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -10926,7 +11465,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -10934,8 +11475,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -10963,7 +11504,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -10971,8 +11514,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -11000,7 +11543,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -11008,8 +11553,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -11037,7 +11582,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -11045,8 +11592,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.177128,
-     51.485577
+     -3.1773,
+     51.4858
     ]
    },
    "properties": {
@@ -11074,7 +11621,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-museum-cardiff",
+    "location_src": "National Museum Cardiff"
    }
   }
  ]

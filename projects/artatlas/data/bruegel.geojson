@@ -29,8 +29,8 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "private-collection",
-    "country": "France"
+    "country": "France",
+    "placeless": true
    }
   },
   {
@@ -38,7 +38,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358241,
+     4.35824,
      50.84168
     ]
    },
@@ -46,8 +46,8 @@
     "painter": "Pieter Bruegel the Elder",
     "title": "Adoration of the Magi",
     "year": "1556",
-    "location": "Oldmasters Museum",
-    "city": "Brussels",
+    "location": "Royal Museums of Fine Arts of Belgium",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anbetung%20der%20K%C3%B6nige%20%28Bruegel%2C%20um%201564%29.jpg?width=500",
@@ -75,7 +75,9 @@
       "source": "Wikipedia list",
       "title": "The Adoration of the Kings"
      }
-    ]
+    ],
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -110,7 +112,8 @@
     "country": "United States",
     "qid": "Q1434332",
     "wikidata": "https://www.wikidata.org/wiki/Q1434332",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/20other.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/20other.html",
+    "location_src": "Timken Museum of Art"
    }
   },
   {
@@ -118,8 +121,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.405,
-     51.215
+     4.40532,
+     51.21552
     ]
    },
    "properties": {
@@ -140,7 +143,10 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-mayer-van-den-bergh",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/03/07prover.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/03/07prover.html",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "location_src": "Museum Mayer van den Bergh"
    }
   },
   {
@@ -173,7 +179,10 @@
     "museum_id": "berlin-state-museums",
     "qid": "Q533619",
     "wikidata": "https://www.wikidata.org/wiki/Q533619",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_y/proverb7.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_y/proverb7.html",
+    "city": "Berlin",
+    "country": "Germany",
+    "location_src": "Berlin State Museums"
    }
   },
   {
@@ -208,7 +217,8 @@
     "country": "Austria",
     "qid": "Q689236",
     "wikidata": "https://www.wikidata.org/wiki/Q689236",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/04/06carniva.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/04/06carniva.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -243,7 +253,8 @@
     "country": "Austria",
     "qid": "Q697332",
     "wikidata": "https://www.wikidata.org/wiki/Q697332",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/02/22games.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/02/22games.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -278,7 +289,8 @@
     "country": "Italy",
     "qid": "Q4009224",
     "wikidata": "https://www.wikidata.org/wiki/Q4009224",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/12/01navalb.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/12/01navalb.html",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -313,7 +325,8 @@
     "country": "Belgium",
     "qid": "Q1247110",
     "wikidata": "https://www.wikidata.org/wiki/Q1247110",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/04icarus.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/04icarus.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -348,7 +361,8 @@
     "country": "Austria",
     "qid": "Q3976754",
     "wikidata": "https://www.wikidata.org/wiki/Q3976754",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/07saulsu.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/07saulsu.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -383,7 +397,8 @@
     "country": "Belgium",
     "qid": "Q594406",
     "wikidata": "https://www.wikidata.org/wiki/Q594406",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/05/32rebel.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/05/32rebel.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -391,8 +406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.405,
-     51.215
+     4.40532,
+     51.21552
     ]
    },
    "properties": {
@@ -416,7 +431,10 @@
     "museum_id": "museum-mayer-van-den-bergh",
     "qid": "Q80869",
     "wikidata": "https://www.wikidata.org/wiki/Q80869",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/05/24dulle.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/05/24dulle.html",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "location_src": "Museum Mayer van den Bergh"
    }
   },
   {
@@ -451,7 +469,8 @@
     "country": "Spain",
     "qid": "Q644856",
     "wikidata": "https://www.wikidata.org/wiki/Q644856",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/05/11death.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/05/11death.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -484,7 +503,10 @@
     "museum_id": "berlin-state-museums",
     "qid": "Q231953",
     "wikidata": "https://www.wikidata.org/wiki/Q231953",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/12/03monkey.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/12/03monkey.html",
+    "city": "Berlin",
+    "country": "Germany",
+    "location_src": "Berlin State Museums"
    }
   },
   {
@@ -518,7 +540,8 @@
     "city": "Vienna",
     "country": "Austria",
     "qid": "Q699091",
-    "wikidata": "https://www.wikidata.org/wiki/Q699091"
+    "wikidata": "https://www.wikidata.org/wiki/Q699091",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -552,7 +575,8 @@
     "city": "Rotterdam",
     "country": "Netherlands",
     "qid": "Q699091",
-    "wikidata": "https://www.wikidata.org/wiki/Q699091"
+    "wikidata": "https://www.wikidata.org/wiki/Q699091",
+    "location_src": "Museum Boijmans Van Beuningen"
    }
   },
   {
@@ -560,15 +584,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
     "painter": "Pieter Bruegel the Elder",
     "title": "Landscape with the Flight into Egypt",
     "year": "1563",
-    "location": "Courtauld Institute Galleries",
+    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "37.1 × 55.6 cm",
@@ -582,12 +606,13 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "courtauld-institute-galleries",
+    "museum_id": "courtauld-gallery",
     "city": "London",
     "country": "United Kingdom",
     "qid": "Q1803755",
     "wikidata": "https://www.wikidata.org/wiki/Q1803755",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/21other.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/21other.html",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -595,8 +620,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -632,7 +657,9 @@
       "source": "Wikipedia list",
       "title": "Portrait of an Old Woman"
      }
-    ]
+    ],
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -666,7 +693,8 @@
     "museum_id": "oskar-reinhart-collection-am-romerholz",
     "qid": "Q1211030",
     "wikidata": "https://www.wikidata.org/wiki/Q1211030",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/08snow.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/08snow.html",
+    "location_src": "Oskar Reinhart Collection 'Am Römerholz'"
    }
   },
   {
@@ -697,7 +725,8 @@
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "city": "Brussels-Capital Region",
-    "country": "Belgium"
+    "country": "Belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -732,7 +761,8 @@
     "museum_id": "national-gallery",
     "qid": "Q4680634",
     "wikidata": "https://www.wikidata.org/wiki/Q4680634",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/06adorat.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/06adorat.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -767,7 +797,8 @@
     "country": "Austria",
     "qid": "Q686107",
     "wikidata": "https://www.wikidata.org/wiki/Q686107",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/19calvar.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/19calvar.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -802,7 +833,8 @@
     "country": "United States",
     "qid": "Q776175",
     "wikidata": "https://www.wikidata.org/wiki/Q776175",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/20august.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/20august.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -837,7 +869,8 @@
     "country": "Austria",
     "qid": "Q698254",
     "wikidata": "https://www.wikidata.org/wiki/Q698254",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/22novemb.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/22novemb.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -872,7 +905,8 @@
     "country": "Austria",
     "qid": "Q500985",
     "wikidata": "https://www.wikidata.org/wiki/Q500985",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/04januar.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/04januar.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -907,7 +941,8 @@
     "country": "Austria",
     "qid": "Q698219",
     "wikidata": "https://www.wikidata.org/wiki/Q698219",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/11februa.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/07/11februa.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -942,7 +977,8 @@
     "country": "Belgium",
     "qid": "Q873639",
     "wikidata": "https://www.wikidata.org/wiki/Q873639",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/15winter.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/15winter.html",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -950,15 +986,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
     "painter": "Pieter Bruegel the Elder",
     "title": "Christ and the Woman Taken in Adultery",
     "year": "c. 1565",
-    "location": "Courtauld Institute Galleries",
+    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "24 × 34 cm",
@@ -972,12 +1008,13 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "courtauld-institute-galleries",
+    "museum_id": "courtauld-gallery",
     "city": "London",
     "country": "United Kingdom",
     "qid": "Q1087244",
     "wikidata": "https://www.wikidata.org/wiki/Q1087244",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/10adulte.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/10adulte.html",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -1011,7 +1048,8 @@
     "city": "Madrid",
     "country": "Spain",
     "qid": "Q1198007",
-    "wikidata": "https://www.wikidata.org/wiki/Q1198007"
+    "wikidata": "https://www.wikidata.org/wiki/Q1198007",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1045,7 +1083,8 @@
     "city": "Brussels-Capital Region",
     "country": "Belgium",
     "qid": "Q1198007",
-    "wikidata": "https://www.wikidata.org/wiki/Q1198007"
+    "wikidata": "https://www.wikidata.org/wiki/Q1198007",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1088,7 +1127,8 @@
       "qid": "Q375216",
       "url": "https://www.wikidata.org/wiki/Q375216"
      }
-    ]
+    ],
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -1128,7 +1168,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q257048 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -1136,8 +1177,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -1163,7 +1204,8 @@
     "country": "United States",
     "qid": "Q3702434",
     "wikidata": "https://www.wikidata.org/wiki/Q3702434",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/16dance1.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/16dance1.html",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -1198,7 +1240,8 @@
     "country": "Germany",
     "qid": "Q556553",
     "wikidata": "https://www.wikidata.org/wiki/Q556553",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/20cockai.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/20cockai.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1233,7 +1276,8 @@
     "country": "Austria",
     "qid": "Q665337",
     "wikidata": "https://www.wikidata.org/wiki/Q665337",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/12saulco.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/12saulco.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1268,7 +1312,8 @@
     "country": "Austria",
     "qid": "Q603751",
     "wikidata": "https://www.wikidata.org/wiki/Q603751",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/08weddin.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/08weddin.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1303,7 +1348,8 @@
     "country": "Austria",
     "qid": "Q95562",
     "wikidata": "https://www.wikidata.org/wiki/Q95562",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/14dance.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/14dance.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1338,7 +1384,8 @@
     "country": "Austria",
     "qid": "Q666982",
     "wikidata": "https://www.wikidata.org/wiki/Q666982",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/10nester.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/10nester.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1373,7 +1420,8 @@
     "country": "Italy",
     "qid": "Q2059447",
     "wikidata": "https://www.wikidata.org/wiki/Q2059447",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/11misant.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/11misant.html",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1408,7 +1456,8 @@
     "country": "France",
     "qid": "Q3772184",
     "wikidata": "https://www.wikidata.org/wiki/Q3772184",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/08crippl.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/08crippl.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1443,7 +1492,8 @@
     "country": "Italy",
     "qid": "Q1192570",
     "wikidata": "https://www.wikidata.org/wiki/Q1192570",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/07parabl.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/11/07parabl.html",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1476,7 +1526,8 @@
     "museum_id": "hessisches-landesmuseum",
     "qid": "Q1122842",
     "wikidata": "https://www.wikidata.org/wiki/Q1122842",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/18magpie.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/18magpie.html",
+    "location_src": "Hessisches Landesmuseum"
    }
   },
   {
@@ -1516,7 +1567,8 @@
       "source": "Wikidata reconciliation",
       "note": "matched to Q19857193 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
-    }
+    },
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -1551,7 +1603,8 @@
     "country": "Austria",
     "qid": "Q7766701",
     "wikidata": "https://www.wikidata.org/wiki/Q7766701",
-    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/22other.html"
+    "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/22other.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1559,8 +1612,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.604444444,
-     51.483888888
+     -0.60444,
+     51.48389
     ]
    },
    "properties": {
@@ -1595,7 +1648,9 @@
       "title": "Massacre of the Innocents",
       "ref": "https://en.wikipedia.org/wiki/Massacre_of_the_Innocents_(Bruegel)"
      }
-    ]
+    ],
+    "museum_id": "windsor-castle",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -1622,7 +1677,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q111644838",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fuhrermuseum",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -1659,7 +1716,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -1667,8 +1726,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.394349,
-     51.208819
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -1686,7 +1745,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q22076691",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp"
    }
   },
   {
@@ -1694,8 +1755,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.405316,
-     51.215517
+     4.40532,
+     51.21552
     ]
    },
    "properties": {
@@ -1723,7 +1784,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-mayer-van-den-bergh",
+    "location_src": "Museum Mayer van den Bergh"
    }
   },
   {
@@ -1731,8 +1794,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.404852,
-     50.091609
+     14.42139,
+     50.0875
     ]
    },
    "properties": {
@@ -1740,7 +1803,7 @@
     "title": "The Hay Harvest (early summer June/July)",
     "year": "1565",
     "location": "Lobkowicz Palace",
-    "city": "Hradčany",
+    "city": "Prague",
     "country": "Czech Republic",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Die%20Heuernte.jpg?width=500",
@@ -1767,7 +1830,9 @@
       "title": "Haymaking",
       "ref": "https://en.wikipedia.org/wiki/The_Hay_Harvest"
      }
-    ]
+    ],
+    "museum_id": "lobkowicz-palace",
+    "location_src": "Lobkowicz Palace"
    }
   },
   {
@@ -1804,7 +1869,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "upton-house",
+    "location_src": "Upton House"
    }
   },
   {
@@ -1841,7 +1908,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fondation-custodia",
+    "location_src": "Fondation Custodia"
    }
   }
  ]

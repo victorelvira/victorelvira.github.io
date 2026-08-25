@@ -45,7 +45,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q1133114",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/venus_cu.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/venus_cu.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -74,7 +75,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q131450158"
+    "qid": "Q131450158",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -116,7 +118,8 @@
      }
     },
     "museum_id": "pinacoteca-vaticana",
-    "qid": "Q131704772"
+    "qid": "Q131704772",
+    "location_src": "Pinacoteca Vaticana"
    }
   },
   {
@@ -162,7 +165,8 @@
     },
     "museum_id": "galleria-borghese",
     "qid": "Q1408753",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/danae1.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/danae1.html",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -206,9 +210,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q1527541",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/night.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/night.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -251,7 +256,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q18572256",
-    "wga_url": "https://www.wga.hu/html/p/parmigia/port_you.html"
+    "wga_url": "https://www.wga.hu/html/p/parmigia/port_you.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -259,8 +265,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -297,7 +303,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q2017819",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/portrait.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/portrait.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -315,7 +322,7 @@
     "year": "1528",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -341,9 +348,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
+    "museum_id": "parma-national-gallery",
     "qid": "Q23014521",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/scodella.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/scodella.html",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -387,7 +395,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q28029242"
+    "qid": "Q28029242",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -405,7 +414,7 @@
     "year": "1525",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -430,8 +439,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q3202071"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q3202071",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -439,15 +449,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1517,
-     51.5035
+     -0.15167,
+     51.50347
     ]
    },
    "properties": {
     "painter": "Correggio",
     "title": "Agony in the Garden",
     "year": "1525",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Apsley House",
     "kind": "museum",
@@ -475,7 +485,8 @@
      }
     },
     "museum_id": "apsley-house",
-    "qid": "Q3535914"
+    "qid": "Q3535914",
+    "location_src": "Apsley House"
    }
   },
   {
@@ -520,7 +531,8 @@
     },
     "museum_id": "pinacoteca-di-brera",
     "qid": "Q3605527",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/adorati.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/adorati.html",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -565,7 +577,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3605562",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/adoratio.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/adoratio.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -611,7 +624,8 @@
     },
     "museum_id": "palazzo-ducale-mantua",
     "qid": "Q3612413",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/allegorz.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/allegorz.html",
+    "location_src": "Palazzo Ducale Mantua"
    }
   },
   {
@@ -619,8 +633,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -628,7 +642,7 @@
     "title": "Allegory of Virtues",
     "year": "1531",
     "country": "France",
-    "location": "Department of Prints and Drawings of the Louvre",
+    "location": "Louvre",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -653,9 +667,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "department-of-prints-and-drawings-of-the-louvre",
+    "museum_id": "louvre",
     "qid": "Q3612419",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/allegory.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/allegory.html",
+    "city": "Paris",
+    "location_src": "Louvre"
    }
   },
   {
@@ -687,7 +703,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "basilica-of-sant-andrea",
-    "qid": "Q3657723"
+    "qid": "Q3657723",
+    "location_src": "Basilica of Sant'Andrea"
    }
   },
   {
@@ -721,7 +738,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery",
-    "qid": "Q3684647"
+    "qid": "Q3684647",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -739,7 +757,7 @@
     "year": "1524",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -764,9 +782,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
+    "museum_id": "parma-national-gallery",
     "qid": "Q3685121",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/depositi.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/depositi.html",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -800,7 +819,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q3697625"
+    "qid": "Q3697625",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -833,7 +853,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-diocesano-francesco-gonzaga",
-    "qid": "Q3705701"
+    "qid": "Q3705701",
+    "location_src": "Museo diocesano Francesco Gonzaga"
    }
   },
   {
@@ -878,7 +899,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3717885",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/eccehomo.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/eccehomo.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -924,7 +946,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3719885",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/cupid.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/cupid.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -942,7 +965,7 @@
     "year": "1522-1600",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -967,8 +990,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q3766168"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q3766168",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -1003,7 +1027,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "musee-des-beaux-arts-de-strasbourg",
-    "qid": "Q3769183"
+    "qid": "Q3769183",
+    "location_src": "Musée des Beaux-Arts de Strasbourg"
    }
   },
   {
@@ -1021,7 +1046,7 @@
     "year": "1521",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -1045,8 +1070,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q3797772"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q3797772",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -1090,7 +1116,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3821326"
+    "qid": "Q3821326",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1136,7 +1163,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3829339",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/leda.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/leda.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1171,7 +1199,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q3842386"
+    "qid": "Q3842386",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1215,7 +1244,8 @@
      }
     },
     "museum_id": "pinacoteca-del-castello-sforzesco",
-    "qid": "Q3842389"
+    "qid": "Q3842389",
+    "location_src": "Pinacoteca del Castello Sforzesco"
    }
   },
   {
@@ -1223,8 +1253,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.9216,
-     44.6485
+     10.92066,
+     44.64825
     ]
    },
    "properties": {
@@ -1259,7 +1289,8 @@
      }
     },
     "museum_id": "galleria-estense",
-    "qid": "Q3842393"
+    "qid": "Q3842393",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -1294,7 +1325,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3842466"
+    "qid": "Q3842466",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1338,7 +1370,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q3842518"
+    "qid": "Q3842518",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -1384,7 +1417,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q3842519",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/madonna.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/madonna.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1429,7 +1463,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3842555",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/madglory.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/madglory.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1437,8 +1472,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181,
-     39.966
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -1464,7 +1499,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "philadelphia-museum-of-art",
-    "qid": "Q3842564"
+    "qid": "Q3842564",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -1509,7 +1545,8 @@
     },
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q3842618",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/latte2.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/latte2.html",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -1555,7 +1592,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3842660",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/basket.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/basket.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1599,9 +1637,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q3842732",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/francesc.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/francesc.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1645,9 +1684,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q3842733",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/mad_geor.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/mad_geor.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1691,8 +1731,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q3842735"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q3842735",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -1710,7 +1751,7 @@
     "year": "1528",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -1735,9 +1776,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
+    "museum_id": "parma-national-gallery",
     "qid": "Q3842738",
-    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/day.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/madonna/day.html",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -1780,7 +1822,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q3847397"
+    "qid": "Q3847397",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1798,7 +1841,7 @@
     "year": "1524",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -1824,8 +1867,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q3850306"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q3850306",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -1869,7 +1913,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3851960"
+    "qid": "Q3851960",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -1914,7 +1959,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3851966",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/mystic_m.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/mystic_m.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1950,7 +1996,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3851968",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/mystic.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/mystic.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1958,8 +2005,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -1985,7 +2032,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "detroit-institute-of-arts",
-    "qid": "Q3851969"
+    "qid": "Q3851969",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -2021,7 +2069,8 @@
     },
     "museum_id": "pinacoteca-di-brera",
     "qid": "Q3873238",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/nativity.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/nativity.html",
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -2067,7 +2116,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q3877896",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/noli_me.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/noli_me.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2100,7 +2150,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "civic-museum-il-correggio",
-    "qid": "Q3904387"
+    "qid": "Q3904387",
+    "location_src": "Civic Museum il Correggio"
    }
   },
   {
@@ -2145,7 +2196,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3927386"
+    "qid": "Q3927386",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2190,7 +2242,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3936375",
-    "wga_url": "https://www.wga.hu/html/c/correggi/various/restflig.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/various/restflig.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2234,7 +2287,8 @@
      }
     },
     "museum_id": "pinacoteca-del-castello-sforzesco",
-    "qid": "Q3937414"
+    "qid": "Q3937414",
+    "location_src": "Pinacoteca del Castello Sforzesco"
    }
   },
   {
@@ -2276,7 +2330,8 @@
      }
     },
     "museum_id": "lowe-art-museum",
-    "qid": "Q3937720"
+    "qid": "Q3937720",
+    "location_src": "Lowe Art Museum"
    }
   },
   {
@@ -2319,7 +2374,8 @@
      }
     },
     "museum_id": "thyssen-bornemisza-museum",
-    "qid": "Q3937757"
+    "qid": "Q3937757",
+    "location_src": "Thyssen-Bornemisza Museum"
    }
   },
   {
@@ -2353,7 +2409,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museo-diocesano-francesco-gonzaga",
-    "qid": "Q3944471"
+    "qid": "Q3944471",
+    "location_src": "Museo diocesano Francesco Gonzaga"
    }
   },
   {
@@ -2387,7 +2444,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "malaspina-picture-gallery",
-    "qid": "Q3944472"
+    "qid": "Q3944472",
+    "location_src": "Malaspina Picture Gallery"
    }
   },
   {
@@ -2395,8 +2453,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.3592,
-     34.0633
+     -118.35917,
+     34.06333
     ]
    },
    "properties": {
@@ -2431,7 +2489,8 @@
      }
     },
     "museum_id": "los-angeles-county-museum-of-art",
-    "qid": "Q3944482"
+    "qid": "Q3944482",
+    "location_src": "Los Angeles County Museum of Art"
    }
   },
   {
@@ -2474,7 +2533,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-d-orleans",
-    "qid": "Q3944483"
+    "qid": "Q3944483",
+    "location_src": "Musée des Beaux-Arts d'Orléans"
    }
   },
   {
@@ -2516,7 +2576,8 @@
      }
     },
     "museum_id": "san-giovanni-evangelista",
-    "qid": "Q3947277"
+    "qid": "Q3947277",
+    "location_src": "San Giovanni Evangelista"
    }
   },
   {
@@ -2559,7 +2620,8 @@
      }
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q3947287"
+    "qid": "Q3947287",
+    "location_src": "Royal Academy of Fine Arts of San Fernando"
    }
   },
   {
@@ -2602,7 +2664,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3947332"
+    "qid": "Q3947332",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -2646,7 +2709,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3948768"
+    "qid": "Q3948768",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -2690,7 +2754,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "qid": "Q3948946"
+    "qid": "Q3948946",
+    "location_src": "Hampton Court Palace"
    }
   },
   {
@@ -2734,7 +2799,8 @@
      }
     },
     "museum_id": "getty-center",
-    "qid": "Q4009400"
+    "qid": "Q4009400",
+    "location_src": "Getty Center"
    }
   },
   {
@@ -2776,7 +2842,8 @@
      }
     },
     "museum_id": "civic-museum-il-correggio",
-    "qid": "Q4016334"
+    "qid": "Q4016334",
+    "location_src": "Civic Museum il Correggio"
    }
   },
   {
@@ -2808,7 +2875,7 @@
      "url": "https://www.wikidata.org/wiki/Q50321650",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q50321650",
     "_overrides": {
      "attribution": {
@@ -2817,7 +2884,8 @@
       "was": "generally accepted",
       "note": "dated 1623, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2859,7 +2927,8 @@
      }
     },
     "museum_id": "stadel-museum",
-    "qid": "Q64787450"
+    "qid": "Q64787450",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -2905,7 +2974,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q700834",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/io.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/io.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2951,7 +3021,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q939962",
-    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/ganymede.html"
+    "wga_url": "https://www.wga.hu/html/c/correggi/mytholog/ganymede.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -2959,8 +3030,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -2978,7 +3049,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20539040",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -2986,8 +3059,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -3005,7 +3078,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29953490",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3013,8 +3088,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -3032,7 +3107,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30093989",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3040,8 +3117,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -3059,7 +3136,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30093991",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3067,8 +3146,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -3086,7 +3165,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30098879",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -3094,8 +3175,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3103,7 +3184,7 @@
     "title": "Heads of Two Angels",
     "year": "1522",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20%28c.1489-1534%29%20-%20Heads%20of%20Two%20Angels%20-%20NG3921%20-%20National%20Gallery.jpg?width=500",
@@ -3113,7 +3194,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26492433",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3121,8 +3204,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3130,7 +3213,7 @@
     "title": "Head of an Angel",
     "year": "1522",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20%28c.1489-1534%29%20-%20Head%20of%20an%20Angel%20-%20NG3920%20-%20National%20Gallery.jpg?width=500",
@@ -3140,7 +3223,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26693158",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3148,8 +3233,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3157,7 +3242,7 @@
     "title": "Head of an Angel",
     "year": "1522",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20%28c.1489-1534%29%20-%20Head%20of%20an%20Angel%20-%20NG4067%20-%20National%20Gallery.jpg?width=500",
@@ -3167,7 +3252,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26706539",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3194,7 +3281,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20433254",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -3202,8 +3291,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -3221,7 +3310,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30056300",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3229,8 +3320,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -3256,7 +3347,9 @@
       "was": "generally accepted",
       "note": "dated 1555, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -3264,7 +3357,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -3283,7 +3376,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20426227",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -3310,7 +3405,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119625913",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3337,7 +3434,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840702",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3364,7 +3463,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840704",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3391,7 +3492,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840706",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3418,7 +3521,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840708",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3445,7 +3550,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840710",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3472,7 +3579,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840712",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "victoria-and-albert-museum",
+    "location_src": "Victoria and Albert Museum"
    }
   },
   {
@@ -3488,7 +3597,7 @@
     "painter": "Correggio",
     "title": "Head of the Virgin",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3499,7 +3608,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455296",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -3515,7 +3626,7 @@
     "painter": "Correggio",
     "title": "Infant Christ",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3526,7 +3637,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455323",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -3542,7 +3655,7 @@
     "painter": "Correggio",
     "title": "Head of Joseph",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3553,7 +3666,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455471",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -3569,7 +3684,7 @@
     "painter": "Correggio",
     "title": "Hercules Introduced to Olympus",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3580,7 +3695,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455551",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -3588,8 +3705,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.116549193,
-     55.763939027
+     -2.11655,
+     55.76394
     ]
    },
    "properties": {
@@ -3607,7 +3724,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455389",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "paxton-house",
+    "location_src": "Paxton House"
    }
   },
   {
@@ -3634,7 +3753,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118680583",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hepworth-wakefield",
+    "location_src": "Hepworth Wakefield"
    }
   },
   {
@@ -3642,8 +3763,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.891928239,
-     53.391463035
+     -2.89193,
+     53.39146
     ]
    },
    "properties": {
@@ -3661,7 +3782,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455343",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "liverpool-hope-university",
+    "location_src": "Liverpool Hope University"
    }
   },
   {
@@ -3696,7 +3819,9 @@
       "was": "generally accepted",
       "note": "dated 1611, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "niedersachsisches-landesmuseum-fur-kunst-und-kulturgeschicht",
+    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte"
    }
   },
   {
@@ -3723,7 +3848,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77933101",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -3731,7 +3858,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.138041,
+     -0.13804,
      50.8237
     ]
    },
@@ -3758,7 +3885,9 @@
       "was": "generally accepted",
       "note": "dated 1750, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "brighton-museum-art-gallery",
+    "location_src": "Brighton Museum & Art Gallery"
    }
   },
   {
@@ -3785,7 +3914,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455630",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "abbot-hall-art-gallery",
+    "location_src": "Abbot Hall Art Gallery"
    }
   },
   {
@@ -3820,7 +3951,9 @@
       "was": "generally accepted",
       "note": "dated 1725, after death (1489–1534) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "holburne-museum",
+    "location_src": "Holburne Museum"
    }
   },
   {
@@ -3847,7 +3980,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455492",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "middlesbrough-institute-of-modern-art",
+    "location_src": "Middlesbrough Institute of Modern Art"
    }
   },
   {
@@ -3874,7 +4009,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455302",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-croydon",
+    "location_src": "Museum of Croydon"
    }
   },
   {
@@ -3890,7 +4027,7 @@
     "painter": "Correggio",
     "title": "Reading Magdalene",
     "year": "",
-    "location": "Southampton City Art Gallery",
+    "location": "Southampton Art Gallery",
     "city": "Southampton",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3901,7 +4038,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119840715",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "southampton-art-gallery",
+    "location_src": "Southampton Art Gallery"
    }
   },
   {
@@ -3909,8 +4048,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.985908333,
-     52.585666666
+     -1.98591,
+     52.58567
     ]
    },
    "properties": {
@@ -3928,7 +4067,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119455535",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "the-new-art-gallery-walsall",
+    "location_src": "The New Art Gallery Walsall"
    }
   },
   {
@@ -3936,8 +4077,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -3945,7 +4086,7 @@
     "title": "Pietà",
     "year": "1525",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20%28c.1489-1534%29%20%28follower%20of%29%20-%20Piet%C3%A0%20-%20P.1947.LF.73%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -3955,7 +4096,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118680638",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -3963,8 +4106,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -3982,7 +4125,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118874409",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -3990,8 +4135,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -4009,7 +4154,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118877980",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   },
   {
@@ -4017,8 +4164,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.366258,
-     55.811757
+     -4.36626,
+     55.81176
     ]
    },
    "properties": {
@@ -4036,7 +4183,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119921269",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glasgow-museums-resource-centre",
+    "location_src": "Glasgow Museums Resource Centre"
    }
   }
  ]

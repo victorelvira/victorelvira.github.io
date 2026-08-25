@@ -30,7 +30,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q104935741"
+    "qid": "Q104935741",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -70,7 +71,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436666"
+    "qid": "Q107436666",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -115,7 +117,8 @@
      }
     },
     "museum_id": "staatsgalerie-stuttgart",
-    "qid": "Q1091213"
+    "qid": "Q1091213",
+    "location_src": "Staatsgalerie Stuttgart"
    }
   },
   {
@@ -161,7 +164,8 @@
     },
     "museum_id": "doria-pamphilj-gallery",
     "qid": "Q1115595",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/f_egypt.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/f_egypt.html",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -204,7 +208,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q12060616",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/hunting.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/hunting.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -250,7 +255,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q1227679",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/quovadis.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/quovadis.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -296,7 +302,8 @@
     },
     "museum_id": "palazzo-colonna",
     "qid": "Q1232131",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/beaneate.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/beaneate.html",
+    "location_src": "Palazzo Colonna"
    }
   },
   {
@@ -312,9 +319,9 @@
     "painter": "Annibale Carracci",
     "title": "Diana Surprised by Actaeon",
     "year": "1550",
-    "city": "Brussels",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
-    "location": "Oldmasters Museum",
+    "location": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -327,8 +334,9 @@
      "url": "https://www.wikidata.org/wiki/Q123512502",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "oldmasters-museum",
-    "qid": "Q123512502"
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "qid": "Q123512502",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -336,8 +344,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.9216,
-     44.6485
+     10.92066,
+     44.64825
     ]
    },
    "properties": {
@@ -360,7 +368,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "galleria-estense",
-    "qid": "Q126084323"
+    "qid": "Q126084323",
+    "location_src": "Galleria Estense"
    }
   },
   {
@@ -401,7 +410,8 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -443,7 +453,8 @@
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q126180481"
+    "qid": "Q126180481",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -482,7 +493,8 @@
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q126727999"
+    "qid": "Q126727999",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -511,7 +523,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q131450089"
+    "qid": "Q131450089",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -540,7 +553,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q131501612"
+    "qid": "Q131501612",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -569,7 +583,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q131690503"
+    "qid": "Q131690503",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -611,7 +626,8 @@
      }
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q132173174"
+    "qid": "Q132173174",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -653,7 +669,8 @@
      }
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q132173520"
+    "qid": "Q132173520",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -681,7 +698,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q132397751"
+    "qid": "Q132397751",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -709,7 +727,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "santa-caterina-dei-funari",
-    "qid": "Q133281016"
+    "qid": "Q133281016",
+    "location_src": "Santa Caterina dei Funari"
    }
   },
   {
@@ -752,7 +771,8 @@
      }
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q16268699"
+    "qid": "Q16268699",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -796,7 +816,8 @@
      }
     },
     "museum_id": "santa-maria-in-monserrato-degli-spagnoli",
-    "qid": "Q16268730"
+    "qid": "Q16268730",
+    "location_src": "Santa Maria in Monserrato degli Spagnoli"
    }
   },
   {
@@ -805,7 +826,7 @@
     "type": "Point",
     "coordinates": [
      2.48528,
-     49.19389
+     49.19394
     ]
    },
    "properties": {
@@ -841,7 +862,8 @@
     },
     "museum_id": "musee-conde",
     "qid": "Q16268861",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/sleepven.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/sleepven.html",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -875,7 +897,7 @@
      "url": "https://www.wikidata.org/wiki/Q16551556",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q16551556",
     "_overrides": {
      "attribution": {
@@ -884,7 +906,8 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -928,7 +951,8 @@
      }
     },
     "museum_id": "london",
-    "qid": "Q16912528"
+    "qid": "Q16912528",
+    "location_src": "London"
    }
   },
   {
@@ -971,7 +995,8 @@
       "was": "generally accepted",
       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Bridgewater House"
    }
   },
   {
@@ -1015,7 +1040,8 @@
      }
     },
     "museum_id": "bridgewater-house",
-    "qid": "Q17628493"
+    "qid": "Q17628493",
+    "location_src": "Bridgewater House"
    }
   },
   {
@@ -1061,7 +1087,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q17629102",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/children.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/children.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1105,7 +1132,8 @@
      }
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q17651291"
+    "qid": "Q17651291",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1150,7 +1178,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q17651293",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/dead_chr.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/dead_chr.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1195,7 +1224,8 @@
     },
     "museum_id": "santa-caterina-dei-funari",
     "qid": "Q17652120",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/margaret.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/margaret.html",
+    "location_src": "Santa Caterina dei Funari"
    }
   },
   {
@@ -1239,7 +1269,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "qid": "Q18170299"
+    "qid": "Q18170299",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -1284,7 +1315,8 @@
     },
     "museum_id": "santi-gregorio-e-siro",
     "qid": "Q18222731",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/baptism.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/baptism.html",
+    "location_src": "Santi Gregorio e Siro"
    }
   },
   {
@@ -1329,7 +1361,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q18223127",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/christ_g.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/christ_g.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -1374,7 +1407,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q18224327",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/pieta_s.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/pieta_s.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1420,7 +1454,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q18420689",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/venus_sc.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/venus_sc.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1464,7 +1499,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q18572292",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/virgin.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/virgin.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1507,7 +1543,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18572400"
+    "qid": "Q18572400",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1549,7 +1586,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18572402"
+    "qid": "Q18572402",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1593,7 +1631,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q18572448",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/stephen1.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/stephen1.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1635,7 +1674,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18572451"
+    "qid": "Q18572451",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1643,8 +1683,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1681,7 +1721,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q18590147",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/women.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/women.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1725,7 +1766,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q18613324"
+    "qid": "Q18613324",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1767,7 +1809,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911518"
+    "qid": "Q19911518",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1809,7 +1852,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q19911572"
+    "qid": "Q19911572",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1852,7 +1896,8 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Palazzo del Comune"
    }
   },
   {
@@ -1896,7 +1941,8 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Pinacoteca di Brera"
    }
   },
   {
@@ -1941,7 +1987,8 @@
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q19966565",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/mocking.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/mocking.html",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -1985,7 +2032,8 @@
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q19966583"
+    "qid": "Q19966583",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -2003,7 +2051,7 @@
     "year": "1585",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2028,8 +2076,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q19966591"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q19966591",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -2045,7 +2094,7 @@
     "painter": "Annibale Carracci",
     "title": "Giovanni Battista Agucchi",
     "year": "1603",
-    "city": "York",
+    "city": "City of York",
     "country": "United Kingdom",
     "location": "York Art Gallery",
     "kind": "museum",
@@ -2073,7 +2122,8 @@
      }
     },
     "museum_id": "york-art-gallery",
-    "qid": "Q19966598"
+    "qid": "Q19966598",
+    "location_src": "York Art Gallery"
    }
   },
   {
@@ -2118,7 +2168,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q19966612",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/temptat1.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/temptat1.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2161,7 +2212,8 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -2205,7 +2257,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q20176833",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/river_la.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/river_la.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2223,7 +2276,7 @@
     "year": "1593",
     "city": "Parma",
     "country": "Italy",
-    "location": "Galleria Nazionale di Parma",
+    "location": "Parma National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -2248,8 +2301,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-di-parma",
-    "qid": "Q21121883"
+    "museum_id": "parma-national-gallery",
+    "qid": "Q21121883",
+    "location_src": "Parma National Gallery"
    }
   },
   {
@@ -2294,7 +2348,8 @@
     },
     "museum_id": "museo-di-capodimonte",
     "qid": "Q21121936",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/pieta.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/pieta.html",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -2302,8 +2357,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2340,7 +2395,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q21722833",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/rest_f_e.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/rest_f_e.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2348,8 +2404,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -2385,7 +2441,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q21727777",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/selfport.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/selfport.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -2426,7 +2483,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26706703"
+    "qid": "Q26706703",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2472,7 +2530,8 @@
     },
     "museum_id": "santa-maria-della-carita",
     "qid": "Q26767069",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/crucifix.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/crucifix.html",
+    "location_src": "Santa Maria della Carità"
    }
   },
   {
@@ -2515,9 +2574,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q26767075",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/mad_matt.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/mad_matt.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2560,7 +2620,8 @@
      }
     },
     "museum_id": "hampton-castle",
-    "qid": "Q28031091"
+    "qid": "Q28031091",
+    "location_src": "Hampton Castle"
    }
   },
   {
@@ -2606,7 +2667,8 @@
     },
     "museum_id": "museo-di-capodimonte",
     "qid": "Q283665",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/heracles.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/heracles.html",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -2614,8 +2676,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.2545,
-     51.7507
+     -1.25585,
+     51.7502
     ]
    },
    "properties": {
@@ -2650,7 +2712,8 @@
      }
     },
     "museum_id": "christ-church-picture-gallery",
-    "qid": "Q28668136"
+    "qid": "Q28668136",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -2692,7 +2755,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q30335941"
+    "qid": "Q30335941",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2735,7 +2799,8 @@
       "was": "generally accepted",
       "note": "dated 2000, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Palazzo Farnese"
    }
   },
   {
@@ -2781,7 +2846,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q4245125",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/venus_ac.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/venus_ac.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2827,7 +2893,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q4810381",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/assumpti.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/assumpti.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2868,8 +2935,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q50323648"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q50323648",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2912,7 +2980,8 @@
     },
     "museum_id": "fitzwilliam-museum",
     "qid": "Q50819030",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/magdalen.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/magdalen.html",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -2956,7 +3025,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q52337780",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/selfpor.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/selfpor.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3000,7 +3070,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q5454994",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/fishing.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/fishing.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3044,7 +3115,8 @@
      }
     },
     "museum_id": "cerasi-chapel",
-    "qid": "Q57983818"
+    "qid": "Q57983818",
+    "location_src": "Cerasi Chapel"
    }
   },
   {
@@ -3086,7 +3158,8 @@
      }
     },
     "museum_id": "palazzo-farnese",
-    "qid": "Q5826944"
+    "qid": "Q5826944",
+    "location_src": "Palazzo Farnese"
    }
   },
   {
@@ -3127,7 +3200,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q60477093"
+    "qid": "Q60477093",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3172,7 +3246,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q935815"
+    "qid": "Q935815",
+    "location_src": "Louvre"
    }
   },
   {
@@ -3180,8 +3255,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.49028,
-     41.90361
+     12.48986,
+     41.90332
     ]
    },
    "properties": {
@@ -3213,7 +3288,8 @@
      }
     },
     "museum_id": "palazzo-barberini",
-    "qid": "Q97704145"
+    "qid": "Q97704145",
+    "location_src": "Palazzo Barberini"
    }
   },
   {
@@ -3255,7 +3331,8 @@
     },
     "museum_id": "galleria-borghese",
     "qid": "Q97704181",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/laughing.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/laughing.html",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -3298,7 +3375,8 @@
     },
     "museum_id": "museo-di-capodimonte",
     "qid": "Q97704183",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/mystic_m.html"
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/mystic_m.html",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3333,7 +3411,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "buckingham-palace",
+    "location_src": "Buckingham Palace"
    }
   },
   {
@@ -3341,8 +3421,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -3368,7 +3448,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3376,8 +3458,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -3395,7 +3477,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126138414",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3403,8 +3487,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -3430,7 +3514,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3438,8 +3524,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.250346,
-     40.86699
+     14.25053,
+     40.86701
     ]
    },
    "properties": {
@@ -3457,7 +3543,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126367769",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-di-capodimonte",
+    "location_src": "Museo di Capodimonte"
    }
   },
   {
@@ -3465,8 +3553,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.482777777,
-     41.893055555
+     12.48278,
+     41.89306
     ]
    },
    "properties": {
@@ -3484,7 +3572,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126728034",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "capitoline-museums",
+    "location_src": "Capitoline Museums"
    }
   },
   {
@@ -3492,8 +3582,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -3521,7 +3611,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -3529,7 +3621,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.492144,
+     12.49214,
      41.91421
     ]
    },
@@ -3538,7 +3630,7 @@
     "title": "Man with turban",
     "year": "1550",
     "location": "Galleria Borghese",
-    "city": "Roma Capitale",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%2C%20Uomo%20in%20turbante.jpg?width=500",
@@ -3556,7 +3648,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "galleria-borghese",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -3564,8 +3658,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.470805555,
-     41.894694444
+     12.47081,
+     41.89469
     ]
    },
    "properties": {
@@ -3591,7 +3685,9 @@
       "was": "generally accepted",
       "note": "dated 1500, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "palazzo-farnese",
+    "location_src": "Palazzo Farnese"
    }
   },
   {
@@ -3599,8 +3695,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.353538,
-     44.497707
+     11.35354,
+     44.49771
     ]
    },
    "properties": {
@@ -3626,7 +3722,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "pinacoteca-nazionale-di-bologna",
+    "location_src": "Pinacoteca Nazionale di Bologna"
    }
   },
   {
@@ -3634,8 +3732,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -3663,7 +3761,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -3671,7 +3771,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -3690,7 +3790,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q126285722",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -3717,7 +3819,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q131694990",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-dijon",
+    "location_src": "Musée des Beaux-Arts de Dijon"
    }
   },
   {
@@ -3725,8 +3829,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489527499,
-     41.902779717
+     12.48953,
+     41.90278
     ]
    },
    "properties": {
@@ -3754,7 +3858,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -3762,8 +3868,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489527499,
-     41.902779717
+     12.48953,
+     41.90278
     ]
    },
    "properties": {
@@ -3789,7 +3895,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -3797,8 +3905,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.489527499,
-     41.902779717
+     12.48953,
+     41.90278
     ]
    },
    "properties": {
@@ -3824,7 +3932,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -3832,8 +3942,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     1.90944444,
-     47.9025
+     1.90957,
+     47.90259
     ]
    },
    "properties": {
@@ -3859,7 +3969,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-d-orleans",
+    "location_src": "Musée des Beaux-Arts d'Orléans"
    }
   },
   {
@@ -3894,7 +4006,9 @@
       "was": "generally accepted",
       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "allentown-art-museum",
+    "location_src": "Allentown Art Museum"
    }
   },
   {
@@ -3902,8 +4016,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.684472222,
-     -23.579888888
+     -46.68447,
+     -23.57989
     ]
    },
    "properties": {
@@ -3929,7 +4043,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museu-da-casa-brasileira",
+    "location_src": "Museu da Casa Brasileira"
    }
   },
   {
@@ -3937,8 +4053,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.206262,
-     44.413758
+     12.20626,
+     44.41376
     ]
    },
    "properties": {
@@ -3956,7 +4072,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q135261056",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "ravenna-art-museum",
+    "location_src": "Ravenna Art Museum"
    }
   },
   {
@@ -3964,8 +4082,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.3469308,
-     44.4919895
+     11.34693,
+     44.49199
     ]
    },
    "properties": {
@@ -3991,7 +4109,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "palazzo-pepoli",
+    "location_src": "Palazzo Pepoli"
    }
   },
   {
@@ -3999,8 +4119,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.250008,
-     43.765153
+     11.2501,
+     43.7652
     ]
    },
    "properties": {
@@ -4028,7 +4148,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-pitti",
+    "location_src": "Palazzo Pitti"
    }
   },
   {
@@ -4036,8 +4158,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.252777777,
-     51.753333333
+     -1.25278,
+     51.75333
     ]
    },
    "properties": {
@@ -4055,7 +4177,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119851301",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "all-souls-college",
+    "location_src": "All Souls College"
    }
   },
   {
@@ -4063,8 +4187,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.252777777,
-     51.753333333
+     -1.25278,
+     51.75333
     ]
    },
    "properties": {
@@ -4082,7 +4206,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119888575",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "all-souls-college",
+    "location_src": "All Souls College"
    }
   },
   {
@@ -4090,8 +4216,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.393873,
-     43.304414
+     5.39387,
+     43.30441
     ]
    },
    "properties": {
@@ -4117,7 +4243,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-marseille",
+    "location_src": "Musée des beaux-arts de Marseille"
    }
   },
   {
@@ -4125,8 +4253,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.328139,
-     45.431078
+     12.32814,
+     45.43108
     ]
    },
    "properties": {
@@ -4144,7 +4272,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q120598686",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gallerie-dell-accademia",
+    "location_src": "Gallerie dell'Accademia"
    }
   },
   {
@@ -4171,7 +4301,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q104528074",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe"
    }
   },
   {
@@ -4187,7 +4319,7 @@
     "painter": "Annibale Carracci",
     "title": "Saint Francis in a Swoon",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -4198,7 +4330,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119691862",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -4214,7 +4348,7 @@
     "painter": "Annibale Carracci",
     "title": "The Entombment of Christ",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -4225,7 +4359,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119933289",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -4241,7 +4377,7 @@
     "painter": "Annibale Carracci",
     "title": "The Holy Family with the Infant Saint John",
     "year": "",
-    "location": "Christ Church",
+    "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -4252,7 +4388,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119933302",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -4260,8 +4398,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.470805555,
-     41.894694444
+     12.47081,
+     41.89469
     ]
    },
    "properties": {
@@ -4289,7 +4427,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "palazzo-farnese",
+    "location_src": "Palazzo Farnese"
    }
   },
   {
@@ -4297,7 +4437,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.002275,
+     21.00228,
      52.24215
     ]
    },
@@ -4316,7 +4456,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118904702",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-john-paul-ii-collection",
+    "location_src": "Museum of John Paul II Collection"
    }
   },
   {
@@ -4324,8 +4466,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -4343,7 +4485,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876357",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -4351,8 +4495,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -4370,7 +4514,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876680",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -4378,8 +4524,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -4397,7 +4543,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118878525",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -4434,7 +4582,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-grenoble",
+    "location_src": "Museum of Grenoble"
    }
   },
   {
@@ -4461,7 +4611,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77967700",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -4488,7 +4640,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q77978628",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland"
    }
   },
   {
@@ -4496,8 +4650,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.2545,
-     51.7507
+     -1.25585,
+     51.7502
     ]
    },
    "properties": {
@@ -4515,7 +4669,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876355",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -4523,8 +4679,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.2545,
-     51.7507
+     -1.25585,
+     51.7502
     ]
    },
    "properties": {
@@ -4542,7 +4698,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876461",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "christ-church-picture-gallery",
+    "location_src": "Christ Church Picture Gallery"
    }
   },
   {
@@ -4569,7 +4727,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q120035362",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "weston-park",
+    "location_src": "Weston Park"
    }
   },
   {
@@ -4596,7 +4756,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119891886",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "burton-constable-hall",
+    "location_src": "Burton Constable Hall"
    }
   },
   {
@@ -4604,8 +4766,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.944444444,
-     51.623888888
+     -3.94444,
+     51.62389
     ]
    },
    "properties": {
@@ -4623,7 +4785,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119872926",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "glynn-vivian-art-gallery",
+    "location_src": "Glynn Vivian Art Gallery"
    }
   },
   {
@@ -4650,7 +4814,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q119500584",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "leicester-museum-art-gallery",
+    "location_src": "Leicester Museum & Art Gallery"
    }
   },
   {
@@ -4659,7 +4825,7 @@
     "type": "Point",
     "coordinates": [
      -1.46679,
-     53.379715
+     53.37971
     ]
    },
    "properties": {
@@ -4687,7 +4853,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "sheffield-galleries-and-museums-trust",
+    "location_src": "Sheffield Galleries and Museums Trust"
    }
   },
   {
@@ -4695,8 +4863,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -4704,7 +4872,7 @@
     "title": "Portrait of a Man",
     "year": "1590",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%281560-1609%29%20%28attributed%20to%29%20-%20Portrait%20of%20a%20Man%20-%20P.1948.SC.72%20-%20Courtauld%20Gallery.jpg?width=500",
@@ -4714,7 +4882,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876469",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -4741,7 +4911,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q118876390",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "hatchlands-park",
+    "location_src": "Hatchlands Park"
    }
   },
   {
@@ -4768,7 +4940,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50323361",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4795,7 +4969,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50323513",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4822,7 +4998,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50323537",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4849,7 +5027,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50323547",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4876,7 +5056,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50323554",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4911,7 +5093,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -4919,8 +5103,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.604444444,
-     51.483888888
+     -0.60444,
+     51.48389
     ]
    },
    "properties": {
@@ -4948,7 +5132,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "windsor-castle",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -4956,8 +5142,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.604444444,
-     51.483888888
+     -0.60444,
+     51.48389
     ]
    },
    "properties": {
@@ -4975,7 +5161,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28043551",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "windsor-castle",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -4984,7 +5172,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -5012,7 +5200,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -5021,7 +5211,7 @@
     "type": "Point",
     "coordinates": [
      16.3616,
-     48.203880555
+     48.20388
     ]
    },
    "properties": {
@@ -5039,7 +5229,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27979526",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -5047,8 +5239,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5066,7 +5258,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29898333",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5074,8 +5268,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5093,7 +5287,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29938930",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5101,8 +5297,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5130,7 +5326,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5138,8 +5336,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5157,7 +5355,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30093404",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5165,8 +5365,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5184,7 +5384,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30093630",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5192,8 +5394,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.569985,
-     48.148291
+     11.57,
+     48.14833
     ]
    },
    "properties": {
@@ -5211,7 +5413,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30098923",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "alte-pinakothek",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -5219,8 +5423,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5238,7 +5442,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q59481142",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5246,8 +5452,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5275,7 +5481,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5283,8 +5491,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5310,7 +5518,9 @@
       "was": "generally accepted",
       "note": "dated 1551, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5318,8 +5528,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5345,7 +5555,9 @@
       "was": "generally accepted",
       "note": "dated 1551, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5353,8 +5565,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5380,7 +5592,9 @@
       "was": "generally accepted",
       "note": "dated 1551, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5388,8 +5602,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5415,7 +5629,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5423,8 +5639,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5452,7 +5668,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5460,8 +5678,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5489,7 +5707,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5497,8 +5717,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -5526,7 +5746,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -5534,8 +5756,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5553,7 +5775,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29899659",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5561,8 +5785,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5580,7 +5804,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29952403",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5588,8 +5814,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5607,7 +5833,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q29954370",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5615,8 +5843,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.571776,
-     48.149583
+     11.57178,
+     48.14958
     ]
    },
    "properties": {
@@ -5634,7 +5862,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q30095349",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "bavarian-state-painting-collections",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5671,7 +5901,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-fine-arts-budapest",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -5679,8 +5911,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -5706,7 +5938,9 @@
       "was": "generally accepted",
       "note": "dated 1750, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -5714,8 +5948,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.698906,
-     45.429535
+     -75.69891,
+     45.42954
     ]
    },
    "properties": {
@@ -5743,7 +5977,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -5751,8 +5987,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -5780,7 +6016,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -5788,8 +6026,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -5807,7 +6045,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q64651945",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -5815,8 +6055,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -5844,7 +6084,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -5852,8 +6094,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -5881,7 +6123,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -5889,8 +6133,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.485277777,
-     49.193944444
+     2.48528,
+     49.19394
     ]
    },
    "properties": {
@@ -5918,7 +6162,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-conde",
+    "location_src": "Musée Condé"
    }
   },
   {
@@ -5926,8 +6172,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.086388888,
-     51.446111111
+     -0.08639,
+     51.44611
     ]
    },
    "properties": {
@@ -5953,7 +6199,9 @@
       "was": "generally accepted",
       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "dulwich-picture-gallery",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -5961,8 +6209,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -5980,7 +6228,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q50821193",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -6017,7 +6267,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -6025,7 +6277,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -6044,7 +6296,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q49415308",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -6053,14 +6307,14 @@
     "type": "Point",
     "coordinates": [
      -97.365,
-     32.748611111
+     32.74861
     ]
    },
    "properties": {
     "painter": "Annibale Carracci",
     "title": "The Butcher's Shop",
     "year": "1582",
-    "location": "Museo de Arte Kimbell",
+    "location": "Kimbell Art Museum",
     "city": "Fort Worth",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6071,7 +6325,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q28776027",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "kimbell-art-museum",
+    "location_src": "Kimbell Art Museum"
    }
   },
   {
@@ -6079,7 +6335,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     17.108611111,
+     17.10861,
      48.14
     ]
    },
@@ -6098,7 +6354,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q51188592",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "slovak-national-gallery",
+    "location_src": "Slovak National Gallery"
    }
   },
   {
@@ -6106,7 +6364,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     17.108611111,
+     17.10861,
      48.14
     ]
    },
@@ -6125,7 +6383,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q51212705",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "slovak-national-gallery",
+    "location_src": "Slovak National Gallery"
    }
   },
   {
@@ -6142,7 +6402,7 @@
     "title": "The Holy Family with Saint Francis",
     "year": "1584",
     "location": "Tatton Park",
-    "city": "Cheshire East",
+    "city": "National Trust",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%281560-1609%29%20%28attributed%20to%29%20-%20The%20Holy%20Family%20with%20Saint%20Francis%20-%201298204%20-%20National%20Trust.jpg?width=500",
@@ -6152,7 +6412,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q52289615",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "tatton-park",
+    "location_src": "Tatton Park"
    }
   },
   {
@@ -6160,8 +6422,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.692222222,
-     40.413888888
+     -3.6922,
+     40.4139
     ]
    },
    "properties": {
@@ -6179,7 +6441,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q27698563",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -6187,8 +6451,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.18358611,
-     41.38240278
+     2.18359,
+     41.3824
     ]
    },
    "properties": {
@@ -6216,7 +6480,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "reial-academia-catalana-de-belles-arts-de-sant-jordi",
+    "location_src": "Reial Acadèmia Catalana de Belles Arts de Sant Jordi"
    }
   },
   {
@@ -6224,8 +6490,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6233,7 +6499,7 @@
     "title": "The Holy Family with the Infant Saint John the Baptist",
     "year": "1600",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%281560-1609%29%20-%20The%20Holy%20Family%20with%20the%20Infant%20Saint%20John%20the%20Baptist%20%28The%20Montalto%20Madonna%29%20-%20NG6597%20-%20National%20Gallery.jpg?width=500",
@@ -6253,7 +6519,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6261,8 +6529,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6270,7 +6538,7 @@
     "title": "Saint John the Baptist seated in the Wilderness",
     "year": "1650",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Circle%20of%20Annibale%20Carracci%2C%20Saint%20John%20the%20Baptist%20seated%20in%20the%20Wilderness.jpg?width=500",
@@ -6288,7 +6556,9 @@
       "was": "generally accepted",
       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6296,8 +6566,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6305,7 +6575,7 @@
     "title": "Marsyas and Olympus",
     "year": "1598",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Marsyas%20and%20Olympus%20National%20Gallery.jpeg?width=500",
@@ -6325,7 +6595,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6333,8 +6605,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6342,7 +6614,7 @@
     "title": "Erminia takes Refuge with the Shepherds",
     "year": "1612",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%281560-1609%29%20%28circle%20of%29%20-%20Erminia%20takes%20Refuge%20with%20the%20Shepherds%20-%20NG88%20-%20National%20Gallery.jpg?width=500",
@@ -6352,7 +6624,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q26706706",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6360,8 +6634,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -6369,7 +6643,7 @@
     "title": "Silenus gathering Grapes",
     "year": "1598",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carracci%20-%20Silenus%20gathering%20Grapes.jpg?width=500",
@@ -6389,7 +6663,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -6398,7 +6674,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -6416,7 +6692,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20176839",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -6443,7 +6721,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20277527",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6470,7 +6750,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20355762",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6497,7 +6779,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20380829",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6532,7 +6816,9 @@
       "was": "generally accepted",
       "note": "dated 1661, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6559,7 +6845,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20441101",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "statens-museum-for-kunst",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -6567,8 +6855,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6596,7 +6884,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6604,8 +6894,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6633,7 +6923,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6641,8 +6933,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6670,7 +6962,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6678,8 +6972,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6707,7 +7001,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6715,8 +7011,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6744,7 +7040,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6752,8 +7050,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6781,7 +7079,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6789,8 +7089,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6826,7 +7126,9 @@
       "qid": "Q19242643",
       "url": "https://www.wikidata.org/wiki/Q19242643"
      }
-    ]
+    ],
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6834,8 +7136,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6863,7 +7165,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6871,8 +7175,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6900,7 +7204,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6908,8 +7214,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.153305555,
-     41.368333333
+     2.15331,
+     41.36833
     ]
    },
    "properties": {
@@ -6937,7 +7243,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya"
    }
   },
   {
@@ -6945,8 +7253,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.481145,
-     41.897669
+     12.48114,
+     41.89767
     ]
    },
    "properties": {
@@ -6974,7 +7282,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "doria-pamphilj-gallery",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -6982,7 +7292,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     144.968888888,
+     144.96889,
      -37.8225
     ]
    },
@@ -7001,7 +7311,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20408717",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "national-gallery-of-victoria",
+    "location_src": "National Gallery of Victoria"
    }
   },
   {
@@ -7009,8 +7321,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.547222222,
-     47.219444444
+     -1.54722,
+     47.21944
     ]
    },
    "properties": {
@@ -7036,7 +7348,9 @@
       "was": "generally accepted",
       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "museum_id": "nantes-museum-of-arts",
+    "location_src": "Nantes Museum of Arts"
    }
   },
   {
@@ -7044,8 +7358,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7053,7 +7367,7 @@
     "title": "The Stoning of Saint Stephen",
     "year": "1603",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carracci%20-%20La%20Lapidation%20de%20saint%20%C3%89tienne%2C%201600%20-%201605%2C%20INV%20203%20%3B%20MR%20121.jpg?width=500",
@@ -7073,7 +7387,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7081,8 +7397,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7090,7 +7406,7 @@
     "title": "Abraham's Sacrifice",
     "year": "1599",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Isacco.jpg?width=500",
@@ -7110,7 +7426,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   },
   {
@@ -7118,8 +7436,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.335833,
-     48.861111
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
@@ -7127,7 +7445,7 @@
     "title": "Infant Hercules Strangling the Serpents",
     "year": "1599",
     "location": "Louvre",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Ercole%20fanciullo%20strozza%20i%20serpenti.jpg?width=500",
@@ -7147,7 +7465,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre"
    }
   }
  ]

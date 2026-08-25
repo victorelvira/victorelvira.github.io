@@ -39,7 +39,8 @@
     },
     "museum_id": "prato-cathedral",
     "qid": "Q103235023",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450pr/23herod.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450pr/23herod.html",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -81,7 +82,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q1055111",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/8madonn.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/8madonn.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -89,8 +91,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.12779,
-     51.49106
+     -0.12722,
+     51.49083
     ]
    },
    "properties": {
@@ -99,7 +101,7 @@
     "year": "1450",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Tate",
+    "location": "Tate Britain",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -124,9 +126,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "tate",
+    "museum_id": "tate-britain",
     "qid": "Q1056007",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/10annun2.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/10annun2.html",
+    "location_src": "Tate Britain"
    }
   },
   {
@@ -171,7 +174,8 @@
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "qid": "Q1056043",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/01annun3.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/01annun3.html",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -179,8 +183,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11472,
+     42.37417
     ]
    },
    "properties": {
@@ -199,7 +203,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "harvard-art-museums",
-    "qid": "Q106864663"
+    "qid": "Q106864663",
+    "location_src": "Harvard Art Museums"
    }
   },
   {
@@ -207,8 +212,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.1147,
-     42.3742
+     -71.11472,
+     42.37417
     ]
    },
    "properties": {
@@ -237,7 +242,8 @@
      }
     },
     "museum_id": "harvard-art-museums",
-    "qid": "Q106865071"
+    "qid": "Q106865071",
+    "location_src": "Harvard Art Museums"
    }
   },
   {
@@ -275,7 +281,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436839"
+    "qid": "Q107436839",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -313,7 +320,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107439978"
+    "qid": "Q107439978",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -356,7 +364,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q1124982"
+    "qid": "Q1124982",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -396,7 +405,8 @@
      }
     },
     "museum_id": "lindenau-museum",
-    "qid": "Q116898419"
+    "qid": "Q116898419",
+    "location_src": "Lindenau museum"
    }
   },
   {
@@ -426,7 +436,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "san-jacopo-in-castellare",
-    "qid": "Q117278793"
+    "qid": "Q117278793",
+    "location_src": "San Jacopo in Castellare"
    }
   },
   {
@@ -434,8 +445,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -467,7 +478,8 @@
      }
     },
     "museum_id": "courtauld-gallery",
-    "qid": "Q118630529"
+    "qid": "Q118630529",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -475,8 +487,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -506,7 +518,8 @@
      }
     },
     "museum_id": "courtauld-gallery",
-    "qid": "Q118630618"
+    "qid": "Q118630618",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -514,8 +527,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -545,7 +558,8 @@
      }
     },
     "museum_id": "courtauld-gallery",
-    "qid": "Q118630620"
+    "qid": "Q118630620",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -553,8 +567,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -584,7 +598,8 @@
      }
     },
     "museum_id": "courtauld-gallery",
-    "qid": "Q118630625"
+    "qid": "Q118630625",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -626,7 +641,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q124733445",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -655,7 +671,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "prato-cathedral",
-    "qid": "Q131546506"
+    "qid": "Q131546506",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -684,7 +701,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "prato-cathedral",
-    "qid": "Q131557484"
+    "qid": "Q131557484",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -715,7 +733,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "prato-cathedral",
-    "qid": "Q131676037"
+    "qid": "Q131676037",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -743,7 +762,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "sacred-art-museum-montespertoli",
-    "qid": "Q131690584"
+    "qid": "Q131690584",
+    "location_src": "Sacred Art Museum (Montespertoli)"
    }
   },
   {
@@ -782,7 +802,8 @@
      }
     },
     "museum_id": "prato-cathedral",
-    "qid": "Q131719735"
+    "qid": "Q131719735",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -811,7 +832,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "prato-cathedral",
-    "qid": "Q131812900"
+    "qid": "Q131812900",
+    "location_src": "Prato Cathedral"
    }
   },
   {
@@ -839,7 +861,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q133280995"
+    "qid": "Q133280995",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -867,7 +890,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "palazzo-pretorio-museum",
-    "qid": "Q133281079"
+    "qid": "Q133281079",
+    "location_src": "Palazzo Pretorio Museum"
    }
   },
   {
@@ -905,7 +929,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26519697"
+    "qid": "Q26519697",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -944,7 +969,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26689452"
+    "qid": "Q26689452",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -982,7 +1008,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26689453"
+    "qid": "Q26689453",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1020,7 +1047,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26692281"
+    "qid": "Q26692281",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1059,7 +1087,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q26708046"
+    "qid": "Q26708046",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1101,7 +1130,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q291189",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/1forest1.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/1forest1.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -1151,7 +1181,8 @@
       "qid": "Q29335225",
       "url": "https://www.wikidata.org/wiki/Q29335225"
      }
-    ]
+    ],
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -1195,7 +1226,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3202172",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/08bernar.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/08bernar.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1241,7 +1273,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3531531",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/05adora2.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/05adora2.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1283,7 +1316,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3538918",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/3lawren1.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/3lawren1.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1324,7 +1358,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q3558025",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/7madonna.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/7madonna.html",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -1365,7 +1400,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3605566",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/3adorati.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/3adorati.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1407,7 +1443,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3605568",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/2adoratx.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/2adoratx.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1449,7 +1486,8 @@
     },
     "museum_id": "prato",
     "qid": "Q3605569",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/3adorati.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/3adorati.html",
+    "location_src": "Prato"
    }
   },
   {
@@ -1493,7 +1531,8 @@
     },
     "museum_id": "frick-collection",
     "qid": "Q3618175",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/7annunc.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/7annunc.html",
+    "location_src": "Frick Collection"
    }
   },
   {
@@ -1537,7 +1576,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3618177",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/9annunci.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/9annunci.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1580,7 +1620,8 @@
      }
     },
     "museum_id": "palazzo-pretorio-museum",
-    "qid": "Q3618189"
+    "qid": "Q3618189",
+    "location_src": "Palazzo Pretorio Museum"
    }
   },
   {
@@ -1625,7 +1666,8 @@
     },
     "museum_id": "doria-pamphilj-gallery",
     "qid": "Q3618191",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/09annunc.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/09annunc.html",
+    "location_src": "Doria Pamphilj Gallery"
    }
   },
   {
@@ -1670,7 +1712,8 @@
     },
     "museum_id": "basilica-of-san-lorenzo",
     "qid": "Q3618193",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/06annun.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/06annun.html",
+    "location_src": "Basilica of San Lorenzo"
    }
   },
   {
@@ -1715,7 +1758,8 @@
     },
     "museum_id": "bavarian-state-painting-collections",
     "qid": "Q3618194",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/02annung.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/02annung.html",
+    "location_src": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1757,7 +1801,8 @@
      }
     },
     "museum_id": "santa-maria-del-carmine",
-    "qid": "Q3686606"
+    "qid": "Q3686606",
+    "location_src": "Santa Maria del Carmine"
    }
   },
   {
@@ -1801,7 +1846,8 @@
      }
     },
     "museum_id": "museo-horne",
-    "qid": "Q3697635"
+    "qid": "Q3697635",
+    "location_src": "Museo Horne"
    }
   },
   {
@@ -1844,7 +1890,8 @@
      }
     },
     "museum_id": "castelvecchio-museum",
-    "qid": "Q3697637"
+    "qid": "Q3697637",
+    "location_src": "Castelvecchio Museum"
    }
   },
   {
@@ -1887,7 +1934,8 @@
      }
     },
     "museum_id": "pinacoteca-della-accademia-albertina-di-belle-arti",
-    "qid": "Q3714537"
+    "qid": "Q3714537",
+    "location_src": "Pinacoteca della Accademia Albertina di Belle Arti"
    }
   },
   {
@@ -1930,7 +1978,8 @@
      }
     },
     "museum_id": "pinacoteca-della-accademia-albertina-di-belle-arti",
-    "qid": "Q3714538"
+    "qid": "Q3714538",
+    "location_src": "Pinacoteca della Accademia Albertina di Belle Arti"
    }
   },
   {
@@ -1973,7 +2022,8 @@
      }
     },
     "museum_id": "museo-dell-opera-del-duomo",
-    "qid": "Q3732905"
+    "qid": "Q3732905",
+    "location_src": "Museo dell'Opera del Duomo"
    }
   },
   {
@@ -2016,7 +2066,8 @@
      }
     },
     "museum_id": "ashmolean-museum",
-    "qid": "Q3797737"
+    "qid": "Q3797737",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -2061,7 +2112,8 @@
     },
     "museum_id": "vatican-museums",
     "qid": "Q3797762",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/04corona.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/04corona.html",
+    "location_src": "Vatican Museums"
    }
   },
   {
@@ -2106,7 +2158,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3797764",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/03coron6.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/03coron6.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2150,7 +2203,8 @@
     },
     "museum_id": "pinacoteca-del-castello-sforzesco",
     "qid": "Q3842426",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/2humilit.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/2humilit.html",
+    "location_src": "Pinacoteca del Castello Sforzesco"
    }
   },
   {
@@ -2194,7 +2248,8 @@
     },
     "museum_id": "cini-palace",
     "qid": "Q3842438",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/6madsain.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/6madsain.html",
+    "location_src": "Cini Palace"
    }
   },
   {
@@ -2236,7 +2291,8 @@
      }
     },
     "museum_id": "palazzo-degli-alberti",
-    "qid": "Q3842471"
+    "qid": "Q3842471",
+    "location_src": "Palazzo degli Alberti"
    }
   },
   {
@@ -2281,7 +2337,8 @@
     },
     "museum_id": "fondazione-magnani-rocca",
     "qid": "Q3842472",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/0madonna.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/0madonna.html",
+    "location_src": "Fondazione Magnani-Rocca"
    }
   },
   {
@@ -2324,7 +2381,8 @@
      }
     },
     "museum_id": "utah-museum-of-fine-arts",
-    "qid": "Q3842473"
+    "qid": "Q3842473",
+    "location_src": "Utah Museum of Fine Arts"
    }
   },
   {
@@ -2368,7 +2426,8 @@
     },
     "museum_id": "national-gallery-of-art",
     "qid": "Q3842474",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/00madonx.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/00madonx.html",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2412,7 +2471,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3842542",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/5madchi4.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/5madchi4.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2457,7 +2517,8 @@
     },
     "museum_id": "palazzo-pretorio-museum",
     "qid": "Q3842608",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/2ceppo.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/2ceppo.html",
+    "location_src": "Palazzo Pretorio Museum"
    }
   },
   {
@@ -2498,7 +2559,8 @@
     },
     "museum_id": "palazzo-pretorio-museum",
     "qid": "Q3842662",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/4cintola.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/4cintola.html",
+    "location_src": "Palazzo Pretorio Museum"
    }
   },
   {
@@ -2543,7 +2605,8 @@
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "qid": "Q3842743",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/4madonna.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/4madonna.html",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -2585,7 +2648,8 @@
     },
     "museum_id": "palazzo-medici-riccardi",
     "qid": "Q3842747",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/9medici.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/9medici.html",
+    "location_src": "Palazzo Medici Riccardi"
    }
   },
   {
@@ -2628,7 +2692,8 @@
      }
     },
     "museum_id": "st-andreas-picture-gallery",
-    "qid": "Q3842766"
+    "qid": "Q3842766",
+    "location_src": "St Andreas Picture Gallery"
    }
   },
   {
@@ -2673,7 +2738,8 @@
     },
     "museum_id": "louvre",
     "qid": "Q3889196",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2717,7 +2783,8 @@
       "was": "generally accepted",
       "note": "dated 1486, after death (1406–1469) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2761,7 +2828,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q3889222"
+    "qid": "Q3889222",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2806,7 +2874,8 @@
     },
     "museum_id": "museo-poldi-pezzoli",
     "qid": "Q3904391",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/4jpieta.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/4jpieta.html",
+    "location_src": "Museo Poldi Pezzoli"
    }
   },
   {
@@ -2850,7 +2919,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3937681",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/00portr11.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/00portr11.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2894,7 +2964,8 @@
     },
     "museum_id": "gemaldegalerie-berlin",
     "qid": "Q3937778",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/00portr2.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/00portr2.html",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -2937,7 +3008,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q3946834"
+    "qid": "Q3946834",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -2982,7 +3054,8 @@
     },
     "museum_id": "lindenau-museum",
     "qid": "Q3947313",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/4jerome.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/4jerome.html",
+    "location_src": "Lindenau museum"
    }
   },
   {
@@ -3024,7 +3097,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3949327"
+    "qid": "Q3949327",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3067,7 +3141,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q3949531"
+    "qid": "Q3949531",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -3112,7 +3187,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q3958339",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/10panel2.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/10panel2.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3157,7 +3233,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3993020",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/1virgi.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1450/1virgi.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3201,7 +3278,8 @@
      }
     },
     "museum_id": "fitzwilliam-museum",
-    "qid": "Q3999109"
+    "qid": "Q3999109",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -3244,7 +3322,8 @@
      }
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q4009966"
+    "qid": "Q4009966",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3252,8 +3331,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -3287,7 +3366,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q4014780"
+    "qid": "Q4014780",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -3331,7 +3411,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q50617387",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad2.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad2.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3362,7 +3443,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50896196"
+    "qid": "Q50896196",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -3400,7 +3482,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q60469131"
+    "qid": "Q60469131",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3438,7 +3521,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q60469135"
+    "qid": "Q60469135",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3476,7 +3560,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q60502700"
+    "qid": "Q60502700",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3512,7 +3597,8 @@
      }
     },
     "museum_id": "museum-catharijneconvent",
-    "qid": "Q61939512"
+    "qid": "Q61939512",
+    "location_src": "Museum Catharijneconvent"
    }
   },
   {
@@ -3530,7 +3616,7 @@
     "year": "1464",
     "city": "Worcester",
     "country": "United States",
-    "location": "Museo de Arte de Worcester",
+    "location": "Worcester Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -3548,8 +3634,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-worcester",
-    "qid": "Q79026812"
+    "museum_id": "worcester-art-museum",
+    "qid": "Q79026812",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -3567,7 +3654,7 @@
     "year": "1464",
     "city": "Worcester",
     "country": "United States",
-    "location": "Museo de Arte de Worcester",
+    "location": "Worcester Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -3585,8 +3672,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-worcester",
-    "qid": "Q79035005"
+    "museum_id": "worcester-art-museum",
+    "qid": "Q79035005",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -3628,7 +3716,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q87114468"
+    "qid": "Q87114468",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3670,7 +3759,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q92358261",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad1.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad1.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3711,7 +3801,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q92419779",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad2.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad2.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3752,7 +3843,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q92422327",
-    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad3.html"
+    "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1430/8barbad3.html",
+    "location_src": "Uffizi Gallery"
    }
   }
  ]

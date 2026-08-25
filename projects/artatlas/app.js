@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "0.56.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 15:21";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.60.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 19:15";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -391,7 +391,10 @@ function activeCoord(f) {
     const p = f.properties;
     return (p.creation_lat != null && p.creation_lon != null) ? [p.creation_lon, p.creation_lat] : null;
   }
-  return f.geometry.coordinates;
+  // "Private collection", "Stolen from …": we know the work exists, not where it is. It stays in the
+  // table, in its painter's set and in the galaxy, but it gets no pin — the coordinate in the file is
+  // a city centroid the geocoder invented. Map 2 still shows it, because where it was PAINTED is known.
+  return f.properties.placeless ? null : f.geometry.coordinates;
 }
 
 function esc(s) {
@@ -983,7 +986,7 @@ function tGalBuildStream(rows) {
   const groups = new Map();
   for (const p of rows) {
     const k = museumKey(p);
-    if (!groups.has(k)) groups.set(k, { location: p.location || "Unknown", city: p.city || "", items: [] });
+    if (!groups.has(k)) groups.set(k, { location: p.location || "Unknown", city: p.city || "", items: [], key: k });
     groups.get(k).items.push({ p });
   }
   const ordered = [...groups.values()].sort((a, z) =>
@@ -998,6 +1001,7 @@ function tGalAppend() {
   let html = "";
   for (; tGalCursor < end; tGalCursor++) { const it = tGalFlat[tGalCursor]; html += tileHTML(it.w, tGalVis, it.grp); }
   g.insertAdjacentHTML("beforeend", html);
+  scheduleMuseumLayout();                      // measure the museum names of the new tiles
 }
 function renderWorksGallery() {
   document.getElementById("works-table").hidden = true;
@@ -1028,13 +1032,16 @@ function renderWorksGallery() {
     tGalGroup = e.target.checked;
     if (view.table && tableMode === "works" && tableGallery) renderWorksGallery();
   });
-  slider.addEventListener("input", () =>
-    document.getElementById("table-gallery").style.setProperty("--thumb", slider.value + "px"));
+  slider.addEventListener("input", () => {
+    document.getElementById("table-gallery").style.setProperty("--thumb", slider.value + "px");
+    scheduleMuseumLayout(true);                // the grid reflows → museum runs change width
+  });
   document.getElementById("table-wrap").addEventListener("scroll", e => {
     const el = e.target;
     if (tableGallery && tableMode === "works" && tGalHasMore() &&
         el.scrollTop + el.clientHeight >= el.scrollHeight - 700) tGalAppend();
   });
+  wireMuseumFocus(document.getElementById("table-gallery"));
   document.getElementById("table-gallery").addEventListener("click", e => {
     const sh = e.target.closest(".gshare");
     if (sh) { e.stopPropagation(); shareWork(tGalVis[+sh.dataset.i].p); return; }   // 🔗 → share
@@ -1069,11 +1076,28 @@ document.getElementById("v-mapview").addEventListener("click", () => { setTableV
 // one common free-text filter — applies to the map, the list/gallery AND the table at once
 {
   let qt = 0;
-  document.getElementById("filter").addEventListener("input", e => {
+  const box = document.getElementById("filter"), wrap = document.getElementById("filter-wrap");
+  const clearBtn = document.getElementById("filter-clear");
+  const syncClear = () => {                       // the ✕ only exists while there is something to clear
+    const on = box.value.length > 0;
+    wrap.classList.toggle("has-q", on);
+    clearBtn.hidden = !on;
+  };
+  box.addEventListener("input", e => {
     const v = deacc(e.target.value.trim());
+    syncClear();
     clearTimeout(qt);
     qt = setTimeout(() => { state.q = v; refresh(); }, 140);   // debounce: refresh rebuilds markers
   });
+  const wipe = () => {                            // ✕ or Esc → empty the box and show everything again
+    clearTimeout(qt);
+    box.value = ""; syncClear();
+    if (state.q) { state.q = ""; refresh(); }
+    box.focus();
+  };
+  clearBtn.addEventListener("click", wipe);
+  box.addEventListener("keydown", e => { if (e.key === "Escape") { e.preventDefault(); wipe(); } });
+  syncClear();
 }
 document.querySelectorAll("#table-tabs .ttab").forEach(b => b.addEventListener("click", () => {
   tableMode = b.dataset.tmode;
@@ -1141,6 +1165,9 @@ let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 // grounds into one continuous field (the museum "background"); the picture cards sit on top in a
 // lighter tone of the same colour. The next museum's colour abuts directly — no gaps, no labels.
 const MUS_PASTELS = ["#e8dcc2", "#d7e3d3", "#d6dced", "#eed9d0", "#e3d6e8", "#d3e3df"];
+// a darker tone of each pastel: the line that runs around the whole colour field of a museum, so
+// where one museum ends and the next begins is visible even when both are pale (Víctor)
+const MUS_EDGES   = ["#b39a63", "#8fae88", "#8f9cc4", "#c79c8b", "#a892b3", "#85aca4"];
 
 // gallery tile — lazy thumbnail (click → lightbox) + caption (click → the work "ficha").
 // `vis` is the index array the caption click resolves against (panelVis or the table's own).
@@ -1154,10 +1181,13 @@ function tileHTML(w, vis, grp) {
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
   const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
-  const style = grp && grp.color ? ` style="background:${grp.color}"` : "";
+  const style = grp && grp.color ? ` style="background:${grp.color}${grp.edge ? `;--edge:${grp.edge}` : ""}"` : "";
   const nameTag = grp && grp.label ? `<div class="mlabel">${esc(grp.label)}</div>` : "";
   const placeAttr = grp && grp.key ? ` data-place="${esc(grp.key)}"` : "";
-  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}>${share}${nameTag}` +
+  // every tile of a museum carries the same data-mus, so hovering the colour field can light up the
+  // museum's whole run (data-place stays on the FIRST tile only — it is the marker→list scroll target)
+  const musAttr = grp && grp.mus != null ? ` data-mus="${grp.mus}"` : "";
+  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}${musAttr}>${share}${nameTag}` +
     `<div class="gcard">${img}<div class="gmeta">` +
     `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
@@ -1170,11 +1200,116 @@ function panelCellHTML(w) { return tileHTML(w, panelVis); }
 function groupedTileStream(ordered) {
   const stream = [];
   ordered.forEach((g, gi) => {
-    const color = MUS_PASTELS[gi % MUS_PASTELS.length];
+    const color = MUS_PASTELS[gi % MUS_PASTELS.length], edge = MUS_EDGES[gi % MUS_EDGES.length];
     const label = g.location + (g.city ? ` · ${g.city}` : "");   // shown over the museum's FIRST tile
-    g.items.forEach((w, wi) => stream.push({ w, grp: { color, label: wi === 0 ? label : "", key: wi === 0 ? g.key : "" } }));
+    g.items.forEach((w, wi) => stream.push({ w, grp: { color, edge, mus: gi, label: wi === 0 ? label : "", key: wi === 0 ? g.key : "" } }));
   });
   return stream;
+}
+
+// ── museum names on the grid, and museum focus on hover ──────────────────────────────────────
+// The name sits on its museum's colour band, over the museum's FIRST tile. Museums run back-to-back
+// in the same row, so a long name used to print straight over the next museum's band and the two
+// collided into unreadable mush. Each label is now capped at the width its museum really occupies in
+// that row (ellipsis beyond) — and the full name is one hover away: pointing at a museum's COLOUR
+// FIELD (the band above the pictures / the gutters between them) writes its whole name out over
+// whatever comes after it, and greys every other museum's ground and name so the museum under the
+// pointer reads as one continuous block.
+const MLABEL_PAD = 12;     // .gallery.grouped .gcell side padding (4px) + .mlabel inset (6px), both sides
+
+// Cap each museum name at its museum's run of tiles *in its own row* (offsetTop identifies the row).
+// `all` refits every label (layout changed); otherwise only the ones never measured (fresh chunk).
+function fitMuseumLabels(root, all) {
+  if (!root || !root.clientWidth) return;                    // hidden gallery → measurements are all 0
+  const labs = [...root.querySelectorAll(all ? ".mlabel" : ".mlabel:not([data-fit])")];
+  if (!labs.length) return;
+  const widths = labs.map(lab => {                           // read pass first, write pass after,
+    const first = lab.parentElement;                         // so the browser lays out only once
+    const mus = first.dataset.mus, top = first.offsetTop;
+    let last = first;
+    for (let n = first.nextElementSibling; n && n.dataset.mus === mus && n.offsetTop === top; n = n.nextElementSibling) last = n;
+    return Math.max(30, last.offsetLeft + last.offsetWidth - first.offsetLeft - MLABEL_PAD);
+  });
+  labs.forEach((lab, i) => { lab.style.maxWidth = widths[i] + "px"; lab.dataset.fit = "1"; });
+}
+// Outline + chamfer: a museum's field is a ragged block of tiles, so its outline is drawn tile by
+// tile — each cell carries a dark line only on the sides that face a different museum (or the edge of
+// the grid), and rounds off the corners where two of those sides meet. Gapless neighbours therefore
+// separate with a small notch of panel background + a darker line, instead of two pastels touching.
+const EDGE_SIDES = ["t", "r", "b", "l"];
+function paintMuseumEdges(root) {
+  if (!root || !root.clientWidth) return;
+  const cells = [...root.querySelectorAll(".gcell")];
+  if (!cells.length) return;
+  const cols = Math.max(1, (getComputedStyle(root).gridTemplateColumns.match(/px/g) || []).length);
+  const mus = cells.map(c => c.dataset.mus || "");
+  const n = cells.length;
+  for (let i = 0; i < n; i++) {
+    const m = mus[i];
+    const code = (i - cols < 0 || mus[i - cols] !== m ? "t" : "") +
+                 ((i + 1) % cols === 0 || i + 1 >= n || mus[i + 1] !== m ? "r" : "") +
+                 (i + cols >= n || mus[i + cols] !== m ? "b" : "") +
+                 (i % cols === 0 || mus[i - 1] !== m ? "l" : "");
+    if (cells[i].dataset.edges === code) continue;            // unchanged → no DOM write
+    cells[i].dataset.edges = code;
+    EDGE_SIDES.forEach(sd => cells[i].classList.toggle("e-" + sd, code.includes(sd)));
+  }
+}
+
+let _fitRAF = 0, _fitAll = false;
+function scheduleMuseumLayout(all) {
+  _fitAll = _fitAll || !!all;
+  if (_fitRAF) return;
+  _fitRAF = requestAnimationFrame(() => {
+    const every = _fitAll; _fitRAF = 0; _fitAll = false;
+    ["worklist", "table-gallery"].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el || !el.classList.contains("grouped")) return;
+      paintMuseumEdges(el);
+      fitMuseumLabels(el, every);
+    });
+  });
+}
+
+document.addEventListener("visibilitychange", () => { if (!document.hidden) scheduleMuseumLayout(true); });
+
+// Hover a museum's colour field → full name + everything else greyed (see .mus-focus in style.css).
+function wireMuseumFocus(root) {
+  if (!root) return;
+  const clear = () => {
+    if (!root.classList.contains("mus-focus")) return;
+    root.classList.remove("mus-focus");
+    root.querySelectorAll(".gcell.mus-on").forEach(c => {
+      c.classList.remove("mus-on");
+      const lab = c.querySelector(".mlabel");
+      if (lab) lab.style.left = "";
+    });
+    root.dataset.mus = "";
+  };
+  root.addEventListener("mouseover", e => {
+    const cell = e.target.closest && e.target.closest(".gcell");
+    if (!cell || !root.classList.contains("grouped")) return;   // gaps/sentinel → keep the current focus
+    const mus = cell.dataset.mus || "";
+    if (mus && mus === root.dataset.mus) return;                // still inside the focused museum
+    // only the colour field counts: .gcard covers the cell's content box, so the event landing on the
+    // cell itself means the pointer is on the museum's own ground, not on a picture
+    if (e.target !== cell || !mus) { clear(); return; }
+    clear();
+    root.querySelectorAll(`.gcell[data-mus="${mus}"]`).forEach(c => c.classList.add("mus-on"));
+    root.dataset.mus = mus;
+    root.classList.add("mus-focus");
+    // a museum sitting at the right edge would run its full name straight into the panel wall —
+    // slide the name left instead (over its greyed-out neighbours) so the whole of it is readable
+    const lab = root.querySelector(".gcell.mus-on .mlabel");
+    if (lab) {
+      const lr = lab.getBoundingClientRect(), rr = root.getBoundingClientRect();
+      const over = lr.right - (rr.right - 4), room = lr.left - (rr.left + 4);
+      const shift = Math.min(over, room);
+      if (shift > 0) lab.style.left = (6 - shift) + "px";
+    }
+  });
+  root.addEventListener("mouseleave", clear);
+  new ResizeObserver(() => scheduleMuseumLayout(true)).observe(root);   // panel drag / window resize
 }
 
 function panelRowHTML(w) {
@@ -1213,6 +1348,7 @@ function appendPanelChunk() {
     }
   }
   ul.insertAdjacentHTML("beforeend", html);
+  scheduleMuseumLayout();                      // measure the museum names of the new tiles
   if (panelHasMore()) {                             // more to come → sentinel + observe
     ul.insertAdjacentHTML("beforeend", `<li class="sentinel" aria-hidden="true"></li>`);
     const s = ul.querySelector(".sentinel");
@@ -1293,6 +1429,7 @@ function revealMuseumInPanel(key) {
   _revealT = setTimeout(() => target.classList.remove("grp-flash"), 3600);
 }
 
+wireMuseumFocus(document.getElementById("worklist"));
 document.getElementById("worklist").addEventListener("click", e => {
   const sh = e.target.closest(".gshare");
   if (sh) { e.stopPropagation(); shareWork(panelVis[+sh.dataset.i].p); return; }   // 🔗 → share
@@ -1323,7 +1460,7 @@ document.getElementById("worklist").addEventListener("click", e => {
     panelGalGroup = e.target.checked;
     if (!state.near) renderPanel();
   });
-  const applySize = () => ul.style.setProperty("--thumb", slider.value + "px");
+  const applySize = () => { ul.style.setProperty("--thumb", slider.value + "px"); scheduleMuseumLayout(true); };
   slider.addEventListener("input", applySize);
   applySize();
   // Reliable infinite-scroll trigger: append the next chunk when the scroll container nears the
@@ -1561,11 +1698,12 @@ function openWorkCard(w) {
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
     `<div class="wc-info"><h3 class="wc-title">${esc(p.title || "Untitled")}</h3>` +
-    row("Painter", painterTag(p)) + row("Date", esc(p.year || "")) + row("Where", esc(venue)) +
+    row("Painter", painterTag(p)) + row("Date", esc(p.year || "")) +
+    row("Where", esc(venue) + (p.placeless ? ` <span class="wc-noplace">not on the map — no public address</span>` : "")) +
     row("Technique", esc(p.medium || "")) + row("Size", esc(p.dimensions || "")) + row("Attribution", attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
     `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button>` +
-    `<button type="button" class="wc-map">📍 On the map</button>` +
+    (p.placeless ? "" : `<button type="button" class="wc-map">📍 On the map</button>`) +
     `<span class="wc-hint">or just copy the address bar</span></div>` +
     `<div class="wc-aff" id="wc-affinity"></div>` +
     `<div class="wc-similar" id="wc-subject"></div>` +

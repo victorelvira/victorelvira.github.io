@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.1439,
-     34.1475
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -36,7 +36,8 @@
       "qid": "Q19607558",
       "url": "https://www.wikidata.org/wiki/Q19607558"
      }
-    ]
+    ],
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -65,7 +66,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -73,16 +75,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.0633,
-     38.9142
+     -77.06333,
+     38.91417
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "1879 Head of a Young Girl",
     "year": "1879 Head of a Young Girl",
-    "city": "Washington D.C.",
-    "location": "Dumbarton Oaks Research Library and Collection",
+    "city": "Washington, D.C.",
+    "location": "Dumbarton Oaks",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seurat_Testa_di_ragazza.jpg/500px-Seurat_Testa_di_ragazza.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -93,7 +95,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "dumbarton-oaks-research-library-and-collection"
+    "museum_id": "dumbarton-oaks",
+    "country": "United States",
+    "location_src": "Dumbarton Oaks"
    }
   },
   {
@@ -101,8 +105,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -136,7 +140,9 @@
       "source": "Wikipedia list",
       "title": "1879 Paysage rose"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -164,7 +170,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "fogg-art-museum-cambridge"
+    "museum_id": "fogg-art-museum-cambridge",
+    "location_src": "Fogg Art Museum, Cambridge"
    }
   },
   {
@@ -207,7 +214,9 @@
       "source": "Wikipedia list",
       "title": "1881 Sunset"
      }
-    ]
+    ],
+    "museum_id": "bristol-city-museum-art-gallery",
+    "location_src": "Bristol City Museum & Art Gallery"
    }
   },
   {
@@ -215,8 +224,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -250,7 +259,9 @@
       "source": "Wikipedia list",
       "title": "1881 Landscape with \"The Poor Fisherman\" by Puvis de Chavannes"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -279,7 +290,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -287,8 +299,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -296,7 +308,7 @@
     "title": "A Man Leaning on a Parapet",
     "year": "1881",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20A%20Man%20Leaning%20on%20a%20Parapet%20-%202019.141.17%20-%20Metropolitan%20Museum%20of%20Art.jpg?width=500",
@@ -322,7 +334,9 @@
       "source": "Wikipedia list",
       "title": "1881 to 1882 A man leaning against a Parapet"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -351,7 +365,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -360,7 +375,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -394,7 +409,9 @@
       "source": "Wikipedia list",
       "title": "1882 Peasant with a Hoe"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -402,8 +419,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.290636382,
-     55.868608412
+     -4.29056,
+     55.86861
     ]
    },
    "properties": {
@@ -411,7 +428,7 @@
     "title": "Boy Sitting in a Meadow",
     "year": "1882",
     "location": "Kelvingrove Art Gallery and Museum",
-    "city": "Glasgow City",
+    "city": "Glasgow",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20001.jpg?width=500",
@@ -437,7 +454,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 Boy sitting in a meadow"
      }
-    ]
+    ],
+    "museum_id": "kelvingrove-art-gallery-and-museum",
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -445,8 +464,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -480,7 +499,9 @@
       "source": "Wikipedia list",
       "title": "1882 Le Petit Paysan en bleu"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -488,7 +509,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.958611,
+     6.95861,
      50.9375
     ]
    },
@@ -497,7 +518,7 @@
     "title": "Massif figure in a landscape",
     "year": "1882",
     "location": "Wallraf–Richartz Museum",
-    "city": "Altstadt-Nord",
+    "city": "Cologne",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Figure%20massive%20dans%20un%20paysage%20%C3%A0%20Barbizon%20PC%2027.jpg?width=500",
@@ -523,7 +544,9 @@
       "source": "Wikipedia list",
       "title": "1882 Massive figure in a meadow in Barbizon"
      }
-    ]
+    ],
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -559,7 +582,8 @@
       "qid": "Q85225383",
       "url": "https://www.wikidata.org/wiki/Q85225383"
      }
-    ]
+    ],
+    "location_src": "Virginia Museum of Fine Arts, Richmond"
    }
   },
   {
@@ -567,8 +591,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.979666,
-     53.410068
+     -2.97967,
+     53.41007
     ]
    },
    "properties": {
@@ -602,7 +626,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 White houses in Ville d'Avray"
      }
-    ]
+    ],
+    "museum_id": "walker-art-gallery",
+    "location_src": "Walker Art Gallery"
    }
   },
   {
@@ -639,7 +665,8 @@
       "qid": "Q3888853",
       "url": "https://www.wikidata.org/wiki/Q3888853"
      }
-    ]
+    ],
+    "location_src": "Musée des Beaux-Arts de Bordeaux"
    }
   },
   {
@@ -648,7 +675,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -682,7 +709,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 Man with a Hoe"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -691,7 +720,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -725,7 +754,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 The Stone breaker"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -733,8 +764,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.1439,
-     34.1475
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -762,7 +793,8 @@
       "qid": "Q118054308",
       "url": "https://www.wikidata.org/wiki/Q118054308"
      }
-    ]
+    ],
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -770,8 +802,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -791,7 +823,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "yale-university-art-gallery",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -800,7 +833,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -834,7 +867,9 @@
       "source": "Wikipedia list",
       "title": "1882 Haymakers at Montfermeil"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -850,8 +885,8 @@
     "painter": "Georges Seurat",
     "title": "1882 The Stone Breaker",
     "year": "1882 The Stone Breaker",
-    "city": "Washington D.C.",
-    "location": "Phillips Collection",
+    "city": "Washington, D.C.",
+    "location": "The Phillips Collection",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Georges_Seurat_060.jpg/500px-Georges_Seurat_060.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -862,8 +897,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "phillips-collection",
-    "country": "United States"
+    "museum_id": "the-phillips-collection",
+    "country": "United States",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -871,8 +907,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -880,7 +916,7 @@
     "title": "The Gardener",
     "year": "1882",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gardener%20MET%20DT1499.jpg?width=500",
@@ -906,7 +942,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 The Gardener"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -915,7 +953,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -949,7 +987,9 @@
       "source": "Wikipedia list",
       "title": "1882 Haystacks"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -978,7 +1018,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -986,8 +1027,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -1007,7 +1048,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "yale-university-art-gallery",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -1016,7 +1058,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1050,7 +1092,9 @@
       "source": "Wikipedia list",
       "title": "1883 Figures in a Landscape"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1059,7 +1103,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1093,7 +1137,9 @@
       "source": "Wikipedia list",
       "title": "1883 A Summer Landscape"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1101,8 +1147,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -1136,7 +1182,9 @@
       "source": "Wikipedia list",
       "title": "1883 Arbres, hiver"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1144,8 +1192,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -1179,7 +1227,9 @@
       "source": "Wikipedia list",
       "title": "1883 Lisière de bois au printemps"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1187,8 +1237,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.881111111,
-     52.358333333
+     4.8811,
+     52.3583
     ]
    },
    "properties": {
@@ -1215,7 +1265,9 @@
       "source": "Wikipedia list",
       "title": "1883 to 1884 The Seine at Courbevoie"
      }
-    ]
+    ],
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum"
    }
   },
   {
@@ -1223,8 +1275,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     132.458061111,
-     34.398669444
+     132.45806,
+     34.39867
     ]
    },
    "properties": {
@@ -1258,7 +1310,9 @@
       "source": "Wikipedia list",
       "title": "1883 Around the Town"
      }
-    ]
+    ],
+    "museum_id": "hiroshima-museum-of-art",
+    "location_src": "Hiroshima Museum of Art"
    }
   },
   {
@@ -1287,7 +1341,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kelvingrove-art-gallery-and-museum"
+    "museum_id": "kelvingrove-art-gallery-and-museum",
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -1296,7 +1351,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1330,7 +1385,9 @@
       "source": "Wikipedia list",
       "title": "1883 Watering can at Le Raincy"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1338,8 +1395,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.08027778,
-     48.29972222
+     4.08028,
+     48.29972
     ]
    },
    "properties": {
@@ -1373,7 +1430,9 @@
       "source": "Wikipedia list",
       "title": "1883 Suburb"
      }
-    ]
+    ],
+    "museum_id": "musee-d-art-moderne-de-troyes",
+    "location_src": "Musée d'Art moderne de Troyes"
    }
   },
   {
@@ -1391,7 +1450,7 @@
     "year": "1883 Figures on a street",
     "city": "Cologne",
     "country": "Germany",
-    "location": "Wallraf-Richartz Museum",
+    "location": "Wallraf–Richartz Museum",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Georges_Seurat_-_Dans_la_rue_PC_71.jpg/500px-Georges_Seurat_-_Dans_la_rue_PC_71.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -1402,7 +1461,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "wallraf-richartz-museum"
+    "museum_id": "wallraf-richartz-museum",
+    "location_src": "Wallraf–Richartz Museum"
    }
   },
   {
@@ -1439,7 +1499,8 @@
       "qid": "Q88311890",
       "url": "https://www.wikidata.org/wiki/Q88311890"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1447,8 +1508,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -1468,7 +1529,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "courtauld-gallery"
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -1476,8 +1538,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -1497,7 +1559,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "yale-university-art-gallery",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -1505,8 +1568,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.634444,
-     43.310278
+     -73.63444,
+     43.31028
     ]
    },
    "properties": {
@@ -1540,7 +1603,9 @@
       "source": "Wikipedia list",
       "title": "1883 Banks of the Seine near Courbevoie"
      }
-    ]
+    ],
+    "museum_id": "the-hyde-collection",
+    "location_src": "The Hyde Collection"
    }
   },
   {
@@ -1548,8 +1613,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -1583,7 +1648,9 @@
       "source": "Wikipedia list",
       "title": "1883 Allée en forêt, Barbizon"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -1612,7 +1679,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1620,8 +1688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -1649,7 +1717,8 @@
       "qid": "Q88311886",
       "url": "https://www.wikidata.org/wiki/Q88311886"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -1657,8 +1726,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.08027778,
-     48.29972222
+     4.08028,
+     48.29972
     ]
    },
    "properties": {
@@ -1692,7 +1761,9 @@
       "source": "Wikipedia list",
       "title": "1883 Fishermen on the banks of the Seine"
      }
-    ]
+    ],
+    "museum_id": "musee-d-art-moderne-de-troyes",
+    "location_src": "Musée d'Art moderne de Troyes"
    }
   },
   {
@@ -1721,7 +1792,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kelvingrove-art-gallery-and-museum"
+    "museum_id": "kelvingrove-art-gallery-and-museum",
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -1730,7 +1802,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1764,7 +1836,9 @@
       "source": "Wikipedia list",
       "title": "1883 Horse and Boats"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1773,7 +1847,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -1807,7 +1881,9 @@
       "source": "Wikipedia list",
       "title": "1883 Bathers"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -1815,8 +1891,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1824,7 +1900,7 @@
     "title": "The Rainbow: Study for 'Bathers at Asnières'",
     "year": "1883",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20The%20Rainbow%20Study%20for%20Bathers%20at%20Asni%C3%A8res.jpg?width=500",
@@ -1850,7 +1926,9 @@
       "source": "Wikipedia list",
       "title": "1883 The Rainbow"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1858,8 +1936,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -81.611666666,
-     41.508888888
+     -81.61167,
+     41.50889
     ]
    },
    "properties": {
@@ -1893,7 +1971,9 @@
       "source": "Wikipedia list",
       "title": "1883 Sitting Man on the Banks of the Seine"
      }
-    ]
+    ],
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -1901,8 +1981,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -1910,7 +1990,7 @@
     "title": "Bathers at Asnières (Study II)",
     "year": "1883",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Bathers%20at%20Asni%C3%A8res%20PC%2091.jpg?width=500",
@@ -1936,7 +2016,9 @@
       "source": "Wikipedia list",
       "title": "1883 Five Male Figures"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1965,7 +2047,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1974,7 +2057,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -2008,7 +2091,9 @@
       "source": "Wikipedia list",
       "title": "1883 The Seine with Clothing on the Bank"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -2016,15 +2101,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "1883 Boy with Horse near Asnières",
     "year": "1883 Boy with Horse near Asnières",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "attribution": "generally accepted",
@@ -2037,7 +2122,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "scottish-national-gallery"
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -2053,7 +2139,7 @@
     "painter": "Georges Seurat",
     "title": "1883 Figure on the banks of the Seine and bathers",
     "year": "1883 Figure on the banks of the Seine and bathers",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "attribution": "generally accepted",
@@ -2066,7 +2152,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-d-orsay"
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2074,8 +2161,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -2109,7 +2196,9 @@
       "source": "Wikipedia list",
       "title": "1883 Bathers sitting on the Beach of the Seine"
      }
-    ]
+    ],
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -2138,7 +2227,8 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -2178,7 +2268,8 @@
       "qid": "Q1090837",
       "url": "https://www.wikidata.org/wiki/Q1090837"
      }
-    ]
+    ],
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2186,8 +2277,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -2221,7 +2312,9 @@
       "source": "Wikipedia list",
       "title": "1884 The Rue St Vincent, Paris in Spring"
      }
-    ]
+    ],
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -2229,8 +2322,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.078055555,
-     59.328611111
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -2257,7 +2350,9 @@
       "source": "Wikipedia list",
       "title": "1884 The bridge at Bineau"
      }
-    ]
+    ],
+    "museum_id": "nationalmuseum",
+    "location_src": "Nationalmuseum"
    }
   },
   {
@@ -2266,7 +2361,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -2300,7 +2395,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1885 Study for La Grande Jatte"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -2308,8 +2405,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -2317,7 +2414,7 @@
     "title": "Group of characters",
     "year": "1884",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20038.jpg?width=500",
@@ -2343,7 +2440,9 @@
       "source": "Wikipedia list",
       "title": "1884 Study for A Sunday on La Grande Jatte"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2372,7 +2471,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2380,8 +2480,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -2415,7 +2515,9 @@
       "source": "Wikipedia list",
       "title": "1884 Seated male and reclining female figure"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2423,8 +2525,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -2444,7 +2546,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -2452,8 +2555,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -2487,7 +2590,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1886 Seated figures and woman with large hat"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -2516,7 +2621,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -2545,7 +2651,8 @@
     },
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -2588,7 +2695,9 @@
       "source": "Wikipedia list",
       "title": "1884 View of the Grande Jatte"
      }
-    ]
+    ],
+    "museum_id": "minnesota-marine-art-museum",
+    "location_src": "Minnesota Marine Art Museum"
    }
   },
   {
@@ -2624,7 +2733,8 @@
       "qid": "Q70781282",
       "url": "https://www.wikidata.org/wiki/Q70781282"
      }
-    ]
+    ],
+    "location_src": "Fogg Art Museum, Cambridge"
    }
   },
   {
@@ -2632,7 +2742,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.87563,
+     -78.87562,
      42.93245
     ]
    },
@@ -2641,7 +2751,7 @@
     "title": "1884 to 1885 Woman sitting in the foreground and boat",
     "year": "1884 to 1885 Woman sitting in the foreground and boat",
     "city": "Buffalo",
-    "location": "Albright Knox Art Gallery",
+    "location": "Buffalo AKG Art Museum",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Georges_Seurat_-_%C3%89tude_pour_La_Grande_Jatte_PC_132.jpg/500px-Georges_Seurat_-_%C3%89tude_pour_La_Grande_Jatte_PC_132.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -2652,7 +2762,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "albright-knox-art-gallery"
+    "museum_id": "buffalo-akg-art-museum",
+    "country": "United States",
+    "location_src": "Buffalo AKG Art Museum"
    }
   },
   {
@@ -2661,7 +2773,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -2695,7 +2807,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1885 Study of Figures for La Grande Jatte"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -2731,7 +2845,8 @@
       "qid": "Q3713920",
       "url": "https://www.wikidata.org/wiki/Q3713920"
      }
-    ]
+    ],
+    "location_src": "Smith College Museum of Art, Northampton"
    }
   },
   {
@@ -2739,8 +2854,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.119444,
-     52.200278
+     0.11944,
+     52.20028
     ]
    },
    "properties": {
@@ -2767,7 +2882,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1885 Promenading Couple"
      }
-    ]
+    ],
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum"
    }
   },
   {
@@ -2775,8 +2892,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -2784,7 +2901,7 @@
     "title": "Final study for \"La Grande Jatte\"",
     "year": "1884",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20034.jpg?width=500",
@@ -2810,7 +2927,9 @@
       "source": "Wikipedia list",
       "title": "1884 Final study for La Grande Jatte"
      }
-    ]
+    ],
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -2842,7 +2961,8 @@
     "city": "Chicago",
     "country": "United States",
     "qid": "Q1044742",
-    "wikidata": "https://www.wikidata.org/wiki/Q1044742"
+    "wikidata": "https://www.wikidata.org/wiki/Q1044742",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -2850,15 +2970,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "1884 to 1885 La Luzerne, Saint-Denis",
     "year": "1884 to 1885 La Luzerne, Saint-Denis",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "attribution": "generally accepted",
@@ -2879,7 +2999,8 @@
       "qid": "Q18684436",
       "url": "https://www.wikidata.org/wiki/Q18684436"
      }
-    ]
+    ],
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -2887,8 +3008,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.06291,
-     50.63035
+     3.06117,
+     50.63092
     ]
    },
    "properties": {
@@ -2908,7 +3029,8 @@
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "city": "Lille",
-    "country": "France"
+    "country": "France",
+    "location_src": "Palais des Beaux-Arts de Lille"
    }
   },
   {
@@ -2916,8 +3038,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -2937,7 +3059,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -2945,8 +3068,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -2966,7 +3089,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -2974,8 +3098,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3009,7 +3133,9 @@
       "source": "Wikipedia list",
       "title": "1885 Mill ruin at Grandchamp"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -3017,8 +3143,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     139.021145,
-     35.256711
+     139.02114,
+     35.25671
     ]
    },
    "properties": {
@@ -3052,7 +3178,9 @@
       "source": "Wikipedia list",
       "title": "1885 Boats at low tide at Grandchamp"
      }
-    ]
+    ],
+    "museum_id": "pola-museum-of-art",
+    "location_src": "Pola Museum of Art"
    }
   },
   {
@@ -3060,8 +3188,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.313611111,
-     59.940555555
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -3095,7 +3223,9 @@
       "source": "Wikipedia list",
       "title": "1885 Fort-Samson, Grandchamp"
      }
-    ]
+    ],
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -3103,8 +3233,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     149.136388888,
-     -35.300277777
+     149.1364,
+     -35.3003
     ]
    },
    "properties": {
@@ -3138,7 +3268,9 @@
       "source": "Wikipedia list",
       "title": "1885 Study for \"Le Bec du Hoc, Grandchamp\""
      }
-    ]
+    ],
+    "museum_id": "national-gallery-of-australia",
+    "location_src": "National Gallery of Australia"
    }
   },
   {
@@ -3146,8 +3278,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3155,7 +3287,7 @@
     "title": "Le Bec du Hoc, Grandcamp",
     "year": "1885",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat-Le%20Bec%20du%20Hoc%20%C3%A0%20Grandcamp.jpg?width=500",
@@ -3181,7 +3313,9 @@
       "source": "Wikipedia list",
       "title": "1885 Le Bec du Hoc, Grandchamp"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3218,7 +3352,8 @@
       "qid": "Q3775512",
       "url": "https://www.wikidata.org/wiki/Q3775512"
      }
-    ]
+    ],
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -3226,8 +3361,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -3235,7 +3370,7 @@
     "title": "The Morning Walk",
     "year": "1884",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20050.jpg?width=500",
@@ -3261,7 +3396,9 @@
       "source": "Wikipedia list",
       "title": "1885 The Morning Walk , Study for \"The Seine at Courbevoie\""
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3269,8 +3406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944444,
-     52.095833333
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -3278,7 +3415,7 @@
     "title": "Corner of the harbour, Honfleur",
     "year": "1886",
     "location": "Kröller-Müller Museum",
-    "city": "Ede",
+    "city": "Otterlo",
     "country": "Netherlands",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1886%20Seurat%20Hafen%20von%20Honfleur%20anagoria.JPG?width=500",
@@ -3304,7 +3441,9 @@
       "source": "Wikipedia list",
       "title": "1886 Harbour at Honfleur"
      }
-    ]
+    ],
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -3341,7 +3480,8 @@
       "qid": "Q3786544",
       "url": "https://www.wikidata.org/wiki/Q3786544"
      }
-    ]
+    ],
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -3349,8 +3489,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.61917,
-     39.32611
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -3377,7 +3517,9 @@
       "qid": "Q71328898",
       "url": "https://www.wikidata.org/wiki/Q71328898"
      }
-    ]
+    ],
+    "country": "United States",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -3406,7 +3548,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-des-beaux-arts",
-    "country": "France"
+    "country": "France",
+    "location_src": "Musée des Beaux-Arts"
    }
   },
   {
@@ -3414,8 +3557,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944444,
-     52.095833333
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -3423,7 +3566,7 @@
     "title": "End of the pier, Honfleur",
     "year": "1886",
     "location": "Kröller-Müller Museum",
-    "city": "Ede",
+    "city": "Otterlo",
     "country": "Netherlands",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Bout%20de%20la%20jet%C3%A9e%20%C3%A0%20Honfleur%20PC%20171.jpg?width=500",
@@ -3449,7 +3592,9 @@
       "source": "Wikipedia list",
       "title": "1886 Harbour entrance at Honfleur"
      }
-    ]
+    ],
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -3457,8 +3602,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -3478,7 +3623,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -3518,7 +3664,8 @@
       "qid": "Q20189827",
       "url": "https://www.wikidata.org/wiki/Q20189827"
      }
-    ]
+    ],
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -3547,7 +3694,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3555,8 +3703,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -3584,7 +3732,8 @@
       "qid": "Q3908058",
       "url": "https://www.wikidata.org/wiki/Q3908058"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -3592,8 +3741,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3627,7 +3776,9 @@
       "source": "Wikipedia list",
       "title": "1887 Les Poseuses , Study of a standing model from the front"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -3635,8 +3786,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3670,7 +3821,9 @@
       "source": "Wikipedia list",
       "title": "1887 to 1890 Les Poseuses , Study of a standing model"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -3678,8 +3831,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3713,7 +3866,9 @@
       "source": "Wikipedia list",
       "title": "1887 Les Poseuses , Study of a seated model in profile"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -3721,8 +3876,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -3756,7 +3911,9 @@
       "source": "Wikipedia list",
       "title": "1887 Les Poseuses , Study of a model from behind"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -3764,8 +3921,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -3796,7 +3953,8 @@
       "qid": "Q3234845",
       "url": "https://www.wikidata.org/wiki/Q3234845"
      }
-    ]
+    ],
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -3825,7 +3983,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery"
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -3854,7 +4013,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-museums-of-fine-arts"
+    "museum_id": "royal-museums-of-fine-arts",
+    "location_src": "Royal Museums of Fine Arts"
    }
   },
   {
@@ -3894,7 +4054,8 @@
       "qid": "Q3823444",
       "url": "https://www.wikidata.org/wiki/Q3823444"
      }
-    ]
+    ],
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3902,8 +4063,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.2742,
-     44.9586
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -3923,7 +4084,8 @@
     },
     "museum_id": "minneapolis-institute-of-art",
     "city": "Minneapolis",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -3932,7 +4094,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -3966,7 +4128,9 @@
       "source": "Wikipedia list",
       "title": "1888 Seascape at Port-en-Bessin, Normandy"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -3974,8 +4138,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.29444,
-     38.63944
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -3994,8 +4158,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "saint-louis-art-museum",
-    "city": "St",
-    "country": "United States"
+    "city": "St. Louis",
+    "country": "United States",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -4003,8 +4168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944444,
-     52.095833333
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -4012,7 +4177,7 @@
     "title": "Sunday at Port-en-Bessin",
     "year": "1888",
     "location": "Kröller-Müller Museum",
-    "city": "Ede",
+    "city": "Otterlo",
     "country": "Netherlands",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20057.jpg?width=500",
@@ -4038,7 +4203,9 @@
       "source": "Wikipedia list",
       "title": "1888 View of Port-en-Bessin, Sunday"
      }
-    ]
+    ],
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -4067,7 +4234,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-modern-art",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -4075,8 +4243,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4110,7 +4278,9 @@
       "source": "Wikipedia list",
       "title": "1888 Port-en-Bessin, Port entrance at high tide"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4118,8 +4288,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.0647,
-     42.3594
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -4139,7 +4309,8 @@
     },
     "museum_id": "detroit-institute-of-arts",
     "city": "Detroit",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -4167,7 +4338,9 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fine-arts-museums-of-san-francisco",
-    "city": "San Francisco"
+    "city": "San Francisco",
+    "country": "United States",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -4196,7 +4369,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts",
-    "country": "United States"
+    "country": "United States",
+    "location_src": "Museum of Fine Arts"
    }
   },
   {
@@ -4204,8 +4378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -4225,7 +4399,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "courtauld-gallery"
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -4233,7 +4408,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.87563,
+     -78.87562,
      42.93245
     ]
    },
@@ -4242,7 +4417,7 @@
     "title": "1889 Étude pour Le Chahut",
     "year": "1889 Étude pour Le Chahut",
     "city": "Buffalo",
-    "location": "Albright Knox Art Gallery",
+    "location": "Buffalo AKG Art Museum",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Georges_Seurat_-_%C3%89tude_pour_Le_Chahut_PC_201.jpg/500px-Georges_Seurat_-_%C3%89tude_pour_Le_Chahut_PC_201.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -4253,7 +4428,9 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "albright-knox-art-gallery"
+    "museum_id": "buffalo-akg-art-museum",
+    "country": "United States",
+    "location_src": "Buffalo AKG Art Museum"
    }
   },
   {
@@ -4261,8 +4438,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -4290,7 +4467,8 @@
       "qid": "Q88311895",
       "url": "https://www.wikidata.org/wiki/Q88311895"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -4321,7 +4499,9 @@
     },
     "museum_id": "kroller-muller-museum",
     "qid": "Q3835761",
-    "wikidata": "https://www.wikidata.org/wiki/Q3835761"
+    "wikidata": "https://www.wikidata.org/wiki/Q3835761",
+    "country": "Netherlands",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -4329,8 +4509,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.1727,
-     39.9605
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -4350,7 +4530,8 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "barnes-foundation"
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -4358,8 +4539,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.181388888,
-     39.965833333
+     -75.18139,
+     39.96583
     ]
    },
    "properties": {
@@ -4393,7 +4574,9 @@
       "source": "Wikipedia list",
       "title": "1890 Moored boats and trees at gravelines"
      }
-    ]
+    ],
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art"
    }
   },
   {
@@ -4402,7 +4585,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.891388888
+     38.89139
     ]
    },
    "properties": {
@@ -4436,7 +4619,9 @@
       "source": "Wikipedia list",
       "title": "1890 Seascape at Gravelines"
      }
-    ]
+    ],
+    "museum_id": "galeria-nacional-de-arte",
+    "location_src": "Galería Nacional de Arte"
    }
   },
   {
@@ -4444,8 +4629,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11747,
-     51.51175
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -4473,7 +4658,8 @@
       "qid": "Q3848104",
       "url": "https://www.wikidata.org/wiki/Q3848104"
      }
-    ]
+    ],
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -4481,8 +4667,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -94.580960249,
-     39.044969557
+     -94.58096,
+     39.04497
     ]
    },
    "properties": {
@@ -4516,7 +4702,9 @@
       "source": "Wikipedia list",
       "title": "1890 Study for \"The Channel of Gravelines, Petit Fort Philippe\""
      }
-    ]
+    ],
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art"
    }
   },
   {
@@ -4524,8 +4712,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.185655,
-     39.826019
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -4559,7 +4747,9 @@
       "source": "Wikipedia list",
       "title": "1890 The Channel of Gravelines, Petit Fort Philippe"
      }
-    ]
+    ],
+    "museum_id": "museo-de-arte-de-indianapolis",
+    "location_src": "Museo de Arte de Indianápolis"
    }
   },
   {
@@ -4567,8 +4757,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -4576,7 +4766,7 @@
     "title": "The Channel of Gravelines, Grand Fort-Philippe",
     "year": "1890",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20016.jpg?width=500",
@@ -4602,7 +4792,9 @@
       "source": "Wikipedia list",
       "title": "1890 Gravelines. Grand Fort Philippe"
      }
-    ]
+    ],
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -4610,8 +4802,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     5.816944444,
-     52.095833333
+     5.81694,
+     52.09583
     ]
    },
    "properties": {
@@ -4619,7 +4811,7 @@
     "title": "The Gravelines Channel, towards the sea",
     "year": "1890",
     "location": "Kröller-Müller Museum",
-    "city": "Ede",
+    "city": "Otterlo",
     "country": "Netherlands",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1890%20Seurat%20Kanal%20von%20Gravelines%20anagoria.JPG?width=500",
@@ -4645,7 +4837,9 @@
       "source": "Wikipedia list",
       "title": "1890 The Channel at Gravelines, in the Direction of the Sea"
      }
-    ]
+    ],
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum"
    }
   },
   {
@@ -4681,7 +4875,8 @@
       "qid": "Q18919413",
       "url": "https://www.wikidata.org/wiki/Q18919413"
      }
-    ]
+    ],
+    "location_src": "Musée de l'Annonciade"
    }
   },
   {
@@ -4718,7 +4913,8 @@
       "qid": "Q3793240",
       "url": "https://www.wikidata.org/wiki/Q3793240"
      }
-    ]
+    ],
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -4726,8 +4922,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4761,7 +4957,9 @@
       "source": "Wikipedia list",
       "title": "1891 Study for \"The Circus\""
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4777,7 +4975,7 @@
     "painter": "Georges Seurat",
     "title": "1891 The Circus",
     "year": "1891 The Circus",
-    "city": "Paris",
+    "city": "7th arrondissement of Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "attribution": "generally accepted",
@@ -4801,7 +4999,8 @@
       "qid": "Q2275610",
       "url": "https://www.wikidata.org/wiki/Q2275610"
      }
-    ]
+    ],
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4809,8 +5008,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4838,7 +5037,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4846,8 +5047,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4875,7 +5076,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4883,8 +5086,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.326527,
-     48.859972
+     2.32653,
+     48.85997
     ]
    },
    "properties": {
@@ -4918,7 +5121,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 Landscape in the Île-de-France"
      }
-    ]
+    ],
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay"
    }
   },
   {
@@ -4926,8 +5131,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -4935,7 +5140,7 @@
     "title": "The Forest at Pontaubert",
     "year": "1881",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20063.jpg?width=500",
@@ -4955,7 +5160,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -4963,8 +5170,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -4972,7 +5179,7 @@
     "title": "Gray Weather, Grande Jatte",
     "year": "1886",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gray%20Weather%2C%20Grande%20Jatte%20MET%20DT1945.jpg?width=500",
@@ -4992,7 +5199,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5000,8 +5209,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -5009,7 +5218,7 @@
     "title": "View of the Seine",
     "year": "1882",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20the%20Seine%20MET%20DT211328.jpg?width=500",
@@ -5029,7 +5238,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5037,8 +5248,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -5046,7 +5257,7 @@
     "title": "Landscape at Saint-Ouen",
     "year": "1878",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20at%20Saint-Ouen%20MET%20DT9036.jpg?width=500",
@@ -5066,7 +5277,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5074,8 +5287,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.963333333,
-     40.779444444
+     -73.9631,
+     40.7794
     ]
    },
    "properties": {
@@ -5083,7 +5296,7 @@
     "title": "The Mower",
     "year": "1883",
     "location": "Metropolitan Museum of Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Mower%20MET%20SLP0206.jpg?width=500",
@@ -5103,7 +5316,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -5111,8 +5326,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5120,7 +5335,7 @@
     "title": "Clothes on the Grass",
     "year": "1883",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20%281859-1891%29%20-%20Clothes%20on%20the%20Grass%20%28V%C3%AAtements%20sur%20l%27herbe%29%20-%20L727%20-%20National%20Gallery.jpg?width=500",
@@ -5140,7 +5355,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5148,8 +5365,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.977611111,
-     40.761444444
+     -73.9775,
+     40.7617
     ]
    },
    "properties": {
@@ -5157,7 +5374,7 @@
     "title": "Grandcamp, Evening",
     "year": "1885",
     "location": "Museum of Modern Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20Grandcamp%2C%20un%20soir%20-%20Google%20Art%20Project.jpg?width=500",
@@ -5183,7 +5400,9 @@
       "source": "Wikipedia list",
       "title": "1885 Grandchamp, Evening"
      }
-    ]
+    ],
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -5191,8 +5410,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.977611111,
-     40.761444444
+     -73.9775,
+     40.7617
     ]
    },
    "properties": {
@@ -5200,7 +5419,7 @@
     "title": "Evening, Honfleur",
     "year": "1886",
     "location": "Museum of Modern Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20Honfleur%2C%20un%20soir%2C%20embouchure%20de%20la%20Seine%20-%20Google%20Art%20Project.jpg?width=500",
@@ -5226,7 +5445,9 @@
       "source": "Wikipedia list",
       "title": "1886 Honfleur, evening"
      }
-    ]
+    ],
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -5234,8 +5455,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.977611111,
-     40.761444444
+     -73.9775,
+     40.7617
     ]
    },
    "properties": {
@@ -5243,7 +5464,7 @@
     "title": "The Channel at Gravelines, Evening",
     "year": "1890",
     "location": "Museum of Modern Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20The%20Channel%20at%20Gravelines%2C%20Evening%20-%20Google%20Art%20Project.jpg?width=500",
@@ -5269,7 +5490,9 @@
       "source": "Wikipedia list",
       "title": "1890 The Channel at Gravelines, Evening"
      }
-    ]
+    ],
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -5277,8 +5500,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.977611111,
-     40.761444444
+     -73.9775,
+     40.7617
     ]
    },
    "properties": {
@@ -5286,7 +5509,7 @@
     "title": "Port-en-Bessin, Entrance to the Harbor",
     "year": "1888",
     "location": "Museum of Modern Art",
-    "city": "Manhattan",
+    "city": "New York",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20032.jpg?width=500",
@@ -5306,7 +5529,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art"
    }
   },
   {
@@ -5314,8 +5539,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.958888888,
-     40.783055555
+     -73.95889,
+     40.78306
     ]
    },
    "properties": {
@@ -5349,7 +5574,9 @@
       "source": "Wikipedia list",
       "title": "1883 Peasant Woman Seated in the Grass"
      }
-    ]
+    ],
+    "museum_id": "solomon-r-guggenheim-museum",
+    "location_src": "Solomon R. Guggenheim Museum"
    }
   },
   {
@@ -5357,8 +5584,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.958888888,
-     40.783055555
+     -73.95889,
+     40.78306
     ]
    },
    "properties": {
@@ -5392,7 +5619,9 @@
       "source": "Wikipedia list",
       "title": "1882 Peasant with Hoe"
      }
-    ]
+    ],
+    "museum_id": "solomon-r-guggenheim-museum",
+    "location_src": "Solomon R. Guggenheim Museum"
    }
   },
   {
@@ -5400,8 +5629,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.958888888,
-     40.783055555
+     -73.95889,
+     40.78306
     ]
    },
    "properties": {
@@ -5435,7 +5664,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 Farm Women at Work"
      }
-    ]
+    ],
+    "museum_id": "solomon-r-guggenheim-museum",
+    "location_src": "Solomon R. Guggenheim Museum"
    }
   },
   {
@@ -5443,7 +5674,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.358238,
+     4.35824,
      50.84168
     ]
    },
@@ -5472,7 +5703,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -5480,8 +5713,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.548055555,
-     47.370277777
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -5509,7 +5742,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich"
    }
   },
   {
@@ -5517,8 +5752,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -5546,7 +5781,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -5554,7 +5791,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -5583,7 +5820,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -5591,8 +5830,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.094166666,
-     42.339444444
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5610,7 +5849,9 @@
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q20539818",
      "note": "harvested: painting by this creator with an image and a documented collection"
-    }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -5618,8 +5859,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5627,7 +5868,7 @@
     "title": "The Seine seen from La Grande Jatte",
     "year": "1888",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20%281859-1891%29%20-%20The%20Seine%20seen%20from%20La%20Grande%20Jatte%20-%20NG6558%20-%20National%20Gallery.jpg?width=500",
@@ -5647,7 +5888,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5655,8 +5898,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5664,7 +5907,7 @@
     "title": "Study for 'La Grande Jatte'",
     "year": "1884",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20%281859-1891%29%20-%20Study%20for%20%27La%20Grande%20Jatte%27%20-%20NG6556%20-%20National%20Gallery.jpg?width=500",
@@ -5684,7 +5927,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5692,8 +5937,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5701,7 +5946,7 @@
     "title": "La Grande Jatte (Study VI)",
     "year": "1884",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20%281859-1891%29%20-%20Study%20for%20%27La%20Grande%20Jatte%27%20-%20NG6560%20-%20National%20Gallery.jpg?width=500",
@@ -5721,7 +5966,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5729,8 +5976,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.128333333,
-     51.508888888
+     -0.1283,
+     51.5089
     ]
    },
    "properties": {
@@ -5738,7 +5985,7 @@
     "title": "A River Bank (The Seine at Asnières)",
     "year": "1883",
     "location": "National Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20%281859-1891%29%20-%20A%20River%20Bank%20%28The%20Seine%20at%20Asni%C3%A8res%29%20-%20NG6559%20-%20National%20Gallery.jpg?width=500",
@@ -5758,7 +6005,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -5766,8 +6015,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     7.594193,
-     47.554032
+     7.59419,
+     47.55403
     ]
    },
    "properties": {
@@ -5801,7 +6050,9 @@
       "source": "Wikipedia list",
       "title": "1882 Landscape with a stake"
      }
-    ]
+    ],
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel"
    }
   },
   {
@@ -5809,8 +6060,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -5838,7 +6089,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -5846,8 +6099,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -87.623888888,
-     41.879444444
+     -87.62389,
+     41.87944
     ]
    },
    "properties": {
@@ -5875,7 +6128,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -5883,8 +6138,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.6195034,
-     39.3259955
+     -76.6195,
+     39.326
     ]
    },
    "properties": {
@@ -5918,7 +6173,9 @@
       "source": "Wikipedia list",
       "title": "1886 Study for \"The Beach of Bas-Butin, Honfleur\""
      }
-    ]
+    ],
+    "museum_id": "baltimore-museum-of-art",
+    "location_src": "Baltimore Museum of Art"
    }
   },
   {
@@ -5927,14 +6184,14 @@
     "type": "Point",
     "coordinates": [
      14.4325,
-     50.101111111
+     50.10111
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "The „Maria“ at Honfleur",
     "year": "1886",
-    "location": "Trade Fair Palace",
+    "location": "National Gallery Prague",
     "city": "Holešovice",
     "country": "Czech Republic",
     "attribution": "generally accepted",
@@ -5961,7 +6218,9 @@
       "source": "Wikipedia list",
       "title": "1886 The Mary in Honfleur"
      }
-    ]
+    ],
+    "museum_id": "national-gallery-prague",
+    "location_src": "National Gallery Prague"
    }
   },
   {
@@ -5969,8 +6228,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.046805555,
-     38.911388888
+     -77.04681,
+     38.91139
     ]
    },
    "properties": {
@@ -5998,7 +6257,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "the-phillips-collection",
+    "location_src": "The Phillips Collection"
    }
   },
   {
@@ -6006,8 +6267,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6041,7 +6302,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1885 Study for La Grande-Jatte"
      }
-    ]
+    ],
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6049,8 +6312,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.561758,
-     47.353045
+     8.56176,
+     47.35305
     ]
    },
    "properties": {
@@ -6084,7 +6347,9 @@
       "source": "Wikipedia list",
       "title": "1887 Study for \"The Circus Parade\""
      }
-    ]
+    ],
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection"
    }
   },
   {
@@ -6092,7 +6357,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.800893,
+     -96.80089,
      32.78756
     ]
    },
@@ -6121,7 +6386,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art"
    }
   },
   {
@@ -6129,8 +6396,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -6158,7 +6425,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -6166,8 +6435,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -6195,7 +6464,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -6203,8 +6474,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -6232,7 +6503,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -6240,8 +6513,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.172808,
-     39.960643
+     -75.17281,
+     39.96064
     ]
    },
    "properties": {
@@ -6269,7 +6542,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation"
    }
   },
   {
@@ -6277,7 +6552,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.114358,
+     -71.11436,
      42.37409
     ]
    },
@@ -6312,7 +6587,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1885 Seated Figures"
      }
-    ]
+    ],
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum"
    }
   },
   {
@@ -6320,8 +6597,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -6349,7 +6626,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -6357,8 +6636,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.195686,
-     55.950902
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -6386,7 +6665,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -6394,8 +6675,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.290636382,
-     55.868608412
+     -4.29056,
+     55.86861
     ]
    },
    "properties": {
@@ -6403,7 +6684,7 @@
     "title": "House among Trees",
     "year": "1883",
     "location": "Kelvingrove Art Gallery and Museum",
-    "city": "Glasgow City",
+    "city": "Glasgow",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20030.jpg?width=500",
@@ -6423,7 +6704,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kelvingrove-art-gallery-and-museum",
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -6431,8 +6714,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.290636382,
-     55.868608412
+     -4.29056,
+     55.86861
     ]
    },
    "properties": {
@@ -6440,7 +6723,7 @@
     "title": "The Riverbanks",
     "year": "1882",
     "location": "Kelvingrove Art Gallery and Museum",
-    "city": "Glasgow City",
+    "city": "Glasgow",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Riverbanks%20Seurat.jpg?width=500",
@@ -6460,7 +6743,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "kelvingrove-art-gallery-and-museum",
+    "location_src": "Kelvingrove Art Gallery and Museum"
    }
   },
   {
@@ -6468,8 +6753,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.064722222,
-     42.359444444
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -6497,7 +6782,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts"
    }
   },
   {
@@ -6505,8 +6792,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.063333333,
-     38.914166666
+     -77.06333,
+     38.91417
     ]
    },
    "properties": {
@@ -6534,7 +6821,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "dumbarton-oaks",
+    "location_src": "Dumbarton Oaks"
    }
   },
   {
@@ -6542,7 +6831,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -6571,7 +6860,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -6579,7 +6870,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -6608,7 +6899,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -6616,7 +6909,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.930958,
+     -72.93096,
      41.30839
     ]
    },
@@ -6645,7 +6938,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "yale-university-art-gallery",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -6653,8 +6948,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -93.274166666,
-     44.958611111
+     -93.27417,
+     44.95861
     ]
    },
    "properties": {
@@ -6682,7 +6977,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "minneapolis-institute-of-art",
+    "location_src": "Minneapolis Institute of Art"
    }
   },
   {
@@ -6690,8 +6987,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -6725,7 +7022,9 @@
       "source": "Wikipedia list",
       "title": "1882 The Stone Breakers, Le Raincy"
      }
-    ]
+    ],
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -6733,8 +7032,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -90.294491,
-     38.639306
+     -90.29449,
+     38.63931
     ]
    },
    "properties": {
@@ -6762,7 +7061,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "saint-louis-art-museum",
+    "location_src": "Saint Louis Art Museum"
    }
   },
   {
@@ -6771,7 +7072,7 @@
     "type": "Point",
     "coordinates": [
      136.91978,
-     35.288899
+     35.2889
     ]
    },
    "properties": {
@@ -6799,7 +7100,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "menard-art-museum",
+    "location_src": "Menard Art Museum"
    }
   },
   {
@@ -6807,7 +7110,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.875618,
+     -78.87562,
      42.93245
     ]
    },
@@ -6836,7 +7139,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "buffalo-akg-art-museum",
+    "location_src": "Buffalo AKG Art Museum"
    }
   },
   {
@@ -6844,8 +7149,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.307402777,
-     47.049561111
+     8.3074,
+     47.04956
     ]
    },
    "properties": {
@@ -6873,7 +7178,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "rosengart-collection",
+    "location_src": "Rosengart Collection"
    }
   },
   {
@@ -6910,7 +7217,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-d-art-et-d-histoire",
+    "location_src": "Musée d'Art et d'Histoire"
    }
   },
   {
@@ -6918,8 +7227,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.474706,
-     37.556422
+     -77.47471,
+     37.55642
     ]
    },
    "properties": {
@@ -6953,7 +7262,9 @@
       "source": "Wikipedia list",
       "title": "1882 to 1883 House and Garden"
      }
-    ]
+    ],
+    "museum_id": "virginia-museum-of-fine-arts",
+    "location_src": "Virginia Museum of Fine Arts"
    }
   },
   {
@@ -6961,8 +7272,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -6970,7 +7281,7 @@
     "title": "Boat by the Bank, Asnières",
     "year": "1883",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Boat%20by%20the%20Riverbank%20PC%2080.jpg?width=500",
@@ -6996,7 +7307,9 @@
       "source": "Wikipedia list",
       "title": "1883 Boat by the Bank, Asnieres"
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7004,8 +7317,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7013,7 +7326,7 @@
     "title": "Man in a Boat",
     "year": "1884",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Homme%20dans%20une%20barque%201884.jpg?width=500",
@@ -7033,7 +7346,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7041,8 +7356,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7050,7 +7365,7 @@
     "title": "Man Painting a Boat",
     "year": "1883",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Man%20painting%20a%20boat%20PC%2072.jpg?width=500",
@@ -7076,7 +7391,9 @@
       "source": "Wikipedia list",
       "title": "1883 Man painting a boat"
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7084,8 +7401,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7093,7 +7410,7 @@
     "title": "Study for 'Le Chahut'",
     "year": "1889",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Le%20Chahut%20PC%20200.jpg?width=500",
@@ -7119,7 +7436,9 @@
       "source": "Wikipedia list",
       "title": "1890 Study for \"Le Chahut\""
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7127,8 +7446,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     9.522527777,
-     47.139305555
+     9.52253,
+     47.13931
     ]
    },
    "properties": {
@@ -7156,7 +7475,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "hilti-art-foundation",
+    "location_src": "Hilti Art Foundation"
    }
   },
   {
@@ -7193,7 +7514,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "audrey-jones-beck-building",
+    "location_src": "Audrey Jones Beck Building"
    }
   },
   {
@@ -7201,8 +7524,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.159162,
-     34.146225
+     -118.15916,
+     34.14623
     ]
    },
    "properties": {
@@ -7236,7 +7559,9 @@
       "source": "Wikipedia list",
       "title": "1878 Angélique"
      }
-    ]
+    ],
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum"
    }
   },
   {
@@ -7244,8 +7569,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     3.38555556,
-     50.60277778
+     3.38556,
+     50.60278
     ]
    },
    "properties": {
@@ -7273,7 +7598,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "musee-des-beaux-arts-de-tournai",
+    "location_src": "Musée des Beaux-Arts de Tournai"
    }
   },
   {
@@ -7281,8 +7608,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7290,7 +7617,7 @@
     "title": "Bridge of Courbevoie",
     "year": "1880",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20012.jpg?width=500",
@@ -7316,7 +7643,9 @@
       "source": "Wikipedia list",
       "title": "1886 to 1887 The Bridge at Courbevoie"
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7324,8 +7653,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.636378,
-     42.318502
+     -72.63638,
+     42.3185
     ]
    },
    "properties": {
@@ -7359,7 +7688,9 @@
       "source": "Wikipedia list",
       "title": "1884 Walk with Monkey"
      }
-    ]
+    ],
+    "museum_id": "smith-college-museum-of-art",
+    "location_src": "Smith College Museum of Art"
    }
   },
   {
@@ -7367,7 +7698,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -122.468694444,
+     -122.46869,
      37.7715
     ]
    },
@@ -7396,7 +7727,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -7404,8 +7737,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.352277186,
-     48.86063847
+     2.35228,
+     48.86064
     ]
    },
    "properties": {
@@ -7439,7 +7772,9 @@
       "source": "Wikipedia list",
       "title": "1890 Study for \"The Channel at Gravelines, Evening\""
      }
-    ]
+    ],
+    "museum_id": "musee-national-d-art-moderne",
+    "location_src": "Musée National d'Art Moderne"
    }
   },
   {
@@ -7447,7 +7782,7 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -78.875618,
+     -78.87562,
      42.93245
     ]
    },
@@ -7476,7 +7811,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "buffalo-akg-art-museum",
+    "location_src": "Buffalo AKG Art Museum"
    }
   },
   {
@@ -7484,15 +7821,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.223888888,
-     55.951944444
+     -3.22389,
+     55.95194
     ]
    },
    "properties": {
     "painter": "Georges Seurat",
     "title": "La Luzerne, Saint-Denis",
     "year": "1885",
-    "location": "National Galleries Scotland",
+    "location": "National Galleries of Scotland",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7519,7 +7856,9 @@
       "source": "Wikipedia list",
       "title": "1884 to 1885 La Luzerne, Saint-Denis"
      }
-    ]
+    ],
+    "museum_id": "national-galleries-of-scotland",
+    "location_src": "National Galleries of Scotland"
    }
   },
   {
@@ -7527,8 +7866,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7536,7 +7875,7 @@
     "title": "Young Woman Powdering Herself",
     "year": "1889",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Young%20Woman%20Powdering%20Herself%20Georges%20Seurat.jpg?width=500",
@@ -7556,7 +7895,9 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    }
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   },
   {
@@ -7564,8 +7905,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.117712,
-     51.511568
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
@@ -7573,7 +7914,7 @@
     "title": "Beach at Gravelines",
     "year": "1890",
     "location": "Courtauld Gallery",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Beach%20at%20Gravelines%20PC%20207.jpg?width=500",
@@ -7599,7 +7940,9 @@
       "source": "Wikipedia list",
       "title": "1890 Beach at Gravelines"
      }
-    ]
+    ],
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery"
    }
   }
  ]

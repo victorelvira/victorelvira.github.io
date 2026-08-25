@@ -149,12 +149,22 @@ body {
 /* the map's own options (Now in / Painted in) — secondary, and only shown in the map view */
 #mapopts { display: inline-flex; gap: 6px; align-items: center; }
 #mapopts[hidden] { display: none; }
-/* one common free-text filter — placed to the LEFT of the view tabs (order:-1), applies to every view */
-#modes #filter { order: -1; flex: 0 1 300px; min-width: 150px;
+/* one common free-text filter — placed to the LEFT of the view tabs (order:-1), applies to every view.
+   Its ✕ lives inside the pill, on the right, and only appears once you have typed something. */
+#modes #filter-wrap { order: -1; flex: 0 1 300px; min-width: 150px; position: relative; display: flex; }
+#modes #filter-wrap[hidden] { display: none; }
+#modes #filter { flex: 1 1 auto; min-width: 0;
   padding: 6px 13px; font: inherit; font-size: 13px;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; }
+#modes #filter-wrap.has-q #filter { padding-right: 31px; }   /* room for the ✕ */
+#filter::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }   /* ours instead */
+#filter-clear { position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+  width: 21px; height: 21px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+  background: #ece5d8; color: #6a4a2a; font-size: 11px; line-height: 21px; text-align: center; }
+#filter-clear:hover { background: var(--ink); color: #fff; }
+#filter-clear[hidden] { display: none; }
 /* mobile: the filter can't sit beside the tabs — give it its own full-width row on top */
-@media (max-width: 640px) { #modes #filter { flex: 1 1 100%; } }
+@media (max-width: 640px) { #modes #filter-wrap { flex: 1 1 100%; } }
 .mode-btn {
   font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted);
@@ -318,6 +328,24 @@ body.resizing #map { pointer-events: none; }
 .gallery.grouped { gap: 0; }
 .gallery.grouped .gcell { padding: 17px 4px 4px; }   /* tall top band: museum name + more colour, rows breathe */
 .gallery.grouped .gcard { background: rgba(255, 255, 255, .58); border-color: rgba(255, 255, 255, .5); }
+/* Where a museum ENDS: a darker line of its own colour (--edge, set inline per tile) on the sides
+   that face another museum, and a chamfered (rounded) corner where two such sides meet — the grid is
+   gapless, so that notch of panel background + the two lines are what separate one museum's field
+   from the next. paintMuseumEdges() puts the .e-t/.e-r/.e-b/.e-l classes on the right tiles. */
+.gallery.grouped .gcell {
+  --musr: 10px;   /* chamfer radius at a museum's outer corners */
+  box-shadow: var(--sh-t, 0 0 transparent), var(--sh-r, 0 0 transparent),
+              var(--sh-b, 0 0 transparent), var(--sh-l, 0 0 transparent);
+  transition: background .12s ease;
+}
+.gallery.grouped .gcell.e-t { --sh-t: inset 0 1.5px 0 var(--edge, #b8ae99); }
+.gallery.grouped .gcell.e-r { --sh-r: inset -1.5px 0 0 var(--edge, #b8ae99); }
+.gallery.grouped .gcell.e-b { --sh-b: inset 0 -1.5px 0 var(--edge, #b8ae99); }
+.gallery.grouped .gcell.e-l { --sh-l: inset 1.5px 0 0 var(--edge, #b8ae99); }
+.gallery.grouped .gcell.e-t.e-l { border-top-left-radius: var(--musr); }
+.gallery.grouped .gcell.e-t.e-r { border-top-right-radius: var(--musr); }
+.gallery.grouped .gcell.e-b.e-l { border-bottom-left-radius: var(--musr); }
+.gallery.grouped .gcell.e-b.e-r { border-bottom-right-radius: var(--musr); }
 /* museum name on the colour field, above the museum's first picture (only that tile carries it) */
 .mlabel { position: absolute; top: 3px; left: 6px; right: 6px; z-index: 1; pointer-events: none;
   font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #5a4d38;
@@ -682,7 +710,7 @@ button.pop-museum:hover .pm-arrow { color: #6a4a2a; }
 .g-feedback.ok { color: #1e6b3c; } .g-feedback.no { color: #a8321c; }
 .g-next { font: inherit; font-size: 15px; font-weight: 700; padding: 9px 22px; border: 0; border-radius: 999px; background: var(--ink); color: #fff; cursor: pointer; }
 .g-empty { color: var(--muted); padding: 40px; }
-body.show-game #timeline, body.show-game #filter { display: none; }
+body.show-game #timeline, body.show-game #filter-wrap { display: none; }
 
 /* Game — wide layout: painting | options | info-on-answer; stacks on narrow screens */
 #game-stage { flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: center;
@@ -726,11 +754,29 @@ body.show-game #timeline, body.show-game #filter { display: none; }
 #chart-names .cn em { color: #b3aa9c; font-style: normal; }
 #chart-scroll svg { display: block; }
 #chart-scroll circle { cursor: default; }
-body.show-chart #timeline, body.show-chart #filter, body.show-chart #mapopts { display: none; }
+body.show-chart #timeline, body.show-chart #filter-wrap, body.show-chart #mapopts { display: none; }
 
-/* museum label on miniatures: show the FULL name, flowing right over the museum's own (same-colour)
-   top bands; clipped only at the panel/table edge. Overrides the earlier ellipsis rule. */
-.mlabel { right: auto; overflow: visible; text-overflow: clip; }
+/* ── museum name on the miniatures, and museum focus on hover ──────────────────────────────────
+   The name flows right, past its own tile, over the museum's own (same-colour) top bands — but it
+   stops where that museum's tiles stop in this row (`max-width` measured by fitMuseumLabels()), so
+   two museums can no longer print their names over each other. A short museum therefore shows an
+   ellipsis; hovering its colour field writes the name out in full (below). */
+.mlabel { right: auto; max-width: calc(100% - 12px); overflow: hidden; text-overflow: ellipsis;
+  transition: color .12s ease; }
+
+/* Hovering a museum's COLOUR FIELD (the band above the pictures, the gutters around them — not the
+   pictures themselves, which would make the grid flicker as you browse) lifts that museum: its full
+   name over everything, its colours kept, while every other museum's ground, outline and name fade
+   to a light grey. The colour run of the museum under the pointer reads as one block. */
+.gallery.grouped.mus-focus .gcell:not(.mus-on) {
+  background: #eceae5 !important; --edge: #dcd8d1 !important;
+}
+.gallery.grouped.mus-focus .gcell:not(.mus-on) .mlabel { color: #c0b9ad; }
+.gallery.grouped.mus-focus .gcell.mus-on { z-index: 4; }   /* the full name may spill over later tiles */
+.gallery.grouped.mus-focus .gcell.mus-on .mlabel {
+  max-width: none !important; overflow: visible; text-overflow: clip; color: #3a3126;
+  text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(255,255,255,.95);
+}
 
 /* Game & Timeline: hide the map-only chrome (painter selector, filters, stats) — not needed there,
    and it wastes space on mobile (Lorena) */
@@ -847,7 +893,7 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 .gl-chip { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
 .gl-chip i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 .gl-note { font-size: 11px; color: var(--muted); font-style: italic; }
-body.show-galaxy #timeline, body.show-galaxy #filter, body.show-galaxy #mapopts,
+body.show-galaxy #timeline, body.show-galaxy #filter-wrap, body.show-galaxy #mapopts,
 body.show-galaxy #painters, body.show-galaxy .filters, body.show-galaxy .stats { display: none; }
 
 /* collapse the top bars (navbar + brand) for more room — Víctor's mobile idea */
@@ -885,3 +931,6 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
   box-shadow: 0 8px 30px rgba(0,0,0,.5); }
 #g-preview[hidden] { display: none; }
 #g-preview img { max-width: 290px; max-height: 290px; display: block; border-radius: 4px; }
+
+/* a work with no address (private collection, stolen): named in the ficha, absent from the map */
+.wc-noplace { color: var(--muted); font-size: 11.5px; font-style: italic; white-space: nowrap; }

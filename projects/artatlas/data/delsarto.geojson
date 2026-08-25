@@ -7,15 +7,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.153,
-     51.5175
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "The Virgin and Child with the Infant Baptist",
     "year": "1518",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Wallace Collection",
     "kind": "museum",
@@ -41,7 +41,8 @@
      }
     },
     "museum_id": "wallace-collection",
-    "qid": "Q106496947"
+    "qid": "Q106496947",
+    "location_src": "Wallace Collection"
    }
   },
   {
@@ -84,7 +85,8 @@
      }
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q106522105"
+    "qid": "Q106522105",
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -114,7 +116,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pisa-cathedral",
-    "qid": "Q106575251"
+    "qid": "Q106575251",
+    "location_src": "Pisa Cathedral"
    }
   },
   {
@@ -157,7 +160,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q106575253"
+    "qid": "Q106575253",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -197,7 +201,8 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Galleria Borghese"
    }
   },
   {
@@ -227,7 +232,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "palazzo-davanzati",
-    "qid": "Q106611055"
+    "qid": "Q106611055",
+    "location_src": "Palazzo Davanzati"
    }
   },
   {
@@ -258,7 +264,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107436437"
+    "qid": "Q107436437",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -288,7 +295,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q107441880"
+    "qid": "Q107441880",
+    "location_src": "Gemäldegalerie Berlin"
    }
   },
   {
@@ -329,7 +337,8 @@
      }
     },
     "museum_id": "new-york-city",
-    "qid": "Q110713257"
+    "qid": "Q110713257",
+    "location_src": "New York City"
    }
   },
   {
@@ -371,7 +380,8 @@
      }
     },
     "museum_id": "fuhrermuseum",
-    "qid": "Q111646370"
+    "qid": "Q111646370",
+    "location_src": "Führermuseum"
    }
   },
   {
@@ -403,7 +413,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-of-lyon",
-    "qid": "Q115675568"
+    "qid": "Q115675568",
+    "location_src": "Museum of Fine Arts of Lyon"
    }
   },
   {
@@ -411,14 +422,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.92773,
-     52.45042
+     -1.92783,
+     52.45033
     ]
    },
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "The Madonna and Child with the Infant Saint John",
-    "city": "Birmingham",
+    "city": "Edgbaston",
     "country": "United Kingdom",
     "location": "Barber Institute of Fine Arts",
     "kind": "museum",
@@ -434,7 +445,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "barber-institute-of-fine-arts",
-    "qid": "Q118679635"
+    "qid": "Q118679635",
+    "location_src": "Barber Institute of Fine Arts"
    }
   },
   {
@@ -476,7 +488,8 @@
      }
     },
     "museum_id": "hatton-gallery",
-    "qid": "Q118680778"
+    "qid": "Q118680778",
+    "location_src": "Hatton Gallery"
    }
   },
   {
@@ -508,7 +521,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "holburne-museum",
-    "qid": "Q118874151"
+    "qid": "Q118874151",
+    "location_src": "Holburne Museum"
    }
   },
   {
@@ -550,7 +564,8 @@
      }
     },
     "museum_id": "ashmolean-museum",
-    "qid": "Q118874187"
+    "qid": "Q118874187",
+    "location_src": "Ashmolean Museum"
    }
   },
   {
@@ -581,7 +596,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "lincoln-college",
-    "qid": "Q118877005"
+    "qid": "Q118877005",
+    "location_src": "Lincoln College"
    }
   },
   {
@@ -613,7 +629,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "victoria-art-gallery",
-    "qid": "Q119454759"
+    "qid": "Q119454759",
+    "location_src": "Victoria Art Gallery"
    }
   },
   {
@@ -644,7 +661,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "sheffield-galleries-and-museums-trust",
-    "qid": "Q119454769"
+    "qid": "Q119454769",
+    "location_src": "Sheffield Galleries and Museums Trust"
    }
   },
   {
@@ -675,7 +693,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "lambeth-palace",
-    "qid": "Q119454778"
+    "qid": "Q119454778",
+    "location_src": "Lambeth Palace"
    }
   },
   {
@@ -691,7 +710,7 @@
     "painter": "Andrea del Sarto",
     "title": "Portrait of a Youth",
     "year": "1600",
-    "city": "York",
+    "city": "City of York",
     "country": "United Kingdom",
     "location": "York Art Gallery",
     "kind": "museum",
@@ -708,7 +727,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "york-art-gallery",
-    "qid": "Q119454786"
+    "qid": "Q119454786",
+    "location_src": "York Art Gallery"
    }
   },
   {
@@ -739,7 +759,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "windsor-and-royal-borough-museum",
-    "qid": "Q119454808"
+    "qid": "Q119454808",
+    "location_src": "Windsor and Royal Borough Museum"
    }
   },
   {
@@ -780,7 +801,8 @@
      }
     },
     "museum_id": "opocno-castle",
-    "qid": "Q123223980"
+    "qid": "Q123223980",
+    "location_src": "Opočno Castle"
    }
   },
   {
@@ -826,7 +848,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q1235695",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/harpies1.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/harpies1.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -842,9 +865,9 @@
     "painter": "Andrea del Sarto",
     "title": "Leda and the swan",
     "year": "1490",
-    "city": "Brussels",
+    "city": "Brussels-Capital Region",
     "country": "Belgium",
-    "location": "Oldmasters Museum",
+    "location": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -857,8 +880,9 @@
      "url": "https://www.wikidata.org/wiki/Q123641189",
      "retrieved_at": "2026-08-23"
     },
-    "museum_id": "oldmasters-museum",
-    "qid": "Q123641189"
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
+    "qid": "Q123641189",
+    "location_src": "Royal Museums of Fine Arts of Belgium"
    }
   },
   {
@@ -903,7 +927,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q1241129",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/annuncia.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/annuncia.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -933,7 +958,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "palazzo-davanzati",
-    "qid": "Q125689917"
+    "qid": "Q125689917",
+    "location_src": "Palazzo Davanzati"
    }
   },
   {
@@ -965,7 +991,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "eva-klabin-house-museum",
-    "qid": "Q125691621"
+    "qid": "Q125691621",
+    "location_src": "Eva Klabin House Museum"
    }
   },
   {
@@ -1006,7 +1033,8 @@
      }
     },
     "museum_id": "museo-soumaya",
-    "qid": "Q125691658"
+    "qid": "Q125691658",
+    "location_src": "Museo Soumaya"
    }
   },
   {
@@ -1037,7 +1065,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "pisa-cathedral",
-    "qid": "Q125691772"
+    "qid": "Q125691772",
+    "location_src": "Pisa Cathedral"
    }
   },
   {
@@ -1067,7 +1096,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "national-art-museum-of-azerbaijan",
-    "qid": "Q125704227"
+    "qid": "Q125704227",
+    "location_src": "National Art Museum of Azerbaijan"
    }
   },
   {
@@ -1096,7 +1126,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-the-last-supper-of-andrea-del-sarto",
-    "qid": "Q131450116"
+    "qid": "Q131450116",
+    "location_src": "Museum of the Last Supper of Andrea del Sarto"
    }
   },
   {
@@ -1125,7 +1156,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "palazzo-dei-musei",
-    "qid": "Q135260990"
+    "qid": "Q135260990",
+    "location_src": "Palazzo dei Musei"
    }
   },
   {
@@ -1165,7 +1197,8 @@
      }
     },
     "museum_id": "museum-of-the-last-supper-of-andrea-del-sarto",
-    "qid": "Q139074746"
+    "qid": "Q139074746",
+    "location_src": "Museum of the Last Supper of Andrea del Sarto"
    }
   },
   {
@@ -1207,7 +1240,8 @@
     },
     "museum_id": "louvre",
     "city": "Paris",
-    "qid": "Q18565899"
+    "qid": "Q18565899",
+    "location_src": "Louvre"
    }
   },
   {
@@ -1250,7 +1284,8 @@
      }
     },
     "museum_id": "galleria-palatina",
-    "qid": "Q18613323"
+    "qid": "Q18613323",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -1292,7 +1327,8 @@
       "was": "generally accepted",
       "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
      }
-    }
+    },
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -1333,7 +1369,8 @@
      }
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q20175980"
+    "qid": "Q20175980",
+    "location_src": "National Gallery of Art"
    }
   },
   {
@@ -1374,7 +1411,8 @@
      }
     },
     "museum_id": "statens-museum-for-kunst",
-    "qid": "Q20472815"
+    "qid": "Q20472815",
+    "location_src": "Statens Museum for Kunst"
    }
   },
   {
@@ -1415,7 +1453,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q20537336"
+    "qid": "Q20537336",
+    "location_src": "Museum of Fine Arts Boston"
    }
   },
   {
@@ -1458,7 +1497,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "qid": "Q21121918"
+    "qid": "Q21121918",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1503,7 +1543,8 @@
     },
     "museum_id": "national-gallery",
     "qid": "Q21121948",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/youngman.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/youngman.html",
+    "location_src": "National Gallery"
    }
   },
   {
@@ -1511,8 +1552,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1546,7 +1587,8 @@
     },
     "museum_id": "hermitage-museum",
     "qid": "Q21725466",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/madonna.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/madonna.html",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1554,8 +1596,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.3136,
-     59.9406
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -1588,7 +1630,8 @@
      }
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q21727761"
+    "qid": "Q21727761",
+    "location_src": "Hermitage Museum"
    }
   },
   {
@@ -1631,7 +1674,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q27697313",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/lucrezia.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/lucrezia.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1672,7 +1716,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27697321"
+    "qid": "Q27697321",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1714,7 +1759,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q27697635"
+    "qid": "Q27697635",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -1722,15 +1768,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Madonna and Child with St John",
     "year": "1530",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "kind": "museum",
@@ -1753,7 +1799,8 @@
      }
     },
     "museum_id": "scottish-national-gallery",
-    "qid": "Q27970348"
+    "qid": "Q27970348",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -1761,15 +1808,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Domenico di Jacopo di Matteo, called 'Becuccio Bicchieraio'",
     "year": "1529",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
     "kind": "museum",
@@ -1796,7 +1843,8 @@
      }
     },
     "museum_id": "scottish-national-gallery",
-    "qid": "Q27974811"
+    "qid": "Q27974811",
+    "location_src": "Scottish National Gallery"
    }
   },
   {
@@ -1840,7 +1888,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q27978347",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/tobias.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/tobias.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -1883,7 +1932,8 @@
     },
     "museum_id": "kunsthistorisches-museum",
     "qid": "Q27978350",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/lamentat.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/lamentat.html",
+    "location_src": "Kunsthistorisches Museum"
    }
   },
   {
@@ -1925,7 +1975,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "qid": "Q28028756"
+    "qid": "Q28028756",
+    "location_src": "Windsor Castle"
    }
   },
   {
@@ -1941,7 +1992,7 @@
     "painter": "Andrea del Sarto",
     "title": "Portrait of a woman in yellow",
     "year": "1529",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
     "location": "Buckingham Palace",
     "kind": "museum",
@@ -1969,7 +2020,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "qid": "Q28035523"
+    "qid": "Q28035523",
+    "location_src": "Buckingham Palace"
    }
   },
   {
@@ -1985,7 +2037,7 @@
     "painter": "Andrea del Sarto",
     "title": "Madonna and Child with St John",
     "year": "1550",
-    "city": "London",
+    "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
     "kind": "museum",
@@ -2002,7 +2054,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "dulwich-picture-gallery",
-    "qid": "Q28801667"
+    "qid": "Q28801667",
+    "location_src": "Dulwich Picture Gallery"
    }
   },
   {
@@ -2034,7 +2087,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q29917998"
+    "qid": "Q29917998",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2066,7 +2120,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q29918049"
+    "qid": "Q29918049",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2098,7 +2153,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q29920902"
+    "qid": "Q29920902",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2140,7 +2196,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q29953615"
+    "qid": "Q29953615",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2172,7 +2229,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q30093516"
+    "qid": "Q30093516",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2204,7 +2262,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q30094324"
+    "qid": "Q30094324",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2245,7 +2304,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q30099017"
+    "qid": "Q30099017",
+    "location_src": "Alte Pinakothek"
    }
   },
   {
@@ -2263,7 +2323,7 @@
     "year": "1517",
     "city": "Worcester",
     "country": "United States",
-    "location": "Museo de Arte de Worcester",
+    "location": "Worcester Art Museum",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -2286,8 +2346,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-worcester",
-    "qid": "Q31578984"
+    "museum_id": "worcester-art-museum",
+    "qid": "Q31578984",
+    "location_src": "Worcester Art Museum"
    }
   },
   {
@@ -2332,7 +2393,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3618188",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/the_annx.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/the_annx.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -2378,7 +2440,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3627381",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/assumpti.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/assumpti.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -2423,7 +2486,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3630715",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/selfport.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/selfport.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2467,7 +2531,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3658719",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/charity.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/charity.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2512,7 +2577,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3701197",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/port_lad.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/port_lad.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2557,7 +2623,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3701199",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/port_wom.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/port_wom.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2600,7 +2667,8 @@
     },
     "museum_id": "chiostrino-dei-voti",
     "qid": "Q3706331",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_miracu.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_miracu.html",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -2646,7 +2714,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3710280",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/trinity.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/trinity.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -2689,7 +2758,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3714445",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/vallomb2.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/vallomb2.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2733,7 +2803,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3771677",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/joseph_2.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/joseph_2.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -2775,7 +2846,8 @@
      }
     },
     "museum_id": "chiostrino-dei-voti",
-    "qid": "Q3831651"
+    "qid": "Q3831651",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -2819,7 +2891,8 @@
     "museum_id": "louvre",
     "city": "Paris",
     "qid": "Q3842600",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/mad_chil.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/mad_chil.html",
+    "location_src": "Louvre"
    }
   },
   {
@@ -2864,7 +2937,8 @@
     },
     "museum_id": "museo-del-prado",
     "qid": "Q3842686",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/virgin_s.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/virgin_s.html",
+    "location_src": "Museo del Prado"
    }
   },
   {
@@ -2909,7 +2983,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3842749",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/virgin.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/virgin.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -2952,8 +3027,9 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
-    "qid": "Q3851957"
+    "museum_id": "gemaldegalerie-alte-meister-2",
+    "qid": "Q3851957",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -2995,7 +3071,8 @@
      }
     },
     "museum_id": "chiostrino-dei-voti",
-    "qid": "Q3863247"
+    "qid": "Q3863247",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -3039,7 +3116,8 @@
     },
     "museum_id": "chiostrino-dei-voti",
     "qid": "Q3873243",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_virgin.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_virgin.html",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -3083,7 +3161,8 @@
      }
     },
     "museum_id": "museum-of-the-last-supper-of-andrea-del-sarto",
-    "qid": "Q3877890"
+    "qid": "Q3877890",
+    "location_src": "Museum of the Last Supper of Andrea del Sarto"
    }
   },
   {
@@ -3128,7 +3207,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3889243",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/madglory.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/madglory.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3172,7 +3252,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3904409",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/pieta.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/pieta.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3214,7 +3295,8 @@
     },
     "museum_id": "chiostrino-dei-voti",
     "qid": "Q3925592",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_gamble.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_gamble.html",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -3259,7 +3341,8 @@
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "qid": "Q3944457",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/holyfamy.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/holyfamy.html",
+    "location_src": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -3303,7 +3386,8 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "qid": "Q3944459",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/holyfami.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/holyfami.html",
+    "location_src": "Metropolitan Museum of Art"
    }
   },
   {
@@ -3347,7 +3431,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3944461",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/holy_fam.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/holy_fam.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3390,7 +3475,8 @@
      }
     },
     "museum_id": "galleria-palatina",
-    "qid": "Q3944463"
+    "qid": "Q3944463",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3434,9 +3520,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "gemaldegalerie-alte-meister",
+    "museum_id": "gemaldegalerie-alte-meister-2",
     "qid": "Q3944647",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/sacrific.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/sacrific.html",
+    "location_src": "Gemäldegalerie Alte Meister"
    }
   },
   {
@@ -3480,7 +3567,8 @@
     },
     "museum_id": "santissima-annunziata",
     "qid": "Q3945930",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/redeemer.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/redeemer.html",
+    "location_src": "Santissima Annunziata"
    }
   },
   {
@@ -3521,7 +3609,8 @@
      }
     },
     "museum_id": "chiostrino-dei-voti",
-    "qid": "Q3947064"
+    "qid": "Q3947064",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -3567,7 +3656,8 @@
     },
     "museum_id": "galleria-palatina",
     "qid": "Q3947281",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/baptist.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/baptist.html",
+    "location_src": "Galleria Palatina"
    }
   },
   {
@@ -3611,7 +3701,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3947375",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/s_james.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/3/s_james.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3655,7 +3746,8 @@
     },
     "museum_id": "uffizi-gallery",
     "qid": "Q3974456",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/joseph_1.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/2/joseph_1.html",
+    "location_src": "Uffizi Gallery"
    }
   },
   {
@@ -3698,7 +3790,8 @@
     },
     "museum_id": "chiostrino-dei-voti",
     "qid": "Q4010941",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_journe.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/b_journe.html",
+    "location_src": "chiostrino dei Voti"
    }
   },
   {
@@ -3706,8 +3799,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.93099,
-     41.30846
+     -72.93096,
+     41.30839
     ]
    },
    "properties": {
@@ -3738,7 +3831,8 @@
      }
     },
     "museum_id": "yale-university-art-gallery",
-    "qid": "Q49390705"
+    "qid": "Q49390705",
+    "location_src": "Yale University Art Gallery"
    }
   },
   {
@@ -3769,7 +3863,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "qid": "Q50886403"
+    "qid": "Q50886403",
+    "location_src": "Museum of Fine Arts, Budapest"
    }
   },
   {
@@ -3811,7 +3906,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q58023083"
+    "qid": "Q58023083",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -3854,7 +3950,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q58023326"
+    "qid": "Q58023326",
+    "location_src": "Art Institute of Chicago"
    }
   },
   {
@@ -3896,7 +3993,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q59115342"
+    "qid": "Q59115342",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3937,7 +4035,8 @@
      }
     },
     "museum_id": "national-gallery-of-canada",
-    "qid": "Q59514334"
+    "qid": "Q59514334",
+    "location_src": "National Gallery of Canada"
    }
   },
   {
@@ -3979,7 +4078,8 @@
      }
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q60515057"
+    "qid": "Q60515057",
+    "location_src": "Cleveland Museum of Art"
    }
   },
   {
@@ -3987,8 +4087,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -79.94898,
-     40.44369
+     -79.949,
+     40.4437
     ]
    },
    "properties": {
@@ -4012,7 +4112,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "carnegie-museum-of-art",
-    "qid": "Q62034599"
+    "qid": "Q62034599",
+    "location_src": "Carnegie Museum of Art"
    }
   },
   {
@@ -4043,7 +4144,8 @@
      "retrieved_at": "2026-08-23"
     },
     "museum_id": "stadel-museum",
-    "qid": "Q64788633"
+    "qid": "Q64788633",
+    "location_src": "Städel Museum"
    }
   },
   {
@@ -4085,7 +4187,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-de-caen",
-    "qid": "Q74038506"
+    "qid": "Q74038506",
+    "location_src": "Musée des Beaux-Arts de Caen"
    }
   },
   {
@@ -4128,7 +4231,8 @@
     },
     "museum_id": "galleria-borghese",
     "qid": "Q77310161",
-    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/madchild.html"
+    "wga_url": "https://www.wga.hu/html/a/andrea/sarto/1/madchild.html",
+    "location_src": "Galleria Borghese"
    }
   }
  ]
