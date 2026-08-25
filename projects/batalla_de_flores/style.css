@@ -196,6 +196,12 @@ a { color: inherit; }
    heredados y desentonaban al lado de los tres controles. */
 .controls .ghost, .controls .toggle { font-size: 12.5px; }
 .controls .ghost { min-height: var(--control-h); }
+/* `applyFilters` marca "Limpiar" con `hidden` cuando no hay nada que limpiar.
+   En pantalla ancha eso NO se obedece: sobra sitio, y hacerlo aparecer y
+   desaparecer empujaba los dos desplegables de lado mientras se escribia. Lo
+   obedece la pantalla estrecha, donde esos 64 px son justo los que le faltan al
+   buscador para caber. La misma afirmacion, dos respuestas. */
+.controls .ghost[hidden] { display: inline-flex; }
 
 .toggle { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); white-space: nowrap; }
 /* El mismo toggle, pero dentro de la barra de la pestana Carrozas: ahi convive
@@ -449,12 +455,22 @@ table.palmares.ajustable th[data-col="grupo"],
 table.palmares.ajustable td.group { width: var(--col-grupo, auto); }
 table.palmares.ajustable th[data-col="fuentes"],
 table.palmares.ajustable td:last-child { width: var(--col-fuentes, 116px); }
+/* La miniatura llena su celda, no mide lo suyo.
+ *
+ * Iba clavada a `--miniatura`, que la calcula el divisor de la ficha. Asi que
+ * al arrastrar la separacion de la cabecera «Foto» se ensanchaba la columna y
+ * la imagen se quedaba igual, con un hueco blanco al lado: la unica razon para
+ * ensanchar esa columna es ver la foto mas grande.
+ *
+ * Ahora la celda manda y la imagen la llena. La celda mide `--col-foto` si
+ * alguien la ha ajustado a mano, y si no, `--miniatura`: una anchura elegida a
+ * proposito gana a la que se deduce sola. */
 table.palmares td.c-photo .thumb {
-  display: block; width: var(--miniatura, 54px); height: var(--miniatura, 54px);
+  display: block; width: 100%;
   padding: 0; border: 0; background: none; cursor: pointer;
 }
 table.palmares td.c-photo .thumb img {
-  width: 100%; height: var(--miniatura, 54px);
+  width: 100%; height: auto; aspect-ratio: 1;
   object-fit: cover; object-position: center 35%;
   border-radius: 4px;
 }
@@ -590,14 +606,41 @@ table.palmares td.c-photo .thumb img {
 .axis-line { stroke: var(--line-soft); stroke-width: 1; }
 .axis-label { fill: var(--muted); font-size: 9px; text-anchor: middle; }
 
-.career-name {
-  fill: var(--ink); font-size: 9.5px; text-anchor: end;
-  dominant-baseline: middle; pointer-events: none;
+/* Trayectorias: los nombres clavados y el tiempo deslizándose por debajo.
+ *
+ * Los nombres estaban dentro del SVG, así que al mover el gráfico se iban con
+ * él y a los dos segundos ya no se sabía de quién era cada fila. Ahora son una
+ * columna de verdad, `sticky` a la izquierda del contenedor que se desliza: el
+ * navegador la deja quieta sin que haya que sincronizar nada a mano. */
+.carreras {
+  display: flex; align-items: flex-start;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  margin: 4px 0 2px;
 }
+.carreras.hay-scroll { cursor: grab; }
+.carreras.arrastrando { cursor: grabbing; user-select: none; }
+.carreras-nombres {
+  position: sticky; left: 0; z-index: 2; flex: 0 0 128px;
+  width: 128px; align-self: stretch;
+  /* Degradado en vez de corte seco: al pasar una fila larga por debajo se ve
+     que sigue, no que se ha acabado. */
+  background: linear-gradient(to right, var(--panel) 86%, rgba(255, 250, 245, 0));
+}
+.carrera-nombre {
+  position: absolute; right: 8px; transform: translateY(-50%);
+  max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  padding: 0; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: 9.5px; color: var(--ink); text-align: right;
+}
+.carreras-svg { display: block; flex: none; }
 .career-hit { fill: transparent; cursor: pointer; }
 .career.alt .career-hit { fill: rgba(34, 23, 22, 0.022); }
-.career:hover .career-hit { fill: var(--rose-soft); }
-.career:hover .career-name { fill: var(--rose); font-weight: 600; }
+.career:hover .career-hit,
+.career.hover-fila .career-hit { fill: var(--rose-soft); }
+.carrera-nombre:hover,
+.carrera-nombre.hover-fila { color: var(--rose); font-weight: 600; }
+.carreras-barra { align-items: center; flex-wrap: wrap; }
 .span { stroke: #d9cec4; stroke-width: 1.5; }
 
 .dot.win { fill: var(--gold); }
@@ -1053,7 +1096,9 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   /* Filtros que en movil solo estorban: el estado y el toggle de palmarés. */
   .desk-only { display: none; }
   .controls { gap: 6px; }
-  .controls .ghost { padding: 4px 8px; font-size: 12px; }
+  /* 12,5, como el buscador y el desplegable. Estaba en 12 y se notaba: la
+     queja era exactamente que la barra no iba toda a un tamano. */
+  .controls .ghost { padding: 4px 8px; }
 
   /* Cabecera más apretada: el bloque de cifras ocupaba media pantalla. */
   #bar { grid-template-columns: 1fr; padding: 6px 12px; gap: 6px; }
@@ -1082,11 +1127,14 @@ ul.plain a { color: var(--sky); word-break: break-all; }
      min-width 140 no cabia "Limpiar" y se caia a una segunda fila. */
   .controls { flex-wrap: nowrap; gap: 5px; }
   .controls input[type="search"] { flex: 1 1 150px; width: auto; min-width: 0; }
-  /* El selector no necesita 16 px: no se escribe en el, asi que iOS no hace
-     zoom al tocarlo. Al bajarlo al tamano de "Limpiar" deja de comerse la
-     linea y el buscador recupera ancho. */
-  .controls select { flex: 0 1 auto; min-width: 0; font-size: 12.5px; padding: 4px 6px; }
+  /* Quien no puede desplazar su texto, no encoge.
+     El desplegable ensena una etiqueta fija: si le falta un pixel, se lee
+     "Todas las decada" y no hay forma de ver el resto. El buscador si puede
+     encogerse, porque su texto se desplaza solo al escribir. Asi que el ancho
+     que falte se lo come el buscador entero. */
+  .controls select { flex: 0 0 auto; min-width: 0; font-size: 12.5px; padding: 4px 6px; }
   .controls .ghost { flex: none; }
+  .controls .ghost[hidden] { display: none; }
 
   /* Décadas plegables. Cerradas fluyen como fichas, cuatro o cinco por línea,
      con forma distinta a los años para que no se confundan: pastilla con tinte,
@@ -1545,22 +1593,27 @@ body.lb-abierto { overflow: hidden; }
   .report { border-radius: 16px; }
 }
 
-/* iOS amplia la pagina al enfocar un campo cuya letra baje de 16 px. Como la
- * hoja del formulario es position:fixed, tras ese zoom se sale por la derecha.
- * No se arregla con maximum-scale, que ademas impide ampliar a quien lo
- * necesita: se arregla poniendo 16 px justos en los controles. */
+/* iOS amplia la pagina al enfocar un campo cuya letra baje de 16 px. La hoja
+ * del formulario es position:fixed, asi que tras ese zoom se sale por la
+ * derecha.
+ *
+ * Durante tres intentos esto se "arreglo" subiendo el buscador a 16 px. Pero el
+ * buscador va en una fila con "Limpiar" y "Todas las decadas", que siguen a
+ * 12,5: quedaba con la letra visiblemente mas gorda que sus dos vecinos, y
+ * encima el texto no le cabia ("Carroza, grup"). Igualar la ALTURA no arreglaba
+ * nada, porque lo que se ve distinto es la LETRA.
+ *
+ * El zoom se ataca ahora donde nace, en `frenarZoomAlEnfocar()` (app.js), y los
+ * tres controles vuelven a la misma tipografia. El formulario se queda en 16 px
+ * porque ahi es comodidad para escribir, no un parche: ocupa el ancho entero y
+ * no tiene con quien descuadrarse. */
 @media (max-width: 619px) {
   /* Mismos selectores que la regla base: con `.report input` a secas ganaba
    * ella por especificidad y dos campos se quedaban en 13,5 px. */
   .report input[type="text"], .report input:not([type]), .report input[type="email"],
-  .report textarea,
-  .controls input[type="search"] { font-size: 16px; }
-  /* Con 16 px el buscador crece a 31,6 y descuadraba la fila. Se sube la altura
-     comun para que los tres vuelvan a medir lo mismo. El tamano de letra SI
-     difiere aqui y es a proposito: por debajo de 16 px iOS hace zoom al enfocar
-     el campo y descoloca la pagina entera. */
+  .report textarea { font-size: 16px; }
   :root { --control-h: 32px; }
-  /* Solo el tamano de letra. El ancho lo gobierna la regla de arriba
-     (flex:1, min-width:140px): con width:100% el buscador ocupaba la linea
-     entera y mandaba el selector y "Limpiar" a la siguiente. */
+  /* El desplegable pinta su flecha dentro de la caja: sin sitio reservado se
+     comia la ultima letra y se leia "Todas las decada". */
+  .controls select { padding-right: 18px; }
 }

@@ -35,6 +35,7 @@ const state = {
   category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
   statsCategory: "all",   // "all" | "A" | "B" en el grafico de trayectorias
   statsZoom: 1,           // 1 | 2 | 4: ensancha el grafico de barras y lo hace scrollable
+  carrerasZoom: 1,        // factor sobre "todo a la vista" en el grafico de trayectorias
   editionCategory: "todas",  // "todas" | "A" | "B" — qué se ve en el palmarés
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
@@ -221,6 +222,15 @@ function applyFilters() {
     if (query && !edition.searchIndex.includes(query)) return false;
     return true;
   });
+  // "Limpiar" sin nada que limpiar es un boton muerto, y en el movil ademas
+  // roba 64 px de una fila donde el buscador ya no tiene sitio para su propio
+  // texto. Aparece cuando hay algo que quitar y desaparece cuando no.
+  els.clearFilters.hidden = !hayAlgunFiltro();
+}
+
+function hayAlgunFiltro() {
+  return Boolean(state.query) || state.decade !== "all" || state.status !== "all"
+    || state.rankedOnly || state.winnersOnly || state.category;
 }
 
 /* Todas las carrozas en una sola lista, para la pestana de tabla. Se construye
@@ -715,7 +725,7 @@ function yearAxis(scale, { from, to, step, height, minGap }) {
  * Asi se ve de un golpe cuando entran, cuando desaparecen y como les fue. */
 const CATEGORIES_FROM = 2011;
 
-function chartCareers(category) {
+function carrerasRows(category) {
   const series = new Map();
   state.floats.forEach(entry => {
     if (entry.position == null || !entry.group_canonical) return;
@@ -728,7 +738,7 @@ function chartCareers(category) {
   // Un punto por edicion, no por carroza: 45 grupos llevaron dos o tres carrozas
   // en el mismo ano y los circulos se pisaban unos a otros, dejando anillos de
   // colores que no significaban nada. Se pinta su mejor puesto de ese ano.
-  const rows = [...series.entries()]
+  return [...series.entries()]
     .filter(([, items]) => items.length >= 3)
     .map(([name, items]) => {
       const perYear = new Map();
@@ -748,12 +758,51 @@ function chartCareers(category) {
       };
     })
     .sort((a, b) => a.from - b.from || a.to - b.to);
+}
 
-  if (!rows.length) return '<p class="empty">No hay suficientes datos en esta categoría.</p>';
+/* El grafico se pinta en pixeles de verdad, no en un viewBox que se estira.
+ *
+ * Un viewBox escalado tiene la ventaja de no necesitar medir nada, pero al
+ * estirar el tiempo estira TAMBIEN las letras y los puntos: el ano 1908 acabaria
+ * escrito en cuerpo 30. Aqui lo que cambia es cuantos pixeles ocupa un ano; los
+ * nombres, las cifras del eje y los circulos miden siempre lo mismo. Por eso hay
+ * que medir el hueco disponible, y por eso el pintado va aparte del armado del
+ * bloque: el ancho real no existe hasta que el bloque esta en la pagina.
+ *
+ * El zoom es un FACTOR sobre el ancho que cabe, no una medida absoluta. Asi 1x
+ * es exactamente "todo a la vista", que es como estaba antes de que esto se
+ * pudiera mover, y sigue siendolo en un movil y en un monitor de 30 pulgadas. */
+const CARRERAS = { nombres: 128, padIzq: 6, zoomMin: 1, zoomMax: 16, paso: 1.6 };
+
+function chartCareers(category) {
+  if (!carrerasRows(category).length) {
+    return '<p class="empty">No hay suficientes datos en esta categoría.</p>';
+  }
+  // Solo el armazon: lo de dentro lo pone `pintarCarreras()` cuando ya se puede
+  // medir. Se marca el zoom actual para que el bloque sepa reconstruirse igual
+  // tras un re-render de la pestana.
+  return `<div class="carreras" data-carreras>
+    <div class="carreras-nombres"></div>
+    <svg class="carreras-svg" role="img"
+      aria-label="Trayectoria de cada carrocista a lo largo de los años"></svg>
+  </div>`;
+}
+
+function pintarCarreras({ conservarScroll = false } = {}) {
+  const caja = document.querySelector("[data-carreras]");
+  if (!caja) return;
+  const rows = carrerasRows(state.statsCategory);
+  if (!rows.length) return;
+
+  const scrollPrevio = conservarScroll ? caja.scrollLeft : 0;
+  const anchoPrevio = caja.scrollWidth;
 
   const { min, max } = statsYears();
-  const scale = makeScale({ from: min, to: max, width: CHART.w, left: CHART.padL });
+  const hueco = Math.max(220, caja.clientWidth - CARRERAS.nombres);
+  const ancho = Math.round(hueco * state.carrerasZoom);
   const height = CHART.padT + rows.length * CHART.rowH + CHART.padB;
+  const scale = makeScale({ from: min, to: max, width: ancho, left: CARRERAS.padIzq });
+
   const body = rows.map((row, index) => {
     const y = CHART.padT + index * CHART.rowH + CHART.rowH / 2;
     const dots = row.years.map(item => {
@@ -762,19 +811,40 @@ function chartCareers(category) {
       return `<circle class="dot ${cls}" cx="${scale(item.year).toFixed(1)}" cy="${y}"
         r="${item.best === 1 ? 3.4 : 2.6}" data-tip="${esc(tip)}"/>`;
     }).join("");
+    const slug = esc(slugifyGroup(row.name));
     return `
-      <g class="career${index % 2 ? " alt" : ""}" data-group="${esc(slugifyGroup(row.name))}">
-        <rect class="career-hit" x="0" y="${y - CHART.rowH / 2}" width="${CHART.w}" height="${CHART.rowH}"/>
-        <text class="career-name" x="${CHART.padL - 8}" y="${y + 3.2}">${esc(row.name)}</text>
+      <g class="career${index % 2 ? " alt" : ""}" data-group="${slug}" data-fila="${index}">
+        <rect class="career-hit" x="0" y="${y - CHART.rowH / 2}" width="${ancho}" height="${CHART.rowH}"/>
         <line class="span" x1="${scale(row.from).toFixed(1)}" y1="${y}"
               x2="${scale(row.to).toFixed(1)}" y2="${y}"/>
         ${dots}
       </g>`;
   }).join("");
 
-  return `<svg class="chart" viewBox="0 0 ${CHART.w} ${height}" role="img"
-    aria-label="Trayectoria de cada carrocista a lo largo de los años">
-    ${yearAxis(scale, { from: min, to: max, height })}${body}</svg>`;
+  const svg = caja.querySelector(".carreras-svg");
+  svg.setAttribute("viewBox", `0 0 ${ancho} ${height}`);
+  svg.setAttribute("width", ancho);
+  svg.setAttribute("height", height);
+  svg.innerHTML = `${yearAxis(scale, { from: min, to: max, height })}${body}`;
+
+  // Los nombres viven fuera del SVG para poder quedarse clavados a la izquierda
+  // mientras el tiempo se desliza por debajo. Dentro del SVG se irian con el.
+  const nombres = caja.querySelector(".carreras-nombres");
+  nombres.style.height = `${height}px`;
+  nombres.innerHTML = rows.map((row, index) => {
+    const y = CHART.padT + index * CHART.rowH + CHART.rowH / 2;
+    return `<button class="carrera-nombre" type="button" style="top:${y}px"
+      data-group="${esc(slugifyGroup(row.name))}" data-fila="${index}"
+      title="${esc(row.name)}">${esc(row.name)}</button>`;
+  }).join("");
+
+  caja.classList.toggle("hay-scroll", state.carrerasZoom > 1);
+  // Al comprimir o estirar se mira el mismo tramo de siglo, no el mismo pixel:
+  // se conserva el centro de lo que se estaba viendo.
+  if (conservarScroll && anchoPrevio > 0) {
+    const centro = (scrollPrevio + caja.clientWidth / 2) / anchoPrevio;
+    caja.scrollLeft = centro * caja.scrollWidth - caja.clientWidth / 2;
+  }
 }
 
 /* Grafico 2: cuantas carrozas desfilaron cada edicion.
@@ -1128,10 +1198,17 @@ function renderStatsTab() {
       ${chartFloatsPerYear(zoom)}
 
       <h3 class="section">Trayectoria de los carrocistas</h3>
-      <div class="chart-tabs">
+      <div class="chart-tabs carreras-barra">
         ${[["all", "Todas"], ["A", "Categoría A"], ["B", "Categoría B"]].map(([cat, label]) =>
           `<button class="view${category === cat ? " is-on" : ""}" type="button"
             data-stats-cat="${cat}">${label}</button>`).join("")}
+        <span class="zoom-label">Tiempo</span>
+        <button class="view" type="button" data-carreras-zoom="out"
+          title="Comprimir el tiempo: más años a la vista">−</button>
+        <button class="view" type="button" data-carreras-zoom="in"
+          title="Estirar el tiempo: más sitio entre año y año">+</button>
+        <button class="view" type="button" data-carreras-zoom="fit"
+          title="Volver a ver el siglo entero">Todo</button>
       </div>
       <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
       de su primera a su última carroza; cada punto es una edición, y el color dice cómo le fue.
@@ -1202,6 +1279,10 @@ function renderStatsTab() {
         </div>
       </div>
     </div>`;
+  // El grafico de trayectorias se pinta despues de insertar el HTML porque
+  // necesita medir su hueco. Va aqui y no en cada sitio que llama a esta
+  // funcion: si se olvida en uno, el bloque sale en blanco.
+  pintarCarreras();
 }
 
 /* ── indice: recorridos ─────────────────────────────────────────────────── */
@@ -2197,6 +2278,101 @@ function setupZoomGaleria() {
     state.tamGaleria = Number(evento.target.value);
     document.documentElement.style.setProperty("--galeria", `${state.tamGaleria}px`);
     localStorage.setItem("tam-galeria", state.tamGaleria);
+  });
+}
+
+/* iOS amplia la pagina al enfocar un campo cuya letra baje de 16 px, y despues
+ * la deja descolocada. La salida facil es poner 16 px al campo, pero entonces
+ * el buscador queda con la letra mas gorda que "Limpiar" y "Todas las decadas",
+ * que van en la misma fila: se arreglaba el zoom estropeando la barra. Se
+ * intento tres veces por ahi.
+ *
+ * Asi que se frena el zoom en lugar de rendirse a el: mientras hay un campo
+ * enfocado, el viewport no deja ampliar; al salir del campo se devuelve. El
+ * `maximum-scale` fijo de toda la vida no vale porque le quita el pellizco a
+ * quien necesita ampliar para leer, y eso no se negocia por un detalle de
+ * maquetacion. Aqui solo esta puesto los segundos que dura el foco.
+ *
+ * Solo en iOS: es el unico que hace esto, y en los demas seria quitar el
+ * pellizco a cambio de nada. */
+function frenarZoomAlEnfocar() {
+  const esIOS = /iPad|iPhone|iPod/.test(navigator.platform)
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+  if (!esIOS) return;
+  const meta = document.querySelector('meta[name="viewport"]');
+  if (!meta) return;
+  const suelto = meta.getAttribute("content");
+  const atado = suelto + ", maximum-scale=1";
+  const escribible = el => el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName);
+
+  document.addEventListener("focusin", event => {
+    if (escribible(event.target)) meta.setAttribute("content", atado);
+  });
+  document.addEventListener("focusout", event => {
+    if (!escribible(event.target)) return;
+    // Se devuelve el pellizco un instante despues: si se hace en el mismo
+    // momento del blur, Safari aun esta cerrando el teclado y se lo come.
+    setTimeout(() => {
+      if (!escribible(document.activeElement)) meta.setAttribute("content", suelto);
+    }, 300);
+  });
+}
+
+/* Moverse por el grafico de trayectorias.
+ *
+ * El contenedor ya se desliza con el dedo y con la rueda horizontal, pero en un
+ * portatil sin rueda lateral no hay forma de recorrer el siglo sin ir a la barra
+ * de scroll. Con arrastrar basta. Se distingue del clic por la distancia: menos
+ * de 4 px sigue siendo un clic y abre la ficha del carrocista.
+ *
+ * Ademas, el ancho de "todo a la vista" depende del hueco, asi que al cambiar el
+ * tamano de la ventana hay que volver a medir. */
+function setupCarreras() {
+  let arrastre = null;
+
+  document.addEventListener("mousedown", evento => {
+    const caja = evento.target.closest("[data-carreras]");
+    if (!caja || caja.scrollWidth <= caja.clientWidth) return;
+    arrastre = { caja, x0: evento.clientX, scroll0: caja.scrollLeft, movido: 0 };
+  });
+  window.addEventListener("mousemove", evento => {
+    if (!arrastre) return;
+    const dx = evento.clientX - arrastre.x0;
+    arrastre.movido = Math.max(arrastre.movido, Math.abs(dx));
+    if (arrastre.movido < 4) return;
+    arrastre.caja.classList.add("arrastrando");
+    arrastre.caja.scrollLeft = arrastre.scroll0 - dx;
+    evento.preventDefault();
+  });
+  window.addEventListener("click", evento => {
+    // Un arrastre termina en click: si se ha movido, ese click no es un clic.
+    if (arrastre && arrastre.movido >= 4 && evento.target.closest("[data-carreras]")) {
+      evento.stopPropagation();
+      evento.preventDefault();
+    }
+  }, true);
+  window.addEventListener("mouseup", () => {
+    if (!arrastre) return;
+    arrastre.caja.classList.remove("arrastrando");
+    arrastre = null;
+  });
+
+  // Resaltar la fila entera al pasar por el nombre, y al reves: son dos
+  // elementos distintos desde que los nombres salieron del SVG.
+  document.addEventListener("mouseover", evento => {
+    const caja = document.querySelector("[data-carreras]");
+    if (!caja) return;
+    const fila = evento.target.closest("[data-fila]");
+    caja.querySelectorAll(".hover-fila").forEach(el => el.classList.remove("hover-fila"));
+    if (!fila || !caja.contains(fila)) return;
+    caja.querySelectorAll(`[data-fila="${fila.dataset.fila}"]`)
+      .forEach(el => el.classList.add("hover-fila"));
+  });
+
+  let temporizador = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(temporizador);
+    temporizador = setTimeout(() => pintarCarreras({ conservarScroll: true }), 120);
   });
 }
 
@@ -3837,6 +4013,18 @@ function bindEvents() {
     }
     if (event.target.closest("#open-report-from-stats, #open-report-from-float, #open-report-from-edition")) { openReport(); return; }
 
+    const zoomCarreras = event.target.closest("[data-carreras-zoom]");
+    if (zoomCarreras) {
+      const que = zoomCarreras.dataset.carrerasZoom;
+      const factor = que === "in" ? CARRERAS.paso : que === "out" ? 1 / CARRERAS.paso : 0;
+      state.carrerasZoom = que === "fit" ? 1
+        : Math.min(CARRERAS.zoomMax, Math.max(CARRERAS.zoomMin, state.carrerasZoom * factor));
+      // Se repinta solo el grafico, no la pestana entera: repintarla mandaria la
+      // pagina de vuelta arriba y perderia el tramo que se estaba mirando.
+      pintarCarreras({ conservarScroll: true });
+      return;
+    }
+
     const statsZoom = event.target.closest("[data-stats-zoom]");
     if (statsZoom) {
       state.statsZoom = Number(statsZoom.dataset.statsZoom);
@@ -3907,6 +4095,8 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     setupTooltip();
     setupReport();
     setupVisor();
+  frenarZoomAlEnfocar();
+  setupCarreras();
   setupDivisor();
   setupZoomGaleria();
   setupColumnasAjustables();
