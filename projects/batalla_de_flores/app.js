@@ -35,7 +35,7 @@ const state = {
   category: null,      // filtro de la pestana Carrozas: "A" | "B" | null
   statsCategory: "all",   // "all" | "A" | "B" en el grafico de trayectorias
   statsZoom: 1,           // 1 | 2 | 4: ensancha el grafico de barras y lo hace scrollable
-  editionCategory: "A",   // categoria visible en el palmares de una edicion
+  editionCategory: "todas",  // "todas" | "A" | "B" — qué se ve en el palmarés
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
   mapAttribution: null,
@@ -50,6 +50,10 @@ const state = {
   // Se pone al pulsar un codigo de fuente: la ficha se abre con el bloque de
   // procedencia desplegado, que es justo lo que se ha ido a mirar.
   abrirProcedencia: false,
+  // ¿Hemos apilado NOSOTROS alguna entrada de historial en esta sesión? Si se
+  // entra directo por un enlace con # -desde el historial de Chrome, o desde
+  // WhatsApp- no hay nada detrás, y volver atrás saca de la web.
+  historialPropio: false,
   sort: { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } },
   openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
@@ -128,10 +132,10 @@ const SOURCE_LABEL = {
   archive_float_page: "Ficha de carroza",
   official_result: "Resultado oficial",
   official_result_summary: "Resumen oficial",
-  manual_seed: "Transcrito a mano",
+  manual_seed: "Semilla inicial, sin página registrada",
   press_photo: "Prensa (pie de foto)",
   press_clipping: "Recorte de prensa",
-  photo_archive: "Archivo fotográfico cedido",
+  photo_archive: "Fotos cedidas por Santi Fernández",
   book: "Libro del Centenario (Oruña Fuentes, 2008)",
   press_history: "Hemeroteca histórica",
 };
@@ -149,6 +153,22 @@ const SOURCE_SHORT = {
   photo_archive: "FOTO",
   book: "LIBRO",
   press_history: "HEMER",
+};
+
+const SOURCE_EXPLICA = {
+  archive_palmares: "La página de palmarés que batalladeflores.net dedica a esa edición.",
+  archive_float_page: "La página que batalladeflores.net dedica a esa carroza en concreto. "
+    + "Es la misma web que el palmarés, así que coincidir con él no confirma nada.",
+  official_result: "La nota que publica el Ayuntamiento de Laredo con la clasificación.",
+  official_result_summary: "Resumen de prensa del resultado oficial del Ayuntamiento.",
+  manual_seed: "Copiados de una web en la primera versión del proyecto sin anotar de qué "
+    + "página. Es la fuente más débil del archivo: no hay forma de comprobarla.",
+  press_photo: "El pie de una foto de prensa.",
+  press_clipping: "Un recorte de prensa transcrito a mano, con el escaneo enlazado.",
+  photo_archive: "El puesto y el grupo salen de cómo nombró él los ficheros al entregarlos: "
+    + "lo afirma él, no lo deducimos nosotros.",
+  book: "«Batalla de Flores de Laredo. 100 años de historia viva», de Alfonso Oruña Fuentes (2008).",
+  press_history: "Prensa de la época —Mundo Gráfico, ABC, La Voz— leída de los escaneos.",
 };
 
 function sourceShort(sourceType) {
@@ -582,19 +602,22 @@ function renderFloatList() {
         ${sortHeader("floats", "year", "Año", "col-num")}
         ${sortHeader("floats", "category", "Cat.", "col-num col-cat")}
         ${sortHeader("floats", "position", "Puesto", "col-num")}
+        <span class="col-src">Fuente</span>
         <span aria-hidden="true"></span>
       </div>
       ${sortRows("floats", rows).map(entry => {
         const active = state.selection?.kind === "float" && state.selection.id === entry.id;
         return `
-          <button class="row row-float${active ? " is-active" : ""}" type="button" data-float="${esc(entry.id)}">
+          <div class="row row-float${active ? " is-active" : ""}" role="button" tabindex="0"
+               data-float="${esc(entry.id)}">
             <span class="row-name">${winnerBadge(entry, true)}${esc(entry.name)}${reviewMark(entry)}<small>${esc(entry.group_canonical || "sin grupo")}</small></span>
             <span class="col-grp">${esc(entry.group_canonical || "–")}</span>
             <span class="col-num">${entry.year}</span>
             <span class="col-num col-cat">${entry.category ? esc(entry.category) : "única"}</span>
             <span class="col-num">${entry.position != null ? `${entry.position}.º` : "–"}</span>
+            <span class="col-src">${auditCell(entry)}</span>
             <span class="row-go" aria-hidden="true">›</span>
-          </button>`;
+          </div>`;
       }).join("")}
     </div>`;
 }
@@ -1766,34 +1789,82 @@ function bestSourceUrl(entry) {
  * Las que no tienen enlace -las fotos cedidas por Santi son ficheros, no
  * paginas; la semilla no registro de donde salio- se quedan sin flecha, que es
  * la verdad. El codigo sigue abriendo la ficha, donde se explica cada una. */
-function sourceCell(entry) {
-  const partes = sourceParts(entry).filter((part, i, list) => list.indexOf(part) === i);
-  const porFuente = new Map();
-  (entry.source_links || []).forEach(link => {
-    if (!porFuente.has(link.kind)) porFuente.set(link.kind, link.url);
-  });
-  // Sin desglose por fuente (datos viejos) se cae al comportamiento de antes.
-  const suelto = porFuente.size ? null : bestSourceUrl(entry);
+const DATO_LABEL = {
+  POS: "el puesto", GRU: "el grupo", VES: "el premio de vestidos",
+  ART: "el premio de arte", PTS: "los puntos", FOT: "la foto", ARC: "la foto",
+};
 
-  return `<span class="src">${partes.map(part => {
-    const url = porFuente.get(part) || (partes.length === 1 ? suelto : null);
-    const code = SOURCE_SHORT[part] || part;
-    const label = SOURCE_LABEL[part] || part;
-    return `<span class="src-one">
-      <button class="tag tag-src" type="button" data-float="${esc(entry.id)}" data-prov="1"
-        title="${esc(label)} — pulsa para ver de dónde sale este dato">${esc(code)}</button>${url
-      ? `<a href="${esc(url)}" target="_blank" rel="noopener"
-           title="Ver la fuente: ${esc(label)}">↗</a>`
-      : (() => {
-          // Una fuente sin URL no es una fuente coja: un libro se cita, no se
-          // enlaza. Se enseña SU cita -autor, título, página-, no un hueco.
-          const ref = (entry.source_refs || []).find(r => r.kind === part && r.cita);
-          return ref
-            ? `<span class="src-cita" title="${esc(ref.cita)}${ref.pagina ? `, p. ${esc(String(ref.pagina))}` : ""}">▣</span>`
-            : `<span class="src-nolink" title="${esc(label)}: sin página ni cita registrada">·</span>`;
-        })()}
-    </span>`;
-  }).join("")}</span>`;
+/* La columna de fuente, dato a dato.
+ *
+ * Antes listaba las fuentes que habían tocado la carroza —OFI, FOTO, MAN— sin
+ * decir qué había aportado cada una: para auditar no vale, porque la pregunta
+ * no es "¿quién pasó por aquí?" sino "¿de dónde sale QUE quedó tercera?".
+ *
+ * Ahora hay una etiqueta por DATO, y detrás sus enlaces. Si la misma página del
+ * Ayuntamiento sostiene el puesto de las trece carrozas, sale trece veces: es
+ * repetitivo y es lo correcto, porque cada fila se audita sola.
+ *
+ * FOT lleva enlace cuando la web publica la foto en la ficha de esa carroza;
+ * cuando la identificación viene del nombre del fichero no hay página que
+ * enlazar y se marca ARC, sin flecha. */
+function auditCell(entry) {
+  const claims = entry.claims || {};
+  const bloques = [];
+
+  const porDato = [["POS", "position"], ["GRU", "group_raw"],
+                   ["VES", "prize_costumes_rank"], ["ART", "prize_art_rank"], ["PTS", "points"]];
+  porDato.forEach(([code, campo]) => {
+    const claim = claims[campo];
+    if (!claim || entry[campo] == null) return;
+    const enlaces = claim.fuentes.map(f => {
+      const nombre = SOURCE_LABEL[f.kind] || f.kind;
+      const ayuda = `${DATO_LABEL[code]}, según ${nombre}`;
+      return f.url
+        ? `<a href="${esc(f.url)}" target="_blank" rel="noopener" title="${esc(ayuda)}">↗</a>`
+        : `<span class="src-nolink" title="${esc(ayuda)} — sin página que enlazar">·</span>`;
+    }).join("");
+    const dudoso = (claim.disputa || []).length
+      ? ` <span class="dato-duda" title="Otra fuente dice algo distinto. Sin resolver.">?</span>` : "";
+    bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
+      data-float="${esc(entry.id)}" data-prov="1"
+      title="De dónde sale ${esc(DATO_LABEL[code])}">${code}</button>${enlaces}${dudoso}</span>`);
+  });
+
+  (entry.image_refs || []).forEach(ref => {
+    const porPagina = ref.por === "pagina" && ref.evidencia;
+    bloques.push(`<span class="src-one"><button class="tag tag-src" type="button"
+      data-float="${esc(entry.id)}" data-prov="1"
+      title="${esc(porPagina
+        ? "La foto: la web la publica en la ficha de esta carroza"
+        : `La foto: identificada por el nombre del fichero «${ref.evidencia || ""}»`)}"
+      >${porPagina ? "FOT" : "ARC"}</button>${porPagina
+        ? `<a href="${esc(ref.evidencia)}" target="_blank" rel="noopener" title="Ver la página donde se publica">↗</a>`
+        : `<span class="src-nolink" title="No hay página que enlazar: la identifica el nombre del fichero">·</span>`}</span>`);
+  });
+
+  return `<span class="src">${bloques.join("")}</span>`;
+}
+
+function sourceCell(entry) {
+  return auditCell(entry);
+}
+
+/* Las mismas flechas, pero pegadas a UN dato suelto. En la ficha el puesto y el
+ * grupo se leían desnudos y su procedencia estaba tres secciones más abajo,
+ * plegada: para auditar hay que poder ver la fuente sin buscarla. */
+function fieldSources(entry, campo) {
+  const claim = (entry.claims || {})[campo];
+  if (!claim || entry[campo] == null) return "";
+  const enlaces = claim.fuentes.map(f => {
+    const nombre = SOURCE_LABEL[f.kind] || f.kind;
+    return f.url
+      ? `<a href="${esc(f.url)}" target="_blank" rel="noopener" title="Según ${esc(nombre)}">↗</a>`
+      : `<span class="src-nolink" title="${esc(nombre)} — sin página que enlazar">·</span>`;
+  }).join("");
+  const duda = (claim.disputa || []).map(d =>
+    ` <span class="dato-duda" title="Otra fuente dice «${esc(String(d.valor))}»: ${esc(
+      joinEs(d.fuentes.map(f => SOURCE_LABEL[f.kind] || f.kind)))}. Sin resolver.">?</span>`).join("");
+  return `<span class="dato-src">${enlaces}${duda}</span>`;
 }
 
 /* "A1.º" ordenado como texto daria A1, A10, A2. Se genera una clave
@@ -1859,8 +1930,31 @@ function creditText(entry, url) {
   return "Procedencia sin registrar";
 }
 
+/* De quién es la foto y por qué decimos que es de esta carroza son DOS
+ * preguntas, y mezclarlas engaña. "Foto cedida por Santi Fernández" se puede
+ * leer como que Santi certifica que sale Aiko, cuando en 287 casos la carroza
+ * la deducimos nosotros del nombre del fichero y él no ha dicho nada.
+ *
+ * Así que van en dos líneas: arriba de quién es, debajo quién la asigna. Y
+ * cuando la asignación es nuestra se marca, porque es lo que puede fallar. */
+function photoAssign(entry, url) {
+  const ref = (entry.image_refs || []).find(item => item.url === url);
+  if (!ref) return "";
+  const propia = ref.asignada_por !== "fuente";
+  // Solo hay dos razones para decir que una foto es de una carroza, y cada una
+  // trae su prueba: o la web la publica en la ficha de esa carroza -y damos el
+  // enlace-, o lo dice el nombre del fichero -y lo enseñamos entero-.
+  const corto = ref.por === "pagina"
+    ? "lo dice su página" : "lo dice el nombre del fichero";
+  const largo = ref.por === "pagina"
+    ? `batalladeflores.net publica esta foto en la página que dedica a esta carroza: ${ref.evidencia || ""}`
+    : `El fichero se llama «${ref.evidencia || ""}», que trae el año y el nombre de la carroza.`
+      + (propia ? " La asociación la deducimos nosotros de ese nombre." : "");
+  return `<span class="asigna${propia ? " asigna-deducida" : ""}" title="${esc(largo)}">${esc(corto)}</span>`;
+}
+
 function photoCredit(entry, url) {
-  return `<span class="credito">${esc(creditText(entry, url))}</span>`;
+  return `<span class="credito">${esc(creditText(entry, url))}</span>${photoAssign(entry, url)}`;
 }
 
 /* ── visor de fotos ────────────────────────────────────────────────────────
@@ -1894,9 +1988,15 @@ function photoMeta(entry) {
 function photoAttrs(entry, url) {
   const m = photoMeta(entry);
   m.credito = creditText(entry, url);
+  const ref = (entry.image_refs || []).find(item => item.url === url);
+  m.asigna = ref ? (ref.asignada_por === "fuente"
+    ? `Es esta carroza según la fuente: ${ref.asignacion}`
+    : `Que sea esta carroza lo deducimos nosotros: ${ref.asignacion}`) : "";
+  m.asignaProp = ref?.asignada_por || "";
   return `data-photo="${esc(url)}" data-nombre="${esc(m.nombre)}" data-grupo="${esc(m.grupo)}"
     data-anio="${esc(m.anio)}" data-puesto="${esc(m.puesto)}" data-credito="${esc(m.credito)}"
-    data-origen="${esc(m.origen)}" data-ficha="${esc(entry.id)}"`;
+    data-origen="${esc(m.origen)}" data-ficha="${esc(entry.id)}"
+    data-asigna="${esc(m.asigna)}" data-asigna-prop="${esc(m.asignaProp)}"`;
 }
 
 /* La galeria depende de DONDE se pulso.
@@ -1943,6 +2043,8 @@ function pintarVisor() {
       ${d.puesto ? `<span class="lb-puesto">${esc(d.puesto)}</span>` : ""}
     </span>
     <span class="lb-credito">${esc(d.credito || "Procedencia sin registrar")}</span>
+    ${d.asigna ? `<span class="lb-asigna${d.asignaProp === "fuente" ? "" : " asigna-deducida"}"
+      >${esc(d.asigna)}</span>` : ""}
     <span class="lb-contador">${lb.indice + 1} de ${lb.fotos.length}</span>`;
   // Precarga de la siguiente: pasar fotos de 1600 px sin esto parpadea.
   const sig = lb.fotos[(lb.indice + 1) % lb.fotos.length];
@@ -2052,13 +2154,27 @@ function provenanceLine(label, entries, vacio) {
  * la version larga vive en "De donde sale cada dato", pero eso queda una
  * pantalla y media mas abajo y nadie ata los dos cabos. */
 function codesLegend(entries) {
-  const codes = new Map();
-  entries.forEach(entry => sourceParts(entry).forEach(part => {
-    if (SOURCE_SHORT[part]) codes.set(SOURCE_SHORT[part], SOURCE_LABEL[part]);
-  }));
-  if (!codes.size) return "";
-  return `<p class="codes codes-inline">Fuente: ${[...codes.entries()]
-    .map(([code, label]) => `<span class="tag">${esc(code)}</span> ${esc(label)}`).join(" · ")}</p>`;
+  const usados = new Set();
+  entries.forEach(entry => {
+    const c = entry.claims || {};
+    if (entry.position != null && c.position) usados.add("POS");
+    if (entry.group_raw && c.group_raw) usados.add("GRU");
+    if (entry.prize_costumes_rank != null) usados.add("VES");
+    if (entry.prize_art_rank != null) usados.add("ART");
+    if (entry.points != null) usados.add("PTS");
+    (entry.image_refs || []).forEach(r => usados.add(r.por === "pagina" ? "FOT" : "ARC"));
+  });
+  if (!usados.size) return "";
+  const texto = {
+    POS: "el puesto", GRU: "el grupo", VES: "el premio de vestidos",
+    ART: "el premio de arte", PTS: "los puntos",
+    FOT: "la foto, publicada en la ficha de esa carroza",
+    ARC: "la foto, identificada por el nombre del fichero (sin página que enlazar)",
+  };
+  const orden = ["POS", "GRU", "VES", "ART", "PTS", "FOT", "ARC"];
+  return `<p class="codes codes-inline">Cada flecha lleva a la fuente de <b>ese</b> dato:
+    ${orden.filter(c => usados.has(c))
+      .map(c => `<span class="tag">${c}</span> ${esc(texto[c])}`).join(" · ")}</p>`;
 }
 
 /* Lo que queda por confirmar EN ESTA EDICIÓN.
@@ -2068,6 +2184,23 @@ function codesLegend(entries) {
  * en los dos sitios: en el inventario general y donde el lector se la va a
  * encontrar. Si solo estuviera en la pestaña, quien mira 1930 no se entera de
  * que ese podio está en disputa. */
+/* Las gracias por las fotos, una vez por edición y no bajo cada carroza.
+ *
+ * El crédito por foto sigue estando donde toca —en su pie y en su ficha—, pero
+ * repetir "cedidas por Santi Fernández" trece veces en la misma pantalla no
+ * agradece más: cansa. Aquí va el reconocimiento; ahí arriba, la auditoría. */
+function photoThanks(entries) {
+  const origenes = new Map();
+  entries.forEach(entry => (entry.image_refs || []).forEach(ref => {
+    origenes.set(ref.origen, (origenes.get(ref.origen) || 0) + 1);
+  }));
+  if (!origenes.size) return "";
+  const partes = [...origenes.entries()].sort((a, b) => b[1] - a[1]).map(([quien, n]) =>
+    `<b>${esc(quien)}</b> (${n} foto${n === 1 ? "" : "s"})`);
+  return `<p class="gracias">📷 Las fotos de esta edición son de ${joinEs(partes)}.
+    Se publican con su permiso y cada una dice de dónde sale.</p>`;
+}
+
 function pendingForYear(year) {
   const q = openQuestions();
   const filas = [];
@@ -2181,8 +2314,10 @@ function renderEditionDetail(edition) {
   // Con categorias A y B, mostrarlas juntas mezclaba dos competiciones
   // distintas: se separan con un selector, como en Estadisticas.
   const cats = [...new Set(ranked.map(entry => entry.category).filter(Boolean))].sort();
-  const shownCat = cats.includes(state.editionCategory) ? state.editionCategory : cats[0];
-  const shown = cats.length > 1 ? ranked.filter(entry => entry.category === shownCat) : ranked;
+  const shownCat = state.editionCategory === "todas" || cats.includes(state.editionCategory)
+    ? state.editionCategory : cats[0];
+  const shown = cats.length > 1 && shownCat !== "todas"
+    ? ranked.filter(entry => entry.category === shownCat) : ranked;
   const withPhotos = shown.some(entry => (entry.image_urls || []).length);
 
   els.detail.innerHTML = `
@@ -2211,9 +2346,12 @@ function renderEditionDetail(edition) {
 
     ${ranked.length ? `
       <h3 class="section">Palmarés</h3>
-      ${cats.length > 1 ? `<div class="chart-tabs">${cats.map(cat =>
-        `<button class="view${cat === shownCat ? " is-on" : ""}" type="button"
-          data-edition-cat="${esc(cat)}">Categoría ${esc(cat)}</button>`).join("")}</div>` : ""}
+      ${cats.length > 1 ? `<div class="chart-tabs">
+        <button class="view${shownCat === "todas" ? " is-on" : ""}" type="button"
+          data-edition-cat="todas" title="Las ${ranked.length} carrozas del desfile, juntas">Todas</button>
+        ${cats.map(cat =>
+          `<button class="view${cat === shownCat ? " is-on" : ""}" type="button"
+            data-edition-cat="${esc(cat)}">Categoría ${esc(cat)}</button>`).join("")}</div>` : ""}
       <table class="palmares${withPhotos ? " with-photo" : ""}">
         <thead><tr>
           ${withPhotos ? '<th class="c-photo" aria-label="Foto"></th>' : ""}
@@ -2231,7 +2369,9 @@ function renderEditionDetail(edition) {
                      alt="${esc(entry.name)}" loading="lazy"></button>`
                 : ""}</td>` : ""}
               <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.position === 1
-                ? `${ICON_TROPHY}` : ""}${cats.length > 1 || !entry.category ? "" : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
+                ? `${ICON_TROPHY}` : ""}${shownCat === "todas" && entry.category
+                ? `<span class="pos-cat cat-${esc(entry.category.toLowerCase())}">${esc(entry.category)}</span>` : ""}${
+                entry.position != null ? `${entry.position}.º` : "–"}</td>
               <td class="name" data-sort="${esc(normalizeText(entry.name))}"><button class="link t-float"
                 type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>${reviewMark(entry)}${prizeChips(entry)
                 ? `<small class="prizes">${esc(prizeChips(entry))}</small>` : ""}</td>
@@ -2296,6 +2436,8 @@ function renderEditionDetail(edition) {
     ${route?.geometry ? `
       <h3 class="section">Recorrido</h3>
       ${renderRouteMap(route.id, { variant: "thumbstrip" })}` : ""}
+
+    ${photoThanks(entries)}
 
     ${pendingForYear(edition.year)}
 
@@ -2436,6 +2578,46 @@ function fieldSize(entry) {
  *     nuestra a partir del nombre del fichero, no algo que diga la fuente.
  *
  * Va plegado: quien mira una carroza quiere ver la carroza. Quien duda, abre. */
+const CLAIM_LABEL = {
+  position: "El puesto", category: "La categoría", group_raw: "El grupo",
+  points: "Los puntos", prize_costumes_rank: "El premio de vestidos",
+  prize_art_rank: "El premio de arte",
+};
+
+/* Una línea por afirmación, no un cajón con todas.
+ *
+ * Antes ponía "El puesto y el grupo: A, B y C", que junta dos afirmaciones
+ * distintas y tres fuentes sin decir cuál dijo qué. Ahora cada dato dice quién
+ * lo sostiene, con su enlace, y si hay más de un origen independiente se marca:
+ * dos páginas de la misma web no son dos fuentes, y eso hay que distinguirlo. */
+function claimLines(entry) {
+  const claims = entry.claims || {};
+  const orden = ["position", "category", "group_raw", "points",
+                 "prize_costumes_rank", "prize_art_rank"];
+  const ordinal = new Set(["position", "prize_costumes_rank", "prize_art_rank"]);
+  const valor = campo => campo === "group_raw"
+    ? (entry.group_raw || "")
+    : ordinal.has(campo) ? `${entry[campo]}.º` : String(entry[campo] ?? "");
+
+  return orden.filter(campo => claims[campo] && entry[campo] != null).map(campo => {
+    const claim = claims[campo];
+    const quien = claim.fuentes.map(f => {
+      const etiqueta = esc(SOURCE_LABEL[f.kind] || f.kind);
+      return f.url
+        ? `<a href="${esc(f.url)}" target="_blank" rel="noopener">${etiqueta} ↗</a>`
+        : etiqueta;
+    });
+    const sello = claim.independientes >= 2
+      ? ` <span class="tag corrobora" title="Lo dicen fuentes de procedencia distinta, que coinciden">${claim.independientes} orígenes ✓</span>`
+      : "";
+    const otras = (claim.disputa || []).map(d => `
+      <br><small class="prov-disputa">Otra versión: <b>${esc(String(d.valor))}</b>, según
+      ${joinEs(d.fuentes.map(f => esc(SOURCE_LABEL[f.kind] || f.kind)))}. Sin resolver.</small>`).join("");
+    return `<li><b>${CLAIM_LABEL[campo] || campo}:</b>
+      ${esc(valor(campo))} — ${joinEs(quien)}${sello}${otras}</li>`;
+  }).join("");
+}
+
 function floatProvenance(entry) {
   const refs = entry.image_refs || [];
   const inferida = refs.some(r => r.asignada_por !== "fuente");
@@ -2447,15 +2629,19 @@ function floatProvenance(entry) {
       <summary>De dónde sale todo esto${inferida
         ? ' <span class="proc-aviso">la foto está asignada por deducción</span>' : ""}</summary>
       <ul class="prov-list">
-        <li><b>El puesto y el grupo:</b> ${fuentes.length ? esc(joinEs(fuentes)) : "sin fuente registrada"}.
-          ${(entry.source_refs || []).filter(r => r.kind !== "press_history")
-            .map(r => esc(r.cita)).filter(Boolean)
-            .map(c => `<br><small>${c}</small>`).join("")}</li>
+        ${claimLines(entry)}
+        ${(entry.source_refs || []).filter(r => r.kind !== "press_history")
+          .map(r => esc(r.cita)).filter(Boolean)
+          .map(c => `<li class="prov-cita"><small>${c}</small></li>`).join("")}
         ${pressCitations(entry).length ? `<li><b>En la prensa de la época:</b>
           ${citationList(pressCitations(entry))}</li>` : ""}
         ${refs.length ? refs.map(r => `
-          <li><b>La foto:</b> ${esc(r.origen)}.
-            <br><small>Que sea de esta carroza: ${esc(r.asignacion)}.</small>
+          <li><b>La foto es de:</b> ${esc(r.origen)}.
+            <br><small><b>Que sea de esta carroza</b>, ${r.por === "pagina"
+              ? `lo dice su página: la publica en la ficha que dedica a esta carroza`
+              : `lo dice el nombre del fichero: <code>${esc(r.evidencia || "")}</code>`}.
+              ${r.por === "fichero" && r.asignada_por !== "fuente"
+                ? " Esa asociación la deducimos nosotros de ese nombre." : ""}</small>
             ${r.pagina ? `<br><small><a href="${esc(r.pagina)}" target="_blank" rel="noopener">ver la página de origen ↗</a></small>` : ""}
             ${r.original ? `<br><small>Se sirve desde aquí una copia, para no cargarle el tráfico a
               su servidor. <a href="${esc(r.original)}" target="_blank" rel="noopener">ver el original ↗</a></small>` : ""}
@@ -2491,16 +2677,18 @@ function renderFloatDetail(entry) {
       </dd></div>
       <div><dt>Grupo</dt><dd>${entry.group_canonical
         ? `<button class="link t-group" type="button" data-group="${esc(slugifyGroup(entry.group_canonical))}">${esc(entry.group_canonical)}</button>`
-        : '<span class="muted-val">sin grupo</span>'}</dd></div>
+        : '<span class="muted-val">sin grupo</span>'}${fieldSources(entry, "group_raw")}</dd></div>
       <div><dt>Categoría</dt><dd>${entry.category
         ? `<button class="link t-float" type="button" data-category="${esc(entry.category)}">Categoría ${esc(entry.category)}</button>`
-        : '<span class="muted-val">sin categoría</span>'}</dd></div>
+        : '<span class="muted-val">sin categoría</span>'}${fieldSources(entry, "category")}</dd></div>
       <div><dt>Puesto</dt><dd>${entry.position != null
         ? `<b>${entry.position}</b><span class="of-total"> de ${fieldSize(entry)}</span>`
-        : '<span class="muted-val">no consta</span>'}</dd></div>
+        : '<span class="muted-val">no consta</span>'}${fieldSources(entry, "position")}</dd></div>
     </dl>
 
-    ${prizes ? `<p class="span-note">${esc(prizes)}</p>` : ""}
+    ${prizes ? `<p class="span-note">${esc(prizes)}
+      ${fieldSources(entry, "prize_costumes_rank")}${fieldSources(entry, "prize_art_rank")}
+      ${fieldSources(entry, "points")}</p>` : ""}
 
     ${(entry.image_urls || []).length ? `
       <h3 class="section">Imágenes (${entry.image_urls.length})</h3>
@@ -3058,6 +3246,7 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
     // cada seleccion obligaria a veinte pulsaciones para escapar.
     const method = hadSelection ? "replaceState" : "pushState";
     history[method](null, "", `#/${prefix}/${id}`);
+    if (method === "pushState") state.historialPropio = true;
     track(location.pathname + location.hash, `${kind}: ${id}`);
   }
   renderIndex();
@@ -3120,10 +3309,17 @@ function closeDetail() {
   if (!state.selection) return;
   // Si la ficha metio una entrada en el historial, la X retrocede: asi el boton
   // atras y la X dejan el historial igual y no se acumulan estados muertos.
-  if (location.hash) {
+  //
+  // Pero si se ha entrado DIRECTO a un enlace con # -del historial del
+  // navegador, de WhatsApp, de un marcador- no hay nada detrás y `back()` saca
+  // de la web: cerrar una ficha no puede echarte del sitio. En ese caso se
+  // limpia el hash y se aterriza en el índice, que es de donde se habría
+  // venido de haber venido de algún sitio.
+  if (location.hash && state.historialPropio) {
     history.back();
     return;
   }
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   clearSelection();
 }
 
@@ -3157,6 +3353,15 @@ function bindEvents() {
   });
 
   els.tabs.forEach(tab => tab.addEventListener("click", () => setMode(tab.dataset.mode)));
+
+  // Una fila con role="button" no responde sola al teclado: hay que dárselo.
+  document.addEventListener("keydown", event => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const fila = event.target.closest?.('[role="button"][data-float]');
+    if (!fila || event.target.closest("a")) return;
+    event.preventDefault();
+    select("float", fila.dataset.float);
+  });
 
   els.indexTools.addEventListener("change", event => {
     if (event.target.classList.contains("winners-only")) {

@@ -442,7 +442,7 @@ table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo
    cae y aparece como segunda linea bajo el nombre, que ocupa menos. */
 .rows-floats .row-head,
 .rows-floats .row {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) 46px 38px 54px 14px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr) 44px 34px 48px 122px 14px;
   align-items: baseline;
 }
 .rows-floats .row-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -710,7 +710,7 @@ h3.section {
 table.palmares { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
 table.palmares td.name small.prizes { display: block; color: var(--muted); font-weight: 400; font-size: 11px; }
 table.palmares col.c-pos { width: 34px; }
-table.palmares col.c-src { width: 92px; }
+table.palmares col.c-src { width: 116px; }
 table.palmares th {
   text-align: left; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--muted); font-weight: 600; padding: 0 6px 4px 0; border-bottom: 1px solid var(--line);
@@ -760,13 +760,82 @@ table.palmares tr:hover td { background: #fffaf5; }
 /* Un par código+enlace por fuente. Se apilan: en escritorio caben en línea y en
    el móvil bajan solos sin cortar nada. */
 .src { display: flex; flex-wrap: wrap; gap: 3px 6px; justify-content: flex-end; }
-.src-one { display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+.src-one { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; }
+.src-one .tag-src { padding: 1px 4px; }
+.src { gap: 2px 4px; }
 /* La fuente que no es una página web: un punto apagado en lugar de la flecha,
    para que se vea que ahí no falta un enlace, es que no lo hay. */
 .src-nolink { color: var(--line); font-size: 11.5px; cursor: help; }
 /* Fuente citada pero no enlazable (el libro). No es un hueco: es una cita, y
    se marca como tal para que no parezca que falta un enlace. */
 .src-cita { color: var(--gold); font-size: 10px; cursor: help; }
+
+/* Procedencia por afirmación. El sello de corroboración solo aparece cuando de
+   verdad hay orígenes distintos: el palmarés y la ficha de carroza son la misma
+   web y no cuentan como dos. */
+.tag.corrobora {
+  border-color: #bcd9c6; background: #eef7f1; color: var(--leaf);
+  font-size: 9.5px; padding: 1px 5px; border-radius: 4px; border: 1px solid #bcd9c6;
+  white-space: nowrap;
+}
+.prov-disputa { color: var(--alerta); }
+.prov-cita { color: var(--muted); }
+.prov-list a { color: var(--t-year); }
+/* La leyenda explica cada código al pasar por encima: el acrónimo no se explica
+   solo y expandirlo a otra frase corta tampoco decía de dónde sale el dato. */
+.codes-ayuda { border-bottom: 1px dotted var(--line); cursor: help; }
+
+/* Marca de dato en disputa dentro de la columna de auditoría. */
+/* Columna de auditoría en la lista de carrozas: las etiquetas se apilan si no
+   caben, sin empujar al resto de la fila. */
+.col-src { min-width: 0; }
+/* La fila de la lista pasó de <button> a <div role="button"> para poder llevar
+   enlaces dentro: hay que devolverle lo que heredaba del botón. */
+.rows-floats .row[role="button"] { cursor: pointer; text-align: left; font: inherit; }
+.rows-floats .row[role="button"]:focus-visible {
+  outline: 2px solid var(--rose); outline-offset: -2px;
+}
+.col-src .src { justify-content: flex-start; }
+/* Las flechas pegadas a un dato suelto en la ficha. */
+/* Letra de categoría junto al puesto, solo en la vista "Todas". */
+.pos-cat {
+  display: inline-block; margin-right: 3px; padding: 0 3px; border-radius: 3px;
+  font-size: 9.5px; font-weight: 700; vertical-align: 1px;
+}
+.pos-cat.cat-a { background: #eaf2f7; color: var(--cat-a); }
+.pos-cat.cat-b { background: #fbeaf7; color: var(--cat-b); }
+.dato-src { margin-left: 5px; white-space: nowrap; }
+.dato-src a { color: var(--t-year); text-decoration: none; font-size: 11px; }
+.dato-src a:hover { text-decoration: underline; }
+
+.dato-duda {
+  color: var(--alerta); font-weight: 700; font-size: 10px; cursor: help;
+  border: 1px solid var(--alerta-borde); border-radius: 3px; padding: 0 3px;
+}
+/* Las gracias por las fotos: una vez por edición, con tono de reconocimiento
+   y no de auditoría. */
+.gracias {
+  margin: 14px 0 0; padding: 8px 11px; border-radius: 8px;
+  background: var(--bar); border: 1px solid var(--line-soft);
+  font-size: 12.5px; color: var(--muted); line-height: 1.5;
+}
+.gracias b { color: var(--ink); }
+
+/* Dos preguntas, dos líneas. Arriba de quién es la foto; debajo, por qué
+   decimos que es de esta carroza. La segunda se marca cuando la conclusión es
+   nuestra: es la que puede estar equivocada. */
+.asigna {
+  display: block; font-size: 10px; line-height: 1.3; color: var(--muted);
+  margin-top: 1px; cursor: help;
+  /* Bajo una miniatura estrecha el texto se cortaba a media palabra. */
+  white-space: normal; overflow-wrap: anywhere;
+}
+.asigna-deducida { color: var(--gold); }
+.asigna-deducida::before { content: "≈ "; font-weight: 700; }
+.lb-asigna {
+  display: block; font-size: 11px; opacity: .78; margin-top: 2px; cursor: help;
+}
+.lb-asigna.asigna-deducida { opacity: .95; }
 .tag-src:hover { border-color: var(--sky); color: var(--sky); background: #f2f7fa; }
 .tag-src:focus-visible { outline: 2px solid var(--sky); outline-offset: 1px; }
 
@@ -851,7 +920,7 @@ ul.plain a { color: var(--sky); word-break: break-all; }
      estrecho y sin partir palabras a lo bestia. */
   .src .long { display: none; }
   table.palmares { font-size: 12.5px; }
-  table.palmares col.c-src, table.palmares th:last-child { width: 62px; }
+  table.palmares col.c-src, table.palmares th:last-child { width: 84px; }
   table.palmares td.group { hyphens: auto; }
   .thumb img { width: 40px; height: 30px; }
   table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo { width: 46px; }
