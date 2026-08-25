@@ -2750,6 +2750,13 @@ function provenanceBlock(entries, sources, edition) {
     <div class="provenance">
       <b>De dónde sale cada dato</b>
       <ul class="prov-list">
+        ${edition?.parade_date_text ? `<li><b>La fecha del desfile:</b>
+          ${esc(edition.parade_date_text)}, según ${esc(edition.parade_date_source || "sin fuente registrada")}.</li>` : ""}
+        ${edition?.cartel ? `<li><b>El cartel:</b> procede de
+          ${esc(edition.cartel.origen)} —
+          <a href="${esc(edition.cartel.original)}" target="_blank" rel="noopener">el
+          original ↗</a>—. Lo servimos desde aquí para no gastar el ancho de banda
+          de quien lo publica. ${esc(edition.cartel.asignacion)}.</li>` : ""}
         ${edition?.status === "planned" ? (() => {
           // Una edicion sin celebrar no tiene datos "que falten": es que todavia
           // no existen. Decir "no consta ninguna carroza" ahi parece un fallo de
@@ -2878,6 +2885,28 @@ function renderEditionDetail(edition) {
 
   els.detail.innerHTML = `
     <div class="detail-head edition-head">
+      ${edition.cartel
+        // Pequeño y al lado del año, no dentro de la galería.
+        //
+        // Un cartel no es una foto más de la edición: es la cara que la edición
+        // se dio a sí misma, la encargó alguien y se pegó por Laredo. Y sobre
+        // todo es la PRUEBA de la fecha —lleva impreso «28 de Agosto de 1998 ·
+        // 89 Edición»—, así que su sitio es junto a la fecha, no al final.
+        //
+        // Pequeño a propósito: lo primero que se tiene que ver es el año, y
+        // solo 43 de 115 ediciones tienen cartel. Un hueco grande y vacío en las
+        // otras 72 sería peor que no ponerlo.
+        ? `<button class="cartel-mini" type="button"
+             data-photo="${esc(edition.cartel.url)}"
+             data-nombre="Cartel de la Batalla de Flores de ${edition.year}"
+             data-anio="${edition.year}" data-grupo="" data-puesto=""
+             data-credito="${esc(`Cartel anunciador · ${edition.cartel.origen}`)}"
+             data-origen="${esc(edition.cartel.origen)}"
+             data-asigna="${esc(edition.cartel.asignacion)}"
+             data-asigna-prop="${esc(edition.cartel.asignada_por)}"
+             title="Cartel anunciador de ${edition.year} — pulsa para verlo entero">
+             <img src="${esc(edition.cartel.mini)}" alt="Cartel de la Batalla de Flores de ${edition.year}" loading="lazy">
+           </button>` : ""}
       <div class="anio-bloque">
       <h2>${edition.year}</h2>
       ${edition.parade_date_text

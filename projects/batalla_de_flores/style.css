@@ -691,6 +691,18 @@ table.palmares td.c-photo .thumb img {
 
 /* La edición que se sale de la costumbre del último viernes de agosto. Sale en
    tres de veintiséis, así que cuando aparece es porque hay algo que contar. */
+/* El cartel, junto al año. Pequeño a propósito: lo primero que se lee es el
+   año, y el cartel lo acompaña como acompaña la portada a un libro. */
+.cartel-mini {
+  flex: none; padding: 0; border: 0; background: none; cursor: pointer;
+  line-height: 0; margin-right: 2px;
+}
+.cartel-mini img {
+  display: block; width: 46px; height: 62px; object-fit: cover;
+  border-radius: 4px; border: 1px solid var(--line); background: #f1e9df;
+}
+.cartel-mini:hover img { border-color: var(--rose); }
+
 .fecha-rara {
   margin: 6px 0; padding: 7px 10px;
   border: 1px solid var(--line-soft); border-left: 3px solid var(--gold);
