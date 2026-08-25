@@ -36,6 +36,7 @@ const state = {
   statsCategory: "all",   // "all" | "A" | "B" en el grafico de trayectorias
   statsZoom: 1,           // 1 | 2 | 4: ensancha el grafico de barras y lo hace scrollable
   carrerasZoom: 1,        // factor sobre "todo a la vista" en el grafico de trayectorias
+  carrerasCentro: null,   // que punto del siglo se esta mirando, de 0 a 1
   editionCategory: "todas",  // "todas" | "A" | "B" — qué se ve en el palmarés
   routes: [],
   map: null,          // plano (calles, manzanas, verde): llega aparte
@@ -788,17 +789,27 @@ function chartCareers(category) {
   </div>`;
 }
 
-function pintarCarreras({ conservarScroll = false } = {}) {
+/* Que año se está mirando, de 0 a 1. Lo apuntan tanto el desplazamiento normal
+ * como el arrastre: el arrastre mueve `scrollLeft` a mano y esperar a que el
+ * navegador devuelva el evento es dar un rodeo para saber algo que ya sabemos. */
+function apuntarCentro(caja) {
+  if (caja.scrollWidth <= caja.clientWidth) return;
+  state.carrerasCentro = (caja.scrollLeft + caja.clientWidth / 2) / caja.scrollWidth;
+}
+
+function pintarCarreras() {
   const caja = document.querySelector("[data-carreras]");
   if (!caja) return;
   const rows = carrerasRows(state.statsCategory);
   if (!rows.length) return;
 
-  const scrollPrevio = conservarScroll ? caja.scrollLeft : 0;
-  const anchoPrevio = caja.scrollWidth;
-
   const { min, max } = statsYears();
-  const hueco = Math.max(220, caja.clientWidth - CARRERAS.nombres);
+  // El ancho de la columna de nombres se MIDE, no se supone: en el movil la CSS
+  // se la estrecha para no comerse media pantalla, y dar por hecho los 128 px
+  // dejaba el grafico desbordando desde el primer momento.
+  const anchoNombres = caja.querySelector(".carreras-nombres").getBoundingClientRect().width
+    || CARRERAS.nombres;
+  const hueco = Math.max(180, caja.clientWidth - anchoNombres);
   const ancho = Math.round(hueco * state.carrerasZoom);
   const height = CHART.padT + rows.length * CHART.rowH + CHART.padB;
   const scale = makeScale({ from: min, to: max, width: ancho, left: CARRERAS.padIzq });
@@ -839,11 +850,26 @@ function pintarCarreras({ conservarScroll = false } = {}) {
   }).join("");
 
   caja.classList.toggle("hay-scroll", state.carrerasZoom > 1);
-  // Al comprimir o estirar se mira el mismo tramo de siglo, no el mismo pixel:
-  // se conserva el centro de lo que se estaba viendo.
-  if (conservarScroll && anchoPrevio > 0) {
-    const centro = (scrollPrevio + caja.clientWidth / 2) / anchoPrevio;
-    caja.scrollLeft = centro * caja.scrollWidth - caja.clientWidth / 2;
+  // Los botones del tiempo los pinta `renderStatsTab`, que NO se vuelve a
+  // ejecutar al cambiar el zoom -a proposito: repintar la pestana entera
+  // mandaria la pagina de vuelta arriba-. Se ponen al dia aqui.
+  const fila = document.querySelector("[data-carreras-tiempo]");
+  if (fila) {
+    const todoElSiglo = state.carrerasZoom <= 1;
+    fila.querySelector('[data-carreras-zoom="fit"]').classList.toggle("is-on", todoElSiglo);
+    fila.querySelector(".zoom-hint").hidden = todoElSiglo;
+  }
+  // El `scroll` de un elemento no burbujea, asi que delegarlo en `document` no
+  // lo cazaba: va aqui, en la caja misma. `onscroll` en vez de
+  // `addEventListener` porque este bloque se repinta y no queremos apilar
+  // oyentes en cada repintado.
+  caja.onscroll = () => apuntarCentro(caja);
+  // Lo que se guarda es el AÑO que se estaba mirando, no el pixel: al estirar
+  // el tiempo el pixel deja de significar lo mismo, y al volver de la ficha de
+  // un carrocista el grafico saltaba de vuelta a 1908 aunque estuvieras en los
+  // setenta.
+  if (state.carrerasCentro != null && caja.scrollWidth > caja.clientWidth) {
+    caja.scrollLeft = state.carrerasCentro * caja.scrollWidth - caja.clientWidth / 2;
   }
 }
 
@@ -1198,17 +1224,10 @@ function renderStatsTab() {
       ${chartFloatsPerYear(zoom)}
 
       <h3 class="section">Trayectoria de los carrocistas</h3>
-      <div class="chart-tabs carreras-barra">
+      <div class="chart-tabs">
         ${[["all", "Todas"], ["A", "Categoría A"], ["B", "Categoría B"]].map(([cat, label]) =>
           `<button class="view${category === cat ? " is-on" : ""}" type="button"
             data-stats-cat="${cat}">${label}</button>`).join("")}
-        <span class="zoom-label">Tiempo</span>
-        <button class="view" type="button" data-carreras-zoom="out"
-          title="Comprimir el tiempo: más años a la vista">−</button>
-        <button class="view" type="button" data-carreras-zoom="in"
-          title="Estirar el tiempo: más sitio entre año y año">+</button>
-        <button class="view" type="button" data-carreras-zoom="fit"
-          title="Volver a ver el siglo entero">Todo</button>
       </div>
       <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
       de su primera a su última carroza; cada punto es una edición, y el color dice cómo le fue.
@@ -1221,6 +1240,16 @@ function renderStatsTab() {
         <span class="win-key">${ICON_TROPHY}Ganador</span>
         <span class="podium-key">${ICON_PODIUM}Podio</span>
         <span><i class="dot ran"></i>Resto</span>
+      </div>
+      <div class="chart-tabs zoom-tabs" data-carreras-tiempo>
+        <span class="zoom-label">Tiempo</span>
+        <button class="view" type="button" data-carreras-zoom="out"
+          title="Comprimir: más años a la vista">−</button>
+        <button class="view" type="button" data-carreras-zoom="in"
+          title="Estirar: más sitio entre año y año">+</button>
+        <button class="view" type="button"
+          data-carreras-zoom="fit" title="Volver a ver el siglo entero">Todo</button>
+        <span class="zoom-hint" hidden>arrastra el gráfico →</span>
       </div>
       ${chartCareers(category)}
 
@@ -2329,8 +2358,14 @@ function frenarZoomAlEnfocar() {
  * tamano de la ventana hay que volver a medir. */
 function setupCarreras() {
   let arrastre = null;
+  // Se apunta al soltar y lo consume el `click` que viene detras. Si por lo que
+  // sea ese click no llega -por ejemplo, si se suelta fuera de la ventana- la
+  // marca se quedaria puesta y se comeria un clic legitimo mas tarde: cada
+  // gesto nuevo la limpia.
+  let fueArrastre = false;
 
   document.addEventListener("mousedown", evento => {
+    fueArrastre = false;
     const caja = evento.target.closest("[data-carreras]");
     if (!caja || caja.scrollWidth <= caja.clientWidth) return;
     arrastre = { caja, x0: evento.clientX, scroll0: caja.scrollLeft, movido: 0 };
@@ -2342,17 +2377,22 @@ function setupCarreras() {
     if (arrastre.movido < 4) return;
     arrastre.caja.classList.add("arrastrando");
     arrastre.caja.scrollLeft = arrastre.scroll0 - dx;
+    apuntarCentro(arrastre.caja);
     evento.preventDefault();
   });
+  // El `click` llega DESPUES del `mouseup`, asi que no se puede consultar el
+  // arrastre desde el: para entonces ya se ha soltado. Se deja escrito al
+  // soltar si aquello fue un arrastre, y el click lo lee y se anula.
   window.addEventListener("click", evento => {
-    // Un arrastre termina en click: si se ha movido, ese click no es un clic.
-    if (arrastre && arrastre.movido >= 4 && evento.target.closest("[data-carreras]")) {
-      evento.stopPropagation();
-      evento.preventDefault();
-    }
+    if (!fueArrastre) return;
+    fueArrastre = false;
+    if (!evento.target.closest("[data-carreras]")) return;
+    evento.stopPropagation();
+    evento.preventDefault();
   }, true);
   window.addEventListener("mouseup", () => {
     if (!arrastre) return;
+    fueArrastre = arrastre.movido >= 4;
     arrastre.caja.classList.remove("arrastrando");
     arrastre = null;
   });
@@ -2372,7 +2412,7 @@ function setupCarreras() {
   let temporizador = null;
   window.addEventListener("resize", () => {
     clearTimeout(temporizador);
-    temporizador = setTimeout(() => pintarCarreras({ conservarScroll: true }), 120);
+    temporizador = setTimeout(() => pintarCarreras(), 120);
   });
 }
 
@@ -2763,6 +2803,24 @@ function renderEditionDetail(edition) {
     ? ranked.filter(entry => entry.category === shownCat) : ranked;
   const withPhotos = shown.some(entry => (entry.image_urls || []).length);
 
+  // Anterior y siguiente recorren TODAS las ediciones por orden de año, no las
+  // que deje el filtro puesto. Saltarse 1937-1940 porque un filtro los esconde
+  // seria esconder justo lo que este archivo quiere enseñar: que hay años de
+  // los que no ha quedado nada.
+  const anios = state.editions.map(e => e.year).sort((a, b) => a - b);
+  const donde = anios.indexOf(edition.year);
+  const anterior = donde > 0 ? anios[donde - 1] : null;
+  const siguiente = donde >= 0 && donde < anios.length - 1 ? anios[donde + 1] : null;
+  // Con el año escrito en el boton y no una flecha sola: se ve a donde lleva
+  // antes de pulsarlo, que en un archivo con huecos no es lo mismo que "+1".
+  const navEdicion = `
+    <nav class="edicion-nav" aria-label="Otras ediciones">
+      ${anterior ? `<button class="nav-edicion" type="button" data-year="${anterior}"
+        title="Edición de ${anterior}">‹ ${anterior}</button>` : "<span></span>"}
+      ${siguiente ? `<button class="nav-edicion" type="button" data-year="${siguiente}"
+        title="Edición de ${siguiente}">${siguiente} ›</button>` : "<span></span>"}
+    </nav>`;
+
   els.detail.innerHTML = `
     <div class="detail-head edition-head">
       ${edition.parade_date_text
@@ -2778,6 +2836,7 @@ function renderEditionDetail(edition) {
         <span class="disc"><b>${num(groupCount)}</b>grupos</span>
       </span>
     </div>
+    ${navEdicion}
     <div class="chips">
       ${edition.status !== "published"
         ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
@@ -2958,6 +3017,12 @@ function bloqueConvenciones() {
     </details>`;
 }
 
+/* El enlace a batalladefloresdemo.netlify.app: escrito y listo, pero apagado
+ * mientras esa página esté en pruebas. Recomendar un sitio es responder por él,
+ * y no se recomienda algo que aún puede cambiar debajo. Se enciende poniendo
+ * `true`, sin tocar nada más. */
+const DEMO_EN_PRUEBAS = false;
+
 function renderAbout() {
   const summary = state.dataset.summary || {};
   els.detail.innerHTML = `
@@ -2981,6 +3046,8 @@ function renderAbout() {
     (fechas, inscripciones, programa) acude a
     <a href="https://www.laredo.es/09/fiestas_flores.php" target="_blank" rel="noopener">laredo.es</a>
     o a <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>.</p>
+    ${DEMO_EN_PRUEBAS ? `<p>Otra página no oficial con información muy útil es
+    <a href="https://batalladefloresdemo.netlify.app/" target="_blank" rel="noopener">batalladefloresdemo.netlify.app</a>.</p>` : ""}
 
     <h3 class="section">De dónde salen los datos</h3>
     <p>El grueso del archivo histórico procede de
@@ -2994,8 +3061,16 @@ function renderAbout() {
     cita exacta cuando es un libro o un recorte—. Al final de cada edición hay un bloque
     <b>«De dónde sale cada dato»</b> que lo desglosa, y lo que no está claro se marca en vez
     de resolverse por las bravas.</p>
-    <p>Las imágenes se muestran enlazadas desde el servidor original y
-    pertenecen a sus autores.</p>
+    <p class="descarga">Y está entero en una tabla:
+    <a href="batalla_de_flores/data/afirmaciones.csv" download>afirmaciones.csv</a>
+    — una fila por <b>cada fuente que afirma algo</b>, con qué dice, de dónde sale y su
+    enlace. Se abre en cualquier hoja de cálculo. Si dos fuentes coinciden salen las dos
+    filas, y <b>lo que perdió una discrepancia también está</b>, marcado como descartado:
+    esconder la fuente equivocada sería quedarse con media historia.</p>
+    <p>Las imágenes <b>las servimos nosotros</b>, desde esta web. Antes se enlazaban al
+    servidor de batalladeflores.net, así que cada visita aquí le gastaba a Santi su ancho
+    de banda sin que él pudiera ni saberlo. Servirlas no cambia de quién son: cada una
+    sigue diciendo de dónde viene y enlazando al original.</p>
 
     <h3 class="section">De dónde salen las fotos</h3>
     <p>Las imágenes <b>no son mías</b>. La mayoría llegan a través de
@@ -4021,7 +4096,7 @@ function bindEvents() {
         : Math.min(CARRERAS.zoomMax, Math.max(CARRERAS.zoomMin, state.carrerasZoom * factor));
       // Se repinta solo el grafico, no la pestana entera: repintarla mandaria la
       // pagina de vuelta arriba y perderia el tramo que se estaba mirando.
-      pintarCarreras({ conservarScroll: true });
+      pintarCarreras();
       return;
     }
 

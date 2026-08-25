@@ -419,6 +419,17 @@ body.redimensionando { cursor: col-resize; user-select: none; }
    al borde derecho se confundían con el botón rojo de cerrar. */
 .edition-head { align-items: center; gap: 12px; padding-right: 54px; }
 
+/* Anterior y siguiente edición. Los `<span>` vacíos de los extremos —1908 no
+   tiene anterior, 2026 no tiene siguiente— mantienen el `space-between`, para
+   que "siguiente" no se deslice a la izquierda en el primer año. */
+.edicion-nav { display: flex; justify-content: space-between; gap: 8px; margin: 2px 0 6px; }
+.nav-edicion {
+  padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--panel); color: var(--muted); cursor: pointer;
+  font: inherit; font-size: 12px; font-variant-numeric: tabular-nums;
+}
+.nav-edicion:hover { border-color: var(--rose); color: var(--rose); }
+
 .discs { display: inline-flex; gap: 6px; flex-wrap: wrap; }
 /* «114ª edición» en pastilla achatada, a la misma altura que los discos.
    Con el rótulo completo se partía en cuatro líneas. */
@@ -565,6 +576,13 @@ table.palmares td.c-photo .thumb img {
 .stats-block { padding-bottom: 6px; }
 .chart { display: block; width: 100%; height: auto; margin: 4px 0 2px; }
 .chart-note { margin: 0 0 6px; color: var(--muted); font-size: 11.5px; line-height: 1.35; max-width: 66ch; }
+/* El enlace al libro mayor: destacado, porque es la prueba de todo lo que la
+   página afirma y si pasa por un enlace más del párrafo no lo abre nadie. */
+.descarga {
+  margin: 8px 0; padding: 9px 12px;
+  border: 1px solid var(--line-soft); border-left: 3px solid var(--rose);
+  border-radius: 8px; background: #fffaf5;
+}
 .chart-tabs { display: flex; gap: 5px; margin-bottom: 6px; }
 .zoom-tabs { align-items: center; }
 .zoom-label { color: var(--muted); font-size: 11px; margin-right: 1px; }
@@ -622,7 +640,7 @@ table.palmares td.c-photo .thumb img {
 .carreras.arrastrando { cursor: grabbing; user-select: none; }
 .carreras-nombres {
   position: sticky; left: 0; z-index: 2; flex: 0 0 128px;
-  width: 128px; align-self: stretch;
+  width: 128px;
   /* Degradado en vez de corte seco: al pasar una fila larga por debajo se ve
      que sigue, no que se ha acabado. */
   background: linear-gradient(to right, var(--panel) 86%, rgba(255, 250, 245, 0));
@@ -640,7 +658,7 @@ table.palmares td.c-photo .thumb img {
 .career.hover-fila .career-hit { fill: var(--rose-soft); }
 .carrera-nombre:hover,
 .carrera-nombre.hover-fila { color: var(--rose); font-weight: 600; }
-.carreras-barra { align-items: center; flex-wrap: wrap; }
+.zoom-hint[hidden] { display: none; }
 .span { stroke: #d9cec4; stroke-width: 1.5; }
 
 .dot.win { fill: var(--gold); }
@@ -1135,6 +1153,11 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .controls select { flex: 0 0 auto; min-width: 0; font-size: 12.5px; padding: 4px 6px; }
   .controls .ghost { flex: none; }
   .controls .ghost[hidden] { display: none; }
+
+  /* Los nombres de los carrocistas, mas estrechos: 128 px de 375 son un tercio
+     de la pantalla dedicado a la columna que NO es el grafico. */
+  .carreras-nombres { flex-basis: 92px; width: 92px; }
+  .carrera-nombre { max-width: 86px; font-size: 9px; }
 
   /* Décadas plegables. Cerradas fluyen como fichas, cuatro o cinco por línea,
      con forma distinta a los años para que no se confundan: pastilla con tinte,
