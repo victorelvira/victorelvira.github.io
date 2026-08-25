@@ -1,0 +1,3897 @@
+{
+ "type": "FeatureCollection",
+ "_note": "Canon from List of works by Bronzino (Wikipedia). Coords via MediaWiki API.",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Pietà",
+    "year": "1529",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "105 x 100 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Angelo_Bronzino_-_Piet%C3%A0_-_WGA3284.jpg/500px-Angelo_Bronzino_-_Piet%C3%A0_-_WGA3284.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Piet%C3%A0_(Bronzino,_1529)",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q83295755",
+    "wikidata": "https://www.wikidata.org/wiki/Q83295755",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/e_pieta.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Pietà with Saint Mary Magdalene",
+      "qid": "Q83295755",
+      "url": "https://www.wikidata.org/wiki/Q83295755"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.3136,
+     59.9406
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Flaying of Marsyas",
+    "year": "c. 1531–1532",
+    "city": "Saint Petersburg",
+    "location": "Hermitage Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on canvas",
+    "dimensions": "48 × 119 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Angelo_Bronzino_-_Sfida_tra_apollo_e_marsia.jpg/500px-Angelo_Bronzino_-_Sfida_tra_apollo_e_marsia.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Flaying_of_Marsyas_(Bronzino)",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "hermitage-museum",
+    "country": "Russia",
+    "qid": "Q21723151",
+    "wikidata": "https://www.wikidata.org/wiki/Q21723151"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.142,
+     51.501
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Lady in Green",
+    "year": "1530–1532",
+    "city": "England",
+    "location": "Royal Collection",
+    "attribution": "generally accepted",
+    "medium": "Oil on poplar panel",
+    "dimensions": "76.6 x 66.2 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Agnolo_Bronzino_%281503-72%29_-_Portrait_of_a_Lady_in_Green_-_RCIN_405754_-_Royal_Collection.jpg/500px-Agnolo_Bronzino_%281503-72%29_-_Portrait_of_a_Lady_in_Green_-_RCIN_405754_-_Royal_Collection.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "royal-collection",
+    "country": "United Kingdom",
+    "qid": "Q28028694",
+    "wikidata": "https://www.wikidata.org/wiki/Q28028694",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q28028694 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Young Man as Saint Sebastian",
+    "year": "c. 1533",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Thyssen-Bornemisza Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "87 x 76.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Bronzino_-_Saint_Sebastian_-_Google_Art_Project.jpg/500px-Bronzino_-_Saint_Sebastian_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_a_Young_Man_as_Saint_Sebastian",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "qid": "Q18683039",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683039",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/sebastia.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Saint Sebastian",
+      "qid": "Q18683039",
+      "url": "https://www.wikidata.org/wiki/Q18683039"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Ugolino Martelli",
+    "year": "1536–1537",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on poplar panel",
+    "dimensions": "102 × 85 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Angelo_Bronzino_-_portrait_of_Ugolino_Martelli_-_WGA3264.jpg/500px-Angelo_Bronzino_-_portrait_of_Ugolino_Martelli_-_WGA3264.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Ugolino_Martelli",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "qid": "Q7232310",
+    "wikidata": "https://www.wikidata.org/wiki/Q7232310"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Young Man with a Book",
+    "year": "1530s",
+    "city": "New York",
+    "location": "Metropolitan Museum of Art",
+    "attribution": "generally accepted",
+    "medium": "Oil on wood",
+    "dimensions": "95.6 cm × 74.9 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bronzino_%28Agnolo_di_Cosimo_di_Mariano%29_-_Portrait_of_a_Young_Man_-_The_Metropolitan_Museum_of_Art.jpg/500px-Bronzino_%28Agnolo_di_Cosimo_di_Mariano%29_-_Portrait_of_a_Young_Man_-_The_Metropolitan_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_a_Young_Man_with_a_Book_(Bronzino)",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "country": "United States",
+    "qid": "Q3937730",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937730",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/2/young_ma.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Man Holding a Statuette",
+    "year": "c. 1525–1575",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
+    "attribution": "generally accepted",
+    "medium": "Oil on wood transferred to canvas",
+    "dimensions": "99 x 79 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bronzino_-_Portrait_d%27homme_tenant_une_statuette_02.jpg/500px-Bronzino_-_Portrait_d%27homme_tenant_une_statuette_02.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "louvre",
+    "qid": "Q18609058",
+    "wikidata": "https://www.wikidata.org/wiki/Q18609058",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18609058 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.05778,
+     42.36028
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Adoration of the Shepherds",
+    "year": "1539–1540",
+    "city": "Boston",
+    "country": "United States",
+    "location": "Museum of Fine Arts",
+    "attribution": "generally accepted",
+    "medium": "Oil on poplar panel",
+    "dimensions": "65.3 x 46.7 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Worship_of_the_shepherds_by_bronzino.jpg/500px-Worship_of_the_shepherds_by_bronzino.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Adoration_of_the_Shepherds_(Bronzino)",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q50973173",
+    "wikidata": "https://www.wikidata.org/wiki/Q50973173",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/adorati3.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Adoration of the Shepherds",
+      "qid": "Q50973173",
+      "url": "https://www.wikidata.org/wiki/Q50973173"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Panciatichi Holy Family",
+    "year": "1541",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "117 x 93 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bronzino_-_Sacra_famiglia_Panciatichi_or_Madonna_Panciatichi_-_Google_Art_Project.jpg/500px-Bronzino_-_Sacra_famiglia_Panciatichi_or_Madonna_Panciatichi_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Panciatichi_Holy_Family",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q3944462",
+    "wikidata": "https://www.wikidata.org/wiki/Q3944462",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3/holyfamx.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Head of a Smiling Young Woman",
+    "year": "c. 1542–1543",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
+    "attribution": "generally accepted",
+    "medium": "Charcoal and black chalk, with stumping, highlighted with white chalk",
+    "dimensions": "28.8 x 21.6 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bronzino-head-of-a-smiling-young-woman-1542-43.jpg/500px-Bronzino-head-of-a-smiling-young-woman-1542-43.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "louvre"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.2561,
+     43.7694
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Crossing of the Red Sea",
+    "year": "1542",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Palazzo Vecchio",
+    "attribution": "generally accepted",
+    "medium": "Fresco",
+    "dimensions": "320 x 490 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Agnolo_Bronzino_-_The_crossing_of_the_Red_Sea_-_Google_Art_Project.jpg/500px-Agnolo_Bronzino_-_The_crossing_of_the_Red_Sea_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Crossing_of_the_Red_Sea_(Bronzino)",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "palazzo-vecchio",
+    "qid": "Q1404331",
+    "wikidata": "https://www.wikidata.org/wiki/Q1404331"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.2561,
+     43.7694
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Adoration of the Bronze Snake",
+    "year": "1540–1545",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Palazzo Vecchio",
+    "attribution": "generally accepted",
+    "medium": "Fresco",
+    "dimensions": "380 x 300 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Agnolo_Bronzino_-_The_adoration_of_the_bronze_snake_-_Google_Art_Project_%2827465014%29.jpg/500px-Agnolo_Bronzino_-_The_adoration_of_the_bronze_snake_-_Google_Art_Project_%2827465014%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "palazzo-vecchio"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.02,
+     47.24
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Deposition of Christ",
+    "year": "1545",
+    "city": "Besançon",
+    "location": "Musée des Beaux-Arts",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "268 × 173 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/D%C3%A9ploration_sur_le_Christ_mort_%28Bronzino%29.jpg/500px-D%C3%A9ploration_sur_le_Christ_mort_%28Bronzino%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Deposition_of_Christ_(Bronzino)",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "musee-des-beaux-arts",
+    "qid": "Q1131476",
+    "wikidata": "https://www.wikidata.org/wiki/Q1131476",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/3a/01eleono.html",
+    "country": "France"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.18782,
+     45.47196
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Andrea Doria as Neptune",
+    "year": "c. 1530s–1540s",
+    "city": "Milan",
+    "country": "Italy",
+    "location": "Pinacoteca di Brera",
+    "attribution": "generally accepted",
+    "medium": "Oil on canvas",
+    "dimensions": "199.5 × 149 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Angelo_Bronzino_-_Portrait_of_Andrea_Doria_as_Neptune_-_WGA3261.jpg/500px-Angelo_Bronzino_-_Portrait_of_Andrea_Doria_as_Neptune_-_WGA3261.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Andrea_Doria_as_Neptune",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "pinacoteca-di-brera",
+    "qid": "Q493792",
+    "wikidata": "https://www.wikidata.org/wiki/Q493792",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/2/doria.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Bartolomeo Panciatichi",
+    "year": "c. 1540",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "104 × 85 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Painting_-_Portrait_of_Bartolomeo_Panciatichi_by_Bronzino.jpg/500px-Painting_-_Portrait_of_Bartolomeo_Panciatichi_by_Bronzino.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Bartolomeo_Panciatichi",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q3937473",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937473",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/2/panciat1.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Lucrezia Panciatichi",
+    "year": "c. 1540–1545",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "101 x 82.8 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Agnolo_di_Cosimo_Tori_detto_Bronzino_%28Firenze%2C_1503-1572%29_-_Ritratto_di_Lucrezia_Panciatichi_-_736_-_Uffizi_Gallery.jpg/500px-Agnolo_di_Cosimo_Tori_detto_Bronzino_%28Firenze%2C_1503-1572%29_-_Ritratto_di_Lucrezia_Panciatichi_-_736_-_Uffizi_Gallery.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Lucrezia_Panciatichi",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q1990128",
+    "wikidata": "https://www.wikidata.org/wiki/Q1990128",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/2/panciat2.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Bia de' Medici",
+    "year": "c. 1542",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "63.3 x 48 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Bia_di_Cosimo_de%E2%80%98_Medici%2C_by_Agnolo_Bronzino.jpg/500px-Bia_di_Cosimo_de%E2%80%98_Medici%2C_by_Agnolo_Bronzino.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Bia_de%27_Medici",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q3937472",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937472"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Giovanni de' Medici as a Child",
+    "year": "1545",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Tempera on panel",
+    "dimensions": "58 × 48 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Giovanni_de%27_Medici_as_a_Child.jpg/500px-Giovanni_de%27_Medici_as_a_Child.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Giovanni_de%27_Medici_as_a_Child",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q3784272",
+    "wikidata": "https://www.wikidata.org/wiki/Q3784272",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/1/g_medici.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.0647,
+     42.3594
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Eleanor of Toledo and her son Giovanni de' Medici",
+    "year": "c. 1545",
+    "location": "Detroit Institute of Arts",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "115 x 96 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Bronzino_-_Eleonora_di_Toledo_col_figlio_Giovanni_-_Google_Art_Project.jpg/500px-Bronzino_-_Eleonora_di_Toledo_col_figlio_Giovanni_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Eleanor_of_Toledo",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "city": "Detroit",
+    "country": "United States",
+    "qid": "Q1328065",
+    "wikidata": "https://www.wikidata.org/wiki/Q1328065",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/1/eleonora.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici",
+    "year": "1543–1545",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "74 x 58 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Portrait_of_Cosimo_I_de%27_Medici_in_armour%2C_by_Agnolo_Bronzino_%28Uffizi_Gallery%2C_Florence%29.jpg/500px-Portrait_of_Cosimo_I_de%27_Medici_in_armour%2C_by_Agnolo_Bronzino_%28Uffizi_Gallery%2C_Florence%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Cosimo_I_de%27_Medici",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q3625842",
+    "wikidata": "https://www.wikidata.org/wiki/Q3625842",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/1/cosimo.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.93361,
+     52.40833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici",
+    "year": "c. 1545",
+    "city": "Poznań",
+    "location": "National Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "76 x 59 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bronzino_Cosimo_de%27_Medici.jpg/500px-Bronzino_Cosimo_de%27_Medici.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-museum",
+    "qid": "Q117215371",
+    "wikidata": "https://www.wikidata.org/wiki/Q117215371",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q117215371 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Cosimo I de' Medici in armour",
+      "qid": "Q105296824",
+      "url": "https://www.wikidata.org/wiki/Q105296824"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     151.2172,
+     -33.8686
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici",
+    "year": "c. 1545",
+    "city": "Sydney",
+    "location": "Art Gallery of New South Wales",
+    "attribution": "generally accepted",
+    "medium": "Oil on poplar panel",
+    "dimensions": "86 x 66.8 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Agnolo_Bronzino_-_Cosimo_I_de%27_Medici_in_armour_-_Google_Art_Project.jpg/500px-Agnolo_Bronzino_-_Cosimo_I_de%27_Medici_in_armour_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "art-gallery-of-new-south-wales"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici",
+    "year": "c. 1545",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Thyssen-Bornemisza Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "76.5 x 59 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Cosimo_I_de%27_Medici_in_Armour_%28by_Agnolo_Bronzino%2C_ca._1545%29_-_Museo_Nacional_Thyssen-Bornemisza%2C_Madrid.jpg/500px-Cosimo_I_de%27_Medici_in_Armour_%28by_Agnolo_Bronzino%2C_ca._1545%29_-_Museo_Nacional_Thyssen-Bornemisza%2C_Madrid.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "thyssen-bornemisza-museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48953,
+     41.90278
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Stefano Colonna",
+    "year": "c. 1546",
+    "city": "Rome",
+    "country": "Italy",
+    "location": "Galleria Nazionale d'Arte Antica",
+    "attribution": "generally accepted",
+    "medium": "Tempera on wood",
+    "dimensions": "125 x 95 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Stefano_IV_Colonna%2C_por_Bronzino.jpg/500px-Stefano_IV_Colonna%2C_por_Bronzino.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Stefano_Colonna",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "galleria-nazionale-d-arte-antica",
+    "qid": "Q28113318",
+    "wikidata": "https://www.wikidata.org/wiki/Q28113318",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/2/colonna.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Holy Family with Saint Anne and the Infant Saint John",
+    "year": "c. 1545–1546",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on wood",
+    "dimensions": "126.8 x 101.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Agnolo_di_Cosimo%2C_called_Bronzino_-_Holy_Family_with_St._Anne_and_the_Infant_St._John_-_Google_Art_Project.jpg/500px-Agnolo_di_Cosimo%2C_called_Bronzino_-_Holy_Family_with_St._Anne_and_the_Infant_St._John_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Holy_Family_with_Saint_Anne_and_the_Infant_Saint_John",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q118190483",
+    "wikidata": "https://www.wikidata.org/wiki/Q118190483",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Holy Family with St. Anne and the Infant St. John",
+      "qid": "Q27979302",
+      "url": "https://www.wikidata.org/wiki/Q27979302"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Holy Family with Saint Elizabeth and the Infant Saint John the Baptist",
+    "year": "c. 1525–1550",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "133 x 101 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Bronzino_-_La_Sainte_Famille_avec_sainte_Anne_et_le_petit_saint_Jean-Baptiste_02.jpg/500px-Bronzino_-_La_Sainte_Famille_avec_sainte_Anne_et_le_petit_saint_Jean-Baptiste_02.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "louvre"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Venus, Cupid, Folly and Time",
+    "year": "c. 1545",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on wood",
+    "dimensions": "146.1 × 116.2 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Angelo_Bronzino_-_Venus%2C_Cupid%2C_Folly_and_Time_-_National_Gallery%2C_London.jpg/500px-Angelo_Bronzino_-_Venus%2C_Cupid%2C_Folly_and_Time_-_National_Gallery%2C_London.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Venus,_Cupid,_Folly_and_Time",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q1430990",
+    "wikidata": "https://www.wikidata.org/wiki/Q1430990",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/4/venus_cx.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.05778,
+     42.36028
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Venus, Cupid and Jealousy",
+    "year": "1548–1550",
+    "city": "Boston",
+    "country": "United States",
+    "location": "Museum of Fine Arts",
+    "attribution": "generally accepted",
+    "medium": "Oil on poplar",
+    "dimensions": "192 x 142 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Budapest_kunst_0018.tif/lossy-page1-250px-Budapest_kunst_0018.tif.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museum-of-fine-arts",
+    "qid": "Q50906201",
+    "wikidata": "https://www.wikidata.org/wiki/Q50906201",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q50906201 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Young Man",
+    "year": "c. 1550–1555",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "75 x 57.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Angelo_Bronzino_-_Portrait_of_a_Young_Man.jpg/500px-Angelo_Bronzino_-_Portrait_of_a_Young_Man.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q107447067",
+    "wikidata": "https://www.wikidata.org/wiki/Q107447067",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q107447067 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a Young Man",
+      "qid": "Q26706099",
+      "url": "https://www.wikidata.org/wiki/Q26706099"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.967222222,
+     40.771111111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Lodovico Capponi",
+    "year": "1550",
+    "location": "The Frick Collection",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20055.jpg?width=500",
+    "qid": "Q19857192",
+    "wikidata": "https://www.wikidata.org/wiki/Q19857192",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19857192",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "117 x 86 cm",
+    "medium": "Oil on panel",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Lodovico Capponi"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.692222222,
+     40.413888888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Garzia de' Medici",
+    "year": "1550",
+    "location": "Museo del Prado",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Garcia%20de%27%20Medici%20by%20Angelo%20Bronzino.jpg?width=500",
+    "qid": "Q27697982",
+    "wikidata": "https://www.wikidata.org/wiki/Q27697982",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27697982",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "38 x 48 cm",
+    "medium": "Oil on panel",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Don Garcia de' Medici"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Don Garcia de' Medici",
+    "year": "1555–1565",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on tin",
+    "dimensions": "15 x 12 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Angelo_Bronzino_-_Garcia_de%27_Medici_-_WGA3255.jpg/500px-Angelo_Bronzino_-_Garcia_de%27_Medici_-_WGA3255.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.2501,
+     43.7652
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of the Dwarf Nano Morgante",
+    "year": "1552",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Palazzo Pitti",
+    "attribution": "generally accepted",
+    "medium": "Oil on canvas",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Nano_Morgante.jpg/500px-Nano_Morgante.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_the_Dwarf_Nano_Morgante",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "palazzo-pitti",
+    "qid": "Q108314527",
+    "wikidata": "https://www.wikidata.org/wiki/Q108314527"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Young Man",
+    "year": "c. 1560",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on poplar panel",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Bronzino_-_Bildnis_eines_J%C3%BCnglings%2C_um_1560%2C_S.2_%28cropped%29.jpg/500px-Bronzino_-_Bildnis_eines_J%C3%BCnglings%2C_um_1560%2C_S.2_%28cropped%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Allegory of Happiness",
+    "year": "c. 1567",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on copper",
+    "dimensions": "40 x 30 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Angelo_Bronzino_-_Allegorie_Des_Gl%C3%BCcks.jpg/500px-Angelo_Bronzino_-_Allegorie_Des_Gl%C3%BCcks.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Allegory_of_Happiness",
+    "creation_place": "Florence",
+    "creation_lat": 43.7696,
+    "creation_lon": 11.2558,
+    "_source": {
+     "source": "Wikipedia: List of works by Bronzino",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q50474718",
+    "wikidata": "https://www.wikidata.org/wiki/Q50474718",
+    "wga_url": "https://www.wga.hu/html/b/bronzino/4/happines.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60602901,
+     55.74702868
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "The Holy Family with the Infant Saint John the Baptist (Madonna Stroganoff)",
+    "year": "1541",
+    "location": "Pushkin Museum of Fine Arts",
+    "city": "Khamovniki District",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20The%20Holy%20Family%20with%20the%20Infant%20Saint%20John%20the%20Baptist%20%28Madonna%20Stroganoff%29.jpg?width=500",
+    "qid": "Q28797541",
+    "wikidata": "https://www.wikidata.org/wiki/Q28797541",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28797541",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a girl",
+    "year": "1545",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%2C%20Agnolo%20-%20Portrait%20of%20a%20Young%20Girl%20with%20a%20book.jpeg?width=500",
+    "qid": "Q48814933",
+    "wikidata": "https://www.wikidata.org/wiki/Q48814933",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q48814933",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Francesco I de' Medici as a Child",
+    "year": "1551",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/FrancescodeMedici.jpg?width=500",
+    "qid": "Q50378007",
+    "wikidata": "https://www.wikidata.org/wiki/Q50378007",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50378007",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Maria (di Cosimo I) de' Medici",
+    "year": "1551",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Maria%20%28di%20Cosimo%20I%29%20de%27%20Medici.jpg?width=500",
+    "qid": "Q50378015",
+    "wikidata": "https://www.wikidata.org/wiki/Q50378015",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50378015",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a young man with a lute",
+    "year": "1532",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20064.jpg?width=500",
+    "qid": "Q50384906",
+    "wikidata": "https://www.wikidata.org/wiki/Q50384906",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50384906",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Pygmalion and Galatea",
+    "year": "1529",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20068.jpg?width=500",
+    "qid": "Q111577849",
+    "wikidata": "https://www.wikidata.org/wiki/Q111577849",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111577849",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Lady in Red (Francesca Salviati?)",
+    "year": "1533",
+    "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Lady%20in%20Red%20%28Francesca%20Salviati%3F%29%20%28SM%201136%29.png?width=500",
+    "qid": "Q64788316",
+    "wikidata": "https://www.wikidata.org/wiki/Q64788316",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64788316",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Man",
+    "year": "",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Art%2C%20Agnolo%20Bronzino%20%281503%20-%201572%29%20-%20Male%20portrait%20-%20B.82%20-%20Gem%C3%A4ldegalerie.jpg?width=500",
+    "qid": "Q107437670",
+    "wikidata": "https://www.wikidata.org/wiki/Q107437670",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107437670",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a boy",
+    "year": "1540",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%2C%20ritratto%20di%20ragazzo%2C%201540-45%20ca.jpg?width=500",
+    "qid": "Q107446083",
+    "wikidata": "https://www.wikidata.org/wiki/Q107446083",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107446083",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a boy",
+    "year": "1542",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%2C%20ritratto%20di%20ragazzo%2C%201560%20ca.jpg?width=500",
+    "qid": "Q107446091",
+    "wikidata": "https://www.wikidata.org/wiki/Q107446091",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107446091",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.694925,
+     40.416041
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Cosimo de Medici in Armour",
+    "year": "1545",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Cosimo%20I%20de%27%20Medici%20in%20Armour%20%28by%20Agnolo%20Bronzino%29%20-%20Museo%20Nacional%20Thyssen-Bornemisza%2C%20Madrid%20-%20%28Original%20colors%29.jpg?width=500",
+    "qid": "Q21711382",
+    "wikidata": "https://www.wikidata.org/wiki/Q21711382",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21711382",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Piero de' Medici",
+    "year": "1550",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Piero%20di%20Cosimo%20de%27%20Medici.jpg?width=500",
+    "qid": "Q26707718",
+    "wikidata": "https://www.wikidata.org/wiki/Q26707718",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26707718",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "The Madonna and Child with Saints",
+    "year": "1545",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20The%20Madonna%20and%20Child%20with%20Saint%20John%20the%20Baptist%20and%20Saint%20Elizabeth%2C%20National%20Gallery%2C%20London.jpg?width=500",
+    "qid": "Q26707762",
+    "wikidata": "https://www.wikidata.org/wiki/Q26707762",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26707762",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.928902,
+     52.40865
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici in armour",
+    "year": "1545",
+    "location": "National Museum in Poznań",
+    "city": "Poznań",
+    "country": "Poland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20Cosimo%20de%27%20Medici.jpg?width=500",
+    "qid": "Q105296824",
+    "wikidata": "https://www.wikidata.org/wiki/Q105296824",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105296824",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Cosimo I de' Medici"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.616499,
+     39.296425
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "The Feast Given by Joseph for His Brothers",
+    "year": "1550",
+    "location": "Walters Art Museum",
+    "city": "Baltimore",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20The%20Feast%20Given%20by%20Joseph%20for%20His%20Brothers%20-%20Walters%20371063.jpg?width=500",
+    "qid": "Q18748343",
+    "wikidata": "https://www.wikidata.org/wiki/Q18748343",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18748343",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -76.616499,
+     39.296425
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Baby Boy",
+    "year": "1540",
+    "location": "Walters Art Museum",
+    "city": "Baltimore",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Workshop%20of%20Agnolo%20Bronzino%20-%20Portrait%20of%20a%20Baby%20Boy%20-%20Walters%2037451.jpg?width=500",
+    "qid": "Q18749422",
+    "wikidata": "https://www.wikidata.org/wiki/Q18749422",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18749422",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "The Holy Family",
+    "year": "1525",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20The%20Holy%20Family%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20175897",
+    "wikidata": "https://www.wikidata.org/wiki/Q20175897",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20175897",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "A Young Woman and Her Little Boy",
+    "year": "1540",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20A%20Young%20Woman%20and%20Her%20Little%20Boy%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20176299",
+    "wikidata": "https://www.wikidata.org/wiki/Q20176299",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20176299",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.623888888,
+     41.879444444
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Virgin and Child with the Young Saint John the Baptist",
+    "year": "1528",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Virgin%20and%20Child%20with%20the%20Young%20Saint%20John%20the%20Baptist%20-%201963.206%20-%20Art%20Institute%20of%20Chicago.jpg?width=500",
+    "qid": "Q20268355",
+    "wikidata": "https://www.wikidata.org/wiki/Q20268355",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20268355",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.256111111,
+     43.769444444
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Laura Battiferri",
+    "year": "1552",
+    "location": "Palazzo Vecchio",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Laura%20Battiferri%20by%20Angelo%20Bronzino.jpg?width=500",
+    "qid": "Q90485037",
+    "wikidata": "https://www.wikidata.org/wiki/Q90485037",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q90485037",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.181388888,
+     39.965833333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici as Orpheus",
+    "year": "1537",
+    "location": "Philadelphia Museum of Art",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Portrait%20of%20Cosimo%20I%20de%27%20Medici%20as%20Orpheus%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20808504",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808504",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20808504",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Bust-length portrait of Elonora of Toledo",
+    "year": "1560",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Bildnis%20der%20Eleonora%20von%20Toledo%2C%20Brustbild%2C%20Um%201560.jpg?width=500",
+    "qid": "Q50323124",
+    "wikidata": "https://www.wikidata.org/wiki/Q50323124",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50323124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.611666666,
+     41.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Woman",
+    "year": "1550",
+    "location": "Cleveland Museum of Art",
+    "city": "Cleveland",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clevelandart%201972.121.jpg?width=500",
+    "qid": "Q60472115",
+    "wikidata": "https://www.wikidata.org/wiki/Q60472115",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q60472115",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Man, presumably a member of the Medici Family",
+    "year": "1545",
+    "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Portrait%20of%20a%20Man%2C%20presumably%20a%20member%20of%20the%20Medici%20Family%20-%20KMS563%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
+    "qid": "Q20440484",
+    "wikidata": "https://www.wikidata.org/wiki/Q20440484",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20440484",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.492144,
+     41.91421
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Saint John the Baptist",
+    "year": "1560",
+    "location": "Galleria Borghese",
+    "city": "Roma Capitale",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20di%20Cosimo%20detto%20Bronzino%20%28Firenze%201503%20-%201572%29%20-%20San%20Giovanni%20Battista%20%28Ritratto%20di%20Giovanni%20de%E2%80%99%20Medici%29%20-%20444%20-%20Galleria%20Borghese.jpg?width=500",
+    "qid": "Q110015681",
+    "wikidata": "https://www.wikidata.org/wiki/Q110015681",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110015681",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.475,
+     34.0775
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "St. John the Baptist",
+    "year": "1542",
+    "location": "J. Paul Getty Museum",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20St.%20John%20the%20Baptist%20-%2073.PB.70%20-%20J.%20Paul%20Getty%20Museum.jpg?width=500",
+    "qid": "Q20179963",
+    "wikidata": "https://www.wikidata.org/wiki/Q20179963",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20179963",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.475,
+     34.0775
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Virgin and Child with Saint Elizabeth and Saint John the Baptist",
+    "year": "1542",
+    "location": "J. Paul Getty Museum",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Virgin%20and%20Child%20with%20Saint%20Elizabeth%20and%20Saint%20John%20the%20Baptist%20-2019.116%20The%20J.%20Paul%20Getty%20Museum.jpg?width=500",
+    "qid": "Q111381253",
+    "wikidata": "https://www.wikidata.org/wiki/Q111381253",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111381253",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     19.07678,
+     47.51587
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Young Lady",
+    "year": "1570",
+    "location": "Museum of Fine Arts, Budapest",
+    "city": "Budapest district XIV",
+    "country": "Hungary",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Budapest%20bronzino.JPG?width=500",
+    "qid": "Q50902915",
+    "wikidata": "https://www.wikidata.org/wiki/Q50902915",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50902915",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     18.078055555,
+     59.328611111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Isabella de Medici (1542-1576)",
+    "year": "1552",
+    "location": "Nationalmuseum",
+    "city": "Stockholm",
+    "country": "Sweden",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Isabella%20de%20Medici%20%281542-1576%29%20%28Agnolo%20Bronzino%29%20-%20Nationalmuseum%20-%2017348.tif?width=500",
+    "qid": "Q18599876",
+    "wikidata": "https://www.wikidata.org/wiki/Q18599876",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18599876",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.802222222,
+     42.273055555
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Giovanna Chevara and Giovanni Montalvo",
+    "year": "1562",
+    "location": "Museo de Arte de Worcester",
+    "city": "Worcester",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Antonio%20Montalvo%27s%20Wife%2C%20and%20One%20of%20His%20Sons%2C%20about%201560-1565.jpg?width=500",
+    "qid": "Q79030035",
+    "wikidata": "https://www.wikidata.org/wiki/Q79030035",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q79030035",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.698906,
+     45.429535
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Pierantonio Bandini",
+    "year": "1552",
+    "location": "National Gallery of Canada",
+    "city": "Ottawa",
+    "country": "Canada",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Pierantonio%20Bandini%20-%20c.%201550-55.jpg?width=500",
+    "qid": "Q59501432",
+    "wikidata": "https://www.wikidata.org/wiki/Q59501432",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q59501432",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.064722222,
+     42.359444444
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Costanza da Sommaia",
+    "year": "1540",
+    "location": "Detroit Institute of Arts",
+    "city": "Detroit",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Costanza%20da%20Sommaia%2C%20ca.%201540.jpg?width=500",
+    "qid": "Q64515739",
+    "wikidata": "https://www.wikidata.org/wiki/Q64515739",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64515739",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.064722222,
+     42.359444444
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Madonna and Child with Saint John the Baptist",
+    "year": "1540",
+    "location": "Detroit Institute of Arts",
+    "city": "Detroit",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Madonna%20and%20Child%20with%20Saint%20John%20the%20Baptist%20-%2082.51%20-%20Detroit%20Institute%20of%20Arts.jpg?width=500",
+    "qid": "Q64515746",
+    "wikidata": "https://www.wikidata.org/wiki/Q64515746",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64515746",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.37111111,
+     38.11666667
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Madonna col Bambino e san Giovannino",
+    "year": "1550",
+    "location": "Palazzo Abatellis",
+    "city": "Palermo",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madonna%20and%20Child%20with%20St%20John%20-%20Bronzino%20-%20Palazzo%20Abatellis%20-%20Italy%202015.JPG?width=500",
+    "qid": "Q24049414",
+    "wikidata": "https://www.wikidata.org/wiki/Q24049414",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24049414",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     17.0475,
+     51.111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Madonna and Child with St. John the Baptist",
+    "year": "1530",
+    "location": "National Museum in Wrocław",
+    "city": "Wrocław",
+    "country": "Poland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%2C%20Madonna%20with%20Child%20and%20Saint%20John%2C%20Wroc%C5%82aw%20Muzeum%20Narodowe.jpg?width=500",
+    "qid": "Q105296029",
+    "wikidata": "https://www.wikidata.org/wiki/Q105296029",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105296029",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.468694444,
+     37.7715
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of an Elderly Lady",
+    "year": "1540",
+    "location": "Fine Arts Museums of San Francisco",
+    "city": "San Francisco",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20an%20Elderly%20Lady%20by%20Agnolo%20Bronzino%2C%20California%20Palace%20of%20the%20Legion%20of%20Honor.JPG?width=500",
+    "qid": "Q20199680",
+    "wikidata": "https://www.wikidata.org/wiki/Q20199680",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20199680",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.4325,
+     50.101111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Eleonora of Toledo",
+    "year": "1543",
+    "location": "National Gallery Prague",
+    "city": "",
+    "country": "Czech Republic",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%2C%20Agnolo%20-%20Eleonora%20of%20Toledo%20-%20National%20Gallery%20in%20Prague.jpg?width=500",
+    "qid": "Q20729893",
+    "wikidata": "https://www.wikidata.org/wiki/Q20729893",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20729893",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Eleonora of Toledo"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.890833,
+     52.370278
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a man (copy)",
+    "year": "1700",
+    "location": "Amsterdam Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Portret%20van%20een%20heer%20-%20SA%203342%20-%20Amsterdam%20Museum.jpg?width=500",
+    "qid": "Q17531832",
+    "wikidata": "https://www.wikidata.org/wiki/Q17531832",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17531832",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1503–1572) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.4032862,
+     51.311076
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cosimo I de' Medici, Grand Duke of Tuscany",
+    "year": "1550",
+    "location": "Hessen Kassel Heritage",
+    "city": "Kassel",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Bildnis%20Cosimo%20I.%2C%20Gro%C3%9Fherzog%20von%20Toscana%2C%20um%201550.jpg?width=500",
+    "qid": "Q56036662",
+    "wikidata": "https://www.wikidata.org/wiki/Q56036662",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q56036662",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.25255,
+     53.34091
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Saint John the Baptist in the Wilderness",
+    "year": "",
+    "location": "National Gallery of Ireland",
+    "city": "Dublin City",
+    "country": "Ireland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20John%20the%20Baptist%20in%20the%20Wilderness%20.PNG?width=500",
+    "qid": "Q77881248",
+    "wikidata": "https://www.wikidata.org/wiki/Q77881248",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77881248",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.25255,
+     53.34091
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Saint Catherine of Alexandria",
+    "year": "",
+    "location": "National Gallery of Ireland",
+    "city": "Dublin City",
+    "country": "Ireland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Catherine%20of%20Alexandria%20.PNG?width=500",
+    "qid": "Q77939166",
+    "wikidata": "https://www.wikidata.org/wiki/Q77939166",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77939166",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.26128,
+     43.7769
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Resurrection of Christ",
+    "year": "",
+    "location": "Santissima Annunziata",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%2C%20resurrezione%2C%201552%2C%2001.jpg?width=500",
+    "qid": "Q71650320",
+    "wikidata": "https://www.wikidata.org/wiki/Q71650320",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q71650320",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.496944444,
+     39.113888888
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Eleonora of Toledo and Her Son, Francesco de'Medici",
+    "year": "1549",
+    "location": "Cincinnati Art Museum",
+    "city": "Eden Park",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20di%20Cosimo%20di%20Mariano%20Bronzino%20%28Italian%2C%20b.1503%2C%20d.1572%29%20-%20Portrait%20of%20Eleonora%20of%20Toledo%20and%20Her%20Son%2C%20Francesco%20de%27Medici%20-%201927.381%20-%20Cincinnati%20Art%20Museum.jpg?width=500",
+    "qid": "Q46938357",
+    "wikidata": "https://www.wikidata.org/wiki/Q46938357",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q46938357",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.335833,
+     48.861111
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Noli me tangere",
+    "year": "1561",
+    "location": "Louvre",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Christ%20en%20jardinier%20appara%C3%AEt%20aux%20trois%20Marie%20ou%20Noli%20Me%20tangere%20-%20Il%20Bronzino%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%20130%20%3B%20MR%2079.jpg?width=500",
+    "qid": "Q18572239",
+    "wikidata": "https://www.wikidata.org/wiki/Q18572239",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18572239",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.248861,
+     43.694537
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Christ at the Cross",
+    "year": "1540",
+    "location": "Musée des Beaux-Arts Jules Chéret",
+    "city": "Nice",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino-Christ-Nice.jpg?width=500",
+    "qid": "Q74810157",
+    "wikidata": "https://www.wikidata.org/wiki/Q74810157",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q74810157",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.26274,
+     43.76845
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Christ into the limbo",
+    "year": "",
+    "location": "Basilica of Santa Croce",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Refettorio%20santa%20croce%202009.JPG?width=500",
+    "qid": "Q107287657",
+    "wikidata": "https://www.wikidata.org/wiki/Q107287657",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107287657",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.250346,
+     40.86699
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a lady",
+    "year": "",
+    "location": "Museo di Capodimonte",
+    "city": "Naples",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ritratto%20di%20dama%2C%20Agnolo%20Bronzino%20001.JPG?width=500",
+    "qid": "Q106839979",
+    "wikidata": "https://www.wikidata.org/wiki/Q106839979",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106839979",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.249367,
+     43.7743
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Raising of Jairus' daughter",
+    "year": "1570",
+    "location": "Basilica of Santa Maria Novella",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angolo%20bronzino%2C%20resurrezione%20della%20figlia%20di%20giaro%2C%201570-72%2C%2001.jpg?width=500",
+    "qid": "Q134960242",
+    "wikidata": "https://www.wikidata.org/wiki/Q134960242",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134960242",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.26274,
+     43.76845
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Descent to Limbo",
+    "year": "1552",
+    "location": "Basilica of Santa Croce",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Italy-1110%20-%20Christ%20to%20Limbo%20%285203559587%29.jpg?width=500",
+    "qid": "Q124348118",
+    "wikidata": "https://www.wikidata.org/wiki/Q124348118",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124348118",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Cardinal Ippolito de’ Medici",
+    "year": "",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20bronzino%2C%20ritratto%20del%20cardinale%20ippolito%20de%27%20medici%2001.jpg?width=500",
+    "qid": "Q124350611",
+    "wikidata": "https://www.wikidata.org/wiki/Q124350611",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124350611",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Alessandro de' Medici",
+    "year": "1560",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Alessandro%20de%27%20Medici%20-%20WGA3243.jpg?width=500",
+    "qid": "Q125964860",
+    "wikidata": "https://www.wikidata.org/wiki/Q125964860",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q125964860",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Lucrezia di Cosimo",
+    "year": "1560",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Lucrezia%20di%20Cosimo%20-%20WGA3256.jpg?width=500",
+    "qid": "Q126727913",
+    "wikidata": "https://www.wikidata.org/wiki/Q126727913",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q126727913",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Ferdinando I de' medici as a child",
+    "year": "1560",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Ferdinando%20de%27%20Medici%20-%20WGA3252.jpg?width=500",
+    "qid": "Q128610363",
+    "wikidata": "https://www.wikidata.org/wiki/Q128610363",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q128610363",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.17162,
+     51.49685
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Lady in a Black Dress",
+    "year": "",
+    "location": "Victoria and Albert Museum",
+    "city": "Royal Borough of Kensington and Chelsea",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Style%20of%20Agnolo%20Bronzino%20-%20Portrait%20of%20a%20Lady%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
+    "qid": "Q118985390",
+    "wikidata": "https://www.wikidata.org/wiki/Q118985390",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118985390",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.292,
+     48.2901
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Francesco I de Medici",
+    "year": "1527",
+    "location": "Führermuseum",
+    "city": "Linz",
+    "country": "German Reich",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angiolo%20Bronzino%20%281502-1572%29%20-%20Portr%C3%A4t%20des%20Francesco%20Medici%20-%201112%20-%20F%C3%BChrermuseum.jpg?width=500",
+    "qid": "Q111641692",
+    "wikidata": "https://www.wikidata.org/wiki/Q111641692",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111641692",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.292,
+     48.2901
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "portrait of a gentleman with his dog",
+    "year": "1527",
+    "location": "Führermuseum",
+    "city": "Linz",
+    "country": "German Reich",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angiolo%20Bronzino%20%281502-1572%29%20-%20Bildnis%20eines%20jungen%20Mannes%20mit%20Radkragen%20und%20Degen%20-%202741%20-%20F%C3%BChrermuseum.jpg?width=500",
+    "qid": "Q111647865",
+    "wikidata": "https://www.wikidata.org/wiki/Q111647865",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111647865",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.26056,
+     51.75556
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Giovanni de' Medici",
+    "year": "1550",
+    "location": "Ashmolean Museum",
+    "city": "Oxford",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Giovanni%20de%27%20Medici%2C%20c.%201550%20-%201551.jpg?width=500",
+    "qid": "Q118875046",
+    "wikidata": "https://www.wikidata.org/wiki/Q118875046",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118875046",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25,
+     43.7652
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Guidobaldo II della Rovere",
+    "year": "1531",
+    "location": "Galleria Palatina",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Portrait%20of%20Guidobaldo%20della%20Rovere.jpg?width=500",
+    "qid": "Q113825024",
+    "wikidata": "https://www.wikidata.org/wiki/Q113825024",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q113825024",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25,
+     43.7652
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Luca Martini",
+    "year": "1555",
+    "location": "Galleria Palatina",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Tori%20detto%20Bronzino%20%28Firenze%2C%201503-1572%29%20-%20Ritratto%20di%20Luca%20Martini%20-%20434%20-%20Galleria%20Palatina.jpg?width=500",
+    "qid": "Q131463514",
+    "wikidata": "https://www.wikidata.org/wiki/Q131463514",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131463514",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.221456,
+     43.731414
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Saint Lawrence with Angel",
+    "year": "1523",
+    "location": "Florence Charterhouse",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20bronzino%2C%20San%20Lorenzo%20e%20un%20angelo%2C%201523-24.jpg?width=500",
+    "qid": "Q124354582",
+    "wikidata": "https://www.wikidata.org/wiki/Q124354582",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124354582",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.221456,
+     43.731414
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "San Lorenzo dona la vista ai ciechi",
+    "year": "1523",
+    "location": "Florence Charterhouse",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20bronzino%2C%20San%20Lorenzo%20dona%20la%20vista%20ai%20ciechi%2C%201523-24%2C%2002.jpg?width=500",
+    "qid": "Q124354605",
+    "wikidata": "https://www.wikidata.org/wiki/Q124354605",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124354605",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     26.09598,
+     44.43978
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Venus and Cupid",
+    "year": "",
+    "location": "National Museum of Art of Romania",
+    "city": "Bucharest",
+    "country": "Romania",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20%28da%20michelangelo-pontormo%29%2C%20venere%20e%20amore%2C%2002.JPG?width=500",
+    "qid": "Q134930860",
+    "wikidata": "https://www.wikidata.org/wiki/Q134930860",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134930860",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.2446,
+     38.9597
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Mary Magdalene (Young Florentine Woman portrayed as the Magdalene)",
+    "year": "1565",
+    "location": "Spencer Museum of Art",
+    "city": "Douglas County",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Maria%20Magdalena.jpg?width=500",
+    "qid": "Q125958556",
+    "wikidata": "https://www.wikidata.org/wiki/Q125958556",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q125958556",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48421389,
+     41.89763611
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Venus, Cupido &#32;und&#32; Satyr",
+    "year": "",
+    "location": "Palazzo Colonna",
+    "city": "Rome",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20Venus%2C%20Cupido%20and%20Satyr.jpg?width=500",
+    "qid": "Q135432565",
+    "wikidata": "https://www.wikidata.org/wiki/Q135432565",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q135432565",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68618,
+     45.07412
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of a Lady",
+    "year": "1550",
+    "location": "Galleria Sabauda",
+    "city": "Turin",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20060.jpg?width=500",
+    "qid": "Q123473584",
+    "wikidata": "https://www.wikidata.org/wiki/Q123473584",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123473584",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.263593,
+     43.76981
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "noli me tangere",
+    "year": "1532",
+    "location": "Casa Buonarroti",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20%28da%20pontormo%20su%20dis.%20di%20michelangelo%29%2C%20noli%20me%20tangere%20%28per%20vittoria%20colonna%29%2C%201532%20ca.%2001.JPG?width=500",
+    "qid": "Q134930893",
+    "wikidata": "https://www.wikidata.org/wiki/Q134930893",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134930893",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25245833,
+     43.76689722
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "St Matthew",
+    "year": "1525",
+    "location": "Capponi Chapel",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20St%20Matthew%20-%20WGA03275.jpg?width=500",
+    "qid": "Q126285217",
+    "wikidata": "https://www.wikidata.org/wiki/Q126285217",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q126285217",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25245833,
+     43.76689722
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "St Mark",
+    "year": "1525",
+    "location": "Capponi Chapel",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20St%20Mark%20-%20WGA03274.jpg?width=500",
+    "qid": "Q126381608",
+    "wikidata": "https://www.wikidata.org/wiki/Q126381608",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q126381608",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25245833,
+     43.76689722
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Evangelisten-Tondi, Hl. Markus",
+    "year": "1525",
+    "location": "Capponi Chapel",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20008.jpg?width=500",
+    "qid": "Q134960103",
+    "wikidata": "https://www.wikidata.org/wiki/Q134960103",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134960103",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68548,
+     45.0711
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Saint Michael",
+    "year": "1525",
+    "location": "Museo Civico d'Arte Antica",
+    "city": "Turin",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%2C%20s.%20michele%20arcangelo%2C%201525%20ca.%2C%20da%20palazzo%20madama%20a%20torino%2001.JPG?width=500",
+    "qid": "Q134959196",
+    "wikidata": "https://www.wikidata.org/wiki/Q134959196",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134959196",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.249968,
+     43.765275
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Portrait of Piero de' Medici",
+    "year": "1555",
+    "location": "Tesoro dei Granduchi",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Piero%20de%27%20Medici%20by%20Bronzino.jpg?width=500",
+    "qid": "Q120401056",
+    "wikidata": "https://www.wikidata.org/wiki/Q120401056",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q120401056",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.18027778,
+     45.46972222
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Porträt des Lorenzo Lenzi",
+    "year": "1527",
+    "location": "Pinacoteca del Castello Sforzesco",
+    "city": "Milan",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20-%20Portrait%20of%20Lorenzo%20Lenzi.jpg?width=500",
+    "qid": "Q124350580",
+    "wikidata": "https://www.wikidata.org/wiki/Q124350580",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124350580",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.258888888,
+     43.776944444
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "The Deposition",
+    "year": "1565",
+    "location": "Galleria dell'Accademia",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Deposition%20-%20WGA03283.jpg?width=500",
+    "qid": "Q134930829",
+    "wikidata": "https://www.wikidata.org/wiki/Q134930829",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134930829",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  }
+ ]
+}

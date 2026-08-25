@@ -1,0 +1,5060 @@
+{
+ "type": "FeatureCollection",
+ "_note": "Canon from List of paintings by Albrecht Dürer (Wikipedia). Coords via MediaWiki API.",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Dürer's Father diptych, right wing back side: Combined Coat of Arms of the Dürer and Holper Families",
+    "year": "1490",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "47.5 × 39.5 47 × 39 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Albrecht_D%C3%BCrer_-_Ritratto_del_padre_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Ritratto_del_padre_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_Diptych_of_D%C3%BCrer%27s_Parents",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q1988057",
+    "wikidata": "https://www.wikidata.org/wiki/Q1988057",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of the artist's father",
+      "qid": "Q18683052",
+      "url": "https://www.wikidata.org/wiki/Q18683052"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Barbara Dürer diptych, left wing back side: \"Rocky Landscape with Dragon\", or \"Hell resp. Purgatory scene\"",
+    "year": "1490",
+    "city": "Nuremberg",
+    "location": "Germanisches Nationalmuseum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "47.2 × 35.7 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Albrecht_D%C3%BCrer_072.jpg/500px-Albrecht_D%C3%BCrer_072.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_Diptych_of_D%C3%BCrer%27s_Parents",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany",
+    "qid": "Q1988057",
+    "wikidata": "https://www.wikidata.org/wiki/Q1988057",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Barbara Holper",
+      "qid": "Q3937468",
+      "url": "https://www.wikidata.org/wiki/Q3937468"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4,
+     49.0119
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Christ as the Man of Sorrows back side: \"Agate cut or Lightvision\"",
+    "year": "c. 1493",
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "location": "Staatliche Kunsthalle",
+    "attribution": "generally accepted",
+    "medium": "Oil, tempera and gilding on panel (pinewood)",
+    "dimensions": "30 × 19 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/D%C3%BCrer%2C_Christus_als_Schmerzensmann%2C_c1493._Kunsthalle_Karlsruhe_%282183%29.jpg/500px-D%C3%BCrer%2C_Christus_als_Schmerzensmann%2C_c1493._Kunsthalle_Karlsruhe_%282183%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "staatliche-kunsthalle"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Self-Portrait ( Portrait of the Artist Holding a Thistle )",
+    "year": "1493",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
+    "attribution": "generally accepted",
+    "medium": "Oil on parchment transferred to canvas",
+    "dimensions": "56.5 × 44.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Albrecht-self.jpg/500px-Albrecht-self.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_the_Artist_Holding_a_Thistle",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "louvre",
+    "qid": "Q2428778",
+    "wikidata": "https://www.wikidata.org/wiki/Q2428778",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/01/04self22.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jesus Child as Redeemer",
+    "year": "1493",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Albertina",
+    "attribution": "generally accepted",
+    "medium": "Bodycolor and gold on parchment",
+    "dimensions": "11.8 × 9.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/D%C3%BCrer_-_Der_Jesusknabe_als_Erl%C3%B6ser%2C_Albertina_3059.jpg/500px-D%C3%BCrer_-_Der_Jesusknabe_als_Erl%C3%B6ser%2C_Albertina_3059.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "albertina"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10,
+     53.55
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Lion",
+    "year": "1494",
+    "city": "Hamburg",
+    "country": "Germany",
+    "location": "Kunsthalle",
+    "attribution": "generally accepted",
+    "medium": "Bodycolor, watercolor on parchment",
+    "dimensions": "12.6 × 17.2 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Albrecht_D%C3%BCrer_055.jpg/500px-Albrecht_D%C3%BCrer_055.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthalle",
+    "qid": "Q2542197",
+    "wikidata": "https://www.wikidata.org/wiki/Q2542197",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q2542197 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.23333,
+     50.05
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Virgin and Child Before a Landscape",
+    "year": "c. 1494",
+    "city": "Schweinfurt",
+    "location": "private collection Georg Schäfer",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "89 × 74 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Albrecht_D%C3%BCrer_063.jpg/500px-Albrecht_D%C3%BCrer_063.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "private-collection-georg-schafer"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.41611,
+     51.315
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Seven Sorrows Polyptych",
+    "year": "c. 1495",
+    "city": "Kassel",
+    "country": "Germany",
+    "location": "Gemäldegalerie Alte Meister",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (pinewood)",
+    "dimensions": "63 × 44.5–46.5 each side panel 110 × 43.6 central panel",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Durer%2C_polittico_dei_sette_dolori%2C_ricostruzione.jpg/500px-Durer%2C_polittico_dei_sette_dolori%2C_ricostruzione.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Seven_Sorrows_Polyptych",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "qid": "Q1988321",
+    "wikidata": "https://www.wikidata.org/wiki/Q1988321"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Saint Jerome in the Wilderness back side: Heavenly Scene",
+    "year": "c. 1496",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (pearwood)",
+    "dimensions": "23.1 × 17.4 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Albrecht_D%C3%BCrer_012.jpg/500px-Albrecht_D%C3%BCrer_012.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Jerome_in_the_Wilderness_(D%C3%BCrer)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q3947309",
+    "wikidata": "https://www.wikidata.org/wiki/Q3947309",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/01/06jerome.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "St. Jerome in the Wilderness",
+      "qid": "Q3947309",
+      "url": "https://www.wikidata.org/wiki/Q3947309"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Elector Frederick the Wise of Saxony",
+    "year": "1496",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Tempera on canvas",
+    "dimensions": "76 × 57 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Albrecht_d%C3%BCrer%2C_ritratto_di_federico_III_il_saggio%2C_1500_ca._02.JPG/500px-Albrecht_d%C3%BCrer%2C_ritratto_di_federico_III_il_saggio%2C_1500_ca._02.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Elector_Frederick_the_Wise_of_Saxony",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "qid": "Q3937522",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937522",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/01/08electo.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.41611,
+     51.315
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Dresden Altarpiece",
+    "year": "1496",
+    "city": "Kassel",
+    "country": "Germany",
+    "location": "Gemäldegalerie Alte Meister",
+    "attribution": "generally accepted",
+    "medium": "Tempera on canvas",
+    "dimensions": "114 × 45 each wing 114 × 96.5 central panel",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Albrecht_D%C3%BCrer_065.jpg/500px-Albrecht_D%C3%BCrer_065.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Dresden_Altarpiece",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "qid": "Q3613128",
+    "wikidata": "https://www.wikidata.org/wiki/Q3613128"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.8914
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Haller Madonna back side: Lot and His Daughters",
+    "year": "c. 1496",
+    "city": "Washington",
+    "country": "United States",
+    "location": "National Gallery of Art",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "52.4 × 42.2 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Albrecht_D%C3%BCrer_-_Madonna_and_Child_%28obverse%29_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Madonna_and_Child_%28obverse%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Haller_Madonna",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery-of-art",
+    "qid": "Q3842403",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842403",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/02/07haller.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.68222,
+     50.11056
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Woman with Her Hair Down (formerly believed to be a Fürleger)",
+    "year": "1497",
+    "city": "Städel",
+    "location": "Frankfurt",
+    "attribution": "generally accepted",
+    "medium": "Watercolor on canvas ( Tüchlein )",
+    "dimensions": "56.3 × 43.2 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Portrait_of_a_Young_Woman_with_Her_Hair_Down_%28SM_937%29.png/500px-Portrait_of_a_Young_Woman_with_Her_Hair_Down_%28SM_937%29.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "frankfurt",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a Young Fürleger with Loose Hair",
+      "qid": "Q1112111",
+      "url": "https://www.wikidata.org/wiki/Q1112111"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Woman with braided hair",
+    "year": "1497",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Bildnis%20einer%20jungen%20Frau%20mit%20geflochtenem%20Haar%2C%201497%2C%20Gem%C3%A4ldegalerie%20Berlin.jpg?width=500",
+    "qid": "Q3755489",
+    "wikidata": "https://www.wikidata.org/wiki/Q3755489",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3755489",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "dimensions": "56.5 × 43.1 cm",
+    "medium": "Watercolor on canvas ( Tüchlein )",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of a Young Woman with Her Hair Done Up (formerly believed to be a Fürleger)"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Dürer's Father at 70 copy",
+    "year": "1497",
+    "city": "London",
+    "country": "United Kingdom",
+    "location": "National Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "51 × 40.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Albrecht_D%C3%BCrer_-_Portrait_of_D%C3%BCrer%27s_Father_at_70.jpg/500px-Albrecht_D%C3%BCrer_-_Portrait_of_D%C3%BCrer%27s_Father_at_70.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_D%C3%BCrer%27s_Father_at_70",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery",
+    "qid": "Q3937451",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937451",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/02/01father.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.6922,
+     40.4139
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Self-Portrait at 26",
+    "year": "1498",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Museo del Prado",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "52 × 41 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Selbstportr%C3%A4t%2C_by_Albrecht_D%C3%BCrer%2C_from_Prado_in_Google_Earth.jpg/500px-Selbstportr%C3%A4t%2C_by_Albrecht_D%C3%BCrer%2C_from_Prado_in_Google_Earth.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Self-Portrait_(D%C3%BCrer,_Madrid)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museo-del-prado",
+    "qid": "Q2388965",
+    "wikidata": "https://www.wikidata.org/wiki/Q2388965",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/02/05self26.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Self-Portrait",
+      "qid": "Q2388965",
+      "url": "https://www.wikidata.org/wiki/Q2388965"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Lamentation (Holzschuher Lamentation)",
+    "year": "1499",
+    "city": "Nuremberg",
+    "location": "Germanisches Nationalmuseum",
+    "attribution": "generally accepted",
+    "medium": "Color on panel",
+    "dimensions": "150 × 120.6 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Albrecht_D%C3%BCrer_011.jpg/500px-Albrecht_D%C3%BCrer_011.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Lamentation_of_Christ_(D%C3%BCrer,_Nuremberg)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany",
+    "qid": "Q3685122",
+    "wikidata": "https://www.wikidata.org/wiki/Q3685122"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Oswolt Krell",
+    "year": "1499",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on panel (limewood)",
+    "dimensions": "49.7 × 38.9 central panel 49.4 × 15.7 (l) 49.8 × 15.6 (r)",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Albrecht_D%C3%BCrer_-_Portrait_of_Oswolt_Krel_-_WGA6933.jpg/500px-Albrecht_D%C3%BCrer_-_Portrait_of_Oswolt_Krel_-_WGA6933.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.6758,
+     45.7042
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of an Unknown Man in a Red Gown (\"St Sebastian\")",
+    "year": "c. 1499",
+    "city": "Bergamo",
+    "location": "Accademia Carrara",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "52 × 40 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Albrecht_D%C3%BCrer_098.jpg/500px-Albrecht_D%C3%BCrer_098.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "accademia-carrara",
+    "country": "Italy"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.32944,
+     50.98111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Hans Tucher diptych, left wing back side: Combined Coat-of-Arms of the Tucher and Rieter Families",
+    "year": "1499",
+    "city": "Weimar",
+    "location": "Schlossmuseum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "28 × 24 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Albrecht_D%C3%BCrer_077.jpg/500px-Albrecht_D%C3%BCrer_077.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Tucher_von_Simmelsdorf",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "schlossmuseum",
+    "qid": "Q2459066",
+    "wikidata": "https://www.wikidata.org/wiki/Q2459066",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Hans Tucher",
+      "qid": "Q3937563",
+      "url": "https://www.wikidata.org/wiki/Q3937563"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.32944,
+     50.98111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Felicitas Tucher (née Rieter) diptych, right wing",
+    "year": "1499",
+    "city": "Weimar",
+    "location": "Schlossmuseum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "28 × 24 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Albrecht_D%C3%BCrer_074.jpg/500px-Albrecht_D%C3%BCrer_074.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "schlossmuseum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Felicitas Tucher",
+      "qid": "Q3937525",
+      "url": "https://www.wikidata.org/wiki/Q3937525"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.41611,
+     51.315
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Elsbeth Tucher (née Pusch) diptych, left wing with the Portrait of Nikolaus Tucher lost",
+    "year": "1499",
+    "city": "Kassel",
+    "country": "Germany",
+    "location": "Gemäldegalerie Alte Meister",
+    "attribution": "generally accepted",
+    "medium": "Color on panel (limewood)",
+    "dimensions": "29.1 × 23.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Albrecht_D%C3%BCrer_073.jpg/500px-Albrecht_D%C3%BCrer_073.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Elspeth Tucher",
+      "qid": "Q3937514",
+      "url": "https://www.wikidata.org/wiki/Q3937514"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Self-Portrait with Fur-Trimmed Robe",
+    "year": "1500",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on panel (limewood)",
+    "dimensions": "67.1 × 48.9 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg/500px-Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Self-Portrait_(D%C3%BCrer,_Munich)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q2546309",
+    "wikidata": "https://www.wikidata.org/wiki/Q2546309",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/03/1self28.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Hercules Killing the Stymphalian Birds",
+    "year": "1500",
+    "city": "Nuremberg",
+    "location": "Germanisches Nationalmuseum",
+    "attribution": "generally accepted",
+    "medium": "Watercolor on canvas",
+    "dimensions": "84.5 × 107.5 cropped",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/D%C3%BCrer%2C_Herkules_im_Kampf_gegen_die_stymphalischen_V%C3%B6gel%2C_1500._Gm166.jpg/500px-D%C3%BCrer%2C_Herkules_im_Kampf_gegen_die_stymphalischen_V%C3%B6gel%2C_1500._Gm166.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Hercules_Killing_the_Stymphalian_Birds",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany",
+    "qid": "Q3731240",
+    "wikidata": "https://www.wikidata.org/wiki/Q3731240"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Paumgartner Altarpiece Nativity Georg Paumgartner as St George (inner left wing) Lukas Paumgartner as St Eustacius (inner right wing)",
+    "year": "c. 1500",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (firwood)",
+    "dimensions": "155 × 126.1 central panel , 157 × 60.4 each wing",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Albrecht_D%C3%BCrer%2C_Paumgartner_Altarpiece%2C_c1500%2C_Alte_Pinakothek%2C_Munich_%28702%29.jpg/500px-Albrecht_D%C3%BCrer%2C_Paumgartner_Altarpiece%2C_c1500%2C_Alte_Pinakothek%2C_Munich_%28702%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Paumgartner_altarpiece",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q571122",
+    "wikidata": "https://www.wikidata.org/wiki/Q571122",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/03/3paumg.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Lamentation of Christ (Glim Lamentation)",
+    "year": "1500",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on panel (spruce)",
+    "dimensions": "151.9 × 121.6 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/ALBRECHT-DUERER_BEWEINUNG-CHRISTI-GLIMSCHE-BEWEINUNG_BSTGS_704.jpg/500px-ALBRECHT-DUERER_BEWEINUNG-CHRISTI-GLIMSCHE-BEWEINUNG_BSTGS_704.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Lamentation_of_Christ_(D%C3%BCrer,_Munich)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q3685113",
+    "wikidata": "https://www.wikidata.org/wiki/Q3685113",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/03/2lament4.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Lamentation of Christ",
+      "qid": "Q3685113",
+      "url": "https://www.wikidata.org/wiki/Q3685113"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna and Child at the Breast ( Madonna lactans )",
+    "year": "1503",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "24.1 × 18.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Albrecht_D%C3%BCrer%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Maria_mit_Kind_an_der_Brust_-_GG_846_-_Kunsthistorisches_Museum.jpg/500px-Albrecht_D%C3%BCrer%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Maria_mit_Kind_an_der_Brust_-_GG_846_-_Kunsthistorisches_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_Lactans",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q1576172",
+    "wikidata": "https://www.wikidata.org/wiki/Q1576172"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.68222,
+     50.11056
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jabach Altarpiece outer panels: Job on the Dungheap or Job Taunted by His Wife Piper and Drummer",
+    "year": "c. 1503",
+    "city": "Städel",
+    "location": "Frankfurt",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "94 × 51 (l) 94 x 57 (r) both truncated at top",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jarbach_Altarpiece_01.jpg/500px-Jarbach_Altarpiece_01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Jabach_Altarpiece",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "frankfurt",
+    "qid": "Q3428032",
+    "wikidata": "https://www.wikidata.org/wiki/Q3428032",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jabach Altarpiece triptych wings (central panel lost) Saints Joseph and Joachim (l) Saints Simeon and Lazarus (r)",
+    "year": "c. 1503",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on panel",
+    "dimensions": "96.6 × 54.5 (l) 97 × 55.1 (r) both truncated at top",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Albrecht_D%C3%BCrer%2C_Jabach_Altarpiece%2C_Sts_Joseph_and_Joachim%2C_c1503-5%2C_Alte_Pinakothek_M%C3%BCnchen_%28WAF228%29.jpg/500px-Albrecht_D%C3%BCrer%2C_Jabach_Altarpiece%2C_Sts_Joseph_and_Joachim%2C_c1503-5%2C_Alte_Pinakothek_M%C3%BCnchen_%28WAF228%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Jabach_Altarpiece",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q3428032",
+    "wikidata": "https://www.wikidata.org/wiki/Q3428032",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.37583,
+     48.83361
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Studies of a Boy's Head Inclined to the Right Boy's Head Inclined to the Left",
+    "year": "1506",
+    "city": "Paris",
+    "country": "France",
+    "location": "Bibliothèque nationale de France",
+    "attribution": "generally accepted",
+    "medium": "Distemper over ink or charcoal on cloth doubled by paper",
+    "dimensions": "22.5 × 19.2 23.1 × 17.9 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Albrecht_D%C3%BCrer%2C_T%C3%AAte_de_jeune_gar%C3%A7on_pench%C3%A9e_vers_la_droite%2C_1506._Paris%2C_BnF_%28B13r%C3%A9s%29.jpg/500px-Albrecht_D%C3%BCrer%2C_T%C3%AAte_de_jeune_gar%C3%A7on_pench%C3%A9e_vers_la_droite%2C_1506._Paris%2C_BnF_%28B13r%C3%A9s%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "bibliotheque-nationale-de-france"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Adoration of the Magi",
+    "year": "1504",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "99 × 113.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Albrecht_D%C3%BCrer_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Adoration_of_the_Magi_(D%C3%BCrer)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "qid": "Q2628761",
+    "wikidata": "https://www.wikidata.org/wiki/Q2628761",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/04/2adorat2.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.05778,
+     42.36028
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Man (Endres Dürer)",
+    "year": "c. 1504",
+    "city": "Boston",
+    "country": "United States",
+    "location": "Museum of Fine Arts",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "43 × 29 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Portrait_of_a_Young_Man_9fdcb0.jpg/500px-Portrait_of_a_Young_Man_9fdcb0.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museum-of-fine-arts",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a Young Man",
+      "qid": "Q50906843",
+      "url": "https://www.wikidata.org/wiki/Q50906843"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Venetian Woman",
+    "year": "1505",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (spruce)",
+    "dimensions": "33 × 24.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Albrecht_D%C3%BCrer_-_Brustbild_einer_jungen_Venezianerin_-_GG_6440_-_Kunsthistorisches_Museum.jpg/500px-Albrecht_D%C3%BCrer_-_Brustbild_einer_jungen_Venezianerin_-_GG_6440_-_Kunsthistorisches_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_a_Venetian_Woman",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q3937735",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937735",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.963333333,
+     40.779444444
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Salvator Mundi",
+    "year": "1505",
+    "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salvator%20Mundi%2C%20by%20Albrecht%20D%C3%BCrer%2C%20MET.jpg?width=500",
+    "qid": "Q19911432",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911432",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911432",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "58.1 × 47 cm",
+    "medium": "Oil on panel",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Salvator Mundi unfinished"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     14.42139,
+     50.0875
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Feast of the Rosary",
+    "year": "1506",
+    "city": "Prague",
+    "country": "Czech Republic",
+    "location": "Národní galerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "162 × 192 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Albrecht_D%C3%BCrer_-_Feast_of_Rose_Garlands_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Feast_of_Rose_Garlands_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Feast_of_the_Rosary",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "narodni-galerie",
+    "qid": "Q1170194",
+    "wikidata": "https://www.wikidata.org/wiki/Q1170194",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/03rose.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna with the Siskin",
+    "year": "1506",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (poplar)",
+    "dimensions": "93.5 × 78.9 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Madonna_with_the_Siskin_by_Albrecht_D%C3%BCrer_-_Gem%C3%A4ldegalerie_-_Berlin_-_Germany_2017.jpg/500px-Madonna_with_the_Siskin_by_Albrecht_D%C3%BCrer_-_Gem%C3%A4ldegalerie_-_Berlin_-_Germany_2017.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/06siski.html",
+    "qid": "Q386034",
+    "wikidata": "https://www.wikidata.org/wiki/Q386034",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q386034 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Venetian Woman",
+    "year": "1506",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (poplar)",
+    "dimensions": "28.5 × 21.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/D%C3%BCrer_-_Bildnis_einer_jungen_Venezianerin%2C_um_1506%2C_557G.jpg/500px-D%C3%BCrer_-_Bildnis_einer_jungen_Venezianerin%2C_um_1506%2C_557G.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_a_Venetian_Woman",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "qid": "Q3937735",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937735",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.93225,
+     44.41119
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Man",
+    "year": "1506",
+    "city": "Genoa",
+    "country": "Italy",
+    "location": "Palazzo Rosso",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "46 × 35 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Albrecht_D%C3%BCrer_-_Portrait_of_a_Young_Man_-_Palazzo_Rosso_Genoa.jpg/500px-Albrecht_D%C3%BCrer_-_Portrait_of_a_Young_Man_-_Palazzo_Rosso_Genoa.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "palazzo-rosso",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/05youngm.html",
+    "qid": "Q3937701",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937701",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3937701 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1,
+     51.42
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Burkard von Speyer",
+    "year": "1506",
+    "city": "Windsor Castle",
+    "location": "Berkshire",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "31.7 × 26 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Albrecht_D%C3%BCrer_-_Burkhard_von_Speyer_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Burkhard_von_Speyer_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "berkshire",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/02speyer.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Burkard von Speyer",
+      "qid": "Q3937478",
+      "url": "https://www.wikidata.org/wiki/Q3937478"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.7033,
+     40.4169
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Christ Among the Doctors",
+    "year": "1506",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Museo Nacional Thyssen-Bornemisza",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (poplar)",
+    "dimensions": "64.3 × 80.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Albrecht_D%C3%BCrer_-_Jesus_among_the_Doctors_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Jesus_among_the_Doctors_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Christ_among_the_Doctors_(D%C3%BCrer)",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museo-nacional-thyssen-bornemisza",
+    "qid": "Q2448065",
+    "wikidata": "https://www.wikidata.org/wiki/Q2448065",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/05/07docto3.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Man back side: Allegory of Avarice",
+    "year": "1507",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "35 × 29 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/D%C3%BCrer_-_Brustbild_eines_jungen_Mannes%2C_1507%2C_Gem%C3%A4ldegalerie%2C_849.jpg/500px-D%C3%BCrer_-_Brustbild_eines_jungen_Mannes%2C_1507%2C_Gem%C3%A4ldegalerie%2C_849.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Avarice_(D%C3%BCrer,_Vienna)",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q4827756",
+    "wikidata": "https://www.wikidata.org/wiki/Q4827756"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Woman with a (Red) Beret",
+    "year": "1507",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Bildnis%20eines%20M%C3%A4dchens%20mit%20rotem%20Barett%2C%201507%2C%20557I.jpg?width=500",
+    "qid": "Q3937756",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937756",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937756",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "dimensions": "32.5 × 22.3 cm",
+    "medium": "Color on parchment transferred to panel",
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of a Young Girl (with a Red Beret)"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.6922,
+     40.4139
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Adam and Eve",
+    "year": "1507 m dmi",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Museo del Prado",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (pinewood)",
+    "dimensions": "209 × 81 209 × 80 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albrecht_D%C3%BCrer_-_Adam_and_Eve_%28Prado%29_2.jpg/500px-Albrecht_D%C3%BCrer_-_Adam_and_Eve_%28Prado%29_2.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Adam_and_Eve_(D%C3%BCrer)",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museo-del-prado",
+    "qid": "Q351300",
+    "wikidata": "https://www.wikidata.org/wiki/Q351300"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Martyrdom of the Ten Thousand",
+    "year": "1508",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel transferred to canvas",
+    "dimensions": "99 × 87.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Albrecht_D%C3%BCrer%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Marter_der_zehntausend_Christen_-_GG_835_-_Kunsthistorisches_Museum.jpg/500px-Albrecht_D%C3%BCrer%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Marter_der_zehntausend_Christen_-_GG_835_-_Kunsthistorisches_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Martyrdom_of_the_Ten_Thousand",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q664038",
+    "wikidata": "https://www.wikidata.org/wiki/Q664038",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/06/6martyr.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.68222,
+     50.11056
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Heller Altarpiece copy",
+    "year": "1508",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "location": "Historical Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil and tempera on panel",
+    "dimensions": "189 × 138 central element",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/D%C3%BCrer%2C_Gr%C3%BCnewald%2C_Harrich_-_Heller-Altar_HMF_DSC6312.jpg/500px-D%C3%BCrer%2C_Gr%C3%BCnewald%2C_Harrich_-_Heller-Altar_HMF_DSC6312.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Heller_Altarpiece",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "historical-museum",
+    "qid": "Q323141",
+    "wikidata": "https://www.wikidata.org/wiki/Q323141"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.47334,
+     51.91421
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Holy Family",
+    "year": "1509",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "location": "Museum Boijmans Van Beuningen",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "30.9 × 38.6 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albrecht_D%C3%BCrer_-_De_heilige_familie_-_2447_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg/500px-Albrecht_D%C3%BCrer_-_De_heilige_familie_-_2447_%28OK%29_-_Museum_Boijmans_Van_Beuningen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "qid": "Q19925781",
+    "wikidata": "https://www.wikidata.org/wiki/Q19925781",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q19925781 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Holy Family",
+      "qid": "Q19925781",
+      "url": "https://www.wikidata.org/wiki/Q19925781"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.203880555
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Adoration of the Trinity",
+    "year": "1511",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Adoration%20of%20the%20Trinity%20%28Landauer%20Altar%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q688870",
+    "wikidata": "https://www.wikidata.org/wiki/Q688870",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q688870",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "dimensions": "135 × 123.4 (limewood) 147,7 × 135.4 (frame)",
+    "medium": "Oil on panel (limewood)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Adoration of the Trinity (Landauer Altar) with frame designed by Dürer"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna of the Pear",
+    "year": "1512",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "49.3 × 37.4 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Albrecht_D%C3%BCrer_-_Virgin_and_child_with_a_pear_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Virgin_and_child_with_a_pear_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/08/1pear.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Emperor Charlemagne and Emperor Sigismund",
+    "year": "c. 1512",
+    "city": "Nuremberg",
+    "location": "Germanisches Nationalmuseum",
+    "attribution": "generally accepted",
+    "medium": "Oil and tempera on panel",
+    "dimensions": "215 × 115 each, including frame",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Albrecht_D%C3%BCrer_-_Emperor_Charlemagne_and_Emperor_Sigismund_-_WGA06997.jpg/500px-Albrecht_D%C3%BCrer_-_Emperor_Charlemagne_and_Emperor_Sigismund_-_WGA06997.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/08/2empero.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Virgin and Child",
+    "year": "1516",
+    "city": "New York",
+    "country": "United States",
+    "location": "Metropolitan Museum of Art",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (spruce)",
+    "dimensions": "27.9 × 18.7 (w/border 22.2)",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Virgin_and_Child_MET_DP164788.jpg/500px-Virgin_and_Child_MET_DP164788.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/03/4virgin.html",
+    "qid": "Q19911578",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911578",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q19911578 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna of the Carnation",
+    "year": "1516",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on parchment mounted on pine wood (doubled with spruce)",
+    "dimensions": "39.7 × 29.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Albrecht_D%C3%BCrer_060.jpg/500px-Albrecht_D%C3%BCrer_060.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q3842613",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842613",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3842613 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Madonna of the Carnation",
+      "qid": "Q3842613",
+      "url": "https://www.wikidata.org/wiki/Q3842613"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Michael Wolgemut",
+    "year": "1516",
+    "city": "Nuremberg",
+    "location": "Germanisches Nationalmuseum",
+    "attribution": "generally accepted",
+    "medium": "Oil and tempera on panel (limewood)",
+    "dimensions": "29.8 × 28.1 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Albrecht_D%C3%BCrer_085.jpg/500px-Albrecht_D%C3%BCrer_085.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/08/4wolgemu.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.8914
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Clergyman (Johann Dorsch?)",
+    "year": "1516",
+    "city": "Washington",
+    "country": "United States",
+    "location": "National Gallery of Art",
+    "attribution": "generally accepted",
+    "medium": "Oil on parchment transferred to fabric",
+    "dimensions": "41.7 × 32.7 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Albrecht_D%C3%BCrer_-_Bildnis_eines_Geistlichen_%28National_Gallery_of_Art%29.jpg/500px-Albrecht_D%C3%BCrer_-_Bildnis_eines_Geistlichen_%28National_Gallery_of_Art%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "national-gallery-of-art",
+    "qid": "Q20175457",
+    "wikidata": "https://www.wikidata.org/wiki/Q20175457",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q20175457 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Saint Philip",
+    "year": "1516",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20009.jpg?width=500",
+    "qid": "Q3947062",
+    "wikidata": "https://www.wikidata.org/wiki/Q3947062",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3947062",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "dimensions": "45 × 38 46 × 37 cm",
+    "medium": "Tempera on panel",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Apostles Philip and James"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Lucretia (The Suicide of Lucretia)",
+    "year": "1518",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on panel (limewood)",
+    "dimensions": "168 × 74 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Albrecht_D%C3%BCrer%2C_Selbstmord_der_Lucretia%2C_1518._M%C3%BCnchen%2C_Alte_Pinakothek_%28705%29.jpg/500px-Albrecht_D%C3%BCrer%2C_Selbstmord_der_Lucretia%2C_1518._M%C3%BCnchen%2C_Alte_Pinakothek_%28705%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Suicide_of_Lucretia_(D%C3%BCrer)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q3976746",
+    "wikidata": "https://www.wikidata.org/wiki/Q3976746",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/1lucrezi.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Virgin Mary in Prayer",
+    "year": "1518",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "54.9 × 45.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Betende_Maria_-_Gem%C3%A4ldegalerie_Berlin_-_5184312.jpg/500px-Betende_Maria_-_Gem%C3%A4ldegalerie_Berlin_-_5184312.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "qid": "Q3842750",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842750",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3842750 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "The Virgin Mary in Prayer",
+      "qid": "Q3842750",
+      "url": "https://www.wikidata.org/wiki/Q3842750"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Virgin and Child with St Anne",
+    "year": "1519",
+    "city": "New York",
+    "country": "United States",
+    "location": "Metropolitan Museum of Art",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "60 × 49.8 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Virgin_and_Child_with_Saint_Anne_MET_DP280846.jpg/500px-Virgin_and_Child_with_Saint_Anne_MET_DP280846.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Virgin_and_Child_with_Saint_Anne_(D%C3%BCrer)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "qid": "Q3948737",
+    "wikidata": "https://www.wikidata.org/wiki/Q3948737",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/3stanne2.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Virgin and Child with Saint Anne",
+      "qid": "Q3948737",
+      "url": "https://www.wikidata.org/wiki/Q3948737"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.89778,
+     48.36889
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Jakob Fugger the Wealthy",
+    "year": "c. 1520",
+    "city": "Augsburg",
+    "location": "Staatsgalerie Altdeutsche Meister",
+    "attribution": "generally accepted",
+    "medium": "Tempera on canvas ( Tüchlein )",
+    "dimensions": "69.4 × 53 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Albrecht_D%C3%BCrer%2C_Bildnis_Jakob_Fugger_der_Reiche%2C_c1520._BSTGS_717.jpg/500px-Albrecht_D%C3%BCrer%2C_Bildnis_Jakob_Fugger_der_Reiche%2C_c1520._BSTGS_717.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Jakob_Fugger_the_Wealthy",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "staatsgalerie-altdeutsche-meister",
+    "qid": "Q738242",
+    "wikidata": "https://www.wikidata.org/wiki/Q738242",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/4fugger.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Emperor Maximilian I of Habsburg",
+    "year": "1519",
+    "city": "Nuremberg",
+    "location": "Germanisches Nationalmuseum",
+    "attribution": "generally accepted",
+    "medium": "Tempera on canvas",
+    "dimensions": "83 × 65 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Albrecht_D%C3%BCrer_083.jpg/500px-Albrecht_D%C3%BCrer_083.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "country": "Germany"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Emperor Maximilian I",
+    "year": "1519",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "74 × 62 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Albrecht_D%C3%BCrer_-_Portrait_of_Maximilian_I_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Portrait_of_Maximilian_I_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Emperor_Maximilian_I",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q3937442",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937442",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/5empero1.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Emperor Maximilian I",
+      "qid": "Q3937442",
+      "url": "https://www.wikidata.org/wiki/Q3937442"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Man",
+    "year": "1520",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
+    "attribution": "generally accepted",
+    "medium": "Distemper on canvas mounted on paper",
+    "dimensions": "40 × 30.3 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Albrecht_D%C3%BCrer_-_Portrait_of_a_Man_-_WGA07018.jpg/500px-Albrecht_D%C3%BCrer_-_Portrait_of_a_Man_-_WGA07018.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "louvre",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/02/04port_m.html",
+    "qid": "Q27697646",
+    "wikidata": "https://www.wikidata.org/wiki/Q27697646",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q27697646 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a Man",
+      "qid": "Q115696852",
+      "url": "https://www.wikidata.org/wiki/Q115696852"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3522,
+     48.8567
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Study for a Virgin Mary",
+    "year": "c. 1520",
+    "city": "Paris",
+    "country": "France",
+    "location": "Bibliothèque nationale de France ( B-13 rés",
+    "attribution": "generally accepted",
+    "medium": "Tempera on canvas",
+    "dimensions": "25.5 × 21.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Albrecht_D%C3%BCrer%2C_%C3%89tude_pour_une_Sainte_Vierge%2C_1503._Paris%2C_BnF_%28B-13_r%C3%A9s.%29.tif/lossless-page1-250px-Albrecht_D%C3%BCrer%2C_%C3%89tude_pour_une_Sainte_Vierge%2C_1503._Paris%2C_BnF_%28B-13_r%C3%A9s.%29.tif.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "bibliotheque-nationale-de-france-b-13-res"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.41611,
+     51.315
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Bernhart von Reesen",
+    "year": "1521",
+    "city": "Kassel",
+    "country": "Germany",
+    "location": "Gemäldegalerie Alte Meister",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (oak wood)",
+    "dimensions": "45.5 × 31.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Albrecht_D%C3%BCrer_-_Portrait_of_Bernhard_von_Reesen_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Portrait_of_Bernhard_von_Reesen_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Bernhart_von_Reesen",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "qid": "Q3937475",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937475"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.05778,
+     42.36028
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Man in a Fur Coat (Rodrigo de Almada?)",
+    "year": "1521",
+    "city": "Boston",
+    "country": "United States",
+    "location": "Isabella Stewart Gardner Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "50.6 × 32.9 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Albrecht_D%C3%BCrer_-_A_Man_in_a_Fur_Coat_-_P21n10_-_Isabella_Stewart_Gardner_Museum.jpg/500px-Albrecht_D%C3%BCrer_-_A_Man_in_a_Fur_Coat_-_P21n10_-_Isabella_Stewart_Gardner_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "isabella-stewart-gardner-museum",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "A Man in a Fur Coat",
+      "qid": "Q103838809",
+      "url": "https://www.wikidata.org/wiki/Q103838809"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -9.15,
+     38.72528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "St. Jerome in His Study",
+    "year": "1521",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "location": "Museum Nacional de Arte Antiga",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (oak wood)",
+    "dimensions": "59.5 × 48.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Albrecht_D%C3%BCrer_035.jpg/500px-Albrecht_D%C3%BCrer_035.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/St._Jerome_in_His_Study_(D%C3%BCrer,_1521)",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museum-nacional-de-arte-antiga",
+    "qid": "Q1989202",
+    "wikidata": "https://www.wikidata.org/wiki/Q1989202",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/09/8jerome1.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.6922,
+     40.4139
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Man with Beret and Scroll",
+    "year": "1521",
+    "city": "Madrid",
+    "country": "Spain",
+    "location": "Museo del Prado",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (oakwood)",
+    "dimensions": "50 × 36 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Albrecht_D%C3%BCrer_-_Bildnis_eines_unbekannten_Mannes.jpg/500px-Albrecht_D%C3%BCrer_-_Bildnis_eines_unbekannten_Mannes.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "museo-del-prado",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of a Man",
+      "qid": "Q27697646",
+      "url": "https://www.wikidata.org/wiki/Q27697646"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     21.01111,
+     52.23
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Virgin and Child with Saint Anne",
+    "year": "1523",
+    "city": "Warsaw",
+    "location": "Muzeum Kolekcji im",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "75 x 64.5",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/D%C3%BCrer_Virgin_and_Child.jpg/500px-D%C3%BCrer_Virgin_and_Child.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "muzeum-kolekcji-im"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna and Child with the Pear",
+    "year": "1526",
+    "city": "Florence",
+    "country": "Italy",
+    "location": "Uffizi Gallery",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "43 × 31 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Albrecht_D%C3%BCrer_061.jpg/500px-Albrecht_D%C3%BCrer_061.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "uffizi-gallery",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/1madpear.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Jakob Muffel",
+    "year": "1526",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel transferred to canvas",
+    "dimensions": "49.7 × 37.2 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/D%C3%BCrer_-_Jakob_Muffel_%281471-1526%29%2C_1526%2C_557D.jpg/500px-D%C3%BCrer_-_Jakob_Muffel_%281471-1526%29%2C_1526%2C_557D.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Jakob_Muffel",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "qid": "Q3937578",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937578",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/2muffel.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.3647,
+     52.5086
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Hieronymus Holzschuher with cover",
+    "year": "1526",
+    "city": "Berlin",
+    "country": "Germany",
+    "location": "Gemäldegalerie",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "51 × 37.1 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/D%C3%BCrer_-_Hieronymus_Holzschuher_%281469-1529%29_mit_Deckel%2C_1526%2C_557E.jpg/500px-D%C3%BCrer_-_Hieronymus_Holzschuher_%281469-1529%29_mit_Deckel%2C_1526%2C_557E.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Hieronymus_Holzschuher",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "gemaldegalerie",
+    "qid": "Q3937568",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937568",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/3holzsch.html",
+    "_merged": [
+     {
+      "source": "Wikidata",
+      "title": "Portrait of Hieronymus Holzschuher",
+      "qid": "Q3937568",
+      "url": "https://www.wikidata.org/wiki/Q3937568"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Johann Kleberger",
+    "year": "1526",
+    "city": "Vienna",
+    "country": "Austria",
+    "location": "Kunsthistorisches Museum",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel (limewood)",
+    "dimensions": "36.5 × 36.5 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Albrecht_D%C3%BCrer_-_Johannes_Kleberger_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Johannes_Kleberger_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Portrait_of_Johann_Kleberger",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "qid": "Q2130035",
+    "wikidata": "https://www.wikidata.org/wiki/Q2130035",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/4kleberg.html"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57,
+     48.14833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Four Apostles Saints John and Peter Saints Mark and Paul",
+    "year": "1526",
+    "city": "Munich",
+    "country": "Germany",
+    "location": "Alte Pinakothek",
+    "attribution": "generally accepted",
+    "medium": "Color on panel",
+    "dimensions": "212.8 × 76.2 (l) 212.4 × 76.3 (r)",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Vier_Apostel_%28Albrecht_Duerer%29.jpg/500px-Vier_Apostel_%28Albrecht_Duerer%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Apostles",
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "alte-pinakothek",
+    "qid": "Q829270",
+    "wikidata": "https://www.wikidata.org/wiki/Q829270"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.6758,
+     45.7042
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Way to Calvary",
+    "year": "1527",
+    "city": "Bergamo",
+    "location": "Accademia Carrara",
+    "attribution": "generally accepted",
+    "medium": "Oil on panel",
+    "dimensions": "32 × 47 cm",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Albrecht_D%C3%BCrer_-_Way_to_Calvary_-_WGA07030.jpg/500px-Albrecht_D%C3%BCrer_-_Way_to_Calvary_-_WGA07030.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
+    "notable": true,
+    "creation_place": "Nuremberg",
+    "creation_lat": 49.4521,
+    "creation_lon": 11.0767,
+    "_source": {
+     "source": "Wikipedia: List of paintings by Albrecht Dürer",
+     "coord": "MediaWiki coordinates API"
+    },
+    "museum_id": "accademia-carrara",
+    "country": "Italy",
+    "wga_url": "https://www.wga.hu/html/d/durer/1/10/6calvary.html",
+    "qid": "Q74717565",
+    "wikidata": "https://www.wikidata.org/wiki/Q74717565",
+    "_overrides": {
+     "qid": {
+      "at": "2026-08-24",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q74717565 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Apostle James the Elder",
+    "year": "1516",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Durer%2C%20san%20giacomo.jpg?width=500",
+    "qid": "Q3947190",
+    "wikidata": "https://www.wikidata.org/wiki/Q3947190",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3947190",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna and Child",
+    "year": "1526",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Durer%2C%20vergine%20della%20pera.jpg?width=500",
+    "qid": "Q4009969",
+    "wikidata": "https://www.wikidata.org/wiki/Q4009969",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4009969",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.203880555
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Mary and Child",
+    "year": "1512",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%2C%20%2C%20Kunsthistorisches%20Museum%20Wien%2C%20Gem%C3%A4ldegalerie%20-%20Maria%20mit%20Kind%20-%20GG%20848%20-%20Kunsthistorisches%20Museum.jpg?width=500",
+    "qid": "Q2598223",
+    "wikidata": "https://www.wikidata.org/wiki/Q2598223",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2598223",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Seven Sorrows Polyptych:Sorrowing mother",
+    "year": "1496",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Maria%20als%20Schmerzensmutter%20%28Alte%20Pinakothek%29.jpg?width=500",
+    "qid": "Q16055586",
+    "wikidata": "https://www.wikidata.org/wiki/Q16055586",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16055586",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a Young Fürleger with Loose Hair",
+    "year": "1497",
+    "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Young%20Woman%20with%20Her%20Hair%20Down%20%28SM%20937%29.png?width=500",
+    "qid": "Q1112111",
+    "wikidata": "https://www.wikidata.org/wiki/Q1112111",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1112111",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of a Young Woman with Her Hair Down (formerly believed to be a Fürleger)"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.885277777,
+     52.36
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Willibald Pirckheimer",
+    "year": "1562",
+    "location": "Rijksmuseum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Albrecht%20D%C3%BCrer%20001.jpg?width=500",
+    "qid": "Q17319783",
+    "wikidata": "https://www.wikidata.org/wiki/Q17319783",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17319783",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1562, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.075556,
+     49.448333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of the Nuremberg Painter Michael Wolgemut",
+    "year": "1516",
+    "location": "Germanisches Nationalmuseum",
+    "city": "Nuremberg",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Bildnis%20des%20N%C3%BCrnberger%20Malers%20Michael%20Wolgemut%20%281516%29.jpg?width=500",
+    "qid": "Q3937632",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937632",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937632",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.367,
+     52.5084
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Wire drawing mill near Nyremberg",
+    "year": "1494",
+    "location": "Kupferstichkabinett Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Duerer%20Drahtziehmuehle.jpg?width=500",
+    "qid": "Q12871864",
+    "wikidata": "https://www.wikidata.org/wiki/Q12871864",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q12871864",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.332222222,
+     50.980277777
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Felicitas Tucher",
+    "year": "1499",
+    "location": "Schloss Weimar",
+    "city": "Weimar",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20074.jpg?width=500",
+    "qid": "Q3937525",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937525",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937525",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Felicitas Tucher (née Rieter) diptych, right wing"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.332222222,
+     50.980277777
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Hans Tucher",
+    "year": "1499",
+    "location": "Schloss Weimar",
+    "city": "Weimar",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20077.jpg?width=500",
+    "qid": "Q3937563",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937563",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937563",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Hans Tucher diptych, left wing back side: Combined Coat-of-Arms of the Tucher and Rieter Families",
+      "ref": "https://en.wikipedia.org/wiki/Tucher_von_Simmelsdorf"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.142,
+     51.501
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Burkard von Speyer",
+    "year": "1506",
+    "location": "Royal Collection",
+    "city": "",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Burkhard%20von%20Speyer%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3937478",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937478",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937478",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Burkard von Speyer"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.4032862,
+     51.311076
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Elspeth Tucher",
+    "year": "1499",
+    "location": "Hessen Kassel Heritage",
+    "city": "Kassel",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20073.jpg?width=500",
+    "qid": "Q3937514",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937514",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937514",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of Elsbeth Tucher (née Pusch) diptych, left wing with the Portrait of Nikolaus Tucher lost"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.348469,
+     44.667649
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Bagnacavallo Madonna",
+    "year": "1495",
+    "location": "Fondazione Magnani-Rocca",
+    "city": "Traversetolo",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20062.jpg?width=500",
+    "qid": "Q3842710",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842710",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3842710",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Virgin and Child before an Archway (Bagnacavallo Madonna)",
+      "ref": "https://en.wikipedia.org/wiki/Bagnacavallo_Madonna"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.203880555
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Maria mit Kind an der Brust",
+    "year": "1503",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20059.jpg?width=500",
+    "qid": "Q27981718",
+    "wikidata": "https://www.wikidata.org/wiki/Q27981718",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27981718",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.692222222,
+     40.413888888
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Adam",
+    "year": "1507",
+    "location": "Museo del Prado",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Adam.jpg?width=500",
+    "qid": "Q27697307",
+    "wikidata": "https://www.wikidata.org/wiki/Q27697307",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27697307",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.692222222,
+     40.413888888
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Eve",
+    "year": "1507",
+    "location": "Museo del Prado",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Eva.jpg?width=500",
+    "qid": "Q27697311",
+    "wikidata": "https://www.wikidata.org/wiki/Q27697311",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27697311",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.963333333,
+     40.779444444
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Head of a Young Woman",
+    "year": "1522",
+    "location": "Metropolitan Museum of Art",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Head%20of%20a%20Young%20Woman%20MET%20DP809594.jpg?width=500",
+    "qid": "Q20187871",
+    "wikidata": "https://www.wikidata.org/wiki/Q20187871",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20187871",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.128333333,
+     51.508888888
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Heavenly Scene",
+    "year": "1495",
+    "location": "National Gallery",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20durer%20heavenly%20body%20in%20the%20night%20sky.jpg?width=500",
+    "qid": "Q24024495",
+    "wikidata": "https://www.wikidata.org/wiki/Q24024495",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24024495",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Lot and His Daughters [reverse]",
+    "year": "1497",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Lot%20und%20seine%20T%C3%B6chter%20%28NGA%29.jpg?width=500",
+    "qid": "Q20174732",
+    "wikidata": "https://www.wikidata.org/wiki/Q20174732",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20174732",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.368333333,
+     48.204722222
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Mary among a Multitude of Animals",
+    "year": "1503",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Mary%20among%20a%20Multitude%20of%20Animals%2C%20c.%201503%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683053",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683053",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683053",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Circumcision of Jesus",
+    "year": "1494",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20018.jpg?width=500",
+    "qid": "Q22250337",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250337",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250337",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Flight to Egypt",
+    "year": "1496",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20The%20Seven%20Sorrows%20of%20the%20Virgin%20-%20The%20Flight%20into%20Egypt%20-%20WGA06920.jpg?width=500",
+    "qid": "Q22250338",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250338",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250338",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Seven Sorrows Polyptych: Christ among the Doctors",
+    "year": "1494",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20020.jpg?width=500",
+    "qid": "Q22250339",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250339",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250339",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Via Crucis",
+    "year": "1494",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20024.jpg?width=500",
+    "qid": "Q22250340",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250340",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250340",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Altarpiece of the Mater Dolorosa, Scene: Christ Nailed Art the Cross",
+    "year": "1494",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20023.jpg?width=500",
+    "qid": "Q22250341",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250341",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250341",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Crucifixion",
+    "year": "1494",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20019.jpg?width=500",
+    "qid": "Q22250343",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250343",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250343",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Deposition",
+    "year": "1494",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20021.jpg?width=500",
+    "qid": "Q22250344",
+    "wikidata": "https://www.wikidata.org/wiki/Q22250344",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22250344",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Seven Sorrows of the Virgin",
+    "year": "",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20The%20Seven%20Sorrows%20of%20the%20Virgin%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q28797398",
+    "wikidata": "https://www.wikidata.org/wiki/Q28797398",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28797398",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Luther",
+    "year": "1611",
+    "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Portrait%20of%20Luther%20-%20KMSsp716%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
+    "qid": "Q20391983",
+    "wikidata": "https://www.wikidata.org/wiki/Q20391983",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20391983",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1611, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Venus and the Three Graces",
+    "year": "",
+    "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Venus%20and%20the%20Three%20Graces%20-%20KMSsp715%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
+    "qid": "Q20440793",
+    "wikidata": "https://www.wikidata.org/wiki/Q20440793",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20440793",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57861,
+     55.68889
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Adoration of the Magi",
+    "year": "1647",
+    "location": "Statens Museum for Kunst",
+    "city": "Copenhagen Municipality",
+    "country": "Denmark",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20The%20Adoration%20of%20the%20Magi%20-%20KMSst549%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
+    "qid": "Q20536257",
+    "wikidata": "https://www.wikidata.org/wiki/Q20536257",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20536257",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1647, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jabach Altar: Saints Joseph and Joachim",
+    "year": "1504",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20029.jpg?width=500",
+    "qid": "Q29473934",
+    "wikidata": "https://www.wikidata.org/wiki/Q29473934",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29473934",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jabach Altar: Saints Simeon and Lazarus",
+    "year": "1500",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20044.png?width=500",
+    "qid": "Q29473936",
+    "wikidata": "https://www.wikidata.org/wiki/Q29473936",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29473936",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of the artist's father",
+    "year": "1599",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%28Kopie%20nach%29%20-%20Bildnis%20des%20Vaters%20des%20K%C3%BCnstlers%20%28Kopie%20nach%20dem%20Original%20in%20London%2C%20National%20Gallery%29%20-%20WAF%20237%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=500",
+    "qid": "Q29958685",
+    "wikidata": "https://www.wikidata.org/wiki/Q29958685",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29958685",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1599, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Hll. Johannes und Petrus (Verkleinerte Kopie nach den Vier Aposteln) (Kopie nach)",
+    "year": "",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%28Kopie%20nach%29%20-%20Hll.%20Johannes%20und%20Petrus%20%28Verkleinerte%20Kopie%20nach%20den%20Vier%20Aposteln%29%20-%2012130%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=500",
+    "qid": "Q30082306",
+    "wikidata": "https://www.wikidata.org/wiki/Q30082306",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30082306",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Tod Mariae (Kopie nach)",
+    "year": "",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%28Kopie%20nach%29%20-%20Tod%20Mariae%20-%20716%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=500",
+    "qid": "Q30094305",
+    "wikidata": "https://www.wikidata.org/wiki/Q30094305",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30094305",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.394349,
+     51.208819
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Elector of Saxony Frederick III",
+    "year": "1524",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20De%20Saksische%20keurvorst%20Frederik%20III%20-%20124%20-%20Royal%20Museum%20of%20Fine%20Arts%20Antwerp.tiff?width=500",
+    "qid": "Q21614252",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614252",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614252",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     17.61941,
+     59.7038
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of a man",
+    "year": "1497",
+    "location": "Skokloster Castle",
+    "city": "Håbo Municipality",
+    "country": "Sweden",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%2C%20attributed%20to%2C%20his%20studio%3F%20-%20Portrait%20of%20a%20man%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q28801399",
+    "wikidata": "https://www.wikidata.org/wiki/Q28801399",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28801399",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.099121,
+     42.33818
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "A Man in a Fur Coat",
+    "year": "1521",
+    "location": "Isabella Stewart Gardner Museum",
+    "city": "Boston",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20A%20Man%20in%20a%20Fur%20Coat%20-%20P21n10%20-%20Isabella%20Stewart%20Gardner%20Museum.jpg?width=500",
+    "qid": "Q103838809",
+    "wikidata": "https://www.wikidata.org/wiki/Q103838809",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q103838809",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_merged": [
+     {
+      "source": "Wikipedia list",
+      "title": "Portrait of a Man in a Fur Coat (Rodrigo de Almada?)"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.73466,
+     51.05338
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna and Child (central panel)",
+    "year": "1496",
+    "location": "Gemäldegalerie Alte Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20064.jpg?width=500",
+    "qid": "Q124455099",
+    "wikidata": "https://www.wikidata.org/wiki/Q124455099",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124455099",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255277777,
+     43.768333333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Marriage Coat of Arms of the Families Duerer and Holper. Verso of the Albrecht Dürer the Elder portrait",
+    "year": "1490",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Marriage%20Coat%20of%20Arms%20of%20the%20Families%20Duerer%20and%20Holper.jpg?width=500",
+    "qid": "Q124454923",
+    "wikidata": "https://www.wikidata.org/wiki/Q124454923",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124454923",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Four Apostles: Saints Mark and Paul",
+    "year": "1526",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20027.jpg?width=500",
+    "qid": "Q116731747",
+    "wikidata": "https://www.wikidata.org/wiki/Q116731747",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116731747",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Oswolt Krel: \"Sylvan Men\" with Heraldic Shields of Oswolt Krel",
+    "year": "1499",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/057%20Homme%20sauvage%20Albrecht%20D%C3%BCrer.jpg?width=500",
+    "qid": "Q124291036",
+    "wikidata": "https://www.wikidata.org/wiki/Q124291036",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124291036",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Oswolt Krel: Oswolt Krel",
+    "year": "1499",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20Oswolt%20Krel.jpg?width=500",
+    "qid": "Q124291055",
+    "wikidata": "https://www.wikidata.org/wiki/Q124291055",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124291055",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.569985,
+     48.148291
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Oswolt Krel: \"Sylvan Men\" with Heraldic Shields of Agathe von Esendorf",
+    "year": "1499",
+    "location": "Alte Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/058%20Homme%20sauvage%20Albrecht%20D%C3%BCrer.jpg?width=500",
+    "qid": "Q124291071",
+    "wikidata": "https://www.wikidata.org/wiki/Q124291071",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124291071",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.375833333,
+     48.833611111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Knabenkopf nach links geneigt",
+    "year": "1503",
+    "location": "Bibliothèque nationale de France",
+    "city": "13th arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20048.jpg?width=500",
+    "qid": "Q124458968",
+    "wikidata": "https://www.wikidata.org/wiki/Q124458968",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124458968",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.375833333,
+     48.833611111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Knabenkopf nach rechts geneigt",
+    "year": "1503",
+    "location": "Bibliothèque nationale de France",
+    "city": "13th arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20049.jpg?width=500",
+    "qid": "Q124458979",
+    "wikidata": "https://www.wikidata.org/wiki/Q124458979",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124458979",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.594193,
+     47.554032
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Adoration of the Magi",
+    "year": "1492",
+    "location": "Kunstmuseum Basel",
+    "city": "Basel",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20006.jpg?width=500",
+    "qid": "Q126888237",
+    "wikidata": "https://www.wikidata.org/wiki/Q126888237",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q126888237",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.891388888
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Young Woman in Netherlandish Dress",
+    "year": "1521",
+    "location": "Galería Nacional de Arte",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Young%20Woman%20in%20Netherlandish%20Dress.jpg?width=500",
+    "qid": "Q124454984",
+    "wikidata": "https://www.wikidata.org/wiki/Q124454984",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124454984",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.367,
+     52.5084
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Tal von Kalchreuth.",
+    "year": "1494",
+    "location": "Kupferstichkabinett Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20105.jpg?width=500",
+    "qid": "Q124455129",
+    "wikidata": "https://www.wikidata.org/wiki/Q124455129",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124455129",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.473341,
+     51.914215
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Holy Family",
+    "year": "1494",
+    "location": "Museum Boijmans Van Beuningen",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20034.jpg?width=500",
+    "qid": "Q124458991",
+    "wikidata": "https://www.wikidata.org/wiki/Q124458991",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124458991",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.138041,
+     50.8237
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Not this Man but Barabbas",
+    "year": "",
+    "location": "Brighton Museum & Art Gallery",
+    "city": "Brighton and Hove",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%281471-1528%29%20%28after%29%20-%20Not%20this%20Man%20but%20Barabbas%20-%20FA000181%20-%20Brighton%20Museum%20%5E%20Art%20Gallery.jpg?width=500",
+    "qid": "Q119703809",
+    "wikidata": "https://www.wikidata.org/wiki/Q119703809",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119703809",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.36779,
+     49.66187
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "La Crucifixion avec la Vierge, saint Jean et un donateur",
+    "year": "1492",
+    "location": "Musée Jeanne-d'Aboville",
+    "city": "La Fère",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Crucifixion%20avec%20la%20Vierge%2C%20saint%20Jean%20et%20un%20donateur.jpg?width=500",
+    "qid": "Q125798877",
+    "wikidata": "https://www.wikidata.org/wiki/Q125798877",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q125798877",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.133888888,
+     51.525944444
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Christ and Mary Magdalene (Noli me Tangere)",
+    "year": "",
+    "location": "Wellcome Collection",
+    "city": "London Borough of Camden",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%281471-1528%29%20%28copy%20after%29%20-%20Christ%20and%20Mary%20Magdalene%20%28Noli%20me%20Tangere%29%20-%2045963i%20-%20Wellcome%20Collection.jpg?width=500",
+    "qid": "Q119703810",
+    "wikidata": "https://www.wikidata.org/wiki/Q119703810",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119703810",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.133888888,
+     51.525944444
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Saint Jerome",
+    "year": "",
+    "location": "Wellcome Collection",
+    "city": "London Borough of Camden",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%281471-1528%29%20%28after%29%20-%20Saint%20Jerome%20-%20577090i%20-%20Wellcome%20Collection.jpg?width=500",
+    "qid": "Q119931360",
+    "wikidata": "https://www.wikidata.org/wiki/Q119931360",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119931360",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.133888888,
+     51.525944444
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Saint Jerome in His Study",
+    "year": "",
+    "location": "Wellcome Collection",
+    "city": "London Borough of Camden",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%281471-1528%29%20%28follower%20of%29%20-%20Saint%20Jerome%20in%20His%20Study%20-%2044769i%20-%20Wellcome%20Collection.jpg?width=500",
+    "qid": "Q119931564",
+    "wikidata": "https://www.wikidata.org/wiki/Q119931564",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q119931564",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.366258,
+     55.811757
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Head of Christ Crowned with Thorns",
+    "year": "1587",
+    "location": "Glasgow Museums Resource Centre",
+    "city": "Glasgow City",
+    "country": "United Kingdom",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20%281471-1528%29%20%28imitator%20of%29%20-%20The%20Head%20of%20Christ%20Crowned%20with%20Thorns%20-%20209%20-%20Glasgow%20Museums%20Resource%20Centre.jpg?width=500",
+    "qid": "Q118876330",
+    "wikidata": "https://www.wikidata.org/wiki/Q118876330",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118876330",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1587, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jabach Altar: Job on the Dungheap",
+    "year": "1505",
+    "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20043.png?width=500",
+    "qid": "Q64787121",
+    "wikidata": "https://www.wikidata.org/wiki/Q64787121",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64787121",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.6825,
+     50.1097
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Heller Altarpiece",
+    "year": "1507",
+    "location": "Historical Museum Frankfurt",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20038.jpg?width=500",
+    "qid": "Q48553884",
+    "wikidata": "https://www.wikidata.org/wiki/Q48553884",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q48553884",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.6825,
+     50.1097
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Heller-Altar, first inner wing, Martyrdom of Saint James the Great",
+    "year": "1500",
+    "location": "Historical Museum Frankfurt",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20037.jpg?width=500",
+    "qid": "Q48554354",
+    "wikidata": "https://www.wikidata.org/wiki/Q48554354",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q48554354",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.368333333,
+     48.204722222
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Two Squirrels",
+    "year": "1512",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Durer-ecureuil.jpg?width=500",
+    "qid": "Q97940492",
+    "wikidata": "https://www.wikidata.org/wiki/Q97940492",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q97940492",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.075556,
+     49.448333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Emperor Charlemagne",
+    "year": "1511",
+    "location": "Germanisches Nationalmuseum",
+    "city": "Nuremberg",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Duerer%20Karl%20der%20Grosse.jpg?width=500",
+    "qid": "Q69667374",
+    "wikidata": "https://www.wikidata.org/wiki/Q69667374",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q69667374",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.075556,
+     49.448333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Emperor Sigismund",
+    "year": "1512",
+    "location": "Germanisches Nationalmuseum",
+    "city": "Nuremberg",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sigismund%2C%20Holy%20Roman%20Emperor%2C%20by%20Albrecht%20D%C3%BCrer.jpg?width=500",
+    "qid": "Q69667738",
+    "wikidata": "https://www.wikidata.org/wiki/Q69667738",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q69667738",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4,
+     49.0119
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Christ as the Man of Sorrows",
+    "year": "1493",
+    "location": "Staatliche Kunsthalle Karlsruhe",
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Christ%20as%20the%20Man%20of%20Sorrows%20-%20WGA06911.jpg?width=500",
+    "qid": "Q48447927",
+    "wikidata": "https://www.wikidata.org/wiki/Q48447927",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q48447927",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.813611,
+     53.072778
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "View of Kalchreuth",
+    "year": "1511",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%20Ansicht%20des%20Dorfes%20Kalchreuth.jpg?width=500",
+    "qid": "Q54805599",
+    "wikidata": "https://www.wikidata.org/wiki/Q54805599",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q54805599",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     17.108611111,
+     48.14
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Madonna",
+    "year": "1516",
+    "location": "Slovak National Gallery",
+    "city": "Bratislava",
+    "country": "Slovakia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stredoeur%C3%B3psky%20maliar%20-%20Madonna%20-%20O%20332%20-%20Slovak%20National%20Gallery.jpg?width=500",
+    "qid": "Q50752557",
+    "wikidata": "https://www.wikidata.org/wiki/Q50752557",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50752557",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.364722222,
+     52.508611111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Emperor Maximilan I. (1459-1519)",
+    "year": "",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Bezirk Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Umkreis%2C%20Albrecht%20D%C3%BCrer%20-%20Emperor%20Maximilan%20I.%20%281459-1519%29%20-%202111%20-%20Gem%C3%A4ldegalerie.jpg?width=500",
+    "qid": "Q107443977",
+    "wikidata": "https://www.wikidata.org/wiki/Q107443977",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107443977",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.375833333,
+     48.833611111
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Head of a Woman",
+    "year": "1503",
+    "location": "Bibliothèque nationale de France",
+    "city": "13th arrondissement of Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20050.jpg?width=500",
+    "qid": "Q112252084",
+    "wikidata": "https://www.wikidata.org/wiki/Q112252084",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112252084",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.675609,
+     45.70386
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of St Sebastian with an Arrow",
+    "year": "1499",
+    "location": "Accademia Carrara",
+    "city": "Bergamo",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Portrait%20of%20St%20Sebastian%20with%20an%20Arrow%20-%20WGA06936.jpg?width=500",
+    "qid": "Q115695271",
+    "wikidata": "https://www.wikidata.org/wiki/Q115695271",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q115695271",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.368333333,
+     48.204722222
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Salvator Mundi with the Child Jesus",
+    "year": "1493",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20045.jpg?width=500",
+    "qid": "Q111822126",
+    "wikidata": "https://www.wikidata.org/wiki/Q111822126",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111822126",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.075556,
+     49.448333
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Emperor Maximilian I",
+    "year": "1519",
+    "location": "Germanisches Nationalmuseum",
+    "city": "Nuremberg",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Bildnis%20Kaiser%20Maximilians%20I.%20%281519%29.jpg?width=500",
+    "qid": "Q110892303",
+    "wikidata": "https://www.wikidata.org/wiki/Q110892303",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110892303",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Crucifixion",
+    "year": "1600",
+    "location": "Staatliche Kunstsammlungen Dresden",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Christus%20am%20Kreuz.jpg?width=500",
+    "qid": "Q115902349",
+    "wikidata": "https://www.wikidata.org/wiki/Q115902349",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q115902349",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "_overrides": {
+     "attribution": {
+      "at": "2026-08-24",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.813611,
+     53.072778
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "St. Unuphrius",
+    "year": "1505",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Onuphrius%20-%20Kunsthalle%20Bremen.jpg?width=500",
+    "qid": "Q115695183",
+    "wikidata": "https://www.wikidata.org/wiki/Q115695183",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q115695183",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.958611,
+     50.9375
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Jabach Altar: Piper and Drummer",
+    "year": "1507",
+    "location": "Wallraf–Richartz Museum",
+    "city": "Altstadt-Nord",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20028.png?width=500",
+    "qid": "Q116294982",
+    "wikidata": "https://www.wikidata.org/wiki/Q116294982",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116294982",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.571776,
+     48.149583
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "The Four Apostles: Saints John and Peter",
+    "year": "1526",
+    "location": "Bavarian State Painting Collections",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20The%20Four%20Apostles%2C%20Saints%20John%20and%20Peter.jpg?width=500",
+    "qid": "Q116731690",
+    "wikidata": "https://www.wikidata.org/wiki/Q116731690",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116731690",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.485277777,
+     52.156944444
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Erasmus of Rotterdam",
+    "year": "1501",
+    "location": "Leiden University",
+    "city": "Leiden",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20Desiderius%20Erasmus%2C%20humanist%20Icones%205.tiff?width=500",
+    "qid": "Q114808013",
+    "wikidata": "https://www.wikidata.org/wiki/Q114808013",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114808013",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.813611,
+     53.072778
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Graveyard of S. Johannis",
+    "year": "1489",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Johannisfriedhof%20Albrecht%20D%C3%BCrer.jpg?width=500",
+    "qid": "Q54833681",
+    "wikidata": "https://www.wikidata.org/wiki/Q54833681",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q54833681",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    }
+   }
+  }
+ ]
+}

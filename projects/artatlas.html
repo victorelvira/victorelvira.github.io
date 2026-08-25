@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Interactive Atlas of Painting · masterpieces in space and time</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237a5a3a' d='M12 3C6.5 3 2 6.6 2 11c0 3 2.4 4.6 4.5 4.6 1.6 0 2.2-1 3.2-1 .8 0 1.3.6 1.3 1.5 0 .7-.4 1.2-.4 1.9 0 1.1 1 2 2.4 2C18 21 22 16.7 22 11 22 6.6 17.5 3 12 3z'/%3E%3Ccircle cx='7' cy='9.5' r='1.5' fill='%23c0392b'/%3E%3Ccircle cx='10.5' cy='7' r='1.5' fill='%23c8a24a'/%3E%3Ccircle cx='14.5' cy='7.2' r='1.5' fill='%232e7d5b'/%3E%3Ccircle cx='17.5' cy='10' r='1.5' fill='%232a4d8f'/%3E%3C/svg%3E">
+  <meta name="description" content="An interactive atlas of the great painters — where their masterpieces are today and where they were painted, across space and time. Caravaggio, Leonardo, Raphael, Goya, Velázquez, Botticelli, Titian, Vermeer and more. Data from Wikidata, Wikipedia and Wikimedia Commons.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#3a2317">
+  <!-- social share cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Interactive Atlas of Painting">
+  <meta property="og:description" content="Masterpieces in space and time — where the great painters' works are today and where they were made.">
+  <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Judith%20Beheading%20Holofernes%20-%20Caravaggio.jpg?width=1200">
+  <meta property="og:url" content="https://victorelvira.github.io/projects/artatlas.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
+  <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
+  <link rel="stylesheet" href="artatlas/style.css?v=0.56.0">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Version and last update"></span>
+  </nav>
+  <header id="bar">
+    <a class="brand" href="artatlas.html" title="Reload the atlas (clears filters)">
+      <svg class="mark" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path fill="#7a5a3a" d="M12 3C6.5 3 2 6.6 2 11c0 3 2.4 4.6 4.5 4.6 1.6 0 2.2-1 3.2-1 .8 0 1.3.6 1.3 1.5 0 .7-.4 1.2-.4 1.9 0 1.1 1 2 2.4 2C18 21 22 16.7 22 11 22 6.6 17.5 3 12 3z"/>
+        <circle cx="7" cy="9.5" r="1.5" fill="#c0392b"/>
+        <circle cx="10.5" cy="7" r="1.5" fill="#c8a24a"/>
+        <circle cx="14.5" cy="7.2" r="1.5" fill="#2e7d5b"/>
+        <circle cx="17.5" cy="10" r="1.5" fill="#2a4d8f"/>
+      </svg>
+      <div>
+        <strong>Interactive Atlas of Painting</strong>
+        <small>masterpieces in space and time</small>
+      </div>
+    </a>
+    <span id="painters" class="painters primary"></span>
+    <div id="stats" class="stats">…</div>
+    <div class="filters">
+      <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
+      <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
+      <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
+      <label class="chip toggle att" title="Show only works of accepted attribution — hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked><span>Accepted only</span></label>
+      <button id="locate" class="chip btn" type="button" title="Find the painting nearest to your location">📍 Near me</button>
+    </div>
+  </header>
+
+  <div id="modes">
+    <span id="view-tabs">
+      <button type="button" id="v-mapview" class="view-btn active" title="Map with the list of works beside it">🗺 Map &amp; list</button>
+      <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
+      <button type="button" id="v-game" class="view-btn" title="Guess the painting — a multiple-choice quiz">🎮 Game</button>
+      <button type="button" id="v-chart" class="view-btn" title="Every painter's output across the years">📈 Timeline</button>
+      <button type="button" id="v-galaxy" class="view-btn" title="Paintings arranged by visual similarity (AI)">🌌 Similar</button>
+    </span>
+    <span id="mapopts" title="What the map plots">
+      <button type="button" class="mode-btn active" data-mode="current">📍 Now in</button>
+      <button type="button" class="mode-btn" data-mode="painted">🎨 Painted in</button>
+    </span>
+    <input id="filter" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off"
+           title="Filters every view: map, list and table">
+    <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
+  </div>
+
+  <div id="timeline">
+    <span class="tl-cap">Painted</span>
+    <div class="tl-range">
+      <div class="tl-track"></div>
+      <div id="tl-fill" class="tl-fill"></div>
+      <input type="range" id="tl-min" aria-label="From year">
+      <input type="range" id="tl-max" aria-label="To year">
+    </div>
+    <span id="tl-label" class="tl-val">—</span>
+  </div>
+
+  <div id="main">
+    <div id="map"></div>
+    <div id="panel-resize" title="Drag to resize the panel" aria-hidden="true"></div>
+    <aside id="panel">
+      <div id="panel-top">
+        <span id="panel-head">Works in view</span>
+        <span id="panel-view">
+          <label id="pv-group" class="subtick" title="Group the miniatures by museum" hidden><input type="checkbox" checked> ⛪ by museum</label>
+          <input id="thumb-size" type="range" min="72" max="240" value="112" title="Thumbnail size" hidden>
+          <button type="button" id="pv-list" class="pvbtn active" title="List view">☰ List</button>
+          <button type="button" id="pv-grid" class="pvbtn" title="Thumbnails">▦ Miniature</button>
+        </span>
+      </div>
+      <ul id="worklist"></ul>
+    </aside>
+  </div>
+
+  <section id="table" hidden>
+    <div id="table-bar">
+      <span id="table-tabs">
+        <button type="button" class="ttab active" data-tmode="works">Works</button>
+        <button type="button" class="ttab" data-tmode="museums">Museums</button>
+      </span>
+      <span id="table-count" class="t-count"></span>
+      <span id="table-view">
+        <label id="tv-group" class="subtick" title="Group the pictures by museum — each museum's works run together, introduced by a small label, with no wasted rows">
+          <input type="checkbox" checked> ⛪ by museum</label>
+        <input id="tv-thumb" type="range" min="72" max="260" value="150" title="Thumbnail size">
+        <button type="button" id="tv-grid" class="pvbtn active" title="Picture grid">▦ Pictures</button>
+        <button type="button" id="tv-list" class="pvbtn" title="Detailed sortable list">☰ List</button>
+      </span>
+    </div>
+    <div id="table-wrap">
+      <table id="works-table">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+      <ul id="table-gallery" class="gallery" hidden></ul>
+    </div>
+  </section>
+
+  <section id="game" hidden>
+    <div id="game-bar">
+      <span class="g-seg" id="game-mode" title="What to guess">
+        <button type="button" class="gbtn active" data-gmode="mixed">🎲 Mixed</button>
+        <button type="button" class="gbtn" data-gmode="author">Author</button>
+        <button type="button" class="gbtn" data-gmode="date">Date</button>
+        <button type="button" class="gbtn" data-gmode="where">Where</button>
+        <button type="button" class="gbtn" data-gmode="painting">Painting</button>
+      </span>
+      <span class="g-seg" id="game-diff" title="Harder = closer options; Hard gives 5 choices">
+        <button type="button" class="gbtn active" data-diff="easy">Easy</button>
+        <button type="button" class="gbtn" data-diff="medium">Medium</button>
+        <button type="button" class="gbtn" data-diff="hard">Hard</button>
+      </span>
+      <input id="game-fig" type="range" min="22" max="62" value="46" title="Painting size — shrink it so everything fits on a phone">
+      <span id="game-score" class="g-score"></span>
+      <span id="game-records" class="g-records" title="Your streak, best streak, and % correct today and all-time (saved on this device)"></span>
+      <button type="button" id="game-restart" class="gbtn" title="Reset this session's score (records are kept)">↺ Session</button>
+      <button type="button" id="game-reset-all" class="gbtn" title="Erase your saved records (streak, today, all-time)">⌫ Records</button>
+    </div>
+    <div id="game-stage"></div>
+  </section>
+
+  <section id="chartview" hidden>
+    <div id="chart-bar">
+      <span class="g-seg" id="chart-group" title="How to order / group the painters">
+        <button type="button" class="gbtn active" data-cg="individual">Individual</button>
+        <button type="button" class="gbtn" data-cg="period">By period</button>
+        <button type="button" class="gbtn" data-cg="school">By school</button>
+      </span>
+      <span class="g-seg" id="chart-zoom" title="Compress or stretch the year axis">
+        <button type="button" class="gbtn" data-z="out">－ Compress</button>
+        <button type="button" class="gbtn" data-z="in">＋ Stretch</button>
+      </span>
+      <span id="chart-legend" class="chart-legend">Each dot = a year · bigger = more works</span>
+    </div>
+    <div id="chart-body">
+      <div id="chart-scroll"></div>
+      <div id="chart-names" aria-hidden="true"><div id="chart-names-inner"></div></div>
+    </div>
+  </section>
+
+  <section id="galaxyview" hidden>
+    <div id="galaxy-bar">
+      <div class="galaxy-controls">
+        <span class="g-seg" id="galaxy-dim" title="Flat 2-D map or a rotatable 3-D cloud">
+          <button type="button" class="gbtn active" data-dim="2d">2D</button>
+          <button type="button" class="gbtn" data-dim="3d">🧊 3D</button>
+        </span>
+        <span class="g-seg" id="galaxy-colorby" title="Colour the dots by…">
+          <button type="button" class="gbtn" data-cb="author">Author</button>
+          <button type="button" class="gbtn" data-cb="period">Period</button>
+          <button type="button" class="gbtn active" data-cb="school">School</button>
+          <button type="button" class="gbtn" data-cb="color">Colour</button>
+        </span>
+        <span class="galaxy-mini">
+          <label id="galaxy-titles" title="Write each painting's title next to its dot"><input type="checkbox" data-lab="title"> 🏷 Painting titles</label>
+          <span class="gm-sep" id="galaxy-names"><span class="gm-cap">Painter names:</span>
+            <button type="button" class="minibtn active" data-names="off" title="No painter names">none</button>
+            <button type="button" class="minibtn" data-names="dots" title="A small painter name on every dot">on each dot</button>
+            <button type="button" class="minibtn" data-names="centroid" title="One big painter name at the middle of their cluster">one per painter</button>
+          </span>
+        </span>
+        <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover to preview · <b>click to pin</b> · scroll/pinch zoom · drag to pan</span>
+      </div>
+      <span id="galaxy-legend" class="galaxy-legend"></span>
+    </div>
+    <div id="galaxy-body">
+      <div id="galaxy-scroll"><div id="galaxy-plane"></div><canvas id="galaxy-canvas" hidden></canvas></div>
+      <aside id="gx-side" hidden>
+        <button type="button" id="gx-side-x" title="Close" aria-label="Close">✕</button>
+        <div id="gx-side-body"></div>
+      </aside>
+    </div>
+    <details id="galaxy-method">
+      <summary>How this is built — methodology</summary>
+      <div class="gm-body">
+        <p>Every painting is passed through a <b>CLIP</b> image model (ViT-B/32, open-source) that turns the
+        picture into a 512-number vector capturing what it <em>looks like</em> — composition, palette, subject,
+        handling — with no captions or labels involved. Two works are “similar” when their vectors point the same
+        way (<b>cosine similarity</b>); that drives <em>Visually closest</em> and <em>Painters nearest this work</em>
+        in each painting’s card.</p>
+        <p>This map lays all embedded works out in 2-D with <b>t-SNE</b>, so visually alike paintings land near each
+        other. The dots can be coloured by painter, period or school — or by each work’s own <b>dominant colour</b>
+        (the average of its pixels), captured while embedding. <em>Painters nearest this work</em> and the
+        <em>“If you like … try”</em> chips average a painter’s vectors into one “fingerprint” and compare fingerprints.</p>
+        <p>Everything is computed <b>offline</b> and shipped as small precomputed files — the page itself runs no AI.
+        Coverage grows as more works are embedded. Images © their sources via Wikimedia Commons.</p>
+      </div>
+    </details>
+  </section>
+
+  <div id="sheet" hidden>
+    <button id="sheet-close" type="button" aria-label="Close">✕</button>
+    <div id="sheet-body"></div>
+  </div>
+
+  <div id="lightbox" hidden>
+    <button id="lb-close" type="button" aria-label="Close">✕</button>
+    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  </div>
+
+  <div id="work-card" hidden>
+    <div class="wc-card">
+      <button id="wc-close" type="button" aria-label="Close">✕</button>
+      <div id="wc-body"></div>
+    </div>
+  </div>
+
+  <footer id="foot">
+    <a class="home" href="https://victorelvira.github.io">← victorelvira.github.io</a>
+    · Data: <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+    · <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a>
+    · <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>
+    · <button type="button" id="report-open" class="linkbtn">Missing a work or spotted an error?</button>
+  </footer>
+
+  <div id="report-panel" hidden>
+    <form id="report-form">
+      <h3>Report an error or a missing work</h3>
+      <label>Type
+        <select name="type">
+          <option value="missing">A work is missing</option>
+          <option value="location">Wrong location / museum</option>
+          <option value="attribution">Wrong attribution</option>
+          <option value="image">Wrong or missing image</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <input name="painter" placeholder="Painter (if known)">
+      <input name="title" placeholder="Work title (if known)">
+      <textarea name="note" rows="3" placeholder="Details"></textarea>
+      <input name="email" type="email" placeholder="Your email (optional, in case I need to ask)">
+      <input type="hidden" name="qid"><input type="hidden" name="pagina" value="atlas">
+      <div class="row">
+        <button type="button" id="report-cancel">Cancel</button>
+        <button type="submit" id="report-send">Send</button>
+      </div>
+      <div class="msg" id="report-msg"></div>
+    </form>
+  </div>
+
+  <script src="artatlas/vendor/leaflet.js"></script>
+  <script src="artatlas/vendor/leaflet.markercluster.js"></script>
+  <script src="artatlas/app.js?v=0.56.0"></script>
+<!-- Tracking: Google Analytics tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GHT1L88XYZ');
+</script>
+<!-- End Google Analytics tag (gtag.js) -->
+<!-- Default Statcounter code -->
+<script type="text/javascript">
+var sc_project=11157426;
+var sc_invisible=1;
+var sc_security="c4968ba5";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+<!-- GoatCounter -->
+<script data-goatcounter="https://victorelvira.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
