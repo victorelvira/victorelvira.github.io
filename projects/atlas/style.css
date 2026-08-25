@@ -789,6 +789,8 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
 #galaxy-legend:empty { display: none; }
 #galaxy-labels { display: inline-flex; gap: 10px; align-items: center; }
 #galaxy-labels label { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); cursor: pointer; }
+#galaxy-names { display: inline-flex; align-items: center; gap: 2px; }
+.g-seg-cap { font-size: 12px; color: var(--muted); margin-right: 4px; }
 /* tiny grey labels beside each dot (optional, can get busy — that's expected) */
 /* one big translucent painter name at the cluster's median (a soft watermark behind the dots) */
 .gx-zone { position: absolute; transform: translate(-50%, -50%); font-weight: 800;
@@ -800,6 +802,9 @@ body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { di
   overflow: hidden; text-overflow: ellipsis; }
 #galaxy-scroll { flex: 1; overflow: hidden; position: relative; cursor: grab; touch-action: none; }
 #galaxy-plane { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
+#galaxy-canvas { position: absolute; inset: 0; cursor: grab; touch-action: none; }
+#galaxy-canvas:active { cursor: grabbing; }
+#galaxy-canvas[hidden] { display: none; }
 .gx-dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%);
   cursor: pointer; box-shadow: 0 0 0 .5px rgba(0,0,0,.22); }
 .gx-dot:hover { transform: translate(-50%, -50%) scale(2.1); z-index: 20; box-shadow: 0 0 0 2px #fff, 0 2px 8px rgba(0,0,0,.4); }

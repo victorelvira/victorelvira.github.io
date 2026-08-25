@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.52.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 15:05";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.53.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 16:20";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -2152,7 +2152,9 @@ function setChartView(on) {
 
 // ══ Similarity "galaxy": paintings laid out in 2-D by CLIP visual similarity (precomputed) ═══════
 let galaxyCoords = null, galaxyByQid = null, galaxyColorBy = "school";
-let galaxyLabels = { title: false, author: false, zones: false };   // per-dot labels + big per-painter names
+let galaxyTitles = false;              // 🏷 per-dot title labels (checkbox)
+let galaxyNames = "off";               // painter names: "off" | "dots" (per dot) | "centroid" (one at the median)
+let galaxy3D = false;   // 3-D rotatable point cloud (canvas) vs the flat 2-D DOM map
 const CLUSTER_PALETTE = ["#c0392b", "#2a4d8f", "#2e7d5b", "#c8a24a", "#7b3fb0", "#e07b39", "#3a8fb0", "#a0518f", "#6a8f2a", "#8a5a3a", "#d04a7a", "#4aa0a0"];
 let _eraIdx = null, _schoolIdx = null;
 function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals whether it clusters
@@ -2177,10 +2179,17 @@ function setAuthorFocus(slug) {
   if (_gxFocusSlug === slug) return;
   _gxFocusSlug = slug;
   if (!_gxFocusStyle) { _gxFocusStyle = document.createElement("style"); document.head.appendChild(_gxFocusStyle); }
-  _gxFocusStyle.textContent = slug
-    ? `#galaxy-plane .gx-dot:not([data-a="${slug}"]){background:#7c766b !important;opacity:.85}` +
-      `#galaxy-plane .gx-dot[data-a="${slug}"]{opacity:1;z-index:5;box-shadow:0 0 0 1.5px #fff,0 1px 5px rgba(0,0,0,.5)}`
-    : "";
+  let rule = "";
+  if (slug) {
+    // grey out every OTHER painter's dots (in any colour mode) so this painter's set pops
+    rule += `#galaxy-plane .gx-dot:not([data-a="${slug}"]){background:#7c766b !important;opacity:.8}` +
+      `#galaxy-plane .gx-dot[data-a="${slug}"]{opacity:1;z-index:5;box-shadow:0 0 0 1.5px #fff,0 1px 5px rgba(0,0,0,.5)}`;
+    if (galaxyNames === "centroid") {    // keep only the hovered painter's name — coloured and on top
+      rule += `#galaxy-plane .gx-zone:not([data-a="${slug}"]){opacity:.08}` +
+        `#galaxy-plane .gx-zone[data-a="${slug}"]{opacity:1;z-index:20}`;
+    }
+  }
+  _gxFocusStyle.textContent = rule;
 }
 function clearAuthorFocus() { setAuthorFocus(null); }
 function renderGalaxy() {
@@ -2205,29 +2214,33 @@ function drawGalaxy() {
     const fill = (galaxyColorBy === "color" && xy.length >= 5) ? `rgb(${xy[2]},${xy[3]},${xy[4]})` : galaxyColorOf(w);
     const aSlug = GAME_SLUG_OF_NAME[w.p.painter] || "";
     html += `<i class="gx-dot" data-qid="${qid}" data-a="${aSlug}" style="left:${x}px;top:${y}px;background:${fill}"></i>`;
-    if (galaxyLabels.title || galaxyLabels.author) {
+    if (galaxyTitles || galaxyNames === "dots") {
       const parts = [];
-      if (galaxyLabels.title) parts.push(w.p.title || "Untitled");
-      if (galaxyLabels.author) parts.push(w.p.painter || "");
+      if (galaxyTitles) parts.push(w.p.title || "Untitled");
+      if (galaxyNames === "dots") parts.push(w.p.painter || "");
       const txt = parts.filter(Boolean).join(" · ");
       if (txt) html += `<span class="gx-lab" style="left:${(+x + 6)}px;top:${y}px">${esc(txt)}</span>`;
     }
     n++;
   }
-  // one big translucent painter name at the MEDIAN of each painter's cluster (drawn behind the dots)
+  // one big translucent painter name at the MEDIAN of each painter's cluster (drawn behind the dots),
+  // coloured to MATCH the dots under the current colour mode (author/period/school, or mean dominant colour)
   let zonesHtml = "";
-  if (galaxyLabels.zones) {
+  if (galaxyNames === "centroid") {
     const byA = new Map();
     for (const [qid, xy] of Object.entries(galaxyCoords)) {
       const w = galaxyByQid.get(qid); const pn = w && w.p.painter; if (!pn) continue;
-      if (!byA.has(pn)) byA.set(pn, { xs: [], ys: [] });
+      if (!byA.has(pn)) byA.set(pn, { xs: [], ys: [], r: 0, g: 0, b: 0, n: 0, w });
       const o = byA.get(pn); o.xs.push(xy[0]); o.ys.push(xy[1]);
+      if (xy.length >= 5) { o.r += xy[2]; o.g += xy[3]; o.b += xy[4]; o.n++; }   // 2-D coords are [x,y,r,g,b]
     }
     const med = a => { const s = a.slice().sort((p, q) => p - q), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
     for (const [pn, o] of byA) {
       if (o.xs.length < 2) continue;
       const zx = (PAD + med(o.xs) / 1000 * S).toFixed(0), zy = (PAD + med(o.ys) / 1000 * S).toFixed(0);
-      zonesHtml += `<span class="gx-zone" style="left:${zx}px;top:${zy}px;color:${colorFor(pn)}">${esc(pn)}</span>`;
+      const col = (galaxyColorBy === "color" && o.n) ? `rgb(${Math.round(o.r / o.n)},${Math.round(o.g / o.n)},${Math.round(o.b / o.n)})` : galaxyColorOf(o.w);
+      const zSlug = GAME_SLUG_OF_NAME[pn] || "";
+      zonesHtml += `<span class="gx-zone" data-a="${zSlug}" style="left:${zx}px;top:${zy}px;color:${col}">${esc(pn)}</span>`;
     }
   }
   plane.innerHTML = zonesHtml + html;
@@ -2258,12 +2271,24 @@ function setGalaxyView(on) {
     const b = e.target.closest("[data-cb]"); if (!b) return;
     galaxyColorBy = b.dataset.cb;
     document.querySelectorAll("#galaxy-colorby .gbtn").forEach(x => x.classList.toggle("active", x === b));
-    if (galaxyCoords) drawGalaxy();
+    if (galaxy3D) { window._galaxy3Drecolor && window._galaxy3Drecolor(); }
+    else if (galaxyCoords) drawGalaxy();
   });
+  const btn3d = document.getElementById("galaxy-3d");
+  if (btn3d) btn3d.addEventListener("click", () => { window._setGalaxy3D && window._setGalaxy3D(!galaxy3D); });
   const labels = document.getElementById("galaxy-labels");
   if (labels) labels.addEventListener("change", e => {
-    const cb = e.target.closest("[data-lab]"); if (!cb) return;
-    galaxyLabels[cb.dataset.lab] = cb.checked;
+    const cb = e.target.closest('[data-lab="title"]'); if (!cb) return;
+    galaxyTitles = cb.checked;
+    if (galaxy3D) return;                 // titles don't apply in 3-D
+    if (galaxyCoords) drawGalaxy();
+  });
+  const names = document.getElementById("galaxy-names");
+  if (names) names.addEventListener("click", e => {
+    const b = e.target.closest("[data-names]"); if (!b) return;
+    galaxyNames = b.dataset.names;
+    names.querySelectorAll(".gbtn").forEach(x => x.classList.toggle("active", x === b));
+    if (galaxy3D) return;                 // painter names don't apply in 3-D
     if (galaxyCoords) drawGalaxy();
   });
   plane.addEventListener("click", e => {
@@ -2275,8 +2300,8 @@ function setGalaxyView(on) {
   plane.addEventListener("mousemove", e => {
     const d = e.target.closest(".gx-dot");
     if (!d) { tip.hidden = true; tip.dataset.qid = ""; clearAuthorFocus(); return; }
-    // in Author mode, grey out every other painter so this one's constellation pops
-    if (galaxyColorBy === "author") setAuthorFocus(d.dataset.a || ""); else clearAuthorFocus();
+    // hover focus: grey other painters' dots (Author mode) and/or spotlight this painter's name (zones on)
+    setAuthorFocus(d.dataset.a || "");
     const w = galaxyByQid && galaxyByQid.get(d.dataset.qid); if (!w) return;
     const p = w.p;
     if (tip.dataset.qid !== d.dataset.qid) {
@@ -2339,4 +2364,135 @@ function setGalaxyView(on) {
     scale = clamp(Math.min(r.width, r.height) / pw * 0.92);
     tx = (r.width - pw * scale) / 2; ty = (r.height - pw * scale) / 2; apply();
   };
+})();
+
+// ══ 3-D galaxy: a rotatable point cloud on a canvas (drag = rotate, wheel = zoom) ═══════════════
+(function () {
+  const scroll = document.getElementById("galaxy-scroll"), plane = document.getElementById("galaxy-plane");
+  const canvas = document.getElementById("galaxy-canvas");
+  if (!scroll || !canvas) return;
+  const ctx = canvas.getContext("2d");
+  let coords3d = null, pts = null;          // pts: [{x,y,z (−0.5..0.5), col, w}]
+  let rx = 0.5, ry = 0.6, zoom = 1;         // rotation + zoom
+  let W = 0, H = 0, DPR = 1;
+  const tip = () => document.getElementById("gx-tip");
+
+  function colorOfPoint(p) {
+    if (galaxyColorBy === "color") return `rgb(${p.rgb[0]},${p.rgb[1]},${p.rgb[2]})`;
+    return galaxyColorOf(p.w);
+  }
+  function buildPoints() {
+    if (!galaxyByQid) { galaxyByQid = new Map(); for (const w of works) if (w.p.qid) galaxyByQid.set(w.p.qid, w); }
+    pts = [];
+    for (const [qid, c] of Object.entries(coords3d)) {
+      const w = galaxyByQid.get(qid); if (!w) continue;
+      pts.push({ x: c[0] / 1000 - 0.5, y: c[1] / 1000 - 0.5, z: c[2] / 1000 - 0.5, rgb: [c[3], c[4], c[5]], w, qid });
+    }
+    recolor();
+  }
+  function recolor() { if (pts) for (const p of pts) p.col = colorOfPoint(p); }
+  window._galaxy3Drecolor = () => { recolor(); draw(); };
+
+  function resize() {
+    const r = scroll.getBoundingClientRect(); if (!r.width || !r.height) return false;
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    W = r.width; H = r.height;
+    canvas.width = W * DPR; canvas.height = H * DPR; canvas.style.width = W + "px"; canvas.style.height = H + "px";
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    return true;
+  }
+  // project one point with the current rotation → screen x,y + depth factor
+  function project(p) {
+    const cx = Math.cos(ry), sx = Math.sin(ry), cy = Math.cos(rx), sy = Math.sin(rx);
+    let X = p.x * cx - p.z * sx, Z = p.x * sx + p.z * cx;      // rotate around Y
+    let Y = p.y * cy - Z * sy; Z = p.y * sy + Z * cy;          // rotate around X
+    const focal = 2.2, persp = focal / (focal - Z);           // simple perspective
+    const s = Math.min(W, H) * 0.62 * zoom;
+    return { sx: W / 2 + X * s * persp, sy: H / 2 + Y * s * persp, d: Z, persp };
+  }
+  function draw() {
+    if (!pts || !W) return;
+    ctx.clearRect(0, 0, W, H);
+    const proj = pts.map(p => { const q = project(p); q.p = p; return q; });
+    proj.sort((a, b) => a.d - b.d);                           // far → near (painter's algorithm)
+    _lastProj = proj;
+    for (const q of proj) {
+      const r = Math.max(0.6, 2.1 * q.persp * Math.sqrt(zoom));
+      const near = (q.d + 0.6);                               // fade the far side a touch for depth
+      ctx.globalAlpha = Math.max(0.35, Math.min(1, near));
+      ctx.fillStyle = q.p.col;
+      ctx.beginPath(); ctx.arc(q.sx, q.sy, r, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+  let _lastProj = null;
+  function pick(mx, my) {                                     // nearest projected point to the cursor
+    if (!_lastProj) return null;
+    let best = null, bd = 100;
+    for (let i = _lastProj.length - 1; i >= 0; i--) {         // near points first (drawn on top)
+      const q = _lastProj[i], dx = q.sx - mx, dy = q.sy - my, d = dx * dx + dy * dy;
+      if (d < 49 && d < bd) { bd = d; best = q; }
+    }
+    return best;
+  }
+
+  window._setGalaxy3D = (on) => {
+    galaxy3D = on;
+    document.getElementById("galaxy-3d").classList.toggle("active", on);
+    plane.hidden = on; canvas.hidden = !on;
+    document.getElementById("galaxy-labels").style.opacity = on ? ".4" : "";   // labels don't apply in 3-D
+    const gn = document.getElementById("galaxy-names"); if (gn) gn.style.opacity = on ? ".4" : "";
+    const hint = document.getElementById("galaxy-hint");
+    if (hint) hint.innerHTML = on
+      ? `<b>3-D</b> · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · <b>drag to rotate</b> · scroll to zoom · hover a dot · click to open`
+      : `Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">${document.getElementById("galaxy-n")?.textContent || ""}</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan`;
+    if (!on) { if (galaxyCoords) drawGalaxy(); return; }
+    const start = () => {
+      if (!resize()) { setTimeout(start, 90); return; }
+      if (coords3d) { if (!pts) buildPoints(); draw(); return; }
+      fetch("atlas/data/sim_coords3d.json?v=" + DATA_V).then(r => r.json()).then(c => { coords3d = c; buildPoints(); draw(); })
+        .catch(() => { ctx.fillStyle = "#8a7"; ctx.fillText("3-D map not built yet.", 20, 30); });
+    };
+    start();
+  };
+
+  // interaction
+  let drag = false, lx = 0, ly = 0, moved = false;
+  canvas.addEventListener("pointerdown", e => { e.stopPropagation(); canvas.setPointerCapture(e.pointerId); drag = true; moved = false; lx = e.clientX; ly = e.clientY; });
+  canvas.addEventListener("pointermove", e => {
+    if (drag) e.stopPropagation();
+    if (drag) {
+      const dx = e.clientX - lx, dy = e.clientY - ly; lx = e.clientX; ly = e.clientY;
+      if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+      ry += dx * 0.008; rx += dy * 0.008;
+      rx = Math.max(-1.4, Math.min(1.4, rx));
+      draw();
+    } else {                                                  // hover → tip
+      const r = canvas.getBoundingClientRect(), q = pick(e.clientX - r.left, e.clientY - r.top), t = tip();
+      if (!q) { t.hidden = true; t.dataset.qid = ""; return; }
+      const p = q.p.w.p;
+      if (t.dataset.qid !== q.p.qid) {
+        t.dataset.qid = q.p.qid;
+        t.innerHTML = `<img src="${esc(p.image)}" alt="" onerror="this.remove()"><div class="gt-b"><b>${esc(p.painter || "")}</b>` +
+          `<div>${esc(p.title || "Untitled")}${p.year ? " · " + esc(p.year) : ""}</div>` +
+          `<div class="gt-w">${esc([p.location, p.city].filter(Boolean).join(", "))}</div></div>`;
+      }
+      t.hidden = false;
+      let x = e.clientX + 16, y = e.clientY + 16;
+      if (x + 230 > innerWidth) x = e.clientX - 16 - 230;
+      if (y + 210 > innerHeight) y = e.clientY - 16 - 210;
+      t.style.left = Math.max(6, x) + "px"; t.style.top = Math.max(6, y) + "px";
+    }
+  });
+  const end = e => { drag = false; };
+  canvas.addEventListener("pointerup", e => { end(e); });
+  canvas.addEventListener("pointercancel", end);
+  canvas.addEventListener("mouseleave", () => { const t = tip(); if (t) { t.hidden = true; t.dataset.qid = ""; } });
+  canvas.addEventListener("click", e => {
+    if (moved) { moved = false; return; }                     // that was a rotate, not a pick
+    const r = canvas.getBoundingClientRect(), q = pick(e.clientX - r.left, e.clientY - r.top);
+    if (q) openWorkCard(q.p.w);
+  });
+  canvas.addEventListener("wheel", e => { e.preventDefault(); e.stopPropagation(); zoom = Math.max(0.3, Math.min(6, zoom * Math.exp(-e.deltaY * 0.0016))); draw(); }, { passive: false });
+  window.addEventListener("resize", () => { if (galaxy3D && resize()) draw(); });
 })();

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#b6465f">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=1b6b35d0">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=de41e2c3">
 </head>
 <body>
   <nav id="navbar">
@@ -62,15 +62,18 @@
       </div>
       <div class="controls">
       <input id="search" type="search" placeholder="Carroza, grupo o año" autocomplete="off" aria-label="Buscar">
+      <button id="clear-filters" class="ghost" type="button">Limpiar</button>
       <select id="decade" aria-label="Década"></select>
       <select id="status" class="desk-only" aria-label="Estado de la edición"></select>
       <label class="toggle desk-only"><input id="ranked-only" type="checkbox"><span>Con palmarés</span></label>
-      <button id="clear-filters" class="ghost" type="button">Limpiar</button>
       </div>
 
       <div id="index-body" class="pane-body"></div>
       <div id="legend" class="legend"></div>
     </section>
+
+    <div class="divisor" role="separator" aria-orientation="vertical"
+         aria-label="Ajustar el ancho de la ficha" tabindex="0"></div>
 
     <section class="pane pane-detail" aria-label="Detalle">
       <button id="detail-close" class="detail-close" type="button" aria-label="Cerrar el detalle">✕</button>
@@ -95,6 +98,7 @@
   <!-- Visor de fotos. Se abre encima de la aplicación: abrir pestaña nueva
        sacaba al visitante del sitio y perdía dónde estaba mirando. -->
   <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto">
+    <span id="lb-contador" class="lb-contador" aria-live="polite"></span>
     <button id="lb-close" class="lb-close" type="button" aria-label="Cerrar">✕</button>
     <button id="lb-prev" class="lb-nav lb-prev" type="button" aria-label="Anterior">‹</button>
     <button id="lb-next" class="lb-nav lb-next" type="button" aria-label="Siguiente">›</button>
@@ -143,7 +147,7 @@
     </form>
   </div>
 
-  <script src="batalla_de_flores/app.js?v=e41fe313"></script>
+  <script src="batalla_de_flores/app.js?v=ca87708f"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

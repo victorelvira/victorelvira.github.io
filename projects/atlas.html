@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.52.2">
+  <link rel="stylesheet" href="atlas/style.css?v=0.53.2">
 </head>
 <body>
   <nav id="navbar">
@@ -171,16 +171,21 @@
           <button type="button" class="gbtn active" data-cb="school">School</button>
           <button type="button" class="gbtn" data-cb="color">Colour</button>
         </span>
-        <span class="g-seg" id="galaxy-labels" title="Show labels on the map">
+        <span class="g-seg" id="galaxy-labels" title="Show titles next to every dot">
           <label><input type="checkbox" data-lab="title"> 🏷 Titles</label>
-          <label><input type="checkbox" data-lab="author"> ✍ Authors</label>
-          <label title="One big translucent name per painter, at the middle of their cluster"><input type="checkbox" data-lab="zones"> 🅰 Painter names</label>
         </span>
+        <span class="g-seg" id="galaxy-names" title="Painter names on the map">
+          <span class="g-seg-cap">Painter names:</span>
+          <button type="button" class="gbtn active" data-names="off">off</button>
+          <button type="button" class="gbtn" data-names="dots" title="A small name on every dot">on dots</button>
+          <button type="button" class="gbtn" data-names="centroid" title="One big name at the middle of each painter's cluster">at centre</button>
+        </span>
+        <button type="button" class="gbtn" id="galaxy-3d" title="Spin the cloud in 3-D (drag to rotate)">🧊 3D</button>
         <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan</span>
       </div>
       <span id="galaxy-legend" class="galaxy-legend"></span>
     </div>
-    <div id="galaxy-scroll"><div id="galaxy-plane"></div></div>
+    <div id="galaxy-scroll"><div id="galaxy-plane"></div><canvas id="galaxy-canvas" hidden></canvas></div>
     <details id="galaxy-method">
       <summary>How this is built — methodology</summary>
       <div class="gm-body">
@@ -251,7 +256,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.52.2"></script>
+  <script src="atlas/app.js?v=0.53.2"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

@@ -223,10 +223,26 @@ a { color: inherit; }
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 430px);
-  gap: 12px;
+  /* El ancho de la ficha lo puede mover el lector arrastrando el borde. Se
+     guarda en localStorage: una tabla de palmarés con seis columnas y una
+     galería piden anchos distintos según lo que estés mirando. */
+  grid-template-columns: minmax(0, 1fr) 6px minmax(0, var(--ficha-ancho, 430px));
+  gap: 6px;
   padding: 12px 16px;
 }
+
+/* Tirador entre las dos columnas. Fino, y solo se nota al acercarse. */
+.divisor {
+  cursor: col-resize; border-radius: 3px; background: transparent;
+  transition: background .12s;
+}
+.divisor:hover, .divisor.arrastrando { background: var(--line); }
+.divisor::after {
+  content: ""; display: block; width: 2px; height: 26px; margin: 0 auto;
+  position: relative; top: calc(50% - 13px); border-radius: 2px; background: var(--line);
+}
+.divisor:hover::after, .divisor.arrastrando::after { background: var(--rose); }
+body.redimensionando { cursor: col-resize; user-select: none; }
 
 .pane {
   display: flex;
@@ -409,7 +425,51 @@ a { color: inherit; }
 .disc b { color: var(--ink); font-size: 17px; font-variant-numeric: tabular-nums; }
 
 /* Miniatura como columna del palmarés. */
-table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo { width: 54px; }
+table.palmares col.c-photo, table.palmares th.c-photo, table.palmares td.c-photo {
+  width: var(--col-foto, var(--miniatura, 54px));
+}
+table.palmares.ajustable th[data-col] { position: relative; }
+/* Zona de agarre: los últimos 8 px de la cabecera. El resto sigue ordenando. */
+table.palmares.ajustable th[data-col] { padding-left: 7px; }
+table.palmares.ajustable th[data-col]:first-child { padding-left: 0; }
+table.palmares.ajustable th[data-col]::after {
+  content: ""; position: absolute; top: 4px; bottom: 4px; right: 0; width: 8px;
+  cursor: col-resize; border-right: 2px solid transparent;
+}
+table.palmares.ajustable th[data-col]:hover::after { border-right-color: var(--line); }
+table.palmares.ajustable th[data-col]:last-child::after { display: none; }
+
+table.palmares.ajustable th[data-col="puesto"],
+table.palmares.ajustable td.pos { width: var(--col-puesto, 62px); }
+/* Las cabeceras no se parten ni se recortan: si no cabe el título, la columna
+   está mal medida. */
+table.palmares.ajustable th { white-space: nowrap; }
+table.palmares th.c-photo { text-align: left; }
+table.palmares.ajustable th[data-col="grupo"],
+table.palmares.ajustable td.group { width: var(--col-grupo, auto); }
+table.palmares.ajustable th[data-col="fuentes"],
+table.palmares.ajustable td:last-child { width: var(--col-fuentes, 116px); }
+table.palmares td.c-photo .thumb {
+  display: block; width: var(--miniatura, 54px); height: var(--miniatura, 54px);
+  padding: 0; border: 0; background: none; cursor: pointer;
+}
+table.palmares td.c-photo .thumb img {
+  width: 100%; height: var(--miniatura, 54px);
+  object-fit: cover; object-position: center 35%;
+  border-radius: 4px;
+}
+.gallery {
+  display: block;
+  columns: var(--galeria, 168px);
+  column-gap: 8px;
+}
+.gallery .shot {
+  break-inside: avoid;
+  margin: 0 0 8px;
+  display: inline-block;
+  width: 100%;
+}
+.gallery img { height: auto; width: 100%; }
 .thumb { padding: 0; border: 0; background: none; cursor: pointer; display: block; }
 .thumb img {
   display: block; width: 46px; height: 34px; object-fit: cover;
@@ -701,10 +761,10 @@ h3.section {
   filter: drop-shadow(0 1px 3px rgba(182, 70, 95, 0.35));
 }
 
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; }
+
 .gallery a { display: block; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #f1e9df; }
 .gallery .shot a { display: block; }
-.gallery img { display: block; width: 100%; height: 74px; object-fit: cover; }
+.gallery img { display: block; width: 100%; object-fit: cover; }
 .gallery a:hover { border-color: var(--rose); }
 
 table.palmares { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
@@ -804,6 +864,32 @@ table.palmares tr:hover td { background: #fffaf5; }
 }
 .pos-cat.cat-a { background: #eaf2f7; color: var(--cat-a); }
 .pos-cat.cat-b { background: #fbeaf7; color: var(--cat-b); }
+/* Los identificadores, en la cabecera de la ficha: es lo que se usa para citar
+   y para decidir, así que tiene que estar a la vista y no en un fichero. */
+/* Deslizador de tamaño, en la propia cabecera de la sección. */
+.zoom-fotos {
+  float: right; display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10px; color: var(--line); font-weight: 400;
+}
+.zoom-fotos input[type="range"] { width: 84px; accent-color: var(--rose); cursor: pointer; }
+
+.ids { margin: 2px 0 6px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  font-size: 10.5px; color: var(--line); }
+.id-par { cursor: help; letter-spacing: .02em; }
+/* Aviso de que dos nombres se han fundido: quien busca el que no se muestra
+   tiene derecho a saber que está aquí. */
+.alias-note {
+  margin: 6px 0; padding: 7px 10px; border-radius: 8px;
+  background: var(--bar); border: 1px solid var(--line-soft);
+  font-size: 12px; color: var(--muted); line-height: 1.45;
+}
+.alias-note b { color: var(--ink); font-weight: 600; }
+.ids code {
+  font-size: 11px; padding: 1px 6px; border-radius: 4px; cursor: help;
+  background: var(--bar); border: 1px solid var(--line-soft); color: var(--muted);
+}
+.ids .id-principal { color: var(--ink); font-weight: 600; }
+
 .dato-src { margin-left: 5px; white-space: nowrap; }
 .dato-src a { color: var(--t-year); text-decoration: none; font-size: 11px; }
 .dato-src a:hover { text-decoration: underline; }
@@ -1209,7 +1295,12 @@ body.lb-abierto { overflow: hidden; }
   background: rgba(255,255,255,0.18); font-variant-numeric: tabular-nums;
 }
 .lb-credito { display: block; margin-top: 3px; font-size: 11px; font-style: italic; opacity: 0.72; }
-.lb-contador { position: absolute; right: 14px; bottom: 10px; font-size: 11px; opacity: 0.7; }
+.lb-contador {
+  position: fixed; top: 14px; right: 62px; z-index: 3;
+  font-size: 12.5px; font-variant-numeric: tabular-nums; letter-spacing: .02em;
+  color: #fff; background: rgba(0, 0, 0, .42); padding: 4px 10px; border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
 
 .lb-close, .lb-nav {
   position: absolute; cursor: pointer; color: #fff;

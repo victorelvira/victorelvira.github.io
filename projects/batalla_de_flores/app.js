@@ -1924,6 +1924,30 @@ function winnerBadge(entry, inline = false) {
     ${ICON_TROPHY}</span>`;
 }
 
+/* La cabecera de una ficha, siempre igual.
+ *
+ * Antes cada tipo de ficha la montaba a su manera: en la de grupo el botón de
+ * compartir iba dentro del título y en la de carroza en una fila aparte, así que
+ * los mismos botones cambiaban de sitio al navegar. Una sola función.
+ *
+ * El identificador va aquí porque es lo que se usa para citar y para decidir:
+ * si no está a la vista, hay que ir a buscarlo al fichero. */
+function detailHead(titulo, { marca = "", ids = null, acciones = "", tam = 22 } = {}) {
+  return `
+    <div class="detail-head">
+      <h2 style="font-size:${tam}px">${titulo}${marca}</h2>
+    </div>
+    ${ids ? `<p class="ids">
+      <span class="id-par" title="Identificador de esta entidad. Se reparte por orden
+        cronológico: la primera se queda la forma corta.">id:
+        <code class="id-principal">${esc(ids.id)}</code></span>
+      ${ids.completo ? `<span class="id-par" title="Grupo, año y título. Es NUESTRA atribución:
+        cambia si cambia el grupo.">id_completo:
+        <code>${esc(ids.completo)}</code></span>` : ""}
+    </p>` : ""}
+    <div class="chips">${shareButton()}${acciones}</div>`;
+}
+
 function reviewMark(entry) {
   const reasons = entry.needs_review || [];
   if (!reasons.length) return "";
@@ -2065,6 +2089,11 @@ function moverVisor(paso) {
 function pintarVisor() {
   const el = lb.fotos[lb.indice];
   if (!el) return cerrarVisor();
+  const contador = document.getElementById("lb-contador");
+  if (contador) {
+    contador.textContent = `${lb.indice + 1} / ${lb.fotos.length}`;
+    contador.hidden = lb.fotos.length < 2;
+  }
   const d = el.dataset;
   document.getElementById("lb-img").src = d.photo;
   document.getElementById("lb-img").alt = d.nombre;
@@ -2081,11 +2110,162 @@ function pintarVisor() {
     <span class="lb-credito">${esc(d.credito || "Procedencia sin registrar")}</span>
     ${d.asigna ? `<span class="lb-asigna${d.asignaProp === "fuente" ? "" : " asigna-deducida"}"
       >${esc(d.asigna)}</span>` : ""}
-    <span class="lb-contador">${lb.indice + 1} de ${lb.fotos.length}</span>`;
+`;
   // Precarga de la siguiente: pasar fotos de 1600 px sin esto parpadea.
   const sig = lb.fotos[(lb.indice + 1) % lb.fotos.length];
   if (sig) new Image().src = sig.dataset.photo;
   document.querySelectorAll(".lb-nav").forEach(b => { b.hidden = lb.fotos.length < 2; });
+}
+
+/* Arrastrar el borde para ensanchar o estrechar la ficha.
+ *
+ * Una tabla de palmarés con seis columnas y una galería de fotos no quieren el
+ * mismo ancho, y el que sirve para una aprieta a la otra. Se guarda la
+ * preferencia: quien la mueve una vez no quiere volver a moverla.
+ *
+ * Solo en escritorio: en móvil la ficha se superpone y no hay dos columnas. */
+/* Deslizador de tamaño de las fotos.
+ *
+ * Ni la rejilla ni el mosaico aciertan con un tamaño único: para reconocer una
+ * carroza que recuerdas hace falta grande, y para barrer un año entero, pequeño.
+ * Se guarda, como el ancho de la ficha. */
+/* Anchos de columna a mano, arrastrando la separación de las cabeceras.
+ *
+ * Con `table-layout: fixed` los anchos los manda el CSS, y el reparto que sirve
+ * para un palmarés de 1908 —dos columnas con datos— aprieta al de 2017, que
+ * lleva foto, premios y cinco etiquetas de fuente. Cada uno quiere lo suyo.
+ *
+ * Se guarda por columna, no por edición: quien ensancha «Fuentes» una vez la
+ * quiere ancha siempre. */
+function setupColumnasAjustables() {
+  const ANCHOS = {};
+  try {
+    Object.assign(ANCHOS, JSON.parse(localStorage.getItem("anchos-columna") || "{}"));
+  } catch { /* si está corrupto, se empieza de cero */ }
+
+  const aplicar = () => {
+    Object.entries(ANCHOS).forEach(([col, px]) => {
+      document.documentElement.style.setProperty(`--col-${col}`, `${px}px`);
+    });
+  };
+  aplicar();
+
+  let activo = null;
+  document.addEventListener("mousedown", evento => {
+    const th = evento.target.closest("table.ajustable th[data-col]");
+    if (!th) return;
+    const caja = th.getBoundingClientRect();
+    // Solo los últimos 8 px de la cabecera: el resto sigue sirviendo para ordenar.
+    if (evento.clientX < caja.right - 8) return;
+    // El mínimo de una columna es lo que mide su propio título: una cabecera
+    // recortada no se entiende, por corto que sea el dato de debajo.
+    const medidor = document.createElement("span");
+    medidor.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap;"
+      + `font:${getComputedStyle(th).font}`;
+    medidor.textContent = th.textContent.trim();
+    document.body.appendChild(medidor);
+    const estilo = getComputedStyle(th);
+    const minimo = Math.ceil(medidor.getBoundingClientRect().width)
+      + parseFloat(estilo.paddingLeft || 0) + parseFloat(estilo.paddingRight || 0) + 14;
+    medidor.remove();
+    activo = { col: th.dataset.col, x0: evento.clientX, ancho0: caja.width, minimo };
+    document.body.classList.add("redimensionando");
+    evento.preventDefault();
+  });
+  window.addEventListener("mousemove", evento => {
+    if (!activo) return;
+    const nuevo = Math.max(activo.minimo,
+      Math.round(activo.ancho0 + evento.clientX - activo.x0));
+    ANCHOS[activo.col] = nuevo;
+    document.documentElement.style.setProperty(`--col-${activo.col}`, `${nuevo}px`);
+  });
+  window.addEventListener("mouseup", () => {
+    if (!activo) return;
+    activo = null;
+    document.body.classList.remove("redimensionando");
+    localStorage.setItem("anchos-columna", JSON.stringify(ANCHOS));
+  });
+}
+
+function setupZoomGaleria() {
+  const guardado = Number(localStorage.getItem("tam-galeria"));
+  state.tamGaleria = guardado || 168;
+  document.documentElement.style.setProperty("--galeria", `${state.tamGaleria}px`);
+
+  document.addEventListener("input", evento => {
+    if (evento.target.id !== "zoom-galeria") return;
+    state.tamGaleria = Number(evento.target.value);
+    document.documentElement.style.setProperty("--galeria", `${state.tamGaleria}px`);
+    localStorage.setItem("tam-galeria", state.tamGaleria);
+  });
+}
+
+function setupDivisor() {
+  const divisor = document.querySelector(".divisor");
+  if (!divisor) return;
+  const MIN = 300;
+  const MAX_PROPORCION = 0.68;   // que nunca se coma el índice entero
+
+  const aplicar = ancho => {
+    const tope = Math.max(MIN, Math.round(window.innerWidth * MAX_PROPORCION));
+    const valor = Math.min(Math.max(ancho, MIN), tope);
+    document.documentElement.style.setProperty("--ficha-ancho", `${valor}px`);
+    // Las fotos crecen con la columna: si alguien la ensancha es justo para ver
+    // mejor, y una miniatura de 54 px no aprovecha el espacio que acaba de dar.
+    const sobra = valor - MIN;
+    document.documentElement.style.setProperty(
+      "--miniatura", `${Math.round(54 + sobra * 0.22)}px`);
+    return valor;
+  };
+
+  aplicar(Number(localStorage.getItem("ficha-ancho")) || 430);
+
+  let arrastrando = false;
+  const mover = evento => {
+    if (!arrastrando) return;
+    const x = evento.touches ? evento.touches[0].clientX : evento.clientX;
+    aplicar(window.innerWidth - x - 20);
+  };
+  const soltar = () => {
+    if (!arrastrando) return;
+    arrastrando = false;
+    divisor.classList.remove("arrastrando");
+    document.body.classList.remove("redimensionando");
+    const actual = getComputedStyle(document.documentElement).getPropertyValue("--ficha-ancho");
+    if (actual) localStorage.setItem("ficha-ancho", parseInt(actual, 10));
+  };
+  const coger = evento => {
+    if (isNarrow()) return;
+    arrastrando = true;
+    divisor.classList.add("arrastrando");
+    document.body.classList.add("redimensionando");
+    evento.preventDefault();
+  };
+
+  divisor.addEventListener("mousedown", coger);
+  divisor.addEventListener("touchstart", coger, { passive: false });
+  window.addEventListener("mousemove", mover);
+  window.addEventListener("touchmove", mover, { passive: true });
+  window.addEventListener("mouseup", soltar);
+  window.addEventListener("touchend", soltar);
+
+  // Con el teclado, flechas: un separador con `tabindex` que no responda al
+  // teclado es un adorno.
+  divisor.addEventListener("keydown", evento => {
+    const paso = evento.key === "ArrowLeft" ? 24 : evento.key === "ArrowRight" ? -24 : 0;
+    if (!paso) return;
+    evento.preventDefault();
+    const actual = parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue("--ficha-ancho"), 10) || 430;
+    localStorage.setItem("ficha-ancho", aplicar(actual + paso));
+  });
+
+  // Al estrechar la ventana, el tope relativo puede haber cambiado.
+  window.addEventListener("resize", () => {
+    const actual = parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue("--ficha-ancho"), 10);
+    if (actual) aplicar(actual);
+  });
 }
 
 function setupVisor() {
@@ -2159,7 +2339,14 @@ function renderGallery(entries) {
   const images = todas.slice(0, TOPE);
   if (!images.length) return "";
   return `
-    <h3 class="section">Imágenes (${todas.length})</h3>
+    <h3 class="section">Imágenes (${todas.length})
+      <label class="zoom-fotos" title="Tamaño de las fotos">
+        <span aria-hidden="true">▪</span>
+        <input type="range" id="zoom-galeria" min="110" max="420" step="10"
+          value="${state.tamGaleria || 168}" aria-label="Tamaño de las fotos">
+        <span aria-hidden="true">■</span>
+      </label>
+    </h3>
     ${todas.length > TOPE ? `<p class="chart-note">Se muestran las primeras ${TOPE};
       el resto están en la ficha de cada carroza.</p>` : ""}
     <div class="gallery">
@@ -2432,13 +2619,13 @@ function renderEditionDetail(edition) {
         ${cats.map(cat =>
           `<button class="view${cat === shownCat ? " is-on" : ""}" type="button"
             data-edition-cat="${esc(cat)}">Categoría ${esc(cat)}</button>`).join("")}</div>` : ""}
-      <table class="palmares${withPhotos ? " with-photo" : ""}">
+      <table class="palmares ajustable${withPhotos ? " with-photo" : ""}">
         <thead><tr>
-          ${withPhotos ? '<th class="c-photo" aria-label="Foto"></th>' : ""}
-          <th data-sort-type="text">Puesto</th>
-          <th data-sort-type="text">Carroza</th>
-          <th data-sort-type="text">Grupo</th>
-          <th data-sort-type="text">Fuentes</th>
+          ${withPhotos ? '<th class="c-photo" data-col="foto">Foto</th>' : ""}
+          <th data-sort-type="text" data-col="puesto">Puesto</th>
+          <th data-sort-type="text" data-col="carroza">Carroza</th>
+          <th data-sort-type="text" data-col="grupo">Grupo</th>
+          <th data-sort-type="text" data-col="fuentes">Fuentes</th>
         </tr></thead>
         <tbody>
           ${shown.map(entry => `
@@ -2804,10 +2991,8 @@ function renderFloatDetail(entry) {
   const prizes = prizeChips(entry);
 
   els.detail.innerHTML = `
-    <div class="detail-head">
-      <h2 style="font-size:22px">${esc(entry.name)}${reviewMark(entry)}</h2>
-    </div>
-    <div class="chips">${shareButton()}</div>
+    ${detailHead(esc(entry.name), { marca: reviewMark(entry),
+      ids: { id: entry.id_carroza, completo: entry.id_completo } })}
     ${(entry.needs_review || []).length ? `<div class="review-box">
       <b>Dato sin aclarar</b>
       <ul>${entry.needs_review.map(reason => `<li>${esc(reason)}</li>`).join("")}</ul>
@@ -3004,10 +3189,15 @@ function renderGroupDetail(group) {
   const podium = entries.filter(entry => entry.position != null && entry.position <= 3).length;
 
   els.detail.innerHTML = `
-    <div class="detail-head">
-      <h2 style="font-size:22px">${esc(group.canonical_name)}</h2>
-      ${shareButton()}
-    </div>
+    ${detailHead(esc(group.canonical_name),
+      { ids: { id: group.id_grupo || "", completo: null } })}
+    ${(() => {
+      const otros = (group.aliases || []).filter(a => a !== group.canonical_name);
+      return otros.length ? `<p class="alias-note">También aparece en las fuentes como
+        ${joinEs(otros.map(a => `<b>«${esc(a)}»</b>`))}. Aquí van juntos porque hemos
+        decidido que son el mismo carrocista.</p>` : "";
+    })()}
+
     <p class="span-note">
       ${groupSubject(group.canonical_name)} desfiló
       entre <b>${group.first_year_seen}</b> y <b>${group.last_year_seen}</b>
@@ -3717,6 +3907,9 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
     setupTooltip();
     setupReport();
     setupVisor();
+  setupDivisor();
+  setupZoomGaleria();
+  setupColumnasAjustables();
     applyFilters();
     renderNocheMagica();
 

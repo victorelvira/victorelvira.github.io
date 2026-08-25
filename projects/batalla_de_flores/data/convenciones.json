@@ -69,9 +69,27 @@
    "pierde_a_alguien": false
   },
   {
+   "de": "José Luis González y Alvaro Torre",
+   "a": "Álvaro Torre",
+   "carrozas": 3,
+   "pierde_a_alguien": true
+  },
+  {
    "de": "Carrozas oruna",
    "a": "Carrozas Oruña",
    "carrozas": 3,
+   "pierde_a_alguien": false
+  },
+  {
+   "de": "Fructuoso",
+   "a": "Fructuoso Gutiérrez",
+   "carrozas": 2,
+   "pierde_a_alguien": false
+  },
+  {
+   "de": "José Berasategi",
+   "a": "José Berasategui",
+   "carrozas": 2,
    "pierde_a_alguien": false
   },
   {
@@ -183,6 +201,12 @@
    "pierde_a_alguien": false
   },
   {
+   "de": "Nicasio Escalante y socios",
+   "a": "Nicasio Escalante",
+   "carrozas": 1,
+   "pierde_a_alguien": true
+  },
+  {
    "de": "Fructuoso Gutierrez",
    "a": "Fructuoso Gutiérrez",
    "carrozas": 1,
@@ -245,6 +269,18 @@
   {
    "de": "Ángel Sainz y Amigos",
    "a": "Ángel Sainz",
+   "carrozas": 1,
+   "pierde_a_alguien": true
+  },
+  {
+   "de": "Alfonso Santisteban y Amigos",
+   "a": "Alfonso Santisteban",
+   "carrozas": 1,
+   "pierde_a_alguien": true
+  },
+  {
+   "de": "Pepín Izaguirre y Amigos",
+   "a": "Pepín Izaguirre",
    "carrozas": 1,
    "pierde_a_alguien": true
   },
@@ -393,7 +429,7 @@
    "pierde_a_alguien": false
   }
  ],
- "pliegues_que_pierden_a_alguien": 30,
+ "pliegues_que_pierden_a_alguien": 36,
  "resueltas_por_autoridad": [
   {
    "año": 2016,
@@ -417,5 +453,5 @@
    "descartado": "«6»"
   }
  ],
- "disputas_abiertas": 54
+ "disputas_abiertas": 48
 }
