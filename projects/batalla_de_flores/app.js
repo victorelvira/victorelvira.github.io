@@ -517,8 +517,9 @@ function renderGroupList() {
 
 function categoryNote() {
   if (!state.category) return "";
-  return `<button class="chip link-chip t-float" type="button" data-category="">
-    Categoría ${esc(state.category)} ✕</button>`;
+  return `<button class="chip link-chip t-float chip-filtro" type="button" data-category=""
+    title="Quitar el filtro y ver todas las carrozas">
+    Solo categoría ${esc(state.category)} ✕</button>`;
 }
 
 /* En cuadricula no hay cabeceras de tabla donde pinchar, asi que el orden se
@@ -2899,6 +2900,11 @@ function renderEditionDetail(edition) {
       </span>
     </div>
     ${navEdicion}
+    ${edition.fecha_fuera_de_costumbre
+      // Solo sale cuando la edición se sale de la costumbre. Las 23 que caen en
+      // el último viernes de agosto no dicen nada: contarlo en todas sería
+      // ruido, y el interés está justo en las tres que no.
+      ? `<p class="fecha-rara">📅 ${esc(edition.fecha_fuera_de_costumbre)}</p>` : ""}
     <div class="chips">
       ${edition.status !== "published"
         ? `<span class="chip rose">${esc(STATUS_LABEL[edition.status] || edition.status)}</span>` : ""}
@@ -3866,6 +3872,17 @@ function readHash() {
 }
 
 function setMode(mode) {
+  // El filtro de categoría es de la pestaña de Carrozas y solo actúa ahí, pero
+  // su aviso vive en la barra de esa pestaña — que se vacía al cambiar de
+  // pestaña. Resultado: salías a Ediciones, volvías, y veías 97 carrozas de 585
+  // sin nada en pantalla que dijera por qué. Un filtro activo e invisible es
+  // peor que no tener filtro.
+  //
+  // Se va con la pestaña. Si un día hace falta que sobreviva, tendrá que subir
+  // a la barra de filtros de arriba, que sí se ve siempre.
+  if (mode !== "floats" && state.category) {
+    state.category = null;
+  }
   state.mode = mode;
   if (mode === "pending" && !state.selection) {
     history.replaceState(null, "", `${location.pathname}#/pendiente`);
@@ -4082,6 +4099,10 @@ function bindEvents() {
     const category = event.target.closest("[data-category]");
     if (category) {
       state.category = category.dataset.category || null;
+      // En móvil la ficha se superpone al índice: al filtrar desde ella, el
+      // resultado quedaba detrás y no se veía nada. Se cierra para que se vea
+      // lo que acabas de pedir.
+      if (state.category && isNarrow()) document.body.classList.remove("detail-open");
       if (state.mode !== "floats") setMode("floats");
       else renderFloatList();
       return;

@@ -682,6 +682,21 @@ table.palmares td.c-photo .thumb img {
 .carrera-nombre:hover,
 .carrera-nombre.hover-fila { color: var(--rose); font-weight: 600; }
 .zoom-hint[hidden] { display: none; }
+/* El filtro de categoría, con la forma de los demás filtros y no la de un
+   enlace: es algo puesto que hay que poder quitar, no un sitio al que ir. */
+.chip-filtro {
+  background: #fdf4e0; border-color: var(--gold); color: #8a6410;
+}
+.chip-filtro:hover { border-color: var(--rose); color: var(--rose); }
+
+/* La edición que se sale de la costumbre del último viernes de agosto. Sale en
+   tres de veintiséis, así que cuando aparece es porque hay algo que contar. */
+.fecha-rara {
+  margin: 6px 0; padding: 7px 10px;
+  border: 1px solid var(--line-soft); border-left: 3px solid var(--gold);
+  border-radius: 8px; background: #fdf9f0;
+  font-size: 12px; line-height: 1.45; color: var(--ink);
+}
 .span { stroke: #d9cec4; stroke-width: 1.5; }
 
 .dot.win { fill: var(--gold); }
