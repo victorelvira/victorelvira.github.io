@@ -2271,25 +2271,27 @@ function setGalaxyView(on) {
     const b = e.target.closest("[data-cb]"); if (!b) return;
     galaxyColorBy = b.dataset.cb;
     document.querySelectorAll("#galaxy-colorby .gbtn").forEach(x => x.classList.toggle("active", x === b));
-    if (galaxy3D) { window._galaxy3Drecolor && window._galaxy3Drecolor(); }
-    else if (galaxyCoords) drawGalaxy();
+    galaxyRedraw(); syncGalaxyURL();
   });
-  const btn3d = document.getElementById("galaxy-3d");
-  if (btn3d) btn3d.addEventListener("click", () => { window._setGalaxy3D && window._setGalaxy3D(!galaxy3D); });
-  const labels = document.getElementById("galaxy-labels");
-  if (labels) labels.addEventListener("change", e => {
+  const dim = document.getElementById("galaxy-dim");
+  if (dim) dim.addEventListener("click", e => {
+    const b = e.target.closest("[data-dim]"); if (!b) return;
+    window._setGalaxy3D && window._setGalaxy3D(b.dataset.dim === "3d");
+    syncGalaxyURL();
+  });
+  const titles = document.getElementById("galaxy-titles");
+  if (titles) titles.addEventListener("change", e => {
     const cb = e.target.closest('[data-lab="title"]'); if (!cb) return;
     galaxyTitles = cb.checked;
-    if (galaxy3D) return;                 // titles don't apply in 3-D
-    if (galaxyCoords) drawGalaxy();
+    if (!galaxy3D) galaxyRedraw();        // titles are 2-D only
+    syncGalaxyURL();
   });
   const names = document.getElementById("galaxy-names");
   if (names) names.addEventListener("click", e => {
     const b = e.target.closest("[data-names]"); if (!b) return;
     galaxyNames = b.dataset.names;
-    names.querySelectorAll(".gbtn").forEach(x => x.classList.toggle("active", x === b));
-    if (galaxy3D) return;                 // painter names don't apply in 3-D
-    if (galaxyCoords) drawGalaxy();
+    names.querySelectorAll(".minibtn").forEach(x => x.classList.toggle("active", x === b));
+    galaxyRedraw(); syncGalaxyURL();
   });
   plane.addEventListener("click", e => {
     const d = e.target.closest(".gx-dot"); if (!d) return;

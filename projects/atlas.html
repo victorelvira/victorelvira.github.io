@@ -165,22 +165,24 @@
   <section id="galaxyview" hidden>
     <div id="galaxy-bar">
       <div class="galaxy-controls">
+        <span class="g-seg" id="galaxy-dim" title="Flat 2-D map or a rotatable 3-D cloud">
+          <button type="button" class="gbtn active" data-dim="2d">2D</button>
+          <button type="button" class="gbtn" data-dim="3d">🧊 3D</button>
+        </span>
         <span class="g-seg" id="galaxy-colorby" title="Colour the dots by…">
           <button type="button" class="gbtn" data-cb="author">Author</button>
           <button type="button" class="gbtn" data-cb="period">Period</button>
           <button type="button" class="gbtn active" data-cb="school">School</button>
           <button type="button" class="gbtn" data-cb="color">Colour</button>
         </span>
-        <span class="g-seg" id="galaxy-labels" title="Show titles next to every dot">
-          <label><input type="checkbox" data-lab="title"> 🏷 Titles</label>
+        <span class="galaxy-mini">
+          <label id="galaxy-titles" title="Show titles next to every dot"><input type="checkbox" data-lab="title"> 🏷 Titles</label>
+          <span class="gm-sep" id="galaxy-names" title="Painter names on the map"><span class="gm-cap">names</span>
+            <button type="button" class="minibtn active" data-names="off">off</button>
+            <button type="button" class="minibtn" data-names="dots" title="A small name on every dot">dots</button>
+            <button type="button" class="minibtn" data-names="centroid" title="One big name at the middle of each painter's cluster">centre</button>
+          </span>
         </span>
-        <span class="g-seg" id="galaxy-names" title="Painter names on the map">
-          <span class="g-seg-cap">Painter names:</span>
-          <button type="button" class="gbtn active" data-names="off">off</button>
-          <button type="button" class="gbtn" data-names="dots" title="A small name on every dot">on dots</button>
-          <button type="button" class="gbtn" data-names="centroid" title="One big name at the middle of each painter's cluster">at centre</button>
-        </span>
-        <button type="button" class="gbtn" id="galaxy-3d" title="Spin the cloud in 3-D (drag to rotate)">🧊 3D</button>
         <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan</span>
       </div>
       <span id="galaxy-legend" class="galaxy-legend"></span>
