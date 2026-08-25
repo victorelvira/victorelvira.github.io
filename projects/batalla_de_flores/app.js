@@ -1166,12 +1166,6 @@ function renderPendingTab() {
       <div class="chips"><button id="share-pending" class="share" type="button"
         title="Compartir esta lista">${ICON_SHARE}Compartir esta lista</button></div>
 
-      ${bloque("📅", "Ediciones de las que no sabemos el día", q.sinFecha, ed => `
-        <li><button class="link t-year" type="button" data-year="${ed.year}">${ed.year}</button>
-          — sabemos el año, no el día. Un cartel, un programa o un recorte de prensa
-          de aquella semana lo resuelve.
-          ${askButton(`fecha-${ed.year}`, `Fecha del desfile de ${ed.year}`)}</li>`)}
-
       ${bloque("📷", "Ediciones celebradas sin una sola foto", q.sinFoto, ed => `
         <li><button class="link t-year" type="button" data-year="${ed.year}">${ed.year}</button>
           — se celebró y no conservamos ninguna imagen${ed.year >= 2000
@@ -1228,6 +1222,12 @@ function renderPendingTab() {
         <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
           ${esc((edition.notes_derivadas || []).find(n => n.includes("faltan")) || "")}
           ${askButton(`year:${edition.year}`, `Edición ${edition.year} · faltan carrozas`)}</li>`)}
+
+      ${bloque("📅", "Ediciones de las que no sabemos el día", q.sinFecha, ed => `
+        <li><button class="link t-year" type="button" data-year="${ed.year}">${ed.year}</button>
+          — sabemos el año, no el día. Un cartel, un programa o un recorte de prensa
+          de aquella semana lo resuelve.
+          ${askButton(`fecha-${ed.year}`, `Fecha del desfile de ${ed.year}`)}</li>`)}
       ${bloque("🕳️", "Ediciones celebradas sin palmarés conocido", q.noPalmares, edition => `
         <li><button class="link t-year" type="button" data-year="${edition.year}">${edition.year}</button>
           ${esc(edition.notes?.[0] || "No se ha localizado la clasificación.")}
@@ -3988,6 +3988,8 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   const previa = state.selection;
   state.vengoDe = previa && (previa.kind !== kind || previa.id !== id) ? previa : null;
   state.selection = { kind, id };
+  // Hay ficha abierta: en el PC eso es lo que enciende la cruz de cerrar.
+  document.body.classList.add("hay-ficha");
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
@@ -4063,6 +4065,7 @@ function latestRankedEdition() {
  * donde el navegador ya ha retrocedido por su cuenta. */
 function clearSelection() {
   document.body.classList.remove("detail-open");
+  document.body.classList.remove("hay-ficha");
   state.selection = null;
   // Al salir del todo no se vuelve de ningún sitio: si no se borra, la X de la
   // siguiente ficha que se abra te mandaría a una que cerraste hace rato.
