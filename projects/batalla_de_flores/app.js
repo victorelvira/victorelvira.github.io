@@ -2587,7 +2587,7 @@ function renderGallery(entries) {
              title="${esc(entry.name)} (${entry.year})${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}">
             <img src="${esc(thumbUrl(url))}" alt="${esc(entry.name)}" loading="lazy">
           </button>
-          <figcaption>${esc(entry.name)}<small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small>
+          <figcaption><span class="shot-name">${esc(entry.name)}</span><small>${entry.year}${entry.group_canonical ? ` · ${esc(entry.group_canonical)}` : ""}</small>
             ${photoCredit(entry)}</figcaption>
         </figure>`).join("")}
     </div>`;
@@ -2877,13 +2877,17 @@ function renderEditionDetail(edition) {
   els.detail.innerHTML = `
     <div class="detail-head edition-head">
       <div class="anio-bloque">
+      <h2>${edition.year}</h2>
       ${edition.parade_date_text
-        // Encima del año y en gris: la fecha acompaña, no compite con el año.
-        // El ancho lo ajusta `ajustarFechaAlAno()` para que la línea mida
-        // exactamente lo que el año de debajo.
+        // DEBAJO del año, no encima. El año es la identidad de la edición y es
+        // por donde se navega: poniendo la fecha arriba, el ojo aterrizaba
+        // primero en una línea gris pequeña. Debajo funciona como lo que es,
+        // un pie. Y sin «de 2026», que ya está justo encima.
+        //
+        // El ancho lo iguala `ajustarFechaAlAno()`: la fecha mide exactamente
+        // lo que el año, así que las dos líneas forman un bloque.
         ? `<span class="fecha-desfile" title="Fuente: ${esc(edition.parade_date_source || "")}">${
             esc(edition.parade_date_text.replace(/ de \d{4}$/, ""))}</span>` : ""}
-      <h2>${edition.year}</h2>
       </div>
       <span class="discs">
         ${edition.edition_number

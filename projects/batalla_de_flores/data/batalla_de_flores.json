@@ -19,10 +19,10 @@
     "carrozas_en_duda_por_duplicado": 135,
     "grupos": 177,
     "ediciones_con_palmares": 112,
-    "carrozas_con_foto": 584,
-    "fotos": 776,
+    "carrozas_con_foto": 585,
+    "fotos": 778,
     "afirmaciones": 3802,
-    "afirmaciones_corroboradas": 441,
+    "afirmaciones_corroboradas": 443,
     "ediciones_con_fecha": 6,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -61,9 +61,14 @@
           "group_canonical": "Nicasio Escalante",
           "source_type": "manual_seed",
           "source_urls": [
-            "https://batalladeflores.net/"
+            "https://www.batalladeflores.net/la-argentina/"
           ],
-          "source_links": [],
+          "source_links": [
+            {
+              "kind": "archive_float_page",
+              "url": "https://www.batalladeflores.net/la-argentina/"
+            }
+          ],
           "float_url": null,
           "prize_art_rank": null,
           "prize_costumes_rank": null,
@@ -71,8 +76,8 @@
             "Diseno de Gonzalo Bringas"
           ],
           "needs_review": [
-            "El grupo que consta arriba no es el que dice la fuente. La fuente firma esta carroza como «Nicasio Escalante y socios» y el archivo la agrupa bajo «Nicasio Escalante»: la fuente firma la carroza a varios y el plegado se queda con uno: desaparece «socios». Está sin decidir.",
             "El archivo atribuye esta carroza a dos grupos: «Gonzalo Bringas» y «Nicasio Escalante y socios».",
+            "El grupo que consta arriba no es el que dice la fuente. La fuente firma esta carroza como «Nicasio Escalante y socios» y el archivo la agrupa bajo «Nicasio Escalante»: la fuente firma la carroza a varios y el plegado se queda con uno: desaparece «socios». Está sin decidir.",
             "El único respaldo de esta carroza es la semilla de la primera versión del proyecto, copiada de batalladeflores.net sin anotar de qué página. No hay forma de comprobarla: hace falta una fuente que la confirme."
           ],
           "source_refs": [
@@ -110,6 +115,17 @@
                   "url": null
                 }
               ],
+              "disputa": [
+                {
+                  "valor": "Gonzalo Bringas",
+                  "fuentes": [
+                    {
+                      "kind": "archive_float_page",
+                      "url": "https://www.batalladeflores.net/la-argentina/"
+                    }
+                  ]
+                }
+              ],
               "independientes": 0
             },
             "group_canonical": {
@@ -130,12 +146,12 @@
           "image_refs": [
             {
               "url": "batalla_de_flores/fotos/archivo/1846-argentina-1846.jpg",
-              "origen": "batalladeflores.net (biblioteca de medios)",
-              "por": "fichero",
-              "evidencia": "1908laargentina-2",
-              "asignacion": "el fichero se subió como «1908laargentina-2», que lleva el año y el nombre de esta carroza",
-              "asignada_por": "deducción",
-              "pagina": null,
+              "origen": "batalladeflores.net",
+              "por": "pagina",
+              "evidencia": "https://www.batalladeflores.net/la-argentina/",
+              "asignacion": "publicada en la ficha de esta carroza en batalladeflores.net",
+              "asignada_por": "fuente",
+              "pagina": "https://www.batalladeflores.net/la-argentina/",
               "original": "https://www.batalladeflores.net/wp-content/uploads/2013/08/1908LaArgentina.jpg"
             },
             {
@@ -170,9 +186,14 @@
           "group_canonical": "Nicasio Escalante",
           "source_type": "manual_seed",
           "source_urls": [
-            "https://batalladeflores.net/"
+            "https://www.batalladeflores.net/la-argentina/"
           ],
-          "source_links": [],
+          "source_links": [
+            {
+              "kind": "archive_float_page",
+              "url": "https://www.batalladeflores.net/la-argentina/"
+            }
+          ],
           "float_url": null,
           "prize_art_rank": null,
           "prize_costumes_rank": null,
@@ -180,8 +201,8 @@
             "Diseno de Gonzalo Bringas"
           ],
           "needs_review": [
-            "El grupo que consta arriba no es el que dice la fuente. La fuente firma esta carroza como «Nicasio Escalante y socios» y el archivo la agrupa bajo «Nicasio Escalante»: la fuente firma la carroza a varios y el plegado se queda con uno: desaparece «socios». Está sin decidir.",
             "El archivo atribuye esta carroza a dos grupos: «Gonzalo Bringas» y «Nicasio Escalante y socios».",
+            "El grupo que consta arriba no es el que dice la fuente. La fuente firma esta carroza como «Nicasio Escalante y socios» y el archivo la agrupa bajo «Nicasio Escalante»: la fuente firma la carroza a varios y el plegado se queda con uno: desaparece «socios». Está sin decidir.",
             "El único respaldo de esta carroza es la semilla de la primera versión del proyecto, copiada de batalladeflores.net sin anotar de qué página. No hay forma de comprobarla: hace falta una fuente que la confirme."
           ],
           "source_refs": [
@@ -219,6 +240,17 @@
                   "url": null
                 }
               ],
+              "disputa": [
+                {
+                  "valor": "Gonzalo Bringas",
+                  "fuentes": [
+                    {
+                      "kind": "archive_float_page",
+                      "url": "https://www.batalladeflores.net/la-argentina/"
+                    }
+                  ]
+                }
+              ],
               "independientes": 0
             },
             "group_canonical": {
@@ -239,12 +271,12 @@
           "image_refs": [
             {
               "url": "batalla_de_flores/fotos/archivo/1846-argentina-1846.jpg",
-              "origen": "batalladeflores.net (biblioteca de medios)",
-              "por": "fichero",
-              "evidencia": "1908laargentina-2",
-              "asignacion": "el fichero se subió como «1908laargentina-2», que lleva el año y el nombre de esta carroza",
-              "asignada_por": "deducción",
-              "pagina": null,
+              "origen": "batalladeflores.net",
+              "por": "pagina",
+              "evidencia": "https://www.batalladeflores.net/la-argentina/",
+              "asignacion": "publicada en la ficha de esta carroza en batalladeflores.net",
+              "asignada_por": "fuente",
+              "pagina": "https://www.batalladeflores.net/la-argentina/",
               "original": "https://www.batalladeflores.net/wp-content/uploads/2013/08/1908LaArgentina.jpg"
             },
             {
@@ -68078,12 +68110,17 @@
           "group_canonical": "Agrupación del PCE de Laredo",
           "source_type": "archive_float_page",
           "source_urls": [
+            "https://www.batalladeflores.net/gallo-rojo-2/",
             "https://www.batalladeflores.net/gallo-rojo/"
           ],
           "source_links": [
             {
               "kind": "archive_float_page",
               "url": "https://www.batalladeflores.net/gallo-rojo/"
+            },
+            {
+              "kind": "archive_float_page",
+              "url": "https://www.batalladeflores.net/gallo-rojo-2/"
             }
           ],
           "float_url": "https://www.batalladeflores.net/gallo-rojo/",
@@ -68122,6 +68159,17 @@
                   "url": "https://www.batalladeflores.net/gallo-rojo/"
                 }
               ],
+              "disputa": [
+                {
+                  "valor": "Felipe Revuelta",
+                  "fuentes": [
+                    {
+                      "kind": "archive_float_page",
+                      "url": "https://www.batalladeflores.net/gallo-rojo-2/"
+                    }
+                  ]
+                }
+              ],
               "independientes": 1
             },
             "group_canonical": {
@@ -68135,7 +68183,8 @@
             }
           },
           "image_urls": [
-            "batalla_de_flores/fotos/archivo/1105-gallorojo-1105.jpg"
+            "batalla_de_flores/fotos/archivo/1105-gallorojo-1105.jpg",
+            "batalla_de_flores/fotos/archivo/1785-gallorojo-1785.jpg"
           ],
           "image_refs": [
             {
@@ -68147,6 +68196,16 @@
               "asignada_por": "fuente",
               "pagina": "https://www.batalladeflores.net/gallo-rojo/",
               "original": "https://www.batalladeflores.net/wp-content/uploads/2013/08/1981gallorojo1p.jpg"
+            },
+            {
+              "url": "batalla_de_flores/fotos/archivo/1785-gallorojo-1785.jpg",
+              "origen": "batalladeflores.net",
+              "por": "pagina",
+              "evidencia": "https://www.batalladeflores.net/gallo-rojo-2/",
+              "asignacion": "publicada en la ficha de esta carroza en batalladeflores.net",
+              "asignada_por": "fuente",
+              "pagina": "https://www.batalladeflores.net/gallo-rojo-2/",
+              "original": "https://www.batalladeflores.net/wp-content/uploads/2013/08/1981gallorojo1p1.jpg"
             }
           ],
           "image_credit": null,
@@ -68630,12 +68689,17 @@
           "group_canonical": "Agrupación del PCE de Laredo",
           "source_type": "archive_float_page",
           "source_urls": [
+            "https://www.batalladeflores.net/gallo-rojo-2/",
             "https://www.batalladeflores.net/gallo-rojo/"
           ],
           "source_links": [
             {
               "kind": "archive_float_page",
               "url": "https://www.batalladeflores.net/gallo-rojo/"
+            },
+            {
+              "kind": "archive_float_page",
+              "url": "https://www.batalladeflores.net/gallo-rojo-2/"
             }
           ],
           "float_url": "https://www.batalladeflores.net/gallo-rojo/",
@@ -68674,6 +68738,17 @@
                   "url": "https://www.batalladeflores.net/gallo-rojo/"
                 }
               ],
+              "disputa": [
+                {
+                  "valor": "Felipe Revuelta",
+                  "fuentes": [
+                    {
+                      "kind": "archive_float_page",
+                      "url": "https://www.batalladeflores.net/gallo-rojo-2/"
+                    }
+                  ]
+                }
+              ],
               "independientes": 1
             },
             "group_canonical": {
@@ -68687,7 +68762,8 @@
             }
           },
           "image_urls": [
-            "batalla_de_flores/fotos/archivo/1105-gallorojo-1105.jpg"
+            "batalla_de_flores/fotos/archivo/1105-gallorojo-1105.jpg",
+            "batalla_de_flores/fotos/archivo/1785-gallorojo-1785.jpg"
           ],
           "image_refs": [
             {
@@ -68699,6 +68775,16 @@
               "asignada_por": "fuente",
               "pagina": "https://www.batalladeflores.net/gallo-rojo/",
               "original": "https://www.batalladeflores.net/wp-content/uploads/2013/08/1981gallorojo1p.jpg"
+            },
+            {
+              "url": "batalla_de_flores/fotos/archivo/1785-gallorojo-1785.jpg",
+              "origen": "batalladeflores.net",
+              "por": "pagina",
+              "evidencia": "https://www.batalladeflores.net/gallo-rojo-2/",
+              "asignacion": "publicada en la ficha de esta carroza en batalladeflores.net",
+              "asignada_por": "fuente",
+              "pagina": "https://www.batalladeflores.net/gallo-rojo-2/",
+              "original": "https://www.batalladeflores.net/wp-content/uploads/2013/08/1981gallorojo1p1.jpg"
             }
           ],
           "image_credit": null
@@ -70738,9 +70824,7 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "notes": [],
-          "needs_review": [
-            "El archivo atribuye esta carroza a dos grupos: «Berasategui y Polo» y «José Berasategi»."
-          ],
+          "needs_review": [],
           "source_refs": [],
           "nivel": 1,
           "claims": {
@@ -70838,9 +70922,7 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "notes": [],
-          "needs_review": [
-            "El archivo atribuye esta carroza a dos grupos: «Berasategui y Polo» y «José Berasategi»."
-          ],
+          "needs_review": [],
           "source_refs": [],
           "nivel": 1,
           "claims": {
@@ -71544,9 +71626,7 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "notes": [],
-          "needs_review": [
-            "El archivo atribuye esta carroza a dos grupos: «Berasategui y Polo» y «José Berasategi»."
-          ],
+          "needs_review": [],
           "source_refs": [],
           "nivel": 1,
           "claims": {
@@ -71638,9 +71718,7 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "notes": [],
-          "needs_review": [
-            "El archivo atribuye esta carroza a dos grupos: «Berasategui y Polo» y «José Berasategi»."
-          ],
+          "needs_review": [],
           "source_refs": [],
           "nivel": 1,
           "claims": {
@@ -146949,12 +147027,21 @@
           "group_canonical": "Grupo Alegoría",
           "source_type": "official_result",
           "source_urls": [
+            "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-2016/",
             "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2561"
           ],
           "source_links": [
             {
               "kind": "official_result",
               "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2561"
+            },
+            {
+              "kind": "archive_palmares",
+              "url": "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-2016/"
+            },
+            {
+              "kind": "archive_palmares",
+              "url": "http://www.batalladeflores.net/plumas/"
             }
           ],
           "float_url": null,
@@ -146999,6 +147086,17 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2561"
+                }
+              ],
+              "disputa": [
+                {
+                  "valor": "Grupo Pejino",
+                  "fuentes": [
+                    {
+                      "kind": "archive_palmares",
+                      "url": "http://www.batalladeflores.net/plumas/"
+                    }
+                  ]
                 }
               ],
               "independientes": 1
@@ -147772,12 +147870,21 @@
           "group_canonical": "Grupo Alegoría",
           "source_type": "official_result",
           "source_urls": [
+            "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-2016/",
             "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2561"
           ],
           "source_links": [
             {
               "kind": "official_result",
               "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2561"
+            },
+            {
+              "kind": "archive_palmares",
+              "url": "https://www.batalladeflores.net/batalla-de-flores-de-laredo-palmares-de-la-edicion-2016/"
+            },
+            {
+              "kind": "archive_palmares",
+              "url": "http://www.batalladeflores.net/plumas/"
             }
           ],
           "float_url": null,
@@ -147822,6 +147929,17 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=2561"
+                }
+              ],
+              "disputa": [
+                {
+                  "valor": "Grupo Pejino",
+                  "fuentes": [
+                    {
+                      "kind": "archive_palmares",
+                      "url": "http://www.batalladeflores.net/plumas/"
+                    }
+                  ]
                 }
               ],
               "independientes": 1
@@ -160554,7 +160672,7 @@
           "points": 14,
           "group_raw": "Spartans",
           "group_canonical": "Spartans",
-          "source_type": "official_result",
+          "source_type": "official_result+photo_archive",
           "source_urls": [
             "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
           ],
@@ -160567,12 +160685,21 @@
           "float_url": null,
           "prize_art_rank": null,
           "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [
-            "El archivo atribuye esta carroza a dos grupos: «7p» y «Spartans»."
+          "notes": [
+            "Puesto y grupo tomados del archivo fotográfico cedido por Santi Fernández (batalladeflores.net) (1 foto)."
           ],
-          "source_refs": [],
-          "nivel": 1,
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Archivo fotográfico cedido por Santi Fernández (batalladeflores.net)",
+              "ficheros": [
+                "2022-7p-el show de garfield-7p (3).jpg"
+              ],
+              "carpeta": "data/fotos_santi_2017_2025"
+            }
+          ],
+          "nivel": 2,
           "claims": {
             "name": {
               "fuentes": [
@@ -160588,18 +160715,26 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "category": {
               "fuentes": [
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "points": {
               "fuentes": [
@@ -160629,9 +160764,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg",
+              "origen": "Santi Fernández (batalladeflores.net)",
+              "por": "fichero",
+              "evidencia": "2022-7p-el show de garfield-7p (3).jpg",
+              "asignacion": "así la nombró Santi Fernández (batalladeflores.net) al cederla: «2022-7p-el show de garfield-7p (3).jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Santi Fernández (batalladeflores.net)",
           "id_carroza": "show",
           "id_grupo": "spartans",
           "id_completo": "spartans_2022_show-garfield",
@@ -161401,7 +161547,7 @@
           "points": 14,
           "group_raw": "Spartans",
           "group_canonical": "Spartans",
-          "source_type": "official_result",
+          "source_type": "official_result+photo_archive",
           "source_urls": [
             "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
           ],
@@ -161414,12 +161560,21 @@
           "float_url": null,
           "prize_art_rank": null,
           "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [
-            "El archivo atribuye esta carroza a dos grupos: «7p» y «Spartans»."
+          "notes": [
+            "Puesto y grupo tomados del archivo fotográfico cedido por Santi Fernández (batalladeflores.net) (1 foto)."
           ],
-          "source_refs": [],
-          "nivel": 1,
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Archivo fotográfico cedido por Santi Fernández (batalladeflores.net)",
+              "ficheros": [
+                "2022-7p-el show de garfield-7p (3).jpg"
+              ],
+              "carpeta": "data/fotos_santi_2017_2025"
+            }
+          ],
+          "nivel": 2,
           "claims": {
             "name": {
               "fuentes": [
@@ -161435,18 +161590,26 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "category": {
               "fuentes": [
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4141"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "points": {
               "fuentes": [
@@ -161476,9 +161639,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2022-el-show-de-garfield.jpg",
+              "origen": "Santi Fernández (batalladeflores.net)",
+              "por": "fichero",
+              "evidencia": "2022-7p-el show de garfield-7p (3).jpg",
+              "asignacion": "así la nombró Santi Fernández (batalladeflores.net) al cederla: «2022-7p-el show de garfield-7p (3).jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Santi Fernández (batalladeflores.net)"
         },
         {
           "id": "2022-yabba-dabba-doo-b-1",
@@ -161906,7 +162080,6 @@
       "desfilaron": null,
       "notes_derivadas": [
         "Esto no puede ser: 2 carrozas figuran en el B4.º puesto de 2022 — «Blocks creations» y «Irezumi». Todas son del mismo grupo, así que lo más probable es que sean la misma carroza con el título escrito de varias maneras. Sin resolver.",
-        "Tenemos una foto de «El show de garfield» sin colgar: la carroza está en el palmarés, pero las fuentes no coinciden en el grupo («7p» en la foto, «Spartans» en el archivo). Está pendiente de confirmar.",
         "Tenemos una foto titulada «Block creation» (B3.º, Grupo alegoria) y ninguna carroza de esta edición se llama así: puede ser una que nos falta o la misma con otro título."
       ]
     },
@@ -174291,7 +174464,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.25.0",
+  "version": "2.28.0",
   "about": {
     "url": "https://victorelvira.github.io/projects/batalla_de_flores.html",
     "compiled_by": "Víctor Elvira",
@@ -174309,7 +174482,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-25 18:13",
+  "built_at": "2026-08-25 18:52",
   "map_features": [
     {
       "id": "route_origin_1908",

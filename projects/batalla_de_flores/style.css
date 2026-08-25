@@ -516,9 +516,13 @@ table.palmares td.c-photo .thumb img {
 /* Pie de cada foto: el archivo no guarda autor ni fecha exacta, pero sí la
    carroza, el año y el grupo, que es lo que permite reconocerla. */
 .shot { margin: 0; }
-.shot figcaption {
-  margin-top: 3px; color: var(--ink); font-size: 11px; line-height: 1.25;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+/* El recorte a una línea es SOLO para el título de la carroza. Estaba en el
+   `figcaption` entero y se llevaba por delante el crédito: se leía «Foto cedida
+   por Santi Fernández (bat» y ahí se acababa. Truncar una atribución es media
+   atribución, que en esta página es peor que ninguna. */
+.shot figcaption { margin-top: 3px; color: var(--ink); font-size: 11px; line-height: 1.25; }
+.shot-name {
+  display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .shot figcaption small { display: block; color: var(--muted); font-size: 10px; }
 
@@ -586,7 +590,15 @@ table.palmares td.c-photo .thumb img {
 
 .stats-block { padding-bottom: 6px; }
 .chart { display: block; width: 100%; height: auto; margin: 4px 0 2px; }
-.chart-note { margin: 0 0 6px; color: var(--muted); font-size: 11.5px; line-height: 1.35; max-width: 66ch; }
+/* El tope de línea era 66ch, la «medida óptima» de los manuales. Pero a 11,5 px
+   eso son 440 px, y el panel mide 828: la nota se plegaba en cuatro líneas
+   dejando 388 px en blanco al lado. Una medida que en un libro es cómoda, en
+   una columna ancha se lee como texto encajonado.
+   `min()` para que siga cediendo en pantallas estrechas, donde 92ch no caben. */
+.chart-note {
+  margin: 0 0 6px; color: var(--muted); font-size: 11.5px; line-height: 1.35;
+  max-width: min(100%, 92ch);
+}
 /* El enlace al libro mayor: destacado, porque es la prueba de todo lo que la
    página afirma y si pasa por un enlace más del párrafo no lo abre nadie. */
 .descarga {
@@ -1359,7 +1371,7 @@ table.palmares td.pos .kpi-icon { width: 11px; height: 11px; fill: var(--gold); 
    contenedor entero y la cuenta del ajuste daría cualquier cosa. */
 .anio-bloque { display: flex; flex-direction: column; align-items: flex-start; }
 .fecha-desfile {
-  display: inline-block; margin-bottom: -2px; white-space: nowrap;
+  display: inline-block; margin-top: 1px; white-space: nowrap;
   color: var(--muted); font-size: 12px; line-height: 1.1;
 }
 
@@ -1453,7 +1465,13 @@ body.lb-abierto { overflow: hidden; }
  * quien la hizo. */
 .about-note { margin: -4px 0 10px; color: var(--muted); font-size: 12px; line-height: 1.45; }
 
-.credito { display: block; margin-top: 2px; color: var(--muted); font-size: 10.5px; font-style: italic; }
+.credito {
+  display: block; margin-top: 2px; color: var(--muted); font-size: 10.5px;
+  font-style: italic;
+  /* Envuelve, no se corta. Y parte las palabras larguísimas —una URL de origen—
+     antes que desbordar la columna. */
+  white-space: normal; overflow-wrap: anywhere; line-height: 1.3;
+}
 
 /* Mapa de Leaflet de la Noche Magica. */
 .mapa-montaje {
