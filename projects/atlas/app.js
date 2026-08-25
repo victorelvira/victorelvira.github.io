@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.48.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 11:31";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.50.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 12:45";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1371,6 +1371,73 @@ document.addEventListener("click", e => {
 // ── work "ficha": the full record for one painting (image + facts + links) ──
 const workCard = document.getElementById("work-card");
 let wcWork = null;
+
+// ── "More on this subject" — works whose TITLE shares the same (rare) subject words ──
+// e.g. open a "Saint John the Baptist" → other John the Baptists. TF-IDF over title tokens so the
+// discriminative word (baptist) counts, not the common one (saint). No embeddings needed.
+const SUBJ_STOP = new Set(("the a an of and or in on at to with by from for as after before saint san sant santa " +
+  "st de del della di la le les los las el e y und der die das of un una the his her our their after study copy " +
+  "portrait scene view").split(/\s+/));
+let subjIndex = null;
+function buildSubjectIndex() {
+  const tokensByQid = new Map(), df = new Map(), postings = new Map();
+  for (const w of works) {
+    if (!w.p.qid || !w.p.title) continue;
+    const toks = new Set(deacc(w.p.title).split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !SUBJ_STOP.has(t) && !/^\d+$/.test(t)));
+    if (!toks.size) continue;
+    tokensByQid.set(w.p.qid, toks);
+    for (const t of toks) { df.set(t, (df.get(t) || 0) + 1); (postings.get(t) || postings.set(t, []).get(t)).push(w.p.qid); }
+  }
+  const N = tokensByQid.size, idf = new Map();
+  for (const [t, d] of df) idf.set(t, Math.log(N / d));
+  subjIndex = { tokensByQid, idf, postings };
+}
+function subjectMatches(qid, limit = 6) {
+  if (!subjIndex) buildSubjectIndex();
+  const mine = subjIndex.tokensByQid.get(qid); if (!mine) return [];
+  const score = new Map();
+  for (const t of mine) {
+    const w = subjIndex.idf.get(t) || 0; if (w < 1.4) continue;        // skip the common words (portrait, virgin…)
+    for (const q of subjIndex.postings.get(t) || []) { if (q === qid) continue; score.set(q, (score.get(q) || 0) + w); }
+  }
+  const byQid = new Map(); for (const x of works) if (x.p.qid) byQid.set(x.p.qid, x);
+  const ranked = [...score.entries()].filter(([, s]) => s >= 2.4).sort((a, b) => b[1] - a[1]);
+  const out = [], usedImg = new Set([byQid.get(qid)?.p.image]);
+  for (const [q] of ranked) {
+    const x = byQid.get(q); if (!x || !x.p.image || usedImg.has(x.p.image)) continue;
+    usedImg.add(x.p.image); out.push(x); if (out.length >= limit) break;
+  }
+  return out;
+}
+function renderSubject(qid) {
+  const host = document.getElementById("wc-subject"); if (!host || !qid) return;
+  const items = subjectMatches(qid);
+  if (!items.length) return;
+  host.innerHTML = `<div class="wc-sim-h">More on this subject</div><div class="wc-sim-row">` +
+    items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
+}
+
+// ── "Painters like this one" — style affinity from mean CLIP vectors (painter_affinity.py) ──
+let painterAff = null, painterAffTried = false;
+async function loadPainterAff() {
+  if (painterAff || painterAffTried) return painterAff;
+  painterAffTried = true;
+  try { painterAff = await (await fetch("atlas/data/painter_neighbors.json?v=" + DATA_V)).json(); }
+  catch (e) { painterAff = null; }
+  return painterAff;
+}
+async function renderAffinity(name) {
+  const host = document.getElementById("wc-affinity"); if (!host || !name) return;
+  const aff = await loadPainterAff(); const rec = aff && aff[name];
+  if (!rec || !rec.near || !rec.near.length) return;
+  const known = new Set(PAINTERS.map(p => p.name));
+  const chips = rec.near.filter(n => known.has(n)).slice(0, 6);
+  if (!chips.length) return;
+  host.innerHTML = `<span class="wc-aff-h">If you like ${esc(name)}, try</span>` +
+    chips.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}">` +
+      `<span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("");
+}
+
 // "Visually similar" — CLIP nearest-neighbour QIDs, precomputed in atlas/data/sim_neighbors.json
 let simNeighbors = null;
 async function loadSimNeighbors() {
@@ -1412,8 +1479,12 @@ function openWorkCard(w) {
     `<div class="wc-actions"><button type="button" class="wc-share">🔗 Share</button>` +
     `<button type="button" class="wc-map">📍 On the map</button>` +
     `<span class="wc-hint">or just copy the address bar</span></div>` +
+    `<div class="wc-aff" id="wc-affinity"></div>` +
+    `<div class="wc-similar" id="wc-subject"></div>` +
     `<div class="wc-similar" id="wc-similar"></div></div>`;
   workCard.hidden = false;
+  renderAffinity(p.painter); // "painters like this one" (style affinity) — fills in async
+  renderSubject(p.qid);   // "more on this subject" (shared title words) — instant, no embeddings
   renderSimilar(p.qid);   // "visually similar" (CLIP neighbours) — fills in async when available
   // reflect the open painting in the address bar → copying the URL shares this exact work
   if (p.qid) history.replaceState(null, "", location.pathname + "?w=" + p.qid + location.hash);
@@ -1442,6 +1513,13 @@ workCard.addEventListener("click", e => {
   if (e.target.closest(".wc-map") && wcWork) { const w = wcWork; closeWorkCard(); flyToWork(w); return; }
   const sim = e.target.closest(".wc-sim");
   if (sim) { const x = works.find(y => y.p.qid === sim.dataset.qid); if (x) openWorkCard(x); return; }  // hop to a similar work
+  const aff = e.target.closest(".wc-aff-chip");
+  if (aff) {   // "try this painter" → isolate them on the map (Kayak-style "only") and close the card
+    const only = aff.dataset.painterOnly;
+    PAINTERS.forEach(p => { state.painters[p.name] = p.name === only; });
+    closeWorkCard(); refresh(); updatePainterBtn(); renderPainterList();
+    toast("Showing only " + only); return;
+  }
   if (e.target === workCard) closeWorkCard();
 });
 
