@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.48.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 11:16";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.48.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 11:20";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -1865,7 +1865,7 @@ function renderChart() {
   // Aggregate rows are tall with the (long) group name ON TOP of the dots, so it can't run off the
   // left edge. Individual rows keep the short painter name right-aligned in a left gutter.
   const agg = chartGroup !== "individual";
-  const rowH = agg ? 40 : 17, padL = agg ? 12 : 230, padT = 30, padR = 24, yw = chartYW;
+  const rowH = agg ? 40 : 19, padL = agg ? 12 : 230, padT = 30, padR = 24, yw = chartYW;
   const W = padL + (maxY - minY) * yw + padR, H = padT + rows.length * rowH + 16;
   const X = y => padL + (y - minY) * yw;
   const gridStep = yw < 3 ? 50 : yw < 5 ? 40 : 20;
@@ -1876,10 +1876,15 @@ function renderChart() {
   for (const r of rows) {
     const cy = agg ? ry + 27 : ry + rowH / 2;   // aggregate: dots on a baseline below the top label
     parts.push(`<line x1="${padL}" y1="${cy}" x2="${W - padR}" y2="${cy}" stroke="#f5f2eb"/>`);
-    if (agg)
-      parts.push(`<text x="${padL}" y="${ry + 13}" font-size="12.5" font-weight="700" fill="#333">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">· ${esc(r.sub)}</tspan></text>`);
-    else
+    const yrs = [...r.years.keys()], fx = X(Math.min(...yrs)), lx = X(Math.max(...yrs));
+    if (agg) {   // group name ABOVE where its dots begin (so it's aligned with them, not stranded far left)
+      const nx = Math.max(padL, Math.min(fx, W - padR - 260));
+      parts.push(`<text x="${nx.toFixed(0)}" y="${ry + 13}" font-size="12.5" font-weight="700" fill="#333">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">· ${esc(r.sub)}</tspan></text>`);
+    } else {
       parts.push(`<text x="${padL - 8}" y="${cy + 3.5}" font-size="10.5" fill="#333" text-anchor="end">${esc(r.label)} <tspan fill="#b3aa9c">${esc(r.sub)}</tspan></text>`);
+      for (let x = fx; x <= lx; x += 520)   // faint repeated name so you keep track when scrolled right
+        parts.push(`<text x="${(x + 5).toFixed(0)}" y="${(cy - 5).toFixed(1)}" font-size="8.5" fill="#d6cebf">${esc(r.label)}</text>`);
+    }
     const rmax = agg ? 9 : 5, ri = rows.indexOf(r);
     for (const [yr, cell] of r.years) {
       const c = chartCellCount(r, cell);
