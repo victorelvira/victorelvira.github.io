@@ -1,6 +1,6 @@
 /*
  * Fiestas de pueblo de Cantabria — generado por pipeline/build.py
- * 2026-08-19 14:35 · feed planesparahoy 20260819122735
+ * 2026-08-24 21:29 · feed planesparahoy 20260824183818
  * Fuentes: planesparahoy (agenda), Wikipedia (descripciones notables),
  * descripciones IA y clásicas curadas. Ver pipeline/FUENTES.md.
  */
@@ -41,24 +41,6 @@ const FIESTAS = [
   "interes": "Regional",
   "_fuente_desc": "ayuntamiento",
   "id": "ayto:cabalgata-de-reyes-de-sena-limpias-sena"
- },
- {
-  "id": "7",
-  "nombre": "Exposición de Natalia Tomás Segovia",
-  "pueblo": "Villapresente",
-  "municipio": "Reocín",
-  "comarca": "",
-  "mes": 2,
-  "fecha": "6 febrero – 30 octubre",
-  "inicio": "2026-02-06",
-  "fin": "2026-10-30",
-  "tipo": "exposiciones",
-  "interes": "",
-  "lat": 43.36394,
-  "lng": -4.10529,
-  "descripcion": "Exposición en Villapresente. 6 febrero – 30 octubre. Lugar: Espacio de Arte Contemporáneo.",
-  "_fuente_desc": "factual",
-  "fuente": "https://ayto-reocin.com/events/programa-de-exposiciones-2026-natalia-tomas-segovia/"
  },
  {
   "nombre": "Carnaval de Laredo",
@@ -256,7 +238,7 @@ const FIESTAS = [
   "lng": -4.05064,
   "descripcion": "Actividad infantil en Torrelavega. 1 junio – 20 septiembre. Lugar: Plaza de La Llama. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://paseatorrelavega.es/eventos/"
+  "fuente": "https://paseatorrelavega.es/eventos"
  },
  {
   "id": "4446",
@@ -311,6 +293,194 @@ const FIESTAS = [
   "descripcion": "Evento deportivo en Ontaneda. 18 junio – 31 agosto. Lugar: Piscina Municipal de Ontaneda (Corvera de Toranzo). Puntual: jóvenes (-18) 2€/día, adultos (+18) 2,50€/día; Abonado: jóvenes 30€/temporada, adultos 50€/temporada; Bono familiar 90€/temporada.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/corvera-de-toranzo/piscinas-municipales-ontaneda--69"
+ },
+ {
+  "id": "635477",
+  "nombre": "10ª Feria del Disco y Coleccionismo de Santander",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 6,
+  "fecha": "22 junio – 7 septiembre",
+  "inicio": "2026-06-22",
+  "fin": "2026-09-07",
+  "tipo": "ferias y mercados",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Feria o mercado en Santander. 22 junio – 7 septiembre. Lugar: Plaza de Alfonso XIII. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/10-feria-del-disco-y-coleccionismo-de-santander",
+  "programa": [
+   {
+    "dia": "Lun 22",
+    "hora": "09:00",
+    "evento": "Robótica y MicroBit",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 22",
+    "hora": "09:00",
+    "evento": "Diseña y aprende Ukelele",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 22",
+    "hora": "",
+    "evento": "Música y Tecnología",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 29",
+    "hora": "09:00",
+    "evento": "Laboratorio Tecnológico I",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 29",
+    "hora": "09:00",
+    "evento": "Universo Minecraft I",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 29",
+    "hora": "09:00",
+    "evento": "Desarrollo de Videojuegos I",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 29",
+    "hora": "09:00",
+    "evento": "Universo Roblox Studio con IA",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 6",
+    "hora": "09:00",
+    "evento": "Robótica y MicroBit",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 6",
+    "hora": "09:00",
+    "evento": "Arte y Tecnología",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 13",
+    "hora": "09:00",
+    "evento": "Diseña y aprende Ukelele",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 13",
+    "hora": "09:00",
+    "evento": "Desarrollo de Videojuegos II",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 20",
+    "hora": "09:00",
+    "evento": "Robótica y MicroBit",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 20",
+    "hora": "09:00",
+    "evento": "Arte y Tecnología",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 27",
+    "hora": "09:00",
+    "evento": "Robótica de Competición",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 27",
+    "hora": "",
+    "evento": "Música y Tecnología",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 3",
+    "hora": "09:00",
+    "evento": "Laboratorio Tecnológico I",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 10",
+    "hora": "09:00",
+    "evento": "Desarrollo de Videojuegos VR",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 10",
+    "hora": "09:00",
+    "evento": "Arcade Dance",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 10",
+    "hora": "",
+    "evento": "Robótica Creativa con LEGO",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "09:00",
+    "evento": "Robótica y MicroBit",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "09:00",
+    "evento": "Arte y Tecnología",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "09:00",
+    "evento": "Universo Minecraft I",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "09:00",
+    "evento": "Desarrollo de Videojuegos VR",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "09:00",
+    "evento": "Arcade Dance",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "09:00",
+    "evento": "Universo Minecraft I",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "09:00",
+    "evento": "Arte y Tecnología",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "09:00",
+    "evento": "Desarrollo de Videojuegos",
+    "lugar": "Nakama STEAM"
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "09:00",
+    "evento": "DÍA TECNOLÓGICO",
+    "lugar": "Nakama STEAM"
+   }
+  ]
  },
  {
   "id": "100876",
@@ -635,6 +805,24 @@ const FIESTAS = [
   "id": "ayto:san-pablo-laredo-la-pesquera"
  },
  {
+  "id": "100894",
+  "nombre": "Exposición de obras de OKUDA San Miguel",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 6,
+  "fecha": "30 junio – 11 septiembre",
+  "inicio": "2026-06-30",
+  "fin": "2026-09-11",
+  "tipo": "exposiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Exposición en Santander. 30 junio – 11 septiembre. Lugar: Palacio de la Magdalena. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/23638"
+ },
+ {
   "id": "25830",
   "nombre": "Exposición permanente de la Colección ENAIRE",
   "pueblo": "Santander",
@@ -830,6 +1018,24 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "6509",
+  "nombre": "Visitas guiadas Arboreto",
+  "pueblo": "Liendo",
+  "municipio": "Liendo",
+  "comarca": "",
+  "mes": 7,
+  "fecha": "1 julio – 31 agosto",
+  "inicio": "2026-07-01",
+  "fin": "2026-08-31",
+  "tipo": "naturaleza",
+  "interes": "",
+  "lat": 43.39483,
+  "lng": -3.37828,
+  "descripcion": "Actividad en la naturaleza en Liendo. 1 julio – 31 agosto. Lugar: Arboreto de Liendo. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://cantabriaorientalrural.es/events/visitas-guiadas-al-arboreto-de-liendo"
+ },
+ {
   "id": "42500",
   "nombre": "Cantabria Music Rally II",
   "pueblo": "Santander",
@@ -919,7 +1125,7 @@ const FIESTAS = [
   "lng": -3.41432,
   "descripcion": "Exposición en Laredo. 2 julio – 27 agosto. Lugar: Oficina de Turismo de Laredo. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://www.laredoturismo.es/evento/exposicion-de-pintura-renacer-de-lidia-m-sancho/"
+  "fuente": "https://laredoturismo.es/evento/exposicion-de-pintura-renacer-de-lidia-m-sancho"
  },
  {
   "id": "34711",
@@ -2112,6 +2318,146 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "33118",
+  "nombre": "Visitas al centro de interpretación «El último desembarco de Carlos V»",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 7,
+  "fecha": "17 julio – 29 agosto",
+  "inicio": "2026-07-17",
+  "fin": "2026-08-29",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Visitas al centro de interpretación «El último desembarco de Carlos V» en Laredo. 17 julio – 29 agosto. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/visitas-al-centro-de-interpretacion-el-ultimo-desembarco-de-carlos-v-laredo--33118",
+  "programa": [
+   {
+    "dia": "Vie 17",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 18",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 19",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 24",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 25",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 26",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 31",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 1",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 2",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 7",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 8",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 9",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "11:00",
+    "evento": "Visitas al centro de interpretación: El último desembarco de Carlos V",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "id": "9927",
   "nombre": "Conciertos de Verano",
   "pueblo": "Luey",
@@ -2210,14 +2556,14 @@ const FIESTAS = [
   "municipio": "Santander",
   "comarca": "",
   "mes": 7,
-  "fecha": "21 julio – 25 septiembre",
+  "fecha": "21 julio – 25 octubre",
   "inicio": "2026-07-21",
-  "fin": "2026-09-25",
+  "fin": "2026-10-25",
   "tipo": "exposiciones",
   "interes": "",
   "lat": 43.46234,
   "lng": -3.80999,
-  "descripcion": "Exposición en Santander. 21 julio – 25 septiembre. Lugar: Jardines de Pereda. 9 € (gratuito para Amigos del Centro Botín).",
+  "descripcion": "Exposición en Santander. 21 julio – 25 octubre. Lugar: Jardines de Pereda. 9 € (gratuito para Amigos del Centro Botín).",
   "_fuente_desc": "factual",
   "fuente": "https://img.planesparahoy.com/exposicion-marisol-cuando-todo-esta-por-comenzar-b2139ec011b5.webp",
   "programa": [
@@ -2565,6 +2911,162 @@ const FIESTAS = [
    },
    {
     "dia": "Vie 25",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Dom 27",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mar 29",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mié 30",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Jue 1",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Vie 2",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Sáb 3",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Dom 4",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mar 6",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mié 7",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Jue 8",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Vie 9",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Sáb 10",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Dom 11",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mar 13",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mié 14",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Jue 15",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Vie 16",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Sáb 17",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Dom 18",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mar 20",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Mié 21",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Jue 22",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Vie 23",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Sáb 24",
+    "hora": "16:00",
+    "evento": "Exposición Marisol: Cuando todo está por comenzar",
+    "lugar": "Centro Botín"
+   },
+   {
+    "dia": "Dom 25",
     "hora": "16:00",
     "evento": "Exposición Marisol: Cuando todo está por comenzar",
     "lugar": "Centro Botín"
@@ -3147,6 +3649,356 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "7605",
+  "nombre": "Free Tour de Comillas",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
+  "comarca": "",
+  "mes": 7,
+  "fecha": "21 julio – 26 septiembre",
+  "inicio": "2026-07-21",
+  "fin": "2026-09-26",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "Charla o taller en Comillas. 21 julio – 26 septiembre. Lugar: Oficina Turismo Comillas. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://conocecomillas.com/free-tour",
+  "programa": [
+   {
+    "dia": "Mar 21",
+    "hora": "11:30",
+    "evento": "Free Tour por Comillas",
+    "lugar": "Oficina de Turismo de Comillas"
+   },
+   {
+    "dia": "Mar 28",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 29",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 30",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 31",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 1",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 2",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 4",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 5",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 6",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 7",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 8",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 9",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 11",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 12",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 13",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 18",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 19",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 20",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "",
+    "evento": "Visitas Grupales",
+    "lugar": "Comillas"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 2",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 3",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 10",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 11",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 15",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 16",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 17",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mar 22",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Mié 23",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Jue 24",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Vie 25",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "11:30",
+    "evento": "Free Tour Comillas 2026",
+    "lugar": "Oficina Turismo Comillas"
+   }
+  ]
+ },
+ {
   "id": "423784",
   "nombre": "Concierto de Marcos Bárcena",
   "pueblo": "Ramales de la Victoria",
@@ -3221,6 +4073,112 @@ const FIESTAS = [
   "fuente": "https://turismodecantabria.com/?post_type=tribe_events&amp;p=213015"
  },
  {
+  "id": "611882",
+  "nombre": "Visita guiada a templos románicos en el Camino de Santiago",
+  "pueblo": "Medio Cudeyo",
+  "municipio": "Medio Cudeyo",
+  "comarca": "",
+  "mes": 7,
+  "fecha": "25 julio – 11 septiembre",
+  "inicio": "2026-07-25",
+  "fin": "2026-09-11",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.3903,
+  "lng": -3.7872,
+  "descripcion": "Visita guiada a templos románicos en el Camino de Santiago en Medio Cudeyo. 25 julio – 11 septiembre. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://www.mieres.es/evento/rutas-turisticas-2026-visita-guiada-templos-romanicos-en-el-camino-de-santiago-5set/",
+  "programa": [
+   {
+    "dia": "Sáb 25",
+    "hora": "16:30",
+    "evento": "Visita guiada: Templos románicos - Iglesia de Santa María Magdalena (La Rebollá)",
+    "lugar": "Iglesia de Santa María Magdalena (La Rebollá)"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "18:00",
+    "evento": "Visita guiada templos románicos en el Camino de Santiago",
+    "lugar": "Iglesia de Santolaya (Uxo)"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "18:00",
+    "evento": "Visita guiada templos románicos en el Camino de Santiago",
+    "lugar": "Iglesia de Santolaya (Uxo)"
+   },
+   {
+    "dia": "Vie 11",
+    "hora": "18:00",
+    "evento": "Visita guiada templos románicos en el Camino de Santiago",
+    "lugar": "Iglesia de Santolaya (Uxo)"
+   }
+  ]
+ },
+ {
+  "id": "660415",
+  "nombre": "Los bailables del verano",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 7,
+  "fecha": "26 julio – 6 septiembre",
+  "inicio": "2026-07-26",
+  "fin": "2026-09-06",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Los bailables del verano en Laredo. 26 julio – 6 septiembre. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/los-bailables-del-verano-laredo--660415",
+  "programa": [
+   {
+    "dia": "Dom 26",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 2",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 9",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "20:00",
+    "evento": "Los bailables del verano",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "nombre": "Virgen de Santa Ana · Laredo",
   "pueblo": "Tarrueza",
   "municipio": "Laredo",
@@ -3248,11 +4206,11 @@ const FIESTAS = [
   "fecha": "27 julio – 31 diciembre",
   "inicio": "2026-07-27",
   "fin": "2026-12-31",
-  "tipo": "charlas y talleres",
+  "tipo": "tradiciones",
   "interes": "",
   "lat": 43.46234,
   "lng": -3.80999,
-  "descripcion": "Charla o taller en Santander. 27 julio – 31 diciembre. Lugar: Jardines de Pereda. Entrada gratuita.",
+  "descripcion": "Free Tour por el centro de Santander en Santander. 27 julio – 31 diciembre. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://visitacantabria.es/visitas/santander/santander-freetour"
  },
@@ -5011,12 +5969,6 @@ const FIESTAS = [
    {
     "dia": "Sáb 15",
     "hora": "00:00",
-    "evento": "SE GUIMOS CON GRUPO D'CANO Y PARA LOS MAS RESISTENTES DJ",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "00:00",
     "evento": "trainera",
     "lugar": ""
    },
@@ -5118,20 +6070,8 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 16",
-    "hora": "09:00",
-    "evento": "COMENZAMOS A ASAR A FUEGO LENTO LA CENA",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
     "hora": "12:30",
     "evento": "Procesión y misa solemne en honor a Nuestra Señora de la Asunción",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "13:00",
-    "evento": "¡¡¡ GRAN CONCURSO DE PAELLAS",
     "lugar": ""
    },
    {
@@ -5154,32 +6094,8 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 16",
-    "hora": "14:30",
-    "evento": "CATA DEL JURADO",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "17:00",
-    "evento": "CONCURSO DE MUS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "17:00",
-    "evento": "BINGO MUSICAL Y CARRERA DE SACOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
     "hora": "17:30",
     "evento": "Concurso de brisca",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "18:00",
-    "evento": "PINTA CARAS Y JUEGOS INFANTILES",
     "lugar": ""
    },
    {
@@ -5196,12 +6112,6 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 16",
-    "hora": "19:30",
-    "evento": "AMENIZANDO LA TARDE/NOCHE",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
     "hora": "20:00",
     "evento": "Caga D'Or 4.0 y sorteo",
     "lugar": ""
@@ -5214,20 +6124,8 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 16",
-    "hora": "21:00",
-    "evento": "TRAS 12 HORAS A FUEGO LENTO NUESTROS 3 CHONES ESTÁN LISTOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
     "hora": "22:00",
     "evento": "Venta de tickets para el pepito de lomo",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "22:00",
-    "evento": "DESDE ASTURIAS LLEGA GRUPO D'CANO",
     "lugar": ""
    },
    {
@@ -5250,56 +6148,8 @@ const FIESTAS = [
    },
    {
     "dia": "Lun 17",
-    "hora": "13:00",
-    "evento": "TAPEO Y BLANQUEO EN EL BAR DE LAS FIESTAS",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "17:00",
-    "evento": "CONCURSO DE TUTE",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "17:00",
-    "evento": "RESTO DE ACTIVIDADES",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
     "hora": "19:30",
     "evento": "ENTREGA PREMIOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "20:00",
-    "evento": "MÚSICA EN VIVO - \"LOST IN COVERS\"",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "21:00",
-    "evento": "DEGUSTACIÓN DE TORTILLA DE PATATA",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "21:30",
-    "evento": "ACTUACIÓN DE \"MANERAS VIVAS\"",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "23:00",
-    "evento": "ÚLTIMO GRAN BINGO",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "23:30",
-    "evento": "FIN DE FIESTAS A CARGO DE \"NEW PROJECT\" Y NUESTRO DJ DARIWEY",
     "lugar": ""
    },
    {
@@ -6511,6 +7361,56 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "652022",
+  "nombre": "Conferencia histórica «La conquista de Andalucía II»",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "5–24 de agosto",
+  "inicio": "2026-08-05",
+  "fin": "2026-08-24",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Charla o taller en Noja. 5–24 de agosto. Lugar: Palacio Marqués de Albaicín. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/noja/conferencia-historica-la-conquista-de-andalucia-ii-noja--652022",
+  "programa": [
+   {
+    "dia": "Mié 5",
+    "hora": "20:00",
+    "evento": "Conferencia histórica: David Solar Cubillas. Segunda Guerra Mundial I",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Jue 6",
+    "hora": "20:00",
+    "evento": "Conferencia histórica: David Solar Cubillas. Segunda Guerra Mundial II",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Lun 10",
+    "hora": "20:00",
+    "evento": "Conferencia histórica: Maribel del Val Valdivieso: La reina Urraca (1109-1126)",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "20:00",
+    "evento": "Conferencia histórica: Carlos Vara: La Conquista de Andalucía I",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "Conferencia histórica: Carlos Vara: La Conquista de Andalucía II",
+    "lugar": "Palacio de Albaicín"
+   }
+  ]
+ },
+ {
   "id": "402286",
   "nombre": "Exposición «La otra lucha contra el cambio climático: Adaptación»",
   "pueblo": "Solórzano",
@@ -7653,8 +8553,8 @@ const FIESTAS = [
    {
     "dia": "Vie 21",
     "hora": "21:00",
-    "evento": "Quique Matilla",
-    "lugar": "Plaza Marqués de Valdecilla, Lierganes"
+    "evento": "Espectáculo de humor con Quique Matilla",
+    "lugar": "Plaza Marqués de Valdecilla"
    },
    {
     "dia": "Vie 28",
@@ -7665,52 +8565,40 @@ const FIESTAS = [
   ]
  },
  {
-  "id": "100335",
-  "nombre": "Encuentros en el Puerto de Santander",
+  "id": "101303",
+  "nombre": "Narración oral «De amor y esos líos» de Aurora Maroto",
   "pueblo": "Santander",
   "municipio": "Santander",
   "comarca": "",
   "mes": 8,
-  "fecha": "8 agosto – 12 diciembre",
-  "inicio": "2026-08-08",
-  "fin": "2026-12-12",
-  "tipo": "tradiciones",
+  "fecha": "7–28 de agosto",
+  "inicio": "2026-08-07",
+  "fin": "2026-08-28",
+  "tipo": "teatro",
   "interes": "",
   "lat": 43.46234,
   "lng": -3.80999,
-  "descripcion": "Programa cultural de larga duración en el puerto de Santander, con actividades que se extienden de agosto a diciembre.",
-  "_fuente_desc": "ia",
-  "fuente": "https://x.com/DescubreCantabr",
+  "descripcion": "Teatro en Santander. 7–28 de agosto. Lugar: Biblioteca Central de Cantabria. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/el-patio-t-cuenta-cuentos-eroticos-para-publico-adulto",
   "programa": [
    {
-    "dia": "Sáb 8",
-    "hora": "11:00",
-    "evento": "Encuentros en el puerto Santander 2026",
-    "lugar": "Museo Maritimo de Santander"
+    "dia": "Vie 7",
+    "hora": "19:30",
+    "evento": "Crispín D'Olot: «Soñé que te gozaba»",
+    "lugar": "Biblioteca Central de Cantabria (El Patio)"
    },
    {
-    "dia": "Sáb 12",
-    "hora": "11:00",
-    "evento": "Encuentros en el puerto Santander 2026",
-    "lugar": "Museo Maritimo de Santander"
+    "dia": "Vie 21",
+    "hora": "19:30",
+    "evento": "Pep Bruno: «El pastor de conejos»",
+    "lugar": "Biblioteca Central de Cantabria (El Patio)"
    },
    {
-    "dia": "Sáb 10",
-    "hora": "11:00",
-    "evento": "Encuentros en el puerto Santander 2026",
-    "lugar": "Museo Maritimo de Santander"
-   },
-   {
-    "dia": "Sáb 14",
-    "hora": "11:00",
-    "evento": "Encuentros en el puerto Santander 2026",
-    "lugar": "Museo Maritimo de Santander"
-   },
-   {
-    "dia": "Sáb 12",
-    "hora": "11:00",
-    "evento": "Encuentros en el puerto Santander 2026",
-    "lugar": "Museo Maritimo de Santander"
+    "dia": "Vie 28",
+    "hora": "19:30",
+    "evento": "Aurora Maroto: «De amor y esos líos»",
+    "lugar": "Biblioteca Central de Cantabria (El Patio)"
    }
   ]
  },
@@ -8329,12 +9217,6 @@ const FIESTAS = [
     "lugar": "Campos de Sport de El Sardinero"
    },
    {
-    "dia": "Vie 21",
-    "hora": "22:00",
-    "evento": "Concierto de Parachutes",
-    "lugar": ""
-   },
-   {
     "dia": "Sáb 22",
     "hora": "19:00",
     "evento": "Danza Djelia Tamao Musso",
@@ -8345,6 +9227,12 @@ const FIESTAS = [
     "hora": "19:00",
     "evento": "Actuación de Djelia Tamao Musso",
     "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "19:00",
+    "evento": "Conciertos del Festival Intercultural de las Naciones",
+    "lugar": "Campos de Sport del Sardinero"
    },
    {
     "dia": "Sáb 22",
@@ -8411,12 +9299,6 @@ const FIESTAS = [
     "hora": "22:00",
     "evento": "Concierto de En Pausa",
     "lugar": ""
-   },
-   {
-    "dia": "Mar 25",
-    "hora": "11:00",
-    "evento": "Cuentacuentos con sus autores",
-    "lugar": "Biblioteca Central"
    },
    {
     "dia": "Mar 25",
@@ -9222,344 +10104,6 @@ const FIESTAS = [
     "dia": "Lun 17",
     "hora": "23:30",
     "evento": "FIN DE FIESTAS A CARGO DE \"NEW PROJECT\" Y NUESTRO DJ DARIWEY",
-    "lugar": ""
-   }
-  ]
- },
- {
-  "id": "226435",
-  "nombre": "Fiestas de la Asunción",
-  "pueblo": "Novales",
-  "municipio": "Alfoz de Lloredo",
-  "comarca": "",
-  "mes": 8,
-  "fecha": "11–29 de agosto",
-  "inicio": "2026-08-11",
-  "fin": "2026-08-29",
-  "tipo": "fiestas",
-  "interes": "",
-  "lat": 43.37869,
-  "lng": -4.18169,
-  "descripcion": "Novales festeja la Asunción de la Virgen (15 de agosto) con verbenas, romería, comida popular, juegos, fuegos y folclore.",
-  "_fuente_desc": "ia",
-  "fuente": "https://planesparahoy.com/e/cantabria/alfoz-de-lloredo/fiestas-de-la-asuncion-novales--226435",
-  "programa": [
-   {
-    "dia": "Mar 11",
-    "hora": "08:00",
-    "evento": "BOMBA MATINAL",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "08:30",
-    "evento": "MARATÓN POPULAR SOLIDARIO",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "12:00",
-    "evento": "SANTA MISA",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "13:00",
-    "evento": "BLANQUEO",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "17:00",
-    "evento": "CONCURSO DE BRISCA",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "17:30",
-    "evento": "CIMCANA PARA TODAS LAS EDADES",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "18:00",
-    "evento": "HINCHABLES Y FIESTA DE LA ESPUMA INFANTIL",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "19:30",
-    "evento": "ACTUACIÓN \"LEVRE\"",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "21:00",
-    "evento": "ENTREGA PREMIOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "21:00",
-    "evento": "GRAN PARRILLADA",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "23:00",
-    "evento": "ESCUELA DE CALOR VUELVE EL POP/ROCK ESPAÑOL A LOS 80'S",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "23:00",
-    "evento": "¡¡¡CONTINUAMOS PARA BINGO!!!",
-    "lugar": ""
-   },
-   {
-    "dia": "Mar 11",
-    "hora": "23:30",
-    "evento": "GRAN ESPECTÁCULO MUSICAL \"RENOVATION EXPERIENCE\"",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "02:00",
-    "evento": "LA FESTA NO PARA!!!!",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "19:00",
-    "evento": "APERTURA DEL BAR DE FIESTAS",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "19:30",
-    "evento": "CARRERA DE BICICLETAS LENTAS EN LA CAMPA DE FIESTAS",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "20:00",
-    "evento": "ROMERÍA PARA IR CALENTANDO MOTORES",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "21:00",
-    "evento": "GRAN SARDINADA",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "22:00",
-    "evento": "GRAN ORQUESTA TEKILA",
-    "lugar": ""
-   },
-   {
-    "dia": "Mié 12",
-    "hora": "23:30",
-    "evento": "¡¡CONTINUAMOS PARA BINGO!!!",
-    "lugar": ""
-   },
-   {
-    "dia": "Vie 14",
-    "hora": "19:30",
-    "evento": "PASACALLES Y CONCURSO DE DISFRACES",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "00:00",
-    "evento": "SE GUIMOS CON GRUPO D'CANO Y PARA LOS MAS RESISTENTES DJ",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "12:15",
-    "evento": "Misa solemne en honor de Ntra. Sra. de La Asunción",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "13:00",
-    "evento": "Baile en honor a la patrona",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "13:30",
-    "evento": "Pasacalles por los bares del pueblo",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "14:30",
-    "evento": "Sesión vermú y tardeo",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "17:00",
-    "evento": "Hinchables para los más pequeños con música para todos los públicos",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "20:00",
-    "evento": "Actuación de NÉSTOR DE LA OSA",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "21:00",
-    "evento": "Bingo",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 15",
-    "hora": "22:00",
-    "evento": "Verbena fin de fiesta",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "09:00",
-    "evento": "COMENZAMOS A ASAR A FUEGO LENTO LA CENA",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "13:00",
-    "evento": "¡¡¡ GRAN CONCURSO DE PAELLAS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "14:30",
-    "evento": "CATA DEL JURADO",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "17:00",
-    "evento": "CONCURSO DE MUS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "17:00",
-    "evento": "BINGO MUSICAL Y CARRERA DE SACOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "18:00",
-    "evento": "PINTA CARAS Y JUEGOS INFANTILES",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "19:30",
-    "evento": "AMENIZANDO LA TARDE/NOCHE",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "21:00",
-    "evento": "TRAS 12 HORAS A FUEGO LENTO NUESTROS 3 CHONES ESTÁN LISTOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "22:00",
-    "evento": "DESDE ASTURIAS LLEGA GRUPO D'CANO",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 16",
-    "hora": "23:30",
-    "evento": "BINGO ESPECIAL",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "13:00",
-    "evento": "TAPEO Y BLANQUEO EN EL BAR DE LAS FIESTAS",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "14:00",
-    "evento": "IV CONCURSO DE OLLA FERROVIARIA - CARICO DE ISLA",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "17:00",
-    "evento": "CONCURSO DE TUTE",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "17:00",
-    "evento": "RESTO DE ACTIVIDADES",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "19:30",
-    "evento": "ENTREGA PREMIOS",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "20:00",
-    "evento": "MÚSICA EN VIVO - \"LOST IN COVERS\"",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "21:00",
-    "evento": "DEGUSTACIÓN DE TORTILLA DE PATATA",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "21:30",
-    "evento": "ACTUACIÓN DE \"MANERAS VIVAS\"",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "23:00",
-    "evento": "ÚLTIMO GRAN BINGO",
-    "lugar": ""
-   },
-   {
-    "dia": "Lun 17",
-    "hora": "23:30",
-    "evento": "FIN DE FIESTAS A CARGO DE \"NEW PROJECT\" Y NUESTRO DJ DARIWEY",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 23",
-    "hora": "16:30",
-    "evento": "Celebración de San Millán",
-    "lugar": "Ermita"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "",
-    "evento": "Memorial de bolos",
-    "lugar": ""
-   },
-   {
-    "dia": "Sáb 29",
-    "hora": "",
-    "evento": "Desfile de Carrozas y Carretas",
     "lugar": ""
    }
   ]
@@ -10905,6 +11449,188 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "518603",
+  "nombre": "Fiestas de San Roque",
+  "pueblo": "Santa Cruz de Bezana",
+  "municipio": "Santa Cruz de Bezana",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "13–27 de agosto",
+  "inicio": "2026-08-13",
+  "fin": "2026-08-27",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.44044,
+  "lng": -3.90472,
+  "descripcion": "Fiestas de San Roque en Santa Cruz de Bezana. 13–27 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://turismodecantabria.com/proximamente-evento/san-roque-en-santa-cruz-de-bezana/",
+  "programa": [
+   {
+    "dia": "Jue 13",
+    "hora": "19:00",
+    "evento": "Entrega del kit de fiestas",
+    "lugar": "Plaza Margarita"
+   },
+   {
+    "dia": "Jue 13",
+    "hora": "20:00",
+    "evento": "Concierto de Los Tin Covers",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "18:00",
+    "evento": "La charanga Los Ronceros pondrá música a las calles de Bezana",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "20:00",
+    "evento": "Pregón e inicio oficial de las fiestas de San Roque",
+    "lugar": "Plaza Cantabria"
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "20:30",
+    "evento": "Pasacalles y desfile de peñas, seguido del Concurso de Carros",
+    "lugar": "Plaza Margarita"
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "22:00",
+    "evento": "Romería y verbena popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "22:00",
+    "evento": "Romería y verbena con Orquesta Tekila",
+    "lugar": "Recinto de fiestas de Santa Cruz de Bezana"
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "09:00",
+    "evento": "Torneo de Fútbol 7 Vecinal",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "12:00",
+    "evento": "Apertura del bar",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "14:00",
+    "evento": "Comida de Peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "15:00",
+    "evento": "Olimpeñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "17:30",
+    "evento": "Gran Tómbola",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "18:00",
+    "evento": "Show infantil Lucy Tunes",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "19:00",
+    "evento": "Juegos infantiles con Los Arrieros del Juego",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "19:30",
+    "evento": "Tardeo de las Peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "21:00",
+    "evento": "Bingo musical",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "22:30",
+    "evento": "Concierto de Extremo Puro",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "",
+    "evento": "Verbena popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "",
+    "evento": "Verbena con Diego Pérez DJ",
+    "lugar": "Recinto de fiestas de Santa Cruz de Bezana"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "09:00",
+    "evento": "Inicio de finales del Torneo de Fútbol 7 Vecinal",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "12:00",
+    "evento": "Apertura del bar",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "12:30",
+    "evento": "Santa Misa en honor a San Roque",
+    "lugar": "Parroquia de la Santa Cruz"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "13:00",
+    "evento": "Vermut bailongo y exhibición de la Escuela de Baile David Vidal",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "14:00",
+    "evento": "Comida Popular Solidaria",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "15:00",
+    "evento": "Entrega de premios del Concurso de Carros y del Torneo de Fútbol 7 Vecinal",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "16:00",
+    "evento": "Fin de fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "",
+    "evento": "Cuentos y Talleres",
+    "lugar": "Bibliotecas municipales y locales sociales cercanos"
+   }
+  ]
+ },
+ {
   "id": "417326",
   "nombre": "Fiestas de Torrelavega",
   "pueblo": "Torrelavega",
@@ -10996,6 +11722,12 @@ const FIESTAS = [
    },
    {
     "dia": "Vie 14",
+    "hora": "12:00",
+    "evento": "Desfile Inaugural con todas las compañías",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
     "hora": "12:30",
     "evento": "Taller de guerrilleros (zona infantil)",
     "lugar": ""
@@ -11004,6 +11736,12 @@ const FIESTAS = [
     "dia": "Vie 14",
     "hora": "12:45",
     "evento": "Taller de comic napoleonico (zona infantil)",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "13:30",
+    "evento": "El bandolero y la zíngara - La Galerna (Pasacalles teatral)",
     "lugar": ""
    },
    {
@@ -11064,6 +11802,12 @@ const FIESTAS = [
     "dia": "Vie 14",
     "hora": "20:30",
     "evento": "Solemne procesión de la Virgen Grande",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 14",
+    "hora": "20:45",
+    "evento": "Explicación de armas en el campamento",
     "lugar": ""
    },
    {
@@ -11187,6 +11931,18 @@ const FIESTAS = [
     "lugar": ""
    },
    {
+    "dia": "Sáb 15",
+    "hora": "22:30",
+    "evento": "El vuelo de la emperatriz - Aeronova (Espectáculo aéreo)",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "23:00",
+    "evento": "Alma, fuego y revolución - Xalamut. Espectáculo de fuego, danza y música (Ambos en Auditorium Lucio Lazaro)",
+    "lugar": ""
+   },
+   {
     "dia": "Dom 16",
     "hora": "10:30",
     "evento": "Concurso de Arroz de las Peñas Somos 39300",
@@ -11242,6 +11998,12 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 16",
+    "hora": "18:15",
+    "evento": "Taller de tesoros del emperador con arcilla (zona infantil)",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
     "hora": "20:30",
     "evento": "Espectáculo \"La Inauguración\"",
     "lugar": ""
@@ -11286,6 +12048,12 @@ const FIESTAS = [
     "dia": "Lun 17",
     "hora": "16:00",
     "evento": "Exhibición de Bolo Pasiego",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "18:15",
+    "evento": "Taller de tesoros del emperador con arcilla (zona infantil)",
     "lugar": ""
    },
    {
@@ -11547,12 +12315,6 @@ const FIESTAS = [
     "lugar": ""
    },
    {
-    "dia": "Sáb 22",
-    "hora": "22:00",
-    "evento": "Cierre de la feria del hojaldre",
-    "lugar": ""
-   },
-   {
     "dia": "Dom 23",
     "hora": "11:00",
     "evento": "Concurso de Tortillas",
@@ -11580,7 +12342,7 @@ const FIESTAS = [
     "dia": "Dom 23",
     "hora": "21:00",
     "evento": "Concierto de Nancys Rubias",
-    "lugar": ""
+    "lugar": "Boulevard Demetrio Herrero"
    },
    {
     "dia": "Dom 23",
@@ -13191,6 +13953,158 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "402290",
+  "nombre": "Fiestas de San Millán",
+  "pueblo": "Novales",
+  "municipio": "Alfoz de Lloredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "14–30 de agosto",
+  "inicio": "2026-08-14",
+  "fin": "2026-08-30",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37869,
+  "lng": -4.18169,
+  "descripcion": "Novales honra a San Millán con actos religiosos.",
+  "_fuente_desc": "ia",
+  "fuente": "https://planesparahoy.com/e/cantabria/alfoz-de-lloredo/fiestas-de-san-millan-novales--402290",
+  "programa": [
+   {
+    "dia": "Vie 14",
+    "hora": "20:30",
+    "evento": "Actuación de JIMMY BARNATÁN",
+    "lugar": "huerta de Limoneros EL Almacén"
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "12:15",
+    "evento": "Misa solemne en honor de Ntra. Sra. de La Asunción",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "13:00",
+    "evento": "Baile en honor a la patrona",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "13:30",
+    "evento": "Pasacalles por los bares del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "14:30",
+    "evento": "Sesión vermú y tardeo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "17:00",
+    "evento": "HINCHABLES para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "20:00",
+    "evento": "Actuación estelar de nuestro querido NÉSTOR DE LA OSA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "21:00",
+    "evento": "¡BINGO!",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "22:00",
+    "evento": "VERBENA fin de fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:30",
+    "evento": "Celebración de SAN MILLÁN",
+    "lugar": "la Ermita"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "18:00",
+    "evento": "Memorial de bolos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "Gran Desfile de Carrozas y Carretas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "Actuación de la ORQUESTA CASTING y MACRODISCOTECA DARLING",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "10:00",
+    "evento": "Las campanas de la iglesia nos anuncian el día de los Santos",
+    "lugar": "la iglesia"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:15",
+    "evento": "Misa solemne en honor a San Emeterio y San Celedonio",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:00",
+    "evento": "Baile en honor a la patrona",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:30",
+    "evento": "Pasacalles por los bares del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:00",
+    "evento": "Sesión vermú y tardeo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "17:00",
+    "evento": "II Torneo de Toro Salvaje",
+    "lugar": "Parque de Los Pelambres"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "18:30",
+    "evento": "Taller de Creaciones Grafiteras con pintura en spray",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:30",
+    "evento": "Actuación de la ORQUESTA KAPITANA SHOW y Gran Filetada",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:30",
+    "evento": "Sesión de risoterapia y BINGO",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "id": "402411",
   "nombre": "Fiestas de San Roque",
   "pueblo": "Rubayo",
@@ -13514,6 +14428,224 @@ const FIESTAS = [
     "dia": "Lun 17",
     "hora": "16:30",
     "evento": "Concurso Flor y Brisca",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "226435",
+  "nombre": "Fiestas de la Asunción",
+  "pueblo": "Novales",
+  "municipio": "Alfoz de Lloredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "14–29 de agosto",
+  "inicio": "2026-08-14",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37869,
+  "lng": -4.18169,
+  "descripcion": "Novales festeja la Asunción de la Virgen (15 de agosto) con verbenas, romería, comida popular, juegos, fuegos y folclore.",
+  "_fuente_desc": "ia",
+  "fuente": "https://planesparahoy.com/e/cantabria/alfoz-de-lloredo/fiestas-de-la-asuncion-novales--226435",
+  "programa": [
+   {
+    "dia": "Vie 14",
+    "hora": "19:30",
+    "evento": "PASACALLES Y CONCURSO DE DISFRACES",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "00:00",
+    "evento": "SE GUIMOS CON GRUPO D'CANO Y PARA LOS MAS RESISTENTES DJ",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "12:15",
+    "evento": "Misa solemne en honor de Ntra. Sra. de La Asunción",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "13:00",
+    "evento": "Baile en honor a la patrona",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "13:30",
+    "evento": "Pasacalles por los bares del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "14:30",
+    "evento": "Sesión vermú y tardeo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "17:00",
+    "evento": "Hinchables para los más pequeños con música para todos los públicos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "20:00",
+    "evento": "Actuación de NÉSTOR DE LA OSA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "21:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "22:00",
+    "evento": "Verbena fin de fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "09:00",
+    "evento": "COMENZAMOS A ASAR A FUEGO LENTO LA CENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "13:00",
+    "evento": "¡¡¡ GRAN CONCURSO DE PAELLAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "14:30",
+    "evento": "CATA DEL JURADO",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "17:00",
+    "evento": "CONCURSO DE MUS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "17:00",
+    "evento": "BINGO MUSICAL Y CARRERA DE SACOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "18:00",
+    "evento": "PINTA CARAS Y JUEGOS INFANTILES",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "19:30",
+    "evento": "AMENIZANDO LA TARDE/NOCHE",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "21:00",
+    "evento": "TRAS 12 HORAS A FUEGO LENTO NUESTROS 3 CHONES ESTÁN LISTOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "22:00",
+    "evento": "DESDE ASTURIAS LLEGA GRUPO D'CANO",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "23:30",
+    "evento": "BINGO ESPECIAL",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "13:00",
+    "evento": "TAPEO Y BLANQUEO EN EL BAR DE LAS FIESTAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "14:00",
+    "evento": "IV CONCURSO DE OLLA FERROVIARIA - CARICO DE ISLA",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "17:00",
+    "evento": "CONCURSO DE TUTE",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "17:00",
+    "evento": "RESTO DE ACTIVIDADES",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "19:30",
+    "evento": "ENTREGA PREMIOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "20:00",
+    "evento": "MÚSICA EN VIVO - \"LOST IN COVERS\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "21:00",
+    "evento": "DEGUSTACIÓN DE TORTILLA DE PATATA",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "21:30",
+    "evento": "ACTUACIÓN DE \"MANERAS VIVAS\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "23:00",
+    "evento": "ÚLTIMO GRAN BINGO",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "23:30",
+    "evento": "FIN DE FIESTAS A CARGO DE \"NEW PROJECT\" Y NUESTRO DJ DARIWEY",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "16:30",
+    "evento": "Celebración de San Millán",
+    "lugar": "Ermita"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "Memorial de bolos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Desfile de Carrozas y Carretas",
     "lugar": ""
    }
   ]
@@ -14857,6 +15989,302 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "628670",
+  "nombre": "Fiestas de Nuestra Señora",
+  "pueblo": "Bezana",
+  "municipio": "Santa Cruz de Bezana",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "15–24 de agosto",
+  "inicio": "2026-08-15",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.44302,
+  "lng": -3.90452,
+  "descripcion": "Fiestas de Nuestra Señora en Bezana. 15–24 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santa-cruz-de-bezana/fiestas-de-nuestra-senora-bezana--628670",
+  "programa": [
+   {
+    "dia": "Sáb 15",
+    "hora": "11:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "12:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "09:00",
+    "evento": "V Quedada Motera Memorial \"Indio Pérez\"",
+    "lugar": "Campa de la Virgen del Monte"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "10:00",
+    "evento": "Eucaristía en Bárcena de Cudón (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "12:30",
+    "evento": "Eucaristía en Miengo (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "18:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "19:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 18",
+    "hora": "18:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 18",
+    "hora": "19:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 19",
+    "hora": "18:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 19",
+    "hora": "19:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 20",
+    "hora": "18:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 20",
+    "hora": "19:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "13:30",
+    "evento": "Fiesta de la 3ª Edad",
+    "lugar": "Campa de la Virgen del Monte"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "18:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "19:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "21:00",
+    "evento": "Gran Fiesta Recibimiento a las Peñas de Miengo",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "21:00",
+    "evento": "Actuación del grupo “La última y nos vamos”",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "21:30",
+    "evento": "Concurso de disfraces años 60/70",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "23:00",
+    "evento": "Fiesta del Verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "01:00",
+    "evento": "Macro Fest",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:00",
+    "evento": "Grand Prix Peñas de Miengo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "18:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "19:00",
+    "evento": "Eucaristía (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:00",
+    "evento": "Animación Musical",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:00",
+    "evento": "Parrillada",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "Festival de Tributos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "01:30",
+    "evento": "Fiesta con DJ",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:00",
+    "evento": "Apertura de la Gran Feria Internacional de la sidra",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Rosario (Novena)",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "Parque Infantil",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:30",
+    "evento": "Misa Cantada por el Coro Ronda Garcilaso y Procesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:30",
+    "evento": "Pruebas Peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "20:00",
+    "evento": "Concierto de Piloska y Bruno",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "21:00",
+    "evento": "Asado de Cerdo al Hierro",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "22:00",
+    "evento": "Actuación de Hermanos Cosío",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:15",
+    "evento": "Fuegos Artificiales",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:30",
+    "evento": "Verbena con David Argos y Reme Muñoz",
+    "lugar": "Campa Mogro"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "11:30",
+    "evento": "Folclore Regional",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Misa Mayor Cantada por la Coral \"La Honor de Miengo\" y Procesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:30",
+    "evento": "Lunch",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "16:30",
+    "evento": "Hinchables y Merienda para los Peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:00",
+    "evento": "Espectáculo Duende Ecuestre",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Fiesta Entrega de Premios Peñas Miengo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:30",
+    "evento": "Gran Chocolatada Gratuita",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "id": "610827",
   "nombre": "Fiestas de Nuestra Señora de Muslera",
   "pueblo": "Guarnizo",
@@ -14991,6 +16419,116 @@ const FIESTAS = [
     "hora": "",
     "evento": "Gran Paella Popular",
     "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "583068",
+  "nombre": "Fiestas de San Bartolomé",
+  "pueblo": "Meruelo",
+  "municipio": "Meruelo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "15–29 de agosto",
+  "inicio": "2026-08-15",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.45667,
+  "lng": -3.57469,
+  "descripcion": "Fiestas de San Bartolomé en Meruelo. 15–29 de agosto. Con verbenas y bailes, actos religiosos, actividades infantiles y folclore y tradición. 1€ por panceta, chorizo y asados.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/meruelo/fiestas-de-san-bartolome-meruelo--583068",
+  "programa": [
+   {
+    "dia": "Sáb 15",
+    "hora": "15:00",
+    "evento": "Final TROFEO TRASMIERA DE PASABOLO LOSA",
+    "lugar": "bolera EL CASTILLO"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "11:00",
+    "evento": "ENCUENTRO DE TOCADORES DE CAMPANAS",
+    "lugar": "FINCA HERMANOS PORTILLA"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "00:30",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "PARQUE INFANTIL",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "20:00",
+    "evento": "PANCETA Y CHORIZO PARA TODOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "21:30",
+    "evento": "ROMERÍA CON EL DÚO \"CANTASTUR\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:00",
+    "evento": "ACTUACION DE \"KINI KINIENTOS\" SEGUIDAMENTE VERBENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:00",
+    "evento": "Concierto de Kini Kinientos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "00:30",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:30",
+    "evento": "MISA SOLEMNE CON PROCESIÓN",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "ASADO PARA TODOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:30",
+    "evento": "ROMERÍA CON EL DÚO \"MARCOSMELO\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "ACTUACIÓN DE \"GELO FUENTES\" Y A CONTINUACIÓN VERBENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "Concierto de «Gelo Fuentes»",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:30",
+    "evento": "MISA EN LA ERMITA DE SANTA ROSA CON LUNCH",
+    "lugar": "ERMITA DE SANTA ROSA"
    }
   ]
  },
@@ -15855,6 +17393,302 @@ const FIESTAS = [
     "hora": "22:30",
     "evento": "Gran Chocolatada Gratuita",
     "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "652903",
+  "nombre": "Fiestas de la Virgen del Monte y Feria de la Sidra",
+  "pueblo": "Monte",
+  "municipio": "Miengo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "15–24 de agosto",
+  "inicio": "2026-08-15",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.42743,
+  "lng": -3.97191,
+  "descripcion": "Fiestas de la Virgen del Monte y Feria de la Sidra en Monte. 15–24 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/miengo/fiestas-de-la-virgen-del-monte-y-feria-de-la-sidra-monte--652903",
+  "programa": [
+   {
+    "dia": "Sáb 15",
+    "hora": "11:30",
+    "evento": "Novena a la Virgen del Monte: Rosario",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 15",
+    "hora": "12:00",
+    "evento": "Novena a la Virgen del Monte: Eucaristía",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "09:00",
+    "evento": "V Quedada Motera Memorial 'Indio Pérez'",
+    "lugar": "En la campa de la Virgen del Monte"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "09:00",
+    "evento": "Últimas inscripciones",
+    "lugar": "campa de la Virgen de Monte"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "10:00",
+    "evento": "Eucaristía de la Novena",
+    "lugar": "Bárcena de Cudón"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "",
+    "evento": "Salida de la ruta",
+    "lugar": "campa de la Virgen de Monte"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "",
+    "evento": "Lunch en restaurante New Caladero",
+    "lugar": "restaurante New Caladero (Cuchía)"
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "",
+    "evento": "Gran paellada",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "",
+    "evento": "Música en directo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 16",
+    "hora": "",
+    "evento": "Grandes sorteos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "09:30",
+    "evento": "Recogida de tickets de la paella",
+    "lugar": "Local de la Tercera Edad de Miengo"
+   },
+   {
+    "dia": "Lun 17",
+    "hora": "18:30",
+    "evento": "Novena a la Virgen del Monte: Rosario y Eucaristía",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 18",
+    "hora": "",
+    "evento": "Recogida de tickets de la paella (Alternativa)",
+    "lugar": "Ayuntamiento de Miengo"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "01:00",
+    "evento": "Macro fest con DJ, regalos y fiesta hawaiana",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "13:30",
+    "evento": "Fiesta de la 3ª Edad",
+    "lugar": "En la campa de la Virgen del Monte"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "21:00",
+    "evento": "Gran Fiesta Recibimiento a las Peñas de Miengo",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "23:00",
+    "evento": "Fiesta del Verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Concurso de disfraces de los años 60/70’s (hippie)",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Actuación del grupo La última y nos vamos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "01:00",
+    "evento": "Macro Fest",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "01:30",
+    "evento": "Fiesta con DJ",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:00",
+    "evento": "Grand Prix Peñas de Miengo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:00",
+    "evento": "Animación musical con la charanga Kali Kali",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:00",
+    "evento": "Parrillada",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "Festival de tributos: Los delincuentes, Estopa y Melendi",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "01:30",
+    "evento": "Fiesta con DJ",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Novena a la Virgen del Monte: Rosario",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "Parque infantil y merienda para los peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:30",
+    "evento": "Misa cantada por el coro Ronda Garcilaso y procesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:30",
+    "evento": "Pruebas para las peñas, con premio especial",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "20:00",
+    "evento": "Concierto de Piloska y Bruno",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "21:00",
+    "evento": "Asado de cerdo al hierro",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "22:00",
+    "evento": "Actuación de los Hermanos Cosío",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:15",
+    "evento": "Fuegos Artificiales",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:30",
+    "evento": "Verbena con David Argos y Reme Muñoz",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "06:30",
+    "evento": "Misa",
+    "lugar": "santuario de la Virgen del monte"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "11:30",
+    "evento": "Folclore Regional",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Misa Mayor cantada por la Coral y Procesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:00",
+    "evento": "Hinchables gratuitos para los peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:30",
+    "evento": "Lunch",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "16:30",
+    "evento": "Hinchables y merienda para los peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:00",
+    "evento": "Espectáculo Duende Ecuestre",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Fiesta Entrega de Premios Peñas Miengo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:30",
+    "evento": "Gran Chocolatada Gratuita",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "",
+    "evento": "Misas de la Solemnidad de la Virgen del Monte",
+    "lugar": "Santuario de la Virgen del Monte"
    }
   ]
  },
@@ -20113,6 +21947,44 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/cabezon-de-la-sal/rally-hdc-espana-2026-galerna-bike-rock-fest-cabezon-de-la-sal--42192"
  },
  {
+  "id": "640973",
+  "nombre": "Semana Bolística",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "20–24 de agosto",
+  "inicio": "2026-08-20",
+  "fin": "2026-08-24",
+  "tipo": "deporte",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Evento deportivo en Santander. 20–24 de agosto. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/semana-bolistica-santander--640973",
+  "programa": [
+   {
+    "dia": "Jue 20",
+    "hora": "17:00",
+    "evento": "Semifinales de la Copa Federación Española de Bolos",
+    "lugar": "Bolera Mateo Grijuela"
+   },
+   {
+    "dia": "Jue 20",
+    "hora": "17:00",
+    "evento": "1ª Semifinal Copa Federación Española",
+    "lugar": "Bolera Mateo Grijuela"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "Final de la Copa Federación Española",
+    "lugar": "Bolera Mateo Grijuela"
+   }
+  ]
+ },
+ {
   "id": "227030",
   "nombre": "Taller de Creatividad",
   "pueblo": "Arenas de Iguña",
@@ -20231,6 +22103,44 @@ const FIESTAS = [
     "hora": "19:30",
     "evento": "Sunset Pilates & Wine",
     "lugar": "Bodega Bahía de Santander"
+   }
+  ]
+ },
+ {
+  "id": "651843",
+  "nombre": "Campeonato Pasabolo Tablón I Memorial Eder Fernández",
+  "pueblo": "Ramales de la Victoria",
+  "municipio": "Ramales de la Victoria",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "21 agosto – 12 septiembre",
+  "inicio": "2026-08-21",
+  "fin": "2026-09-12",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.25653,
+  "lng": -3.46447,
+  "descripcion": "Campeonato Pasabolo Tablón I Memorial Eder Fernández en Ramales de la Victoria. 21 agosto – 12 septiembre.",
+  "_fuente_desc": "factual",
+  "fuente": "https://cantabriaorientalrural.es/events/campeonato-pasabolo-tablon-i-memorial-eder-fernandez-bolera-domingo-muguira-ramales-de-la-victoria",
+  "programa": [
+   {
+    "dia": "Vie 21",
+    "hora": "16:00",
+    "evento": "Tiradas de Clasificación - Primer Memorial Eder Fernández",
+    "lugar": "Bolera Domingo Muguira"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "10:00",
+    "evento": "Finales - 2ª Categoría",
+    "lugar": "Bolera Domingo Muguira"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "",
+    "evento": "Tiradas Finales",
+    "lugar": "Bolera Domingo Muguira, Ramales de la Victoria"
    }
   ]
  },
@@ -21327,6 +23237,266 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "580405",
+  "nombre": "Fiestas de San Ginés",
+  "pueblo": "Colindres",
+  "municipio": "Colindres",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "21–25 de agosto",
+  "inicio": "2026-08-21",
+  "fin": "2026-08-25",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.39506,
+  "lng": -3.44689,
+  "descripcion": "Fiestas de San Ginés en Colindres. 21–25 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y fuegos y pirotecnia. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://turismodecantabria.com/proximamente-evento/fiesta-de-san-gines",
+  "programa": [
+   {
+    "dia": "Vie 21",
+    "hora": "00:00",
+    "evento": "Dj Aymares y Dj Javi Rios",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "04:30",
+    "evento": "Fin de fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "19:00",
+    "evento": "Apertura de casetas y barracas",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "20:30",
+    "evento": "Concierto de Sabe",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "22:00",
+    "evento": "Concierto Álvaro de Luna",
+    "lugar": "Centro Urbano Colindres"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "23:30",
+    "evento": "Dj hasta altas horas de la madrugada",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "00:00",
+    "evento": "Dj Rich y Dj Ismael Sable",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "00:00",
+    "evento": "Dj Aymares y Dj Javi Rios",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "04:30",
+    "evento": "Fin de fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "Encuentro de peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:30",
+    "evento": "Batalla de remo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "13:30",
+    "evento": "Torneo de futbolín humano",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "14:00",
+    "evento": "La ronda del bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "16:00",
+    "evento": "Cucañas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:00",
+    "evento": "Carrera de artefactos navegables",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "19:00",
+    "evento": "Sardinada repartida por las peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:30",
+    "evento": "Tributo a Queen",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "",
+    "evento": "Magic Queen Alive",
+    "lugar": "Recinto Ferial"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "",
+    "evento": "Zapato Veloz",
+    "lugar": "Recinto Ferial"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "00:00",
+    "evento": "Dj Javi Rios y Dj Raulsa",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "04:30",
+    "evento": "Fin de fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "Descubriendo protección civil",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "14:00",
+    "evento": "Presentación de la marmita al jurado en el frontón",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "Entrega de premios del concurso",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "19:00",
+    "evento": "Tardeo con Valerio",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "El Drogas",
+    "lugar": "Recinto Ferial"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales en el puerto",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "11:30",
+    "evento": "Actividades infantil, hinchables y talleres",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Vive el motor Aarón Turbón",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Taller y venta de anchoas de Colindres",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "18:00",
+    "evento": "Exhibición y taller de peonzas con Naira Martínez",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "19:00",
+    "evento": "Reparto de chocolate con bizcochos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "",
+    "evento": "Orquesta Malasia",
+    "lugar": "Recinto Ferial"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "11:30",
+    "evento": "Actividades infantiles, hinchables y talleres",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "12:00",
+    "evento": "Misa en la cofradía de pescadores",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "20:00",
+    "evento": "Gran fiesta de la espuma",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "20:30",
+    "evento": "Concierto de Kerchak",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "22:30",
+    "evento": "Concierto Sexy Cebras",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "23:55",
+    "evento": "Fuegos artificiales de San Ginés",
+    "lugar": "Puerto de Colindres"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "",
+    "evento": "Sexy Zebras",
+    "lugar": "Recinto Ferial"
+   }
+  ]
+ },
+ {
   "id": "562899",
   "nombre": "Fiestas de San Sebastián",
   "pueblo": "Barcenillas",
@@ -21596,6 +23766,820 @@ const FIESTAS = [
     "dia": "Dom 23",
     "hora": "",
     "evento": "Concurso de tortillas",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "652902",
+  "nombre": "Fiestas de la Consolación",
+  "pueblo": "Bárcena de Pie de Concha",
+  "municipio": "Villaescusa",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "21 agosto – 6 septiembre",
+  "inicio": "2026-08-21",
+  "fin": "2026-09-06",
+  "tipo": "fiestas",
+  "interes": "Regional",
+  "lat": 43.37033,
+  "lng": -3.85664,
+  "descripcion": "Fiestas de la Consolación en Bárcena de Pie de Concha. 21 agosto – 6 septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/villaescusa/fiestas-de-la-consolacion-barcena-de-pie-de-concha--652902",
+  "programa": [
+   {
+    "dia": "Vie 21",
+    "hora": "00:30",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "19:00",
+    "evento": "Fiesta de Nuestra Señora de la Consolación",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "19:00",
+    "evento": "Comienzo de la NOVENA, en honor a la Virgen de Consolación",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "",
+    "evento": "Rosario de la Novena",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "07:00",
+    "evento": "Aperitivos Espiadillas 50 Aniversario Peño Joyensaro",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "Misa",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "16:30",
+    "evento": "MARATÓN DE FLOR",
+    "lugar": "Plaza de las Escuelas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:00",
+    "evento": "Apertura de la exposición 50 Aniversario Peña Joyancón",
+    "lugar": "salín Nave Euterpe"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "18:00",
+    "evento": "Fiesta de los años 80 y 90",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:00",
+    "evento": "FESTIVAL FOLKLÓRICO SOLIDARIO VALLE DE IGUÑA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "FIESTA DE LOS AÑOS 80 Y 90",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "09:30",
+    "evento": "Colocación de toriles",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "10:00",
+    "evento": "Rosario",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:00",
+    "evento": "Isabel Valiente",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Colocación de los bolos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Rosario en honor a la Virgen de la Consolación",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "Misa por los difuntos de la peña y Novena",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:30",
+    "evento": "ROSARIO en honor a la Virgen de Consolación",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "13:00",
+    "evento": "Blanguada de Txiscula",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "13:00",
+    "evento": "Misa por los difuntos de la peña y NOVENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "13:00",
+    "evento": "BLANQUEADA y COMIDA POPULAR",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "Charangas y Dantzaris",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:30",
+    "evento": "BINGO MUSICAL y ROMERÍA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "19:30",
+    "evento": "Castañada Nocturna",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "10:00",
+    "evento": "Comienzo del CIERRE DEL PUEBLO",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "20:00",
+    "evento": "Espina en la plaza del pueblo",
+    "lugar": "Plaza del pueblo"
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "00:30",
+    "evento": "Macofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "00:30",
+    "evento": "MACROFIESTA CON DJ MAROTO",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "",
+    "evento": "II TORNEO DE CONSOLACIÓN DE FUBBITO",
+    "lugar": "Pista del pueblo"
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "00:30",
+    "evento": "Verbena con la orquestra Solo Saxo, Fiesta con DJ Argu Live y DJ Fronceda",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "00:30",
+    "evento": "Macrofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "00:30",
+    "evento": "VERBENA con la Orquesta SOLO SAXO",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "11:00",
+    "evento": "Gran Chupinzo y Pregón de Consolación 2026",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "11:00",
+    "evento": "Montaje y alzado del arco de flores",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "21:30",
+    "evento": "CENA POPULAR y QUEIMADA",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "22:30",
+    "evento": "GRAN Y ESPECIAL BINGO",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "23:30",
+    "evento": "Queimada",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "00:30",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "01:00",
+    "evento": "IX Ruta en Albarcas",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "01:00",
+    "evento": "Macofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "01:00",
+    "evento": "MACRO FIESTA con DJ HUGO MARTÍN y DJ FRONCEDA",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "16:00",
+    "evento": "CONCURSO DE BRISCA",
+    "lugar": "Plaza de las Escuelas"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "17:30",
+    "evento": "Final Torneo de Bolos CONSOLACIÓN 2026",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "18:00",
+    "evento": "JUEGOS INFANTILES",
+    "lugar": "Prado de Fiestas"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "18:30",
+    "evento": "Final del Torneo de Bolos Consolación 2026",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "20:30",
+    "evento": "Parrillada donada por Camarsa",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:30",
+    "evento": "GRAND PRIX CONSOLACIÓN 2026",
+    "lugar": "Plaza de toros"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "Fiesta desde Reinosa",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "DJ Argu Live",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales y verbena",
+    "lugar": "Bárcena de Pie de Concha"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:00",
+    "evento": "Macrodicoteca Tour Music",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:00",
+    "evento": "FUEGOS ARTIFICIALES y MACRODISCOTECA TOUR MUSIC",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales para finalizar las fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:00",
+    "evento": "Verbena con la macrodiscoteca Tour Music",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "01:00",
+    "evento": "Macrofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "02:00",
+    "evento": "Pasacalles con música y disparo de cohetes para cerrar las fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "06:00",
+    "evento": "Carrera en paños menores",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "11:00",
+    "evento": "IX RUTA EN ALBARCAS: Pie de Concha - Pujayo - Pie de Concha",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "IV Concurso de Tortillas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Actuación de los piterucos de Jano y pandereteras de Santa Olalla",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:30",
+    "evento": "IV CONCURSO DE TORTILLAS de Pie de Concha",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Actuación para acompañar la blanqueada",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Actuación de PITERUCOS DE JANO y PANDERETERAS DE SANTA OLALLA",
+    "lugar": "Plaza del pueblo"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:30",
+    "evento": "II CONCURSO DE SANGRÍA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "18:00",
+    "evento": "Suelta de vaquillas",
+    "lugar": "plaza de toros"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "NOVENA a la Virgen de Consolación y tradicional PROCESIÓN DE LAS ANTORCHAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:30",
+    "evento": "Novena de la Virgen de la Consolación y procesión de las antorchas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales y verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "02:00",
+    "evento": "Pasacalles con música y disparo de cohetes",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "06:00",
+    "evento": "Carrera en PAÑOS MENORES",
+    "lugar": "Prado de Fiestas"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:00",
+    "evento": "Misa Mayor",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:30",
+    "evento": "XLVII TRADICIONAL ENCIERRO y Blanqueada",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:00",
+    "evento": "Rosario",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "15:00",
+    "evento": "Xlur Tradicional Encierro",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "16:30",
+    "evento": "III DESCENSO DE TRIÁNGULOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "17:00",
+    "evento": "II BOLOENCIERRO INFANTIL e HINCHABLES GRATUITOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "18:30",
+    "evento": "XII Descenso de triángulos por las calles del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "19:00",
+    "evento": "X Boloencierro Infantil",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Concierto",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Hamburguesas de carne de tudanca",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Degustación de LA TUDANCUCA de Carnicería CUCA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:30",
+    "evento": "CONCIERTO del GRUPO STAND BY y GRAN SORTEO DE LOS 400€",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:30",
+    "evento": "Gran sorteo de 400 euros",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:00",
+    "evento": "ROMERÍA a cargo de NACHO BARQUÍN",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "",
+    "evento": "Hinchables gratuitos para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "01:00",
+    "evento": "Macrofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "01:00",
+    "evento": "Macofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "11:00",
+    "evento": "Grandes fiestas de Pie de Concha 2026: nuestra Señora de la Consolación",
+    "lugar": "Bárcena de Pie de Concha"
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "11:00",
+    "evento": "Disparo de cohetes y repique de campanas",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "12:00",
+    "evento": "MISA MAYOR en honor a Ntra. Sra. de Consolación",
+    "lugar": "Ermita"
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "",
+    "evento": "Blanqueada y aperitivo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "01:00",
+    "evento": "Macrofiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "06:00",
+    "evento": "Carrera en paños menores",
+    "lugar": "prao de fiestas"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "11:00",
+    "evento": "IX Ruta en albarcas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "12:30",
+    "evento": "IV Concurso de Tortillas de Pie de Concha",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "13:00",
+    "evento": "Actuación en la Plaza del pueblo para acompañar la blanqueada",
+    "lugar": "Plaza del pueblo"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "16:30",
+    "evento": "II Concurso de Sangría",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "18:00",
+    "evento": "Suelta de vaquillas",
+    "lugar": "plaza de toros"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "Novena a la Virgen de Consolación seguida de la solemne y tradicional Procesión de las Antorchas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "06:00",
+    "evento": "Carrera en paños menores",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "454600",
+  "nombre": "Fiestas de la Virgen de la Cama",
+  "pueblo": "Escalante",
+  "municipio": "Escalante",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "21–24 de agosto",
+  "inicio": "2026-08-21",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.43742,
+  "lng": -3.51408,
+  "descripcion": "Fiestas de la Virgen de la Cama en Escalante. 21–24 de agosto. Con verbenas y bailes, actos religiosos, actividades infantiles, deporte y juegos y folclore y tradición. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://turismodecantabria.com/proximamente-evento/fiestas-de-la-virgen-de-la-cama",
+  "programa": [
+   {
+    "dia": "Vie 21",
+    "hora": "16:00",
+    "evento": "LX Circuito Ciclista de Escalante · Memorial Ángel Sainz Chapa",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "16:30",
+    "evento": "final del torneo de pádel",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "17:00",
+    "evento": "torneo de bolos",
+    "lugar": "La Cagiga"
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "18:30",
+    "evento": "petición de Nuestra Señora La Virgen de la Cama a las madres clarisas",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "20:00",
+    "evento": "Pregón",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 21",
+    "hora": "21:30",
+    "evento": "Concierto de «Los de Antes», Alfredo Piedrafita y Rock Covers",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "08:00",
+    "evento": "Pasacalles Grupo de Danzas \"Virgen de la Cama\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "08:30",
+    "evento": "Santa Misa",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "08:30",
+    "evento": "Pasacalles con el Grupo de Danzas Virgen de la Cama",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "MISA SOLEMNE",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "13:00",
+    "evento": "actuación del grupo de danzas Virgen de la Cama",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "13:00",
+    "evento": "vermú en la plaza del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "18:00",
+    "evento": "Misa a las 18:00",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:00",
+    "evento": "Misa a las 20:00",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:30",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "23:00",
+    "evento": "actuación de «Al Alba»",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "",
+    "evento": "Agrupación musical «Virgen de la amargura»",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "Parque infantil",
+    "lugar": "pistas deportivas"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "19:00",
+    "evento": "inscripciones al concurso de disfraces infantiles y de adultos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "20:30",
+    "evento": "Actuación \"PAGANOS BAND\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:30",
+    "evento": "Tributo a El Canto del Loco y Dani Martín con Recuerdos Locos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:30",
+    "evento": "actuación de «Recuerdos Locos»",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "Nos Vamos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:30",
+    "evento": "MISA SOLEMNE",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "16:00",
+    "evento": "Partido de Solteros contra Casados",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "\"CAÑONEROS\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "La Última y Nos Vamos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "Concierto de Sinbatone",
     "lugar": ""
    }
   ]
@@ -21991,40 +24975,136 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/laredo/tributo-a-mecano-viaje-a-venus-laredo--628634"
  },
  {
-  "id": "611882",
-  "nombre": "Visita guiada a templos románicos en el Camino de Santiago",
-  "pueblo": "Medio Cudeyo",
-  "municipio": "Medio Cudeyo",
+  "id": "640967",
+  "nombre": "XVII Día del Indiano en Comillas",
+  "pueblo": "Comillas",
+  "municipio": "Comillas",
   "comarca": "",
   "mes": 8,
-  "fecha": "21 agosto – 11 septiembre",
+  "fecha": "21–30 de agosto",
   "inicio": "2026-08-21",
-  "fin": "2026-09-11",
-  "tipo": "tradiciones",
+  "fin": "2026-08-30",
+  "tipo": "fiestas",
   "interes": "",
-  "lat": 43.3903,
-  "lng": -3.7872,
-  "descripcion": "Visita guiada a templos románicos en el Camino de Santiago en Medio Cudeyo. 21 agosto – 11 septiembre. Entrada gratuita.",
+  "lat": 43.38528,
+  "lng": -4.29158,
+  "descripcion": "XVII Día del Indiano en Comillas en Comillas. 21–30 de agosto. Con verbenas y bailes, actividades infantiles y folclore y tradición.",
   "_fuente_desc": "factual",
-  "fuente": "https://www.mieres.es/evento/rutas-turisticas-2026-visita-guiada-templos-romanicos-en-el-camino-de-santiago-5set/",
+  "fuente": "https://planesparahoy.com/e/cantabria/comillas/xvii-dia-del-indiano-en-comillas--640967",
   "programa": [
    {
     "dia": "Vie 21",
-    "hora": "16:30",
-    "evento": "Visita guiada a Iglesia de Santa María Magdalena",
-    "lugar": "Iglesia de Santa María Magdalena (La Rebollá)"
+    "hora": "",
+    "evento": "Exposición 'Comillas se viste de época'",
+    "lugar": ""
    },
    {
-    "dia": "Sáb 5",
-    "hora": "16:30",
-    "evento": "Visita guiada a Iglesia de Santa María Magdalena",
-    "lugar": "Iglesia de Santa María Magdalena (La Rebollá)"
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "Conferencia «Máximo Díaz de Quijano y El Capricho de Gaudí»",
+    "lugar": "Centro Cultural El Espolón"
    },
    {
-    "dia": "Vie 11",
-    "hora": "16:30",
-    "evento": "Visita guiada a Iglesia de Santa María Magdalena",
-    "lugar": "Iglesia de Santa María Magdalena (La Rebollá)"
+    "dia": "Mié 26",
+    "hora": "20:00",
+    "evento": "Conferencia «Un museo en Sobrellano: la colección de Claudio López Bru»",
+    "lugar": "Centro Cultural El Espolón"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "20:00",
+    "evento": "Pasacalles temático teatralizado",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "21:30",
+    "evento": "Inauguración del Día del Indiano",
+    "lugar": "iglesia parroquial de Comillas"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "Recital de habaneras 'con aires de La Habana'",
+    "lugar": "iglesia parroquial de San Cristóbal"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "Música en directo con grupo cubano Ajiaco",
+    "lugar": "Escenario del Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Apertura del Mercado Colonial",
+    "lugar": "Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:30",
+    "evento": "Espectáculo de danza y baile",
+    "lugar": "Escenario de la Plaza Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:45",
+    "evento": "Acto de bienvenida de los reyes",
+    "lugar": "Escenario Plaza del Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "15:00",
+    "evento": "Fiesta en el rincón cubano",
+    "lugar": "Fuente de Tres Caños"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "18:00",
+    "evento": "Apertura del mercado indiano",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "Gran fiesta latina: concierto de Havana 537",
+    "lugar": "Escenario de la Plaza del Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:30",
+    "evento": "Sorteo de un viaje a la isla de la Palma para dos personas",
+    "lugar": "Escenario Plaza del Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:30",
+    "evento": "Fin de fiesta al son de ritmos latinos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Instalación de La Gauditeca",
+    "lugar": "Plaza Joaquín del Piélago"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Talleres de baile",
+    "lugar": "Escenario Plaza del Corro Campíos"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Ambientación del mercado indiano y calles",
+    "lugar": "calles de Comillas"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Boleros de ida y vuelta",
+    "lugar": "Centro Cultural El Espolón"
    }
   ]
  },
@@ -22705,6 +25785,230 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "659834",
+  "nombre": "Fiestas San Vitores Hijas",
+  "pueblo": "Puente Viesgo",
+  "municipio": "Puente Viesgo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22 agosto – 1 septiembre",
+  "inicio": "2026-08-22",
+  "fin": "2026-09-01",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.2845,
+  "lng": -3.9857,
+  "descripcion": "Fiestas San Vitores Hijas en Puente Viesgo. 22 agosto – 1 septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Gratis (paella popular: 6€ con inscripción previa).",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/puente-viesgo/fiestas-san-vitores-hijas--659834",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "¡Operación remojo! Batalla de agua y juegos",
+    "lugar": "pista de la Biblioteca"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "16:30",
+    "evento": "Concurso de BRISCA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "18:30",
+    "evento": "Apertura del bar de la comisión de fiestas",
+    "lugar": "bar de la comisión de fiestas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:30",
+    "evento": "Cine de verano",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "00:30",
+    "evento": "Noche de temazos con DJ Cachena",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "08:00",
+    "evento": "Gran repique de campanas",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "11:00",
+    "evento": "Folclore y tradición: los 'Piteros Covadonga'",
+    "lugar": "recorren nuestros barrios"
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "12:00",
+    "evento": "Misa en honor de nuestro Patron San Vitores",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "13:00",
+    "evento": "Blanco-vermouth",
+    "lugar": "bar de las Fiestas"
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "13:00",
+    "evento": "Vermut",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "13:30",
+    "evento": "IV Concurso de Tortilla (Cohiño, Las Fuentes, Cantigalindo, Villanueva)",
+    "lugar": "bar"
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "14:30",
+    "evento": "Paella popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "16:00",
+    "evento": "Hinchables para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "16:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "17:30",
+    "evento": "¡A todo color! Sesión de pintacaras",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "19:00",
+    "evento": "Taller de prehistoria",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "21:00",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "22:30",
+    "evento": "Gran Parrillada para todos los asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "23:00",
+    "evento": "III Concurso lanzamiento de jamón",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "23:30",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "",
+    "evento": "Verbena con DJ",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "00:30",
+    "evento": "Cierre de fiestas con sesión del DJ Carchena",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "00:30",
+    "evento": "Cierre de fiestas por todo lo alto: sesión del DJ Cachena",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "08:00",
+    "evento": "Gran repique de campanas",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "11:00",
+    "evento": "Folclore y tradición: los 'Piteros Covadonga'",
+    "lugar": "recorren nuestros barrios"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "12:00",
+    "evento": "Misa en honor de nuestra Patrona la Virgen del Buen Suceso",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "13:00",
+    "evento": "Blanco-vermouth",
+    "lugar": "bar de las Fiestas"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "13:30",
+    "evento": "IV Concurso de Tortilla (La Molina)",
+    "lugar": "bar"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "14:30",
+    "evento": "Paella popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "16:00",
+    "evento": "Tarde de ¡Bingo!",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "19:00",
+    "evento": "Taller de prehistoria: Deja tu huella",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "21:00",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "23:00",
+    "evento": "I Concurso de lanzamiento de paca de hierba",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "23:30",
+    "evento": "Verbena",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "id": "615207",
   "nombre": "Fiestas de Arenillas de Ebro",
   "pueblo": "Valderredible",
@@ -22915,24 +26219,6 @@ const FIESTAS = [
   ]
  },
  {
-  "id": "628670",
-  "nombre": "Fiestas de Nuestra Señora",
-  "pueblo": "Bezana",
-  "municipio": "Santa Cruz de Bezana",
-  "comarca": "",
-  "mes": 8,
-  "fecha": "22–23 de agosto",
-  "inicio": "2026-08-22",
-  "fin": "2026-08-23",
-  "tipo": "fiestas",
-  "interes": "",
-  "lat": 43.44302,
-  "lng": -3.90452,
-  "descripcion": "Fiestas de Nuestra Señora en Bezana. 22–23 de agosto. Entrada gratuita.",
-  "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/santa-cruz-de-bezana/fiestas-de-nuestra-senora-bezana--628670"
- },
- {
   "id": "635669",
   "nombre": "Fiestas de Nuestra Señora",
   "pueblo": "Santa Cruz de Bezana",
@@ -23027,6 +26313,554 @@ const FIESTAS = [
     "hora": "23:00",
     "evento": "Actuación de vero de OT",
     "lugar": "Avenida de la Libertad, Mompía"
+   }
+  ]
+ },
+ {
+  "id": "619334",
+  "nombre": "Fiestas de Quijas",
+  "pueblo": "Reocín",
+  "municipio": "Reocín",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22 agosto – 8 septiembre",
+  "inicio": "2026-08-22",
+  "fin": "2026-09-08",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.34989,
+  "lng": -4.13279,
+  "descripcion": "Fiestas de Quijas en Reocín. 22 agosto – 8 septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y fuegos y pirotecnia. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/reocin/fiestas-de-quijas--619334",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "08:00",
+    "evento": "CHUPINAZO. ¡Todo el mundo arriba, COMIENZAN LAS FIESTAS!",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "Santa misa",
+    "lugar": "Ermita del Buen Sucesor"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:30",
+    "evento": "Juegos tradicionales",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "19:00",
+    "evento": "Bingo",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:30",
+    "evento": "Reparto de pancetada",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:30",
+    "evento": "Verbena amenizada por \"TRIO RUBI\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "09:30",
+    "evento": "X Concurso de Ollas Ferroviarias",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "14:30",
+    "evento": "II Concurso de tartas",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "16:00",
+    "evento": "CONCURSOS DE FLOR Y DE PARCHÍS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "Masterchef Infantil",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "MASTERCHEF para todos los niños",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "18:30",
+    "evento": "Fiesta Holi",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "15:00",
+    "evento": "II MEMORIAL SANTOS GONZÁLEZ",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:00",
+    "evento": "HINCHABLES para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:30",
+    "evento": "Comienza la verbena a cargo de DJ...",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "08:00",
+    "evento": "Diana floreada",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:00",
+    "evento": "PROCESIÓN DE LOS SANTOS MÁRTIRES, SANTA MISA y SESIÓN DE VERMUT con 'ESTAMPA DE MEXICO'",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:00",
+    "evento": "procesión de los santos mártires (San Celedonio y San Emeterio)",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "17:00",
+    "evento": "Bolos Solteras Vs Casadas",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:00",
+    "evento": "Actuación de la orquesta 'PASITO SHOW' y FUEGOS ARTIFICIALES",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "08:00",
+    "evento": "Diana floreada",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "11:00",
+    "evento": "Santa Misa en honor a Los Martirucos",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "11:00",
+    "evento": "Comida campestre",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "16:00",
+    "evento": "Actuación de DJ ÁLVARO MONTES",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "17:30",
+    "evento": "Concurso de disfraces",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "19:30",
+    "evento": "Concurso de tortillas",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "20:00",
+    "evento": "Barbacoa",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "20:30",
+    "evento": "Actuación de Dj Álvaro Montes",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "08:00",
+    "evento": "Diana FLoreada",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "11:00",
+    "evento": "SANTA MISA y blanqueo",
+    "lugar": "Ermita de Consolación"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "19:00",
+    "evento": "Tradicional carrera de bicis y triciclos",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "21:00",
+    "evento": "Actuación de Duo Milenium",
+    "lugar": "Quijas"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "22:00",
+    "evento": "Reparto de chocolate",
+    "lugar": "Quijas"
+   }
+  ]
+ },
+ {
+  "id": "659838",
+  "nombre": "Fiestas de San Bartolo",
+  "pueblo": "Lamasón",
+  "municipio": "Lamasón",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22–24 de agosto",
+  "inicio": "2026-08-22",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.25279,
+  "lng": -4.48456,
+  "descripcion": "Fiestas de San Bartolo en Lamasón. 22–24 de agosto. Con verbenas y bailes, actos religiosos y deporte y juegos. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/lamason/fiestas-de-san-bartolo-lamason--659838",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "12:30",
+    "evento": "Fiesta de la Sidra Lamasón",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Concurso exhibición de las escuelas de Bolos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "16:00",
+    "evento": "Colchonetas para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "23:00",
+    "evento": "Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "11:00",
+    "evento": "Tradicional Feria Ganadera",
+    "lugar": "Recinto ferial de Los Molinos"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Exhibición de Deportes Rurales de Cantabria",
+    "lugar": "Recinto ferial"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:00",
+    "evento": "Misa Solemne en honor al patrón San Bartolomé",
+    "lugar": "Capilla de San Bartolomé de Quintanilla"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "16:00",
+    "evento": "Colchonetas para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "XIV Edición del Conciertucu",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "Gran Verbena",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "652907",
+  "nombre": "Fiestas de San Bartolomé",
+  "pueblo": "Alfoz de Lloredo",
+  "municipio": "Alfoz de Lloredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22–24 de agosto",
+  "inicio": "2026-08-22",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37869,
+  "lng": -4.18169,
+  "descripcion": "Fiestas de San Bartolomé en Alfoz de Lloredo. 22–24 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, fuegos y pirotecnia y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/alfoz-de-lloredo/fiestas-de-san-bartolome-alfoz-de-lloredo--652907",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "Apertura del bar de la comisión",
+    "lugar": "Bar de la comisión"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "16:30",
+    "evento": "Gran bingo en la plaza",
+    "lugar": "plaza"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:00",
+    "evento": "FIESTA DE LA ESPUMA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:00",
+    "evento": "SARDINADA para todos los asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "ROMERÍA Y VERBENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "00:00",
+    "evento": "FUEGOS ARTIFICIALES",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "08:00",
+    "evento": "Diana Floreada para comenzar la fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "08:00",
+    "evento": "Fiestas de San Bartolomé en Oreña 2026",
+    "lugar": "Ermita de San Bartolomé (Oreña, Alfoz de Lloredo)"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:30",
+    "evento": "MISA SOLEMNE",
+    "lugar": "Iglesia de San Bartolomé"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "14:00",
+    "evento": "LUNCH en la carpa",
+    "lugar": "Carpa"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "16:30",
+    "evento": "HINCHABLES GRATIS",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:00",
+    "evento": "Gran bingo en la plaza del pueblo",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "FILETADA para todos los asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:00",
+    "evento": "ROMERÍA Y VERBENA",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "652909",
+  "nombre": "Fiestas de San Bartolomé",
+  "pueblo": "Santa María de Cayón",
+  "municipio": "Santa María de Cayón",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22–24 de agosto",
+  "inicio": "2026-08-22",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.30961,
+  "lng": -3.85294,
+  "descripcion": "Fiestas de San Bartolomé en Santa María de Cayón. 22–24 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santa-maria-de-cayon/fiestas-de-san-bartolome-santa-maria-de-cayon--652909",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "00:00",
+    "evento": "Bingo y verbena con grupo Noche Show",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "00:30",
+    "evento": "Verbena con la orquesta Cayenna",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "15:45",
+    "evento": "Quedada en el parque",
+    "lugar": "El parque"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "16:00",
+    "evento": "XVI Marcha Campestre por los montes del pueblo",
+    "lugar": "Montes del pueblo"
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "18:30",
+    "evento": "Guerra de agua",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "22:00",
+    "evento": "Romería con el grupo regional \"GÜEYOS\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "23:00",
+    "evento": "Romería con \"GRUPO LA NOCHE SHOW\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "Pasacalles de cabezudos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:30",
+    "evento": "Concurso de brisca por parejas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "Verbena con \"GRUPO LA NOCHE SHOW\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "I Concurso de Oca para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "",
+    "evento": "Juegos populares para niños y carrera de carretillos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Misa en honor al santo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:00",
+    "evento": "Blanqueo y degustación de pinchos de tortilla",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:00",
+    "evento": "Pesca del pez colorao y truchas",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "18:00",
+    "evento": "Hinchables gratuitos para todos los peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:00",
+    "evento": "Parrillada para todos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:30",
+    "evento": "Romería con la macrodiscoteca Impacto",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "23:30",
+    "evento": "Verbena con la macrodiscoteca Impacto",
+    "lugar": ""
    }
   ]
  },
@@ -23172,6 +27006,212 @@ const FIESTAS = [
     "dia": "Lun 24",
     "hora": "22:00",
     "evento": "Actuación del Grupo Solo Saxo",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "635255",
+  "nombre": "Fiestas de San Ginés de Arlés",
+  "pueblo": "Cerrazo",
+  "municipio": "Reocín",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "22–25 de agosto",
+  "inicio": "2026-08-22",
+  "fin": "2026-08-25",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.36486,
+  "lng": -4.12196,
+  "descripcion": "Fiestas de San Ginés de Arlés en Cerrazo. 22–25 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/reocin/fiestas-de-san-gines-de-arles-cerrazo--635255",
+  "programa": [
+   {
+    "dia": "Sáb 22",
+    "hora": "02:30",
+    "evento": "Fin de fiesta... o no",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "09:00",
+    "evento": "Gran CHUPINAZO",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:00",
+    "evento": "Gran Blancada con deliciosos aperitivos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "12:30",
+    "evento": "CONCURSO DE PAELLAS PARA PEÑAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "17:00",
+    "evento": "JUEGOS PARA LAS PEÑAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "20:00",
+    "evento": "Jugaremos unos BINGOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:00",
+    "evento": "Reparto de Bocadillo de lomo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 22",
+    "hora": "21:30",
+    "evento": "ROMERÍA/VERBENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "11:30",
+    "evento": "Tradicional CONCURSO DE TORTILLAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "12:00",
+    "evento": "Gran Blancada con deliciosos aperitivos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "13:00",
+    "evento": "Gran Actuación de JOSÉ BUSTAMANTE Y BELA RUIZ",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "16:00",
+    "evento": "TALLERES INFANTILES",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "16:30",
+    "evento": "GRAN CONCURSO DE FLOR",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "17:00",
+    "evento": "TARDE DE BINGOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "18:00",
+    "evento": "MERENDOLA para los niños",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "21:00",
+    "evento": "REPARTO DE JIJAS CON PATATAS",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "21:30",
+    "evento": "ROMERÍA LARGA con GRUPO TAMAN",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "22:00",
+    "evento": "CONCURSO DE DISFRACES",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:30",
+    "evento": "Gran Blancada",
+    "lugar": "Bar de la comisión"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "16:30",
+    "evento": "CONCURSO DE PARCHÍS",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:00",
+    "evento": "GUERRA DE AGUA",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "18:30",
+    "evento": "Unos Bingos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Reparto de PEPITO DE BACON CON QUESO",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Baile con el GRUPO CLAVE DEL NORTE",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:30",
+    "evento": "MEMORIAS DE CERRAZO y VERBENA",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "08:30",
+    "evento": "DISPARO DE BOMBAS Y COHETES",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "13:00",
+    "evento": "MISA SOLEMNE Y PROCESIÓN",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "16:00",
+    "evento": "Tarde de niños con HINCHABLES y MERENDOLA",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "21:00",
+    "evento": "GRAN PARRILLADA",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "21:00",
+    "evento": "ROMERÍA LARGA con GRUPO LA NOCHE",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "22:30",
+    "evento": "CONCURSO DE BAILE PARA PEÑAS",
     "lugar": ""
    }
   ]
@@ -23887,38 +27927,6 @@ const FIESTAS = [
   ]
  },
  {
-  "id": "402290",
-  "nombre": "Fiestas de San Millán",
-  "pueblo": "Novales",
-  "municipio": "Alfoz de Lloredo",
-  "comarca": "",
-  "mes": 8,
-  "fecha": "23 de agosto",
-  "inicio": "2026-08-23",
-  "fin": "2026-08-23",
-  "tipo": "fiestas",
-  "interes": "",
-  "lat": 43.37869,
-  "lng": -4.18169,
-  "descripcion": "Novales honra a San Millán con actos religiosos.",
-  "_fuente_desc": "ia",
-  "fuente": "https://planesparahoy.com/e/cantabria/alfoz-de-lloredo/fiestas-de-san-millan-novales--402290",
-  "programa": [
-   {
-    "dia": "Dom 23",
-    "hora": "12:30",
-    "evento": "Misa en la ermita",
-    "lugar": ""
-   },
-   {
-    "dia": "Dom 23",
-    "hora": "",
-    "evento": "Aperitivo",
-    "lugar": ""
-   }
-  ]
- },
- {
   "id": "635539",
   "nombre": "Fiestas de San Roque",
   "pueblo": "Villafufre",
@@ -24113,6 +28121,50 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/suances/strength-barre-brunch-suances--436231"
  },
  {
+  "id": "660418",
+  "nombre": "V Concurso Nacional de Pintura Rápida Juvenil",
+  "pueblo": "San Miguel de Aguayo",
+  "municipio": "San Miguel de Aguayo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "23 agosto – 1 septiembre",
+  "inicio": "2026-08-23",
+  "fin": "2026-09-01",
+  "tipo": "exposiciones",
+  "interes": "",
+  "lat": 43.05644,
+  "lng": -4.02483,
+  "descripcion": "Exposición en San Miguel de Aguayo. 23 agosto – 1 septiembre. Lugar: Centro Cultural de San Miguel de Aguayo. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/san-miguel-de-aguayo/v-concurso-nacional-de-pintura-rapida-juvenil-san-miguel-de-aguayo--660418",
+  "programa": [
+   {
+    "dia": "Dom 23",
+    "hora": "09:00",
+    "evento": "Inscripción presencial y sellado de soportes - V Concurso Nacional de Pintura Rápida Juvenil",
+    "lugar": "Centro Cultural San Miguel de Aguayo"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "16:30",
+    "evento": "Entrega de obras terminadas - V Concurso Nacional de Pintura Rápida Juvenil",
+    "lugar": "Centro Cultural San Miguel de Aguayo"
+   },
+   {
+    "dia": "Dom 23",
+    "hora": "19:30",
+    "evento": "Fallo del jurado",
+    "lugar": "Centro Cultural de San Miguel de Aguayo"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "",
+    "evento": "Exposición de las 10 obras seleccionadas",
+    "lugar": "Centro Cultural de San Miguel de Aguayo"
+   }
+  ]
+ },
+ {
   "id": "619620",
   "nombre": "Actuación Show del Flow",
   "pueblo": "Escalante",
@@ -24128,15 +28180,7 @@ const FIESTAS = [
   "lng": -3.51408,
   "descripcion": "Actuación Show del Flow en Escalante. 24 de agosto. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/escalante/actuacion-show-del-flow-escalante--619620",
-  "programa": [
-   {
-    "dia": "Lun 24",
-    "hora": "21:00",
-    "evento": "Actuación del Show de Flow",
-    "lugar": "Escalante"
-   }
-  ]
+  "fuente": "https://planesparahoy.com/e/cantabria/escalante/actuacion-show-del-flow-escalante--619620"
  },
  {
   "id": "41988",
@@ -24189,6 +28233,356 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "659828",
+  "nombre": "Espectáculo familiar «Cuenterete»",
+  "pueblo": "Pesquera",
+  "municipio": "Pesquera",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "24 de agosto",
+  "inicio": "2026-08-24",
+  "fin": "2026-08-24",
+  "tipo": "teatro",
+  "interes": "",
+  "lat": 43.08211,
+  "lng": -4.08044,
+  "descripcion": "Teatro en Pesquera. 24 de agosto. Lugar: Plaza multiusos. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/pesquera/espectaculo-familiar-cuenterete-pesquera--659828"
+ },
+ {
+  "id": "659835",
+  "nombre": "Fiestas de San Bartolo",
+  "pueblo": "Selaya",
+  "municipio": "Selaya",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "24 de agosto",
+  "inicio": "2026-08-24",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.21669,
+  "lng": -3.80686,
+  "descripcion": "Fiestas de San Bartolo en Selaya. 24 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/selaya/fiestas-de-san-bartolo-selaya--659835",
+  "programa": [
+   {
+    "dia": "Lun 24",
+    "hora": "09:00",
+    "evento": "Lanzamiento de bombas y cohetes",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Misa Solemne",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:30",
+    "evento": "Degustación de Pinchos al son del pito y tambor",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "15:00",
+    "evento": "Degustación de paella para todos los asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:30",
+    "evento": "Juegos infantiles y piñatas de macetas",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Romería con música",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:30",
+    "evento": "Gran Parrillada para todos los asistentes",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "518570",
+  "nombre": "Fiestas de San Bartolomé",
+  "pueblo": "Obregón",
+  "municipio": "Villaescusa",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "24 de agosto",
+  "inicio": "2026-08-24",
+  "fin": "2026-08-24",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.34474,
+  "lng": -3.86681,
+  "descripcion": "Fiestas de San Bartolomé en Obregón. 24 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles y deporte y juegos. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/villaescusa/fiestas-de-san-bartolome-obregon--518570",
+  "programa": [
+   {
+    "dia": "Lun 24",
+    "hora": "00:00",
+    "evento": "Fiesta en la barra de la Comisión",
+    "lugar": "barra de la Comisión"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Procesión desde la plaza del Pino hasta la iglesia",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "13:00",
+    "evento": "Apertura de la barra con degustación de pinchos",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "17:00",
+    "evento": "Gran Fiesta de Hinchables y Juegos Infantiles",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "18:00",
+    "evento": "Fiesta de la Espuma",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "19:00",
+    "evento": "Exhibición de baile",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:30",
+    "evento": "Bingo de Tarde",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Primer pase de Grupo Alhambra",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:30",
+    "evento": "Reparto de tortilla",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "22:30",
+    "evento": "Segundo pase de Grupo Alhambra",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "641011",
+  "nombre": "Fiestas de San Luis en Calle El Arco",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "24–25 de agosto",
+  "inicio": "2026-08-24",
+  "fin": "2026-08-25",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Fiestas de San Luis en Calle El Arco en Noja. 24–25 de agosto. Con verbenas y bailes, comida popular, actividades infantiles y folclore y tradición. 6 €.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ayuntamientodenoja.es/portal/evento/fiestas-de-san-luis-2",
+  "programa": [
+   {
+    "dia": "Lun 24",
+    "hora": "00:00",
+    "evento": "Continúa la fiesta con el DJ",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:00",
+    "evento": "Apertura del bar",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "12:30",
+    "evento": "Castillos hinchables",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "19:30",
+    "evento": "Magia con 'Nicolas Chevalier'",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "20:30",
+    "evento": "Reparto de hamburguesa + bebida",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Lun 24",
+    "hora": "21:00",
+    "evento": "Romería con el grupo 'Salados'",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "00:00",
+    "evento": "Continúa la fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "12:00",
+    "evento": "Apertura del bar",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "12:30",
+    "evento": "Castillos hinchables",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "14:00",
+    "evento": "Gran sardinada + bebida",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "17:00",
+    "evento": "Trashumancia de burros por las calles de la villa",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "18:00",
+    "evento": "Llegada del rebaño y paseos infantiles por el recinto ferial",
+    "lugar": "Recinto ferial"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "19:30",
+    "evento": "Romería infantil con 'El Show de Taty'",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "19:30",
+    "evento": "Magia con Nicolas Chevalier",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "20:30",
+    "evento": "Reparto de asado de carne + bebida",
+    "lugar": "Calle El Arco"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "20:30",
+    "evento": "Reparto de hamburguesas + bebida",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "21:00",
+    "evento": "Romería con el grupo 'Solo Saxo'",
+    "lugar": "Calle El Arco"
+   }
+  ]
+ },
+ {
+  "id": "7855",
+  "nombre": "Mercado artesanal",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "24–30 de agosto",
+  "inicio": "2026-08-24",
+  "fin": "2026-08-30",
+  "tipo": "ferias y mercados",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Feria o mercado en Laredo. 24–30 de agosto. Lugar: Ayuntamiento de Laredo. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/mercado-artesanal-laredo--7855",
+  "programa": [
+   {
+    "dia": "Lun 24",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   },
+   {
+    "dia": "Mar 25",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   },
+   {
+    "dia": "Mié 26",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:00",
+    "evento": "Mercado artesanal Laredo 2026",
+    "lugar": "Ayuntamiento de Laredo"
+   }
+  ]
+ },
+ {
   "id": "424586",
   "nombre": "Mercado de las Flores de Laredo",
   "pueblo": "Laredo",
@@ -24204,7 +28598,7 @@ const FIESTAS = [
   "lng": -3.41432,
   "descripcion": "Mercado de las Flores de Laredo en Laredo. 24–30 de agosto. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://agendamedieval.com/agenda/mercado-de-las-flores-de-laredo-cantabria-2026/"
+  "fuente": "https://agendamedieval.com/agenda/mercado-de-las-flores-de-laredo-cantabria"
  },
  {
   "id": "619619",
@@ -24231,6 +28625,24 @@ const FIESTAS = [
     "lugar": "Escalante"
    }
   ]
+ },
+ {
+  "id": "651619",
+  "nombre": "Presentación del libro «Antoni Gaudí» de Gijs van Hensbergen",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "24 de agosto",
+  "inicio": "2026-08-24",
+  "fin": "2026-08-24",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 24 de agosto. Lugar: Librería Gil. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24273"
  },
  {
   "id": "20592",
@@ -24337,6 +28749,32 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "659824",
+  "nombre": "Charla «El puente Astillero-Pontejos: 60 años uniendo orillas»",
+  "pueblo": "Pontejos",
+  "municipio": "El Astillero",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "25 de agosto",
+  "inicio": "2026-08-25",
+  "fin": "2026-08-25",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.39798,
+  "lng": -3.82706,
+  "descripcion": "Charla o taller en Pontejos. 25 de agosto. Lugar: Espacio Fermín Molino. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/el-astillero/charla-el-puente-astillero-pontejos-60-anos-uniendo-orillas-pontejos--659824",
+  "programa": [
+   {
+    "dia": "Mar 25",
+    "hora": "19:30",
+    "evento": "Charla: \"Astillero-Pontejos: 60 años uniendo orillas\"",
+    "lugar": "Espacio Fermín Molino"
+   }
+  ]
+ },
+ {
   "id": "617",
   "nombre": "Concierto del Cuarteto Casals",
   "pueblo": "Comillas",
@@ -24353,6 +28791,32 @@ const FIESTAS = [
   "descripcion": "Concierto en Comillas. 25 de agosto. Lugar: Avenida de la Universidad Pontificia s/n. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/comillas/concierto-del-cuarteto-casals-comillas--617"
+ },
+ {
+  "id": "660422",
+  "nombre": "Espectáculo de magia «Welcome to the Magic 2.0»",
+  "pueblo": "Mazcuerras",
+  "municipio": "Mazcuerras",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "25 de agosto",
+  "inicio": "2026-08-25",
+  "fin": "2026-08-25",
+  "tipo": "teatro",
+  "interes": "",
+  "lat": 43.29858,
+  "lng": -4.20925,
+  "descripcion": "Teatro en Mazcuerras. 25 de agosto. Lugar: Plaza de Cos. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/mazcuerras/espectaculo-de-magia-welcome-to-the-magic-2-0-mazcuerras--660422",
+  "programa": [
+   {
+    "dia": "Mar 25",
+    "hora": "20:00",
+    "evento": "Magia con Iván Giner: «Welcome to the Magic 2.0»",
+    "lugar": "Plaza de Cipriano González (Cos, Mazcuerras)"
+   }
+  ]
  },
  {
   "id": "433848",
@@ -24373,6 +28837,24 @@ const FIESTAS = [
   "fuente": "https://nansanatural.es/event/paseo-cultural-en-polanco/"
  },
  {
+  "id": "640992",
+  "nombre": "Presentación del libro «Quemados»",
+  "pueblo": "Laredo",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "25 de agosto",
+  "inicio": "2026-08-25",
+  "fin": "2026-08-25",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Charla o taller en Laredo. 25 de agosto. Lugar: Casa de Cultura de Laredo «Doctor Velasco». Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/presentacion-del-libro-quemados-laredo--640992"
+ },
+ {
   "id": "628649",
   "nombre": "Taller de dibujo con modelo al natural",
   "pueblo": "Santander",
@@ -24388,7 +28870,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Charla o taller en Santander. 25 de agosto. Lugar: La Musa Azul. 15€.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/24199"
+  "fuente": "https://santandercreativa.com/eventos/24199",
+  "programa": [
+   {
+    "dia": "Mar 25",
+    "hora": "18:30",
+    "evento": "Sesión de dibujo con modelo al natural",
+    "lugar": "La Musa Azul"
+   }
+  ]
  },
  {
   "id": "599404",
@@ -24406,121 +28896,13 @@ const FIESTAS = [
   "lng": -3.7872,
   "descripcion": "Teatro en Tapia de Casariego. 25 de agosto. Lugar: CASA CULTURA DE TAPIA DE CASARIEGO. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://feteas.org/actividad/santa-barbara-teatro-camin-de-santiago-7/"
- },
- {
-  "id": "635477",
-  "nombre": "10ª Feria del Disco y Coleccionismo de Santander",
-  "pueblo": "Santander",
-  "municipio": "Santander",
-  "comarca": "",
-  "mes": 8,
-  "fecha": "26–29 de agosto",
-  "inicio": "2026-08-26",
-  "fin": "2026-08-29",
-  "tipo": "ferias y mercados",
-  "interes": "",
-  "lat": 43.46234,
-  "lng": -3.80999,
-  "descripcion": "Feria o mercado en Santander. 26–29 de agosto. Lugar: Plaza de Alfonso XIII. Entrada gratuita.",
-  "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/10-feria-del-disco-y-coleccionismo-de-santander",
+  "fuente": "https://feteas.org/actividad/santa-barbara-teatro-camin-de-santiago-7/",
   "programa": [
    {
-    "dia": "Mié 26",
-    "hora": "19:00",
-    "evento": "Charla DCP49: «Impulsando el talento español en todo el mundo»",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "19:00",
-    "evento": "Love Pride Day · Festival de Naciones",
-    "lugar": "Campos de Sport de El Sardinero"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "19:00",
-    "evento": "Sofía Palencia Danza",
-    "lugar": "Campos de Sport de El Sardinero"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "19:30",
-    "evento": "Visita guiada: «Retratos ocultos en la era de los selfies» con Norberto Sayegh",
-    "lugar": "Centro Cultural Doctor Madrazo"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "20:00",
-    "evento": "Coros y Danzas de Santander",
-    "lugar": "Campos de Sport de El Sardinero"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "20:30",
-    "evento": "ON Session: «El arte lo pones tú»",
-    "lugar": "escenario libre del Centro Botín"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "20:30",
-    "evento": "ON Session con Cuca, Carol y Carmona DJ",
-    "lugar": "Centro Botín"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "20:30",
-    "evento": "Concierto «ON Session»",
-    "lugar": "Exterior del Centro Botín"
-   },
-   {
-    "dia": "Jue 27",
-    "hora": "22:00",
-    "evento": "Mia Moi, Kini 500 y Mikaella Ritchy",
-    "lugar": "Campos de Sport de El Sardinero"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "19:00",
-    "evento": "Partido Primera División: Racing vs. Elche",
-    "lugar": "Campos de Sport de El Sardinero"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "19:30",
-    "evento": "Presentación del libro «Alas del mañana. Historia del autogiro»",
-    "lugar": "Ateneo de Santander"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "20:30",
-    "evento": "CYLLOS",
-    "lugar": "Rock Beer The New"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "21:00",
-    "evento": "Concierto de Samuel y los Rezagados",
-    "lugar": "Rock Beer The New"
-   },
-   {
-    "dia": "Sáb 29",
-    "hora": "17:00",
-    "evento": "Grindhouse: Planet Terror",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
-   },
-   {
-    "dia": "Sáb 29",
-    "hora": "18:45",
-    "evento": "Proyección de «Death Proof» de Quentin Tarantino (V.O.S.E.)",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
-   },
-   {
-    "dia": "Sáb 29",
+    "dia": "Mar 25",
     "hora": "",
-    "evento": "Verano Tarantino",
-    "lugar": ""
+    "evento": "Teatro: Camín de Santiago",
+    "lugar": "Santiago (Tapia de Casariego)"
    }
   ]
  },
@@ -24544,9 +28926,9 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Mié 26",
-    "hora": "17:30",
-    "evento": "17 SIFF: \"A través de El Espejo Negro\", de Rafael Robles Gutiérrez",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
+    "hora": "",
+    "evento": "A través de El Espejo Negro",
+    "lugar": "Santander"
    }
   ]
  },
@@ -24593,6 +28975,50 @@ const FIESTAS = [
     "lugar": "Filmoteca de Cantabria Mario Camus"
    }
   ]
+ },
+ {
+  "id": "659285",
+  "nombre": "Concierto «Una noche de piano y voz»",
+  "pueblo": "Castillo",
+  "municipio": "Arnuero",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "26 de agosto",
+  "inicio": "2026-08-26",
+  "fin": "2026-08-26",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.45694,
+  "lng": -3.55321,
+  "descripcion": "Concierto en Castillo. 26 de agosto. Lugar: Castillo de Argüeso. 6€, menores de 16 gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/arnuero/concierto-una-noche-de-piano-y-voz-castillo--659285",
+  "programa": [
+   {
+    "dia": "Mié 26",
+    "hora": "19:30",
+    "evento": "Guillermo: Una noche de piano y voz",
+    "lugar": "Castillo de Argüeso"
+   }
+  ]
+ },
+ {
+  "id": "583513",
+  "nombre": "DCP49: Impulsando el talento español en todo el mundo",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "26 de agosto",
+  "inicio": "2026-08-26",
+  "fin": "2026-08-26",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 26 de agosto. Lugar: Filmoteca de Cantabria Mario Camus. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24144"
  },
  {
   "id": "562900",
@@ -24806,7 +29232,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Charla o taller en Santander. 26 de agosto. Lugar: Librería Gil. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/presentacion-de-las-invasiones-barbaras-de-claudi-perez"
+  "fuente": "https://santandercreativa.com/eventos/presentacion-de-las-invasiones-barbaras-de-claudi-perez",
+  "programa": [
+   {
+    "dia": "Mié 26",
+    "hora": "19:00",
+    "evento": "Presentación del libro: Las invasiones bárbaras",
+    "lugar": "Librería Gil (Plaza Pombo, Santander)"
+   }
+  ]
  },
  {
   "id": "164395",
@@ -24846,9 +29280,9 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Jue 27",
-    "hora": "17:30",
-    "evento": "17 SIFF: \"New beginnings\", de Isabelle Ingold y Vivianne Perelmuter",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
+    "hora": "",
+    "evento": "New Beginnings",
+    "lugar": ""
    }
   ]
  },
@@ -24923,6 +29357,42 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/ribamontan-al-mar/cine-de-verano-tipos-malos-2-loredo--158956"
  },
  {
+  "id": "424604",
+  "nombre": "Cine de verano: Los tipos malos 2",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "27 de agosto",
+  "inicio": "2026-08-27",
+  "fin": "2026-08-27",
+  "tipo": "cine",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Cine en Noja. 27 de agosto. Lugar: Parque Los Pinares. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ayuntamientodenoja.es/portal/evento/cine-de-verano-los-tipos-malos-2/"
+ },
+ {
+  "id": "668422",
+  "nombre": "Club de lectura sobre la Guerra Civil Española",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "27 de agosto",
+  "inicio": "2026-08-27",
+  "fin": "2026-08-27",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 27 de agosto. Lugar: Biblioteca Central de Cantabria. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/club-de-lectura-sobre-la-guerra-civil-espanola-santander--668422"
+ },
+ {
   "id": "651",
   "nombre": "Concierto Ana Mena",
   "pueblo": "Santander",
@@ -24939,6 +29409,86 @@ const FIESTAS = [
   "descripcion": "Concierto en Santander. 27 de agosto. Lugar: Calle Virgen del Mar 0. 49,50€.",
   "_fuente_desc": "factual",
   "fuente": "https://img.planesparahoy.com/concierto-ana-mena-bd4f246507fc.webp"
+ },
+ {
+  "id": "100516",
+  "nombre": "Concierto Flamin Groovies",
+  "pueblo": "Liérganes",
+  "municipio": "Liérganes",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "27 agosto – 8 septiembre",
+  "inicio": "2026-08-27",
+  "fin": "2026-09-08",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.34494,
+  "lng": -3.74564,
+  "descripcion": "Concierto en Liérganes. 27 agosto – 8 septiembre. Lugar: Los Picos.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/lierganes/concierto-flamin-groovies-lierganes--100516",
+  "programa": [
+   {
+    "dia": "Jue 27",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "El Sol, Madrid"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Festivalle Tobalina, Quintana Martín Galíndez"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Winter Indie City, Segovia"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Sala H, Ponferrada"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Rock and Blues, Zaragoza"
+   },
+   {
+    "dia": "Mié 2",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Upload, Barcelona"
+   },
+   {
+    "dia": "Jue 3",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "16 Toneladas, Valencia"
+   },
+   {
+    "dia": "Vie 4",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Stereo, Alicante"
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Hogaza Rock, Alfacar"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "",
+    "evento": "The Flamin' Groovies",
+    "lugar": "Los Picos, Liérganes"
+   }
+  ]
  },
  {
   "id": "652",
@@ -24992,7 +29542,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Charla o taller en Santander. 27 de agosto. Lugar: Ateneo de Santander. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/vientos-del-norte-y-del-sur-blanchard-quiros-y-lorca-conferencia-de-salvador-carretero"
+  "fuente": "https://santandercreativa.com/eventos/vientos-del-norte-y-del-sur-blanchard-quiros-y-lorca-conferencia-de-salvador-carretero",
+  "programa": [
+   {
+    "dia": "Jue 27",
+    "hora": "19:00",
+    "evento": "Conferencia: Vientos del norte y del sur en Santander: Blanchard, Quirós y Lorca",
+    "lugar": "Ateneo de Santander (Gómez Oreña, 5, Santander)"
+   }
+  ]
  },
  {
   "id": "550365",
@@ -25028,7 +29586,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Cine en Santander. 27 de agosto. Lugar: Librería La Vorágine. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/23965"
+  "fuente": "https://santandercreativa.com/eventos/23965",
+  "programa": [
+   {
+    "dia": "Jue 27",
+    "hora": "",
+    "evento": "Proyección del documental «74, la recontrucción de una lucha» de Raed y Rania Rafei",
+    "lugar": "Santander"
+   }
+  ]
  },
  {
   "id": "436249",
@@ -25285,6 +29851,296 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "518549",
+  "nombre": "Fiestas de San Agustín de Villasevil",
+  "pueblo": "Santiurde de Toranzo",
+  "municipio": "Santiurde de Toranzo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "27–30 de agosto",
+  "inicio": "2026-08-27",
+  "fin": "2026-08-30",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.25625,
+  "lng": -3.93246,
+  "descripcion": "Fiestas de San Agustín de Villasevil en Santiurde de Toranzo. 27–30 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santiurde-de-toranzo/fiestas-de-san-agustin-de-villasevil--518549",
+  "programa": [
+   {
+    "dia": "Jue 27",
+    "hora": "00:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "20:00",
+    "evento": "Desfile y presentación de peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "21:30",
+    "evento": "Música a cargo de DJ Doble P",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 27",
+    "hora": "22:30",
+    "evento": "Orquesta Reina Show",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "01:15",
+    "evento": "Gran Actuación del DJ JOSÉ DE RICO",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "02:40",
+    "evento": "Continúa la gran noche con DJ cUCA",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "04:00",
+    "evento": "DJ residente DJ Doble P cierra la noche",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "04:00",
+    "evento": "Cerrará la noche",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "12:30",
+    "evento": "Misa en honor a San Agustín",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "13:30",
+    "evento": "Vermut musical amenizado por los Mariachis Estampas de México",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "16:00",
+    "evento": "Concurso de fos",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "16:30",
+    "evento": "Hinchables para niños",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "19:30",
+    "evento": "Gymkana de juegos",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "21:30",
+    "evento": "Primera suelta de vaquillas",
+    "lugar": "plaza"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "21:30",
+    "evento": "Primeros suelta de vaquillas",
+    "lugar": "Plaza"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:30",
+    "evento": "Romería a cargo de DJ MARIANO y Orquesta Kapitana Show",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:30",
+    "evento": "Comienzo de la romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "01:15",
+    "evento": "DJ José de Rico",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "02:40",
+    "evento": "Continúa la gran noche con DJ Cuca",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "04:00",
+    "evento": "DJ Doble P",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Deporte rural La Garita",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Vermut y degustación de tortillas donadas por los vecinos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "14:00",
+    "evento": "Parrillada gratuita",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:30",
+    "evento": "Juegos infantiles",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "18:00",
+    "evento": "Presentación de las categorías del Club Toranzo Alto Pas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "Primera edición de Villavision",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:30",
+    "evento": "Segunda suelta de vaquillas",
+    "lugar": "plaza"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:00",
+    "evento": "Romería con DJ cUCA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:00",
+    "evento": "Comienzo la romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:00",
+    "evento": "Concurso de tortillas de patatas realizadas por las peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:00",
+    "evento": "Vermut acompañado de una parrillada",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:15",
+    "evento": "Baile Esencia Latina",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:30",
+    "evento": "Vermut a cargo del Dúo Tamán",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:30",
+    "evento": "Continuamos el vermut",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "15:00",
+    "evento": "Asado de cerdo al hierro con patatas y pimientos + postre",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "16:30",
+    "evento": "Memorial Manuel Fernández Rosillo",
+    "lugar": "campo de Villasevil"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "18:30",
+    "evento": "Autos Locos a cargo de las diferentes peñas",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "21:00",
+    "evento": "Inicio de la tomatina a cargo del Dúo Tamán",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "21:00",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:00",
+    "evento": "Entrega de premios del concurso de peñas y de los sorteos realizados",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:15",
+    "evento": "Continúa la romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "23:00",
+    "evento": "GRAN CHOCOLATADA para todos los asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "23:00",
+    "evento": "Chocolatada",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "23:15",
+    "evento": "Dúo Tamán cierra la fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "23:15",
+    "evento": "Sigue el Dúo Tamán",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "id": "423590",
   "nombre": "Love Pride Day · Festival de Naciones",
   "pueblo": "Santander",
@@ -25338,7 +30194,7 @@ const FIESTAS = [
   "lng": -4.40186,
   "descripcion": "El casco histórico de San Vicente de la Barquera se transforma en un mercado medieval con artesanos, música y teatro de calle.",
   "_fuente_desc": "ia",
-  "fuente": "https://agendamedieval.com/agenda/mercado-medieval-de-san-vicente-de-la-barquera-cantabria-2026/"
+  "fuente": "https://agendamedieval.com/agenda/mercado-medieval-de-san-vicente-de-la-barquera-cantabria"
  },
  {
   "id": "101326",
@@ -25360,9 +30216,9 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Jue 27",
-    "hora": "20:00",
-    "evento": "17 SIFF: Itinerancias Fílmicas",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
+    "hora": "",
+    "evento": "Itinerancias Fílmicas: Picknic Santander",
+    "lugar": "Santander"
    }
   ]
  },
@@ -25382,7 +30238,7 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 27–28 de agosto. Lugar: Exterior Virgen del Mar. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://apmusicales.com/evento/negrita-music-festival-santander-2026/",
+  "fuente": "https://apmusicales.com/evento/negrita-music-festival-santander-2026",
   "programa": [
    {
     "dia": "Jue 27",
@@ -25415,6 +30271,24 @@ const FIESTAS = [
   "descripcion": "Concierto en Santander. 27 de agosto. Lugar: Centro Botín. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://santandercreativa.com/eventos/24129"
+ },
+ {
+  "id": "402288",
+  "nombre": "ON Session. El arte lo pones tú",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "27 de agosto",
+  "inicio": "2026-08-27",
+  "fin": "2026-08-27",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 27 de agosto. Lugar: Centro Botín. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://turismodecantabria.com/proximamente-evento/on-session-el-arte-lo-pones-tu-con-cuca-carol-y-carmona-dj"
  },
  {
   "id": "550366",
@@ -25493,6 +30367,32 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "583683",
+  "nombre": "Visita guiada a la exposición «Retratos ocultos en la era de los selfies»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "27 de agosto",
+  "inicio": "2026-08-27",
+  "fin": "2026-08-27",
+  "tipo": "exposiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Exposición en Santander. 27 de agosto. Lugar: Centro Cultural Doctor Madrazo. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24188",
+  "programa": [
+   {
+    "dia": "Jue 27",
+    "hora": "19:30",
+    "evento": "Visita guiada: Retratos ocultos en la era de los selfies",
+    "lugar": "Centro Cultural Dr. Madrazo"
+   }
+  ]
+ },
+ {
   "id": "573249",
   "nombre": "Visita guiada: «Retratos ocultos en la era de los selfies» con Norberto Sayegh",
   "pueblo": "Santander",
@@ -25555,6 +30455,32 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "628631",
+  "nombre": "Barracas y ferias",
+  "pueblo": "Llano",
+  "municipio": "Laredo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "ferias y mercados",
+  "interes": "",
+  "lat": 43.40989,
+  "lng": -3.41432,
+  "descripcion": "Feria o mercado en Llano. 28 de agosto. Lugar: Alameda Manuel Llano.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/laredo/barracas-y-ferias-llano--628631",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "22:00",
+    "evento": "Concierto de Andy en Laredo",
+    "lugar": "Alameda Miramar"
+   }
+  ]
+ },
+ {
   "id": "463743",
   "nombre": "Chocolatada de fin de fiesta",
   "pueblo": "Escalante",
@@ -25592,9 +30518,9 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Vie 28",
-    "hora": "20:00",
-    "evento": "17 SIFF: \"Espina\", de Daniel Poler",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
+    "hora": "",
+    "evento": "Espina",
+    "lugar": "Santander"
    }
   ]
  },
@@ -25618,11 +30544,29 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Vie 28",
-    "hora": "17:30",
-    "evento": "17 SIFF: \"Propiedad privada, prohibido pasar\", de Wojciech Ganczarek",
-    "lugar": "Filmoteca de Cantabria Mario Camus"
+    "hora": "",
+    "evento": "Propiedad privada, prohibido pasar",
+    "lugar": ""
    }
   ]
+ },
+ {
+  "id": "563795",
+  "nombre": "Concierto Samuel y Los Rezagados",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 28 de agosto. Lugar: Sala Rock Beer the New. 5€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/samuel-y-los-rezagados-en-concierto"
  },
  {
   "id": "423954",
@@ -25687,6 +30631,32 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/el-duo-otero-clausura-los-veranos-en-jado"
  },
  {
+  "id": "43636",
+  "nombre": "Concierto folclórico «Álvaro Fernández y Puri Díaz»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto folclórico «Álvaro Fernández y Puri Díaz» en Santander. 28 de agosto.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/alvaro-fernandez-y-puri-diaz-en-el-ciclo-folclore-en-todas-las-estaciones",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "19:00",
+    "evento": "UNA TARDE CON NUESTROS COROS",
+    "lugar": "Centro Cívico Juan de Santander"
+   }
+  ]
+ },
+ {
   "id": "550368",
   "nombre": "Concurso de flor",
   "pueblo": "Villasevil",
@@ -25703,6 +30673,128 @@ const FIESTAS = [
   "descripcion": "Feria o mercado en Villasevil. 28 de agosto.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/santiurde-de-toranzo/concurso-de-flor-villasevil--550368"
+ },
+ {
+  "id": "549212",
+  "nombre": "Descenso popular ría San Martín Suances",
+  "pueblo": "Suances",
+  "municipio": "Suances",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28–29 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.42603,
+  "lng": -4.042,
+  "descripcion": "Descenso popular ría San Martín Suances en Suances. 28–29 de agosto. Con verbenas y bailes y comida popular. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/suances/descenso-popular-ria-san-martin-suances--549212",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "00:30",
+    "evento": "KEVIN McCALLISTER, segunda sesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "02:00",
+    "evento": "BINGO",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "17:00",
+    "evento": "Abrimos inscripciones y recogida de dorsales",
+    "lugar": "C/ EL MUELLE (zona MOZ)"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "19:00",
+    "evento": "Comienzo de la BIRRANKANA",
+    "lugar": "Campo de fútbol"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "21:30",
+    "evento": "KEVIN McCALLISTER, primera sesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "23:00",
+    "evento": "Actuación en directo de \"THE COVERTIZO\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:30",
+    "evento": "Abrimos inscripciones y recogida de dorsales",
+    "lugar": "MUELLE DE HINOJEDO"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "14:00",
+    "evento": "Salida de Autobuses",
+    "lugar": "Rotonda del Hotel El Muelle (junto al puerto de Suances)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "14:45",
+    "evento": "ALVARITO sigues presente, PAELLADA para participantes",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "17:30",
+    "evento": "SALIDA del XV MEMORIAL OSCAR ZATÓN (MOZ) por mar y tierra",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "LLEGADA a la Playa de la Riberuca",
+    "lugar": "Playa de la Riberuca"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:30",
+    "evento": "Actuación en directo del grupo de Rock SWEET FUNK O'mine",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "20:30",
+    "evento": "PARRILLADA únicamente para participantes y barcos de apoyo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "ENTREGA DE PREMIOS a las embarcaciones y disfraces más originales",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:30",
+    "evento": "HOMENAJE A LOS FUNDADORES E IDEÓLOGOS DE ESTE EVENTO",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:45",
+    "evento": "DJ invitado, desde Transilvania",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:30",
+    "evento": "Inicio de la MACRODISCOTECA a cargo \"TITANIUM\", sin parar",
+    "lugar": ""
+   }
+  ]
  },
  {
   "id": "599903",
@@ -25723,6 +30815,300 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/villaescusa/fiesta-con-dj-argu-live-la-concha--599903"
  },
  {
+  "id": "651368",
+  "nombre": "Fiesta con los nuestros",
+  "pueblo": "Unquera",
+  "municipio": "Val de San Vicente",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37425,
+  "lng": -4.51751,
+  "descripcion": "Fiesta con los nuestros en Unquera. 28 de agosto. Con comida popular. 5€/plato.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/val-de-san-vicente/fiesta-con-los-nuestros-unquera--651368",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "21:30",
+    "evento": "Parrillada popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:30",
+    "evento": "Actuaciones en directo de Chocolate Sexy, Perezosos Desenchufados y Reimon y Garfunkel",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "655297",
+  "nombre": "Fiesta de Puente Avios",
+  "pueblo": "Suances",
+  "municipio": "Suances",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28–29 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.42603,
+  "lng": -4.042,
+  "descripcion": "Fiesta de Puente Avios en Suances. 28–29 de agosto. Con actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/aportar#s29",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "19:30",
+    "evento": "Gran Chupinazo de comienzo de fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "20:00",
+    "evento": "XXII MARATHON DE FLOR",
+    "lugar": "centro cultural"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:00",
+    "evento": "GRAN CHOCOLATADA CON BIZCOCHOS",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "08:00",
+    "evento": "Disparo de bombas y cohetes",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "MISA solemne",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Actuación de las PITERAS DE VALLES",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:30",
+    "evento": "Invitación de un APERITIVO",
+    "lugar": "carpa de las fiestas"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:00",
+    "evento": "JUEGOS INFANTILES",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "17:00",
+    "evento": "GRAN CONCURSO DE PETANCA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "20:30",
+    "evento": "GRAN ROMERÍA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:15",
+    "evento": "GRAN CHORIZADA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:30",
+    "evento": "Entrega de PREMIOS",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "640995",
+  "nombre": "Fiesta de San Ramón",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28–30 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-30",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Fiesta de San Ramón en Santander. 28–30 de agosto. Con verbenas y bailes, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Ración 3€ (socios gratis).",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/fiesta-de-san-ramon-santander--640995",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "00:00",
+    "evento": "Fin de jornada",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "01:00",
+    "evento": "FIN DE FIESTA, que seguimos mañana",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "17:00",
+    "evento": "Apertura del Ambigú",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "19:30",
+    "evento": "Actuación \"PIPE NÚÑEZ\"",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "20:30",
+    "evento": "Gran Fiesta",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "11:30",
+    "evento": "Exposición de motos clásicas",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Hinchables \"PyP\"",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Actuación \"YAIZA SAMPA\"",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "14:30",
+    "evento": "COMIDA POPULAR",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:00",
+    "evento": "Entrega premios motos clásicas",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "Zumba a cargo de LARA Y SERGIO",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "20:30",
+    "evento": "Sorteo Especial",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "Actuación Musical \"POSTDATA\"",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:00",
+    "evento": "Disco-romería \"DJ VAYROM\"",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Chorizada",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:30",
+    "evento": "Exposición de coches clásicos",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:00",
+    "evento": "Exhibición del Real Cuerpo de Bomberos Voluntarios de Santander",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:30",
+    "evento": "Recepción de tortillas",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:00",
+    "evento": "Guerra de globos de agua",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:00",
+    "evento": "IX Concurso de tortillas. Tortilla española y tortilla fussion",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "16:00",
+    "evento": "Entrega premios coches clásicos",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "17:00",
+    "evento": "Juegos Infantiles",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Sorteo Especial",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:30",
+    "evento": "Fiesta de la Espuma y Chocolatada",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:00",
+    "evento": "GRAN TRACA FIN DE FIESTA",
+    "lugar": "Aparcamiento C/ Argentina (PEÑA DEL CUERVO)"
+   }
+  ]
+ },
+ {
   "id": "614828",
   "nombre": "Fiestas Patronales de Noja",
   "pueblo": "Noja",
@@ -25738,7 +31124,7 @@ const FIESTAS = [
   "lng": -3.52053,
   "descripcion": "La villa costera de Noja celebra sus fiestas patronales con verbenas, actos religiosos, juegos, fuegos y folclore junto a sus playas.",
   "_fuente_desc": "ia",
-  "fuente": "https://planesparahoy.com/e/cantabria/noja/fiestas-patronales-de-noja--614828",
+  "fuente": "https://ayuntamientodenoja.es/portal/evento/fiestas-de-noja-2026-2",
   "programa": [
    {
     "dia": "Vie 28",
@@ -25853,12 +31239,6 @@ const FIESTAS = [
     "hora": "20:45",
     "evento": "Concierto de \"Billy Boom Band\"",
     "lugar": ""
-   },
-   {
-    "dia": "Lun 31",
-    "hora": "22:30",
-    "evento": "Gran espectáculo de fuegos artificiales",
-    "lugar": "Playa Trengandín"
    },
    {
     "dia": "Lun 31",
@@ -26307,6 +31687,326 @@ const FIESTAS = [
     "hora": "",
     "evento": "Bingos y venta de raciones",
     "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "659274",
+  "nombre": "Fiestas de San Antolín",
+  "pueblo": "Ruijas",
+  "municipio": "Valderredible",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28–30 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-30",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 42.82034,
+  "lng": -3.91855,
+  "descripcion": "Fiestas de San Antolín en Ruijas. 28–30 de agosto. Con verbenas y bailes, actos religiosos, comida popular y deporte y juegos. Barbacoa: 5€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/valderredible/fiestas-de-san-antolin-ruijas--659274",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "00:00",
+    "evento": "Verbena con DJ Melo y bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "19:00",
+    "evento": "Pregón",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "19:30",
+    "evento": "Campeonato de rana",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "20:30",
+    "evento": "Venta de comida",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:00",
+    "evento": "Cine",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "23:30",
+    "evento": "Karaoke",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Misa y procesión",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:30",
+    "evento": "Picoteo y música",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "17:00",
+    "evento": "Torneo de mus",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "18:00",
+    "evento": "Juegos tradicionales",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:00",
+    "evento": "Barbacoa",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:30",
+    "evento": "Limpieza del pueblo y guerra de agua",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "651371",
+  "nombre": "Fiestas de los Santos Mártires",
+  "pueblo": "Unquera",
+  "municipio": "Val de San Vicente",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28–31 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-31",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37425,
+  "lng": -4.51751,
+  "descripcion": "Fiestas de los Santos Mártires en Unquera. 28–31 de agosto. Con verbenas y bailes, actos religiosos y folclore y tradición. 5€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/val-de-san-vicente/fiestas-de-los-santos-martires-unquera--651371",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "00:00",
+    "evento": "Entrega de premios de las balsas y continuación de la verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "19:00",
+    "evento": "Desfile de disfraces y IV Descenso de Balsas",
+    "lugar": "Estación"
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "21:30",
+    "evento": "Parrillada popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:30",
+    "evento": "Actuaciones musicales",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:30",
+    "evento": "Romería y verbena con Orquesta Malassia y Macrodiscoteca Kolossal",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:00",
+    "evento": "Misa en honor de los Santos Mártires",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:30",
+    "evento": "Pasacalles por los bares con el Mariachi Real de Jalisco",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "16:30",
+    "evento": "XXXVII Regata Santos Mártires y V Paracanoe",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "21:30",
+    "evento": "Primer pase de la Macrodisco Titanium Show",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "23:30",
+    "evento": "¡Actuación del grupo Recordando los 80",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "21:30",
+    "evento": "Cine de verano: Robot Salvaje",
+    "lugar": "Villa Mercedes"
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "",
+    "evento": "Cierre de fiesta con la Macrodiscoteca Titanium Show",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "640951",
+  "nombre": "Fiestas del Sagrado Corazón",
+  "pueblo": "San Roque de Riomiera",
+  "municipio": "San Roque de Riomiera",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28–29 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.23489,
+  "lng": -3.70214,
+  "descripcion": "Fiestas del Sagrado Corazón en San Roque de Riomiera. 28–29 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/san-roque-de-riomiera/fiestas-del-sagrado-corazon-san-roque-de-riomiera--640951",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "21:00",
+    "evento": "¡Comenzamos! Chupinazo de Inicio de Fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 28",
+    "hora": "22:00",
+    "evento": "Gran Maratón de Flor de 32 parejas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "00:30",
+    "evento": "Baile de la escoba",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "02:00",
+    "evento": "Bingo Sorpresa",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "09:00",
+    "evento": "Chupinazo en Honor al Santo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Misa en honor al Santo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:30",
+    "evento": "Actuación de \"JUSTO GUZPARRAS\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Blanqueo y pinchos en la barra de la comisión",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:00",
+    "evento": "Hinchables y merienda para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:30",
+    "evento": "Concurso de Brisca",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "17:00",
+    "evento": "Partido de fútbol",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "IV Edición de Grand Prix",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:00",
+    "evento": "Romería Amenizada por SAL Y PIMIENTA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:00",
+    "evento": "Barbacoa para todos los asistentes",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "43627",
+  "nombre": "Folclore en todas las estaciones: Miguel Cadavieco",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 agosto – 25 septiembre",
+  "inicio": "2026-08-28",
+  "fin": "2026-09-25",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Folclore en todas las estaciones: Miguel Cadavieco en Santander. 28 agosto – 25 septiembre.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/miguel-cadavieco-protagonista-del-ciclo-folclore-en-todas-las-estaciones",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "19:00",
+    "evento": "UNA TARDE CON NUESTROS COROS",
+    "lugar": "Centro Cívico Juan de Santander"
+   },
+   {
+    "dia": "Vie 25",
+    "hora": "19:00",
+    "evento": "MIGUEL CADAVIECO",
+    "lugar": "Centro Cívico Juan de Santander"
    }
   ]
  },
@@ -27051,56 +32751,14 @@ const FIESTAS = [
    {
     "dia": "Vie 28",
     "hora": "",
-    "evento": "Augurios de Trusila y Silenia",
+    "evento": "Homenaje a los ausentes y entrega de la Tessera",
     "lugar": "Anfiteatro"
    },
    {
     "dia": "Vie 28",
     "hora": "",
-    "evento": "Entrada de los personajes principales",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "",
-    "evento": "Encendido del fuego sagrado",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "",
-    "evento": "Entrega del fuego a tribus y legiones",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "",
-    "evento": "Apertura del templo de Jano",
-    "lugar": "Templo de Jano"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "",
-    "evento": "Noche de Plenilunio",
-    "lugar": "Templo de Jano"
-   },
-   {
-    "dia": "Vie 28",
-    "hora": "",
-    "evento": "photocall de personajes",
-    "lugar": "Ágora"
-   },
-   {
-    "dia": "Sáb 29",
-    "hora": "11:00",
-    "evento": "Ensayo general abierto de la batalla",
-    "lugar": "Ágora"
-   },
-   {
-    "dia": "Sáb 29",
-    "hora": "11:00",
-    "evento": "Concurso de cocina cántabro-romana",
-    "lugar": "campamento asentamiento romano"
+    "evento": "Juegos de adultos en el campamento poblado cántabro",
+    "lugar": "campamento poblado cántabro"
    },
    {
     "dia": "Sáb 29",
@@ -27134,33 +32792,15 @@ const FIESTAS = [
    },
    {
     "dia": "Sáb 29",
-    "hora": "20:00",
-    "evento": "entrada de Augusto",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Sáb 29",
     "hora": "22:00",
     "evento": "Crónica de guerras. Puesta en contexto del acto de la batalla",
     "lugar": "Ágora"
    },
    {
     "dia": "Sáb 29",
-    "hora": "23:00",
-    "evento": "combate cántabro-romano",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Sáb 29",
     "hora": "",
-    "evento": "Noche de Plenilunio",
-    "lugar": "Templo de Jano"
-   },
-   {
-    "dia": "Sáb 29",
-    "hora": "",
-    "evento": "Corocotta reclama su recompensa a Augusto",
-    "lugar": "Anfiteatro"
+    "evento": "Ludi Iuvenales (juegos juveniles)",
+    "lugar": "campamento poblado cántabro"
    },
    {
     "dia": "Dom 30",
@@ -27176,20 +32816,8 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 30",
-    "hora": "12:00",
-    "evento": "presentación de jóvenes festeros",
-    "lugar": "Templo de Jano"
-   },
-   {
-    "dia": "Dom 30",
     "hora": "12:30",
     "evento": "¿Y si fue así?",
-    "lugar": "Tierra Sagrada"
-   },
-   {
-    "dia": "Dom 30",
-    "hora": "13:30",
-    "evento": "demostración de lucha escénica y especialistas",
     "lugar": "Tierra Sagrada"
    },
    {
@@ -27218,75 +32846,15 @@ const FIESTAS = [
    },
    {
     "dia": "Dom 30",
-    "hora": "20:00",
-    "evento": "proclama de la diosa Minerva",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Dom 30",
-    "hora": "",
-    "evento": "Sesión de senado romano infantil",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Dom 30",
-    "hora": "",
-    "evento": "Reunión del consejo de tribus infantil",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Dom 30",
-    "hora": "",
-    "evento": "Imposición de la Corona Castrensis",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Dom 30",
-    "hora": "",
-    "evento": "Cesión de tropas a cargo de Cayo Antistio",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Dom 30",
-    "hora": "",
-    "evento": "Entrega del fuego del hogar",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Dom 30",
     "hora": "",
     "evento": "Boda cántabra",
     "lugar": "Anfiteatro"
    },
    {
-    "dia": "Dom 30",
-    "hora": "",
-    "evento": "Llegada de los esclavos insurrectos (principio de la 2ª guerra)",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Lun 31",
+    "dia": "Mié 2",
     "hora": "17:00",
-    "evento": "Taller infantil textil: «de la fibra a la tela»",
+    "evento": "Taller infantil: del cálamo al papiro",
     "lugar": "Carpa protocolo"
-   },
-   {
-    "dia": "Lun 31",
-    "hora": "18:00",
-    "evento": "Conferencia «Los vadinienses. Un pueblo singular de la Cantabria romana»",
-    "lugar": "Sala Multiusos Espacio Plaza"
-   },
-   {
-    "dia": "Mar 1",
-    "hora": "17:00",
-    "evento": "Taller infantil de bulla romana: «tu amuleto de protección»",
-    "lugar": "Carpa protocolo"
-   },
-   {
-    "dia": "Mar 1",
-    "hora": "20:00",
-    "evento": "Conferencia: «Auxiliares cántabros en el ejército romano»",
-    "lugar": "Sala Multiusos Espacio Plaza"
    },
    {
     "dia": "Mié 2",
@@ -27326,18 +32894,6 @@ const FIESTAS = [
    },
    {
     "dia": "Vie 4",
-    "hora": "20:00",
-    "evento": "Crónica de Guerras. Puesta en contexto del acto del consejo",
-    "lugar": "Ágora"
-   },
-   {
-    "dia": "Vie 4",
-    "hora": "21:00",
-    "evento": "Invocación de Virón a la Diosa Cantabria",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 4",
     "hora": "",
     "evento": "Marcha nocturna de antorchas",
     "lugar": "Anfiteatro"
@@ -27345,38 +32901,8 @@ const FIESTAS = [
    {
     "dia": "Vie 4",
     "hora": "",
-    "evento": "Reunión del consejo de tribus",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 4",
-    "hora": "",
-    "evento": "Llegada de los insurrectos",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 4",
-    "hora": "",
-    "evento": "Proclamación de Corocotta",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 4",
-    "hora": "",
-    "evento": "Aparición de la Diosa Cantabria",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 4",
-    "hora": "",
     "evento": "Devotio cántabra",
     "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Vie 4",
-    "hora": "",
-    "evento": "Photocall con los personajes",
-    "lugar": "Ágora"
    },
    {
     "dia": "Vie 4",
@@ -27398,14 +32924,14 @@ const FIESTAS = [
    },
    {
     "dia": "Sáb 5",
-    "hora": "13:00",
-    "evento": "monólogo sobre la vida romana",
-    "lugar": "Tierra Sagrada"
+    "hora": "17:00",
+    "evento": "XX Certamen Internacional de Lanzamiento de Uva Masculino",
+    "lugar": "campamento asentamiento romano"
    },
    {
     "dia": "Sáb 5",
     "hora": "19:00",
-    "evento": "Crónica de guerras. Puesta en contexto del acto del foro y del Senado",
+    "evento": "Crónica de guerras: contexto del foro y el Senado",
     "lugar": "Ágora"
    },
    {
@@ -27416,14 +32942,14 @@ const FIESTAS = [
    },
    {
     "dia": "Sáb 5",
-    "hora": "22:00",
-    "evento": "Crónica de guerras. Puesta en contexto del acto de la insumisión crucifixión",
-    "lugar": "Ágora"
+    "hora": "23:00",
+    "evento": "Insumisión del pueblo cántabro",
+    "lugar": "Anfiteatro"
    },
    {
     "dia": "Sáb 5",
-    "hora": "23:00",
-    "evento": "Insumisión del pueblo cántabro",
+    "hora": "",
+    "evento": "Sesión del Senado romano y cesión de tropas de Agrippa",
     "lugar": "Anfiteatro"
    },
    {
@@ -27435,26 +32961,8 @@ const FIESTAS = [
    {
     "dia": "Sáb 5",
     "hora": "",
-    "evento": "XV Concurso Internacional de lanzamiento de sandalia femenino",
-    "lugar": "campamento asentamiento romano"
-   },
-   {
-    "dia": "Sáb 5",
-    "hora": "",
     "evento": "VI Concurso de vestimenta",
     "lugar": "templo de Jano"
-   },
-   {
-    "dia": "Sáb 5",
-    "hora": "",
-    "evento": "Lucha de gladiadores",
-    "lugar": "Anfiteatro"
-   },
-   {
-    "dia": "Sáb 5",
-    "hora": "",
-    "evento": "Crucifixión de prisioneros a manos de Agrippa",
-    "lugar": "Anfiteatro"
    },
    {
     "dia": "Sáb 5",
@@ -27669,6 +33177,58 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/24193"
  },
  {
+  "id": "641226",
+  "nombre": "Presentación en directo del podcast «Te la pinto»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 28 de agosto. Lugar: Mecha Estudio. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24250",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "Te la pinto en directo",
+    "lugar": "Mecha"
+   }
+  ]
+ },
+ {
+  "id": "100660",
+  "nombre": "Repande",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Repande en Santander. 28 de agosto. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/20588",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "19:00",
+    "evento": "UNA TARDE CON NUESTROS COROS",
+    "lugar": "Centro Cívico Juan de Santander"
+   }
+  ]
+ },
+ {
   "nombre": "San Agustín y San Emeterio · Liendo",
   "pueblo": "Sopeña",
   "municipio": "Liendo",
@@ -27799,6 +33359,32 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "664905",
+  "nombre": "Teatro «La leyenda de los besos»",
+  "pueblo": "Arnuero",
+  "municipio": "Arnuero",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "28 de agosto",
+  "inicio": "2026-08-28",
+  "fin": "2026-08-28",
+  "tipo": "teatro",
+  "interes": "",
+  "lat": 43.47044,
+  "lng": -3.56161,
+  "descripcion": "Teatro en Arnuero. 28 de agosto.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ecoparquedetrasmiera.com/evento/la-leyenda-de-los-besos-abrego-teatro",
+  "programa": [
+   {
+    "dia": "Vie 28",
+    "hora": "",
+    "evento": "La leyenda de los besos",
+    "lugar": "Arnuero"
+   }
+  ]
+ },
+ {
   "id": "43599",
   "nombre": "Teatro: «Pijama para seis» de Marc Camoletti",
   "pueblo": "Santander",
@@ -27818,11 +33404,71 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Vie 28",
-    "hora": "20:00",
-    "evento": "Teatro «Pijama para seis» de Marc Camoletti",
-    "lugar": "Fundación Caja Cantabria (CASYC)"
+    "hora": "",
+    "evento": "Pijama para seis",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Pijama para seis",
+    "lugar": ""
    }
   ]
+ },
+ {
+  "id": "659275",
+  "nombre": "Campanadas de Fin de Verano",
+  "pueblo": "Rioseco",
+  "municipio": "Guriezo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 de agosto",
+  "inicio": "2026-08-29",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.36405,
+  "lng": -3.31775,
+  "descripcion": "Campanadas de Fin de Verano en Rioseco. 29 de agosto. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/guriezo/campanadas-de-fin-de-verano-rioseco--659275"
+ },
+ {
+  "id": "227649",
+  "nombre": "Campeonato Escolar de Triatlón",
+  "pueblo": "Maliaño",
+  "municipio": "Camargo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 de agosto",
+  "inicio": "2026-08-29",
+  "fin": "2026-08-29",
+  "tipo": "deporte",
+  "interes": "",
+  "lat": 43.41815,
+  "lng": -3.84006,
+  "descripcion": "Evento deportivo en Maliaño. 29 de agosto.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/camargo/campeonato-escolar-de-triatlon-maliano--227649"
+ },
+ {
+  "id": "619628",
+  "nombre": "Chocolatada de fin de fiesta",
+  "pueblo": "Escalante",
+  "municipio": "Escalante",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 de agosto",
+  "inicio": "2026-08-29",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.43742,
+  "lng": -3.51408,
+  "descripcion": "Chocolatada de fin de fiesta en Escalante. 29 de agosto. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/escalante/chocolatada-de-fin-de-fiesta-escalante--619628"
  },
  {
   "id": "492542",
@@ -27920,7 +33566,15 @@ const FIESTAS = [
   "lng": -4.23686,
   "descripcion": "Actividad infantil en Cabezón de la Sal. 29 de agosto. Lugar: Museo de la Naturaleza de Cantabria. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/cabezon-de-la-sal/cuentos-huevos-y-jamon-con-julianini-cabezon-de-la-sal--463775"
+  "fuente": "https://planesparahoy.com/e/cantabria/cabezon-de-la-sal/cuentos-huevos-y-jamon-con-julianini-cabezon-de-la-sal--463775",
+  "programa": [
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Sesión: Cuentos, Huevos y Jamón",
+    "lugar": "Museo de la Naturaleza de Cantabria (Cabezón de la Sal)"
+   }
+  ]
  },
  {
   "id": "519656",
@@ -27965,6 +33619,602 @@ const FIESTAS = [
   "descripcion": "Deporte rural en Villasevil. 29 de agosto.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/santiurde-de-toranzo/deporte-rural-villasevil--550371"
+ },
+ {
+  "id": "663869",
+  "nombre": "Fiestas de Nuestra Sra. del Milagro de Fresnedo",
+  "pueblo": "Solórzano",
+  "municipio": "Solórzano",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 agosto – 9 septiembre",
+  "inicio": "2026-08-29",
+  "fin": "2026-09-09",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.381,
+  "lng": -3.58742,
+  "descripcion": "Fiestas de Nuestra Sra. del Milagro de Fresnedo en Solórzano. 29 agosto – 9 septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/solorzano/fiestas-de-nuestra-sra-del-milagro-de-fresnedo-solorzano--663869",
+  "programa": [
+   {
+    "dia": "Sáb 29",
+    "hora": "14:00",
+    "evento": "IV Edición comida para mayores de 55 años",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "18:30",
+    "evento": "Misa solemne y bajada de la Virgen desde el Santuario de Fresnedo hasta la Iglesia de San Pedro Apóstol",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "02:30",
+    "evento": "III Carrera de calzoncillos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "18:00",
+    "evento": "III Concurso de dibujo infantil en las Antiguas Escuelas",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "20:00",
+    "evento": "Fiesta de la sidra",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "Romería con música de los 2000 en castellano",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "23:00",
+    "evento": "Macrodiscoteca DJ CUCU",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "12:00",
+    "evento": "Bicicletada y ruta por el pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "14:30",
+    "evento": "Hamburguesas para participantes y asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "16:00",
+    "evento": "Concurso Flor y Brisca",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "16:30",
+    "evento": "Fiesta HOLI y fiesta de la espuma",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "00:00",
+    "evento": "Macrodiscoteca DJ ISRA Y PUNTO",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "01:30",
+    "evento": "DJ DAN",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "18:00",
+    "evento": "Misa solemne y subida de la Sagrada Imagen de la Virgen del Milagro",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "21:00",
+    "evento": "Chupinazo e inicio de fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "21:30",
+    "evento": "Chorizada con actuación de LOWE",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "23:00",
+    "evento": "BINGO ESPECIAL",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 7",
+    "hora": "23:30",
+    "evento": "Torneo de fútbolin",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "00:30",
+    "evento": "Gran chocolatada de fin de fiestas",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "10:00",
+    "evento": "Eucaristía en el Santuario de Fresnedo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "12:30",
+    "evento": "Procesión y solemne eucaristía acompañada por el Coro Panchoneras de Laredo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "13:30",
+    "evento": "Blanqueo y pase de los danzantes por el pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "16:00",
+    "evento": "Final del Concurso de Bolos de 1a Categoría Granja Torreón",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "20:00",
+    "evento": "Misa solemne en el Santuario de Fresnedo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "21:00",
+    "evento": "Bocata de panceta",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "21:30",
+    "evento": "Entrega de premios a las promesas deportivas",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "22:00",
+    "evento": "Despedida de los Danzantes en la plaza del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "22:30",
+    "evento": "María Jesús y su Acordeón",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "23:30",
+    "evento": "Grupo Aroma",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "12:30",
+    "evento": "Eucaristía en la Iglesia de San Pedro Apóstol con Coro Regina Coeli de Hazas de Cesto",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "16:00",
+    "evento": "Hinchables para los peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "18:00",
+    "evento": "Taller La plaza es un circo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "20:00",
+    "evento": "Espectáculo LEYENDAS en homenaje a las grandes voces",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "21:00",
+    "evento": "Bocata de lomo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "22:00",
+    "evento": "Romería con la orquesta DOMINÓ",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "23:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 9",
+    "hora": "23:30",
+    "evento": "Verbena con DOMINÓ",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "273972",
+  "nombre": "Fiestas de Rioseco",
+  "pueblo": "Guriezo",
+  "municipio": "Guriezo",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 de agosto",
+  "inicio": "2026-08-29",
+  "fin": "2026-08-29",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.34894,
+  "lng": -3.32611,
+  "descripcion": "Fiestas de Rioseco en Guriezo. 29 de agosto. Con verbenas y bailes, actos religiosos y folclore y tradición.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/guriezo/fiestas-de-rioseco-guriezo--273972",
+  "programa": [
+   {
+    "dia": "Sáb 29",
+    "hora": "12:30",
+    "evento": "Misa Solemne",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:30",
+    "evento": "Chorizada y Pancetada",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "20:00",
+    "evento": "Romería-Verbena amenizada por \"Dj Victor Calvo\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:30",
+    "evento": "Baile de la escoba para los más pequeños",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:30",
+    "evento": "Baile del botijo para los mayores",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "659273",
+  "nombre": "Fiestas de San Ramón Nonato",
+  "pueblo": "Mortera",
+  "municipio": "Piélagos",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29–31 de agosto",
+  "inicio": "2026-08-29",
+  "fin": "2026-08-31",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.44425,
+  "lng": -3.92372,
+  "descripcion": "Fiestas de San Ramón Nonato en Mortera. 29–31 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Comida de hermandad: 5€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/pielagos/fiestas-de-san-ramon-nonato-mortera--659273",
+  "programa": [
+   {
+    "dia": "Sáb 29",
+    "hora": "01:00",
+    "evento": "DJ Diego Ceballos",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "09:00",
+    "evento": "XII Concurso de Ollas Ferroviarias San Ramón",
+    "lugar": "Recinto de fiestas"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "12:00",
+    "evento": "Tradicional mercadillo infantil",
+    "lugar": "Carpa de las fiestas"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "13:00",
+    "evento": "Apertura bar de la fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:00",
+    "evento": "Apertura del recinto de ferias",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "17:00",
+    "evento": "Hinchables y actuación Pequeparty",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:30",
+    "evento": "Reparto de chorizo a la sidra",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "21:45",
+    "evento": "Sorteo realizado por AMARA CANTABRIA",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "22:00",
+    "evento": "Inicio de la romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "23:00",
+    "evento": "QUÓRUM ROCK BAND en directo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:30",
+    "evento": "Sesión Vermut con música en directo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:30",
+    "evento": "Comida de hermandad",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "15:30",
+    "evento": "BINGO a favor de AMARA CANTABRIA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "16:00",
+    "evento": "Tradicional TOBOGÁN ACUÁTICO",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "18:30",
+    "evento": "ESPECTÁCULO DE MAGIA Y HUMOR",
+    "lugar": "Carpa de las fiestas"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Feria Gastronómica DEGUSTA CANTABRIA",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:30",
+    "evento": "Sesión tardeo y fin de fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "09:00",
+    "evento": "Volteo de campanas",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "11:00",
+    "evento": "Entrega de obsequio al primer bebé nacido en la HUMV Valdecilla",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "12:30",
+    "evento": "Misa Solemne en honor de San Ramón Nonato",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "641012",
+  "nombre": "Fiestas de San Vicente Mártir",
+  "pueblo": "Lloreda",
+  "municipio": "Santa María de Cayón",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 agosto – 1 septiembre",
+  "inicio": "2026-08-29",
+  "fin": "2026-09-01",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.29451,
+  "lng": -3.8212,
+  "descripcion": "Fiestas de San Vicente Mártir en Lloreda. 29 agosto – 1 septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos y folclore y tradición. Desde 5 €.",
+  "_fuente_desc": "factual",
+  "fuente": "https://turismodecantabria.com/proximamente-evento/fiesta-de-san-vicente-martir-en-lloreda-2",
+  "programa": [
+   {
+    "dia": "Sáb 29",
+    "hora": "09:45",
+    "evento": "Ruta por el pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "14:30",
+    "evento": "Comida Popular",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "16:00",
+    "evento": "Animación de sobremesa con Charanga Los Ronceros",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "17:30",
+    "evento": "Fiesta de la espuma y pinta caras para los más peques",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "DJ Vayrom",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "19:00",
+    "evento": "DJ Veyrom",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "16:00",
+    "evento": "Pasacalles con cabezudos por los barrios del pueblo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "17:00",
+    "evento": "Juegos infantiles",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "17:30",
+    "evento": "Concurso de parchís",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "18:00",
+    "evento": "Concurso de tartas",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "20:00",
+    "evento": "Actuación del Coro Ronda Valle de Cayón",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "21:30",
+    "evento": "Parrillada para todos los asistentes",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "22:00",
+    "evento": "Bingo",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "22:30",
+    "evento": "Romería y Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "09:00",
+    "evento": "Gran chupinazo y pasacalles con piteros",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "12:00",
+    "evento": "Solemne misa en la Ermita de San Vicente Mártir",
+    "lugar": "Ermita de San Vicente Mártir"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "12:00",
+    "evento": "Solemne misa y degustación de tortillas",
+    "lugar": "Ermita de San Vicente Mártir"
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "17:30",
+    "evento": "Gran desfile de trajes regionales",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "18:15",
+    "evento": "Gran desfile de carrozas tradicionales",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "20:30",
+    "evento": "Comienzo de la Romería con \"Orquesta Malassia\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "21:30",
+    "evento": "Parrillada",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "23:00",
+    "evento": "Bingo y Verbena",
+    "lugar": ""
+   },
+   {
+    "dia": "Mar 1",
+    "hora": "",
+    "evento": "Concurso de Carrozas Tradicionales",
+    "lugar": "Lloreda de Cayón"
+   }
+  ]
  },
  {
   "id": "635498",
@@ -28020,7 +34270,57 @@ const FIESTAS = [
   "lng": -4.05064,
   "descripcion": "Concierto en Torrelavega. 29 de agosto. Lugar: Skatepark Rio Viar.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/torrelavega/garbage-fest-torrelavega--273910"
+  "fuente": "https://planesparahoy.com/e/cantabria/torrelavega/garbage-fest-torrelavega--273910",
+  "programa": [
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Open Skate",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Sub 16",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Best Trick",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Premios",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Concierto: Tifer",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Concierto: Triskelion",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Concierto: Wet Cactus",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   },
+   {
+    "dia": "Sáb 29",
+    "hora": "",
+    "evento": "Concierto: One More Pill",
+    "lugar": "Skatepark Río Viar, Torrelavega"
+   }
+  ]
  },
  {
   "id": "519650",
@@ -28101,6 +34401,24 @@ const FIESTAS = [
   "descripcion": "Parrillada gratuita en Villasevil. 29 de agosto. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/santiurde-de-toranzo/parrillada-gratuita-villasevil--519649"
+ },
+ {
+  "id": "651398",
+  "nombre": "Showcase de Young G Poeta Callejero",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "29 de agosto",
+  "inicio": "2026-08-29",
+  "fin": "2026-08-29",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 29 de agosto. Lugar: Supersonic Discos. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24263"
  },
  {
   "id": "227012",
@@ -28246,7 +34564,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 30 de agosto. Lugar: Rock Beer The New. 10 € anticipada / 15 € taquilla.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/santander/concierto-de-angela-hoodoo-santander--100523"
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/concierto-de-angela-hoodoo-santander--100523",
+  "programa": [
+   {
+    "dia": "Dom 30",
+    "hora": "20:30",
+    "evento": "Concierto de Ángela Hoodoo - Outlaw Girls On The Road Tour 2026",
+    "lugar": "Rock Beer The New, Santander"
+   }
+  ]
  },
  {
   "id": "550373",
@@ -28285,6 +34611,32 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/santiurde-de-toranzo/entrega-de-premios-villasevil--550376"
  },
  {
+  "id": "652024",
+  "nombre": "Espectáculo «El bosque mágico del Trasgu»",
+  "pueblo": "Castillo",
+  "municipio": "Arnuero",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "30 de agosto",
+  "inicio": "2026-08-30",
+  "fin": "2026-08-30",
+  "tipo": "teatro",
+  "interes": "",
+  "lat": 43.45694,
+  "lng": -3.55321,
+  "descripcion": "Teatro en Castillo. 30 de agosto. Lugar: Castillo de Argüeso. General 15 €, infantil (4-10 años) 5 €.",
+  "_fuente_desc": "factual",
+  "fuente": "https://entradium.com/events/el-bosque-magico-del-trasgu",
+  "programa": [
+   {
+    "dia": "Dom 30",
+    "hora": "",
+    "evento": "El bosque mágico del Trasgu, en el castillo de Argüeso",
+    "lugar": "Castillo de Argüeso"
+   }
+  ]
+ },
+ {
   "id": "635274",
   "nombre": "Festival del Tomate",
   "pueblo": "Santa Cruz de Bezana",
@@ -28300,7 +34652,193 @@ const FIESTAS = [
   "lng": -3.90472,
   "descripcion": "Festival del Tomate en Santa Cruz de Bezana. 30 de agosto. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/santa-cruz-de-bezana/festival-del-tomate-santa-cruz-de-bezana--635274"
+  "fuente": "https://aytobezana.com/actualidad/eventos/festival-del-tomate"
+ },
+ {
+  "id": "640996",
+  "nombre": "Fiesta de Interés Turístico Regional",
+  "pueblo": "Val de San Vicente",
+  "municipio": "Val de San Vicente",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "30 de agosto",
+  "inicio": "2026-08-30",
+  "fin": "2026-08-30",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37469,
+  "lng": -4.48772,
+  "descripcion": "Fiesta de Interés Turístico Regional en Val de San Vicente. 30 de agosto.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/val-de-san-vicente/fiesta-de-interes-turistico-regional-val-de-san-vicente--640996",
+  "programa": [
+   {
+    "dia": "Dom 30",
+    "hora": "16:30",
+    "evento": "XXXVII Regata Santos Mártires",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "16:30",
+    "evento": "V Regata Paracanoe",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "379",
+  "nombre": "Fiestas de los Santos Mártires",
+  "pueblo": "San Pedro del Romeral",
+  "municipio": "San Pedro del Romeral",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "30–31 de agosto",
+  "inicio": "2026-08-30",
+  "fin": "2026-08-31",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.11561,
+  "lng": -3.81869,
+  "descripcion": "Fiestas de los Santos Mártires en San Pedro del Romeral. 30–31 de agosto. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "http://sanpedrodelromeral.fr/page29.html",
+  "programa": [
+   {
+    "dia": "Dom 30",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "00:30",
+    "evento": "Orquesta Nueva Banda y Macro Disco Galaxy",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "10:30",
+    "evento": "Homenaje a todas las “Mujeres Lavanderas”",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "11:00",
+    "evento": "Espectáculo ecuestre de doma India",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "12:00",
+    "evento": "Santa misa cantada por el “Dúo Cantata” y procesión de los Santos Mártires",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "13:00",
+    "evento": "Parque infantil para los más atrevidos",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:00",
+    "evento": "Baile vermut con el Dúo Fiesta",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:00",
+    "evento": "Sesión vermut con el “Dúo Cantastur”",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "14:30",
+    "evento": "Degustación de paella",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "18:30",
+    "evento": "Concurso bolo pasiego",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Gran actuación de Ana Rodrigo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "20:00",
+    "evento": "Actuación de Electrocharanga motociclones",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:00",
+    "evento": "Continuamos la fiesta con la grandiosa Orquesta Tango y Macro Disco Galaxy",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "22:00",
+    "evento": "Gran romería con la orquesta “Nueva banda”",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "14:00",
+    "evento": "Sesión Vermouth con Dúo Cantastur",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "20:00",
+    "evento": "Actuación de Electrocharanga Motociclones",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "22:00",
+    "evento": "Gran Romería con Orquesta Nueva Banda",
+    "lugar": ""
+   },
+   {
+    "dia": "Lun 31",
+    "hora": "",
+    "evento": "Fuegos artificiales",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "660425",
+  "nombre": "Memorial Teodoro Ríos de Bolo Palma",
+  "pueblo": "Anievas",
+  "municipio": "Anievas",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "30 de agosto",
+  "inicio": "2026-08-30",
+  "fin": "2026-08-30",
+  "tipo": "deporte",
+  "interes": "",
+  "lat": 43.20261,
+  "lng": -4.00728,
+  "descripcion": "Evento deportivo en Anievas. 30 de agosto. Lugar: Bolera de Barriopalacio. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/anievas/memorial-teodoro-rios-de-bolo-palma-anievas--660425",
+  "programa": [
+   {
+    "dia": "Dom 30",
+    "hora": "17:00",
+    "evento": "Memorial Teodoro Ríos",
+    "lugar": "Bolera de Barriopalacio (Anievas)"
+   }
+  ]
  },
  {
   "id": "243",
@@ -28371,6 +34909,38 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "667054",
+  "nombre": "Visita guiada al Museo de las Espadas",
+  "pueblo": "Limpias",
+  "municipio": "Limpias",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "30 de agosto",
+  "inicio": "2026-08-30",
+  "fin": "2026-08-30",
+  "tipo": "exposiciones",
+  "interes": "",
+  "lat": 43.36131,
+  "lng": -3.42683,
+  "descripcion": "Exposición en Limpias. 30 de agosto. Lugar: Casa de Cultura de Limpias. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://cantabriaorientalrural.es/events/visita-guiada-al-museo-de-las-espadas-limpias",
+  "programa": [
+   {
+    "dia": "Dom 30",
+    "hora": "12:00",
+    "evento": "Visita guiada al Museo de las Espadas",
+    "lugar": "Casa de Cultura de Limpias"
+   },
+   {
+    "dia": "Dom 30",
+    "hora": "",
+    "evento": "Ruta «Natureando en corto»: ría de Rada",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "id": "43601",
   "nombre": "Encuentros magistrales: 150 años de «El anillo del nibelungo»",
   "pueblo": "Santander",
@@ -28393,6 +34963,32 @@ const FIESTAS = [
     "hora": "12:00",
     "evento": "Encuentros magistrales Grandes Músicos: 150 años de \"El anillo del nibelungo\", con Pablo Heras Casado",
     "lugar": "Palacio de la Magdalena"
+   }
+  ]
+ },
+ {
+  "id": "629514",
+  "nombre": "Fuegos artificiales de Noja",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 8,
+  "fecha": "31 de agosto",
+  "inicio": "2026-08-31",
+  "fin": "2026-08-31",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Fuegos artificiales de Noja en Noja. 31 de agosto. Con verbenas y bailes. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/noja/fuegos-artificiales-de-noja--629514",
+  "programa": [
+   {
+    "dia": "Lun 31",
+    "hora": "",
+    "evento": "Verbena con la Orquesta Panorama",
+    "lugar": ""
    }
   ]
  },
@@ -28520,7 +35116,7 @@ const FIESTAS = [
   "interes": "",
   "lat": 43.32921,
   "lng": -3.19249,
-  "descripcion": "Fiestas de San Antolín en Otañes. 2–5 de septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición.",
+  "descripcion": "Fiestas de San Antolín en Otañes. 2–5 de septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Gratis.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/castro-urdiales/fiestas-de-san-antolin-otanes--635280",
   "programa": [
@@ -28757,6 +35353,32 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/23366"
  },
  {
+  "id": "651620",
+  "nombre": "Presentación del libro «Dos poemarios de mirar barroco» de Ramón E. Mandado",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "3 de septiembre",
+  "inicio": "2026-09-03",
+  "fin": "2026-09-03",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 3 de septiembre. Lugar: Ateneo de Santander. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24274",
+  "programa": [
+   {
+    "dia": "Jue 3",
+    "hora": "19:00",
+    "evento": "Presentación del libro: Dos poemarios de mirar barroco",
+    "lugar": "Ateneo de Santander, C/ Gómez Oreña, 5, Santander"
+   }
+  ]
+ },
+ {
   "id": "436242",
   "nombre": "Stand Up. Monólogos de comedia",
   "pueblo": "Santander",
@@ -28809,6 +35431,24 @@ const FIESTAS = [
   "descripcion": "Cine en Castro-Urdiales. 4 de septiembre. Lugar: Plaza. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://planesparahoy.com/e/cantabria/castro-urdiales/cine-de-verano-islares--41135"
+ },
+ {
+  "id": "7",
+  "nombre": "Exposición de Natalia Tomás Segovia",
+  "pueblo": "Villapresente",
+  "municipio": "Reocín",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "4 de septiembre",
+  "inicio": "2026-09-04",
+  "fin": "2026-09-04",
+  "tipo": "exposiciones",
+  "interes": "",
+  "lat": 43.36394,
+  "lng": -4.10529,
+  "descripcion": "Exposición en Villapresente. 4 de septiembre. Lugar: Espacio de Arte Contemporáneo.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ayto-reocin.com/events/programa-de-exposiciones-2026-natalia-tomas-segovia/"
  },
  {
   "id": "274083",
@@ -29040,7 +35680,7 @@ const FIESTAS = [
   "lng": -4.06699,
   "descripcion": "MACELLUM – Mercado Cántabro-Romano en Los Corrales de Buelna. 4–6 de septiembre. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://agendamedieval.com/agenda/macellum-mercado-cantabro-romano-en-los-corrales-de-buelna-cantabria-2026/"
+  "fuente": "https://agendamedieval.com/agenda/macellum-mercado-cantabro-romano-en-los-corrales-de-buelna-cantabria"
  },
  {
   "id": "463788",
@@ -29076,7 +35716,21 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Teatro en Santander. 4–5 de septiembre. Lugar: Fundación Caja Cantabria (CASYC). 28 € anticipada hasta 30/08, 30 € venta normal.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/22773"
+  "fuente": "https://santandercreativa.com/eventos/22773",
+  "programa": [
+   {
+    "dia": "Vie 4",
+    "hora": "",
+    "evento": "Carles Sans: ¡Por fin me voy!",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 5",
+    "hora": "",
+    "evento": "Carles Sans: ¡Por fin me voy!",
+    "lugar": ""
+   }
+  ]
  },
  {
   "id": "482274",
@@ -29174,7 +35828,21 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Evento deportivo en Santander. 5–6 de septiembre. Lugar: Complejo Deportivo Municipal Ruth Beitia.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/santander/24-horas-de-santander--42369"
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/24-horas-de-santander--42369",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "",
+    "evento": "24 Horas de Santander (La prueba de 24 Horas)",
+    "lugar": "Santander"
+   },
+   {
+    "dia": "Dom 6",
+    "hora": "",
+    "evento": "24 Horas de Santander (La prueba de 24 Horas)",
+    "lugar": "Santander"
+   }
+  ]
  },
  {
   "id": "464166",
@@ -29240,9 +35908,17 @@ const FIESTAS = [
   "interes": "",
   "lat": 43.25544,
   "lng": -4.40597,
-  "descripcion": "Carrera Autos Locos en Puentenansa. 5 de septiembre. Entrada gratuita.",
+  "descripcion": "Carrera Autos Locos en Puentenansa. 5 de septiembre. Con deporte y juegos. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/rionansa/carrera-autos-locos-puentenansa--40238"
+  "fuente": "https://planesparahoy.com/e/cantabria/rionansa/carrera-autos-locos-puentenansa--40238",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "11:00",
+    "evento": "Carrera de Autos Locos",
+    "lugar": "Puentenansa"
+   }
+  ]
  },
  {
   "id": "424053",
@@ -29273,6 +35949,114 @@ const FIESTAS = [
     "hora": "12:00",
     "evento": "Claves: Marisol Cuando todo está por comenzar - Poniendo imágenes en palabras",
     "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "657297",
+  "nombre": "Concierto CUBintage",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5–26 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-26",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Concierto en Noja. 5–26 de septiembre. Lugar: Palacio de Albaicín · Noja, C/ de los Pinares, 14. Entrada: 8, Abono ciclo completo: 20.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ayuntamientodenoja.es/portal/evento/las-veladas-del-palacio-cubintage/",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "Concierto de La Solana",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "21:00",
+    "evento": "Concierto de Juan Carmona y Los Cuerdos",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "21:00",
+    "evento": "Las Veladas del Palacio – CUBintage",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "21:00",
+    "evento": "Concierto de CUBintage",
+    "lugar": "Palacio de Albaicín"
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "21:00",
+    "evento": "Tontxu - Las Veladas del Palacio",
+    "lugar": "Palacio de Albaicín, Noja"
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "21:00",
+    "evento": "Concierto de TONTXU",
+    "lugar": "Palacio de Albaicín"
+   }
+  ]
+ },
+ {
+  "id": "640950",
+  "nombre": "Concierto de Cuatro Pesos de Propina",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-05",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 5 de septiembre. Lugar: Sala Rock Beer the New. 15€ anticipada / 20€ taquilla.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24249",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "Concierto de Cuatro Pesos",
+    "lugar": "Rock Beer"
+   }
+  ]
+ },
+ {
+  "id": "657114",
+  "nombre": "Concierto «Las Veladas del Palacio» – Juan Carmona y Los Cuerdos",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-05",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Concierto «Las Veladas del Palacio» – Juan Carmona y Los Cuerdos en Noja. 5 de septiembre. Con verbenas y bailes. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ayuntamientodenoja.es/portal/evento/las-veladas-del-palacio-juan-carmona-y-los-cuerdos/",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "La Solana - Música tradicional y canción de autor",
+    "lugar": "Palacio de Albaicín, Noja"
    }
   ]
  },
@@ -29613,6 +36397,50 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "651382",
+  "nombre": "La Urbana. Breakin’Beach Contest III edición",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-05",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 5 de septiembre. Lugar: Centro Cívico Tabacalera. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24254"
+ },
+ {
+  "id": "646018",
+  "nombre": "Las Veladas del Palacio: «La Solana»",
+  "pueblo": "Noja",
+  "municipio": "Noja",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-05",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.47933,
+  "lng": -3.52053,
+  "descripcion": "Las Veladas del Palacio: «La Solana» en Noja. 5 de septiembre. Con verbenas y bailes. Entrada: 8.",
+  "_fuente_desc": "factual",
+  "fuente": "https://ayuntamientodenoja.es/portal/evento/las-veladas-del-palacio-2026-la-solana/",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "21:00",
+    "evento": "La Solana - Música tradicional y canción de autor",
+    "lugar": "Palacio de Albaicín, Noja"
+   }
+  ]
+ },
+ {
   "id": "622794",
   "nombre": "Taller «Claves»",
   "pueblo": "Santander",
@@ -29649,32 +36477,6 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/el-ex-producida-y-dirigida-por-edy-asenjo-4d5d39e6-4f4d-4f10-a54c-27a6744c5519"
  },
  {
-  "id": "33987",
-  "nombre": "Tributo a Iron Maiden",
-  "pueblo": "Santander",
-  "municipio": "Santander",
-  "comarca": "",
-  "mes": 9,
-  "fecha": "5 de septiembre",
-  "inicio": "2026-09-05",
-  "fin": "2026-09-05",
-  "tipo": "conciertos",
-  "interes": "",
-  "lat": 43.46234,
-  "lng": -3.80999,
-  "descripcion": "Concierto en Santander. 5 de septiembre. Lugar: Escenario Santander. 12.",
-  "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/santuario-banda-tributo-a-iron-maiden",
-  "programa": [
-   {
-    "dia": "Sáb 5",
-    "hora": "21:30",
-    "evento": "Santuario, banda tributo a Iron Maiden",
-    "lugar": "Escenario Santander"
-   }
-  ]
- },
- {
   "id": "434095",
   "nombre": "XX Certamen Internacional de Lanzamiento de Uva Masculino",
   "pueblo": "Cabezón de la Sal",
@@ -29703,6 +36505,32 @@ const FIESTAS = [
     "hora": "",
     "evento": "VI Concurso de vestimenta",
     "lugar": "templo de Jano"
+   }
+  ]
+ },
+ {
+  "id": "599319",
+  "nombre": "«Cielos»: tributo a Supertramp y Electric Light Orchestra en el Castillo de Argüeso",
+  "pueblo": "Castillo",
+  "municipio": "Arnuero",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "5 de septiembre",
+  "inicio": "2026-09-05",
+  "fin": "2026-09-05",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.45694,
+  "lng": -3.55321,
+  "descripcion": "Concierto en Castillo. 5 de septiembre. Lugar: Hermandad Campoo de Suso. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://turismodecantabria.com/proximamente-evento/musica-en-directo-bajo-las-estrellas-en-el-castillo-de-argueso/",
+  "programa": [
+   {
+    "dia": "Sáb 5",
+    "hora": "19:30",
+    "evento": "CIELOS: tributo a Supertramp y Electric Light Orchestra",
+    "lugar": "Castillo de Argüeso"
    }
   ]
  },
@@ -29740,7 +36568,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 6 de septiembre. Lugar: Bar Rvbicón. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/jam-jazz-en-el-rvbicon-a3ccb521-744f-4070-9834-39e623446dcd"
+  "fuente": "https://santandercreativa.com/eventos/jam-jazz-en-el-rvbicon-a3ccb521-744f-4070-9834-39e623446dcd",
+  "programa": [
+   {
+    "dia": "Dom 6",
+    "hora": "",
+    "evento": "Jam Jazz",
+    "lugar": "Rvbicón"
+   }
+  ]
  },
  {
   "id": "42172",
@@ -29758,7 +36594,15 @@ const FIESTAS = [
   "lng": -3.52053,
   "descripcion": "Evento deportivo en Noja. 6 de septiembre. Lugar: Playa de Ris.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/noja/noja-race-ris-2026-noja--42172"
+  "fuente": "https://planesparahoy.com/e/cantabria/noja/noja-race-ris-2026-noja--42172",
+  "programa": [
+   {
+    "dia": "Dom 6",
+    "hora": "",
+    "evento": "Noja Race Ris 2026 - Carrera de Obstáculos",
+    "lugar": "Playa de Ris, Noja"
+   }
+  ]
  },
  {
   "id": "33480",
@@ -29776,7 +36620,91 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 6 de septiembre. Lugar: Gran Hotel Sardinero. 26.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/santander/tributo-a-hans-zimmer-santander--33480"
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/tributo-a-hans-zimmer-santander--33480",
+  "programa": [
+   {
+    "dia": "Dom 6",
+    "hora": "",
+    "evento": "Candlelight: Tributo a Hans Zimmer",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "33987",
+  "nombre": "Tributo a Iron Maiden",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "6 de septiembre",
+  "inicio": "2026-09-06",
+  "fin": "2026-09-06",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 6 de septiembre. Lugar: Escenario Santander. 12.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/santuario-banda-tributo-a-iron-maiden",
+  "programa": [
+   {
+    "dia": "Dom 6",
+    "hora": "21:30",
+    "evento": "Santuaria - Banda Tributo a Iron Maiden",
+    "lugar": "Escenario Santander"
+   }
+  ]
+ },
+ {
+  "id": "43635",
+  "nombre": "Conferencia «Rosario de Velasco»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "7 septiembre – 30 octubre",
+  "inicio": "2026-09-07",
+  "fin": "2026-10-30",
+  "tipo": "exposiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Exposición en Santander. 7 septiembre – 30 octubre.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/arte-en-madrazo-sesion-dedicada-a-rosario-de-velasco",
+  "programa": [
+   {
+    "dia": "Lun 7",
+    "hora": "19:00",
+    "evento": "Holbein y \"Los embajadores\"",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   },
+   {
+    "dia": "Lun 28",
+    "hora": "19:00",
+    "evento": "Ingres y las odaliscas",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   },
+   {
+    "dia": "Lun 5",
+    "hora": "19:00",
+    "evento": "Clásicos y modernos en la colección BBVA",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   },
+   {
+    "dia": "Lun 26",
+    "hora": "19:00",
+    "evento": "Mengs y el ideal neoclásico",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   },
+   {
+    "dia": "Vie 30",
+    "hora": "19:00",
+    "evento": "Rosario de Velasco",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   }
+  ]
  },
  {
   "id": "43147",
@@ -29853,10 +36781,10 @@ const FIESTAS = [
   ]
  },
  {
-  "id": "100516",
-  "nombre": "Concierto Flamin Groovies",
-  "pueblo": "Liérganes",
-  "municipio": "Liérganes",
+  "id": "640987",
+  "nombre": "Concierto de The Birras",
+  "pueblo": "Piélagos",
+  "municipio": "Piélagos",
   "comarca": "",
   "mes": 9,
   "fecha": "8 de septiembre",
@@ -29864,11 +36792,63 @@ const FIESTAS = [
   "fin": "2026-09-08",
   "tipo": "conciertos",
   "interes": "",
-  "lat": 43.34494,
-  "lng": -3.74564,
-  "descripcion": "Concierto en Liérganes. 8 de septiembre. Lugar: Los Picos.",
+  "lat": 43.35606,
+  "lng": -3.95658,
+  "descripcion": "Concierto en Piélagos. 8 de septiembre. Lugar: El Varuko.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/lierganes/concierto-flamin-groovies-lierganes--100516"
+  "fuente": "https://planesparahoy.com/e/cantabria/pielagos/concierto-de-the-birras-pielagos--640987",
+  "programa": [
+   {
+    "dia": "Mar 8",
+    "hora": "16:30",
+    "evento": "The Birras en desconcierto",
+    "lugar": ""
+   }
+  ]
+ },
+ {
+  "id": "660426",
+  "nombre": "Concurso de ollas ferroviarias",
+  "pueblo": "Liaño",
+  "municipio": "Villaescusa",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "8 de septiembre",
+  "inicio": "2026-09-08",
+  "fin": "2026-09-08",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.37987,
+  "lng": -3.84182,
+  "descripcion": "Concurso de ollas ferroviarias en Liaño. 8 de septiembre. Con comida popular y deporte y juegos. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/villaescusa/concurso-de-ollas-ferroviarias-liano--660426",
+  "programa": [
+   {
+    "dia": "Mar 8",
+    "hora": "09:30",
+    "evento": "Presentación de ollas a concurso",
+    "lugar": "Plaza La Posta, Socabarga"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "14:00",
+    "evento": "Degustación del jurado del concurso de ollas ferroviarias",
+    "lugar": "Plaza La Posta, Socabarga"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "14:30",
+    "evento": "Entrega de premios del concurso de ollas ferroviarias",
+    "lugar": "Escenario de las fiestas"
+   },
+   {
+    "dia": "Mar 8",
+    "hora": "15:00",
+    "evento": "Reparto de raciones de paella mixta",
+    "lugar": "Plaza La Posta, Socabarga"
+   }
+  ]
  },
  {
   "nombre": "La Virgen de Gracia · Liendo",
@@ -29966,7 +36946,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 10 de septiembre. Lugar: Escenario Santander. 25 €.",
   "_fuente_desc": "factual",
-  "fuente": "https://escenariosantander.com/eventos/stone-foundation/"
+  "fuente": "https://escenariosantander.com/eventos/stone-foundation/",
+  "programa": [
+   {
+    "dia": "Jue 10",
+    "hora": "20:30",
+    "evento": "Stone Foundation - Tour 2026 + DJ Rock Night",
+    "lugar": "Escenario Santander"
+   }
+  ]
  },
  {
   "id": "583685",
@@ -30038,7 +37026,33 @@ const FIESTAS = [
   "lng": -4.40186,
   "descripcion": "Evento deportivo en San Vicente de la Barquera. 11 de septiembre. Lugar: Bolera Municipal El Parque. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/san-vicente-de-la-barquera/concurso-de-bolos-san-vicente-de-la-barquera--171"
+  "fuente": "https://planesparahoy.com/e/cantabria/san-vicente-de-la-barquera/concurso-de-bolos-san-vicente-de-la-barquera--171",
+  "programa": [
+   {
+    "dia": "Vie 11",
+    "hora": "",
+    "evento": "Concurso de Bolos (Final) - 1ª Categoría Individual",
+    "lugar": "Municipal El Parque-San Vicente de la Barquera"
+   }
+  ]
+ },
+ {
+  "id": "33972",
+  "nombre": "El RODEO",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "11 de septiembre",
+  "inicio": "2026-09-11",
+  "fin": "2026-09-11",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 11 de septiembre. Lugar: Escenario Santander. 20€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/el-rodeo-santander--33972"
  },
  {
   "id": "42879",
@@ -30085,8 +37099,8 @@ const FIESTAS = [
    {
     "dia": "Sáb 12",
     "hora": "19:30",
-    "evento": "El Rodeo Festival: No Los Angeles, Delta Blues Riders y Adam Simons",
-    "lugar": "Escenario Santander"
+    "evento": "Delta Blues Riders",
+    "lugar": ""
    }
   ]
  },
@@ -30119,6 +37133,86 @@ const FIESTAS = [
     "hora": "22:00",
     "evento": "Concierto de Nando Agüeros",
     "lugar": "Campo de Fútbol de Molledo"
+   }
+  ]
+ },
+ {
+  "id": "33957",
+  "nombre": "Luke Winslow-King",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "11–26 de septiembre",
+  "inicio": "2026-09-11",
+  "fin": "2026-09-26",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 11–26 de septiembre. Lugar: Little Bobby Speakeasy. 15.4.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santander/luke-winslow-king-santander--33957",
+  "programa": [
+   {
+    "dia": "Vie 11",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Herent, BE"
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Logroño, ES"
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Getxo, ES"
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Segovia, ES"
+   },
+   {
+    "dia": "Lun 21",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Santander, ES"
+   },
+   {
+    "dia": "Mar 22",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Barcelona, ES"
+   },
+   {
+    "dia": "Mié 23",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Zaragoza, ES"
+   },
+   {
+    "dia": "Jue 24",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Sevilla, ES"
+   },
+   {
+    "dia": "Vie 25",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Valencia, ES"
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "",
+    "evento": "Luke Winslow-King - Coast of Light Tour",
+    "lugar": "Madrid, ES"
    }
   ]
  },
@@ -30185,6 +37279,190 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "651381",
+  "nombre": "XVI Festival Internacional de la Magia y lo Visual",
+  "pueblo": "Camargo",
+  "municipio": "Camargo",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "11–13 de septiembre",
+  "inicio": "2026-09-11",
+  "fin": "2026-09-13",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.42353,
+  "lng": -3.85508,
+  "descripcion": "XVI Festival Internacional de la Magia y lo Visual en Camargo. 11–13 de septiembre. Con actividades infantiles. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/camargo/xvi-festival-internacional-de-la-magia-y-lo-visual-camargo--651381",
+  "programa": [
+   {
+    "dia": "Vie 11",
+    "hora": "21:00",
+    "evento": "Raúl Alegría",
+    "lugar": "Plaza de la Constitución"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "12:00",
+    "evento": "Mino y Arthur",
+    "lugar": "Calle Constitución"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "13:30",
+    "evento": "Carlos Adriano",
+    "lugar": "Plaza de la Constitución"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "17:00",
+    "evento": "Boto Botones y Mandy Mandona",
+    "lugar": "Teatro Raúl Alegría (Calle Mies de San Juan, 9 Nave)"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "18:30",
+    "evento": "Daba y Cielo",
+    "lugar": "Parque Fombellida / Parque de Cros"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "20:00",
+    "evento": "Gonza Martini",
+    "lugar": "Plaza de la Constitución"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "21:30",
+    "evento": "Gala Internacional Magia de Escena",
+    "lugar": "Teatro Raúl Alegría (Calle Mies de San Juan, Nave Camargo)"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "12:00",
+    "evento": "Carlos Adriano",
+    "lugar": "Plaza de la Constitución"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "13:30",
+    "evento": "Boto Botones y Mandy Mandona",
+    "lugar": "Parque Fombellida / Parque de Cros"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "17:00",
+    "evento": "Mino y Arthur",
+    "lugar": "Teatro Raúl Alegría (Calle Mies de San Juan, 9 Nave)"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "18:30",
+    "evento": "Daba y Cielo",
+    "lugar": "Calle Constitución"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "20:00",
+    "evento": "Gonza Martini",
+    "lugar": "Plaza de la Constitución"
+   }
+  ]
+ },
+ {
+  "id": "641023",
+  "nombre": "XXIX Festival Intercéltico de Orejo",
+  "pueblo": "Marina de Cudeyo",
+  "municipio": "Marina de Cudeyo",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "11–13 de septiembre",
+  "inicio": "2026-09-11",
+  "fin": "2026-09-13",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.4016,
+  "lng": -3.73604,
+  "descripcion": "XXIX Festival Intercéltico de Orejo en Marina de Cudeyo. 11–13 de septiembre. Con verbenas y bailes. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/marina-de-cudeyo/xxix-festival-interceltico-de-orejo--641023",
+  "programa": [
+   {
+    "dia": "Vie 11",
+    "hora": "17:00",
+    "evento": "DJ.",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Vie 11",
+    "hora": "18:00",
+    "evento": "TUDANCA FOLK CANTABRIA",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Vie 11",
+    "hora": "21:30",
+    "evento": "JUAN SAIZ TAÑEDOR",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "12:00",
+    "evento": "DJ.",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "13:30",
+    "evento": "XABI ABURRUZAGA",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "17:30",
+    "evento": "MOSQUERA CELTIC BAND",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "22:00",
+    "evento": "NANDO AGÜEROS",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "11:00",
+    "evento": "CORO RONDA DE VALLE DE CAMARGO",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "11:45",
+    "evento": "ASOCIACIÓN SOCIOCULTURAL NADIYA",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "14:30",
+    "evento": "ANA BELÉN",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "18:00",
+    "evento": "ÓSCAR IBÁÑEZ & TRIBO",
+    "lugar": "Orejo"
+   },
+   {
+    "dia": "Dom 13",
+    "hora": "21:30",
+    "evento": "BRAS RODRIGO",
+    "lugar": "Orejo"
+   }
+  ]
+ },
+ {
   "id": "563796",
   "nombre": "Concierto: El Desván presenta «La suerte también sangra»",
   "pueblo": "Santander",
@@ -30200,7 +37478,59 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 12 de septiembre. Lugar: Sala Rock Beer the New. 12,48€ anticipada.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/el-desvan-presenta-en-santander-su-tercer-disco-la-suerte-tambien-sangra"
+  "fuente": "https://santandercreativa.com/eventos/el-desvan-presenta-en-santander-su-tercer-disco-la-suerte-tambien-sangra",
+  "programa": [
+   {
+    "dia": "Sáb 12",
+    "hora": "21:00",
+    "evento": "El Desván",
+    "lugar": "Rock Beer The New"
+   }
+  ]
+ },
+ {
+  "id": "641530",
+  "nombre": "Día a Jorra",
+  "pueblo": "Puente San Miguel",
+  "municipio": "Reocín",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "12 de septiembre",
+  "inicio": "2026-09-12",
+  "fin": "2026-09-12",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.35969,
+  "lng": -4.08725,
+  "descripcion": "Día a Jorra en Puente San Miguel. 12 de septiembre. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/reocin/dia-a-jorra-puente-san-miguel--641530",
+  "programa": [
+   {
+    "dia": "Sáb 12",
+    "hora": "12:30",
+    "evento": "banduca Brañajana",
+    "lugar": "Auditorio del Parque de La Robleda de Puente San Miguel"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "13:30",
+    "evento": "Coro ronda Salines",
+    "lugar": "Auditorio del Parque de La Robleda de Puente San Miguel"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "20:00",
+    "evento": "actuación de Álvaro Fernández y Puri Díaz",
+    "lugar": "Auditorio del Parque de La Robleda de Puente San Miguel"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "21:00",
+    "evento": "Banduca L'Ábrigu",
+    "lugar": "Auditorio del Parque de La Robleda de Puente San Miguel"
+   }
+  ]
  },
  {
   "id": "463776",
@@ -30218,7 +37548,15 @@ const FIESTAS = [
   "lng": -4.23686,
   "descripcion": "Teatro en Cabezón de la Sal. 12 de septiembre. Lugar: Museo de la Naturaleza de Cantabria. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/cabezon-de-la-sal/efecto-mariposa-experiencia-teatralizada-con-cuenturaleza-cabezon-de-la-sal--463776"
+  "fuente": "https://planesparahoy.com/e/cantabria/cabezon-de-la-sal/efecto-mariposa-experiencia-teatralizada-con-cuenturaleza-cabezon-de-la-sal--463776",
+  "programa": [
+   {
+    "dia": "Sáb 12",
+    "hora": "12:00",
+    "evento": "Efecto Mariposa - Experiencia Teatralizada",
+    "lugar": "Museo de la Naturaleza de Cantabria, Cabezón de la Sal"
+   }
+  ]
  },
  {
   "id": "33469",
@@ -30239,6 +37577,50 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/santander/el-desvan-santander--33469"
  },
  {
+  "id": "100335",
+  "nombre": "Encuentros en el Puerto de Santander",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "12 septiembre – 12 diciembre",
+  "inicio": "2026-09-12",
+  "fin": "2026-12-12",
+  "tipo": "tradiciones",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Programa cultural de larga duración en el puerto de Santander, con actividades que se extienden de agosto a diciembre.",
+  "_fuente_desc": "ia",
+  "fuente": "https://x.com/DescubreCantabr",
+  "programa": [
+   {
+    "dia": "Sáb 12",
+    "hora": "11:00",
+    "evento": "Encuentros en el puerto Santander 2026",
+    "lugar": "Museo Maritimo de Santander"
+   },
+   {
+    "dia": "Sáb 10",
+    "hora": "11:00",
+    "evento": "Encuentros en el puerto Santander 2026",
+    "lugar": "Museo Maritimo de Santander"
+   },
+   {
+    "dia": "Sáb 14",
+    "hora": "11:00",
+    "evento": "Encuentros en el puerto Santander 2026",
+    "lugar": "Museo Maritimo de Santander"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "11:00",
+    "evento": "Encuentros en el puerto Santander 2026",
+    "lugar": "Museo Maritimo de Santander"
+   }
+  ]
+ },
+ {
   "id": "628630",
   "nombre": "III Cigüeños Folk Sobrepeña de Ebro",
   "pueblo": "Tudanca",
@@ -30252,9 +37634,47 @@ const FIESTAS = [
   "interes": "",
   "lat": 43.16206,
   "lng": -4.37158,
-  "descripcion": "III Cigüeños Folk Sobrepeña de Ebro en Tudanca. 12 de septiembre.",
+  "descripcion": "III Cigüeños Folk Sobrepeña de Ebro en Tudanca. 12 de septiembre. Con verbenas y bailes y deporte y juegos.",
   "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/tudanca/iii-ciguenos-folk-sobrepena-de-ebro-tudanca--628630"
+  "fuente": "https://planesparahoy.com/e/cantabria/tudanca/iii-ciguenos-folk-sobrepena-de-ebro-tudanca--628630",
+  "programa": [
+   {
+    "dia": "Sáb 12",
+    "hora": "00:00",
+    "evento": "Concierto de NEL TARDÍU",
+    "lugar": "Sobrepeña de Ebro (Valderredible)"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "18:00",
+    "evento": "BurbuGEA",
+    "lugar": "Sobrepeña de Ebro (Valderredible)"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "19:00",
+    "evento": "Juegos tradicionales Cantabria",
+    "lugar": "Sobrepeña de Ebro (Valderredible)"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "20:00",
+    "evento": "Concierto de BALADANS",
+    "lugar": "Sobrepeña de Ebro (Valderredible)"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "22:00",
+    "evento": "Concierto de TUDANCA",
+    "lugar": "Sobrepeña de Ebro (Valderredible)"
+   },
+   {
+    "dia": "Sáb 12",
+    "hora": "",
+    "evento": "BINGO",
+    "lugar": "Sobrepeña de Ebro (Valderredible)"
+   }
+  ]
  },
  {
   "nombre": "La Gran Marmitada · Santoña",
@@ -30414,7 +37834,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 14 de septiembre. Lugar: El Almacén de Little Bobby. 12€ anticipada / 15€ taquilla.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/fiesta-anos-80-con-escuela-de-calor-3191dde1-f1e9-420a-9f40-ceef01107536"
+  "fuente": "https://santandercreativa.com/eventos/fiesta-anos-80-con-escuela-de-calor-3191dde1-f1e9-420a-9f40-ceef01107536",
+  "programa": [
+   {
+    "dia": "Lun 14",
+    "hora": "20:00",
+    "evento": "Escuela de Calor - Fiestón Años 80!!",
+    "lugar": "El Almacén de Little Bobby, Santander"
+   }
+  ]
  },
  {
   "id": "532096",
@@ -30471,6 +37899,176 @@ const FIESTAS = [
   "fuente": "https://planesparahoy.com/e/cantabria/escalante/romeria-escalante--463747"
  },
  {
+  "id": "664608",
+  "nombre": "Fiestas de San Cipriano",
+  "pueblo": "Bárcena de Cicero",
+  "municipio": "Bárcena de Cicero",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "15–26 de septiembre",
+  "inicio": "2026-09-15",
+  "fin": "2026-09-26",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.42461,
+  "lng": -3.52292,
+  "descripcion": "Fiestas de San Cipriano en Bárcena de Cicero. 15–26 de septiembre. Con verbenas y bailes, actos religiosos, comida popular, actividades infantiles, deporte y juegos, fuegos y pirotecnia y folclore y tradición. Gratis.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/barcena-de-cicero/fiestas-de-san-cipriano-barcena-de-cicero--664608",
+  "programa": [
+   {
+    "dia": "Mar 15",
+    "hora": "18:00",
+    "evento": "Campeonato de Brisca",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 16",
+    "hora": "12:00",
+    "evento": "Santa Misa con procesión del Santo",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 16",
+    "hora": "13:00",
+    "evento": "Degustación de blancos del municipio con octavillo de anchoas",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Mié 16",
+    "hora": "19:00",
+    "evento": "Concurso de Dados",
+    "lugar": ""
+   },
+   {
+    "dia": "Mié 16",
+    "hora": "20:30",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 17",
+    "hora": "14:30",
+    "evento": "Comida homenaje a nuestros mayores",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 17",
+    "hora": "17:00",
+    "evento": "Actuación de los Hermanos Cosío",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "20:30",
+    "evento": "Tardeo en la plaza del pueblo",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "21:30",
+    "evento": "Actuación del Grupo Pop Rock Cacho",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "22:00",
+    "evento": "Fiesta de la Cerveza",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "22:45",
+    "evento": "Actuación de los DJ Borja Setién, Kpi DJ y DJ Teky",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "00:00",
+    "evento": "Fuegos artificiales",
+    "lugar": "Puente de Treto"
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "00:30",
+    "evento": "Actuación de Rebeca",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "12:30",
+    "evento": "Súper Día Infantil",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "16:00",
+    "evento": "Continuación del Día Infantil + taller",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "19:00",
+    "evento": "Actuación infantil",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "22:00",
+    "evento": "Romería",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "09:00",
+    "evento": "XIV edición del Trail Puente de Treto",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "12:00",
+    "evento": "Santa Misa con procesión del Santo",
+    "lugar": ""
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "13:00",
+    "evento": "Blanqueo con degustación de jamón cortado a cuchillo",
+    "lugar": "plaza del pueblo"
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "18:00",
+    "evento": "Todos los peques sin móvil en la plaza",
+    "lugar": "plaza"
+   },
+   {
+    "dia": "Dom 20",
+    "hora": "20:00",
+    "evento": "Romería larga",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "10:00",
+    "evento": "Mercado agroalimentario de productores de Cantabria \"Sabe a Norte\"",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "12:30",
+    "evento": "Animación del mercado y exhibición de deporte rural con música",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "20:30",
+    "evento": "Fin del mercado agroalimentario y sorteo de una cesta de productos",
+    "lugar": ""
+   }
+  ]
+ },
+ {
   "nombre": "La Bien Aparecida",
   "pueblo": "Santuario (Marrón)",
   "municipio": "Ampuero",
@@ -30489,28 +38087,34 @@ const FIESTAS = [
   "id": "clasica:la-bien-aparecida-santuario-marron"
  },
  {
-  "id": "583680",
-  "nombre": "Taller Método de Feedback Das Arts",
+  "id": "42704",
+  "nombre": "Charla «Carlos Salomón» con Alberto Santamaría",
   "pueblo": "Santander",
   "municipio": "Santander",
   "comarca": "",
   "mes": 9,
-  "fecha": "15 de septiembre",
-  "inicio": "2026-09-15",
-  "fin": "2026-09-15",
-  "tipo": "teatro",
+  "fecha": "16 septiembre – 14 octubre",
+  "inicio": "2026-09-16",
+  "fin": "2026-10-14",
+  "tipo": "charlas y talleres",
   "interes": "",
   "lat": 43.46234,
   "lng": -3.80999,
-  "descripcion": "Teatro en Santander. 15 de septiembre. Lugar: Café de las Artes Teatro. Entrada gratuita.",
+  "descripcion": "Charla o taller en Santander. 16 septiembre – 14 octubre. Lugar: Centro Cultural Doctor Madrazo. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/24187",
+  "fuente": "https://santandercreativa.com/eventos/alberto-santamaria-cierra-la-palabra-habitada-con-una-charla-sobre-carlos-salomon",
   "programa": [
    {
-    "dia": "Mar 15",
-    "hora": "19:00",
-    "evento": "Sesión práctica de Rata Fría",
-    "lugar": ""
+    "dia": "Mié 16",
+    "hora": "19:30",
+    "evento": "Baldomero Fernández Moreno",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   },
+   {
+    "dia": "Mié 14",
+    "hora": "19:30",
+    "evento": "Rafael Gutiérrez Colomer",
+    "lugar": "Centro Cultural Doctor Madrazo"
    }
   ]
  },
@@ -30541,22 +38145,74 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "43643",
+  "nombre": "Conferencia «Fray Antonio de Guevara»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "16 septiembre – 14 octubre",
+  "inicio": "2026-09-16",
+  "fin": "2026-10-14",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 16 septiembre – 14 octubre.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/la-palabra-habitada-conferencia-de-juan-jose-prior-sobre-fray-antonio-de-guevara",
+  "programa": [
+   {
+    "dia": "Mié 16",
+    "hora": "19:30",
+    "evento": "Baldomero Fernández Moreno",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   },
+   {
+    "dia": "Mié 14",
+    "hora": "19:30",
+    "evento": "Rafael Gutiérrez Colomer",
+    "lugar": "Centro Cultural Doctor Madrazo"
+   }
+  ]
+ },
+ {
   "id": "43619",
   "nombre": "Criar con amabilidad y firmeza a la vez ¿Es posible?",
   "pueblo": "Santander",
   "municipio": "Santander",
   "comarca": "",
   "mes": 9,
-  "fecha": "17 de septiembre",
+  "fecha": "17 septiembre – 8 octubre",
   "inicio": "2026-09-17",
-  "fin": "2026-09-17",
+  "fin": "2026-10-08",
   "tipo": "charlas y talleres",
   "interes": "",
   "lat": 43.46234,
   "lng": -3.80999,
-  "descripcion": "Charla o taller en Santander. 17 de septiembre. Lugar: Centro Cívico Tabacalera. Entrada gratuita.",
+  "descripcion": "Charla o taller en Santander. 17 septiembre – 8 octubre. Lugar: Centro Cívico Tabacalera. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/criar-con-amabilidad-y-firmeza-a-la-vez-es-posible-por-maria-del-carmen-herrera"
+  "fuente": "https://santandercreativa.com/eventos/criar-con-amabilidad-y-firmeza-a-la-vez-es-posible-por-maria-del-carmen-herrera",
+  "programa": [
+   {
+    "dia": "Jue 17",
+    "hora": "19:00",
+    "evento": "Criar con amabilidad y firmeza a la vez ¿es posible?",
+    "lugar": "Centro Cívico Tabacalera"
+   },
+   {
+    "dia": "Jue 17",
+    "hora": "19:00",
+    "evento": "Empatía: Criar con amabilidad y firmeza ¿al alcance es posible?",
+    "lugar": ""
+   },
+   {
+    "dia": "Jue 8",
+    "hora": "19:00",
+    "evento": "Comunicar con emoción",
+    "lugar": "Centro Cívico Tabacalera"
+   }
+  ]
  },
  {
   "id": "533832",
@@ -30574,7 +38230,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Charla o taller en Santander. 17 de septiembre. Lugar: Escena La Clave. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/jornada-de-puertas-abiertas-en-escena-la-clave"
+  "fuente": "https://santandercreativa.com/eventos/jornada-de-puertas-abiertas-en-escena-la-clave",
+  "programa": [
+   {
+    "dia": "Jue 17",
+    "hora": "19:00",
+    "evento": "Inauguración - Puertas Abiertas Escena La Clave",
+    "lugar": "Escena La Clave (C/ Miguel Unamuno s/n, Santander)"
+   }
+  ]
  },
  {
   "id": "635579",
@@ -30648,7 +38312,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 18 de septiembre. Lugar: Palacio de Festivales de Cantabria. Desde 11€.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/un-viaje-de-la-cumbre-vienesa-al-genio-de-arriaga-con-el-quatuor-mosaiques"
+  "fuente": "https://santandercreativa.com/eventos/un-viaje-de-la-cumbre-vienesa-al-genio-de-arriaga-con-el-quatuor-mosaiques",
+  "programa": [
+   {
+    "dia": "Vie 18",
+    "hora": "19:30",
+    "evento": "\"Un viaje de la cumbre vienesa al genio de Arriaga\" con el Quatuor Mosaïques",
+    "lugar": "Palacio de Festivales de Cantabria"
+   }
+  ]
  },
  {
   "id": "436230",
@@ -30670,8 +38342,8 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Vie 18",
-    "hora": "22:00",
-    "evento": "Concierto de Gloosito",
+    "hora": "23:00",
+    "evento": "Gloosito",
     "lugar": "Sala Kaya"
    }
   ]
@@ -30710,7 +38382,47 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 18 de septiembre. Lugar: Centro Cultural y Biblioteca Fernando Ateca. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/recital-musical-tarde-de-canto-con-en-canto"
+  "fuente": "https://santandercreativa.com/eventos/recital-musical-tarde-de-canto-con-en-canto",
+  "programa": [
+   {
+    "dia": "Vie 18",
+    "hora": "19:00",
+    "evento": "Recital: Tarde de canto con en-canto",
+    "lugar": "Centro Cultural Fernando Ateca"
+   }
+  ]
+ },
+ {
+  "id": "659284",
+  "nombre": "Sancibrián 90s",
+  "pueblo": "Santa Cruz de Bezana",
+  "municipio": "Santa Cruz de Bezana",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "18 de septiembre",
+  "inicio": "2026-09-18",
+  "fin": "2026-09-18",
+  "tipo": "fiestas",
+  "interes": "",
+  "lat": 43.44044,
+  "lng": -3.90472,
+  "descripcion": "Sancibrián 90s en Santa Cruz de Bezana. 18 de septiembre. Con verbenas y bailes.",
+  "_fuente_desc": "factual",
+  "fuente": "https://planesparahoy.com/e/cantabria/santa-cruz-de-bezana/sancibrian-90s-santa-cruz-de-bezana--659284",
+  "programa": [
+   {
+    "dia": "Vie 18",
+    "hora": "21:00",
+    "evento": "Sesión de DJ Cheda",
+    "lugar": ""
+   },
+   {
+    "dia": "Vie 18",
+    "hora": "",
+    "evento": "Concierto",
+    "lugar": ""
+   }
+  ]
  },
  {
   "id": "41841",
@@ -30729,6 +38441,32 @@ const FIESTAS = [
   "descripcion": "Teatro en Santander. 18–19 de septiembre. Lugar: Fundación Caja Cantabria (CASYC). 24€.",
   "_fuente_desc": "factual",
   "fuente": "https://santandercreativa.com/eventos/corta-el-cable-rojo-la-comedia-mas-explosiva-7c96337a-0ee5-4b46-b4e0-20f216d5316e"
+ },
+ {
+  "id": "651400",
+  "nombre": "Teatro «Un intento valiente de representar 30 obras en 1 hora» de Trueba&Trueba",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "18 de septiembre",
+  "inicio": "2026-09-18",
+  "fin": "2026-09-18",
+  "tipo": "teatro",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Teatro en Santander. 18 de septiembre. Lugar: Escena Miriñaque. Entrada general: 14€ online / 15€ en taquilla.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24265",
+  "programa": [
+   {
+    "dia": "Vie 18",
+    "hora": "",
+    "evento": "Teatro «Un intento valiente de representar 30 obras en 1 hora»",
+    "lugar": "Santander"
+   }
+  ]
  },
  {
   "id": "463773",
@@ -30800,7 +38538,7 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 19 de septiembre. Lugar: Escenario Santander. 16€.",
   "_fuente_desc": "factual",
-  "fuente": "https://escenariosantander.com/agenda/",
+  "fuente": "https://escenariosantander.com/agenda",
   "programa": [
    {
     "dia": "Sáb 19",
@@ -30818,6 +38556,12 @@ const FIESTAS = [
     "dia": "Sáb 19",
     "hora": "21:30",
     "evento": "Smash",
+    "lugar": "Escenario Santander"
+   },
+   {
+    "dia": "Sáb 19",
+    "hora": "21:30",
+    "evento": "Black Limos",
     "lugar": "Escenario Santander"
    }
   ]
@@ -30861,8 +38605,8 @@ const FIESTAS = [
    {
     "dia": "Sáb 19",
     "hora": "20:30",
-    "evento": "Concierto de The New 1987, Los Idiotas y Guaya Tones",
-    "lugar": "RockBeer"
+    "evento": "Garage Punk Rock Party: Los Idiotas + Los Guay-A-Tones",
+    "lugar": "Rockbeer The New, Santander"
    }
   ]
  },
@@ -30901,24 +38645,6 @@ const FIESTAS = [
   "descripcion": "Teatro en Santander. 19 de septiembre. Lugar: El Principal. 23€.",
   "_fuente_desc": "factual",
   "fuente": "https://santandercreativa.com/eventos/el-hambre-el-clasico-de-august-strindberg"
- },
- {
-  "id": "33957",
-  "nombre": "Luke Winslow-King",
-  "pueblo": "Santander",
-  "municipio": "Santander",
-  "comarca": "",
-  "mes": 9,
-  "fecha": "21 de septiembre",
-  "inicio": "2026-09-21",
-  "fin": "2026-09-21",
-  "tipo": "conciertos",
-  "interes": "",
-  "lat": 43.46234,
-  "lng": -3.80999,
-  "descripcion": "Concierto en Santander. 21 de septiembre. Lugar: Little Bobby Speakeasy. 15.4.",
-  "_fuente_desc": "factual",
-  "fuente": "https://planesparahoy.com/e/cantabria/santander/luke-winslow-king-santander--33957"
  },
  {
   "id": "43624",
@@ -31035,6 +38761,32 @@ const FIESTAS = [
   ]
  },
  {
+  "id": "651399",
+  "nombre": "Club de lectura «Manual de ghosting para principiantes»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "25 de septiembre",
+  "inicio": "2026-09-25",
+  "fin": "2026-09-25",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 25 de septiembre. Lugar: Librería CSA La Libre. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24264",
+  "programa": [
+   {
+    "dia": "Vie 25",
+    "hora": "19:30",
+    "evento": "Club de lectura Mujeres LBT: \"Manual de ghosting para principiantes\"",
+    "lugar": "Librería Asociativa La Libre, C/Rampa Sotileza 1, Santander"
+   }
+  ]
+ },
+ {
   "id": "41107",
   "nombre": "Concierto Andrés Campo",
   "pueblo": "Santander",
@@ -31089,32 +38841,6 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/the-new-raemon-vuelve-a-santander"
  },
  {
-  "id": "43627",
-  "nombre": "Folclore en todas las estaciones: Miguel Cadavieco",
-  "pueblo": "Santander",
-  "municipio": "Santander",
-  "comarca": "",
-  "mes": 9,
-  "fecha": "25 de septiembre",
-  "inicio": "2026-09-25",
-  "fin": "2026-09-25",
-  "tipo": "tradiciones",
-  "interes": "",
-  "lat": 43.46234,
-  "lng": -3.80999,
-  "descripcion": "Folclore en todas las estaciones: Miguel Cadavieco en Santander. 25 de septiembre.",
-  "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/miguel-cadavieco-protagonista-del-ciclo-folclore-en-todas-las-estaciones",
-  "programa": [
-   {
-    "dia": "Vie 25",
-    "hora": "19:00",
-    "evento": "Miguel Cadavieco, protagonista del ciclo 'Folclore en todas las estaciones'",
-    "lugar": "Centro Cívico Juan de Santander"
-   }
-  ]
- },
- {
   "id": "436047",
   "nombre": "Noche de techno con Andrés Campo",
   "pueblo": "Santander",
@@ -31130,7 +38856,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Concierto en Santander. 25 de septiembre. Lugar: Sala Kaya. 30€ + gastos de gestión.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/noche-de-techno-con-andres-campo"
+  "fuente": "https://santandercreativa.com/eventos/noche-de-techno-con-andres-campo",
+  "programa": [
+   {
+    "dia": "Vie 25",
+    "hora": "",
+    "evento": "Andrés Campo",
+    "lugar": "Sala Kaya, Santander"
+   }
+  ]
  },
  {
   "id": "424059",
@@ -31166,7 +38900,21 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Teatro en Santander. 25–26 de septiembre. Lugar: Palacio de Festivales de Cantabria. Desde 11€.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/teatro-largo-viaje-hacia-la-noche-de-eugene-o-neill"
+  "fuente": "https://santandercreativa.com/eventos/teatro-largo-viaje-hacia-la-noche-de-eugene-o-neill",
+  "programa": [
+   {
+    "dia": "Vie 25",
+    "hora": "",
+    "evento": "Largo viaje hacia la noche",
+    "lugar": ""
+   },
+   {
+    "dia": "Sáb 26",
+    "hora": "",
+    "evento": "Largo viaje hacia la noche",
+    "lugar": ""
+   }
+  ]
  },
  {
   "id": "635577",
@@ -31184,7 +38932,15 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Charla o taller en Santander. 25 de septiembre. Lugar: Plaza de Alfonso XIII. Entrada gratuita.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/xiv-noche-europea-de-los-investigadores-e-investigadoras-de-la-uc"
+  "fuente": "https://santandercreativa.com/eventos/xiv-noche-europea-de-los-investigadores-e-investigadoras-de-la-uc",
+  "programa": [
+   {
+    "dia": "Vie 25",
+    "hora": "",
+    "evento": "LA NOCHE EUROPEA DE LOS INVESTIGADORES E INVESTIGADORAS (European Researchers' Night)",
+    "lugar": "Plaza de Alfonso XIII"
+   }
+  ]
  },
  {
   "id": "687",
@@ -31220,7 +38976,21 @@ const FIESTAS = [
   "lng": -3.80999,
   "descripcion": "Espectáculo de danza en Santander. 26–27 de septiembre. Lugar: Escena La Clave. 80€.",
   "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/curso-intensivo-el-cuerpo-creativo-pantomima-de-objetos-y-comedia-fisica-en-la-impro-y-el-clown-5ef9a089-1887-4a7c-95eb-83c9b2ec713d"
+  "fuente": "https://santandercreativa.com/eventos/curso-intensivo-el-cuerpo-creativo-pantomima-de-objetos-y-comedia-fisica-en-la-impro-y-el-clown-5ef9a089-1887-4a7c-95eb-83c9b2ec713d",
+  "programa": [
+   {
+    "dia": "Sáb 26",
+    "hora": "",
+    "evento": "Clown: Curso Intensivo - El Cuerpo Creativo / Pantomima de Objetos",
+    "lugar": "Escena La Clave, Santander"
+   },
+   {
+    "dia": "Dom 27",
+    "hora": "",
+    "evento": "Clown: Curso Intensivo - El Cuerpo Creativo / Pantomima de Objetos",
+    "lugar": "Escena La Clave, Santander"
+   }
+  ]
  },
  {
   "id": "33967",
@@ -31257,6 +39027,64 @@ const FIESTAS = [
   "descripcion": "Exposición en Santander. 26 de septiembre. Lugar: Santander. Entrada gratuita.",
   "_fuente_desc": "factual",
   "fuente": "https://turismodecantabria.com/proximamente-evento/reading-party-mundos-imaginarios/"
+ },
+ {
+  "id": "583680",
+  "nombre": "Taller Método de Feedback Das Arts",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "26 de septiembre",
+  "inicio": "2026-09-26",
+  "fin": "2026-09-26",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 26 de septiembre. Lugar: Café de las Artes Teatro. Entrada gratuita.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24187",
+  "programa": [
+   {
+    "dia": "Sáb 26",
+    "hora": "19:00",
+    "evento": "Sesión de feedback con Compañía Rata Fría",
+    "lugar": "Café de las Artes Teatro"
+   }
+  ]
+ },
+ {
+  "id": "651401",
+  "nombre": "Teatro «Escupir al cielo» de Azar Teatro",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 9,
+  "fecha": "26–27 de septiembre",
+  "inicio": "2026-09-26",
+  "fin": "2026-09-27",
+  "tipo": "teatro",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Teatro en Santander. 26–27 de septiembre. Lugar: Escena Miriñaque. Entrada general: 10€ online / 12€ en taquilla.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/24266",
+  "programa": [
+   {
+    "dia": "Sáb 26",
+    "hora": "",
+    "evento": "Teatro «Escupir al cielo»",
+    "lugar": "Santander"
+   },
+   {
+    "dia": "Dom 27",
+    "hora": "",
+    "evento": "Teatro «Escupir al cielo»",
+    "lugar": "Santander"
+   }
+  ]
  },
  {
   "id": "100596",
@@ -31437,6 +39265,38 @@ const FIESTAS = [
   "fuente": "https://santandercreativa.com/eventos/recital-poetico-creo-en-lope-todopoderoso-poeta-del-cielo-y-de-la-tierra-a-cargo-de-rita-cofino-y-rosa-gil"
  },
  {
+  "id": "164307",
+  "nombre": "TEDx Jardines de Pereda «El nuevo norte»",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 10,
+  "fecha": "1–2 de octubre",
+  "inicio": "2026-10-01",
+  "fin": "2026-10-02",
+  "tipo": "charlas y talleres",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Charla o taller en Santander. 1–2 de octubre. Lugar: Paraninfo de la Magdalena. 30€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/tedx-jardines-de-pereda-el-nuevo-norte",
+  "programa": [
+   {
+    "dia": "Jue 1",
+    "hora": "",
+    "evento": "Charlas TED en Santander: El nuevo norte",
+    "lugar": "Santander"
+   },
+   {
+    "dia": "Vie 2",
+    "hora": "",
+    "evento": "Charlas TED en Santander: El nuevo norte",
+    "lugar": "Santander"
+   }
+  ]
+ },
+ {
   "id": "43300",
   "nombre": "Concierto Serko",
   "pueblo": "Santander",
@@ -31456,8 +39316,8 @@ const FIESTAS = [
   "programa": [
    {
     "dia": "Vie 2",
-    "hora": "23:00",
-    "evento": "Serko",
+    "hora": "",
+    "evento": "Serko - 125KM Tour",
     "lugar": "Sala Kaya"
    }
   ]
@@ -31497,24 +39357,6 @@ const FIESTAS = [
   "descripcion": "Concierto en Santander. 2 de octubre. Lugar: Fundación Caja Cantabria (CASYC). 37€.",
   "_fuente_desc": "factual",
   "fuente": "https://santandercreativa.com/eventos/la-guardia-ruta-40"
- },
- {
-  "id": "164307",
-  "nombre": "TEDx Jardines de Pereda «El nuevo norte»",
-  "pueblo": "Santander",
-  "municipio": "Santander",
-  "comarca": "",
-  "mes": 10,
-  "fecha": "2 de octubre",
-  "inicio": "2026-10-02",
-  "fin": "2026-10-02",
-  "tipo": "charlas y talleres",
-  "interes": "",
-  "lat": 43.46234,
-  "lng": -3.80999,
-  "descripcion": "Charla o taller en Santander. 2 de octubre. Lugar: Paraninfo de la Magdalena. 30€.",
-  "_fuente_desc": "factual",
-  "fuente": "https://santandercreativa.com/eventos/tedx-jardines-de-pereda-el-nuevo-norte"
  },
  {
   "id": "226270",
@@ -31699,6 +39541,24 @@ const FIESTAS = [
   "fuente": "https://www.eldiariomontanes.es/culturas/nace-concurso-internacional-video-mapping-ciudad-santander-20260727073242-nt.html"
  },
  {
+  "id": "423667",
+  "nombre": "Concierto «Escenas para cuatro manos» de Naara Martínez y Elena Villazón",
+  "pueblo": "Santander",
+  "municipio": "Santander",
+  "comarca": "",
+  "mes": 10,
+  "fecha": "7 de octubre",
+  "inicio": "2026-10-07",
+  "fin": "2026-10-07",
+  "tipo": "conciertos",
+  "interes": "",
+  "lat": 43.46234,
+  "lng": -3.80999,
+  "descripcion": "Concierto en Santander. 7 de octubre. Lugar: Fundación Caja Cantabria (CASYC). 15€.",
+  "_fuente_desc": "factual",
+  "fuente": "https://santandercreativa.com/eventos/escenas-para-cuatro-manos-naara-martinez-ruiz-y-elena-villazon-del-campo"
+ },
+ {
   "nombre": "San Martín · Laredo",
   "pueblo": "Laredo",
   "municipio": "Laredo",
@@ -31754,4 +39614,4 @@ const FIESTAS = [
  }
 ];
 
-const DATA_INFO = {"generado": "2026-08-19 14:35", "feed": "20260819122735", "fiestas": 597};
+const DATA_INFO = {"generado": "2026-08-24 21:29", "feed": "20260824183818", "fiestas": 685};

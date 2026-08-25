@@ -515,5 +515,26 @@ window.addEventListener("load", ajustarMapa);
   }
 })();
 
+// --- Reporte: "¿falta algo / hay un error?" → Apps Script compartido ---
+const REPORT_ENDPOINT = "https://script.google.com/macros/s/AKfycbxgpFado69HbPzmWw0d1uqqwMT3ipapcUwtSp9pWyOELcrND5idSUE2k4WG9D4QWa4Q/exec";
+const $rep = document.getElementById("report-panel");
+document.getElementById("report-open")?.addEventListener("click", () => {
+  document.getElementById("report-msg").textContent = "";
+  $rep.hidden = false;
+});
+function cerrarReporte() { $rep.hidden = true; document.getElementById("report-form").reset(); }
+document.getElementById("report-cancel")?.addEventListener("click", cerrarReporte);
+$rep?.addEventListener("click", e => { if (e.target.id === "report-panel") cerrarReporte(); });
+document.getElementById("report-form")?.addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new URLSearchParams(new FormData(e.target));
+  const send = document.getElementById("report-send"), msg = document.getElementById("report-msg");
+  send.disabled = true; msg.textContent = "Enviando…";
+  fetch(REPORT_ENDPOINT, { method: "POST", mode: "no-cors", body: data })
+    .then(() => { msg.textContent = "¡Gracias! Lo reviso. 🙌"; setTimeout(cerrarReporte, 1500); })
+    .catch(() => { msg.textContent = "No se pudo enviar, inténtalo más tarde."; })
+    .finally(() => { send.disabled = false; });
+});
+
 // --- Inicio -----------------------------------------------------------
 aplicarFiltros();

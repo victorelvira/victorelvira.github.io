@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <link rel="stylesheet" href="fiestas_cantabria/style.css?v=13">
+  <link rel="stylesheet" href="fiestas_cantabria/style.css?v=15">
 </head>
 <body class="vista-mapa">
   <nav id="navbar">
@@ -32,6 +32,7 @@
     <div class="header-right">
       <div class="header-count"><span id="contador">0</span> planes</div>
       <div class="update-info" id="update-info"></div>
+      <button type="button" id="report-open" class="report-link">¿Falta algo o hay un error?</button>
     </div>
   </header>
 
@@ -108,8 +109,32 @@
   </div>
   <div id="overlay" class="overlay" hidden></div>
 
-  <script src="fiestas_cantabria/data/data.js?v=13"></script>
-  <script src="fiestas_cantabria/app.js?v=13"></script>
+  <!-- Reporte: ¿falta algo o hay un error? -->
+  <div id="report-panel" hidden>
+    <form id="report-form">
+      <h3>¿Falta un plan o hay un error?</h3>
+      <label>Tipo
+        <select name="tipo">
+          <option value="falta">Falta un plan/evento</option>
+          <option value="fecha_lugar">Fecha o lugar equivocado</option>
+          <option value="duplicado">Está duplicado</option>
+          <option value="otro">Otro</option>
+        </select>
+      </label>
+      <input name="evento" placeholder="Nombre del plan (si aplica)">
+      <textarea name="detalle" rows="3" placeholder="Cuéntame qué pasa"></textarea>
+      <input name="email" type="email" placeholder="Tu email (opcional, por si necesito preguntarte)">
+      <input type="hidden" name="pagina" value="planes_cantabria">
+      <div class="report-row">
+        <button type="button" id="report-cancel">Cancelar</button>
+        <button type="submit" id="report-send">Enviar</button>
+      </div>
+      <div class="report-msg" id="report-msg"></div>
+    </form>
+  </div>
+
+  <script src="fiestas_cantabria/data/data.js?v=15"></script>
+  <script src="fiestas_cantabria/app.js?v=15"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
