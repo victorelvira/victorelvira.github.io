@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="atlas/vendor/leaflet.css">
   <link rel="stylesheet" href="atlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="atlas/style.css?v=0.50.0">
+  <link rel="stylesheet" href="atlas/style.css?v=0.51.0">
 </head>
 <body>
   <nav id="navbar">
@@ -164,14 +164,20 @@
 
   <section id="galaxyview" hidden>
     <div id="galaxy-bar">
-      <span class="g-seg" id="galaxy-colorby" title="Colour the dots by…">
-        <button type="button" class="gbtn" data-cb="author">Author</button>
-        <button type="button" class="gbtn" data-cb="period">Period</button>
-        <button type="button" class="gbtn active" data-cb="school">School</button>
-        <button type="button" class="gbtn" data-cb="color">Colour</button>
-      </span>
+      <div class="galaxy-controls">
+        <span class="g-seg" id="galaxy-colorby" title="Colour the dots by…">
+          <button type="button" class="gbtn" data-cb="author">Author</button>
+          <button type="button" class="gbtn" data-cb="period">Period</button>
+          <button type="button" class="gbtn active" data-cb="school">School</button>
+          <button type="button" class="gbtn" data-cb="color">Colour</button>
+        </span>
+        <span class="g-seg" id="galaxy-labels" title="Show small labels next to every dot">
+          <label><input type="checkbox" data-lab="title"> 🏷 Titles</label>
+          <label><input type="checkbox" data-lab="author"> ✍ Authors</label>
+        </span>
+        <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover a dot · <b>click</b> to open · scroll/pinch zoom · drag to pan</span>
+      </div>
       <span id="galaxy-legend" class="galaxy-legend"></span>
-      <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover a dot for the painting · scroll/pinch zoom · drag to pan</span>
     </div>
     <div id="galaxy-scroll"><div id="galaxy-plane"></div></div>
   </section>
@@ -228,7 +234,7 @@
 
   <script src="atlas/vendor/leaflet.js"></script>
   <script src="atlas/vendor/leaflet.markercluster.js"></script>
-  <script src="atlas/app.js?v=0.50.0"></script>
+  <script src="atlas/app.js?v=0.51.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

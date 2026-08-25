@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "atlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "atlas/data/miro.geojson" },
 ];
-const DATA_V = "0.50.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 12:45";   // update together with DATA_V — shown in the navbar
+const DATA_V = "0.51.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep atlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 13:30";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
@@ -561,6 +561,15 @@ function buildMarkers() {
     const marker = L.marker([lat, lon], { works: feats.length })
       // autoPan:false → opening a popup never scrolls the map out from under you
       .bindPopup("", { maxWidth: 320, minWidth: 240, autoPan: false });
+    // Desktop: a marker popup can spill off the top of the map and get clipped. Instead of the popup,
+    // slide the side list to this museum (its works are already listed there). Mobile keeps the popup
+    // → bottom sheet. bindPopup stays so programmatic openPopup() (e.g. "On the map") still works.
+    const placeKey = `${lat.toFixed(5)},${lon.toFixed(5)}`;
+    marker.off("click");                              // drop Leaflet's default click-to-open-popup
+    marker.on("click", () => {
+      if (isMobile()) { marker.openPopup(); return; } // phone → popup routed to the bottom sheet
+      revealMuseumInPanel(placeKey);
+    });
     places.push({ marker, kind, feats, lat, lon, shown: false });
     for (const f of feats) works.push({ p: f.properties, lat, lon, marker });
   }
@@ -1146,7 +1155,8 @@ function tileHTML(w, vis, grp) {
   const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
   const style = grp && grp.color ? ` style="background:${grp.color}"` : "";
   const nameTag = grp && grp.label ? `<div class="mlabel">${esc(grp.label)}</div>` : "";
-  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}>${share}${nameTag}` +
+  const placeAttr = grp && grp.key ? ` data-place="${esc(grp.key)}"` : "";
+  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}>${share}${nameTag}` +
     `<div class="gcard">${img}<div class="gmeta">` +
     `<div class="gm1">${esc(p.painter)}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     (p.location ? `<div class="gm2">${esc(p.location)}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
@@ -1161,7 +1171,7 @@ function groupedTileStream(ordered) {
   ordered.forEach((g, gi) => {
     const color = MUS_PASTELS[gi % MUS_PASTELS.length];
     const label = g.location + (g.city ? ` · ${g.city}` : "");   // shown over the museum's FIRST tile
-    g.items.forEach((w, wi) => stream.push({ w, grp: { color, label: wi === 0 ? label : "" } }));
+    g.items.forEach((w, wi) => stream.push({ w, grp: { color, label: wi === 0 ? label : "", key: wi === 0 ? g.key : "" } }));
   });
   return stream;
 }
@@ -1197,7 +1207,7 @@ function appendPanelChunk() {
     for (; panelCursor < end; panelCursor++) {
       const e = panelQueue[panelCursor];
       html += e.grp
-        ? `<li class="grp"><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span><span class="n">${e.grp.count}</span></li>`
+        ? `<li class="grp"${e.grp.key ? ` data-place="${esc(e.grp.key)}"` : ""}><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span><span class="n">${e.grp.count}</span></li>`
         : panelRowHTML(e.w);
     }
   }
@@ -1226,7 +1236,7 @@ function renderPanel() {
     const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
     if (!groups.has(k)) groups.set(k, {
       location: painted ? (w.p.creation_place || "Unknown") : (w.p.location || "Location"),
-      city: painted ? "" : (w.p.city || ""), items: [],
+      city: painted ? "" : (w.p.city || ""), items: [], key: k,   // key = place, to scroll here from a marker
     });
     groups.get(k).items.push(w);
   }
@@ -1250,13 +1260,34 @@ function renderPanel() {
   panelFlatCursor = 0;
   panelQueue = [];              // list mode → flat rows with header bars
   for (const g of ordered) {
-    panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length } });
+    panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length, key: g.key } });
     for (const w of g.items) panelQueue.push({ w });
   }
   panelCursor = 0;
   ul.classList.toggle("grouped", panelMode === "gallery" && panelGalGroup);
   ul.innerHTML = "";
   appendPanelChunk();
+}
+
+// Marker click (desktop) → smooth-scroll the side list to this museum's section and flash it.
+// The museum is already grouped in the list; we just stream chunks until it's rendered, then scroll.
+let _revealT = 0;
+function revealMuseumInPanel(key) {
+  if (view.table) setTableView(false);               // the list lives under the map view
+  if (!view.panel) { view.panel = true; setView(); }
+  const panel = document.getElementById("panel");
+  const ul = document.getElementById("worklist");
+  const sel = `[data-place="${key}"]`;
+  let guard = 0;
+  while (!ul.querySelector(sel) && panelHasMore() && guard++ < 1000) appendPanelChunk();
+  const target = ul.querySelector(sel);
+  if (!target) return;                               // ungrouped gallery has no headers — nothing to scroll to
+  const pr = panel.getBoundingClientRect(), tr = target.getBoundingClientRect();
+  panel.scrollTo({ top: panel.scrollTop + (tr.top - pr.top) - 6, behavior: "smooth" });
+  clearTimeout(_revealT);
+  ul.querySelectorAll(".grp-flash").forEach(x => x.classList.remove("grp-flash"));
+  target.classList.add("grp-flash");
+  _revealT = setTimeout(() => target.classList.remove("grp-flash"), 1800);
 }
 
 document.getElementById("worklist").addEventListener("click", e => {
@@ -2102,6 +2133,7 @@ function setChartView(on) {
 
 // ══ Similarity "galaxy": paintings laid out in 2-D by CLIP visual similarity (precomputed) ═══════
 let galaxyCoords = null, galaxyByQid = null, galaxyColorBy = "school";
+let galaxyLabels = { title: false, author: false };   // optional small grey labels beside each dot
 const CLUSTER_PALETTE = ["#c0392b", "#2a4d8f", "#2e7d5b", "#c8a24a", "#7b3fb0", "#e07b39", "#3a8fb0", "#a0518f", "#6a8f2a", "#8a5a3a", "#d04a7a", "#4aa0a0"];
 let _eraIdx = null, _schoolIdx = null;
 function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals whether it clusters
@@ -2139,6 +2171,13 @@ function drawGalaxy() {
     const x = (PAD + xy[0] / 1000 * S).toFixed(0), y = (PAD + xy[1] / 1000 * S).toFixed(0);
     const fill = (galaxyColorBy === "color" && xy.length >= 5) ? `rgb(${xy[2]},${xy[3]},${xy[4]})` : galaxyColorOf(w);
     html += `<i class="gx-dot" data-qid="${qid}" style="left:${x}px;top:${y}px;background:${fill}"></i>`;
+    if (galaxyLabels.title || galaxyLabels.author) {
+      const parts = [];
+      if (galaxyLabels.title) parts.push(w.p.title || "Untitled");
+      if (galaxyLabels.author) parts.push(w.p.painter || "");
+      const txt = parts.filter(Boolean).join(" · ");
+      if (txt) html += `<span class="gx-lab" style="left:${(+x + 6)}px;top:${y}px">${esc(txt)}</span>`;
+    }
     n++;
   }
   plane.innerHTML = html;
@@ -2169,6 +2208,12 @@ function setGalaxyView(on) {
     const b = e.target.closest("[data-cb]"); if (!b) return;
     galaxyColorBy = b.dataset.cb;
     document.querySelectorAll("#galaxy-colorby .gbtn").forEach(x => x.classList.toggle("active", x === b));
+    if (galaxyCoords) drawGalaxy();
+  });
+  const labels = document.getElementById("galaxy-labels");
+  if (labels) labels.addEventListener("change", e => {
+    const cb = e.target.closest("[data-lab]"); if (!cb) return;
+    galaxyLabels[cb.dataset.lab] = cb.checked;
     if (galaxyCoords) drawGalaxy();
   });
   plane.addEventListener("click", e => {
