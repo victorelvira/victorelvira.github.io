@@ -4440,3 +4440,59 @@ fetch("batalla_de_flores/data/map.json")
     if (state.mode === "routes") renderIndex();
   })
   .catch(() => {});
+
+/* El titulo de bienvenida se despliega: arranca escrito como el dominio,
+ * «BatallaDeDatos», y se abre a «Batalla de Flores de Laredo en datos».
+ *
+ * Quien decide SI se anima es el script en linea del HTML, no esto: tiene que
+ * decidirse antes del primer fotograma, y app.js se carga al final del body.
+ * Aqui solo se lleva el compas, y solo si aquel dejo puesta la clase.
+ *
+ * Las duraciones viven aqui y no en la CSS para no tenerlas escritas en dos
+ * sitios: se pasan como variables, y la CSS trae los mismos numeros de
+ * respaldo por si esto no llegara a correr. */
+(function desplegarTitulo() {
+  const h1 = document.getElementById("titulo");
+  if (!h1 || !h1.classList.contains("anim")) return;
+
+  const ESPERA = 1500;   // cuanto se lee «BatallaDeDatos» antes de abrirse
+  const HUECO  = 700;    // lo que tardan los espacios en abrirse
+  const ENTRE  = 700;    // del arranque a que broten las palabras que faltan
+  const BROTE  = 1250;   // lo que tarda el brote
+  const YEARS  = 900;    // y lo que espera detras el parentesis de los anos
+
+  const huecos = [...h1.querySelectorAll(".hueco")];
+  const brotes = [...h1.querySelectorAll(".brote")];
+
+  // Se mide con las piezas abiertas: un max-width en «auto» no se puede
+  // animar, hace falta un numero. Quitar y volver a poner la clase dentro del
+  // mismo bloque no llega a pintarse, asi que no parpadea.
+  h1.classList.remove("anim");
+  const anchoHueco = huecos.map(nodo => nodo.scrollWidth);
+  const anchoBrote = brotes.map(nodo => nodo.scrollWidth);
+  h1.classList.add("anim");
+  h1.style.setProperty("--t-hueco", HUECO + "ms");
+  h1.style.setProperty("--t-brote", BROTE + "ms");
+  void h1.offsetWidth;
+
+  // 1 · se abren los espacios: BatallaDeDatos -> Batalla De Datos
+  setTimeout(() => {
+    huecos.forEach((nodo, i) => { nodo.style.maxWidth = anchoHueco[i] + "px"; });
+  }, ESPERA);
+
+  // 2 · y solo cuando ya estan abiertos bajan las mayusculas. Yendo a la vez
+  //     se leia «Batalladedatos» todo junto y en minuscula, que no era ni el
+  //     dominio ni el titulo.
+  setTimeout(() => h1.classList.add("minus"), ESPERA + HUECO);
+
+  // 3 · brotan las palabras que faltan
+  setTimeout(() => {
+    h1.classList.add("paso2");
+    brotes[0].style.maxWidth = anchoBrote[0] + "px";
+  }, ESPERA + ENTRE);
+
+  // 4 · y los anos entran los ultimos
+  setTimeout(() => {
+    brotes[1].style.maxWidth = anchoBrote[1] + "px";
+  }, ESPERA + ENTRE + YEARS);
+})();

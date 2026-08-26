@@ -103,6 +103,39 @@ a { color: inherit; }
   letter-spacing: -0.2px;
 }
 .bar-title h1 .of { font-weight: 400; }
+
+/* El titulo que se despliega, una vez por visitante.
+ *
+ * El HTML dice siempre el titulo final; lo que hace la animacion es taparlo
+ * un momento para que arranque escrito como el dominio, «BatallaDeDatos», y
+ * se abra a «Batalla de Flores de Laredo en datos». Tres piezas:
+ *
+ *   .hueco  los espacios, que se abren desde ancho cero
+ *   .brote  las palabras que faltan, que crecen
+ *   .may    «de» y «datos», en mayuscula por CSS mientras dura el arranque,
+ *           sin tocar el texto real
+ *
+ * Sin la clase .anim —sin JS, o a la segunda visita— esto no hace nada y el
+ * titulo sale entero desde el primer fotograma.
+ *
+ * «pre» y no «nowrap» en los dos: un inline-block se come el espacio con el
+ * que empieza, y «de» salia pegado a «Flores». */
+.hueco, .brote { display: inline-block; overflow: hidden; vertical-align: bottom; white-space: pre; }
+
+h1.anim .hueco { max-width: 0; transition: max-width var(--t-hueco, 520ms) cubic-bezier(.3,.7,.4,1); }
+h1.anim .brote {
+  max-width: 0; opacity: 0;
+  transition: max-width var(--t-brote, 950ms) cubic-bezier(.22,.61,.36,1),
+              opacity calc(var(--t-brote, 950ms) * .7) ease;
+}
+h1.anim .may { text-transform: capitalize; }
+h1.anim.minus .may { text-transform: none; }
+h1.anim.paso2 .brote { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  h1.anim .hueco, h1.anim .brote { max-width: none !important; opacity: 1 !important; transition: none; }
+  h1.anim .may { text-transform: none; }
+}
 /* Sangrada para arrancar donde arranca «Batalla», no debajo de la dalia. */
 .bar-sub {
   margin: 5px 0 0;
