@@ -364,7 +364,17 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
 .year {
   position: relative;
   display: flex; flex-direction: column; align-items: center; gap: 1px;
-  min-width: 52px; padding: 4px 6px 5px; cursor: pointer;
+  /* Ancho fijo, no mínimo. Con «min-width» cada celda se estiraba hasta lo que
+     midiera su texto y salían cinco anchos distintos en la misma rejilla —52,
+     58, 62, 65 y 68—, según pusiera «Prevista», «1 carroza» o «13 carrozas».
+     72 es lo que necesita la más ancha, «13 carrozas», sin partirse en dos
+     líneas: fijándolo en los 68 que medía justos, el texto se le iba abajo y
+     entonces eran los altos los que dejaban de coincidir. Igualar el ancho no
+     basta si la letra puede saltar de línea, así que .year-meta va en nowrap.
+     Ya se intentó arreglar esto acortando las etiquetas; aquello quitó el caso
+     peor pero no la causa, que es dejar que el texto mande sobre el tamaño de
+     la celda. */
+  width: 72px; padding: 4px 6px 5px; cursor: pointer;
   border: 1px solid var(--line); border-radius: 7px; background: #fff;
   font: inherit; color: inherit;
   font-variant-numeric: tabular-nums;
@@ -375,7 +385,7 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
 .year.is-active .year-meta { color: rgba(255, 255, 255, 0.85); }
 
 .year-num { font-size: 13px; font-weight: 600; letter-spacing: -0.2px; }
-.year-meta { font-size: 10.5px; color: var(--muted); line-height: 1.1; }
+.year-meta { font-size: 10.5px; color: var(--muted); line-height: 1.1; white-space: nowrap; }
 
 .year-bar {
   width: 100%; height: 3px; margin-top: 2px; border-radius: 2px;
@@ -1338,7 +1348,8 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .decade-count { display: inline; color: var(--muted); font-size: 11px; font-weight: 400; }
   .decade-row:not(.is-open) .year-grid { display: none; }
   .decade-row.is-open .year-grid { padding: 2px 0 8px; }
-  .year { min-width: 68px; }
+  /* El ancho ya es fijo arriba (72px) y vale igual aquí: este min-width
+     de 68 era de cuando lo mandaba el texto. */
 
   /* El detalle se superpone al índice, con cruz para cerrar. */
   .pane-detail {
