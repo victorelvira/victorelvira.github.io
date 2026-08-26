@@ -58,13 +58,15 @@
            body, cuando el titulo ya esta pintado, y anadir la clase entonces
            daria un parpadeo del titulo entero antes de encogerse. Esto decide
            antes del primer fotograma. Si no hay JS no hay clase, y el titulo
-           sale completo, que es lo correcto. -->
+           sale completo, que es lo correcto.
+
+           Se anima en CADA carga, no solo la primera. Estuvo limitado a una
+           vez por visitante con una marca en localStorage y era peor: quien
+           recargaba para ver si algo habia cambiado no volvia a verlo nunca,
+           y no habia forma de ensenarselo a nadie. Repetirlo al recargar es
+           decision tomada, no un descuido. -->
       <script>
         (function () {
-          try {
-            if (localStorage.getItem("titulo-visto")) return;
-            localStorage.setItem("titulo-visto", "1");
-          } catch (e) { /* navegacion privada: entonces se ve cada vez */ }
           if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
           document.getElementById("titulo").className = "anim";
         })();
@@ -136,9 +138,8 @@
     </p>
   </footer>
 
-  <!-- Analitica: GoatCounter. Sin cookies ni datos personales, asi que no
-       necesita banner de consentimiento. Unica peticion externa de la pagina.
-       No cuenta en localhost: para probarlo hay que desplegar. -->
+  <!-- Analitica: GoatCounter. No cuenta en localhost: para probarlo hay que
+       desplegar. -->
   <script data-goatcounter="https://victorelvira.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
@@ -194,7 +195,7 @@
     </form>
   </div>
 
-  <script src="batalla_de_flores/app.js?v=eec28d38"></script>
+  <script src="batalla_de_flores/app.js?v=465e0d87"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

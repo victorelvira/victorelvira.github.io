@@ -4159,6 +4159,9 @@ function bindEvents() {
   els.home.addEventListener("click", event => {
     event.preventDefault();
     resetToStart();
+    // Volver al inicio lo pide una persona, asi que el titulo se vuelve a
+    // desplegar aunque ya se haya visto en esta carga.
+    desplegarTitulo({ reiniciando: true });
   });
 
   els.faq.addEventListener("click", () => select("about", "-"));
@@ -4365,7 +4368,13 @@ function bindEvents() {
 
 /* ── arranque ───────────────────────────────────────────────────────────── */
 
-fetch("batalla_de_flores/data/batalla_de_flores.json")
+/* «no-cache» no es «no guardes»: es «pregunta antes de servir lo guardado».
+ * El JSON no lleva ?v= en la direccion como la CSS y el JS, asi que un
+ * navegador que ya lo tenia seguia enseñando la version vieja mucho
+ * despues de desplegar: la barra decia v2.47 con v2.49 publicado. Al
+ * revalidar, si no ha cambiado el servidor responde 304 sin cuerpo y no
+ * cuesta nada; si ha cambiado, llega el nuevo. */
+fetch("batalla_de_flores/data/batalla_de_flores.json", { cache: "no-cache" })
   .then(response => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
@@ -4431,7 +4440,7 @@ fetch("batalla_de_flores/data/batalla_de_flores.json")
 /* El plano viaja aparte (~170 KB) y no bloquea nada: hasta que llega, los mapas
  * se pintan solo con los recorridos y al llegar se repinta lo que haya en
  * pantalla. Si falla, el archivo sigue funcionando entero. */
-fetch("batalla_de_flores/data/map.json")
+fetch("batalla_de_flores/data/map.json", { cache: "no-cache" })
   .then(response => (response.ok ? response.json() : null))
   .then(map => {
     if (!map) return;
@@ -4451,9 +4460,18 @@ fetch("batalla_de_flores/data/map.json")
  * Las duraciones viven aqui y no en la CSS para no tenerlas escritas en dos
  * sitios: se pasan como variables, y la CSS trae los mismos numeros de
  * respaldo por si esto no llegara a correr. */
-(function desplegarTitulo() {
+function desplegarTitulo({ reiniciando = false } = {}) {
   const h1 = document.getElementById("titulo");
-  if (!h1 || !h1.classList.contains("anim")) return;
+  if (!h1) return;
+  // Al arrancar, quien decide es el script en linea del HTML: si no puso la
+  // clase —movimiento reducido— aqui no se fuerza. Al pinchar el logo si,
+  // porque entonces lo ha pedido una persona.
+  if (!reiniciando && !h1.classList.contains("anim")) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  clearTimeout(desplegarTitulo.relojes?.[0]);
+  (desplegarTitulo.relojes || []).forEach(clearTimeout);
+  desplegarTitulo.relojes = [];
 
   const ESPERA = 1500;   // cuanto se lee «BatallaDeDatos» antes de abrirse
   const HUECO  = 700;    // lo que tardan los espacios en abrirse
@@ -4467,32 +4485,37 @@ fetch("batalla_de_flores/data/map.json")
   // Se mide con las piezas abiertas: un max-width en «auto» no se puede
   // animar, hace falta un numero. Quitar y volver a poner la clase dentro del
   // mismo bloque no llega a pintarse, asi que no parpadea.
-  h1.classList.remove("anim");
+  h1.className = "";
+  [...huecos, ...brotes].forEach(nodo => { nodo.style.maxWidth = ""; });
   const anchoHueco = huecos.map(nodo => nodo.scrollWidth);
   const anchoBrote = brotes.map(nodo => nodo.scrollWidth);
-  h1.classList.add("anim");
+  h1.className = "anim";
   h1.style.setProperty("--t-hueco", HUECO + "ms");
   h1.style.setProperty("--t-brote", BROTE + "ms");
   void h1.offsetWidth;
 
   // 1 · se abren los espacios: BatallaDeDatos -> Batalla De Datos
-  setTimeout(() => {
+  const luego = (fn, ms) => desplegarTitulo.relojes.push(setTimeout(fn, ms));
+
+  luego(() => {
     huecos.forEach((nodo, i) => { nodo.style.maxWidth = anchoHueco[i] + "px"; });
   }, ESPERA);
 
   // 2 · y solo cuando ya estan abiertos bajan las mayusculas. Yendo a la vez
   //     se leia «Batalladedatos» todo junto y en minuscula, que no era ni el
   //     dominio ni el titulo.
-  setTimeout(() => h1.classList.add("minus"), ESPERA + HUECO);
+  luego(() => h1.classList.add("minus"), ESPERA + HUECO);
 
   // 3 · brotan las palabras que faltan
-  setTimeout(() => {
+  luego(() => {
     h1.classList.add("paso2");
     brotes[0].style.maxWidth = anchoBrote[0] + "px";
   }, ESPERA + ENTRE);
 
   // 4 · y los anos entran los ultimos
-  setTimeout(() => {
+  luego(() => {
     brotes[1].style.maxWidth = anchoBrote[1] + "px";
   }, ESPERA + ENTRE + YEARS);
-})();
+}
+
+desplegarTitulo();
