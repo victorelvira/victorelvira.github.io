@@ -4451,7 +4451,7 @@ fetch("batalla_de_flores/data/map.json", { cache: "no-cache" })
   .catch(() => {});
 
 /* El titulo de bienvenida se despliega: arranca escrito como el dominio,
- * «BatallaDeDatos», y se abre a «Batalla de Flores de Laredo en datos».
+ * «Batalladedatos», y se abre a «Batalla de Flores de Laredo en datos».
  *
  * Quien decide SI se anima es el script en linea del HTML, no esto: tiene que
  * decidirse antes del primer fotograma, y app.js se carga al final del body.
@@ -4473,11 +4473,11 @@ function desplegarTitulo({ reiniciando = false } = {}) {
   (desplegarTitulo.relojes || []).forEach(clearTimeout);
   desplegarTitulo.relojes = [];
 
-  const ESPERA = 1500;   // cuanto se lee «BatallaDeDatos» antes de abrirse
+  const ESPERA = 1500;   // cuanto se lee «Batalladedatos» antes de abrirse
   const HUECO  = 700;    // lo que tardan los espacios en abrirse
   const ENTRE  = 700;    // del arranque a que broten las palabras que faltan
-  const BROTE  = 1250;   // lo que tarda el brote
-  const YEARS  = 900;    // y lo que espera detras el parentesis de los anos
+  const BROTE  = 1250;   // lo que tarda cada brote
+  const COMPAS = 900;    // lo que separa un compas del siguiente
 
   const huecos = [...h1.querySelectorAll(".hueco")];
   const brotes = [...h1.querySelectorAll(".brote")];
@@ -4486,7 +4486,7 @@ function desplegarTitulo({ reiniciando = false } = {}) {
   // animar, hace falta un numero. Quitar y volver a poner la clase dentro del
   // mismo bloque no llega a pintarse, asi que no parpadea.
   h1.className = "";
-  [...huecos, ...brotes].forEach(nodo => { nodo.style.maxWidth = ""; });
+  [...huecos, ...brotes].forEach(nodo => { nodo.style.maxWidth = ""; nodo.style.opacity = ""; });
   const anchoHueco = huecos.map(nodo => nodo.scrollWidth);
   const anchoBrote = brotes.map(nodo => nodo.scrollWidth);
   h1.className = "anim";
@@ -4494,28 +4494,26 @@ function desplegarTitulo({ reiniciando = false } = {}) {
   h1.style.setProperty("--t-brote", BROTE + "ms");
   void h1.offsetWidth;
 
-  // 1 · se abren los espacios: BatallaDeDatos -> Batalla De Datos
+  // 1 · se abren los espacios: Batalladedatos -> Batalla de datos
   const luego = (fn, ms) => desplegarTitulo.relojes.push(setTimeout(fn, ms));
 
   luego(() => {
     huecos.forEach((nodo, i) => { nodo.style.maxWidth = anchoHueco[i] + "px"; });
   }, ESPERA);
 
-  // 2 · y solo cuando ya estan abiertos bajan las mayusculas. Yendo a la vez
-  //     se leia «Batalladedatos» todo junto y en minuscula, que no era ni el
-  //     dominio ni el titulo.
-  luego(() => h1.classList.add("minus"), ESPERA + HUECO);
-
-  // 3 · brotan las palabras que faltan
-  luego(() => {
-    h1.classList.add("paso2");
-    brotes[0].style.maxWidth = anchoBrote[0] + "px";
-  }, ESPERA + ENTRE);
-
-  // 4 · y los anos entran los ultimos
-  luego(() => {
-    brotes[1].style.maxWidth = anchoBrote[1] + "px";
-  }, ESPERA + ENTRE + YEARS);
+  // 2, 3, 4 · los brotes entran por compases, y cada palabra sabe el suyo
+  // por su data-paso: primero «Flores» y «en» (Batalla de Flores en datos),
+  // luego «de Laredo», y los anos al final. Abrirlos es poner el ancho y la
+  // opacidad en linea, nodo a nodo: una clase en el h1 abriria todos a la vez.
+  [2, 3, 4].forEach((paso, orden) => {
+    luego(() => {
+      brotes.forEach((nodo, i) => {
+        if (nodo.dataset.paso !== String(paso)) return;
+        nodo.style.maxWidth = anchoBrote[i] + "px";
+        nodo.style.opacity = "1";
+      });
+    }, ESPERA + ENTRE + orden * COMPAS);
+  });
 }
 
 desplegarTitulo();

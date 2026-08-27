@@ -107,13 +107,18 @@ a { color: inherit; }
 /* El titulo que se despliega, una vez por visitante.
  *
  * El HTML dice siempre el titulo final; lo que hace la animacion es taparlo
- * un momento para que arranque escrito como el dominio, «BatallaDeDatos», y
- * se abra a «Batalla de Flores de Laredo en datos». Tres piezas:
+ * un momento para que arranque escrito como el dominio, «Batalladedatos», y
+ * se abra a «Batalla de Flores de Laredo en datos». Dos piezas:
  *
  *   .hueco  los espacios, que se abren desde ancho cero
- *   .brote  las palabras que faltan, que crecen
- *   .may    «de» y «datos», en mayuscula por CSS mientras dura el arranque,
- *           sin tocar el texto real
+ *   .brote  las palabras que faltan, que crecen; su data-paso dice en que
+ *           compas entran (2 «Flores» y «en» · 3 «de Laredo» · 4 los anos),
+ *           y por eso abrir cada una es inline y no una clase del h1
+ *
+ * Las palabras que sobreviven al arranque —«Batalla», «en», «datos»— no
+ * cambian de forma en ningun momento: solo se juntan. Hubo una version que
+ * arrancaba en «BatallaDeDatos» y tenia que bajar dos mayusculas por el
+ * camino; ese salto se veia, y quitarlo salio gratis.
  *
  * Sin la clase .anim —sin JS, o a la segunda visita— esto no hace nada y el
  * titulo sale entero desde el primer fotograma.
@@ -123,18 +128,20 @@ a { color: inherit; }
 .hueco, .brote { display: inline-block; overflow: hidden; vertical-align: bottom; white-space: pre; }
 
 h1.anim .hueco { max-width: 0; transition: max-width var(--t-hueco, 520ms) cubic-bezier(.3,.7,.4,1); }
+/* La opacidad va RETRASADA respecto al ancho, y no es un capricho: la caja
+ * se abre recortando lo que asoma (overflow), y si la palabra ya fuera
+ * visible mientras se abre, el borde la cortaria en vertical por mitad de
+ * las letras: se veia como un rectangulo deslizandose por encima. Con el
+ * retraso, primero se abre el hueco con la palabra casi invisible y luego
+ * la palabra se funde ya en su sitio, entera. */
 h1.anim .brote {
   max-width: 0; opacity: 0;
   transition: max-width var(--t-brote, 950ms) cubic-bezier(.22,.61,.36,1),
-              opacity calc(var(--t-brote, 950ms) * .7) ease;
+              opacity calc(var(--t-brote, 950ms) * .6) ease calc(var(--t-brote, 950ms) * .45);
 }
-h1.anim .may { text-transform: capitalize; }
-h1.anim.minus .may { text-transform: none; }
-h1.anim.paso2 .brote { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
   h1.anim .hueco, h1.anim .brote { max-width: none !important; opacity: 1 !important; transition: none; }
-  h1.anim .may { text-transform: none; }
 }
 /* Sangrada para arrancar donde arranca «Batalla», no debajo de la dalia. */
 .bar-sub {
