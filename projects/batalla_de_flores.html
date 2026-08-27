@@ -186,8 +186,12 @@
       <label>Qué dato está mal o falta
         <textarea name="mal" rows="2" required placeholder="Ej.: el grupo de la carroza «Aiko» no es ese"></textarea>
       </label>
-      <label>Cuál es el dato correcto
-        <textarea name="correcto" rows="2" required placeholder="Ej.: la llevó el Grupo Pejino, no Come Golayu"></textarea>
+      <!-- Opcional a proposito: saber que algo esta mal sin saber el valor
+           bueno tambien es una aportacion. Es la regla de la casa: contradecir
+           no es elegir, y el dato pasa a revision aunque nadie tenga aun el
+           correcto. -->
+      <label>Cuál es el dato correcto <span class="opt">(si lo sabes: avisar de que algo falla ya ayuda)</span>
+        <textarea name="correcto" rows="2" placeholder="Ej.: la llevó el Grupo Pejino, no Come Golayu"></textarea>
       </label>
       <label>Evidencia <span class="opt">(opcional, pero ayuda mucho)</span>
         <textarea name="evidencia" rows="2" placeholder="Un enlace, el nombre del periódico y la fecha, o de dónde lo sabes"></textarea>
@@ -205,8 +209,7 @@ queda guardado como registro de la corrección. El nombre y el email son
 opcionales: sirven sobre todo para poder aclarar contigo lo que mandes y,
 si lo incorporo, para citarte.
 Por esta misma vía puedes pedir corregirlos o borrarlos, y si algo quedara
-sin resolver, existe la Agencia Española de Protección de Datos. No
-adjuntes fotos con personas reconocibles sin su permiso.</p>
+sin resolver, existe la Agencia Española de Protección de Datos.</p>
 
       <div class="report-foot">
         <span class="report-msg" id="report-msg"></span>

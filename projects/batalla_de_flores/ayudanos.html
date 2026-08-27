@@ -54,7 +54,7 @@
 <p class="intro">Estas <b>131 carrozas</b> están fotografiadas en el archivo de
 <a href="https://www.batalladeflores.net/" target="_blank" rel="noopener">batalladeflores.net</a>
 y sabemos el año, pero <b>no hemos conseguido averiguar qué carroza es cada una</b> ni de qué
-grupo. Si reconoces alguna, dínoslo con el botón y la incorporamos citando quién lo ha aportado.
+grupo. No hace falta saberlo todo: el grupo solo, o un detalle, también ayuda. Si reconoces alguna, dínoslo con el botón y la incorporamos citando quién lo ha aportado.
 Fotos cedidas por Santi Fernández.</p>
 <p class="intro"><a href="batalla_de_flores.html">← volver al archivo</a></p>
 <div class="indice"><a href="#a1918">1918</a> · <a href="#a1926">1926</a> · <a href="#a1932">1932</a> · <a href="#a1935">1935</a> · <a href="#a1941">1941</a> · <a href="#a1950">1950</a> · <a href="#a1951">1951</a> · <a href="#a1953">1953</a> · <a href="#a1954">1954</a> · <a href="#a1955">1955</a> · <a href="#a1956">1956</a> · <a href="#a1958">1958</a> · <a href="#a1965">1965</a> · <a href="#a1967">1967</a> · <a href="#a1968">1968</a> · <a href="#a1969">1969</a> · <a href="#a1970">1970</a> · <a href="#a1971">1971</a> · <a href="#a1972">1972</a> · <a href="#a1973">1973</a> · <a href="#a1975">1975</a> · <a href="#a1977">1977</a> · <a href="#a1978">1978</a> · <a href="#a1979">1979</a> · <a href="#a1983">1983</a> · <a href="#a1985">1985</a> · <a href="#a1989">1989</a> · <a href="#a1990">1990</a> · <a href="#a1993">1993</a> · <a href="#a1996">1996</a> · <a href="#a2003">2003</a> · <a href="#a2004">2004</a> · <a href="#a2006">2006</a> · <a href="#a2007">2007</a> · <a href="#a2008">2008</a> · <a href="#a2009">2009</a> · <a href="#a2010">2010</a> · <a href="#a2011">2011</a> · <a href="#a2012">2012</a> · <a href="#a2013">2013</a> · <a href="#a2014">2014</a> · <a href="#a2015">2015</a> · <a href="#a2016">2016</a> · <a href="#a2017">2017</a></div>
@@ -1767,7 +1767,7 @@ Fotos cedidas por Santi Fernández.</p>
 <div id="fondo" hidden>
   <form id="f">
     <button type="button" class="cerrar" id="x">✕</button>
-    <h3>Sé cuál es</h3>
+    <h3>Cuéntanos lo que sepas</h3>
     <p class="ctx" id="ctx"></p>
     <input type="hidden" name="ficha" id="ficha">
     <input type="hidden" name="proyecto" value="batalla_de_flores">
@@ -1775,8 +1775,11 @@ Fotos cedidas por Santi Fernández.</p>
     <!-- Nombre y email opcionales a propósito (minimización del RGPD): para
          identificar una carroza no hace falta saber quién avisa. -->
     <label>Tu nombre <span style="font-style:italic">(opcional: para dirigirme a ti y, si lo incorporo, citarte)</span><input name="nombre" placeholder="O deja el aviso sin firmar"></label>
-    <label>¿Qué carroza es?<input name="correcto" required placeholder="Nombre de la carroza"></label>
-    <label>¿De qué grupo?<input name="mal" placeholder="Grupo o carrocista"></label>
+    <!-- Ningún campo concreto es obligatorio: el saber parcial es el caso
+         típico, no la excepción. Lo obligatorio es decir al menos una cosa,
+         y eso lo comprueba el submit. -->
+    <label>¿Qué carroza es? <span style="font-style:italic">(si lo sabes)</span><input name="correcto" placeholder="Nombre de la carroza"></label>
+    <label>¿De qué grupo? <span style="font-style:italic">(vale aunque solo sepas esto)</span><input name="mal" placeholder="Grupo o carrocista"></label>
     <label>¿Algo más? <span style="font-style:italic">(puesto, quién sale en la foto…)</span>
       <textarea name="evidencia" rows="2"></textarea></label>
     <label>Tu email <span style="font-style:italic">(opcional: por si hace falta aclarar algo contigo)</span><input name="email" type="email"></label>
@@ -1785,8 +1788,7 @@ queda guardado como registro de la corrección. El nombre y el email son
 opcionales: sirven sobre todo para poder aclarar contigo lo que mandes y,
 si lo incorporo, para citarte.
 Por esta misma vía puedes pedir corregirlos o borrarlos, y si algo quedara
-sin resolver, existe la Agencia Española de Protección de Datos. No
-adjuntes fotos con personas reconocibles sin su permiso.</p>
+sin resolver, existe la Agencia Española de Protección de Datos.</p>
     <div class="pie"><span class="msg" id="msg"></span><button type="submit">Enviar</button></div>
   </form>
 </div>
@@ -1809,6 +1811,11 @@ document.addEventListener("click", e => {
 document.getElementById("f").addEventListener("submit", async e => {
   e.preventDefault();
   const msg = document.getElementById("msg");
+  const dice = ["correcto", "mal", "evidencia"].some(n => e.target[n].value.trim());
+  if (!dice) {
+    msg.textContent = "Cuéntanos al menos una cosa: la carroza, el grupo o un detalle.";
+    return;
+  }
   msg.textContent = "Enviando…";
   try {
     await fetch("https://script.google.com/macros/s/AKfycbxwXjxQaL4d9X67HJv3f17mR2ctchtxfpg0JCj054XK5jiViPybpD-XY-H3qSIxloOSXA/exec", { method:"POST", mode:"no-cors",
