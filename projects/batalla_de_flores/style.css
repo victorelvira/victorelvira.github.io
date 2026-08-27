@@ -1802,6 +1802,9 @@ body.lb-abierto { overflow: hidden; }
 .report input:focus-visible, .report textarea:focus-visible { outline: 2px solid var(--t-year); outline-offset: 1px; }
 .file-label input[type="file"] { display: block; margin-top: 4px; font-size: 12px; max-width: 100%; }
 .file-note { display: block; margin-top: 3px; color: var(--t-route); font-size: 11.5px; }
+.report-legal {
+  margin: 8px 0 0; color: var(--muted); font-size: 10.5px; line-height: 1.45;
+}
 .report-foot { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
 .report-msg { color: var(--muted); font-size: 12px; }
 .pill.send {

@@ -1772,12 +1772,21 @@ Fotos cedidas por Santi Fernández.</p>
     <input type="hidden" name="ficha" id="ficha">
     <input type="hidden" name="proyecto" value="batalla_de_flores">
     <input type="hidden" name="url" id="url">
-    <label>Tu nombre y apellidos<input name="nombre" required placeholder="Para poder citarte"></label>
+    <!-- Nombre y email opcionales a propósito (minimización del RGPD): para
+         identificar una carroza no hace falta saber quién avisa. -->
+    <label>Tu nombre <span style="font-style:italic">(opcional: para dirigirme a ti y, si lo incorporo, citarte)</span><input name="nombre" placeholder="O deja el aviso sin firmar"></label>
     <label>¿Qué carroza es?<input name="correcto" required placeholder="Nombre de la carroza"></label>
     <label>¿De qué grupo?<input name="mal" placeholder="Grupo o carrocista"></label>
     <label>¿Algo más? <span style="font-style:italic">(puesto, quién sale en la foto…)</span>
       <textarea name="evidencia" rows="2"></textarea></label>
-    <label>Tu email <span style="font-style:italic">(opcional)</span><input name="email" type="email"></label>
+    <label>Tu email <span style="font-style:italic">(opcional: por si hace falta aclarar algo contigo)</span><input name="email" type="email"></label>
+    <p style="margin:8px 0 0;color:#6d5a55;font-size:10.5px;line-height:1.45">Lo que envíes va a una hoja de cálculo privada mía, alojada en Google, y
+queda guardado como registro de la corrección. El nombre y el email son
+opcionales: sirven sobre todo para poder aclarar contigo lo que mandes y,
+si lo incorporo, para citarte.
+Por esta misma vía puedes pedir corregirlos o borrarlos, y si algo quedara
+sin resolver, existe la Agencia Española de Protección de Datos. No
+adjuntes fotos con personas reconocibles sin su permiso.</p>
     <div class="pie"><span class="msg" id="msg"></span><button type="submit">Enviar</button></div>
   </form>
 </div>

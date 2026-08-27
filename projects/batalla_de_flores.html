@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="https://batalladedatos.es/batalla_de_flores/og.jpg?v=0136bc10">
   <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=ce1b050f">
+  <link rel="stylesheet" href="batalla_de_flores/style.css?v=250df98d">
 </head>
 <body>
   <nav id="navbar">
@@ -175,8 +175,13 @@
       <input type="hidden" name="ficha" id="report-ficha">
       <input type="hidden" name="url" id="report-url">
 
-      <label>Tu nombre y apellidos
-        <input name="nombre" required autocomplete="name" placeholder="Para poder citarte si lo incorporo">
+      <!-- El nombre y el email son opcionales a proposito, y no es cortesia:
+           es la minimizacion del RGPD. Para corregir un dato del archivo no
+           hace falta saber quien avisa, asi que solo lo imprescindible es
+           obligatorio. Darlos es consentir su unico uso, que el propio campo
+           dice. -->
+      <label>Tu nombre <span class="opt">(opcional: para dirigirme a ti y, si lo incorporo, citarte)</span>
+        <input name="nombre" autocomplete="name" placeholder="O deja el aviso sin firmar">
       </label>
       <label>Qué dato está mal o falta
         <textarea name="mal" rows="2" required placeholder="Ej.: el grupo de la carroza «Aiko» no es ese"></textarea>
@@ -191,9 +196,17 @@
         <input id="report-file" type="file" accept="image/*">
         <span class="file-note" id="report-file-note"></span>
       </label>
-      <label>Tu email <span class="opt">(opcional, por si necesito preguntarte)</span>
+      <label>Tu email <span class="opt">(opcional: por si hace falta aclarar algo contigo)</span>
         <input name="email" type="email" autocomplete="email" placeholder="nombre@correo.com">
       </label>
+
+      <p class="report-legal">Lo que envíes va a una hoja de cálculo privada mía, alojada en Google, y
+queda guardado como registro de la corrección. El nombre y el email son
+opcionales: sirven sobre todo para poder aclarar contigo lo que mandes y,
+si lo incorporo, para citarte.
+Por esta misma vía puedes pedir corregirlos o borrarlos, y si algo quedara
+sin resolver, existe la Agencia Española de Protección de Datos. No
+adjuntes fotos con personas reconocibles sin su permiso.</p>
 
       <div class="report-foot">
         <span class="report-msg" id="report-msg"></span>
