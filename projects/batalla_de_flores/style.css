@@ -63,6 +63,12 @@ a { color: inherit; }
 #navbar .nav-sep { color: #8a7f72; }
 #navbar .nav-home { color: #cbbfae; text-decoration: none; }
 #navbar a:hover { text-decoration: underline; }
+/* Monocromo a proposito: el degradado de marca de Instagram gritaria en una
+   barra que es toda tierra y hueso. Mismo color que el resto, blanco al pasar.
+   OJO: la navbar es compartida entre proyectos; si esto se queda, hay que
+   replicarlo en los demas. */
+#navbar .nav-ig { margin-left: 10px; color: #cbbfae; display: inline-flex; align-items: center; }
+#navbar .nav-ig:hover { color: #fff; }
 #navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ── barra de título y filtros ─────────────────────────────────────────── */
@@ -115,32 +121,37 @@ a { color: inherit; }
  *           compas entran (2 «Flores» y «en» · 3 «de Laredo» · 4 los anos),
  *           y por eso abrir cada una es inline y no una clase del h1
  *
- * Las palabras que sobreviven al arranque —«Batalla», «en», «datos»— no
- * cambian de forma en ningun momento: solo se juntan. Hubo una version que
- * arrancaba en «BatallaDeDatos» y tenia que bajar dos mayusculas por el
- * camino; ese salto se veia, y quitarlo salio gratis.
+ * La unidad de la animacion es la LETRA, no el pixel. Antes cada palabra era
+ * una caja con overflow que crecia en pixeles, y en cualquier fotograma
+ * intermedio habia media letra cortada por el borde: parecia un cartel
+ * deslizandose por encima. Ahora el JS trocea cada brote en un span por
+ * letra (.ch), y las letras aparecen enteras, una tras otra, entrando con
+ * un pelin de desenfoque. Una letra esta o no esta; nunca esta a medias.
  *
- * Sin la clase .anim —sin JS, o a la segunda visita— esto no hace nada y el
- * titulo sale entero desde el primer fotograma.
+ * El brote-caja-que-crece sigue existiendo un instante: es la tapa inicial
+ * (max-width 0) que esconde las palabras hasta que el JS trocea. En cuanto
+ * hay letras, el brote pasa a .letras y deja de recortar nada.
  *
- * «pre» y no «nowrap» en los dos: un inline-block se come el espacio con el
- * que empieza, y «de» salia pegado a «Flores». */
+ * Sin la clase .anim —sin JS, o con movimiento reducido— nada de esto se
+ * aplica y el titulo sale entero desde el primer fotograma.
+ *
+ * «pre» y no «nowrap»: un inline-block se come el espacio con el que
+ * empieza, y «de» salia pegado a «Flores». Los .ch lo heredan, que un span
+ * cuyo contenido es un espacio necesita conservarlo. */
 .hueco, .brote { display: inline-block; overflow: hidden; vertical-align: bottom; white-space: pre; }
 
-h1.anim .hueco { max-width: 0; transition: max-width var(--t-hueco, 520ms) cubic-bezier(.3,.7,.4,1); }
-/* Se probo retrasar la opacidad respecto al ancho (abrir el hueco con la
- * palabra invisible y fundirla despues, para que el borde del overflow no
- * recortara letras a medias). En la practica se veia peor: el titulo
- * respiraba a dos tiempos y quedaba raro. Decision tomada: vuelven a ir a
- * la vez. */
-h1.anim .brote {
-  max-width: 0; opacity: 0;
-  transition: max-width var(--t-brote, 950ms) cubic-bezier(.22,.61,.36,1),
-              opacity calc(var(--t-brote, 950ms) * .7) ease;
-}
+h1.anim .hueco { max-width: 0; transition: max-width var(--t-hueco, 700ms) cubic-bezier(.3,.7,.4,1); }
+h1.anim .brote { max-width: 0; opacity: 0; }
+h1.anim .brote.letras { max-width: none; opacity: 1; }
+
+.brote .ch { transition: opacity 240ms ease, filter 320ms ease; }
+.brote .ch.oculta { display: none; }
+.brote .ch.entrando { opacity: 0; filter: blur(6px); }
 
 @media (prefers-reduced-motion: reduce) {
   h1.anim .hueco, h1.anim .brote { max-width: none !important; opacity: 1 !important; transition: none; }
+  .brote .ch.oculta { display: inline; }
+  .brote .ch.entrando { opacity: 1; filter: none; }
 }
 /* Sangrada para arrancar donde arranca «Batalla», no debajo de la dalia. */
 .bar-sub {

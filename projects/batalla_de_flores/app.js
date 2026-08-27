@@ -4469,48 +4469,77 @@ function desplegarTitulo({ reiniciando = false } = {}) {
   if (!reiniciando && !h1.classList.contains("anim")) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  clearTimeout(desplegarTitulo.relojes?.[0]);
   (desplegarTitulo.relojes || []).forEach(clearTimeout);
   desplegarTitulo.relojes = [];
+  const luego = (fn, ms) => desplegarTitulo.relojes.push(setTimeout(fn, ms));
 
   const ESPERA = 1500;   // cuanto se lee «Batalladedatos» antes de abrirse
   const HUECO  = 700;    // lo que tardan los espacios en abrirse
-  const ENTRE  = 700;    // del arranque a que broten las palabras que faltan
-  const BROTE  = 1250;   // lo que tarda cada brote
+  const ENTRE  = 700;    // del arranque al primer compas de letras
   const COMPAS = 900;    // lo que separa un compas del siguiente
+  const LETRA  = 65;     // lo que separa una letra de la siguiente
 
   const huecos = [...h1.querySelectorAll(".hueco")];
   const brotes = [...h1.querySelectorAll(".brote")];
 
-  // Se mide con las piezas abiertas: un max-width en «auto» no se puede
-  // animar, hace falta un numero. Quitar y volver a poner la clase dentro del
-  // mismo bloque no llega a pintarse, asi que no parpadea.
+  // La unidad de la animacion es la letra entera: la primera vez, cada texto
+  // de los brotes se trocea en un span por caracter, conservando los spans
+  // interiores (.of, .years) para no perder su estilo. Una letra escondida
+  // es display:none —no ocupa nada—, asi que nunca hay media letra cortada.
+  if (!desplegarTitulo.troceado) {
+    desplegarTitulo.troceado = true;
+    const trocear = nodo => {
+      [...nodo.childNodes].forEach(hijo => {
+        if (hijo.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          for (const ch of hijo.textContent) {
+            const s = document.createElement("span");
+            s.className = "ch";
+            s.textContent = ch;
+            frag.appendChild(s);
+          }
+          nodo.replaceChild(frag, hijo);
+        } else {
+          trocear(hijo);
+        }
+      });
+    };
+    brotes.forEach(brote => { trocear(brote); brote.classList.add("letras"); });
+  }
+  const letras = brotes.map(brote => [...brote.querySelectorAll(".ch")]);
+
+  // Estado de salida: huecos cerrados y todas las letras escondidas. Se mide
+  // el ancho natural de los huecos con la clase quitada, porque un max-width
+  // en «auto» no se puede animar; quitar y reponer la clase en el mismo
+  // bloque no llega a pintarse, asi que no parpadea.
   h1.className = "";
-  [...huecos, ...brotes].forEach(nodo => { nodo.style.maxWidth = ""; nodo.style.opacity = ""; });
+  huecos.forEach(nodo => { nodo.style.maxWidth = ""; });
+  letras.flat().forEach(ch => { ch.classList.add("oculta"); ch.classList.remove("entrando"); });
   const anchoHueco = huecos.map(nodo => nodo.scrollWidth);
-  const anchoBrote = brotes.map(nodo => nodo.scrollWidth);
   h1.className = "anim";
   h1.style.setProperty("--t-hueco", HUECO + "ms");
-  h1.style.setProperty("--t-brote", BROTE + "ms");
   void h1.offsetWidth;
 
   // 1 · se abren los espacios: Batalladedatos -> Batalla de datos
-  const luego = (fn, ms) => desplegarTitulo.relojes.push(setTimeout(fn, ms));
-
   luego(() => {
     huecos.forEach((nodo, i) => { nodo.style.maxWidth = anchoHueco[i] + "px"; });
   }, ESPERA);
 
-  // 2, 3, 4 · los brotes entran por compases, y cada palabra sabe el suyo
-  // por su data-paso: primero «Flores» y «en» (Batalla de Flores en datos),
-  // luego «de Laredo», y los anos al final. Abrirlos es poner el ancho y la
-  // opacidad en linea, nodo a nodo: una clase en el h1 abriria todos a la vez.
+  // 2, 3, 4 · las letras entran por compases —primero «Flores» y «en», luego
+  // «de Laredo», al final los anos— y dentro de cada compas van una a una,
+  // enteras, entrando con un pelin de desenfoque.
   [2, 3, 4].forEach((paso, orden) => {
     luego(() => {
-      brotes.forEach((nodo, i) => {
-        if (nodo.dataset.paso !== String(paso)) return;
-        nodo.style.maxWidth = anchoBrote[i] + "px";
-        nodo.style.opacity = "1";
+      brotes.forEach((brote, b) => {
+        if (brote.dataset.paso !== String(paso)) return;
+        letras[b].forEach((ch, i) => {
+          luego(() => {
+            ch.classList.remove("oculta");
+            ch.classList.add("entrando");
+            void ch.offsetWidth;
+            ch.classList.remove("entrando");
+          }, i * LETRA);
+        });
       });
     }, ESPERA + ENTRE + orden * COMPAS);
   });
