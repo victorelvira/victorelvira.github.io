@@ -53,7 +53,6 @@ const state = {
   // entra directo por un enlace con # -desde el historial de Chrome, o desde
   // WhatsApp- no hay nada detrás, y volver atrás saca de la web.
   historialPropio: false,
-  vengoDe: null,          // la ficha desde la que se abrió la actual
   sort: { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } },
   openDecade: null,   // solo se usa en movil: una decada desplegada a la vez
 };
@@ -3977,16 +3976,7 @@ function track(path, title, event = false) {
 }
 
 function select(kind, id, { updateHash = true, reveal = true } = {}) {
-  const hadSelection = Boolean(state.selection);
-  // De dónde vengo, para que la X me devuelva ahí.
-  //
-  // El historial se mantiene plano a propósito (ver abajo), así que «atrás»
-  // sale al índice y la edición que estabas mirando se perdía: abrías una
-  // carroza desde el palmarés de 2017, cerrabas, y aparecías en la rejilla.
-  // Esto guarda UN paso, no una pila: la X te devuelve a la ficha de la que
-  // saliste y desde ahí ya cierra. Nunca más de una pulsación extra.
   const previa = state.selection;
-  state.vengoDe = previa && (previa.kind !== kind || previa.id !== id) ? previa : null;
   state.selection = { kind, id };
   // Hay ficha abierta: en el PC eso es lo que enciende la cruz de cerrar.
   document.body.classList.add("hay-ficha");
@@ -3994,11 +3984,16 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
     const prefix = { year: "y", group: "g", route: "r", float: "c", about: "info" }[kind];
-    // Se apila UNA sola entrada: la de abrir ficha estando en el indice. Saltar
-    // de una ficha a otra reemplaza. Asi "atras" cierra lo que estas mirando y
-    // te devuelve al indice, y el segundo "atras" ya sale de la pagina. Apilar
-    // cada seleccion obligaria a veinte pulsaciones para escapar.
-    const method = hadSelection ? "replaceState" : "pushState";
+    // CADA ficha nueva apila su entrada, tambien al saltar de ficha a ficha.
+    // Estuvo aplanado —una sola entrada por sesion de fichas— para poder
+    // escapar de la web en dos pulsaciones, y en la calle se vio lo contrario:
+    // la gente mayor navega SOLO con el boton atras, esperaba volver a la
+    // ficha anterior, y en dos pulsaciones estaba fuera de la web sin boton de
+    // adelante que la rescatara. Atras tiene que deshacer el ultimo paso, no
+    // expulsar. Solo re-seleccionar la misma ficha reemplaza, para no apilar
+    // duplicados.
+    const same = previa && previa.kind === kind && previa.id === id;
+    const method = same ? "replaceState" : "pushState";
     history[method](null, "", `#/${prefix}/${id}`);
     if (method === "pushState") state.historialPropio = true;
     track(location.pathname + location.hash, `${kind}: ${id}`);
@@ -4067,27 +4062,16 @@ function clearSelection() {
   document.body.classList.remove("detail-open");
   document.body.classList.remove("hay-ficha");
   state.selection = null;
-  // Al salir del todo no se vuelve de ningún sitio: si no se borra, la X de la
-  // siguiente ficha que se abra te mandaría a una que cerraste hace rato.
-  state.vengoDe = null;
   renderIndex();
   renderDetail();
 }
 
 function closeDetail() {
   if (!state.selection) return;
-  // Si esta ficha se abrió desde otra, la X vuelve a aquella en vez de cerrar
-  // del todo: es lo que espera quien estaba leyendo un palmarés y ha entrado a
-  // ver una carroza.
-  if (state.vengoDe) {
-    const volver = state.vengoDe;
-    state.vengoDe = null;
-    select(volver.kind, volver.id);
-    state.vengoDe = null;
-    return;
-  }
-  // Si la ficha metio una entrada en el historial, la X retrocede: asi el boton
-  // atras y la X dejan el historial igual y no se acumulan estados muertos.
+  // La X hace lo mismo que el boton atras: deshacer el ultimo paso. Antes
+  // habia una memoria propia de un salto (vengoDe); con el historial apilado
+  // de verdad sobra, y tener dos memorias del mismo camino es tener dos
+  // versiones que un dia discrepan.
   //
   // Pero si se ha entrado DIRECTO a un enlace con # -del historial del
   // navegador, de WhatsApp, de un marcador- no hay nada detrás y `back()` saca
