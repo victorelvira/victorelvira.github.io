@@ -128,16 +128,15 @@ a { color: inherit; }
 .hueco, .brote { display: inline-block; overflow: hidden; vertical-align: bottom; white-space: pre; }
 
 h1.anim .hueco { max-width: 0; transition: max-width var(--t-hueco, 520ms) cubic-bezier(.3,.7,.4,1); }
-/* La opacidad va RETRASADA respecto al ancho, y no es un capricho: la caja
- * se abre recortando lo que asoma (overflow), y si la palabra ya fuera
- * visible mientras se abre, el borde la cortaria en vertical por mitad de
- * las letras: se veia como un rectangulo deslizandose por encima. Con el
- * retraso, primero se abre el hueco con la palabra casi invisible y luego
- * la palabra se funde ya en su sitio, entera. */
+/* Se probo retrasar la opacidad respecto al ancho (abrir el hueco con la
+ * palabra invisible y fundirla despues, para que el borde del overflow no
+ * recortara letras a medias). En la practica se veia peor: el titulo
+ * respiraba a dos tiempos y quedaba raro. Decision tomada: vuelven a ir a
+ * la vez. */
 h1.anim .brote {
   max-width: 0; opacity: 0;
   transition: max-width var(--t-brote, 950ms) cubic-bezier(.22,.61,.36,1),
-              opacity calc(var(--t-brote, 950ms) * .6) ease calc(var(--t-brote, 950ms) * .45);
+              opacity calc(var(--t-brote, 950ms) * .7) ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
