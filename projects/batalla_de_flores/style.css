@@ -1327,8 +1327,11 @@ ul.plain a { color: var(--sky); word-break: break-all; }
      linea. Se aprieta el espaciado y se encogen un punto los años: juntos
      regalan ~13px de margen, que ademas cubre que la Avenir del iPhone no
      mide exactamente como la fuente de reserva. */
-  .bar-title h1 { font-size: 17px; letter-spacing: -0.4px; }
-  .bar-title h1 .years { font-size: 0.72em; }
+  .bar-title h1 { font-size: 17px; letter-spacing: -0.5px; }
+  .bar-title h1 .years { font-size: 0.7em; }
+  /* Y la dalia cede dos px de hueco: son los ultimos que faltaban para que
+     los años entren en la linea del iPhone. */
+  .home { gap: 5px; }
   .stats { gap: 10px; font-size: 12px; flex-wrap: wrap; }
   .stats span { display: inline-flex; align-items: baseline; gap: 3px; }
 
