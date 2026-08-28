@@ -18,10 +18,10 @@
     "carrozas_documentadas": 805,
     "carrozas_en_duda_por_duplicado": 133,
     "grupos": 177,
-    "ediciones_con_palmares": 112,
+    "ediciones_con_palmares": 113,
     "carrozas_con_foto": 585,
     "fotos": 778,
-    "afirmaciones": 3858,
+    "afirmaciones": 3863,
     "afirmaciones_corroboradas": 443,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
@@ -175672,13 +175672,331 @@
       "float_page_count": 0,
       "palmares_page_count": 0,
       "source_urls": [
+        "http://batalladeflores.net/wp-content/uploads/2013/09/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+        "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
         "https://www.laredo.es/09/agenda_ampliada/4015.html",
         "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4490"
       ],
       "notes": [
+        "Palmarés anunciado la noche del desfile, según EFE: «Quimera» (Mi Vida Loca) ganó el primer premio, el de mejor vestuario, el premio al Arte y la Onza de Oro; «Walt» (Agrupa-2) ganó la categoría B. El trofeo al segundo premio, de plata valorado en 1.700 €, fue novedad de esta edición. Se homenajeó al carrocista mayor Javier Castillo «Poty» y al veterano Antonio Pascual Torre, participante en 1968. Palmarés completo pendiente de la nota oficial del Ayuntamiento. Fuente: EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026), recorte prensa-efe-infobae-2026-palmares.html (copia en data/sources/) transcrito a mano.",
         "La 115.ª edición se celebra el viernes 28 de agosto de 2026 con 14 carrozas (10 en categoría A y 4 en categoría B) de 7 agrupaciones. La Noche Mágica es el jueves 27 de agosto de 2026, a partir de las 20:00."
       ],
       "floats": [
+        {
+          "id": "2026-quimera-a-na",
+          "label": "vida-2026-quimera",
+          "name": "Quimera",
+          "slug": "quimera",
+          "year": 2026,
+          "category": "A",
+          "position": 1,
+          "points": null,
+          "group_raw": "MI VIDA LOCA",
+          "group_canonical": "Mi Vida Loca",
+          "source_type": "official_result+press_clipping",
+          "source_urls": [
+            "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            },
+            {
+              "kind": "press_clipping",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": 1,
+          "prize_costumes_rank": 1,
+          "notes": [
+            "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
+          ],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_clipping",
+              "cita": "EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)",
+              "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_art_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_costumes_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "quimera",
+          "id_grupo": "vida-loca",
+          "id_completo": "vida-loca_2026_quimera",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-walt-b-na",
+          "label": "agrupa-2026-walt",
+          "name": "Walt",
+          "slug": "walt",
+          "year": 2026,
+          "category": "B",
+          "position": 1,
+          "points": null,
+          "group_raw": "AGRUPA-2",
+          "group_canonical": "Agrupa-dos",
+          "source_type": "official_result+press_clipping",
+          "source_urls": [
+            "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            },
+            {
+              "kind": "press_clipping",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [
+            "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
+          ],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_clipping",
+              "cita": "EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)",
+              "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "walt",
+          "id_grupo": "agrupa-dos",
+          "id_completo": "agrupa-dos_2026_walt",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-eutopia-a-na",
+          "label": "agrupa-2026-eutopia",
+          "name": "Eutopía",
+          "slug": "eutopia",
+          "year": 2026,
+          "category": "A",
+          "position": 2,
+          "points": null,
+          "group_raw": "AGRUPA-2",
+          "group_canonical": "Agrupa-dos",
+          "source_type": "official_result+press_clipping",
+          "source_urls": [
+            "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            },
+            {
+              "kind": "press_clipping",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [
+            "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
+          ],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_clipping",
+              "cita": "EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)",
+              "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "eutopia",
+          "id_grupo": "agrupa-dos",
+          "id_completo": "agrupa-dos_2026_eutopia",
+          "avisos_derivados": []
+        },
         {
           "id": "2026-alistair-a-na",
           "label": "pejino-2026-alistair",
@@ -175902,81 +176220,6 @@
           "id_carroza": "dulces",
           "id_grupo": "vida-loca",
           "id_completo": "vida-loca_2026_dulces-suenos",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-eutopia-a-na",
-          "label": "agrupa-2026-eutopia",
-          "name": "Eutopía",
-          "slug": "eutopia",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "AGRUPA-2",
-          "group_canonical": "Agrupa-dos",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "eutopia",
-          "id_grupo": "agrupa-dos",
-          "id_completo": "agrupa-dos_2026_eutopia",
           "avisos_derivados": []
         },
         {
@@ -176280,81 +176523,6 @@
           "avisos_derivados": []
         },
         {
-          "id": "2026-quimera-a-na",
-          "label": "vida-2026-quimera",
-          "name": "Quimera",
-          "slug": "quimera",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "MI VIDA LOCA",
-          "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "quimera",
-          "id_grupo": "vida-loca",
-          "id_completo": "vida-loca_2026_quimera",
-          "avisos_derivados": []
-        },
-        {
           "id": "2026-sonando-altamira-a-na",
           "label": "cantu-2026-sonando",
           "name": "Soñando Altamira",
@@ -176653,35 +176821,165 @@
           "id_grupo": "golayu",
           "id_completo": "golayu_2026_todo-o-nada",
           "avisos_derivados": []
-        },
+        }
+      ],
+      "results": [
         {
-          "id": "2026-walt-b-na",
-          "label": "agrupa-2026-walt",
-          "name": "Walt",
-          "slug": "walt",
+          "id": "2026-quimera-a-na",
+          "label": "vida-2026-quimera",
+          "name": "Quimera",
+          "slug": "quimera",
           "year": 2026,
-          "category": "B",
-          "position": null,
+          "category": "A",
+          "position": 1,
           "points": null,
-          "group_raw": "AGRUPA-2",
-          "group_canonical": "Agrupa-dos",
-          "source_type": "official_result",
+          "group_raw": "MI VIDA LOCA",
+          "group_canonical": "Mi Vida Loca",
+          "source_type": "official_result+press_clipping",
           "source_urls": [
+            "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
           "source_links": [
             {
               "kind": "official_result",
               "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            },
+            {
+              "kind": "press_clipping",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": 1,
+          "prize_costumes_rank": 1,
+          "notes": [
+            "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
+          ],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_clipping",
+              "cita": "EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)",
+              "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_art_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_costumes_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-eutopia-a-na",
+          "label": "agrupa-2026-eutopia",
+          "name": "Eutopía",
+          "slug": "eutopia",
+          "year": 2026,
+          "category": "A",
+          "position": 2,
+          "points": null,
+          "group_raw": "AGRUPA-2",
+          "group_canonical": "Agrupa-dos",
+          "source_type": "official_result+press_clipping",
+          "source_urls": [
+            "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            },
+            {
+              "kind": "press_clipping",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
             }
           ],
           "float_url": null,
           "prize_art_rank": null,
           "prize_costumes_rank": null,
-          "notes": [],
+          "notes": [
+            "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
+          ],
           "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
+          "source_refs": [
+            {
+              "kind": "press_clipping",
+              "cita": "EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)",
+              "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "nivel": 2,
           "claims": {
             "name": {
               "fuentes": [
@@ -176719,18 +177017,21 @@
                 }
               ],
               "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                }
+              ],
+              "independientes": 1
             }
           },
           "image_urls": [],
           "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "walt",
-          "id_grupo": "agrupa-dos",
-          "id_completo": "agrupa-dos_2026_walt",
-          "avisos_derivados": []
-        }
-      ],
-      "results": [
+          "image_credit": null
+        },
         {
           "id": "2026-alistair-a-na",
           "label": "pejino-2026-alistair",
@@ -176935,77 +177236,6 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-eutopia-a-na",
-          "label": "agrupa-2026-eutopia",
-          "name": "Eutopía",
-          "slug": "eutopia",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "AGRUPA-2",
-          "group_canonical": "Agrupa-dos",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
                 }
               ],
               "independientes": 1
@@ -177229,77 +177459,6 @@
           "image_credit": null
         },
         {
-          "id": "2026-quimera-a-na",
-          "label": "vida-2026-quimera",
-          "name": "Quimera",
-          "slug": "quimera",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "MI VIDA LOCA",
-          "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
           "id": "2026-sonando-altamira-a-na",
           "label": "cantu-2026-sonando",
           "name": "Soñando Altamira",
@@ -177432,6 +177591,101 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-walt-b-na",
+          "label": "agrupa-2026-walt",
+          "name": "Walt",
+          "slug": "walt",
+          "year": 2026,
+          "category": "B",
+          "position": 1,
+          "points": null,
+          "group_raw": "AGRUPA-2",
+          "group_canonical": "Agrupa-dos",
+          "source_type": "official_result+press_clipping",
+          "source_urls": [
+            "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            },
+            {
+              "kind": "press_clipping",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [
+            "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
+          ],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_clipping",
+              "cita": "EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)",
+              "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
+              "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_clipping",
+                  "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
                 }
               ],
               "independientes": 1
@@ -177645,77 +177899,6 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-walt-b-na",
-          "label": "agrupa-2026-walt",
-          "name": "Walt",
-          "slug": "walt",
-          "year": 2026,
-          "category": "B",
-          "position": null,
-          "points": null,
-          "group_raw": "AGRUPA-2",
-          "group_canonical": "Agrupa-dos",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
                 }
               ],
               "independientes": 1
@@ -178280,24 +178463,6 @@
       "id_grupo": "manuel-piedra"
     },
     {
-      "canonical_name": "Hermanos Piedra",
-      "aliases": [
-        "Hermanos Piedra"
-      ],
-      "merged_variants": [],
-      "years": [
-        1931,
-        1932,
-        1934
-      ],
-      "first_year_seen": 1931,
-      "last_year_seen": 1934,
-      "float_count": 5,
-      "wins": 3,
-      "category_counts": {},
-      "id_grupo": "hermanos-piedra"
-    },
-    {
       "canonical_name": "Agrupa-dos",
       "aliases": [
         "AGRUPA-2",
@@ -178314,7 +178479,7 @@
       "first_year_seen": 2014,
       "last_year_seen": 2026,
       "float_count": 8,
-      "wins": 2,
+      "wins": 3,
       "category_counts": {
         "A": 4,
         "B": 4
@@ -178337,12 +178502,30 @@
       "first_year_seen": 2023,
       "last_year_seen": 2026,
       "float_count": 8,
-      "wins": 2,
+      "wins": 3,
       "category_counts": {
         "A": 7,
         "B": 1
       },
       "id_grupo": "vida-loca"
+    },
+    {
+      "canonical_name": "Hermanos Piedra",
+      "aliases": [
+        "Hermanos Piedra"
+      ],
+      "merged_variants": [],
+      "years": [
+        1931,
+        1932,
+        1934
+      ],
+      "first_year_seen": 1931,
+      "last_year_seen": 1934,
+      "float_count": 5,
+      "wins": 3,
+      "category_counts": {},
+      "id_grupo": "hermanos-piedra"
     },
     {
       "canonical_name": "Hermanos Quintana",
@@ -181418,7 +181601,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.71.0",
+  "version": "2.72.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -181436,7 +181619,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-28 15:31",
+  "built_at": "2026-08-28 21:15",
   "map_features": [
     {
       "id": "route_origin_1908",
