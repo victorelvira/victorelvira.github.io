@@ -19,10 +19,10 @@
     "carrozas_en_duda_por_duplicado": 133,
     "grupos": 177,
     "ediciones_con_palmares": 113,
-    "carrozas_con_foto": 587,
-    "fotos": 780,
+    "carrozas_con_foto": 588,
+    "fotos": 781,
     "afirmaciones": 3871,
-    "afirmaciones_corroboradas": 448,
+    "afirmaciones_corroboradas": 449,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -176189,13 +176189,137 @@
           "avisos_derivados": []
         },
         {
+          "id": "2026-hagan-juego-a-na",
+          "label": "come-2026-hagan",
+          "name": "Hagan juego",
+          "slug": "hagan-juego",
+          "year": 2026,
+          "category": "A",
+          "position": 3,
+          "points": null,
+          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result+photo_archive+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
+          "needs_review": [
+            "si"
+          ],
+          "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-3p-hagan juego-come golayu.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación provisional",
+              "texto": "mensaje-noche-desfile-2026",
+              "recorte": "",
+              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-hagan-juego.jpg"
+                }
+              ],
+              "independientes": 2
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-hagan-juego.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-hagan-juego.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-3p-hagan juego-come golayu.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-3p-hagan juego-come golayu.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
+          "id_carroza": "hagan",
+          "id_grupo": "golayu",
+          "id_completo": "golayu_2026_hagan-juego",
+          "avisos_derivados": []
+        },
+        {
           "id": "2026-todo-o-nada-a-na",
           "label": "come-2026-todo",
           "name": "Todo o nada",
           "slug": "todo-o-nada",
           "year": 2026,
           "category": "A",
-          "position": 3,
+          "position": 4,
           "points": null,
           "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
           "group_canonical": "Come Golayu",
@@ -176214,7 +176338,7 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista da 3.º y 4.º a Golayu sin nombrar carrozas; la 3.ª es «Hagan juego» (foto con cartel), luego la 4.ª es «Todo o nada»."
           ],
           "source_refs": [
             {
@@ -176281,101 +176405,6 @@
           "id_carroza": "todo",
           "id_grupo": "golayu",
           "id_completo": "golayu_2026_todo-o-nada",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-hagan-juego-a-na",
-          "label": "come-2026-hagan",
-          "name": "Hagan juego",
-          "slug": "hagan-juego",
-          "year": 2026,
-          "category": "A",
-          "position": 4,
-          "points": null,
-          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
-          "group_canonical": "Come Golayu",
-          "source_type": "official_result+press_history",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [
-            "si"
-          ],
-          "source_refs": [
-            {
-              "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
-              "url": null
-            }
-          ],
-          "nivel": 2,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            },
-            "position": {
-              "fuentes": [
-                {
-                  "kind": "press_history",
-                  "url": null
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "hagan",
-          "id_grupo": "golayu",
-          "id_completo": "golayu_2026_hagan-juego",
           "avisos_derivados": []
         },
         {
@@ -177362,17 +177391,17 @@
           "image_credit": "Víctor Elvira"
         },
         {
-          "id": "2026-todo-o-nada-a-na",
-          "label": "come-2026-todo",
-          "name": "Todo o nada",
-          "slug": "todo-o-nada",
+          "id": "2026-hagan-juego-a-na",
+          "label": "come-2026-hagan",
+          "name": "Hagan juego",
+          "slug": "hagan-juego",
           "year": 2026,
           "category": "A",
           "position": 3,
           "points": null,
           "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
           "group_canonical": "Come Golayu",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -177385,11 +177414,21 @@
           "float_url": null,
           "prize_art_rank": null,
           "prize_costumes_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [
             "si"
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-3p-hagan juego-come golayu.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación provisional",
@@ -177415,9 +177454,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-hagan-juego.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -177434,6 +177477,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -177448,15 +177495,26 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-hagan-juego.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-hagan-juego.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-3p-hagan juego-come golayu.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-3p-hagan juego-come golayu.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
-          "id": "2026-hagan-juego-a-na",
-          "label": "come-2026-hagan",
-          "name": "Hagan juego",
-          "slug": "hagan-juego",
+          "id": "2026-todo-o-nada-a-na",
+          "label": "come-2026-todo",
+          "name": "Todo o nada",
+          "slug": "todo-o-nada",
           "year": 2026,
           "category": "A",
           "position": 4,
@@ -177478,7 +177536,7 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista da 3.º y 4.º a Golayu sin nombrar carrozas; la 3.ª es «Hagan juego» (foto con cartel), luego la 4.ª es «Todo o nada»."
           ],
           "source_refs": [
             {
@@ -182091,7 +182149,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.76.0",
+  "version": "2.77.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -182109,7 +182167,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-28 21:35",
+  "built_at": "2026-08-28 23:15",
   "map_features": [
     {
       "id": "route_origin_1908",
