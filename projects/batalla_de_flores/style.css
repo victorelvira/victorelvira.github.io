@@ -1759,6 +1759,10 @@ body.lb-abierto { overflow: hidden; }
 @media (max-width: 619px) {
   .noche-magica { flex-wrap: nowrap; }
   .nm-texto { flex: 1 1 auto; }
+  /* El boton, a lo minimo: «Ver 2026 →». Cada palabra que suelta el boton es
+     una linea menos del texto de al lado, que con el boton largo se partia
+     en tres. La version larga se queda para pantallas anchas. */
+  .nm-ir .nm-largo { display: none; }
 }
 
 /* Informe de procedencia: una linea por tipo de dato. */

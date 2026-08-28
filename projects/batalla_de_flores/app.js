@@ -361,7 +361,7 @@ function renderNocheMagica() {
     <button class="nm-texto" type="button" data-year="${nm.year}"
       title="${esDiaDesfile ? "Ver la edición" : "Ver el mapa y los locales"}"><b>${titular}</b> · ${detalle}</button>
     <button class="nm-ir" type="button" data-year="${nm.year}">${
-      esDiaDesfile ? `Ver la edición ${nm.year} →` : "Ver el mapa →"}</button>`;
+      esDiaDesfile ? `Ver <span class="nm-largo">la edición </span>${nm.year} →` : "Ver el mapa →"}</button>`;
 }
 
 function renderStats() {
