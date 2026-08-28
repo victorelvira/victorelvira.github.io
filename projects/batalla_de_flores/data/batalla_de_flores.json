@@ -21,8 +21,8 @@
     "ediciones_con_palmares": 113,
     "carrozas_con_foto": 585,
     "fotos": 778,
-    "afirmaciones": 3870,
-    "afirmaciones_corroboradas": 445,
+    "afirmaciones": 3871,
+    "afirmaciones_corroboradas": 446,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -175824,7 +175824,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping",
+          "source_type": "official_result+press_clipping+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175853,6 +175853,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "texto": "En la B ganó Walt y segunda la de Cantu",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
             }
           ],
           "nivel": 2,
@@ -175899,9 +175907,13 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             }
           },
           "image_urls": [],
@@ -176023,6 +176035,101 @@
           "id_carroza": "eutopia",
           "id_grupo": "agrupa-dos",
           "id_completo": "agrupa-dos_2026_eutopia",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-titan-b-na",
+          "label": "cantu-2026-titan",
+          "name": "Titán",
+          "slug": "titan",
+          "year": 2026,
+          "category": "B",
+          "position": 2,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
+          "group_canonical": "El Cantu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "El anuncio nombra al grupo (El Cantu); «Titán» es su única carroza de categoría B según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "texto": "En la B ganó Walt y segunda la de Cantu",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "titan",
+          "id_grupo": "cantu",
+          "id_completo": "cantu_2026_titan",
           "avisos_derivados": []
         },
         {
@@ -176902,81 +177009,6 @@
           "id_carroza": "sonar",
           "id_grupo": "oruna",
           "id_completo": "oruna_2026_sonar-estrellas",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-titan-b-na",
-          "label": "cantu-2026-titan",
-          "name": "Titán",
-          "slug": "titan",
-          "year": 2026,
-          "category": "B",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
-          "group_canonical": "El Cantu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "titan",
-          "id_grupo": "cantu",
-          "id_completo": "cantu_2026_titan",
           "avisos_derivados": []
         }
       ],
@@ -177925,7 +177957,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping",
+          "source_type": "official_result+press_clipping+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -177954,6 +177986,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "texto": "En la B ganó Walt y segunda la de Cantu",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
             }
           ],
           "nivel": 2,
@@ -178000,6 +178040,101 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 2
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-titan-b-na",
+          "label": "cantu-2026-titan",
+          "name": "Titán",
+          "slug": "titan",
+          "year": 2026,
+          "category": "B",
+          "position": 2,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
+          "group_canonical": "El Cantu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "El anuncio nombra al grupo (El Cantu); «Titán» es su única carroza de categoría B según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "texto": "En la B ganó Walt y segunda la de Cantu",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178142,77 +178277,6 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-titan-b-na",
-          "label": "cantu-2026-titan",
-          "name": "Titán",
-          "slug": "titan",
-          "year": 2026,
-          "category": "B",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
-          "group_canonical": "El Cantu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
                 }
               ],
               "independientes": 1
@@ -181915,7 +181979,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.74.0",
+  "version": "2.75.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -181933,7 +181997,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-28 21:21",
+  "built_at": "2026-08-28 21:24",
   "map_features": [
     {
       "id": "route_origin_1908",
