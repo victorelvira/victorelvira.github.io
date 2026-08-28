@@ -69,7 +69,17 @@ a { color: inherit; }
    replicarlo en los demas. */
 #navbar .nav-ig { margin-left: 10px; color: #cbbfae; display: inline-flex; align-items: center; }
 #navbar .nav-ig:hover { color: #fff; }
-#navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* En escritorio, version y fecha en linea y legibles: es la matricula con la
+   que se desarrolla y se diagnostican caches viejas, y a 6.5px habia que
+   acercarse a la pantalla. En movil (bloque de abajo) se apilan y encogen,
+   que alli el sitio manda. El separador lo pone la CSS segun el modo: en
+   columna un punto volante sobraria. */
+#navbar .build {
+  margin-left: auto; color: #8a7f72; font-size: 10px;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  display: inline-flex; align-items: baseline; gap: 4px;
+}
+#navbar .build .build-fecha::before { content: "· "; }
 
 /* ── barra de título y filtros ─────────────────────────────────────────── */
 
@@ -405,7 +415,15 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
 .year.is-active .year-meta { color: rgba(255, 255, 255, 0.85); }
 
 .year-num { font-size: 13px; font-weight: 600; letter-spacing: -0.2px; }
-.year-meta { font-size: 10.5px; color: var(--muted); line-height: 1.1; white-space: nowrap; }
+.year-meta {
+  font-size: 10.5px; color: var(--muted); line-height: 1.1; white-space: nowrap;
+  /* La razon del buscador puede ser un nombre largo: se corta con puntos
+     suspensivos dentro de los 72px de la celda, y el titulo lo da entero. */
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+}
+/* La razon por la que el buscador dejo pasar este ano: carroza en su color,
+   con el nombre completo en el tooltip. */
+.year-razon { color: var(--t-float); }
 
 .year-bar {
   width: 100%; height: 3px; margin-top: 2px; border-radius: 2px;
@@ -1297,13 +1315,20 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .controls .ghost { padding: 4px 8px; }
 
   /* Cabecera más apretada: el bloque de cifras ocupaba media pantalla. */
-  /* La fecha del sello no cabe en 375px y era lo que doblaba la navbar:
-     la version se queda, que es la que sirve para diagnosticar. */
-  #navbar .build-fecha { display: none; }
   #bar { grid-template-columns: 1fr; padding: 6px 12px; gap: 6px; }
   /* Los botones en columna a la derecha estrujaban el título; aquí van debajo. */
   .bar-actions { flex-direction: row; flex-wrap: wrap; }
-  .bar-title h1 { font-size: 17px; }
+  /* En movil, la matricula vuelve a apilarse y encogerse: ahi cada pixel de
+     la barra cuenta y el diagnostico fino se hace en el PC. */
+  #navbar .build { flex-direction: column; align-items: flex-end; gap: 0; font-size: 6.5px; line-height: 1.25; }
+  #navbar .build .build-fecha::before { content: none; }
+
+  /* Al titulo completo le faltaba UN pixel en 375 y los años se caian de
+     linea. Se aprieta el espaciado y se encogen un punto los años: juntos
+     regalan ~13px de margen, que ademas cubre que la Avenir del iPhone no
+     mide exactamente como la fuente de reserva. */
+  .bar-title h1 { font-size: 17px; letter-spacing: -0.4px; }
+  .bar-title h1 .years { font-size: 0.72em; }
   .stats { gap: 10px; font-size: 12px; flex-wrap: wrap; }
   .stats span { display: inline-flex; align-items: baseline; gap: 3px; }
 
@@ -1724,6 +1749,16 @@ body.lb-abierto { overflow: hidden; }
 
 @media (min-width: 620px) {
   .noche-magica { margin: 10px 14px 0; }
+}
+
+/* En movil el boton va AL LADO del texto, no debajo: dejandolo envolver, el
+   boton se bajaba a su propia fila y la caja verde crecia a lo alto. Con el
+   texto encogible y el boton fijo, la caja mide lo que midan las lineas del
+   texto. Es la misma regla de la barra de filtros: encoge quien puede
+   desplazar su contenido, no quien enseña una etiqueta fija. */
+@media (max-width: 619px) {
+  .noche-magica { flex-wrap: nowrap; }
+  .nm-texto { flex: 1 1 auto; }
 }
 
 /* Informe de procedencia: una linea por tipo de dato. */

@@ -181235,7 +181235,9 @@
         "sitio": "bernardino",
         "group_canonical": "Agrupa-dos"
       }
-    ]
+    ],
+    "desfile_hora": "17:00",
+    "desfile_hora_fuente": "Programa oficial de la 115.ª Batalla de Flores, pág. 4: «desfilarán en la Alameda Miramar a las 17:00 horas»"
   },
   "grupos_ids": {
     "Carrozas Oruña": "oruna",
@@ -181416,7 +181418,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.64.0",
+  "version": "2.68.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -181434,7 +181436,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-28 12:49",
+  "built_at": "2026-08-28 14:12",
   "map_features": [
     {
       "id": "route_origin_1908",

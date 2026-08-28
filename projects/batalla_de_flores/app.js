@@ -221,6 +221,35 @@ function buildSearchIndex(edition) {
   return normalizeText(pieces.filter(Boolean).join(" "));
 }
 
+/* Por que ESTA edicion pasa el filtro del buscador.
+ *
+ * La rejilla filtra por un indice que incluye carrozas y grupos, pero la celda
+ * solo ensena el ano: buscabas «pejino», quedaban ocho anos, y no habia forma
+ * de saber que pintaba 1993 ahi. Esto devuelve la carroza o el grupo que ha
+ * coincidido, para pintarlo debajo del ano.
+ *
+ * Dos frenos a proposito: nada con menos de dos letras -con una coincide
+ * medio archivo y seria ruido-, y nada cuando lo buscado esta en el propio
+ * ano visible, que entonces la razon es obvia. */
+function razonDelFiltro(edition, query) {
+  if (!query || query.length < 2) return null;
+  if (String(edition.year).includes(query)) return null;
+  const vistos = new Set();
+  const razones = [];
+  (edition.floats || []).forEach(entry => {
+    let razon = null;
+    if (normalizeText(entry.name).includes(query)) razon = { icono: "🌺", texto: entry.name };
+    else if (normalizeText(`${entry.group_canonical || ""} ${entry.group_raw || ""}`).includes(query)) {
+      razon = { icono: "👥", texto: entry.group_canonical || entry.group_raw };
+    }
+    if (razon && !vistos.has(razon.icono + razon.texto)) {
+      vistos.add(razon.icono + razon.texto);
+      razones.push(razon);
+    }
+  });
+  return razones.length ? razones : null;
+}
+
 function applyFilters() {
   const query = normalizeText(state.query);
   state.filtered = state.editions.filter(edition => {
@@ -323,7 +352,7 @@ function renderNocheMagica() {
   // empuja el contenido real hacia abajo.
   const dia = esc(nm.fecha.replace(/ de \d{4}$/, "").replace(" de agosto", ""));
   const detalle = esDiaDesfile
-    ? `${nm.float_count} carrozas de ${nm.grupos.length} grupos en la Alameda Miramar.`
+    ? `${nm.desfile_hora ? `A las ${esc(nm.desfile_hora)} ` : ""}en la Alameda Miramar, ${nm.float_count} carrozas.`
     : `${dia} de agosto, ${esc(nm.hora)}. Locales abiertos de los ${nm.grupos.length} grupos.`;
 
   caja.hidden = false;
@@ -332,7 +361,7 @@ function renderNocheMagica() {
     <button class="nm-texto" type="button" data-year="${nm.year}"
       title="${esDiaDesfile ? "Ver la edición" : "Ver el mapa y los locales"}"><b>${titular}</b> · ${detalle}</button>
     <button class="nm-ir" type="button" data-year="${nm.year}">${
-      esDiaDesfile ? "Ver la edición →" : "Ver el mapa →"}</button>`;
+      esDiaDesfile ? `Ver la edición ${nm.year} →` : "Ver el mapa →"}</button>`;
 }
 
 function renderStats() {
@@ -345,10 +374,11 @@ function renderStats() {
     `<span><b>${num(summary.group_count)}</b> grupos</span>`,
   ].join("");
   const version = state.dataset.version ? `v${state.dataset.version}` : "sin versión";
-  // La fecha va en su propio span porque en movil se esconde: la barra pedia
-  // 405px en una pantalla de 375 y el enlace largo se doblaba en dos lineas.
-  // La version se queda siempre: es la que deja diagnosticar una cache vieja.
-  els.build.innerHTML = `${esc(version)}<span class="build-fecha"> · ${esc(
+  // Version y fecha en dos spans: la CSS los apila en columna. Asi caben los
+  // dos en el movil sin que la barra crezca —dos lineas de letra diminuta
+  // suman menos alto que una del texto normal de al lado— y sin separador,
+  // que apilado sobraria.
+  els.build.innerHTML = `<span>${esc(version)}</span><span class="build-fecha">${esc(
     state.dataset.built_at || state.dataset.updated_at || "s/f")}</span>`;
 }
 
@@ -418,12 +448,17 @@ function renderYearGrid() {
         ${[...editions].reverse().map(edition => {
           const active = state.selection?.kind === "year" && state.selection.id === edition.year;
           const count = edition.result_count || edition.float_count || 0;
+          const razones = razonDelFiltro(edition, normalizeText(state.query));
+          const razon = razones && razones[0];
           return `
             <button class="year ${coverageClass(edition)}${active ? " is-active" : ""}"
                     type="button" data-year="${edition.year}"
                     title="${esc(edition.edition_label || edition.year)} · ${esc(COVERAGE_LABEL[edition.coverage] || "")}">
               <span class="year-num">${edition.year}</span>
-              <span class="year-meta">${count
+              ${razon ? `<span class="year-meta year-razon"
+                title="Coincide: ${esc(razones.map(r => r.texto).join(" · "))}">${razon.icono} ${esc(razon.texto)}${
+                razones.length > 1 ? ` +${razones.length - 1}` : ""}</span>`
+              : `<span class="year-meta">${count
                 ? `${count} carroza${count === 1 ? "" : "s"}`
                 // En la rejilla, la etiqueta corta. «Hueco documental» son
                 // dieciséis caracteres contra los diez de «5 carrozas», y esa
@@ -432,7 +467,7 @@ function renderYearGrid() {
                 // «Sin datos»: eran dos nombres para lo mismo en la misma
                 // pantalla. El nombre largo sigue en la ficha, que es donde hay
                 // sitio para explicarse.
-                : (ESTADO_CORTO[edition.status] || STATUS_LABEL[edition.status] || "–")}</span>
+                : (ESTADO_CORTO[edition.status] || STATUS_LABEL[edition.status] || "–")}</span>`}
               <span class="year-bar"></span>
             </button>`;
         }).join("")}
