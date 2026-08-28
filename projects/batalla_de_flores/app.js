@@ -345,7 +345,11 @@ function renderStats() {
     `<span><b>${num(summary.group_count)}</b> grupos</span>`,
   ].join("");
   const version = state.dataset.version ? `v${state.dataset.version}` : "sin versión";
-  els.build.textContent = `${version} · ${state.dataset.built_at || state.dataset.updated_at || "s/f"}`;
+  // La fecha va en su propio span porque en movil se esconde: la barra pedia
+  // 405px en una pantalla de 375 y el enlace largo se doblaba en dos lineas.
+  // La version se queda siempre: es la que deja diagnosticar una cache vieja.
+  els.build.innerHTML = `${esc(version)}<span class="build-fecha"> · ${esc(
+    state.dataset.built_at || state.dataset.updated_at || "s/f")}</span>`;
 }
 
 function renderFilterOptions() {

@@ -61,7 +61,7 @@ a { color: inherit; }
 }
 #navbar .wordmark { color: #fff; font-weight: 700; text-decoration: none; letter-spacing: .2px; }
 #navbar .nav-sep { color: #8a7f72; }
-#navbar .nav-home { color: #cbbfae; text-decoration: none; }
+#navbar .nav-home { color: #cbbfae; text-decoration: none; white-space: nowrap; }
 #navbar a:hover { text-decoration: underline; }
 /* Monocromo a proposito: el degradado de marca de Instagram gritaria en una
    barra que es toda tierra y hueso. Mismo color que el resto, blanco al pasar.
@@ -108,7 +108,10 @@ a { color: inherit; }
   font-size: 19px;
   letter-spacing: -0.2px;
 }
-.bar-title h1 .of { font-weight: 400; }
+/* En negrita queda solo lo que dice el dominio —Batalla, de, datos—: las
+   palabras que brotan («Flores de Laredo en», los años) van en peso normal.
+   Así el título en reposo sigue enseñando el juego aunque no haya animación. */
+.bar-title h1 .brote, .bar-title h1 .of { font-weight: 400; }
 
 /* El titulo que se despliega, una vez por visitante.
  *
@@ -1294,6 +1297,9 @@ ul.plain a { color: var(--sky); word-break: break-all; }
   .controls .ghost { padding: 4px 8px; }
 
   /* Cabecera más apretada: el bloque de cifras ocupaba media pantalla. */
+  /* La fecha del sello no cabe en 375px y era lo que doblaba la navbar:
+     la version se queda, que es la que sirve para diagnosticar. */
+  #navbar .build-fecha { display: none; }
   #bar { grid-template-columns: 1fr; padding: 6px 12px; gap: 6px; }
   /* Los botones en columna a la derecha estrujaban el título; aquí van debajo. */
   .bar-actions { flex-direction: row; flex-wrap: wrap; }
