@@ -19,10 +19,10 @@
     "carrozas_en_duda_por_duplicado": 133,
     "grupos": 177,
     "ediciones_con_palmares": 113,
-    "carrozas_con_foto": 585,
-    "fotos": 778,
+    "carrozas_con_foto": 587,
+    "fotos": 780,
     "afirmaciones": 3871,
-    "afirmaciones_corroboradas": 446,
+    "afirmaciones_corroboradas": 448,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -175693,7 +175693,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_clipping+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175712,6 +175712,7 @@
           "prize_art_rank": 1,
           "prize_costumes_rank": 1,
           "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [
@@ -175724,6 +175725,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-1p-quimera-mi vida loca.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
             },
             {
               "kind": "press_history",
@@ -175750,9 +175759,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-quimera.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -175769,6 +175782,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -175805,9 +175822,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-quimera.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-quimera.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-1p-quimera-mi vida loca.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-1p-quimera-mi vida loca.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "quimera",
           "id_grupo": "vida-loca",
           "id_completo": "vida-loca_2026_quimera",
@@ -175935,7 +175963,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175954,6 +175982,7 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [
@@ -175966,6 +175995,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-2p-eutopia-agrupa-2.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
             },
             {
               "kind": "press_history",
@@ -175992,9 +176029,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-eutopia.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -176011,6 +176052,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -176029,9 +176074,20 @@
               "independientes": 2
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-eutopia.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-eutopia.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-2p-eutopia-agrupa-2.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-2p-eutopia-agrupa-2.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "eutopia",
           "id_grupo": "agrupa-dos",
           "id_completo": "agrupa-dos_2026_eutopia",
@@ -177024,7 +177080,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_clipping+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -177043,6 +177099,7 @@
           "prize_art_rank": 1,
           "prize_costumes_rank": 1,
           "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [
@@ -177055,6 +177112,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-1p-quimera-mi vida loca.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
             },
             {
               "kind": "press_history",
@@ -177081,9 +177146,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-quimera.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -177100,6 +177169,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -177136,9 +177209,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-quimera.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-quimera.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-1p-quimera-mi vida loca.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-1p-quimera-mi vida loca.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-eutopia-a-na",
@@ -177151,7 +177235,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -177170,6 +177254,7 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [
@@ -177182,6 +177267,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-2p-eutopia-agrupa-2.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
             },
             {
               "kind": "press_history",
@@ -177208,9 +177301,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-eutopia.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -177227,6 +177324,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -177245,9 +177346,20 @@
               "independientes": 2
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-eutopia.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-eutopia.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-2p-eutopia-agrupa-2.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-2p-eutopia-agrupa-2.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-todo-o-nada-a-na",
@@ -181979,7 +182091,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.75.0",
+  "version": "2.76.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -181997,7 +182109,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-28 21:24",
+  "built_at": "2026-08-28 21:35",
   "map_features": [
     {
       "id": "route_origin_1908",
