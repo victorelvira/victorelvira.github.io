@@ -21,8 +21,8 @@
     "ediciones_con_palmares": 113,
     "carrozas_con_foto": 585,
     "fotos": 778,
-    "afirmaciones": 3863,
-    "afirmaciones_corroboradas": 443,
+    "afirmaciones": 3870,
+    "afirmaciones_corroboradas": 445,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -175693,7 +175693,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_clipping",
+          "source_type": "official_result+press_clipping+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175722,6 +175722,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
             }
           ],
           "nivel": 2,
@@ -175768,9 +175776,13 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "prize_art_rank": {
               "fuentes": [
@@ -175909,7 +175921,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping",
+          "source_type": "official_result+press_clipping+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175930,7 +175942,9 @@
           "notes": [
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
-          "needs_review": [],
+          "needs_review": [
+            "La lista da el 2.º a Agrupa-dos sin nombrar carroza; «Eutopía» es su única de categoría A según el programa."
+          ],
           "source_refs": [
             {
               "kind": "press_clipping",
@@ -175938,6 +175952,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
             }
           ],
           "nivel": 2,
@@ -175984,9 +176006,13 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             }
           },
           "image_urls": [],
@@ -175995,6 +176021,583 @@
           "id_carroza": "eutopia",
           "id_grupo": "agrupa-dos",
           "id_completo": "agrupa-dos_2026_eutopia",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-todo-o-nada-a-na",
+          "label": "come-2026-todo",
+          "name": "Todo o nada",
+          "slug": "todo-o-nada",
+          "year": 2026,
+          "category": "A",
+          "position": 3,
+          "points": null,
+          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista da 3.º y 4.º a Golayu sin nombrar carrozas; Víctor precisó que la 4.ª es «Hagan juego», luego la 3.ª es «Todo o nada»."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "todo",
+          "id_grupo": "golayu",
+          "id_completo": "golayu_2026_todo-o-nada",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-hagan-juego-a-na",
+          "label": "come-2026-hagan",
+          "name": "Hagan juego",
+          "slug": "hagan-juego",
+          "year": 2026,
+          "category": "A",
+          "position": 4,
+          "points": null,
+          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "hagan",
+          "id_grupo": "golayu",
+          "id_completo": "golayu_2026_hagan-juego",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-sonando-altamira-a-na",
+          "label": "cantu-2026-sonando",
+          "name": "Soñando Altamira",
+          "slug": "sonando-altamira",
+          "year": 2026,
+          "category": "A",
+          "position": 5,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
+          "group_canonical": "El Cantu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 2,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (El Cantu); «Soñando Altamira» es su única de categoría A según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_costumes_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "sonando",
+          "id_grupo": "cantu",
+          "id_completo": "cantu_2026_sonando-altamira",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-jerez-de-la-frontera-a-na",
+          "label": "oruna-2026-jerez",
+          "name": "Jerez de la Frontera",
+          "slug": "jerez-de-la-frontera",
+          "year": 2026,
+          "category": "A",
+          "position": 7,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (Oruña); «Jerez de la Frontera» es su única de categoría A según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "jerez",
+          "id_grupo": "oruna",
+          "id_completo": "oruna_2026_jerez-frontera",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-dulces-suenos-a-na",
+          "label": "vida-2026-dulces",
+          "name": "Dulces sueños",
+          "slug": "dulces-suenos",
+          "year": 2026,
+          "category": "A",
+          "position": 9,
+          "points": null,
+          "group_raw": "MI VIDA LOCA",
+          "group_canonical": "Mi Vida Loca",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (Mi Vida Loca); con «Quimera» ya 1.ª, su otra de categoría A es «Dulces sueños»."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "dulces",
+          "id_grupo": "vida-loca",
+          "id_completo": "vida-loca_2026_dulces-suenos",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-flotaremos-a-na",
+          "label": "alegoria-2026-flotaremos",
+          "name": "Flotaremos",
+          "slug": "flotaremos",
+          "year": 2026,
+          "category": "A",
+          "position": 10,
+          "points": null,
+          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (Alegoría); «Flotaremos» es su única de categoría A según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "flotaremos",
+          "id_grupo": "alegoria",
+          "id_completo": "alegoria_2026_flotaremos",
           "avisos_derivados": []
         },
         {
@@ -176148,231 +176751,6 @@
           "avisos_derivados": []
         },
         {
-          "id": "2026-dulces-suenos-a-na",
-          "label": "vida-2026-dulces",
-          "name": "Dulces sueños",
-          "slug": "dulces-suenos",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "MI VIDA LOCA",
-          "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "dulces",
-          "id_grupo": "vida-loca",
-          "id_completo": "vida-loca_2026_dulces-suenos",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-flotaremos-a-na",
-          "label": "alegoria-2026-flotaremos",
-          "name": "Flotaremos",
-          "slug": "flotaremos",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
-          "group_canonical": "Grupo Alegoría",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "flotaremos",
-          "id_grupo": "alegoria",
-          "id_completo": "alegoria_2026_flotaremos",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-hagan-juego-a-na",
-          "label": "come-2026-hagan",
-          "name": "Hagan juego",
-          "slug": "hagan-juego",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
-          "group_canonical": "Come Golayu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "hagan",
-          "id_grupo": "golayu",
-          "id_completo": "golayu_2026_hagan-juego",
-          "avisos_derivados": []
-        },
-        {
           "id": "2026-huellitas-b-na",
           "label": "alegoria-2026-huellitas",
           "name": "Huellitas",
@@ -176445,156 +176823,6 @@
           "id_carroza": "huellitas",
           "id_grupo": "alegoria",
           "id_completo": "alegoria_2026_huellitas",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-jerez-de-la-frontera-a-na",
-          "label": "oruna-2026-jerez",
-          "name": "Jerez de la Frontera",
-          "slug": "jerez-de-la-frontera",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
-          "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "jerez",
-          "id_grupo": "oruna",
-          "id_completo": "oruna_2026_jerez-frontera",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-sonando-altamira-a-na",
-          "label": "cantu-2026-sonando",
-          "name": "Soñando Altamira",
-          "slug": "sonando-altamira",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
-          "group_canonical": "El Cantu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "sonando",
-          "id_grupo": "cantu",
-          "id_completo": "cantu_2026_sonando-altamira",
           "avisos_derivados": []
         },
         {
@@ -176746,81 +176974,6 @@
           "id_grupo": "cantu",
           "id_completo": "cantu_2026_titan",
           "avisos_derivados": []
-        },
-        {
-          "id": "2026-todo-o-nada-a-na",
-          "label": "come-2026-todo",
-          "name": "Todo o nada",
-          "slug": "todo-o-nada",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
-          "group_canonical": "Come Golayu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "todo",
-          "id_grupo": "golayu",
-          "id_completo": "golayu_2026_todo-o-nada",
-          "avisos_derivados": []
         }
       ],
       "results": [
@@ -176835,7 +176988,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_clipping",
+          "source_type": "official_result+press_clipping+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -176864,6 +177017,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
             }
           ],
           "nivel": 2,
@@ -176910,9 +177071,13 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "prize_art_rank": {
               "fuentes": [
@@ -176948,7 +177113,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping",
+          "source_type": "official_result+press_clipping+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -176969,7 +177134,9 @@
           "notes": [
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
-          "needs_review": [],
+          "needs_review": [
+            "La lista da el 2.º a Agrupa-dos sin nombrar carroza; «Eutopía» es su única de categoría A según el programa."
+          ],
           "source_refs": [
             {
               "kind": "press_clipping",
@@ -176977,6 +177144,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
             }
           ],
           "nivel": 2,
@@ -177023,6 +177198,563 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 2
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-todo-o-nada-a-na",
+          "label": "come-2026-todo",
+          "name": "Todo o nada",
+          "slug": "todo-o-nada",
+          "year": 2026,
+          "category": "A",
+          "position": 3,
+          "points": null,
+          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista da 3.º y 4.º a Golayu sin nombrar carrozas; Víctor precisó que la 4.ª es «Hagan juego», luego la 3.ª es «Todo o nada»."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-hagan-juego-a-na",
+          "label": "come-2026-hagan",
+          "name": "Hagan juego",
+          "slug": "hagan-juego",
+          "year": 2026,
+          "category": "A",
+          "position": 4,
+          "points": null,
+          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
+          "group_canonical": "Come Golayu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-sonando-altamira-a-na",
+          "label": "cantu-2026-sonando",
+          "name": "Soñando Altamira",
+          "slug": "sonando-altamira",
+          "year": 2026,
+          "category": "A",
+          "position": 5,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
+          "group_canonical": "El Cantu",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 2,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (El Cantu); «Soñando Altamira» es su única de categoría A según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_costumes_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-jerez-de-la-frontera-a-na",
+          "label": "oruna-2026-jerez",
+          "name": "Jerez de la Frontera",
+          "slug": "jerez-de-la-frontera",
+          "year": 2026,
+          "category": "A",
+          "position": 7,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (Oruña); «Jerez de la Frontera» es su única de categoría A según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-dulces-suenos-a-na",
+          "label": "vida-2026-dulces",
+          "name": "Dulces sueños",
+          "slug": "dulces-suenos",
+          "year": 2026,
+          "category": "A",
+          "position": 9,
+          "points": null,
+          "group_raw": "MI VIDA LOCA",
+          "group_canonical": "Mi Vida Loca",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (Mi Vida Loca); con «Quimera» ya 1.ª, su otra de categoría A es «Dulces sueños»."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
+          "id": "2026-flotaremos-a-na",
+          "label": "alegoria-2026-flotaremos",
+          "name": "Flotaremos",
+          "slug": "flotaremos",
+          "year": 2026,
+          "category": "A",
+          "position": 10,
+          "points": null,
+          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La lista nombra al grupo (Alegoría); «Flotaremos» es su única de categoría A según el programa."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría A recibida por Víctor Elvira la noche del desfile (mensajería; remitente sin registrar). Carrozas asignadas por grupo cotejando el programa oficial",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -177165,432 +177897,6 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-dulces-suenos-a-na",
-          "label": "vida-2026-dulces",
-          "name": "Dulces sueños",
-          "slug": "dulces-suenos",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "MI VIDA LOCA",
-          "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-flotaremos-a-na",
-          "label": "alegoria-2026-flotaremos",
-          "name": "Flotaremos",
-          "slug": "flotaremos",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
-          "group_canonical": "Grupo Alegoría",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-hagan-juego-a-na",
-          "label": "come-2026-hagan",
-          "name": "Hagan juego",
-          "slug": "hagan-juego",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
-          "group_canonical": "Come Golayu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-jerez-de-la-frontera-a-na",
-          "label": "oruna-2026-jerez",
-          "name": "Jerez de la Frontera",
-          "slug": "jerez-de-la-frontera",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
-          "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-sonando-altamira-a-na",
-          "label": "cantu-2026-sonando",
-          "name": "Soñando Altamira",
-          "slug": "sonando-altamira",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
-          "group_canonical": "El Cantu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CARROCISTA EL CANTU» → «El Cantu»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-todo-o-nada-a-na",
-          "label": "come-2026-todo",
-          "name": "Todo o nada",
-          "slug": "todo-o-nada",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
-          "group_canonical": "Come Golayu",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA» → «Come Golayu»: el plegado usa otro nombre para el mismo grupo"
                 }
               ],
               "independientes": 1
@@ -181601,7 +181907,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.72.0",
+  "version": "2.73.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -181619,7 +181925,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-28 21:15",
+  "built_at": "2026-08-28 21:21",
   "map_features": [
     {
       "id": "route_origin_1908",
