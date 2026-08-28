@@ -1974,7 +1974,7 @@ function bestSourceUrl(entry) {
  * paginas; la semilla no registro de donde salio- se quedan sin flecha, que es
  * la verdad. El codigo sigue abriendo la ficha, donde se explica cada una. */
 const DATO_LABEL = {
-  POS: "el puesto", GRU: "el grupo", VES: "el premio de vestidos",
+  EXI: "que desfiló", POS: "el puesto", CAT: "la categoría", GRU: "el grupo", VES: "el premio de vestidos",
   ART: "el premio de arte", PTS: "los puntos", FOT: "la foto", ARC: "la foto",
 };
 
@@ -1995,7 +1995,9 @@ function auditCell(entry) {
   const claims = entry.claims || {};
   const bloques = [];
 
-  const porDato = [["POS", "position"], ["GRU", "group_raw"],
+  // EXI abre la lista: antes de que el puesto o el grupo tengan quien los
+  // sostenga, la primera afirmacion auditable es que esa carroza desfilo.
+  const porDato = [["EXI", "name"], ["POS", "position"], ["CAT", "category"], ["GRU", "group_raw"],
                    ["VES", "prize_costumes_rank"], ["ART", "prize_art_rank"], ["PTS", "points"]];
   porDato.forEach(([code, campo]) => {
     const claim = claims[campo];
@@ -2728,8 +2730,20 @@ function countBySource(entries) {
 
 function provenanceLine(label, entries, vacio) {
   if (!entries.length) return `<li><b>${label}:</b> ${vacio}</li>`;
+  // Cada fuente con su flecha. La linea decia «14, de Programa oficial (14)»
+  // sin enlace: el unico sitio de la ficha donde una fuente se citaba sin
+  // poder ir a verla. Se enlaza la primera URL que esa fuente aporta en la
+  // edicion; para una nota o un programa es LA pagina.
+  const urlPorFuente = new Map();
+  entries.forEach(entry => (entry.source_links || []).forEach(l => {
+    if (l.url && !urlPorFuente.has(l.kind)) urlPorFuente.set(l.kind, l.url);
+  }));
   const partes = countBySource(entries)
-    .map(([part, n]) => `${esc(SOURCE_LABEL[part] || part)} (${n})`);
+    .map(([part, n]) => {
+      const url = urlPorFuente.get(part);
+      const nombre = `${esc(SOURCE_LABEL[part] || part)} (${n})`;
+      return url ? `${nombre} <a href="${esc(url)}" target="_blank" rel="noopener">↗</a>` : nombre;
+    });
   return `<li><b>${label}:</b> ${entries.length}, de ${joinEs(partes)}.</li>`;
 }
 
@@ -2740,7 +2754,9 @@ function codesLegend(entries) {
   const usados = new Set();
   entries.forEach(entry => {
     const c = entry.claims || {};
+    if (c.name) usados.add("EXI");
     if (entry.position != null && c.position) usados.add("POS");
+    if (entry.category && c.category) usados.add("CAT");
     if (entry.group_raw && c.group_raw) usados.add("GRU");
     if (entry.prize_costumes_rank != null) usados.add("VES");
     if (entry.prize_art_rank != null) usados.add("ART");
@@ -2749,12 +2765,13 @@ function codesLegend(entries) {
   });
   if (!usados.size) return "";
   const texto = {
-    POS: "el puesto", GRU: "el grupo", VES: "el premio de vestidos",
+    EXI: "que la carroza desfiló",
+    POS: "el puesto", CAT: "la categoría", GRU: "el grupo", VES: "el premio de vestidos",
     ART: "el premio de arte", PTS: "los puntos",
     FOT: "la foto, publicada en la ficha de esa carroza",
     ARC: "la foto, identificada por el nombre del fichero (sin página que enlazar)",
   };
-  const orden = ["POS", "GRU", "VES", "ART", "PTS", "FOT", "ARC"];
+  const orden = ["EXI", "POS", "CAT", "GRU", "VES", "ART", "PTS", "FOT", "ARC"];
   return `<p class="codes codes-inline">Cada flecha lleva a la fuente de ese dato:
     ${orden.filter(c => usados.has(c))
       .map(c => `<span class="tag">${c}</span> ${esc(texto[c])}`).join(" · ")}</p>`;
@@ -2865,6 +2882,14 @@ function provenanceBlock(entries, sources, edition) {
           // Una edicion sin celebrar no tiene datos "que falten": es que todavia
           // no existen. Decir "no consta ninguna carroza" ahi parece un fallo de
           // la pagina cuando es el estado correcto del mundo.
+          //
+          // Y desde que el programa oficial se publica ANTES del desfile, una
+          // prevista puede tener ya sus carrozas: entonces se ensena la linea
+          // de participantes con su fuente, como en cualquier edicion, y solo
+          // la clasificacion queda como pendiente-por-naturaleza.
+          if (entries.length) return `
+            ${provenanceLine("Participantes", entries, "")}
+            <li><b>Clasificación:</b> se sabrá tras el desfile.</li>`;
           const nm = state.dataset.noche_magica;
           const anuncio = nm && nm.year === edition.year
             ? `Se conocen los <b>${nm.grupos.length} grupos</b> y las
@@ -3290,6 +3315,7 @@ function fieldSize(entry) {
  *
  * Va plegado: quien mira una carroza quiere ver la carroza. Quien duda, abre. */
 const CLAIM_LABEL = {
+  name: "Que desfiló",
   position: "El puesto", category: "La categoría", group_raw: "El grupo",
   points: "Los puntos", prize_costumes_rank: "El premio de vestidos",
   prize_art_rank: "El premio de arte",
@@ -3303,11 +3329,12 @@ const CLAIM_LABEL = {
  * dos páginas de la misma web no son dos fuentes, y eso hay que distinguirlo. */
 function claimLines(entry) {
   const claims = entry.claims || {};
-  const orden = ["position", "category", "group_raw", "points",
+  const orden = ["name", "position", "category", "group_raw", "points",
                  "prize_costumes_rank", "prize_art_rank"];
   const ordinal = new Set(["position", "prize_costumes_rank", "prize_art_rank"]);
   const valor = campo => campo === "group_raw"
     ? (entry.group_raw || "")
+    : campo === "name" ? `«${entry.name}»`
     : ordinal.has(campo) ? `${entry[campo]}.º` : String(entry[campo] ?? "");
 
   return orden.filter(campo => claims[campo] && entry[campo] != null).map(campo => {
@@ -3634,7 +3661,8 @@ function renderGroupDetail(group) {
                    alt="${esc(entry.name)}" loading="lazy"></button>`
               : ""}</td>` : ""}
             <td class="pos" data-sort="${entry.year}"><button class="link t-year" type="button" data-year="${entry.year}">${entry.year}</button></td>
-            <td class="name" data-sort="${esc(normalizeText(entry.name))}">${esc(entry.name)}</td>
+            <td class="name" data-sort="${esc(normalizeText(entry.name))}"><button
+              class="link t-float" type="button" data-float="${esc(entry.id)}">${esc(entry.name)}</button>${reviewMark(entry)}</td>
             <td class="pos" data-sort="${esc(positionSortKey(entry))}">${entry.category ? esc(entry.category) : ""}${entry.position != null ? `${entry.position}.º` : "–"}</td>
             <td data-sort="${esc(sourceShort(entry.source_type))}">${sourceCell(entry)}</td>
           </tr>`).join("")}
