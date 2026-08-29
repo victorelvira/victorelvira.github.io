@@ -21,8 +21,8 @@
     "ediciones_con_palmares": 113,
     "carrozas_con_foto": 588,
     "fotos": 781,
-    "afirmaciones": 3871,
-    "afirmaciones_corroboradas": 449,
+    "afirmaciones": 3874,
+    "afirmaciones_corroboradas": 451,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -175678,7 +175678,7 @@
         "https://www.laredo.es/09/noticia_ampliada.php?id_Noticia=4490"
       ],
       "notes": [
-        "Palmarés anunciado la noche del desfile, según EFE: «Quimera» (Mi Vida Loca) ganó el primer premio, el de mejor vestuario, el premio al Arte y la Onza de Oro; «Walt» (Agrupa-2) ganó la categoría B. El trofeo al segundo premio, de plata valorado en 1.700 €, fue novedad de esta edición. Se homenajeó al carrocista mayor Javier Castillo «Poty» y al veterano Antonio Pascual Torre, participante en 1968. Palmarés completo pendiente de la nota oficial del Ayuntamiento. Fuente: EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026), recorte prensa-efe-infobae-2026-palmares.html (copia en data/sources/) transcrito a mano.",
+        "Palmarés de la 115.ª edición — Categoría A: 1.ª «Quimera» (Mi Vida Loca), que hizo pleno con el Mejor Vestuario, el Premio al Arte y la onza de oro; 2.ª «Eutopía» (Agrupa-2, que volvía tras ocho años sin participar); 3.ª «Hagan juego» y 4.ª «Todo o nada» (Come Golayu); 5.ª «Soñando Altamira» (El Cantu). Categoría B: 1.ª «Walt» (Agrupa-2). Premio Internacional: «Alistair» (Grupo Pejino). Premios: 18.123 € y onza de oro al primero de A; 10.423 € a la ganadora de B; 650 € al mejor vestuario. Desfile de tres vueltas a la Alameda Miramar desde las 17:30, con homenaje al Carrocista Mayor Javier «Poty» Castillo y al Veterano Antonio Pascual. Según la crónica de El Diario Montañés (28-08-2026). Fuente: EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026), recorte prensa-efe-infobae-2026-palmares.html (copia en data/sources/) transcrito a mano.",
         "La 115.ª edición se celebra el viernes 28 de agosto de 2026 con 14 carrozas (10 en categoría A y 4 en categoría B) de 7 agrupaciones. La Noche Mágica es el jueves 27 de agosto de 2026, a partir de las 20:00."
       ],
       "floats": [
@@ -175693,7 +175693,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_clipping+photo_archive+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175715,9 +175715,7 @@
             "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
-          "needs_review": [
-            "si"
-          ],
+          "needs_review": [],
           "source_refs": [
             {
               "kind": "press_clipping",
@@ -175736,10 +175734,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "La gran explosión llegó con 'Quimera'. La propuesta de Mi Vida Loca se proclamó ganadora de la categoría A [...] 'Quimera' completó una tarde prácticamente perfecta al conseguir también el premio al Mejor Vestido y el Premio al Arte",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -175808,18 +175814,26 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "prize_costumes_rank": {
               "fuentes": [
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             }
           },
           "image_urls": [
@@ -175852,7 +175866,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+press_history",
+          "source_type": "official_result+press_clipping+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175884,10 +175898,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "cita": "Clasificación anunciada la noche del desfile",
               "texto": "En la B ganó Walt y segunda la de Cantu",
               "recorte": "mensaje-noche-desfile-2026",
               "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "Agrupa-2 terminó de redondear su regreso con 'Walt'. La carroza dedicada al universo Disney se proclamó vencedora de la categoría B.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -175963,7 +175985,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+photo_archive+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -175986,7 +176008,7 @@
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [
-            "si"
+            "La lista da el 2.º a Agrupa-dos sin nombrar carroza; «Eutopía» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
@@ -176006,10 +176028,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "'Eutopía' consiguió el segundo puesto de la categoría A [...] La agrupación regresaba este año a la fiesta después de ocho años sin participar",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -176124,7 +176154,7 @@
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "cita": "Clasificación anunciada la noche del desfile",
               "texto": "En la B ganó Walt y segunda la de Cantu",
               "recorte": "mensaje-noche-desfile-2026",
               "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
@@ -176199,7 +176229,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
           "group_canonical": "Come Golayu",
-          "source_type": "official_result+photo_archive+press_history",
+          "source_type": "official_result+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -176216,7 +176246,7 @@
             "Foto de Víctor Elvira, hecha en el desfile."
           ],
           "needs_review": [
-            "si"
+            "Víctor dijo primero «cuarto es Hagan juego»; al ver su propia foto de la 3.ª clasificada con el cartel «HAGAN JUEGO» lo corrigió. Queda: 3.ª Hagan juego, 4.ª Todo o nada. Confirmado por la crónica de El Diario Montañés (28-08-2026)."
           ],
           "source_refs": [
             {
@@ -176229,10 +176259,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "El tercer puesto fue para 'Hagan Juego', de Come Golayu que lo ha hecho Güela, mientras que su segunda propuesta, 'Todo o nada', terminó cuarta.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -176323,7 +176361,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
           "group_canonical": "Come Golayu",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+press_history+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -176338,15 +176376,23 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "La lista da 3.º y 4.º a Golayu sin nombrar carrozas; la 3.ª es «Hagan juego» (foto con cartel), luego la 4.ª es «Todo o nada»."
+            "Víctor dijo primero «cuarto es Hagan juego»; al ver su propia foto de la 3.ª clasificada con el cartel «HAGAN JUEGO» lo corrigió. Queda: 3.ª Hagan juego, 4.ª Todo o nada. Confirmado por la crónica de El Diario Montañés (28-08-2026)."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "El tercer puesto fue para 'Hagan Juego', de Come Golayu que lo ha hecho Güela, mientras que su segunda propuesta, 'Todo o nada', terminó cuarta.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -176418,7 +176464,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
           "group_canonical": "El Cantu",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+press_history+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -176433,15 +176479,23 @@
           "prize_costumes_rank": 2,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (El Cantu); «Soñando Altamira» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "'Soñando Altamira', de la Asociación Carrocista El Cantu, completó los cinco primeros puestos de la categoría A",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -176512,6 +176566,110 @@
           "avisos_derivados": []
         },
         {
+          "id": "2026-alistair-a-na",
+          "label": "pejino-2026-alistair",
+          "name": "Alistair",
+          "slug": "alistair",
+          "year": 2026,
+          "category": "A",
+          "position": 6,
+          "points": null,
+          "group_raw": "GRUPO PEJINO",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 3,
+          "notes": [],
+          "needs_review": [
+            "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "Entre las distinciones especiales destacó también 'Alistair', del Grupo Pejino, que recibió el Premio Internacional Batalla de Flores 2026.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_costumes_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "alistair",
+          "id_grupo": "pejino",
+          "id_completo": "pejino_2026_alistair",
+          "avisos_derivados": []
+        },
+        {
           "id": "2026-jerez-de-la-frontera-a-na",
           "label": "oruna-2026-jerez",
           "name": "Jerez de la Frontera",
@@ -176537,15 +176695,15 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (Oruña); «Jerez de la Frontera» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
               "url": null
             }
           ],
@@ -176607,6 +176765,101 @@
           "avisos_derivados": []
         },
         {
+          "id": "2026-beep-beep-a-na",
+          "label": "pejino-2026-beep",
+          "name": "Beep-Beep",
+          "slug": "beep-beep",
+          "year": 2026,
+          "category": "A",
+          "position": 8,
+          "points": null,
+          "group_raw": "GRUPO PEJINO",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "Entre las distinciones especiales destacó también 'Alistair', del Grupo Pejino, que recibió el Premio Internacional Batalla de Flores 2026.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "beep",
+          "id_grupo": "pejino",
+          "id_completo": "pejino_2026_beep-beep",
+          "avisos_derivados": []
+        },
+        {
           "id": "2026-dulces-suenos-a-na",
           "label": "vida-2026-dulces",
           "name": "Dulces sueños",
@@ -176632,15 +176885,15 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (Mi Vida Loca); con «Quimera» ya 1.ª, su otra de categoría A es «Dulces sueños»."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
               "url": null
             }
           ],
@@ -176727,15 +176980,15 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (Alegoría); «Flotaremos» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
               "url": null
             }
           ],
@@ -176794,156 +177047,6 @@
           "id_carroza": "flotaremos",
           "id_grupo": "alegoria",
           "id_completo": "alegoria_2026_flotaremos",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-alistair-a-na",
-          "label": "pejino-2026-alistair",
-          "name": "Alistair",
-          "slug": "alistair",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "GRUPO PEJINO",
-          "group_canonical": "Grupo Pejino",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "alistair",
-          "id_grupo": "pejino",
-          "id_completo": "pejino_2026_alistair",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-beep-beep-a-na",
-          "label": "pejino-2026-beep",
-          "name": "Beep-Beep",
-          "slug": "beep-beep",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "GRUPO PEJINO",
-          "group_canonical": "Grupo Pejino",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "beep",
-          "id_grupo": "pejino",
-          "id_completo": "pejino_2026_beep-beep",
           "avisos_derivados": []
         },
         {
@@ -177109,7 +177212,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_clipping+photo_archive+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -177131,9 +177234,7 @@
             "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
-          "needs_review": [
-            "si"
-          ],
+          "needs_review": [],
           "source_refs": [
             {
               "kind": "press_clipping",
@@ -177152,10 +177253,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "La gran explosión llegó con 'Quimera'. La propuesta de Mi Vida Loca se proclamó ganadora de la categoría A [...] 'Quimera' completó una tarde prácticamente perfecta al conseguir también el premio al Mejor Vestido y el Premio al Arte",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -177224,18 +177333,26 @@
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "prize_costumes_rank": {
               "fuentes": [
                 {
                   "kind": "press_clipping",
                   "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+                },
+                {
+                  "kind": "press_history",
+                  "url": null
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             }
           },
           "image_urls": [
@@ -177264,7 +177381,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+photo_archive+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -177287,7 +177404,7 @@
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [
-            "si"
+            "La lista da el 2.º a Agrupa-dos sin nombrar carroza; «Eutopía» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
@@ -177307,10 +177424,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "'Eutopía' consiguió el segundo puesto de la categoría A [...] La agrupación regresaba este año a la fiesta después de ocho años sin participar",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -177401,7 +177526,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
           "group_canonical": "Come Golayu",
-          "source_type": "official_result+photo_archive+press_history",
+          "source_type": "official_result+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -177418,7 +177543,7 @@
             "Foto de Víctor Elvira, hecha en el desfile."
           ],
           "needs_review": [
-            "si"
+            "Víctor dijo primero «cuarto es Hagan juego»; al ver su propia foto de la 3.ª clasificada con el cartel «HAGAN JUEGO» lo corrigió. Queda: 3.ª Hagan juego, 4.ª Todo o nada. Confirmado por la crónica de El Diario Montañés (28-08-2026)."
           ],
           "source_refs": [
             {
@@ -177431,10 +177556,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "El tercer puesto fue para 'Hagan Juego', de Come Golayu que lo ha hecho Güela, mientras que su segunda propuesta, 'Todo o nada', terminó cuarta.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -177521,7 +177654,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN COME GOLAYU QUE LO HA HECHU GÜELA",
           "group_canonical": "Come Golayu",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+press_history+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -177536,15 +177669,23 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "La lista da 3.º y 4.º a Golayu sin nombrar carrozas; la 3.ª es «Hagan juego» (foto con cartel), luego la 4.ª es «Todo o nada»."
+            "Víctor dijo primero «cuarto es Hagan juego»; al ver su propia foto de la 3.ª clasificada con el cartel «HAGAN JUEGO» lo corrigió. Queda: 3.ª Hagan juego, 4.ª Todo o nada. Confirmado por la crónica de El Diario Montañés (28-08-2026)."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "El tercer puesto fue para 'Hagan Juego', de Come Golayu que lo ha hecho Güela, mientras que su segunda propuesta, 'Todo o nada', terminó cuarta.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -177612,7 +177753,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN CARROCISTA EL CANTU",
           "group_canonical": "El Cantu",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+press_history+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -177627,15 +177768,23 @@
           "prize_costumes_rank": 2,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (El Cantu); «Soñando Altamira» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "'Soñando Altamira', de la Asociación Carrocista El Cantu, completó los cinco primeros puestos de la categoría A",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -177702,6 +177851,106 @@
           "image_credit": null
         },
         {
+          "id": "2026-alistair-a-na",
+          "label": "pejino-2026-alistair",
+          "name": "Alistair",
+          "slug": "alistair",
+          "year": 2026,
+          "category": "A",
+          "position": 6,
+          "points": null,
+          "group_raw": "GRUPO PEJINO",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": 3,
+          "notes": [],
+          "needs_review": [
+            "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "Entre las distinciones especiales destacó también 'Alistair', del Grupo Pejino, que recibió el Premio Internacional Batalla de Flores 2026.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "prize_costumes_rank": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
           "id": "2026-jerez-de-la-frontera-a-na",
           "label": "oruna-2026-jerez",
           "name": "Jerez de la Frontera",
@@ -177727,15 +177976,15 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (Oruña); «Jerez de la Frontera» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
               "url": null
             }
           ],
@@ -177793,6 +178042,97 @@
           "image_credit": null
         },
         {
+          "id": "2026-beep-beep-a-na",
+          "label": "pejino-2026-beep",
+          "name": "Beep-Beep",
+          "slug": "beep-beep",
+          "year": 2026,
+          "category": "A",
+          "position": 8,
+          "points": null,
+          "group_raw": "GRUPO PEJINO",
+          "group_canonical": "Grupo Pejino",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "notes": [],
+          "needs_review": [
+            "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "Entre las distinciones especiales destacó también 'Alistair', del Grupo Pejino, que recibió el Premio Internacional Batalla de Flores 2026.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null
+        },
+        {
           "id": "2026-dulces-suenos-a-na",
           "label": "vida-2026-dulces",
           "name": "Dulces sueños",
@@ -177818,15 +178158,15 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (Mi Vida Loca); con «Quimera» ya 1.ª, su otra de categoría A es «Dulces sueños»."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
               "url": null
             }
           ],
@@ -177909,15 +178249,15 @@
           "prize_costumes_rank": null,
           "notes": [],
           "needs_review": [
-            "si"
+            "La lista nombra al grupo (Alegoría); «Flotaremos» es su única de categoría A según el programa."
           ],
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional",
-              "texto": "mensaje-noche-desfile-2026",
-              "recorte": "",
-              "archivo_local": "data/media_batalladeflores/escaneos/",
+              "cita": "Clasificación anunciada la noche del desfile",
+              "texto": "Categoría A: Mi vida loca 1.º (1.º vestidos, premio al arte) · Agrupa dos 2.º · Golayu 3.º · Golayu 4.º · El Cantu 5.º (2.º en vestidos) · Pejino 6.º (3.º vestidos e internacional) · Oruña 7.º · Pejino 8.º · Mi vida Loca 9.º · Alegoría 10.º — y precisión posterior: «Cuarto es Hagan juego»",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
               "url": null
             }
           ],
@@ -177975,148 +178315,6 @@
           "image_credit": null
         },
         {
-          "id": "2026-alistair-a-na",
-          "label": "pejino-2026-alistair",
-          "name": "Alistair",
-          "slug": "alistair",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "GRUPO PEJINO",
-          "group_canonical": "Grupo Pejino",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
-          "id": "2026-beep-beep-a-na",
-          "label": "pejino-2026-beep",
-          "name": "Beep-Beep",
-          "slug": "beep-beep",
-          "year": 2026,
-          "category": "A",
-          "position": null,
-          "points": null,
-          "group_raw": "GRUPO PEJINO",
-          "group_canonical": "Grupo Pejino",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
           "id": "2026-walt-b-na",
           "label": "agrupa-2026-walt",
           "name": "Walt",
@@ -178127,7 +178325,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+press_history",
+          "source_type": "official_result+press_clipping+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -178159,10 +178357,18 @@
             },
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "cita": "Clasificación anunciada la noche del desfile",
               "texto": "En la B ganó Walt y segunda la de Cantu",
               "recorte": "mensaje-noche-desfile-2026",
               "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            },
+            {
+              "kind": "press_history",
+              "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
+              "texto": "Agrupa-2 terminó de redondear su regreso con 'Walt'. La carroza dedicada al universo Disney se proclamó vencedora de la categoría B.",
+              "recorte": "prensa-dm-2026-cronica.html (copia en data/sources/)",
+              "archivo_local": "data/media_batalladeflores/escaneos/prensa-dm-2026-cronica.html (copia en data/sources/)",
               "url": null
             }
           ],
@@ -178254,7 +178460,7 @@
           "source_refs": [
             {
               "kind": "press_history",
-              "cita": "Clasificación provisional, anunciada la noche del desfile",
+              "cita": "Clasificación anunciada la noche del desfile",
               "texto": "En la B ganó Walt y segunda la de Cantu",
               "recorte": "mensaje-noche-desfile-2026",
               "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
@@ -182149,7 +182355,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.78.0",
+  "version": "2.79.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -182167,7 +182373,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-29 16:31",
+  "built_at": "2026-08-29 18:38",
   "map_features": [
     {
       "id": "route_origin_1908",
