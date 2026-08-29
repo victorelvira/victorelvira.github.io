@@ -36,6 +36,11 @@
         color: #fff;
       }
       .project-thumb i{ font-size: 2.8rem; opacity: .95; }
+      /* Las miniaturas que son la propia tarjeta og del proyecto (1200x630):
+         mismo alto que las de icono, recortadas por arriba donde va el titulo. */
+      .project-thumb.og{ background-size: cover; background-position: center 30%; }
+      .lang-switch{ font-size: .8rem; }
+      .lang-switch .active{ font-weight: 700; text-decoration: underline; }
       .project-card .card-title{ margin-bottom: .35rem; }
       .lang-badge{ font-size: .68rem; letter-spacing: .03em; }
       /* que toda la tarjeta sea clicable pero el título mantenga su color */
@@ -48,8 +53,15 @@
 <div id="navbar-placeholder"></div>
 
 <div class="container py-4">
-    <h2>Personal projects</h2>
-    <p class="text-muted mb-4" style="max-width: 46rem;">
+    <div class="d-flex justify-content-between align-items-baseline">
+        <h2 data-i18n="titulo">Personal projects</h2>
+        <div class="lang-switch text-muted" role="group" aria-label="Language">
+            <a href="#" id="lang-en" class="text-reset text-decoration-none">EN</a>
+            ·
+            <a href="#" id="lang-es" class="text-reset text-decoration-none">ES</a>
+        </div>
+    </div>
+    <p class="text-muted mb-4" style="max-width: 46rem;" data-i18n="intro">
         A few side projects I build for fun. Small data-driven web apps and databases
         around music, culture and my home region of Cantabria.
     </p>
@@ -59,14 +71,12 @@
         <!-- New Year's Concert -->
         <div class="col">
             <div class="card project-card">
-                <div class="project-thumb" style="background:#2C3E50;">
-                    <i class="fa-solid fa-music"></i>
-                </div>
+                <div class="project-thumb og" style="background-color:#101626; background-image:url('/projects/nyc/og.jpg');"></div>
                 <div class="card-body">
                     <h5 class="card-title">New Year's Concert Database
                         <span class="badge bg-secondary lang-badge align-middle">EN</span>
                     </h5>
-                    <p class="card-text text-muted">
+                    <p class="card-text text-muted" data-i18n="nyc">
                         Explore the distribution of compositions, conductors and other key
                         details across the Vienna Philharmonic's New Year's Concerts.
                     </p>
@@ -78,14 +88,12 @@
         <!-- Interactive Atlas of Painting -->
         <div class="col">
             <div class="card project-card">
-                <div class="project-thumb" style="background:#A04000;">
-                    <i class="fa-solid fa-palette"></i>
-                </div>
+                <div class="project-thumb og" style="background-color:#181410; background-image:url('/projects/artatlas/og.jpg');"></div>
                 <div class="card-body">
                     <h5 class="card-title">Interactive Atlas of Painting
                         <span class="badge bg-secondary lang-badge align-middle">EN</span>
                     </h5>
-                    <p class="card-text text-muted">
+                    <p class="card-text text-muted" data-i18n="atlas">
                         Interactive map of where the great painters' masterpieces are today,
                         and where they were painted. From Giotto to Goya, built from
                         Wikidata, Wikipedia and Wikimedia Commons.
@@ -105,7 +113,7 @@
                     <h5 class="card-title">Planes de Cantabria
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted">
+                    <p class="card-text text-muted" data-i18n="planes">
                         Agenda y mapa interactivo de Cantabria: fiestas, conciertos, teatro,
                         exposiciones, deporte y más, con fechas y programas.
                     </p>
@@ -124,7 +132,7 @@
                     <h5 class="card-title">Frontones
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted">
+                    <p class="card-text text-muted" data-i18n="frontones">
                         Mapa de frontones de Cantabria y el País Vasco, a partir de datos
                         abiertos de OpenStreetMap y el Gobierno de Cantabria.
                     </p>
@@ -136,14 +144,12 @@
         <!-- Batalla de Flores -->
         <div class="col">
             <div class="card project-card">
-                <div class="project-thumb" style="background:#E74C3C;">
-                    <i class="fa-solid fa-spa"></i>
-                </div>
+                <div class="project-thumb og" style="background-color:#221716; background-image:url('/projects/batalla_de_flores/og.jpg');"></div>
                 <div class="card-body">
                     <h5 class="card-title">Batalla de Flores
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted">
+                    <p class="card-text text-muted" data-i18n="batalla">
                         Archivo navegable de la Batalla de Flores de Laredo: ediciones desde
                         1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato.
                     </p>
@@ -162,7 +168,7 @@
                     <h5 class="card-title">Laredo frente al clima
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted">
+                    <p class="card-text text-muted" data-i18n="clima">
                         Web interactiva del cambio climático en Laredo y Cantabria: temperaturas,
                         mar y anomalías, con datos abiertos de ERA5 · Copernicus y AEMET.
                     </p>
@@ -179,6 +185,63 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Idioma: una sola pagina, dos lenguas. El HTML de base es el ingles; el
+     diccionario rellena el espanol. Se decide por el idioma del navegador
+     (en Pages no hay servidor que sepa el pais), el conmutador manda sobre
+     la deteccion, y la eleccion se recuerda. Duplicar la pagina por idioma
+     seria mantener dos copias que un dia discrepan. -->
+<script>
+(function () {
+  var T = {
+    titulo: {
+      en: "Personal projects",
+      es: "Proyectos personales" },
+    intro: {
+      en: "A few side projects I build for fun. Small data-driven web apps and databases around music, culture and my home region of Cantabria.",
+      es: "Proyectos que construyo por diversión: pequeñas webs y bases de datos sobre música, cultura y mi tierra, Cantabria." },
+    nyc: {
+      en: "Explore the distribution of compositions, conductors and other key details across the Vienna Philharmonic's New Year's Concerts.",
+      es: "Compositores, directores y programas de todos los Conciertos de Año Nuevo de la Filarmónica de Viena, desde 1939." },
+    atlas: {
+      en: "Interactive map of where the great painters' masterpieces are today, and where they were painted. From Giotto to Goya, built from Wikidata, Wikipedia and Wikimedia Commons.",
+      es: "Mapa interactivo de dónde están hoy las obras maestras de los grandes pintores, y dónde se pintaron. De Giotto a Goya, con datos de Wikidata, Wikipedia y Wikimedia Commons." },
+    planes: {
+      en: "Agenda and interactive map of Cantabria: festivals, concerts, theatre, exhibitions, sport and more, with dates and programmes.",
+      es: "Agenda y mapa interactivo de Cantabria: fiestas, conciertos, teatro, exposiciones, deporte y más, con fechas y programas." },
+    frontones: {
+      en: "Map of Basque-pelota courts in Cantabria and the Basque Country, from OpenStreetMap and Government of Cantabria open data.",
+      es: "Mapa de frontones de Cantabria y el País Vasco, a partir de datos abiertos de OpenStreetMap y el Gobierno de Cantabria." },
+    batalla: {
+      en: "Browsable archive of Laredo's Battle of Flowers: every edition since 1908, results, floats, builders and routes — each fact with its source.",
+      es: "Archivo navegable de la Batalla de Flores de Laredo: ediciones desde 1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato." },
+    clima: {
+      en: "Interactive site on climate change in Laredo and Cantabria: temperatures, sea and anomalies, with ERA5 · Copernicus and AEMET open data.",
+      es: "Web interactiva del cambio climático en Laredo y Cantabria: temperaturas, mar y anomalías, con datos abiertos de ERA5 · Copernicus y AEMET." },
+  };
+
+  function aplicar(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var t = T[el.getAttribute("data-i18n")];
+      if (t && t[lang]) el.textContent = t[lang];
+    });
+    document.documentElement.lang = lang;
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    document.getElementById("lang-es").classList.toggle("active", lang === "es");
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+
+  var lang;
+  try { lang = localStorage.getItem("lang"); } catch (e) {}
+  if (lang !== "en" && lang !== "es") {
+    lang = /^es/i.test(navigator.language || "") ? "es" : "en";
+  }
+  aplicar(lang);
+
+  document.getElementById("lang-en").addEventListener("click", function (e) { e.preventDefault(); aplicar("en"); });
+  document.getElementById("lang-es").addEventListener("click", function (e) { e.preventDefault(); aplicar("es"); });
+})();
+</script>
 
 <!-- Statcounter -->
 <script type="text/javascript">
