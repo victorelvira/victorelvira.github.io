@@ -2014,7 +2014,7 @@ function bestSourceUrl(entry) {
  * la verdad. El codigo sigue abriendo la ficha, donde se explica cada una. */
 const DATO_LABEL = {
   EXI: "que desfiló", POS: "el puesto", CAT: "la categoría", GRU: "el grupo", VES: "el premio de vestidos",
-  ART: "el premio de arte", PTS: "los puntos", FOT: "la foto", ARC: "la foto",
+  ART: "el premio de arte", INT: "el premio internacional", PTS: "los puntos", FOT: "la foto", ARC: "la foto",
 };
 
 /* La columna de fuente, dato a dato.
@@ -2037,7 +2037,8 @@ function auditCell(entry) {
   // EXI abre la lista: antes de que el puesto o el grupo tengan quien los
   // sostenga, la primera afirmacion auditable es que esa carroza desfilo.
   const porDato = [["EXI", "name"], ["POS", "position"], ["CAT", "category"], ["GRU", "group_raw"],
-                   ["VES", "prize_costumes_rank"], ["ART", "prize_art_rank"], ["PTS", "points"]];
+                   ["VES", "prize_costumes_rank"], ["ART", "prize_art_rank"],
+                   ["INT", "prize_international_rank"], ["PTS", "points"]];
   porDato.forEach(([code, campo]) => {
     const claim = claims[campo];
     if (!claim || entry[campo] == null) return;
@@ -2799,6 +2800,7 @@ function codesLegend(entries) {
     if (entry.group_raw && c.group_raw) usados.add("GRU");
     if (entry.prize_costumes_rank != null) usados.add("VES");
     if (entry.prize_art_rank != null) usados.add("ART");
+    if (entry.prize_international_rank != null) usados.add("INT");
     if (entry.points != null) usados.add("PTS");
     (entry.image_refs || []).forEach(r => usados.add(r.por === "pagina" ? "FOT" : "ARC"));
   });
@@ -2806,11 +2808,13 @@ function codesLegend(entries) {
   const texto = {
     EXI: "que la carroza desfiló",
     POS: "el puesto", CAT: "la categoría", GRU: "el grupo", VES: "el premio de vestidos",
-    ART: "el premio de arte", PTS: "los puntos",
+    ART: "el premio de arte",
+    INT: "el premio internacional, que vota un jurado de las ciudades hermanas",
+    PTS: "los puntos",
     FOT: "la foto, publicada en la ficha de esa carroza",
     ARC: "la foto, identificada por el nombre del fichero (sin página que enlazar)",
   };
-  const orden = ["EXI", "POS", "CAT", "GRU", "VES", "ART", "PTS", "FOT", "ARC"];
+  const orden = ["EXI", "POS", "CAT", "GRU", "VES", "ART", "INT", "PTS", "FOT", "ARC"];
   return `<p class="codes codes-inline">Cada flecha lleva a la fuente de ese dato:
     ${orden.filter(c => usados.has(c))
       .map(c => `<span class="tag">${c}</span> ${esc(texto[c])}`).join(" · ")}</p>`;
@@ -3357,7 +3361,7 @@ const CLAIM_LABEL = {
   name: "Que desfiló",
   position: "El puesto", category: "La categoría", group_raw: "El grupo",
   points: "Los puntos", prize_costumes_rank: "El premio de vestidos",
-  prize_art_rank: "El premio de arte",
+  prize_art_rank: "El premio de arte", prize_international_rank: "El premio internacional",
 };
 
 /* Una línea por afirmación, no un cajón con todas.
@@ -3369,8 +3373,8 @@ const CLAIM_LABEL = {
 function claimLines(entry) {
   const claims = entry.claims || {};
   const orden = ["name", "position", "category", "group_raw", "points",
-                 "prize_costumes_rank", "prize_art_rank"];
-  const ordinal = new Set(["position", "prize_costumes_rank", "prize_art_rank"]);
+                 "prize_costumes_rank", "prize_art_rank", "prize_international_rank"];
+  const ordinal = new Set(["position", "prize_costumes_rank", "prize_art_rank", "prize_international_rank"]);
   const valor = campo => campo === "group_raw"
     ? (entry.group_raw || "")
     : campo === "name" ? `«${entry.name}»`
