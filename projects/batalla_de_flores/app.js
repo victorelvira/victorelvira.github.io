@@ -4482,10 +4482,19 @@ fetch("batalla_de_flores/data/batalla_de_flores.json", { cache: "no-cache" })
       if (fromHash.kind === "float") setMode("floats");
       select(fromHash.kind, fromHash.id, { updateHash: false });
     } else {
-      // Sin seleccion de salida: con una edicion ya abierta, la rejilla no
-      // invitaba a pinchar.
-      renderIndex();
-      renderDetail();
+      // De salida se abre la ultima edicion con carrozas. Estuvo al reves
+      // —sin seleccion, para invitar a pinchar la rejilla— hasta la Batalla
+      // de 2026: recien celebrada, lo que la gente viene a ver ES la ultima
+      // edicion, y que la portada la ensene sola vale mas que la invitacion.
+      // Es la ultima CON carrozas, no el ano mas alto: asi en junio de 2027,
+      // con la edicion nueva aun vacia, seguira abriendo 2026.
+      const ultima = [...state.editions].reverse().find(e => (e.floats || []).length);
+      if (ultima) {
+        select("year", ultima.year, { updateHash: false });
+      } else {
+        renderIndex();
+        renderDetail();
+      }
     }
   })
   .catch(error => {
