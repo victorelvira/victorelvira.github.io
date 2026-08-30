@@ -812,6 +812,14 @@ table.palmares td.c-photo .thumb img {
 
 .axis-line { stroke: var(--line-soft); stroke-width: 1; }
 .axis-label { fill: var(--muted); font-size: 9px; text-anchor: middle; }
+/* La caja del movil para las barras de Estadisticas: primer toque la abre,
+   el segundo (es un boton con data-year) navega. */
+.bar-caja {
+  position: fixed; z-index: 60; padding: 7px 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  font: inherit; font-size: 13px; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(34, 23, 22, .18); white-space: nowrap;
+}
 
 /* Trayectorias: los nombres clavados y el tiempo deslizándose por debajo.
  *

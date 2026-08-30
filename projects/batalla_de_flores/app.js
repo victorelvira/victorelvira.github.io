@@ -1006,6 +1006,30 @@ function niceStep(top, target) {
   return [1, 2, 5, 10, 20, 50].find(step => step >= raw) || 100;
 }
 
+/* La caja del movil para las barras: flotante, tocable, y con el mismo texto
+ * que daria el hover del PC mas la invitacion a entrar. Es un boton con
+ * data-year, asi que el toque siguiente lo resuelve la delegacion normal. */
+function mostrarCajaBarra(barra) {
+  cerrarCajaBarra();
+  const ed = state.editions.find(e => e.year === Number(barra.dataset.year));
+  if (!ed) return;
+  const caja = document.createElement("button");
+  caja.className = "bar-caja";
+  caja.type = "button";
+  caja.dataset.year = ed.year;
+  caja.innerHTML = `<b>${ed.year}</b> · ${ed.float_count} carrozas · ver edición →`;
+  document.body.appendChild(caja);
+  const r = barra.getBoundingClientRect();
+  const ancho = caja.offsetWidth;
+  caja.style.left = `${Math.max(8, Math.min(r.left + r.width / 2 - ancho / 2, innerWidth - ancho - 8))}px`;
+  caja.style.top = `${Math.max(8, r.top - caja.offsetHeight - 8)}px`;
+}
+
+function cerrarCajaBarra() {
+  state.barraArmada = null;
+  document.querySelector(".bar-caja")?.remove();
+}
+
 function chartFloatsPerYear(zoom = 1) {
   const width = CHART.w * zoom;
   // Al ampliar tambien se gana alto: si no, las lineas de rejilla nuevas caen
@@ -1557,6 +1581,7 @@ function renderCartelesTab() {
 function renderIndex() {
   if (state.mode !== "pending") document.querySelector(".controls")?.removeAttribute("hidden");
   hideTooltip();
+  cerrarCajaBarra();
   // Solo Carrozas tiene controles propios; el resto limpia la barra.
   if (state.mode !== "floats") els.indexTools.innerHTML = "";
   if (state.mode === "editions") renderYearGrid();
@@ -4510,6 +4535,20 @@ function bindEvents() {
       event.stopPropagation();
       mostrarTipEn(chip);
       return;
+    }
+
+    // En el movil no hay hover: el primer toque en una barra de Estadisticas
+    // enseña la caja (año + cuantas carrozas) y el segundo —en la caja o en la
+    // misma barra— abre la edicion. En PC el hover ya cuenta y el clic navega
+    // a la primera, como siempre.
+    const barra = event.target.closest(".bar-group");
+    if (barra && NARROW.matches && state.barraArmada !== barra.dataset.year) {
+      state.barraArmada = barra.dataset.year;
+      mostrarCajaBarra(barra);
+      return;
+    }
+    if (!barra && state.barraArmada && !event.target.closest(".bar-caja")) {
+      cerrarCajaBarra();
     }
 
     const target = event.target.closest("[data-year], [data-group], [data-route], [data-float]");
