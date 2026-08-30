@@ -659,7 +659,8 @@ function renderFloatGrid(rows) {
         <button class="link tile-name" type="button" data-float="${esc(entry.id)}"
                 title="Abrir la ficha de ${esc(entry.name)}">${esc(entry.name)}</button>
         <span class="tile-meta">${entry.year}${entry.position != null
-          ? ` · ${entry.category || ""}${entry.position}.º` : ""}</span>
+          ? ` · ${entry.category || ""}${entry.position}.º` : ""}${grupo
+          ? ` · ${esc(grupo)}` : ""}</span>
       </div>`;
   }).join("")}</div>`;
 }
