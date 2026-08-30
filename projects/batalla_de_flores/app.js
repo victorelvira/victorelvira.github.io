@@ -4488,7 +4488,12 @@ fetch("batalla_de_flores/data/batalla_de_flores.json", { cache: "no-cache" })
       // edicion, y que la portada la ensene sola vale mas que la invitacion.
       // Es la ultima CON carrozas, no el ano mas alto: asi en junio de 2027,
       // con la edicion nueva aun vacia, seguira abriendo 2026.
-      const ultima = [...state.editions].reverse().find(e => (e.floats || []).length);
+      //
+      // SOLO en pantalla ancha: ahi la ficha se abre AL LADO de la rejilla y
+      // suma. En el movil los paneles van en columna y la ficha abierta
+      // sepulta la entrada normal de la web; ahi manda la rejilla.
+      const ultima = !NARROW.matches
+        && [...state.editions].reverse().find(e => (e.floats || []).length);
       if (ultima) {
         select("year", ultima.year, { updateHash: false });
       } else {
