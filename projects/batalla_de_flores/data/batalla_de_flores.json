@@ -174462,7 +174462,16 @@
       "notes_derivadas": [
         "Tenemos una foto de «Tweety» sin colgar: la carroza está en el palmarés, pero las fuentes no coinciden en el grupo («Grupo pejino» en la foto, «Spartans» en el archivo). Está pendiente de confirmar."
       ],
-      "curiosidades": []
+      "curiosidades": [],
+      "cartel": {
+        "anio": 2024,
+        "url": "batalla_de_flores/fotos/carteles/cartel-2024.jpg",
+        "mini": "batalla_de_flores/fotos/carteles/cartel-2024-mini.jpg",
+        "origen": "laredo.es (Ayuntamiento de Laredo)",
+        "original": "https://www.laredo.es/09/archivos/cartel-batalla-flores-2024-digital-logos1724404123.jpg",
+        "asignacion": "publicado por el Ayuntamiento en laredo.es como «cartel-batalla-flores-2024»; el cartel mismo dice «Viernes 30 agosto · Batalla de Flores · 113 edición»",
+        "asignada_por": "fuente"
+      }
     },
     {
       "year": 2025,
@@ -177223,7 +177232,16 @@
       "documentadas": 11,
       "desfilaron": null,
       "notes_derivadas": [],
-      "curiosidades": []
+      "curiosidades": [],
+      "cartel": {
+        "anio": 2025,
+        "url": "batalla_de_flores/fotos/carteles/cartel-2025.jpg",
+        "mini": "batalla_de_flores/fotos/carteles/cartel-2025-mini.jpg",
+        "origen": "laredo.es (Ayuntamiento de Laredo)",
+        "original": "https://www.laredo.es/09/archivos/cartel-batalla-de-flores-20251743424334.jpg",
+        "asignacion": "publicado por el Ayuntamiento en laredo.es como «cartel-batalla-de-flores-2025»; el cartel mismo dice «Batalla de Flores · 114 edición · viernes 29 agosto 2025»",
+        "asignada_por": "fuente"
+      }
     },
     {
       "year": 2026,
@@ -184713,7 +184731,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.86.0",
+  "version": "2.87.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -184731,7 +184749,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-30 13:28",
+  "built_at": "2026-08-30 13:50",
   "map_features": [
     {
       "id": "route_origin_1908",
