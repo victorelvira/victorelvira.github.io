@@ -292,7 +292,9 @@ function filteredFloats() {
     // solo la A dejaria fuera media historia de la fiesta.
     && (!state.winnersOnly || entry.position === 1)
     && (!state.category || entry.category === state.category)
-    && (!query || entry.search.includes(query)));
+    && (!query || (state.soloNombre
+        ? normalizeText(entry.name).includes(query)
+        : entry.search.includes(query))));
 }
 
 function filteredGroups() {
@@ -1536,9 +1538,9 @@ function renderStatsTab() {
         ${(() => {
           const top = palabrasDeCarrozas().slice(0, 22);
           const max = top[0]?.n || 1;
-          return top.map(p => `
+          return top.map((p, i) => `
             <button class="palabra" type="button" data-buscar="${esc(p.forma)}"
-              style="--peso:${(p.n / max).toFixed(3)}"
+              style="--peso:${(p.n / max).toFixed(3)};--orden:${i}"
               title="Buscar «${esc(p.forma)}» en las carrozas">
               ${esc(p.forma)} <small>${p.n}</small>
             </button>`).join("");
@@ -4413,6 +4415,7 @@ function closeDetail() {
 
 function resetToStart() {
   state.query = ""; state.decade = "all"; state.winnersOnly = false; state.category = null;
+  state.soloNombre = false;
   els.search.value = ""; els.decade.value = "all";
   state.sort = { groups: { key: "wins", dir: -1 }, floats: { key: "year", dir: -1 } };
   state.openDecade = null;
@@ -4429,7 +4432,10 @@ function resetToStart() {
 /* ── eventos ────────────────────────────────────────────────────────────── */
 
 function bindEvents() {
-  els.search.addEventListener("input", event => { state.query = event.target.value; refresh(); });
+  els.search.addEventListener("input", event => {
+    state.soloNombre = false;   // teclear a mano vuelve a la busqueda completa
+    state.query = event.target.value; refresh();
+  });
   els.decade.addEventListener("change", event => { state.decade = event.target.value; refresh(); });
   els.clearFilters.addEventListener("click", () => {
     state.query = ""; state.decade = "all"; state.winnersOnly = false;
@@ -4665,6 +4671,11 @@ function bindEvents() {
       // nueva y atrás encontraba una vacía.
       history.replaceState({ vueltaA: { mode: state.mode, query: state.query } }, "");
       history.pushState({}, "");
+      // La pildora cuenta palabras de los NOMBRES, asi que su clic busca solo
+      // en nombres: buscando «laredo» a mano salen tambien las carrozas de
+      // grupos laredanos (¡Chu-chú!, de la Asoc. de Carrocistas de Laredo), y
+      // eso esta bien para el buscador pero rompia la promesa de la pildora.
+      state.soloNombre = true;
       state.query = palabra.dataset.buscar;
       els.search.value = state.query;
       setMode("floats");
@@ -4703,6 +4714,7 @@ function bindEvents() {
     // tal y como estaban. Es una miga nuestra, no una seleccion del hash.
     if (event.state && event.state.vueltaA) {
       const { mode, query } = event.state.vueltaA;
+      state.soloNombre = false;
       state.query = query || "";
       els.search.value = state.query;
       setMode(mode);

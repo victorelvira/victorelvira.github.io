@@ -474,6 +474,20 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
   cursor: pointer; font-family: inherit; color: inherit;
   font-size: calc(11px + var(--peso, 0) * 10px);
   padding: calc(2px + var(--peso, 0) * 3px) calc(8px + var(--peso, 0) * 5px);
+  /* Brotan al entrar, cada una con su compas, y se estiran al pasar: el mismo
+     lenguaje del titulo de la portada. Sin movimiento si el sistema lo pide. */
+  animation: palabra-brota .45s cubic-bezier(.25,.9,.35,1.2) both;
+  animation-delay: calc(var(--orden, 0) * 45ms);
+  transition: transform .15s ease, border-color .15s ease, color .15s ease;
+}
+.palabra:hover { transform: scale(1.09) rotate(-1.2deg); }
+@keyframes palabra-brota {
+  from { opacity: 0; transform: scale(.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .palabra { animation: none; }
+  .palabra:hover { transform: none; }
 }
 .palabra small { color: var(--muted); font-size: 0.72em; }
 .palabra:hover { border-color: var(--rose); color: var(--rose); }
