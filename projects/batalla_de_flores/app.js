@@ -1492,6 +1492,8 @@ function renderCartelesTab() {
           </button>
           <button class="link cartel-anio" type="button" data-year="${e.year}"
             title="Abrir la edición de ${e.year}">${e.year}</button>
+          <span class="cartel-ganador">${(() => { const q = ganadorDe(e);
+            return q ? `🏆 ${esc(q)}` : "palmarés sin localizar"; })()}</span>
         </div>`; }).join("")}
     </div>
     ${(() => {

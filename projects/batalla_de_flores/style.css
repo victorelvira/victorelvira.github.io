@@ -462,6 +462,11 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
   color: inherit; border-radius: 4px;
 }
 .cartel-anio:hover { color: var(--rose); text-decoration: underline; }
+.cartel-ganador {
+  font-size: 10.5px; color: var(--muted); line-height: 1.15; text-align: center;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  padding-bottom: 2px;
+}
 .marco-muestra {
   display: inline-block; width: 12px; height: 12px; border-radius: 3px;
   border: 1px solid rgba(0,0,0,.12); vertical-align: -1px;
