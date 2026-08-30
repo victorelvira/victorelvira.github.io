@@ -1452,14 +1452,27 @@ function renderCartelesTab() {
     els.indexBody.innerHTML = `<p class="empty">Ningún cartel con los filtros puestos.</p>`;
     return;
   }
+  // Cada clic lleva a lo suyo: el cartel se ABRE (visor, con su procedencia,
+  // y flechas para pasear los 47 como una exposición) y el año lleva a la
+  // edición. La celda no puede ser un botón con botones dentro —HTML se los
+  // comería sin avisar, ya nos pasó— así que es un div con dos botones.
+  // El marco de cada celda es el color medio de su propio cartel, aclarado:
+  // la variedad sale de la obra, no de una paleta inventada.
   els.indexBody.innerHTML = `
     <div class="cartel-grid">
       ${conCartel.map(e => `
-        <button class="cartel-celda" type="button" data-year="${e.year}"
-                title="Ver la edición de ${e.year}">
-          <img src="${esc(e.cartel.mini)}" alt="Cartel de la Batalla de Flores de ${e.year}" loading="lazy">
-          <span class="cartel-anio">${e.year}</span>
-        </button>`).join("")}
+        <div class="cartel-celda"${e.cartel.color ? ` style="background:${esc(e.cartel.color)}"` : ""}>
+          <button class="cartel-img" type="button" title="Ver el cartel de ${e.year} en grande"
+            data-photo="${esc(e.cartel.url)}" data-nombre="Cartel de ${e.year}"
+            data-grupo="" data-anio="${e.year}" data-puesto=""
+            data-credito="${esc(e.cartel.origen)}" data-origen="${esc(e.cartel.origen)}"
+            data-ficha="" data-asigna="${esc(e.cartel.asignacion || "")}"
+            data-asigna-prop="${esc(e.cartel.asignada_por || "")}">
+            <img src="${esc(e.cartel.mini)}" alt="Cartel de la Batalla de Flores de ${e.year}" loading="lazy">
+          </button>
+          <button class="link cartel-anio" type="button" data-year="${e.year}"
+            title="Abrir la edición de ${e.year}">${e.year}</button>
+        </div>`).join("")}
     </div>`;
 }
 

@@ -447,12 +447,21 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
 }
 .cartel-celda {
   border: 1px solid var(--line); border-radius: 8px; background: #fff;
-  padding: 6px 6px 4px; cursor: pointer; font: inherit; color: inherit;
+  padding: 6px 6px 4px;
   display: flex; flex-direction: column; gap: 4px; align-items: center;
 }
-.cartel-celda:hover { border-color: var(--rose); }
-.cartel-celda img { width: 100%; border-radius: 4px; display: block; }
-.cartel-anio { font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cartel-img {
+  border: 0; padding: 0; background: none; cursor: zoom-in; width: 100%;
+  border-radius: 4px; overflow: hidden;
+}
+.cartel-img:hover img { transform: scale(1.03); }
+.cartel-celda img { width: 100%; border-radius: 4px; display: block; transition: transform .2s ease; }
+.cartel-anio {
+  font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums;
+  border: 0; background: none; padding: 1px 6px; cursor: pointer; font-family: inherit;
+  color: inherit; border-radius: 4px;
+}
+.cartel-anio:hover { color: var(--rose); text-decoration: underline; }
 
 /* ── lista de grupos ───────────────────────────────────────────────────── */
 
