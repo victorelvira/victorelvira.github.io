@@ -168406,7 +168406,16 @@
       "notes_derivadas": [
         "Tenemos una foto titulada «Block creation» (B3.º, Grupo alegoria) y ninguna carroza de esta edición se llama así: puede ser una que nos falta o la misma con otro título."
       ],
-      "curiosidades": []
+      "curiosidades": [],
+      "cartel": {
+        "anio": 2022,
+        "url": "batalla_de_flores/fotos/carteles/cartel-2022.jpg",
+        "mini": "batalla_de_flores/fotos/carteles/cartel-2022-mini.jpg",
+        "origen": "laredoturismo.es (programa oficial de 2022)",
+        "original": "https://www.laredoturismo.es/wp-content/uploads/2022/01/programa-batalla-flores-2022.pdf",
+        "asignacion": "es la portada del programa oficial de 2022 publicado por laredoturismo.es; la imagen misma dice «111 edición · viernes 26 agosto 2022 · Batalla de Flores Laredo»",
+        "asignada_por": "fuente"
+      }
     },
     {
       "year": 2023,
@@ -184731,7 +184740,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.88.0",
+  "version": "2.89.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -184749,7 +184758,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-30 14:37",
+  "built_at": "2026-08-30 14:38",
   "map_features": [
     {
       "id": "route_origin_1908",
