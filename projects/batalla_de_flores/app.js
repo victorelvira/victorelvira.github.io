@@ -681,7 +681,10 @@ function renderFloatGrid(rows) {
           <span class="tile-anio">(${entry.year})</span>
         </span>
         <span class="tile-meta">${entry.position != null
-          ? `${entry.category || ""}${entry.position}.º · ` : ""}${esc(grupo)}</span>
+          ? `${entry.category || ""}${entry.position}.º · ` : ""}${grupo
+          ? `<button class="link tile-grupo" type="button"
+               data-group="${esc(slugifyGroup(grupo))}"
+               title="Abrir la ficha de ${esc(grupo)}">${esc(grupo)}</button>` : ""}</span>
       </div>`;
   }).join("")}</div>`;
 }

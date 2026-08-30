@@ -731,6 +731,11 @@ table.palmares td.c-photo .thumb img {
 }
 .tile-name:hover { color: var(--rose); text-decoration: underline; }
 .tile-anio { font-size: 11px; color: var(--muted); flex: none; font-variant-numeric: tabular-nums; }
+.tile-grupo {
+  border: 0; background: none; padding: 0; cursor: pointer;
+  font: inherit; color: inherit;
+}
+.tile-grupo:hover { color: var(--t-group); text-decoration: underline; }
 .tam-mini { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; }
 .tam-mini input { width: 90px; accent-color: var(--rose); }
 .tile-meta {
