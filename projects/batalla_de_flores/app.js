@@ -3988,6 +3988,40 @@ function renderGroupDetail(group) {
 
 /* ── detalle: recorrido ─────────────────────────────────────────────────── */
 
+/* La ficha de una palabra: todas las carrozas cuyo NOMBRE la contiene (solo
+ * el nombre: las pildoras cuentan nombres, y mezclar los grupos metia a
+ * «¡Chu-chú!» en «laredo» por ser de la Asoc. de Carrocistas de Laredo). */
+function renderPalabraDetail(palabra) {
+  const clave = normalizeText(palabra);
+  const filas = state.floats
+    .filter(f => normalizeText(f.name).includes(clave))
+    .sort((a, b) => b.year - a.year);
+  els.detail.innerHTML = `
+    <div class="detail-head">
+      <h2 style="font-size:20px">«${esc(palabra)}»</h2>
+    </div>
+    <div class="chips">
+      ${shareButton()}
+      <span class="chip rose">${num(filas.length)} carroza${filas.length === 1 ? "" : "s"} con la palabra en el nombre</span>
+    </div>
+    <div class="float-grid palabra-grid">
+      ${filas.map(f => `
+        <div class="tile">
+          ${(f.image_urls || []).length ? `
+          <button class="tile-foto" type="button" title="Ver la foto en grande"
+                  ${photoAttrs(f, f.image_urls[0])}>
+            <img src="${esc(thumbUrl(f.image_urls[0]))}" alt="${esc(f.name)}" loading="lazy">
+          </button>` : ""}
+          <span class="tile-cabecera">
+            <button class="link tile-name" type="button" data-float="${esc(f.id)}"
+                    title="Abrir la ficha de ${esc(f.name)}">${esc(f.name)}</button>
+            <span class="tile-anio">(${f.year})</span>
+          </span>
+          <span class="tile-meta">${esc(f.group_canonical || f.group_raw || "")}</span>
+        </div>`).join("")}
+    </div>`;
+}
+
 function renderRouteDetail(route) {
   const editions = state.editions.filter(e => e.year >= route.start_year && e.year <= route.end_year);
   const floats = editions.reduce((total, e) => total + (e.float_count || 0), 0);
@@ -4167,6 +4201,7 @@ function renderDetail() {
     if (route) return renderRouteDetail(route);
   }
   if (selection.kind === "about") return renderAbout();
+  if (selection.kind === "palabra") return renderPalabraDetail(selection.id);
   if (selection.kind === "float") {
     const entry = state.floats.find(item => item.id === selection.id);
     if (entry) return renderFloatDetail(entry);
@@ -4310,7 +4345,7 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
-    const prefix = { year: "y", group: "g", route: "r", float: "c", about: "info" }[kind];
+    const prefix = { year: "y", group: "g", route: "r", float: "c", about: "info", palabra: "p" }[kind];
     // CADA ficha nueva apila su entrada, tambien al saltar de ficha a ficha.
     // Estuvo aplanado —una sola entrada por sesion de fichas— para poder
     // escapar de la web en dos pulsaciones, y en la calle se vio lo contrario:
@@ -4334,13 +4369,14 @@ function readHash() {
   // La pestaña Pendiente es compartible: es la parte que uno quiere mandarle a
   // un carrocista, y sin URL propia no habia forma de enlazarla.
   if (location.hash === "#/pendiente") return null;
-  const match = /^#\/(y|g|r|c)\/(.+)$/.exec(location.hash);
+  const match = /^#\/(y|g|r|c|p)\/(.+)$/.exec(location.hash);
   if (!match) return null;
   const [, prefix, rawId] = match;
   const id = decodeURIComponent(rawId);
   if (prefix === "y") return { kind: "year", id: Number(id) };
   if (prefix === "g") return { kind: "group", id };
   if (prefix === "c") return { kind: "float", id };
+  if (prefix === "p") return { kind: "palabra", id };
   return { kind: "route", id };
 }
 
@@ -4663,22 +4699,10 @@ function bindEvents() {
     // a la primera, como siempre.
     const palabra = event.target.closest("[data-buscar]");
     if (palabra) {
-      // El salto deja miga en el historial: quien pincha «fantasía» y ve las
-      // 25 quiere poder volver a Estadísticas con el botón de atrás, no
-      // encontrarse fuera de la web. La miga se graba en la entrada ACTUAL
-      // (replaceState) y luego se empuja la nueva: atrás aterriza en la
-      // entrada que lleva la miga. Al reves, la miga viajaba con la entrada
-      // nueva y atrás encontraba una vacía.
-      history.replaceState({ vueltaA: { mode: state.mode, query: state.query } }, "");
-      history.pushState({}, "");
-      // La pildora cuenta palabras de los NOMBRES, asi que su clic busca solo
-      // en nombres: buscando «laredo» a mano salen tambien las carrozas de
-      // grupos laredanos (¡Chu-chú!, de la Asoc. de Carrocistas de Laredo), y
-      // eso esta bien para el buscador pero rompia la promesa de la pildora.
-      state.soloNombre = true;
-      state.query = palabra.dataset.buscar;
-      els.search.value = state.query;
-      setMode("floats");
+      // La pildora abre su ficha en el panel de la derecha, como todo lo
+      // demas en esta web: con su cruz de cerrar y su entrada en el
+      // historial via select(). Nada de saltar de pestaña.
+      select("palabra", palabra.dataset.buscar);
       return;
     }
 
