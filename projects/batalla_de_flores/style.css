@@ -478,6 +478,7 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
 .palabra small { color: var(--muted); font-size: 0.72em; }
 .palabra:hover { border-color: var(--rose); color: var(--rose); }
 .palabra-decadas b { font-variant-numeric: tabular-nums; }
+.medallero-epoca { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .medallero-resto { margin: 4px 0 10px; }
 .medallero-resto summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
 

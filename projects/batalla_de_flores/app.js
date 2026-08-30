@@ -1507,7 +1507,10 @@ function renderStatsTab() {
           <tr>
             <td class="pos">${index + 1}</td>
             <td class="name"><button class="link t-group" type="button"
-              data-group="${esc(slugifyGroup(row.grupo))}">${esc(row.grupo)}</button></td>
+              data-group="${esc(slugifyGroup(row.grupo))}">${esc(row.grupo)}</button>${(() => {
+                const g = state.groups.find(x => x.canonical_name === row.grupo);
+                return g ? ` <span class="medallero-epoca">(${g.first_year_seen}–${g.last_year_seen})</span>` : "";
+              })()}</td>
             <td class="pos">${row.oro || ""}</td>
             <td class="pos">${row.plata || ""}</td>
             <td class="pos">${row.bronce || ""}</td>
@@ -1516,7 +1519,7 @@ function renderStatsTab() {
         const CORTE = 12;
         return `<table class="palmares medallero">
           <colgroup><col class="c-pos"><col><col class="c-pos"><col class="c-pos"><col class="c-pos"><col class="c-pos"></colgroup>
-          <thead><tr><th></th><th>Grupo</th><th>🥇</th><th>🥈</th><th>🥉</th><th>Σ</th></tr></thead>
+          <thead><tr><th></th><th>Grupo</th><th>🥇</th><th>🥈</th><th>🥉</th><th>Suma</th></tr></thead>
           <tbody>${filas.slice(0, CORTE).map(fila).join("")}</tbody>
         </table>
         ${filas.length > CORTE ? `<details class="medallero-resto">
