@@ -857,20 +857,26 @@ function carrerasRows(category) {
     series.get(entry.group_canonical).push(entry);
   });
 
-  // Un punto por edicion, no por carroza: 45 grupos llevaron dos o tres carrozas
-  // en el mismo ano y los circulos se pisaban unos a otros, dejando anillos de
-  // colores que no significaban nada. Se pinta su mejor puesto de ese ano.
+  // Un punto GRANDE por edicion, no por carroza: 45 grupos llevaron dos o tres
+  // carrozas en el mismo ano y los circulos del mismo tamano se pisaban unos a
+  // otros, dejando anillos de colores que no significaban nada. La linea sigue
+  // al mejor puesto del ano; las demas carrozas de ese ano no desaparecen, sino
+  // que asoman como satelites pequenos pegados al punto (ver pintarCarreras).
   return [...series.entries()]
     .filter(([, items]) => items.length >= 3)
     .map(([name, items]) => {
       const perYear = new Map();
       items.forEach(item => {
-        const current = perYear.get(item.year);
-        if (!current || item.position < current.best) {
-          perYear.set(item.year, { year: item.year, best: item.position, names: [] });
-        }
+        const d = perYear.get(item.year)
+          || { year: item.year, best: Infinity, posiciones: [], names: [] };
+        d.best = Math.min(d.best, item.position);
+        d.posiciones.push(item.position);
+        d.names.push(`${item.name} (${item.category || ""}${item.position}.º)`);
+        perYear.set(item.year, d);
       });
-      items.forEach(item => perYear.get(item.year).names.push(`${item.name} (${item.position}.º)`));
+      perYear.forEach(d => {
+        d.otras = d.posiciones.sort((a, b) => a - b).slice(1);
+      });
       const years = [...perYear.values()].sort((a, b) => a.year - b.year);
       return {
         name,
@@ -940,8 +946,17 @@ function pintarCarreras() {
     const dots = row.years.map(item => {
       const cls = item.best === 1 ? "win" : item.best <= 3 ? "podium" : "ran";
       const tip = `${row.name} · ${item.year}<b>${item.names.join(" · ")}</b>`;
-      return `<circle class="dot ${cls}" cx="${scale(item.year).toFixed(1)}" cy="${y}"
-        r="${item.best === 1 ? 3.4 : 2.6}" data-tip="${esc(tip)}"/>`;
+      const x = scale(item.year).toFixed(1);
+      // El ano con dos carrozas (las dos categorias, casi siempre): la linea
+      // sigue a la mejor y las demas asoman como satelites pequenos, debajo y
+      // encima del punto. Caben dos; con mas, el tooltip las cuenta todas.
+      const sats = (item.otras || []).slice(0, 2).map((pos, k) => {
+        const scls = pos === 1 ? "win" : pos <= 3 ? "podium" : "ran";
+        return `<circle class="dot sat ${scls}" cx="${x}"
+          cy="${(y + (k ? -4.6 : 4.6)).toFixed(1)}" r="1.6"/>`;
+      }).join("");
+      return `<circle class="dot ${cls}" cx="${x}" cy="${y}"
+        r="${item.best === 1 ? 3.4 : 2.6}" data-tip="${esc(tip)}"/>${sats}`;
     }).join("");
     const slug = esc(slugifyGroup(row.name));
     return `
@@ -1347,10 +1362,14 @@ function renderPendingTab() {
 /* Medallero historico de la competicion principal: lista unica hasta 2010 y
  * categoria A desde entonces (mismo criterio que las rachas: es la misma
  * competicion en dos epocas). Orden olimpico: oros, luego platas, bronces. */
-function medallero() {
+/* Sin argumento: la competición principal (lista única + categoría A, que son
+ * la misma en dos épocas). Con "B": solo la categoría B, que nació en 2011. */
+function medallero(categoria) {
   const filas = new Map();
   state.editions.forEach(ed => (ed.floats || []).forEach(f => {
-    const main = f.category == null || f.category === "" || f.category === "A";
+    const main = categoria === "B"
+      ? f.category === "B"
+      : f.category == null || f.category === "" || f.category === "A";
     if (!main || !f.position || f.position > 3 || !f.group_canonical) return;
     const m = filas.get(f.group_canonical) || { oro: 0, plata: 0, bronce: 0 };
     m[["oro", "plata", "bronce"][f.position - 1]] += 1;
@@ -1463,6 +1482,8 @@ function renderStatsTab() {
       </div>
       <p class="chart-note">Cada fila es un grupo con tres o más participaciones. La línea gris va
       de su primera a su última carroza; cada punto es una edición, y el color dice cómo le fue.
+      Si un año llevó dos carrozas —una por categoría, casi siempre—, el punto sigue a la mejor y
+      la otra asoma como un satélite pequeño pegado; el detalle, al pasar por encima.
       ${category === "all"
         ? `Las categorías A y B no existen antes de <b>${CATEGORIES_FROM}</b>, cuando el reglamento
            municipal las creó según el tamaño de la carroza; por eso «Todas» es la única vista que
@@ -1529,6 +1550,72 @@ function renderStatsTab() {
           <table class="palmares medallero"><tbody>
             ${filas.slice(CORTE).map((row, i) => fila(row, i + CORTE)).join("")}
           </tbody></table></details>` : ""}`;
+      })()}
+
+      <h3 class="section">⚖️ Las dos categorías</h3>
+      ${(() => {
+        // Todo sale del dataset en el momento: nada de cifras escritas a mano
+        // que caduquen con la siguiente edición.
+        const desde = CATEGORIES_FROM;
+        let nA = 0, nB = 0;
+        const primeras = new Map();   // grupo -> {A: primer año, B: primer año}
+        const dobles = [];            // [año, grupo] con carroza en las dos listas
+        state.editions.forEach(ed => {
+          const porGrupo = new Map();
+          (ed.floats || []).forEach(f => {
+            const c = f.category;
+            if (c !== "A" && c !== "B") return;
+            if (c === "A") nA += 1; else nB += 1;
+            const g = f.group_canonical;
+            if (!g) return;
+            const p = primeras.get(g) || {};
+            p[c] = Math.min(p[c] || 9999, ed.year);
+            primeras.set(g, p);
+            const cats = porGrupo.get(g) || new Set();
+            cats.add(c);
+            porGrupo.set(g, cats);
+          });
+          porGrupo.forEach((cats, g) => { if (cats.size === 2) dobles.push([ed.year, g]); });
+        });
+        const soloB = [...primeras.entries()].filter(([, p]) => p.B && !p.A);
+        const cantera = [...primeras.entries()]
+          .filter(([, p]) => p.A && p.B && p.B < p.A)
+          .sort((a, b) => a[1].B - b[1].B);
+        const gBtn = g => `<button class="link t-group" type="button"
+          data-group="${esc(slugifyGroup(g))}">${esc(g)}</button>`;
+        const filasB = medallero("B");
+        return `
+      <p class="chart-note">Desde <b>${desde}</b> el reglamento municipal separa el desfile en dos
+      listas por el tamaño de la carroza: la <b>A</b> para las grandes y la <b>B</b> para las
+      pequeñas, cada una con sus premios. Desde entonces han desfilado ${num(nA)} carrozas en A
+      y ${num(nB)} en B.</p>
+      <h4>Medallero de la categoría B</h4>
+      <table class="palmares medallero">
+        <colgroup><col class="c-pos"><col><col class="c-pos"><col class="c-pos"><col class="c-pos"><col class="c-pos"></colgroup>
+        <thead><tr><th></th><th>Grupo</th><th>🥇</th><th>🥈</th><th>🥉</th><th>Suma</th></tr></thead>
+        <tbody>${filasB.slice(0, 8).map((row, index) => `
+          <tr>
+            <td class="pos">${index + 1}</td>
+            <td class="name">${gBtn(row.grupo)}</td>
+            <td class="pos">${row.oro || ""}</td>
+            <td class="pos">${row.plata || ""}</td>
+            <td class="pos">${row.bronce || ""}</td>
+            <td class="pos"><b>${row.total}</b></td>
+          </tr>`).join("")}</tbody>
+      </table>
+      <ul class="dos-categorias">
+        <li>Doblar es la costumbre: <b>${dobles.length} veces</b> un grupo ha presentado carroza
+          en las dos listas el mismo año.</li>
+        ${soloB.length ? `<li>Los especialistas: ${soloB.map(([g]) => gBtn(g)).join(" y ")}
+          ${soloB.length > 1 ? "no han desfilado nunca" : "no ha desfilado nunca"} en la A.</li>` : ""}
+        ${cantera.length ? `<li>La B también es cantera: ${cantera.map(([g, p]) =>
+          `${gBtn(g)} debutó en la B en ${p.B} y en ${p.A} ya estaba en la A`).join("; ")}.</li>` : ""}
+        ${filasB[0] ? `<li>El dominio: ${gBtn(filasB[0].grupo)} ha ganado la B
+          <b>${filasB[0].oro} veces</b>${filasB[1] ? `, más que ${(() => {
+            const resto = filasB.slice(1).reduce((t, r) => t + r.oro, 0);
+            return resto < filasB[0].oro ? "todos los demás juntos" : "nadie";
+          })()}` : ""}.</li>` : ""}
+      </ul>`;
       })()}
 
       <h3 class="section">💬 Las palabras de las carrozas</h3>
@@ -3833,22 +3920,71 @@ function chartGroupTimeline(entries) {
     <text class="split-label" x="${(scale(splitYear) - 4).toFixed(1)}" y="${topPad - 8}"
       text-anchor="end">${splitYear}</text>` : "";
 
-  const lines = categories.map(category => {
-    const points = ranked.filter(entry => catOf(entry) === category).sort((a, b) => a.year - b.year);
-    const path = points.map((entry, index) =>
-      `${index ? "L" : "M"}${scale(entry.year).toFixed(1)} ${yOf(entry.position).toFixed(1)}`).join("");
-    const dots = points.map(entry => `
-      <circle class="serie-dot" cx="${scale(entry.year).toFixed(1)}" cy="${yOf(entry.position).toFixed(1)}"
-              r="${entry.position === 1 ? 4 : 3.2}" data-float="${esc(entry.id)}"
-              data-tip="${esc(`${entry.year} · ${entry.category || ""}${entry.position}.º<b>${entry.name}</b>`)}"/>`).join("");
+  // La lista única y la categoría A son LA MISMA competición en dos épocas
+  // —así lo cuentan ya las rachas y el medallero—, así que su línea es UNA y
+  // cruza 2011 de largo, sin cortarse. La B va aparte porque nació aparte.
+  const seriesDef = [
+    { clase: "A", filtro: e => catOf(e) !== "B" },
+    { clase: "B", filtro: e => catOf(e) === "B" },
+  ].filter(def => ranked.some(def.filtro));
+
+  // ¿Hubo ediciones CELEBRADAS entre dos participaciones? Se cuentan
+  // ediciones, no años: los de la guerra no abren hueco (no hubo fiesta que
+  // perderse), pero saltarse un año con desfile sí.
+  const seSaltoAlgo = (a, b) => state.editions.some(ed =>
+    ed.status === "published" && ed.year > a && ed.year < b);
+  let hayAusencias = false;
+
+  const lines = seriesDef.map(({ clase, filtro }) => {
+    const points = ranked.filter(filtro)
+      .sort((a, b) => a.year - b.year || a.position - b.position);
+    // Dos carrozas del MISMO año en la MISMA lista (frecuente antes de 2011):
+    // trazar la linea por las dos era un zigzag vertical sin significado. La
+    // linea sigue a la mejor del año; las demas cuelgan en su puesto real,
+    // unidas a la linea por un hilo fino que dice «mismo año». Cada punto
+    // sigue siendo su carroza: mismo tooltip, mismo clic.
+    const porAnio = new Map();
+    points.forEach(entry => {
+      if (!porAnio.has(entry.year)) porAnio.set(entry.year, []);
+      porAnio.get(entry.year).push(entry);
+    });
+    const principales = [...porAnio.values()].map(lista => lista[0]);
+    const extras = [...porAnio.values()]
+      .flatMap(lista => lista.slice(1).map(entry => ({ entry, mejor: lista[0] })));
+    // El tramo entre dos participaciones consecutivas DE VERDAD va sólido;
+    // si en medio hubo ediciones a las que el grupo no fue, va discontinuo y
+    // apagado: la ausencia se ve, no se disimula con una recta que parece
+    // continuidad.
+    const solidos = [], huecos = [];
+    for (let i = 1; i < principales.length; i++) {
+      const a = principales[i - 1], b = principales[i];
+      const seg = `M${scale(a.year).toFixed(1)} ${yOf(a.position).toFixed(1)}`
+        + `L${scale(b.year).toFixed(1)} ${yOf(b.position).toFixed(1)}`;
+      (seSaltoAlgo(a.year, b.year) ? huecos : solidos).push(seg);
+    }
+    if (huecos.length) hayAusencias = true;
+    const puntoDe = (entry, extra) => `
+      <circle class="serie-dot${extra ? " sat" : ""}" cx="${scale(entry.year).toFixed(1)}"
+              cy="${yOf(entry.position).toFixed(1)}"
+              r="${extra ? 2.4 : entry.position === 1 ? 4 : 3.2}" data-float="${esc(entry.id)}"
+              data-tip="${esc(`${entry.year} · ${entry.category || ""}${entry.position}.º<b>${entry.name}</b>`)}"/>`;
+    const dots = principales.map(entry => puntoDe(entry, false)).join("")
+      + extras.map(({ entry, mejor }) => `
+      <line class="serie-hilo" x1="${scale(entry.year).toFixed(1)}"
+            y1="${yOf(mejor.position).toFixed(1)}" x2="${scale(entry.year).toFixed(1)}"
+            y2="${yOf(entry.position).toFixed(1)}"/>${puntoDe(entry, true)}`).join("");
     // La copa va en su propia capa, encima de todas las lineas.
     const cups = points.filter(entry => entry.position === 1).map(entry => {
-      const winners = winsByYear.get(entry.year) || [category];
-      const index = Math.max(winners.indexOf(category), 0);
+      const cat = catOf(entry);
+      const winners = winsByYear.get(entry.year) || [cat];
+      const index = Math.max(winners.indexOf(cat), 0);
       const offset = (index - (winners.length - 1) / 2) * 13;
-      return trophyMark(scale(entry.year) + offset, yOf(entry.position), `trophy-${catClass(category)}`);
+      return trophyMark(scale(entry.year) + offset, yOf(entry.position), `trophy-${catClass(cat)}`);
     }).join("");
-    return `<g class="serie serie-${catClass(category)}"><path class="serie-line" d="${path}"/>${dots}${cups}</g>`;
+    return `<g class="serie serie-${clase}">
+      <path class="serie-line" d="${solidos.join(" ")}"/>
+      ${huecos.length ? `<path class="serie-line serie-ausencia" d="${huecos.join(" ")}"/>` : ""}
+      ${dots}${cups}</g>`;
   }).join("");
 
   return `
@@ -3856,6 +3992,7 @@ function chartGroupTimeline(entries) {
     <div class="chart-legend">${categories.filter(c => c !== SIN_CAT).map(c =>
       `<span><i class="key key-${catClass(c)}"></i>Categoría ${esc(c)}</span>`).join("")}
       ${splitYear ? `<span><i class="key key-split"></i>${CATEGORIES_FROM}: se crean A y B</span>` : ""}
+      ${hayAusencias ? `<span><i class="key key-ausencia"></i>ediciones sin participar</span>` : ""}
       <span class="cup-key">${ICON_TROPHY}1.<sup>er</sup> puesto</span></div>
     ${categories.includes(SIN_CAT) ? `<p class="chart-note">Hasta ${CATEGORIES_FROM - 1} el palmarés
       era una lista única, que en <b>${CATEGORIES_FROM}</b> el reglamento municipal partió en dos
@@ -4345,7 +4482,6 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   // En movil el detalle se superpone al indice; en escritorio no hace nada.
   if (reveal && isNarrow()) document.body.classList.add("detail-open");
   if (updateHash) {
-    const prefix = { year: "y", group: "g", route: "r", float: "c", about: "info", palabra: "p" }[kind];
     // CADA ficha nueva apila su entrada, tambien al saltar de ficha a ficha.
     // Estuvo aplanado —una sola entrada por sesion de fichas— para poder
     // escapar de la web en dos pulsaciones, y en la calle se vio lo contrario:
@@ -4356,7 +4492,7 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
     // duplicados.
     const same = previa && previa.kind === kind && previa.id === id;
     const method = same ? "replaceState" : "pushState";
-    history[method](null, "", `#/${prefix}/${id}`);
+    history[method](null, "", hashDe(state.mode, { kind, id }));
     if (method === "pushState") state.historialPropio = true;
     track(location.pathname + location.hash, `${kind}: ${id}`);
   }
@@ -4364,23 +4500,42 @@ function select(kind, id, { updateHash = true, reveal = true } = {}) {
   renderDetail();
 }
 
-function readHash() {
-  if (location.hash === "#/info/-") return { kind: "about", id: "-" };
-  // La pestaña Pendiente es compartible: es la parte que uno quiere mandarle a
-  // un carrocista, y sin URL propia no habia forma de enlazarla.
-  if (location.hash === "#/pendiente") return null;
-  const match = /^#\/(y|g|r|c|p)\/(.+)$/.exec(location.hash);
-  if (!match) return null;
-  const [, prefix, rawId] = match;
-  const id = decodeURIComponent(rawId);
-  if (prefix === "y") return { kind: "year", id: Number(id) };
-  if (prefix === "g") return { kind: "group", id };
-  if (prefix === "c") return { kind: "float", id };
-  if (prefix === "p") return { kind: "palabra", id };
-  return { kind: "route", id };
+/* La URL dice DÓNDE estás y QUÉ miras: «#/pestaña» a secas, o
+ * «#/pestaña/tipo/id» con una ficha abierta. Antes solo decía la ficha, y al
+ * cambiar de pestaña o cerrarla se quedaba vieja: compartías «estadísticas»
+ * y el enlace llevaba a una carroza.
+ *
+ * Las formas viejas (#/y/2026, #/c/id, #/pendiente, #/info/-) se siguen
+ * LEYENDO aunque ya no se escriban: hay enlaces repartidos por WhatsApp y un
+ * enlace compartido no puede caducar. */
+const TAB_SLUG = { editions: "ediciones", groups: "grupos", floats: "carrozas",
+  stats: "estadisticas", routes: "recorridos", carteles: "carteles", pending: "pendiente" };
+const SLUG_TAB = Object.fromEntries(Object.entries(TAB_SLUG).map(([k, v]) => [v, k]));
+const KIND_PREF = { year: "y", group: "g", route: "r", float: "c", about: "info", palabra: "p" };
+const PREF_KIND = { y: "year", g: "group", r: "route", c: "float", info: "about", p: "palabra" };
+
+/* La URL que toca para un estado dado. Sin nada que decir (Ediciones, sin
+ * ficha) devuelve la dirección limpia, que es la portada compartible. */
+function hashDe(mode, selection) {
+  const tab = TAB_SLUG[mode] || "ediciones";
+  if (selection) return `#/${tab}/${KIND_PREF[selection.kind]}/${selection.id}`;
+  return mode === "editions" ? location.pathname + location.search : `#/${tab}`;
 }
 
-function setMode(mode) {
+function readHash() {
+  const crudo = location.hash.replace(/^#\/?/, "");
+  if (!crudo) return { tab: null, sel: null };
+  const partes = crudo.split("/");
+  const tab = SLUG_TAB[partes[0]] ? SLUG_TAB[partes.shift()] : null;
+  if (!partes.length) return { tab, sel: null };
+  const kind = PREF_KIND[partes[0]];
+  if (!kind) return { tab, sel: null };
+  const id = decodeURIComponent(partes.slice(1).join("/"));
+  if (!id) return { tab, sel: null };
+  return { tab, sel: { kind, id: kind === "year" ? Number(id) : id } };
+}
+
+function setMode(mode, { updateHash = true } = {}) {
   // El filtro de categoría es de la pestaña de Carrozas y solo actúa ahí, pero
   // su aviso vive en la barra de esa pestaña — que se vacía al cambiar de
   // pestaña. Resultado: salías a Ediciones, volvías, y veías 97 carrozas de 585
@@ -4393,11 +4548,11 @@ function setMode(mode) {
     state.category = null;
   }
   state.mode = mode;
-  if (mode === "pending" && !state.selection) {
-    history.replaceState(null, "", `${location.pathname}#/pendiente`);
-  } else if (location.hash === "#/pendiente") {
-    history.replaceState(null, "", location.pathname);
-  }
+  // La pestaña se escribe en la URL SIN apilar historial: cambiar de pestaña
+  // es pasearse por la misma pagina, y el boton atras debe deshacer fichas,
+  // no repetir el paseo. Cuando el cambio VIENE del historial (popstate,
+  // arranque), no se escribe nada: la URL de esa entrada ya es la verdad.
+  if (updateHash) history.replaceState(null, "", hashDe(mode, state.selection));
   els.tabs.forEach(tab => {
     const isActive = tab.dataset.mode === mode;
     tab.classList.toggle("is-active", isActive);
@@ -4445,7 +4600,7 @@ function closeDetail() {
     history.back();
     return;
   }
-  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  if (location.hash) history.replaceState(null, "", hashDe(state.mode, null));
   clearSelection();
 }
 
@@ -4741,11 +4896,12 @@ function bindEvents() {
       state.soloNombre = false;
       state.query = query || "";
       els.search.value = state.query;
-      setMode(mode);
+      setMode(mode, { updateHash: false });
       return;
     }
-    const selection = readHash();
-    if (selection) select(selection.kind, selection.id, { updateHash: false });
+    const { tab, sel } = readHash();
+    if (tab && tab !== state.mode) setMode(tab, { updateHash: false });
+    if (sel) select(sel.kind, sel.id, { updateHash: false });
     else clearSelection();
   });
 }
@@ -4802,14 +4958,19 @@ fetch("batalla_de_flores/data/batalla_de_flores.json", { cache: "no-cache" })
     renderNocheMagica();
 
     const fromHash = readHash();
-    if (location.hash === "#/pendiente") {
-      setMode("pending");
+    if (fromHash.tab) {
+      setMode(fromHash.tab, { updateHash: false });
+    } else if (fromHash.sel) {
+      // Enlace de la era anterior, sin pestaña: cada tipo abre en la suya.
+      if (fromHash.sel.kind === "group") setMode("groups", { updateHash: false });
+      if (fromHash.sel.kind === "route") setMode("routes", { updateHash: false });
+      if (fromHash.sel.kind === "float") setMode("floats", { updateHash: false });
+    }
+    if (fromHash.sel) {
+      select(fromHash.sel.kind, fromHash.sel.id, { updateHash: false });
+    } else if (fromHash.tab) {
+      renderIndex();
       renderDetail();
-    } else if (fromHash) {
-      if (fromHash.kind === "group") setMode("groups");
-      if (fromHash.kind === "route") setMode("routes");
-      if (fromHash.kind === "float") setMode("floats");
-      select(fromHash.kind, fromHash.id, { updateHash: false });
     } else {
       // De salida se abre la ultima edicion con carrozas. Estuvo al reves
       // —sin seleccion, para invitar a pinchar la rejilla— hasta la Batalla

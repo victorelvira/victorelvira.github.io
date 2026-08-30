@@ -1989,3 +1989,23 @@ body.lb-abierto { overflow: hidden; }
      comia la ultima letra y se leia "Todas las decada". */
   .controls select { padding-right: 18px; }
 }
+
+/* ── las dos categorías ── */
+.dos-categorias { margin: 10px 0 0; padding-left: 20px; font-size: 13.5px; line-height: 1.55; }
+.dos-categorias li { margin-bottom: 4px; }
+/* Satélite: la segunda carroza del mismo año en la trayectoria. Borde blanco
+ * para que no se funda con el punto grande al que va pegado. */
+.dot.sat { stroke: #fff; stroke-width: 0.7; }
+/* Ficha del grupo: la segunda carroza del mismo año en la misma lista cuelga
+ * de la línea con un hilo, en su puesto real. */
+.serie-hilo { stroke-width: 1; stroke-dasharray: 2 2.5; opacity: .55; }
+.serie-A .serie-hilo { stroke: var(--cat-a); }
+.serie-B .serie-hilo { stroke: var(--cat-b); }
+.serie-none .serie-hilo { stroke: var(--cat-a); }
+.serie-dot.sat { opacity: .8; }
+/* Tramo de ausencia en la trayectoria del grupo: discontinuo y apagado. */
+.serie-ausencia { stroke-dasharray: 4 4; opacity: .4; }
+.key.key-ausencia {
+  background: repeating-linear-gradient(90deg, #8fa6bd 0 4px, transparent 4px 8px);
+  opacity: .8;
+}
