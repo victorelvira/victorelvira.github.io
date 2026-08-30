@@ -1,7 +1,7 @@
 {
   "project": "batalla_de_flores",
   "title": "Batalla de Flores de Laredo",
-  "updated_at": "2026-08-29",
+  "updated_at": "2026-08-30",
   "summary": {
     "edition_count": 119,
     "published_editions": 113,
@@ -19,10 +19,10 @@
     "carrozas_en_duda_por_duplicado": 133,
     "grupos": 177,
     "ediciones_con_palmares": 113,
-    "carrozas_con_foto": 591,
-    "fotos": 785,
-    "afirmaciones": 3877,
-    "afirmaciones_corroboradas": 454,
+    "carrozas_con_foto": 598,
+    "fotos": 793,
+    "afirmaciones": 3879,
+    "afirmaciones_corroboradas": 461,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -177446,7 +177446,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+press_history+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -177466,6 +177466,7 @@
           "prize_costumes_rank": null,
           "prize_international_rank": null,
           "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [],
@@ -177476,6 +177477,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-cat b 1p-walt-agrupa 2.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
             },
             {
               "kind": "press_history",
@@ -177510,9 +177519,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-walt.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -177529,6 +177542,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -177547,9 +177564,20 @@
               "independientes": 2
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-walt.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-walt.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-cat b 1p-walt-agrupa 2.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-cat b 1p-walt-agrupa 2.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "walt",
           "id_grupo": "agrupa-dos",
           "id_completo": "agrupa-dos_2026_walt",
@@ -177958,6 +177986,227 @@
           "avisos_derivados": []
         },
         {
+          "id": "2026-sonar-con-las-estrellas-b-na",
+          "label": "oruna-2026-sonar",
+          "name": "Soñar con las estrellas",
+          "slug": "sonar-con-las-estrellas",
+          "year": 2026,
+          "category": "B",
+          "position": 3,
+          "points": null,
+          "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
+          "group_canonical": "Carrozas Oruña",
+          "source_type": "official_result+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "prize_international_rank": null,
+          "notes": [],
+          "needs_review": [
+            "Pendiente de una fuente citable que lo confirme."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría B, recibida tras el desfile",
+              "texto": "Soñar con las estrellas fue 3.ª; Huellitas, 4.ª",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [],
+          "image_refs": [],
+          "image_credit": null,
+          "id_carroza": "sonar",
+          "id_grupo": "oruna",
+          "id_completo": "oruna_2026_sonar-estrellas",
+          "avisos_derivados": []
+        },
+        {
+          "id": "2026-huellitas-b-na",
+          "label": "alegoria-2026-huellitas",
+          "name": "Huellitas",
+          "slug": "huellitas",
+          "year": 2026,
+          "category": "B",
+          "position": 4,
+          "points": null,
+          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result+photo_archive+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "prize_international_rank": null,
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
+          "needs_review": [
+            "Pendiente de una fuente citable que lo confirme."
+          ],
+          "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-cat b 4p-huellitas-grupo alegoria.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría B, recibida tras el desfile",
+              "texto": "Soñar con las estrellas fue 3.ª; Huellitas, 4.ª",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-huellitas.jpg"
+                }
+              ],
+              "independientes": 2
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-huellitas.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-huellitas.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-cat b 4p-huellitas-grupo alegoria.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-cat b 4p-huellitas-grupo alegoria.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
+          "id_carroza": "huellitas",
+          "id_grupo": "alegoria",
+          "id_completo": "alegoria_2026_huellitas",
+          "avisos_derivados": []
+        },
+        {
           "id": "2026-todo-o-nada-a-na",
           "label": "come-2026-todo",
           "name": "Todo o nada",
@@ -178249,7 +178498,7 @@
           "points": null,
           "group_raw": "GRUPO PEJINO",
           "group_canonical": "Grupo Pejino",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -178263,11 +178512,22 @@
           "prize_art_rank": null,
           "prize_costumes_rank": 3,
           "prize_international_rank": 1,
-          "notes": [],
+          "notes": [
+            "Fotos de Víctor Elvira, hechas en el desfile."
+          ],
           "needs_review": [
             "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-6p-alistair-grupo pejino (1).jpg",
+                "2026-6p-alistair-grupo pejino (2).jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
@@ -178293,9 +178553,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-alistair-1.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -178312,6 +178576,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178344,9 +178612,29 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-alistair-1.jpg",
+            "batalla_de_flores/fotos/2026-alistair-2.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-alistair-1.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-6p-alistair-grupo pejino (1).jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-6p-alistair-grupo pejino (1).jpg»",
+              "asignada_por": "fuente"
+            },
+            {
+              "url": "batalla_de_flores/fotos/2026-alistair-2.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-6p-alistair-grupo pejino (1).jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-6p-alistair-grupo pejino (1).jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "alistair",
           "id_grupo": "pejino",
           "id_completo": "pejino_2026_alistair",
@@ -178363,7 +178651,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
           "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -178377,9 +178665,19 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-7p-jerez de la frontera-carrozas oruña.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación anunciada la noche del desfile",
@@ -178405,9 +178703,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-jerez-de-la-frontera.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -178424,6 +178726,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178438,9 +178744,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-jerez-de-la-frontera.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-jerez-de-la-frontera.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-7p-jerez de la frontera-carrozas oruña.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-7p-jerez de la frontera-carrozas oruña.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "jerez",
           "id_grupo": "oruna",
           "id_completo": "oruna_2026_jerez-frontera",
@@ -178457,7 +178774,7 @@
           "points": null,
           "group_raw": "GRUPO PEJINO",
           "group_canonical": "Grupo Pejino",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -178471,11 +178788,21 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [
             "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-8p-beep beep-grupo pejino.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
@@ -178501,9 +178828,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-beep-beep.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -178520,6 +178851,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178534,9 +178869,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-beep-beep.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-beep-beep.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-8p-beep beep-grupo pejino.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-8p-beep beep-grupo pejino.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "beep",
           "id_grupo": "pejino",
           "id_completo": "pejino_2026_beep-beep",
@@ -178553,7 +178899,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -178567,9 +178913,19 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-9p-dulces sueños-mi vida loca.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación anunciada la noche del desfile",
@@ -178595,9 +178951,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-dulces-suenos.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -178614,6 +178974,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178628,9 +178992,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-dulces-suenos.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-dulces-suenos.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-9p-dulces sueños-mi vida loca.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-9p-dulces sueños-mi vida loca.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "dulces",
           "id_grupo": "vida-loca",
           "id_completo": "vida-loca_2026_dulces-suenos",
@@ -178647,7 +179022,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
           "group_canonical": "Grupo Alegoría",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -178661,9 +179036,19 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-10p-flotaremos-grupo alegoria.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación anunciada la noche del desfile",
@@ -178689,9 +179074,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-flotaremos.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -178708,6 +179097,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178722,164 +179115,23 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-flotaremos.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-flotaremos.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-10p-flotaremos-grupo alegoria.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-10p-flotaremos-grupo alegoria.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "flotaremos",
           "id_grupo": "alegoria",
           "id_completo": "alegoria_2026_flotaremos",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-huellitas-b-na",
-          "label": "alegoria-2026-huellitas",
-          "name": "Huellitas",
-          "slug": "huellitas",
-          "year": 2026,
-          "category": "B",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
-          "group_canonical": "Grupo Alegoría",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "prize_international_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "huellitas",
-          "id_grupo": "alegoria",
-          "id_completo": "alegoria_2026_huellitas",
-          "avisos_derivados": []
-        },
-        {
-          "id": "2026-sonar-con-las-estrellas-b-na",
-          "label": "oruna-2026-sonar",
-          "name": "Soñar con las estrellas",
-          "slug": "sonar-con-las-estrellas",
-          "year": 2026,
-          "category": "B",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
-          "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "prize_international_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
-          "id_carroza": "sonar",
-          "id_grupo": "oruna",
-          "id_completo": "oruna_2026_sonar-estrellas",
           "avisos_derivados": []
         }
       ],
@@ -179609,7 +179861,7 @@
           "points": null,
           "group_raw": "GRUPO PEJINO",
           "group_canonical": "Grupo Pejino",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -179623,11 +179875,22 @@
           "prize_art_rank": null,
           "prize_costumes_rank": 3,
           "prize_international_rank": 1,
-          "notes": [],
+          "notes": [
+            "Fotos de Víctor Elvira, hechas en el desfile."
+          ],
           "needs_review": [
             "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-6p-alistair-grupo pejino (1).jpg",
+                "2026-6p-alistair-grupo pejino (2).jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
@@ -179653,9 +179916,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-alistair-1.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -179672,6 +179939,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -179704,9 +179975,29 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-alistair-1.jpg",
+            "batalla_de_flores/fotos/2026-alistair-2.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-alistair-1.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-6p-alistair-grupo pejino (1).jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-6p-alistair-grupo pejino (1).jpg»",
+              "asignada_por": "fuente"
+            },
+            {
+              "url": "batalla_de_flores/fotos/2026-alistair-2.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-6p-alistair-grupo pejino (1).jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-6p-alistair-grupo pejino (1).jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-jerez-de-la-frontera-a-na",
@@ -179719,7 +180010,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
           "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -179733,9 +180024,19 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-7p-jerez de la frontera-carrozas oruña.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación anunciada la noche del desfile",
@@ -179761,9 +180062,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-jerez-de-la-frontera.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -179780,6 +180085,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -179794,9 +180103,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-jerez-de-la-frontera.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-jerez-de-la-frontera.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-7p-jerez de la frontera-carrozas oruña.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-7p-jerez de la frontera-carrozas oruña.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-beep-beep-a-na",
@@ -179809,7 +180129,7 @@
           "points": null,
           "group_raw": "GRUPO PEJINO",
           "group_canonical": "Grupo Pejino",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -179823,11 +180143,21 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [
             "La crónica no da los puestos 6.º a 10.º; da el Premio Internacional a «Alistair». La clasificación de la noche daba al Pejino 6.º «internacional y 3.º de vestidos». Cruzando ambas: Alistair 6.ª (y 3.ª de vestidos), Beep-Beep 8.ª. Deducción nuestra."
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-8p-beep beep-grupo pejino.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "El Diario Montañés, crónica de Laura Masegosa (28-08-2026)",
@@ -179853,9 +180183,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-beep-beep.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -179872,6 +180206,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«GRUPO PEJINO» → «Grupo Pejino»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -179886,9 +180224,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-beep-beep.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-beep-beep.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-8p-beep beep-grupo pejino.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-8p-beep beep-grupo pejino.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-dulces-suenos-a-na",
@@ -179901,7 +180250,7 @@
           "points": null,
           "group_raw": "MI VIDA LOCA",
           "group_canonical": "Mi Vida Loca",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -179915,9 +180264,19 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-9p-dulces sueños-mi vida loca.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación anunciada la noche del desfile",
@@ -179943,9 +180302,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-dulces-suenos.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -179962,6 +180325,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«MI VIDA LOCA» → «Mi Vida Loca»: misma cosa escrita de otra manera (tildes, mayúsculas, abreviatura)"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -179976,9 +180343,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-dulces-suenos.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-dulces-suenos.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-9p-dulces sueños-mi vida loca.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-9p-dulces sueños-mi vida loca.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-flotaremos-a-na",
@@ -179991,7 +180369,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
           "group_canonical": "Grupo Alegoría",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -180005,9 +180383,19 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-10p-flotaremos-grupo alegoria.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación anunciada la noche del desfile",
@@ -180033,9 +180421,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-flotaremos.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -180052,6 +180444,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -180066,9 +180462,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-flotaremos.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-flotaremos.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-10p-flotaremos-grupo alegoria.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-10p-flotaremos-grupo alegoria.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-walt-b-na",
@@ -180081,7 +180488,7 @@
           "points": null,
           "group_raw": "AGRUPA-2",
           "group_canonical": "Agrupa-dos",
-          "source_type": "official_result+press_clipping+press_history+press_history",
+          "source_type": "official_result+press_clipping+photo_archive+press_history+press_history",
           "source_urls": [
             "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/",
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
@@ -180101,6 +180508,7 @@
           "prize_costumes_rank": null,
           "prize_international_rank": null,
           "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile.",
             "Transcrito del recorte de prensa prensa-efe-infobae-2026-palmares.html (copia en data/sources/) · EFE, teletipo de la noche del desfile, publicado por Infobae (28-08-2026)."
           ],
           "needs_review": [],
@@ -180111,6 +180519,14 @@
               "recorte": "prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "archivo_local": "data/raw/batalladeflores/prensa/recortes/prensa-efe-infobae-2026-palmares.html (copia en data/sources/)",
               "url": "https://www.infobae.com/espana/agencias/2026/08/28/una-carroza-con-motivos-circenses-y-fantasticos-gana-la-batalla-de-flores-de-laredo/"
+            },
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-cat b 1p-walt-agrupa 2.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
             },
             {
               "kind": "press_history",
@@ -180145,9 +180561,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-walt.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -180164,6 +180584,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«AGRUPA-2» → «Agrupa-dos»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -180182,9 +180606,20 @@
               "independientes": 2
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-walt.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-walt.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-cat b 1p-walt-agrupa 2.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-cat b 1p-walt-agrupa 2.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-titan-b-na",
@@ -180306,89 +180741,17 @@
           "image_credit": "Víctor Elvira"
         },
         {
-          "id": "2026-huellitas-b-na",
-          "label": "alegoria-2026-huellitas",
-          "name": "Huellitas",
-          "slug": "huellitas",
-          "year": 2026,
-          "category": "B",
-          "position": null,
-          "points": null,
-          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
-          "group_canonical": "Grupo Alegoría",
-          "source_type": "official_result",
-          "source_urls": [
-            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-          ],
-          "source_links": [
-            {
-              "kind": "official_result",
-              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-            }
-          ],
-          "float_url": null,
-          "prize_art_rank": null,
-          "prize_costumes_rank": null,
-          "prize_international_rank": null,
-          "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
-          "claims": {
-            "name": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "category": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_raw": {
-              "fuentes": [
-                {
-                  "kind": "official_result",
-                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
-                }
-              ],
-              "independientes": 1
-            },
-            "group_canonical": {
-              "fuentes": [
-                {
-                  "kind": "pliegue_propio",
-                  "url": null,
-                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
-                }
-              ],
-              "independientes": 1
-            }
-          },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
-        },
-        {
           "id": "2026-sonar-con-las-estrellas-b-na",
           "label": "oruna-2026-sonar",
           "name": "Soñar con las estrellas",
           "slug": "sonar-con-las-estrellas",
           "year": 2026,
           "category": "B",
-          "position": null,
+          "position": 3,
           "points": null,
           "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
           "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result",
+          "source_type": "official_result+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -180403,9 +180766,20 @@
           "prize_costumes_rank": null,
           "prize_international_rank": null,
           "notes": [],
-          "needs_review": [],
-          "source_refs": [],
-          "nivel": 1,
+          "needs_review": [
+            "Pendiente de una fuente citable que lo confirme."
+          ],
+          "source_refs": [
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría B, recibida tras el desfile",
+              "texto": "Soñar con las estrellas fue 3.ª; Huellitas, 4.ª",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
           "claims": {
             "name": {
               "fuentes": [
@@ -180443,11 +180817,141 @@
                 }
               ],
               "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
             }
           },
           "image_urls": [],
           "image_refs": [],
           "image_credit": null
+        },
+        {
+          "id": "2026-huellitas-b-na",
+          "label": "alegoria-2026-huellitas",
+          "name": "Huellitas",
+          "slug": "huellitas",
+          "year": 2026,
+          "category": "B",
+          "position": 4,
+          "points": null,
+          "group_raw": "ASOCIACIÓN GRUPO ALEGORÍA",
+          "group_canonical": "Grupo Alegoría",
+          "source_type": "official_result+photo_archive+press_history",
+          "source_urls": [
+            "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+          ],
+          "source_links": [
+            {
+              "kind": "official_result",
+              "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+            }
+          ],
+          "float_url": null,
+          "prize_art_rank": null,
+          "prize_costumes_rank": null,
+          "prize_international_rank": null,
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
+          "needs_review": [
+            "Pendiente de una fuente citable que lo confirme."
+          ],
+          "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-cat b 4p-huellitas-grupo alegoria.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
+            {
+              "kind": "press_history",
+              "cita": "Clasificación de la categoría B, recibida tras el desfile",
+              "texto": "Soñar con las estrellas fue 3.ª; Huellitas, 4.ª",
+              "recorte": "mensaje-noche-desfile-2026",
+              "archivo_local": "data/media_batalladeflores/escaneos/mensaje-noche-desfile-2026",
+              "url": null
+            }
+          ],
+          "nivel": 2,
+          "claims": {
+            "name": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "category": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-huellitas.jpg"
+                }
+              ],
+              "independientes": 2
+            },
+            "group_raw": {
+              "fuentes": [
+                {
+                  "kind": "official_result",
+                  "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                }
+              ],
+              "independientes": 1
+            },
+            "group_canonical": {
+              "fuentes": [
+                {
+                  "kind": "pliegue_propio",
+                  "url": null,
+                  "regla": "«ASOCIACIÓN GRUPO ALEGORÍA» → «Grupo Alegoría»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            },
+            "position": {
+              "fuentes": [
+                {
+                  "kind": "press_history",
+                  "url": null
+                }
+              ],
+              "independientes": 1
+            }
+          },
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-huellitas.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-huellitas.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-cat b 4p-huellitas-grupo alegoria.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-cat b 4p-huellitas-grupo alegoria.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         }
       ],
       "result_count": 14,
@@ -184142,7 +184646,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.82.0",
+  "version": "2.83.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -184160,7 +184664,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-29 19:30",
+  "built_at": "2026-08-30 10:25",
   "map_features": [
     {
       "id": "route_origin_1908",
