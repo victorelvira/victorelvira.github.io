@@ -19,10 +19,10 @@
     "carrozas_en_duda_por_duplicado": 133,
     "grupos": 177,
     "ediciones_con_palmares": 113,
-    "carrozas_con_foto": 598,
-    "fotos": 793,
+    "carrozas_con_foto": 599,
+    "fotos": 794,
     "afirmaciones": 3879,
-    "afirmaciones_corroboradas": 461,
+    "afirmaciones_corroboradas": 462,
     "ediciones_con_fecha": 52,
     "ediciones_sabemos_cuantas_desfilaron": 3,
     "year_min": 1908,
@@ -177996,7 +177996,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
           "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -178010,11 +178010,21 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [
             "Pendiente de una fuente citable que lo confirme."
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-cat b 3p-soñar con las estrellas-carrozas oruña.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación de la categoría B, recibida tras el desfile",
@@ -178040,9 +178050,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-sonar-con-las-estrellas.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -178059,6 +178073,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -178073,9 +178091,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null,
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-sonar-con-las-estrellas.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-sonar-con-las-estrellas.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-cat b 3p-soñar con las estrellas-carrozas oruña.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-cat b 3p-soñar con las estrellas-carrozas oruña.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira",
           "id_carroza": "sonar",
           "id_grupo": "oruna",
           "id_completo": "oruna_2026_sonar-estrellas",
@@ -180751,7 +180780,7 @@
           "points": null,
           "group_raw": "ASOCIACIÓN CULTURAL CARROZAS ORUÑA",
           "group_canonical": "Carrozas Oruña",
-          "source_type": "official_result+press_history",
+          "source_type": "official_result+photo_archive+press_history",
           "source_urls": [
             "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
           ],
@@ -180765,11 +180794,21 @@
           "prize_art_rank": null,
           "prize_costumes_rank": null,
           "prize_international_rank": null,
-          "notes": [],
+          "notes": [
+            "Foto de Víctor Elvira, hecha en el desfile."
+          ],
           "needs_review": [
             "Pendiente de una fuente citable que lo confirme."
           ],
           "source_refs": [
+            {
+              "kind": "photo_archive",
+              "cita": "Fotos de Víctor Elvira, hechas en el desfile",
+              "ficheros": [
+                "2026-cat b 3p-soñar con las estrellas-carrozas oruña.jpg"
+              ],
+              "carpeta": "data/fotos_victor_2026"
+            },
             {
               "kind": "press_history",
               "cita": "Clasificación de la categoría B, recibida tras el desfile",
@@ -180795,9 +180834,13 @@
                 {
                   "kind": "official_result",
                   "url": "https://www.laredo.es/09/archivos/programa-batalla-de-flores-20261787567890.pdf"
+                },
+                {
+                  "kind": "photo_archive",
+                  "url": "batalla_de_flores/fotos/2026-sonar-con-las-estrellas.jpg"
                 }
               ],
-              "independientes": 1
+              "independientes": 2
             },
             "group_raw": {
               "fuentes": [
@@ -180814,6 +180857,10 @@
                   "kind": "pliegue_propio",
                   "url": null,
                   "regla": "«ASOCIACIÓN CULTURAL CARROZAS ORUÑA» → «Carrozas Oruña»: el plegado usa otro nombre para el mismo grupo"
+                },
+                {
+                  "kind": "pliegue_propio",
+                  "url": null
                 }
               ],
               "independientes": 1
@@ -180828,9 +180875,20 @@
               "independientes": 1
             }
           },
-          "image_urls": [],
-          "image_refs": [],
-          "image_credit": null
+          "image_urls": [
+            "batalla_de_flores/fotos/2026-sonar-con-las-estrellas.jpg"
+          ],
+          "image_refs": [
+            {
+              "url": "batalla_de_flores/fotos/2026-sonar-con-las-estrellas.jpg",
+              "origen": "Víctor Elvira",
+              "por": "fichero",
+              "evidencia": "2026-cat b 3p-soñar con las estrellas-carrozas oruña.jpg",
+              "asignacion": "hecha e identificada por Víctor Elvira en el desfile: «2026-cat b 3p-soñar con las estrellas-carrozas oruña.jpg»",
+              "asignada_por": "fuente"
+            }
+          ],
+          "image_credit": "Víctor Elvira"
         },
         {
           "id": "2026-huellitas-b-na",
@@ -184646,7 +184704,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.83.0",
+  "version": "2.84.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -184664,7 +184722,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-30 10:25",
+  "built_at": "2026-08-30 10:32",
   "map_features": [
     {
       "id": "route_origin_1908",
