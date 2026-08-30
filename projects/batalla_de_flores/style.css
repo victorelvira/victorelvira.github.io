@@ -703,7 +703,7 @@ table.palmares td.c-photo .thumb img {
 .solo-ganadoras .kpi-icon { width: 13px; height: 13px; fill: currentColor; }
 
 /* Cuadricula de fotos. */
-.float-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(122px, 1fr)); gap: 8px; }
+.float-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--tile-min, 122px), 1fr)); gap: 8px; }
 .tile {
   display: flex; flex-direction: column; padding: 0; text-align: left;
   border: 1px solid var(--line); border-radius: 9px; background: #fff; overflow: hidden;
@@ -711,18 +711,24 @@ table.palmares td.c-photo .thumb img {
 }
 .tile-foto { border: 0; padding: 0; background: none; cursor: zoom-in; display: block; position: relative; }
 .tile img { display: block; width: 100%; height: 92px; object-fit: cover; background: #f1e9df; }
+/* Cabecera de la celda: nombre en negrita que recorta, y el año que
+   sobrevive SIEMPRE al recorte — «Hasta el infinit… (2025)». */
+.tile-cabecera {
+  display: flex; align-items: baseline; gap: 3px;
+  width: 100%; box-sizing: border-box; padding: 6px 9px 0;
+}
 .tile-name {
-  /* width 100% + box-border: sin ellos el boton medía su texto y el nombre
-     largo se plantaba en el borde mismo de la celda. Aire a ambos lados. */
-  width: 100%; box-sizing: border-box;
-  padding: 5px 8px 0 7px; font-size: 12px; font-weight: 600; line-height: 1.2;
+  font-size: 11.5px; font-weight: 700; line-height: 1.2; min-width: 0;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   border: 0; background: none; cursor: pointer; font-family: inherit; color: inherit;
-  text-align: left;
+  text-align: left; padding: 0;
 }
 .tile-name:hover { color: var(--rose); text-decoration: underline; }
+.tile-anio { font-size: 11px; color: var(--muted); flex: none; font-variant-numeric: tabular-nums; }
+.tam-mini { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; }
+.tam-mini input { width: 90px; accent-color: var(--rose); }
 .tile-meta {
-  padding: 1px 8px 6px 7px; color: var(--muted); font-size: 11px;
+  padding: 1px 9px 7px; color: var(--muted); font-size: 10.5px;
   font-variant-numeric: tabular-nums;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%;
   box-sizing: border-box;

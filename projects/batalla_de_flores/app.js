@@ -49,6 +49,8 @@ const state = {
   // Se pone al pulsar un codigo de fuente: la ficha se abre con el bloque de
   // procedencia desplegado, que es justo lo que se ha ido a mirar.
   abrirProcedencia: false,
+  tamMiniaturas: (() => { try { return Number(localStorage.getItem("tam-miniaturas")) || 122; }
+                          catch (e) { return 122; } })(),
   // ¿Hemos apilado NOSOTROS alguna entrada de historial en esta sesión? Si se
   // entra directo por un enlace con # -desde el historial de Chrome, o desde
   // WhatsApp- no hay nada detrás, y volver atrás saca de la web.
@@ -631,8 +633,13 @@ function viewToggle() {
  * 318 en blanco esto parecia roto, y el contador ya avisa de cuantas quedan. */
 function renderFloatGrid(rows) {
   const withPhoto = rows.filter(entry => (entry.image_urls || []).length);
-  els.indexTools.innerHTML = `${viewToggle()}${winnersToggle()}${gridSort()}${categoryNote()}`;
+  els.indexTools.innerHTML = `${viewToggle()}${winnersToggle()}${gridSort()}${sliderMiniaturas()}${categoryNote()}`;
   els.indexCount.textContent = `${num(withPhoto.length)} con foto`;
+  document.getElementById("tam-miniaturas")?.addEventListener("input", event => {
+    state.tamMiniaturas = Number(event.target.value);
+    try { localStorage.setItem("tam-miniaturas", state.tamMiniaturas); } catch (e) {}
+    els.indexBody.style.setProperty("--tile-min", `${state.tamMiniaturas}px`);
+  });
 
   if (!withPhoto.length) {
     els.indexBody.innerHTML = '<p class="empty">Ninguna de estas carrozas tiene foto en el archivo.</p>';
@@ -645,33 +652,47 @@ function renderFloatGrid(rows) {
   // la celda es un div con dos botones. El fondo lleva el color del grupo
   // —estable por carrocista, con el nombre del grupo en el tooltip— para que
   // las familias se vean de un golpe al ordenar o filtrar.
-  els.indexBody.innerHTML = `<div class="float-grid">${sortRows("floats", withPhoto).map(entry => {
+  // Los tonos se reparten por ORDEN DE APARICION en la vista, saltando el
+  // angulo aureo entre grupos: dos vecinos nunca riman (137° de distancia).
+  // Con el hash del nombre, las cinco primeras de 2026 cayeron en cinco
+  // verdes. El precio es que el color de un grupo cambia con el filtro; el
+  // grupo va escrito en cada celda, asi que el color es acento, no codigo.
+  const filas = sortRows("floats", withPhoto);
+  const tonoDe = new Map();
+  filas.forEach(entry => {
+    const g = entry.group_canonical || entry.group_raw || "";
+    if (g && !tonoDe.has(g)) tonoDe.set(g, Math.round(tonoDe.size * 137.508) % 360);
+  });
+  els.indexBody.style.setProperty("--tile-min", `${state.tamMiniaturas || 122}px`);
+  els.indexBody.innerHTML = `<div class="float-grid">${filas.map(entry => {
     const active = state.selection?.kind === "float" && state.selection.id === entry.id;
     const grupo = entry.group_canonical || entry.group_raw || "";
     return `
       <div class="tile${active ? " is-active" : ""}"${grupo
-        ? ` style="background:${colorPastelGrupo(grupo)}" title="${esc(`Carroza de ${grupo}`)}"` : ""}>
+        ? ` style="background:hsl(${tonoDe.get(grupo)} 40% 90%)" title="${esc(`Carroza de ${grupo}`)}"` : ""}>
         <button class="tile-foto" type="button" title="Ver la foto en grande"
                 ${photoAttrs(entry, entry.image_urls[0])}>
           <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy">
           ${winnerBadge(entry)}
         </button>
-        <button class="link tile-name" type="button" data-float="${esc(entry.id)}"
-                title="Abrir la ficha de ${esc(entry.name)}">${esc(entry.name)}</button>
-        <span class="tile-meta">${entry.year}${entry.position != null
-          ? ` · ${entry.category || ""}${entry.position}.º` : ""}${grupo
-          ? ` · ${esc(grupo)}` : ""}</span>
+        <span class="tile-cabecera">
+          <button class="link tile-name" type="button" data-float="${esc(entry.id)}"
+                  title="Abrir la ficha de ${esc(entry.name)}">${esc(entry.name)}</button>
+          <span class="tile-anio">(${entry.year})</span>
+        </span>
+        <span class="tile-meta">${entry.position != null
+          ? `${entry.category || ""}${entry.position}.º · ` : ""}${esc(grupo)}</span>
       </div>`;
   }).join("")}</div>`;
 }
 
-/* Color estable por grupo para los fondos de miniaturas: tono del hash del
- * nombre, en pastel. Aqui es acento con tooltip, no un codigo que descifrar:
- * el grupo va escrito al pasar el raton y en la ficha a un clic. */
-function colorPastelGrupo(nombre) {
-  let h = 0;
-  for (const ch of nombre) h = (h * 31 + ch.codePointAt(0)) >>> 0;
-  return `hsl(${h % 360} 38% 90%)`;
+/* La barrita de tamano de las miniaturas, con memoria: quien la mueve una
+ * vez no quiere volver a moverla. Mismo patron que el ancho de la ficha y el
+ * tamano de la galeria. */
+function sliderMiniaturas() {
+  return `<label class="tam-mini" title="Tamaño de las miniaturas">🔍<input
+    type="range" id="tam-miniaturas" min="100" max="240" step="10"
+    value="${state.tamMiniaturas || 122}"></label>`;
 }
 
 function renderFloatList() {
