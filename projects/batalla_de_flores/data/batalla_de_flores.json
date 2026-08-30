@@ -181017,7 +181017,16 @@
       "documentadas": 14,
       "desfilaron": null,
       "notes_derivadas": [],
-      "curiosidades": []
+      "curiosidades": [],
+      "cartel": {
+        "anio": 2026,
+        "url": "batalla_de_flores/fotos/carteles/cartel-2026.jpg",
+        "mini": "batalla_de_flores/fotos/carteles/cartel-2026-mini.jpg",
+        "origen": "laredo.es (Ayuntamiento de Laredo)",
+        "original": "https://laredo.es/09/archivos/cartel-batalla-de-flores-20261770970003.jpeg",
+        "asignacion": "publicado por el Ayuntamiento en laredo.es como cartel de la Batalla de Flores 2026: «cartel-batalla-de-flores-2026…»",
+        "asignada_por": "fuente"
+      }
     }
   ],
   "groups": [
@@ -184704,7 +184713,7 @@
     "Asociacion de Carrocistas y festejos de Laredo": "festejos-laredo",
     "Grupo Atalaya": "atalaya"
   },
-  "version": "2.85.0",
+  "version": "2.86.0",
   "about": {
     "url": "https://batalladedatos.es/",
     "compiled_by": "Víctor Elvira",
@@ -184722,7 +184731,7 @@
     ],
     "note": "Base de datos derivada y estructurada, no una réplica del contenido editorial de las fuentes. Cada entrada lleva su `source_type` y sus `source_urls`. Si reutilizas esto, cita a las fuentes originales."
   },
-  "built_at": "2026-08-30 13:25",
+  "built_at": "2026-08-30 13:28",
   "map_features": [
     {
       "id": "route_origin_1908",

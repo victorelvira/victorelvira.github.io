@@ -1440,6 +1440,29 @@ function setCount(shown, total, noun) {
   els.indexCount.textContent = shown === total ? "" : `${num(shown)} de ${num(total)} ${noun}`;
 }
 
+/* ── galeria de carteles ────────────────────────────────────────────────────
+ * El cartel es la cara que cada edicion se dio a si misma, y juntos son un
+ * paseo por medio siglo de estetica de la fiesta. Respetan el buscador y el
+ * filtro de decada (venimos de state.filtered), van de nuevo a viejo, y cada
+ * uno abre su edicion, que es donde vive su procedencia. */
+function renderCartelesTab() {
+  const conCartel = [...state.filtered].filter(e => e.cartel).sort((a, b) => b.year - a.year);
+  els.indexCount.textContent = `${num(conCartel.length)} carteles`;
+  if (!conCartel.length) {
+    els.indexBody.innerHTML = `<p class="empty">Ningún cartel con los filtros puestos.</p>`;
+    return;
+  }
+  els.indexBody.innerHTML = `
+    <div class="cartel-grid">
+      ${conCartel.map(e => `
+        <button class="cartel-celda" type="button" data-year="${e.year}"
+                title="Ver la edición de ${e.year}">
+          <img src="${esc(e.cartel.mini)}" alt="Cartel de la Batalla de Flores de ${e.year}" loading="lazy">
+          <span class="cartel-anio">${e.year}</span>
+        </button>`).join("")}
+    </div>`;
+}
+
 function renderIndex() {
   if (state.mode !== "pending") document.querySelector(".controls")?.removeAttribute("hidden");
   hideTooltip();
@@ -1450,6 +1473,7 @@ function renderIndex() {
   else if (state.mode === "groups") renderGroupList();
   else if (state.mode === "stats") renderStatsTab();
   else if (state.mode === "pending") renderPendingTab();
+  else if (state.mode === "carteles") renderCartelesTab();
   else renderRouteList();
   renderLegend();
 }
