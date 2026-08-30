@@ -710,7 +710,13 @@ table.palmares td.c-photo .thumb img {
   font: inherit; color: inherit;
 }
 .tile-foto { border: 0; padding: 0; background: none; cursor: zoom-in; display: block; position: relative; }
-.tile img { display: block; width: 100%; height: 92px; object-fit: cover; background: #f1e9df; }
+.tile img {
+  display: block; width: 100%; height: auto;
+  /* Proporción fija, no altura fija: con la barrita de tamaño la celda crece
+     y la foto crecía solo a lo ancho, aplastándose en panorámica. 4:3 es lo
+     que ya eran los 122×92 de siempre. */
+  aspect-ratio: 4 / 3; object-fit: cover; background: #f1e9df;
+}
 /* Cabecera de la celda: nombre en negrita que recorta, y el año que
    sobrevive SIEMPRE al recorte — «Hasta el infinit… (2025)». */
 .tile-cabecera {
