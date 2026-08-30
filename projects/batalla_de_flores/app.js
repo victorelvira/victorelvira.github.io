@@ -639,18 +639,38 @@ function renderFloatGrid(rows) {
     return;
   }
 
+  // La celda dejo de ser UN boton: la foto abre el visor y el nombre abre la
+  // ficha de la carroza, que es lo que ese texto promete. Un boton dentro de
+  // otro se lo comeria el navegador sin avisar (leccion aprendida), asi que
+  // la celda es un div con dos botones. El fondo lleva el color del grupo
+  // —estable por carrocista, con el nombre del grupo en el tooltip— para que
+  // las familias se vean de un golpe al ordenar o filtrar.
   els.indexBody.innerHTML = `<div class="float-grid">${sortRows("floats", withPhoto).map(entry => {
     const active = state.selection?.kind === "float" && state.selection.id === entry.id;
+    const grupo = entry.group_canonical || entry.group_raw || "";
     return `
-      <button class="tile${active ? " is-active" : ""}" type="button"
-              ${photoAttrs(entry, entry.image_urls[0])}>
-        <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy">
-        ${winnerBadge(entry)}
-        <span class="tile-name">${esc(entry.name)}</span>
+      <div class="tile${active ? " is-active" : ""}"${grupo
+        ? ` style="background:${colorPastelGrupo(grupo)}" title="${esc(`Carroza de ${grupo}`)}"` : ""}>
+        <button class="tile-foto" type="button" title="Ver la foto en grande"
+                ${photoAttrs(entry, entry.image_urls[0])}>
+          <img src="${esc(thumbUrl(entry.image_urls[0]))}" alt="${esc(entry.name)}" loading="lazy">
+          ${winnerBadge(entry)}
+        </button>
+        <button class="link tile-name" type="button" data-float="${esc(entry.id)}"
+                title="Abrir la ficha de ${esc(entry.name)}">${esc(entry.name)}</button>
         <span class="tile-meta">${entry.year}${entry.position != null
           ? ` · ${entry.category || ""}${entry.position}.º` : ""}</span>
-      </button>`;
+      </div>`;
   }).join("")}</div>`;
+}
+
+/* Color estable por grupo para los fondos de miniaturas: tono del hash del
+ * nombre, en pastel. Aqui es acento con tooltip, no un codigo que descifrar:
+ * el grupo va escrito al pasar el raton y en la ficha a un clic. */
+function colorPastelGrupo(nombre) {
+  let h = 0;
+  for (const ch of nombre) h = (h * 31 + ch.codePointAt(0)) >>> 0;
+  return `hsl(${h % 360} 38% 90%)`;
 }
 
 function renderFloatList() {
