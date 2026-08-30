@@ -1342,6 +1342,70 @@ function renderPendingTab() {
     </div>`;
 }
 
+/* Medallero historico de la competicion principal: lista unica hasta 2010 y
+ * categoria A desde entonces (mismo criterio que las rachas: es la misma
+ * competicion en dos epocas). Orden olimpico: oros, luego platas, bronces. */
+function medallero() {
+  const filas = new Map();
+  state.editions.forEach(ed => (ed.floats || []).forEach(f => {
+    const main = f.category == null || f.category === "" || f.category === "A";
+    if (!main || !f.position || f.position > 3 || !f.group_canonical) return;
+    const m = filas.get(f.group_canonical) || { oro: 0, plata: 0, bronce: 0 };
+    m[["oro", "plata", "bronce"][f.position - 1]] += 1;
+    filas.set(f.group_canonical, m);
+  }));
+  return [...filas.entries()]
+    .map(([grupo, m]) => ({ grupo, ...m, total: m.oro + m.plata + m.bronce }))
+    .sort((a, b) => b.oro - a.oro || b.plata - a.plata || b.bronce - a.bronce
+      || a.grupo.localeCompare(b.grupo));
+}
+
+/* Las palabras de las carrozas: 119 años de nombres, tokenizados en cliente.
+ * Se cuenta por clave sin tildes y se enseña la grafia mas frecuente. */
+const PALABRAS_VACIAS_NOMBRES = new Set(("de la el los las y en del un una unas unos al a lo con por para su o e mi tu se que nos".split(" ")));
+function palabrasDeCarrozas() {
+  const cuentas = new Map();
+  state.floats.forEach(f => {
+    const vistas = new Set();
+    (f.name || "").split(/[^\p{L}0-9]+/u).forEach(cruda => {
+      if (!cruda || cruda.length < 3) return;
+      const clave = normalizeText(cruda);
+      if (PALABRAS_VACIAS_NOMBRES.has(clave) || vistas.has(clave)) return;
+      vistas.add(clave);   // una palabra repetida en el MISMO nombre cuenta una vez
+      const d = cuentas.get(clave) || { n: 0, formas: new Map() };
+      d.n += 1;
+      const forma = cruda.toLowerCase();
+      d.formas.set(forma, (d.formas.get(forma) || 0) + 1);
+      cuentas.set(clave, d);
+    });
+  });
+  return [...cuentas.entries()]
+    .map(([clave, d]) => ({
+      clave, n: d.n,
+      forma: [...d.formas.entries()].sort((a, b) => b[1] - a[1])[0][0],
+    }))
+    .sort((a, b) => b.n - a.n || a.forma.localeCompare(b.forma));
+}
+
+function palabraPorDecada() {
+  const porDecada = new Map();
+  state.floats.forEach(f => {
+    const dec = Math.floor(f.year / 10) * 10;
+    (f.name || "").split(/[^\p{L}0-9]+/u).forEach(cruda => {
+      if (!cruda || cruda.length < 3) return;
+      const clave = normalizeText(cruda);
+      if (PALABRAS_VACIAS_NOMBRES.has(clave)) return;
+      const d = porDecada.get(dec) || new Map();
+      d.set(clave, (d.get(clave) || 0) + 1);
+      porDecada.set(dec, d);
+    });
+  });
+  return [...porDecada.entries()].sort((a, b) => a[0] - b[0]).map(([dec, m]) => {
+    const [clave, n] = [...m.entries()].sort((a, b) => b[1] - a[1])[0];
+    return { dec, clave, n };
+  }).filter(x => x.n >= 2);
+}
+
 function renderStatsTab() {
   const summary = state.dataset.summary || {};
   // Las ediciones sin carrozas no pintan barra, asi que sus niveles tampoco
@@ -1432,6 +1496,53 @@ function renderStatsTab() {
             <span class="streak-years">${row.from}–${row.to}</span>
           </li>`).join("")}
       </ol>
+
+      <h3 class="section">🏅 Medallero histórico</h3>
+      <p class="chart-note">Podios de la competición principal: la lista única hasta
+      ${CATEGORIES_FROM - 1} y la <b>categoría A</b> desde entonces. Orden olímpico:
+      deciden los oros, luego las platas.</p>
+      ${(() => {
+        const filas = medallero();
+        const fila = (row, index) => `
+          <tr>
+            <td class="pos">${index + 1}</td>
+            <td class="name"><button class="link t-group" type="button"
+              data-group="${esc(slugifyGroup(row.grupo))}">${esc(row.grupo)}</button></td>
+            <td class="pos">${row.oro || ""}</td>
+            <td class="pos">${row.plata || ""}</td>
+            <td class="pos">${row.bronce || ""}</td>
+            <td class="pos"><b>${row.total}</b></td>
+          </tr>`;
+        const CORTE = 12;
+        return `<table class="palmares medallero">
+          <colgroup><col class="c-pos"><col><col class="c-pos"><col class="c-pos"><col class="c-pos"><col class="c-pos"></colgroup>
+          <thead><tr><th></th><th>Grupo</th><th>🥇</th><th>🥈</th><th>🥉</th><th>Σ</th></tr></thead>
+          <tbody>${filas.slice(0, CORTE).map(fila).join("")}</tbody>
+        </table>
+        ${filas.length > CORTE ? `<details class="medallero-resto">
+          <summary>los otros ${filas.length - CORTE} grupos con podio</summary>
+          <table class="palmares medallero"><tbody>
+            ${filas.slice(CORTE).map((row, i) => fila(row, i + CORTE)).join("")}
+          </tbody></table></details>` : ""}`;
+      })()}
+
+      <h3 class="section">💬 Las palabras de las carrozas</h3>
+      <p class="chart-note">De qué hablan ${num(state.floats.length)} nombres en 119 años.
+      Cada palabra cuenta una vez por carroza; pincha una y la buscas.</p>
+      <div class="palabras">
+        ${(() => {
+          const top = palabrasDeCarrozas().slice(0, 22);
+          const max = top[0]?.n || 1;
+          return top.map(p => `
+            <button class="palabra" type="button" data-buscar="${esc(p.forma)}"
+              style="--peso:${(p.n / max).toFixed(3)}"
+              title="Buscar «${esc(p.forma)}» en las carrozas">
+              ${esc(p.forma)} <small>${p.n}</small>
+            </button>`).join("");
+        })()}
+      </div>
+      <p class="chart-note palabra-decadas">La palabra de cada década:
+        ${palabraPorDecada().map(x => `<b>${x.dec}s</b> ${esc(x.clave)}`).join(" · ")}</p>
 
       <h3 class="section">Premios especiales</h3>
       <p class="chart-note">Aparte de la clasificación del desfile. <b>👗 Vestidos</b> lo puntúa el
@@ -4541,6 +4652,14 @@ function bindEvents() {
     // enseña la caja (año + cuantas carrozas) y el segundo —en la caja o en la
     // misma barra— abre la edicion. En PC el hover ya cuenta y el clic navega
     // a la primera, como siempre.
+    const palabra = event.target.closest("[data-buscar]");
+    if (palabra) {
+      state.query = palabra.dataset.buscar;
+      els.search.value = state.query;
+      setMode("floats");
+      return;
+    }
+
     const barra = event.target.closest(".bar-group");
     if (barra && NARROW.matches && state.barraArmada !== barra.dataset.year) {
       state.barraArmada = barra.dataset.year;

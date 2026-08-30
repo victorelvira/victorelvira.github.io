@@ -467,6 +467,20 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
   max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   padding-bottom: 2px;
 }
+/* Las palabras de las carrozas: tamaño segun peso, tocables. */
+.palabras { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: baseline; margin: 8px 0; }
+.palabra {
+  border: 1px solid var(--line); border-radius: 999px; background: #fff;
+  cursor: pointer; font-family: inherit; color: inherit;
+  font-size: calc(11px + var(--peso, 0) * 10px);
+  padding: calc(2px + var(--peso, 0) * 3px) calc(8px + var(--peso, 0) * 5px);
+}
+.palabra small { color: var(--muted); font-size: 0.72em; }
+.palabra:hover { border-color: var(--rose); color: var(--rose); }
+.palabra-decadas b { font-variant-numeric: tabular-nums; }
+.medallero-resto { margin: 4px 0 10px; }
+.medallero-resto summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+
 .marco-muestra {
   display: inline-block; width: 12px; height: 12px; border-radius: 3px;
   border: 1px solid rgba(0,0,0,.12); vertical-align: -1px;
