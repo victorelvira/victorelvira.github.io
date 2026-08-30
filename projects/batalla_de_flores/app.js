@@ -4657,6 +4657,14 @@ function bindEvents() {
     // a la primera, como siempre.
     const palabra = event.target.closest("[data-buscar]");
     if (palabra) {
+      // El salto deja miga en el historial: quien pincha «fantasía» y ve las
+      // 25 quiere poder volver a Estadísticas con el botón de atrás, no
+      // encontrarse fuera de la web. La miga se graba en la entrada ACTUAL
+      // (replaceState) y luego se empuja la nueva: atrás aterriza en la
+      // entrada que lleva la miga. Al reves, la miga viajaba con la entrada
+      // nueva y atrás encontraba una vacía.
+      history.replaceState({ vueltaA: { mode: state.mode, query: state.query } }, "");
+      history.pushState({}, "");
       state.query = palabra.dataset.buscar;
       els.search.value = state.query;
       setMode("floats");
@@ -4690,7 +4698,16 @@ function bindEvents() {
 
   // popstate cubre el boton atras del navegador y el gesto de deslizar del
   // movil. Sin hash es que hemos vuelto al indice: se cierra la ficha.
-  window.addEventListener("popstate", () => {
+  window.addEventListener("popstate", event => {
+    // Atrás tras un salto por palabra: se restaura la pestaña y el buscador
+    // tal y como estaban. Es una miga nuestra, no una seleccion del hash.
+    if (event.state && event.state.vueltaA) {
+      const { mode, query } = event.state.vueltaA;
+      state.query = query || "";
+      els.search.value = state.query;
+      setMode(mode);
+      return;
+    }
     const selection = readHash();
     if (selection) select(selection.kind, selection.id, { updateHash: false });
     else clearSelection();
