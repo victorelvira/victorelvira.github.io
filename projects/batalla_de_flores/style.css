@@ -462,6 +462,10 @@ body.hay-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
   color: inherit; border-radius: 4px;
 }
 .cartel-anio:hover { color: var(--rose); text-decoration: underline; }
+.marco-muestra {
+  display: inline-block; width: 12px; height: 12px; border-radius: 3px;
+  border: 1px solid rgba(0,0,0,.12); vertical-align: -1px;
+}
 
 /* ── lista de grupos ───────────────────────────────────────────────────── */
 

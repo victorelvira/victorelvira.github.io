@@ -1456,12 +1456,32 @@ function renderCartelesTab() {
   // y flechas para pasear los 47 como una exposición) y el año lleva a la
   // edición. La celda no puede ser un botón con botones dentro —HTML se los
   // comería sin avisar, ya nos pasó— así que es un div con dos botones.
-  // El marco de cada celda es el color medio de su propio cartel, aclarado:
-  // la variedad sale de la obra, no de una paleta inventada.
+  //
+  // El marco CODIFICA: es el color de la agrupación que gano ese año, estable
+  // por grupo (sale de un hash del nombre canónico, no de una tabla que
+  // mantener). Así la galería enseña las eras de dominio de un vistazo, como
+  // la cinta de directores del Concierto de Año Nuevo. Gris = palmarés
+  // desconocido, que también es información y de la honesta.
+  const ganadorDe = e => {
+    const g = (e.floats || []).find(f => f.position === 1 && (!f.category || f.category === "A"));
+    return g ? g.group_canonical || g.group_raw : null;
+  };
+  // La rueda de color se reparte entera entre los ganadores presentes:
+  // 360/n grados por grupo, separacion maxima garantizada. Un hash daba
+  // tonos estables pero dejaba vecinos indistinguibles (dos rosas a 4°).
+  // El orden de reparto es por victorias y luego alfabetico: deterministico
+  // para los mismos datos, que es la estabilidad que importa aqui.
+  const victorias = new Map();
+  conCartel.forEach(e => { const q = ganadorDe(e); if (q) victorias.set(q, (victorias.get(q) || 0) + 1); });
+  const ordenados = [...victorias.keys()].sort((a, b) =>
+    victorias.get(b) - victorias.get(a) || a.localeCompare(b));
+  const marcos = new Map(ordenados.map((q, i) =>
+    [q, `hsl(${Math.round(i * 360 / ordenados.length)} 42% 86%)`]));
   els.indexBody.innerHTML = `
     <div class="cartel-grid">
-      ${conCartel.map(e => `
-        <div class="cartel-celda"${e.cartel.color ? ` style="background:${esc(e.cartel.color)}"` : ""}>
+      ${conCartel.map(e => { const quien = ganadorDe(e); return `
+        <div class="cartel-celda" style="background:${quien ? esc(marcos.get(quien)) : "#ececec"}"
+             title="${quien ? esc(`En ${e.year} ganó ${quien}`) : `Palmarés de ${e.year} sin localizar`}">
           <button class="cartel-img" type="button" title="Ver el cartel de ${e.year} en grande"
             data-photo="${esc(e.cartel.url)}" data-nombre="Cartel de ${e.year}"
             data-grupo="" data-anio="${e.year}" data-puesto=""
@@ -1472,9 +1492,20 @@ function renderCartelesTab() {
           </button>
           <button class="link cartel-anio" type="button" data-year="${e.year}"
             title="Abrir la edición de ${e.year}">${e.year}</button>
-        </div>`).join("")}
-    </div>`;
+        </div>`; }).join("")}
+    </div>
+    ${(() => {
+      const cuenta = new Map();
+      conCartel.forEach(e => { const q = ganadorDe(e); if (q) cuenta.set(q, (cuenta.get(q) || 0) + 1); });
+      const sinPalmares = conCartel.filter(e => !ganadorDe(e)).length;
+      const filas = [...cuenta.entries()].sort((a, b) => b[1] - a[1])
+        .map(([q, n]) => `<span class="marco-muestra" style="background:${esc(marcos.get(q))}"></span> ${esc(q)} (${n})`);
+      if (sinPalmares) filas.push(`<span class="marco-muestra" style="background:#ececec"></span> sin palmarés (${sinPalmares})`);
+      return `<p class="codes codes-inline">El marco es el color de la agrupación que ganó ese año:
+        ${filas.join(" · ")}</p>`;
+    })()}`;
 }
+
 
 function renderIndex() {
   if (state.mode !== "pending") document.querySelector(".controls")?.removeAttribute("hidden");
