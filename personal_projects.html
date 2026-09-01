@@ -7,10 +7,10 @@
     <meta name="description" content="Personal side projects by Víctor Elvira: data-driven web apps and databases on music, culture and local heritage.">
 
     <!-- CSS -->
-    <link href="assets/css/styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+    <link href="assets/css/styles.css" rel="stylesheet">
 
     <!-- JS -->
     <script src="assets/js/scripts.js"></script>
@@ -36,9 +36,9 @@
         color: #fff;
       }
       .project-thumb i{ font-size: 2.8rem; opacity: .95; }
-      /* Las miniaturas que son la propia tarjeta og del proyecto (1200x630):
-         mismo alto que las de icono, recortadas por arriba donde va el titulo. */
-      .project-thumb.og{ background-size: cover; background-position: center 30%; }
+      /* Miniaturas = imagen OG del proyecto (1200x630). Se muestran COMPLETAS
+         (sin recorte), usando su misma proporcion, para que se lean bien. */
+      .project-thumb.og{ height: auto; aspect-ratio: 1200 / 630; background-size: cover; background-position: center; }
       .lang-switch{ font-size: .8rem; }
       .lang-switch .active{ font-weight: 700; text-decoration: underline; }
       .project-card .card-title{ margin-bottom: .35rem; }
@@ -66,7 +66,7 @@
         around music, culture and my home region of Cantabria.
     </p>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 
         <!-- New Year's Concert -->
         <div class="col">
@@ -95,13 +95,36 @@
                     </h5>
                     <p class="card-text text-muted" data-i18n="atlas">
                         Interactive map of where the great painters' masterpieces are today,
-                        and where they were painted. From Giotto to Goya, built from
-                        Wikidata, Wikipedia and Wikimedia Commons.
+                        and where they were painted. From Giotto to Goya.
                     </p>
                     <a href="/projects/atlas.html" class="stretched-link" aria-label="Open the Interactive Atlas of Painting"></a>
                 </div>
             </div>
         </div>
+
+        <!-- Batalla de Flores -->
+        <div class="col">
+            <div class="card project-card">
+                <div class="project-thumb og" style="background-color:#221716; background-image:url('/projects/batalla_de_flores/og.jpg');"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Batalla de Flores
+                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
+                    </h5>
+                    <p class="card-text text-muted" data-i18n="batalla">
+                        Archivo navegable de la Batalla de Flores de Laredo: ediciones desde
+                        1908, palmarés, carrozas, grupos y recorridos.
+                    </p>
+                    <a href="/projects/batalla_de_flores.html" class="stretched-link" aria-label="Abrir Batalla de Flores"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h4 class="mt-5" data-i18n="exp_title">Experimental</h4>
+    <p class="text-muted mb-4" data-i18n="exp_sub">Rougher works in progress.</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 
         <!-- Planes de Cantabria -->
         <div class="col">
@@ -133,27 +156,9 @@
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
                     <p class="card-text text-muted" data-i18n="frontones">
-                        Mapa de frontones de Cantabria y el País Vasco, a partir de datos
-                        abiertos de OpenStreetMap y el Gobierno de Cantabria.
+                        Mapa de frontones de Cantabria y el País Vasco.
                     </p>
                     <a href="/projects/frontones.html" class="stretched-link" aria-label="Abrir Frontones"></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Batalla de Flores -->
-        <div class="col">
-            <div class="card project-card">
-                <div class="project-thumb og" style="background-color:#221716; background-image:url('/projects/batalla_de_flores/og.jpg');"></div>
-                <div class="card-body">
-                    <h5 class="card-title">Batalla de Flores
-                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
-                    </h5>
-                    <p class="card-text text-muted" data-i18n="batalla">
-                        Archivo navegable de la Batalla de Flores de Laredo: ediciones desde
-                        1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato.
-                    </p>
-                    <a href="/projects/batalla_de_flores.html" class="stretched-link" aria-label="Abrir Batalla de Flores"></a>
                 </div>
             </div>
         </div>
@@ -170,7 +175,7 @@
                     </h5>
                     <p class="card-text text-muted" data-i18n="clima">
                         Web interactiva del cambio climático en Laredo y Cantabria: temperaturas,
-                        mar y anomalías, con datos abiertos de ERA5 · Copernicus y AEMET.
+                        mar y anomalías.
                     </p>
                     <a href="/projects/clima_cantabria.html" class="stretched-link" aria-label="Abrir Laredo frente al clima"></a>
                 </div>
@@ -204,20 +209,26 @@
       en: "Explore the distribution of compositions, conductors and other key details across the Vienna Philharmonic's New Year's Concerts.",
       es: "Compositores, directores y programas de todos los Conciertos de Año Nuevo de la Filarmónica de Viena, desde 1939." },
     atlas: {
-      en: "Interactive map of where the great painters' masterpieces are today, and where they were painted. From Giotto to Goya, built from Wikidata, Wikipedia and Wikimedia Commons.",
-      es: "Mapa interactivo de dónde están hoy las obras maestras de los grandes pintores, y dónde se pintaron. De Giotto a Goya, con datos de Wikidata, Wikipedia y Wikimedia Commons." },
+      en: "Interactive map of where the great painters' masterpieces are today, and where they were painted. From Giotto to Goya.",
+      es: "Mapa interactivo de dónde están hoy las obras maestras de los grandes pintores, y dónde se pintaron. De Giotto a Goya." },
     planes: {
       en: "Agenda and interactive map of Cantabria: festivals, concerts, theatre, exhibitions, sport and more, with dates and programmes.",
       es: "Agenda y mapa interactivo de Cantabria: fiestas, conciertos, teatro, exposiciones, deporte y más, con fechas y programas." },
     frontones: {
-      en: "Map of Basque-pelota courts in Cantabria and the Basque Country, from OpenStreetMap and Government of Cantabria open data.",
-      es: "Mapa de frontones de Cantabria y el País Vasco, a partir de datos abiertos de OpenStreetMap y el Gobierno de Cantabria." },
+      en: "Map of Basque-pelota courts in Cantabria and the Basque Country.",
+      es: "Mapa de frontones de Cantabria y el País Vasco." },
     batalla: {
-      en: "Browsable archive of Laredo's Battle of Flowers: every edition since 1908, results, floats, builders and routes — each fact with its source.",
-      es: "Archivo navegable de la Batalla de Flores de Laredo: ediciones desde 1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato." },
+      en: "Browsable archive of Laredo's Battle of Flowers: every edition since 1908, results, floats, builders and routes.",
+      es: "Archivo navegable de la Batalla de Flores de Laredo: ediciones desde 1908, palmarés, carrozas, grupos y recorridos." },
     clima: {
-      en: "Interactive site on climate change in Laredo and Cantabria: temperatures, sea and anomalies, with ERA5 · Copernicus and AEMET open data.",
-      es: "Web interactiva del cambio climático en Laredo y Cantabria: temperaturas, mar y anomalías, con datos abiertos de ERA5 · Copernicus y AEMET." },
+      en: "Interactive site on climate change in Laredo and Cantabria: temperatures, sea and anomalies.",
+      es: "Web interactiva del cambio climático en Laredo y Cantabria: temperaturas, mar y anomalías." },
+    exp_title: {
+      en: "Experimental",
+      es: "Experimental" },
+    exp_sub: {
+      en: "Rougher works in progress.",
+      es: "Proyectos más en bruto, en construcción." },
   };
 
   function aplicar(lang) {
