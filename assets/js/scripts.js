@@ -1,40 +1,35 @@
-// Automatic year
-// document.getElementById('currentYear').textContent = new Date().getFullYear();
+// Carga la navbar (nav.html) y el footer (footer.html) compartidos y los inyecta
+// en sus placeholders. Para que la navbar NO tarde en aparecer:
+//   1) Las descargas arrancan cuanto antes: en cuanto se evalúa este script (en el
+//      <head>), en paralelo con el parseo del HTML. No se espera a window.onload
+//      (que es lo más tardío: aguarda imágenes, fuentes, etc. -> causaba el retraso).
+//   2) La inyección se hace en DOMContentLoaded, cuando ya existen los placeholders.
 
-// Load the navbar from nav.html into the placeholder
-function loadNavbar() {
-    console.log("Attempting to fetch the navbar...");
-    fetch('/nav.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
+const __navbarPromise = fetch('/nav.html').then(r => r.ok ? r.text() : Promise.reject(new Error('nav.html ' + r.status)));
+const __footerPromise = fetch('/footer.html').then(r => r.ok ? r.text() : Promise.reject(new Error('footer.html ' + r.status)));
+
+function injectNavbar() {
+    __navbarPromise
+        .then(html => {
+            const el = document.getElementById('navbar-placeholder');
+            if (el) el.innerHTML = html;
         })
-        .then(data => {
-            console.log("Navbar successfully fetched!");
-            document.getElementById('navbar-placeholder').innerHTML = data;
-        })
-        .catch(error => {
-            console.error("Error fetching the navbar:", error);
-        });
+        .catch(error => console.error('Error loading navbar:', error));
 }
 
-window.onload = loadNavbar;
+function injectFooter() {
+    __footerPromise
+        .then(html => {
+            const el = document.getElementById('footer-placeholder');
+            if (!el) return;
+            el.innerHTML = html;
 
-
-
-// Load the footer from footer.html into the placeholder
-function loadFooter() {
-    fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-            // Update the year once the footer is loaded
+            // Año del copyright
             const currentYearElement = document.getElementById('currentYear');
             if (currentYearElement) {
                 currentYearElement.textContent = new Date().getFullYear();
             }
+
             // "Last updated": fecha del último commit del repo (se actualiza solo).
             // Si la API de GitHub falla, no se muestra nada (fallback silencioso).
             const lastUpdateElement = document.getElementById('lastUpdate');
@@ -49,10 +44,14 @@ function loadFooter() {
                     .catch(() => {});
             }
         })
-        .catch(error => console.error("Error loading footer:", error));
+        .catch(error => console.error('Error loading footer:', error));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadNavbar();
-    loadFooter();
-});
+// Inyecta en cuanto el DOM esté listo (los placeholders ya existen). Si el script
+// se cargara tarde (DOM ya parseado), inyecta de inmediato.
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { injectNavbar(); injectFooter(); });
+} else {
+    injectNavbar();
+    injectFooter();
+}
