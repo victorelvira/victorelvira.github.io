@@ -944,3 +944,11 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 .langbtn:last-child { border-radius: 0 4px 4px 0; margin-left: -3px; }
 .langbtn:hover { color: #fff; border-color: rgba(255,255,255,.5); }
 .langbtn.active { background: #f0ece3; border-color: #f0ece3; color: #3a2317; }
+
+/* panel order: ⛪ museum (grouped, the default) · year · painter · title (one flat run) */
+#pv-sort { font: inherit; font-size: 11.5px; color: var(--muted); background: #fff;
+  border: 1px solid var(--line); border-radius: 999px; padding: 2px 6px; cursor: pointer; max-width: 128px; }
+#pv-sort:hover { border-color: #c8b48c; }
+/* with no venue header above it, each row carries its own museum */
+#worklist .wvenue { color: #9a8f7d; font-size: 11px; margin-top: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

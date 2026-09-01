@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.0.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 21:40";   // update together with DATA_V — shown in the navbar
+const DATA_V = "1.3.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-08-25 23:05";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -263,6 +263,16 @@ const LOST_COLOR = "#c0392b";
 const painterColors = Object.fromEntries(PAINTERS.map((p, i) => [p.name, PALETTE[i % PALETTE.length]]));
 painterColors["Gustav Klimt"] = "#c9a227";   // Klimt gold — explicit so palette insertion order can't steal it
 function colorFor(name) { return painterColors[name] || MULTI_COLOR; }
+// the same colour, watered down: the panel's colour fields have to sit UNDER the pictures without
+// competing with them, so a painter's ground is their map colour mixed into white.
+function mixWhite(hex, w) {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex || "");
+  if (!m) return hex;
+  // a negative amount darkens instead, so one call gives a band both its ground and its outline
+  const v = parseInt(m[1], 16), ch = [v >> 16 & 255, v >> 8 & 255, v & 255]
+    .map(c => Math.round(w >= 0 ? c + (255 - c) * w : c * (1 + w)));
+  return "#" + ch.map(c => c.toString(16).padStart(2, "0")).join("");
+}
 
 // a {colour: count} map → a CSS background: solid for one painter, a pie (conic-gradient) for several
 function pieStyle(counts) {
@@ -1275,7 +1285,102 @@ let panelQueue = [];    // list mode: flat render plan {grp} headers + {w} work 
 let panelCursor = 0;
 let panelFlat = [];     // gallery: a flat stream of {w, grp?} tiles (grp carries museum colour+label)
 let panelFlatCursor = 0;
-let panelGalGroup = true;   // "⛪ by museum" toggle for the miniature view
+// How the side panel is ordered. "museum" is the default and the one the map understands: works
+// clustered by the venue that holds them, which is what a pin on the map *is*. The other three throw
+// the museums away and lay every work out in one run — by date, by painter, or by title — because
+// sometimes you are not asking "what is in this museum?" but "what is here, oldest first?".
+// Applies to BOTH the list and the miniatures; grouping by colour only happens under "museum".
+let panelSort = "museum";
+try { panelSort = localStorage.getItem("atlasPanelSort") || "museum"; } catch (e) { /* private mode */ }
+
+// Comparators for the ungrouped orders. Undated and untitled works sink to the bottom instead of
+// pretending to be year 0 / the empty string.
+function cmpText(a, b) {
+  a = deacc(a || ""); b = deacc(b || "");
+  if (!a !== !b) return a ? -1 : 1;
+  return a < b ? -1 : a > b ? 1 : 0;
+}
+// Time bands adapt to what you are looking at. Zoomed into Delft you may be seeing sixty years of
+// Vermeer, and centuries would give you one band; across Europe you may be seeing seven hundred years,
+// and decades would give you seventy. So: pick the coarsest step from a ladder that still leaves a
+// readable number of bands (about fourteen at most) for the span actually in view.
+const TIME_STEPS = [1, 5, 10, 25, 50, 100, 200, 500];
+function timeStepFor(span) {
+  for (const step of TIME_STEPS) if (span / step <= 14) return step;
+  return TIME_STEPS[TIME_STEPS.length - 1];
+}
+function romanCentury(n) {                       // 16 → XVI, for "Siglo XVI"
+  const map = [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"],
+               [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]];
+  let out = "", v = n;
+  for (const [q, sym] of map) while (v >= q) { out += sym; v -= q; }
+  return out;
+}
+function ordinal(c) {
+  const two = c % 100, one = c % 10;
+  const suf = (two >= 11 && two <= 13) ? "th" : one === 1 ? "st" : one === 2 ? "nd" : one === 3 ? "rd" : "th";
+  return c + suf;
+}
+function bandLabel(start, step) {
+  if (step === 100) {                            // a whole century reads better as a century
+    const c = Math.floor(start / 100) + 1;
+    return LANG === "es" ? `Siglo ${romanCentury(c)}` : `${ordinal(c)} century`;
+  }
+  if (step === 10) return LANG === "es" ? `Década de ${start}` : `${start}s`;
+  if (step === 1) return String(start);
+  return `${start}–${start + step - 1}`;
+}
+
+// Contiguous runs of the sorted works: one per painter, or one per time band. Each run carries the
+// ground colour its tiles will share — the painter's own colour, or a place along a ramp from the
+// oldest band to the newest, so the panel reads as a timeline you can see at a glance.
+function painterRuns(flat) {
+  const runs = [];
+  for (const w of flat) {
+    const name = w.p.painter || "";
+    const last = runs[runs.length - 1];
+    if (last && last.name === name) { last.items.push(w); continue; }
+    const c = colorFor(name);
+    runs.push({ name, items: [w], location: pName(name), city: "", kind: "painter",
+                color: mixWhite(c, .82), edge: mixWhite(c, .18), key: "painter:" + name });
+  }
+  return runs;
+}
+const TIME_RAMP = ["#e8dcc2", "#e4ddc8", "#dbe0d2", "#d2e0dc", "#d3dced", "#ddd7ea"];  // sand → dusk
+function rampAt(i, n) {
+  if (n <= 1) return TIME_RAMP[0];
+  const x = (i / (n - 1)) * (TIME_RAMP.length - 1), lo = Math.floor(x), f = x - lo;
+  const rgb = h => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+  const a = rgb(TIME_RAMP[lo]), b = rgb(TIME_RAMP[Math.min(lo + 1, TIME_RAMP.length - 1)]);
+  return "#" + a.map((v, k) => Math.round(v + (b[k] - v) * f).toString(16).padStart(2, "0")).join("");
+}
+function periodRuns(flat) {
+  const dated = flat.filter(w => yearNum(w.p) != null);
+  if (!dated.length) return null;                // nothing is dated → nothing to band by
+  const lo = yearNum(dated[0].p), hi = yearNum(dated[dated.length - 1].p);
+  const step = timeStepFor(Math.max(1, hi - lo + 1));
+  const runs = [];
+  for (const w of flat) {
+    const y = yearNum(w.p);
+    const start = y == null ? null : Math.floor(y / step) * step;
+    const last = runs[runs.length - 1];
+    if (last && last.start === start) { last.items.push(w); continue; }
+    runs.push({ start, items: [w], kind: "period", key: "period:" + start,
+                location: start == null ? t("Undated") : bandLabel(start, step), city: "" });
+  }
+  runs.forEach((g, i) => {                       // colour them along the ramp, oldest first
+    const c = g.start == null ? "#e6e3dd" : rampAt(i, runs.length);
+    g.color = c; g.edge = mixWhite(c, -.35);     // the outline is the same colour, darkened
+  });
+  return runs;
+}
+
+function panelSorter(sort) {
+  const yr = w => { const y = yearNum(w.p); return y == null ? Infinity : y; };
+  if (sort === "year") return (a, z) => yr(a) - yr(z) || cmpText(pName(a.p.painter), pName(z.p.painter));
+  if (sort === "painter") return (a, z) => cmpText(pName(a.p.painter), pName(z.p.painter)) || yr(a) - yr(z);
+  return (a, z) => cmpText(a.p.title, z.p.title) || yr(a) - yr(z);   // title
+}
 let panelIO = null;
 let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 
@@ -1309,7 +1414,10 @@ function tileHTML(w, vis, grp) {
   const musAttr = grp && grp.mus != null ? ` data-mus="${grp.mus}"` : "";
   return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}${musAttr}>${share}${nameTag}` +
     `<div class="gcard">${img}<div class="gmeta">` +
-    `<div class="gm1">${esc(pName(p.painter))}${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
+    // under a painter's colour field their name is already written above the whole run, so the card
+    // spends its two lines on what is not known yet: the title, and where the work hangs
+    `<div class="gm1">${grp && grp.kind === "painter" ? esc(p.title || t("Untitled")) : esc(pName(p.painter))}` +
+    `${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     (p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
@@ -1320,9 +1428,11 @@ function panelCellHTML(w) { return tileHTML(w, panelVis); }
 function groupedTileStream(ordered) {
   const stream = [];
   ordered.forEach((g, gi) => {
-    const color = MUS_PASTELS[gi % MUS_PASTELS.length], edge = MUS_EDGES[gi % MUS_EDGES.length];
+    // a group can bring its own colours (painters use their map colour); museums cycle the pastels
+    const color = g.color || MUS_PASTELS[gi % MUS_PASTELS.length];
+    const edge = g.edge || MUS_EDGES[gi % MUS_EDGES.length];
     const label = g.location + (g.city ? ` · ${g.city}` : "");   // shown over the museum's FIRST tile
-    g.items.forEach((w, wi) => stream.push({ w, grp: { color, edge, mus: gi, label: wi === 0 ? label : "", key: wi === 0 ? g.key : "" } }));
+    g.items.forEach((w, wi) => stream.push({ w, grp: { color, edge, mus: gi, kind: g.kind || "museum", label: wi === 0 ? label : "", key: wi === 0 ? g.key : "" } }));
   });
   return stream;
 }
@@ -1439,9 +1549,13 @@ function panelRowHTML(w) {
   const thumb = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
+  // with no venue headers above it, a row has to say where the work is itself
+  const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}">${thumb}<div>` +
-    `<div class="wt">${esc(p.title || "Untitled")}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
-    `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div></div></li>`;
+    `<div class="wt">${esc(p.title || t("Untitled"))}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
+    `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
+    (venue ? `<div class="sub wvenue">${esc(venue)}${p.city ? ", " + esc(p.city) : ""}</div>` : "") +
+    `</div></li>`;
 }
 
 function panelHasMore() {
@@ -1510,18 +1624,41 @@ function renderPanel() {
     return;
   }
   // build the render plans (cheap); appendPanelChunk streams whichever the mode needs
-  for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
-  panelFlat = panelGalGroup                    // gallery: one continuous tile stream
-    ? groupedTileStream(ordered)               //   grouped → each tile tagged with its museum colour
-    : ordered.flatMap(g => g.items).map(w => ({ w }));   // ungrouped → plain tiles
-  panelFlatCursor = 0;
-  panelQueue = [];              // list mode → flat rows with header bars
-  for (const g of ordered) {
-    panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length, key: g.key } });
-    for (const w of g.items) panelQueue.push({ w });
+  const byMuseum = panelSort === "museum";
+  let runs = null;                               // painter / time bands, when the order has any
+  if (byMuseum) {
+    for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
+    panelFlat = groupedTileStream(ordered);     // gallery: one continuous tile stream, tinted per museum
+    panelQueue = [];                            // list: flat rows with a header bar per venue
+    for (const g of ordered) {
+      panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length, key: g.key } });
+      for (const w of g.items) panelQueue.push({ w });
+    }
+  } else {
+    const flat = vis.slice().sort(panelSorter(panelSort));   // every work in one run, no venues
+    // Same idea as the museums, one field further out: a run of works that belong together sits on one
+    // continuous ground with its name written above it. By painter that ground is the painter's OWN
+    // colour from the map; by year it is a place along a sand→dusk ramp, so the panel reads as time.
+    // By title there is nothing to group — an alphabet is not a subject — so those stay plain tiles.
+    runs = panelSort === "painter" ? painterRuns(flat)
+         : panelSort === "year" ? periodRuns(flat) : null;
+    if (runs) {
+      panelFlat = groupedTileStream(runs);
+      panelQueue = [];                          // the list gets the same bands, as header bars
+      for (const g of runs) {
+        panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length, key: g.key } });
+        for (const w of g.items) panelQueue.push({ w });
+      }
+    } else {
+      panelFlat = flat.map(w => ({ w }));
+      panelQueue = flat.map(w => ({ w }));
+    }
   }
+  panelFlatCursor = 0;
   panelCursor = 0;
-  ul.classList.toggle("grouped", panelMode === "gallery" && panelGalGroup);
+  const tinted = byMuseum || !!runs;             // gallery grounds: museums, painters or time bands
+  ul.classList.toggle("grouped", panelMode === "gallery" && tinted);
+  ul.classList.toggle("flat", !byMuseum);       // rows carry their own venue when nothing groups them
   ul.innerHTML = "";
   appendPanelChunk();
 }
@@ -1532,6 +1669,13 @@ let _revealT = 0;
 function revealMuseumInPanel(key) {
   if (view.table) setTableView(false);               // the list lives under the map view
   if (!view.panel) { view.panel = true; setView(); }
+  if (panelSort !== "museum") {                      // asking "what is in this museum?" — so group by museum
+    panelSort = "museum";
+    const sel = document.getElementById("pv-sort");
+    if (sel) sel.value = "museum";
+    try { localStorage.setItem("atlasPanelSort", panelSort); } catch (e) { /* private mode */ }
+    renderPanel();
+  }
   const panel = document.getElementById("panel");
   const ul = document.getElementById("worklist");
   const sel = `[data-place="${key}"]`;
@@ -1564,20 +1708,21 @@ document.getElementById("worklist").addEventListener("click", e => {
 (function wirePanelView() {
   const ul = document.getElementById("worklist");
   const slider = document.getElementById("thumb-size");
-  const grpTick = document.getElementById("pv-group");
+  const sortSel = document.getElementById("pv-sort");
   const setMode = m => {
     panelMode = m;
     ul.classList.toggle("gallery", m === "gallery");
     document.getElementById("pv-list").classList.toggle("active", m === "list");
     document.getElementById("pv-grid").classList.toggle("active", m === "gallery");
-    slider.hidden = m !== "gallery";
-    grpTick.hidden = m !== "gallery";             // "by museum" tick only applies to the miniature grid
+    slider.hidden = m !== "gallery";              // the size slider is a miniatures-only control
     if (!state.near) renderPanel();               // re-render the same in-view works in the new mode
   };
   document.getElementById("pv-list").addEventListener("click", () => setMode("list"));
   document.getElementById("pv-grid").addEventListener("click", () => setMode("gallery"));
-  grpTick.querySelector("input").addEventListener("change", e => {
-    panelGalGroup = e.target.checked;
+  sortSel.value = panelSort;                      // the order survives a reload
+  sortSel.addEventListener("change", e => {
+    panelSort = e.target.value;
+    try { localStorage.setItem("atlasPanelSort", panelSort); } catch (err) { /* private mode */ }
     if (!state.near) renderPanel();
   });
   const applySize = () => { ul.style.setProperty("--thumb", slider.value + "px"); scheduleMuseumLayout(true); };

@@ -147,6 +147,7 @@ const SOURCE_LABEL = {
   press_photo: "Prensa (pie de foto)",
   press_clipping: "Recorte de prensa",
   photo_archive: "Fotos cedidas por Santi Fernández",
+  photo_cedida: "Foto cedida por un particular",
   book: "Libro del Centenario (Oruña Fuentes, 2008)",
   press_history: "Hemeroteca histórica",
 };
@@ -162,6 +163,7 @@ const SOURCE_SHORT = {
   press_photo: "PRE",
   press_clipping: "REC",
   photo_archive: "FOTO",
+  photo_cedida: "CEDIDA",
   book: "LIBRO",
   press_history: "HEMER",
 };
@@ -178,6 +180,8 @@ const SOURCE_EXPLICA = {
   press_clipping: "Un recorte de prensa transcrito a mano, con el escaneo enlazado.",
   photo_archive: "El puesto y el grupo salen de cómo nombró él los ficheros al entregarlos: "
     + "lo afirma él, no lo deducimos nosotros.",
+  photo_cedida: "Una foto cedida por un particular, que al entregarla dice de qué carroza es. "
+    + "El crédito exacto va en la propia foto.",
   book: "«Batalla de Flores de Laredo. 100 años de historia viva», de Alfonso Oruña Fuentes (2008).",
   press_history: "Prensa de la época —Mundo Gráfico, ABC, La Voz— leída de los escaneos.",
 };
@@ -2553,14 +2557,21 @@ function creditText(entry, url) {
 function photoAssign(entry, url) {
   const ref = (entry.image_refs || []).find(item => item.url === url);
   if (!ref) return "";
+  // En una foto cedida el credito ya dice quien la entrega y la identifica:
+  // repetirlo en una coletilla era ruido. La explicacion entera sigue en el
+  // bloque de procedencia de la ficha.
+  if (ref.por === "fuente") return "";
   const propia = ref.asignada_por !== "fuente";
   // Solo hay dos razones para decir que una foto es de una carroza, y cada una
   // trae su prueba: o la web la publica en la ficha de esa carroza -y damos el
   // enlace-, o lo dice el nombre del fichero -y lo enseñamos entero-.
-  const corto = ref.por === "pagina"
-    ? "lo dice su página" : "lo dice el nombre del fichero";
+  const corto = ref.por === "pagina" ? "lo dice su página"
+    : ref.por === "fuente" ? "lo dice quien la cede"
+    : "lo dice el nombre del fichero";
   const largo = ref.por === "pagina"
     ? `batalladeflores.net publica esta foto en la página que dedica a esta carroza: ${ref.evidencia || ""}`
+    : ref.por === "fuente"
+    ? (ref.asignacion || "Quien cede la foto dice de qué carroza es.")
     : `El fichero se llama «${ref.evidencia || ""}», que trae el año y el nombre de la carroza.`
       + (propia ? " La asociación la deducimos nosotros de ese nombre." : "");
   return `<span class="asigna${propia ? " asigna-deducida" : ""}" title="${esc(largo)}">${esc(corto)}</span>`;
@@ -2602,9 +2613,10 @@ function photoAttrs(entry, url) {
   const m = photoMeta(entry);
   m.credito = creditText(entry, url);
   const ref = (entry.image_refs || []).find(item => item.url === url);
-  m.asigna = ref ? (ref.asignada_por === "fuente"
+  m.asigna = !ref || ref.por === "fuente" ? ""
+    : ref.asignada_por === "fuente"
     ? `Es esta carroza según la fuente: ${ref.asignacion}`
-    : `Que sea esta carroza lo deducimos nosotros: ${ref.asignacion}`) : "";
+    : `Que sea esta carroza lo deducimos nosotros: ${ref.asignacion}`;
   m.asignaProp = ref?.asignada_por || "";
   return `data-photo="${esc(url)}" data-nombre="${esc(m.nombre)}" data-grupo="${esc(m.grupo)}"
     data-anio="${esc(m.anio)}" data-puesto="${esc(m.puesto)}" data-credito="${esc(m.credito)}"
@@ -2618,25 +2630,62 @@ function photoAttrs(entry, url) {
  * cuadricula de Carrozas son TODAS las que haya filtradas, que es lo que
  * convierte la pestana en un carrusel: con el tick de ganadoras puesto,
  * pasas una a una todas las ganadoras de la historia. */
-function abrirVisor(elemento) {
+/* La URL de una foto: la ficha de su carroza mas /foto/N, donde N es su
+ * posicion entre las fotos de ESA carroza. Compartirla lleva a la ficha con
+ * el visor abierto en esa foto. */
+function hashDeFoto(elemento) {
+  const d = elemento.dataset;
+  if (!d.ficha) return null;
+  const k = lb.fotos.filter(f => f.dataset.ficha === d.ficha).indexOf(elemento);
+  return hashDe(state.mode, { kind: "float", id: d.ficha }, k + 1);
+}
+
+function abrirVisor(elemento, { escribirUrl = true } = {}) {
   const ambito = elemento.closest("#index-body") ? "#index-body" : "#detail";
   lb.fotos = [...document.querySelectorAll(`${ambito} [data-photo]`)];
   lb.indice = Math.max(0, lb.fotos.indexOf(elemento));
   document.getElementById("lightbox").hidden = false;
   document.body.classList.add("lb-abierto");
+  // El visor apila su propia entrada: atras lo cierra y devuelve a donde
+  // estabas, y la URL con /foto/N se puede copiar y compartir.
+  const hf = escribirUrl && hashDeFoto(elemento);
+  if (hf) { history.pushState(null, "", hf); lb.enHistorial = true; }
+  else lb.enHistorial = false;
   pintarVisor();
   track("foto/abrir", "Ver foto", true);
 }
 
-function cerrarVisor() {
+/* Cierre "logico": solo la capa. Lo usa popstate, que ya movio el historial. */
+function cerrarVisorLogico() {
   document.getElementById("lightbox").hidden = true;
   document.body.classList.remove("lb-abierto");
+}
+
+function cerrarVisor() {
+  cerrarVisorLogico();
+  if (lb.enHistorial) { lb.enHistorial = false; history.back(); }
+  else if (/\/foto\/\d+$/.test(location.hash)) {
+    // Se entro DIRECTO por el enlace de la foto: no hay entrada que deshacer,
+    // se limpia la URL y en pantalla queda la ficha.
+    history.replaceState(null, "", hashDe(state.mode, state.selection));
+  }
 }
 
 function moverVisor(paso) {
   if (!lb.fotos.length) return;
   lb.indice = (lb.indice + paso + lb.fotos.length) % lb.fotos.length;
+  const hf = hashDeFoto(lb.fotos[lb.indice]);
+  if (lb.enHistorial || /\/foto\/\d+$/.test(location.hash)) {
+    history.replaceState(null, "", hf || hashDe(state.mode, state.selection));
+  }
   pintarVisor();
+}
+
+/* Reabrir el visor desde una URL /foto/N: la ficha ya esta pintada. */
+function abrirVisorDesdeUrl(fichaId, n) {
+  const el = [...document.querySelectorAll("#detail [data-photo]")]
+    .filter(f => f.dataset.ficha === fichaId)[n - 1];
+  if (el) abrirVisor(el, { escribirUrl: false });
 }
 
 function pintarVisor() {
@@ -2973,6 +3022,12 @@ function setupDivisor() {
 
 function setupVisor() {
   document.getElementById("lb-close").addEventListener("click", cerrarVisor);
+  document.getElementById("lb-share").addEventListener("click", event => {
+    const el = lb.fotos[lb.indice];
+    const hf = el && hashDeFoto(el);
+    if (hf && location.hash !== hf) history.replaceState(null, "", hf);
+    shareUrl(location.href, "Foto de la Batalla de Flores", "", event.currentTarget);
+  });
   document.getElementById("lb-prev").addEventListener("click", () => moverVisor(-1));
   document.getElementById("lb-next").addEventListener("click", () => moverVisor(1));
   document.getElementById("lightbox").addEventListener("click", event => {
@@ -3256,8 +3311,18 @@ function provenanceBlock(entries, sources, edition) {
             : `Lo confirman <b>${fuentes.length} fuentes independientes</b>`;
           const cita = edition.parade_date_nota
             ? `<div class="prov-cita">${esc(edition.parade_date_nota)}</div>` : "";
-          return `<li><b>La fecha del desfile:</b> ${esc(edition.parade_date_text)}.
-            ${cuantas}:<ul class="prov-fuentes">${lista}</ul>${cita}</li>`;
+          // La otra candidata y el motivo de la duda van aquí, con el mismo
+          // formato que las disputas de una carroza: valor, quién lo dice, y
+          // por qué no se elige. El razonamiento es parte del dato.
+          const disputa = (edition.parade_date_disputa || []).map(d => `
+            <div class="prov-disputa"><b>Otra fecha candidata:</b>
+              ${esc(d.fecha)}${d.fuente ? `, según ${esc(d.fuente)}` : ""}${d.enlace
+                ? ` <a href="${esc(d.enlace)}" target="_blank" rel="noopener">↗</a>` : ""}.</div>`).join("");
+          const porQue = edition.parade_date_duda
+            ? `<div class="prov-duda"><b>Por qué no está resuelta:</b> ${esc(edition.parade_date_duda)}</div>`
+            : "";
+          return `<li id="duda-fecha-${edition.year}"><b>La fecha del desfile:</b> ${esc(edition.parade_date_text)}.
+            ${cuantas}:<ul class="prov-fuentes">${lista}</ul>${cita}${disputa}${porQue}</li>`;
         })() : ""}
         ${edition?.cartel ? `<li><b>El cartel:</b> procede de
           ${esc(edition.cartel.origen)} —
@@ -3441,7 +3506,16 @@ function renderEditionDetail(edition) {
         // El ancho lo iguala `ajustarFechaAlAno()`: la fecha mide exactamente
         // lo que el año, así que las dos líneas forman un bloque.
         ? `<span class="fecha-desfile" title="Fuente: ${esc(edition.parade_date_source || "")}">${
-            esc(edition.parade_date_text.replace(/ de \d{4}$/, ""))}</span>` : ""}
+            esc(edition.parade_date_text.replace(/ de \d{4}$/, ""))}${
+            // Una fecha en disputa lo dice DONDE se lee la fecha, no solo en el
+            // bloque de procedencia del final: quien mira el año tiene que
+            // saber ahí mismo que ese día no está cerrado.
+            (edition.parade_date_disputa || []).length
+              ? ` <button class="dato-duda" type="button" data-duda-fecha="${edition.year}"
+                   title="${esc(`Hay otra fecha candidata: ${edition.parade_date_disputa[0].fecha}`
+                     + (edition.parade_date_disputa[0].fuente ? `, según ${edition.parade_date_disputa[0].fuente}` : "")
+                     + ". Pulsa para ver por qué no está resuelta.")}">?</button>`
+              : ""}</span>` : ""}
       </div>
       <span class="discs">
         ${edition.edition_number
@@ -3763,6 +3837,8 @@ function floatProvenance(entry) {
           <li><b>La foto es de:</b> ${esc(r.origen)}.
             <br><small><b>Que sea de esta carroza</b>, ${r.por === "pagina"
               ? `lo dice su página: la publica en la ficha que dedica a esta carroza`
+              : r.por === "fuente"
+              ? `lo dice quien la cede: ${esc(r.asignacion || "")}`
               : `lo dice el nombre del fichero: <code>${esc(r.evidencia || "")}</code>`}.
               ${r.por === "fichero" && r.asignada_por !== "fuente"
                 ? " Esa asociación la deducimos nosotros de ese nombre." : ""}</small>
@@ -4275,7 +4351,10 @@ async function shareUrl(url, title, text, button) {
   track("compartir", title, true);
   try {
     if (navigator.share) {
-      await navigator.share({ title, text, url });
+      // SOLO la URL. Con title y text, WhatsApp y otros pegan el texto detras
+      // del enlace y el enlace deja de ser pulsable. Se reporto con un enlace
+      // real: «...a-8Archivo de la Batalla de Flores» no lleva a ningun sitio.
+      await navigator.share({ url });
       return;
     }
     await navigator.clipboard.writeText(url);
@@ -4516,9 +4595,10 @@ const PREF_KIND = { y: "year", g: "group", r: "route", c: "float", info: "about"
 
 /* La URL que toca para un estado dado. Sin nada que decir (Ediciones, sin
  * ficha) devuelve la dirección limpia, que es la portada compartible. */
-function hashDe(mode, selection) {
+function hashDe(mode, selection, foto) {
   const tab = TAB_SLUG[mode] || "ediciones";
-  if (selection) return `#/${tab}/${KIND_PREF[selection.kind]}/${selection.id}`;
+  if (selection) return `#/${tab}/${KIND_PREF[selection.kind]}/${selection.id}`
+    + (foto ? `/foto/${foto}` : "");
   return mode === "editions" ? location.pathname + location.search : `#/${tab}`;
 }
 
@@ -4530,9 +4610,15 @@ function readHash() {
   if (!partes.length) return { tab, sel: null };
   const kind = PREF_KIND[partes[0]];
   if (!kind) return { tab, sel: null };
+  // «.../foto/3» al final: la tercera foto de esa ficha, abierta en el visor.
+  let foto = null;
+  if (partes.length >= 4 && partes[partes.length - 2] === "foto"
+      && /^\d+$/.test(partes[partes.length - 1])) {
+    foto = Number(partes.pop()); partes.pop();
+  }
   const id = decodeURIComponent(partes.slice(1).join("/"));
   if (!id) return { tab, sel: null };
-  return { tab, sel: { kind, id: kind === "year" ? Number(id) : id } };
+  return { tab, sel: { kind, id: kind === "year" ? Number(id) : id }, foto };
 }
 
 function setMode(mode, { updateHash = true } = {}) {
@@ -4871,6 +4957,22 @@ function bindEvents() {
       cerrarCajaBarra();
     }
 
+    // El «?» de la fecha: despliega la procedencia y lleva el ojo a la línea de
+    // la fecha, que es donde está la explicación. Sin esto el aviso decía «hay
+    // duda» y dejaba al lector buscándola.
+    const dudaFecha = event.target.closest("[data-duda-fecha]");
+    if (dudaFecha) {
+      const bloque = document.querySelector(".provenance")?.closest("details");
+      if (bloque) bloque.open = true;
+      const linea = document.getElementById(`duda-fecha-${dudaFecha.dataset.dudaFecha}`);
+      if (linea) {
+        linea.scrollIntoView({ behavior: "smooth", block: "center" });
+        linea.classList.add("resaltada");
+        setTimeout(() => linea.classList.remove("resaltada"), 2200);
+      }
+      return;
+    }
+
     const target = event.target.closest("[data-year], [data-group], [data-route], [data-float]");
     if (!target) return;
     // Abrir una ficha NO cambia de pestaña: el indice es donde estas mirando y
@@ -4899,10 +5001,18 @@ function bindEvents() {
       setMode(mode, { updateHash: false });
       return;
     }
-    const { tab, sel } = readHash();
+    const { tab, sel, foto } = readHash();
     if (tab && tab !== state.mode) setMode(tab, { updateHash: false });
     if (sel) select(sel.kind, sel.id, { updateHash: false });
     else clearSelection();
+    // El visor vive en el historial: atras lo cierra, adelante lo reabre.
+    if (foto && sel?.kind === "float") {
+      abrirVisorDesdeUrl(sel.id, foto);
+      lb.enHistorial = true;
+    } else if (!document.getElementById("lightbox").hidden) {
+      lb.enHistorial = false;
+      cerrarVisorLogico();
+    }
   });
 }
 
@@ -4968,6 +5078,9 @@ fetch("batalla_de_flores/data/batalla_de_flores.json", { cache: "no-cache" })
     }
     if (fromHash.sel) {
       select(fromHash.sel.kind, fromHash.sel.id, { updateHash: false });
+      if (fromHash.foto && fromHash.sel.kind === "float") {
+        abrirVisorDesdeUrl(fromHash.sel.id, fromHash.foto);
+      }
     } else if (fromHash.tab) {
       renderIndex();
       renderDetail();

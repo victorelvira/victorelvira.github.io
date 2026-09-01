@@ -1,11 +1,11 @@
 {
  "generado_de": "data/processed/batalla_de_flores.json",
- "carrozas": 805,
+ "carrozas": 867,
  "pliegues": [
   {
    "de": "Hermanos Oruña",
    "a": "Carrozas Oruña",
-   "carrozas": 18,
+   "carrozas": 17,
    "pierde_a_alguien": true
   },
   {
@@ -147,12 +147,6 @@
    "pierde_a_alguien": false
   },
   {
-   "de": "Come Golayu Que Lo Ha Hechu Güela",
-   "a": "Come Golayu",
-   "carrozas": 2,
-   "pierde_a_alguien": false
-  },
-  {
    "de": "Asoc. Spartans Batalla de Flores",
    "a": "Spartans",
    "carrozas": 2,
@@ -243,10 +237,10 @@
    "pierde_a_alguien": false
   },
   {
-   "de": "Nicasio Escalante y socios",
-   "a": "Nicasio Escalante",
+   "de": "hermanos Piedra",
+   "a": "Hermanos Piedra",
    "carrozas": 1,
-   "pierde_a_alguien": true
+   "pierde_a_alguien": false
   },
   {
    "de": "Fructuoso Gutierrez",
@@ -423,6 +417,12 @@
    "pierde_a_alguien": false
   },
   {
+   "de": "Come Golayu Que Lo Ha Hechu Güela",
+   "a": "Come Golayu",
+   "carrozas": 1,
+   "pierde_a_alguien": false
+  },
+  {
    "de": "S.A., El Cantu",
    "a": "El Cantu",
    "carrozas": 1,
@@ -471,7 +471,7 @@
    "pierde_a_alguien": false
   }
  ],
- "pliegues_que_pierden_a_alguien": 36,
+ "pliegues_que_pierden_a_alguien": 35,
  "resueltas_por_autoridad": [
   {
    "año": 1911,
@@ -516,6 +516,20 @@
    "descartado": "«5»"
   },
   {
+   "año": 1954,
+   "carroza": "El parque de la paloma",
+   "campo": "name",
+   "puesto": "El parque de la paloma",
+   "descartado": "«Parque de la Paloma»"
+  },
+  {
+   "año": 1954,
+   "carroza": "El parque de la paloma",
+   "campo": "position",
+   "puesto": "5",
+   "descartado": "«9»"
+  },
+  {
    "año": 1967,
    "carroza": "Princesa",
    "campo": "position",
@@ -542,6 +556,13 @@
    "campo": "position",
    "puesto": "1",
    "descartado": "«2»"
+  },
+  {
+   "año": 2002,
+   "carroza": "Jardines de Nivaria",
+   "campo": "name",
+   "puesto": "Jardines de Nivaria",
+   "descartado": "«Los Jardines de Nivaria»"
   },
   {
    "año": 2002,
@@ -574,6 +595,13 @@
   {
    "año": 2017,
    "carroza": "NOAH WUNDER",
+   "campo": "name",
+   "puesto": "NOAH WUNDER",
+   "descartado": "«A noah wunder»"
+  },
+  {
+   "año": 2017,
+   "carroza": "NOAH WUNDER",
    "campo": "position",
    "puesto": "7",
    "descartado": "«6»"
@@ -586,5 +614,5 @@
    "descartado": "«4»"
   }
  ],
- "disputas_abiertas": 53
+ "disputas_abiertas": 93
 }
