@@ -35,10 +35,19 @@ function loadFooter() {
             if (currentYearElement) {
                 currentYearElement.textContent = new Date().getFullYear();
             }
-            // const currentYearElement = document.getElementById('currentDate');
-            // if (currentYearElement) {
-            //     currentYearElement.textContent = new Date().getSeconds();
-            // }
+            // "Last updated": fecha del último commit del repo (se actualiza solo).
+            // Si la API de GitHub falla, no se muestra nada (fallback silencioso).
+            const lastUpdateElement = document.getElementById('lastUpdate');
+            if (lastUpdateElement) {
+                fetch('https://api.github.com/repos/victorelvira/victorelvira.github.io/commits?per_page=1')
+                    .then(r => r.ok ? r.json() : Promise.reject())
+                    .then(commits => {
+                        const d = new Date(commits[0].commit.committer.date);
+                        lastUpdateElement.textContent = 'Last updated: ' +
+                            d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+                    })
+                    .catch(() => {});
+            }
         })
         .catch(error => console.error("Error loading footer:", error));
 }
