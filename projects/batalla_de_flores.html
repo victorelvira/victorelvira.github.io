@@ -1,248 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Batalla de Flores · Laredo</title>
-  <meta name="description" content="Archivo navegable de la Batalla de Flores de Laredo: ediciones desde 1908, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato.">
-  <meta name="theme-color" content="#b6465f">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Batalla de Flores de Laredo en datos · se ha mudado</title>
 
-  <!-- La tarjeta que se ve al compartir el enlace (WhatsApp, Twitter, Slack…).
-       La imagen la dibuja scripts/build_og.py en cada build, del mismo dataset
-       que lee la página: las cifras no pueden desfasarse porque no están
-       escritas aquí. El ?v= lo sella build.py con el hash del fichero, que es
-       lo único que hace que un WhatsApp deje de servir la miniatura vieja. -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Batalla de Flores de Laredo">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:url" content="https://batalladedatos.es/">
-  <meta property="og:title" content="Batalla de Flores de Laredo · 1908–2026">
-  <meta property="og:description" content="El archivo completo de la fiesta: ediciones, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato y de cada foto.">
-  <meta property="og:image" content="https://batalladedatos.es/batalla_de_flores/og.jpg?v=3f76c1a0">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ocho carrozas ganadoras de las últimas ediciones, cubiertas de dalias, sobre el título «Batalla de Flores de Laredo».">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Batalla de Flores de Laredo · 1908–2026">
-  <meta name="twitter:description" content="El archivo completo de la fiesta: ediciones, palmarés, carrozas, grupos y recorridos, con la fuente de cada dato y de cada foto.">
-  <meta name="twitter:image" content="https://batalladedatos.es/batalla_de_flores/og.jpg?v=3f76c1a0">
-  <link rel="icon" href="batalla_de_flores/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="batalla_de_flores/apple-touch-icon.png">
-  <link rel="stylesheet" href="batalla_de_flores/style.css?v=5d9b9216">
+<!-- Esta página sustituye a la copia que vivía aquí. La web tiene ahora una
+     sola casa, https://batalladedatos.es, y esta dirección se conserva porque
+     hay enlaces y marcadores apuntando a ella desde hace años.
+
+     `canonical` es lo que le dice a Google cuál es la buena; sin él las dos
+     direcciones compiten entre sí y ninguna gana. -->
+<link rel="canonical" href="https://batalladedatos.es/">
+<meta name="robots" content="noindex, follow">
+
+<!-- El salto lo hace el script, NO un meta refresh, por una razón concreta: un
+     meta refresh se lleva la dirección pelada y tira el fragmento, y aquí el
+     fragmento es el contenido. Un enlace a
+     …/batalla_de_flores.html#/ediciones/c/2009-sinfonia-del-cantabrico-a-8
+     tiene que llegar a esa carroza, no a la portada. El meta va detrás, con
+     retardo, solo para quien tenga el JavaScript desactivado. -->
+<meta http-equiv="refresh" content="3; url=https://batalladedatos.es/">
+<script>
+  (function () {
+    var destino = "https://batalladedatos.es/" + (location.hash || "") + (location.search || "");
+    // `replace` y no `assign`: si dejamos el desvío en el historial, el botón
+    // de atrás vuelve aquí y rebota otra vez. Se sale del sitio a trompicones.
+    location.replace(destino);
+  })();
+</script>
+
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: #f6f1ea; color: #221716;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 24px;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1d1818; color: #f2e9e2; }
+  }
+  .caja { max-width: 34rem; text-align: center; }
+  h1 { font-size: 1.5rem; margin: 0 0 12px; letter-spacing: -.01em; }
+  p { margin: 0 0 14px; }
+  a { color: #b6465f; font-weight: 600; }
+  @media (prefers-color-scheme: dark) { a { color: #e0899c; } }
+  .flor { font-size: 2rem; display: block; margin-bottom: 10px; }
+</style>
 </head>
 <body>
-  <nav id="navbar">
-    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
-    <span class="nav-sep">·</span>
-    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">otros proyectos interactivos</a>
-    <span id="build" class="build" title="Versión del dataset publicado"></span>
-    <a class="nav-ig" href="https://www.instagram.com/victelvi/" target="_blank" rel="noopener"
-       aria-label="Instagram de Víctor Elvira" title="Instagram">
-      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
-           stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
-    </a>
-  </nav>
-
-  <header id="bar">
-    <div class="bar-main">
-      <div class="bar-title">
-        <a id="home" href="#" class="home" title="Volver al inicio: limpia filtros y vuelve al índice">
-          <img class="dalia" src="batalla_de_flores/dalia.jpg" width="128" height="128"
-               alt="Dalia, la flor con la que se cubren las carrozas">
-          <!-- El texto de aqui es SIEMPRE el titulo final: es lo que leen
-               Google y un lector de pantalla. La animacion de bienvenida solo
-               tapa un momento lo que sobra, para que arranque escrito como el
-               dominio, «Batalladedatos», y se abra a lo que dice de verdad. -->
-          <h1 id="titulo">Batalla<span class="hueco"> </span>de<span
-              class="brote" data-paso="2"> Flores</span><span class="brote"
-              data-paso="3"> <span class="of">de&nbsp;Laredo</span></span><span
-              class="brote" data-paso="2"> en</span><span
-              class="hueco"> </span>datos<span class="brote"
-              data-paso="4"> <span class="years">(1908–2026)</span></span></h1>
-        </a>
-      </div>
-      <!-- Va aqui y no en app.js a proposito: app.js se carga al final del
-           body, cuando el titulo ya esta pintado, y anadir la clase entonces
-           daria un parpadeo del titulo entero antes de encogerse. Esto decide
-           antes del primer fotograma. Si no hay JS no hay clase, y el titulo
-           sale completo, que es lo correcto.
-
-           Se anima en CADA carga, no solo la primera. Estuvo limitado a una
-           vez por visitante con una marca en localStorage y era peor: quien
-           recargaba para ver si algo habia cambiado no volvia a verlo nunca,
-           y no habia forma de ensenarselo a nadie. Repetirlo al recargar es
-           decision tomada, no un descuido. -->
-      <script>
-        (function () {
-          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-          document.getElementById("titulo").className = "anim";
-        })();
-      </script>
-      <p class="bar-sub">Base de datos interactiva · Fiesta de Interés Turístico Nacional</p>
-      <div id="stats" class="stats"></div>
-    </div>
-
-    <div class="bar-actions">
-      <button id="faq" class="pill" type="button">
-        <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke-width="1.5"/><path d="M6 6.2a2 2 0 1 1 2.6 1.9c-.4.2-.6.5-.6.9v.5" fill="none" stroke-width="1.5"/><circle cx="8" cy="11.8" r="0.9" stroke="none"/></svg>
-        ¿Qué es esta página?</button>
-      <button id="share-site" class="pill" type="button">
-        <svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.2"/><circle cx="3.5" cy="8" r="2.2"/><circle cx="12.5" cy="12.5" r="2.2"/><path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.4" fill="none"/></svg>
-        Compartir</button>
-    </div>
-
-  </header>
-
-  <!-- Aviso de la Noche Magica: lo rellena y lo oculta app.js segun la fecha. -->
-  <div id="noche-magica" class="noche-magica" hidden></div>
-
-  <main class="layout">
-    <section class="pane pane-index" aria-label="Índice">
-      <div class="pane-head">
-        <div class="tabs" role="tablist">
-          <button class="tab is-active" type="button" data-mode="editions" role="tab" aria-selected="true">📅 Ediciones</button>
-          <button class="tab" type="button" data-mode="groups" role="tab" aria-selected="false">👥 Grupos</button>
-          <button class="tab" type="button" data-mode="floats" role="tab" aria-selected="false">🌺 Carrozas</button>
-          <button class="tab" type="button" data-mode="stats" role="tab" aria-selected="false">📊 Estadísticas</button>
-          <button class="tab" type="button" data-mode="routes" role="tab" aria-selected="false">🗺️ Recorridos</button>
-          <button class="tab" type="button" data-mode="carteles" role="tab" aria-selected="false">🖼️ Carteles</button>
-          <button class="tab" type="button" data-mode="pending" role="tab" aria-selected="false">❓ Pendiente</button>
-        </div>
-        <div id="index-tools" class="tools"></div>
-        <p id="index-count" class="count"></p>
-      </div>
-      <div class="controls">
-      <input id="search" type="search" placeholder="Carroza, grupo o año" autocomplete="off" aria-label="Buscar">
-      <button id="clear-filters" class="ghost" type="button">Limpiar</button>
-      <select id="decade" aria-label="Década"></select>
-      <!-- Aquí había dos filtros más, «Años con palmarés» y «Todos los estados».
-           Fuera los dos. El de palmarés escondía 7 años de 119 y la meta del
-           proyecto es justamente que no quede ninguno: un filtro que sirve para
-           mirar hacia otro lado. Y el de estado repartía 119 ediciones en cuatro
-           cajones de los que tres son casi vacíos —2 canceladas, 1 no celebrada,
-           1 prevista, y esa es obvia—, así que ocupaba una cuarta parte de la
-           barra para no separar nada. Lo que sí distingue el estado se ve mejor
-           donde ya estaba: en el color de cada año de la rejilla. -->
-      </div>
-
-      <div id="index-body" class="pane-body"></div>
-      <div id="legend" class="legend"></div>
-    </section>
-
-    <div class="divisor" role="separator" aria-orientation="vertical"
-         aria-label="Ajustar el ancho de la ficha" tabindex="0"></div>
-
-    <section class="pane pane-detail" aria-label="Detalle">
-      <button id="detail-close" class="detail-close" type="button" aria-label="Cerrar el detalle">✕</button>
-      <div id="detail" class="pane-body"></div>
-    </section>
-  </main>
-
-  <footer id="credits">
-    <p>
-      Proyecto personal y sin ánimo de lucro, no es la web oficial de la fiesta.
-      Todos los datos proceden de fuentes públicas, y cada uno indica cuál.
-      Más información <button id="faq-foot" class="link t-float" type="button">aquí</button>.
-    </p>
-  </footer>
-
-  <!-- Analitica: GoatCounter. No cuenta en localhost: para probarlo hay que
-       desplegar. -->
-  <script data-goatcounter="https://victorelvira.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
-
-  <!-- Visor de fotos. Se abre encima de la aplicación: abrir pestaña nueva
-       sacaba al visitante del sitio y perdía dónde estaba mirando. -->
-  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto">
-    <span id="lb-contador" class="lb-contador" aria-live="polite"></span>
-    <button id="lb-close" class="lb-close" type="button" aria-label="Cerrar">✕</button>
-    <button id="lb-share" class="lb-share" type="button"
-      title="Copiar el enlace de esta foto" aria-label="Copiar el enlace de esta foto">🔗</button>
-    <button id="lb-prev" class="lb-nav lb-prev" type="button" aria-label="Anterior">‹</button>
-    <button id="lb-next" class="lb-nav lb-next" type="button" aria-label="Siguiente">›</button>
-    <figure class="lb-figura">
-      <img id="lb-img" alt="">
-      <figcaption id="lb-pie" class="lb-pie"></figcaption>
-    </figure>
+  <div class="caja">
+    <span class="flor">🌺</span>
+    <h1>El archivo se ha mudado</h1>
+    <p>La Batalla de Flores de Laredo en datos vive ahora en
+      <a href="https://batalladedatos.es/">batalladedatos.es</a>, con su propia
+      dirección y una sola copia que mantener.</p>
+    <p>Te estamos llevando allí. Si no pasa nada,
+      <a href="https://batalladedatos.es/">entra tú mismo</a>.</p>
   </div>
-
-  <!-- Formulario de corrección. Se abre desde el botón «¿Algo mal?» de cada
-       ficha, con el contexto ya relleno. -->
-  <div id="report-back" class="report-back" hidden>
-    <form id="report-form" class="report">
-      <div class="report-head">
-        <h3>Corregir un dato</h3>
-        <button id="report-close" class="report-x" type="button" aria-label="Cerrar">✕</button>
-      </div>
-      <p class="report-ctx" id="report-ctx"></p>
-      <input type="hidden" name="ficha" id="report-ficha">
-      <input type="hidden" name="url" id="report-url">
-
-      <!-- El nombre y el email son opcionales a proposito, y no es cortesia:
-           es la minimizacion del RGPD. Para corregir un dato del archivo no
-           hace falta saber quien avisa, asi que solo lo imprescindible es
-           obligatorio. Darlos es consentir su unico uso, que el propio campo
-           dice. -->
-      <label>Tu nombre <span class="opt">(opcional: para dirigirme a ti y, si lo incorporo, citarte)</span>
-        <input name="nombre" autocomplete="name" placeholder="O deja el aviso sin firmar">
-      </label>
-      <label>Qué dato está mal o falta
-        <textarea name="mal" rows="2" required placeholder="Ej.: el grupo de la carroza «Aiko» no es ese"></textarea>
-      </label>
-      <!-- Opcional a proposito: saber que algo esta mal sin saber el valor
-           bueno tambien es una aportacion. Es la regla de la casa: contradecir
-           no es elegir, y el dato pasa a revision aunque nadie tenga aun el
-           correcto. -->
-      <label>Cuál es el dato correcto <span class="opt">(si lo sabes: avisar de que algo falla ya ayuda)</span>
-        <textarea name="correcto" rows="2" placeholder="Ej.: la llevó el Grupo Pejino, no Come Golayu"></textarea>
-      </label>
-      <label>Evidencia <span class="opt">(opcional, pero ayuda mucho)</span>
-        <textarea name="evidencia" rows="2" placeholder="Un enlace, el nombre del periódico y la fecha, o de dónde lo sabes"></textarea>
-      </label>
-      <label class="file-label">Foto o recorte <span class="opt">(opcional)</span>
-        <input id="report-file" type="file" accept="image/*">
-        <span class="file-note" id="report-file-note"></span>
-      </label>
-      <label>Tu email <span class="opt">(opcional: por si hace falta aclarar algo contigo)</span>
-        <input name="email" type="email" autocomplete="email" placeholder="nombre@correo.com">
-      </label>
-
-      <p class="report-legal">Lo que envíes va a una hoja de cálculo privada mía, alojada en Google, y
-queda guardado como registro de la corrección. El nombre y el email son
-opcionales: sirven sobre todo para poder aclarar contigo lo que mandes y,
-si lo incorporo, para citarte.
-Por esta misma vía puedes pedir corregirlos o borrarlos, y si algo quedara
-sin resolver, existe la Agencia Española de Protección de Datos.</p>
-
-      <div class="report-foot">
-        <span class="report-msg" id="report-msg"></span>
-        <button id="report-send" class="pill send" type="submit">Enviar</button>
-      </div>
-    </form>
-  </div>
-
-  <script src="batalla_de_flores/app.js?v=25c7761c"></script>
-<!-- Tracking: Google Analytics tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GHT1L88XYZ');
-</script>
-<!-- End Google Analytics tag (gtag.js) -->
-<!-- Default Statcounter code -->
-<script type="text/javascript">
-var sc_project=11157426;
-var sc_invisible=1;
-var sc_security="c4968ba5";
-</script>
-<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/11157426/0/c4968ba5/1/" alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 </body>
 </html>

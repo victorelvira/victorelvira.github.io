@@ -1169,6 +1169,9 @@ table.palmares tr:hover td { background: #fffaf5; }
   white-space: nowrap;
 }
 .prov-disputa { color: var(--alerta); }
+/* Lo que decimos NOSOTROS no se pinta como una fuente: va en cursiva y apagado,
+ * para que no se confunda con lo que afirma un periodico o un palmares. */
+.prov-nuestro { font-style: italic; color: var(--muted); }
 .prov-cita { color: var(--muted); }
 .prov-list a { color: var(--t-year); }
 /* La leyenda explica cada código al pasar por encima: el acrónimo no se explica
@@ -2023,3 +2026,80 @@ body.lb-abierto { overflow: hidden; }
   box-shadow: 0 0 0 6px #fff6d8;
   transition: background .3s ease, box-shadow .3s ease;
 }
+
+/* ── de dónde salen los datos (Estadísticas) ─────────────────────────────── */
+/* Un color por origen, reutilizando los del sitio: no hace falta una paleta
+ * nueva para cinco cosas, y así el rosa sigue siendo «el archivo» en todas
+ * partes. */
+.f-NET { --f: var(--rose); }
+.f-HEM { --f: var(--t-year); }
+.f-AYT { --f: var(--leaf); }
+.f-PER { --f: var(--gold); }
+.f-LIB { --f: var(--t-float); }
+.f-bg-NET { background: var(--rose); }
+.f-bg-HEM { background: var(--t-year); }
+.f-bg-AYT { background: var(--leaf); }
+.f-bg-PER { background: var(--gold); }
+.f-bg-LIB { background: var(--t-float); }
+
+.fuentes-rows { display: flex; flex-direction: column; gap: 4px; margin: 10px 0 14px; }
+.fuente-combo { border-bottom: 1px solid var(--line-soft); padding-bottom: 4px; }
+.fuente-combo:last-child { border-bottom: none; }
+
+.fuente-fila {
+  display: grid; grid-template-columns: minmax(120px, 8.5em) 1fr auto;
+  gap: 12px; align-items: center; width: 100%;
+  background: none; border: 0; padding: 7px 0; text-align: left;
+  color: inherit; font: inherit; cursor: pointer;
+}
+.fuente-fila.estatica { cursor: default; }
+.fuente-fila:not(.estatica):hover { background: var(--bar); }
+.fuente-fila:focus-visible { outline: 2px solid var(--t-year); outline-offset: 2px; }
+
+.fuente-etiq { display: flex; align-items: center; gap: 7px; font-size: 13px; line-height: 1.25; }
+.fuente-etiq em { color: var(--muted); font-style: italic; }
+.fuente-chip {
+  width: 9px; height: 15px; border-radius: 2px; flex: none; background: var(--f, var(--muted));
+}
+/* El carril mide siempre lo mismo aunque la barra sea un hilo: si no, las
+ * barras cortas se leen como si no hubiera dato. */
+.fuente-track { min-width: 0; }
+.fuente-bar { display: block; height: 15px; border-radius: 0 3px 3px 0; min-width: 3px; }
+.fuente-combo .fuente-bar:not([class*="f-bg-"]) { background: var(--muted); }
+/* Una web coincidiendo consigo misma no es respaldo: la barra va rayada para
+ * que no se lea igual que las demás. */
+.fuente-bar.misma-web {
+  background: repeating-linear-gradient(135deg,
+    var(--muted) 0 4px, transparent 4px 8px);
+  opacity: .75;
+}
+.fuente-num {
+  font-variant-numeric: tabular-nums; font-size: 13px; white-space: nowrap; text-align: right;
+}
+.fuente-num small { color: var(--muted); font-size: 12px; }
+.fuente-pie { margin: 0 0 6px; padding-left: 16px; font-size: 12.5px; color: var(--muted); }
+.fuente-aviso {
+  display: block; padding-left: 16px; margin: -2px 0 5px;
+  font-size: 12px; color: var(--alerta);
+}
+.fuente-casos {
+  display: flex; flex-wrap: wrap; gap: 4px 12px;
+  padding: 4px 0 10px 16px; font-size: 13px;
+}
+.fuente-mas { color: var(--muted); font-size: 12.5px; }
+.fuente-combo.is-open { background: var(--bar); border-radius: 4px; }
+
+@media (max-width: 620px) {
+  .fuente-fila { grid-template-columns: 1fr auto; }
+  .fuente-track { grid-column: 1 / -1; }
+}
+
+/* Las dos mitades de «Pendiente»: primero de qué está hecho lo que hay, y
+ * después lo que falta. Sin este corte, la pestaña empezaba enumerando huecos
+ * sin decir nunca sobre qué. */
+.parte-tenemos, .parte-falta {
+  display: flex; align-items: baseline; gap: 10px;
+  border-top: 2px solid var(--line); padding-top: 14px;
+}
+.parte-tenemos { border-top: none; padding-top: 0; }
+.parte-falta { margin-top: 34px; }

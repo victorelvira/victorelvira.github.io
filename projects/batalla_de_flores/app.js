@@ -84,6 +84,13 @@ function num(value) {
   return new Intl.NumberFormat("es-ES").format(value ?? 0);
 }
 
+/* Porcentaje con coma decimal, que es como se escribe en español. */
+function pct(parte, total) {
+  if (!total) return "0 %";
+  return `${(100 * parte / total).toLocaleString("es-ES",
+    { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`;
+}
+
 const STATUS_LABEL = {
   published: "Publicada",
   planned: "Prevista",
@@ -150,6 +157,7 @@ const SOURCE_LABEL = {
   photo_cedida: "Foto cedida por un particular",
   book: "Libro del Centenario (Oruña Fuentes, 2008)",
   press_history: "Hemeroteca histórica",
+  pliegue_propio: "Reescritura nuestra",
 };
 
 /* Version corta para las tablas del panel de detalle, que es estrecho.
@@ -1235,7 +1243,10 @@ function openQuestions() {
   // es un hueco: es un error, y va antes que nada.
   const imposibles = [];
   state.editions.forEach(edition => (edition.floats || []).forEach(entry => {
-    (entry.needs_review || []).forEach(reason => {
+    // Miraba solo en `needs_review`, y estos avisos los escribe derivar.py en
+    // `avisos_derivados`: el bloque llevaba vacio desde entonces, sin avisar de
+    // que no encontraba nada. 162 carrozas marcadas y ni una en la lista.
+    dudasDe(entry).forEach(reason => {
       if (!reason.startsWith("Esto no puede ser")) return;
       if (imposibles.some(o => o.year === edition.year && o.reason === reason)) return;
       imposibles.push({ year: edition.year, name: entry.name, reason, id: entry.id });
@@ -1289,6 +1300,10 @@ function renderPendingTab() {
 
   els.indexBody.innerHTML = `
     <div class="stats-block">
+      ${bloqueFuentes()}
+
+      <h3 class="section parte-falta">Lo que falta
+        <span class="open-count">${num(total)}</span></h3>
       <p class="chart-note">Este archivo no está terminado. Aquí está todo lo que sabemos que falta
       o que no cuadra. Si conoces la respuesta a alguno, dínoslo con el botón de su línea.</p>
       <div class="chips"><button id="share-pending" class="share" type="button"
@@ -1685,6 +1700,187 @@ function renderStatsTab() {
   // necesita medir su hueco. Va aqui y no en cada sitio que llama a esta
   // funcion: si se olvida en uno, el bloque sale en blanco.
   pintarCarreras();
+}
+
+/* ── de dónde salen los datos ───────────────────────────────────────────── */
+/*
+ * Todo esto se calcula al vuelo sobre el dataset que ya está en memoria: no
+ * añade ni un byte a lo que se descarga. Y se calcula aquí, no en el pipeline,
+ * porque son cuentas sobre `claims`, que es donde vive la procedencia.
+ *
+ * La distinción que da sentido al bloque: `kind` es la PÁGINA que lo dice
+ * (palmarés, ficha de carroza, nota oficial) y `origen` es QUIÉN está detrás
+ * de esa página. Dos páginas de batalladeflores.net que coinciden no son dos
+ * fuentes coincidiendo: son la misma web repitiéndose, y eso hay que verlo.
+ */
+const ORIGEN_DE_KIND = {
+  archive_palmares: "NET", archive_float_page: "NET", manual_seed: "NET",
+  official_result: "AYT", official_result_summary: "AYT",
+  press_history: "HEM", press_clipping: "HEM", press_photo: "HEM",
+  book: "LIB", photo_archive: "PER", photo_cedida: "PER",
+};
+const ORIGEN_LABEL = {
+  NET: "batalladeflores.net", HEM: "Hemerotecas y prensa", AYT: "Ayuntamiento de Laredo",
+  PER: "Personas que ceden fotos", LIB: "Libro del Centenario",
+};
+const ORIGEN_NOTA = {
+  NET: "El archivo de la fiesta: sus páginas de palmarés, sus fichas de carroza y la semilla del proyecto, que salió de ahí.",
+  HEM: "Prensa de la época leída en la Hemeroteca de la BNE, la Biblioteca Virtual de Prensa Histórica y el Archivo ABC.",
+  AYT: "Notas y resultados oficiales publicados por el Ayuntamiento en laredo.es.",
+  PER: "Fotos cedidas por particulares, con lo que afirman sobre la carroza que retratan.",
+  LIB: "Oruña Fuentes, «Batalla de Flores de Laredo» (2008).",
+};
+const ORIGEN_ORDEN = ["NET", "HEM", "AYT", "PER", "LIB"];
+
+/* Recorre las afirmaciones una sola vez y devuelve las tres vistas. */
+function cuentasDeFuentes() {
+  const porOrigen = new Map(ORIGEN_ORDEN.map(o => [o, { n: 0, carrozas: new Set() }]));
+  const contra = new Map();
+  const coinci = new Map();
+  let total = 0, nuestras = 0;
+
+  const anota = (mapa, kinds, entry, campo) => {
+    const clave = kinds.join("|");
+    let fila = mapa.get(clave);
+    if (!fila) {
+      const origenes = [...new Set(kinds.map(k => ORIGEN_DE_KIND[k]).filter(Boolean))];
+      fila = { kinds, origenes, n: 0, casos: [] };
+      mapa.set(clave, fila);
+    }
+    fila.n += 1;
+    fila.casos.push({ id: entry.id, year: entry.year, name: entry.name, campo });
+  };
+
+  state.editions.forEach(edition => (edition.floats || []).forEach(entry => {
+    const claims = entry.claims || {};
+    Object.keys(claims).forEach(campo => {
+      const claim = claims[campo];
+      const kinds = new Set();
+      (claim.fuentes || []).forEach(f => {
+        if (f.kind === "pliegue_propio") { nuestras += 1; return; }
+        const origen = ORIGEN_DE_KIND[f.kind];
+        if (!origen) return;
+        total += 1;
+        kinds.add(f.kind);
+        const casilla = porOrigen.get(origen);
+        casilla.n += 1;
+        casilla.carrozas.add(entry.id);
+      });
+      const lista = [...kinds].sort();
+      if (lista.length > 1) anota(coinci, lista, entry, campo);
+      (claim.disputa || []).forEach(otra => {
+        // Una discrepancia mete en la misma fila a quien sostiene el valor que
+        // se muestra y a quien sostiene el descartado. Cuando son dos, sale una
+        // pareja; cuando la disputa arrastra a tres, sale un trío.
+        const juntas = [...new Set([...lista, ...(otra.fuentes || []).map(f => f.kind)])].sort();
+        anota(contra, juntas, entry, campo);
+      });
+    });
+  }));
+
+  const origenes = ORIGEN_ORDEN
+    .map(o => ({ clave: o, nombre: ORIGEN_LABEL[o], nota: ORIGEN_NOTA[o],
+                 n: porOrigen.get(o).n, carrozas: porOrigen.get(o).carrozas.size }))
+    .filter(o => o.n > 0)
+    .sort((a, b) => b.n - a.n);
+  const ordenar = mapa => [...mapa.values()].sort((a, b) => b.n - a.n);
+  return { origenes, total, nuestras, contra: ordenar(contra), coinci: ordenar(coinci) };
+}
+
+/* Una fila de combinación: las fichas de color de cada origen, los nombres de
+ * las páginas, la barra y el número. Se despliega con las carrozas concretas. */
+function filaCombinacion(fila, tope, signo, abierta) {
+  const mismaWeb = fila.origenes.length === 1;
+  const chips = fila.origenes.map(o =>
+    `<i class="fuente-chip f-${o}" title="${esc(ORIGEN_LABEL[o])}"></i>`).join("");
+  const nombres = fila.kinds.map(k => esc(SOURCE_LABEL[k] || k)).join(` ${signo} `);
+  const sola = fila.kinds.length === 1;
+  const clave = fila.kinds.join("|");
+  const MUESTRA = 40;
+  return `
+    <div class="fuente-combo${abierta ? " is-open" : ""}">
+      <button class="fuente-fila" type="button" data-combo="${esc(clave)}"
+        aria-expanded="${abierta ? "true" : "false"}">
+        <span class="fuente-etiq">${chips}<span>${sola
+          ? `${nombres} <em>consigo misma</em>` : nombres}</span></span>
+        <span class="fuente-track"><i class="fuente-bar${mismaWeb ? " misma-web" : ""}"
+          style="width:${(100 * fila.n / tope).toFixed(2)}%"></i></span>
+        <span class="fuente-num">${num(fila.n)}</span>
+      </button>
+      ${mismaWeb ? '<span class="fuente-aviso">la misma web consigo misma: esto no corrobora nada</span>' : ""}
+      ${abierta ? `<div class="fuente-casos">
+        ${fila.casos.slice(0, MUESTRA).map(c => `
+          <button class="link t-float" type="button" data-float="${esc(c.id)}"
+            title="${esc(CLAIM_LABEL[c.campo] || c.campo)}">${c.year} · ${esc(c.name)}</button>`).join("")}
+        ${fila.casos.length > MUESTRA
+          ? `<span class="fuente-mas">y ${num(fila.casos.length - MUESTRA)} más</span>` : ""}
+      </div>` : ""}
+    </div>`;
+}
+
+/* El bloque vive en «Pendiente», pero un dia vivio en «Estadisticas» y podria
+ * volver a moverse: quien repinta pregunta por la pestana en vez de darla por
+ * hecha. Dejarlo llamando a `renderStatsTab()` desde Pendiente vaciaba la
+ * pestana al pulsar una fila. */
+function repintarConFuentes() {
+  if (state.mode === "pending") renderPendingTab();
+  else renderStatsTab();
+}
+
+function bloqueFuentes() {
+  const d = cuentasDeFuentes();
+  const vista = state.fuentesVista || "todas";
+  const tab = (id, texto) => `<button class="view${vista === id ? " is-on" : ""}" type="button"
+    data-fuentes-vista="${id}">${texto}</button>`;
+
+  const nContra = d.contra.reduce((t, f) => t + f.n, 0);
+  const propias = d.coinci.filter(f => f.origenes.length === 1).reduce((t, f) => t + f.n, 0);
+  const reales = d.coinci.reduce((t, f) => t + f.n, 0) - propias;
+
+  let cuerpo = "";
+  if (vista === "todas") {
+    const tope = d.origenes[0].n;
+    cuerpo = `<div class="fuentes-rows">${d.origenes.map(o => `
+      <div class="fuente-combo">
+        <div class="fuente-fila estatica">
+          <span class="fuente-etiq"><i class="fuente-chip f-${o.clave}"></i><span>${esc(o.nombre)}</span></span>
+          <span class="fuente-track"><i class="fuente-bar f-bg-${o.clave}"
+            style="width:${(100 * o.n / tope).toFixed(2)}%"></i></span>
+          <span class="fuente-num">${num(o.n)} <small>${pct(o.n, d.total)}</small></span>
+        </div>
+        <p class="fuente-pie">${esc(o.nota)} Aparece en ${num(o.carrozas)} carrozas
+          (${pct(o.carrozas, state.floats.length)} de las ${num(state.floats.length)}).</p>
+      </div>`).join("")}</div>
+      <p class="chart-note">Y aparte, <b>${num(d.nuestras)}</b> afirmaciones que no son de nadie:
+      reescrituras nuestras del nombre de un grupo. Van contadas fuera a propósito, porque una
+      decisión editorial no es una fuente.</p>`;
+  } else if (vista === "contra") {
+    const tope = d.contra[0]?.n || 1;
+    cuerpo = `<p class="chart-note">${num(nContra)} veces dos fuentes dicen cosas distintas del
+      mismo dato. No se elige a escondidas: se muestran las dos versiones con quién sostiene cada
+      una. Pincha una fila para ver en qué carrozas pasa.</p>
+      <div class="fuentes-rows">${d.contra
+        .map(f => filaCombinacion(f, tope, "✕", state.fuenteAbierta === f.kinds.join("|"))).join("")}</div>`;
+  } else {
+    const tope = d.coinci[0]?.n || 1;
+    cuerpo = `<p class="chart-note">Dos fuentes diciendo lo mismo del mismo dato. Pero ojo con la
+      primera fila: <b>${num(propias)}</b> de esas coincidencias son dos páginas de la misma web,
+      que no se corroboran entre sí. Corroboración de verdad, con orígenes distintos, hay
+      <b>${num(reales)}</b>.</p>
+      <div class="fuentes-rows">${d.coinci
+        .map(f => filaCombinacion(f, tope, "+", state.fuenteAbierta === f.kinds.join("|"))).join("")}</div>`;
+  }
+
+  return `
+    <h3 class="section parte-tenemos">Lo que tenemos</h3>
+    <p class="chart-note">Antes de lo que falta, de qué está hecho lo que hay. Cada dato del
+    archivo lleva registrado quién lo afirma: sumadas son <b>${num(d.total)}</b> afirmaciones con
+    una fuente detrás, repartidas entre ${d.origenes.length} orígenes.</p>
+    <div class="chart-tabs">
+      ${tab("todas", "Todas")}${tab("contra", `Se contradicen (${num(nContra)})`)}
+      ${tab("coinci", `Coinciden (${num(reales)})`)}
+    </div>
+    ${cuerpo}`;
 }
 
 /* ── indice: recorridos ─────────────────────────────────────────────────── */
@@ -2505,12 +2701,55 @@ function detailHead(titulo, { marca = "", ids = null, acciones = "", tam = 22 } 
     <div class="chips">${shareButton()}${acciones}</div>`;
 }
 
+/* Lo que no cuadra en una carroza, en un solo sitio y sin repetirse.
+ *
+ * Habia dos listas y ninguna estaba completa. `needs_review` la escribe
+ * normalize.py cuando dos fuentes chocan. `avisos_derivados` la calcula
+ * derivar.py cuando algo NO PUEDE ser cierto —dos carrozas primeras en la
+ * misma categoria— y solo se pintaba en la nota del AÑO: 1910 avisaba de dos
+ * primeros puestos y las dos fichas culpables no decian ni palabra. Son 162
+ * carrozas que llevaban encima un aviso invisible en su propia ficha.
+ *
+ * Y al reves se contaba dos veces lo mismo: 23 carrozas repetian arriba, en la
+ * caja de avisos, la discrepancia que ya sale abajo pegada a su dato con las
+ * dos versiones, quien dice cada una y por que se muestra esa. El sitio de una
+ * discrepancia de campo es el campo, asi que aqui se descuenta.
+ *
+ * `EXPLICADO_JUNTO_AL_DATO` es como empieza esa frase en normalize.py. Si alli
+ * cambia el texto, aqui deja de descontarse y la ficha vuelve a repetirse: no
+ * se rompe nada, pero se nota. */
+const EXPLICADO_JUNTO_AL_DATO = "Las fuentes no coinciden en ";
+
+function dudasDe(entry) {
+  const sueltas = (entry.needs_review || [])
+    .filter(reason => !reason.startsWith(EXPLICADO_JUNTO_AL_DATO));
+  return [...new Set([...(entry.avisos_derivados || []), ...sueltas])];
+}
+
+/* Los campos que tienen mas de una version. No devuelve el texto de la disputa:
+ * la ficha solo nombra el campo y manda a mirar el dato, que es donde estan las
+ * versiones con su fuente y su motivo. */
+function camposEnDisputa(entry) {
+  const claims = entry.claims || {};
+  return Object.keys(claims)
+    .filter(campo => (claims[campo].disputa || []).length)
+    .map(campo => CLAIM_LABEL[campo] || campo);
+}
+
+/* Las etiquetas ya vienen con articulo («El puesto»), asi que la frase se arma
+ * poniendolas de sujeto. Colgarlas de un «de» daba «una version de el puesto». */
+function fraseDisputa(campos) {
+  return `${joinEs(campos)} ${campos.length > 1 ? "tienen" : "tiene"} más de una versión`;
+}
+
 function reviewMark(entry) {
-  const reasons = entry.needs_review || [];
-  if (!reasons.length) return "";
+  const reasons = dudasDe(entry);
+  const campos = camposEnDisputa(entry);
+  if (!reasons.length && !campos.length) return "";
+  const texto = reasons.length ? reasons.join(" · ") : `${fraseDisputa(campos)}.`;
   return `<button class="review-mark" type="button" data-float="${esc(entry.id)}" data-prov="1"
-    data-tip="${esc(reasons.join(" · "))}"
-    title="${esc(reasons.join(" · "))} — pulsa para verlo entero">?</button>`;
+    data-tip="${esc(texto)}"
+    title="${esc(texto)} — pulsa para verlo entero">?</button>`;
 }
 
 function prizeChips(entry) {
@@ -3777,6 +4016,7 @@ function fieldSize(entry) {
 const CLAIM_LABEL = {
   name: "Que desfiló",
   position: "El puesto", category: "La categoría", group_raw: "El grupo",
+  group_canonical: "El grupo, tal y como lo agrupamos aquí",
   points: "Los puntos", prize_costumes_rank: "El premio de vestidos",
   prize_art_rank: "El premio de arte", prize_international_rank: "El premio internacional",
 };
@@ -3797,10 +4037,25 @@ function claimLines(entry) {
     : campo === "name" ? `«${entry.name}»`
     : ordinal.has(campo) ? `${entry[campo]}.º` : String(entry[campo] ?? "");
 
-  return orden.filter(campo => claims[campo] && entry[campo] != null).map(campo => {
+  // `group_canonical` solo se explica cuando NO es lo que dijo la fuente. Si
+  // coinciden, repetirlo es decir dos veces lo mismo; si difieren, callarlo es
+  // publicar una atribucion nuestra como si la firmara la fuente.
+  const reescrito = entry.group_canonical && entry.group_raw
+    && entry.group_canonical !== entry.group_raw;
+
+  return orden.filter(campo => claims[campo] && entry[campo] != null)
+    .concat(reescrito && claims.group_canonical ? ["group_canonical"] : [])
+    .map(campo => {
     const claim = claims[campo];
     const quien = claim.fuentes.map(f => {
       const etiqueta = esc(SOURCE_LABEL[f.kind] || f.kind);
+      // `pliegue_propio` no es una fuente que afirme nada: es la regla con la
+      // que reescribimos el nombre. Se dice entera, que es lo que permite
+      // discutirla.
+      if (f.kind === "pliegue_propio") {
+        const porque = f.motivo || f.regla;
+        return `<span class="prov-nuestro">lo decidimos nosotros${porque ? `: ${esc(porque)}` : ""}</span>`;
+      }
       return f.url
         ? `<a href="${esc(f.url)}" target="_blank" rel="noopener">${etiqueta} ↗</a>`
         : etiqueta;
@@ -3808,9 +4063,13 @@ function claimLines(entry) {
     const sello = claim.independientes >= 2
       ? ` <span class="tag corrobora" title="Lo dicen fuentes de procedencia distinta, que coinciden">${claim.independientes} orígenes ✓</span>`
       : "";
+    // La descartada se escribe como la mostrada: si arriba pone «5.º», abajo no
+    // puede poner «7» pelado, que se lee como otra cosa.
     const otras = (claim.disputa || []).map(d => `
-      <br><small class="prov-disputa">Otra versión: <b>${esc(String(d.valor))}</b>, según
-      ${joinEs(d.fuentes.map(f => esc(SOURCE_LABEL[f.kind] || f.kind)))}. Sin resolver.</small>`).join("");
+      <br><small class="prov-disputa">Otra versión: <b>${esc(ordinal.has(campo)
+        ? `${d.valor}.º` : String(d.valor))}</b>, según
+      ${joinEs(d.fuentes.map(f => esc(SOURCE_LABEL[f.kind] || f.kind)))}.
+      ${d.motivo ? esc(d.motivo) : "Sin resolver."}</small>`).join("");
     return `<li><b>${CLAIM_LABEL[campo] || campo}:</b>
       ${esc(valor(campo))} — ${joinEs(quien)}${sello}${otras}</li>`;
   }).join("");
@@ -3853,21 +4112,36 @@ function floatProvenance(entry) {
     </details>`;
 }
 
+/* La caja de arriba: SOLO lo que no tiene sitio propio mas abajo.
+ *
+ * Las discrepancias de campo no se repiten aqui —se nombran y se manda al dato,
+ * que es donde estan las dos versiones con su fuente y su motivo—; lo que sube
+ * es lo que no cabe en un campo: que dos carrozas ocupen el mismo puesto, que
+ * un periodico llame a la ganadora de otra manera, que falte confirmar algo. */
+function floatWarnings(entry) {
+  const dudas = dudasDe(entry);
+  const campos = camposEnDisputa(entry);
+  if (!dudas.length && !campos.length) return "";
+  const citas = pressCitations(entry);
+  return `<div class="review-box">
+    <b>Dato sin aclarar</b>
+    ${dudas.length ? `<ul>${dudas.map(reason => `<li>${esc(reason)}</li>`).join("")}</ul>` : ""}
+    ${campos.length ? `<p>${fraseDisputa(campos)}. Están más abajo, junto al dato,
+      con quién dice cada una y por qué se muestra la que se muestra.</p>` : ""}
+    ${citas.length ? `<p class="cite-head">Lo que dice la hemeroteca,
+      palabra por palabra:</p>${citationList(citas)}` : ""}
+    <p>Si sabes cuál es la versión buena, <button class="link t-float" type="button"
+       id="open-report-from-float">cuéntanoslo</button>.</p>
+  </div>`;
+}
+
 function renderFloatDetail(entry) {
-  const edition = state.editions.find(item => item.year === entry.year);
   const prizes = prizeChips(entry);
 
   els.detail.innerHTML = `
     ${detailHead(esc(entry.name), { marca: reviewMark(entry),
       ids: { id: entry.id_carroza, completo: entry.id_completo } })}
-    ${(entry.needs_review || []).length ? `<div class="review-box">
-      <b>Dato sin aclarar</b>
-      <ul>${entry.needs_review.map(reason => `<li>${esc(reason)}</li>`).join("")}</ul>
-      ${pressCitations(entry).length ? `<p class="cite-head">Lo que dice la hemeroteca,
-        palabra por palabra:</p>${citationList(pressCitations(entry))}` : ""}
-      <p>Si sabes cuál es la versión buena, <button class="link t-float" type="button"
-         id="open-report-from-float">cuéntanoslo</button>.</p>
-    </div>` : ""}
+    ${floatWarnings(entry)}
 
     <dl class="facts">
       <div><dt>Año</dt><dd>
@@ -3906,17 +4180,14 @@ function renderFloatDetail(entry) {
 
     ${(entry.notes || []).length
       ? `<h3 class="section">Notas</h3><ul class="plain">${entry.notes.map(note => `<li>${esc(note)}</li>`).join("")}</ul>`
-      : ""}
-
-    <div class="provenance">
-      <b>Fuentes</b>
-      <ul>
-        <li>${esc(sourceLabel(entry.source_type))}</li>
-        ${edition ? `<li>Edición de ${entry.year}: ${esc(edition.edition_label || "")}</li>` : ""}
-      </ul>
-      ${(entry.source_urls || []).length ? `<ul class="plain" style="margin-top:6px">${entry.source_urls
-        .map(url => `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a></li>`).join("")}</ul>` : ""}
-    </div>`;
+      : ""}`;
+  /* Aqui habia un cuarto bloque, «Fuentes», con `source_type` y la lista pelada
+   * de `source_urls`. Se quito: de sus 1.355 enlaces, 1.341 ya salian mas
+   * arriba pegados al dato que sostienen —que es donde sirven de algo— y los 14
+   * restantes no eran fuentes, sino rutas de fotos locales de 2018 coladas en
+   * `source_urls`. Ninguna carroza dependia de el: las 867 tienen al menos una
+   * linea de procedencia por campo. Repetirlo todo al final, sin decir que
+   * enlace sostiene que dato, era justo el ruido que hacia ilegible la ficha. */
   els.detail.scrollTop = 0;
   activarMapasZoom();
 }
@@ -4859,6 +5130,28 @@ function bindEvents() {
     if (editionCat) {
       state.editionCategory = editionCat.dataset.editionCat;
       renderDetail();
+      return;
+    }
+
+    const fuentesVista = event.target.closest("[data-fuentes-vista]");
+    if (fuentesVista) {
+      state.fuentesVista = fuentesVista.dataset.fuentesVista;
+      // Cambiar de vista cierra lo que hubiera desplegado: la fila abierta era
+      // de la otra lista y ahi no significa nada.
+      state.fuenteAbierta = null;
+      repintarConFuentes();
+      return;
+    }
+
+    const combo = event.target.closest("[data-combo]");
+    if (combo) {
+      const clave = combo.dataset.combo;
+      state.fuenteAbierta = state.fuenteAbierta === clave ? null : clave;
+      repintarConFuentes();
+      // Repintar la pestana entera manda la pagina arriba del todo: se vuelve a
+      // la fila que se acaba de pulsar.
+      const vuelta = els.indexBody.querySelector(`[data-combo="${CSS.escape(clave)}"]`);
+      if (vuelta) vuelta.scrollIntoView({ block: "center" });
       return;
     }
 
