@@ -1100,3 +1100,15 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
   .brand small { display: none; }
   .stats { font-size: 10.5px; }
 }
+
+/* ── a fourth kind of place, and a new axis: the kind of work ────────────────────────────────────
+   Sculpture brought the street with it. A Bernini fountain is not in a museum, a church or a private
+   collection — it is in Piazza Navona, free, at three in the morning, and that deserves its own
+   colour on the map. The two chips after the separator answer a different question altogether
+   (what the work IS, not where it is), so a thin rule keeps the two families apart. */
+:root { --public: #2f7d3f; }        /* out in the open — green, the colour of a square */
+.pin.public { background: var(--public); }
+.legend .k.public { background: var(--public); }
+.chip.kind.pub input { accent-color: var(--public); }
+.chip-sep { width: 1px; align-self: stretch; margin: 2px 2px; background: var(--line); flex: 0 0 1px; }
+.chip.form input { accent-color: #6a4a2a; }

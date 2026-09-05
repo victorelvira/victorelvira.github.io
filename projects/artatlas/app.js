@@ -12,6 +12,8 @@ const WIKI_LANGS = ["es", "en", "it"];
 // painters loaded onto the (shared) map 1. Add a painter = add a line here.
 const PAINTERS = [
   { slug: "caravaggio", name: "Caravaggio", file: "artatlas/data/caravaggio.geojson" },
+  // the first artist here who never painted: the Atlas holds works, and a work can be carved
+  { slug: "bernini", name: "Bernini", file: "artatlas/data/bernini.geojson" },
   { slug: "leonardo", name: "Leonardo da Vinci", file: "artatlas/data/leonardo.geojson" },
   { slug: "raphael", name: "Raphael", file: "artatlas/data/raphael.geojson" },
   { slug: "goya", name: "Goya", file: "artatlas/data/goya.geojson" },
@@ -85,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.4.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-04 11:05";   // update together with DATA_V — shown in the navbar
+const DATA_V = "1.5.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-05 12:10";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -299,7 +301,7 @@ const ERAS = [
 const ERA_OF = {
   giotto: "1", duccio: "1", masaccio: "1", fraangelico: "1", piero: "1", botticelli: "1",
   ghirlandaio: "1", mantegna: "1", vaneyck: "1", weyden: "1", memling: "1", bosch: "1",
-  leonardo: "2", raphael: "2", michelangelo: "2", durer: "2", cranach: "2", holbein: "2",
+  leonardo: "2", raphael: "2", michelangelo: "2", durer: "2", cranach: "2", holbein: "2", bernini: "3",
   giorgione: "2", titian: "2", correggio: "2", delsarto: "2", parmigianino: "2", bruegel: "2",
   tintoretto: "2", veronese: "2", elgreco: ["2", "3"],   // Mannerism ↔ Baroque (d. 1614)
   caravaggio: "3", artemisia: "3", rubens: "3", vandyck: "3", rembrandt: "3", vermeer: "3",
@@ -327,7 +329,7 @@ const SCHOOLS = [
 ];
 const SCHOOL_OF = {
   duccio: "it", giotto: "it", masaccio: "it", fraangelico: "it", piero: "it", botticelli: "it",
-  ghirlandaio: "it", mantegna: "it", leonardo: "it", raphael: "it", michelangelo: "it",
+  ghirlandaio: "it", mantegna: "it", leonardo: "it", raphael: "it", michelangelo: "it", bernini: "it",
   giorgione: "it", titian: "it", correggio: "it", delsarto: "it", parmigianino: "it",
   tintoretto: "it", veronese: "it", caravaggio: "it", artemisia: "it",
   velazquez: "es", goya: "es", elgreco: ["es", "it"], ribera: "es", zurbaran: "es", murillo: "es",
@@ -350,7 +352,7 @@ const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 const BORN = {
   duccio: 1255, giotto: 1267, vaneyck: 1390, fraangelico: 1395, weyden: 1399, masaccio: 1401,
   piero: 1415, memling: 1430, mantegna: 1431, botticelli: 1445, ghirlandaio: 1448, bosch: 1450,
-  leonardo: 1452, durer: 1471, cranach: 1472, michelangelo: 1475, giorgione: 1477, raphael: 1483,
+  bernini: 1598, leonardo: 1452, durer: 1471, cranach: 1472, michelangelo: 1475, giorgione: 1477, raphael: 1483,
   delsarto: 1486, titian: 1488, correggio: 1489, holbein: 1497, parmigianino: 1503, tintoretto: 1518,
   bruegel: 1525, veronese: 1528, elgreco: 1541, caravaggio: 1571, rubens: 1577, franshals: 1582,
   artemisia: 1593, delatour: 1593, poussin: 1594, velazquez: 1599, vandyck: 1599, lorrain: 1600,
@@ -365,7 +367,7 @@ const BORN = {
 const bornOf = slug => BORN[slug] || 9999;
 
 // death year per painter (Wikidata P570) — for the Timeline life-span labels
-const DIED = { klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
+const DIED = { bernini: 1680, klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
 const diedOf = slug => DIED[slug] || null;
 
 // short label per painter for the selector button (the first name is often wrong — "Ignacio"
@@ -447,7 +449,10 @@ let allFeatures = [];   // raw point features from the geojson
 const places = [];   // {marker, kind, feats, lat, lon, shown}
 const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
 let panelVis = [];   // works currently listed in the panel
-const state = { mode: "current", museum: true, church: true, private: true,
+// `museum/church/private/public` are kinds of PLACE; `painting/sculpture` are kinds of WORK. Two
+// different questions — "where can I see it?" and "what is it?" — so two different sets of chips.
+const state = { mode: "current", museum: true, church: true, private: true, public: true,
+                painting: true, sculpture: true,
                 acceptedOnly: true, museumFilter: null, near: null, q: "",
                 yearMin: -Infinity, yearMax: Infinity, painters: {} };
 
@@ -508,11 +513,12 @@ function matchesQ(p) {
   return !!other && other.includes(state.q);
 }
 function passesAll(p) {
-  const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"];   // no venue type on map 2
+  const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"] !== false;   // no venue type on map 2
+  const formOk = state[p.form || "painting"] !== false;
   const painterOk = state.painters[p.painter] !== false;
   const attrOk = !state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution);
   const museumOk = !state.museumFilter || museumKey(p) === state.museumFilter;
-  return painterOk && kindOk && attrOk && museumOk && inYear(p) && matchesQ(p);
+  return painterOk && kindOk && formOk && attrOk && museumOk && inYear(p) && matchesQ(p);
 }
 // active coordinate per map: current location, or where it was painted (map 2)
 function activeCoord(f) {
@@ -938,8 +944,11 @@ function updatePainterBtn() {
 }
 
 // filters
-document.querySelectorAll('.filters input[data-kind]').forEach(cb => {
-  cb.addEventListener("change", () => { state[cb.dataset.kind] = cb.checked; refresh(); });
+document.querySelectorAll('.filters input[data-kind], .filters input[data-form]').forEach(cb => {
+  cb.addEventListener("change", () => {
+    state[cb.dataset.kind || cb.dataset.form] = cb.checked;
+    refresh();
+  });
 });
 document.getElementById("accepted-only").addEventListener("change", e => {
   state.acceptedOnly = e.target.checked; refresh();
@@ -2210,7 +2219,9 @@ function gAuthorQ() {
   const tiers = G.diff === "hard" ? [near, mid, far] : G.diff === "medium" ? [mid, near, far] : [far, mid, near];
   const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
   const opts = [{ text: p.painter, correct: true }, ...ds.map(s => ({ text: GAME_NAME_OF_SLUG[s], correct: false }))];
-  return { kind: "img", image: p.image, prompt: "Who painted this?", options: gShuffle(opts), answer: p.painter, work: p };
+  // Bernini never painted anything: the question has to fit the work it is asking about
+  const ask = p.form === "sculpture" ? t("Who made this?") : t("Who painted this?");
+  return { kind: "img", image: p.image, prompt: ask, options: gShuffle(opts), answer: p.painter, work: p };
 }
 
 function gDateQ() {

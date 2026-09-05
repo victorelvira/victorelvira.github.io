@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.4.0">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.5.0">
 </head>
 <body>
   <nav id="navbar">
@@ -59,6 +59,11 @@
       <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
       <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
       <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
+      <label class="chip kind pub" title="Out in the open: a square, a bridge, a street — no ticket, no opening hours"><input type="checkbox" data-kind="public" checked> Outdoors</label>
+      <span class="chip-sep" aria-hidden="true"></span>
+      <!-- kind of WORK, not kind of place: both on means "everything", which is the default -->
+      <label class="chip form pnt" title="Show paintings"><input type="checkbox" data-form="painting" checked> 🖼 Paintings</label>
+      <label class="chip form scu" title="Show sculpture"><input type="checkbox" data-form="sculpture" checked> 🗿 Sculpture</label>
       <label class="chip toggle att" title="Show only works of accepted attribution — hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked><span>Accepted only</span></label>
       <button id="locate" class="chip btn" type="button" title="Find the painting nearest to your location">📍 Near me</button>
     </div>
@@ -291,7 +296,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.4.0"></script>
+  <script src="artatlas/app.js?v=1.5.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
