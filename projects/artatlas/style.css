@@ -945,15 +945,17 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 /* a work with no address (private collection, stolen): named in the ficha, absent from the map */
 .wc-noplace { color: var(--muted); font-size: 11.5px; font-style: italic; white-space: nowrap; }
 
-/* language switch — two letters in the top identity bar, quiet until you need it */
-.langsel { display: inline-flex; gap: 2px; margin-left: auto; margin-right: 10px; }
-.langbtn { border: 1px solid rgba(255,255,255,.28); background: transparent; color: #d8d2c6;
+/* Language switch — beside the Atlas's own title, NOT in the identity bar above it. That bar is the
+   same on every one of Víctor's projects (../../LLM.md §2): a per-project control has no business in
+   it, and on a phone it pushed the version stamp off the right edge. */
+.langsel { display: inline-flex; gap: 2px; margin-left: 14px; align-self: center; }
+.langbtn { border: 1px solid var(--line); background: #fff; color: var(--muted);
   font: inherit; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; line-height: 1;
-  padding: 3px 6px; border-radius: 4px; cursor: pointer; }
+  padding: 3px 7px; border-radius: 4px; cursor: pointer; }
 .langbtn:first-child { border-radius: 4px 0 0 4px; }
 .langbtn:last-child { border-radius: 0 4px 4px 0; margin-left: -3px; }
-.langbtn:hover { color: #fff; border-color: rgba(255,255,255,.5); }
-.langbtn.active { background: #f0ece3; border-color: #f0ece3; color: #3a2317; }
+.langbtn:hover { color: var(--ink); border-color: #c8b48c; }
+.langbtn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
 
 /* panel order: ⛪ museum (grouped, the default) · year · painter · title (one flat run) */
 #pv-sort { font: inherit; font-size: 11.5px; color: var(--muted); background: #fff;
@@ -1112,3 +1114,8 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 .chip.kind.pub input { accent-color: var(--public); }
 .chip-sep { width: 1px; align-self: stretch; margin: 2px 2px; background: var(--line); flex: 0 0 1px; }
 .chip.form input { accent-color: #6a4a2a; }
+
+@media (max-width: 640px), (max-height: 520px) and (max-width: 1000px) {
+  /* the title's line ends with the two letters, hard right */
+  #bar .langsel { margin-left: auto; }
+}
