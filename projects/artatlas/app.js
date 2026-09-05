@@ -85,8 +85,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.3.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-08-25 23:05";   // update together with DATA_V — shown in the navbar
+const DATA_V = "1.4.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-04 11:05";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -928,7 +928,9 @@ function renderMuseumChip() {
 function updatePainterBtn() {
   const btn = document.getElementById("painters-btn");
   const sel = PAINTERS.filter(p => state.painters[p.name] !== false);
-  const label = sel.length === PAINTERS.length ? `${t("All")} ${PAINTERS.length} ${tu("painters")}`
+  // "All 73 painters" / "Los 73 pintores": the article does not survive a word-by-word translation,
+  // so the whole phrase is one key with the number slotted in
+  const label = sel.length === PAINTERS.length ? t("All N painters").replace("N", PAINTERS.length)
     : sel.length === 0 ? t("No painters")
       : sel.length <= 3 ? sel.map(p => pName(nickOf(p))).join(", ")
         : `${sel.length} ${tu("painters")}`;
@@ -1686,7 +1688,12 @@ function revealMuseumInPanel(key) {
   const pr = panel.getBoundingClientRect(), tr = target.getBoundingClientRect();
   const head = document.getElementById("panel-top");           // sticky header sits over the top of the list
   const headH = head ? head.offsetHeight : 0;                  // …offset by its height so the museum isn't hidden under it
-  panel.scrollTo({ top: panel.scrollTop + (tr.top - pr.top) - headH - 8, behavior: "smooth" });
+  if (panel.scrollHeight - panel.clientHeight > 4) {           // desktop: the panel is its own scroller
+    panel.scrollTo({ top: panel.scrollTop + (tr.top - pr.top) - headH - 8, behavior: "smooth" });
+  } else {                                                      // phone: the page is the scroller
+    const y = window.scrollY + tr.top - headH - 8;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+  }
   clearTimeout(_revealT);
   ul.querySelectorAll(".grp-flash").forEach(x => x.classList.remove("grp-flash"));
   target.classList.add("grp-flash");
@@ -1738,6 +1745,13 @@ document.getElementById("worklist").addEventListener("click", e => {
           el.scrollTop + el.clientHeight >= el.scrollHeight - 700) appendPanelChunk();
     });
   });
+  // On a phone the panel has no scrollbar of its own — the page IS the scroller (see the mobile
+  // block in style.css), so the window has to be able to ask for the next chunk too.
+  window.addEventListener("scroll", () => {
+    if (state.near || !panelHasMore()) return;
+    const doc = document.documentElement;
+    if (doc.scrollTop + window.innerHeight >= doc.scrollHeight - 700) appendPanelChunk();
+  }, { passive: true });
 })();
 
 // ── draggable panel width (desktop): a splitter between the map and the side panel ──

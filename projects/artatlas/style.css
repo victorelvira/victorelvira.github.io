@@ -16,6 +16,8 @@ body {
   display: flex; flex-direction: column; height: 100dvh;
 }
 
+/* the phone rails' wrappers are invisible to layout on a desktop: same flex rows as before */
+#bar-rail, #modes-rail { display: contents; }
 #bar {
   display: flex; align-items: center; gap: 12px 16px; flex-wrap: wrap;
   padding: 10px 16px; background: var(--bar);
@@ -486,7 +488,15 @@ body.resizing #map { pointer-events: none; }
   z-index: 3000; opacity: 0; pointer-events: none; box-shadow: 0 4px 20px rgba(0,0,0,.4);
   transition: opacity .18s, transform .18s; }
 #toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
-@media (max-width: 640px) { #wc-body { grid-template-columns: 1fr; } .wc-imgwrap .wc-img { max-height: 46vh; } }
+@media (max-width: 640px) {
+  #wc-body { grid-template-columns: 1fr; }
+  .wc-imgwrap .wc-img { max-height: 46vh; }
+  /* a phone has no width to spare on a backdrop margin */
+  #work-card { padding: 8px; }
+  #work-card .wc-card { max-height: 94dvh; }
+  .wc-info { padding: 12px 14px; }
+  .wc-title { font-size: 16.5px; }
+}
 #lb-close {
   position: fixed; top: 14px; right: 18px; font-size: 22px; line-height: 1;
   background: rgba(255,255,255,.14); color: #fff; border: 0; border-radius: 8px;
@@ -952,3 +962,141 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 /* with no venue header above it, each row carries its own museum */
 #worklist .wvenue { color: #9a8f7d; font-size: 11px; margin-top: 1px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════
+   PHONE (≤640px) — the chrome was eating half the screen
+   ══════════════════════════════════════════════════════════════════════════════════════════════
+   Measured on a 375×812 phone: 404px of bars above the map (nav 29 + header 146 + modes 186 +
+   timeline 43), leaving 365px of map and 309px of list. The header stacked its four pieces on four
+   rows and "🗺 Map & list" wrapped onto three lines inside its own tab.
+
+   The fix is the same idea three times: anything that is a *row of controls* becomes ONE line that
+   scrolls sideways if it must, instead of wrapping into a wall. A phone screen is short, not narrow:
+   vertical pixels are the scarce thing, and every one we give back is another painting on screen.
+
+   The condition is not only "narrow". A phone turned sideways is 844×390: wide enough to miss a
+   max-width rule, and short enough that the old chrome ate 266 of its 390 pixels. So the compact
+   layout applies to a narrow screen OR to any short-and-not-huge one.
+   ══════════════════════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 640px), (max-height: 520px) and (max-width: 1000px) {
+  /* a strip of controls that scrolls sideways rather than wrapping downwards */
+  .filters, #modes {
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .filters::-webkit-scrollbar, #modes::-webkit-scrollbar { display: none; }
+
+  /* ── identity bar: the title on one line, everything else on ONE rail that scrolls sideways ──
+     Four stacked rows (title / painters / filters / stats) were 130px; as a single rail they are 30. */
+  #bar { padding: 6px 12px; gap: 5px 10px; }
+  .brand { gap: 8px; }
+  .brand .mark { width: 22px; height: 22px; }
+  .brand strong { font-size: 14.5px; }
+  #bar-rail { display: flex; width: 100%; align-items: center; gap: 6px;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+  #bar-rail::-webkit-scrollbar { display: none; }
+  #bar-rail > * { flex: 0 0 auto; }
+  .filters { display: flex; gap: 6px; }
+  .stats { order: 9; width: auto; font-size: 11px; color: var(--muted); white-space: nowrap;
+    padding-right: 4px; }
+  .chip { font-size: 11.5px; padding: 3px 9px; white-space: nowrap; flex: 0 0 auto; }
+  #painters .pbtn { font-size: 12px; padding: 4px 11px; }
+
+  /* ── view tabs: one line, never three ──
+     "🗺 Map & list" wrapped onto three lines inside its own tab and made the row 87px tall. The tabs,
+     the map's own options and the collapse caret now share ONE line that scrolls sideways, and the
+     filter keeps a full-width row above them. */
+  #modes { padding: 6px 12px; gap: 6px; flex-wrap: wrap; overflow: visible; }
+  #modes #filter-wrap { flex: 1 1 100%; order: -1; }
+  #modes-rail { display: flex; width: 100%; align-items: center; gap: 8px;
+    flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+  #modes-rail::-webkit-scrollbar { display: none; }
+  #modes-rail > * { flex: 0 0 auto; }
+  #view-tabs .view-btn, .mode-btn { white-space: nowrap; font-size: 12px; padding: 5px 9px; }
+  #mapopts { gap: 4px; }
+
+  /* a rail that runs off the edge says so, with a soft fade instead of a scrollbar */
+  #bar-rail, #modes-rail { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 18px), transparent); }
+
+  /* ── timeline: slimmer, and the years sit beside the track instead of below it ── */
+  #timeline { padding: 4px 12px; gap: 8px; }
+  .tl-cap { font-size: 9.5px; letter-spacing: .04em; }
+  #tl-range { font-size: 11.5px; }
+
+  /* ── ONE scroll, not two ──
+     The panel used to be a 38vh window with its own scrollbar sitting inside a page that also
+     scrolled: you swipe, the page moves a little, then your finger is suddenly driving a small
+     box. On a phone the map takes a fixed slice off the top and the list simply *continues the
+     page* — one gesture from the first painting to the last, with the footer where a footer
+     belongs: after the last painting, not floating over it.
+     For that the page has to stop being a 100dvh flex box and become an ordinary document — but ONLY
+     in the map view. The table, the game, the timeline and the galaxy are full-screen panes that size
+     themselves against a 100dvh flex column, and turning that off leaves them 126px tall. */
+  body:not(.show-table):not(.show-game):not(.show-chart):not(.show-galaxy) { height: auto; min-height: 100dvh; display: block; }
+  body:not(.show-table):not(.show-game):not(.show-chart):not(.show-galaxy) #main { display: block; overflow: visible; }
+  body:not(.show-table):not(.show-game):not(.show-chart):not(.show-galaxy) #map { height: 38dvh; min-height: 0; flex: none; }
+  body:not(.show-table):not(.show-game):not(.show-chart):not(.show-galaxy) #panel { max-height: none; overflow: visible; width: auto; flex: none; }
+
+  /* ── panel toolbar: one line, icons instead of words ── */
+  #panel-top { padding: 5px 10px; gap: 6px; flex-wrap: nowrap; }
+  #panel-head { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #panel-view { flex: 0 0 auto; gap: 4px; }
+  #pv-sort { font-size: 11px; padding: 2px 4px; max-width: 108px; }
+  .pvbtn { font-size: 0; padding: 4px 8px; }              /* keep the icon, drop the word */
+  .pvbtn::first-letter { font-size: 13px; }
+  #thumb-size { width: 62px; }
+
+  /* ── miniatures: the picture is the point, so the chrome on top of it shrinks ── */
+  .gshare { width: 21px; height: 21px; font-size: 10.5px; line-height: 21px; top: 5px; right: 5px; }
+  @media (hover: none) { .gshare { opacity: .72; } }   /* touch: visible, but not shouting */
+  .gallery.grouped .gcell { padding: 15px 3px 3px; }
+  .mlabel { font-size: 9.5px; top: 2.5px; left: 5px; }
+  .gcell .gmeta { padding: 3px 5px 5px; }
+  .gcell .gm1 { font-size: 11px; }
+  .gcell .gm2 { font-size: 10px; }
+
+  /* ── the table view's own toolbar: one scrolling line instead of two wrapped rows ── */
+  #table-bar { padding: 5px 10px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: none; }
+  #table-bar::-webkit-scrollbar { display: none; }
+  #table-bar > * { flex: 0 0 auto; }
+  #table-bar #table-search { flex: 1 1 130px; min-width: 110px; font-size: 12px; padding: 4px 8px; }
+  #table-bar .t-count { font-size: 11.5px; white-space: nowrap; }
+  #table-tabs .ttab { font-size: 12px; padding: 4px 9px; }
+  #tv-thumb { width: 64px; }
+  #table-view .subtick { font-size: 11px; }
+
+  /* ── denser list rows: a phone shows nine works instead of five ── */
+  #worklist li[data-i] { padding: 6px 10px; gap: 8px; }
+  #worklist .th { width: 42px; height: 42px; }
+  #worklist .wt { font-size: 12.5px; line-height: 1.25; }
+  #worklist .sub { font-size: 11px; line-height: 1.25; }
+  #worklist .grp { padding: 5px 10px; font-size: 11.5px; }
+  #foot { font-size: 10.5px; padding: 6px 12px; }
+}
+
+/* very narrow (≤380px): the nav's second link is the first thing that can go */
+@media (max-width: 380px) {
+  nav .nav-sep, nav .nav-home { display: none; }
+  .brand strong { font-size: 13.5px; }
+}
+
+/* ── phone turned sideways (short but wide) ──────────────────────────────────────────────────────
+   The compact block above already applies here, but its layout assumes the scarce axis is width and
+   gives each rail a full row. Sideways it is the other way round: 844 pixels of width going spare
+   and 390 of height to spend carefully. So the rails stop claiming their own rows and sit beside
+   what precedes them — the whole chrome collapses onto three short lines. */
+@media (max-height: 520px) and (max-width: 1000px) {
+  /* nowrap, not wrap: the rails already scroll sideways, so letting them share a line with the
+     title (or with the search box) costs nothing and saves two rows */
+  #bar, #modes { flex-wrap: nowrap; padding: 4px 12px; }
+  #bar-rail, #modes-rail { width: auto; flex: 1 1 auto; min-width: 0; }
+  #modes #filter-wrap { flex: 0 1 240px; order: 0; }
+  #timeline { padding: 2px 12px; }
+  /* the map earns more of a short screen — the list is one scroll away */
+  body:not(.show-table):not(.show-game):not(.show-chart):not(.show-galaxy) #map { height: 54dvh; }
+  .brand strong { font-size: 13.5px; white-space: nowrap; }   /* one line, not "Interactive Atlas of / Painting" */
+  .brand small { display: none; }
+  .stats { font-size: 10.5px; }
+}
