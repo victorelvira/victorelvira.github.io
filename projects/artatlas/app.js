@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.5.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-05 13:30";   // update together with DATA_V — shown in the navbar
+const DATA_V = "1.6.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-05 14:20";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -854,6 +854,11 @@ function renderPainterList() {
     } else {                                   // idle → grouped by the active axis (period or school)
       const groups = painterGroupBy === "school" ? SCHOOLS : ERAS;
       const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
+      // ONLY throws everything else away, which is the right verb the first time and the wrong one
+      // the second: once you have isolated the Baroque, the next thing you want is to *add* the
+      // Renaissance, not to swap to it. So every group that is not already in shows ALSO beside it —
+      // but only while something is left out, since with all 74 painters on there is nothing to add.
+      const everythingOn = PAINTERS.every(p => state.painters[p.name] !== false);
       for (const g of groups) {
         const inGroup = pnt.filter(p => keysOf(p.slug).includes(g.key))
           .sort((a, z) => bornOf(a.slug) - bornOf(z.slug));   // chronological within the group
@@ -863,6 +868,9 @@ function renderPainterList() {
           `<label class="grp-tick" title="${esc(t("Tick/untick the whole group"))}">` +
           `<input type="checkbox" data-grp-tick="${esc(g.key)}"${allOn ? " checked" : ""}>` +
           `<span>${esc(t(g.label))}</span></label>` +
+          (allOn || everythingOn ? "" :
+            `<button type="button" class="grp-also" data-grp-also="${esc(g.key)}" ` +
+            `title="${esc(t("Add these painters to the ones already shown"))}">${esc(t("also"))}</button>`) +
           `<button type="button" class="grp-only" data-grp-only="${esc(g.key)}" ` +
           `title="${esc(t("Show only these painters"))}">${esc(t("only"))}</button></li>` +
           inGroup.map(painterRow).join("");
@@ -892,6 +900,14 @@ function renderPainterList() {
     const gk = b.dataset.grpOnly;
     const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
     PAINTERS.forEach(p => { state.painters[p.name] = keysOf(p.slug).includes(gk); });
+    refresh(); updatePainterBtn(); renderPainterList();
+  }));
+  // group "also": add a whole period/school to what is already on screen
+  ul.querySelectorAll("button[data-grp-also]").forEach(b => b.addEventListener("click", e => {
+    e.preventDefault(); e.stopPropagation();
+    const gk = b.dataset.grpAlso;
+    const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
+    PAINTERS.forEach(p => { if (keysOf(p.slug).includes(gk)) state.painters[p.name] = true; });
     refresh(); updatePainterBtn(); renderPainterList();
   }));
   // group tick: add/remove a whole period/school without disturbing the others

@@ -116,14 +116,19 @@ body {
 .pop-h.grp { display: flex; align-items: center; justify-content: space-between; }
 .pop-h.grp .grp-tick { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
 .pop-h.grp .grp-tick input { margin: 0; cursor: pointer; accent-color: #6a4a2a; }
-.pop-h.grp .grp-only {
+.pop-h.grp .grp-also, .pop-h.grp .grp-only {
   border: 0; background: none; color: var(--accent, #6a4a2a); font: inherit; font-size: 10.5px;
   font-weight: 700; text-transform: uppercase; letter-spacing: .3px; cursor: pointer;
   padding: 1px 6px; border-radius: 999px; opacity: 0;
 }
+.pop-h.grp:hover .grp-also, .pop-h.grp:focus-within .grp-also,
 .pop-h.grp:hover .grp-only, .pop-h.grp:focus-within .grp-only { opacity: .8; }
-.pop-h.grp .grp-only:hover { opacity: 1; text-decoration: underline; background: #efe6d6; }
-@media (hover: none) { .pop-h.grp .grp-only { opacity: .75; } }
+.pop-h.grp .grp-also:hover, .pop-h.grp .grp-only:hover { opacity: 1; text-decoration: underline; background: #efe6d6; }
+/* ALSO adds, ONLY replaces: the additive one is the friendlier of the two, so it reads in the
+   accent colour while ONLY stays quiet grey until you mean it */
+.pop-h.grp .grp-also { color: #2f7d3f; margin-left: auto; }
+.pop-h.grp .grp-only { color: var(--muted); }
+@media (hover: none) { .pop-h.grp .grp-also, .pop-h.grp .grp-only { opacity: .75; } }
 .pop-list .mrow { display: flex; gap: 8px; align-items: flex-start; padding: 5px 4px; cursor: pointer; }
 .pop-list .mrow:hover { background: #faf7f1; }
 .mrow .micon { flex: 0 0 auto; }
