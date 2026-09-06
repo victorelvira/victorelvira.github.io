@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.7.7";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-06 21:58";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.8.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-06 22:21";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1327,6 +1327,10 @@ let panelFlatCursor = 0;
 // the museums away and lay every work out in one run — by date, by painter, or by title — because
 // sometimes you are not asking "what is in this museum?" but "what is here, oldest first?".
 // Applies to BOTH the list and the miniatures; grouping by colour only happens under "museum".
+// Which group headers are folded shut. Kept across re-renders on purpose: the panel rebuilds every
+// time the map moves, and a fold that undid itself on every pan would be useless. Keyed by the
+// group's own key, so it survives changing the order too.
+const panelFolded = new Set();
 let panelSort = "museum";
 try { panelSort = localStorage.getItem("atlasPanelSort") || "museum"; } catch (e) { /* private mode */ }
 
@@ -1579,8 +1583,9 @@ function wireMuseumFocus(root) {
   new ResizeObserver(() => scheduleMuseumLayout(true)).observe(root);   // panel drag / window resize
 }
 
-function panelRowHTML(w) {
+function panelRowHTML(w, grpKey) {
   const i = panelVis.length; panelVis.push(w);
+  const fold = grpKey ? ` data-in="${esc(grpKey)}"${panelFolded.has(grpKey) ? " hidden" : ""}` : "";
   const p = w.p;
   const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
   const thumb = p.image
@@ -1588,7 +1593,7 @@ function panelRowHTML(w) {
     : `<span class="th ph"></span>`;
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
-  return `<li data-i="${i}">${thumb}<div>` +
+  return `<li data-i="${i}"${fold}>${thumb}<div>` +
     `<div class="wt">${esc(p.title || t("Untitled"))}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
     (venue ? `<div class="sub wvenue">${esc(venue)}${p.city ? ", " + esc(p.city) : ""}</div>` : "") +
@@ -1614,8 +1619,17 @@ function appendPanelChunk() {
     for (; panelCursor < end; panelCursor++) {
       const e = panelQueue[panelCursor];
       html += e.grp
-        ? `<li class="grp"${e.grp.key ? ` data-place="${esc(e.grp.key)}"` : ""}><span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span><span class="n">${e.grp.count}</span></li>`
-        : panelRowHTML(e.w);
+        ? (() => {
+            const folded = panelFolded.has(e.grp.key);
+            return `<li class="grp${folded ? " folded" : ""}" role="button" tabindex="0"` +
+              ` aria-expanded="${folded ? "false" : "true"}"` +
+              (e.grp.key ? ` data-place="${esc(e.grp.key)}" data-fold="${esc(e.grp.key)}"` : "") +
+              ` title="${esc(t("Fold or unfold this group"))}">` +
+              `<span class="grp-caret" aria-hidden="true">▾</span>` +
+              `<span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
+              `<span class="n">${e.grp.count}</span></li>`;
+          })()
+        : panelRowHTML(e.w, e.grpKey);
     }
   }
   ul.insertAdjacentHTML("beforeend", html);
@@ -1669,7 +1683,7 @@ function renderPanel() {
     panelQueue = [];                            // list: flat rows with a header bar per venue
     for (const g of ordered) {
       panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length, key: g.key } });
-      for (const w of g.items) panelQueue.push({ w });
+      for (const w of g.items) panelQueue.push({ w, grpKey: g.key });
     }
   } else {
     const flat = vis.slice().sort(panelSorter(panelSort));   // every work in one run, no venues
@@ -1684,7 +1698,7 @@ function renderPanel() {
       panelQueue = [];                          // the list gets the same bands, as header bars
       for (const g of runs) {
         panelQueue.push({ grp: { location: g.location, city: g.city, count: g.items.length, key: g.key } });
-        for (const w of g.items) panelQueue.push({ w });
+        for (const w of g.items) panelQueue.push({ w, grpKey: g.key });
       }
     } else {
       panelFlat = flat.map(w => ({ w }));
@@ -1736,7 +1750,22 @@ function revealMuseumInPanel(key) {
 }
 
 wireMuseumFocus(document.getElementById("worklist"));
+// Folding a group hides its rows in place — no re-render, so the scroll position does not jump and
+// the works that were already streamed stay streamed.
+function toggleFold(head) {
+  const key = head.dataset.fold;
+  if (!key) return;
+  const folded = !panelFolded.has(key);
+  folded ? panelFolded.add(key) : panelFolded.delete(key);
+  head.classList.toggle("folded", folded);
+  head.setAttribute("aria-expanded", folded ? "false" : "true");
+  document.getElementById("worklist")
+    .querySelectorAll(`li[data-in="${CSS.escape(key)}"]`).forEach(li => { li.hidden = folded; });
+}
+
 document.getElementById("worklist").addEventListener("click", e => {
+  const head = e.target.closest(".grp[data-fold]");
+  if (head) { toggleFold(head); return; }
   const sh = e.target.closest(".gshare");
   if (sh) { e.stopPropagation(); shareWork(panelVis[+sh.dataset.i].p); return; }   // 🔗 → share
   if (e.target.closest("img.th")) return;          // thumbnail → lightbox (handled below)
@@ -1744,6 +1773,10 @@ document.getElementById("worklist").addEventListener("click", e => {
   if (cell) { openWorkCard(panelVis[+cell.dataset.i]); return; }   // gallery caption → the work ficha
   const li = e.target.closest("li[data-i]");
   if (li) openWorkCard(panelVis[+li.dataset.i]);                   // list row → the work ficha too
+});
+document.getElementById("worklist").addEventListener("keydown", e => {
+  const head = e.target.closest && e.target.closest(".grp[data-fold]");
+  if (head && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleFold(head); }
 });
 
 // ── panel view: list vs gallery (thumbnail grid) + a size slider ──
@@ -1761,6 +1794,17 @@ document.getElementById("worklist").addEventListener("click", e => {
   };
   document.getElementById("pv-list").addEventListener("click", () => setMode("list"));
   document.getElementById("pv-grid").addEventListener("click", () => setMode("gallery"));
+  // With 23 museums in view, folding them all turns the panel into an index you can scan.
+  const foldAll = document.getElementById("pv-fold");
+  if (foldAll) foldAll.addEventListener("click", () => {
+    const heads = [...ul.querySelectorAll(".grp[data-fold]")];
+    const anyOpen = heads.some(h => !h.classList.contains("folded"));
+    // fold the ones that are open (or, if none is, unfold the ones that are shut)
+    heads.forEach(h => { if (h.classList.contains("folded") === !anyOpen) toggleFold(h); });
+    foldAll.textContent = anyOpen ? "⊞" : "⊟";
+    foldAll.title = anyOpen ? t("Unfold every group") : t("Fold every group");
+  });
+
   sortSel.value = panelSort;                      // the order survives a reload
   sortSel.addEventListener("change", e => {
     panelSort = e.target.value;

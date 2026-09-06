@@ -1128,3 +1128,16 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 /* the institution a building belongs to — Palazzo Corsini · Galleria Nazionale d'Arte Antica.
    Quieter than the building, because the building is where you actually go. */
 .wc-venueof { color: var(--muted); font-size: 12px; }
+
+/* ── folding a group in the side panel ───────────────────────────────────────────────────────────
+   With two dozen museums in view the panel is a wall; folded, it is an index. The caret turns, the
+   count stays visible (it is the useful part when the works are hidden), and the rows are hidden in
+   place rather than re-rendered, so the scroll position does not jump. */
+#worklist .grp[data-fold] { cursor: pointer; user-select: none; }
+#worklist .grp[data-fold]:hover { background: #f3ece0; }
+#worklist .grp .grp-caret { display: inline-block; width: 10px; margin-right: 5px; color: var(--muted);
+  transition: transform .12s ease; font-size: 10px; }
+#worklist .grp.folded .grp-caret { transform: rotate(-90deg); }
+#worklist .grp.folded { color: var(--muted); }
+#worklist .grp.folded .n { color: #8a7f6d; }
+.pvbtn.fold { font-size: 13px; padding: 4px 8px; }

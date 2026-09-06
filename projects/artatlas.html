@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.7.7">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.8.1">
 </head>
 <body>
   <nav id="navbar">
@@ -120,6 +120,7 @@
             <option value="title">🔤 by title</option>
           </select></label>
           <input id="thumb-size" type="range" min="72" max="240" value="112" title="Thumbnail size" hidden>
+          <button type="button" id="pv-fold" class="pvbtn fold" title="Fold every group">⊟</button>
           <button type="button" id="pv-list" class="pvbtn active" title="List view">☰ List</button>
           <button type="button" id="pv-grid" class="pvbtn" title="Thumbnails">▦ Miniature</button>
         </span>
@@ -296,7 +297,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.7.7"></script>
+  <script src="artatlas/app.js?v=1.8.1"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
