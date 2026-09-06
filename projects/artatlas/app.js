@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.7.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-06 12:20";   // update together with DATA_V — shown in the navbar
+const DATA_V = "1.7.7";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-06 21:58";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -399,8 +399,16 @@ const map = L.map("map", { zoomControl: true, worldCopyJump: true }).setView([43
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19, attribution: "© OpenStreetMap",
 }).addTo(map);
-requestAnimationFrame(() => map.invalidateSize());
+// Leaflet measures its container once and believes that number until told otherwise. Telling it
+// inside requestAnimationFrame is a trap: **rAF does not run in a background tab**, so an atlas
+// opened in a tab you are not looking at (a restored session, a ⌘-click) keeps whatever size the
+// container had before the layout settled — and shows a ridiculously small map when you switch to
+// it. A ResizeObserver on the element itself cannot miss: it fires whenever the box really changes,
+// foreground or not, on load, on resize, on the splitter being dragged.
+new ResizeObserver(() => map.invalidateSize()).observe(document.getElementById("map"));
+document.addEventListener("visibilitychange", () => { if (!document.hidden) map.invalidateSize(); });
 window.addEventListener("resize", () => map.invalidateSize());
+window.addEventListener("load", () => map.invalidateSize());
 
 // clustering: overlapping venues (e.g. all of Rome) merge at low zoom into one badge
 // showing the TOTAL number of works, and split apart as you zoom in.
@@ -1786,8 +1794,16 @@ document.getElementById("worklist").addEventListener("click", e => {
   const handle = document.getElementById("panel-resize");
   if (!handle) return;
   const MIN = 240, MAX = 1040, root = document.documentElement;   // wider panel cap → the map can shrink more
+  // A width chosen once, on one screen, must not be obeyed blindly on another: dragged wide on a
+  // big monitor and reopened on a laptop, the saved 1040px left the map a sliver. Clamp it to half
+  // of whatever window it is being applied in.
+  const fits = w => Math.max(MIN, Math.min(w, MAX, Math.round(window.innerWidth * 0.5)));
   const saved = parseInt(localStorage.getItem("atlasPanelW") || "", 10);
-  if (saved >= MIN && saved <= MAX) root.style.setProperty("--panel-w", saved + "px");
+  if (saved >= MIN) root.style.setProperty("--panel-w", fits(saved) + "px");
+  window.addEventListener("resize", () => {          // …and re-clamp when the window changes
+    const cur = parseInt(root.style.getPropertyValue("--panel-w"), 10);
+    if (cur && cur > window.innerWidth * 0.5) root.style.setProperty("--panel-w", fits(cur) + "px");
+  });
   let dragging = false, raf = 0;
   const onMove = e => {
     if (!dragging) return;
