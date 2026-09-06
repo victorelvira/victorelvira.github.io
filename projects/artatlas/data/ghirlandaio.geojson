@@ -253,7 +253,7 @@
     "city": "San Gimignano",
     "country": "Italy",
     "location": "Collegiate Church of San Gimignano",
-    "kind": "museum",
+    "kind": "church",
     "attribution": "attributed",
     "status": "present",
     "medium": "Fresco",
@@ -296,7 +296,7 @@
     "city": "Florence",
     "country": "Italy",
     "location": "Sassetti Chapel",
-    "kind": "museum",
+    "kind": "church",
     "attribution": "attributed",
     "status": "present",
     "genre": "religious art",
@@ -371,7 +371,7 @@
     "city": "Florence",
     "country": "Italy",
     "location": "Basilica of Santa Maria Novella",
-    "kind": "museum",
+    "kind": "church",
     "attribution": "attributed",
     "status": "present",
     "medium": "Fresco",
@@ -1525,7 +1525,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston"
+    "location_src": "Museum of Fine Arts Boston",
+    "kind": "museum"
    }
   },
   {
@@ -1565,7 +1566,8 @@
     },
     "museum_id": "alte-pinakothek",
     "location_src": "Alte Pinakothek",
-    "venue_of": "Bavarian State Painting Collections"
+    "venue_of": "Bavarian State Painting Collections",
+    "kind": "museum"
    }
   },
   {
@@ -1605,7 +1607,8 @@
     },
     "museum_id": "alte-pinakothek",
     "location_src": "Alte Pinakothek",
-    "venue_of": "Bavarian State Painting Collections"
+    "venue_of": "Bavarian State Painting Collections",
+    "kind": "museum"
    }
   },
   {
@@ -1644,7 +1647,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1683,7 +1687,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1722,7 +1727,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1761,7 +1767,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1790,7 +1797,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1819,7 +1827,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1848,7 +1857,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -1887,7 +1897,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -1926,7 +1937,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -1965,7 +1977,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "location_src": "Museum of Fine Arts, Budapest"
+    "location_src": "Museum of Fine Arts, Budapest",
+    "kind": "museum"
    }
   },
   {
@@ -2004,7 +2017,8 @@
      }
     },
     "museum_id": "lindenau-museum",
-    "location_src": "Lindenau museum"
+    "location_src": "Lindenau museum",
+    "kind": "museum"
    }
   },
   {
@@ -2043,7 +2057,8 @@
      }
     },
     "museum_id": "collegiate-church-of-san-gimignano",
-    "location_src": "Collegiate Church of San Gimignano"
+    "location_src": "Collegiate Church of San Gimignano",
+    "kind": "church"
    }
   },
   {
@@ -2080,7 +2095,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum"
    }
   },
   {
@@ -2117,7 +2133,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum"
    }
   },
   {
@@ -2156,7 +2173,8 @@
      }
     },
     "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
-    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens",
+    "kind": "museum"
    }
   },
   {
@@ -2195,7 +2213,8 @@
      }
     },
     "museum_id": "the-huntington-library-art-museum-and-botanical-gardens",
-    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens"
+    "location_src": "The Huntington Library, Art Museum, and Botanical Gardens",
+    "kind": "museum"
    }
   },
   {
@@ -2234,7 +2253,8 @@
      }
     },
     "museum_id": "clark-art-institute",
-    "location_src": "Clark Art Institute"
+    "location_src": "Clark Art Institute",
+    "kind": "museum"
    }
   },
   {
@@ -2273,7 +2293,8 @@
      }
     },
     "museum_id": "musee-fabre",
-    "location_src": "Musée Fabre"
+    "location_src": "Musée Fabre",
+    "kind": "museum"
    }
   },
   {
@@ -2312,7 +2333,8 @@
      }
     },
     "museum_id": "national-gallery-of-ireland",
-    "location_src": "National Gallery of Ireland"
+    "location_src": "National Gallery of Ireland",
+    "kind": "museum"
    }
   },
   {
@@ -2351,7 +2373,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -2390,7 +2413,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -2429,7 +2453,8 @@
      }
     },
     "museum_id": "harvard-art-museums",
-    "location_src": "Harvard Art Museums"
+    "location_src": "Harvard Art Museums",
+    "kind": "museum"
    }
   },
   {
@@ -2468,7 +2493,8 @@
      }
     },
     "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin"
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum"
    }
   },
   {
@@ -2507,7 +2533,8 @@
      }
     },
     "museum_id": "cini-palace",
-    "location_src": "Cini Palace"
+    "location_src": "Cini Palace",
+    "kind": "museum"
    }
   },
   {
@@ -2546,7 +2573,8 @@
      }
     },
     "museum_id": "wawel-castle",
-    "location_src": "Wawel Castle"
+    "location_src": "Wawel Castle",
+    "kind": "museum"
    }
   },
   {
@@ -2575,7 +2603,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "kind": "museum"
    }
   },
   {
@@ -2604,7 +2633,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "kind": "museum"
    }
   },
   {
@@ -2643,7 +2673,8 @@
      }
     },
     "museum_id": "palazzo-vecchio",
-    "location_src": "Palazzo Vecchio"
+    "location_src": "Palazzo Vecchio",
+    "kind": "museum"
    }
   },
   {
@@ -2682,7 +2713,8 @@
      }
     },
     "museum_id": "sassetti-chapel",
-    "location_src": "Sassetti Chapel"
+    "location_src": "Sassetti Chapel",
+    "kind": "church"
    }
   },
   {
@@ -2721,7 +2753,8 @@
      }
     },
     "museum_id": "ashmolean-museum",
-    "location_src": "Ashmolean Museum"
+    "location_src": "Ashmolean Museum",
+    "kind": "museum"
    }
   },
   {
@@ -2750,7 +2783,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "bowes-museum",
-    "location_src": "Bowes Museum"
+    "location_src": "Bowes Museum",
+    "kind": "museum"
    }
   },
   {
@@ -2789,7 +2823,8 @@
      }
     },
     "museum_id": "basilica-of-the-holy-trinity",
-    "location_src": "Basilica of the Holy Trinity"
+    "location_src": "Basilica of the Holy Trinity",
+    "kind": "church"
    }
   },
   {
@@ -2828,7 +2863,8 @@
      }
     },
     "museum_id": "basilica-of-the-holy-trinity",
-    "location_src": "Basilica of the Holy Trinity"
+    "location_src": "Basilica of the Holy Trinity",
+    "kind": "church"
    }
   },
   {
@@ -2865,7 +2901,8 @@
      }
     },
     "museum_id": "pinacoteca-ambrosiana",
-    "location_src": "Pinacoteca Ambrosiana"
+    "location_src": "Pinacoteca Ambrosiana",
+    "kind": "museum"
    }
   },
   {
@@ -2904,7 +2941,8 @@
      }
     },
     "museum_id": "niedersachsisches-landesmuseum-fur-kunst-und-kulturgeschicht",
-    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte"
+    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte",
+    "kind": "museum"
    }
   },
   {
@@ -2943,7 +2981,8 @@
      }
     },
     "museum_id": "niedersachsisches-landesmuseum-fur-kunst-und-kulturgeschicht",
-    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte"
+    "location_src": "Niedersächsisches Landesmuseum für Kunst und Kulturgeschichte",
+    "kind": "museum"
    }
   },
   {
@@ -2980,7 +3019,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -3017,7 +3057,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -3054,7 +3095,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -3091,7 +3133,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -3128,7 +3171,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -3165,7 +3209,8 @@
      }
     },
     "museum_id": "tornabuoni-chapel",
-    "location_src": "Tornabuoni Chapel"
+    "location_src": "Tornabuoni Chapel",
+    "kind": "church"
    }
   },
   {
@@ -3194,7 +3239,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "musee-bonnat",
-    "location_src": "Musée Bonnat"
+    "location_src": "Musée Bonnat",
+    "kind": "museum"
    }
   },
   {
@@ -3233,7 +3279,8 @@
      }
     },
     "museum_id": "ognissanti-church",
-    "location_src": "Ognissanti Church"
+    "location_src": "Ognissanti Church",
+    "kind": "church"
    }
   },
   {
@@ -3272,7 +3319,8 @@
      }
     },
     "museum_id": "ognissanti-church",
-    "location_src": "Ognissanti Church"
+    "location_src": "Ognissanti Church",
+    "kind": "church"
    }
   },
   {
@@ -3309,7 +3357,8 @@
      }
     },
     "museum_id": "brighton-museum-art-gallery",
-    "location_src": "Brighton Museum & Art Gallery"
+    "location_src": "Brighton Museum & Art Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -3348,7 +3397,8 @@
      }
     },
     "museum_id": "church-of-st-andrew-in-san-donnino",
-    "location_src": "Church of St. Andrew in San Donnino"
+    "location_src": "Church of St. Andrew in San Donnino",
+    "kind": "church"
    }
   }
  ]

@@ -3233,7 +3233,7 @@
     "city": "Fiesole",
     "country": "Italy",
     "location": "convent of San Domenico",
-    "kind": "museum",
+    "kind": "church",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Panel",
@@ -3535,7 +3535,8 @@
      }
     },
     "museum_id": "gemaldegalerie-alte-meister",
-    "location_src": "Gemäldegalerie Alte Meister"
+    "location_src": "Gemäldegalerie Alte Meister",
+    "kind": "museum"
    }
   },
   {
@@ -3574,7 +3575,8 @@
      }
     },
     "museum_id": "oxford",
-    "location_src": "Oxford"
+    "location_src": "Oxford",
+    "kind": "church"
    }
   },
   {
@@ -3604,7 +3606,8 @@
     },
     "museum_id": "alte-pinakothek",
     "location_src": "Alte Pinakothek",
-    "venue_of": "Bavarian State Painting Collections"
+    "venue_of": "Bavarian State Painting Collections",
+    "kind": "museum"
    }
   },
   {
@@ -3644,7 +3647,8 @@
     },
     "museum_id": "alte-pinakothek",
     "location_src": "Alte Pinakothek",
-    "venue_of": "Bavarian State Painting Collections"
+    "venue_of": "Bavarian State Painting Collections",
+    "kind": "museum"
    }
   },
   {
@@ -3684,7 +3688,8 @@
     },
     "museum_id": "alte-pinakothek",
     "location_src": "Alte Pinakothek",
-    "venue_of": "Bavarian State Painting Collections"
+    "venue_of": "Bavarian State Painting Collections",
+    "kind": "museum"
    }
   },
   {
@@ -3723,7 +3728,8 @@
      }
     },
     "museum_id": "museo-del-prado",
-    "location_src": "Museo del Prado"
+    "location_src": "Museo del Prado",
+    "kind": "museum"
    }
   },
   {
@@ -3762,7 +3768,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -3801,7 +3808,8 @@
      }
     },
     "museum_id": "hampton-court-palace",
-    "location_src": "Hampton Court Palace"
+    "location_src": "Hampton Court Palace",
+    "kind": "museum"
    }
   },
   {
@@ -3840,7 +3848,8 @@
      }
     },
     "museum_id": "wadsworth-atheneum",
-    "location_src": "Wadsworth Atheneum"
+    "location_src": "Wadsworth Atheneum",
+    "kind": "museum"
    }
   },
   {
@@ -3879,7 +3888,8 @@
      }
     },
     "museum_id": "convent-of-san-domenico",
-    "location_src": "convent of San Domenico"
+    "location_src": "convent of San Domenico",
+    "kind": "church"
    }
   },
   {
@@ -3918,7 +3928,8 @@
      }
     },
     "museum_id": "pinacoteca-vaticana",
-    "location_src": "Pinacoteca Vaticana"
+    "location_src": "Pinacoteca Vaticana",
+    "kind": "museum"
    }
   },
   {
@@ -3957,7 +3968,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-budapest",
-    "location_src": "Museum of Fine Arts, Budapest"
+    "location_src": "Museum of Fine Arts, Budapest",
+    "kind": "museum"
    }
   },
   {
@@ -3996,7 +4008,8 @@
      }
     },
     "museum_id": "lindenau-museum",
-    "location_src": "Lindenau museum"
+    "location_src": "Lindenau museum",
+    "kind": "museum"
    }
   },
   {
@@ -4035,7 +4048,8 @@
      }
     },
     "museum_id": "lindenau-museum",
-    "location_src": "Lindenau museum"
+    "location_src": "Lindenau museum",
+    "kind": "museum"
    }
   },
   {
@@ -4064,7 +4078,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "museo-de-arte-de-indianapolis",
-    "location_src": "Museo de Arte de Indianápolis"
+    "location_src": "Museo de Arte de Indianápolis",
+    "kind": "museum"
    }
   },
   {
@@ -4103,7 +4118,8 @@
      }
     },
     "museum_id": "basilica-of-st-mark",
-    "location_src": "Basilica of St. Mark"
+    "location_src": "Basilica of St. Mark",
+    "kind": "church"
    }
   },
   {
@@ -4142,7 +4158,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum"
    }
   },
   {
@@ -4181,7 +4198,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum"
    }
   },
   {
@@ -4220,7 +4238,8 @@
      }
     },
     "museum_id": "musee-conde",
-    "location_src": "Musée Condé"
+    "location_src": "Musée Condé",
+    "kind": "museum"
    }
   },
   {
@@ -4259,7 +4278,8 @@
      }
     },
     "museum_id": "yale-university-art-gallery",
-    "location_src": "Yale University Art Gallery"
+    "location_src": "Yale University Art Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -4298,7 +4318,8 @@
      }
     },
     "museum_id": "yale-university-art-gallery",
-    "location_src": "Yale University Art Gallery"
+    "location_src": "Yale University Art Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -4337,7 +4358,8 @@
      }
     },
     "museum_id": "yale-university-art-gallery",
-    "location_src": "Yale University Art Gallery"
+    "location_src": "Yale University Art Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -4376,7 +4398,8 @@
      }
     },
     "museum_id": "kimbell-art-museum",
-    "location_src": "Kimbell Art Museum"
+    "location_src": "Kimbell Art Museum",
+    "kind": "museum"
    }
   },
   {
@@ -4415,7 +4438,8 @@
      }
     },
     "museum_id": "princeton-art-museum",
-    "location_src": "Princeton Art Museum"
+    "location_src": "Princeton Art Museum",
+    "kind": "museum"
    }
   },
   {
@@ -4454,7 +4478,8 @@
      }
     },
     "museum_id": "musee-des-beaux-arts-jules-cheret",
-    "location_src": "Musée des Beaux-Arts Jules Chéret"
+    "location_src": "Musée des Beaux-Arts Jules Chéret",
+    "kind": "museum"
    }
   },
   {
@@ -4493,7 +4518,8 @@
      }
     },
     "museum_id": "diocesan-museum-in-cortona",
-    "location_src": "Diocesan Museum in Cortona"
+    "location_src": "Diocesan Museum in Cortona",
+    "kind": "museum"
    }
   },
   {
@@ -4532,7 +4558,8 @@
      }
     },
     "museum_id": "harvard-art-museums",
-    "location_src": "Harvard Art Museums"
+    "location_src": "Harvard Art Museums",
+    "kind": "museum"
    }
   },
   {
@@ -4571,7 +4598,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4610,7 +4638,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4649,7 +4678,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4688,7 +4718,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4727,7 +4758,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4766,7 +4798,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4805,7 +4838,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4844,7 +4878,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4883,7 +4918,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4912,7 +4948,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4941,7 +4978,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -4980,7 +5018,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -5009,7 +5048,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -5048,7 +5088,8 @@
      }
     },
     "museum_id": "pinacoteca-vaticana",
-    "location_src": "Pinacoteca Vaticana"
+    "location_src": "Pinacoteca Vaticana",
+    "kind": "museum"
    }
   },
   {
@@ -5087,7 +5128,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -5126,7 +5168,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -5165,7 +5208,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -5204,7 +5248,8 @@
      }
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston"
+    "location_src": "Museum of Fine Arts Boston",
+    "kind": "museum"
    }
   },
   {
@@ -5243,7 +5288,8 @@
      }
     },
     "museum_id": "metropolitan-museum-of-art",
-    "location_src": "Metropolitan Museum of Art"
+    "location_src": "Metropolitan Museum of Art",
+    "kind": "museum"
    }
   },
   {
@@ -5282,7 +5328,8 @@
      }
     },
     "museum_id": "galeria-nacional-de-arte",
-    "location_src": "Galería Nacional de Arte"
+    "location_src": "Galería Nacional de Arte",
+    "kind": "museum"
    }
   },
   {
@@ -5321,7 +5368,8 @@
      }
     },
     "museum_id": "art-institute-of-chicago",
-    "location_src": "Art Institute of Chicago"
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum"
    }
   },
   {
@@ -5360,7 +5408,8 @@
      }
     },
     "museum_id": "philadelphia-museum-of-art",
-    "location_src": "Philadelphia Museum of Art"
+    "location_src": "Philadelphia Museum of Art",
+    "kind": "museum"
    }
   },
   {
@@ -5399,7 +5448,8 @@
      }
     },
     "museum_id": "philadelphia-museum-of-art",
-    "location_src": "Philadelphia Museum of Art"
+    "location_src": "Philadelphia Museum of Art",
+    "kind": "museum"
    }
   },
   {
@@ -5438,7 +5488,8 @@
      }
     },
     "museum_id": "museum-boijmans-van-beuningen",
-    "location_src": "Museum Boijmans Van Beuningen"
+    "location_src": "Museum Boijmans Van Beuningen",
+    "kind": "museum"
    }
   },
   {
@@ -5478,7 +5529,8 @@
     },
     "museum_id": "getty-center",
     "location_src": "Getty Center",
-    "venue_of": "J. Paul Getty Museum"
+    "venue_of": "J. Paul Getty Museum",
+    "kind": "museum"
    }
   },
   {
@@ -5518,7 +5570,8 @@
     },
     "museum_id": "getty-center",
     "location_src": "Getty Center",
-    "venue_of": "J. Paul Getty Museum"
+    "venue_of": "J. Paul Getty Museum",
+    "kind": "museum"
    }
   },
   {
@@ -5557,7 +5610,8 @@
      }
     },
     "museum_id": "strossmayer-gallery-of-old-masters",
-    "location_src": "Strossmayer Gallery of Old Masters"
+    "location_src": "Strossmayer Gallery of Old Masters",
+    "kind": "museum"
    }
   },
   {
@@ -5596,7 +5650,8 @@
      }
     },
     "museum_id": "fine-arts-museums-of-san-francisco",
-    "location_src": "Fine Arts Museums of San Francisco"
+    "location_src": "Fine Arts Museums of San Francisco",
+    "kind": "museum"
    }
   },
   {
@@ -5635,7 +5690,8 @@
      }
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
-    "location_src": "Royal Museum of Fine Arts Antwerp"
+    "location_src": "Royal Museum of Fine Arts Antwerp",
+    "kind": "museum"
    }
   },
   {
@@ -5674,7 +5730,8 @@
      }
     },
     "museum_id": "minneapolis-institute-of-art",
-    "location_src": "Minneapolis Institute of Art"
+    "location_src": "Minneapolis Institute of Art",
+    "kind": "museum"
    }
   },
   {
@@ -5713,7 +5770,8 @@
      }
     },
     "museum_id": "minneapolis-institute-of-art",
-    "location_src": "Minneapolis Institute of Art"
+    "location_src": "Minneapolis Institute of Art",
+    "kind": "museum"
    }
   },
   {
@@ -5752,7 +5810,8 @@
      }
     },
     "museum_id": "louvre",
-    "location_src": "Louvre"
+    "location_src": "Louvre",
+    "kind": "museum"
    }
   },
   {
@@ -5791,7 +5850,8 @@
      }
     },
     "museum_id": "louvre",
-    "location_src": "Louvre"
+    "location_src": "Louvre",
+    "kind": "museum"
    }
   },
   {
@@ -5820,7 +5880,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "ashmolean-museum",
-    "location_src": "Ashmolean Museum"
+    "location_src": "Ashmolean Museum",
+    "kind": "museum"
    }
   },
   {
@@ -5859,7 +5920,8 @@
      }
     },
     "museum_id": "parma-national-gallery",
-    "location_src": "Parma National Gallery"
+    "location_src": "Parma National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -5898,7 +5960,8 @@
      }
     },
     "museum_id": "pinacoteca-vaticana",
-    "location_src": "Pinacoteca Vaticana"
+    "location_src": "Pinacoteca Vaticana",
+    "kind": "museum"
    }
   },
   {
@@ -5937,7 +6000,8 @@
      }
     },
     "museum_id": "pinacoteca-vaticana",
-    "location_src": "Pinacoteca Vaticana"
+    "location_src": "Pinacoteca Vaticana",
+    "kind": "museum"
    }
   },
   {
@@ -5976,7 +6040,8 @@
      }
     },
     "museum_id": "lindenau-museum",
-    "location_src": "Lindenau museum"
+    "location_src": "Lindenau museum",
+    "kind": "museum"
    }
   },
   {
@@ -6015,7 +6080,8 @@
      }
     },
     "museum_id": "basilica-of-st-mark",
-    "location_src": "Basilica of St. Mark"
+    "location_src": "Basilica of St. Mark",
+    "kind": "church"
    }
   },
   {
@@ -6044,7 +6110,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum"
    }
   },
   {
@@ -6083,7 +6150,8 @@
      }
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum"
    }
   },
   {
@@ -6122,7 +6190,8 @@
      }
     },
     "museum_id": "galleria-sabauda",
-    "location_src": "Galleria Sabauda"
+    "location_src": "Galleria Sabauda",
+    "kind": "museum"
    }
   },
   {
@@ -6161,7 +6230,8 @@
      }
     },
     "museum_id": "princeton-art-museum",
-    "location_src": "Princeton Art Museum"
+    "location_src": "Princeton Art Museum",
+    "kind": "museum"
    }
   },
   {
@@ -6200,7 +6270,8 @@
      }
     },
     "museum_id": "diocesan-museum-in-cortona",
-    "location_src": "Diocesan Museum in Cortona"
+    "location_src": "Diocesan Museum in Cortona",
+    "kind": "museum"
    }
   },
   {
@@ -6229,7 +6300,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "firing-line-cardiff-castle-museum-of-the-welsh-soldier",
-    "location_src": "Firing Line: Cardiff Castle Museum of the Welsh Soldier"
+    "location_src": "Firing Line: Cardiff Castle Museum of the Welsh Soldier",
+    "kind": "museum"
    }
   },
   {
@@ -6258,7 +6330,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery"
+    "location_src": "Courtauld Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6287,7 +6360,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery"
+    "location_src": "Courtauld Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6316,7 +6390,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery"
+    "location_src": "Courtauld Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6355,7 +6430,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -6394,7 +6470,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -6433,7 +6510,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -6472,7 +6550,8 @@
      }
     },
     "museum_id": "museum-of-san-marco",
-    "location_src": "Museum of San Marco"
+    "location_src": "Museum of San Marco",
+    "kind": "museum"
    }
   },
   {
@@ -6501,7 +6580,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "museum-der-bildenden-kunste",
-    "location_src": "Museum der bildenden Künste"
+    "location_src": "Museum der bildenden Künste",
+    "kind": "museum"
    }
   },
   {
@@ -6540,7 +6620,8 @@
      }
     },
     "museum_id": "arp-museum-bahnhof-rolandseck-2",
-    "location_src": "Arp Museum Bahnhof Rolandseck"
+    "location_src": "Arp Museum Bahnhof Rolandseck",
+    "kind": "museum"
    }
   },
   {
@@ -6579,7 +6660,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6618,7 +6700,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6657,7 +6740,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6696,7 +6780,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   },
   {
@@ -6735,7 +6820,8 @@
      }
     },
     "museum_id": "national-gallery",
-    "location_src": "National Gallery"
+    "location_src": "National Gallery",
+    "kind": "museum"
    }
   }
  ]
