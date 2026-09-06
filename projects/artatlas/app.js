@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.8.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-06 22:21";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.8.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-06 23:47";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1510,21 +1510,31 @@ function fitMuseumLabels(root, all) {
 const EDGE_SIDES = ["t", "r", "b", "l"];
 function paintMuseumEdges(root) {
   if (!root || !root.clientWidth) return;
-  const cells = [...root.querySelectorAll(".gcell")];
+  // Read the rows off the real layout instead of counting columns. The grid stopped being uniform the
+  // moment folding arrived: a folded museum's tiles are display:none but still in the DOM, and its
+  // name strip spans the whole width — so index arithmetic (i % cols) drew every outline one museum
+  // out of step. Geometry cannot drift like that.
+  const cells = [...root.querySelectorAll(".gcell")].filter(c => c.offsetParent !== null);
   if (!cells.length) return;
-  const cols = Math.max(1, (getComputedStyle(root).gridTemplateColumns.match(/px/g) || []).length);
-  const mus = cells.map(c => c.dataset.mus || "");
-  const n = cells.length;
-  for (let i = 0; i < n; i++) {
-    const m = mus[i];
-    const code = (i - cols < 0 || mus[i - cols] !== m ? "t" : "") +
-                 ((i + 1) % cols === 0 || i + 1 >= n || mus[i + 1] !== m ? "r" : "") +
-                 (i + cols >= n || mus[i + cols] !== m ? "b" : "") +
-                 (i % cols === 0 || mus[i - 1] !== m ? "l" : "");
-    if (cells[i].dataset.edges === code) continue;            // unchanged → no DOM write
-    cells[i].dataset.edges = code;
-    EDGE_SIDES.forEach(sd => cells[i].classList.toggle("e-" + sd, code.includes(sd)));
+  const rows = [];
+  for (const c of cells) {
+    if (!rows.length || rows[rows.length - 1].top !== c.offsetTop) rows.push({ top: c.offsetTop, cells: [] });
+    rows[rows.length - 1].cells.push(c);
   }
+  const musOf = c => c.dataset.mus || "";
+  const overlaps = (a, b) => a.offsetLeft < b.offsetLeft + b.offsetWidth &&
+                             b.offsetLeft < a.offsetLeft + a.offsetWidth;
+  rows.forEach((row, ri) => row.cells.forEach((c, ci) => {
+    const m = musOf(c);
+    const above = r => !!r && r.cells.some(o => musOf(o) === m && overlaps(c, o));
+    const code = (above(rows[ri - 1]) ? "" : "t") +
+                 (ci + 1 < row.cells.length && musOf(row.cells[ci + 1]) === m ? "" : "r") +
+                 (above(rows[ri + 1]) ? "" : "b") +
+                 (ci > 0 && musOf(row.cells[ci - 1]) === m ? "" : "l");
+    if (c.dataset.edges === code) return;                     // unchanged → no DOM write
+    c.dataset.edges = code;
+    EDGE_SIDES.forEach(sd => c.classList.toggle("e-" + sd, code.includes(sd)));
+  }));
 }
 
 let _fitRAF = 0, _fitAll = false;
@@ -1625,7 +1635,7 @@ function appendPanelChunk() {
               ` aria-expanded="${folded ? "false" : "true"}"` +
               (e.grp.key ? ` data-place="${esc(e.grp.key)}" data-fold="${esc(e.grp.key)}"` : "") +
               ` title="${esc(t("Fold or unfold this group"))}">` +
-              `<span class="grp-caret" aria-hidden="true">▾</span>` +
+              `<span class="grp-caret" aria-hidden="true"></span>` +
               `<span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
               `<span class="n">${e.grp.count}</span></li>`;
           })()
@@ -1633,6 +1643,7 @@ function appendPanelChunk() {
     }
   }
   ul.insertAdjacentHTML("beforeend", html);
+  if (panelMode === "gallery") applyGalleryFolds();   // new tiles of an already-folded field
   scheduleMuseumLayout();                      // measure the museum names of the new tiles
   if (panelHasMore()) {                             // more to come → sentinel + observe
     ul.insertAdjacentHTML("beforeend", `<li class="sentinel" aria-hidden="true"></li>`);
@@ -1665,8 +1676,9 @@ function renderPanel() {
   const ordered = [...groups.values()].sort((a, z) =>
     (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
 
-  document.getElementById("panel-head").textContent =
-    `${vis.length} ${tu(vis.length === 1 ? "work" : "works")}${bounded ? " " + tu("in view") : ""}`;
+  document.getElementById("panel-head").innerHTML =
+    `<b>${vis.length}</b><span class="ph-tail"> ${esc(tu(vis.length === 1 ? "work" : "works"))}` +
+    `${bounded ? " " + esc(tu("in view")) : ""}</span>`;
 
   const ul = document.getElementById("worklist");
   panelVis = [];
@@ -1752,20 +1764,59 @@ function revealMuseumInPanel(key) {
 wireMuseumFocus(document.getElementById("worklist"));
 // Folding a group hides its rows in place — no re-render, so the scroll position does not jump and
 // the works that were already streamed stay streamed.
+// In the miniature view there is no header bar to click: the group's name lives in the coloured band
+// at the top of its first tile. So the band's label is the handle there — clicking it collapses the
+// whole colour field down to that strip, which is the same idea the list does with its header.
+function setFoldGallery(mus, folded, relayout = true) {
+  folded ? panelFolded.add("mus:" + mus) : panelFolded.delete("mus:" + mus);
+  applyGalleryFolds(mus);
+  if (relayout) scheduleMuseumLayout(true);   // the run changed shape: re-measure labels and edges
+}
+
+// Paint the folds onto whatever tiles are on screen. Called after a toggle, and again after every
+// streamed chunk — the panel renders in chunks, so a field folded before its later tiles arrived
+// would otherwise reappear open one scroll further down.
+function applyGalleryFolds(only) {
+  const ul = document.getElementById("worklist");
+  const sel = only == null ? ".gcell[data-mus]" : `.gcell[data-mus="${CSS.escape(only)}"]`;
+  const seen = new Set();
+  ul.querySelectorAll(sel).forEach(c => {
+    const folded = panelFolded.has("mus:" + c.dataset.mus);
+    const first = !seen.has(c.dataset.mus);
+    seen.add(c.dataset.mus);
+    c.classList.toggle("fold-head", folded && first);
+    c.classList.toggle("folded-away", folded && !first);
+  });
+}
+
+function toggleFoldGallery(label) {
+  const mus = label.parentElement.dataset.mus;
+  if (mus == null) return;
+  setFoldGallery(mus, !panelFolded.has("mus:" + mus));
+}
+
+function applyListFolds() {
+  const ul = document.getElementById("worklist");
+  ul.querySelectorAll(".grp[data-fold]").forEach(h => {
+    const folded = panelFolded.has(h.dataset.fold);
+    h.classList.toggle("folded", folded);
+    h.setAttribute("aria-expanded", folded ? "false" : "true");
+  });
+  ul.querySelectorAll("li[data-in]").forEach(li => { li.hidden = panelFolded.has(li.dataset.in); });
+}
+
 function toggleFold(head) {
   const key = head.dataset.fold;
   if (!key) return;
-  const folded = !panelFolded.has(key);
-  folded ? panelFolded.add(key) : panelFolded.delete(key);
-  head.classList.toggle("folded", folded);
-  head.setAttribute("aria-expanded", folded ? "false" : "true");
-  document.getElementById("worklist")
-    .querySelectorAll(`li[data-in="${CSS.escape(key)}"]`).forEach(li => { li.hidden = folded; });
+  panelFolded.has(key) ? panelFolded.delete(key) : panelFolded.add(key);
+  applyListFolds();
 }
 
 document.getElementById("worklist").addEventListener("click", e => {
   const head = e.target.closest(".grp[data-fold]");
   if (head) { toggleFold(head); return; }
+  const label = e.target.closest(".mlabel");
+  if (label) { e.stopPropagation(); toggleFoldGallery(label); return; }
   const sh = e.target.closest(".gshare");
   if (sh) { e.stopPropagation(); shareWork(panelVis[+sh.dataset.i].p); return; }   // 🔗 → share
   if (e.target.closest("img.th")) return;          // thumbnail → lightbox (handled below)
@@ -1797,10 +1848,17 @@ document.getElementById("worklist").addEventListener("keydown", e => {
   // With 23 museums in view, folding them all turns the panel into an index you can scan.
   const foldAll = document.getElementById("pv-fold");
   if (foldAll) foldAll.addEventListener("click", () => {
-    const heads = [...ul.querySelectorAll(".grp[data-fold]")];
-    const anyOpen = heads.some(h => !h.classList.contains("folded"));
-    // fold the ones that are open (or, if none is, unfold the ones that are shut)
-    heads.forEach(h => { if (h.classList.contains("folded") === !anyOpen) toggleFold(h); });
+    // Fold every group the *plan* has, not only the ones streamed so far — with 23 museums in view
+    // most are still below the scroll, and folding what you can see is not folding all.
+    const gallery = panelMode === "gallery";
+    const keys = gallery
+      ? [...new Set(panelFlat.map(it => it.grp && it.grp.mus).filter(k => k != null))]
+      : [...new Set(panelQueue.filter(e => e.grp && e.grp.key).map(e => e.grp.key))];
+    if (!keys.length) return;
+    const key = k => (gallery ? "mus:" + k : k);
+    const anyOpen = keys.some(k => !panelFolded.has(key(k)));   // fold the open; if none, unfold all
+    keys.forEach(k => { anyOpen ? panelFolded.add(key(k)) : panelFolded.delete(key(k)); });
+    if (gallery) { applyGalleryFolds(); scheduleMuseumLayout(true); } else applyListFolds();
     foldAll.textContent = anyOpen ? "⊞" : "⊟";
     foldAll.title = anyOpen ? t("Unfold every group") : t("Fold every group");
   });
@@ -2217,8 +2275,9 @@ function renderNearMe() {                        // owns the side panel while ne
   if (!state.near) return;
   const { lat, lon, radiusKm } = state.near;
   const within = nearVenues(lat, lon).filter(v => v.d <= radiusKm);
-  document.getElementById("panel-head").textContent =
-    `${within.length} place${within.length === 1 ? "" : "s"} within ${radiusKm} km`;
+  document.getElementById("panel-head").innerHTML =
+    `<b>${within.length}</b><span class="ph-tail"> ${esc(tu(within.length === 1 ? "place" : "places"))}` +
+    ` ${esc(t("within"))} ${radiusKm} km</span>`;
   const chips = NEAR_RADII.map(r =>
     `<button type="button" class="rchip${r === radiusKm ? " on" : ""}" data-r="${r}">${r}</button>`).join("");
   let html = `<li class="near-ctrl"><span class="near-lbl">Radius km</span>${chips}</li>`;

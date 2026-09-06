@@ -1141,3 +1141,68 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 #worklist .grp.folded { color: var(--muted); }
 #worklist .grp.folded .n { color: #8a7f6d; }
 .pvbtn.fold { font-size: 13px; padding: 4px 8px; }
+
+/* The caret is drawn, not typed: "▾" renders as anything from a triangle to a dot depending on the
+   font, and it read as a stray dot beside the museum name. A CSS triangle looks the same everywhere. */
+#worklist .grp .grp-caret { width: 0; height: 0; border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent; border-top: 5.5px solid var(--muted);
+  margin-right: 7px; margin-top: 1px; flex: 0 0 auto; }
+#worklist .grp.folded .grp-caret { transform: rotate(-90deg); }
+
+/* Folding in the miniature view: the colour field collapses to the band that carries its name.
+   The label is the handle there, so it needs to take clicks (it is pointer-events:none otherwise). */
+.gallery.grouped .mlabel { pointer-events: auto; cursor: pointer; }
+.gallery.grouped .mlabel:hover { text-decoration: underline; }
+.gallery.grouped .gcell.folded-away { display: none; }
+.gallery.grouped .gcell.fold-head { padding-bottom: 0; }
+.gallery.grouped .gcell.fold-head .gcard,
+.gallery.grouped .gcell.fold-head .gshare { display: none; }
+.gallery.grouped .gcell.fold-head .mlabel::after { content: " ▸"; opacity: .7; }
+
+/* The map is the point: two thirds of the width to it, one third to the panel. Was a flat 320px,
+   which on a wide screen left the list cramped and on a small one ate the map. */
+#panel { flex: 0 0 var(--panel-w, 33.333%); width: var(--panel-w, 33.333%); }
+
+/* ── the third time this exact trap has been sprung in this file ─────────────────────────────────
+   `li.hidden = true` sets the HTML attribute, whose effect is the user-agent's `[hidden]{display:none}`
+   — one of the weakest rules there is. `#worklist li:not(.grp):not(.empty):not(.gcell):not(.mset)`
+   carries an id and four :not() classes and wins on specificity, so every folded row stayed on
+   screen: the caret turned, the aria said "collapsed", and nothing moved. Same shape as the two
+   already annotated above (`#table[hidden]`, `.gallery[hidden]`), so it gets an explicit rule too. */
+#worklist li[hidden] { display: none !important; }
+
+/* ── the panel head, when the panel is narrow ────────────────────────────────────────────────────
+   The panel is draggable, so "narrow" is not a question about the viewport: at a third of a wide
+   screen this row is roomy, dragged in it is not, and a viewport media query cannot tell. The row
+   asks its own width instead. Without this the head wrapped one word per line — "7010 / obras / a /
+   la / vista" — beside buttons that never gave up a pixel. */
+#panel-top { container-type: inline-size; container-name: paneltop; }
+#panel-head { flex: 0 1 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* The count is the load-bearing half of the head, so it is the half that survives a squeeze: the
+   words after it go first, and the number itself goes whole or not at all. Ellipsising it turned
+   "3423 obras a la vista" into "3", which is not a shorter truth — it is a wrong number. */
+#panel-head b { font-weight: 700; font-variant-numeric: tabular-nums; }
+@container paneltop (max-width: 440px) {
+  #panel-view .pvbtn { font-size: 0; padding: 4px 7px; }   /* keep the icon, drop the word */
+  #panel-view .pvbtn::first-letter { font-size: 13px; }
+  #panel-view #thumb-size { width: 54px; }
+  #pv-sort { max-width: 116px; }
+}
+@container paneltop (max-width: 380px) {
+  #panel-head .ph-tail { display: none; }        /* the words go; the number stays whole */
+  #panel-head { flex: 0 0 auto; overflow: visible; }
+  #pv-sort { max-width: 92px; }
+  #panel-view #thumb-size { width: 44px; }
+}
+@container paneltop (max-width: 300px) { #panel-head { display: none; } }
+
+/* ── a folded group is an index entry, not a tile ────────────────────────────────────────────────
+   Folded, each museum kept its tile's width and the names came out as a grid of 126px stubs —
+   "Biblioteca Nacional de Fran…" four across. An index wants one name per line, all starting at the
+   same left edge, so the folded strip takes the full width of the panel and the names read as a
+   column you can run your eye down. (The outlines follow: paintMuseumEdges measures the real rows.) */
+.gallery.grouped .gcell.fold-head { grid-column: 1 / -1; }
+.gallery.grouped .gcell.fold-head .mlabel {
+  font-size: 10.5px; letter-spacing: .02em; color: #4a3f2d; top: 4px;
+}
+.gallery.grouped .gcell.fold-head { padding-top: 20px; }
