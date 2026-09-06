@@ -95,8 +95,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.25,
-     55.86111
+     -4.28861,
+     55.87194
     ]
    },
    "properties": {
@@ -105,7 +105,7 @@
     "year": "1635",
     "city": "Glasgow City",
     "country": "United Kingdom",
-    "location": "Glasgow",
+    "location": "Hunterian Museum and Art Gallery",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -128,7 +128,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "glasgow",
+    "museum_id": "hunterian-museum-and-art-gallery",
     "qid": "Q105582409",
     "location_src": "Glasgow"
    }
@@ -2052,7 +2052,8 @@
     },
     "museum_id": "glasgow-museums-resource-centre",
     "qid": "Q119801264",
-    "location_src": "Glasgow Museums Resource Centre"
+    "location_src": "Glasgow Museums Resource Centre",
+    "venue_of": "Glasgow Museums"
    }
   },
   {
@@ -2706,9 +2707,10 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini-2",
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "qid": "Q124478748",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -2808,7 +2810,10 @@
     },
     "museum_id": "palazzo-bianco",
     "qid": "Q125775011",
-    "location_src": "Palazzo Bianco"
+    "location_src": "Palazzo Bianco",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jusepe_de_Ribera_%28and_collaborator%29_-_Saint_Francis_receives_the_Seven_Privileges_from_the_Angel_-_Google_Art_Project.jpg",
+    "_image_src": "commons category Category:Saint Francis receives the Seven Privileges from the Angel by José de Ribera",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -5069,7 +5074,8 @@
     },
     "museum_id": "getty-center",
     "qid": "Q20179460",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -7957,7 +7963,7 @@
     "title": "The Astrologer",
     "year": "1630",
     "country": "United Kingdom",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -7980,10 +7986,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "royal-collection",
+    "museum_id": "buckingham-palace",
     "qid": "Q28031511",
     "city": "England",
-    "location_src": "Royal Collection"
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -8356,7 +8363,8 @@
       "url": "https://www.wikidata.org/wiki/Q29899680"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8406,7 +8414,8 @@
       "url": "https://www.wikidata.org/wiki/Q29917306"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8488,7 +8497,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q29939496",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8530,7 +8540,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q30058426",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8572,7 +8583,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q30093952",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8672,7 +8684,8 @@
       "url": "https://www.wikidata.org/wiki/Q30097186"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {

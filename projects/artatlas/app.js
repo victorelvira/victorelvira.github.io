@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.6.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-05 14:20";   // update together with DATA_V — shown in the navbar
+const DATA_V = "1.7.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-06 04:15";   // update together with DATA_V — shown in the navbar
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -507,7 +507,9 @@ function loadMuseumNames() {
 }
 function matchesQ(p) {
   if (!state.q) return true;
-  if ([p.painter, p.title, p.location, p.city, p.country, p.year, p.medium]
+  // `venue_of` is the institution a building belongs to: typing "Royal Collection" has to find both
+  // Buckingham and Windsor, and "Bavarian State Painting Collections" all four Pinakotheken
+  if ([p.painter, p.title, p.location, p.city, p.country, p.year, p.medium, p.venue_of]
       .some(v => deacc(v).includes(state.q))) return true;
   const other = p.museum_id && musI18nSearch.get(p.museum_id);   // the museum in another language
   return !!other && other.includes(state.q);
@@ -2003,7 +2005,9 @@ function openWorkCard(w) {
     `<div class="wc-imgwrap">${img}</div>` +
     `<div class="wc-info"><h3 class="wc-title">${esc(p.title || "Untitled")}</h3>` +
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
-    row(t("Where"), esc(venue) + (p.placeless ? ` <span class="wc-noplace">${t("not on the map — no public address")}</span>` : "")) +
+    row(t("Where"), esc(venue)
+      + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")
+      + (p.placeless ? ` <span class="wc-noplace">${t("not on the map — no public address")}</span>` : "")) +
     row(t("Technique"), esc(p.medium || "")) + row(t("Size"), esc(p.dimensions || "")) + row(t("Attribution"), attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
     `<div class="wc-actions"><button type="button" class="wc-share">${t("🔗 Share")}</button>` +

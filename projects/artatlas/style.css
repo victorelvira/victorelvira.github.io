@@ -1124,3 +1124,7 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
   /* the title's line ends with the two letters, hard right */
   #bar .langsel { margin-left: auto; }
 }
+
+/* the institution a building belongs to — Palazzo Corsini · Galleria Nazionale d'Arte Antica.
+   Quieter than the building, because the building is where you actually go. */
+.wc-venueof { color: var(--muted); font-size: 12px; }

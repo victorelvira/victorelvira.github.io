@@ -103,7 +103,7 @@
     "year": "c. 1493",
     "city": "Karlsruhe",
     "country": "Germany",
-    "location": "Staatliche Kunsthalle",
+    "location": "Staatliche Kunsthalle Karlsruhe",
     "attribution": "generally accepted",
     "medium": "Oil, tempera and gilding on panel (pinewood)",
     "dimensions": "30 × 19 cm",
@@ -116,7 +116,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunsthalle",
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
     "location_src": "Staatliche Kunsthalle"
    }
   },
@@ -668,7 +668,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -857,7 +858,8 @@
     "qid": "Q2546309",
     "wikidata": "https://www.wikidata.org/wiki/Q2546309",
     "wga_url": "https://www.wga.hu/html/d/durer/1/03/1self28.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -928,7 +930,8 @@
     "qid": "Q571122",
     "wikidata": "https://www.wikidata.org/wiki/Q571122",
     "wga_url": "https://www.wga.hu/html/d/durer/1/03/3paumg.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -972,7 +975,8 @@
       "url": "https://www.wikidata.org/wiki/Q3685113"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1078,7 +1082,8 @@
     "qid": "Q3428032",
     "wikidata": "https://www.wikidata.org/wiki/Q3428032",
     "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1154,8 +1159,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1164,7 +1169,7 @@
     "year": "c. 1504",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "43 × 29 cm",
@@ -1177,7 +1182,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -1425,7 +1430,8 @@
       "note": "matched to Q3937701 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Palazzo Rosso"
+    "location_src": "Palazzo Rosso",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -1935,7 +1941,8 @@
       "url": "https://www.wikidata.org/wiki/Q3842613"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2085,7 +2092,8 @@
     "qid": "Q3976746",
     "wikidata": "https://www.wikidata.org/wiki/Q3976746",
     "wga_url": "https://www.wga.hu/html/d/durer/1/09/1lucrezi.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2737,7 +2745,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q829270",
     "wikidata": "https://www.wikidata.org/wiki/Q829270",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2895,7 +2904,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3122,7 +3132,7 @@
     "painter": "Albrecht Dürer",
     "title": "Burkard von Speyer",
     "year": "1506",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3150,8 +3160,9 @@
       "title": "Portrait of Burkard von Speyer"
      }
     ],
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -4193,7 +4204,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4222,7 +4234,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4251,7 +4264,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4280,7 +4294,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4656,7 +4671,8 @@
      }
     },
     "museum_id": "glasgow-museums-resource-centre",
-    "location_src": "Glasgow Museums Resource Centre"
+    "location_src": "Glasgow Museums Resource Centre",
+    "venue_of": "Glasgow Museums"
    }
   },
   {

@@ -3557,7 +3557,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q16674796",
     "wga_url": "https://www.wga.hu/html/z/zurbaran/2/sfrancis.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5403,7 +5404,7 @@
     "title": "St Ignatius Loyola",
     "year": "1642",
     "country": "United Kingdom",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -5426,10 +5427,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "royal-collection",
+    "museum_id": "buckingham-palace",
     "qid": "Q28017378",
     "city": "England",
-    "location_src": "Royal Collection"
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {

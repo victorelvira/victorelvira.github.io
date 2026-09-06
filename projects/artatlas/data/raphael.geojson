@@ -818,7 +818,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2284,7 +2285,8 @@
       "url": "https://www.wikidata.org/wiki/Q2713671"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2715,7 +2717,8 @@
       "url": "https://www.wikidata.org/wiki/Q2535486"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2767,8 +2770,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -2777,7 +2780,7 @@
     "year": "1508",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "Tempera and oil on panel 28,5 × 21,5",
     "dimensions": "Tempera and oil on panel 28,5 × 21,5",
@@ -2791,7 +2794,7 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q2283808",
     "wikidata": "https://www.wikidata.org/wiki/Q2283808",
     "wga_url": "https://www.wga.hu/html/r/raphael/2firenze/2/42ester1.html",
@@ -3844,7 +3847,8 @@
     "qid": "Q2269330",
     "wikidata": "https://www.wikidata.org/wiki/Q2269330",
     "wga_url": "https://www.wga.hu/html/r/raphael/5roma/2/08tenda.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8746,7 +8750,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "glasgow-museums-resource-centre",
-    "location_src": "Glasgow Museums Resource Centre"
+    "location_src": "Glasgow Museums Resource Centre",
+    "venue_of": "Glasgow Museums"
    }
   },
   {

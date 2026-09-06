@@ -659,7 +659,8 @@
      }
     ],
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -676,7 +677,7 @@
     "title": "Adoration of the Magi in the Snow",
     "year": "1563",
     "city": "Winterthur",
-    "location": "Oskar Reinhart Collection 'Am Römerholz'",
+    "location": "Am Römerholz",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "35 × 55 cm",
@@ -690,7 +691,7 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "oskar-reinhart-collection-am-romerholz",
+    "museum_id": "am-romerholz",
     "qid": "Q1211030",
     "wikidata": "https://www.wikidata.org/wiki/Q1211030",
     "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/08/08snow.html",
@@ -1136,8 +1137,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1146,7 +1147,7 @@
     "year": "1566",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "95 × 160.5 cm",
@@ -1159,7 +1160,7 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q257048",
     "wikidata": "https://www.wikidata.org/wiki/Q257048",
     "_overrides": {
@@ -1241,7 +1242,8 @@
     "qid": "Q556553",
     "wikidata": "https://www.wikidata.org/wiki/Q556553",
     "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/10/20cockai.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1612,8 +1614,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -1621,7 +1623,7 @@
     "title": "The Massacre of the Innocents",
     "year": "1566",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pieter%20Bruegel%20the%20Elder%20-%20Massacre%20of%20the%20Innocents%20-%20Google%20Art%20Project.jpg?width=500",
@@ -1650,7 +1652,8 @@
      }
     ],
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {

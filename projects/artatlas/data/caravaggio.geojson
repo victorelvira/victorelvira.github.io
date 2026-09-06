@@ -1031,15 +1031,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.24922,
-     43.77078
+     12.46659,
+     41.89333
     ]
    },
    "properties": {
     "painter": "Caravaggio",
     "title": "Portrait of Maffeo Barberini (Pope Urban VIII)",
     "year": "1593",
-    "city": "Florence",
+    "city": "Rome",
     "country": "Italy",
     "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "kind": "museum",
@@ -1070,7 +1070,8 @@
     },
     "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "qid": "Q16596970",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -1920,7 +1921,8 @@
     "museum_id": "palazzo-bianco",
     "qid": "Q2325834",
     "wga_url": "https://www.wga.hu/html/c/caravagg/08/46ecceho.html",
-    "location_src": "Palazzo Bianco"
+    "location_src": "Palazzo Bianco",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -3573,10 +3575,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini-2",
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "qid": "Q3463869",
     "wga_url": "https://www.wga.hu/html/c/caravagg/07/40baptis.html",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {

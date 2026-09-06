@@ -150,15 +150,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.24922,
-     43.77078
+     12.46659,
+     41.89333
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Triumph of a poet or Triumph of Ovid",
     "year": "1624–1625 c.",
-    "city": "Florence",
+    "city": "Rome",
     "country": "Italy",
     "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "attribution": "generally accepted",
@@ -181,7 +181,8 @@
       "url": "https://www.wikidata.org/wiki/Q114029163"
      }
     ],
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -674,8 +675,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -683,8 +684,8 @@
     "title": "Landscape with nymph and satyr or Amor Omnia Vincit",
     "year": "1625–1627 c.",
     "city": "São Paulo",
-    "country": "United States",
-    "location": "Museum of Art",
+    "country": "Brazil",
+    "location": "São Paulo Museum of Art",
     "attribution": "rejected",
     "dimensions": "97 x 127,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Nymphs_and_a_Satyr_%28Amor_Vincit_Omnia%29_-_Nicolas_Poussin_-_Cleveland_MofA.jpg/500px-Nymphs_and_a_Satyr_%28Amor_Vincit_Omnia%29_-_Nicolas_Poussin_-_Cleveland_MofA.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -696,7 +697,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
+    "museum_id": "sao-paulo-museum-of-art",
     "location_src": "Museum of Art"
    }
   },
@@ -929,7 +930,8 @@
       "url": "https://www.wikidata.org/wiki/Q28801553"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1052,7 +1054,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1060,8 +1063,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.54111,
-     47.37444
+     8.54806,
+     47.37028
     ]
    },
    "properties": {
@@ -1069,7 +1072,7 @@
     "title": "Venus surprised by satyrs",
     "year": "1626",
     "city": "Zurich",
-    "location": "Kunsthaus",
+    "location": "Kunsthaus Zürich",
     "attribution": "rejected",
     "dimensions": "77 x 100 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Poussin%2C_Nicolas_-_Schlafende_Venus%2C_von_Satyr_%C3%BCberrascht_-_1626.jpg/500px-Poussin%2C_Nicolas_-_Schlafende_Venus%2C_von_Satyr_%C3%BCberrascht_-_1626.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1081,8 +1084,9 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthaus",
-    "location_src": "Kunsthaus"
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus",
+    "country": "Switzerland"
    }
   },
   {
@@ -1843,8 +1847,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.04583,
-     42.33167
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -1852,7 +1856,7 @@
     "title": "The Death of Germanicus",
     "year": "1628",
     "city": "Detroit",
-    "location": "Institute of Arts",
+    "location": "Detroit Institute of Arts",
     "attribution": "generally accepted",
     "dimensions": "146 x 195 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Germanicus_Death.jpg/500px-Germanicus_Death.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1865,7 +1869,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "institute-of-arts",
+    "museum_id": "detroit-institute-of-arts",
     "country": "United States",
     "qid": "Q20890835",
     "wikidata": "https://www.wikidata.org/wiki/Q20890835",
@@ -2058,7 +2062,8 @@
     "qid": "Q10901792",
     "wikidata": "https://www.wikidata.org/wiki/Q10901792",
     "wga_url": "https://www.wga.hu/html/p/poussin/1/08midas1.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2066,8 +2071,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.04583,
-     42.33167
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -2076,7 +2081,7 @@
     "year": "1628–1630 (vers)",
     "city": "Detroit",
     "country": "United States",
-    "location": "Institute of Arts",
+    "location": "Detroit Institute of Arts",
     "attribution": "generally accepted",
     "dimensions": "122 x 169 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Diane_et_Endymion_1630_Detroit_Institute_of_Art.jpg/500px-Diane_et_Endymion_1630_Detroit_Institute_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2088,7 +2093,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "institute-of-arts",
+    "museum_id": "detroit-institute-of-arts",
     "location_src": "Institute of Arts"
    }
   },
@@ -2097,8 +2102,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -2107,7 +2112,7 @@
     "year": "1628–1630 c.",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "155 x 213 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nicolas_Poussin_mars_and_venera.jpg/500px-Nicolas_Poussin_mars_and_venera.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2119,7 +2124,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20552745",
     "wikidata": "https://www.wikidata.org/wiki/Q20552745",
     "_overrides": {
@@ -2212,7 +2217,7 @@
     "year": "1629–1630",
     "city": "Karlsruhe",
     "country": "Germany",
-    "location": "Staatliche Kunsthalle",
+    "location": "Staatliche Kunsthalle Karlsruhe",
     "attribution": "generally accepted",
     "dimensions": "101 x 75,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Sainte_Famille_avec_st_Jean_Baptiste_-_Poussin_-_Karlsruhe.jpg/500px-Sainte_Famille_avec_st_Jean_Baptiste_-_Poussin_-_Karlsruhe.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2224,7 +2229,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunsthalle",
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
     "wga_url": "https://www.wga.hu/html/p/poussin/1/10holyfa.html",
     "location_src": "Staatliche Kunsthalle"
    }
@@ -2234,8 +2239,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -2243,7 +2248,7 @@
     "title": "Moses sweetening the bitter waters of Marah",
     "year": "1629–1630 (vers)",
     "city": "São Paulo",
-    "location": "Museum of Art",
+    "location": "São Paulo Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "152 x 210 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Mo%C3%AFse_adoucissant_les_eaux_de_Marah_-_Poussin_-_BaltimoreMA.jpg/500px-Mo%C3%AFse_adoucissant_les_eaux_de_Marah_-_Poussin_-_BaltimoreMA.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2255,8 +2260,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
-    "country": "United States",
+    "museum_id": "sao-paulo-museum-of-art",
+    "country": "Brazil",
     "qid": "Q71328906",
     "wikidata": "https://www.wikidata.org/wiki/Q71328906",
     "_overrides": {
@@ -2400,7 +2405,7 @@
     "title": "The Rest on the Flight into Egypt",
     "year": "1630 c.",
     "city": "Winterthur",
-    "location": "Oskar Reinhart Collection 'Am Römerholz'",
+    "location": "Am Römerholz",
     "attribution": "generally accepted",
     "dimensions": "88 x 67 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Le_Repos_pendant_la_fuite_en_%C3%89gypte_-_Poussin_-_Winterthur.jpg/500px-Le_Repos_pendant_la_fuite_en_%C3%89gypte_-_Poussin_-_Winterthur.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2412,7 +2417,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "oskar-reinhart-collection-am-romerholz",
+    "museum_id": "am-romerholz",
     "qid": "Q19911624",
     "wikidata": "https://www.wikidata.org/wiki/Q19911624",
     "_overrides": {
@@ -2822,8 +2827,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -2831,8 +2836,8 @@
     "title": "The Return from Egypt",
     "year": "1632–1633",
     "city": "São Paulo",
-    "country": "United States",
-    "location": "Museum of Art",
+    "country": "Brazil",
+    "location": "São Paulo Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "134 x 99 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Le_Retour_d%27Egypte_-_Poussin_-_Cleveland_MuseumofArt.jpg/500px-Le_Retour_d%27Egypte_-_Poussin_-_Cleveland_MuseumofArt.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2844,7 +2849,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
+    "museum_id": "sao-paulo-museum-of-art",
     "location_src": "Museum of Art"
    }
   },
@@ -3059,7 +3064,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -3113,8 +3119,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -3122,7 +3128,7 @@
     "title": "Landscape with a man frightened by a snake",
     "year": "1633–1635 c.",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "65 x 76 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Poussin_-_Paysage_avec_un_homme_effray%C3%A9_par_un_serpent_-_MBA_Montr%C3%A9al.jpg/500px-Poussin_-_Paysage_avec_un_homme_effray%C3%A9_par_un_serpent_-_MBA_Montr%C3%A9al.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3134,7 +3140,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "qid": "Q18522881",
     "wikidata": "https://www.wikidata.org/wiki/Q18522881",
@@ -3511,8 +3517,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3520,7 +3526,7 @@
     "title": "Hymen disguised as a woman at a sacrifice to Priapus or Dance in honour of Priapus",
     "year": "1634–1638 c.",
     "city": "São Paulo",
-    "location": "Museum of Art",
+    "location": "São Paulo Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "167 x 376 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Poussin_-_hymenaeus01.jpg/500px-Poussin_-_hymenaeus01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3532,8 +3538,8 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
-    "country": "United States",
+    "museum_id": "sao-paulo-museum-of-art",
+    "country": "Brazil",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3661,8 +3667,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -3670,8 +3676,8 @@
     "title": "The Triumph of Neptune or The Birth of Venus (Richelieu Bacchanals I)",
     "year": "1635 or 1636",
     "city": "São Paulo",
-    "country": "United States",
-    "location": "Museum of Art",
+    "country": "Brazil",
+    "location": "São Paulo Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "97,2 × 108 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Nicolas_Poussin%2C_French_-_The_Birth_of_Venus_-_Google_Art_Project.jpg/500px-Nicolas_Poussin%2C_French_-_The_Birth_of_Venus_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3683,7 +3689,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
+    "museum_id": "sao-paulo-museum-of-art",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4834,8 +4840,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -83.04583,
-     42.33167
+     -83.06472,
+     42.35944
     ]
    },
    "properties": {
@@ -4844,7 +4850,7 @@
     "year": "1641–1642",
     "city": "Detroit",
     "country": "United States",
-    "location": "Institute of Arts",
+    "location": "Detroit Institute of Arts",
     "attribution": "generally accepted",
     "dimensions": "71 x 55,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Sainte_Famille_-_Poussin_-_DetroitIA.jpg/500px-Sainte_Famille_-_Poussin_-_DetroitIA.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4856,7 +4862,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "institute-of-arts",
+    "museum_id": "detroit-institute-of-arts",
     "qid": "Q50807979",
     "wikidata": "https://www.wikidata.org/wiki/Q50807979",
     "_overrides": {
@@ -5309,8 +5315,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -5318,8 +5324,8 @@
     "title": "Holy Family or Madonna on the stairs",
     "year": "1648",
     "city": "São Paulo",
-    "country": "United States",
-    "location": "Museum of Art",
+    "country": "Brazil",
+    "location": "São Paulo Museum of Art",
     "attribution": "copy",
     "dimensions": "118 x 197 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/The_Holy_Family_on_the_Steps.jpg/500px-The_Holy_Family_on_the_Steps.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5331,7 +5337,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
+    "museum_id": "sao-paulo-museum-of-art",
     "location_src": "Museum of Art"
    }
   },
@@ -5928,7 +5934,8 @@
      }
     ],
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -6076,7 +6083,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -6154,8 +6162,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -6164,7 +6172,7 @@
     "year": "1651–c. 1653",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "97,5 x 131,1 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Poussin_Achille_parmi_les_filles_de_Lycom%C3%A8de_Boston.jpg/500px-Poussin_Achille_parmi_les_filles_de_Lycom%C3%A8de_Boston.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6177,7 +6185,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q2235027",
     "wikidata": "https://www.wikidata.org/wiki/Q2235027",
     "location_src": "Museum of Fine Arts"
@@ -6698,8 +6706,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.63333,
-     -23.55
+     -46.65583,
+     -23.56111
     ]
    },
    "properties": {
@@ -6707,8 +6715,8 @@
     "title": "Saint John baptising Christ",
     "year": "1655–1657",
     "city": "São Paulo",
-    "country": "United States",
-    "location": "Museum of Art",
+    "country": "Brazil",
+    "location": "São Paulo Museum of Art",
     "attribution": "generally accepted",
     "dimensions": "92 x 129 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Saint_Jean_baptisant_le_Christ_-_Poussin_-_Philadelphie_Museum_of_Art.jpg/500px-Saint_Jean_baptisant_le_Christ_-_Poussin_-_Philadelphie_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6720,7 +6728,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-art",
+    "museum_id": "sao-paulo-museum-of-art",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6839,7 +6847,8 @@
     },
     "museum_id": "fogg-museum",
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -7782,7 +7791,7 @@
       "title": "The Rest on the Flight into Egypt"
      }
     ],
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -8225,8 +8234,9 @@
       "title": "Triumph of a poet or Triumph of Ovid"
      }
     ],
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini-2",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -9266,7 +9276,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -9305,7 +9316,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -11302,7 +11314,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -11431,7 +11444,8 @@
      }
     ],
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {

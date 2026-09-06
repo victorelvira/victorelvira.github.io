@@ -305,8 +305,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -315,7 +315,7 @@
     "year": "1863",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.18 Oil on wood",
     "dimensions": "61 × 91.5 cm",
@@ -328,7 +328,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538911",
     "wikidata": "https://www.wikidata.org/wiki/Q20538911",
     "_overrides": {
@@ -557,8 +557,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -567,7 +567,7 @@
     "year": "1864",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.33",
     "dimensions": "56 × 61 cm",
@@ -580,7 +580,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -1828,7 +1828,8 @@
       "url": "https://www.wikidata.org/wiki/Q70781190"
      }
     ],
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -3172,7 +3173,8 @@
       "note": "matched to Q70781202 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -3427,8 +3429,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -3437,7 +3439,7 @@
     "year": "1870",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.154",
     "dimensions": "54 × 66 cm",
@@ -3450,7 +3452,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5943,7 +5945,8 @@
       "url": "https://www.wikidata.org/wiki/Q106874627"
      }
     ],
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -5951,8 +5954,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5961,7 +5964,7 @@
     "year": "1873",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.259",
     "dimensions": "50 × 60 cm",
@@ -5974,7 +5977,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6094,7 +6097,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -6147,7 +6151,7 @@
     "year": "1873",
     "city": "Karlsruhe",
     "country": "Germany",
-    "location": "Staatliche Kunsthalle",
+    "location": "Staatliche Kunsthalle Karlsruhe",
     "attribution": "generally accepted",
     "medium": "W.268",
     "dimensions": "50.5 × 65.5 cm",
@@ -6160,7 +6164,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunsthalle",
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
     "location_src": "Staatliche Kunsthalle"
    }
   },
@@ -7164,8 +7168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -7173,7 +7177,7 @@
     "title": "The Windmill on the Onbekende Canal, Amsterdam",
     "year": "1874",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.302",
     "dimensions": "56 × 65 cm",
@@ -7186,7 +7190,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -7430,7 +7434,8 @@
       "url": "https://www.wikidata.org/wiki/Q30093031"
      }
     ],
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -8092,8 +8097,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -8102,7 +8107,7 @@
     "year": "1874",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.348",
     "dimensions": "57 × 74 cm",
@@ -8115,7 +8120,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538941",
     "wikidata": "https://www.wikidata.org/wiki/Q20538941",
     "_overrides": {
@@ -8298,8 +8303,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -8308,7 +8313,7 @@
     "year": "1875",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.357a",
     "dimensions": "66 × 81 cm",
@@ -8321,7 +8326,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -8692,7 +8697,8 @@
       "note": "matched to Q70781239 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -8772,8 +8778,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -8782,7 +8788,7 @@
     "year": "1875",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.378",
     "dimensions": "54.5 × 65.5 cm",
@@ -8795,7 +8801,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -8981,8 +8987,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -8991,7 +8997,7 @@
     "year": "1875",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.382",
     "dimensions": "55 × 66 cm",
@@ -9004,7 +9010,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538875",
     "wikidata": "https://www.wikidata.org/wiki/Q20538875",
     "_overrides": {
@@ -9022,8 +9028,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -9032,7 +9038,7 @@
     "year": "1875",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.387",
     "dimensions": "231.5 × 142 cm",
@@ -9045,7 +9051,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -9864,7 +9870,8 @@
       "note": "matched to Q49985258 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -10903,8 +10910,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -10913,7 +10920,7 @@
     "year": "1879",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "60 x 81",
     "dimensions": "60 x 81",
@@ -10926,7 +10933,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -11118,8 +11125,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -11128,7 +11135,7 @@
     "year": "1879",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "64.5 x 81",
     "dimensions": "64.5 x 81",
@@ -11141,7 +11148,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -11677,7 +11684,8 @@
       "url": "https://www.wikidata.org/wiki/Q106875235"
      }
     ],
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -12290,7 +12298,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "country": "Switzerland",
     "location_src": "Am Römerholz"
    }
@@ -13325,8 +13333,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -13335,7 +13343,7 @@
     "year": "1880",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "59 x 71",
     "dimensions": "59 x 71",
@@ -13348,7 +13356,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538887",
     "wikidata": "https://www.wikidata.org/wiki/Q20538887",
     "_overrides": {
@@ -14317,8 +14325,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -14327,7 +14335,7 @@
     "year": "1881",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "60 x 81",
     "dimensions": "60 x 81",
@@ -14340,7 +14348,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538898",
     "wikidata": "https://www.wikidata.org/wiki/Q20538898",
     "_overrides": {
@@ -14399,8 +14407,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -14409,7 +14417,7 @@
     "year": "1881",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "92 x 73",
     "dimensions": "92 x 73",
@@ -14422,7 +14430,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -15264,7 +15272,8 @@
       "note": "matched to Q70781259 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -15450,7 +15459,8 @@
       "url": "https://www.wikidata.org/wiki/Q70781263"
      }
     ],
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -15726,8 +15736,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -15736,7 +15746,7 @@
     "year": "1882",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.762",
     "dimensions": "60 x 81",
@@ -15749,7 +15759,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -16170,8 +16180,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -16180,7 +16190,7 @@
     "year": "1882",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.805",
     "dimensions": "61 x 88.3",
@@ -16193,7 +16203,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538904",
     "wikidata": "https://www.wikidata.org/wiki/Q20538904",
     "_overrides": {
@@ -16211,8 +16221,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.93361,
-     52.40833
+     16.9289,
+     52.40865
     ]
    },
    "properties": {
@@ -16220,7 +16230,7 @@
     "title": "Beach in Pourville",
     "year": "1882",
     "city": "Poznań",
-    "location": "National Museum",
+    "location": "National Museum in Poznań",
     "attribution": "generally accepted",
     "medium": "W.807",
     "dimensions": "60 x 73",
@@ -16233,7 +16243,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum",
+    "museum_id": "national-museum-in-poznan",
     "qid": "Q2070487",
     "wikidata": "https://www.wikidata.org/wiki/Q2070487",
     "_overrides": {
@@ -16243,7 +16253,8 @@
       "note": "matched to Q2070487 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "National Museum"
+    "location_src": "National Museum",
+    "country": "Poland"
    }
   },
   {
@@ -17696,8 +17707,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -17705,7 +17716,7 @@
     "title": "Orange Branch Bearing Fruit",
     "year": "1884",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.887",
     "dimensions": "53 x 38",
@@ -17718,7 +17729,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -17904,8 +17915,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -17914,7 +17925,7 @@
     "year": "1884",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.897",
     "dimensions": "68 x 84",
@@ -17927,7 +17938,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -18147,8 +18158,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -18156,7 +18167,7 @@
     "title": "Branch of Oranges",
     "year": "1882–85",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.924",
     "dimensions": "50.5 x 37",
@@ -18169,7 +18180,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -18284,8 +18295,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -18294,7 +18305,7 @@
     "year": "1885",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.995",
     "dimensions": "73.6 x 93.4",
@@ -18307,7 +18318,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538957",
     "wikidata": "https://www.wikidata.org/wiki/Q20538957",
     "_overrides": {
@@ -18397,8 +18408,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -18407,7 +18418,7 @@
     "year": "1885",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1000",
     "dimensions": "65 x 81",
@@ -18420,7 +18431,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538915",
     "wikidata": "https://www.wikidata.org/wiki/Q20538915",
     "_overrides": {
@@ -18938,8 +18949,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -18948,7 +18959,7 @@
     "year": "1885",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1029",
     "dimensions": "73 x 92",
@@ -18961,7 +18972,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q22205318",
     "wikidata": "https://www.wikidata.org/wiki/Q22205318",
     "_overrides": {
@@ -19847,8 +19858,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -19857,7 +19868,7 @@
     "year": "1886",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1083",
     "dimensions": "92 x 81",
@@ -19870,7 +19881,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -20233,8 +20244,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -20242,7 +20253,7 @@
     "title": "Rocks at Belle-Ile",
     "year": "1886",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1107",
     "dimensions": "63 x 79",
@@ -20255,7 +20266,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -21138,8 +21149,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -21148,7 +21159,7 @@
     "year": "1888",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1158",
     "dimensions": "65 x 81",
@@ -21161,7 +21172,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538846",
     "wikidata": "https://www.wikidata.org/wiki/Q20538846",
     "_overrides": {
@@ -21179,8 +21190,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -21189,7 +21200,7 @@
     "year": "1888",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1163",
     "dimensions": "81 x 116",
@@ -21202,7 +21213,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts"
    }
   },
@@ -21211,8 +21222,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -21221,7 +21232,7 @@
     "year": "1888",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1163a",
     "dimensions": "60 x 81",
@@ -21234,7 +21245,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts"
    }
   },
@@ -21348,8 +21359,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -21358,7 +21369,7 @@
     "year": "1888",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1172",
     "dimensions": "65 x 81",
@@ -21371,7 +21382,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538857",
     "wikidata": "https://www.wikidata.org/wiki/Q20538857",
     "_overrides": {
@@ -21437,8 +21448,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -21447,7 +21458,7 @@
     "year": "1888",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1176",
     "dimensions": "65 x 81",
@@ -21460,7 +21471,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538862",
     "wikidata": "https://www.wikidata.org/wiki/Q20538862",
     "_overrides": {
@@ -22036,8 +22047,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -22046,7 +22057,7 @@
     "year": "1889",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1219",
     "dimensions": "65 x 92",
@@ -22059,7 +22070,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538884",
     "wikidata": "https://www.wikidata.org/wiki/Q20538884",
     "_overrides": {
@@ -22077,8 +22088,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -22086,7 +22097,7 @@
     "title": "Ravine of the Creuse at the end of the Day",
     "year": "1889",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1220",
     "dimensions": "65 x 81",
@@ -22099,7 +22110,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -22109,8 +22120,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -22119,7 +22130,7 @@
     "year": "1889",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1221",
     "dimensions": "65 x 81",
@@ -22132,7 +22143,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538954",
     "wikidata": "https://www.wikidata.org/wiki/Q20538954",
     "_overrides": {
@@ -22271,8 +22282,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -22281,7 +22292,7 @@
     "year": "1889",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1230",
     "dimensions": "65 x 92",
@@ -22294,7 +22305,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538830",
     "wikidata": "https://www.wikidata.org/wiki/Q20538830",
     "_overrides": {
@@ -22344,8 +22355,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -22354,7 +22365,7 @@
     "year": "1889",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1232",
     "dimensions": "73 x 92",
@@ -22367,7 +22378,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts"
    }
   },
@@ -22715,8 +22726,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -22725,7 +22736,7 @@
     "year": "1890",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1252",
     "dimensions": "60 x 100",
@@ -22738,7 +22749,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20538878",
     "wikidata": "https://www.wikidata.org/wiki/Q20538878",
     "_overrides": {
@@ -23356,8 +23367,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -23366,7 +23377,7 @@
     "year": "1890–91",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1280",
     "dimensions": "65 x 92",
@@ -23380,7 +23391,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
@@ -23606,8 +23617,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -23616,7 +23627,7 @@
     "year": "1891",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1289",
     "dimensions": "73 x 92",
@@ -23630,7 +23641,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
@@ -23692,8 +23703,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -23702,7 +23713,7 @@
     "year": "1891",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1296",
     "dimensions": "100 x 65",
@@ -23716,7 +23727,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "location_src": "Museum of Fine Arts"
@@ -23805,7 +23816,8 @@
       "url": "https://www.wikidata.org/wiki/Q25410258"
      }
     ],
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -24753,8 +24765,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -24763,7 +24775,7 @@
     "year": "1893",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1348",
     "dimensions": "106 x 74",
@@ -24777,7 +24789,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
@@ -24952,8 +24964,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -24962,7 +24974,7 @@
     "year": "1893",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1356",
     "dimensions": "100 x 65",
@@ -24976,7 +24988,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
@@ -25887,8 +25899,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -25897,7 +25909,7 @@
     "year": "1896",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1435",
     "dimensions": "73 x 92",
@@ -25910,7 +25922,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q3821170",
     "wikidata": "https://www.wikidata.org/wiki/Q3821170",
     "_overrides": {
@@ -26681,8 +26693,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -26691,7 +26703,7 @@
     "year": "1897",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1481",
     "dimensions": "81 x 92",
@@ -26704,7 +26716,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q19912384",
     "wikidata": "https://www.wikidata.org/wiki/Q19912384",
     "_overrides": {
@@ -27233,8 +27245,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -27243,7 +27255,7 @@
     "year": "1899–1901",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1526",
     "dimensions": "60 x 92",
@@ -27257,7 +27269,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Museum of Fine Arts"
@@ -27735,7 +27747,8 @@
       "url": "https://www.wikidata.org/wiki/Q70781289"
      }
     ],
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -29696,8 +29709,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -29706,7 +29719,7 @@
     "year": "1908",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1738",
     "dimensions": "73 x 92",
@@ -29720,7 +29733,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q19564337",
     "wikidata": "https://www.wikidata.org/wiki/Q19564337",
     "_merged": [
@@ -31738,8 +31751,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -31747,7 +31760,7 @@
     "title": "The Japanese Bridge",
     "year": "1918–24",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W.1925",
     "dimensions": "89 x 93",
@@ -31760,7 +31773,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -32823,7 +32836,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -33081,7 +33095,7 @@
     "painter": "Claude Monet",
     "title": "Study of rocks, Creuse",
     "year": "1889",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -33100,8 +33114,9 @@
       "ref": "https://en.wikipedia.org/wiki/Study_of_Rocks;_Creuse"
      }
     ],
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -34495,7 +34510,8 @@
      }
     ],
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -34540,7 +34556,8 @@
      }
     ],
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -34579,7 +34596,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -38927,7 +38945,8 @@
      }
     ],
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -42616,7 +42635,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },

@@ -524,7 +524,9 @@
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q131450089",
-    "location_src": "Pinacoteca Nazionale di Bologna"
+    "location_src": "Pinacoteca Nazionale di Bologna",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_%28o_Ludovico%3F%29_Carracci%2C_Arcangelo_Gabriele_%281588%29_01.jpg",
+    "_image_src": "commons category Category:Annunciation by Annibale Carracci (Pinacoteca Nazionale, Bologna)"
    }
   },
   {
@@ -554,7 +556,9 @@
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q131501612",
-    "location_src": "Pinacoteca Nazionale di Bologna"
+    "location_src": "Pinacoteca Nazionale di Bologna",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_Carracci%2C_Assunzione_Bonasoni%2C_Pinacoteca_di_Bologna.jpg",
+    "_image_src": "commons category Category:Assumption of the Virgin by Annibale Carracci (Pinacoteca Nazionale, Bologna)"
    }
   },
   {
@@ -584,7 +588,9 @@
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q131690503",
-    "location_src": "Pinacoteca Nazionale di Bologna"
+    "location_src": "Pinacoteca Nazionale di Bologna",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_Carracci_Pala_di_san_Giorgio.jpg",
+    "_image_src": "commons category Category:Madonna and Child Enthroned with Saints by Annibale Carracci (Pinacoteca Nazionale, Bologna)"
    }
   },
   {
@@ -699,7 +705,9 @@
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q132397751",
-    "location_src": "Pinacoteca Nazionale di Bologna"
+    "location_src": "Pinacoteca Nazionale di Bologna",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_Carracci%2C_San_Francesco_in_adorazione_del_Crocefisso%2C_1598_circa.jpg",
+    "_image_src": "commons category Category:Saint Francis in adoration of the Crucifix by Annibale Carracci (Pinacoteca Nazionale, Bologna)"
    }
   },
   {
@@ -728,7 +736,9 @@
     },
     "museum_id": "santa-caterina-dei-funari",
     "qid": "Q133281016",
-    "location_src": "Santa Caterina dei Funari"
+    "location_src": "Santa Caterina dei Funari",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_Carracci_-_St_Margaret_-_WGA04422.jpg",
+    "_image_src": "commons category Category:Saint Margaret of Antioch by Annibale Carracci (Santa Caterina dei Funari, Rome)"
    }
   },
   {
@@ -1233,15 +1243,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
     "painter": "Annibale Carracci",
     "title": "An Allegory of Truth and Time",
     "year": "1584",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "location": "Windsor Castle",
     "kind": "museum",
@@ -1270,7 +1280,8 @@
     },
     "museum_id": "windsor-castle",
     "qid": "Q18170299",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -3393,7 +3404,7 @@
     "title": "The Agony in the Garden of Gethsemane",
     "year": "1550",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Orazione%20nell%27orto.jpg?width=500",
@@ -3413,7 +3424,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -5103,8 +5115,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -5112,7 +5124,7 @@
     "title": "The Agony in the Garden",
     "year": "1596",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%28Bologna%201560-Rome%201609%29%20-%20The%20Agony%20in%20the%20Garden%20-%20RCIN%20402990%20-%20Royal%20Collection.jpg?width=500",
@@ -5134,7 +5146,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -5142,8 +5155,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -5151,7 +5164,7 @@
     "title": "Head of a Man in Profile",
     "year": "1591",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%28Bologna%201560-Rome%201609%29%20-%20Head%20of%20a%20Man%20in%20Profile%20-%20RCIN%20405471%20-%20Royal%20Collection.jpg?width=500",
@@ -5163,7 +5176,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -5260,7 +5274,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5289,7 +5304,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5328,7 +5344,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5357,7 +5374,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5386,7 +5404,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5415,7 +5434,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {

@@ -454,8 +454,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.3725,
-     48.2083
+     16.3651,
+     48.20125
     ]
    },
    "properties": {
@@ -464,7 +464,7 @@
     "year": "c. 1500–1505",
     "city": "Vienna",
     "country": "Austria",
-    "location": "Academy of Fine Arts",
+    "location": "Academy of Fine Arts Vienna",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "167.7 × 60 cm (left wing) 167 × 60 cm (right wing)",
@@ -478,7 +478,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "academy-of-fine-arts",
+    "museum_id": "academy-of-fine-arts-vienna",
     "qid": "Q1387483",
     "wikidata": "https://www.wikidata.org/wiki/Q1387483",
     "location_src": "Academy of Fine Arts"
@@ -944,8 +944,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -953,7 +953,7 @@
     "title": "Christ Carrying the Cross (Ghent)",
     "year": "c. 1530–1540",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "74 × 81 cm",
@@ -964,7 +964,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q680128",
     "wikidata": "https://www.wikidata.org/wiki/Q680128",
     "country": "United States",
@@ -1255,8 +1255,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1264,7 +1264,7 @@
     "title": "St. Jerome at Prayer",
     "year": "c. 1485–1495",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "77 × 59 cm",
@@ -1278,7 +1278,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q2566840",
     "wikidata": "https://www.wikidata.org/wiki/Q2566840",
     "wga_url": "https://www.wga.hu/html/b/bosch/5panels/09jerome.html",
@@ -1780,7 +1780,8 @@
       "note": "dated 1530, after death (1450–1516) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {

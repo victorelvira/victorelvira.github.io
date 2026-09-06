@@ -2633,8 +2633,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.93361,
-     52.40833
+     16.9289,
+     52.40865
     ]
    },
    "properties": {
@@ -2642,7 +2642,7 @@
     "title": "The Virgin and Child, St. John and an Angel",
     "year": "c. 1488",
     "city": "Poznań",
-    "location": "National Museum",
+    "location": "National Museum in Poznań",
     "attribution": "generally accepted",
     "medium": "Tempera on panel",
     "dimensions": "diameter 111–108 cm",
@@ -2655,8 +2655,9 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum",
-    "location_src": "National Museum"
+    "museum_id": "national-museum-in-poznan",
+    "location_src": "National Museum",
+    "country": "Poland"
    }
   },
   {
@@ -3146,7 +3147,8 @@
       "note": "matched to Q735326 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3291,7 +3293,8 @@
       "url": "https://www.wikidata.org/wiki/Q106860038"
      }
     ],
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -4070,7 +4073,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q3005527",
     "wga_url": "https://www.wga.hu/html/b/botticel/91late/09crucif.html",
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -4253,8 +4257,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4262,7 +4266,7 @@
     "title": "Adoration of the Christ Child",
     "year": "c. 1500",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "diameter 120.7 cm",
@@ -4275,7 +4279,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "qid": "Q28039505",
     "wikidata": "https://www.wikidata.org/wiki/Q28039505",

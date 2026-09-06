@@ -4348,8 +4348,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4357,7 +4357,7 @@
     "title": "1889 Study for Young Woman Powdering Herself",
     "year": "1889 Study for Young Woman Powdering Herself",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Georges_Seurat_-_Young_Woman_Powdering_Herself_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_Young_Woman_Powdering_Herself_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
     "notable": true,
@@ -4368,7 +4368,7 @@
      "source": "Wikipedia: List of paintings by Georges Seurat",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -5822,7 +5822,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -6589,7 +6590,8 @@
      }
     ],
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {

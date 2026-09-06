@@ -1320,7 +1320,8 @@
     "museum_id": "alte-pinakothek",
     "qid": "Q28795868",
     "wga_url": "https://www.wga.hu/html/c/claude/3/06hagar.html",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3548,8 +3549,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -3557,7 +3558,7 @@
     "title": "Harbour Scene at Sunset",
     "year": "1643",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20-%20Harbour%20Scene%20at%20Sunset%20-%20WGA04987.jpg?width=500",
@@ -3579,7 +3580,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -6088,7 +6090,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -6105,7 +6108,7 @@
     "title": "Coast scene with the Rape of Europa",
     "year": "1667",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Gell%C3%A9e%2C%20called%20%22Le%20Lorrain%22%20-%20Rape%20of%20Europa%20-%20Google%20Art%20Project.jpg?width=500",
@@ -6127,7 +6130,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -6144,7 +6148,7 @@
     "title": "A View of the Campagna from Tivoli",
     "year": "1645",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20%281604-5-82%29%20-%20A%20View%20of%20the%20Campagna%20from%20Tivoli%20-%20RCIN%20404688%20-%20Royal%20Collection.jpg?width=500",
@@ -6166,7 +6170,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -6478,7 +6483,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -6517,7 +6523,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -7576,7 +7583,7 @@
     "painter": "Claude Lorrain",
     "title": "Landscape with Cattle Crossing a Stream",
     "year": "1644",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7598,8 +7605,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {

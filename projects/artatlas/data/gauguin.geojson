@@ -418,7 +418,8 @@
       "note": "matched to Q19869138 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -1617,7 +1618,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "qid": "Q15877817",
     "wikidata": "https://www.wikidata.org/wiki/Q15877817",
     "_overrides": {
@@ -1720,8 +1721,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1730,7 +1731,7 @@
     "year": "1884",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W. 110/135 S. 16",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Paul_Gauguin_-_Sous-Bois.jpg/500px-Paul_Gauguin_-_Sous-Bois.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1742,7 +1743,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -1830,8 +1831,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1840,7 +1841,7 @@
     "year": "1884",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W. 121/106",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Paul_Gauguin_048.jpg/500px-Paul_Gauguin_048.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1852,7 +1853,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20554037",
     "wikidata": "https://www.wikidata.org/wiki/Q20554037",
     "_overrides": {
@@ -3151,7 +3152,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3625,7 +3627,8 @@
      }
     ],
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3664,8 +3667,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -3673,7 +3676,7 @@
     "title": "Still Life with Mangoes and a Hibiscus Flower",
     "year": "1888",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W. 238/256 S. 56",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Paul_Gauguin_-_Nature_morte_aux_mangos_et_%C3%A0_la_fleur_d%27hibiscus_%281887%29.jpg/500px-Paul_Gauguin_-_Nature_morte_aux_mangos_et_%C3%A0_la_fleur_d%27hibiscus_%281887%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3685,7 +3688,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "qid": "Q28035859",
     "wikidata": "https://www.wikidata.org/wiki/Q28035859",
@@ -6495,7 +6498,8 @@
      }
     },
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -7034,7 +7038,8 @@
      }
     },
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -8744,8 +8749,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -8753,7 +8758,7 @@
     "title": "Arearea II",
     "year": "1892",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W. 469",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Gauguin_Arearea_II.jpg/500px-Gauguin_Arearea_II.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -8765,7 +8770,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -9041,7 +9046,8 @@
     },
     "museum_id": "fogg-museum",
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -10350,7 +10356,8 @@
     "museum_id": "neue-pinakothek",
     "qid": "Q19984441",
     "wikidata": "https://www.wikidata.org/wiki/Q19984441",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -10546,7 +10553,8 @@
      }
     ],
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -10860,8 +10868,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -10870,7 +10878,7 @@
     "year": "1897 or 1898",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W. 561 S. 381",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Gauguin_-_Where_Do_We_Come_From%3F_What_Are_We%3F_Where_Are_We_Going%3F_%281897-98%29.jpg/500px-Gauguin_-_Where_Do_We_Come_From%3F_What_Are_We%3F_Where_Are_We_Going%3F_%281897-98%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -10883,7 +10891,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q890678",
     "wikidata": "https://www.wikidata.org/wiki/Q890678",
     "location_src": "Museum of Fine Arts"
@@ -12599,8 +12607,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -12609,7 +12617,7 @@
     "year": "1903",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "W. 636 S. 454",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gauguin_-_Femmes_et_cheval_blanc.jpg/500px-Gauguin_-_Femmes_et_cheval_blanc.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -12621,7 +12629,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20554136",
     "wikidata": "https://www.wikidata.org/wiki/Q20554136",
     "_overrides": {
@@ -12768,7 +12776,8 @@
      }
     ],
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -12942,7 +12951,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -13871,7 +13881,8 @@
      }
     ],
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {

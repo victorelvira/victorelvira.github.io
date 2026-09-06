@@ -640,7 +640,8 @@
      }
     ],
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -2197,7 +2198,8 @@
     },
     "museum_id": "tate-britain",
     "country": "United Kingdom",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -3486,15 +3488,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.25,
-     55.86111
+     -4.28861,
+     55.87194
     ]
    },
    "properties": {
     "painter": "Camille Pissarro",
     "title": "Foggy morning, Rouen",
     "year": "1896",
-    "location": "Glasgow",
+    "location": "Hunterian Museum and Art Gallery",
     "city": "Glasgow City",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -3516,7 +3518,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "glasgow",
+    "museum_id": "hunterian-museum-and-art-gallery",
     "location_src": "Glasgow"
    }
   },
@@ -3907,7 +3909,8 @@
      }
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4258,7 +4261,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -4297,7 +4301,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -4336,7 +4341,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -4654,7 +4660,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -16336,7 +16343,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -18481,7 +18488,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -21071,7 +21078,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -21110,7 +21118,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {

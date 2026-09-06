@@ -244,7 +244,8 @@
       "note": "matched to Q70629228 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -767,7 +768,7 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "country": "Switzerland",
     "location_src": "Am Römerholz"
    }
@@ -868,7 +869,8 @@
     "museum_id": "getty-center",
     "qid": "Q3823474",
     "wikidata": "https://www.wikidata.org/wiki/Q3823474",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -1583,7 +1585,7 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "country": "Switzerland",
@@ -1753,7 +1755,8 @@
      }
     ],
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -2844,8 +2847,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -2854,7 +2857,7 @@
     "year": "1882",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "66.4 cm × 81 cm (26.1 in × 31.9 in)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pierre-Auguste_Renoir_-_Rocky_Crags_at_L%27Estaque_-_Google_Art_Project.jpg/500px-Pierre-Auguste_Renoir_-_Rocky_Crags_at_L%27Estaque_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2866,7 +2869,7 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q20556247",
     "wikidata": "https://www.wikidata.org/wiki/Q20556247",
     "_overrides": {
@@ -2918,8 +2921,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -2928,7 +2931,7 @@
     "year": "1883",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "181.9 cm × 98.1 cm (71.6 in × 38.6 in)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Dance-At-Bougival.jpg/500px-Dance-At-Bougival.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2941,7 +2944,7 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q4451145",
     "wikidata": "https://www.wikidata.org/wiki/Q4451145",
     "_merged": [
@@ -3070,8 +3073,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -3080,7 +3083,7 @@
     "year": "1883",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "91.4 cm × 66.4 cm (36.0 in × 26.1 in)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Pierre-Auguste_Renoir_-_Children_on_the_Seashore%2C_Guernsey_-_Google_Art_Project.jpg/500px-Pierre-Auguste_Renoir_-_Children_on_the_Seashore%2C_Guernsey_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3093,7 +3096,7 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
@@ -4014,8 +4017,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4024,7 +4027,7 @@
     "year": "1903",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "65.5 cm × 155.5 cm (25.8 in × 61.2 in)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Reclining_Nude_%28Gabrielle%29_-_Auguste_Renoir.jpg/500px-Reclining_Nude_%28Gabrielle%29_-_Auguste_Renoir.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4036,7 +4039,7 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
       "source": "Wikidata",
@@ -8909,7 +8912,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -17393,7 +17397,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -17422,7 +17427,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -21220,7 +21226,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -21249,7 +21256,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -21288,7 +21296,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -21327,7 +21336,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -21366,7 +21376,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -23738,7 +23749,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -24038,7 +24049,8 @@
      }
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -24077,7 +24089,8 @@
      }
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -24116,7 +24129,8 @@
      }
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -24155,7 +24169,8 @@
      }
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -24194,7 +24209,8 @@
      }
     },
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -27199,7 +27215,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -27238,7 +27254,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -27267,7 +27283,7 @@
      "url": "https://www.wikidata.org/wiki/Q91932622",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -27306,7 +27322,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -27345,7 +27361,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -27384,7 +27400,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -27424,7 +27440,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -27463,7 +27480,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -31365,7 +31383,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "glasgow-museums-resource-centre",
-    "location_src": "Glasgow Museums Resource Centre"
+    "location_src": "Glasgow Museums Resource Centre",
+    "venue_of": "Glasgow Museums"
    }
   },
   {
@@ -32093,7 +32112,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -32132,7 +32151,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -32171,7 +32190,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },

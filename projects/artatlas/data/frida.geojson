@@ -253,8 +253,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -263,7 +263,7 @@
     "year": "1928",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "Oil on canvas, 69.5 x 53.3 cm",
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Dos_mujeres%2C_Frida_Kahlo%2C_1928.jpg/500px-Dos_mujeres%2C_Frida_Kahlo%2C_1928.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -272,7 +272,7 @@
      "source": "Wikipedia: List of paintings by Frida Kahlo",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts"
    }
   },
@@ -917,7 +917,9 @@
     "museum_id": "collection-of-michel-petitjean",
     "qid": "Q5941128",
     "wikidata": "https://www.wikidata.org/wiki/Q5941128",
-    "location_src": "Collection of Michel Petitjean"
+    "location_src": "Collection of Michel Petitjean",
+    "image": "https://upload.wikimedia.org/wikipedia/fa/2/25/Memory-or-the-Heart.jpg?utm_source=fa.wikipedia.org&utm_campaign=api&utm_content=original",
+    "_image_src": "fa.wikipedia lead image"
    }
   },
   {
@@ -1297,7 +1299,9 @@
     "qid": "Q2608280",
     "wikidata": "https://www.wikidata.org/wiki/Q2608280",
     "country": "United States",
-    "location_src": "Phoenix Art Museum"
+    "location_src": "Phoenix Art Museum",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Dorothy_Hale_1905%E2%80%931938.jpg?utm_source=arz.wikipedia.org&utm_campaign=api&utm_content=original",
+    "_image_src": "arz.wikipedia lead image"
    }
   },
   {
@@ -1356,7 +1360,9 @@
     "museum_id": "museo-de-arte-moderno",
     "qid": "Q3232010",
     "wikidata": "https://www.wikidata.org/wiki/Q3232010",
-    "location_src": "Museo de Arte Moderno"
+    "location_src": "Museo de Arte Moderno",
+    "image": "https://upload.wikimedia.org/wikipedia/be/8/89/The_Two_Fridas_%281939%29.jpg?utm_source=be.wikipedia.org&utm_campaign=api&utm_content=original",
+    "_image_src": "be.wikipedia lead image"
    }
   },
   {
@@ -2305,7 +2311,9 @@
     "museum_id": "malba",
     "qid": "Q109620518",
     "wikidata": "https://www.wikidata.org/wiki/Q109620518",
-    "location_src": "MALBA"
+    "location_src": "MALBA",
+    "image": "https://upload.wikimedia.org/wikipedia/el/c/c3/Diego_and_I%2C_1949_by_Frida_Kahlo.jpg?utm_source=el.wikipedia.org&utm_campaign=api&utm_content=original",
+    "_image_src": "el.wikipedia lead image"
    }
   },
   {

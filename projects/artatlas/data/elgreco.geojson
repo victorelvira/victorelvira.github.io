@@ -1107,8 +1107,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1117,7 +1117,7 @@
     "year": "1576–1578",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "164 × 121 cm",
@@ -1131,7 +1131,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q9026835",
     "wikidata": "https://www.wikidata.org/wiki/Q9026835",
     "wga_url": "https://www.wga.hu/html/g/greco_el/06/0603grec.html",
@@ -4311,8 +4311,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4321,7 +4321,7 @@
     "year": "1609",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "112.1 × 86.1 cm",
@@ -4335,7 +4335,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q949323",
     "wikidata": "https://www.wikidata.org/wiki/Q949323",
     "wga_url": "https://www.wga.hu/html/g/greco_el/17/1709grec.html",
@@ -5614,7 +5614,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -7145,7 +7146,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {

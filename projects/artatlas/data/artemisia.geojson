@@ -377,8 +377,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -387,7 +387,7 @@
     "year": "1620",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "86 X 125 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Giaele_e_Sisara_%28ca.1620%29_-_Artemisia_Gentileschi_%28Museum_of_Fine_Arts%2C_Budapest%29.jpg/500px-Giaele_e_Sisara_%28ca.1620%29_-_Artemisia_Gentileschi_%28Museum_of_Fine_Arts%2C_Budapest%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -400,7 +400,7 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q3762348",
     "wikidata": "https://www.wikidata.org/wiki/Q3762348",
     "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/jaelsise.html",
@@ -811,8 +811,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -821,7 +821,7 @@
     "year": "1630–1632",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "12.4 × 17.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/The_Sleeping_Christ_Child_by_Artemisia_Gentileschi.jpg/500px-The_Sleeping_Christ_Child_by_Artemisia_Gentileschi.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -833,7 +833,7 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q133801954",
     "wikidata": "https://www.wikidata.org/wiki/Q133801954",
     "_overrides": {
@@ -1218,7 +1218,7 @@
     "title": "Self-Portrait as the Allegory of Painting",
     "year": "c. 1638–1639",
     "city": "England",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "attribution": "generally accepted",
     "dimensions": "96.5 x 73.7 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Self-portrait_as_the_Allegory_of_Painting_%28La_Pittura%29_-_Artemisia_Gentileschi.jpg/500px-Self-portrait_as_the_Allegory_of_Painting_%28La_Pittura%29_-_Artemisia_Gentileschi.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1231,12 +1231,13 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-collection",
+    "museum_id": "buckingham-palace",
     "qid": "Q3630745",
     "wikidata": "https://www.wikidata.org/wiki/Q3630745",
     "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/selfport.html",
     "country": "United Kingdom",
-    "location_src": "Royal Collection"
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -1253,7 +1254,7 @@
     "title": "Susanna and the Elders",
     "year": "c. 1638–1640",
     "city": "England",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "attribution": "generally accepted",
     "dimensions": "189 x 143 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Susanna_and_the_Elders%2C_by_Artemisia_Gentileschi_%28c.1638-40%29.jpg/500px-Susanna_and_the_Elders%2C_by_Artemisia_Gentileschi_%28c.1638-40%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1265,7 +1266,7 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-collection",
+    "museum_id": "buckingham-palace",
     "wga_url": "https://www.wga.hu/html/g/gentiles/artemisi/susanna.html",
     "country": "United Kingdom",
     "_merged": [
@@ -1276,7 +1277,8 @@
       "url": "https://www.wikidata.org/wiki/Q123821093"
      }
     ],
-    "location_src": "Royal Collection"
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {

@@ -648,8 +648,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -658,7 +658,7 @@
     "year": "1622",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "50.3 × 40.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Luis_de_G%C3%B3ngora_y_Argote_-_Google_Art_Project.jpg/500px-Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Luis_de_G%C3%B3ngora_y_Argote_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -671,7 +671,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q3399444",
     "wikidata": "https://www.wikidata.org/wiki/Q3399444",
     "location_src": "Museum of Fine Arts"
@@ -1358,7 +1358,8 @@
      }
     ],
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1399,8 +1400,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -1409,7 +1410,7 @@
     "year": "1631",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "128.1 × 102 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Don_Baltasar_Carlos_with_a_Dwarf_-_Google_Art_Project.jpg/500px-Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Don_Baltasar_Carlos_with_a_Dwarf_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1422,7 +1423,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q3138273",
     "wikidata": "https://www.wikidata.org/wiki/Q3138273",
     "wga_url": "https://www.wga.hu/html/v/velazque/03/0305vela.html",
@@ -3950,8 +3951,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -3960,7 +3961,7 @@
     "year": "1618–1619",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "disputed",
     "dimensions": "96 × 112 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Diego_Vel%C3%A1zquez_005.jpg/500px-Diego_Vel%C3%A1zquez_005.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3973,7 +3974,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q3500414",
     "wikidata": "https://www.wikidata.org/wiki/Q3500414",
     "wga_url": "https://www.wga.hu/html/v/velazque/01/0102vela.html",
@@ -5696,7 +5697,8 @@
      }
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5725,7 +5727,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {

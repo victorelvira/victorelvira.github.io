@@ -1310,7 +1310,8 @@
       "url": "https://www.wikidata.org/wiki/Q880502"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -2212,7 +2213,8 @@
      }
     },
     "country": "United States",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -2298,8 +2300,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.40028,
-     51.21778
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -2308,7 +2310,7 @@
     "year": "c. 1630",
     "city": "Antwerp",
     "country": "Belgium",
-    "location": "Royal Museum of Fine Arts",
+    "location": "Royal Museum of Fine Arts Antwerp",
     "attribution": "generally accepted",
     "dimensions": "74 cm x 61 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Frans_Hals_092_WGA_version.jpg/500px-Frans_Hals_092_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2321,7 +2323,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-museum-of-fine-arts",
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
     "qid": "Q17418641",
     "wikidata": "https://www.wikidata.org/wiki/Q17418641",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/34fish_b.html",
@@ -4204,8 +4206,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -4213,7 +4215,7 @@
     "title": "Portrait of an unknown woman",
     "year": "1640",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "85.2 × 68.1 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/MSK_Frans_Hals_Portret_van_een_vrouw_17-03-2009_11-48-55.JPG/500px-MSK_Frans_Hals_Portret_van_een_vrouw_17-03-2009_11-48-55.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4225,7 +4227,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "country": "United States",
     "location_src": "Museum of Fine Arts"
    }
@@ -5435,8 +5437,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -5444,7 +5446,7 @@
     "title": "Portrait of a woman",
     "year": "1650",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "dimensions": "84.6 x 69.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Frans_Hals_-_portrait_of_a_woman_clasping_her_hands_and_holding_an_open_book.jpg/500px-Frans_Hals_-_portrait_of_a_woman_clasping_her_hands_and_holding_an_open_book.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5456,7 +5458,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/00-1620/03portwo.html",
     "country": "United States",
     "qid": "Q18008940",
@@ -5476,8 +5478,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.40028,
-     51.21778
+     4.39435,
+     51.20882
     ]
    },
    "properties": {
@@ -5486,7 +5488,7 @@
     "year": "1648–1650",
     "city": "Antwerp",
     "country": "Belgium",
-    "location": "Royal Museum of Fine Arts",
+    "location": "Royal Museum of Fine Arts Antwerp",
     "attribution": "generally accepted",
     "dimensions": "115.4 × 87.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Frans_Hals_038.jpg/500px-Frans_Hals_038.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5498,7 +5500,7 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-museum-of-fine-arts",
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
     "location_src": "Royal Museum of Fine Arts"
    }
   },
@@ -6476,7 +6478,8 @@
      }
     ],
     "museum_id": "alte-pinakothek",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -7265,7 +7268,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {

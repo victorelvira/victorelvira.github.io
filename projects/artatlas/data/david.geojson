@@ -469,8 +469,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.05778,
-     42.36028
+     -71.09417,
+     42.33944
     ]
    },
    "properties": {
@@ -478,7 +478,7 @@
     "title": "Saint Roch Interceding with the Virgin for the Plague-Stricken",
     "year": "1780",
     "city": "Boston",
-    "location": "Museum of Fine Arts",
+    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "260 × 195 cm",
@@ -492,7 +492,7 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts",
+    "museum_id": "museum-of-fine-arts-boston",
     "qid": "Q3464047",
     "wikidata": "https://www.wikidata.org/wiki/Q3464047",
     "wga_url": "https://www.wga.hu/html/d/david_j/1/108david.html",
@@ -1158,7 +1158,8 @@
      }
     ],
     "museum_id": "neue-pinakothek",
-    "location_src": "Neue Pinakothek"
+    "location_src": "Neue Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -1853,7 +1854,8 @@
       "note": "matched to Q70781074 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -2132,7 +2134,9 @@
     "qid": "Q1231009",
     "wikidata": "https://www.wikidata.org/wiki/Q1231009",
     "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html",
-    "location_src": "Museum of the History of France"
+    "location_src": "Museum of the History of France",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/0_Sacre_de_l%27empereur_Napol%C3%A9on_Ier_-_Jean-Louis_David_-_Louvre.JPG",
+    "_image_src": "commons category Category:The Coronation of Napoleon (Jacques-Louis David, Louvre)"
    }
   },
   {
@@ -2561,7 +2565,8 @@
     "qid": "Q3230385",
     "wikidata": "https://www.wikidata.org/wiki/Q3230385",
     "wga_url": "https://www.wga.hu/html/d/david_j/5/504david.html",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -2670,7 +2675,8 @@
       "url": "https://www.wikidata.org/wiki/Q2961038"
      }
     ],
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -2939,7 +2945,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -3173,7 +3180,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -4447,7 +4455,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "am-romerholz",
+    "museum_id": "am-romerholz-2",
     "location_src": "Am Römerholz"
    }
   },
@@ -4487,7 +4495,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {
@@ -4526,7 +4535,8 @@
      }
     },
     "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum"
+    "location_src": "Fogg Museum",
+    "venue_of": "Harvard Art Museums"
    }
   },
   {

@@ -68,7 +68,8 @@
       "url": "https://www.wikidata.org/wiki/Q3630739"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -109,7 +110,8 @@
       "note": "matched to Q20198709 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Legion of Honor Museum"
+    "location_src": "Legion of Honor Museum",
+    "venue_of": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -224,7 +226,8 @@
     "museum_id": "getty-center",
     "city": "Los Angeles",
     "country": "United States",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -265,7 +268,8 @@
       "note": "matched to Q20178837 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -902,7 +906,8 @@
       "url": "https://www.wikidata.org/wiki/Q3937774"
      }
     ],
-    "location_src": "Palazzo Rosso"
+    "location_src": "Palazzo Rosso",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -2067,7 +2072,8 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "legion-of-honor-museum",
-    "location_src": "Legion of Honor Museum"
+    "location_src": "Legion of Honor Museum",
+    "venue_of": "Fine Arts Museums of San Francisco"
    }
   },
   {
@@ -2814,7 +2820,8 @@
       "url": "https://www.wikidata.org/wiki/Q16712383"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3657,7 +3664,8 @@
     "museum_id": "alte-pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3934,7 +3942,8 @@
       "url": "https://www.wikidata.org/wiki/Q29902758"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -3974,7 +3983,9 @@
       "note": "matched to Q19925842 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
-    "location_src": "Liechtenstein Museum"
+    "location_src": "Liechtenstein Museum",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony_van_Dyck_-_Saint_Jerome_-_Google_Art_Project.jpg",
+    "_image_src": "commons category Category:Saint Jerome meditating in the desert by Anthony van Dyck (Museum Boijmans Van Beuningen)"
    }
   },
   {
@@ -4612,7 +4623,8 @@
     "country": "Germany",
     "qid": "Q29871346",
     "wikidata": "https://www.wikidata.org/wiki/Q29871346",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -4842,7 +4854,8 @@
       "url": "https://www.wikidata.org/wiki/Q22329818"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5034,7 +5047,8 @@
       "url": "https://www.wikidata.org/wiki/Q3936370"
      }
     ],
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -5314,7 +5328,7 @@
     "painter": "Anthony van Dyck",
     "title": "Amor and Psyche",
     "year": "1639",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5336,8 +5350,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -5353,7 +5368,7 @@
     "painter": "Anthony van Dyck",
     "title": "Charles I (1600-1649) with M. de St Antoine",
     "year": "1636",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5375,8 +5390,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -5392,7 +5408,7 @@
     "painter": "Anthony van Dyck",
     "title": "Charles I and Henrietta Maria with their two eldest children, Prince Charles and Princess Mary",
     "year": "1632",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5414,8 +5430,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -5431,7 +5448,7 @@
     "painter": "Anthony van Dyck",
     "title": "Charles I (1600-1649)",
     "year": "1636",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -5453,8 +5470,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -7000,7 +7018,7 @@
     "painter": "Anthony van Dyck",
     "title": "Sketch of Charles I and Queen Henrietta Maria with their two eldest children, Prince Charles and Princess Mary",
     "year": "1632",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7022,8 +7040,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -7702,7 +7721,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -7741,7 +7761,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -8148,7 +8169,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -8332,7 +8354,7 @@
     "painter": "Anthony van Dyck",
     "title": "Charles I in Three Positions",
     "year": "1635",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -8354,8 +8376,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -8450,7 +8473,7 @@
     "title": "Zeger van Hontsum (d. 1643)",
     "year": "1630",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20Zeger%20van%20Hontsum%20%28d.%201643%29%20-%20RCIN%20405323%20-%20Royal%20Collection.jpg?width=500",
@@ -8472,7 +8495,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -8489,7 +8513,7 @@
     "title": "Christ Healing the Paralytic",
     "year": "1619",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Christ%20healing%20the%20paralytic.jpg?width=500",
@@ -8511,7 +8535,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -10753,7 +10778,7 @@
     "painter": "Anthony van Dyck",
     "title": "Beatrice de Cusance, Princess of Cantecroix and Duchess of Lorraine (1614-63)",
     "year": "1635",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10775,8 +10800,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -10792,7 +10818,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of an Unknown lady",
     "year": "1634",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10814,8 +10840,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -11443,7 +11470,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -11482,7 +11510,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -11498,7 +11527,7 @@
     "painter": "Anthony van Dyck",
     "title": "George Villiers, 2nd Duke of Buckingham, and Lord Francis Villiers",
     "year": "1635",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11520,8 +11549,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -11537,7 +11567,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Infant Christ and St John the Baptist",
     "year": "1639",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11559,8 +11589,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -11568,8 +11599,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -11577,7 +11608,7 @@
     "title": "St Martin Dividing his Cloak",
     "year": "1620",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20St%20Martin%20Dividing%20his%20Cloak%20-%20RCIN%20405878%20-%20Royal%20Collection.jpg?width=500",
@@ -11599,7 +11630,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -11607,8 +11639,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -11616,7 +11648,7 @@
     "title": "James I & VI (1566-1625)",
     "year": "1632",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20James%20I%20%5E%20VI%20%281566-1625%29%20-%20RCIN%20405670%20-%20Royal%20Collection.jpg?width=500",
@@ -11638,7 +11670,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -11646,8 +11679,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
@@ -11655,7 +11688,7 @@
     "title": "Lady Mary Villiers, Duchess of Richmond and Lennox (1622-85)",
     "year": "1637",
     "location": "Windsor Castle",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20Lady%20Mary%20Villiers%2C%20Duchess%20of%20Richmond%20and%20Lennox%20%281622-85%29%20-%20RCIN%20404402%20-%20Royal%20Collection.jpg?width=500",
@@ -11677,7 +11710,8 @@
      }
     },
     "museum_id": "windsor-castle",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -12634,7 +12668,7 @@
     "painter": "Anthony van Dyck",
     "title": "Henry, Prince of Wales, son of James I & VI (1594-1612)",
     "year": "1633",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -12656,8 +12690,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -12673,7 +12708,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Man",
     "year": "1619",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -12695,8 +12730,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -14906,7 +14942,8 @@
      }
     },
     "museum_id": "glasgow-museums-resource-centre",
-    "location_src": "Glasgow Museums Resource Centre"
+    "location_src": "Glasgow Museums Resource Centre",
+    "venue_of": "Glasgow Museums"
    }
   },
   {
@@ -14981,7 +15018,7 @@
     "title": "The Virgin and Child",
     "year": "1631",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20The%20Virgin%20and%20Child%20-%20RCIN%20404639%20-%20Royal%20Collection.jpg?width=500",
@@ -15003,7 +15040,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -15020,7 +15058,7 @@
     "title": "Thomas Killigrew and William, Lord Crofts (?)",
     "year": "1638",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20Thomas%20Killigrew%20and%20William%2C%20Lord%20Crofts%20%28%5E%29%20-%20RCIN%20407426%20-%20Royal%20Collection.jpg?width=500",
@@ -15042,7 +15080,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -15646,7 +15685,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -16648,7 +16688,7 @@
     "painter": "Anthony van Dyck",
     "title": "John Tufton, Second Earl of Thanet (1608-1664) and Margaret Sackville, his wife (1614-1676)",
     "year": "",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -16660,8 +16700,9 @@
      "url": "https://www.wikidata.org/wiki/Q28031636",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -16677,7 +16718,7 @@
     "painter": "Anthony van Dyck",
     "title": "Charles II when Prince of Wales (1630-85)",
     "year": "1638",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -16699,8 +16740,9 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -16716,7 +16758,7 @@
     "painter": "Anthony van Dyck",
     "title": "Head of a Young Man",
     "year": "1644",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -16728,8 +16770,9 @@
      "url": "https://www.wikidata.org/wiki/Q28033927",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -16745,7 +16788,7 @@
     "painter": "Anthony van Dyck",
     "title": "Katherine Howard, Lady D'Aubigny (d.1650)",
     "year": "",
-    "location": "Royal Collection",
+    "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -16757,8 +16800,9 @@
      "url": "https://www.wikidata.org/wiki/Q28044006",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-collection",
-    "location_src": "Royal Collection"
+    "museum_id": "buckingham-palace",
+    "location_src": "Royal Collection",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -19558,7 +19602,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -22425,7 +22470,7 @@
     "title": "The Mystic Marriage of St Catherine",
     "year": "1630",
     "location": "Buckingham Palace",
-    "city": "City of Westminster",
+    "city": "England",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20The%20Mystical%20Marriage%20of%20St.%20Catherine.jpg?width=500",
@@ -22447,7 +22492,8 @@
      }
     },
     "museum_id": "buckingham-palace",
-    "location_src": "Buckingham Palace"
+    "location_src": "Buckingham Palace",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -25006,7 +25052,8 @@
      }
     },
     "museum_id": "tate-britain",
-    "location_src": "Tate Britain"
+    "location_src": "Tate Britain",
+    "venue_of": "Tate"
    }
   },
   {
@@ -26594,7 +26641,8 @@
      }
     },
     "museum_id": "getty-center",
-    "location_src": "Getty Center"
+    "location_src": "Getty Center",
+    "venue_of": "J. Paul Getty Museum"
    }
   },
   {
@@ -27458,7 +27506,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "palazzo-bianco",
-    "location_src": "Palazzo Bianco"
+    "location_src": "Palazzo Bianco",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -27516,7 +27565,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "palazzo-rosso",
-    "location_src": "Palazzo Rosso"
+    "location_src": "Palazzo Rosso",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -27545,7 +27595,8 @@
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "palazzo-rosso",
-    "location_src": "Palazzo Rosso"
+    "location_src": "Palazzo Rosso",
+    "venue_of": "Musei di Strada Nuova"
    }
   },
   {
@@ -30211,8 +30262,9 @@
      "url": "https://www.wikidata.org/wiki/Q140311638",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini-2",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {

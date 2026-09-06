@@ -355,7 +355,8 @@
     },
     "museum_id": "alte-pinakothek",
     "qid": "Q117101446",
-    "location_src": "Alte Pinakothek"
+    "location_src": "Alte Pinakothek",
+    "venue_of": "Bavarian State Painting Collections"
    }
   },
   {
@@ -414,15 +415,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.24922,
-     43.77078
+     12.46659,
+     41.89333
     ]
    },
    "properties": {
     "painter": "Giovanni Bellini",
     "title": "Q117192930",
     "year": "1475",
-    "city": "Florence",
+    "city": "Rome",
     "country": "Italy",
     "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "kind": "museum",
@@ -457,7 +458,8 @@
       "url": "https://www.wikidata.org/wiki/Q117192930"
      }
     ],
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini"
+    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "venue_of": "Galleria Nazionale d'Arte Antica"
    }
   },
   {
@@ -755,7 +757,9 @@
     },
     "museum_id": "san-francesco-della-vigna",
     "qid": "Q125809444",
-    "location_src": "San Francesco della Vigna"
+    "location_src": "San Francesco della Vigna",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bellini_Giovanni%2C_Madonna_e_santi_%281507%29.jpg",
+    "_image_src": "commons category Category:Madonna with Saints in the San Francesco della Vigna (Venice)"
    }
   },
   {
@@ -946,7 +950,9 @@
     },
     "museum_id": "museo-correr",
     "qid": "Q132166296",
-    "location_src": "Museo Correr"
+    "location_src": "Museo Correr",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Venice%29_Ritratto_di_San_Fortunato_%28Giovane_Santo_Laureato%29_by_Giovanni_Bellini_-_Correr_Museum.jpg",
+    "_image_src": "commons category Category:Saint Fortunato by Giovanni Bellini (Museo Correr)"
    }
   },
   {
@@ -976,7 +982,9 @@
     },
     "museum_id": "pinacoteca-metropolitana-di-bari",
     "qid": "Q133281023",
-    "location_src": "Pinacoteca metropolitana di Bari"
+    "location_src": "Pinacoteca metropolitana di Bari",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni_Bellini_-_San_Pietro_martire_%28Pinacoteca_metropolitana_di_Bari%29.jpg",
+    "_image_src": "commons category Category:Saint Peter Martyr by Giovanni Bellini (Pinacoteca metropolitana, Bari)"
    }
   },
   {
@@ -2195,15 +2203,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.60444,
-     51.48389
+     -0.6044,
+     51.4839
     ]
    },
    "properties": {
     "painter": "Giovanni Bellini",
     "title": "Portrait of a Young Man",
     "year": "1505",
-    "city": "Windsor and Maidenhead",
+    "city": "Windsor Castle",
     "country": "United Kingdom",
     "location": "Windsor Castle",
     "kind": "museum",
@@ -2231,7 +2239,8 @@
     },
     "museum_id": "windsor-castle",
     "qid": "Q28028706",
-    "location_src": "Windsor Castle"
+    "location_src": "Windsor Castle",
+    "venue_of": "Royal Collection"
    }
   },
   {
@@ -6371,7 +6380,8 @@
      }
     },
     "museum_id": "glasgow-museums-resource-centre",
-    "location_src": "Glasgow Museums Resource Centre"
+    "location_src": "Glasgow Museums Resource Centre",
+    "venue_of": "Glasgow Museums"
    }
   },
   {
