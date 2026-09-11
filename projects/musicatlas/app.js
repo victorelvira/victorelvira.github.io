@@ -10,13 +10,13 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.21.0";
-const BUILD_AT = "2026-09-12 00:10";
+const DATA_V = "0.21.1";
+const BUILD_AT = "2026-09-12 00:27";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
                 sort:"work", dir:1, open:new Set(), limit:300, parts:false, doubt:false,
-                grouping:"period", tlMode:"composer", tlZoom:1, year:null };
+                grouping:"period", tlMode:"composer", tlZoom:1, year:null, qw:[] };
 
 /* ---------- reading a field ---------- */
 /* THE INDEX IS COMPACT. core.json holds one short row per work, because the full
@@ -216,7 +216,10 @@ const FACETS=[
 const SUBFACET={id:"form",label:"which",get:w=>arr(val(w,"form"))};
 function passes(w){
   if(state.comp.size && !state.comp.has(w.composer_slug)) return false;
-  if(state.q && !haystack(w).includes(state.q)) return false;
+  /* Every word, in any order. Matching the whole string literally meant "requiem
+     mozart" looked for those two words adjacent and in that order, so it found
+     nothing: the space was part of the needle instead of separating two of them. */
+  if(state.qw.length && !state.qw.every(t => haystack(w).includes(t))) return false;
   if(state.doubt && !inDoubt(w)) return false;
   if(state.year!=null && year(w)!==state.year) return false;
   if(state.f.key && state.f.key.size){ const p=keyParts(val(w,"key"));
@@ -821,7 +824,8 @@ function readHash(){
   h.split("/").forEach((p,i)=>{
     if(i===0&&["table","fifths","graph","time"].includes(p)) state.lens=p;
     const m=p.match(/^(\w+)=(.*)$/); if(!m) return;
-    if(m[1]==="q"){ state.q=fold(m[2]); document.getElementById("q").value=m[2]; }
+    if(m[1]==="q"){ state.q=fold(m[2]); state.qw=state.q.split(/\s+/).filter(Boolean);
+                    document.getElementById("q").value=m[2]; }
     else if(m[1]==="c") state.comp=new Set(m[2].split(","));
     else if(m[1]==="sub") state.sub=m[2];
     else state.f[m[1]]=new Set(m[2].split(","));
@@ -867,7 +871,7 @@ document.addEventListener("click",e=>{
   const drop=t.closest("[data-drop]");
   if(drop){ const k=drop.dataset.drop, v=drop.dataset.dv;
     if(k==="comp"){ state.comp.delete(v); if(state.comp.size===0) state.comp=new Set(); }
-    else if(k==="q"){ state.q=""; document.getElementById("q").value=""; }
+    else if(k==="q"){ state.q=""; state.qw=[]; document.getElementById("q").value=""; }
     else if(k==="doubt"){ state.doubt=false; document.getElementById("t-doubt").setAttribute("aria-pressed",false); }
     else if(k==="parts"){ state.parts=false; document.getElementById("t-parts").setAttribute("aria-pressed",false); }
     else if(k==="year"){ state.year=null; }
@@ -881,7 +885,8 @@ document.addEventListener("click",e=>{
   const play=t.closest("[data-play]");
   if(play){ e.stopPropagation(); return openRec(play.dataset.play); }
   if(t.id==="more"){ state.limit+=300; return renderStage(); }
-  if(t.id==="reset"){ state.f={}; state.q=""; state.comp=new Set(); state.doubt=false; state.year=null;
+  if(t.id==="reset"){ state.f={}; state.q=""; state.qw=[]; state.comp=new Set();
+    state.doubt=false; state.year=null;
     document.getElementById("q").value=""; document.getElementById("t-doubt").setAttribute("aria-pressed",false);
     return draw(); }
   if(t.closest("#rec .close")){ document.getElementById("rec").classList.remove("open");
@@ -893,7 +898,10 @@ document.addEventListener("click",e=>{
     return draw(); }
   const row=t.closest("tr[data-id]"); if(row) return openRec(row.dataset.id);
 });
-document.getElementById("q").addEventListener("input",e=>{ state.q=fold(e.target.value.trim()); draw(); });
+document.getElementById("q").addEventListener("input",e=>{
+  state.q=fold(e.target.value.trim());
+  state.qw=state.q.split(/\s+/).filter(Boolean);
+  draw(); });
 document.addEventListener("mouseover",e=>{
   const tip=document.getElementById("tip");
   const bar=e.target.closest(".tbar");
