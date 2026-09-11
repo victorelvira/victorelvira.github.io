@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.21.1";
-const BUILD_AT = "2026-09-12 00:27";
+const DATA_V = "0.23.5";
+const BUILD_AT = "2026-09-12 00:54";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -68,7 +68,10 @@ const F = (w,n) => {
   if(v == null) return null;
   const code = (w.ag||{})[FIELD_KEY[n]];
   return {v, d:v, a: AG[code] || "single", n:1, s:null, _thin:true,
-          doubt: code === "c"};
+          doubt: code === "c",
+          // the index carries the "outside the composer's life" flag as `ds`, and
+          // losing it here put Buxtehude, who died in 1707, on the timeline in 1950
+          suspect: (n === "date_composed" && w.ds) ? true : undefined};
 };
 const val  = (w,n) => { const f=F(w,n); return f ? f.v : null; };
 const show = (w,n) => { const f=F(w,n); return f ? (f.d!=null?f.d:f.v) : null; };
@@ -460,7 +463,7 @@ function renderInstrument(){
    grouping modes, Compress/Stretch, and the fact that it is an instrument, click
    a bar and the table below filters to that composer in that year.
    Added, because the subject earns it: the life drawn as a pale bar behind. */
-const TL_MODES = [["composer","By composer"],["period","By period"]
+const TL_MODES = [["composer","By composer"],["period","By period"],
                   ["family","By kind"],["all","All together"]];
 const ROW_H = 34;
 
@@ -692,40 +695,119 @@ function drawRec(row){
      ${parent?`<p class="inpart">part of <button data-goto="${esc(parent.id)}">${titleOf(parent)}</button></p>`:""}
      ${vers?`<p class="vers">More than one version on record: ${vers}</p>`:""}
      ${audioBlock(w)}
-     ${archiveBlock(w)}
      ${dl?`<h4 class="sec">The facts, and who says them</h4><dl>${dl}</dl>`:""}
      ${kids?`<h4 class="sec">${(w.tree.children||[]).length} pieces</h4><div class="kids">${kids}</div>`:""}
      ${mediaBlock(w)}
      <div class="links">${links}</div>`;
-  document.getElementById("rec").classList.add("open");
+  document.body.classList.add("rec-open");
   renderStage();
 }
 
 
-function audioBlock(w){
-  if(!w.audio||!w.audio.length) return "";
-  return `<div class="kids"><h4>Listen</h4>` + w.audio.map(a=>
-    `<div class="rec"><audio controls preload="none" src="${esc(a.url)}"></audio>
-     <p>${a.credit?esc(a.credit)+(a.credit_inferred?`<span class="ours" title="Commons does not state the performer; we read this from the file name"> · performer read from the file name</span>`:""):`<span style="color:var(--faint);font-style:italic">performer not stated on Commons</span>`}${a.seconds?` · ${fmtDur(a.seconds)}`:""}${a.matched_by?`<br><span class="ours" title="Commons files name no work, so this link is our inference">linked by ${esc(String(a.matched_by).split(",")[0])}</span>`:""}
-        <a href="${esc(a.page)}" target="_blank" rel="noopener">${esc(a.licence)} ↗</a></p></div>`).join("")
-    + `<p style="font-size:11px;color:var(--faint);margin:4px 0 0">from Wikimedia Commons, public domain or a CC licence without NC or ND, stated per recording.</p></div>`;
+/* ONE PLAYER, whatever the source.
+   Commons recordings used the browser's native <audio> and Archive ones an iframe of
+   the Archive's own widget: two different objects in the same card, one of them
+   unstyleable because it is cross-origin. And an Archive recording showed no length
+   while a Commons one did. So: our own transport for everything, a single shared
+   <audio> element so only one thing ever plays, and every row states the same four
+   facts, format, duration, who played it, and under what licence.
+   The files are still served by Commons and by the Archive. We host nothing. */
+const AUDIO = new Audio();
+AUDIO.preload = "none";
+let PLAYING = null;                       // the row currently bound to it
+
+function fmtClock(s){
+  if(s==null||!isFinite(s)) return "--:--";
+  s=Math.round(s);
+  return s>=3600 ? `${Math.floor(s/3600)}:${String(Math.floor(s%3600/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`
+                 : `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
 }
-/* The Internet Archive, referenced. We link, and we offer THEIR embed player, which
-   they publish for this purpose; nothing is copied or served from here. The match is
-   ours (a catalogue number in the item's title), so each line says so. */
-function archiveBlock(w){
-  const a=w.archive; if(!a||!a.length) return "";
-  return `<h4 class="sec">On the Internet Archive</h4>
-    ${a.slice(0,6).map((x,i)=>`<div class="iarec">
-      <p><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>
-        ${x.creator?`<br><span class="iacre">${esc(x.creator)}</span>`:""}
-        ${x.year?`<span class="iacre"> · ${esc(String(x.year))}</span>`:""}
-        ${x.licence?`<span class="iacre"> · ${esc(String(x.licence).replace(/^https?:\/\//,""))}</span>`
-                   :`<span class="iacre"> · no licence stated there</span>`}</p>
-      <button class="iaplay" data-ia="${esc(x.embed)}" data-i="${i}">▶ play it there</button>
-      <div class="iaframe" data-i="${i}"></div></div>`).join("")}
-    <p class="offwhy">Hosted and served by the Internet Archive, not by this page. The link
-      between an item and this work is ours: its title names the catalogue number.</p>`;
+/* the file name already says what it is, so a format never has to be missing */
+const EXT_FMT={mp3:"MP3",ogg:"OGG",oga:"OGG",opus:"OPUS",flac:"FLAC",wav:"WAV",
+  wave:"WAV",m4a:"M4A",aac:"AAC",mid:"MIDI",midi:"MIDI",shn:"SHN"};
+function fmtOf(o){
+  if(o.format) return o.format;
+  const m=String(o.url||"").toLowerCase().match(/\.([a-z0-9]{2,5})(?:\?|$)/);
+  return m ? (EXT_FMT[m[1]] || m[1].toUpperCase()) : null;
+}
+function playerRow(o){
+  const meta=[fmtOf(o), o.seconds!=null?fmtClock(o.seconds):null, o.credit, o.licence]
+    .filter(Boolean).map(esc);
+  return `<div class="pl" data-url="${esc(o.url)}" data-sec="${o.seconds!=null?o.seconds:""}">
+    <div class="pl-top">
+      <button class="pl-play" aria-label="play">▶</button>
+      <div class="pl-bar"><div class="pl-fill"></div></div>
+      <span class="pl-time">${o.seconds!=null?fmtClock(o.seconds):"--:--"}</span>
+    </div>
+    <p class="pl-meta">${o.label?`<span class="pl-label">${esc(o.label)}</span><br>`:""}
+      ${meta.join(" · ")}
+      ${o.where?` · <a href="${esc(o.where)}" target="_blank" rel="noopener">${esc(o.source)} ↗</a>`
+              :` · ${esc(o.source||"")}`}
+      ${o.note?`<br><span class="ours">${esc(o.note)}</span>`:""}</p></div>`;
+}
+function bindPlayer(row){
+  if(PLAYING && PLAYING !== row){ PLAYING.classList.remove("on"); }
+  if(PLAYING === row && !AUDIO.paused){ AUDIO.pause(); row.classList.remove("on");
+    row.querySelector(".pl-play").textContent="▶"; return; }
+  if(PLAYING !== row){ AUDIO.src = row.dataset.url; PLAYING = row; }
+  row.classList.add("on");
+  AUDIO.play().catch(()=>{ row.querySelector(".pl-time").textContent="cannot play"; });
+  row.querySelector(".pl-play").textContent="⏸";
+}
+AUDIO.addEventListener("timeupdate", ()=>{
+  if(!PLAYING) return;
+  const known = +PLAYING.dataset.sec || AUDIO.duration;
+  const pct = known ? (AUDIO.currentTime/known)*100 : 0;
+  PLAYING.querySelector(".pl-fill").style.width = Math.min(100,pct)+"%";
+  PLAYING.querySelector(".pl-time").textContent =
+    fmtClock(AUDIO.currentTime) + " / " + fmtClock(known);
+});
+AUDIO.addEventListener("loadedmetadata", ()=>{
+  // a duration the source never stated, now that the file itself can say
+  if(PLAYING && !PLAYING.dataset.sec && isFinite(AUDIO.duration)){
+    PLAYING.dataset.sec = Math.round(AUDIO.duration);
+  }
+});
+AUDIO.addEventListener("ended", ()=>{ if(PLAYING){
+  PLAYING.classList.remove("on"); PLAYING.querySelector(".pl-play").textContent="▶"; }});
+
+function audioBlock(w){
+  /* the card paints twice, thin then full: on the first pass `audio` is still the
+     COUNT from the index row, not the list, and the list only exists once the
+     composer's detail file has landed */
+  const list = Array.isArray(w.audio) ? w.audio : [];
+  const arch = Array.isArray(w.archive) ? w.archive : [];
+  const rows=[];
+  list.forEach(a=>rows.push(playerRow({
+    url:a.url, seconds:a.seconds, format:a.format, licence:a.licence,
+    credit:a.credit || "performer not named", source:"Wikimedia Commons", where:a.page,
+    note:[a.credit_inferred?"performer read from the file name":null,
+          a.matched_by?"linked by "+String(a.matched_by).split(",")[0]:null]
+         .filter(Boolean).join(" · ")})));
+  arch.forEach(it=>{
+    const tr=it.tracks||[];
+    if(!tr.length){
+      rows.push(`<p class="pl-nofile"><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
+        <br><span>on the Internet Archive, no playable file listed</span></p>`);
+      return;
+    }
+    const total=it.seconds!=null?fmtClock(it.seconds):null;
+    rows.push(`<div class="pl-group"><p class="pl-gtop">${esc(it.title)}
+      <span>${tr.length} track${tr.length>1?"s":""}${total?` · ${total}`:""}${it.creator?` · ${esc(it.creator)}`:""}
+      · <a href="${esc(it.url)}" target="_blank" rel="noopener">Internet Archive ↗</a></span></p>
+      ${tr.slice(0,12).map(t=>playerRow({
+        url:t.url, label:t.title, seconds:t.seconds, format:t.format,
+        licence:it.licence?String(it.licence).replace(/^https?:\/\//,""):"no licence stated there",
+        source:"Internet Archive", where:it.url})).join("")}</div>`);
+  });
+  const midi=(Array.isArray(w.midi)?w.midi:[]).length;
+  if(!rows.length && !midi) return "";
+  return `<h4 class="sec">Listen</h4>${rows.join("")}
+    ${midi?`<p class="pl-midi">${midi} MIDI rendering${midi>1?"s":""} on Commons, not offered here:
+      a MIDI file is a synthesis, not a performance, and no browser plays one natively.
+      <a href="${esc(w.midi[0].page)}" target="_blank" rel="noopener">see it ↗</a></p>`:""}
+    <p class="offwhy">Played from Wikimedia Commons and the Internet Archive, which host and
+      serve these files. Nothing is copied here.</p>`;
 }
 function mediaBlock(w){
   const m=w.media; if(!m) return "";
@@ -877,11 +959,12 @@ document.addEventListener("click",e=>{
     else if(k==="year"){ state.year=null; }
     else if(state.f[k]) state.f[k].delete(v);
     return draw(); }
-  const ia=t.closest("[data-ia]");
-  if(ia){ const box=ia.parentElement.querySelector(".iaframe");
-    box.innerHTML=`<iframe src="${ia.dataset.ia}" width="100%" height="50" frameborder="0"
-      allowfullscreen loading="lazy"></iframe>`;
-    ia.remove(); return; }
+  const pl=t.closest(".pl");
+  if(pl && t.closest(".pl-play, .pl-bar")){
+    if(t.closest(".pl-bar") && PLAYING===pl && AUDIO.duration){
+      const r=t.closest(".pl-bar").getBoundingClientRect();
+      AUDIO.currentTime=((e.clientX-r.left)/r.width)*AUDIO.duration; return; }
+    return bindPlayer(pl); }
   const play=t.closest("[data-play]");
   if(play){ e.stopPropagation(); return openRec(play.dataset.play); }
   if(t.id==="more"){ state.limit+=300; return renderStage(); }
@@ -889,7 +972,8 @@ document.addEventListener("click",e=>{
     state.doubt=false; state.year=null;
     document.getElementById("q").value=""; document.getElementById("t-doubt").setAttribute("aria-pressed",false);
     return draw(); }
-  if(t.closest("#rec .close")){ document.getElementById("rec").classList.remove("open");
+  if(t.closest("#rec .close")){ document.body.classList.remove("rec-open");
+    if(PLAYING){ AUDIO.pause(); PLAYING.classList.remove("on"); PLAYING=null; }
     state.sel=null; return renderStage(); }
   const goto=t.closest("[data-goto]"); if(goto) return openRec(goto.dataset.goto);
   const crow=t.closest("tr[data-comp]");
@@ -920,6 +1004,26 @@ document.addEventListener("mouseover",e=>{
   document.querySelectorAll("#graph .edge").forEach(p=>p.classList.toggle("hot",
     !!n && (p.dataset.o===n.dataset.o || p.dataset.h===n.dataset.h)));
 });
+/* The divider. Its width is remembered, because a table of catalogue numbers and a
+   record with seven players want different amounts of room. */
+(function(){
+  const d=document.getElementById("divider"), main=document.getElementById("main");
+  if(!d||!main) return;
+  const saved=parseInt(localStorage.getItem("musicatlas.recw")||"",10);
+  if(saved>280 && saved<900) document.documentElement.style.setProperty("--rec-w", saved+"px");
+  let on=false;
+  d.addEventListener("mousedown", e=>{ on=true; d.classList.add("dragging");
+    document.body.classList.add("resizing"); e.preventDefault(); });
+  addEventListener("mousemove", e=>{ if(!on) return;
+    const w=Math.round(main.getBoundingClientRect().right - e.clientX);
+    if(w>280 && w<Math.min(900, innerWidth-360))
+      document.documentElement.style.setProperty("--rec-w", w+"px"); });
+  addEventListener("mouseup", ()=>{ if(!on) return; on=false;
+    d.classList.remove("dragging"); document.body.classList.remove("resizing");
+    const w=parseInt(getComputedStyle(document.documentElement).getPropertyValue("--rec-w"),10);
+    if(w) try{ localStorage.setItem("musicatlas.recw", String(w)); }catch(_){} });
+})();
+
 document.querySelector(".brand").addEventListener("click",e=>{
   e.preventDefault(); history.replaceState(null,"",location.pathname); location.reload(); });
 

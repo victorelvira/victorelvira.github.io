@@ -161,10 +161,6 @@ table.cat tbody tr.sel{background:var(--sand)}
   width:19px;height:19px;line-height:1;font-size:11px;cursor:pointer;padding:0;margin-right:5px;
   border:1px solid var(--sand-line);vertical-align:-2px}
 .c-media .play:hover{background:var(--hot);color:#fff}
-#rec .rec{margin:0 0 9px}
-#rec .rec audio{width:100%;height:30px}
-#rec .rec p{margin:2px 0 0;font-size:11.5px;color:var(--muted)}
-#rec .rec p a{color:var(--faint)}
 .dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 .sw{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:-1px;
   border:1px solid rgba(0,0,0,.12)}
@@ -202,10 +198,6 @@ tr.part .c-title{padding-left:24px;font-size:14px}
 #timeline .tbar:hover .hit{opacity:1;fill:rgba(0,0,0,.045)}
 .hint{text-align:center;font-size:11.5px;color:var(--muted);margin:2px 0 8px}
 
-#rec{position:fixed;right:0;top:0;bottom:0;width:min(430px,100%);background:#fff;
-  border-left:1px solid var(--line);padding:18px 20px;overflow:auto;z-index:2000;
-  box-shadow:-10px 0 30px rgba(0,0,0,.08);transform:translateX(101%);transition:transform .17s ease}
-#rec.open{transform:none}
 #rec h2{margin:0 26px 3px 0;font:600 19px/1.25 var(--serif)}
 #rec .sub{color:var(--muted);font-size:12px;margin:0 0 14px}
 #rec dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px}
@@ -309,10 +301,8 @@ footer a{color:var(--muted)}
   .caret{width:18px;font-size:12px}
 
   #rec{top:auto;left:0;right:0;bottom:0;width:100%;max-height:88vh;border-left:0;
-    border-top:1px solid var(--line);border-radius:14px 14px 0 0;
-    transform:translateY(101%);box-shadow:0 -10px 30px rgba(0,0,0,.16)}
-  #rec.open{transform:none}
-  #rec .close{font-size:26px;right:14px;top:8px}
+    border-top:1px solid var(--line);border-radius:14px 14px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.16)}
+    #rec .close{font-size:26px;right:14px;top:8px}
   .tlscroll{max-height:52vh}
   #tip{max-width:calc(100vw - 20px)}
   footer{font-size:10.5px;padding:5px 12px}
@@ -334,11 +324,85 @@ footer a{color:var(--muted)}
 #rec .premiere{margin:0 0 10px;font-size:12.5px;color:var(--ink2)}
 #rec .premiere b{color:var(--ink)}
 #rec .premiere a{color:var(--faint);text-decoration:none}
-#rec .iarec{margin:0 0 9px;padding-bottom:7px;border-bottom:1px solid var(--line2)}
-#rec .iarec p{margin:0 0 4px;font-size:12.5px;line-height:1.35}
-#rec .iarec a{color:var(--ink)}
-#rec .iacre{color:var(--faint);font-size:11px}
-#rec .iaplay{border:1px solid var(--sand-line);background:var(--sand);color:var(--hot);
-  border-radius:999px;font:inherit;font-size:11.5px;padding:2px 10px;cursor:pointer}
-#rec .iaplay:hover{background:var(--hot);color:#fff}
-#rec .iaframe iframe{border:0;margin-top:4px}
+
+/* one player, whatever the source */
+#rec .pl{margin:0 0 8px}
+#rec .pl-top{display:flex;align-items:center;gap:8px}
+#rec .pl-play{flex:0 0 auto;width:26px;height:26px;border-radius:50%;border:1px solid var(--sand-line);
+  background:var(--sand);color:var(--hot);font-size:11px;cursor:pointer;padding:0;line-height:1}
+#rec .pl-play:hover{background:var(--hot);color:#fff}
+#rec .pl.on .pl-play{background:var(--hot);color:#fff}
+#rec .pl-bar{flex:1 1 auto;height:5px;background:var(--line);border-radius:3px;cursor:pointer;
+  overflow:hidden}
+#rec .pl-fill{height:100%;width:0;background:var(--accent);border-radius:3px}
+#rec .pl-time{flex:0 0 auto;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;
+  min-width:74px;text-align:right}
+#rec .pl-meta{margin:3px 0 0 34px;font-size:11.5px;color:var(--muted);line-height:1.4}
+#rec .pl-label{color:var(--ink2)}
+#rec .pl-meta a{color:var(--faint)}
+#rec .pl-meta .ours{color:var(--maj);font-size:11px}
+#rec .pl-group{margin:0 0 12px;padding-left:8px;border-left:2px solid var(--line)}
+#rec .pl-gtop{margin:0 0 6px;font-size:12.5px;color:var(--ink)}
+#rec .pl-gtop span{display:block;font-size:11px;color:var(--faint)}
+#rec .pl-gtop a{color:var(--accent)}
+#rec .pl-nofile{margin:0 0 8px;font-size:12.5px}
+#rec .pl-nofile span{font-size:11px;color:var(--faint)}
+#rec .pl-midi{margin:8px 0 0;font-size:11px;color:var(--faint);line-height:1.45}
+#rec .pl-midi a{color:var(--muted)}
+
+/* ---------------- the record panel ----------------
+   It was a layer floating over the table: fine on a phone, wrong on a desktop,
+   where there is room to put the two side by side and nothing has to be covered.
+   batalla_de_flores solved this already, so this follows it: a two-column grid
+   with a draggable divider whose width is remembered, each column scrolling on its
+   own, and a close button that is discreet on a desktop (it covers nothing) and a
+   big red circle on a phone (it covers everything). */
+#main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+body.rec-open #main{grid-template-columns:minmax(0,1fr) 6px minmax(0,var(--rec-w,440px))}
+#scroll{min-height:0;overflow:auto}
+#divider{display:none;cursor:col-resize;background:transparent;transition:background .12s}
+body.rec-open #divider{display:block}
+#divider:hover,#divider.dragging{background:var(--line)}
+#divider::after{content:"";display:block;width:2px;height:28px;margin:0 auto;
+  position:relative;top:calc(50% - 14px);border-radius:2px;background:var(--line)}
+#divider:hover::after,#divider.dragging::after{background:var(--accent)}
+body.resizing{cursor:col-resize;user-select:none}
+
+#rec{display:none;min-height:0;overflow:auto;background:#fff;
+  border-left:1px solid var(--line);padding:18px 20px;position:relative}
+body.rec-open #rec{display:block}
+#rec .close{position:absolute;right:12px;top:10px;z-index:2;padding:0;cursor:pointer;
+  border:1px solid var(--line);background:var(--bar);color:var(--muted);
+  width:26px;height:26px;border-radius:50%;font-size:14px;line-height:1}
+#rec .close:hover{border-color:var(--bad);color:var(--bad)}
+#rec .close:active{transform:scale(.94)}
+
+@media(max-width:640px){
+  /* on a phone it IS a layer over everything, so the cross goes back to the big
+     circle everyone recognises */
+  body.rec-open #main{grid-template-columns:minmax(0,1fr)}
+  #divider{display:none!important}
+  #rec{position:fixed;left:0;right:0;bottom:0;top:auto;max-height:88vh;width:100%;
+    border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;
+    box-shadow:0 -10px 30px rgba(0,0,0,.18);z-index:2000}
+  body.rec-open #rec{display:block}
+  #rec .close{width:42px;height:42px;border:0;background:var(--bad);color:#fff;
+    font-size:20px;box-shadow:0 2px 10px rgba(176,80,59,.35);right:14px;top:10px}
+  #rec h2{padding-right:46px}
+}
+
+/* With the record open the table has ~830px, and the fixed column widths alone add
+   up to more than that, so the one flexible column, the WORK, collapsed to nothing:
+   the table lost the only thing anybody reads it for. Two columns stand down while
+   the panel is open, and they are the two the panel itself is showing anyway. */
+body.rec-open .c-scoring,
+body.rec-open .c-key,
+body.rec-open .c-num{display:none}
+body.rec-open table.cat col.k-scoring,
+body.rec-open table.cat col.k-key,
+body.rec-open table.cat col.k-date,
+body.rec-open table.cat col.k-dur{width:0}
+body.rec-open table.cat col.k-comp{width:92px}
+/* what stays: who wrote it, its number, its name, whether it can be heard, and how
+   well the sources agree. Key, scoring, date and duration are all in the panel
+   itself, two inches to the right. */
