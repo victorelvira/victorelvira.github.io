@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.23.5";
-const BUILD_AT = "2026-09-12 00:54";
+const DATA_V = "0.24.0";
+const BUILD_AT = "2026-09-12 01:02";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -338,6 +338,17 @@ const COLS=[
 /* "Sort by catalogue" across several composers has to mean composer THEN number
    or Bach's Op. 1 lands between Chopin's and Mozart's. A catalogue belongs to one
    composer; it is not a shared axis. */
+/* Which columns exist RIGHT NOW. Hiding a cell with display:none does not hide its
+   column: it removes the cell, and every cell after it slides one column to the
+   left, so with four cells hidden "Score · audio" and "Sources" landed on the
+   zero-width columns meant for Key and Scoring and printed on top of each other.
+   The cells, the headers and the <col> widths are all generated from this one list,
+   so they cannot disagree. */
+function liveCols(){
+  const narrow = document.body.classList.contains("rec-open");
+  return COLS.filter(c => !(narrow && (c.id==="key" || c.id==="scoring"
+                                       || c.id==="date" || c.id==="dur")));
+}
 const SORTV={ comp:w=>[fold(w.composer)], work:w=>[fold(w.composer),...catSort(w)],
   cat:w=>catSort(w), title:w=>[fold(w.title)],
   key:w=>{const p=keyParts(val(w,"key"));return p?[FIFTHS.indexOf(p.tonic)*2+(p.mode==="minor"?1:0)]:[99]},
@@ -349,22 +360,31 @@ function cmp(a,b){ const A=SORTV[state.sort](a), B=SORTV[state.sort](b);
     if(typeof x==="string"||typeof y==="string") return String(x)>String(y)?state.dir:-state.dir;
     return (x-y)*state.dir; }
   return fold(a.title)>fold(b.title)?1:-1; }
+const CELL = {
+  comp: w => `<span class="dot" style="background:${compColour(w.composer_slug)}"></span>`
+           + esc(w.composer.split(" ").slice(-1)[0]),
+  work: w => { const c=primaryCat(w), others=cats(w).filter(x=>!c||x.k!==c.k).slice(0,2);
+    return (c?esc(c.label):`<span style="color:var(--faint)">no number</span>`)
+      + (c?mark(w,"catalogue"):"")
+      + (others.length?`<div class="alt">${others.map(o=>esc(o.label)).join(" · ")}</div>`:""); },
+  title: (w,isPart) => { const kids=(w.tree&&w.tree.children||[]).filter(id=>BYID.has(id));
+    const flags=(w.completeness==="lost"?`<span class="flagdot flag-lost" title="lost"></span>`:"")
+      +(w.versions?`<span class="flagdot flag-ver" title="more than one version on record"></span>`:"");
+    return (kids.length&&!isPart?`<span class="caret" data-toggle="${esc(w.id)}">${state.open.has(w.id)?"▾":"▸"}</span>`:"")
+      + titleOf(w) + flags
+      + (kids.length&&!isPart?`<span class="parts">${kids.length} pieces</span>`:""); },
+  key: w => { const k=show(w,"key"); return k
+    ? `<span class="sw" style="background:${keyColour(val(w,"key"))}"></span>${esc(k)}${mark(w,"key")}` : ""; },
+  scoring: w => { const e=ensemble(w); return e ? esc(e)+mark(w,"instrumentation") : ""; },
+  date: w => esc(fmtDate(show(w,"date_composed"))) + (F(w,"date_composed")?mark(w,"date_composed"):""),
+  dur: w => fmtDur(seconds(w)),
+  media: w => mediaCell(w),
+  src: w => srcDots(w),
+};
 function rowHTML(w,isPart){
-  const c=primaryCat(w), others=cats(w).filter(x=>!c||x.k!==c.k).slice(0,2);
-  const k=show(w,"key"), kp=val(w,"key");
-  const kids=(w.tree&&w.tree.children||[]).filter(id=>BYID.has(id));
-  const flags=(w.completeness==="lost"?`<span class="flagdot flag-lost" title="lost"></span>`:"")
-    +(w.versions?`<span class="flagdot flag-ver" title="more than one version on record"></span>`:"");
-  return `<tr class="${isPart?"part":""}${state.sel===w.id?" sel":""}" data-id="${esc(w.id)}">
-    <td class="c-comp"><span class="dot" style="background:${compColour(w.composer_slug)}"></span>${esc(w.composer.split(" ").slice(-1)[0])}</td>
-        <td class="c-cat">${c?esc(c.label):`<span style="color:var(--faint)">no number</span>`}${c?mark(w,"catalogue"):""}${others.length?`<div class="alt">${others.map(o=>esc(o.label)).join(" · ")}</div>`:""}</td>
-    <td class="c-title">${kids.length&&!isPart?`<span class="caret" data-toggle="${esc(w.id)}">${state.open.has(w.id)?"▾":"▸"}</span>`:""}${titleOf(w)}${flags}${kids.length&&!isPart?`<span class="parts">${kids.length} pieces</span>`:""}</td>
-    <td class="c-key">${k?`<span class="sw" style="background:${keyColour(kp)}"></span>${esc(k)}${mark(w,"key")}`:""}</td>
-    <td class="c-scoring">${esc(ensemble(w)||"")}${ensemble(w)?mark(w,"instrumentation"):""}</td>
-    <td class="c-num">${esc(fmtDate(show(w,"date_composed")))}${F(w,"date_composed")?mark(w,"date_composed"):""}</td>
-    <td class="c-num">${fmtDur(seconds(w))}</td>
-    <td class="c-media">${mediaCell(w)}</td>
-    <td class="c-src">${srcDots(w)}</td></tr>`;
+  const cells = liveCols().map(c =>
+    `<td class="${c.cls}">${CELL[c.id](w,isPart)}</td>`).join("");
+  return `<tr class="${isPart?"part":""}${state.sel===w.id?" sel":""}" data-id="${esc(w.id)}">${cells}</tr>`;
 }
 /* Free means free: only Public Domain and the CC licences without NC or ND are
    counted, and the count is of recordings whose licence IMSLP actually states. */
@@ -398,11 +418,12 @@ function renderWorks(){
       const kids=(w.tree.children||[]).map(id=>BYID.get(id)).filter(c=>c&&vset.has(c.id));
       kids.sort(cmp); h+=kids.map(c=>rowHTML(c,true)).join(""); }
     return h;}).join("");
-  const head=COLS.map(c=>`<th data-sort="${c.id}" class="${c.cls}">${c.label}`+
+  const cols=liveCols();
+  const head=cols.map(c=>`<th data-sort="${c.id}" class="${c.cls}">${c.label}`+
     (state.sort===c.id?`<span class="dir"> ${state.dir>0?"▲":"▼"}</span>`:"")+`</th>`).join("");
-  const cols = COLS.map(c=>`<col class="k-${c.id==="work"?"cat":c.id}">`).join("");
+  const colTags = cols.map(c=>`<col class="k-${c.id==="work"?"cat":c.id}">`).join("");
   document.getElementById("stage").innerHTML = tops.length
-    ? `<table class="cat">${cols}<thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`+
+    ? `<table class="cat">${colTags}<thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`+
       (tops.length>slice.length?`<button id="more">Show more, ${tops.length-slice.length} left</button>`:"")
     : `<p style="padding:34px 18px;color:var(--muted)">Nothing matches. <button id="reset" style="border:0;background:none;color:var(--accent);cursor:pointer;text-decoration:underline;font:inherit">Clear everything</button></p>`;
 }

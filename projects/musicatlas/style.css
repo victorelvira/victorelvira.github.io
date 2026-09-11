@@ -395,13 +395,6 @@ body.rec-open #rec{display:block}
    up to more than that, so the one flexible column, the WORK, collapsed to nothing:
    the table lost the only thing anybody reads it for. Two columns stand down while
    the panel is open, and they are the two the panel itself is showing anyway. */
-body.rec-open .c-scoring,
-body.rec-open .c-key,
-body.rec-open .c-num{display:none}
-body.rec-open table.cat col.k-scoring,
-body.rec-open table.cat col.k-key,
-body.rec-open table.cat col.k-date,
-body.rec-open table.cat col.k-dur{width:0}
 body.rec-open table.cat col.k-comp{width:92px}
 /* what stays: who wrote it, its number, its name, whether it can be heard, and how
    well the sources agree. Key, scoring, date and duration are all in the panel
