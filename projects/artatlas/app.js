@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.8.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-07 00:10";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.11.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-11 10:28";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -101,7 +101,7 @@ const BUILD_AT = "2026-09-07 00:10";   // stamped by scripts/stamp_build.py at d
 //   · names of real things   → museums come from Wikidata (artatlas/data/museum_i18n.json), painters
 //     and countries from small tables in the dictionary. A name is not a string to translate: it is
 //     what the place calls itself.
-const I18N_LANGS = [["en", "EN"], ["es", "ES"]];
+const I18N_LANGS = [["en", "EN"], ["es", "ES"], ["fr", "FR"]];
 let LANG = "en", DICT = null;
 
 function t(s) { return (DICT && DICT.ui[s]) || s; }
@@ -116,6 +116,44 @@ function locName(p) {
     if (n && n[LANG]) return n[LANG];
   }
   return p.location || "";
+}
+
+// …and the city beside it. The museum's name comes from its id; the city is a plain English string
+// the harvest stamped on the work, so the table is keyed by that string. Only display sites use
+// this: grouping keys, the search index and the share URL keep the English, or the same museum would
+// split into one pin per language.
+let cityI18n = null;
+function ctyName(c) {
+  if (!c || LANG === "en" || !cityI18n) return c || "";
+  const n = cityI18n[c];
+  return (n && n[LANG]) || c;
+}
+
+// The painting's own title. 32 821 of them across seven languages, but a French reader needs only
+// the French, so they ship one file per language and the file is fetched when that language is
+// chosen — `work_i18n.fr.json` is 348 KB and `work_i18n.ca.json` is 77, and nobody loads both.
+// Keyed by QID, which is why the two QID audits had to come first: nine paintings sharing the QID of
+// the *Sunflowers* SERIES would otherwise have been handed the same title in seven languages.
+let workI18n = null, workI18nLang = null;
+function wTitle(p) {
+  if (!p) return "";
+  if (LANG !== "en" && workI18n && workI18nLang === LANG && p.qid) {
+    const t2 = workI18n[p.qid];
+    if (t2) return t2;
+  }
+  return p.title || "";
+}
+function loadWorkTitles(lang) {
+  if (lang === "en" || workI18nLang === lang) return;
+  workI18nLang = lang; workI18n = null;
+  fetch(`artatlas/data/work_i18n.${lang}.json?v=` + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d || workI18nLang !== lang) return;    // the reader changed language while it was in flight
+      workI18n = d.t || {};
+      if (places.length) refresh();
+    })
+    .catch(() => { /* no titles for this language → the English one, nothing breaks */ });
 }
 
 function translateDOM(root) {
@@ -168,11 +206,11 @@ function setLang(lang, opts) {
       if (typeof view !== "undefined" && view.table && typeof renderTable === "function") renderTable();
     }
   };
-  if (lang === "en") { DICT = null; apply(); return; }
-  if (DICT && DICT.lang === lang) { apply(); return; }
+  if (lang === "en") { DICT = null; workI18n = null; workI18nLang = null; apply(); return; }
+  if (DICT && DICT.lang === lang) { loadWorkTitles(lang); apply(); return; }
   fetch(`artatlas/i18n/${lang}.json?v=` + DATA_V)
     .then(r => r.ok ? r.json() : null)
-    .then(d => { if (!d) return; DICT = d; loadMuseumNames(); apply(); })
+    .then(d => { if (!d) return; DICT = d; loadMuseumNames(); loadWorkTitles(lang); apply(); })
     .catch(() => { /* dictionary missing → stay in English, nothing breaks */ });
 }
 
@@ -180,7 +218,10 @@ function setLang(lang, opts) {
 (function initLang() {
   let want = new URLSearchParams(location.search).get("lang");
   if (!want) { try { want = localStorage.getItem("atlasLang"); } catch (e) { /* ignore */ } }
-  if (!want && (navigator.language || "").toLowerCase().startsWith("es")) want = "es";
+  if (!want) {                                  // nothing chosen → follow the browser, if we speak it
+    const nav = (navigator.language || "").toLowerCase().slice(0, 2);
+    if (I18N_LANGS.some(l => l[0] === nav)) want = nav;
+  }
   const known = I18N_LANGS.map(l => l[0]);
   if (want && known.includes(want) && want !== "en") setLang(want, { rerender: false });
   document.addEventListener("click", e => {
@@ -502,6 +543,10 @@ let musI18n = null, musI18nSearch = new Map();
 function loadMuseumNames() {
   if (musI18n) return;
   musI18n = {};                                   // set immediately so we only ever fetch once
+  fetch("artatlas/data/city_i18n.json?v=" + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { if (d) { cityI18n = d.c || {}; if (places.length) refresh(); } })
+    .catch(() => {});                             // no city table → the English name, nothing breaks
   fetch("artatlas/data/museum_i18n.json?v=" + DATA_V)
     .then(r => r.ok ? r.json() : null)
     .then(d => {
@@ -517,7 +562,7 @@ function matchesQ(p) {
   if (!state.q) return true;
   // `venue_of` is the institution a building belongs to: typing "Royal Collection" has to find both
   // Buckingham and Windsor, and "Bavarian State Painting Collections" all four Pinakotheken
-  if ([p.painter, p.title, p.location, p.city, p.country, p.year, p.medium, p.venue_of]
+  if ([p.painter, p.title, wTitle(p), p.location, p.city, ctyName(p.city), p.country, p.year, p.medium, p.venue_of]
       .some(v => deacc(v).includes(state.q))) return true;
   const other = p.museum_id && musI18nSearch.get(p.museum_id);   // the museum in another language
   return !!other && other.includes(state.q);
@@ -632,7 +677,7 @@ function placePopup(feats) {
     const st = p.status && GONE.has(p.status)
       ? ` <span class="tag gone">${esc(STATUS_LABEL[p.status] || p.status)}</span>` : "";
     const factBits = [p.medium, p.dimensions];
-    if (painted && p.location) factBits.push(`now in ${p.location}${p.city ? `, ${p.city}` : ""}`);
+    if (painted && p.location) factBits.push(`now in ${locName(p)}${p.city ? `, ${ctyName(p.city)}` : ""}`);
     const facts = factBits.filter(Boolean).map(esc).join(" · ");
     const factsRow = facts ? `<div class="fx">${facts}</div>` : "";
     const desc = p.summary ? `<div class="ds">${esc(p.summary)}</div>` : "";
@@ -641,7 +686,7 @@ function placePopup(feats) {
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
     return `<li class="pop-work" data-i="${i}">${thumb}<div class="wk">` +
-      `<div class="wt">${esc(p.title || "Untitled")}${yr}${att}${st}</div>` +
+      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${yr}${att}${st}</div>` +
       `<div class="by">${painterTag(p)}</div>` +
       `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
       `${provLine(p, WORK_SKIP)}</div></li>`;
@@ -952,7 +997,7 @@ function renderMuseumChip() {
     el = document.createElement("span"); el.id = "museum-chip"; el.className = "chip mchip";
     document.getElementById("painters").after(el);
   }
-  el.innerHTML = `🏛 ${esc(mu ? mu.location : "Museum")}${mu && mu.city ? ", " + esc(mu.city) : ""} ` +
+  el.innerHTML = `🏛 ${esc(mu ? mu.location : "Museum")}${mu && mu.city ? ", " + esc(ctyName(mu.city)) : ""} ` +
     `<button type="button" aria-label="Clear museum">✕</button>`;
   el.querySelector("button").addEventListener("click", clearMuseum);
 }
@@ -1096,13 +1141,13 @@ function renderWorksTable() {
     return `<tr data-ri="${i}">` +
       `<td class="c-img">${thumb}</td>` +
       `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${esc(pName(p.painter))}</td>` +
-      `<td class="c-title">${esc(p.title || "Untitled")}</td>` +
+      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}</td>` +
       `<td class="c-year">${esc(p.year || "")}</td>` +
       `<td class="c-medium">${esc(p.medium || "")}</td>` +
       `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
       `<td class="c-attr">${att}</td>` +
       `<td class="c-loc">${esc(locName(p))}</td>` +
-      `<td class="c-city">${esc(p.city || "")}</td>` +
+      `<td class="c-city">${esc(ctyName(p.city))}</td>` +
       `<td class="c-country">${esc(cName(p.country))}</td>` +
       `<td class="c-links">${linksRow(p)}</td>` +
       "</tr>";
@@ -1128,7 +1173,7 @@ function renderMuseumsTable() {
   tbody.innerHTML = rows.map(r =>
     `<tr data-rk="${esc(r.key)}">` +
     `<td class="c-title">🏛 ${esc(r.location)}</td>` +
-    `<td class="c-city">${esc(r.city)}</td>` +
+    `<td class="c-city">${esc(ctyName(r.city))}</td>` +
     `<td class="c-country">${esc(cName(r.country))}</td>` +
     `<td class="c-num">${r.count}</td>` +
     `<td class="c-num">${r.npainters}</td>` +
@@ -1442,7 +1487,7 @@ const MUS_EDGES   = ["#b39a63", "#8fae88", "#8f9cc4", "#c79c8b", "#a892b3", "#85
 function tileHTML(w, vis, grp) {
   const i = vis.length; vis.push(w);
   const p = w.p;
-  const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} — ${locName(p)}`;
   const img = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
@@ -1457,9 +1502,9 @@ function tileHTML(w, vis, grp) {
     `<div class="gcard">${img}<div class="gmeta">` +
     // under a painter's colour field their name is already written above the whole run, so the card
     // spends its two lines on what is not known yet: the title, and where the work hangs
-    `<div class="gm1">${grp && grp.kind === "painter" ? esc(p.title || t("Untitled")) : esc(pName(p.painter))}` +
+    `<div class="gm1">${grp && grp.kind === "painter" ? esc(wTitle(p) || t("Untitled")) : esc(pName(p.painter))}` +
     `${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
-    (p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(p.city)}` : ""}</div>` : "") +
+    (p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(ctyName(p.city))}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
@@ -1472,7 +1517,7 @@ function groupedTileStream(ordered) {
     // a group can bring its own colours (painters use their map colour); museums cycle the pastels
     const color = g.color || MUS_PASTELS[gi % MUS_PASTELS.length];
     const edge = g.edge || MUS_EDGES[gi % MUS_EDGES.length];
-    const label = g.location + (g.city ? ` · ${g.city}` : "");   // shown over the museum's FIRST tile
+    const label = g.location + (g.city ? ` · ${ctyName(g.city)}` : "");   // over the museum's FIRST tile
     g.items.forEach((w, wi) => stream.push({ w, grp: { color, edge, mus: gi, kind: g.kind || "museum", label: wi === 0 ? label : "", key: wi === 0 ? g.key : "" } }));
   });
   return stream;
@@ -1597,16 +1642,16 @@ function panelRowHTML(w, grpKey) {
   const i = panelVis.length; panelVis.push(w);
   const fold = grpKey ? ` data-in="${esc(grpKey)}"${panelFolded.has(grpKey) ? " hidden" : ""}` : "";
   const p = w.p;
-  const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} — ${locName(p)}`;
   const thumb = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}"${fold}>${thumb}<div>` +
-    `<div class="wt">${esc(p.title || t("Untitled"))}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
+    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
-    (venue ? `<div class="sub wvenue">${esc(venue)}${p.city ? ", " + esc(p.city) : ""}</div>` : "") +
+    (venue ? `<div class="sub wvenue">${esc(venue)}${p.city ? ", " + esc(ctyName(p.city)) : ""}</div>` : "") +
     `</div></li>`;
 }
 
@@ -1636,7 +1681,7 @@ function appendPanelChunk() {
               (e.grp.key ? ` data-place="${esc(e.grp.key)}" data-fold="${esc(e.grp.key)}"` : "") +
               ` title="${esc(t("Fold or unfold this group"))}">` +
               `<span class="grp-caret" aria-hidden="true"></span>` +
-              `<span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(e.grp.city)}` : ""}</span>` +
+              `<span>${esc(e.grp.location)}${e.grp.city ? ` · ${esc(ctyName(e.grp.city))}` : ""}</span>` +
               `<span class="n">${e.grp.count}</span></li>`;
           })()
         : panelRowHTML(e.w, e.grpKey);
@@ -2110,18 +2155,18 @@ function openWorkCard(w) {
   if (!w) return;
   wcWork = w;
   const p = w.p;
-  const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p.location || ""}`;
+  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} — ${locName(p)}`;
   const img = p.image
     ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
     : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;
   const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
-  const venue = [locName(p), p.city, cName(p.country)].filter(Boolean).join(", ");
+  const venue = [locName(p), ctyName(p.city), cName(p.country)].filter(Boolean).join(", ");
   const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
     ? esc(p.attribution) + (p.attribution_note ? ` — <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
   const links = linksRow(p);
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
-    `<div class="wc-info"><h3 class="wc-title">${esc(p.title || "Untitled")}</h3>` +
+    `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}</h3>` +
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), esc(venue)
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")
@@ -2373,7 +2418,7 @@ function gDateQ() {
     opts.push({ text: String(yy), correct: false });
   }
   return { kind: "img", image: p.image, options: gShuffle(opts), answer: String(y), work: p,
-    prompt: `${t("When was this painted?")}<span class="g-clue">${esc(pName(p.painter))}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
+    prompt: `${t("When was this painted?")}<span class="g-clue">${esc(pName(p.painter))}${p.title ? ` · “${esc(wTitle(p))}”` : ""}</span>` };
 }
 
 function gWhereQ() {
@@ -2388,7 +2433,7 @@ function gWhereQ() {
   const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
   const opts = [{ text: lab(p), correct: true }, ...ds.map(v => ({ text: lab(v), correct: false }))];
   return { kind: "img", image: p.image, options: gShuffle(opts), answer: lab(p), work: p,
-    prompt: `${t("Where is it now?")}<span class="g-clue">${esc(pName(p.painter))}${p.title ? ` · “${esc(p.title)}”` : ""}</span>` };
+    prompt: `${t("Where is it now?")}<span class="g-clue">${esc(pName(p.painter))}${p.title ? ` · “${esc(wTitle(p))}”` : ""}</span>` };
 }
 
 function gPaintingQ() {
@@ -2435,7 +2480,7 @@ function gInfoHTML(p, kind) {
   const where = [p.location, p.city, p.country].filter(Boolean).join(", ");
   let h = `<div class="gi-h">About this painting</div>`;
   if (kind === "pick" && p.image) h += `<img class="gi-img" src="${esc(p.image)}" alt="">`;
-  h += `<div class="gi-title">${esc(p.title || "Untitled")}</div>`;
+  h += `<div class="gi-title">${esc(wTitle(p) || t("Untitled"))}</div>`;
   const by = [p.painter, p.year].filter(Boolean).join(" · ");
   if (by) h += `<div class="gi-row">${esc(by)}</div>`;
   if (where) h += `<div class="gi-row">📍 ${esc(where)}</div>`;
@@ -2782,7 +2827,7 @@ function gxSideFill(w) {
   const links = linksRow(p);
   body.innerHTML =
     (p.image ? `<img class="gxs-img" src="${esc(fullImage(p.image))}" alt="" onerror="this.style.display='none'">` : "") +
-    `<div class="gxs-title">${esc(p.title || "Untitled")}</div>` +
+    `<div class="gxs-title">${esc(wTitle(p) || t("Untitled"))}</div>` +
     `<div class="gxs-painter"><span class="pdot" style="background:${colorFor(p.painter)}"></span>${esc(p.painter || "")}</div>` +
     row("Date", p.year) + row("Where", venue) + row("Technique", p.medium) + row("Size", p.dimensions) +
     (links ? `<div class="gxs-links">${links}</div>` : "") +

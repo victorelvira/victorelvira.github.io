@@ -1222,7 +1222,9 @@
     "wikidata": "https://www.wikidata.org/wiki/Q1787143",
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -1403,7 +1405,6 @@
     "museum_id": "galerie-neue-meister",
     "city": "Dresden",
     "country": "Germany",
-    "qid": "Q232087",
     "wikidata": "https://www.wikidata.org/wiki/Q232087",
     "wga_url": "https://www.wga.hu/html/f/friedric/2/213fried.html",
     "_merged": [
@@ -1416,7 +1417,8 @@
     ],
     "location_src": "Galerie Neue Meister",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q232087"
    }
   },
   {
@@ -1747,7 +1749,6 @@
     "museum_id": "hermitage-museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "qid": "Q1423223",
     "wikidata": "https://www.wikidata.org/wiki/Q1423223",
     "wga_url": "https://www.wga.hu/html/f/friedric/3/305fried.html",
     "_merged": [
@@ -1760,7 +1761,8 @@
     ],
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1423223"
    }
   },
   {
@@ -1788,7 +1790,9 @@
     "museum_id": "kunstmuseum-winterthur",
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -1885,13 +1889,13 @@
     "museum_id": "neue-pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "qid": "Q1423223",
     "wikidata": "https://www.wikidata.org/wiki/Q1423223",
     "wga_url": "https://www.wga.hu/html/f/friedric/3/305fried.html",
     "location_src": "Neue Pinakothek",
     "venue_of": "Bavarian State Painting Collections",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1423223"
    }
   },
   {
@@ -2096,12 +2100,12 @@
     "museum_id": "alte-nationalgalerie",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "qid": "Q232087",
     "wikidata": "https://www.wikidata.org/wiki/Q232087",
     "wga_url": "https://www.wga.hu/html/f/friedric/2/213fried.html",
     "location_src": "Alte Nationalgalerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q232087"
    }
   },
   {
@@ -2285,7 +2289,6 @@
     "museum_id": "metropolitan-museum-of-art",
     "city": "New York",
     "country": "United States",
-    "qid": "Q232087",
     "wikidata": "https://www.wikidata.org/wiki/Q232087",
     "wga_url": "https://www.wga.hu/html/f/friedric/2/213fried.html",
     "_merged": [
@@ -2298,7 +2301,8 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q232087"
    }
   },
   {
@@ -2774,8 +2778,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -2803,7 +2807,8 @@
     ],
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -3121,7 +3126,8 @@
     "title": "Moonrise by the Sea",
     "_title_src": "friedrich list (Wikipedia), matched by image",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -3917,7 +3923,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Northern Landscape, Spring",
     "year": "1825",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -3939,7 +3945,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -4421,7 +4427,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Rest during the hay harvest",
     "year": "1834",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -4443,7 +4449,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -4462,7 +4468,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Landscape with bridge",
     "year": "1800",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -4484,7 +4490,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -4503,7 +4509,7 @@
     "painter": "Caspar David Friedrich",
     "title": "Evening on the Baltic Sea",
     "year": "1831",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -4525,7 +4531,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -6203,7 +6209,7 @@
     "painter": "Caspar David Friedrich",
     "title": "New Moon above the Riesengebirge Mountains",
     "year": "1810",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6225,7 +6231,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

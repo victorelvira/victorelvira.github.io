@@ -244,8 +244,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33333,
-     48.85694
+     2.33328,
+     48.85681
     ]
    },
    "properties": {
@@ -254,7 +254,7 @@
     "year": "1774",
     "city": "Paris",
     "country": "France",
-    "location": "École nationale supérieure des Beaux-Arts",
+    "location": "Beaux-Arts de Paris",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "120 × 155 cm",
@@ -265,7 +265,7 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "ecole-nationale-superieure-des-beaux-arts",
+    "museum_id": "beaux-arts-de-paris",
     "qid": "Q3590926",
     "wikidata": "https://www.wikidata.org/wiki/Q3590926",
     "wga_url": "https://www.wga.hu/html/d/david_j/1/105david.html",
@@ -1274,7 +1274,7 @@
     "title": "Lycurgus of Sparta",
     "year": "1791",
     "city": "Besançon",
-    "location": "Musée des Beaux-Arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Lycurgus_of_Sparta%2C_Jean-Jacques_Le_Barbier.jpg/500px-Lycurgus_of_Sparta%2C_Jean-Jacques_Le_Barbier.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1287,7 +1287,7 @@
      "source": "Wikipedia: List of paintings by Jacques-Louis David",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts",
+    "museum_id": "musee-des-beaux-arts-de-caen",
     "qid": "Q97516112",
     "wikidata": "https://www.wikidata.org/wiki/Q97516112",
     "country": "France",
@@ -1984,11 +1984,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "chateau-de-malmaison",
-    "qid": "Q59201",
     "wikidata": "https://www.wikidata.org/wiki/Q59201",
     "location_src": "Château de Malmaison",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q59201",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -2167,12 +2168,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q1231009",
     "wikidata": "https://www.wikidata.org/wiki/Q1231009",
     "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1231009"
    }
   },
   {
@@ -2241,14 +2242,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-the-history-of-france",
-    "qid": "Q1231009",
     "wikidata": "https://www.wikidata.org/wiki/Q1231009",
     "wga_url": "https://www.wga.hu/html/d/david_j/4/409david.html",
     "location_src": "Museum of the History of France",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/0_Sacre_de_l%27empereur_Napol%C3%A9on_Ier_-_Jean-Louis_David_-_Louvre.JPG",
     "_image_src": "commons category Category:The Coronation of Napoleon (Jacques-Louis David, Louvre)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1231009"
    }
   },
   {
@@ -2338,14 +2339,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
     "title": "The Emperor Napoleon in His Study at the Tuileries",
     "year": "1812",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
@@ -2421,14 +2422,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Jacques-Louis David",
     "title": "Portrait of Madame David",
     "year": "1813",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "oil on canvas",

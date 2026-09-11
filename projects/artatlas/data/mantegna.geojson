@@ -2025,14 +2025,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Mantegna",
     "title": "Portrait of a Man",
     "year": "1460",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -2352,18 +2352,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.99278,
-     45.43861
+     2.3358,
+     48.8611
     ]
    },
    "properties": {
     "painter": "Mantegna",
     "title": "Crucifixion",
     "year": "1456-1457",
-    "city": "Province of Verona",
-    "country": "Italy",
-    "location": "Verona",
-    "kind": "museum",
+    "city": "Paris",
+    "country": "France",
+    "location": "Louvre",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on panel",
@@ -2387,11 +2386,13 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "verona",
+    "museum_id": "louvre",
     "qid": "Q3698197",
     "wga_url": "https://www.wga.hu/html/m/mantegna/1/sanzenop.html",
     "location_src": "Verona",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195",
+    "kind": "museum"
    }
   },
   {
@@ -2445,14 +2446,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Mantegna",
     "title": "Infant Savior",
     "year": "1455",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -2582,14 +2583,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Mantegna",
     "title": "Judith and Holofernes",
     "year": "1495",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",

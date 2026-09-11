@@ -1,0 +1,344 @@
+/* musicatlas, built in the same visual language as artatlas (../artatlas_project/artatlas/style.css):
+   same paper, same chips, same segmented controls, same full-height app layout, so the two read
+   as siblings. What is specific here: the catalogue table is the spine, and colour is spent on
+   composers (a corpus of many) rather than on keys (which get an 8px swatch where they mean
+   something). */
+:root{
+  --bg:#f6f3ee; --bar:#fff; --ink:#241a12; --muted:#6f665c; --faint:#a89e91; --line:#e5e0d6;
+  --accent:#6a4a2a; --hot:#3a2317; --sand:#efe6d6; --sand-line:#d8c7a6;
+  --ok:#6f9163; --comp:#5f83a0; --maj:#c08a33; --bad:#b0503b; --res:#7f66a0; --one:#d3cbc1;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);
+  background:var(--bg);display:flex;flex-direction:column;height:100dvh}
+
+#navbar{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;padding:5px 12px;
+  background:var(--ink);font-size:12.5px}
+#navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;white-space:nowrap}
+#navbar .nav-sep{color:#8a7f72}
+#navbar .nav-home{color:#cbbfae;text-decoration:none;white-space:nowrap}
+#navbar .build{margin-left:auto;color:#8a7f72;font-size:6.5px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+
+#bar{display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap;padding:7px 16px;
+  background:var(--bar);border-bottom:1px solid var(--line);z-index:500}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;cursor:pointer}
+.brand:hover strong{text-decoration:underline}
+.brand strong{display:block;font:600 16px/1.2 var(--serif);letter-spacing:.2px}
+.brand small{color:var(--muted);font-size:12px}
+.brand .mark{flex:0 0 auto}
+#totals{margin-left:auto;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+#totals b{color:var(--ink);font-weight:600}
+
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--line);
+  border-radius:999px;background:#fff;cursor:pointer;user-select:none;font-size:13px;color:var(--ink)}
+.chip:hover{border-color:var(--sand-line)}
+.chip[aria-pressed=true],.chip.on{background:var(--sand);border-color:var(--sand-line);
+  color:var(--hot);font-weight:600}
+.chip .n{color:var(--faint);font-size:10.5px;font-variant-numeric:tabular-nums}
+.chip[aria-pressed=true] .n{color:#9c8a6d}
+
+/* composer selector, artatlas's painter popover, same shape */
+.picker{position:relative;display:inline-block}
+#comp-btn{cursor:pointer;font:inherit;font-size:14px;font-weight:600;color:var(--hot);
+  background:var(--sand);border:1px solid var(--sand-line);border-radius:999px;padding:7px 15px;
+  box-shadow:0 1px 3px rgba(0,0,0,.1)}
+#comp-btn:hover{background:#e7dcc6;border-color:var(--sand-line)}
+#comp-pop{position:absolute;top:calc(100% + 4px);left:0;z-index:900;width:min(340px,92vw);
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  box-shadow:0 6px 24px rgba(0,0,0,.16);padding:10px}
+#comp-pop[hidden]{display:none}
+.pop-search{width:100%;padding:8px 10px;font:inherit;font-size:14px;border:1px solid var(--line);
+  border-radius:6px}
+.pop-actions{display:flex;gap:6px;margin:6px 0}
+.pop-actions button{flex:1;font:inherit;font-size:12px;padding:3px;cursor:pointer;
+  border:1px solid var(--line);border-radius:6px;background:#faf7f1;color:var(--muted)}
+.pop-list{list-style:none;margin:0;padding:0;max-height:min(60vh,440px);overflow-y:auto}
+.pop-list .prow{display:flex;align-items:center}
+.pop-list .prow label{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;
+  padding:5px 4px;cursor:pointer;font-size:13px}
+.pop-list .prow:hover{background:#faf7f1}
+.pop-list .prow .only{flex:0 0 auto;margin-right:4px;padding:2px 7px;border:0;border-radius:999px;
+  background:none;color:var(--accent);font:inherit;font-size:11.5px;font-weight:600;cursor:pointer;
+  opacity:0;text-transform:uppercase;letter-spacing:.3px}
+.pop-list .prow:hover .only,.pop-list .prow:focus-within .only{opacity:.8}
+.pop-list .prow .only:hover{opacity:1;text-decoration:underline;background:var(--sand)}
+.pop-list .sw{width:12px;height:12px;border-radius:3px;flex:0 0 auto}
+.pop-list .pyr{color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.pop-h{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding:7px 4px 2px;display:flex;align-items:center;gap:6px}
+.pop-h .grp-only{margin-left:auto;border:0;background:none;color:var(--muted);font:inherit;
+  font-size:10.5px;font-weight:700;text-transform:uppercase;cursor:pointer;opacity:0;
+  padding:1px 6px;border-radius:999px}
+.pop-h:hover .grp-only{opacity:.8}
+.pop-h .grp-only:hover{opacity:1;background:var(--sand);text-decoration:underline}
+@media(hover:none){.pop-list .prow .only,.pop-h .grp-only{opacity:.75}}
+
+/* second row: search + views + toggles */
+#modes{display:flex;gap:8px 12px;align-items:center;flex-wrap:wrap;padding:6px 16px;
+  background:var(--bar);border-bottom:1px solid var(--line)}
+#q{flex:0 1 260px;padding:6px 11px;font:inherit;font-size:13px;border:1px solid var(--line);
+  border-radius:6px;background:#fff}
+#q:focus{outline:2px solid var(--sand-line);outline-offset:-1px}
+#view-tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+#view-tabs button{border:0;border-radius:0;font:inherit;font-size:13px;padding:6px 14px;
+  cursor:pointer;background:#fff;color:var(--muted)}
+#view-tabs button+button{border-left:1px solid var(--line)}
+#view-tabs button[aria-pressed=true]{background:var(--hot);color:#fff;font-weight:600}
+
+/* ONE line, scrolled sideways. Wrapping looked harmless and measured 214px, the
+   chrome then filled the whole viewport and the table was left with zero height.
+   The filter row is a rail, not a paragraph. */
+#facets{display:flex;gap:6px 12px;align-items:center;flex-wrap:nowrap;overflow-x:auto;
+  padding:6px 16px;background:var(--bar);border-bottom:1px solid var(--line);font-size:13px;
+  scrollbar-width:thin}
+#facets::-webkit-scrollbar{height:5px}
+#facets::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+#facets .fg{flex:0 0 auto}
+#facets .chip{white-space:nowrap}
+#facets .fg{display:flex;gap:5px;align-items:center;flex-wrap:nowrap}
+#facets .fg > span.lbl{font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--faint);font-weight:700}
+.chip-sep{width:1px;align-self:stretch;margin:2px;background:var(--line);flex:0 0 1px}
+
+/* content area scrolls, the chrome does not */
+#content{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff}
+#subbar{display:flex;align-items:center;gap:10px;padding:5px 14px;border-bottom:1px solid var(--line);
+  flex-wrap:wrap;font-size:13px;color:var(--muted)}
+#subtabs{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+#subtabs button{padding:5px 12px;border:0;background:#fff;font:inherit;font-size:13px;
+  font-weight:600;color:var(--muted);cursor:pointer}
+#subtabs button+button{border-left:1px solid var(--line)}
+#subtabs button[aria-pressed=true]{background:var(--hot);color:#fff}
+#subbar b{color:var(--ink);font-variant-numeric:tabular-nums}
+#subbar .right{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap;
+  justify-content:flex-end;max-width:70%}
+.chip.mchip{display:inline-flex;align-items:center;gap:4px;background:var(--sand);
+  border-color:var(--sand-line);color:var(--hot);font-weight:600;padding-right:4px}
+.chip.mchip button{background:transparent;border:0;cursor:pointer;color:var(--muted);
+  font-size:14px;padding:0 3px;line-height:1}
+.chip.mchip button:hover{color:var(--bad)}
+#scroll{flex:1;min-height:0;overflow:auto}
+#instrument{padding:8px 16px 0;border-bottom:1px solid var(--line);background:var(--bar)}
+#instrument:empty{display:none;border:0;padding:0}
+
+/* Fixed widths, or the Scoring column (free text, sometimes a whole orchestra)
+   swells and pushes Duration and Sources off the right edge. The work's title is
+   what people read, so it gets the slack. */
+table.cat{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+table.cat col.k-comp{width:104px} table.cat col.k-cat{width:118px}
+table.cat col.k-key{width:104px} table.cat col.k-scoring{width:190px}
+table.cat col.k-date{width:132px} table.cat col.k-dur{width:74px}
+table.cat col.k-media{width:86px} table.cat col.k-src{width:70px}
+table.cat td{overflow:hidden;text-overflow:ellipsis}
+.c-title{overflow-wrap:anywhere}
+table.cat thead th{position:sticky;top:0;background:#faf7f1;z-index:2;text-align:left;
+  font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;
+  padding:8px 10px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap;
+  user-select:none}
+table.cat thead th:hover{color:var(--ink)}
+table.cat thead th .dir{color:var(--accent)}
+table.cat td{padding:6px 10px;border-bottom:1px solid #f1ece3;vertical-align:baseline}
+table.cat tbody tr:hover{background:#faf7f1;cursor:pointer}
+table.cat tbody tr.sel{background:var(--sand)}
+.c-comp{white-space:nowrap;font-size:12.5px;color:var(--muted)}
+.c-cat{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink);font-size:12.5px}
+.c-cat .alt{color:var(--faint);font-size:11px}
+.c-title{font-family:var(--serif);font-size:15px;line-height:1.3}
+.c-title .parts{color:var(--faint);font-family:system-ui,sans-serif;font-size:11px;margin-left:6px}
+.c-key{white-space:nowrap;color:var(--ink);font-size:12.5px;overflow:hidden}
+.c-scoring{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-num{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-size:12.5px}
+.c-src{white-space:nowrap;text-align:right;padding-right:18px}
+.c-media{white-space:nowrap;font-size:12px;font-variant-numeric:tabular-nums}
+.c-media a{color:var(--accent);text-decoration:none}
+.c-media a:hover{text-decoration:underline}
+.c-media b{color:var(--accent)}
+.c-media .play{border:0;background:var(--sand);color:var(--hot);border-radius:999px;
+  width:19px;height:19px;line-height:1;font-size:11px;cursor:pointer;padding:0;margin-right:5px;
+  border:1px solid var(--sand-line);vertical-align:-2px}
+.c-media .play:hover{background:var(--hot);color:#fff}
+#rec .rec{margin:0 0 9px}
+#rec .rec audio{width:100%;height:30px}
+#rec .rec p{margin:2px 0 0;font-size:11.5px;color:var(--muted)}
+#rec .rec p a{color:var(--faint)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sw{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:-1px;
+  border:1px solid rgba(0,0,0,.12)}
+.caret{display:inline-block;width:14px;color:var(--faint);cursor:pointer;font-size:10px;user-select:none}
+tr.part td{background:#fdfbf7}
+tr.part .c-title{padding-left:24px;font-size:14px}
+.flagdot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-left:6px;vertical-align:1px}
+.flag-lost{background:var(--faint)} .flag-ver{background:var(--maj)}
+#more{display:block;margin:16px auto;padding:7px 18px;border:1px solid var(--line);background:#fff;
+  border-radius:8px;cursor:pointer;font:inherit;font-size:13px;color:var(--ink)}
+
+#fifths{display:block;margin:0 auto;max-width:300px}
+#fifths .seg{cursor:pointer} #fifths .seg:hover{filter:brightness(1.06)}
+#fifths text{font-size:9px;fill:var(--ink);pointer-events:none;font-variant-numeric:tabular-nums}
+#fifths .cnt{font-size:7px;fill:var(--faint)}
+#graph{display:block;margin:0 auto;max-width:720px}
+#graph .edge{stroke:var(--faint);fill:none;opacity:.4}
+#graph .edge.hot{stroke:var(--accent);opacity:1;stroke-width:1.5}
+#graph .node{cursor:pointer} #graph .node text{font-size:10px;fill:var(--ink)}
+#graph .hub text{font-size:11.5px;font-weight:700}
+.tlbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:0 0 6px}
+#tl-modes{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+#tl-modes button{border:0;font:inherit;font-size:12.5px;padding:4px 12px;cursor:pointer;
+  background:#fff;color:var(--muted)}
+#tl-modes button+button{border-left:1px solid var(--line)}
+#tl-modes button[aria-pressed=true]{background:var(--hot);color:#fff;font-weight:600}
+.tlscroll{overflow-x:auto;max-height:46vh;overflow-y:auto}
+#timeline .grid{stroke:var(--line2);stroke-width:1}
+#timeline .tick{font-size:10px;fill:var(--faint);font-variant-numeric:tabular-nums}
+#timeline .tlab{font-size:11.5px;fill:var(--ink)}
+#timeline .life{stroke-width:7;opacity:.13;stroke-linecap:round}
+#timeline .axis{stroke:var(--line);stroke-width:1}
+#timeline .tbar{cursor:pointer}
+#timeline .tbar:hover rect{opacity:.72}
+#timeline .tbar:hover .hit{opacity:1;fill:rgba(0,0,0,.045)}
+.hint{text-align:center;font-size:11.5px;color:var(--muted);margin:2px 0 8px}
+
+#rec{position:fixed;right:0;top:0;bottom:0;width:min(430px,100%);background:#fff;
+  border-left:1px solid var(--line);padding:18px 20px;overflow:auto;z-index:2000;
+  box-shadow:-10px 0 30px rgba(0,0,0,.08);transform:translateX(101%);transition:transform .17s ease}
+#rec.open{transform:none}
+#rec h2{margin:0 26px 3px 0;font:600 19px/1.25 var(--serif)}
+#rec .sub{color:var(--muted);font-size:12px;margin:0 0 14px}
+#rec dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px}
+#rec dt{color:var(--faint);font-size:9.5px;text-transform:uppercase;letter-spacing:.09em;
+  padding-top:3px;font-weight:700}
+#rec dd{margin:0}
+#rec .close{position:absolute;right:12px;top:9px;border:0;background:none;font-size:21px;
+  cursor:pointer;color:var(--faint);line-height:1}
+#rec .links{margin-top:16px;padding-top:11px;border-top:1px solid var(--line);font-size:12px;
+  display:flex;gap:12px;flex-wrap:wrap}
+#rec .links a{color:var(--accent)}
+#rec .kids{margin-top:14px}
+#rec .kids h4{font-size:9.5px;color:var(--faint);margin:0 0 4px;letter-spacing:.09em;text-transform:uppercase}
+#rec .kids button{display:block;width:100%;text-align:left;border:0;background:none;padding:2px 0;
+  cursor:pointer;color:var(--ink);font:13px var(--serif)}
+#rec .kids button:hover{text-decoration:underline}
+
+.cc{display:inline-block;width:5px;height:5px;border-radius:50%;margin-left:5px;vertical-align:1px;
+  cursor:help;background:var(--one)}
+.cc.unanimous{background:var(--ok)} .cc.complementary{background:var(--comp)}
+.cc.majority{background:var(--maj)} .cc.conflict{background:var(--bad)}
+.cc.resolved{background:var(--res)} .cc.single{background:var(--one)}
+.cc.derived{background:var(--accent);opacity:.55}
+.ccrow{display:inline-flex;gap:3px;align-items:center}
+#tip{position:fixed;z-index:2600;max-width:340px;background:var(--ink);color:#efe9df;font-size:11.5px;
+  line-height:1.45;padding:9px 11px;border-radius:7px;pointer-events:none;opacity:0;
+  transition:opacity .1s;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+#tip.on{opacity:1}
+#tip b{color:#d9b45a;font-weight:600}
+#tip .why{color:#c3bab0;font-style:italic;display:block;margin-top:5px}
+footer{padding:5px 16px;border-top:1px solid var(--line);background:var(--bar);
+  font-size:11.5px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media(max-width:820px){
+  .c-scoring,.c-key,.c-comp{display:none}
+  #totals{display:none} #q{flex:1 1 100%}
+}
+
+/* ---------------- the record card ----------------
+   Five things you scan (what it is, who plays it, key, when, how long) as chips at
+   the top; everything you might want to check as a table below, each fact with its
+   concordance dot. */
+#rec .whose{margin:0 26px 2px 0;font-size:12.5px;color:var(--muted)}
+#rec .whose .yrs{color:var(--faint);font-variant-numeric:tabular-nums}
+#rec h2{margin:0 26px 6px 0;font:600 20px/1.22 var(--serif)}
+#rec .catline{font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums;
+  margin:0 0 10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#rec .catline .sep{color:var(--faint)}
+#rec .keyfacts{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 14px}
+#rec .kf{font-size:12px;padding:3px 9px;border-radius:999px;background:#f4efe6;
+  color:var(--hot);border:1px solid #e7dcc9;white-space:nowrap}
+#rec .kf.k-form{background:var(--hot);color:#fff;border-color:var(--hot);font-weight:600}
+#rec .kf.k-forces{background:#ece4d5}
+#rec .kf.k-warn{background:#f6e3de;border-color:#e6c6bd;color:#8d3d2b}
+#rec .inpart{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+#rec .inpart button{border:0;background:none;padding:0;cursor:pointer;color:var(--accent);
+  font:13px var(--serif);text-decoration:underline}
+#rec .vers{margin:0 0 12px;font-size:12.5px;color:var(--maj)}
+#rec h4.sec{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin:16px 0 6px;padding-top:10px;border-top:1px solid var(--line)}
+#rec .kids button{display:block;width:100%;text-align:left;border:0;background:none;
+  padding:4px 0;cursor:pointer;border-bottom:1px solid var(--line2)}
+#rec .kids button:hover{background:#faf7f1}
+#rec .kids .kt{display:block;font:13.5px var(--serif);color:var(--ink)}
+#rec .kids .km{display:block;font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+
+/* ---------------- mobile ----------------
+   Under 640px the table stops being a table: every row becomes a card, because six
+   columns on a phone means either a horizontal scroll nobody finds or text ground
+   to two characters wide. The record panel becomes a sheet that slides up from the
+   bottom, which is where a thumb is. */
+@media(max-width:640px){
+  #bar{padding:6px 12px;gap:8px}
+  .brand strong{font-size:15px} .brand small{display:none}
+  #comp-btn{font-size:13px;padding:5px 12px}
+  #modes{padding:6px 12px;gap:6px}
+  #view-tabs button{padding:6px 10px;font-size:12px}
+  #t-parts,#t-doubt{font-size:12px;padding:3px 8px}
+  #facets{padding:6px 12px}
+  #subbar{padding:5px 12px}
+  #subbar .right{max-width:100%;margin-left:0;width:100%}
+
+  table.cat{table-layout:auto;display:block}
+  table.cat thead{display:none}
+  table.cat tbody,table.cat tr,table.cat td{display:block;width:auto}
+  table.cat tr{padding:9px 12px 10px;border-bottom:1px solid var(--line);position:relative}
+  table.cat td{padding:0;border:0;overflow:visible;white-space:normal}
+  table.cat col{width:auto!important}
+  .c-comp,.c-key,.c-scoring{display:block!important}
+  .c-cat{font-size:11.5px;color:var(--muted);margin-bottom:1px}
+  .c-cat .alt{display:inline;margin-left:5px}
+  .c-title{font-size:15.5px;line-height:1.28;margin-bottom:3px}
+  .c-comp{font-size:11.5px;color:var(--muted);display:inline-block!important;margin-right:8px}
+  .c-key{font-size:11.5px;display:inline-block!important;margin-right:8px;color:var(--muted)}
+  .c-scoring{font-size:11.5px;display:inline-block!important;margin-right:8px}
+  .c-num{text-align:left;display:inline-block!important;font-size:11.5px;
+    color:var(--muted);margin-right:8px}
+  .c-media{display:inline-block!important;margin-right:8px}
+  .c-src{position:absolute;top:10px;right:12px;text-align:right;padding:0}
+  tr.part .c-title{padding-left:16px}
+  .caret{width:18px;font-size:12px}
+
+  #rec{top:auto;left:0;right:0;bottom:0;width:100%;max-height:88vh;border-left:0;
+    border-top:1px solid var(--line);border-radius:14px 14px 0 0;
+    transform:translateY(101%);box-shadow:0 -10px 30px rgba(0,0,0,.16)}
+  #rec.open{transform:none}
+  #rec .close{font-size:26px;right:14px;top:8px}
+  .tlscroll{max-height:52vh}
+  #tip{max-width:calc(100vw - 20px)}
+  footer{font-size:10.5px;padding:5px 12px}
+}
+
+/* audio that plays here versus audio that lives elsewhere: never the same mark */
+.c-media .offsite{color:var(--muted)}
+#rec .offnote{margin:0 0 6px;font-size:12.5px;color:var(--ink)}
+#rec .offwhy{margin:0 0 8px;font-size:11px;color:var(--faint);line-height:1.45}
+#rec .offrec{margin:2px 0;font-size:12px;color:var(--muted)}
+#rec .offrec span{color:var(--faint)}
+#rec .offlic{font-size:11px;color:var(--faint);margin:6px 0 0}
+#rec .offlink{color:var(--accent);font-size:12.5px}
+#rec .rec .ours{color:var(--maj);font-size:11px}
+#graph .glab{font-size:9.5px;fill:var(--faint);letter-spacing:.09em;text-transform:uppercase;
+  font-weight:700}
+#graph .node text{font-size:10.5px}
+#graph{max-width:none}
+#rec .premiere{margin:0 0 10px;font-size:12.5px;color:var(--ink2)}
+#rec .premiere b{color:var(--ink)}
+#rec .premiere a{color:var(--faint);text-decoration:none}
+#rec .iarec{margin:0 0 9px;padding-bottom:7px;border-bottom:1px solid var(--line2)}
+#rec .iarec p{margin:0 0 4px;font-size:12.5px;line-height:1.35}
+#rec .iarec a{color:var(--ink)}
+#rec .iacre{color:var(--faint);font-size:11px}
+#rec .iaplay{border:1px solid var(--sand-line);background:var(--sand);color:var(--hot);
+  border-radius:999px;font:inherit;font-size:11.5px;padding:2px 10px;cursor:pointer}
+#rec .iaplay:hover{background:var(--hot);color:#fff}
+#rec .iaframe iframe{border:0;margin-top:4px}

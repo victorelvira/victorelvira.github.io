@@ -1310,7 +1310,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q120098062",
     "location_src": "Musée des Beaux-Arts de Caen",
     "form": "painting"
@@ -3456,14 +3456,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Tintoretto",
     "title": "A Procurator of Saint Mark's",
     "year": "1570-1600",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -3501,14 +3501,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Tintoretto",
     "title": "Susanna",
     "year": "1575",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -5975,9 +5975,9 @@
      }
     },
     "museum_id": "national-museum-of-serbia",
-    "qid": "Q7232301",
     "location_src": "National Museum of Serbia",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q7232301"
    }
   },
   {
@@ -11894,7 +11894,7 @@
     "painter": "Tintoretto",
     "title": "Portrait of a Man as Saint George",
     "year": "1550",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11916,7 +11916,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -11935,7 +11935,7 @@
     "painter": "Tintoretto",
     "title": "The Conversion of Saint Paul",
     "year": "1545",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11957,7 +11957,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -11976,7 +11976,7 @@
     "painter": "Tintoretto",
     "title": "The Madonna of the Stars",
     "year": "1550",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11998,7 +11998,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12017,7 +12017,7 @@
     "painter": "Tintoretto",
     "title": "Summer",
     "year": "1555",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12039,7 +12039,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12058,7 +12058,7 @@
     "painter": "Tintoretto",
     "title": "Doge Alvise Mocenigo and Family before the Madonna and Child",
     "year": "1575",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12080,7 +12080,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12263,7 +12263,7 @@
     "painter": "Tintoretto",
     "title": "Holy Family with Saint Catherine and a donor",
     "year": "1590",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -12285,7 +12285,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"

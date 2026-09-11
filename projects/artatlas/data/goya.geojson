@@ -231,7 +231,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q3825595",
     "wikidata": "https://www.wikidata.org/wiki/Q3825595",
     "_merged": [
      {
@@ -243,7 +242,8 @@
     ],
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3825595"
    }
   },
   {
@@ -273,7 +273,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "zaragoza-museum",
-    "qid": "Q3825595",
     "wikidata": "https://www.wikidata.org/wiki/Q3825595",
     "_merged": [
      {
@@ -287,7 +286,8 @@
     "country": "Spain",
     "location_src": "Zaragoza Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3825595"
    }
   },
   {
@@ -481,11 +481,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "basilica-de-nuestra-senora-del-pilar",
-    "qid": "Q3825362",
     "wikidata": "https://www.wikidata.org/wiki/Q3825362",
     "location_src": "Basílica de Nuestra Señora del Pilar",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3825362"
    }
   },
   {
@@ -516,12 +516,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-camon-aznar",
-    "qid": "Q3825362",
     "wikidata": "https://www.wikidata.org/wiki/Q3825362",
     "country": "Spain",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3825362"
    }
   },
   {
@@ -2845,7 +2845,7 @@
     "painter": "Goya",
     "title": "María Teresa de Borbón y Vallabriga, later Condesa de Chinchón",
     "year": "1783",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2867,7 +2867,7 @@
       "title": "María Teresa de Borbón y Vallabriga (in Spanish)"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -3193,8 +3193,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.06861,
-     59.32944
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -3203,7 +3203,7 @@
     "year": "1784",
     "city": "Stockholm",
     "country": "Sweden",
-    "location": "National Museum of Fine Arts",
+    "location": "Nationalmuseum",
     "attribution": "generally accepted",
     "dimensions": "107 x 81",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Ventura_Rodr%C3%ADguez.jpg/500px-Ventura_Rodr%C3%ADguez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3215,7 +3215,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-fine-arts",
+    "museum_id": "nationalmuseum",
     "location_src": "National Museum of Fine Arts",
     "kind": "museum",
     "form": "painting"
@@ -3309,14 +3309,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Goya",
     "title": "The Marquesa de Pontejos",
     "year": "c. 1786",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3332,7 +3332,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q18602798",
     "wikidata": "https://www.wikidata.org/wiki/Q18602798",
     "_merged": [
      {
@@ -3344,7 +3343,9 @@
     ],
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q18602798",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -5200,7 +5201,7 @@
     "year": "1789",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Real Academia de la Historia",
+    "location": "Royal Academy of History",
     "attribution": "generally accepted",
     "dimensions": "137 x 110",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Carlos_IV_por_Goya_%28Academia_de_la_Historia%29.jpg/500px-Carlos_IV_por_Goya_%28Academia_de_la_Historia%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5212,7 +5213,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "real-academia-de-la-historia",
+    "museum_id": "royal-academy-of-history",
     "location_src": "Real Academia de la Historia",
     "kind": "museum",
     "form": "painting"
@@ -5233,7 +5234,7 @@
     "year": "1789",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Real Academia de la Historia",
+    "location": "Royal Academy of History",
     "attribution": "generally accepted",
     "dimensions": "137 x 110",
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Maria_Luisa_de_Parma_por_Goya_%28Academia_de_la_Historia%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail_unscaled",
@@ -5245,7 +5246,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "real-academia-de-la-historia",
+    "museum_id": "royal-academy-of-history",
     "location_src": "Real Academia de la Historia",
     "kind": "museum",
     "form": "painting"
@@ -6393,7 +6394,7 @@
     "painter": "Goya",
     "title": "Félix Colón de Larriátegui",
     "year": "1794",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6415,7 +6416,7 @@
       "title": "Portrait of Félix Colón de Larriátegui (in Spanish)"
      }
     ],
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -8027,7 +8028,7 @@
     "year": "1797 to 1799",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Real Academia de la Historia",
+    "location": "Royal Academy of History",
     "attribution": "generally accepted",
     "dimensions": "128 x 97",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Mariano_Luis_de_Urquijo.jpg/500px-Mariano_Luis_de_Urquijo.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -8039,7 +8040,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "real-academia-de-la-historia",
+    "museum_id": "royal-academy-of-history",
     "location_src": "Real Academia de la Historia",
     "kind": "museum",
     "form": "painting"
@@ -8937,8 +8938,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.06861,
-     59.32944
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -8947,7 +8948,7 @@
     "year": "1800",
     "city": "Stockholm",
     "country": "Sweden",
-    "location": "National Museum of Fine Arts",
+    "location": "Nationalmuseum",
     "attribution": "generally accepted",
     "dimensions": "294 x 244",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Truth%2C_Time_and_History_%28Francisco_Goya_Y_Lucientes%29_-_Nationalmuseum_-_22643.tif/lossy-page1-250px-Truth%2C_Time_and_History_%28Francisco_Goya_Y_Lucientes%29_-_Nationalmuseum_-_22643.tif.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -8960,7 +8961,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-fine-arts",
+    "museum_id": "nationalmuseum",
     "qid": "Q2837807",
     "wikidata": "https://www.wikidata.org/wiki/Q2837807",
     "location_src": "National Museum of Fine Arts",
@@ -9203,7 +9204,7 @@
     "painter": "Goya",
     "title": "Young Lady Wearing a Mantilla and Basquina",
     "year": "1802",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9225,7 +9226,7 @@
       "title": "Young Lady Wearing a Mantilla and Basquina (in Polish)"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9473,7 +9474,7 @@
     "painter": "Goya",
     "title": "Don Antonio Noriega",
     "year": "1801",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9495,7 +9496,7 @@
       "title": "Don Antonio Noriega (Goya) [ Wikidata ]"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9663,7 +9664,7 @@
     "painter": "Goya",
     "title": "Portrait of Bartolomé Sureda y Miserol",
     "year": "1804",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9685,7 +9686,7 @@
       "title": "Bartolome Sureda y Miserol (in Spanish)"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -10141,8 +10142,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.06861,
-     59.32944
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -10151,7 +10152,7 @@
     "year": "1804 to 1806",
     "city": "Stockholm",
     "country": "Sweden",
-    "location": "National Museum of Fine Arts",
+    "location": "Nationalmuseum",
     "attribution": "generally accepted",
     "dimensions": "298 x 326",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/La_poes%C3%ADa_por_Francisco_Goya.jpg/500px-La_poes%C3%ADa_por_Francisco_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -10163,7 +10164,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-fine-arts",
+    "museum_id": "nationalmuseum",
     "location_src": "National Museum of Fine Arts",
     "kind": "museum",
     "form": "painting"
@@ -10216,14 +10217,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Goya",
     "title": "Doña Teresa Sureda",
     "year": "c. 1805",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "120 x 79",
@@ -10382,7 +10383,7 @@
     "year": "1805",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Real Academia de la Historia",
+    "location": "Royal Academy of History",
     "attribution": "generally accepted",
     "dimensions": "104 x 82",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Jos%C3%A9_de_Vargas_Ponce_por_Goya.jpg/500px-Jos%C3%A9_de_Vargas_Ponce_por_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -10394,7 +10395,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "real-academia-de-la-historia",
+    "museum_id": "royal-academy-of-history",
     "qid": "Q123046937",
     "wikidata": "https://www.wikidata.org/wiki/Q123046937",
     "location_src": "Real Academia de la Historia",
@@ -11096,14 +11097,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Goya",
     "title": "Francisca Sabasa y Garcia",
     "year": "1806 to 1811",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "71 x 58",
@@ -12421,14 +12422,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Goya",
     "title": "Victor Guye [ Wikidata ]",
     "year": "1810",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "103.5 x 84.5",
@@ -13181,12 +13182,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q2983399",
     "wikidata": "https://www.wikidata.org/wiki/Q2983399",
     "wga_url": "https://www.wga.hu/html/g/goya/7/713goya.html",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2983399"
    }
   },
   {
@@ -13217,7 +13218,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-camon-aznar",
-    "qid": "Q2983399",
     "wikidata": "https://www.wikidata.org/wiki/Q2983399",
     "wga_url": "https://www.wga.hu/html/g/goya/7/713goya.html",
     "_merged": [
@@ -13231,7 +13231,8 @@
     "country": "Spain",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2983399"
    }
   },
   {
@@ -13561,7 +13562,7 @@
     "year": "c. 1814 to 1819",
     "city": "Besançon",
     "country": "France",
-    "location": "Musée des Beaux-Arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "181 x 125",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Las_j%C3%B3venes_o_la_carta.jpg/500px-Las_j%C3%B3venes_o_la_carta.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -13573,7 +13574,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts",
+    "museum_id": "musee-des-beaux-arts-de-caen",
     "location_src": "Musée des Beaux-Arts",
     "kind": "museum",
     "form": "painting"
@@ -13608,11 +13609,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "royal-academy-of-fine-arts-of-san-fernando",
-    "qid": "Q8209964",
     "wikidata": "https://www.wikidata.org/wiki/Q8209964",
     "location_src": "Royal Academy of Fine Arts of San Fernando",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q8209964"
    }
   },
   {
@@ -13644,11 +13645,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q8209964",
     "wikidata": "https://www.wikidata.org/wiki/Q8209964",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q8209964"
    }
   },
   {
@@ -14172,8 +14173,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.69892,
-     40.4135
+     -3.69883,
+     40.41345
     ]
    },
    "properties": {
@@ -14181,7 +14182,7 @@
     "title": "Brother Juan Fernández de Rojas",
     "year": "1815 to 1816",
     "location": "Royal Academy of History",
-    "city": "",
+    "city": "Madrid",
     "country": "Spain",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fray%20Juan%20Fern%C3%A1ndez%20de%20Rojas%20por%20Goya.jpg?width=500",
@@ -15944,8 +15945,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     18.06861,
-     59.32944
+     18.07806,
+     59.32861
     ]
    },
    "properties": {
@@ -15954,7 +15955,7 @@
     "year": "1824 to 1825",
     "city": "Stockholm",
     "country": "Sweden",
-    "location": "National Museum of Fine Arts",
+    "location": "Nationalmuseum",
     "attribution": "generally accepted",
     "dimensions": "8.8 x 8.3",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Majo_y_maja_sentados%2C_Francisco_de_Goya.jpg/500px-Majo_y_maja_sentados%2C_Francisco_de_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -15966,7 +15967,7 @@
      "source": "Wikipedia: List of works by Francisco Goya",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-fine-arts",
+    "museum_id": "nationalmuseum",
     "location_src": "National Museum of Fine Arts",
     "kind": "museum",
     "form": "painting"
@@ -19166,15 +19167,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Goya",
     "title": "El Médico",
     "year": "1780",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -19189,7 +19190,7 @@
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -21158,8 +21159,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.14778,
-     40.58917
+     -4.15,
+     40.59
     ]
    },
    "properties": {
@@ -21167,7 +21168,7 @@
     "title": "Powder manufacturing in the Sierra de Tardienta",
     "year": "1814",
     "location": "Royal Monastery of San Lorenzo de El Escorial",
-    "city": "San Lorenzo de El Escorial",
+    "city": "Spain",
     "country": "Spain",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fabricaci%C3%B3n%20de%20la%20p%C3%B3lvora%20en%20la%20Sierra%20de%20Tardienta%20por%20Francisco%20Goya.jpg?width=500",
@@ -21585,7 +21586,7 @@
     "painter": "Goya",
     "title": "Señora Sabasa Garcia",
     "year": "1804",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -21600,7 +21601,7 @@
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -21619,7 +21620,7 @@
     "painter": "Goya",
     "title": "Teresa Sureda",
     "year": "1804",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -21634,7 +21635,7 @@
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -21653,7 +21654,7 @@
     "painter": "Goya",
     "title": "Portrait of Victor Guye",
     "year": "1810",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -21668,7 +21669,7 @@
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

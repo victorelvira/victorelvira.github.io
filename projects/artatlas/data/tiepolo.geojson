@@ -94,17 +94,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1275,
-     51.50722
+     -0.11771,
+     51.51157
     ]
    },
    "properties": {
     "painter": "Giovanni Battista Tiepolo",
     "title": "Two Heads of Angels",
     "year": "1768",
-    "city": "Greater London",
+    "city": "London",
     "country": "United Kingdom",
-    "location": "London",
+    "location": "Courtauld Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -127,10 +127,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "london",
+    "museum_id": "courtauld-gallery",
     "qid": "Q107406042",
     "location_src": "London",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195"
    }
   },
   {
@@ -1356,8 +1357,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -1366,7 +1367,7 @@
     "year": "1747",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -1389,7 +1390,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q18684494",
     "location_src": "National Galleries of Scotland",
     "form": "painting"
@@ -1924,14 +1925,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Giovanni Battista Tiepolo",
     "title": "Apollo Pursuing Daphne",
     "year": "1757",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -1969,14 +1970,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Giovanni Battista Tiepolo",
     "title": "Madonna of the Goldfinch",
     "year": "1760",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -5927,8 +5928,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -9309,7 +9310,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Saint Roch Carried to Heaven by Angels",
     "year": "1735",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9331,7 +9332,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9350,7 +9351,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Bacchus and Ariadne",
     "year": "1743",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9372,7 +9373,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9391,7 +9392,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Scene from Ancient History",
     "year": "1750",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9413,7 +9414,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9432,7 +9433,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Young Lady in a Tricorn Hat",
     "year": "1757",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9454,7 +9455,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9473,7 +9474,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Study for a Ceiling with the Personification of Counsel",
     "year": "",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9485,7 +9486,7 @@
      "url": "https://www.wikidata.org/wiki/Q20178221",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9504,7 +9505,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Wealth and Benefits of the Spanish Monarchy under Charles III",
     "year": "1762",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9526,7 +9527,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

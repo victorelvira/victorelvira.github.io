@@ -43,8 +43,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.30861,
-     59.9375
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -53,7 +53,7 @@
     "year": "c. 1618",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage",
+    "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "dimensions": "108.5 × 102 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Diego_Vel%C3%A1zquez_016.jpg/500px-Diego_Vel%C3%A1zquez_016.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -66,7 +66,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hermitage",
+    "museum_id": "hermitage-museum",
     "qid": "Q2535473",
     "wikidata": "https://www.wikidata.org/wiki/Q2535473",
     "wga_url": "https://www.wga.hu/html/v/velazque/01/0101velb.html",
@@ -124,17 +124,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "Old Woman Cooking Eggs",
     "year": "1618",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "100.5 × 119.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Diego_Velazquez_-_An_Old_Woman_Cooking_Eggs_-_Google_Art_Project.jpg/500px-Diego_Velazquez_-_An_Old_Woman_Cooking_Eggs_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -147,7 +147,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q2471800",
     "wikidata": "https://www.wikidata.org/wiki/Q2471800",
     "wga_url": "https://www.wga.hu/html/v/velazque/01/0105vela.html",
@@ -637,11 +637,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "coleccion-fernandez-araoz",
-    "qid": "Q3547160",
     "wikidata": "https://www.wikidata.org/wiki/Q3547160",
     "location_src": "Colección Fernández Araoz",
     "kind": "private",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3547160",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -1186,7 +1187,7 @@
     "wga_url": "https://www.wga.hu/html/v/velazque/02/0214vela.html",
     "location_src": "San Lorenzo de El Escorial",
     "country": "Spain",
-    "kind": "museum",
+    "kind": "church",
     "form": "painting"
    }
   },
@@ -1705,8 +1706,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1715,7 +1716,7 @@
     "year": "1632",
     "city": "Dresden",
     "country": "Germany",
-    "location": "Dresden Gallery",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "dimensions": "108 × 90 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Diego_Vel%C3%A1zquez_O47.jpg/500px-Diego_Vel%C3%A1zquez_O47.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1728,7 +1729,7 @@
      "source": "Wikipedia: List of works by Diego Velázquez",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "dresden-gallery",
+    "museum_id": "gemaldegalerie-alte-meister",
     "qid": "Q50324853",
     "wikidata": "https://www.wikidata.org/wiki/Q50324853",
     "wga_url": "https://www.wga.hu/html/v/velazque/03/0316vela.html",
@@ -2455,14 +2456,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Velázquez",
     "title": "The Needlewoman",
     "year": "1635–1643",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "disputed",
     "dimensions": "74 × 60 cm",
@@ -5671,8 +5672,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -5712,8 +5713,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {

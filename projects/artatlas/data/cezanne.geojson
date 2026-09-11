@@ -303,7 +303,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-granet",
-    "qid": "Q504",
     "wikidata": "https://www.wikidata.org/wiki/Q504",
     "_merged": [
      {
@@ -316,7 +315,9 @@
     "country": "France",
     "location_src": "Musée Granet",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q504",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -908,14 +909,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Portrait of Antony Valabrègue",
     "year": "1866",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "116 × 98 cm",
@@ -1006,14 +1007,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "The Artist's Father, Reading \"L'Événement\"",
     "year": "1866",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3320,7 +3321,7 @@
     "painter": "Paul Cézanne",
     "title": "La Maison du père Lacroix, Auvers-sur-Oise (House of Père Lacroix)",
     "year": "1873",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -3342,7 +3343,7 @@
       "title": "The House of Father Lacroix, Auvers-sur-Oise"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -3968,15 +3969,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Portrait of Paul, the Artist's Son",
     "year": "1875",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "dimensions": "17 × 15 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/1880%2C_C%C3%A9zanne%2C_Portrait_of_Paul%2C_the_Artist%27s_Son.jpg/500px-1880%2C_C%C3%A9zanne%2C_Portrait_of_Paul%2C_the_Artist%27s_Son.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3988,7 +3989,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
+    "museum_id": "princeton-art-museum",
     "qid": "Q64212585",
     "wikidata": "https://www.wikidata.org/wiki/Q64212585",
     "_overrides": {
@@ -4019,7 +4020,7 @@
     "title": "Landscape with Bell Tower",
     "year": "c. 1875",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "65 × 54 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Cezanne_-_Landscape_With_Tower.jpg/500px-Cezanne_-_Landscape_With_Tower.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4031,7 +4032,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4042,7 +4043,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -4570,7 +4572,7 @@
     "title": "Houses Floating on a River",
     "year": "1875-77",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "58 × 72 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/C%C3%A9zanne_-_FWN_87.jpg/500px-C%C3%A9zanne_-_FWN_87.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4582,10 +4584,11 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -4642,7 +4645,7 @@
     "painter": "Paul Cézanne",
     "title": "Flowers in a Rococo Vase",
     "year": "1876",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -4664,7 +4667,7 @@
       "title": "The Rococo Vase"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6781,14 +6784,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Three Pears",
     "year": "1878-79",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "20.5 × 26 cm",
@@ -7510,14 +7513,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Portrait of Louis Guillaume",
     "year": "1879–1880",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -8608,14 +8611,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "The Battle of Love",
     "year": "c. 1880",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "38 × 46 cm",
@@ -9391,7 +9394,7 @@
     "painter": "Paul Cézanne",
     "title": "Landscape near Paris",
     "year": "1876",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9413,7 +9416,7 @@
       "title": "Landscape"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -10098,7 +10101,7 @@
     "painter": "Paul Cézanne",
     "title": "Houses in Provence: The Riaux Valley near L'Estaque",
     "year": "1883",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -10120,7 +10123,7 @@
       "title": "House in Provence"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -10736,7 +10739,9 @@
     ],
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -10918,15 +10923,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Provençal Manor",
     "year": "c.1885",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "dimensions": "33 × 48.3 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/1885%2C_C%C3%A9zanne%2C_Provencal_Manor.jpg/500px-1885%2C_C%C3%A9zanne%2C_Provencal_Manor.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -10938,7 +10943,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
+    "museum_id": "princeton-art-museum",
     "qid": "Q64212455",
     "wikidata": "https://www.wikidata.org/wiki/Q64212455",
     "_overrides": {
@@ -11225,7 +11230,7 @@
     "title": "Still Life with Skull",
     "year": "c. 1885",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "33.2 × 45 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Cezanne_-_Still_Life_With_Skull.jpg/500px-Cezanne_-_Still_Life_With_Skull.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -11237,7 +11242,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -11248,7 +11253,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -11884,7 +11890,7 @@
     "title": "Still Life With Quince, Apples, and Pears",
     "year": "1885-87",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "28.5 × 30.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Cezanne_-_Still_Life_With_Quince%2C_Apples%2C_and_Pears.jpg/500px-Cezanne_-_Still_Life_With_Quince%2C_Apples%2C_and_Pears.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -11896,7 +11902,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "qid": "Q64222279",
     "wikidata": "https://www.wikidata.org/wiki/Q64222279",
     "_overrides": {
@@ -11908,7 +11914,8 @@
     },
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -12032,14 +12039,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Riverbank",
     "year": "c. 1885-90",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "73 × 92 cm",
@@ -12238,7 +12245,7 @@
     "painter": "Paul Cézanne",
     "title": "The Artist's Son, Paul",
     "year": "1886",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12260,7 +12267,7 @@
       "title": "Portrait of the Artist's son Paul Cézanne"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12436,14 +12443,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Montagne Sainte-Victoire, from near Gardanne",
     "year": "1886-88",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "67.5 × 91.5 cm",
@@ -12486,7 +12493,7 @@
     "title": "Mont Sainte-Victoire and Hamlet Near Gardanne",
     "year": "1886-90",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "62.5 × 91 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Cezanne_-_Mont_Sainte-Victoire_and_Hamlet_Near_Gardanne.jpg/500px-Cezanne_-_Mont_Sainte-Victoire_and_Hamlet_Near_Gardanne.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -12498,7 +12505,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -12509,7 +12516,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -12517,8 +12525,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -12552,7 +12560,8 @@
     ],
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -13657,14 +13666,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Boy in a Red Waistcoat",
     "year": "1888–1890",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -13788,7 +13797,7 @@
     "painter": "Paul Cézanne",
     "title": "Harlequin (Arlequin)",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -13810,7 +13819,7 @@
       "title": "Harlequin"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -14044,7 +14053,7 @@
     "title": "Banks of the Marne",
     "year": "1888-94",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "73 × 91 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cezanne_-_House_on_the_Marne.jpg/500px-Cezanne_-_House_on_the_Marne.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -14056,7 +14065,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -14067,7 +14076,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -15314,7 +15324,7 @@
     "title": "The Forest",
     "year": "1890-92",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "73 × 92 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Cezanne_-_The_Forest.jpg/500px-Cezanne_-_The_Forest.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -15326,7 +15336,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -15337,7 +15347,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -15584,11 +15595,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q17277950",
     "wikidata": "https://www.wikidata.org/wiki/Q17277950",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17277950",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -15620,7 +15632,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "qid": "Q17277950",
     "wikidata": "https://www.wikidata.org/wiki/Q17277950",
     "_merged": [
      {
@@ -15632,7 +15643,9 @@
     ],
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17277950",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -16397,7 +16410,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "courtauld-gallery",
-    "qid": "Q17277950",
     "wikidata": "https://www.wikidata.org/wiki/Q17277950",
     "_merged": [
      {
@@ -16409,7 +16421,9 @@
     ],
     "location_src": "Courtauld Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17277950",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -17116,14 +17130,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Man with a Pipe",
     "year": "1892-96",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "26 × 20.5 cm",
@@ -17582,7 +17596,7 @@
     "painter": "Paul Cézanne",
     "title": "The Peppermint Bottle",
     "year": "1893",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -17604,7 +17618,7 @@
       "title": "Still Life with Peppermint Bottle"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -17639,7 +17653,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q17277950",
     "wikidata": "https://www.wikidata.org/wiki/Q17277950",
     "_merged": [
      {
@@ -17651,7 +17664,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17277950",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -17744,14 +17759,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "At the Water's Edge",
     "year": "c. 1894",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "73 × 92 cm",
@@ -20369,15 +20384,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Cistern in the Park of Château Noir",
     "year": "c. 1900",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "dimensions": "74.3 × 61 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/1900%2C_C%C3%A9zanne%2C_Cistern_in_the_Park_of_Chateau_Noir.jpg/500px-1900%2C_C%C3%A9zanne%2C_Cistern_in_the_Park_of_Chateau_Noir.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -20389,7 +20404,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
+    "museum_id": "princeton-art-museum",
     "qid": "Q64237101",
     "wikidata": "https://www.wikidata.org/wiki/Q64237101",
     "_overrides": {
@@ -20494,14 +20509,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Still Life with Milk Jug and Fruit",
     "year": "c. 1900",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -20701,14 +20716,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Vase of Flowers",
     "year": "1900-03",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "101.5 × 82.2 cm",
@@ -20923,15 +20938,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Route to Le Tholonet",
     "year": "1900-04",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "dimensions": "101.1 × 81.3 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/1900%2C_C%C3%A9zanne%2C_Route_to_Le_Tholonet.jpg/500px-1900%2C_C%C3%A9zanne%2C_Route_to_Le_Tholonet.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -20943,7 +20958,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
+    "museum_id": "princeton-art-museum",
     "qid": "Q64212440",
     "wikidata": "https://www.wikidata.org/wiki/Q64212440",
     "_overrides": {
@@ -20966,14 +20981,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Château Noir",
     "year": "1900–1904",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -21273,7 +21288,6 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -21285,7 +21299,9 @@
     ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -21421,14 +21437,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "The Bend in the Road",
     "year": "1902-06",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "81.3 × 64.8 cm",
@@ -21486,7 +21502,6 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -21498,7 +21513,9 @@
     ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -21530,7 +21547,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "the-nelson-atkins-museum-of-art",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -21542,7 +21558,9 @@
     ],
     "location_src": "The Nelson-Atkins Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -21574,7 +21592,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -21586,7 +21603,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -21618,7 +21637,6 @@
     "museum_id": "kunsthaus-zurich",
     "city": "Zurich",
     "country": "Switzerland",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -21630,7 +21648,9 @@
     ],
     "location_src": "Kunsthaus Zürich",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -21639,14 +21659,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "The Gardener Vallier",
     "year": "1902-06",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -21972,7 +21992,6 @@
     "museum_id": "cleveland-museum-of-art",
     "city": "Cleveland",
     "country": "United States",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -21984,7 +22003,9 @@
     ],
     "location_src": "Cleveland Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -22236,15 +22257,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Mont Sainte-Victoire",
     "year": "1904–1906",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "dimensions": "83.8 × 65 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/1904%2C_C%C3%A9zanne%2C_Mont_Sainte-Victoire.jpg/500px-1904%2C_C%C3%A9zanne%2C_Mont_Sainte-Victoire.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -22257,8 +22278,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
-    "qid": "Q3494409",
+    "museum_id": "princeton-art-museum",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -22272,7 +22292,9 @@
     "country": "United States",
     "location_src": "Princeton University Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -22303,12 +22325,13 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "artizon-museum",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "country": "Japan",
     "location_src": "Artizon Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -22340,7 +22363,6 @@
     "museum_id": "detroit-institute-of-arts",
     "city": "Detroit",
     "country": "United States",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -22352,7 +22374,9 @@
     ],
     "location_src": "Detroit Institute of Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -22384,7 +22408,6 @@
     "museum_id": "kunstmuseum-basel",
     "city": "Basel",
     "country": "Switzerland",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -22396,7 +22419,9 @@
     ],
     "location_src": "Kunstmuseum Basel",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -22428,7 +22453,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "qid": "Q3494409",
     "wikidata": "https://www.wikidata.org/wiki/Q3494409",
     "_merged": [
      {
@@ -22440,7 +22464,9 @@
     ],
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3494409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -22498,7 +22524,7 @@
     "title": "Houses on a Hill, Provence",
     "year": "1904-06",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "dimensions": "66 × 81 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cezanne_-_House_on_a_Hill.jpg/500px-Cezanne_-_House_on_a_Hill.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -22510,7 +22536,7 @@
      "source": "Wikipedia: List of paintings by Paul Cézanne",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -22521,7 +22547,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -22630,14 +22657,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Still Life with Apples and Peaches",
     "year": "c. 1905",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "81 × 100.5 cm",
@@ -23376,8 +23403,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -23385,7 +23412,7 @@
     "title": "Skull",
     "year": "1885",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Still%20Life%20With%20Skull.jpg?width=500",
@@ -26278,15 +26305,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Paul Cézanne",
     "title": "Montagne Sainte-Victoire 1890",
     "year": "1890",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -26298,7 +26325,7 @@
      "url": "https://www.wikidata.org/wiki/Q18685993",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -27780,8 +27807,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -27789,7 +27816,7 @@
     "title": "Sous-bois (Underwood)",
     "year": "1890",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20The%20Forest.jpg?width=500",
@@ -27817,8 +27844,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -27826,7 +27853,7 @@
     "title": "Hameau à Payennet près de Gardanne (Hamlet at Payennet, near Gardanne)",
     "year": "1886",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Mont%20Sainte-Victoire%20and%20Hamlet%20Near%20Gardanne.jpg?width=500",
@@ -27854,8 +27881,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -27863,7 +27890,7 @@
     "title": "Maison au bord de la Marne (House on the Marne)",
     "year": "1888",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20House%20on%20the%20Marne.jpg?width=500",
@@ -27891,8 +27918,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -27900,7 +27927,7 @@
     "title": "Paysage avec clocher (Landscape with Bell Tower)",
     "year": "1875",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Landscape%20With%20Tower.jpg?width=500",
@@ -27928,8 +27955,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -27937,7 +27964,7 @@
     "title": "Maisons flottantes sur un fleuve (Houses Floating on a River)",
     "year": "1875",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Boathouse%20on%20a%20River.jpg?width=500",
@@ -27959,8 +27986,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -27968,7 +27995,7 @@
     "title": "Maisons sur la colline, Provence (Houses on the Hill)",
     "year": "1904",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20House%20on%20a%20Hill.jpg?width=500",

@@ -71,9 +71,9 @@
     "title": "Chair of Saint Peter",
     "qid": "Q733893",
     "form": "sculpture",
-    "kind": "museum",
+    "kind": "church",
     "year": "1658",
-    "location": "Vatican City",
+    "location": "St. Peter's Basilica",
     "country": "Vatican City",
     "material": "bronze, gold leaf",
     "medium": "bronze, gold leaf",
@@ -83,14 +83,16 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "vatican-city",
-    "location_src": "Vatican City"
+    "museum_id": "st-peter-s-basilica",
+    "location_src": "Vatican City",
+    "venue_src": "P276",
+    "city": "Vatican City"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.4533,
-     41.9022
+     12.453416666,
+     41.902222222
     ]
    }
   },
@@ -289,7 +291,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1622",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "material": "marble",
@@ -300,14 +302,14 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries Scotland"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    }
   },
@@ -494,36 +496,6 @@
     "coordinates": [
      12.4544,
      41.9064
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "painter": "Bernini",
-    "title": "Corpus",
-    "qid": "Q5172620",
-    "form": "sculpture",
-    "kind": "museum",
-    "location": "Art Gallery of Ontario",
-    "city": "Toronto",
-    "country": "Canada",
-    "material": "bronze",
-    "medium": "bronze",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Art%20Gallery%20of%20Ontario%20%2824409145245%29.jpg",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Corpus_(Bernini)",
-    "attribution": "generally accepted",
-    "_source": {
-     "source": "Wikidata: sculptures by Bernini (Q160538)"
-    },
-    "museum_id": "art-gallery-of-ontario",
-    "location_src": "Art Gallery of Ontario"
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -79.39278,
-     43.65361
     ]
    }
   },
@@ -722,8 +694,8 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1665",
-    "location": "Tuileries Palace",
-    "city": "Saint-Germain-l'Auxerrois",
+    "location": "Palace of Versailles",
+    "city": "Versailles",
     "country": "France",
     "material": "marble",
     "medium": "marble",
@@ -733,14 +705,14 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "tuileries-palace",
+    "museum_id": "palace-of-versailles",
     "location_src": "Tuileries Palace"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.12314,
-     48.80439
+     2.12028,
+     48.80472
     ]
    }
   },
@@ -846,7 +818,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1641",
-    "location": "Department of Sculptures of the Louvre",
+    "location": "Louvre",
     "country": "France",
     "material": "marble",
     "medium": "marble",
@@ -856,14 +828,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "department-of-sculptures-of-the-louvre",
-    "location_src": "Department of Sculptures of the Louvre"
+    "museum_id": "louvre",
+    "location_src": "Department of Sculptures of the Louvre",
+    "city": "Paris"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    }
   },
@@ -999,7 +972,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "150",
-    "location": "Department of Greek, Etruscan, and Roman Antiquities of the Louvre",
+    "location": "Louvre",
     "country": "France",
     "material": "Carrara marble, marble",
     "medium": "Carrara marble, marble",
@@ -1009,14 +982,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "department-of-greek-etruscan-and-roman-antiquities-of-the-lo",
-    "location_src": "Department of Greek, Etruscan, and Roman Antiquities of the Louvre"
+    "museum_id": "louvre",
+    "location_src": "Department of Greek, Etruscan, and Roman Antiquities of the Louvre",
+    "city": "Paris"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.3376,
-     48.86034
+     2.3358,
+     48.8611
     ]
    }
   },
@@ -1121,8 +1095,8 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1617",
-    "location": "Madrid",
-    "city": "Community of Madrid",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
     "country": "Spain",
     "material": "marble",
     "medium": "marble",
@@ -1132,14 +1106,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "madrid",
-    "location_src": "Madrid"
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Madrid",
+    "venue_src": "P195"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.70333,
-     40.41694
+     -3.69493,
+     40.41604
     ]
    }
   },
@@ -1150,9 +1125,9 @@
     "title": "St Bibiana",
     "qid": "Q7592666",
     "form": "sculpture",
-    "kind": "museum",
+    "kind": "church",
     "year": "1624",
-    "location": "Rome",
+    "location": "Santa Bibiana Church",
     "city": "Metropolitan City of Rome",
     "country": "Italy",
     "material": "marble",
@@ -1163,14 +1138,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "rome",
-    "location_src": "Rome"
+    "museum_id": "santa-bibiana-church",
+    "location_src": "Rome",
+    "venue_src": "P276"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.50919,
-     41.89555
+     12.509188888,
+     41.895552777
     ]
    }
   },
@@ -1366,7 +1342,7 @@
     "kind": "museum",
     "year": "1623",
     "location": "National Gallery of Art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "material": "marble",
     "medium": "marble",
@@ -1383,7 +1359,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    }
   },
@@ -1396,7 +1372,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1630",
-    "location": "Rome",
+    "location": "Palazzo dei Conservatori",
     "city": "Metropolitan City of Rome",
     "country": "Italy",
     "material": "marble",
@@ -1407,14 +1383,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "rome-2",
-    "location_src": "Rome"
+    "museum_id": "palazzo-dei-conservatori",
+    "location_src": "Rome",
+    "venue_src": "P276"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48278,
-     41.89306
+     12.48281,
+     41.893
     ]
    }
   },
@@ -1608,9 +1585,9 @@
     "title": "Memorial to Alessandro Valtrini",
     "qid": "Q16060320",
     "form": "sculpture",
-    "kind": "museum",
+    "kind": "church",
     "year": "1639",
-    "location": "Rome",
+    "location": "San Lorenzo in Damaso",
     "city": "Metropolitan City of Rome",
     "country": "Italy",
     "material": "bronze, marble",
@@ -1621,14 +1598,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "rome-2",
-    "location_src": "Rome"
+    "museum_id": "san-lorenzo-in-damaso",
+    "location_src": "Rome",
+    "venue_src": "P276"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48278,
-     41.89306
+     12.47205,
+     41.89676
     ]
    }
   },
@@ -2162,36 +2140,6 @@
    "type": "Feature",
    "properties": {
     "painter": "Bernini",
-    "title": "Bust of Cardinal Scipione Borghese",
-    "qid": "Q51102494",
-    "form": "sculpture",
-    "kind": "museum",
-    "year": "1632",
-    "location": "Galleria Borghese",
-    "city": "Rome",
-    "country": "Italy",
-    "material": "marble",
-    "medium": "marble",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gian%20lorenzo%20bernini%2C%20ritratto%20del%20cardinale%20scipione%20borghese%2C%201632%20ca%2C%20CCLXV%2001.JPG",
-    "attribution": "generally accepted",
-    "_source": {
-     "source": "Wikidata: sculptures by Bernini (Q160538)"
-    },
-    "museum_id": "galleria-borghese",
-    "location_src": "Galleria Borghese"
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.49214,
-     41.91421
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "painter": "Bernini",
     "title": "Saint Longinus",
     "qid": "Q51213124",
     "form": "sculpture",
@@ -2283,7 +2231,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1649",
-    "location": "Bologna",
+    "location": "Academy of Fine Arts of Bologna",
     "city": "Metropolitan City of Bologna",
     "country": "Italy",
     "material": "terracotta, wax, wood",
@@ -2292,14 +2240,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "bologna",
-    "location_src": "Bologna"
+    "museum_id": "academy-of-fine-arts-of-bologna",
+    "location_src": "Bologna",
+    "venue_src": "P195"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.34278,
-     44.49389
+     11.35319,
+     44.49781
     ]
    }
   },
@@ -2367,7 +2316,7 @@
     "title": "Crucified Christ",
     "qid": "Q51214001",
     "form": "sculpture",
-    "kind": "museum",
+    "kind": "church",
     "year": "1650",
     "location": "San Lorenzo de El Escorial",
     "city": "El Escorial",
@@ -2427,8 +2376,8 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1630",
-    "location": "Rome",
-    "city": "Metropolitan City of Rome",
+    "location": "Galleria Nazionale d'Arte Antica",
+    "city": "Rome",
     "country": "Italy",
     "material": "bronze, porphyry, serpentine mineral subgroup",
     "medium": "bronze, porphyry, serpentine mineral subgroup",
@@ -2436,14 +2385,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "rome-2",
-    "location_src": "Rome"
+    "museum_id": "galleria-nazionale-d-arte-antica",
+    "location_src": "Rome",
+    "venue_src": "P195"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48278,
-     41.89306
+     12.48953,
+     41.90278
     ]
    }
   },
@@ -2917,7 +2867,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1662",
-    "location": "Palazzo Venezia",
+    "location": "Museo di Palazzo Venezia",
     "city": "Rome",
     "country": "Italy",
     "material": "terracotta",
@@ -2926,14 +2876,14 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "palazzo-venezia",
+    "museum_id": "museo-di-palazzo-venezia",
     "location_src": "Palazzo Venezia"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.4815,
-     41.8962
+     12.48023,
+     41.89637
     ]
    }
   },
@@ -3180,7 +3130,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1667",
-    "location": "Department of Sculptures of the Louvre",
+    "location": "Louvre",
     "country": "France",
     "material": "terracotta",
     "medium": "terracotta",
@@ -3188,14 +3138,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "department-of-sculptures-of-the-louvre",
-    "location_src": "Department of Sculptures of the Louvre"
+    "museum_id": "louvre",
+    "location_src": "Department of Sculptures of the Louvre",
+    "city": "Paris"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    }
   },
@@ -3471,7 +3422,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1640",
-    "location": "Department of Sculptures of the Louvre",
+    "location": "Louvre",
     "country": "France",
     "material": "bronze",
     "medium": "bronze",
@@ -3480,14 +3431,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "department-of-sculptures-of-the-louvre",
-    "location_src": "Department of Sculptures of the Louvre"
+    "museum_id": "louvre",
+    "location_src": "Department of Sculptures of the Louvre",
+    "city": "Paris"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    }
   },
@@ -3560,7 +3512,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1665",
-    "location": "Department of Sculptures of the Louvre",
+    "location": "Louvre",
     "country": "France",
     "material": "marble",
     "medium": "marble",
@@ -3569,14 +3521,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "department-of-sculptures-of-the-louvre",
-    "location_src": "Department of Sculptures of the Louvre"
+    "museum_id": "louvre",
+    "location_src": "Department of Sculptures of the Louvre",
+    "city": "Paris"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    }
   },
@@ -4035,7 +3988,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1640",
-    "location": "Capitoline Hill",
+    "location": "Capitoline Museums",
     "city": "Rome",
     "country": "Italy",
     "material": "marble",
@@ -4046,14 +3999,14 @@
     "_source": {
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
-    "museum_id": "capitoline-hill",
+    "museum_id": "capitoline-museums",
     "location_src": "Capitoline Hill"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48306,
-     41.89333
+     12.48278,
+     41.89306
     ]
    }
   },

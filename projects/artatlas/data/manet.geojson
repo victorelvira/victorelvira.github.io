@@ -360,14 +360,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "The Old Musician",
     "year": "1862",
-    "location": "National Gallery of Art Washington",
+    "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "187.4 × 248.3 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/%C3%89douard_Manet_-_Le_Vieux_Musicien.jpg/500px-%C3%89douard_Manet_-_Le_Vieux_Musicien.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -380,12 +380,14 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art-washington",
+    "museum_id": "national-gallery-of-art",
     "qid": "Q59815",
     "wikidata": "https://www.wikidata.org/wiki/Q59815",
     "location_src": "National Gallery of Art Washington",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Washington, D.C.",
+    "country": "United States"
    }
   },
   {
@@ -670,14 +672,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "The Dead Toreador",
     "year": "probably 1864",
-    "location": "National Gallery of Art Washington",
+    "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "75.9 × 155.3 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Edouard_Manet_073_%28Toter_Torero%29.jpg/500px-Edouard_Manet_073_%28Toter_Torero%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -690,12 +692,14 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art-washington",
+    "museum_id": "national-gallery-of-art",
     "qid": "Q3203711",
     "wikidata": "https://www.wikidata.org/wiki/Q3203711",
     "location_src": "National Gallery of Art Washington",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Washington, D.C.",
+    "country": "United States"
    }
   },
   {
@@ -1145,13 +1149,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthalle-mannheim",
-    "qid": "Q1212269",
     "wikidata": "https://www.wikidata.org/wiki/Q1212269",
     "city": "Mannheim",
     "country": "Germany",
     "location_src": "Kunsthalle Mannheim",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1212269",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -1681,14 +1686,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "The Railway",
     "year": "1872",
-    "location": "National Gallery of Art Washington",
+    "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "93.3 × 111.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Edouard_Manet_-_Le_Chemin_de_fer_-_Google_Art_Project.jpg/500px-Edouard_Manet_-_Le_Chemin_de_fer_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1701,12 +1706,14 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art-washington",
+    "museum_id": "national-gallery-of-art",
     "qid": "Q1212098",
     "wikidata": "https://www.wikidata.org/wiki/Q1212098",
     "location_src": "National Gallery of Art Washington",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Washington, D.C.",
+    "country": "United States"
    }
   },
   {
@@ -1751,14 +1758,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Masked Ball at the Opera House",
     "year": "1873",
-    "location": "National Gallery of Art Washington",
+    "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "59 × 72.5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Masked_Ball_at_the_Opera_%281873%29_Edouard_Manet_%28National_Gallery_of_Art%2C_Washington_D.C.%29.jpg/500px-Masked_Ball_at_the_Opera_%281873%29_Edouard_Manet_%28National_Gallery_of_Art%2C_Washington_D.C.%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1771,7 +1778,7 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art-washington",
+    "museum_id": "national-gallery-of-art",
     "qid": "Q1163504",
     "wikidata": "https://www.wikidata.org/wiki/Q1163504",
     "_merged": [
@@ -1784,7 +1791,9 @@
     ],
     "location_src": "National Gallery of Art Washington",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Washington, D.C.",
+    "country": "United States"
    }
   },
   {
@@ -1814,13 +1823,13 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-des-beaux-arts-de-tournai",
-    "qid": "Q2860945",
     "wikidata": "https://www.wikidata.org/wiki/Q2860945",
     "city": "Tournai",
     "country": "Belgium",
     "location_src": "Musée des Beaux-Arts de Tournai",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2860945"
    }
   },
   {
@@ -1852,7 +1861,6 @@
     "museum_id": "courtauld-gallery",
     "city": "London",
     "country": "United Kingdom",
-    "qid": "Q2860945",
     "wikidata": "https://www.wikidata.org/wiki/Q2860945",
     "_merged": [
      {
@@ -1864,7 +1872,8 @@
     ],
     "location_src": "Courtauld Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2860945"
    }
   },
   {
@@ -2129,14 +2138,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Plum Brandy",
     "year": "1878",
-    "location": "National Gallery of Art Washington",
+    "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "73.6 × 50.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Edouard_Manet_-_The_Plum_-_National_Gallery_of_Art.jpg/500px-Edouard_Manet_-_The_Plum_-_National_Gallery_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2149,7 +2158,7 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-art-washington",
+    "museum_id": "national-gallery-of-art",
     "qid": "Q731639",
     "wikidata": "https://www.wikidata.org/wiki/Q731639",
     "_merged": [
@@ -2162,7 +2171,9 @@
     ],
     "location_src": "National Gallery of Art Washington",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Washington, D.C.",
+    "country": "United States"
    }
   },
   {
@@ -2723,15 +2734,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     6.1824,
-     48.6935
+     6.18234,
+     48.69346
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "L'Automne (Méry Laurent)",
     "year": "1881",
-    "location": "Musée des Beaux-Arts de Nancy",
+    "location": "Museum of Fine Arts of Nancy",
     "attribution": "generally accepted",
     "dimensions": "73 × 51 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Edouard_Manet_Automne_Mery_Laurent.jpg/500px-Edouard_Manet_Automne_Mery_Laurent.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2744,7 +2755,7 @@
      "source": "Wikipedia: List of paintings by Édouard Manet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-de-nancy",
+    "museum_id": "museum-of-fine-arts-of-nancy",
     "qid": "Q18625546",
     "wikidata": "https://www.wikidata.org/wiki/Q18625546",
     "_merged": [
@@ -2757,7 +2768,9 @@
     ],
     "location_src": "Musée des Beaux-Arts de Nancy",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Nancy",
+    "country": "France"
    }
   },
   {
@@ -2869,11 +2882,12 @@
     "museum_id": "alte-nationalgalerie",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "qid": "Q106766601",
     "wikidata": "https://www.wikidata.org/wiki/Q106766601",
     "location_src": "Alte Nationalgalerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q106766601",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -2905,7 +2919,6 @@
     "museum_id": "national-gallery-of-victoria",
     "city": "City of Melbourne",
     "country": "Australia",
-    "qid": "Q106766601",
     "wikidata": "https://www.wikidata.org/wiki/Q106766601",
     "_merged": [
      {
@@ -2917,7 +2930,9 @@
     ],
     "location_src": "National Gallery of Victoria",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q106766601",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4686,16 +4701,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.31455,
-     48.86605
+     2.31453,
+     48.86604
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Portrait de Théodore Duret",
     "year": "1868",
-    "location": "Musée des Beaux-Arts de la ville de Paris",
-    "city": "8th arrondissement of Paris",
+    "location": "Petit Palais",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20de%20Th%C3%A9odore%20Duret%20%281868%29%20-%20Edouard%20Manet%20%28%20Mus%C3%A9e%20des%20Beaux-Arts%20de%20la%20ville%20de%20Paris%29.jpg?width=500",
@@ -4716,7 +4731,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "museum_id": "petit-palais-2",
     "location_src": "Musée des Beaux-Arts de la ville de Paris",
     "kind": "museum",
     "form": "painting"
@@ -7659,15 +7674,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Édouard Manet",
     "title": "Still-life",
     "year": "",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7679,7 +7694,7 @@
      "url": "https://www.wikidata.org/wiki/Q27968236",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -8729,7 +8744,7 @@
     "painter": "Édouard Manet",
     "title": "Oysters",
     "year": "1862",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8751,7 +8766,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8770,7 +8785,7 @@
     "painter": "Édouard Manet",
     "title": "A King Charles Spaniel",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8792,7 +8807,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8811,7 +8826,7 @@
     "painter": "Édouard Manet",
     "title": "Still Life with Melon and Peaches",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8833,7 +8848,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8852,7 +8867,7 @@
     "painter": "Édouard Manet",
     "title": "The Tragic Actor (Rouvière as Hamlet)",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8874,7 +8889,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8893,7 +8908,7 @@
     "painter": "Édouard Manet",
     "title": "At the Races",
     "year": "1865",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8915,7 +8930,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8934,7 +8949,7 @@
     "painter": "Édouard Manet",
     "title": "Tama, the Japanese Dog",
     "year": "1879",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8956,7 +8971,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8975,7 +8990,7 @@
     "painter": "Édouard Manet",
     "title": "George Moore in the Artist's Garden",
     "year": "1879",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8997,7 +9012,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9016,7 +9031,7 @@
     "painter": "Édouard Manet",
     "title": "Portrait of a Lady",
     "year": "1879",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9038,7 +9053,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9057,7 +9072,7 @@
     "painter": "Édouard Manet",
     "title": "The Melon",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9079,7 +9094,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9098,7 +9113,7 @@
     "painter": "Édouard Manet",
     "title": "Pears",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9120,7 +9135,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9139,7 +9154,7 @@
     "painter": "Édouard Manet",
     "title": "Madame Michel-Levy",
     "year": "1882",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9161,7 +9176,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9918,7 +9933,7 @@
     "painter": "Édouard Manet",
     "title": "Lady in Pink",
     "year": "1880",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -9940,7 +9955,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"

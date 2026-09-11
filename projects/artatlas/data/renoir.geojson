@@ -428,14 +428,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Diana",
     "year": "1866",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -925,14 +925,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Odalisque",
     "year": "1870",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1158,14 +1158,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Le Pont-Neuf ( fr:Le Pont-Neuf )",
     "year": "1872",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1304,14 +1304,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Madame Monet and her son",
     "year": "1874",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1390,14 +1390,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "The Dancer ( French : La Danseuse )",
     "year": "1874",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1413,11 +1413,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -1668,12 +1669,13 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "am-romerholz-2",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "country": "Switzerland",
     "location_src": "Am Römerholz",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -1682,14 +1684,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "A Girl with a Watering Can ( French : Une fille avec un arrosoir )",
     "year": "1876",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "100 cm × 73 cm (39 in × 29 in)",
@@ -1996,11 +1998,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2156,7 +2159,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -2168,7 +2170,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2198,7 +2202,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-fine-arts-of-algiers",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -2212,7 +2215,9 @@
     "country": "Algeria",
     "location_src": "National Museum of Fine Arts of Algiers",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2538,14 +2543,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Oarsmen at Chatou ( French : Les canotiers à Chatou )",
     "year": "1879",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -2561,11 +2566,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2669,7 +2675,6 @@
     },
     "museum_id": "clark-art-institute",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -2681,7 +2686,9 @@
     ],
     "location_src": "Clark Art Institute",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2713,11 +2720,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2749,11 +2757,12 @@
     },
     "museum_id": "clark-art-institute",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Clark Art Institute",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -2909,11 +2918,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "art-institute-of-chicago",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3143,11 +3153,12 @@
     },
     "museum_id": "cincinnati-art-museum",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Cincinnati Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3259,7 +3270,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3271,7 +3281,9 @@
     ],
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3302,7 +3314,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "botero-museum",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3315,7 +3326,9 @@
     "country": "Colombia",
     "location_src": "Botero Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3347,7 +3360,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3359,7 +3371,9 @@
     ],
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3391,7 +3405,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3403,7 +3416,9 @@
     ],
     "location_src": "Alte Nationalgalerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3412,14 +3427,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Girl with a Hoop ( French : Fille avec un cerceau )",
     "year": "1885",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "dimensions": "125.7 cm × 76.6 cm (49.5 in × 30.2 in)",
@@ -3435,7 +3450,6 @@
     },
     "museum_id": "national-gallery-of-art",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3447,7 +3461,9 @@
     ],
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3479,11 +3495,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hermitage-museum",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3513,11 +3530,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "deji-art-museum",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Deji Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3549,7 +3567,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3561,7 +3578,9 @@
     ],
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3593,11 +3612,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3721,11 +3741,12 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "country": "United States",
-    "qid": "Q971215",
     "wikidata": "https://www.wikidata.org/wiki/Q971215",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q971215",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3801,11 +3822,12 @@
     },
     "museum_id": "sao-paulo-museum-of-art",
     "country": "Brazil",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "São Paulo Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3837,11 +3859,12 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3873,7 +3896,6 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3885,7 +3907,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -3961,7 +3985,6 @@
     },
     "museum_id": "virginia-museum-of-fine-arts",
     "country": "United States",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -3973,7 +3996,9 @@
     ],
     "location_src": "Virginia Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4003,11 +4028,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fondation-valentim",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Fondation Valentim",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4039,11 +4065,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-marmottan-monet",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Musée Marmottan Monet",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4075,7 +4102,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -4087,7 +4113,9 @@
     ],
     "location_src": "Cleveland Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4119,7 +4147,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-de-l-orangerie",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -4131,7 +4158,9 @@
     ],
     "location_src": "Musée de l'Orangerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4737,7 +4766,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "botero-museum",
-    "qid": "Q3564208",
     "wikidata": "https://www.wikidata.org/wiki/Q3564208",
     "_merged": [
      {
@@ -4750,7 +4778,9 @@
     "country": "Colombia",
     "location_src": "Botero Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3564208",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4782,11 +4812,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-de-l-orangerie",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Musée de l'Orangerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4818,7 +4849,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "nationalmuseum",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -4830,7 +4860,9 @@
     ],
     "location_src": "Nationalmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4906,11 +4938,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -4942,7 +4975,6 @@
     },
     "museum_id": "art-gallery-of-ontario",
     "country": "Canada",
-    "qid": "Q150",
     "wikidata": "https://www.wikidata.org/wiki/Q150",
     "_merged": [
      {
@@ -4954,7 +4986,9 @@
     ],
     "location_src": "Art Gallery of Ontario",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q150",
+    "qid_rejected_as": "natural language, language, modern language"
    }
   },
   {
@@ -5560,7 +5594,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Flowers in a Vase",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5582,7 +5616,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5601,7 +5635,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Woman by a Fence",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5623,7 +5657,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5642,7 +5676,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Woman in a Park",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5664,7 +5698,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5683,7 +5717,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Woman Standing by a Tree",
     "year": "1866",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5705,7 +5739,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5724,7 +5758,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Head of a Dog",
     "year": "1870",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5746,7 +5780,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5765,7 +5799,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Claude Monet",
     "year": "1872",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5787,7 +5821,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5806,7 +5840,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Landscape between Storms",
     "year": "1875",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5828,7 +5862,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5847,7 +5881,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Regatta at Argenteuil",
     "year": "1874",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5869,7 +5903,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5888,7 +5922,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Picking Flowers",
     "year": "1875",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5910,7 +5944,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5929,7 +5963,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Woman with a Cat",
     "year": "1875",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5951,7 +5985,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5970,7 +6004,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Madame Henriot",
     "year": "1876",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5992,7 +6026,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6011,7 +6045,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Young Woman Braiding Her Hair",
     "year": "1876",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6033,7 +6067,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6052,7 +6086,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Georges Rivière",
     "year": "1877",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6074,7 +6108,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6093,7 +6127,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Marie Murer",
     "year": "1877",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6115,7 +6149,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6134,7 +6168,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Jeanne Samary",
     "year": "1878",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6156,7 +6190,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6175,7 +6209,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "The Grape Pickers",
     "year": "1879",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6197,7 +6231,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6216,7 +6250,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Oarsmen at Chatou",
     "year": "1879",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6238,7 +6272,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6257,7 +6291,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "The Young Soldier",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6279,7 +6313,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6298,7 +6332,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Nude with Figure in Background",
     "year": "1882",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6320,7 +6354,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6339,7 +6373,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Small Study for a Nude",
     "year": "1882",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6361,7 +6395,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6380,7 +6414,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Mlle Charlotte Berthier",
     "year": "1883",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6402,7 +6436,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6421,7 +6455,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Suzanne Valadon",
     "year": "1885",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6443,7 +6477,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6462,7 +6496,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Child with Brown Hair",
     "year": "1887",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6484,7 +6518,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6503,7 +6537,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Young Girl Reading",
     "year": "1888",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6525,7 +6559,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6544,7 +6578,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Girl with a Basket of Fish",
     "year": "1875",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6566,7 +6600,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6585,7 +6619,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Girl with a Basket of Oranges",
     "year": "1875",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6607,7 +6641,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6626,7 +6660,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "The Blue River",
     "year": "1890",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6648,7 +6682,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6667,7 +6701,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Head of a Young Girl",
     "year": "1890",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6689,7 +6723,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6708,7 +6742,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Landscape at Vetheuil",
     "year": "1890",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6730,7 +6764,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6749,7 +6783,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Bather Arranging Her Hair",
     "year": "1893",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6771,7 +6805,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6790,7 +6824,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Child with Blond Hair",
     "year": "1897",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6812,7 +6846,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6831,7 +6865,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Child with Toys - Gabrielle and the Artist's Son, Jean",
     "year": "1895",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6853,7 +6887,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6872,7 +6906,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Nude",
     "year": "1895",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6894,7 +6928,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6913,7 +6947,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Young Spanish Woman with a Guitar",
     "year": "1898",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6935,7 +6969,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6954,7 +6988,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Peaches on a Plate",
     "year": "1902",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6966,7 +7000,7 @@
      "url": "https://www.wikidata.org/wiki/Q20190828",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6985,7 +7019,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Maison de la Poste, Cagnes",
     "year": "1906",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6997,7 +7031,7 @@
      "url": "https://www.wikidata.org/wiki/Q20191037",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -10346,7 +10380,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "The Dancer",
     "year": "1874",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -10368,7 +10402,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -10893,15 +10927,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "A Woman Nursing a Child",
     "year": "1894",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -10923,7 +10957,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -18307,7 +18341,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "View of Monte Carlo from Cap Martin",
     "year": "1884",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -18329,7 +18363,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -18412,7 +18446,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Portrait of Captain Édouard Bernier",
     "year": "1871",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -18434,7 +18468,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19670,7 +19704,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Mademoiselle Sicot",
     "year": "1865",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -19692,7 +19726,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -20738,7 +20772,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Springtime in Essoyes",
     "year": "1900",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20760,7 +20794,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20779,7 +20813,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Little Girl with a Hat (Jeune Fille au Chapeau)",
     "year": "1894",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20801,7 +20835,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20820,7 +20854,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Bouquet in a Vase",
     "year": "1878",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20842,7 +20876,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -35577,15 +35611,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73039,
-     47.50152
+     8.73028,
+     47.50139
     ]
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
     "title": "Femme s’essuyant",
     "year": "1913",
-    "location": "Building of the Winterthur Museum of Art",
+    "location": "Kunstmuseum Winterthur",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -35597,7 +35631,7 @@
      "url": "https://www.wikidata.org/wiki/Q116025756",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "building-of-the-winterthur-museum-of-art",
+    "museum_id": "kunstmuseum-winterthur",
     "location_src": "Building of the Winterthur Museum of Art",
     "kind": "museum",
     "form": "painting"

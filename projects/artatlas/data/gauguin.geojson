@@ -103,8 +103,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -136,7 +136,8 @@
     },
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -1010,15 +1011,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.7375,
-     59.9162
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "L'Intérieur, rue Carcel; ou Intérieur du peintre Paris, rue Carcel",
     "year": "1881",
-    "location": "National Gallery (Norway)",
+    "location": "National Museum of Norway",
     "attribution": "generally accepted",
     "medium": "W. 50/76",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Paul_Gauguin%2C_Interieur_du_peintre_Paris%2C_rue_Carcel_%281881%29_-_01.jpg/500px-Paul_Gauguin%2C_Interieur_du_peintre_Paris%2C_rue_Carcel_%281881%29_-_01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1030,11 +1031,12 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-norway",
+    "museum_id": "national-museum-of-norway",
     "city": "Oslo",
     "location_src": "National Gallery (Norway)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Norway"
    }
   },
   {
@@ -1795,7 +1797,9 @@
     },
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -2054,14 +2058,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Still Life with Peonies",
     "year": "1884",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -2095,8 +2099,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.7375,
-     59.9162
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
@@ -2104,7 +2108,7 @@
     "title": "Nasturtiums and Dahlias in a Basket",
     "year": "1884",
     "city": "Oslo",
-    "location": "National Gallery (Norway)",
+    "location": "National Museum of Norway",
     "attribution": "generally accepted",
     "medium": "W. 134/150",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Gauguin_1884_Capucines_et_dahlias_dans_une_corbeille.jpg/500px-Gauguin_1884_Capucines_et_dahlias_dans_une_corbeille.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -2116,7 +2120,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-norway",
+    "museum_id": "national-museum-of-norway",
     "qid": "Q55408597",
     "wikidata": "https://www.wikidata.org/wiki/Q55408597",
     "_overrides": {
@@ -2128,7 +2132,8 @@
     },
     "location_src": "National Gallery (Norway)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Norway"
    }
   },
   {
@@ -3401,8 +3406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -3428,7 +3433,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q7617093",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -3818,17 +3824,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Végétation tropicale, Martinique",
     "year": "1888",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "W. 232/248 S. 61",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Paul_Gauguin_131.jpg/500px-Paul_Gauguin_131.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -3840,7 +3846,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Gallery of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -3977,17 +3983,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Vision After the Sermon",
     "year": "1888",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "W. 245/308 S. 88",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/La_vision_apr%C3%A8s_le_sermon_%28Paul_Gauguin%29.jpg/500px-La_vision_apr%C3%A8s_le_sermon_%28Paul_Gauguin%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4000,7 +4006,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q1764395",
     "wikidata": "https://www.wikidata.org/wiki/Q1764395",
     "location_src": "National Gallery of Scotland",
@@ -4139,14 +4145,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Breton Girls Dancing, Pont-Aven",
     "year": "1888",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -4613,17 +4619,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10,
-     53.55
+     10.00306,
+     53.555
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Breton Boys Bathing",
     "year": "1888",
-    "city": "Hamburg",
+    "city": "Hamburg-Mitte",
     "country": "Germany",
-    "location": "Kunsthalle",
+    "location": "Hamburger Kunsthalle",
     "attribution": "generally accepted",
     "medium": "W. 275/297 S. 106",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Paul_Gauguin_009.jpg/500px-Paul_Gauguin_009.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4635,7 +4641,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthalle",
+    "museum_id": "hamburger-kunsthalle",
     "qid": "Q66025282",
     "wikidata": "https://www.wikidata.org/wiki/Q66025282",
     "_overrides": {
@@ -5329,8 +5335,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -5356,7 +5362,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q6485108",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -5443,14 +5450,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Madame Alexandre Kohler",
     "year": "1888 or 1889",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -5636,14 +5643,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Self-Portrait with Halo",
     "year": "1889",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -6397,8 +6404,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.7375,
-     59.9162
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
@@ -6406,7 +6413,7 @@
     "title": "Landscape, Bretagne",
     "year": "1889",
     "city": "Oslo",
-    "location": "National Gallery (Norway)",
+    "location": "National Museum of Norway",
     "attribution": "generally accepted",
     "medium": "W. 357 S. 167",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Paul_Gauguin_-_Bretagnelandskap_med_kuer_-_Google_Art_Project.jpg/500px-Paul_Gauguin_-_Bretagnelandskap_med_kuer_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6418,7 +6425,7 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-norway",
+    "museum_id": "national-museum-of-norway",
     "qid": "Q55423454",
     "wikidata": "https://www.wikidata.org/wiki/Q55423454",
     "_overrides": {
@@ -6430,7 +6437,8 @@
     },
     "location_src": "National Gallery (Norway)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Norway"
    }
   },
   {
@@ -6438,8 +6446,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.7375,
-     59.9162
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
@@ -6447,7 +6455,7 @@
     "title": "On the Beach",
     "year": "1889",
     "city": "Oslo",
-    "location": "National Gallery (Norway)",
+    "location": "National Museum of Norway",
     "attribution": "generally accepted",
     "medium": "W. 359 S. 183",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Gauguin_Sur_la_plage_en_Bretagne.jpg/500px-Gauguin_Sur_la_plage_en_Bretagne.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6459,10 +6467,11 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-norway",
+    "museum_id": "national-museum-of-norway",
     "location_src": "National Gallery (Norway)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Norway"
    }
   },
   {
@@ -6470,8 +6479,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -6497,7 +6506,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q16993442",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -6925,14 +6935,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Self-Portrait Dedicated to Carrière",
     "year": "1888 or 1889",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -7283,14 +7293,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Haystacks in Brittany",
     "year": "1890",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -7325,14 +7335,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Landscape at Le Pouldu",
     "year": "1890",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W. 398 S. 233",
@@ -8843,7 +8853,7 @@
     "painter": "Paul Gauguin",
     "title": "Parau na te Varua ino (Words of the Devil)",
     "year": "1892",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8865,7 +8875,7 @@
       "title": "Parau na te Varua ino"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8955,14 +8965,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Fatata te miti",
     "year": "1892",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -10342,8 +10352,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -10375,7 +10385,8 @@
     },
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -11589,14 +11600,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "Te Pape Nave Nave",
     "year": "1898",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -11747,14 +11758,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "The Bathers",
     "year": "1898",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -12417,8 +12428,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.7375,
-     59.9162
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
@@ -12426,7 +12437,7 @@
     "title": "The Square Basket",
     "year": "1901",
     "city": "Oslo",
-    "location": "National Gallery (Norway)",
+    "location": "National Museum of Norway",
     "attribution": "generally accepted",
     "medium": "W. 593 S. 412",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Gauguin_Le_Panier_carr%C3%A9.jpg/500px-Gauguin_Le_Panier_carr%C3%A9.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -12438,10 +12449,11 @@
      "source": "Wikipedia: List of paintings by Paul Gauguin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-norway",
+    "museum_id": "national-museum-of-norway",
     "location_src": "National Gallery (Norway)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Norway"
    }
   },
   {
@@ -13214,14 +13226,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Paul Gauguin",
     "title": "The Invocation",
     "year": "1903",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -14259,7 +14271,7 @@
     "painter": "Paul Gauguin",
     "title": "Brittany Landscape",
     "year": "1888",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -14271,7 +14283,7 @@
      "url": "https://www.wikidata.org/wiki/Q20189915",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -14290,7 +14302,7 @@
     "painter": "Paul Gauguin",
     "title": "Self-Portrait Dedicated to Carriere",
     "year": "1778",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "copy or later version",
@@ -14310,7 +14322,7 @@
       "note": "dated 1778, before birth (1848–1903) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -14329,7 +14341,7 @@
     "painter": "Paul Gauguin",
     "title": "Te Pape Nave Nave (Delectable Waters)",
     "year": "1898",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -14341,7 +14353,7 @@
      "url": "https://www.wikidata.org/wiki/Q20190630",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

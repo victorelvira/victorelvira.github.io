@@ -3965,14 +3965,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Zurbarán",
     "title": "Saint Lucy (NGA Washington)",
     "year": "1637",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -4009,14 +4009,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Zurbarán",
     "title": "Saint Jerome with Saint Paula and Saint Eustochium",
     "year": "1700",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -6264,17 +6264,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.5,
-     40.2
+     -72.67309,
+     41.76371
     ]
    },
    "properties": {
     "painter": "Zurbarán",
     "title": "Saint Serapion",
     "year": "1628",
-    "country": "Spain",
-    "location": "Spain",
-    "kind": "museum",
+    "country": "United States",
+    "location": "Wadsworth Atheneum",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
@@ -6297,10 +6296,13 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "spain",
+    "museum_id": "wadsworth-atheneum",
     "qid": "Q3464088",
     "location_src": "Spain",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195+P276",
+    "kind": "museum",
+    "city": "Hartford"
    }
   },
   {

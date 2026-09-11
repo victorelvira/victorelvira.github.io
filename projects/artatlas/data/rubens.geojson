@@ -3596,38 +3596,6 @@
    },
    "properties": {
     "painter": "Rubens",
-    "title": "Judith and Holofernes",
-    "city": "Florence",
-    "country": "Italy",
-    "location": "Uffizi Gallery",
-    "kind": "museum",
-    "attribution": "attributed",
-    "status": "present",
-    "wikidata": "https://www.wikidata.org/wiki/Q131501683",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q131501683",
-     "retrieved_at": "2026-08-23"
-    },
-    "museum_id": "uffizi-gallery",
-    "qid": "Q131501683",
-    "location_src": "Uffizi Gallery",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens72.jpg",
-    "_image_src": "commons category Category:Judith and Holofernes by Pieter Paul Rubens (Uffizi Gallery, Florence)",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.25528,
-     43.76833
-    ]
-   },
-   "properties": {
-    "painter": "Rubens",
     "title": "Drunken Bacchus",
     "city": "Florence",
     "country": "Italy",
@@ -6408,14 +6376,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rubens",
     "title": "Agrippina and Germanicus",
     "year": "1614",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -12072,14 +12040,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rubens",
     "title": "Portrait of Marchesa Brigida Spinola-Doria",
     "year": "1606",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -12999,7 +12967,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q3797751",
     "location_src": "Musée des Beaux-Arts de Caen",
     "form": "painting"
@@ -13336,17 +13304,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1275,
-     51.50722
+     -0.15302,
+     51.51745
     ]
    },
    "properties": {
     "painter": "Rubens",
     "title": "Landscape with a Rainbow",
     "year": "1636",
-    "city": "Greater London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
-    "location": "London",
+    "location": "Wallace Collection",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -13371,11 +13339,12 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "london",
+    "museum_id": "wallace-collection",
     "qid": "Q3888844",
     "wga_url": "https://www.wga.hu/html/r/rubens/5landsca/16landsc.html",
     "location_src": "London",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195"
    }
   },
   {
@@ -16799,14 +16768,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rubens",
     "title": "Daniel in the Lions' Den",
     "year": "1615",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -17169,14 +17138,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rubens",
     "title": "The Meeting of David and Abigail",
     "year": "1630",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -17301,14 +17270,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rubens",
     "title": "The Fall of Phaeton",
     "year": "1605",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -17525,8 +17494,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     4.48,
-     51.92
+     4.47334,
+     51.91421
     ]
    },
    "properties": {
@@ -17535,7 +17504,7 @@
     "year": "1613-1614",
     "city": "Rotterdam",
     "country": "Netherlands",
-    "location": "Rotterdam",
+    "location": "Museum Boijmans Van Beuningen",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -17558,10 +17527,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "rotterdam",
+    "museum_id": "museum-boijmans-van-beuningen",
     "qid": "Q94785425",
     "location_src": "Rotterdam",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195"
    }
   },
   {
@@ -20580,7 +20550,7 @@
     "painter": "Rubens",
     "title": "Triumphant Entry of Constantine into Rome",
     "year": "1621",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20602,7 +20572,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -25170,7 +25140,7 @@
     "painter": "Rubens",
     "title": "Decius Mus Addressing the Legions",
     "year": "",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -25182,7 +25152,7 @@
      "url": "https://www.wikidata.org/wiki/Q20176955",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -25201,7 +25171,7 @@
     "painter": "Rubens",
     "title": "The Meeting of Abraham and Melchizedek",
     "year": "1625",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -25223,7 +25193,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -25242,7 +25212,7 @@
     "painter": "Rubens",
     "title": "Deborah Kip, Wife of Sir Balthasar Gerbier, and Her Children",
     "year": "1629",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -25264,7 +25234,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -37961,7 +37931,7 @@
     "painter": "Rubens",
     "title": "Hero and Leander",
     "year": "1605",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -37983,7 +37953,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -38770,7 +38740,7 @@
     "painter": "Rubens",
     "title": "The Bear Hunt",
     "year": "1640",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -38792,7 +38762,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -38811,7 +38781,7 @@
     "painter": "Rubens",
     "title": "King Philip III of Spain",
     "year": "1635",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -38833,7 +38803,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -38852,7 +38822,7 @@
     "painter": "Rubens",
     "title": "King Philip IV of Spain",
     "year": "1635",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -38874,7 +38844,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -42421,7 +42391,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "location_src": "Musée des Beaux-Arts de Caen",
     "kind": "museum",
     "form": "painting"
@@ -42588,55 +42558,6 @@
     "museum_id": "church-of-the-gesu",
     "location_src": "Church of the Gesù",
     "kind": "church",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Rubens",
-    "title": "Bounty of James I Triumphing over Avarice",
-    "year": "1633",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20Bounty%20of%20James%20I%20Triumphing%20over%20Avarice%20CIA%20CIA%20P%201978%20PG%20377.jpg?width=500",
-    "qid": "Q111286685",
-    "wikidata": "https://www.wikidata.org/wiki/Q111286685",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q111286685",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Antwerp",
-    "creation_lat": 51.217778,
-    "creation_lon": 4.400278,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Bounty of James I Triumphing over Avarice",
-      "qid": "Q118888210",
-      "url": "https://www.wikidata.org/wiki/Q118888210"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
-    "kind": "museum",
     "form": "painting"
    }
   },
@@ -47218,7 +47139,7 @@
     "painter": "Rubens",
     "title": "An Old Bishop",
     "year": "1634",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -47240,7 +47161,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51730,7 +51651,7 @@
     "painter": "Rubens",
     "title": "The Flight of Cloelia",
     "year": "1650",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "copy or later version",
@@ -51750,7 +51671,7 @@
       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51769,7 +51690,7 @@
     "painter": "Rubens",
     "title": "Satyr and Girl with a Basket of Fruit",
     "year": "1612",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -51791,7 +51712,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51810,7 +51731,7 @@
     "painter": "Rubens",
     "title": "Christ on the Sea of Galilee",
     "year": "1612",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -51832,7 +51753,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51851,7 +51772,7 @@
     "painter": "Rubens",
     "title": "Crowning the Hero",
     "year": "1615",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -51873,7 +51794,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51892,7 +51813,7 @@
     "painter": "Rubens",
     "title": "The Drunken Hercules being Led by a Satyr Couple",
     "year": "1615",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -51914,7 +51835,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51933,7 +51854,7 @@
     "painter": "Rubens",
     "title": "Portrait of a woman with braided blond hair",
     "year": "1620",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -51955,7 +51876,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -51966,8 +51887,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {

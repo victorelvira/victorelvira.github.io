@@ -227,8 +227,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -237,7 +237,7 @@
     "year": "1567",
     "city": "Dresden",
     "country": "Germany",
-    "location": "Old Masters Gallery",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "65.5 × 84 cm",
@@ -251,7 +251,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "old-masters-gallery",
+    "museum_id": "gemaldegalerie-alte-meister",
     "qid": "Q5393073",
     "wikidata": "https://www.wikidata.org/wiki/Q5393073",
     "wga_url": "https://www.wga.hu/html/g/greco_el/02/0201grec.html",
@@ -434,14 +434,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Purification of the Temple",
     "year": "c. 1570",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1318,7 +1318,7 @@
     ],
     "location_src": "San Lorenzo de El Escorial",
     "country": "Spain",
-    "kind": "museum",
+    "kind": "church",
     "form": "painting"
    }
   },
@@ -1650,7 +1650,7 @@
     ],
     "location_src": "San Lorenzo de El Escorial",
     "country": "Spain",
-    "kind": "museum",
+    "kind": "church",
     "form": "painting"
    }
   },
@@ -2241,9 +2241,9 @@
     "painter": "El Greco",
     "title": "Christ Carrying the Cross",
     "year": "1590–1595",
-    "city": "Barcelona",
+    "city": "Sants-Montjuïc",
     "country": "Spain",
-    "location": "National Museum of Art of Catalonia",
+    "location": "Museu Nacional d'Art de Catalunya",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "106 × 69 cm",
@@ -2257,7 +2257,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-art-of-catalonia",
+    "museum_id": "museu-nacional-d-art-de-catalunya",
     "qid": "Q11916108",
     "wikidata": "https://www.wikidata.org/wiki/Q11916108",
     "_merged": [
@@ -2286,9 +2286,9 @@
     "painter": "El Greco",
     "title": "Apostles Peter and Paul",
     "year": "1590–1600",
-    "city": "Barcelona",
+    "city": "Sants-Montjuïc",
     "country": "Spain",
-    "location": "National Museum of Art of Catalonia",
+    "location": "Museu Nacional d'Art de Catalunya",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "116 × 91.8 cm",
@@ -2302,7 +2302,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-museum-of-art-of-catalonia",
+    "museum_id": "museu-nacional-d-art-de-catalunya",
     "qid": "Q2842584",
     "wikidata": "https://www.wikidata.org/wiki/Q2842584",
     "_merged": [
@@ -2764,7 +2764,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museu-del-patriarca",
-    "qid": "Q65058922",
     "wikidata": "https://www.wikidata.org/wiki/Q65058922",
     "_merged": [
      {
@@ -2776,7 +2775,9 @@
     ],
     "location_src": "Museu del Patriarca",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q65058922",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -2865,14 +2866,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Saint Martin and the Beggar",
     "year": "c.1597 – 1599",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3056,7 +3057,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-santa-cruz",
-    "qid": "Q8018",
     "wikidata": "https://www.wikidata.org/wiki/Q8018",
     "_merged": [
      {
@@ -3068,7 +3068,9 @@
     ],
     "location_src": "Museum of Santa Cruz",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q8018",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3305,7 +3307,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "instituto-valencia-of-don-juan",
-    "qid": "Q65058922",
     "wikidata": "https://www.wikidata.org/wiki/Q65058922",
     "_merged": [
      {
@@ -3317,7 +3318,9 @@
     ],
     "location_src": "Instituto Valencia of Don Juan",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q65058922",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -3998,7 +4001,6 @@
     },
     "museum_id": "national-museum-of-art-of-romania",
     "country": "Romania",
-    "qid": "Q3291129",
     "wikidata": "https://www.wikidata.org/wiki/Q3291129",
     "_merged": [
      {
@@ -4010,7 +4012,9 @@
     ],
     "location_src": "National Museum of Art of Romania",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3291129",
+    "qid_rejected_as": "artistic theme, gospel episode"
    }
   },
   {
@@ -4227,7 +4231,7 @@
     ],
     "location_src": "San Lorenzo de El Escorial",
     "country": "Spain",
-    "kind": "museum",
+    "kind": "church",
     "form": "painting"
    }
   },
@@ -4663,7 +4667,7 @@
     "title": "Saint Ildefonsus",
     "year": "1609",
     "city": "Spain",
-    "location": "El Escorial",
+    "location": "Royal Monastery of San Lorenzo de El Escorial",
     "attribution": "generally accepted",
     "medium": "oil on canvas",
     "dimensions": "222 × 105 cm",
@@ -4677,7 +4681,7 @@
      "source": "Wikipedia: List of works by El Greco",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-escorial",
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
     "qid": "Q6118863",
     "wikidata": "https://www.wikidata.org/wiki/Q6118863",
     "_merged": [
@@ -4690,7 +4694,8 @@
     ],
     "location_src": "El Escorial",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Spain"
    }
   },
   {
@@ -4911,14 +4916,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Laocoön",
     "year": "1610–1614",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -4994,8 +4999,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -5030,7 +5035,8 @@
     ],
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -5038,8 +5044,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -5063,7 +5069,8 @@
     "museum_id": "indianapolis-museum-of-art",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -5071,8 +5078,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -5096,7 +5103,8 @@
     "museum_id": "indianapolis-museum-of-art",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -7770,7 +7778,7 @@
     "painter": "El Greco",
     "title": "The Holy Family with Saint Anne and the Infant John the Baptist",
     "year": "1597",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -7782,7 +7790,7 @@
      "url": "https://www.wikidata.org/wiki/Q20176850",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -7801,7 +7809,7 @@
     "painter": "El Greco",
     "title": "Saint Ildefonso",
     "year": "1608",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -7813,7 +7821,7 @@
      "url": "https://www.wikidata.org/wiki/Q20176891",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8421,7 +8429,7 @@
     "painter": "El Greco",
     "title": "Christ Bearing the Cross",
     "year": "1610",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8433,7 +8441,7 @@
      "url": "https://www.wikidata.org/wiki/Q27896938",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -9673,15 +9681,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "El Greco",
     "title": "Saint Jerome in Penitence",
     "year": "1597",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -9693,7 +9701,7 @@
      "url": "https://www.wikidata.org/wiki/Q16621965",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11132,7 +11140,7 @@
     "painter": "El Greco",
     "title": "Madonna and Child with Saint Martina and Saint Agnes",
     "year": "1598",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11144,7 +11152,7 @@
      "url": "https://www.wikidata.org/wiki/Q16573878",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

@@ -6,17 +6,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     14.0,
-     48.0
+     -73.96033,
+     40.78126
     ]
    },
    "properties": {
     "painter": "Gustav Klimt",
     "title": "Portrait of Adele Bloch-Bauer I",
     "year": "1907",
-    "location": "Austria",
-    "city": "",
-    "country": "Austria",
+    "location": "Neue Galerie",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Klimt%2C%201907%2C%20Adele%20Bloch-Bauer%20I%2C%20Neue%20Galerie%20New%20York.jpg?width=500",
     "qid": "Q354396",
@@ -36,10 +36,11 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "austria",
+    "museum_id": "neue-galerie-2",
     "location_src": "Austria",
-    "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195+P276",
+    "kind": "museum"
    }
   },
   {
@@ -878,7 +879,7 @@
     "painter": "Gustav Klimt",
     "title": "Baby (Cradle)",
     "year": "1917",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -900,7 +901,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

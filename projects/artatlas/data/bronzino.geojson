@@ -496,7 +496,7 @@
     "title": "Deposition of Christ",
     "year": "1545",
     "city": "Besançon",
-    "location": "Musée des Beaux-Arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "268 × 173 cm",
@@ -510,7 +510,7 @@
      "source": "Wikipedia: List of works by Bronzino",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts",
+    "museum_id": "musee-des-beaux-arts-de-caen",
     "qid": "Q1131476",
     "wikidata": "https://www.wikidata.org/wiki/Q1131476",
     "wga_url": "https://www.wga.hu/html/b/bronzino/3a/01eleono.html",
@@ -972,7 +972,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q118190483",
     "wikidata": "https://www.wikidata.org/wiki/Q118190483",
     "_merged": [
      {
@@ -984,7 +983,9 @@
     ],
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q118190483",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -2057,7 +2058,7 @@
     "painter": "Bronzino",
     "title": "The Holy Family",
     "year": "1525",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2079,7 +2080,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -2098,7 +2099,7 @@
     "painter": "Bronzino",
     "title": "A Young Woman and Her Little Boy",
     "year": "1540",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2120,7 +2121,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -2262,7 +2263,7 @@
     "painter": "Bronzino",
     "title": "Bust-length portrait of Elonora of Toledo",
     "year": "1560",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -2284,7 +2285,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"

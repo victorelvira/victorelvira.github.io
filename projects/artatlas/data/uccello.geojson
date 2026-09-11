@@ -292,7 +292,7 @@
     "year": "1430",
     "city": "Indianapolis",
     "country": "United States",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -316,7 +316,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "qid": "Q16596981",
     "location_src": "Museo de Arte de Indianápolis",
     "form": "painting"
@@ -686,8 +686,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.257778,
-     51.751944
+     -1.26056,
+     51.75556
     ]
    },
    "properties": {
@@ -696,8 +696,8 @@
     "year": "1470",
     "city": "Oxford",
     "country": "United Kingdom",
-    "location": "Oxford",
-    "kind": "church",
+    "location": "Ashmolean Museum",
+    "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on panel",
@@ -721,11 +721,12 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "oxford",
+    "museum_id": "ashmolean-museum",
     "qid": "Q3649296",
     "wga_url": "https://www.wga.hu/html/u/uccello/6various/6hunt.html",
     "location_src": "Oxford",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P276"
    }
   },
   {

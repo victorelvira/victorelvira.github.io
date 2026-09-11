@@ -1364,14 +1364,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "phoenix-art-museum",
-    "qid": "Q2608280",
     "wikidata": "https://www.wikidata.org/wiki/Q2608280",
     "country": "United States",
     "location_src": "Phoenix Art Museum",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Dorothy_Hale_1905%E2%80%931938.jpg?utm_source=arz.wikipedia.org&utm_campaign=api&utm_content=original",
     "_image_src": "arz.wikipedia lead image",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2608280",
+    "qid_rejected_as": "human"
    }
   },
   {

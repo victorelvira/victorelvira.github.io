@@ -213,7 +213,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q120097155",
     "_merged": [
      {
@@ -328,8 +328,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.38855,
-     43.11192
+     12.38852,
+     43.11039
     ]
    },
    "properties": {
@@ -338,7 +338,7 @@
     "year": "1498",
     "city": "province of Perugia",
     "country": "Italy",
-    "location": "Perugia",
+    "location": "Palazzo Baldeschi al Corso",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -360,10 +360,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "perugia",
+    "museum_id": "palazzo-baldeschi-al-corso",
     "qid": "Q130721745",
     "location_src": "Perugia",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195"
    }
   },
   {
@@ -2169,14 +2170,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pietro Perugino",
     "title": "Madonna with child",
     "year": "1501",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -2735,7 +2736,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q3224308",
     "wga_url": "https://www.wga.hu/html/p/perugino/madonna/marriage.html",
     "location_src": "Musée des Beaux-Arts de Caen",
@@ -3457,14 +3458,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pietro Perugino",
     "title": "Saint Bartholomew",
     "year": "1517",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -3847,14 +3848,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pietro Perugino",
     "title": "Galitzin Triptych",
     "year": "1481",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -4209,8 +4210,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48278,
-     41.89306
+     12.51128,
+     41.91574
     ]
    },
    "properties": {
@@ -4219,7 +4220,7 @@
     "year": "1491",
     "city": "Metropolitan City of Rome",
     "country": "Italy",
-    "location": "Rome",
+    "location": "Villa Torlonia",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -4243,10 +4244,11 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "rome-2",
+    "museum_id": "villa-torlonia",
     "qid": "Q922185",
     "location_src": "Rome",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P276"
    }
   },
   {
@@ -4255,14 +4257,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Pietro Perugino",
     "title": "Portrait of Lorenzo di Credi",
     "year": "1488",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -5062,7 +5064,7 @@
     "painter": "Pietro Perugino",
     "title": "The Crucifixion with the Virgin, Saint John, Saint Jerome, and Saint Mary Magdalene [middle panel]",
     "year": "1483",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5084,7 +5086,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5103,7 +5105,7 @@
     "painter": "Pietro Perugino",
     "title": "The Crucifixion with the Virgin, Saint John, Saint Jerome, and Saint Mary Magdalene [right panel]",
     "year": "1483",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5125,7 +5127,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5144,7 +5146,7 @@
     "painter": "Pietro Perugino",
     "title": "The Crucifixion with the Virgin, Saint John, Saint Jerome, and Saint Mary Magdalene [left panel]",
     "year": "1483",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5166,7 +5168,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

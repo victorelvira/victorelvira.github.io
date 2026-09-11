@@ -7,8 +7,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -34,7 +34,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q16038609",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -42,8 +43,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -75,7 +76,8 @@
     },
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -1085,17 +1087,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.1275,
-     51.50722
+     -0.13944,
+     51.50917
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Dolbadern Castle",
     "year": "1800",
-    "city": "London",
+    "city": "City of Westminster",
     "country": "United Kingdom",
-    "location": "The Royal Academy",
+    "location": "Royal Academy of Arts",
     "attribution": "generally accepted",
     "dimensions": "119.4 × 90.2 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/J.M.W._Turner_Dolbadern_Castle%2C_1800.jpg/500px-J.M.W._Turner_Dolbadern_Castle%2C_1800.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1107,7 +1109,7 @@
      "source": "Wikipedia: List of paintings by J. M. W. Turner",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "the-royal-academy",
+    "museum_id": "royal-academy-of-arts",
     "qid": "Q119023695",
     "wikidata": "https://www.wikidata.org/wiki/Q119023695",
     "_overrides": {
@@ -1127,8 +1129,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -1154,7 +1156,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q7733769",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -1911,14 +1914,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Boats Carrying Out Anchors to the Dutch Men of War",
     "year": "c.1804",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3888,14 +3891,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "The Junction of the Thames and the Medway",
     "year": "1807",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -5819,15 +5822,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Somer Hill, Tonbridge",
     "year": "1811",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "92 × 122 c",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Joseph_Mallord_William_Turner_%281775-1851%29_-_Somer_Hill%2C_Tonbridge_-_NG_1614_-_National_Galleries_of_Scotland.jpg/500px-Joseph_Mallord_William_Turner_%281775-1851%29_-_Somer_Hill%2C_Tonbridge_-_NG_1614_-_National_Galleries_of_Scotland.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5840,7 +5843,7 @@
      "source": "Wikipedia: List of paintings by J. M. W. Turner",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "qid": "Q27968109",
@@ -8700,14 +8703,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Mortlake Terrace",
     "year": "1827",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -9593,8 +9596,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -9617,7 +9620,8 @@
     "museum_id": "indianapolis-museum-of-art",
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -12091,14 +12095,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Rotterdam Ferry-Boat",
     "year": "1833",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -12288,14 +12292,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Venice: The Dogana and San Giorgio Maggiore, 1834",
     "year": "1834",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -12464,7 +12468,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "philadelphia-museum-of-art",
-    "qid": "Q80974590",
     "wikidata": "https://www.wikidata.org/wiki/Q80974590",
     "_merged": [
      {
@@ -12476,7 +12479,9 @@
     ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q80974590",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -12508,7 +12513,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "cleveland-museum-of-art",
-    "qid": "Q80974590",
     "wikidata": "https://www.wikidata.org/wiki/Q80974590",
     "_merged": [
      {
@@ -12520,7 +12524,9 @@
     ],
     "location_src": "Cleveland Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q80974590",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -12615,14 +12621,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Keelmen Heaving in Coals by Moonlight",
     "year": "1835",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -13919,14 +13925,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "The Rape of Proserpine",
     "year": "1839",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -15071,14 +15077,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "The Evening of the Deluge",
     "year": "c. 1843",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -16192,14 +16198,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Approach to Venice",
     "year": "1844",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -17764,7 +17770,7 @@
     "painter": "J.M.W. Turner",
     "title": "The Dogana and Santa Maria della Salute, Venice",
     "year": "1843",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -17786,7 +17792,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -20379,7 +20385,7 @@
     "painter": "J.M.W. Turner",
     "title": "copy of Prince of Orange Landing at Torbay",
     "year": "1831",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20401,7 +20407,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20420,7 +20426,7 @@
     "painter": "J.M.W. Turner",
     "title": "Fontainebleau: The Departure of Napoleon",
     "year": "1833",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20442,7 +20448,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20461,7 +20467,7 @@
     "painter": "J.M.W. Turner",
     "title": "Rochester on the Medway",
     "year": "",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20473,7 +20479,7 @@
      "url": "https://www.wikidata.org/wiki/Q27895144",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20492,7 +20498,7 @@
     "painter": "J.M.W. Turner",
     "title": "East Cowes Castle, the Seat of J. Nash, Esq., the Regatta Beating to Windward",
     "year": "1828",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20514,7 +20520,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20533,7 +20539,7 @@
     "painter": "J.M.W. Turner",
     "title": "Kilgarren Castle",
     "year": "",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20545,7 +20551,7 @@
      "url": "https://www.wikidata.org/wiki/Q27897836",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -20564,7 +20570,7 @@
     "painter": "J.M.W. Turner",
     "title": "Abbotsford",
     "year": "",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -20576,7 +20582,7 @@
      "url": "https://www.wikidata.org/wiki/Q27898407",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"

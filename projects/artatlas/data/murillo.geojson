@@ -671,14 +671,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Murillo",
     "title": "The Return of the Prodigal Son",
     "year": "1668",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -3185,14 +3185,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Murillo",
     "title": "Two Women at a Window",
     "year": "1657-1670",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -5040,8 +5040,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -7180,8 +7180,8 @@
     "painter": "Murillo",
     "title": "Santa Justa",
     "year": "1665",
-    "location": "Dallas",
-    "city": "Dallas County",
+    "location": "Meadows Museum",
+    "city": "Dallas",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Justa%20by%20Bartolome%20Esteban%20Murillo%2C%20Spanish%2C%20c.%201665%2C%20oil%20on%20canvas%20-%20Meadows%20Museum%20-%20Southern%20Methodist%20University%20-%20DSC05295.jpg?width=500",
@@ -7202,10 +7202,11 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "dallas",
+    "museum_id": "meadows-museum",
     "location_src": "Dallas",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195"
    }
   },
   {
@@ -10290,7 +10291,7 @@
     "painter": "Murillo",
     "title": "Blessed Egidius of Assisi, in levitation before Pope Gregory IX",
     "year": "1645",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -10312,7 +10313,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"

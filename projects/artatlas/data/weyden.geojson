@@ -42,14 +42,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Saint George and the Dragon",
     "year": "c. 1425–1430",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -825,7 +825,7 @@
     "title": "The crucified Christ between the mourning Mary and Saint John , so called Crucifixion of Scheut",
     "year": "c. 1450–1455",
     "city": "Spain",
-    "location": "El Escorial",
+    "location": "Royal Monastery of San Lorenzo de El Escorial",
     "attribution": "generally accepted",
     "dimensions": "325 × 192 cm.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Weyden_Christ_on_the_Cross_with_Mary_and_St_John.jpg/500px-Weyden_Christ_on_the_Cross_with_Mary_and_St_John.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -837,7 +837,7 @@
      "source": "Wikipedia: List of works by Rogier van der Weyden",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-escorial",
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
     "_merged": [
      {
       "source": "Wikidata",
@@ -848,7 +848,8 @@
     ],
     "location_src": "El Escorial",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Spain"
    }
   },
   {
@@ -931,14 +932,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rogier van der Weyden",
     "title": "Portrait of a Woman",
     "year": "c. 1460",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1226,8 +1227,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.14778,
-     40.58917
+     -4.15,
+     40.59
     ]
    },
    "properties": {
@@ -1235,7 +1236,7 @@
     "title": "Crucifixion of Scheut",
     "year": "1454",
     "location": "Royal Monastery of San Lorenzo de El Escorial",
-    "city": "San Lorenzo de El Escorial",
+    "city": "Spain",
     "country": "Spain",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Weyden%20Christ%20on%20the%20Cross%20with%20Mary%20and%20St%20John.jpg?width=500",
@@ -2489,7 +2490,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "location_src": "Musée des Beaux-Arts de Caen",
     "kind": "museum",
     "form": "painting"

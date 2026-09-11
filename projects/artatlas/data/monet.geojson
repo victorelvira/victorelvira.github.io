@@ -137,14 +137,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Still Life with Bottle, Carafe, Bread and Wine",
     "year": "1862–63",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.13",
@@ -1204,7 +1204,9 @@
     },
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -1254,7 +1256,7 @@
     "painter": "Claude Monet",
     "title": "Bazille and Camille (Study for \"Déjeuner sur l'Herbe\")",
     "year": "1865",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -1284,7 +1286,7 @@
       "title": "The Strollers (study for Luncheon on the Grass )"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -1320,7 +1322,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "qid": "Q1167912",
     "wikidata": "https://www.wikidata.org/wiki/Q1167912",
     "_merged": [
      {
@@ -1332,7 +1333,8 @@
     ],
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1167912"
    }
   },
   {
@@ -1365,7 +1367,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q1167912",
     "wikidata": "https://www.wikidata.org/wiki/Q1167912",
     "_merged": [
      {
@@ -1377,7 +1378,8 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1167912"
    }
   },
   {
@@ -1410,11 +1412,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q1167912",
     "wikidata": "https://www.wikidata.org/wiki/Q1167912",
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1167912"
    }
   },
   {
@@ -1644,7 +1646,7 @@
     "painter": "Claude Monet",
     "title": "Jar of Peaches",
     "year": "1866",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "W.70",
     "dimensions": "55.5 × 46 cm",
@@ -1657,7 +1659,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
     "country": "Germany",
     "qid": "Q18683988",
@@ -2217,7 +2219,7 @@
     "painter": "Claude Monet",
     "title": "Sainte-Adresse",
     "year": "1867",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -2247,7 +2249,7 @@
       "title": "Sainte-Adresse, Fishing Boats on the Shore"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -2431,14 +2433,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Jean Monet in His Cradle",
     "year": "1867",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.101",
@@ -2791,7 +2793,9 @@
     ],
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -3033,14 +3037,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Interior, after Dinner",
     "year": "1868–69",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.130",
@@ -4213,11 +4217,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "ny-carlsberg-glyptotek",
-    "qid": "Q50697763",
     "wikidata": "https://www.wikidata.org/wiki/Q50697763",
     "location_src": "Ny Carlsberg Glyptotek",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q50697763"
    }
   },
   {
@@ -4352,11 +4356,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "ny-carlsberg-glyptotek",
-    "qid": "Q50697763",
     "wikidata": "https://www.wikidata.org/wiki/Q50697763",
     "location_src": "Ny Carlsberg Glyptotek",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q50697763"
    }
   },
   {
@@ -5146,14 +5150,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Ships Riding on the Seine at Rouen",
     "year": "1872",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.210",
@@ -5368,14 +5372,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Argenteuil",
     "year": "1872",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.223",
@@ -6282,8 +6286,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -6292,7 +6296,7 @@
     "year": "1873",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "W.260",
     "dimensions": "71 × 53.5 cm",
@@ -6305,7 +6309,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -6935,7 +6939,7 @@
     "painter": "Claude Monet",
     "title": "The Artist's Garden in Argenteuil (A Corner of the Garden with Dahlias)",
     "year": "1873",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6965,7 +6969,7 @@
       "title": "The Garden at Argenteuil"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -7227,7 +7231,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "the-nelson-atkins-museum-of-art",
-    "qid": "Q129097749",
     "wikidata": "https://www.wikidata.org/wiki/Q129097749",
     "_merged": [
      {
@@ -7239,7 +7242,9 @@
     ],
     "location_src": "The Nelson-Atkins Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q129097749",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -7716,14 +7721,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Railway Bridge at Argenteuil",
     "year": "1874",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.312",
@@ -7802,14 +7807,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Bridge at Argenteuil on a Gray Day",
     "year": "1876",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.316",
@@ -9375,14 +9380,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Walk, Woman with a Parasol",
     "year": "1875",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.381",
@@ -13395,14 +13400,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Banks of the Seine near Vetheuil",
     "year": "1880",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "73 x 100",
@@ -13750,14 +13755,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Willows",
     "year": "1880",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "66 x 81.5",
@@ -13800,7 +13805,7 @@
     "painter": "Claude Monet",
     "title": "Woman Seated under the Willows",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -13830,7 +13835,7 @@
       "title": "Woman Sitting under the Willows"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -14111,7 +14116,7 @@
     "painter": "Claude Monet",
     "title": "Jerusalem Artichoke Flowers",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -14141,7 +14146,7 @@
       "title": "Jerusalem Artichokes"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -14914,14 +14919,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Artist's Garden at Vetheuil",
     "year": "1881",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "150 x 120",
@@ -15573,7 +15578,9 @@
     },
     "location_src": "Kunstmuseum Winterthur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Winterthur",
+    "country": "Switzerland"
    }
   },
   {
@@ -16288,7 +16295,7 @@
     "painter": "Claude Monet",
     "title": "Cliffs at Pourville",
     "year": "1882",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -16318,7 +16325,7 @@
       "title": "Cliff at Pourville"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -17154,7 +17161,8 @@
     },
     "location_src": "North Carolina Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -17279,7 +17287,6 @@
     "museum_id": "museum-of-fine-arts-of-lyon",
     "city": "Lyon",
     "country": "France",
-    "qid": "Q131741852",
     "wikidata": "https://www.wikidata.org/wiki/Q131741852",
     "_merged": [
      {
@@ -17291,7 +17298,9 @@
     ],
     "location_src": "Museum of Fine Arts of Lyon",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q131741852",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -20117,8 +20126,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10.7375,
-     59.9162
+     10.72917,
+     59.91167
     ]
    },
    "properties": {
@@ -20126,7 +20135,7 @@
     "title": "Etretat in the Rain",
     "year": "1885–86",
     "city": "Oslo",
-    "location": "National Gallery (Norway)",
+    "location": "National Museum of Norway",
     "attribution": "generally accepted",
     "medium": "W.1044",
     "dimensions": "60.5 x 73.5",
@@ -20139,10 +20148,11 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-norway",
+    "museum_id": "national-museum-of-norway",
     "location_src": "National Gallery (Norway)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Norway"
    }
   },
   {
@@ -20895,11 +20905,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "qid": "Q3952498",
     "wikidata": "https://www.wikidata.org/wiki/Q3952498",
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3952498"
    }
   },
   {
@@ -20930,7 +20940,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "caracas-museum-of-contemporary-art",
-    "qid": "Q3952498",
     "wikidata": "https://www.wikidata.org/wiki/Q3952498",
     "_merged": [
      {
@@ -20944,7 +20953,8 @@
     "country": "Venezuela",
     "location_src": "Caracas Museum of Contemporary Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3952498"
    }
   },
   {
@@ -20977,11 +20987,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "ny-carlsberg-glyptotek",
-    "qid": "Q3952498",
     "wikidata": "https://www.wikidata.org/wiki/Q3952498",
     "location_src": "Ny Carlsberg Glyptotek",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3952498"
    }
   },
   {
@@ -22754,14 +22764,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Morning Fog",
     "year": "1888",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.1196",
@@ -24133,7 +24143,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24145,7 +24154,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24178,7 +24189,6 @@
     },
     "museum_id": "hill-stead-museum",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24190,7 +24200,9 @@
     ],
     "location_src": "Hill-Stead Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24223,7 +24235,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24235,7 +24246,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24268,7 +24281,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24280,7 +24292,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24313,7 +24327,6 @@
     },
     "museum_id": "national-gallery-of-australia",
     "country": "Australia",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24325,7 +24338,9 @@
     ],
     "location_src": "National Gallery of Australia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24356,7 +24371,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "shelburne-museum",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24370,7 +24384,9 @@
     "country": "United States",
     "location_src": "Shelburne Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24378,8 +24394,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -24388,7 +24404,7 @@
     "year": "1890–91",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "W.1277",
     "dimensions": "65 x 92",
@@ -24402,8 +24418,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-galleries-of-scotland",
-    "qid": "Q557000",
+    "museum_id": "scottish-national-gallery",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24415,7 +24430,9 @@
     ],
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24448,7 +24465,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24460,7 +24476,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24493,7 +24511,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24505,7 +24522,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24538,7 +24557,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24550,7 +24568,9 @@
     ],
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24583,7 +24603,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24595,7 +24614,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24628,7 +24649,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24640,7 +24660,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24673,7 +24695,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24685,7 +24706,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24717,7 +24740,6 @@
     },
     "museum_id": "minneapolis-institute-of-art",
     "city": "Minneapolis",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "country": "United States",
     "_merged": [
@@ -24730,7 +24752,9 @@
     ],
     "location_src": "Minneapolis Institute of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24763,11 +24787,12 @@
     "museum_id": "kunsthaus-zurich",
     "city": "Zurich",
     "country": "Switzerland",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "location_src": "Kunsthaus Zürich",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24800,7 +24825,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q557000",
     "wikidata": "https://www.wikidata.org/wiki/Q557000",
     "_merged": [
      {
@@ -24812,7 +24836,9 @@
     ],
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q557000",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24844,7 +24870,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "moa-museum-of-art",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -24857,7 +24882,9 @@
     "country": "Japan",
     "location_src": "MOA Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24890,11 +24917,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24927,7 +24955,6 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -24939,7 +24966,9 @@
     ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -24972,7 +25001,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "tate-britain",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -24985,7 +25013,9 @@
     "location_src": "Tate Britain",
     "venue_of": "Tate",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25018,7 +25048,6 @@
     },
     "museum_id": "national-museum-of-western-art",
     "country": "Japan",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -25030,7 +25059,9 @@
     ],
     "location_src": "National Museum of Western Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25063,7 +25094,6 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -25075,7 +25105,9 @@
     ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25108,7 +25140,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -25120,7 +25151,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25128,8 +25161,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
@@ -25138,7 +25171,7 @@
     "year": "1891",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "W.1310",
     "dimensions": "81.5 x 82",
@@ -25152,8 +25185,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-galleries-of-scotland",
-    "qid": "Q733458",
+    "museum_id": "scottish-national-gallery",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -25165,7 +25197,9 @@
     ],
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25198,7 +25232,6 @@
     },
     "museum_id": "fitzwilliam-museum",
     "country": "United Kingdom",
-    "qid": "Q733458",
     "wikidata": "https://www.wikidata.org/wiki/Q733458",
     "_merged": [
      {
@@ -25210,7 +25243,9 @@
     ],
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q733458",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25421,14 +25456,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Rouen Cathedral, West Facade, Sunlight",
     "year": "1894",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.1324",
@@ -25869,7 +25904,6 @@
     "museum_id": "musee-des-beaux-arts-de-rouen",
     "city": "Rouen",
     "country": "France",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -25881,7 +25915,9 @@
     ],
     "location_src": "Musée des Beaux-Arts de Rouen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25914,7 +25950,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -25926,7 +25961,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -25959,7 +25996,6 @@
     },
     "museum_id": "beyeler-foundation",
     "country": "Switzerland",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -25971,7 +26007,9 @@
     ],
     "location_src": "Beyeler Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26004,7 +26042,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -26016,7 +26053,9 @@
     ],
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26049,11 +26088,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26062,14 +26102,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Portal of Rouen Cathedral at Midday",
     "year": "1893",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.1351",
@@ -26086,11 +26126,12 @@
     },
     "museum_id": "national-gallery-of-art",
     "country": "United States",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26122,7 +26163,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-folkwang",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "country": "Germany",
     "_merged": [
@@ -26135,7 +26175,9 @@
     ],
     "location_src": "Museum Folkwang",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26168,7 +26210,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -26180,7 +26221,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26213,7 +26256,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -26225,7 +26267,9 @@
     ],
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26256,13 +26300,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "schloss-weimar",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "city": "Weimar",
     "country": "Germany",
     "location_src": "Schloss Weimar",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26295,7 +26340,6 @@
     },
     "museum_id": "clark-art-institute",
     "country": "United States",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -26307,7 +26351,9 @@
     ],
     "location_src": "Clark Art Institute",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26340,7 +26386,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q637414",
     "wikidata": "https://www.wikidata.org/wiki/Q637414",
     "_merged": [
      {
@@ -26352,7 +26397,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q637414",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -26394,15 +26441,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "A Meadow at Giverny",
     "year": "1894",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "medium": "W.1368",
     "dimensions": "92 x 73",
@@ -26415,7 +26462,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
+    "museum_id": "princeton-art-museum",
     "_merged": [
      {
       "source": "Wikidata",
@@ -27759,7 +27806,8 @@
     "museum_id": "north-carolina-museum-of-art",
     "location_src": "North Carolina Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -27792,7 +27840,8 @@
     "museum_id": "north-carolina-museum-of-art",
     "location_src": "North Carolina Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -28117,7 +28166,7 @@
     "title": "Morning on the Seine",
     "year": "1897",
     "city": "Washington D.C.",
-    "location": "White House Collection",
+    "location": "White House",
     "attribution": "generally accepted",
     "medium": "W.1485",
     "dimensions": "89 x 92",
@@ -28130,7 +28179,7 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "white-house-collection",
+    "museum_id": "white-house",
     "_merged": [
      {
       "source": "Wikidata",
@@ -28141,7 +28190,8 @@
     ],
     "location_src": "White House Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -28269,14 +28319,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "The Seine at Giverny",
     "year": "1897",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.1494",
@@ -28444,11 +28494,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "shelburne-museum-vermont-house",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Shelburne Museum Vermont House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28480,7 +28531,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "murauchi-art-museum",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28493,7 +28543,9 @@
     "country": "Japan",
     "location_src": "Murauchi Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28525,7 +28577,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "menard-art-museum",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28538,7 +28589,9 @@
     "country": "Japan",
     "location_src": "Menard Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28571,7 +28624,6 @@
     },
     "museum_id": "national-museum-of-western-art",
     "country": "Japan",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28583,7 +28635,9 @@
     ],
     "location_src": "National Museum of Western Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28616,11 +28670,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28653,7 +28708,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28665,7 +28719,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28698,7 +28754,6 @@
     "museum_id": "national-museum-cardiff",
     "city": "Cardiff",
     "country": "Wales",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28710,7 +28765,9 @@
     ],
     "location_src": "National Museum Cardiff",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28718,8 +28775,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -28742,7 +28799,6 @@
     },
     "museum_id": "indianapolis-museum-of-art",
     "city": "Indianapolis",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28754,7 +28810,10 @@
     ],
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series",
+    "country": "United States"
    }
   },
   {
@@ -28787,11 +28846,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "thyssen-bornemisza-museum",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Thyssen-Bornemisza Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28823,7 +28883,6 @@
     },
     "museum_id": "baltimore-museum-of-art",
     "city": "Baltimore",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28836,7 +28895,9 @@
     "country": "United States",
     "location_src": "Baltimore Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28869,11 +28930,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-marmottan-monet",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Musée Marmottan Monet",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28904,13 +28966,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "yamagata-museum-of-art",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "city": "Yamagata",
     "country": "Japan",
     "location_src": "Yamagata Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28943,7 +29006,6 @@
     "museum_id": "museum-of-fine-arts-of-lyon",
     "city": "Lyon",
     "country": "France",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -28955,7 +29017,9 @@
     ],
     "location_src": "Museum of Fine Arts of Lyon",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -28988,11 +29052,12 @@
     },
     "museum_id": "art-gallery-of-ontario",
     "country": "Canada",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Art Gallery of Ontario",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -29024,7 +29089,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "mohamed-mahmoud-khalil-museum",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -29037,7 +29101,9 @@
     "country": "Egypt",
     "location_src": "Mohamed Mahmoud Khalil Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -29070,11 +29136,12 @@
     "museum_id": "saint-louis-art-museum",
     "city": "St. Louis",
     "country": "United States",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "location_src": "Saint Louis Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -29107,7 +29174,6 @@
     },
     "museum_id": "fogg-museum",
     "country": "United States",
-    "qid": "Q5074352",
     "wikidata": "https://www.wikidata.org/wiki/Q5074352",
     "_merged": [
      {
@@ -29120,7 +29186,9 @@
     "location_src": "Fogg Museum",
     "venue_of": "Harvard Art Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5074352",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -29357,7 +29425,7 @@
     "painter": "Claude Monet",
     "title": "Waterloo Bridge, London, at Dusk",
     "year": "1904",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -29380,7 +29448,7 @@
       "title": "Waterloo Bridge, at Dusk"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -29544,14 +29612,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Waterloo Bridge, Grey Day",
     "year": "1903",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.1569",
@@ -29827,7 +29895,7 @@
     "painter": "Claude Monet",
     "title": "Waterloo Bridge, London, at Sunset",
     "year": "1904",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -29850,7 +29918,7 @@
       "title": "Waterloo Bridge at Sunset, Pink Effect"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -30094,7 +30162,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "brooklyn-museum",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30106,7 +30173,9 @@
     ],
     "location_src": "Brooklyn Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30115,14 +30184,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Houses of Parliament, Sunset",
     "year": "1903",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
     "medium": "W.1598",
@@ -30139,7 +30208,6 @@
     },
     "museum_id": "national-gallery-of-art",
     "country": "United States",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30151,7 +30219,9 @@
     ],
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30184,7 +30254,6 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30196,7 +30265,9 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30228,7 +30299,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "high-museum-of-art",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "country": "United States",
     "_merged": [
@@ -30241,7 +30311,9 @@
     ],
     "location_src": "High Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30274,11 +30346,12 @@
     "museum_id": "palais-des-beaux-arts-de-lille",
     "city": "Lille",
     "country": "France",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "location_src": "Palais des Beaux-Arts de Lille",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30311,7 +30384,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-marmottan-monet",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30323,7 +30395,9 @@
     ],
     "location_src": "Musée Marmottan Monet",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30356,11 +30430,12 @@
     "museum_id": "kunsthaus-zurich",
     "city": "Zurich",
     "country": "Switzerland",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "location_src": "Kunsthaus Zürich",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30391,7 +30466,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-modern-art-andre-malraux-muma",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30405,7 +30479,9 @@
     "country": "France",
     "location_src": "Museum of modern art André Malraux - MuMa",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30438,7 +30514,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30450,7 +30525,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30483,7 +30560,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30495,7 +30571,9 @@
     ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30503,15 +30581,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -74.65803,
-     40.34719
+     -74.6578,
+     40.3472
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Houses of Parliament, Seagulls",
     "year": "1903",
-    "location": "Princeton University Art Museum",
+    "location": "Princeton Art Museum",
     "attribution": "generally accepted",
     "medium": "W.1612",
     "dimensions": "81 x 92",
@@ -30525,14 +30603,15 @@
      "source": "Wikipedia: List of paintings by Claude Monet",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "princeton-university-art-museum",
-    "qid": "Q468623",
+    "museum_id": "princeton-art-museum",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "city": "Princeton",
     "country": "United States",
     "location_src": "Princeton University Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -30565,7 +30644,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "qid": "Q468623",
     "wikidata": "https://www.wikidata.org/wiki/Q468623",
     "_merged": [
      {
@@ -30577,7 +30655,9 @@
     ],
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q468623",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -31315,7 +31395,7 @@
     "painter": "Claude Monet",
     "title": "The Church of San Giorgio Maggiore, Venice",
     "year": "1908",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -31338,7 +31418,7 @@
       "title": "San Giorgio Maggiore"
      }
     ],
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -31529,7 +31609,7 @@
     "painter": "Claude Monet",
     "title": "Palazzo da Mula, Venice",
     "year": "1908",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -31552,7 +31632,7 @@
       "title": "Palazzo da Mula"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -34554,7 +34634,7 @@
     "painter": "Claude Monet",
     "title": "Japanese Footbridge",
     "year": "1899",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -34566,7 +34646,7 @@
      "url": "https://www.wikidata.org/wiki/Q12858617",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -35719,15 +35799,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "A Seascape, Shipping by Moonlight",
     "year": "1864",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -35755,7 +35835,7 @@
       "title": "Seascape, Night Effect"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -36493,7 +36573,7 @@
     "painter": "Claude Monet",
     "title": "The Bridge at Argenteuil",
     "year": "1874",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -36515,7 +36595,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -36534,7 +36614,7 @@
     "painter": "Claude Monet",
     "title": "Banks of the Seine, Vétheuil",
     "year": "1880",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -36556,7 +36636,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -36575,7 +36655,7 @@
     "painter": "Claude Monet",
     "title": "Waterloo Bridge, Gray Day",
     "year": "1903",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -36587,7 +36667,7 @@
      "url": "https://www.wikidata.org/wiki/Q20190882",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -38886,7 +38966,7 @@
     "painter": "Claude Monet",
     "title": "The Seine at Giverny, Morning Mists",
     "year": "1897",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -38898,7 +38978,7 @@
      "url": "https://www.wikidata.org/wiki/Q75868689",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -43242,15 +43322,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73039,
-     47.50152
+     8.73028,
+     47.50139
     ]
    },
    "properties": {
     "painter": "Claude Monet",
     "title": "Nymphéas blancs et jaunes",
     "year": "1916",
-    "location": "Building of the Winterthur Museum of Art",
+    "location": "Kunstmuseum Winterthur",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -43262,7 +43342,7 @@
      "url": "https://www.wikidata.org/wiki/Q116025708",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "building-of-the-winterthur-museum-of-art",
+    "museum_id": "kunstmuseum-winterthur",
     "location_src": "Building of the Winterthur Museum of Art",
     "kind": "museum",
     "form": "painting"
@@ -46158,8 +46238,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.03667,
-     38.89778
+     -77.01639,
+     38.90472
     ]
    },
    "properties": {
@@ -46167,7 +46247,7 @@
     "title": "Morning on the Seine, Good Weather",
     "year": "1897",
     "location": "White House",
-    "city": "Washington, D.C.",
+    "city": "Washington D.C.",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Matin%20sur%20la%20Seine%2C%20le%20beau%20temps%20%281897%29.jpg?width=500",
@@ -46215,7 +46295,7 @@
      "url": "https://www.wikidata.org/wiki/Q105534732",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "location_src": "Musée des Beaux-Arts de Caen",
     "kind": "museum",
     "form": "painting"

@@ -3584,8 +3584,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -3625,17 +3625,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.25778,
-     51.75194
+     11.25933,
+     43.7782
     ]
    },
    "properties": {
     "painter": "Fra Angelico",
     "title": "Dominican",
     "year": "1438",
-    "location": "Oxford",
-    "city": "Oxford",
-    "country": "United Kingdom",
+    "location": "Museum of San Marco",
+    "city": "Florence",
+    "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Due%20santi%2C%20angelico%202.jpg?width=500",
     "qid": "Q116932916",
@@ -3655,10 +3655,11 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "oxford",
+    "museum_id": "museum-of-san-marco",
     "location_src": "Oxford",
-    "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195+P276",
+    "kind": "museum"
    }
   },
   {
@@ -4159,7 +4160,7 @@
     "painter": "Fra Angelico",
     "title": "Nativity",
     "year": "",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -4171,7 +4172,7 @@
      "url": "https://www.wikidata.org/wiki/Q27894408",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -5431,7 +5432,7 @@
     "painter": "Fra Angelico",
     "title": "The Entombment of Christ",
     "year": "1450",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -5453,7 +5454,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

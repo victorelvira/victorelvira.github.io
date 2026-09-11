@@ -174,11 +174,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q113467729",
     "wikidata": "https://www.wikidata.org/wiki/Q113467729",
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q113467729",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -349,7 +350,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q3627852",
     "wikidata": "https://www.wikidata.org/wiki/Q3627852",
     "_merged": [
      {
@@ -361,7 +361,9 @@
     ],
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3627852",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -853,11 +855,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "accademia-di-san-luca",
-    "qid": "Q123786922",
     "wikidata": "https://www.wikidata.org/wiki/Q123786922",
     "location_src": "Accademia di San Luca",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q123786922",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -1126,8 +1129,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1167,8 +1170,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1198,8 +1201,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1229,8 +1232,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1260,8 +1263,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1291,8 +1294,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1322,8 +1325,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -1353,8 +1356,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -3507,8 +3510,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.14778,
-     40.58917
+     -4.15,
+     40.59
     ]
    },
    "properties": {
@@ -3516,7 +3519,7 @@
     "title": "The Conversion of Saul",
     "year": "",
     "location": "Royal Monastery of San Lorenzo de El Escorial",
-    "city": "San Lorenzo de El Escorial",
+    "city": "Spain",
     "country": "Spain",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Conversi%C3%B3n%20de%20Saulo%20%28Reni%29.jpg?width=500",
@@ -6988,15 +6991,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Guido Reni",
     "title": "Moses with Pharoah's Crown",
     "year": "1640",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -7008,7 +7011,7 @@
      "url": "https://www.wikidata.org/wiki/Q27968139",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"

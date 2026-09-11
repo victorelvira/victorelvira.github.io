@@ -29,13 +29,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frans-hals-museum",
-    "qid": "Q2145365",
     "wikidata": "https://www.wikidata.org/wiki/Q2145365",
     "city": "Haarlem",
     "country": "Netherlands",
     "location_src": "Frans Hals Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2145365",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -215,7 +216,6 @@
     "museum_id": "carnegie-museum-of-art",
     "city": "Pittsburgh",
     "country": "United States",
-    "qid": "Q15430814",
     "wikidata": "https://www.wikidata.org/wiki/Q15430814",
     "_merged": [
      {
@@ -227,7 +227,9 @@
     ],
     "location_src": "Carnegie Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q15430814",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -302,13 +304,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frans-hals-museum",
-    "qid": "Q2202637",
     "wikidata": "https://www.wikidata.org/wiki/Q2202637",
     "city": "Haarlem",
     "country": "Netherlands",
     "location_src": "Frans Hals Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2202637",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -495,11 +498,12 @@
     "museum_id": "gemaldegalerie-berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "qid": "Q527338",
     "wikidata": "https://www.wikidata.org/wiki/Q527338",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q527338",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -605,11 +609,12 @@
     "museum_id": "louvre",
     "city": "Paris",
     "country": "France",
-    "qid": "Q11776271",
     "wikidata": "https://www.wikidata.org/wiki/Q11776271",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q11776271",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -641,7 +646,6 @@
     "museum_id": "toledo-museum-of-art",
     "city": "Toledo",
     "country": "United States",
-    "qid": "Q16859671",
     "wikidata": "https://www.wikidata.org/wiki/Q16859671",
     "_merged": [
      {
@@ -653,7 +657,9 @@
     ],
     "location_src": "Toledo Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16859671",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -808,11 +814,12 @@
     "museum_id": "wallace-collection",
     "city": "City of Westminster",
     "country": "United Kingdom",
-    "qid": "Q16863608",
     "wikidata": "https://www.wikidata.org/wiki/Q16863608",
     "location_src": "Wallace Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16863608",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -965,11 +972,12 @@
     "museum_id": "mauritshuis",
     "city": "The Hague",
     "country": "Netherlands",
-    "qid": "Q16859703",
     "wikidata": "https://www.wikidata.org/wiki/Q16859703",
     "location_src": "Mauritshuis",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16859703",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -1001,11 +1009,12 @@
     "museum_id": "mauritshuis",
     "city": "The Hague",
     "country": "Netherlands",
-    "qid": "Q16859798",
     "wikidata": "https://www.wikidata.org/wiki/Q16859798",
     "location_src": "Mauritshuis",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16859798",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -1035,14 +1044,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "staatliches-museum-schwerin",
-    "qid": "Q17577635",
     "wikidata": "https://www.wikidata.org/wiki/Q17577635",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html",
     "city": "Mecklenburg-Vorpommern",
     "country": "Germany",
     "location_src": "Staatliches Museum Schwerin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q17577635"
    }
   },
   {
@@ -1072,14 +1081,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "staatliches-museum-schwerin",
-    "qid": "Q17577635",
     "wikidata": "https://www.wikidata.org/wiki/Q17577635",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html",
     "city": "Mecklenburg-Vorpommern",
     "country": "Germany",
     "location_src": "Staatliches Museum Schwerin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q17577635"
    }
   },
   {
@@ -1449,7 +1458,6 @@
     },
     "museum_id": "taft-museum-of-art",
     "city": "Cincinnati",
-    "qid": "Q16863829",
     "wikidata": "https://www.wikidata.org/wiki/Q16863829",
     "_merged": [
      {
@@ -1462,7 +1470,9 @@
     "country": "United States",
     "location_src": "Taft Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16863829",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -1616,7 +1626,6 @@
     "museum_id": "metropolitan-museum-of-art",
     "city": "New York",
     "country": "United States",
-    "qid": "Q2063138",
     "wikidata": "https://www.wikidata.org/wiki/Q2063138",
     "_merged": [
      {
@@ -1628,7 +1637,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2063138",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -1660,11 +1671,12 @@
     "museum_id": "gemaldegalerie-berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "qid": "Q832264",
     "wikidata": "https://www.wikidata.org/wiki/Q832264",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q832264",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -1878,7 +1890,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -1898,7 +1910,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "qid": "Q17818628",
     "wikidata": "https://www.wikidata.org/wiki/Q17818628",
@@ -1953,15 +1965,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of a man with the jawbone of a cow in his hand ( Pieter Verdonck )",
     "year": "c. 1627",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "46.7 x 35.6 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Frans_Hals_-_Verdonck_-_WGA11086.jpg/500px-Frans_Hals_-_Verdonck_-_WGA11086.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1974,10 +1986,9 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
-    "city": "Edinburgh",
+    "museum_id": "scottish-national-gallery",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "qid": "Q12072060",
     "wikidata": "https://www.wikidata.org/wiki/Q12072060",
     "_merged": [
      {
@@ -1989,7 +2000,9 @@
     ],
     "location_src": "National Gallery of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q12072060",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -2167,7 +2180,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "allentown-art-museum",
-    "qid": "Q17309990",
     "wikidata": "https://www.wikidata.org/wiki/Q17309990",
     "_merged": [
      {
@@ -2181,7 +2193,9 @@
     "country": "United States",
     "location_src": "Allentown Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17309990",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -2568,11 +2582,12 @@
     "museum_id": "rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "qid": "Q15429895",
     "wikidata": "https://www.wikidata.org/wiki/Q15429895",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q15429895",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -2639,13 +2654,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frans-hals-museum",
-    "qid": "Q15430593",
     "wikidata": "https://www.wikidata.org/wiki/Q15430593",
     "city": "Haarlem",
     "country": "Netherlands",
     "location_src": "Frans Hals Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q15430593",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -2838,7 +2854,6 @@
     "museum_id": "gemaldegalerie-alte-meister-2",
     "city": "Kassel",
     "country": "Germany",
-    "qid": "Q17564400",
     "wikidata": "https://www.wikidata.org/wiki/Q17564400",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/46noport.html",
     "_merged": [
@@ -2851,7 +2866,8 @@
     ],
     "location_src": "Gemäldegalerie Alte Meister",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q17564400"
    }
   },
   {
@@ -2883,12 +2899,12 @@
     "museum_id": "gemaldegalerie-alte-meister-2",
     "city": "Kassel",
     "country": "Germany",
-    "qid": "Q17564400",
     "wikidata": "https://www.wikidata.org/wiki/Q17564400",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/46noport.html",
     "location_src": "Gemäldegalerie Alte Meister",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q17564400"
    }
   },
   {
@@ -2939,7 +2955,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -2959,7 +2975,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "qid": "Q17859670",
     "wikidata": "https://www.wikidata.org/wiki/Q17859670",
@@ -3012,11 +3028,12 @@
     "museum_id": "kenwood-house",
     "city": "London Borough of Camden",
     "country": "United Kingdom",
-    "qid": "Q357524",
     "wikidata": "https://www.wikidata.org/wiki/Q357524",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q357524",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3048,11 +3065,12 @@
     "museum_id": "cleveland-museum-of-art",
     "city": "Cleveland",
     "country": "United States",
-    "qid": "Q16863608",
     "wikidata": "https://www.wikidata.org/wiki/Q16863608",
     "location_src": "Cleveland Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16863608",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3125,11 +3143,12 @@
     "museum_id": "szepmuveszeti-muzeum",
     "city": "Budapest",
     "country": "Hungary",
-    "qid": "Q541976",
     "wikidata": "https://www.wikidata.org/wiki/Q541976",
     "location_src": "Szépmüvészeti Múzeum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q541976",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3392,11 +3411,12 @@
     "museum_id": "rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "qid": "Q16859678",
     "wikidata": "https://www.wikidata.org/wiki/Q16859678",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16859678",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3472,7 +3492,6 @@
     "museum_id": "museum-boijmans-van-beuningen",
     "city": "Rotterdam",
     "country": "Netherlands",
-    "qid": "Q17440812",
     "wikidata": "https://www.wikidata.org/wiki/Q17440812",
     "_merged": [
      {
@@ -3484,7 +3503,9 @@
     ],
     "location_src": "Museum Boijmans Van Beuningen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17440812",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3580,7 +3601,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -3600,7 +3621,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "qid": "Q17907618",
     "wikidata": "https://www.wikidata.org/wiki/Q17907618",
@@ -3798,7 +3819,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "burned-in-billy-rose-mansion",
-    "qid": "Q1048037",
     "wikidata": "https://www.wikidata.org/wiki/Q1048037",
     "_merged": [
      {
@@ -3810,7 +3830,9 @@
     ],
     "location_src": "Burned in Billy Rose mansion",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1048037",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4029,7 +4051,6 @@
     "museum_id": "sao-paulo-museum-of-art",
     "city": "São Paulo",
     "country": "Brazil",
-    "qid": "Q15429921",
     "wikidata": "https://www.wikidata.org/wiki/Q15429921",
     "_merged": [
      {
@@ -4041,7 +4062,9 @@
     ],
     "location_src": "São Paulo Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q15429921",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4155,7 +4178,6 @@
     "museum_id": "national-gallery",
     "city": "London",
     "country": "United Kingdom",
-    "qid": "Q3175473",
     "wikidata": "https://www.wikidata.org/wiki/Q3175473",
     "_merged": [
      {
@@ -4167,7 +4189,9 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3175473",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4243,7 +4267,6 @@
     "museum_id": "john-and-mable-ringling-museum-of-art",
     "city": "Sarasota",
     "country": "United States",
-    "qid": "Q16859799",
     "wikidata": "https://www.wikidata.org/wiki/Q16859799",
     "_merged": [
      {
@@ -4255,7 +4278,9 @@
     ],
     "location_src": "John and Mable Ringling Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q16859799",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4379,11 +4404,12 @@
     "museum_id": "detroit-institute-of-arts",
     "city": "Detroit",
     "country": "United States",
-    "qid": "Q17310899",
     "wikidata": "https://www.wikidata.org/wiki/Q17310899",
     "location_src": "Detroit Institute of Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17310899",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4649,13 +4675,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frans-hals-museum",
-    "qid": "Q7587830",
     "wikidata": "https://www.wikidata.org/wiki/Q7587830",
     "city": "Haarlem",
     "country": "Netherlands",
     "location_src": "Frans Hals Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7587830",
+    "qid_rejected_as": "former hospital"
    }
   },
   {
@@ -4845,11 +4872,12 @@
     "museum_id": "metropolitan-museum-of-art",
     "city": "New York",
     "country": "United States",
-    "qid": "Q1938743",
     "wikidata": "https://www.wikidata.org/wiki/Q1938743",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1938743",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4999,11 +5027,12 @@
     "museum_id": "art-institute-of-chicago",
     "city": "Chicago",
     "country": "United States",
-    "qid": "Q5659093",
     "wikidata": "https://www.wikidata.org/wiki/Q5659093",
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q5659093",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -5070,7 +5099,6 @@
     },
     "museum_id": "wadsworth-atheneum",
     "city": "Hartford",
-    "qid": "Q2271523",
     "wikidata": "https://www.wikidata.org/wiki/Q2271523",
     "_merged": [
      {
@@ -5083,7 +5111,9 @@
     "country": "United States",
     "location_src": "Wadsworth Atheneum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2271523",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -5092,7 +5122,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -5112,7 +5142,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location_src": "National Gallery of Art",
     "kind": "museum",
@@ -5216,15 +5246,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "A Dutch Lady",
     "year": "1643–1645",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "115 x 85.8 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Frans_Hals_105_WGA_version.jpg/500px-Frans_Hals_105_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5236,8 +5266,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
-    "city": "Edinburgh",
+    "museum_id": "scottish-national-gallery",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location_src": "National Gallery of Scotland",
     "kind": "museum",
@@ -5249,15 +5279,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Frans Hals",
     "title": "A Dutch Gentleman",
     "year": "1643–1645",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "115 x 86.1 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Frans_Hals_104_WGA_version.jpg/500px-Frans_Hals_104_WGA_version.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5269,8 +5299,8 @@
      "source": "Wikipedia: List of paintings by Frans Hals",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
-    "city": "Edinburgh",
+    "museum_id": "scottish-national-gallery",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location_src": "National Gallery of Scotland",
     "kind": "museum",
@@ -5283,7 +5313,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -5304,13 +5334,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
-    "qid": "Q352438",
     "wikidata": "https://www.wikidata.org/wiki/Q352438",
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q352438",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -5397,7 +5428,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -5417,7 +5448,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "_merged": [
      {
@@ -5479,7 +5510,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -5499,7 +5530,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "_merged": [
      {
@@ -5543,7 +5574,6 @@
     "museum_id": "statens-museum-for-kunst",
     "city": "Copenhagen Municipality",
     "country": "Denmark",
-    "qid": "Q9191",
     "wikidata": "https://www.wikidata.org/wiki/Q9191",
     "_merged": [
      {
@@ -5555,7 +5585,9 @@
     ],
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q9191",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -5670,7 +5702,6 @@
     },
     "museum_id": "museum-catharijneconvent",
     "city": "Utrecht",
-    "qid": "Q15429540",
     "wikidata": "https://www.wikidata.org/wiki/Q15429540",
     "country": "Netherlands",
     "_merged": [
@@ -5683,7 +5714,9 @@
     ],
     "location_src": "Museum Catharijneconvent",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q15429540",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -6251,11 +6284,12 @@
     "museum_id": "gemaldegalerie-berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "qid": "Q17363969",
     "wikidata": "https://www.wikidata.org/wiki/Q17363969",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17363969",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -6287,7 +6321,6 @@
     "museum_id": "art-gallery-of-ontario",
     "city": "Toronto",
     "country": "Canada",
-    "qid": "Q759626",
     "wikidata": "https://www.wikidata.org/wiki/Q759626",
     "_merged": [
      {
@@ -6299,7 +6332,9 @@
     ],
     "location_src": "Art Gallery of Ontario",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q759626",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -6353,7 +6388,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -6373,7 +6408,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "_merged": [
      {
@@ -6416,7 +6451,6 @@
     },
     "museum_id": "worcester-art-museum",
     "city": "Worcester",
-    "qid": "Q577489",
     "wikidata": "https://www.wikidata.org/wiki/Q577489",
     "_merged": [
      {
@@ -6429,7 +6463,9 @@
     "country": "United States",
     "location_src": "Worcester Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q577489",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -6652,7 +6688,6 @@
     "museum_id": "musee-de-picardie",
     "city": "Amiens",
     "country": "France",
-    "qid": "Q18061888",
     "wikidata": "https://www.wikidata.org/wiki/Q18061888",
     "_merged": [
      {
@@ -6664,7 +6699,9 @@
     ],
     "location_src": "Musée de Picardie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q18061888",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -7104,7 +7141,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of Willem Coymans",
     "year": "1645",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -7116,7 +7153,7 @@
      "url": "https://www.wikidata.org/wiki/Q18010001",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8821,7 +8858,7 @@
     "painter": "Frans Hals",
     "title": "Adriaen van Ostade, 1646/1648",
     "year": "1645",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8833,7 +8870,7 @@
      "url": "https://www.wikidata.org/wiki/Q18030849",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -8852,7 +8889,7 @@
     "painter": "Frans Hals",
     "title": "Young Boy in Profile",
     "year": "1630",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -8864,7 +8901,7 @@
      "url": "https://www.wikidata.org/wiki/Q19326496",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9088,7 +9125,7 @@
     "painter": "Frans Hals",
     "title": "Portrait of the Artist",
     "year": "1649",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9100,7 +9137,7 @@
      "url": "https://www.wikidata.org/wiki/Q27897020",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"

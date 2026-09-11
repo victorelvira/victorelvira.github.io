@@ -3341,14 +3341,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Salvador Dalí",
     "title": "The Sacrament of the Last Supper",
     "year": "1955",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -5161,17 +5161,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.5,
-     40.2
+     4.35824,
+     50.84168
     ]
    },
    "properties": {
     "painter": "Salvador Dalí",
     "title": "The Temptation of St. Anthony",
     "year": "1946",
-    "country": "Spain",
-    "location": "Spain",
-    "kind": "museum",
+    "country": "Belgium",
+    "location": "Royal Museums of Fine Arts of Belgium",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
@@ -5192,10 +5191,13 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "spain",
+    "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q94845",
     "location_src": "Spain",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P195+P276",
+    "kind": "museum",
+    "city": "Brussels-Capital Region"
    }
   },
   {

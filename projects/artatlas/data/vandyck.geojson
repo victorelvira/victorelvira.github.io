@@ -292,7 +292,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -313,7 +313,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "_merged": [
      {
@@ -591,7 +591,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of the Marchesa Elena Grimaldi Cattaneo",
     "year": "1623",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -614,7 +614,7 @@
       "title": "Portrait of Elena Cattaneo"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -677,15 +677,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "The Lomellini Family",
     "year": "1623",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
     "dimensions": "265 × 248 cm",
@@ -699,8 +699,8 @@
      "source": "Wikipedia: List of paintings by Anthony van Dyck",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
-    "city": "Edinburgh",
+    "museum_id": "scottish-national-gallery",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
     "qid": "Q3937446",
     "wikidata": "https://www.wikidata.org/wiki/Q3937446",
@@ -765,7 +765,7 @@
     "painter": "Anthony van Dyck",
     "title": "A Genoese Noblewoman and Her Son",
     "year": "1626",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -788,7 +788,7 @@
       "title": "Portrait of a Genoese Noblewoman with her Son"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -1861,7 +1861,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -1882,7 +1882,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "_merged": [
      {
@@ -1903,7 +1903,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -1924,7 +1924,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location_src": "National Gallery of Art",
     "kind": "museum",
@@ -3687,11 +3687,12 @@
     "museum_id": "wallraf-richartz-museum",
     "city": "Cologne",
     "country": "Germany",
-    "qid": "Q11729456",
     "wikidata": "https://www.wikidata.org/wiki/Q11729456",
     "location_src": "Wallraf–Richartz Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q11729456",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4197,8 +4198,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -4233,7 +4234,8 @@
     ],
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -7341,7 +7343,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Genoese Nobleman",
     "year": "1620",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -7363,7 +7365,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -8865,15 +8867,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Princess Elizabeth and Princess Anne",
     "year": "1637",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -8895,7 +8897,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -12760,7 +12762,7 @@
     "painter": "Anthony van Dyck",
     "title": "Head of a Young Man",
     "year": "1617",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12782,7 +12784,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12801,7 +12803,7 @@
     "painter": "Anthony van Dyck",
     "title": "Filippo Cattaneo",
     "year": "1623",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12813,7 +12815,7 @@
      "url": "https://www.wikidata.org/wiki/Q20177018",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12832,7 +12834,7 @@
     "painter": "Anthony van Dyck",
     "title": "Maddalena Cattaneo",
     "year": "1623",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12844,7 +12846,7 @@
      "url": "https://www.wikidata.org/wiki/Q20177019",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12863,7 +12865,7 @@
     "painter": "Anthony van Dyck",
     "title": "Marchesa Balbi",
     "year": "1625",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12875,7 +12877,7 @@
      "url": "https://www.wikidata.org/wiki/Q20177021",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12894,7 +12896,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Prefect Raffaele Raggi",
     "year": "1625",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12906,7 +12908,7 @@
      "url": "https://www.wikidata.org/wiki/Q20177053",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12925,7 +12927,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of Giovanni Vincenzo Imperiale",
     "year": "1626",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12937,7 +12939,7 @@
      "url": "https://www.wikidata.org/wiki/Q20177059",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12956,7 +12958,7 @@
     "painter": "Anthony van Dyck",
     "title": "Lady with a Fan",
     "year": "1628",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -12978,7 +12980,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -12997,7 +12999,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Virgin as Intercessor",
     "year": "1628",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -13019,7 +13021,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -13038,7 +13040,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of Henri II de Lorraine",
     "year": "1634",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -13060,7 +13062,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -13079,7 +13081,7 @@
     "painter": "Anthony van Dyck",
     "title": "Catherine Howard, Lady d'Aubigny",
     "year": "1638",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -13101,7 +13103,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -13412,15 +13414,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "An Italian Noble",
     "year": "1626",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13432,7 +13434,7 @@
      "url": "https://www.wikidata.org/wiki/Q27964348",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -13443,15 +13445,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Saint Sebastian Bound for Martyrdom",
     "year": "1621",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13463,7 +13465,7 @@
      "url": "https://www.wikidata.org/wiki/Q27964368",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -13474,15 +13476,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "A Study of a Head",
     "year": "1618",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13504,7 +13506,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -13515,15 +13517,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Portrait of Marchese Ambrogio Spinola (1569 - 1630)",
     "year": "1627",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13535,7 +13537,7 @@
      "url": "https://www.wikidata.org/wiki/Q27964791",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -13546,15 +13548,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Charles Seton, 2nd Earl of Dunfermline, 1615 - 1672. Lord Privy Seal",
     "year": "1640",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13576,7 +13578,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -13587,15 +13589,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Alexander Henderson, c 1583 - 1646. Presbyterian divine and diplomatist",
     "year": "1641",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13617,7 +13619,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -13628,15 +13630,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "John Hamilton, 1st Baron Belhaven, d. 1679. Royalist (With his wife, Margaret Hamilton)",
     "year": "",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -13648,7 +13650,7 @@
      "url": "https://www.wikidata.org/wiki/Q27974548",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -19568,7 +19570,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Man with a Blond Beard",
     "year": "1681",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "copy or later version",
@@ -19588,7 +19590,7 @@
       "note": "dated 1681, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19607,7 +19609,7 @@
     "painter": "Anthony van Dyck",
     "title": "Christ Child as Redeemer",
     "year": "1620",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19629,7 +19631,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19648,7 +19650,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Blond Gentleman",
     "year": "1704",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "copy or later version",
@@ -19668,7 +19670,7 @@
       "note": "dated 1704, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19687,7 +19689,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Apostle Peter",
     "year": "1619",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19709,7 +19711,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19728,7 +19730,7 @@
     "painter": "Anthony van Dyck",
     "title": "A Boar Hunt",
     "year": "1619",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19750,7 +19752,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19769,7 +19771,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Apostle Paul",
     "year": "1619",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19791,7 +19793,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19810,7 +19812,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Apostle Bartholomew",
     "year": "1619",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19832,7 +19834,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19851,7 +19853,7 @@
     "painter": "Anthony van Dyck",
     "title": "The Apostle Matthew",
     "year": "1619",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19873,7 +19875,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19892,7 +19894,7 @@
     "painter": "Anthony van Dyck",
     "title": "Simon the Apostle",
     "year": "1619",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19914,7 +19916,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19933,7 +19935,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Man in Armour with a Red Scarf",
     "year": "1626",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19945,7 +19947,7 @@
      "url": "https://www.wikidata.org/wiki/Q50324531",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -19964,7 +19966,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Man in Black before a Column",
     "year": "1629",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -19986,7 +19988,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -20005,7 +20007,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Lady in Black before a Red Curtain",
     "year": "1629",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -20027,7 +20029,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -20046,7 +20048,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Man in a Fur Wrap",
     "year": "1630",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -20068,7 +20070,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -20087,7 +20089,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of King Charles I (1600-1649), with the Order of the Garter",
     "year": "1633",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -20109,7 +20111,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -26295,7 +26297,7 @@
     "title": "Study for the group portrait 'The Magistrates of Brussels', painted in 1634 for the Brussels townhall",
     "year": "1634",
     "location": "Beaux-Arts de Paris",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Les%20Echevins%20de%20Bruxelles%20autour%20de%20la%20statue%20de%20la%20Justice%2C%201634.jpg?width=500",
@@ -28183,7 +28185,7 @@
      "url": "https://www.wikidata.org/wiki/Q89787777",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "rome-2",
+    "museum_id": "rome",
     "location_src": "Rome",
     "kind": "museum",
     "form": "painting"
@@ -29996,8 +29998,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -30037,8 +30039,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -33003,7 +33005,7 @@
     "title": "Amarillis and Mirtillo (study)",
     "year": "1631",
     "location": "Beaux-Arts de Paris",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Amarillis%20et%20Mirtille%2C%201631-1632.jpg?width=500",
@@ -33889,7 +33891,7 @@
     "painter": "Anthony van Dyck",
     "title": "Madonna and Child with Five Saints",
     "year": "1627",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -33901,7 +33903,7 @@
      "url": "https://www.wikidata.org/wiki/Q63891408",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -33920,7 +33922,7 @@
     "painter": "Anthony van Dyck",
     "title": "Lady Mary Villiers, Later Duchess of Richmond and Lennox, with Charles Hamilton, Lord Arran",
     "year": "1637",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -33942,7 +33944,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -33953,15 +33955,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Thomas Hamilton, 2nd Earl of Haddington, 1600 - 1640",
     "year": "1637",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -33983,7 +33985,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -35896,7 +35898,7 @@
     "painter": "Anthony van Dyck",
     "title": "The triumph of the young Bacchus",
     "year": "1623",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -35908,7 +35910,7 @@
      "url": "https://www.wikidata.org/wiki/Q90298914",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"
@@ -36892,7 +36894,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "rome-2",
+    "museum_id": "rome",
     "location_src": "Rome",
     "kind": "museum",
     "form": "painting"
@@ -38607,7 +38609,7 @@
     "painter": "Anthony van Dyck",
     "title": "Portrait of Eerryk de Putte",
     "year": "1632",
-    "location": "Museo de arte de Carolina del Norte",
+    "location": "North Carolina Museum of Art",
     "city": "Raleigh",
     "country": "United States",
     "attribution": "generally accepted",
@@ -38629,7 +38631,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-carolina-del-norte",
+    "museum_id": "north-carolina-museum-of-art",
     "location_src": "Museo de arte de Carolina del Norte",
     "kind": "museum",
     "form": "painting"

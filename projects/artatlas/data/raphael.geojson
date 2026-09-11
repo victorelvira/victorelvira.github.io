@@ -144,7 +144,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pinacoteca-comunale",
-    "qid": "Q1778000",
     "wikidata": "https://www.wikidata.org/wiki/Q1778000",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
     "country": "Italy",
@@ -158,7 +157,8 @@
     ],
     "location_src": "Pinacoteca Comunale",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1778000"
    }
   },
   {
@@ -190,7 +190,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pinacoteca-civica-tosio-martinengo",
-    "qid": "Q1778000",
     "wikidata": "https://www.wikidata.org/wiki/Q1778000",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
     "_merged": [
@@ -203,7 +202,8 @@
     ],
     "location_src": "Pinacoteca Civica Tosio Martinengo",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1778000"
    }
   },
   {
@@ -236,7 +236,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q1778000",
     "wikidata": "https://www.wikidata.org/wiki/Q1778000",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
     "_merged": [
@@ -249,7 +248,8 @@
     ],
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1778000"
    }
   },
   {
@@ -282,7 +282,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q1778000",
     "wikidata": "https://www.wikidata.org/wiki/Q1778000",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
     "_merged": [
@@ -295,7 +294,8 @@
     ],
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1778000"
    }
   },
   {
@@ -522,7 +522,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q598913",
     "wikidata": "https://www.wikidata.org/wiki/Q598913",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/03citta.html",
     "_merged": [
@@ -535,7 +534,8 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q598913"
    }
   },
   {
@@ -568,7 +568,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-ancient-art",
-    "qid": "Q598913",
     "wikidata": "https://www.wikidata.org/wiki/Q598913",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/03citta.html",
     "_merged": [
@@ -581,7 +580,8 @@
     ],
     "location_src": "National Museum of Ancient Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q598913"
    }
   },
   {
@@ -613,7 +613,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "north-carolina-museum-of-art",
-    "qid": "Q598913",
     "wikidata": "https://www.wikidata.org/wiki/Q598913",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/03citta.html",
     "_merged": [
@@ -626,7 +625,9 @@
     ],
     "location_src": "North Carolina Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q598913",
+    "country": "United States"
    }
   },
   {
@@ -659,7 +660,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "vatican-museums",
-    "qid": "Q2344357",
     "wikidata": "https://www.wikidata.org/wiki/Q2344357",
     "_merged": [
      {
@@ -671,7 +671,8 @@
     ],
     "location_src": "Vatican Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2344357"
    }
   },
   {
@@ -704,7 +705,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "vatican-museums",
-    "qid": "Q2344357",
     "wikidata": "https://www.wikidata.org/wiki/Q2344357",
     "_merged": [
      {
@@ -716,7 +716,8 @@
     ],
     "location_src": "Vatican Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2344357"
    }
   },
   {
@@ -749,11 +750,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "vatican-museums",
-    "qid": "Q2344357",
     "wikidata": "https://www.wikidata.org/wiki/Q2344357",
     "location_src": "Vatican Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2344357"
    }
   },
   {
@@ -786,11 +787,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "vatican-museums",
-    "qid": "Q2344357",
     "wikidata": "https://www.wikidata.org/wiki/Q2344357",
     "location_src": "Vatican Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2344357"
    }
   },
   {
@@ -991,8 +992,8 @@
     "painter": "Raphael",
     "title": "1503–1505: Portrait of Pietro Bembo",
     "year": "1503–1505",
-    "city": "Hungary",
-    "location": "Museum of Fine Arts (Budapest)",
+    "city": "Budapest district XIV",
+    "location": "Museum of Fine Arts, Budapest",
     "attribution": "generally accepted",
     "medium": "Oil on panel 54 x 39",
     "dimensions": "Oil on panel 54 x 39",
@@ -1006,7 +1007,7 @@
      "source": "Wikipedia: List of paintings by Raphael",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museum-of-fine-arts-budapest-2",
+    "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q2444277",
     "wikidata": "https://www.wikidata.org/wiki/Q2444277",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/08bembo.html",
@@ -1020,7 +1021,8 @@
     ],
     "location_src": "Museum of Fine Arts (Budapest)",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Hungary"
    }
   },
   {
@@ -1183,7 +1185,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
@@ -1196,7 +1197,8 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q27033728"
    }
   },
   {
@@ -1229,7 +1231,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
@@ -1242,7 +1243,8 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q27033728"
    }
   },
   {
@@ -1275,7 +1277,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
@@ -1288,7 +1289,8 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q27033728"
    }
   },
   {
@@ -1318,12 +1320,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "isabella-stewart-gardner-museum",
-    "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "location_src": "Isabella Stewart Gardner Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q27033728"
    }
   },
   {
@@ -1356,7 +1358,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "dulwich-picture-gallery",
-    "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
@@ -1369,7 +1370,8 @@
     ],
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q27033728"
    }
   },
   {
@@ -1402,7 +1404,6 @@
     },
     "museum_id": "dulwich-picture-gallery",
     "country": "United Kingdom",
-    "qid": "Q27033728",
     "wikidata": "https://www.wikidata.org/wiki/Q27033728",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
@@ -1415,7 +1416,8 @@
     ],
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q27033728"
    }
   },
   {
@@ -1644,7 +1646,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q2713620",
     "wikidata": "https://www.wikidata.org/wiki/Q2713620",
     "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/31anside.html",
     "_merged": [
@@ -1657,7 +1658,8 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2713620"
    }
   },
   {
@@ -1690,7 +1692,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q2713620",
     "wikidata": "https://www.wikidata.org/wiki/Q2713620",
     "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/31anside.html",
     "_merged": [
@@ -1703,7 +1704,8 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2713620"
    }
   },
   {
@@ -1712,14 +1714,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1505 Small Cowper Madonna",
     "year": "c. 1505 Small Cowper Madonna",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -2271,14 +2273,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1506: Saint George and the Dragon",
     "year": "c. 1506",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -2467,7 +2469,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "galleria-borghese",
-    "qid": "Q2500226",
     "wikidata": "https://www.wikidata.org/wiki/Q2500226",
     "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/37entom1.html",
     "_merged": [
@@ -2480,7 +2481,8 @@
     ],
     "location_src": "Galleria Borghese",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2500226"
    }
   },
   {
@@ -2513,12 +2515,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "vatican-museums",
-    "qid": "Q2500226",
     "wikidata": "https://www.wikidata.org/wiki/Q2500226",
     "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/37entom1.html",
     "location_src": "Vatican Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q2500226"
    }
   },
   {
@@ -2863,14 +2865,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "1508: Niccolini-Cowper Madonna",
     "year": "1508",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3301,14 +3303,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1510: Alba Madonna",
     "year": "c. 1510",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3485,7 +3487,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q686848",
     "wikidata": "https://www.wikidata.org/wiki/Q686848",
     "_merged": [
      {
@@ -3497,7 +3498,9 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q686848",
+    "qid_rejected_as": "painting series, group of paintings"
    }
   },
   {
@@ -3716,11 +3719,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q686848",
     "wikidata": "https://www.wikidata.org/wiki/Q686848",
     "location_src": "Uffizi Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q686848",
+    "qid_rejected_as": "painting series, group of paintings"
    }
   },
   {
@@ -4171,14 +4175,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Raphael",
     "title": "c. 1515: Portrait of Bindo Altoviti",
     "year": "c. 1515",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -4779,7 +4783,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3464523",
     "wikidata": "https://www.wikidata.org/wiki/Q3464523",
     "_merged": [
      {
@@ -4791,7 +4794,8 @@
     ],
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3464523"
    }
   },
   {
@@ -4824,7 +4828,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q3464523",
     "wikidata": "https://www.wikidata.org/wiki/Q3464523",
     "_merged": [
      {
@@ -4836,7 +4839,8 @@
     ],
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3464523"
    }
   },
   {

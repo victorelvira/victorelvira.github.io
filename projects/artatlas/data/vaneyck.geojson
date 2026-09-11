@@ -101,12 +101,13 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "galleria-sabauda",
-    "qid": "Q3973522",
     "wikidata": "https://www.wikidata.org/wiki/Q3973522",
     "wga_url": "https://www.wga.hu/html/e/eyck_van/jan/01page/05franci.html",
     "location_src": "Galleria Sabauda",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3973522",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -138,12 +139,13 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "qid": "Q3973522",
     "wikidata": "https://www.wikidata.org/wiki/Q3973522",
     "wga_url": "https://www.wga.hu/html/e/eyck_van/jan/01page/05franci.html",
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q3973522",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -337,14 +339,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Jan van Eyck",
     "title": "Annunciation",
     "year": "1434-36",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",

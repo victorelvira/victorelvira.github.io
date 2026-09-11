@@ -17,7 +17,7 @@
     "year": "1620–1621 c.",
     "city": "Lyon",
     "country": "France",
-    "location": "musée des beaux-arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "173 x 108 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Saint_Denis_l%27Ar%C3%A9opagite_couronn%C3%A9_par_un_ange_-_Poussin_-_MBA_Rouen.jpg/500px-Saint_Denis_l%27Ar%C3%A9opagite_couronn%C3%A9_par_un_ange_-_Poussin_-_MBA_Rouen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -26,7 +26,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2",
+    "museum_id": "musee-des-beaux-arts-de-caen-2-2",
     "_merged": [
      {
       "source": "Wikidata",
@@ -54,7 +54,7 @@
     "title": "The Death of Chione",
     "year": "1622",
     "city": "Lyon",
-    "location": "musée des beaux-arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "109,5 x 159,5 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nicolas_Poussin-La_Mort_de_Chion%C3%A9.jpg/500px-Nicolas_Poussin-La_Mort_de_Chion%C3%A9.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -64,7 +64,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2",
+    "museum_id": "musee-des-beaux-arts-de-caen-2-2",
     "qid": "Q29784132",
     "wikidata": "https://www.wikidata.org/wiki/Q29784132",
     "attribution_note": "Wikipedia: 'executed in 1622 by Nicolas Poussin, his first known surviving work'; acquired by the Musee des Beaux-Arts de Lyon in 2016. Undisputed autograph.",
@@ -266,11 +266,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "york",
-    "qid": "Q124004799",
     "wikidata": "https://www.wikidata.org/wiki/Q124004799",
     "location_src": "York",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q124004799",
+    "qid_rejected_as": "artistic theme, group of paintings"
    }
   },
   {
@@ -405,7 +406,7 @@
     "title": "Mercure, Hersé et Aglaure",
     "year": "1625",
     "location": "Beaux-Arts de Paris",
-    "city": "",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20Mercure%20Hers%C3%A9%20et%20Aglaure%20ENSBA.jpg?width=500",
@@ -658,7 +659,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q124004799",
     "wikidata": "https://www.wikidata.org/wiki/Q124004799",
     "_merged": [
      {
@@ -670,7 +670,9 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q124004799",
+    "qid_rejected_as": "artistic theme, group of paintings"
    }
   },
   {
@@ -836,8 +838,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.36361,
-     49.18139
+     -0.36166,
+     49.18607
     ]
    },
    "properties": {
@@ -845,7 +847,7 @@
     "title": "Venus weeping for Adonis",
     "year": "1626",
     "city": "Caen",
-    "location": "musée des Beaux-Arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "57 x 128 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Poussin_-_V%C3%A9nus_pleurant_Adonis_-_mus%C3%A9e_de_Caen.jpg/500px-Poussin_-_V%C3%A9nus_pleurant_Adonis_-_mus%C3%A9e_de_Caen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -858,12 +860,13 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2-2",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q98507865",
     "wikidata": "https://www.wikidata.org/wiki/Q98507865",
     "location_src": "musée des Beaux-Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "France"
    }
   },
   {
@@ -2572,14 +2575,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Assumption of the Virgin",
     "year": "1630–1632 c.",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "rejected",
@@ -3189,11 +3192,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q27096409",
     "wikidata": "https://www.wikidata.org/wiki/Q27096409",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q27096409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -3471,11 +3475,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q27096409",
     "wikidata": "https://www.wikidata.org/wiki/Q27096409",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q27096409",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4022,7 +4027,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "belvoir-castle",
-    "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
     "country": "United Kingdom",
     "_merged": [
@@ -4035,7 +4039,9 @@
     ],
     "location_src": "Belvoir Castle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7457394",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4110,7 +4116,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "belvoir-castle",
-    "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
     "country": "United Kingdom",
     "_merged": [
@@ -4123,7 +4128,9 @@
     ],
     "location_src": "Belvoir Castle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7457394",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4155,11 +4162,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kimbell-art-museum",
-    "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
     "location_src": "Kimbell Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7457394",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4191,7 +4199,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
     "_merged": [
      {
@@ -4203,7 +4210,9 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7457394",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4212,14 +4221,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments I : Baptism or The Baptism of Christ (7)",
     "year": "1636–1642",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -4235,11 +4244,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "qid": "Q7457394",
     "wikidata": "https://www.wikidata.org/wiki/Q7457394",
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7457394",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4687,11 +4697,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q15805858",
     "wikidata": "https://www.wikidata.org/wiki/Q15805858",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q15805858",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -4751,7 +4762,7 @@
     "year": "1639",
     "city": "Lyon",
     "country": "France",
-    "location": "musée des beaux-arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "105 x 142 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Nicolas_Poussin_-_Venus_Presenting_Arms_to_Aeneas_-_WGA18308.jpg/500px-Nicolas_Poussin_-_Venus_Presenting_Arms_to_Aeneas_-_WGA18308.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -4763,7 +4774,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2",
+    "museum_id": "musee-des-beaux-arts-de-caen-2-2",
     "wga_url": "https://www.wga.hu/html/p/poussin/2a/22venus.html",
     "_merged": [
      {
@@ -5174,17 +5185,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments II : Confirmation (2)",
     "year": "1645",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "117 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Seven_Sacraments_-_Confirmation_II_%281645%29_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Confirmation_II_%281645%29_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5196,7 +5207,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5215,17 +5226,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments II : Baptism (3)",
     "year": "1646",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "117 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Seven_Sacraments_-_Baptism_%28II%29_1646_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Baptism_%28II%29_1646_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5237,7 +5248,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5256,17 +5267,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments II : Confession (4)",
     "year": "1647",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "117 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nicolas_Poussin_077.jpg/500px-Nicolas_Poussin_077.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5278,7 +5289,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5297,17 +5308,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments II : Ordination or Commissioning (5)",
     "year": "1647",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "117 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Seven_Sacraments_-_Ordination_II_%281647%29_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Ordination_II_%281647%29_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5319,7 +5330,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5338,17 +5349,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments II : Eucharist (6)",
     "year": "1647",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "117 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Seven_Sacraments_-_Holy_Eucharist_II_%281647%29_-_Poussin_-_NGofScotland.jpg/500px-Seven_Sacraments_-_Holy_Eucharist_II_%281647%29_-_Poussin_-_NGofScotland.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5360,7 +5371,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5379,17 +5390,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Seven Sacraments II : Marriage (7)",
     "year": "1647–1648",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "117 x 178 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Seven_Sacraments_-_Marriage_II_%281647-1648%29_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Marriage_II_%281647-1648%29_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -5401,7 +5412,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6418,7 +6429,7 @@
     "year": "c. 1651",
     "city": "Lyon",
     "country": "France",
-    "location": "musée des beaux-arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "99 x 132 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Poussin-L%E2%80%99Orage-Rouen.jpg/500px-Poussin-L%E2%80%99Orage-Rouen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -6430,7 +6441,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2",
+    "museum_id": "musee-des-beaux-arts-de-caen-2-2",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6506,11 +6517,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-of-fine-arts-boston",
-    "qid": "Q2235027",
     "wikidata": "https://www.wikidata.org/wiki/Q2235027",
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2235027",
+    "qid_rejected_as": "artistic theme, episode in Greek mythology"
    }
   },
   {
@@ -7093,8 +7105,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.30861,
-     59.9375
+     30.31361,
+     59.94056
     ]
    },
    "properties": {
@@ -7103,7 +7115,7 @@
     "year": "1655–1657",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage",
+    "location": "Hermitage Museum",
     "attribution": "generally accepted",
     "dimensions": "105 × 145 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Nicolas_Poussin_076.jpg/500px-Nicolas_Poussin_076.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -7115,7 +7127,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hermitage",
+    "museum_id": "hermitage-museum",
     "_merged": [
      {
       "source": "Wikidata",
@@ -7318,7 +7330,7 @@
     "title": "The Flight into Egypt or resting on the journey",
     "year": "1657–1658",
     "city": "Lyon",
-    "location": "musée des beaux-arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "dimensions": "146 x 216 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Poussin-Fuite_en_Egypte-MBA-Lyon.jpg/500px-Poussin-Fuite_en_Egypte-MBA-Lyon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -7331,7 +7343,7 @@
      "source": "Wikipedia: List of paintings by Nicolas Poussin",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts-2",
+    "museum_id": "musee-des-beaux-arts-de-caen-2-2",
     "qid": "Q970808",
     "wikidata": "https://www.wikidata.org/wiki/Q970808",
     "country": "France",
@@ -7575,7 +7587,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q7735033",
     "wikidata": "https://www.wikidata.org/wiki/Q7735033",
     "_merged": [
      {
@@ -7587,7 +7598,9 @@
     ],
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7735033",
+    "qid_rejected_as": "tetralogy, painting series"
    }
   },
   {
@@ -7619,11 +7632,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q7735033",
     "wikidata": "https://www.wikidata.org/wiki/Q7735033",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7735033",
+    "qid_rejected_as": "tetralogy, painting series"
    }
   },
   {
@@ -7655,7 +7669,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q7735033",
     "wikidata": "https://www.wikidata.org/wiki/Q7735033",
     "_merged": [
      {
@@ -7667,7 +7680,9 @@
     ],
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7735033",
+    "qid_rejected_as": "tetralogy, painting series"
    }
   },
   {
@@ -7699,7 +7714,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q7735033",
     "wikidata": "https://www.wikidata.org/wiki/Q7735033",
     "_merged": [
      {
@@ -7711,7 +7725,9 @@
     ],
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q7735033",
+    "qid_rejected_as": "tetralogy, painting series"
    }
   },
   {
@@ -9262,7 +9278,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Baptism of Christ",
     "year": "1641",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9284,7 +9300,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9397,7 +9413,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Empire of Flora",
     "year": "1631",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -9419,7 +9435,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -9438,7 +9454,7 @@
     "painter": "Nicolas Poussin",
     "title": "The Exposition of Moses",
     "year": "1624",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -9460,7 +9476,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -9479,7 +9495,7 @@
     "painter": "Nicolas Poussin",
     "title": "Pan and Syrinx",
     "year": "1637",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -9501,7 +9517,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -9520,7 +9536,7 @@
     "painter": "Nicolas Poussin",
     "title": "Narcissus with Two Nymphs and Echo",
     "year": "1647",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -9542,7 +9558,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -11104,15 +11120,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Mystic Marriage of Saint Catherine",
     "year": "1628",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11134,7 +11150,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11145,15 +11161,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of the Holy Eucharist",
     "year": "1647",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11181,7 +11197,7 @@
       "title": "The Seven Sacraments II : Eucharist (6)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11192,15 +11208,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "Moses Striking the Rock",
     "year": "1633",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11228,7 +11244,7 @@
       "title": "Moses making water pour from the rock or The striking of the rock"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11239,15 +11255,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Baptism",
     "year": "1646",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11275,7 +11291,7 @@
       "title": "The Seven Sacraments II : Baptism (3)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11286,15 +11302,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Confirmation",
     "year": "1645",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11322,7 +11338,7 @@
       "title": "The Seven Sacraments II : Confirmation (2)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11333,15 +11349,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Marriage",
     "year": "1647",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11369,7 +11385,7 @@
       "title": "The Seven Sacraments II : Marriage (7)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11380,15 +11396,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Penance",
     "year": "1647",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11416,7 +11432,7 @@
       "title": "The Seven Sacraments II : Confession (4)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11427,15 +11443,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Ordination",
     "year": "1647",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11463,7 +11479,7 @@
       "title": "The Seven Sacraments II : Ordination or Commissioning (5)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -11474,15 +11490,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Nicolas Poussin",
     "title": "The Sacrament of Extreme Unction",
     "year": "1644",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -11510,7 +11526,7 @@
       "title": "The Seven Sacraments II : Extreme Unction (1)"
      }
     ],
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"

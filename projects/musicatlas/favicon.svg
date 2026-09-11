@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1e1b17"/>
+  <!-- a circle of fifths: twelve marks, one lit -->
+  <g stroke="#c9a227" stroke-width="1.6" stroke-linecap="round" fill="none">
+    <circle cx="16" cy="16" r="9" stroke="#5a5248" stroke-width="1.2"/>
+    <path d="M16 5.6v2.4M24.2 10.4l-2 1.2M24.2 21.6l-2-1.2M16 26.4V24M7.8 21.6l2-1.2M7.8 10.4l2 1.2"/>
+  </g>
+  <circle cx="16" cy="7" r="2.6" fill="#c9a227"/>
+</svg>

@@ -1,0 +1,350 @@
+{
+ "bach": {
+  "born": 1685,
+  "catalogues": [
+   "BWV"
+  ],
+  "died": 1750,
+  "n_works": 1697,
+  "name": "Johann Sebastian Bach",
+  "qid": "Q1339"
+ },
+ "beethoven": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1770,
+  "catalogues": [
+   "Op.",
+   "WoO",
+   "Hess"
+  ],
+  "died": 1827,
+  "n_works": 485,
+  "name": "Ludwig van Beethoven",
+  "qid": "Q255"
+ },
+ "brahms": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1833,
+  "catalogues": [
+   "Op.",
+   "WoO"
+  ],
+  "died": 1897,
+  "n_works": 203,
+  "name": "Johannes Brahms",
+  "qid": "Q7294"
+ },
+ "bruckner": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1824,
+  "catalogues": [
+   "WAB"
+  ],
+  "died": 1896,
+  "n_works": 168,
+  "name": "Anton Bruckner",
+  "qid": "Q81752"
+ },
+ "buxtehude": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1637,
+  "catalogues": [
+   "BuxWV"
+  ],
+  "died": 1707,
+  "n_works": 231,
+  "name": "Dietrich Buxtehude",
+  "qid": "Q153637"
+ },
+ "chopin": {
+  "born": 1810,
+  "catalogues": [
+   "Op.",
+   "B.",
+   "KK",
+   "C."
+  ],
+  "died": 1849,
+  "n_works": 366,
+  "name": "Frédéric Chopin",
+  "qid": "Q1268"
+ },
+ "corelli": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1653,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1713,
+  "n_works": 79,
+  "name": "Arcangelo Corelli",
+  "qid": "Q164475"
+ },
+ "couperin": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1668,
+  "catalogues": [],
+  "died": 1733,
+  "n_works": 47,
+  "name": "François Couperin",
+  "qid": "Q50186"
+ },
+ "debussy": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1862,
+  "catalogues": [
+   "L.",
+   "CD"
+  ],
+  "died": 1918,
+  "n_works": 340,
+  "name": "Claude Debussy",
+  "qid": "Q4700"
+ },
+ "dvorak": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1841,
+  "catalogues": [
+   "Op.",
+   "B."
+  ],
+  "died": 1904,
+  "n_works": 220,
+  "name": "Antonín Dvořák",
+  "qid": "Q7298"
+ },
+ "handel": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1685,
+  "catalogues": [
+   "HWV"
+  ],
+  "died": 1759,
+  "n_works": 1788,
+  "name": "George Frideric Handel",
+  "qid": "Q7302"
+ },
+ "haydn": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1732,
+  "catalogues": [
+   "Hob."
+  ],
+  "died": 1809,
+  "n_works": 765,
+  "name": "Joseph Haydn",
+  "qid": "Q7349"
+ },
+ "liszt": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1811,
+  "catalogues": [
+   "S.",
+   "LW"
+  ],
+  "died": 1886,
+  "n_works": 625,
+  "name": "Franz Liszt",
+  "qid": "Q41309"
+ },
+ "mahler": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1860,
+  "catalogues": [],
+  "died": 1911,
+  "n_works": 63,
+  "name": "Gustav Mahler",
+  "qid": "Q7304"
+ },
+ "mendelssohn": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1809,
+  "catalogues": [
+   "Op.",
+   "MWV"
+  ],
+  "died": 1847,
+  "n_works": 322,
+  "name": "Felix Mendelssohn",
+  "qid": "Q46096"
+ },
+ "mozart": {
+  "born": 1756,
+  "catalogues": [
+   "K."
+  ],
+  "died": 1791,
+  "n_works": 1164,
+  "name": "Wolfgang Amadeus Mozart",
+  "qid": "Q254"
+ },
+ "pergolesi": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1710,
+  "catalogues": [],
+  "died": 1736,
+  "n_works": 83,
+  "name": "Giovanni Battista Pergolesi",
+  "qid": "Q185312"
+ },
+ "purcell": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1659,
+  "catalogues": [
+   "Z."
+  ],
+  "died": 1695,
+  "n_works": 496,
+  "name": "Henry Purcell",
+  "qid": "Q9695"
+ },
+ "rachmaninoff": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1873,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1943,
+  "n_works": 113,
+  "name": "Sergei Rachmaninoff",
+  "qid": "Q131861"
+ },
+ "ravel": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1875,
+  "catalogues": [
+   "M."
+  ],
+  "died": 1937,
+  "n_works": 178,
+  "name": "Maurice Ravel",
+  "qid": "Q1178"
+ },
+ "scarlatti": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1685,
+  "catalogues": [
+   "K.",
+   "L."
+  ],
+  "died": 1757,
+  "n_works": 645,
+  "name": "Domenico Scarlatti",
+  "qid": "Q167837"
+ },
+ "schubert": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1797,
+  "catalogues": [
+   "D."
+  ],
+  "died": 1828,
+  "n_works": 1165,
+  "name": "Franz Schubert",
+  "qid": "Q7312"
+ },
+ "schumann": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1810,
+  "catalogues": [
+   "Op.",
+   "WoO"
+  ],
+  "died": 1856,
+  "n_works": 240,
+  "name": "Robert Schumann",
+  "qid": "Q7351"
+ },
+ "shostakovich": {
+  "_copyright": "Still in copyright in most of Europe, so IMSLP holds only the early public-domain works: the catalogue will be complete but scores and audio will be thin. Accepted deliberately.",
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1906,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1975,
+  "n_works": 148,
+  "name": "Dmitri Shostakovich",
+  "qid": "Q80135"
+ },
+ "sibelius": {
+  "_copyright": "Still in copyright in most of Europe, so IMSLP holds only the early public-domain works: the catalogue will be complete but scores and audio will be thin. Accepted deliberately.",
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1865,
+  "catalogues": [
+   "Op.",
+   "JS"
+  ],
+  "died": 1957,
+  "n_works": 229,
+  "name": "Jean Sibelius",
+  "qid": "Q45682"
+ },
+ "strauss_i": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1804,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1849,
+  "n_works": 267,
+  "name": "Johann Strauss I",
+  "qid": "Q184178"
+ },
+ "strauss_ii": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1825,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1899,
+  "n_works": 960,
+  "name": "Johann Strauss II",
+  "qid": "Q83309"
+ },
+ "strauss_josef": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1827,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1870,
+  "n_works": 111,
+  "name": "Joseph Strauss",
+  "qid": "Q312941"
+ },
+ "tchaikovsky": {
+  "born": 1840,
+  "catalogues": [
+   "Op.",
+   "TH",
+   "ČW"
+  ],
+  "died": 1893,
+  "n_works": 270,
+  "name": "Pyotr Ilyich Tchaikovsky",
+  "qid": "Q7315"
+ },
+ "telemann": {
+  "_verified": "resolve_composer.py + IMSLP allcategories, 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1681,
+  "catalogues": [
+   "TWV"
+  ],
+  "died": 1767,
+  "n_works": 1458,
+  "name": "Georg Philipp Telemann",
+  "qid": "Q75854"
+ },
+ "vivaldi": {
+  "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",
+  "born": 1678,
+  "catalogues": [
+   "RV"
+  ],
+  "died": 1741,
+  "n_works": 860,
+  "name": "Antonio Vivaldi",
+  "qid": "Q1340"
+ }
+}

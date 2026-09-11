@@ -271,7 +271,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q112185951",
     "wga_url": "https://www.wga.hu/html/v/veronese/02_1550s/2tempta2.html",
     "location_src": "Musée des Beaux-Arts de Caen",
@@ -1007,15 +1007,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -4.14778,
-     40.58917
+     -4.15,
+     40.59
     ]
    },
    "properties": {
     "painter": "Veronese",
     "title": "Annunciation",
     "year": "1583",
-    "city": "San Lorenzo de El Escorial",
+    "city": "Spain",
     "country": "Spain",
     "location": "Royal Monastery of San Lorenzo de El Escorial",
     "kind": "museum",
@@ -1061,7 +1061,7 @@
     "year": "1555",
     "city": "Raleigh",
     "country": "United States",
-    "location": "Museo d'arte della Carolina del Nord",
+    "location": "North Carolina Museum of Art",
     "kind": "museum",
     "attribution": "attributed",
     "status": "present",
@@ -1084,7 +1084,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "museo-d-arte-della-carolina-del-nord",
+    "museum_id": "north-carolina-museum-of-art",
     "qid": "Q131546464",
     "location_src": "Museo d'arte della Carolina del Nord",
     "form": "painting"
@@ -1656,7 +1656,7 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "musee-des-beaux-arts-de-caen",
+    "museum_id": "musee-des-beaux-arts-de-caen-2",
     "qid": "Q131759366",
     "location_src": "Musée des Beaux-Arts de Caen",
     "form": "painting"
@@ -3694,14 +3694,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Veronese",
     "title": "The Finding of Moses",
     "year": "1570",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -3739,14 +3739,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Veronese",
     "title": "The Annunciation",
     "year": "1580",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -3783,14 +3783,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Veronese",
     "title": "Rebecca at the Well",
     "year": "1585",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -9211,8 +9211,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -9252,8 +9252,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -11192,7 +11192,7 @@
     "painter": "Veronese",
     "title": "Saint Lucy and a Donor",
     "year": "1580",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11214,7 +11214,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -11233,7 +11233,7 @@
     "painter": "Veronese",
     "title": "The Martyrdom and Last Communion of Saint Lucy",
     "year": "1582",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11255,7 +11255,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"

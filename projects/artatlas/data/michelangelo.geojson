@@ -2453,7 +2453,7 @@
     "form": "sculpture",
     "kind": "museum",
     "year": "1514",
-    "location": "Department of Sculptures of the Louvre",
+    "location": "Louvre",
     "country": "France",
     "material": "marble",
     "medium": "marble",
@@ -2463,14 +2463,15 @@
     "_source": {
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
-    "museum_id": "department-of-sculptures-of-the-louvre",
-    "location_src": "Department of Sculptures of the Louvre"
+    "museum_id": "louvre",
+    "location_src": "Department of Sculptures of the Louvre",
+    "city": "Paris"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.33583,
-     48.86111
+     2.3358,
+     48.8611
     ]
    }
   },
@@ -2876,7 +2877,7 @@
     "title": "Crucifix of Montserrat",
     "qid": "Q3005512",
     "form": "sculpture",
-    "kind": "museum",
+    "kind": "church",
     "year": "1492",
     "location": "Santa Maria de Montserrat",
     "city": "Monistrol de Montserrat",

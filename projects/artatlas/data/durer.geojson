@@ -32,7 +32,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q1988057",
     "wikidata": "https://www.wikidata.org/wiki/Q1988057",
     "_merged": [
      {
@@ -44,7 +43,8 @@
     ],
     "location_src": "Uffizi Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1988057"
    }
   },
   {
@@ -77,7 +77,6 @@
     },
     "museum_id": "germanisches-nationalmuseum",
     "country": "Germany",
-    "qid": "Q1988057",
     "wikidata": "https://www.wikidata.org/wiki/Q1988057",
     "_merged": [
      {
@@ -89,7 +88,8 @@
     ],
     "location_src": "Germanisches Nationalmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1988057"
    }
   },
   {
@@ -203,17 +203,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     10,
-     53.55
+     10.00306,
+     53.555
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Lion",
     "year": "1494",
-    "city": "Hamburg",
+    "city": "Hamburg-Mitte",
     "country": "Germany",
-    "location": "Kunsthalle",
+    "location": "Hamburger Kunsthalle",
     "attribution": "generally accepted",
     "medium": "Bodycolor, watercolor on parchment",
     "dimensions": "12.6 × 17.2 cm",
@@ -226,7 +226,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "kunsthalle",
+    "museum_id": "hamburger-kunsthalle",
     "qid": "Q2542197",
     "wikidata": "https://www.wikidata.org/wiki/Q2542197",
     "_overrides": {
@@ -435,14 +435,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Haller Madonna back side: Lot and His Daughters",
     "year": "c. 1496",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -769,7 +769,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "schlossmuseum",
-    "qid": "Q2459066",
     "wikidata": "https://www.wikidata.org/wiki/Q2459066",
     "_merged": [
      {
@@ -781,7 +780,9 @@
     ],
     "location_src": "Schlossmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2459066",
+    "qid_rejected_as": "family, German noble family"
    }
   },
   {
@@ -1059,11 +1060,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q1576172",
     "wikidata": "https://www.wikidata.org/wiki/Q1576172",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1576172",
+    "qid_rejected_as": "artistic theme, titles of Mary, mother of Jesus"
    }
   },
   {
@@ -1095,12 +1097,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frankfurt",
-    "qid": "Q3428032",
     "wikidata": "https://www.wikidata.org/wiki/Q3428032",
     "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html",
     "location_src": "Frankfurt",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3428032"
    }
   },
   {
@@ -1133,13 +1135,13 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-pinakothek",
-    "qid": "Q3428032",
     "wikidata": "https://www.wikidata.org/wiki/Q3428032",
     "wga_url": "https://www.wga.hu/html/d/durer/1/04/1jabach2.html",
     "location_src": "Alte Pinakothek",
     "venue_of": "Bavarian State Painting Collections",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3428032"
    }
   },
   {
@@ -1286,12 +1288,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthistorisches-museum",
-    "qid": "Q3937735",
     "wikidata": "https://www.wikidata.org/wiki/Q3937735",
     "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3937735"
    }
   },
   {
@@ -1455,12 +1457,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q3937735",
     "wikidata": "https://www.wikidata.org/wiki/Q3937735",
     "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3937735"
    }
   },
   {
@@ -1555,8 +1557,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.7033,
-     40.4169
+     -3.69493,
+     40.41604
     ]
    },
    "properties": {
@@ -1565,7 +1567,7 @@
     "year": "1506",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo Nacional Thyssen-Bornemisza",
+    "location": "Thyssen-Bornemisza Museum",
     "attribution": "generally accepted",
     "medium": "Oil on panel (poplar)",
     "dimensions": "64.3 × 80.3 cm",
@@ -1579,7 +1581,7 @@
      "source": "Wikipedia: List of paintings by Albrecht Dürer",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "museo-nacional-thyssen-bornemisza",
+    "museum_id": "thyssen-bornemisza-museum",
     "qid": "Q2448065",
     "wikidata": "https://www.wikidata.org/wiki/Q2448065",
     "wga_url": "https://www.wga.hu/html/d/durer/1/05/07docto3.html",
@@ -1704,11 +1706,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q351300",
     "wikidata": "https://www.wikidata.org/wiki/Q351300",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q351300",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -2086,14 +2089,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Albrecht Dürer",
     "title": "Portrait of a Clergyman (Johann Dorsch?)",
     "year": "1516",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3614,7 +3617,7 @@
     "painter": "Albrecht Dürer",
     "title": "Lot and His Daughters [reverse]",
     "year": "1497",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -3626,7 +3629,7 @@
      "url": "https://www.wikidata.org/wiki/Q20174732",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -3676,7 +3679,7 @@
     "painter": "Albrecht Dürer",
     "title": "Circumcision of Jesus",
     "year": "1494",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3698,7 +3701,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3717,7 +3720,7 @@
     "painter": "Albrecht Dürer",
     "title": "Flight to Egypt",
     "year": "1496",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3729,7 +3732,7 @@
      "url": "https://www.wikidata.org/wiki/Q22250338",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3748,7 +3751,7 @@
     "painter": "Albrecht Dürer",
     "title": "Seven Sorrows Polyptych: Christ among the Doctors",
     "year": "1494",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3770,7 +3773,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3789,7 +3792,7 @@
     "painter": "Albrecht Dürer",
     "title": "Via Crucis",
     "year": "1494",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3811,7 +3814,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3830,7 +3833,7 @@
     "painter": "Albrecht Dürer",
     "title": "Altarpiece of the Mater Dolorosa, Scene: Christ Nailed Art the Cross",
     "year": "1494",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3852,7 +3855,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3871,7 +3874,7 @@
     "painter": "Albrecht Dürer",
     "title": "Crucifixion",
     "year": "1494",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3893,7 +3896,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3912,7 +3915,7 @@
     "painter": "Albrecht Dürer",
     "title": "Deposition",
     "year": "1494",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3934,7 +3937,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -3953,7 +3956,7 @@
     "painter": "Albrecht Dürer",
     "title": "The Seven Sorrows of the Virgin",
     "year": "",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -3965,7 +3968,7 @@
      "url": "https://www.wikidata.org/wiki/Q28797398",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -4347,8 +4350,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -4638,7 +4641,7 @@
     "painter": "Albrecht Dürer",
     "title": "Young Woman in Netherlandish Dress",
     "year": "1521",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -4650,7 +4653,7 @@
      "url": "https://www.wikidata.org/wiki/Q124454984",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -5400,7 +5403,7 @@
     "painter": "Albrecht Dürer",
     "title": "Crucifixion",
     "year": "1600",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "copy or later version",
@@ -5420,7 +5423,7 @@
       "note": "dated 1600, after death (1471–1528) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"

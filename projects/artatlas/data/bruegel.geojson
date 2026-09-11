@@ -565,11 +565,12 @@
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
     "country": "Austria",
-    "qid": "Q699091",
     "wikidata": "https://www.wikidata.org/wiki/Q699091",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q699091",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -602,11 +603,12 @@
     "museum_id": "museum-boijmans-van-beuningen",
     "city": "Rotterdam",
     "country": "Netherlands",
-    "qid": "Q699091",
     "wikidata": "https://www.wikidata.org/wiki/Q699091",
     "location_src": "Museum Boijmans Van Beuningen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q699091",
+    "qid_rejected_as": "group of paintings"
    }
   },
   {
@@ -1102,11 +1104,11 @@
     "museum_id": "museo-del-prado",
     "city": "Madrid",
     "country": "Spain",
-    "qid": "Q1198007",
     "wikidata": "https://www.wikidata.org/wiki/Q1198007",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1198007"
    }
   },
   {
@@ -1139,11 +1141,11 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "city": "Brussels-Capital Region",
     "country": "Belgium",
-    "qid": "Q1198007",
     "wikidata": "https://www.wikidata.org/wiki/Q1198007",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1198007"
    }
   },
   {
@@ -1583,15 +1585,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.6535,
-     49.8749
+     8.65353,
+     49.87475
     ]
    },
    "properties": {
     "painter": "Pieter Bruegel the Elder",
     "title": "The Magpie on the Gallows",
     "year": "1568",
-    "location": "Hessisches Landesmuseum",
+    "location": "Hessian State Museum Darmstadt",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "45.9 × 50.8 cm",
@@ -1605,13 +1607,15 @@
      "source": "Wikipedia: List of paintings by Pieter Bruegel the Elder",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "hessisches-landesmuseum",
+    "museum_id": "hessian-state-museum-darmstadt",
     "qid": "Q1122842",
     "wikidata": "https://www.wikidata.org/wiki/Q1122842",
     "wga_url": "https://www.wga.hu/html/b/bruegel/pieter_e/01/18magpie.html",
     "location_src": "Hessisches Landesmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city": "Darmstadt",
+    "country": "Germany"
    }
   },
   {

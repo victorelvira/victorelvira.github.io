@@ -873,13 +873,13 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Fra Filippo Lippi",
     "title": "Saint Benedict Orders Saint Maurus to the Rescue of Saint Placidus",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -1281,14 +1281,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Fra Filippo Lippi",
     "title": "Adoration of the Magi",
     "year": "1430",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -1503,17 +1503,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     11.09656,
-     43.88081
+     11.09647,
+     43.88083
     ]
    },
    "properties": {
     "painter": "Fra Filippo Lippi",
     "title": "Adoration of the Child with Saints",
     "year": "1455",
-    "city": "Province of Prato",
+    "city": "Prato",
     "country": "Italy",
-    "location": "Prato",
+    "location": "Palazzo Pretorio Museum",
     "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
@@ -1535,11 +1535,12 @@
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
      }
     },
-    "museum_id": "prato",
+    "museum_id": "palazzo-pretorio-museum",
     "qid": "Q3605569",
     "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1460/3adorati.html",
     "location_src": "Prato",
-    "form": "painting"
+    "form": "painting",
+    "venue_src": "P276"
    }
   },
   {
@@ -1594,14 +1595,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Fra Filippo Lippi",
     "title": "The Annunciation",
     "year": "1435",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -2463,14 +2464,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Fra Filippo Lippi",
     "title": "Madonna and Child 1440s",
     "year": "1440",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",
@@ -3059,14 +3060,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Fra Filippo Lippi",
     "title": "Saint Benedict Orders Saint Maurus to the Rescue of Saint Placidius",
     "year": "1445",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "kind": "museum",

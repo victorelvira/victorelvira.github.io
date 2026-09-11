@@ -520,8 +520,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -86.1855,
-     39.8259
+     -86.18565,
+     39.82602
     ]
    },
    "properties": {
@@ -556,7 +556,8 @@
     ],
     "location_src": "Indianapolis Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -2349,7 +2350,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "dulwich-picture-gallery",
-    "qid": "Q17343011",
     "wikidata": "https://www.wikidata.org/wiki/Q17343011",
     "_merged": [
      {
@@ -2361,7 +2361,9 @@
     ],
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q17343011",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -3327,7 +3329,7 @@
     "painter": "Rembrandt",
     "title": "Bust of Saskia Smiling",
     "year": "1633",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "52.5 × 44 cm",
@@ -3340,7 +3342,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
     "country": "Germany",
     "location_src": "Staatliche Kunstsammlungen Dresden",
@@ -3552,14 +3554,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Man in Oriental Costume",
     "year": "c. 1633–1634",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -5096,7 +5098,7 @@
     "painter": "Rembrandt",
     "title": "Self-portrait as the Prodigal Son in the Tavern",
     "year": "1635",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
     "dimensions": "161 × 131 cm",
@@ -5110,7 +5112,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
     "country": "Germany",
     "qid": "Q1111394",
@@ -5185,7 +5187,7 @@
     "painter": "Rembrandt",
     "title": "The Rape of Ganymede",
     "year": "1635",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
     "dimensions": "177 × 130 cm",
@@ -5199,7 +5201,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
     "country": "Germany",
     "qid": "Q3930497",
@@ -5866,14 +5868,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "A Polish Nobleman",
     "year": "1637",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -6016,7 +6018,7 @@
     "painter": "Rembrandt",
     "title": "The Wedding of Samson",
     "year": "1638",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
     "dimensions": "126 × 175 cm",
@@ -6029,7 +6031,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
     "country": "Germany",
     "wga_url": "https://www.wga.hu/html/r/rembrand/15oldtes/13oldtes.html",
@@ -6271,7 +6273,7 @@
     "painter": "Rembrandt",
     "title": "The Bittern Hunter",
     "year": "1639",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -6301,7 +6303,7 @@
       "title": "A Dead Bittern"
      }
     ],
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -6507,7 +6509,7 @@
     "painter": "Rembrandt",
     "title": "Saskia van Uylenburgh, the Wife of the Artist",
     "year": "1640",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6537,7 +6539,7 @@
       "title": "Bust of Young Woman"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6843,7 +6845,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q2592423",
     "wikidata": "https://www.wikidata.org/wiki/Q2592423",
     "_merged": [
      {
@@ -6855,7 +6856,9 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q2592423",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -7044,7 +7047,7 @@
     "painter": "Rembrandt",
     "title": "Saskia as Flora",
     "year": "1641",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "98.5 × 82.5 cm",
@@ -7058,7 +7061,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "city": "Dresden",
     "country": "Germany",
     "qid": "Q16599937",
@@ -7160,8 +7163,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.01111,
-     52.23
+     21.01417,
+     52.24778
     ]
    },
    "properties": {
@@ -7169,7 +7172,7 @@
     "title": "A Scholar at a Writing Desk",
     "year": "1641",
     "city": "Warsaw",
-    "location": "Royal Castle",
+    "location": "Royal Castle in Warsaw",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "104 × 76 cm",
@@ -7183,7 +7186,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-castle",
+    "museum_id": "royal-castle-in-warsaw",
     "qid": "Q9364415",
     "wikidata": "https://www.wikidata.org/wiki/Q9364415",
     "_merged": [
@@ -7196,7 +7199,8 @@
     ],
     "location_src": "Royal Castle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Poland"
    }
   },
   {
@@ -7204,8 +7208,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     21.01111,
-     52.23
+     21.01417,
+     52.24778
     ]
    },
    "properties": {
@@ -7213,7 +7217,7 @@
     "title": "Girl in Fanciful Costume in a Picture Frame",
     "year": "1641",
     "city": "Warsaw",
-    "location": "Royal Castle",
+    "location": "Royal Castle in Warsaw",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "104 × 76 cm",
@@ -7227,7 +7231,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "royal-castle",
+    "museum_id": "royal-castle-in-warsaw",
     "qid": "Q11695670",
     "wikidata": "https://www.wikidata.org/wiki/Q11695670",
     "_merged": [
@@ -7240,7 +7244,8 @@
     ],
     "location_src": "Royal Castle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Poland"
    }
   },
   {
@@ -7949,14 +7954,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "The Mill",
     "year": "c. 1645",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -8079,17 +8084,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "The Prophetess Anna in the Temple",
     "year": "1650 or c. 1646",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "Oil on panel",
     "dimensions": "40.5 × 31.5 cm",
@@ -8102,7 +8107,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q21503254",
     "wikidata": "https://www.wikidata.org/wiki/Q21503254",
     "_overrides": {
@@ -9007,11 +9012,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "qid": "Q272277",
     "wikidata": "https://www.wikidata.org/wiki/Q272277",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q272277",
+    "qid_rejected_as": "human biblical figure"
    }
   },
   {
@@ -9628,14 +9634,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Young Man Seated at a Table",
     "year": "c. 1656",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -9662,14 +9668,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Portrait of a Gentleman with a Pair of Gloves",
     "year": "c. 1656",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -9703,7 +9709,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of a Woman with an Ostrich-Feather Fan",
     "year": "1656",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9733,7 +9739,7 @@
       "title": "Portrait of a Lady with an Ostrich Feather Fan"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -9967,7 +9973,7 @@
     "painter": "Rembrandt",
     "title": "The Apostle Paul",
     "year": "1657",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -9997,7 +10003,7 @@
       "title": "The Apostle Paul at his Writing Desk"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -10443,14 +10449,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Philemon and Baucis",
     "year": "1658",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -10786,17 +10792,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Self-portrait",
     "year": "1657",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "Oil on canvas",
     "dimensions": "50 × 42.5 cm",
@@ -10809,7 +10815,7 @@
      "source": "Wikipedia: List of paintings by Rembrandt",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "wga_url": "https://www.wga.hu/html/r/rembrand/27self/03sp1628.html",
     "_merged": [
      {
@@ -10830,14 +10836,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Self Portrait with Beret and Turned-Up Collar",
     "year": "1659",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -11306,7 +11312,7 @@
     "painter": "Rembrandt",
     "title": "The Circumcision",
     "year": "1661",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -11336,7 +11342,7 @@
       "title": "The Circumcision in the Stable"
      }
     ],
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -14358,7 +14364,7 @@
     "painter": "Rembrandt",
     "title": "Bust of a Young Woman Smiling, possibly Saskia van Uylenburgh",
     "year": "1633",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -14380,7 +14386,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -15121,8 +15127,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -15162,8 +15168,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -15808,7 +15814,7 @@
     "painter": "Rembrandt",
     "title": "Old Man with a Tall, Fur-edged Cap",
     "year": "1652",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -15830,7 +15836,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -16665,7 +16671,7 @@
     "painter": "Rembrandt",
     "title": "An Old Lady with a Book",
     "year": "1637",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -16687,7 +16693,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -16706,7 +16712,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of a Man with a Tall Hat and Gloves",
     "year": "1657",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -16728,7 +16734,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -16747,7 +16753,7 @@
     "painter": "Rembrandt",
     "title": "Head of Saint Matthew",
     "year": "1662",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -16769,7 +16775,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -16788,7 +16794,7 @@
     "painter": "Rembrandt",
     "title": "A Young Man Seated at a Table (possibly Govaert Flinck)",
     "year": "1660",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -16810,7 +16816,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -16829,7 +16835,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of a man in a tall hat",
     "year": "1663",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -16851,7 +16857,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -18421,7 +18427,7 @@
     "painter": "Rembrandt",
     "title": "Seated old man with a cane in fanciful costume",
     "year": "1645",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -18443,7 +18449,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -18536,8 +18542,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.73466,
-     51.05338
+     13.7369,
+     51.0528
     ]
    },
    "properties": {
@@ -19036,7 +19042,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of a Musician with a Sheet of Music in his Hand",
     "year": "1633",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -19058,7 +19064,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -20565,15 +20571,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.73039,
-     47.50152
+     8.73028,
+     47.50139
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "The Foot Operation",
     "year": "1628",
-    "location": "Building of the Winterthur Museum of Art",
+    "location": "Kunstmuseum Winterthur",
     "city": "Winterthur",
     "country": "Switzerland",
     "attribution": "generally accepted",
@@ -20585,7 +20591,7 @@
      "url": "https://www.wikidata.org/wiki/Q21549398",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "building-of-the-winterthur-museum-of-art",
+    "museum_id": "kunstmuseum-winterthur",
     "location_src": "Building of the Winterthur Museum of Art",
     "kind": "museum",
     "form": "painting"
@@ -20897,7 +20903,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of Willem Burggraeff, husband of Maertgen van Bilderbeecq",
     "year": "1633",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -20919,7 +20925,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -20938,7 +20944,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of a Bearded Old Man",
     "year": "1654",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -20960,7 +20966,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -20979,7 +20985,7 @@
     "painter": "Rembrandt",
     "title": "Man with a hat decorated with pearls",
     "year": "1662",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -21001,7 +21007,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -21405,15 +21411,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Oval Portrait of a Young Woman in Flat Lace Collar",
     "year": "1634",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -21435,7 +21441,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -21774,16 +21780,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.31455,
-     48.86605
+     2.31453,
+     48.86604
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Self-portrait in Oriental Dress",
     "year": "1631",
-    "location": "Musée des Beaux-Arts de la ville de Paris",
-    "city": "8th arrondissement of Paris",
+    "location": "Petit Palais",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20-%20Portrait%20de%20l%27artiste%20en%20costume%20oriental%20-%20PDUT925%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20de%20la%20ville%20de%20Paris.jpg?width=500",
@@ -21794,7 +21800,7 @@
      "url": "https://www.wikidata.org/wiki/Q21558298",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-des-beaux-arts-de-la-ville-de-paris",
+    "museum_id": "petit-palais-2",
     "location_src": "Musée des Beaux-Arts de la ville de Paris",
     "kind": "museum",
     "form": "painting"
@@ -22868,15 +22874,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Rembrandt",
     "title": "Man in a Beret looking Left",
     "year": "1646",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -22898,7 +22904,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"

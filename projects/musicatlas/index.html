@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Classical Music Atlas · what they wrote, and how we know</title>
+<meta name="description" content="A catalogue of classical music where every fact says how many sources back it.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=0.21.0">
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+  <span id="build" class="build"></span>
+</nav>
+
+<div id="bar">
+  <a class="brand" href="index.html">
+    <svg class="mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+      <rect width="32" height="32" rx="6" fill="#1e1b17"/>
+      <g stroke="#c9a227" stroke-width="1.6" stroke-linecap="round" fill="none">
+        <circle cx="16" cy="16" r="9" stroke="#5a5248" stroke-width="1.2"/>
+        <path d="M16 5.6v2.4M24.2 10.4l-2 1.2M24.2 21.6l-2-1.2M16 26.4V24M7.8 21.6l2-1.2M7.8 10.4l2 1.2"/>
+      </g><circle cx="16" cy="7" r="2.6" fill="#c9a227"/></svg>
+    <span><strong>Classical Music Atlas</strong>
+      <small>what they wrote, and how we know</small></span>
+  </a>
+  <span class="picker" id="picker"></span>
+  <span id="totals"></span>
+</div>
+
+<div id="modes">
+  <input type="search" id="q" placeholder="Filter, title, opus, key, dedicatee…" autocomplete="off">
+  <span id="view-tabs">
+    <button data-lens="table" aria-pressed="true">Catalogue</button>
+    <button data-lens="fifths" aria-pressed="false">By key</button>
+    <button data-lens="time" aria-pressed="false">Timeline</button>
+    <button data-lens="graph" aria-pressed="false">Arrangements</button>
+  </span>
+  <span class="chip-sep"></span>
+  <button class="chip" id="t-parts" aria-pressed="false">Show individual pieces</button>
+  <button class="chip" id="t-doubt" aria-pressed="false">Only where sources disagree</button>
+</div>
+
+<div id="facets"></div>
+
+<div id="content">
+  <div id="instrument"></div>
+  <div id="subbar">
+    <span id="subtabs">
+      <button data-sub="works" aria-pressed="true">Works</button>
+      <button data-sub="composers" aria-pressed="false">Composers</button>
+    </span>
+    <span id="count"></span>
+    <span class="right"><span id="clear"></span></span>
+  </div>
+  <div id="scroll"><div id="stage"></div></div>
+</div>
+
+<footer>
+  ← <a href="https://victorelvira.github.io">victorelvira.github.io</a> ·
+  Data: <a href="https://imslp.org" target="_blank" rel="noopener">IMSLP</a> ·
+  <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a> ·
+  <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a> ·
+  every field carries who said it, hover a dot.
+</footer>
+
+<aside id="rec"><button class="close" aria-label="Close">×</button><div id="recbody"></div></aside>
+<div id="tip" role="tooltip"></div>
+<script src="app.js?v=0.21.0"></script>
+</body>
+</html>

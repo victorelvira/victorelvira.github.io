@@ -401,7 +401,7 @@
     "title": "Virgin and Child with Two Angels",
     "year": "c. 1468–1469",
     "city": "Besançon",
-    "location": "Musée des Beaux-Arts",
+    "location": "Musée des Beaux-Arts de Caen",
     "attribution": "generally accepted",
     "medium": "Tempera and oil on panel",
     "dimensions": "107 × 75 cm",
@@ -415,7 +415,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "musee-des-beaux-arts",
+    "museum_id": "musee-des-beaux-arts-de-caen",
     "qid": "Q38516820",
     "wikidata": "https://www.wikidata.org/wiki/Q38516820",
     "country": "France",
@@ -803,14 +803,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Madonna and Child",
     "year": "c. 1470",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1476,14 +1476,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Portrait of Giuliano de' Medici",
     "year": "1478–1482",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1519,14 +1519,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Adoration of the Magi",
     "year": "1478–1482",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -1615,7 +1615,7 @@
     "year": "1480",
     "city": "Florence",
     "country": "Italy",
-    "location": "Ognissanti",
+    "location": "Ognissanti Church",
     "attribution": "generally accepted",
     "medium": "Fresco",
     "dimensions": "152 × 112 cm",
@@ -1629,12 +1629,12 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "ognissanti",
+    "museum_id": "ognissanti-church",
     "qid": "Q1114329",
     "wikidata": "https://www.wikidata.org/wiki/Q1114329",
     "wga_url": "https://www.wga.hu/html/b/botticel/21/5augustu.html",
     "location_src": "Ognissanti",
-    "kind": "museum",
+    "kind": "church",
     "form": "painting"
    }
   },
@@ -1843,7 +1843,7 @@
     "painter": "Botticelli",
     "title": "The Virgin Adoring the Child",
     "year": "1490",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -1867,7 +1867,7 @@
     },
     "dimensions": "diameter 58.9 cm",
     "medium": "Tempera on panel",
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -2175,14 +2175,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Portrait of a Young Man",
     "year": "c. 1482–1485",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3392,17 +3392,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "The Virgin Adoring the Sleeping Christ Child",
     "year": "c. 1490",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "medium": "Tempera and gold on canvas",
     "dimensions": "122 × 80.3 cm",
@@ -3415,7 +3415,7 @@
      "source": "Wikipedia: List of paintings by Sandro Botticelli",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q27955560",
     "wikidata": "https://www.wikidata.org/wiki/Q27955560",
     "_overrides": {
@@ -4473,7 +4473,8 @@
     ],
     "location_src": "North Carolina Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "United States"
    }
   },
   {
@@ -4592,7 +4593,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q21813258",
     "wikidata": "https://www.wikidata.org/wiki/Q21813258",
     "_merged": [
      {
@@ -4604,7 +4604,9 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q21813258",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4637,7 +4639,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "qid": "Q21813258",
     "wikidata": "https://www.wikidata.org/wiki/Q21813258",
     "_merged": [
      {
@@ -4649,7 +4650,9 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q21813258",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4682,11 +4685,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q21813258",
     "wikidata": "https://www.wikidata.org/wiki/Q21813258",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q21813258",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4719,7 +4723,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q21813258",
     "wikidata": "https://www.wikidata.org/wiki/Q21813258",
     "_merged": [
      {
@@ -4731,7 +4734,9 @@
     ],
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q21813258",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -5116,7 +5121,7 @@
     "painter": "Botticelli",
     "title": "Last Miracle and the Death of Saint Zenobius",
     "year": "1500",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -5145,7 +5150,7 @@
       "ref": "https://en.wikipedia.org/wiki/Scenes_from_the_Life_of_Saint_Zenobius"
      }
     ],
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -5876,7 +5881,7 @@
     "painter": "Botticelli",
     "title": "Madonna and Child with Angels",
     "year": "1450",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "copy or later version",
@@ -5904,7 +5909,7 @@
       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6046,7 +6051,7 @@
     "painter": "Botticelli",
     "title": "The Virgin and Child with the Young Saint John the Baptist",
     "year": "1497",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -6068,7 +6073,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -6251,7 +6256,7 @@
     "painter": "Botticelli",
     "title": "Madonna and Child with St. John the Baptist",
     "year": "1490",
-    "location": "Museo de Arte de Indianápolis",
+    "location": "Indianapolis Museum of Art",
     "city": "Indianapolis",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6273,7 +6278,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museo-de-arte-de-indianapolis",
+    "museum_id": "indianapolis-museum-of-art",
     "location_src": "Museo de Arte de Indianápolis",
     "kind": "museum",
     "form": "painting"
@@ -6542,15 +6547,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "Saint John the Baptist",
     "year": "",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -6562,7 +6567,7 @@
      "url": "https://www.wikidata.org/wiki/Q27965124",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
@@ -6573,15 +6578,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Botticelli",
     "title": "The Virgin and Saint John the Baptist Adoring the Infant Christ",
     "year": "1477",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -6603,7 +6608,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"

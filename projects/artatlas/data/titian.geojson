@@ -28,7 +28,6 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "detroit-institute-of-arts",
-    "qid": "Q3998923",
     "wikidata": "https://www.wikidata.org/wiki/Q3998923",
     "_merged": [
      {
@@ -40,7 +39,8 @@
     ],
     "location_src": "Detroit Institute of Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q3998923"
    }
   },
   {
@@ -585,17 +585,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "The Three Ages of Man",
     "year": "c. 1512",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "106 × 182 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Tizian_002.jpg/500px-Tizian_002.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -608,7 +608,7 @@
      "source": "Wikipedia: List of works by Titian",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q3998115",
     "wikidata": "https://www.wikidata.org/wiki/Q3998115",
     "wga_url": "https://www.wga.hu/html/t/tiziano/08/04three.html",
@@ -1643,17 +1643,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19556,
-     55.95083
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Venus Anadyomene",
     "year": "c. 1520",
-    "city": "Edinburgh",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "National Gallery of Scotland",
+    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
     "dimensions": "73.6 × 58.4 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Titian_%28Tiziano_Vecellio%29_-_Venus_Rising_from_the_Sea_%28%27Venus_Anadyomene%27%29_-_Google_Art_Project.jpg/500px-Titian_%28Tiziano_Vecellio%29_-_Venus_Rising_from_the_Sea_%28%27Venus_Anadyomene%27%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1666,7 +1666,7 @@
      "source": "Wikipedia: List of works by Titian",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "national-gallery-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "qid": "Q2466780",
     "wikidata": "https://www.wikidata.org/wiki/Q2466780",
     "wga_url": "https://www.wga.hu/html/t/tiziano/08/07anadyo.html",
@@ -2601,11 +2601,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "uffizi-gallery",
-    "qid": "Q555015",
     "wikidata": "https://www.wikidata.org/wiki/Q555015",
     "location_src": "Uffizi Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q555015",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -2637,11 +2638,12 @@
     },
     "museum_id": "frick-collection",
     "country": "United States",
-    "qid": "Q296272",
     "wikidata": "https://www.wikidata.org/wiki/Q296272",
     "location_src": "Frick Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q296272",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -2834,14 +2836,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Portrait of Cardinal Pietro Bembo",
     "year": "1540",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -2871,14 +2873,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Portrait of Doge Andrea Gritti",
     "year": "c. 1546–1550",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3194,14 +3196,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Portrait of Ranuccio Farnese",
     "year": "1542",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -3548,11 +3550,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-di-capodimonte",
-    "qid": "Q1634112",
     "wikidata": "https://www.wikidata.org/wiki/Q1634112",
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1634112",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -3733,12 +3736,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q7920622",
     "wikidata": "https://www.wikidata.org/wiki/Q7920622",
     "wga_url": "https://www.wga.hu/html/t/tiziano/09/05organ.html",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q7920622"
    }
   },
   {
@@ -3770,11 +3773,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q506182",
     "wikidata": "https://www.wikidata.org/wiki/Q506182",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q506182",
+    "qid_rejected_as": "human"
    }
   },
   {
@@ -4055,12 +4059,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "qid": "Q7920622",
     "wikidata": "https://www.wikidata.org/wiki/Q7920622",
     "wga_url": "https://www.wga.hu/html/t/tiziano/09/05organ.html",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q7920622"
    }
   },
   {
@@ -4342,11 +4346,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q58177931",
     "wikidata": "https://www.wikidata.org/wiki/Q58177931",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q58177931",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4378,11 +4383,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q1196075",
     "wikidata": "https://www.wikidata.org/wiki/Q1196075",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1196075",
+    "qid_rejected_as": "artistic theme, titles of Mary, mother of Jesus"
    }
   },
   {
@@ -4391,14 +4397,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Woman Holding an Apple",
     "year": "c. 1550–1555",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -4450,11 +4456,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q1634112",
     "wikidata": "https://www.wikidata.org/wiki/Q1634112",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1634112",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -4558,11 +4565,11 @@
     },
     "museum_id": "national-museum-of-serbia",
     "country": "Serbia",
-    "qid": "Q7232301",
     "wikidata": "https://www.wikidata.org/wiki/Q7232301",
     "location_src": "National Museum of Serbia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q7232301"
    }
   },
   {
@@ -4571,14 +4578,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Venus with a Mirror",
     "year": "c. 1555",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",
@@ -4631,11 +4638,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q58177931",
     "wikidata": "https://www.wikidata.org/wiki/Q58177931",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q58177931",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -5137,11 +5145,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
-    "qid": "Q58177931",
     "wikidata": "https://www.wikidata.org/wiki/Q58177931",
     "location_src": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q58177931",
+    "qid_rejected_as": "painting series"
    }
   },
   {
@@ -5388,12 +5397,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "qid": "Q7920622",
     "wikidata": "https://www.wikidata.org/wiki/Q7920622",
     "wga_url": "https://www.wga.hu/html/t/tiziano/09/05organ.html",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q7920622"
    }
   },
   {
@@ -6283,7 +6292,7 @@
     "painter": "Titian",
     "title": "Adoration of the Shepherds",
     "year": "1507",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6305,7 +6314,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6324,7 +6333,7 @@
     "painter": "Titian",
     "title": "Giovanni Borgherini and His Tutor",
     "year": "1505",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6336,7 +6345,7 @@
      "url": "https://www.wikidata.org/wiki/Q3766873",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6355,7 +6364,7 @@
     "painter": "Titian",
     "title": "Holy Family",
     "year": "1500",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -6367,7 +6376,7 @@
      "url": "https://www.wikidata.org/wiki/Q3944458",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
@@ -6540,7 +6549,7 @@
     "painter": "Titian",
     "title": "Sleeping Venus",
     "year": "1509",
-    "location": "Staatliche Kunstsammlungen Dresden",
+    "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
     "attribution": "generally accepted",
@@ -6562,7 +6571,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "staatliche-kunstsammlungen-dresden",
+    "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
     "form": "painting"
@@ -6892,15 +6901,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.22389,
-     55.95194
+     -3.19569,
+     55.9509
     ]
    },
    "properties": {
     "painter": "Titian",
     "title": "Portrait of An Archer",
     "year": "1508",
-    "location": "National Galleries of Scotland",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "attribution": "generally accepted",
@@ -6922,7 +6931,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "national-galleries-of-scotland",
+    "museum_id": "scottish-national-gallery",
     "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"

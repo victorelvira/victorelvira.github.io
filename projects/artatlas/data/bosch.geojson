@@ -77,11 +77,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q1368767",
     "wikidata": "https://www.wikidata.org/wiki/Q1368767",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q1368767",
+    "qid_rejected_as": "legend, artistic theme"
    }
   },
   {
@@ -114,12 +115,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q321303",
     "wikidata": "https://www.wikidata.org/wiki/Q321303",
     "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q321303"
    }
   },
   {
@@ -152,12 +153,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "qid": "Q321303",
     "wikidata": "https://www.wikidata.org/wiki/Q321303",
     "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q321303"
    }
   },
   {
@@ -390,12 +391,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museu-nacional-de-arte-antiga",
-    "qid": "Q1217288",
     "wikidata": "https://www.wikidata.org/wiki/Q1217288",
     "wga_url": "https://www.wga.hu/html/b/bosch/90anthon/1triptyc.html",
     "location_src": "Museu Nacional de Arte Antiga",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1217288"
    }
   },
   {
@@ -428,12 +429,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museu-nacional-de-arte-antiga",
-    "qid": "Q1217288",
     "wikidata": "https://www.wikidata.org/wiki/Q1217288",
     "wga_url": "https://www.wga.hu/html/b/bosch/90anthon/1triptyc.html",
     "location_src": "Museu Nacional de Arte Antiga",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1217288"
    }
   },
   {
@@ -466,11 +467,11 @@
     },
     "museum_id": "academy-of-fine-arts-vienna",
     "country": "Austria",
-    "qid": "Q1387483",
     "wikidata": "https://www.wikidata.org/wiki/Q1387483",
     "location_src": "Academy of Fine Arts Vienna",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1387483"
    }
   },
   {
@@ -503,11 +504,11 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "academy-of-fine-arts-vienna",
-    "qid": "Q1387483",
     "wikidata": "https://www.wikidata.org/wiki/Q1387483",
     "location_src": "Academy of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_shared": "Q1387483"
    }
   },
   {
@@ -524,7 +525,7 @@
     "title": "The Haywain",
     "year": "1510–1516",
     "city": "Spain",
-    "location": "El Escorial",
+    "location": "Royal Monastery of San Lorenzo de El Escorial",
     "attribution": "generally accepted",
     "medium": "Oil on wood",
     "dimensions": "147 × 232 cm (Escorial version) 135 x 190 cm (Prado version)",
@@ -538,7 +539,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-escorial",
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
     "qid": "Q2213811",
     "wikidata": "https://www.wikidata.org/wiki/Q2213811",
     "wga_url": "https://www.wga.hu/html/b/bosch/4haywain/01pinner.html",
@@ -552,7 +553,8 @@
     ],
     "location_src": "El Escorial",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Spain"
    }
   },
   {
@@ -1129,7 +1131,7 @@
     "title": "Christ Crowned with Thorns (Escorial)",
     "year": "c. 1530–1540",
     "city": "Spain",
-    "location": "El Escorial",
+    "location": "Royal Monastery of San Lorenzo de El Escorial",
     "attribution": "copy or later version",
     "medium": "Oil on wood",
     "dimensions": "165 × 195 cm",
@@ -1140,7 +1142,7 @@
      "source": "Wikipedia: List of paintings by Hieronymus Bosch",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-escorial",
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
     "qid": "Q732277",
     "wikidata": "https://www.wikidata.org/wiki/Q732277",
     "wga_url": "https://www.wga.hu/html/b/bosch/5panels/12thorns.html",
@@ -1154,7 +1156,8 @@
     },
     "location_src": "El Escorial",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Spain"
    }
   },
   {
@@ -1680,14 +1683,14 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
     "painter": "Hieronymus Bosch",
     "title": "Death and the Miser",
     "year": "c. 1500–1510",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "location": "National Gallery of Art",
     "attribution": "generally accepted",

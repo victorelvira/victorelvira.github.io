@@ -361,7 +361,7 @@
     "type": "Point",
     "coordinates": [
      -77.02,
-     38.8914
+     38.89139
     ]
    },
    "properties": {
@@ -382,7 +382,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "city": "Washington",
+    "city": "Washington, D.C.",
     "country": "United States",
     "qid": "Q29021696",
     "wikidata": "https://www.wikidata.org/wiki/Q29021696",
@@ -1032,11 +1032,12 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "palazzo-blu",
-    "qid": "Q103968",
     "wikidata": "https://www.wikidata.org/wiki/Q103968",
     "location_src": "Palazzo Blu",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid_rejected": "Q103968",
+    "qid_rejected_as": "mythological Greek character"
    }
   },
   {
@@ -1548,7 +1549,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "Virgin and Child with a Rosary",
     "year": "1651",
-    "location": "El Escorial",
+    "location": "Royal Monastery of San Lorenzo de El Escorial",
     "attribution": "generally accepted",
     "dimensions": "58 x 50 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/La_Vergine_e_il_Bambino_con_il_rosario_Artemisia.jpg/500px-La_Vergine_e_il_Bambino_con_il_rosario_Artemisia.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1561,13 +1562,14 @@
      "source": "Wikipedia: List of works by Artemisia Gentileschi",
      "coord": "MediaWiki coordinates API"
     },
-    "museum_id": "el-escorial",
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
     "city": "Spain",
     "qid": "Q29016943",
     "wikidata": "https://www.wikidata.org/wiki/Q29016943",
     "location_src": "El Escorial",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Spain"
    }
   },
   {
@@ -1701,7 +1703,7 @@
     "painter": "Artemisia Gentileschi",
     "title": "The Triumph of Galatea",
     "year": "1650",
-    "location": "Galería Nacional de Arte",
+    "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
     "attribution": "generally accepted",
@@ -1723,7 +1725,7 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "galeria-nacional-de-arte",
+    "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
     "form": "painting"
