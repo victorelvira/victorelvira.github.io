@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Culture Atlas · what is left of them, and can you see it</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%235a6b57' d='M12 2a5 5 0 0 0-5 5v3H5v12h14V10h-2V7a5 5 0 0 0-5-5zm0 2a3 3 0 0 1 3 3v3H9V7a3 3 0 0 1 3-3z'/%3E%3Ccircle cx='12' cy='15' r='1.6' fill='%23c8a24a'/%3E%3C/svg%3E">
+  <meta name="description" content="A map of the physical traces famous people left behind — graves, plaques, birth houses, statues — sorted by whether you can see them right now or they have opening hours.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#2f3a2e">
+  <link rel="stylesheet" href="culture/vendor/leaflet.css">
+  <link rel="stylesheet" href="culture/vendor/MarkerCluster.css">
+  <link rel="stylesheet" href="culture/style.css?v=0.12.0">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Version and last update"></span>
+  </nav>
+
+  <header id="bar">
+    <a class="brand" href="cultureatlas.html" title="Reload the atlas (clears every filter)">
+      <svg class="mark" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path fill="#5a6b57" d="M12 2a5 5 0 0 0-5 5v3H5v12h14V10h-2V7a5 5 0 0 0-5-5zm0 2a3 3 0 0 1 3 3v3H9V7a3 3 0 0 1 3-3z"/>
+        <circle cx="12" cy="15" r="1.6" fill="#c8a24a"/>
+      </svg>
+      <div>
+        <strong>Culture Atlas</strong>
+        <small>what is left of them — and can you see it</small>
+      </div>
+    </a>
+    <div id="bar-rail">
+      <span id="who" class="who"></span>
+      <div id="stats" class="stats">…</div>
+    </div>
+  </header>
+
+  <div id="modes">
+    <div id="modes-rail">
+      <span id="view-tabs">
+        <button type="button" id="v-map" class="view-btn active" title="Map with the list beside it">🗺 Map &amp; list</button>
+        <button type="button" id="v-table" class="view-btn" title="Every trace as a sortable table">▦ Table</button>
+      </span>
+      <span id="who" class="who"></span>
+      <span id="renown" class="fam" title="How much of it to look at — the best known of whatever you are already filtering to">
+        <span class="fam-lbl">Renown</span>
+        <button type="button" data-top="100">100</button>
+        <button type="button" data-top="500">500</button>
+        <button type="button" data-top="2000">2000</button>
+        <button type="button" data-top="0" class="on">all</button>
+      </span>
+      <button type="button" id="preset-now" class="chip btn" title="Only what is out in the open — no door, no ticket, no hours">☀ Visible now</button>
+      <button type="button" id="locate" class="chip btn" title="What is near you right now">📍 Near me</button>
+      <span id="personchip" hidden></span>
+      <button type="button" id="reset" class="chip btn" title="Clear every filter">↺</button>
+      <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
+    </div>
+    <div id="legend" class="fam"></div>
+    <div id="axes">
+      <span class="fam" id="fam-access" title="Can you get in?"></span>
+      <span class="fam" id="fam-marking" title="Is there anything there that says so?"></span>
+      <span class="fam" id="fam-what" title="What kind of trace"></span>
+      <span class="fam" id="fam-verb" title="What they did here"></span>
+    </div>
+    <span id="filter-wrap">
+      <input id="filter" type="search" placeholder="Filter — person, place, city…" autocomplete="off"
+             title="Filters every view: map, list and table">
+      <button type="button" id="filter-clear" title="Clear the filter (Esc)" aria-label="Clear the filter" hidden>✕</button>
+      <ul id="suggest" hidden></ul>
+    </span>
+  </div>
+
+  <div id="timeline">
+    <span class="tl-cap">Lifetime</span>
+    <div class="tl-range">
+      <div class="tl-track"></div>
+      <div id="tl-fill" class="tl-fill"></div>
+      <input type="range" id="tl-min" aria-label="From year">
+      <input type="range" id="tl-max" aria-label="To year">
+    </div>
+    <span id="tl-label" class="tl-val">—</span>
+  </div>
+
+  <div id="main">
+    <div id="map"></div>
+    <aside id="panel">
+      <div id="panel-top">
+        <span id="panel-head">In view</span>
+        <span id="panel-view">
+          <label id="pv-sortwrap" class="subtick" title="How to order the panel"><select id="pv-sort">
+            <option value="place">⚰ by place</option>
+            <option value="rank">★ by renown</option>
+            <option value="year">🕰 by date</option>
+            <option value="name">🔤 by name</option>
+          </select></label>
+          <button type="button" id="pv-fold" class="pvbtn" title="Fold every group">⊟</button>
+        </span>
+      </div>
+      <ul id="worklist"></ul>
+    </aside>
+  </div>
+
+  <section id="table" hidden>
+    <div id="table-bar"><span id="table-count" class="t-count"></span></div>
+    <div id="table-wrap"><table id="traces-table"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <!-- one person, everything they left behind. Opened from any name, anywhere. -->
+  <aside id="sheet" hidden>
+    <button type="button" id="sheet-close" aria-label="Close">✕</button>
+    <div id="sheet-body"></div>
+  </aside>
+
+  <div id="banner" hidden></div>
+  <script src="culture/vendor/leaflet.js"></script>
+  <script src="culture/vendor/leaflet.markercluster.js"></script>
+  <script src="culture/app.js?v=0.12.0"></script>
+</body>
+</html>

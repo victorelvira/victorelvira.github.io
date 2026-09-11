@@ -1,0 +1,305 @@
+/* Culture Atlas — the sibling's bones, a colder palette: stone, moss and brass instead of oil. */
+:root{
+  --ink:#22261f; --ink-soft:#5c6356; --line:#d8d5cb; --paper:#f4f2ec; --paper-2:#eceadf;
+  --moss:#5a6b57; --brass:#b08d3f; --stone:#8b8577; --rust:#a3552f; --sky:#3d6a86;
+  --dom-letters:#5a6b57; --dom-music:#7a5a8a; --dom-image:#a3552f; --dom-stage:#b08d3f;
+  --dom-science:#3d6a86; --dom-power:#7c4a4a; --dom-faith:#6b6250; --dom-sport:#4a7c6b;
+  --dom-trade:#8a7250; --dom-other:#9a958a; --dom-nobody:#c3bdb0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--paper);display:flex;flex-direction:column;overflow:hidden}
+
+#navbar{display:flex;align-items:center;gap:6px;background:#2f3a2e;color:#cfd6c8;padding:3px 10px;font-size:12px;flex:0 0 auto}
+#navbar a{color:#e6ebe0;text-decoration:none}
+#navbar a:hover{text-decoration:underline}
+#navbar .nav-sep{opacity:.5}
+#navbar .build{margin-left:auto;color:#8a9184;font-size:6.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+#bar{display:flex;align-items:center;gap:14px;padding:6px 10px;background:var(--paper-2);
+  border-bottom:1px solid var(--line);flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit}
+.brand strong{display:block;font-size:15px;letter-spacing:.2px}
+.brand small{display:block;color:var(--ink-soft);font-size:11px}
+#bar-rail{display:contents}
+.stats{margin-left:auto;color:var(--ink-soft);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+#modes{display:flex;align-items:center;gap:10px;padding:5px 10px;background:var(--paper);
+  border-bottom:1px solid var(--line);flex:0 0 auto;flex-wrap:wrap}
+#modes-rail{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.view-btn,.chip.btn,#chrome-toggle{border:1px solid var(--line);background:#fff;border-radius:6px;
+  padding:3px 8px;font-size:12px;cursor:pointer;color:var(--ink)}
+.view-btn.active{background:var(--moss);color:#fff;border-color:var(--moss)}
+.chip.btn.active{background:var(--brass);color:#fff;border-color:var(--brass)}
+
+/* a filter family: a label and its chips, boxed so the axes read as axes */
+.fam{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:7px;
+  padding:2px 5px;background:#fff}
+.fam-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--stone);margin-right:2px}
+.chip{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:5px;
+  padding:2px 6px;font-size:12px;cursor:pointer;background:#fff;user-select:none}
+.chip input{margin:0}
+.chip.on{background:var(--paper-2);border-color:var(--stone)}
+/* CHASSIS §4: a chip that can never match must say why, not sit there dead */
+.chip.dead{opacity:.42;cursor:not-allowed;text-decoration:line-through var(--stone)}
+.chip .n{font-size:10px;color:var(--stone);font-variant-numeric:tabular-nums}
+
+#filter-wrap{position:relative;display:flex;align-items:center;flex:1 1 220px;min-width:180px}
+#filter{width:100%;padding:4px 24px 4px 8px;border:1px solid var(--line);border-radius:6px;font-size:13px;background:#fff}
+#filter-clear{position:absolute;right:4px;border:0;background:transparent;cursor:pointer;color:var(--stone)}
+#filter-clear[hidden]{display:none!important}
+
+#timeline{display:flex;align-items:center;gap:10px;padding:3px 12px;background:var(--paper-2);
+  border-bottom:1px solid var(--line);flex:0 0 auto}
+.tl-cap{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--stone)}
+.tl-range{position:relative;flex:1;height:20px}
+.tl-track{position:absolute;top:9px;left:0;right:0;height:3px;background:var(--line);border-radius:2px}
+.tl-fill{position:absolute;top:9px;height:3px;background:var(--moss);border-radius:2px}
+.tl-range input{position:absolute;top:0;left:0;width:100%;margin:0;background:none;pointer-events:none;
+  -webkit-appearance:none;appearance:none;height:20px}
+.tl-range input::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:13px;height:13px;
+  border-radius:50%;background:#fff;border:2px solid var(--moss);cursor:pointer}
+.tl-val{font-size:11px;color:var(--ink-soft);font-variant-numeric:tabular-nums;min-width:78px;text-align:right}
+
+#main{flex:1 1 auto;display:flex;min-height:0}
+#map{flex:1 1 auto;min-width:0}
+#panel{flex:0 0 340px;border-left:1px solid var(--line);background:var(--paper);display:flex;
+  flex-direction:column;min-height:0}
+#panel[hidden]{display:none!important}
+#panel-top{display:flex;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--line);
+  background:var(--paper-2);font-size:12px}
+#panel-head{font-weight:600}
+#panel-head .ph-tail{font-weight:400;color:var(--ink-soft)}
+#panel-view{margin-left:auto;display:flex;gap:4px;align-items:center}
+.pvbtn{border:1px solid var(--line);background:#fff;border-radius:5px;padding:1px 6px;cursor:pointer;font-size:12px}
+#pv-sort{border:1px solid var(--line);border-radius:5px;background:#fff;font-size:11px;padding:1px 3px}
+#worklist{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1 1 auto}
+#worklist li{padding:4px 8px;border-bottom:1px solid #e7e4d9}
+#worklist li.grp{background:var(--paper-2);position:sticky;top:0;z-index:2;cursor:pointer;
+  display:flex;align-items:center;gap:6px;font-size:12px}
+#worklist li.grp .gname{font-weight:600}
+#worklist li.grp .gsub{color:var(--ink-soft);font-size:11px;margin-left:auto;white-space:nowrap}
+#worklist li.row{display:flex;align-items:baseline;gap:6px;cursor:pointer}
+#worklist li.row:hover{background:#fff}
+#worklist li.row .nm{font-weight:500}
+#worklist li.row .yr{color:var(--stone);font-size:11px;font-variant-numeric:tabular-nums}
+#worklist li.row .tags{margin-left:auto;display:flex;gap:3px;align-items:center}
+#worklist li.empty{color:var(--ink-soft);padding:14px 10px;text-align:center}
+.dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;display:inline-block}
+.badge{font-size:9px;padding:0 4px;border-radius:3px;border:1px solid var(--line);color:var(--ink-soft);
+  background:#fff;white-space:nowrap}
+.badge.acc-hours{border-color:var(--brass);color:#7a5f22}
+.badge.acc-open-air{border-color:var(--moss);color:#3f4b3d}
+.badge.acc-unknown{border-color:var(--line);color:var(--stone)}
+.badge.plc{border-color:var(--rust);color:var(--rust)}
+
+/* pins */
+.pin{background:none;border:0}
+.pin i{display:block;width:100%;height:100%;border-radius:50%;border:2px solid #fff;
+  box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.pin b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font:600 10px/1 sans-serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.leaflet-popup-content{margin:8px 10px;font-size:13px;max-height:300px;overflow:auto}
+.pop-h{font-weight:600;margin-bottom:2px}
+.pop-sub{color:var(--ink-soft);font-size:11px;margin-bottom:6px}
+.pop-list{list-style:none;margin:0;padding:0}
+.pop-list li{padding:2px 0;border-bottom:1px solid #eee;display:flex;gap:6px;align-items:baseline}
+.pop-list a{color:var(--sky)}
+
+#table{flex:1 1 auto;overflow:auto;padding:0 10px 20px}
+#table[hidden]{display:none!important}
+#table-bar{position:sticky;top:0;background:var(--paper);padding:6px 0;border-bottom:1px solid var(--line);
+  font-size:12px;color:var(--ink-soft);z-index:3}
+#traces-table{border-collapse:collapse;width:100%;font-size:12.5px}
+#traces-table th{position:sticky;top:31px;background:var(--paper-2);text-align:left;padding:4px 6px;
+  border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap;z-index:2}
+#traces-table td{padding:3px 6px;border-bottom:1px solid #eeece2}
+#traces-table tr:hover td{background:#fff}
+
+#banner{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;background:#2f3a2e;color:#fff;
+  padding:8px 14px;border-radius:8px;font-size:13px;z-index:9999;box-shadow:0 3px 14px rgba(0,0,0,.3)}
+#banner[hidden]{display:none!important}
+
+body.chrome-off #bar,body.chrome-off #timeline{display:none}
+
+/* ── a phone ─────────────────────────────────────────────────────────────────────────────────
+ * Four rows of chips, a legend and a stats line do not fit in 375 px, and the first version simply
+ * cut them off: only ACCESS was visible and nothing said the rest were there. Every rail scrolls
+ * sideways now AND SAYS SO — a fading edge on the right while there is more, which disappears when
+ * you reach the end. A hidden control is a control that does not exist.
+ */
+@media (max-width:720px){
+  #main{flex-direction:column}
+  #panel{flex:0 0 46%;border-left:0;border-top:1px solid var(--line)}
+  .brand small{display:none}
+  .brand strong{white-space:nowrap}
+
+  #modes-rail,#axes,#legend{overflow-x:auto;flex-wrap:nowrap;width:100%;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  #modes-rail::-webkit-scrollbar,#axes::-webkit-scrollbar,#legend::-webkit-scrollbar{display:none}
+  /* the fade that says "there is more this way" */
+  #modes,.scroller{position:relative}
+  #modes-rail,#axes,#legend{
+    mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent 100%);
+    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent 100%)}
+  #modes-rail.at-end,#axes.at-end,#legend.at-end{mask-image:none;-webkit-mask-image:none}
+  #axes .fam,#legend .lg-i{flex:0 0 auto}
+
+  /* the stats line explains what a pin IS; truncating it is the worst possible cut */
+  .stats{white-space:normal;font-size:10.5px;line-height:1.25;margin-left:0;flex:1 1 100%;
+    order:3;padding:2px 0 0}
+  #bar{flex-wrap:wrap;row-gap:2px}
+  .leaflet-control-attribution{font-size:8.5px;line-height:1.2;max-height:2.4em;overflow:hidden}
+  #suggest{max-height:52vh}
+}
+
+/* ── the record card: same bones as the sibling's popup (card → hd + rows) ── */
+.leaflet-popup-content{margin:0;max-height:340px}
+.leaflet-popup-content-wrapper{border-radius:10px;padding:0;overflow:hidden}
+.card{font-size:13px}
+.card .hd{padding:8px 10px 6px;background:var(--paper-2);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:2}
+.card .hd .nm{font-weight:600;font-size:14px;line-height:1.25}
+.card .hd .meta{color:var(--ink-soft);font-size:11px;margin-top:1px}
+.card ul.people{list-style:none;margin:0;padding:0}
+.card li.pop-person,.card li.pop-place{display:flex;gap:8px;padding:6px 10px;
+  border-bottom:1px solid #eeece2;align-items:flex-start}
+.card li.pop-place{cursor:pointer;align-items:center}
+.card li.pop-place:hover{background:var(--paper-2)}
+.card .th{width:48px;height:48px;flex:0 0 48px;object-fit:cover;border-radius:4px;
+  background:var(--paper-2);border:1px solid var(--line)}
+.card .th.ph{display:flex;align-items:center;justify-content:center;color:var(--stone);font-size:16px}
+.card .wk{min-width:0;flex:1}
+.card .wt{font-weight:600;line-height:1.25}
+.card .wt .yr{font-weight:400;color:var(--stone);font-size:11px;font-variant-numeric:tabular-nums}
+.card .by{color:var(--ink-soft);font-size:11.5px}
+.card .fx{color:var(--stone);font-size:11px;margin-top:1px}
+.card .lk{font-size:11px;margin-top:2px}
+.card .lk a{color:var(--sky);text-decoration:none}
+.card .lk a:hover{text-decoration:underline}
+.card .pop-more{padding:6px 10px;color:var(--stone);font-size:11px}
+.card li.pop-place .yr{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:12px}
+
+/* ── the professions popover ── */
+.who{position:relative}
+#who-pop{position:absolute;top:100%;left:0;z-index:1200;background:#fff;border:1px solid var(--line);
+  border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.18);min-width:230px;margin-top:4px;
+  max-height:60vh;overflow:auto}
+#who-pop[hidden]{display:none!important}
+#who-pop ul{list-style:none;margin:0;padding:2px 0}
+#who-pop .pop-actions{display:flex;gap:4px;padding:6px 8px;border-bottom:1px solid var(--line);
+  background:var(--paper-2)}
+#who-pop .pop-actions button{border:1px solid var(--line);background:#fff;border-radius:5px;
+  padding:1px 8px;font-size:11px;cursor:pointer}
+#who-pop li.prow{display:flex;align-items:center;gap:4px;padding:2px 8px}
+#who-pop li.prow:hover{background:var(--paper-2)}
+#who-pop li.prow label{display:flex;align-items:center;gap:6px;flex:1;cursor:pointer;font-size:12.5px}
+#who-pop .sw{width:10px;height:10px;border-radius:2px;flex:0 0 10px}
+#who-pop .n{margin-left:auto;color:var(--stone);font-size:10px;font-variant-numeric:tabular-nums}
+#who-pop .only,#who-pop .also{border:1px solid var(--line);background:#fff;border-radius:4px;
+  font-size:10px;padding:0 5px;cursor:pointer;color:var(--ink-soft)}
+#who-pop .also{border-color:var(--moss);color:var(--moss)}
+
+/* ── the renown dial ── */
+#renown button{border:1px solid var(--line);background:#fff;border-radius:5px;padding:1px 7px;
+  font-size:11.5px;cursor:pointer;color:var(--ink)}
+#renown button.on{background:var(--brass);color:#fff;border-color:var(--brass)}
+
+/* ── the person sheet: one person, everything they left ── */
+#sheet{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:92vw;background:var(--paper);
+  border-left:1px solid var(--line);box-shadow:-6px 0 26px rgba(0,0,0,.16);z-index:1500;
+  display:flex;flex-direction:column;overflow:auto}
+#sheet[hidden]{display:none!important}
+#sheet-close{position:absolute;top:8px;right:10px;border:1px solid var(--line);background:#fff;
+  border-radius:6px;width:26px;height:26px;cursor:pointer;font-size:13px;line-height:1;color:var(--ink-soft)}
+#sheet-body{padding:14px 14px 24px}
+.sh-head{display:flex;gap:12px;align-items:flex-start;padding-right:30px}
+.sh-por{width:88px;height:88px;flex:0 0 88px;object-fit:cover;border-radius:6px;
+  border:1px solid var(--line);background:var(--paper-2)}
+.sh-por.ph{display:flex;align-items:center;justify-content:center;color:var(--stone);font-size:26px}
+.sh-name{font-size:18px;font-weight:600;line-height:1.15}
+.sh-life{color:var(--stone);font-size:12px;font-variant-numeric:tabular-nums}
+.sh-occ{color:var(--ink-soft);font-size:12.5px;margin-top:2px}
+.sh-count{color:var(--moss);font-size:11.5px;margin-top:4px;font-weight:600}
+.sh-links{font-size:11.5px;margin-top:3px}
+.sh-links a{color:var(--sky);text-decoration:none}
+.sh-links a:hover{text-decoration:underline}
+.sh-actions{margin:12px 0 6px}
+#sh-fit{border:1px solid var(--moss);background:var(--moss);color:#fff;border-radius:6px;
+  padding:4px 10px;font-size:12px;cursor:pointer}
+.sh-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.sh-trace{display:flex;gap:9px;padding:8px 2px;border-bottom:1px solid #eeece2;cursor:pointer;
+  align-items:flex-start}
+.sh-trace:hover{background:#fff}
+.sh-trace.unpinnable{cursor:default;opacity:.72}
+.sh-trace .ic{font-size:15px;width:20px;flex:0 0 20px;text-align:center;line-height:1.3}
+.sh-trace .wt{font-weight:600;font-size:13px;line-height:1.25}
+.sh-trace .fx{color:var(--stone);font-size:11.5px;margin-top:1px}
+.sh-trace .fx.warn{color:var(--rust)}
+@media (max-width:720px){ #sheet{width:100%;max-width:100%} }
+
+/* ── the axes get a row of their own, so a family reads as a family ── */
+#axes{display:flex;align-items:center;gap:8px;flex-wrap:wrap;width:100%;padding-top:2px}
+#axes .fam{flex:0 0 auto}
+#modes{flex-wrap:wrap}
+#modes-rail{flex:1 1 100%}
+.chip.btn.active{background:var(--brass);color:#fff;border-color:var(--brass)}
+#reset{color:var(--ink-soft)}
+@media (max-width:900px){
+  #axes{overflow-x:auto;flex-wrap:nowrap}
+  #axes .fam{flex:0 0 auto}
+}
+
+/* ── the search box's answers: people and places, not rows ── */
+#suggest{position:absolute;top:100%;left:0;right:0;z-index:1400;background:#fff;
+  border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 26px rgba(0,0,0,.18);
+  list-style:none;margin:4px 0 0;padding:2px 0;max-height:62vh;overflow:auto}
+#suggest[hidden]{display:none!important}
+#suggest .sg-h{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--stone);
+  padding:4px 10px 2px;background:var(--paper-2)}
+#suggest li.sg-person,#suggest li.sg-place{display:flex;gap:8px;align-items:center;
+  padding:4px 10px;cursor:pointer;border-bottom:1px solid #f0eee4}
+#suggest li.sg-person:hover,#suggest li.sg-place:hover{background:var(--paper-2)}
+#suggest .sg-th{width:34px;height:34px;flex:0 0 34px;object-fit:cover;border-radius:4px;
+  border:1px solid var(--line);background:var(--paper-2)}
+#suggest .sg-th.ph{display:flex;align-items:center;justify-content:center;color:var(--stone)}
+#suggest .wt{font-weight:600;font-size:13px;line-height:1.2}
+#suggest .wt .yr{font-weight:400;color:var(--stone);font-size:11px;font-variant-numeric:tabular-nums}
+#suggest .by{color:var(--ink-soft);font-size:11px}
+
+.sh-links .sh-sib{color:var(--rust);font-weight:600}
+
+/* ── published opening hours: the string, the source, the date. Never "open". ── */
+.card .hrs{margin-top:6px;padding:5px 7px;background:#fff;border:1px solid var(--brass);
+  border-radius:6px}
+.card .hrs-h{font-size:12px;line-height:1.35}
+.card .hrs-src{font-size:10px;color:var(--stone);margin-top:2px}
+.card .hrs-src a{color:var(--sky)}
+
+/* ── only / also live beside the chip, not inside its label ── */
+.chipwrap{display:inline-flex;align-items:center;gap:2px}
+.fam .only,.fam .also{border:1px solid var(--line);background:#fff;border-radius:4px;
+  font-size:9.5px;padding:0 4px;cursor:pointer;color:var(--ink-soft);line-height:1.6}
+.fam .also{border-color:var(--moss);color:var(--moss)}
+.fam .only:hover{border-color:var(--brass);color:#7a5f22}
+
+/* ── the legend, which is also the colour-by switch ── */
+#legend{display:flex;align-items:center;gap:5px;flex-wrap:wrap;width:100%;margin-top:2px}
+#legend .lg-by{border:1px solid var(--line);background:#fff;border-radius:5px;padding:1px 7px;
+  font-size:11px;cursor:pointer;color:var(--ink)}
+#legend .lg-by.on{background:var(--moss);color:#fff;border-color:var(--moss)}
+#legend .lg-keys{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:4px}
+#legend .lg-i{display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--ink-soft)}
+#legend .lg-sw{width:9px;height:9px;border-radius:50%;display:inline-block}
+#legend .lg-mk{font-size:11px;color:var(--ink);width:9px;text-align:center}
+
+/* a pin holding one thing says what it is */
+.pin b.mk{font-size:12px;font-weight:400;text-shadow:0 1px 2px rgba(0,0,0,.55)}
+
+/* who the atlas is currently narrowed to — always visible, always dismissable */
+#personchip{display:inline-flex;align-items:center;gap:5px;background:var(--moss);color:#fff;
+  border-radius:6px;padding:2px 4px 2px 8px;font-size:11.5px}
+#personchip[hidden]{display:none!important}
+#personchip button{border:0;background:rgba(255,255,255,.2);color:#fff;border-radius:4px;
+  width:17px;height:17px;cursor:pointer;line-height:1;font-size:11px}
