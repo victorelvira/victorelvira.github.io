@@ -11,7 +11,7 @@
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
 const DATA_V = "0.26.13";
-const BUILD_AT = "2026-09-12 02:42";
+const BUILD_AT = "2026-09-12 11:33";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
