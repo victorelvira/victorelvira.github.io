@@ -303,3 +303,32 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 #personchip[hidden]{display:none!important}
 #personchip button{border:0;background:rgba(255,255,255,.2);color:#fff;border-radius:4px;
   width:17px;height:17px;cursor:pointer;line-height:1;font-size:11px}
+
+/* ── the chip IS the button ─────────────────────────────────────────────────────────────────── */
+.chipwrap{display:inline-flex;align-items:stretch;gap:0}
+button.chip{border:1px solid var(--line);background:#fff;border-radius:6px 0 0 6px;border-right:0;
+  padding:3px 8px;font-size:12.5px;cursor:pointer;color:var(--ink-soft);display:inline-flex;
+  align-items:center;gap:5px;line-height:1.35}
+button.chip.on{background:var(--paper-2);border-color:var(--stone);color:var(--ink);font-weight:600}
+button.chip.sole{background:var(--moss);border-color:var(--moss);color:#fff}
+button.chip.sole .n{color:rgba(255,255,255,.75)}
+button.chip:hover{border-color:var(--brass)}
+.chip.dead{border-radius:6px;opacity:.42;cursor:not-allowed;text-decoration:line-through var(--stone);
+  padding:3px 8px;font-size:12.5px;border:1px solid var(--line);display:inline-flex;align-items:center}
+.plus{border:1px solid var(--line);background:#fff;border-radius:0 6px 6px 0;cursor:pointer;
+  color:var(--stone);font-size:12px;width:19px;line-height:1;padding:0}
+.plus.on{background:var(--paper-2);border-color:var(--stone)}
+.plus:hover{color:var(--ink);border-color:var(--brass)}
+
+/* the primary row is bigger, because it is the one that decides the rest */
+.fam.primary button.chip{font-size:13.5px;padding:5px 10px}
+.fam.primary .fam-lbl{font-weight:600;color:var(--ink-soft)}
+.fam[hidden]{display:none!important}
+
+/* ── the drawer: what is real but rarely asked ── */
+#more{width:100%;margin-top:2px}
+#more summary{cursor:pointer;font-size:11px;color:var(--stone);list-style:none;
+  display:inline-block;padding:1px 6px;border:1px solid var(--line);border-radius:5px;background:#fff}
+#more summary::-webkit-details-marker{display:none}
+#more[open] summary{background:var(--paper-2)}
+.more-body{display:flex;flex-direction:column;gap:4px;padding-top:4px}

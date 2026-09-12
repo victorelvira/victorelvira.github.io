@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.12.2";
+const DATA_V = "0.13.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -445,8 +445,22 @@ document.addEventListener("click", (e) => {
  * Nothing here names a value: add "outside-only" to the data and its chip appears. A value with
  * no rows is drawn dead, with the reason (CHASSIS §4) instead of silently doing nothing.
  */
-const FAMILY_BOX = { access: "fam-access", marking: "fam-marking", what: "fam-what", verb: "fam-verb" };
-const FAMILY_LABEL = { access: "Access", marking: "Marking", what: "Trace", verb: "Did here" };
+/* ── which axes earn a place on screen ───────────────────────────────────────────────────────
+ * Measured, not felt. Knowing the TRACE KIND tells you 84 % of the verb, 73 % of the marking and
+ * 61 % of the access: four rows of chips saying nearly the same thing four times, which is why
+ * there seemed to be too many of them.
+ *
+ *   what → verb     84 %        marking's biggest value is `unknown`: 85 842 rows, 42 %
+ *   what → marking  73 %        — a confession, not a filter
+ *   what → access   61 %        access still earns its row; marking does not
+ *
+ * So: `what` is the primary control and `access` keeps its own row, because it is the question
+ * this atlas exists to answer and a third of it is genuinely independent. `verb` appears only when
+ * the current selection actually has verbs to choose between. `marking` moves to the drawer.
+ */
+const FAMILY_BOX = { what: "fam-what", access: "fam-access", verb: "fam-verb", marking: "fam-marking" };
+const FAMILY_LABEL = { what: "What", access: "Can I see it?", verb: "What happened here",
+                       marking: "Marking" };
 function renderFamilies() {
   for (const [fam, boxId] of Object.entries(FAMILY_BOX)) {
     const box = $(boxId); if (!box) continue;
@@ -454,31 +468,48 @@ function renderFamilies() {
       TRACES.reduce((n, r) => n + (r[fam] === i && passesExcept(r, "table", fam) ? 1 : 0), 0));
     const html = VOCAB[fam].map((v, i) => {
       const on = state[fam][i] !== false, dead = counts[i] === 0;
-      // ONLY, and only ONLY. The sibling pairs it with `also` because there the tick is per
-      // painter and `also` adds a whole period at once — two different scopes, so two verbs. Here
-      // a chip IS one value, so `also` would be the checkbox wearing a hat. Víctor spotted it.
-      const extra = dead ? ""
-        : `<button type="button" class="only" data-only="${fam}:${i}">only</button>`;
-      return `<span class="chipwrap"><label class="chip${on && !dead ? " on" : ""}${dead ? " dead" : ""}"` +
-        (dead ? ` title="${esc(WHY_DEAD[fam] || "")}"` : "") +
-        `><input type="checkbox" data-fam="${fam}" data-i="${i}"${on ? " checked" : ""}` +
-        `${dead ? " disabled" : ""}> ${esc((fam === "verb" ? LABEL.verbChip[v] : LABEL[fam]?.[v]) ?? v)}` +
-        `<span class="n">${counts[i].toLocaleString()}</span></label>${extra}</span>`;
+      // The chip IS the button, and clicking it means ONLY THIS — which is what you want nine
+      // times in ten, and what a checkbox could never say. Clicking the same chip again gives
+      // everything back. The little + is the tenth time: add this one to what is already up, or
+      // take it away. Two affordances, the common one under the whole target.
+      const soleSurvivor = on && VOCAB[fam].every((_, j) => j === i || state[fam][j] === false);
+      const label = esc((fam === "verb" ? LABEL.verbChip[v] : LABEL[fam]?.[v]) ?? v);
+      if (dead)
+        return `<span class="chipwrap"><span class="chip dead" title="${esc(WHY_DEAD[fam] || "")}">` +
+               `${label}</span></span>`;
+      return `<span class="chipwrap">` +
+        `<button type="button" class="chip${on ? " on" : ""}${soleSurvivor ? " sole" : ""}" ` +
+        `data-only="${fam}:${i}" title="${soleSurvivor ? "Show everything again" : "Show only this"}">` +
+        `${label}<span class="n">${counts[i].toLocaleString()}</span></button>` +
+        `<button type="button" class="plus${on ? " on" : ""}" data-add="${fam}:${i}" ` +
+        `title="${on ? "Take this one out" : "Add this one too"}">${on ? "−" : "+"}</button></span>`;
     }).join("");
+    // A row offering one option is not a choice, it is furniture. The verb row hides itself when
+    // the current selection has nothing to choose between — which is applicability made visible
+    // rather than a ternary buried in a predicate (CHASSIS §1).
+    const live = counts.filter((c) => c > 0).length;
+    const hideable = fam === "verb" || fam === "marking";
+    box.hidden = hideable && live < 2;
     box.innerHTML = `<span class="fam-lbl">${esc(FAMILY_LABEL[fam] || fam)}</span>` + html;
   }
 }
-document.addEventListener("change", (e) => {
-  const cb = e.target.closest("input[data-fam]"); if (!cb) return;
-  state[cb.dataset.fam][+cb.dataset.i] = cb.checked;
-  refresh();
-});
 document.addEventListener("click", (e) => {
+  const add = e.target.closest(".fam button[data-add]");
+  if (add) {
+    const [fam, i] = add.dataset.add.split(":");
+    const next = state[fam][+i] === false;
+    // never leave a family with nothing in it: that is an empty map with no way back
+    if (!next && VOCAB[fam].every((_, j) => j === +i || state[fam][j] === false)) return;
+    state[fam][+i] = next;
+    refresh(); return;
+  }
   const o = e.target.closest(".fam button[data-only]");
   if (o) {
     const [fam, i] = o.dataset.only.split(":");
-    VOCAB[fam].forEach((_, j) => { state[fam][j] = j === +i; });
-    refresh(); return;
+    const sole = state[fam][+i] !== false &&
+                 VOCAB[fam].every((_, j) => j === +i || state[fam][j] === false);
+    VOCAB[fam].forEach((_, j) => { state[fam][j] = sole ? true : j === +i; });
+    refresh();
   }
 });
 

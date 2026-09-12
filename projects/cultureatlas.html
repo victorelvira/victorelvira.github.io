@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#2f3a2e">
   <link rel="stylesheet" href="culture/vendor/leaflet.css">
   <link rel="stylesheet" href="culture/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="culture/style.css?v=0.12.2">
+  <link rel="stylesheet" href="culture/style.css?v=0.13.0">
 </head>
 <body>
   <nav id="navbar">
@@ -57,13 +57,21 @@
       <button type="button" id="reset" class="chip btn" title="Clear every filter">↺</button>
       <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
     </div>
-    <div id="legend" class="fam"></div>
+    <!-- The trace kind is the primary control: it determines 84% of the verb and 73% of the
+         marking, so it goes first and biggest. Access keeps its own row because it is the question
+         the atlas exists to answer. Marking lives in the drawer; it is mostly `unknown`. -->
     <div id="axes">
+      <span class="fam primary" id="fam-what" title="What kind of trace"></span>
       <span class="fam" id="fam-access" title="Can you get in?"></span>
-      <span class="fam" id="fam-marking" title="Is there anything there that says so?"></span>
-      <span class="fam" id="fam-what" title="What kind of trace"></span>
-      <span class="fam" id="fam-verb" title="What they did here"></span>
+      <span class="fam" id="fam-verb" title="What happened here — shown when there is a choice"></span>
     </div>
+    <details id="more">
+      <summary>Refine ▾</summary>
+      <div class="more-body">
+        <span class="fam" id="fam-marking" title="Is there anything there that says so?"></span>
+        <div id="legend" class="fam"></div>
+      </div>
+    </details>
     <span id="filter-wrap">
       <input id="filter" type="search" placeholder="Filter — person, place, city…" autocomplete="off"
              title="Filters every view: map, list and table">
@@ -116,6 +124,6 @@
   <div id="banner" hidden></div>
   <script src="culture/vendor/leaflet.js"></script>
   <script src="culture/vendor/leaflet.markercluster.js"></script>
-  <script src="culture/app.js?v=0.12.2"></script>
+  <script src="culture/app.js?v=0.13.0"></script>
 </body>
 </html>
