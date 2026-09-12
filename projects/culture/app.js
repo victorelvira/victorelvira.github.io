@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.14.1";
+const DATA_V = "0.14.2";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -27,7 +27,7 @@ const LANG = (["en", "es", "fr", "de", "it", "pt", "nl", "pl"]
 const LABEL = {
   access: { "open-air": "☀ Always", hours: "🕐 Hours", "outside-only": "🚪 Outside",
             gone: "✕ Gone", unknown: "? Unknown" },
-  marking: { museum: "🏛 Museum", plaque: "▭ Plaque", monument: "🗿 Monument",
+  marking: { museum: "🏛 Museum", plaque: "▭ Plaque", monument: "🗿 Monument", tomb: "⚱ Tomb",
              unmarked: "○ Unmarked", unknown: "? Unknown" },
   what: { grave: "⚰ Grave", plaque: "▭ Plaque", stolperstein: "⬛ Stolperstein",
           house: "🏠 House", statue: "🗿 Statue", museum: "🏛 Museum", church: "⛪ Church" },
@@ -171,6 +171,8 @@ const PALETTE = {
           buried: "#6b6250", commemorated: "#9a958a", built: "#8a7250", exhibited: "#7a5a8a" },
   access: { "open-air": "#5a6b57", hours: "#b08d3f", "outside-only": "#3d6a86",
             gone: "#a3552f", unknown: "#c3bdb0" },
+  marking: { museum: "#3d6a86", plaque: "#b08d3f", monument: "#7c4a4a", tomb: "#6b6250",
+             unmarked: "#a3552f", unknown: "#c3bdb0" },
 };
 const VERB_MARK = { born: "∗", lived: "⌂", worked: "⚒", died: "†", buried: "⚱",
                     commemorated: "❋", built: "△", exhibited: "🖼" };
