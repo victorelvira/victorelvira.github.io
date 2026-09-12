@@ -4,12 +4,18 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.13.0";
+const DATA_V = "0.14.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+// On a phone the count eats the word: "Stolperstein 16,575" becomes "Stolperstein 16,…". The
+// number is context, the word is the control, so the number gets abbreviated and the word stays.
+const narrow = () => window.matchMedia("(max-width: 720px)").matches;
+const num = (n) => !narrow() ? n.toLocaleString()
+  : n >= 1000 ? Math.round(n / 1000) + "k" : String(n);
+
 const deacc = (s) => String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const t = (s) => s;                                   // i18n hook — same shape as the sibling's
 // Which Wikipedia the "Wikipedia" link goes to. Not a translation of the interface (that comes
@@ -401,6 +407,7 @@ function refresh() {
   renderWho();
   renderLegend();
   renderPersonChip();
+  foldSummary();
   markRailEnds();
   if (state.near) renderNearMe(); else renderPanel();
   if (tableOn) renderTable();
@@ -480,7 +487,7 @@ function renderFamilies() {
       return `<span class="chipwrap">` +
         `<button type="button" class="chip${on ? " on" : ""}${soleSurvivor ? " sole" : ""}" ` +
         `data-only="${fam}:${i}" title="${soleSurvivor ? "Show everything again" : "Show only this"}">` +
-        `${label}<span class="n">${counts[i].toLocaleString()}</span></button>` +
+        `${label}<span class="n">${num(counts[i])}</span></button>` +
         `<button type="button" class="plus${on ? " on" : ""}" data-add="${fam}:${i}" ` +
         `title="${on ? "Take this one out" : "Add this one too"}">${on ? "−" : "+"}</button></span>`;
     }).join("");
@@ -535,7 +542,7 @@ function renderWho() {
     const isOn = state.dom[i] !== false;
     return `<li class="prow"><label><input type="checkbox" data-dom="${i}"${isOn ? " checked" : ""}>` +
       `<span class="sw" style="background:${isOn ? domColor(i) : "#cfc7bd"}"></span>` +
-      `${esc(LABEL.dom[v] || v)}<span class="n">${counts[i].toLocaleString()}</span></label>` +
+      `${esc(LABEL.dom[v] || v)}<span class="n">${num(counts[i])}</span></label>` +
       (isOn && !everythingOn ? "" : `<button type="button" class="only" data-only="${i}">only</button>`) +
       (!isOn ? `<button type="button" class="also" data-also="${i}">also</button>` : "") +
       `</li>`;
@@ -1020,6 +1027,31 @@ function banner(msg) {
 $("chrome-toggle").addEventListener("click", () => {
   document.body.classList.toggle("chrome-off"); map.invalidateSize();
 });
+
+/* ── folding the controls away ────────────────────────────────────────────────────────────────
+ * On a phone the filter rows eat half the screen and the map — the thing the atlas IS — gets what
+ * is left. One button folds them, and it says how many filters are still doing something, because
+ * a folded control that is silently filtering is worse than no control at all.
+ */
+function foldSummary() {
+  let n = 0;
+  for (const fam of ["what", "access", "marking", "verb", "dom"])
+    if (VOCAB[fam] && VOCAB[fam].some((_, i) => state[fam][i] === false)) n++;
+  if (state.topN) n++;
+  if (state.person) n++;
+  const folded = document.body.classList.contains("folded");
+  $("fold").innerHTML = folded
+    ? `Filters ▾${n ? ` <b>${n}</b>` : ""}`
+    : `Filters ▴${n ? ` <b>${n}</b>` : ""}`;
+  $("fold").setAttribute("aria-expanded", String(!folded));
+}
+$("fold").addEventListener("click", () => {
+  document.body.classList.toggle("folded");
+  foldSummary();
+  requestAnimationFrame(() => { map.invalidateSize({ pan: false }); renderPanel(); });
+});
+// a phone opens with the map, not with the controls
+if (window.matchMedia("(max-width: 720px)").matches) document.body.classList.add("folded");
 // The fade at the right edge of a scrolling rail is a promise that there is more; it has to stop
 // promising when there is not. Cheap to compute, and the alternative is a control nobody finds.
 function markRailEnds() {

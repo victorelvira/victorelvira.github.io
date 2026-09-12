@@ -332,3 +332,46 @@ button.chip:hover{border-color:var(--brass)}
 #more summary::-webkit-details-marker{display:none}
 #more[open] summary{background:var(--paper-2)}
 .more-body{display:flex;flex-direction:column;gap:4px;padding-top:4px}
+
+/* ── the fold control ── */
+#fold{display:none;border:1px solid var(--line);background:#fff;border-radius:6px;
+  padding:3px 9px;font-size:12px;cursor:pointer;color:var(--ink);white-space:nowrap}
+#fold b{background:var(--brass);color:#fff;border-radius:8px;padding:0 5px;font-size:10px;
+  margin-left:3px}
+body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{display:none}
+
+/* ── a phone: the map is the point, so it gets the screen ────────────────────────────────────
+ * The controls fold away behind one button (which keeps saying how many filters are still on,
+ * because a hidden control that is silently filtering is worse than no control). When they are
+ * open, the chips STRETCH to fill the row instead of leaving a field of grey beside them: the
+ * whole width is tappable, which on a phone is the only size that matters.
+ */
+@media (max-width:720px){
+  #fold{display:inline-block;margin-left:auto;order:2}
+  #bar{padding:4px 8px;gap:8px}
+  .brand{gap:6px}
+  .brand strong{font-size:14px}
+  .brand .mark{width:20px;height:20px}
+  .stats{order:4}
+  #who{order:3;flex:0 0 auto}
+
+  /* chips fill the row — no scrolling, no dead space, everything reachable with a thumb */
+  #axes{flex-direction:column;align-items:stretch;gap:3px;overflow:visible;
+    mask-image:none;-webkit-mask-image:none}
+  #axes .fam{display:flex;flex-wrap:wrap;gap:3px;width:100%;padding:3px 4px}
+  #axes .fam-lbl{flex:0 0 100%;margin:0 0 1px}
+  #axes .chipwrap{flex:1 1 30%;min-width:0}
+  #axes button.chip{flex:1 1 auto;min-width:0;justify-content:center;padding:5px 4px;
+    border-radius:6px 0 0 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #axes .fam.primary button.chip{font-size:12.5px;padding:6px 4px}
+  #axes .chip .n{font-size:9.5px}
+  .plus{width:22px}
+
+  #modes-rail{overflow-x:auto;flex-wrap:nowrap;width:100%;align-items:center}
+  #view-tabs{display:inline-flex;gap:3px;flex:0 0 auto}
+  #view-tabs .view-btn{padding:4px 7px;font-size:11.5px;white-space:nowrap}
+  #renown{flex:0 0 auto}
+  #panel{flex:0 0 38%}
+  #axes .chip .n{opacity:.6}
+  .leaflet-control-attribution{max-height:1.4em}
+}
