@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.14.2";
+const DATA_V = "0.15.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -27,9 +27,10 @@ const LANG = (["en", "es", "fr", "de", "it", "pt", "nl", "pl"]
 const LABEL = {
   access: { "open-air": "☀ Always", hours: "🕐 Hours", "outside-only": "🚪 Outside",
             gone: "✕ Gone", unknown: "? Unknown" },
-  marking: { museum: "🏛 Museum", plaque: "▭ Plaque", monument: "🗿 Monument", tomb: "⚱ Tomb",
+  marking: { museum: "🏛 Museum", plaque: "▭ Plaque", monument: "🗿 Monument", tomb: "🪦 Tomb",
              unmarked: "○ Unmarked", unknown: "? Unknown" },
-  what: { grave: "⚰ Grave", plaque: "▭ Plaque", stolperstein: "⬛ Stolperstein",
+  // 🪦 not ⚰: the atlas maps the place they are, not the box. (Víctor, 2026-09-12.)
+  what: { grave: "🪦 Grave", plaque: "▭ Plaque", stolperstein: "⬛ Stolperstein",
           house: "🏠 House", statue: "🗿 Statue", museum: "🏛 Museum", church: "⛪ Church" },
   dom: { letters: "Letters", music: "Music", image: "Image", stage: "Stage", science: "Science",
          power: "Power", faith: "Faith", sport: "Sport", trade: "Trade",
@@ -40,6 +41,45 @@ const LABEL = {
   verbChip: { born: "born", lived: "lived", worked: "worked", died: "died", buried: "buried",
               commemorated: "remembered", built: "built", exhibited: "exhibited" },
 };
+/* ── the interface explaining itself ─────────────────────────────────────────────────────────
+ * Víctor, who built this atlas, asked what a Stolperstein was. If the author does not know the
+ * word, nobody arriving does — and half these labels are terms of art somebody (me) invented:
+ * `outside-only`, `unmarked`, `exhibited`, `remembered`. A chip that needs explaining and does not
+ * explain itself is a chip that filters by mystery.
+ */
+const HELP = {
+  what: {
+    grave: "Where they are buried — a cemetery, a church, or the stone itself when somebody has mapped it.",
+    plaque: "A commemorative plaque on a wall. Read the inscription: it is on the record.",
+    stolperstein: "A “stumbling stone”: a brass cobble set into the pavement outside the last home a victim of Nazi persecution chose freely. Gunter Demnig has been laying them since 1992; there are now more than 100 000 across Europe. Every one begins HIER WOHNTE — here lived. Almost none of these people have a Wikipedia article, which is the point of them.",
+    house: "A building they were born in, or lived in — often still somebody's home.",
+    statue: "A statue, bust, obelisk or memorial standing outdoors because of them.",
+    museum: "A museum: one about them, or one holding their work.",
+    church: "A church or chapel that holds them.",
+  },
+  access: {
+    "open-air": "Out in the open. No door, no ticket, no hours — you can walk up to it right now.",
+    hours: "There is a door, and it opens and closes. A museum, a church, a gated cemetery.",
+    "outside-only": "Real and private. You can look at the building from the street; you do not go in.",
+    gone: "The building was pulled down or the plaque removed. Kept on the map: the place is still where it happened.",
+    unknown: "We do not know whether you can get in. Not a claim that you cannot.",
+  },
+  marking: {
+    museum: "A museum marks the spot.",
+    plaque: "A plaque marks it, and we have read what it says.",
+    monument: "A statue or memorial marks it.",
+    tomb: "The grave is marked and somebody has photographed the stone, so it can be found.",
+    unmarked: "Nothing on the ground says so. You only know because this atlas told you.",
+    unknown: "Nobody has looked, or nobody has recorded looking. Not the same as `unmarked`.",
+  },
+  verb: {
+    born: "They were born here.", lived: "They lived here.", worked: "They worked here.",
+    died: "They died here.", buried: "They are buried here.",
+    commemorated: "They are remembered here — without the source telling us what happened here.",
+    built: "They built or designed it.", exhibited: "Their work hangs here.",
+  },
+};
+
 const WHY_DEAD = {
   what: "No traces of this kind in the atlas yet — plaques, houses and statues are the next harvest.",
   access: "Nothing in the current corpus has this access.",
@@ -408,6 +448,7 @@ function refresh() {
   renderFamilies();
   renderWho();
   renderLegend();
+  renderGlossary();
   renderPersonChip();
   foldSummary();
   markRailEnds();
@@ -450,6 +491,28 @@ document.addEventListener("click", (e) => {
   refresh();
 });
 
+/* ── the glossary, written out ───────────────────────────────────────────────────────────────
+ * Tooltips answer the desktop reader and nobody else: a phone has no hover. So the same sentences
+ * are also here, in the drawer, as a list you can read. It costs one <details> and it is the only
+ * place in the interface where the atlas says what its own words mean.
+ */
+function renderGlossary() {
+  const box = $("glossary");
+  if (!box || box.dataset.done) return;
+  const fam = (f) => {
+    const vals = VOCAB[f] || [];
+    const rows = vals.map((v) => {
+      const help = (HELP[f] && HELP[f][v]) || "";
+      if (!help) return "";
+      const label = f === "verb" ? (LABEL.verbChip[v] || v) : (LABEL[f] && LABEL[f][v]) || v;
+      return `<li><b>${esc(label)}</b> ${esc(help)}</li>`;
+    }).join("");
+    return rows ? `<h4>${esc(FAMILY_LABEL[f] || f)}</h4><ul>${rows}</ul>` : "";
+  };
+  box.innerHTML = ["what", "access", "marking", "verb"].map(fam).join("");
+  box.dataset.done = "1";
+}
+
 /* ── chips: generated from the bundle's vocabulary, with live facet counts ──
  * Nothing here names a value: add "outside-only" to the data and its chip appears. A value with
  * no rows is drawn dead, with the reason (CHASSIS §4) instead of silently doing nothing.
@@ -483,12 +546,15 @@ function renderFamilies() {
       // take it away. Two affordances, the common one under the whole target.
       const soleSurvivor = on && VOCAB[fam].every((_, j) => j === i || state[fam][j] === false);
       const label = esc((fam === "verb" ? LABEL.verbChip[v] : LABEL[fam]?.[v]) ?? v);
+      const help = (HELP[fam] && HELP[fam][v]) || "";
       if (dead)
-        return `<span class="chipwrap"><span class="chip dead" title="${esc(WHY_DEAD[fam] || "")}">` +
+        return `<span class="chipwrap"><span class="chip dead" title="${esc(help || WHY_DEAD[fam] || "")}">` +
                `${label}</span></span>`;
+      const tip = help + (help ? "\n\n" : "") +
+                  (soleSurvivor ? "Click to show everything again" : "Click to show only this");
       return `<span class="chipwrap">` +
         `<button type="button" class="chip${on ? " on" : ""}${soleSurvivor ? " sole" : ""}" ` +
-        `data-only="${fam}:${i}" title="${soleSurvivor ? "Show everything again" : "Show only this"}">` +
+        `data-only="${fam}:${i}" title="${esc(tip)}">` +
         `${label}<span class="n">${num(counts[i])}</span></button>` +
         `<button type="button" class="plus${on ? " on" : ""}" data-add="${fam}:${i}" ` +
         `title="${on ? "Take this one out" : "Add this one too"}">${on ? "−" : "+"}</button></span>`;
@@ -620,7 +686,7 @@ function indexPeople() {
   }
 }
 
-const WHAT_ICON = { grave: "⚰", plaque: "▭", stolperstein: "⬛", house: "🏠", statue: "🗿",
+const WHAT_ICON = { grave: "🪦", plaque: "▭", stolperstein: "⬛", house: "🏠", statue: "🗿",
                     museum: "🏛", church: "⛪" };
 
 function openPerson(qid) {

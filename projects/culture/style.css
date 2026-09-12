@@ -375,3 +375,15 @@ body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{dis
   #axes .chip .n{opacity:.6}
   .leaflet-control-attribution{max-height:1.4em}
 }
+
+/* ── the glossary ── */
+#gloss-wrap{margin-top:2px}
+#gloss-wrap summary{cursor:pointer;font-size:11px;color:var(--sky);list-style:none;
+  display:inline-block;padding:1px 0}
+#gloss-wrap summary::-webkit-details-marker{display:none}
+#glossary{max-width:720px;padding:4px 0 6px}
+#glossary h4{margin:8px 0 3px;font-size:10px;text-transform:uppercase;letter-spacing:.6px;
+  color:var(--stone);font-weight:600}
+#glossary ul{list-style:none;margin:0;padding:0}
+#glossary li{font-size:11.5px;line-height:1.4;color:var(--ink-soft);padding:1px 0}
+#glossary li b{color:var(--ink);font-weight:600}
