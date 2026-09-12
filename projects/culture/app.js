@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.15.1";
+const DATA_V = "0.19.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -25,21 +25,36 @@ const LANG = (["en", "es", "fr", "de", "it", "pt", "nl", "pl"]
 
 /* ── vocabulary labels (the values themselves come from the bundle, never typed here) ── */
 const LABEL = {
-  access: { "open-air": "☀ Always", hours: "🕐 Hours", "outside-only": "🚪 Outside",
+  access: { "open-air": "☀️ Always", hours: "🕐 Hours", "outside-only": "👁️ Outside",
             gone: "✕ Gone", unknown: "? Unknown" },
-  marking: { museum: "🏛 Museum", plaque: "▭ Plaque", monument: "🗿 Monument", tomb: "🪦 Tomb",
+  marking: { museum: "🏛 Museum", plaque: "🪧 Plaque", monument: "🗿 Monument", tomb: "🪦 Tomb",
              unmarked: "○ Unmarked", unknown: "? Unknown" },
   // 🪦 not ⚰: the atlas maps the place they are, not the box. (Víctor, 2026-09-12.)
-  what: { grave: "🪦 Grave", plaque: "▭ Plaque", stolperstein: "⬛ Stolperstein",
-          house: "🏠 House", statue: "🗿 Statue", museum: "🏛 Museum", church: "⛪ Church" },
+  // "Stolperstein" stays. It is the name the thing has in English and in Spanish too, not just in
+  // German — Víctor checked — and renaming it to something blander would be inventing a worse
+  // word for a thing that already has one. What was actually missing was not a translation: it
+  // was the atlas explaining itself where somebody is looking. See the note under each row.
+  what: { grave: "🪦 Grave", plaque: "🪧 Plaque", house: "🏠 House", statue: "🗿 Statue",
+          museum: "🏛 Museum", church: "⛪ Church" },
+  // A Stolperstein is a plaque; what differs is where it is mounted. Grouped, and still tellable
+  // apart — the distinction appears only when there are plaques to tell apart.
+  mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "— not a plaque" },
   dom: { letters: "Letters", music: "Music", image: "Image", stage: "Stage", science: "Science",
          power: "Power", faith: "Faith", sport: "Sport", trade: "Trade",
          other: "Other trade", nobody: "No person named" },
   verb: { born: "was born", lived: "lived", worked: "worked", died: "died", buried: "is buried",
           commemorated: "is remembered", built: "built it", exhibited: "is exhibited" },
-  // the chips want a word, not a sentence
-  verbChip: { born: "born", lived: "lived", worked: "worked", died: "died", buried: "buried",
-              commemorated: "remembered", built: "built", exhibited: "exhibited" },
+  // The chip carries the SAME mark the map draws on a pin holding one thing (VERB_MARK below):
+  // the filter row teaches you to read the map instead of being a second vocabulary.
+  //
+  // These were monochrome glyphs until 2026-09-12, on my claim that an emoji "turns to mush" at
+  // 12 px inside a coloured circle. Víctor asked why the verb row did not match the others, I
+  // rendered every candidate inside a real 22 px pin, and the claim was simply wrong — 🌱, 🕯️ and
+  // 🔑 are perfectly legible there. An assertion I had never tested was costing the interface its
+  // consistency.
+  verbChip: { born: "🌱 born", lived: "🔑 lived", worked: "🛠️ worked", died: "🕯️ died",
+              buried: "⚱️ buried", commemorated: "💐 remembered", built: "📐 built",
+              exhibited: "🖼️ exhibited" },
 };
 /* ── the interface explaining itself ─────────────────────────────────────────────────────────
  * Víctor, who built this atlas, asked what a Stolperstein was. If the author does not know the
@@ -48,10 +63,14 @@ const LABEL = {
  * explain itself is a chip that filters by mystery.
  */
 const HELP = {
+  mount: {
+    wall: "A plaque on a building, the ordinary kind: you read it standing on the pavement.",
+    ground: "A Stolperstein — a brass cobble set INTO the pavement, outside the last home a victim of Nazi persecution chose freely. Gunter Demnig has laid more than 100 000 of them since 1992, which makes this the largest memorial in the world and the only one you walk on. Every one begins HIER WOHNTE — here lived. 14 874 of the 16 479 here commemorate somebody with no Wikipedia article at all, which is exactly the point.",
+    "n/a": "Not a plaque.",
+  },
   what: {
     grave: "Where they are buried — a cemetery, a church, or the stone itself when somebody has mapped it.",
-    plaque: "A commemorative plaque on a wall. Read the inscription: it is on the record.",
-    stolperstein: "A “stumbling stone”: a brass cobble set into the pavement outside the last home a victim of Nazi persecution chose freely. Gunter Demnig has been laying them since 1992; there are now more than 100 000 across Europe. Every one begins HIER WOHNTE — here lived. Almost none of these people have a Wikipedia article, which is the point of them.",
+    plaque: "A commemorative plaque — on a wall, or set into the pavement. Read the inscription: it is on the record.",
     house: "A building they were born in, or lived in — often still somebody's home.",
     statue: "A statue, bust, obelisk or memorial standing outdoors because of them.",
     museum: "A museum: one about them, or one holding their work.",
@@ -117,7 +136,7 @@ const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
 
 /* ── state: one object, every dimension ── */
 const state = {
-  what: {}, access: {}, marking: {}, dom: {}, verb: {},
+  what: {}, mount: {}, access: {}, marking: {}, dom: {}, verb: {},
   q: "", yearMin: -Infinity, yearMax: Infinity, near: null, site: null, topN: 0,
   colorBy: "dom", person: null, personName: "",
 };
@@ -144,6 +163,7 @@ function recomputeRankCut() {
 const ALL = ["map", "panel", "table"];
 const DIMENSIONS = [
   { id: "what",    family: true, appliesTo: ALL, test: (r) => state.what[r.what] !== false },
+  { id: "mount",   family: true, appliesTo: ALL, test: (r) => state.mount[r.mount] !== false },
   { id: "access",  family: true, appliesTo: ALL, test: (r) => state.access[r.access] !== false },
   { id: "marking", family: true, appliesTo: ALL, test: (r) => state.marking[r.marking] !== false },
   { id: "dom",     family: true, appliesTo: ALL, test: (r) => state.dom[r.dom] !== false },
@@ -214,8 +234,12 @@ const PALETTE = {
   marking: { museum: "#3d6a86", plaque: "#b08d3f", monument: "#7c4a4a", tomb: "#6b6250",
              unmarked: "#a3552f", unknown: "#c3bdb0" },
 };
-const VERB_MARK = { born: "∗", lived: "⌂", worked: "⚒", died: "†", buried: "⚱",
-                    commemorated: "❋", built: "△", exhibited: "🖼" };
+// Identical to LABEL.verbChip above, on purpose. `buried` is ⚱️ and not 🪦 only because 🪦 is
+// already the mark for the PLACE (`what: grave`); the two would sit side by side saying the same
+// thing twice. 💐 for `remembered` is Víctor's call over my objection that a bouquet is an act of
+// mourning rather than a record of one — he is right that it is the gesture the thing represents.
+const VERB_MARK = { born: "🌱", lived: "🔑", worked: "🛠️", died: "🕯️", buried: "⚱️",
+                    commemorated: "💐", built: "📐", exhibited: "🖼️" };
 
 const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const domColor = (d) => cssVar("--dom-" + (VOCAB.dom?.[d] ?? "other")) || "#9a958a";
@@ -530,15 +554,21 @@ function renderGlossary() {
  * this atlas exists to answer and a third of it is genuinely independent. `verb` appears only when
  * the current selection actually has verbs to choose between. `marking` moves to the drawer.
  */
-const FAMILY_BOX = { what: "fam-what", access: "fam-access", verb: "fam-verb", marking: "fam-marking" };
-const FAMILY_LABEL = { what: "What", access: "Can I see it?", verb: "What happened here",
-                       marking: "Marking" };
+// Values that exist so a family can partition the corpus, and that nobody would ever click.
+// `mount: n/a` means "not a plaque" — 124 928 rows of structural filler, offered as a choice.
+const HIDDEN_VALUES = { mount: ["n/a"] };
+
+const FAMILY_BOX = { what: "fam-what", mount: "fam-mount", access: "fam-access",
+                     verb: "fam-verb", marking: "fam-marking" };
+const FAMILY_LABEL = { what: "What", mount: "Where the plaque is", access: "Can I see it?",
+                       verb: "What happened here", marking: "Marking" };
 function renderFamilies() {
   for (const [fam, boxId] of Object.entries(FAMILY_BOX)) {
     const box = $(boxId); if (!box) continue;
     const counts = VOCAB[fam].map((_, i) =>
       TRACES.reduce((n, r) => n + (r[fam] === i && passesExcept(r, "table", fam) ? 1 : 0), 0));
     const html = VOCAB[fam].map((v, i) => {
+      if ((HIDDEN_VALUES[fam] || []).includes(v)) return "";
       const on = state[fam][i] !== false, dead = counts[i] === 0;
       // The chip IS the button, and clicking it means ONLY THIS — which is what you want nine
       // times in ten, and what a checkbox could never say. Clicking the same chip again gives
@@ -562,10 +592,17 @@ function renderFamilies() {
     // A row offering one option is not a choice, it is furniture. The verb row hides itself when
     // the current selection has nothing to choose between — which is applicability made visible
     // rather than a ternary buried in a predicate (CHASSIS §1).
+    // Clicking `only` on a chip is the moment somebody most wants to know what it means, and it is
+    // the moment the tooltip cannot help them (a phone has no hover). So the explanation appears
+    // under the row, for whatever they have just isolated.
+    const soleIdx = VOCAB[fam].findIndex((_, j) =>
+      state[fam][j] !== false && VOCAB[fam].every((_, k) => k === j || state[fam][k] === false));
+    const note = soleIdx >= 0 && HELP[fam] && HELP[fam][VOCAB[fam][soleIdx]]
+      ? `<span class="fam-note">${esc(HELP[fam][VOCAB[fam][soleIdx]])}</span>` : "";
     const live = counts.filter((c) => c > 0).length;
-    const hideable = fam === "verb" || fam === "marking";
+    const hideable = fam === "verb" || fam === "marking" || fam === "mount";
     box.hidden = hideable && live < 2;
-    box.innerHTML = `<span class="fam-lbl">${esc(FAMILY_LABEL[fam] || fam)}</span>` + html;
+    box.innerHTML = `<span class="fam-lbl">${esc(FAMILY_LABEL[fam] || fam)}</span>` + html + note;
   }
 }
 document.addEventListener("click", (e) => {
@@ -651,7 +688,7 @@ $("preset-now").addEventListener("click", () => {
   refresh();
 });
 $("reset").addEventListener("click", () => {
-  for (const fam of ["what", "access", "marking", "dom", "verb"])
+  for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
     VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
   state.topN = 0; state.q = ""; state.near = null; state.site = null;
   state.person = null; state.personName = "";
@@ -686,7 +723,7 @@ function indexPeople() {
   }
 }
 
-const WHAT_ICON = { grave: "🪦", plaque: "▭", stolperstein: "⬛", house: "🏠", statue: "🗿",
+const WHAT_ICON = { grave: "🪦", plaque: "▭", house: "🏠", statue: "🗿",
                     museum: "🏛", church: "⛪" };
 
 function openPerson(qid) {
@@ -1164,7 +1201,8 @@ function absorb(d) {
     const site = local[a[ix.site]];
     const r = { qid: a[ix.qid], name: a[ix.name], born: a[ix.born], died: a[ix.died],
                 site, what: a[ix.what], access: a[ix.access], marking: a[ix.marking],
-                verb: a[ix.verb], rank: a[ix.rank], flags: a[ix.flags], dom: a[ix.dom] };
+                verb: a[ix.verb], rank: a[ix.rank], flags: a[ix.flags], dom: a[ix.dom],
+                mount: a[ix.mount] };
     r._s = deacc(r.name + " " + SITES[site][S_NAME]);
     TRACES.push(r);
   }
@@ -1180,7 +1218,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     VOCAB = d.vocab; BUILD_AT = d.built;
     absorb(d);
     $("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
-    for (const fam of ["what", "access", "marking", "dom", "verb"])
+    for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
       VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
     const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
     buildTimeline(years[Math.floor(years.length * 0.01)] || -500, years.at(-1) || 2026);

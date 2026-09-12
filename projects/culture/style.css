@@ -35,7 +35,7 @@ body{font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica
 
 /* a filter family: a label and its chips, boxed so the axes read as axes */
 .fam{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:7px;
-  padding:2px 5px;background:#fff}
+  padding:2px 5px;background:#fff;flex-wrap:wrap}
 .fam-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--stone);margin-right:2px}
 .chip{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:5px;
   padding:2px 6px;font-size:12px;cursor:pointer;background:#fff;user-select:none}
@@ -295,7 +295,9 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 #legend .lg-mk{font-size:11px;color:var(--ink);width:9px;text-align:center}
 
 /* a pin holding one thing says what it is */
-.pin b.mk{font-size:12px;font-weight:400;text-shadow:0 1px 2px rgba(0,0,0,.55)}
+/* an emoji mark needs a little more room than a glyph did, and no white fill */
+.pin b.mk{font-size:11px;font-weight:400;line-height:1;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.55))}
 
 /* who the atlas is currently narrowed to — always visible, always dismissable */
 #personchip{display:inline-flex;align-items:center;gap:5px;background:var(--moss);color:#fff;
@@ -387,3 +389,9 @@ body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{dis
 #glossary ul{list-style:none;margin:0;padding:0}
 #glossary li{font-size:11.5px;line-height:1.4;color:var(--ink-soft);padding:1px 0}
 #glossary li b{color:var(--ink);font-weight:600}
+
+/* the atlas explaining whatever you just isolated, right under the row that did it */
+/* the explanation gets the whole width of its row, and a rule to sit under */
+.fam-note{flex:1 1 100%;width:100%;font-size:11px;line-height:1.45;color:var(--ink-soft);
+  padding:4px 2px 2px;margin-top:2px;border-top:1px dotted var(--line)}
+@media (max-width:720px){ .fam-note{font-size:10.5px} }
