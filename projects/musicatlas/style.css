@@ -447,3 +447,12 @@ body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
   opacity:.65;margin-bottom:2px}
 .alsoc .alt{display:inline-block;margin:0 10px 2px 0}
 .alsoc .who{margin-left:5px;font-size:10px;opacity:.55;font-variant:small-caps}
+
+/* The map. Height is fixed rather than fluid: Leaflet needs a real box before it can
+   work out its tiles, and a lens that grows with its content would resize under the
+   reader every time they filter. */
+#map{height:440px;border:1px solid var(--rule,#d8d2c8);border-radius:4px;
+  background:var(--soft,#faf8f4)}
+#map .leaflet-container{font:inherit}
+.leaflet-tooltip .tdim{opacity:.6;font-size:11px}
+@media (max-width:760px){ #map{height:320px} }

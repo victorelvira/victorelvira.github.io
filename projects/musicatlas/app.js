@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.26.23";
-const BUILD_AT = "2026-09-12 23:39";
+const DATA_V = "0.26.25";
+const BUILD_AT = "2026-09-13 00:06";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -227,6 +227,10 @@ const FACETS=[
      grouping is Baselt's. Only composers whose list article actually partitions them
      have it, which is why the chip count is smaller than the corpus. */
   {id:"section",label:"As catalogued",get:w=>w.ls?[w.ls]:[]},
+  /* Not shown as a chip rail: 100 places against 15 083 works would be a wall of ones.
+     It exists so the map can set it and the chip above the table can drop it. */
+  {id:"place",label:"First heard at",get:w=>w.pp?[w.pp]:[],hidden:true,
+   name:q=>(PLACES[q]||{}).label||q},
   {id:"length",label:"Length",get:w=>{const s=seconds(w); if(s==null) return [];
     const b=DURATION_BANDS.find(([,lo,hi])=>s>=lo&&s<hi); return b?[b[0]]:[]},
     order:()=>DURATION_BANDS.map(b=>b[0])},
@@ -621,7 +625,69 @@ function renderComposers(){
 function renderInstrument(){
   const host=document.getElementById("instrument");
   if(state.lens==="table"){ host.innerHTML=""; return; }
-  ({fifths:renderFifths, graph:renderGraph, time:renderTimeline}[state.lens])(host);
+  ({fifths:renderFifths, graph:renderGraph, time:renderTimeline,
+    map:renderMap}[state.lens])(host);
+}
+
+/* ---------- lens: the map ----------
+   The axis that earns the word atlas, and the last one to arrive because until today
+   there was nothing honest to draw. The 260 places the atlas held were the venue column
+   of two Wikipedia list articles, so a map of them would have been a map of Mozart and
+   Handel, and they were prose: `King's Theatre, London` and `King’s Theatre, London`
+   were two places, one curly apostrophe apart.
+
+   Wikidata's P4647 is an ITEM, so two spellings are one QID and 95 % carry a coordinate.
+   That gives 215 works in 100 places across a dozen composers, and the places read like
+   what they are: Theater an der Wien, Teatro San Angelo in Venice (Vivaldi's own house),
+   Leipzig, the Eszterházy Palace, the Oper am Gänsemarkt where Handel started.
+
+   An instrument, like every other lens here: click a place and the table below filters
+   to the works first heard there. */
+let PLACES={};
+let MAP=null, MAPLAYER=null;
+/* after the layout settles, not during: the grid animates and a size read mid-transition
+   is the size it is passing through */
+function remapSoon(){ if(MAP) setTimeout(()=>{ try{ MAP.invalidateSize(); }catch(e){} }, 260); }
+function renderMap(host){
+  const pins=new Map();
+  for(const w of visible()){
+    if(!w.pp || !PLACES[w.pp]) continue;
+    if(!pins.has(w.pp)) pins.set(w.pp, []);
+    pins.get(w.pp).push(w);
+  }
+  const shown=[...pins.values()].reduce((a,v)=>a+v.length,0);
+  const noxy=visible().filter(w=>!w.pp && w.premiere_place).length;
+  host.innerHTML=`<div id="map"></div>
+    <p class="hint">${shown} work${shown===1?"":"s"} in ${pins.size} place${pins.size===1?"":"s"},
+      first-performance locations from Wikidata (<code>P4647</code>), which gives an item
+      rather than a name, so two spellings of one theatre are one pin and nothing is
+      geocoded from prose. Click a place to filter the catalogue to it.
+      ${noxy?`${noxy} more works name a place we cannot yet put on a map.`:""}</p>`;
+  const el=document.getElementById("map");
+  if(!window.L){ el.innerHTML='<p class="hint">the map library did not load</p>'; return; }
+  if(MAP){ MAP.remove(); MAP=null; }
+  MAP=L.map(el,{zoomControl:true,scrollWheelZoom:false}).setView([48,10],4);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {maxZoom:18, attribution:"© OpenStreetMap"}).addTo(MAP);
+  MAPLAYER=L.layerGroup().addTo(MAP);
+  const bounds=[];
+  for(const [q,ws] of pins){
+    const p=PLACES[q]; if(p.lat==null) continue;
+    bounds.push([p.lat,p.lon]);
+    /* area with the count, not radius: a circle twice as wide looks four times as big,
+       and Vienna would swamp a village that saw one premiere. */
+    const r=3+Math.sqrt(ws.length)*3.2;
+    const m=L.circleMarker([p.lat,p.lon],{radius:r,weight:1.5,color:"#6a4a2a",
+      fillColor:compColour(ws[0].composer_slug),fillOpacity:.62}).addTo(MAPLAYER);
+    const where=[p.city,p.country].filter(Boolean).join(", ");
+    const names=[...new Set(ws.map(w=>w.composer.split(" ").slice(-1)[0]))];
+    m.bindTooltip(`<b>${esc(p.label)}</b>${where?`<br><span class="tdim">${esc(where)}</span>`:""}
+      <br>${ws.length} work${ws.length===1?"":"s"} · ${esc(names.slice(0,4).join(", "))}${names.length>4?"…":""}`,
+      {direction:"top"});
+    m.on("click",()=>{ state.f.place=new Set([q]); state.lens="table"; state.sub="works";
+                       draw(); });
+  }
+  if(bounds.length) MAP.fitBounds(bounds,{padding:[28,28],maxZoom:6});
 }
 
 /* ---------- lens: the timeline ----------
@@ -911,6 +977,11 @@ function drawRec(row){
      ${mediaBlock(w)}
      <div class="links">${links}</div>`;
   document.body.classList.add("rec-open");
+  /* Leaflet caches the size of its box and cannot see CSS resize it. Opening the record
+     panel narrows #main by 440px, and without this the map keeps drawing at the old
+     width: tiles stop short of the edge and every pin sits where it used to be rather
+     than where it is. */
+  remapSoon();
   renderStage();
 }
 
@@ -1055,7 +1126,8 @@ function railFor(f, pool, limit){
 }
 function renderFacets(){
   const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2))));
-  let html=FACETS.map(f=>railFor(f,pool)).filter(Boolean).join(`<span class="chip-sep"></span>`);
+  let html=FACETS.filter(f=>!f.hidden).map(f=>railFor(f,pool))
+                 .filter(Boolean).join(`<span class="chip-sep"></span>`);
   const g=state.f.form_group;
   if(g && g.size){
     const sub=railFor(SUBFACET, pool.filter(w=>g.has(w.form_group)));
@@ -1078,8 +1150,10 @@ function activeFilters(){
   if(state.comp.has("∅")) out.push({k:"comp",v:"∅",label:"no composer"});
   if(state.q) out.push({k:"q",v:"",label:`“${document.getElementById("q").value}”`});
   (state.f.key?[...state.f.key]:[]).forEach(k=>out.push({k:"key",v:k,label:k,sw:keyColour(k)}));
+  /* A facet may know how to print its own values: the place filter holds a QID, and
+     "first heard at: Q1145326" is not a chip anybody can read. */
   [...FACETS, SUBFACET].forEach(f=>(state.f[f.id]?[...state.f[f.id]]:[]).forEach(v=>
-    out.push({k:f.id,v,label:`${f.label.toLowerCase()}: ${v}`})));
+    out.push({k:f.id,v,label:`${f.label.toLowerCase()}: ${f.name?f.name(v):v}`})));
   if(state.year!=null) out.push({k:"year",v:"",label:`year ${state.year}`});
   if(state.doubt) out.push({k:"doubt",v:"",label:"only where sources disagree"});
   if(state.parts) out.push({k:"parts",v:"",label:"individual pieces shown"});
@@ -1188,7 +1262,7 @@ document.addEventListener("click",e=>{
     state.doubt=false; state.year=null;
     document.getElementById("q").value=""; document.getElementById("t-doubt").setAttribute("aria-pressed",false);
     return draw(); }
-  if(t.closest("#rec .close")){ document.body.classList.remove("rec-open");
+  if(t.closest("#rec .close")){ document.body.classList.remove("rec-open"); remapSoon();
     if(PLAYING){ AUDIO.pause(); PLAYING.classList.remove("on"); PLAYING=null; }
     state.sel=null; return renderStage(); }
   /* THE GRAPH LED NOWHERE. Hovering a name lit its links and clicking it did nothing,
@@ -1256,7 +1330,8 @@ document.addEventListener("mouseover",e=>{
   addEventListener("mouseup", ()=>{ if(!on) return; on=false;
     d.classList.remove("dragging"); document.body.classList.remove("resizing");
     const w=parseInt(getComputedStyle(document.documentElement).getPropertyValue("--rec-w"),10);
-    if(w) try{ localStorage.setItem("musicatlas.recw", String(w)); }catch(_){} });
+    if(w) try{ localStorage.setItem("musicatlas.recw", String(w)); }catch(_){}
+    remapSoon(); });        // the divider resizes the map's box too
 })();
 
 document.querySelector(".brand").addEventListener("click",e=>{
@@ -1265,8 +1340,10 @@ document.querySelector(".brand").addEventListener("click",e=>{
 Promise.all([
   fetch(`core.json?v=${DATA_V}`).then(r=>r.json()),
   fetch(`arrangements.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>[]),
-  fetch(`composers.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({}))
-]).then(([w,e,c])=>{
+  fetch(`composers.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({})),
+  fetch(`places.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({}))
+]).then(([w,e,c,p])=>{
+  PLACES=p||{};
   COMPOSERS=Object.entries(c).map(([slug,v])=>({slug,...v})).sort((a,b)=>(a.born||0)-(b.born||0));
   const byslug=Object.fromEntries(COMPOSERS.map(x=>[x.slug,x]));
   WORKS=w.map(r=>hydrate(r,byslug)); EDGES=e;

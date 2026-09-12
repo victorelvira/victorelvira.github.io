@@ -1,10 +1,10 @@
-/* Culture Atlas — app.js
+/* Culture Atlas · app.js
  *
  * The spine is the sibling's (CHASSIS.md §1): one `state`, one predicate, every view calls it.
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.20.0";
+const DATA_V = "0.21.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -17,9 +17,9 @@ const num = (n) => !narrow() ? n.toLocaleString()
   : n >= 1000 ? Math.round(n / 1000) + "k" : String(n);
 
 const deacc = (s) => String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-const t = (s) => s;                                   // i18n hook — same shape as the sibling's
+const t = (s) => s;                                   // i18n hook: same shape as the sibling's
 // Which Wikipedia the "Wikipedia" link goes to. Not a translation of the interface (that comes
-// later, through t()) — just the courtesy of not sending a Spanish reader to en.wikipedia.
+// later, through t()): just the courtesy of not sending a Spanish reader to en.wikipedia.
 const LANG = (["en", "es", "fr", "de", "it", "pt", "nl", "pl"]
   .find((l) => (navigator.language || "en").toLowerCase().startsWith(l))) || "en";
 
@@ -31,13 +31,13 @@ const LABEL = {
              unmarked: "○ Unmarked", unknown: "? Unknown" },
   // 🪦 not ⚰: the atlas maps the place they are, not the box. (Víctor, 2026-09-12.)
   // "Stolperstein" stays. It is the name the thing has in English and in Spanish too, not just in
-  // German — Víctor checked — and renaming it to something blander would be inventing a worse
+  // German (Víctor checked) and renaming it to something blander would be inventing a worse
   // word for a thing that already has one. What was actually missing was not a translation: it
   // was the atlas explaining itself where somebody is looking. See the note under each row.
   what: { grave: "🪦 Grave", plaque: "🪧 Plaque", house: "🏠 House", statue: "🗿 Statue",
           museum: "🏛 Museum", church: "⛪ Church" },
   // A Stolperstein is a plaque; what differs is where it is mounted. Grouped, and still tellable
-  // apart — the distinction appears only when there are plaques to tell apart.
+  // apart: the distinction appears only when there are plaques to tell apart.
   mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "Not a plaque" },
   dom: { letters: "Letters", music: "Music", image: "Image", stage: "Stage", science: "Science",
          power: "Power", faith: "Faith", sport: "Sport", trade: "Trade",
@@ -49,7 +49,7 @@ const LABEL = {
   //
   // These were monochrome glyphs until 2026-09-12, on my claim that an emoji "turns to mush" at
   // 12 px inside a coloured circle. Víctor asked why the verb row did not match the others, I
-  // rendered every candidate inside a real 22 px pin, and the claim was simply wrong — 🌱, 🕯️ and
+  // rendered every candidate inside a real 22 px pin, and the claim was simply wrong: 🌱, 🕯️ and
   // 🔑 are perfectly legible there. An assertion I had never tested was costing the interface its
   // consistency.
   verbChip: { born: "🌱 born", lived: "🔑 lived", worked: "🛠️ worked", died: "🕯️ died",
@@ -58,7 +58,7 @@ const LABEL = {
 };
 /* ── the interface explaining itself ─────────────────────────────────────────────────────────
  * Víctor, who built this atlas, asked what a Stolperstein was. If the author does not know the
- * word, nobody arriving does — and half these labels are terms of art somebody (me) invented:
+ * word, nobody arriving does, and half these labels are terms of art somebody (me) invented:
  * `outside-only`, `unmarked`, `exhibited`, `remembered`. A chip that needs explaining and does not
  * explain itself is a chip that filters by mystery.
  */
@@ -111,7 +111,7 @@ const WHY_DEAD = {
  * it lazily is what stops a reader who never opens a pin from paying for it. */
 let PEOPLE = null, peopleWaiters = [];
 // The volatile half (DECISIONS D4, D7): published opening hours, keyed by the site's own
-// coordinate. 50 KB, so it comes down at boot — but it is a separate file on a separate cadence,
+// coordinate. 50 KB, so it comes down at boot, but it is a separate file on a separate cadence,
 // and nothing in the permanent corpus depends on it having arrived.
 let HOURS = null;
 function needPeople(then) {
@@ -133,11 +133,11 @@ const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3, S_WHERE = 4;
 // The town and country, interned per file. "4 Rue Croix des Petits Champs" is a real address and
 // a useless one: there is one in Paris and there could be one anywhere, and a reader standing in
 // front of the wrong wall has no way to tell. Kept out of the NAME so that Père-Lachaise is not
-// renamed "Père-Lachaise, Paris, France" — two fields, each true, shown together.
+// renamed "Père-Lachaise, Paris, France": two fields, each true, shown together.
 const WHERES = [""];
 const whereOf = (s) => WHERES[s[S_WHERE]] || "";
 let VOCAB = {}, SITES = [], TRACES = [];
-let deepState = "none";   // none | loading | loaded — what the stats line has to admit
+let deepState = "none";   // none | loading | loaded: what the stats line has to admit
 const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
 
 /* ── state: one object, every dimension ── */
@@ -148,7 +148,7 @@ const state = {
 };
 // The renown dial (DECISIONS D6). Fame never decided who is IN the corpus; it is the reader's
 // control over how much of it to look at. `rankCut` is recomputed from the current selection, so
-// "the top 100" means the hundred best known of *what you are already filtering to* — the top 100
+// "the top 100" means the hundred best known of *what you are already filtering to*: the top 100
 // writers, not the hundred best known people who happen to be writers.
 let rankCut = 0;
 function recomputeRankCut() {
@@ -163,7 +163,7 @@ function recomputeRankCut() {
 /* ── THE DIMENSIONS (CHASSIS §1) ────────────────────────────────────────────────────────────
  * Every filter is a row here. `appliesTo` replaces the sibling's hardcoded ternaries, and is what
  * stops `tablePass()` from ever being forked again. `family` marks the set-of-values dimensions
- * whose chips are generated from the bundle's own vocabulary — so a new value in the data cannot
+ * whose chips are generated from the bundle's own vocabulary, so a new value in the data cannot
  * be forgotten in the interface, which is exactly the bug check_views.py exists to catch.
  */
 const ALL = ["map", "panel", "table"];
@@ -174,7 +174,7 @@ const DIMENSIONS = [
   { id: "marking", family: true, appliesTo: ALL, test: (r) => state.marking[r.marking] !== false },
   { id: "dom",     family: true, appliesTo: ALL, test: (r) => state.dom[r.dom] !== false },
   { id: "verb",    family: true, appliesTo: ALL, test: (r) => state.verb[r.verb] !== false },
-  // A person with no dates stays visible at every slider position — the honesty rule lives inside
+  // A person with no dates stays visible at every slider position: the honesty rule lives inside
   // the predicate, not in a note beside it (CHASSIS §3d).
   { id: "life", appliesTo: ALL, test: (r) => {
       const a = r.born, b = r.died;
@@ -210,16 +210,16 @@ const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     'plaques <a href="https://openplaques.org">Open Plaques</a> (PD) · ' +
     'hours <a href="https://opendata.euskadi.eus">Open Data Euskadi</a>',
 }).addTo(map);
-// Aggregation, done by us instead of by MarkerCluster — and over EVERYTHING, which is the whole
+// Aggregation, done by us instead of by MarkerCluster, and over EVERYTHING, which is the whole
 // point. The screen is cut into cells and each cell becomes ONE pin carrying the total of every
 // place inside it. Nothing is hidden and no number is a sample: a pin that says 3 412 means 3 412
 // people are under it. Zooming in splits the cell, which is how the individual places emerge.
 //
 // (The first attempt drew the three most renowned places per cell and dropped the rest. It was
-// fast and it was a lie — Paris showed one pin saying 43 while thousands sat underneath it.)
+// fast and it was a lie: Paris showed one pin saying 43 while thousands sat underneath it.)
 const pinLayer = L.layerGroup().addTo(map);
 
-const CELL = 54;        // px — the grain of the aggregation
+const CELL = 54;        // px: the grain of the aggregation
 
 /* ── what the pins are coloured BY ───────────────────────────────────────────────────────────
  * A pin is a pie over everything underneath it, which is what makes the count honest. The pie has
@@ -227,7 +227,7 @@ const CELL = 54;        // px — the grain of the aggregation
  * Colouring by verb answers a different question with the same mechanism and the same arithmetic:
  * how much of what is here is a birth, a death, a grave.
  *
- * Emoji cannot aggregate — you cannot draw 1 913 of them in one circle — so they appear exactly
+ * Emoji cannot aggregate (you cannot draw 1 913 of them in one circle) so they appear exactly
  * where they mean something: on a pin that holds ONE trace. The marks are the genealogical ones,
  * ∗ for born and † for died, because they read at 20 px where an emoji turns to mush.
  */
@@ -243,7 +243,7 @@ const PALETTE = {
 // Identical to LABEL.verbChip above, on purpose. `buried` is ⚱️ and not 🪦 only because 🪦 is
 // already the mark for the PLACE (`what: grave`); the two would sit side by side saying the same
 // thing twice. 💐 for `remembered` is Víctor's call over my objection that a bouquet is an act of
-// mourning rather than a record of one — he is right that it is the gesture the thing represents.
+// mourning rather than a record of one: he is right that it is the gesture the thing represents.
 const VERB_MARK = { born: "🌱", lived: "🔑", worked: "🛠️", died: "🕯️", buried: "⚱️",
                     commemorated: "💐", built: "📐", exhibited: "🖼️" };
 
@@ -255,6 +255,20 @@ function colourFor(k) {
   if (state.colorBy === "dom") return domColor(k);
   const v = VOCAB[state.colorBy]?.[k];
   return PALETTE[state.colorBy][v] || "#9a958a";
+}
+
+/* What a pin holding ONE trace shows. It used to be the verb's mark, always, so every museum on
+ * the map carried 💐 ("remembered") and Víctor asked why museums were flowers. Verbs are for
+ * PEOPLE, and only where they tell you something the kind does not (Víctor, 2026-09-13: "lo del
+ * verbo es para personas; museos son museos"). A grave is 🪦, a statue 🗿, a museum 🏛, whatever
+ * the verb; a plaque or a house shows 🌱 🔑 🛠️ 🕯️ 📐 when somebody was born, lived, worked, died
+ * or built there, because that is the whole difference between two plaques. */
+const PIN_VERBS = new Set(["born", "lived", "worked", "died", "built"]);
+function pinMark(r) {
+  const what = VOCAB.what[r.what], verb = VOCAB.verb[r.verb];
+  if ((what === "plaque" || what === "house") && r.qid.startsWith("Q") && PIN_VERBS.has(verb))
+    return VERB_MARK[verb];
+  return WHAT_ICON[what] || "";
 }
 
 function pinIcon(counts, n, mark) {
@@ -272,7 +286,7 @@ function pinIcon(counts, n, mark) {
     `<i style="background:conic-gradient(${stops})"></i>${label}` });
 }
 
-const places = [];   // {siteIdx, rows, lat, lon} — plain data. A marker is made only if it is drawn.
+const places = [];   // {siteIdx, rows, lat, lon}: plain data. A marker is made only if it is drawn.
 
 function buildPlaces() {
   pinLayer.clearLayers(); places.length = 0;
@@ -301,27 +315,40 @@ function markerFor(pl) {
 
 const CARD_MAX = 40;
 
-function personRow(r) {
-  const isPlaque = r.qid.startsWith("op");
+// What a person did at THIS place, in words. The chips say "died"; a card says "died here".
+const HERE = { born: "born here", lived: "lived here", worked: "worked here", died: "died here",
+  buried: "buried here", commemorated: "remembered here", built: "built this", exhibited: "work on show here" };
+
+// A Commons picture that opens large when tapped (the sibling's thumbnails do the same).
+const pic = (file, cls, w, cap) =>
+  `<img class="${cls}" src="${esc(thumb(file, w))}" alt="" loading="lazy" data-file="${esc(file)}" data-cap="${esc(cap)}">`;
+
+function personRow(r, headAccess) {
+  const what = VOCAB.what[r.what], verb = VOCAB.verb[r.verb];
   const pf = (PEOPLE && PEOPLE[r.qid]) || null;
-  const src = pf && thumb(pf[0], 96);
-  const th = src
-    ? `<img class="th" src="${esc(src)}" alt="" loading="lazy">`
-    : `<span class="th ph">${isPlaque ? "▭" : "·"}</span>`;
+  const portrait = pf && pf[0];
+  // The grave's own photograph, when Commons has one: on a grave card it is what you will see.
+  const gravePic = what === "grave" && pf && pf[3];
+  const main = portrait || gravePic;
+  const th = main ? pic(main, "th", 144, portrait ? r.name : `The grave of ${r.name}`)
+                  : `<span class="th ph">${WHAT_ICON[what] || "·"}</span>`;
+  const second = portrait && gravePic
+    ? `<div class="gp">${pic(gravePic, "gth", 96, `The grave of ${r.name}`)}<span>the grave</span></div>` : "";
   const occ = pf && pf[1] ? `<div class="by">${esc(pf[1])}</div>` : "";
   const life = lifeStr(r);
   const acc = VOCAB.access[r.access], mk = VOCAB.marking[r.marking];
-  const facts = [LABEL.verb[VOCAB.verb[r.verb]] || VOCAB.verb[r.verb],
-                 (LABEL.access[acc] || acc), mk !== "unknown" ? (LABEL.marking[mk] || mk) : null]
+  const facts = [`${WHAT_ICON[what] || ""} ${HERE[verb] || ""}`.trim(),
+                 acc !== headAccess ? (LABEL.access[acc] || acc) : null,
+                 // the plaque IS the marking, and a museum is its own: saying so again is noise
+                 mk !== "unknown" && mk !== what ? (LABEL.marking[mk] || mk) : null]
                 .filter(Boolean).join(" · ");
-  const links = isPlaque ? "" :
-    `<div class="lk">` +
+  const links = `<div class="lk">` +
     `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(r.qid)}"` +
     ` target="_blank" rel="noopener">Wikipedia</a> · ` +
     `<a href="https://www.wikidata.org/wiki/${esc(r.qid)}" target="_blank" rel="noopener">Wikidata</a></div>`;
   return `<li class="pop-person" data-qid="${esc(r.qid)}">${th}<div class="wk">` +
     `<div class="wt">${esc(r.name)}${life ? ` <span class="yr">${esc(life)}</span>` : ""}</div>` +
-    `${occ}<div class="fx">${esc(facts)}</div>${links}</div></li>`;
+    `${occ}<div class="fx">${esc(facts)}</div>${second}${links}</div></li>`;
 }
 
 function hoursFor(s) {
@@ -333,8 +360,15 @@ function sitePopup(siteIdx, rows) {
   const s = SITES[siteIdx];
   const sorted = rows.slice().sort((a, z) => z.rank - a.rank);
   const acc = VOCAB.access[sorted[0].access];
-  const meta = [VOCAB.siteKind[s[S_KIND]] || null, LABEL.access[acc] || acc,
-                `${rows.length} ${rows.length === 1 ? "person" : "people"}`].filter(Boolean).join(" · ");
+  // People are listed; a museum, or a plaque about a bridge, is the place itself and lives in the
+  // head. Listing "Museo del Prado" as a person under "Museo del Prado" said the same thing twice.
+  const persons = sorted.filter((r) => r.qid.startsWith("Q"));
+  const kind = VOCAB.siteKind[s[S_KIND]] || "";
+  // A site kind is a little wider than a trace kind: a cemetery holds graves.
+  const kindIcon = WHAT_ICON[kind] || { cemetery: "🪦" }[kind] || "";
+  const meta = [kind ? `${kindIcon} ${kind}`.trim() : null, LABEL.access[acc] || acc,
+                persons.length ? `${persons.length} ${persons.length === 1 ? "person" : "people"}` : null]
+               .filter(Boolean).join(" · ");
   // Published hours, never an assertion: the string, who published it, and the day they last
   // touched it. The atlas says what the administration said; it does not say "open" (D7).
   const h = hoursFor(s);
@@ -344,14 +378,16 @@ function sitePopup(siteIdx, rows) {
       `${h.at ? `, last updated ${esc(String(h.at).split(" ")[0])}` : ""}` +
       `${h.web ? ` · <a href="${esc(h.web)}" target="_blank" rel="noopener">their site</a>` : ""}</div></div>`
     : "";
-  const items = sorted.slice(0, CARD_MAX).map(personRow).join("");
-  const more = sorted.length > CARD_MAX
-    ? `<li class="pop-more">…and ${sorted.length - CARD_MAX} more. They are all in the list beside the map.</li>` : "";
+  const items = persons.slice(0, CARD_MAX).map((r) => personRow(r, acc)).join("");
+  const more = persons.length > CARD_MAX
+    ? `<li class="pop-more">…and ${persons.length - CARD_MAX} more. They are all in the list beside the map.</li>` : "";
+  // What the plaque says, fetched when the card opens (build_inscriptions.py, 0.5° tiles).
+  const ins = kind === "plaque" ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
   const where = whereOf(s);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
     (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
-    `<div class="meta">${esc(meta)}</div>${hoursBlock}</div>` +
-    `<ul class="people">${items}${more}</ul></div>`;
+    `<div class="meta">${esc(meta)}</div>${hoursBlock}${ins}</div>` +
+    (items ? `<ul class="people">${items}${more}</ul>` : "") + `</div>`;
 }
 
 const lifeStr = (r) => r.born == null && r.died == null ? ""
@@ -398,17 +434,14 @@ function drawMap() {
   for (const c of cells.values()) {
     const only = c.n === 1 ? (c.best.vis[0] || null) : null;
     const m = L.marker([c.best.lat, c.best.lon],
-                       { icon: pinIcon(c.counts, c.n, only && VERB_MARK[VOCAB.verb[only.verb]]) });
+                       { icon: pinIcon(c.counts, c.n, only && pinMark(only)) });
     if (c.places.length === 1) {
       m.bindPopup(() => sitePopup(c.best.siteIdx, c.best.vis), { maxWidth: 360, autoPan: false });
-      m.on("click", () => needPeople(() => {
-        if (m._map && m.isPopupOpen()) m.setPopupContent(sitePopup(c.best.siteIdx, c.best.vis));
-      }));
       m.bindTooltip(`${SITES[c.best.siteIdx][S_NAME]} · ${c.n}`, { direction: "top", offset: [0, -12] });
     } else {
       m.bindPopup(() => cellPopup(c), { maxWidth: 360, autoPan: false });
       m.bindTooltip(`${c.places.length} places · ${c.n} people`, { direction: "top", offset: [0, -12] });
-      // A grouped pin USED to zoom in on click — "a door, not a destination". It also opened its
+      // A grouped pin USED to zoom in on click, "a door, not a destination". It also opened its
       // popup, because that is what bindPopup does, and the zoom fired `moveend`, and `moveend`
       // rebuilds every marker: the list appeared and was destroyed in the same gesture. Two
       // reasonable behaviours on one tap, one of them killing the other.
@@ -442,9 +475,14 @@ function cellPopup(c) {
 }
 
 // A row inside a card opens that person; a row inside a grouped card flies to that place.
-// Written once and called for both hosts — the popup on a wide screen, the sheet on a narrow one.
+// Written once and called for both hosts: the popup on a wide screen, the sheet on a narrow one.
 function wirePopupBody(el, dismiss) {
   if (!el) return;
+  el.querySelectorAll("img[data-file]").forEach((img) => img.addEventListener("click", (ev) => {
+    ev.stopPropagation();              // the picture, not the row: do not open the person
+    openLightbox(img.dataset.file, img.dataset.cap);
+  }));
+  fillInscriptions(el);
   el.querySelectorAll(".pop-person[data-qid]").forEach((li) => li.addEventListener("click", (ev) => {
     if (ev.target.closest("a")) return;                 // the links keep their own action
     dismiss();
@@ -461,14 +499,17 @@ function wirePopupBody(el, dismiss) {
   });
 }
 map.on("popupopen", (e) => {
-  const el = e.popup.getElement();
-  if (!el) return;
-  // `getContent()` hands back what was BOUND, and these popups are bound to a function so that a
-  // place nobody opens never pays for its card. The rendered HTML is in the DOM, not in the
-  // binding — read it from there.
-  const body = el.querySelector(".leaflet-popup-content");
-  if (narrow() && body) { openSheetHTML(body.innerHTML, "place"); map.closePopup(e.popup); return; }
-  wirePopupBody(el, () => map.closePopup());
+  const popup = e.popup;
+  // What was bound is a FUNCTION, so a place nobody opens never pays for its card. Calling it again
+  // is how a card is re-rendered once portraits, trades and grave photos have arrived: on a phone
+  // the first render used to be copied into the sheet before people.json existed, and every row
+  // came out bare.
+  const bound = popup.getContent();
+  const render = () => (typeof bound === "function" ? bound(popup._source) : bound);
+  if (narrow()) { map.closePopup(popup); showPlaceSheet(render); return; }
+  const wire = () => wirePopupBody(popup.getElement(), () => map.closePopup());
+  wire();
+  if (!PEOPLE) needPeople(() => { if (popup.isOpen()) { popup.setContent(bound); wire(); } });
 });
 // Tapping the map background dismisses a place list, the way tapping outside any sheet should.
 // Only a place list: a person card was opened deliberately and closes deliberately.
@@ -519,8 +560,8 @@ function refresh() {
 /* ── the legend ───────────────────────────────────────────────────────────────────────────────
  * Eleven colours on every pin and nothing on screen saying what they mean. The sibling has a
  * legend; not porting it was an oversight that only shows up when somebody arrives who did not
- * build the thing. It doubles as the colour-by switch, because the two questions — "what do these
- * colours mean" and "what should they mean" — are the same control.
+ * build the thing. It doubles as the colour-by switch, because the two questions ("what do these
+ * colours mean" and "what should they mean") are the same control.
  */
 function renderLegend() {
   const box = $("legend");
@@ -583,7 +624,7 @@ function renderGlossary() {
  * there seemed to be too many of them.
  *
  *   what → verb     84 %        marking's biggest value is `unknown`: 85 842 rows, 42 %
- *   what → marking  73 %        — a confession, not a filter
+ *   what → marking  73 %        · a confession, not a filter
  *   what → access   61 %        access still earns its row; marking does not
  *
  * So: `what` is the primary control and `access` keeps its own row, because it is the question
@@ -591,7 +632,7 @@ function renderGlossary() {
  * the current selection actually has verbs to choose between. `marking` moves to the drawer.
  */
 // Values that exist so a family can partition the corpus, and that nobody would ever click.
-// `mount: n/a` means "not a plaque" — 124 928 rows of structural filler, offered as a choice.
+// `mount: n/a` means "not a plaque": 124 928 rows of structural filler, offered as a choice.
 const HIDDEN_VALUES = { mount: ["n/a"] };
 
 const FAMILY_BOX = { what: "fam-what", mount: "fam-mount", access: "fam-access",
@@ -606,7 +647,7 @@ function renderFamilies() {
     const html = VOCAB[fam].map((v, i) => {
       if ((HIDDEN_VALUES[fam] || []).includes(v)) return "";
       const on = state[fam][i] !== false, dead = counts[i] === 0;
-      // The chip IS the button, and clicking it means ONLY THIS — which is what you want nine
+      // The chip IS the button, and clicking it means ONLY THIS, which is what you want nine
       // times in ten, and what a checkbox could never say. Clicking the same chip again gives
       // everything back. The little + is the tenth time: add this one to what is already up, or
       // take it away. Two affordances, the common one under the whole target.
@@ -626,7 +667,7 @@ function renderFamilies() {
         `title="${on ? "Take this one out" : "Add this one too"}">${on ? "−" : "+"}</button></span>`;
     }).join("");
     // A row offering one option is not a choice, it is furniture. The verb row hides itself when
-    // the current selection has nothing to choose between — which is applicability made visible
+    // the current selection has nothing to choose between, which is applicability made visible
     // rather than a ternary buried in a predicate (CHASSIS §1).
     // Clicking `only` on a chip is the moment somebody most wants to know what it means, and it is
     // the moment the tooltip cannot help them (a phone has no hover). So the explanation appears
@@ -664,7 +705,7 @@ document.addEventListener("click", (e) => {
 /* ── professions: a popover, not fifteen more chips ──────────────────────────────────────────
  * The bar was already crowded, so this follows the sibling's painter selector: one button, a
  * checklist behind it, and three verbs instead of one. `only` isolates, `also` adds a whole group
- * to what is on screen, and the tick adds or removes without disturbing the rest — because ONLY is
+ * to what is on screen, and the tick adds or removes without disturbing the rest, because ONLY is
  * the right verb the first time and the wrong one the second (CHASSIS §3a).
  */
 function domCounts() {
@@ -727,7 +768,7 @@ $("preset-now").addEventListener("click", () => {
  * Garibaldi has thirty monuments in this corpus and one grave. Rome has a Via Garibaldi and so
  * does nearly every town in Italy; the atlas already refuses to map the streets themselves
  * (data/memorial_kinds.json, `_streets`: "the sign is, the street is not"), but a bronze
- * Garibaldi in a town he never entered is still a real, mappable object — and it is a completely
+ * Garibaldi in a town he never entered is still a real, mappable object, and it is a completely
  * different claim from the house he died in.
  *
  * The axis that separates them already exists: `verb`. `commemorated` means somebody put this up
@@ -767,7 +808,7 @@ document.addEventListener("click", (e) => {
 
 /* ── one person, everything they left ────────────────────────────────────────────────────────
  * The atlas is person-anchored (DECISIONS D1) and until now you could not actually see a person:
- * only the places, with people inside them. This is the other direction — Chopin's grave in
+ * only the places, with people inside them. This is the other direction: Chopin's grave in
  * Père-Lachaise, his heart in Warsaw, his plaques in seven cities, all on one card, in one list,
  * with the map able to frame the lot.
  */
@@ -780,12 +821,13 @@ function indexPeople() {
   }
 }
 
-const WHAT_ICON = { grave: "🪦", plaque: "▭", house: "🏠", statue: "🗿",
+const WHAT_ICON = { grave: "🪦", plaque: "🪧", house: "🏠", statue: "🗿",
                     museum: "🏛", church: "⛪" };
 
 function openPerson(qid) {
   const rows = byPerson.get(qid);
   if (!rows || !rows.length) return;
+  sheetToken++;                      // a place card still waiting for people.json must not land here
   needPeople(() => {
     const r0 = rows[0];
     const pf = (PEOPLE && PEOPLE[qid]) || null;
@@ -819,7 +861,7 @@ function openPerson(qid) {
       (qid.startsWith("op") || qid.startsWith("mus:") ? "" :
         `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(qid)}" target="_blank" rel="noopener">Wikipedia</a> · ` +
         `<a href="https://www.wikidata.org/wiki/${esc(qid)}" target="_blank" rel="noopener">Wikidata</a>`) +
-      // The other atlas. Same person, same QID, a different question about them — where their work
+      // The other atlas. Same person, same QID, a different question about them, where their work
       // hangs rather than where they lie. The link only appears for the painters it knows.
       (pf && pf[2]
         ? ` · <a class="sh-sib" href="https://victorelvira.github.io/projects/artatlas.html#${esc(pf[2])}"` +
@@ -853,22 +895,73 @@ function closeSheet() { $("sheet").hidden = true; $("sheet").dataset.kind = ""; 
  * On a phone this sequence was reliably infuriating: tap a pin, a list of twenty-five names
  * opens, the map moves, and the list is gone before you have read the second name. Nothing was
  * random about it. A Leaflet popup is a child of the map pane and is anchored to a marker, and
- * `drawMap()` rebuilds every marker on `moveend` — so the popup's own anchor is destroyed under
+ * `drawMap()` rebuilds every marker on `moveend`, so the popup's own anchor is destroyed under
  * it. The map was eating its own list.
  *
  * The sibling solved this by taking the list OUT of the map: on a narrow screen the popup's
  * content is moved into the fixed bottom sheet and the Leaflet popup is closed immediately. The
  * sheet is a sibling of the map, not a child, so a redraw cannot touch it. `autoPan: false` is
- * the other half — an opening popup must never scroll the map out from under your thumb.
+ * the other half: an opening popup must never scroll the map out from under your thumb.
  */
-function openSheetHTML(html, kind) {
-  $("sheet-body").innerHTML = html;
+let sheetToken = 0;
+function openSheetHTML(html, kind, keepScroll) {
+  const body = $("sheet-body"), top = body.scrollTop;
+  body.innerHTML = html;
+  body.scrollTop = keepScroll ? top : 0;
   $("sheet").dataset.kind = kind || "place";
   $("sheet").hidden = false;
-  wirePopupBody($("sheet-body"), closeSheet);
+  wirePopupBody(body, closeSheet);
+}
+function showPlaceSheet(render) {
+  const tok = ++sheetToken;
+  openSheetHTML(render(), "place");
+  if (!PEOPLE) needPeople(() => {
+    if (tok === sheetToken && !$("sheet").hidden) openSheetHTML(render(), "place", true);
+  });
 }
 $("sheet-close").addEventListener("click", closeSheet);
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
+
+/* ── a picture, large ─────────────────────────────────────────────────────────────────────────
+ * Every thumbnail is a Commons file. Tapped, it opens at 1 280 px with a link to its Commons page,
+ * which is where the author and the licence are: the atlas shows the picture and says whose it is,
+ * it does not restate a licence it has not read. */
+function openLightbox(file, cap) {
+  $("lb-img").src = thumb(file, 1280);
+  $("lb-cap").innerHTML = `${esc(cap || "")} · <a href="https://commons.wikimedia.org/wiki/File:` +
+    `${encodeURIComponent(file.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikimedia Commons: author and licence</a>`;
+  $("lightbox").hidden = false;
+}
+function closeLightbox() { $("lightbox").hidden = true; $("lb-img").src = ""; }
+$("lightbox").addEventListener("click", (e) => { if (!e.target.closest("a")) closeLightbox(); });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("lightbox").hidden) { e.stopImmediatePropagation(); closeLightbox(); }
+}, true);
+
+/* ── what the plaque says ─────────────────────────────────────────────────────────────────────
+ * 47 064 inscriptions, 17 MB, cut into 0.5° tiles (build_inscriptions.py); a card fetches the one
+ * tile it needs, once. Long texts fold to five lines and open with a tap. */
+const insTiles = new Map();
+function fillInscriptions(root) {
+  root.querySelectorAll(".ins[data-key]").forEach((box) => {
+    const key = box.dataset.key;
+    const [lat, lon] = key.split(",").map(Number);
+    const tile = `${Math.floor(lat / 0.5)}_${Math.floor(lon / 0.5)}`;
+    if (!insTiles.has(tile))
+      insTiles.set(tile, fetch(`culture/data/ins/${tile}.json?v=${DATA_V}`)
+        .then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+    insTiles.get(tile).then((t) => {
+      const list = t[key] || [];
+      if (!list.length) { box.remove(); return; }
+      box.innerHTML = list.slice(0, 4).map(([id, text, year]) =>
+        `<blockquote class="ins-q">${esc(text)}</blockquote>` +
+        `<div class="ins-src"><a href="https://openplaques.org/plaques/${id}" target="_blank" rel="noopener">` +
+        `Open Plaques № ${id}</a>${year ? ` · put up ${esc(year)}` : ""}</div>`).join("") +
+        (list.length > 4 ? `<div class="ins-src">…and ${list.length - 4} more plaques on this spot</div>` : "");
+      box.querySelectorAll(".ins-q").forEach((q) => q.addEventListener("click", () => q.classList.toggle("open")));
+    });
+  });
+}
 
 /* ── side panel: filter → group → render plan → stream (CHASSIS §5) ── */
 const PANEL_CHUNK = 80;
@@ -964,7 +1057,7 @@ $("pv-fold").addEventListener("click", () => {
   renderPanel();
 });
 $("pv-sort").addEventListener("change", (e) => { panelSort = e.target.value; renderPanel(); });
-// Panning and zooming change which cells exist, so the quota has to be re-run — that IS the
+// Panning and zooming change which cells exist, so the quota has to be re-run: that IS the
 // mechanism by which zooming in reveals the ones that were held back.
 map.on("moveend", () => {
   const { pins, inView, rowsInView } = drawMap();
@@ -1020,12 +1113,12 @@ $("v-map").addEventListener("click", () => setTable(false));
 /* ── the search box finds THINGS, not just rows ──────────────────────────────────────────────
  * The filter narrows every view, which is right and was never the problem. The problem was that
  * the panel only shows what is inside the map, so typing "Goya" showed whoever happened to be on
- * screen — four separate rows for his four traces, under a man called Goyau. You could explore the
+ * screen: four separate rows for his four traces, under a man called Goyau. You could explore the
  * atlas and you could not look anything up in it.
  *
  * So the box now also offers what it found: PEOPLE (one row each, with all their traces) and
  * PLACES. Picking one goes there. This is the sibling's painter box (CHASSIS §3c), where typing
- * also finds museums and clicking one sets a different dimension — one box, several kinds of
+ * also finds museums and clicking one sets a different dimension: one box, several kinds of
  * answer, no mode switch.
  */
 const SUGGEST_MAX = 8;
@@ -1126,7 +1219,7 @@ document.addEventListener("keydown", (e) => {
     if (!$("suggest").hidden) { $("suggest").hidden = true; return; }
     $("filter-clear").click();
   }
-  // Enter takes the first suggestion — the whole point is not having to aim at it
+  // Enter takes the first suggestion: the whole point is not having to aim at it
   if (e.key === "Enter" && document.activeElement === filterBox) {
     const first = $("suggest").querySelector(".sg-person, .sg-place");
     if (first) first.click();
@@ -1135,7 +1228,7 @@ document.addEventListener("keydown", (e) => {
 
 /* ── lifetime slider ── */
 let TL_MIN = -500, TL_MAX = 2026;
-// Set once somebody — the reader, or a link they opened — has actually chosen a range. The long
+// Set once somebody (the reader, or a link they opened) has actually chosen a range. The long
 // tail arrives 2.5 s after boot and calls buildTimeline again with wider bounds; without this flag
 // that second call silently threw away the range the URL had just restored.
 let tlChosen = false;
@@ -1194,12 +1287,12 @@ function renderNearMe() {
     b.addEventListener("click", () => { state.near.radiusKm = +b.dataset.r; renderNearMe(); }));
 }
 /* ── the blue dot: where you are, while you walk ──────────────────────────────────────────────
- * The old button took ONE fix, listed what was near it, and then knew nothing more — so the atlas
+ * The old button took ONE fix, listed what was near it, and then knew nothing more, so the atlas
  * was a thing you consulted before leaving the house, not a thing you used in the street. This
  * watches instead: a dot that moves with you, a halo the size of the error the phone admits to,
  * and the "near me" list re-sorting as you walk.
  *
- * The dot lives in its OWN layer. `pinLayer` is cleared and rebuilt on every `moveend` — putting
+ * The dot lives in its OWN layer. `pinLayer` is cleared and rebuilt on every `moveend`: putting
  * the dot in there would delete it the first time you moved, which is the same bug as the popup
  * the map used to eat, and it would be much harder to notice because you would blame the GPS.
  *
@@ -1298,7 +1391,7 @@ $("chrome-toggle").addEventListener("click", () => {
 });
 
 /* ── folding the controls away ────────────────────────────────────────────────────────────────
- * On a phone the filter rows eat half the screen and the map — the thing the atlas IS — gets what
+ * On a phone the filter rows eat half the screen and the map (the thing the atlas IS) gets what
  * is left. One button folds them, and it says how many filters are still doing something, because
  * a folded control that is silently filtering is worse than no control at all.
  */
@@ -1344,19 +1437,19 @@ document.querySelector(".brand").addEventListener("click", (e) => {
  * The corpus ships in two files (DECISIONS D6, and build.py's split): a base with everyone the
  * reader has heard of plus every plaque, statue and house, and a long tail of graves of people
  * with fewer than twenty Wikipedia editions. The tail arrives afterwards, while the map already
- * works, and its site indices are relative to its own file — so they are shifted on the way in.
+ * works, and its site indices are relative to its own file, so they are shifted on the way in.
  */
 const siteAt = new Map();   // "lat,lon" → index in SITES
 
 function absorb(d) {
   const ix = Object.fromEntries(d.cols.map((c, i) => [c, i]));
-  // One site, one pin (DECISIONS D5) — and the two files each carry their own copy of any place
+  // One site, one pin (DECISIONS D5), and the two files each carry their own copy of any place
   // they share, because each renumbers only the sites it uses. Père-Lachaise arrived twice, and so
   // did 9 107 other coordinates. Merging on the coordinate also catches the honest case: a statue
   // and a grave standing at the same spot are one place to go to.
   // Each file interns its OWN town lines, so a `where` index from the long tail means something
   // different from the same number in the base file. Translate on the way in, before the row is
-  // stored — the alternative is shipping the whole vocabulary twice, which is half a megabyte of
+  // stored: the alternative is shipping the whole vocabulary twice, which is half a megabyte of
   // town names the long tail never points at.
   const wmap = (d.vocab.where || [""]).map((w) => {
     let i = WHERES.indexOf(w);
@@ -1385,7 +1478,7 @@ function absorb(d) {
 }
 
 /* ── the whole view lives in the URL ──────────────────────────────────────────────────────────
- * A phone throws a background tab away and reloads it from the address bar when you come back —
+ * A phone throws a background tab away and reloads it from the address bar when you come back,
  * and without this, that reload landed on the home view: every filter gone, the map back over
  * Europe, whatever you had found lost. The atlas looked like it had forgotten, and it had.
  *
@@ -1394,7 +1487,7 @@ function absorb(d) {
  * one we started with. The URL is a SNAPSHOT of where you are standing, not a log of how you got
  * here: reload it, share it, bookmark it, reopen the tab tomorrow, and you are back.
  *
- * Families are written as the values still TICKED, by name, and only when some are NOT — so a
+ * Families are written as the values still TICKED, by name, and only when some are NOT, so a
  * clean view keeps a clean URL, and a value added to the bundle next month cannot be silently
  * excluded by a link written today: it is absent from the list, so it arrives ticked. An old link
  * showing MORE than its author saw is the honest failure; showing less, invisibly, is not.
@@ -1419,7 +1512,7 @@ function viewToURL() {
     p.set("yr", `${state.yearMin},${state.yearMax}`);
   // NOT `near`. Everything else about the view belongs in the URL; where the reader is standing
   // does not. A shared link, a screenshot of the address bar, a browser history synced to another
-  // machine — each would be carrying somebody's location to somewhere they never sent it. The
+  // machine: each would be carrying somebody's location to somewhere they never sent it. The
   // location is live, it is theirs, and it is re-asked for every time.
   // The fold is remembered only when it disagrees with what this screen would have done, so the
   // same link opens sensibly on a phone and on a laptop.
@@ -1441,7 +1534,7 @@ function syncURL() {
 
 /* Read a URL back into the view. Runs at boot and on `popstate` (the phone's back button, and the
  * gesture that restores an evicted tab). Everything it touches is also touched by hand somewhere
- * else in this file, so it sets the STATE and then the controls that display it — never the other
+ * else in this file, so it sets the STATE and then the controls that display it: never the other
  * way round. */
 function applyURL() {
   const p = new URLSearchParams(location.search);
@@ -1520,12 +1613,12 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     // "999+" bubble in the middle of the screen. Measure first, insert second.
     // Twice on purpose. The first call is for the common case; the second runs after the browser
     // has laid out and painted once, which is when the map's box is final. A single call at boot
-    // landed on a 0×0 map and drew an empty world — and since the box never changed again
+    // landed on a 0×0 map and drew an empty world, and since the box never changed again
     // afterwards, the ResizeObserver below had nothing to react to and it stayed empty.
     // refresh() is under 200 ms now, so paying for it twice at boot costs nothing.
     //
     // And the view is re-set each time: `pan: false` keeps the map's top-LEFT pixel fixed, so
-    // resizing from 0×0 to 940×464 slides the centre by half the new size — the atlas opened over
+    // resizing from 0×0 to 940×464 slides the centre by half the new size: the atlas opened over
     // Kuwait. Only at boot; a later resize must not yank the reader back to the home view.
     const settle = () => {
       map.invalidateSize({ pan: false });
@@ -1572,8 +1665,8 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
       }, 2500);
     }
 
-    // And keep measuring: a ResizeObserver fires exactly when the box changes — first layout,
-    // window resize, phone rotation, the panel folding away — where a timer only guesses, and lost
+    // And keep measuring: a ResizeObserver fires exactly when the box changes (first layout,
+    // window resize, phone rotation, the panel folding away) where a timer only guesses, and lost
     // that race about half the time. `pan: false` because the default pans by half the size
     // difference, which from 0×0 is a 470 px shove that moves the map off centre.
     let rTimer = null;

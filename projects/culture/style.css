@@ -1,4 +1,4 @@
-/* Culture Atlas — the sibling's bones, a colder palette: stone, moss and brass instead of oil. */
+/* Culture Atlas · the sibling's bones, a colder palette: stone, moss and brass instead of oil. */
 :root{
   --ink:#22261f; --ink-soft:#5c6356; --line:#d8d5cb; --paper:#f4f2ec; --paper-2:#eceadf;
   --moss:#5a6b57; --brass:#b08d3f; --stone:#8b8577; --rust:#a3552f; --sky:#3d6a86;
@@ -126,7 +126,7 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 /* ── a phone ─────────────────────────────────────────────────────────────────────────────────
  * Four rows of chips, a legend and a stats line do not fit in 375 px, and the first version simply
  * cut them off: only ACCESS was visible and nothing said the rest were there. Every rail scrolls
- * sideways now AND SAYS SO — a fading edge on the right while there is more, which disappears when
+ * sideways now AND SAYS SO: a fading edge on the right while there is more, which disappears when
  * you reach the end. A hidden control is a control that does not exist.
  */
 @media (max-width:720px){
@@ -239,6 +239,35 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 .sh-trace .fx.warn{color:var(--rust)}
 /* A place list hosted by the sheet is a card in its own right and brings its own padding. */
 #sheet[data-kind="place"] #sheet-body{padding:0}
+/* The sheet does not scroll; its BODY does. That is the whole fix for a close button that scrolled
+   away with the list: it sits on a box that never moves (the Atlas of Painting's sheet, ported). */
+#sheet{overflow:hidden}
+#sheet-body{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+#sheet-close{z-index:3}
+#sheet[data-kind="place"] .card .hd{padding-right:46px}
+/* rows worth reading */
+.card li.pop-person{cursor:pointer}
+.card li.pop-person:hover{background:var(--paper-2)}
+.card .gp{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:10.5px;color:var(--stone)}
+.card .gth{width:40px;height:40px;object-fit:cover;border-radius:3px;border:1px solid var(--line)}
+img[data-file]{cursor:zoom-in}
+/* what the plaque says */
+.card .ins-q{margin:7px 0 2px;padding:6px 8px;background:#fff;border-left:3px solid var(--brass);
+  font-size:12.5px;line-height:1.4;font-style:italic;cursor:pointer;
+  display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.card .ins-q.open{display:block;-webkit-line-clamp:unset}
+.card .ins-src{font-size:10.5px;color:var(--stone)}
+.card .ins-src a{color:var(--sky);text-decoration:none}
+/* a picture, large */
+#lightbox{position:fixed;inset:0;z-index:3000;background:rgba(20,18,15,.93);display:flex;
+  align-items:center;justify-content:center;padding:16px}
+#lightbox[hidden]{display:none!important}
+#lightbox figure{margin:0;max-width:100%;display:flex;flex-direction:column;align-items:center;gap:8px}
+#lb-img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:4px;background:#222}
+#lb-cap{color:#e9e4da;font-size:12px;text-align:center;line-height:1.4}
+#lb-cap a{color:#9cc3ff}
+#lb-close{position:absolute;top:10px;right:12px;width:38px;height:38px;border-radius:50%;border:0;
+  background:#fff;font-size:17px;cursor:pointer}
 #sheet[data-kind="place"] #sheet-close{top:6px;right:8px;z-index:2}
 .card .where{font-size:11.5px;color:var(--ink-soft);margin-top:2px}
 .card .by.dim{color:var(--stone);font-size:11px}
@@ -251,6 +280,8 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
    visible above it. A drawer that covers the whole screen is a page, and a page loses the one
    thing the list is about: where on the map you tapped. */
 @media (max-width:720px){
+  #sheet-close{width:36px;height:36px;border-radius:50%;font-size:16px;top:8px;right:10px}
+  .card .th{width:56px;height:56px;flex:0 0 56px}
   #sheet{width:100%;max-width:100%;top:auto;left:0;right:0;bottom:0;max-height:68vh;
     border-left:0;border-top:1px solid var(--line);border-radius:12px 12px 0 0;
     box-shadow:0 -6px 26px rgba(0,0,0,.22)}
@@ -316,7 +347,7 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 .pin b.mk{font-size:11px;font-weight:400;line-height:1;
   filter:drop-shadow(0 1px 1px rgba(0,0,0,.55))}
 
-/* who the atlas is currently narrowed to — always visible, always dismissable */
+/* who the atlas is currently narrowed to: always visible, always dismissable */
 #personchip{display:inline-flex;align-items:center;gap:5px;background:var(--moss);color:#fff;
   border-radius:6px;padding:2px 4px 2px 8px;font-size:11.5px}
 #personchip[hidden]{display:none!important}
@@ -374,7 +405,7 @@ body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{dis
   .stats{order:4}
   #who{order:3;flex:0 0 auto}
 
-  /* chips fill the row — no scrolling, no dead space, everything reachable with a thumb */
+  /* chips fill the row: no scrolling, no dead space, everything reachable with a thumb */
   #axes{flex-direction:column;align-items:stretch;gap:3px;overflow:visible;
     mask-image:none;-webkit-mask-image:none}
   #axes .fam{display:flex;flex-wrap:wrap;gap:3px;width:100%;padding:3px 4px}
