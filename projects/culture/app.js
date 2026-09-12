@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.12.0";
+const DATA_V = "0.12.2";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -454,14 +454,11 @@ function renderFamilies() {
       TRACES.reduce((n, r) => n + (r[fam] === i && passesExcept(r, "table", fam) ? 1 : 0), 0));
     const html = VOCAB[fam].map((v, i) => {
       const on = state[fam][i] !== false, dead = counts[i] === 0;
-      // ONLY is the right verb the first time and the wrong one the second: once you have
-      // isolated `buried`, the next thing you want is to ADD `born`, not swap to it. So the chip
-      // carries both, and `also` only appears while something is left out (CHASSIS §3a).
-      const everythingOn = VOCAB[fam].every((_, j) => state[fam][j] !== false);
+      // ONLY, and only ONLY. The sibling pairs it with `also` because there the tick is per
+      // painter and `also` adds a whole period at once — two different scopes, so two verbs. Here
+      // a chip IS one value, so `also` would be the checkbox wearing a hat. Víctor spotted it.
       const extra = dead ? ""
-        : on ? (everythingOn ? `<button type="button" class="only" data-only="${fam}:${i}">only</button>` : "")
-             : `<button type="button" class="also" data-also="${fam}:${i}">also</button>` +
-               `<button type="button" class="only" data-only="${fam}:${i}">only</button>`;
+        : `<button type="button" class="only" data-only="${fam}:${i}">only</button>`;
       return `<span class="chipwrap"><label class="chip${on && !dead ? " on" : ""}${dead ? " dead" : ""}"` +
         (dead ? ` title="${esc(WHY_DEAD[fam] || "")}"` : "") +
         `><input type="checkbox" data-fam="${fam}" data-i="${i}"${on ? " checked" : ""}` +
@@ -482,11 +479,6 @@ document.addEventListener("click", (e) => {
     const [fam, i] = o.dataset.only.split(":");
     VOCAB[fam].forEach((_, j) => { state[fam][j] = j === +i; });
     refresh(); return;
-  }
-  const a = e.target.closest(".fam button[data-also]");
-  if (a) {
-    const [fam, i] = a.dataset.also.split(":");
-    state[fam][+i] = true; refresh();
   }
 });
 

@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.25.0";
-const BUILD_AT = "2026-09-12 01:17";
+const DATA_V = "0.26.13";
+const BUILD_AT = "2026-09-12 02:42";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -39,6 +39,12 @@ const IDX = {form:"fo", key:"k", catalogue:"cat", instrumentation:"sc",
 function hydrate(r, byslug){
   const c = byslug[r.c] || {};
   r.id = r.i; r.title = r.t; r.composer_slug = r.c; r.composer = c.name || r.c;
+  /* A work can have more than one composer: a pasticcio (The Enchanted Island, by
+     Vivaldi and Handel and Purcell) or a disputed attribution (BWV 223, claimed for
+     Bach and for Handel). The index folds those into one row and keeps every composer
+     in cc, so the work is one line and is still findable under each of them. */
+  r.composer_slugs = r.cc || [r.c];
+  r.composers = r.composer_slugs.map(s2 => (byslug[s2]||{}).name || s2);
   r.form_group = r.fg; r.forces = r.fc; r.completeness = r.cm;
   r.nsources = r.n || 0;
   r.sources = new Array(r.n || 0);
@@ -135,7 +141,21 @@ const cats = w => arr(val(w,"catalogue")).map(s=>{
   const i=String(s).indexOf(":");
   const k=String(s).slice(0,i), rest=String(s).slice(i+1);
   const [n,ed]=String(rest||"").split("#");
-  return {k,n,ed,label:(CATNAME[k]||k)+" "+n+(ed?` (${ed}${["st","nd","rd"][ed-1]||"th"} ed.)`:"")};});
+  /* The group separator is stored as ":" so one work has one key whatever a source
+     wrote, but the catalogues do not agree on how to print it: Hoboken is "Hob. I:41",
+     Kobylańska is "KK IVb/10", Fanna is "F. XII n. 37". Printed the way musicians
+     write it, keyed the way a join needs it. */
+  const SEP={kobylanska:"/",fanna:" n. "};
+  const shown=SEP[k]&&String(n).includes(":")?String(n).replace(":",SEP[k]):n;
+  return {k,n,ed,label:(CATNAME[k]||k)+" "+shown+(ed?` (${ed}${["st","nd","rd"][ed-1]||"th"} ed.)`:"")};});
+/* One source names the edition and another does not, so "K. 185" and "K. 185 (1st ed.)"
+   were printed side by side. They are the same citation, and the qualified one says
+   more, so the bare one is dropped from the display. Both claims stay in the data with
+   their sources: this collapses what is shown, never what is held. */
+function catsShown(w){
+  const c=cats(w), qualified=new Set(c.filter(x=>x.ed).map(x=>x.k+":"+x.n));
+  return c.filter(x=>x.ed || !qualified.has(x.k+":"+x.n));
+}
 function primaryCat(w){ const c=cats(w); if(!c.length) return null;
   for(const p of PRIMARY){ const h=c.find(x=>x.k===p); if(h) return h; } return c[0]; }
 function catSort(w){ const p=primaryCat(w); if(!p) return [9e9,0];
@@ -174,9 +194,13 @@ function fmtDate(v){
 function year(w){ const f=F(w,"date_composed"); if(!f||f.suspect) return null;
   const d=show(w,"date_composed"); if(!d) return null;
   const m=String(d).match(/\b(1[0-9]{3}|20[0-9]{2})\b/); return m?+m[1]:null; }
+/* Name what is there. "large ensemble" was the old answer above four instruments and it
+   tells a reader nothing; three names and a count tell them what kind of piece it is,
+   and the column truncates anyway. 623 works, 5 % of those with a scoring. */
 function ensemble(w){ const i=arr(val(w,"instrumentation")); if(!i.length) return null;
-  const a=[...i].sort(); return a.length>4?"large ensemble":a.join(" + "); }
-function haystack(w){ return w._h || (w._h = fold([w.title,w.composer,
+  const a=[...i].sort();
+  return a.length>4 ? a.slice(0,3).join(" + ")+" +"+(a.length-3) : a.join(" + "); }
+function haystack(w){ return w._h || (w._h = fold([w.title,w.composers.join(" "),
   ...Object.values(w.title_variants||{}), cats(w).map(c=>c.label).join(" "),
   show(w,"key"), show(w,"dedication"), arr(val(w,"instrumentation")).join(" "),
   show(w,"genre")].filter(Boolean).join(" ⋅ "))); }
@@ -208,17 +232,21 @@ const FACETS=[
     if(w.ar) o.push("on the Internet Archive");
     if((w.media||{}).scores) o.push("free score");
     if((w.media||{}).free_recordings) o.push("recording on IMSLP");
-    if((w.sources||[]).length>=3) o.push("three sources");
+    /* two different facts, and they were being conflated: how many catalogues hold an
+       entry, and how many facts two sources actually agreed on */
+    if((w.sources||[]).length>=3) o.push("in three catalogues");
+    if(w.xc) o.push("a fact confirmed twice");
     if(w.completeness==="lost") o.push("lost");
     if(w.versions) o.push("more than one version");
     if(isUntitled(w)) o.push("no title anywhere");
+    if(w.nk) o.push("a name and nothing else");
     if((F(w,"date_composed")||{}).suspect) o.push("date outside the composer's life");
     return o}}
 ];
 /* the second rail: the specific forms inside whichever kind is chosen */
 const SUBFACET={id:"form",label:"which",get:w=>arr(val(w,"form"))};
 function passes(w){
-  if(state.comp.size && !state.comp.has(w.composer_slug)) return false;
+  if(state.comp.size && !w.composer_slugs.some(s2 => state.comp.has(s2))) return false;
   /* Every word, in any order. Matching the whole string literally meant "requiem
      mozart" looked for those two words adjacent and in that order, so it found
      nothing: the space was part of the needle instead of separating two of them. */
@@ -361,8 +389,18 @@ function cmp(a,b){ const A=SORTV[state.sort](a), B=SORTV[state.sort](b);
     return (x-y)*state.dir; }
   return fold(a.title)>fold(b.title)?1:-1; }
 const CELL = {
-  comp: w => `<span class="dot" style="background:${compColour(w.composer_slug)}"></span>`
-           + esc(w.composer.split(" ").slice(-1)[0]),
+  /* One surname fits the column; three do not, and a truncated "Handel &…" tells the
+     reader less than a count does. So: the first name, a dot per composer, and how many
+     more, with every name in the tooltip and all of them spelled out in the card. */
+  comp: w => {
+    const n = w.composer_slugs.length;
+    const dot = `<span class="dot" style="background:${compColour(w.composer_slug)}"></span>`;
+    const first = esc((w.composers[0]||w.composer_slugs[0]).split(" ").slice(-1)[0]);
+    /* one dot, not one per composer: the column is 92px and three dots ate the name */
+    return n < 2 ? dot + first
+      : `<span class="multi" title="${esc(w.composers.join(" · "))}">${dot}${first}`
+        + `<span class="plusn">+${n-1}</span></span>`;
+  },
   work: w => { const c=primaryCat(w), others=cats(w).filter(x=>!c||x.k!==c.k).slice(0,2);
     return (c?esc(c.label):`<span style="color:var(--faint)">no number</span>`)
       + (c?mark(w,"catalogue"):"")
@@ -429,7 +467,7 @@ function renderWorks(){
 }
 function renderComposers(){
   const rows=COMPOSERS.map(c=>{
-    const ws=WORKS.filter(w=>isWork(w)&&w.composer_slug===c.slug);
+    const ws=WORKS.filter(w=>isWork(w)&&w.composer_slugs.includes(c.slug));
     const three=ws.filter(w=>w.nsources>=3).length;
     const dis=ws.filter(inDoubt).length;
     const play=ws.filter(w=>w.au).length;
@@ -489,7 +527,7 @@ const TL_MODES = [["composer","By composer"],["period","By period"],
 const ROW_H = 34;
 
 function renderTimeline(host){
-  const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||state.comp.has(w.composer_slug))
+  const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2)))
     && (!state.f.form||!state.f.form.size||arr(val(w,"form")).some(f=>state.f.form.has(f)))
     && (!state.f.family||!state.f.family.size||state.f.family.has(w.family)));
   const undated=pool.filter(w=>year(w)==null).length;
@@ -570,7 +608,7 @@ function renderTimeline(host){
 
 function renderFifths(host){
   const counts={};
-  WORKS.filter(w=>isWork(w)&&(state.comp.size===0||state.comp.has(w.composer_slug)))
+  WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2))))
     .forEach(w=>{const p=keyParts(val(w,"key"));
       if(p) counts[p.tonic+"|"+p.mode]=(counts[p.tonic+"|"+p.mode]||0)+1;});
   const max=Math.max(1,...Object.values(counts));
@@ -664,10 +702,11 @@ function drawRec(row){
   const w = Object.assign({}, row, DETAIL.get(row.id) || {});
   w.id = row.id; w.title = row.title; w.composer = row.composer;
   w.composer_slug = row.composer_slug; w.forces = row.forces;
+  w.composer_slugs = row.composer_slugs; w.composers = row.composers;
   w.form_group = row.form_group; w.completeness = row.completeness;
   const id=w.id;
   const c=COMPOSERS.find(x=>x.slug===w.composer_slug)||{};
-  const cat=cats(w), pc=primaryCat(w);
+  const cat=catsShown(w), pc=primaryCat(w);
 
   /* THE HEADLINE. What a musician wants before anything else: whose it is, what it
      is, who plays it, what key, how long. Chips, not a table, because these are the
@@ -684,9 +723,10 @@ function drawRec(row){
     w.completeness && {t:w.completeness, cls:"k-warn"},
   ].filter(Boolean).map(k=>`<span class="kf ${k.cls}">${k.sw?`<span class="sw" style="background:${k.sw}"></span>`:""}${esc(k.t)}</span>`).join("");
 
+  const fromPage = (F(w,"catalogue")||{}).from_page_name;
   const catline = cat.length
     ? `<div class="catline">${cat.map(x=>`<b>${esc(x.label)}</b>`).join('<span class="sep">·</span>')}
-       ${mark(w,"catalogue")}</div>` : "";
+       ${mark(w,"catalogue")}${fromPage?`<span class="frompage" title="${esc(fromPage)}">from the page name</span>`:""}</div>` : "";
 
   const ROWS2=[["instrumentation","Scored for"],["date_composed","Composed"],
     ["duration_measured","Measured in recordings"],["duration_estimated","Editor's estimate"],
@@ -706,7 +746,16 @@ function drawRec(row){
   const vers=(w.versions||[]).map(v=>esc(v.raw)).join(" · ");
 
   document.getElementById("recbody").innerHTML=
-    `<p class="whose"><span class="dot" style="background:${compColour(w.composer_slug)}"></span>${esc(c.name||w.composer)}<span class="yrs">${c.born?` ${c.born}–${c.died||""}`:""}</span></p>
+    `<p class="whose">${(w.composer_slugs||[w.composer_slug]).map((s2,i)=>{
+        const ci=COMPOSERS.find(x=>x.slug===s2)||{};
+        return `<span class="dot" style="background:${compColour(s2)}"></span>`
+             + esc(ci.name||(w.composers||[])[i]||s2)
+             + `<span class="yrs">${ci.born?` ${ci.born}${ci.died?"-"+ci.died:""}`:""}</span>`;
+      }).join('<span class="amp">&amp;</span>')}</p>
+     ${(w.composer_slugs||[]).length>1?`<p class="shared">The sources attribute this to
+        ${w.composer_slugs.length} composers. That is not a duplicate: it is a
+        pasticcio, or an attribution nobody has settled, and the catalogue keeps every
+        name rather than choosing one.</p>`:""}
      <h2>${titleOf(w)}</h2>
      ${catline}
      <div class="keyfacts">${head}</div>
@@ -715,8 +764,12 @@ function drawRec(row){
           title="from the Wikipedia list of this composer's compositions">↗</a></p>`:""}
      ${parent?`<p class="inpart">part of <button data-goto="${esc(parent.id)}">${titleOf(parent)}</button></p>`:""}
      ${vers?`<p class="vers">More than one version on record: ${vers}</p>`:""}
+     ${w.joined_by?`<p class="joined">Two sources were joined here. ${esc(w.joined_by)}</p>`:""}
      ${audioBlock(w)}
-     ${dl?`<h4 class="sec">The facts, and who says them</h4><dl>${dl}</dl>`:""}
+     ${dl?`<h4 class="sec">The facts, and who says them</h4><dl>${dl}</dl>`
+        :`<p class="nothing">A name and nothing else. The sources have an entry for this
+          and attribute it, and then say no more: no key, no date, no scoring. It is
+          kept because it exists, not because we know anything about it.</p>`}
      ${kids?`<h4 class="sec">${(w.tree.children||[]).length} pieces</h4><div class="kids">${kids}</div>`:""}
      ${mediaBlock(w)}
      <div class="links">${links}</div>`;
@@ -864,7 +917,7 @@ function railFor(f, pool, limit){
     `</span>`;
 }
 function renderFacets(){
-  const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||state.comp.has(w.composer_slug)));
+  const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2))));
   let html=FACETS.map(f=>railFor(f,pool)).filter(Boolean).join(`<span class="chip-sep"></span>`);
   const g=state.f.form_group;
   if(g && g.size){
@@ -907,7 +960,11 @@ function draw(){
   state.limit=300; renderPicker(); renderFacets(); renderInstrument(); renderStage();
   const v=visible(), all=WORKS.filter(isWork).length;
   document.getElementById("totals").innerHTML=
-    `<b>${all}</b> works · <b>${COMPOSERS.length}</b> composers · <b>${WORKS.filter(w=>isWork(w)&&(w.sources||[]).length>=3).length}</b> triple-checked`;
+    /* Say what is measured. This read "triple-checked" off the number of catalogues
+       that hold an entry for the work, which is not what a reader hears and is not the
+       more interesting fact: a source can list a work without contributing anything we
+       published. `xc` counts fields where two or more sources actually spoke. */
+    `<b>${all}</b> works · <b>${COMPOSERS.length}</b> composers · <b>${WORKS.filter(w=>isWork(w)&&w.xc).length}</b> with a fact confirmed twice`;
   document.getElementById("count").innerHTML= state.sub==="composers"
     ? `<b>${COMPOSERS.length}</b> composers`
     : `<b>${v.length}</b>${v.length!==all?` of ${all}`:""} works · <b>${v.filter(inDoubt).length}</b> with a disagreement`;

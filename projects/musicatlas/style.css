@@ -399,3 +399,17 @@ body.rec-open table.cat col.k-comp{width:92px}
 /* what stays: who wrote it, its number, its name, whether it can be heard, and how
    well the sources agree. Key, scoring, date and duration are all in the panel
    itself, two inches to the right. */
+
+/* A work with more than one composer prints them all in one cell; the ampersand is
+   quieter than the names so the eye still reads two names, not three words. */
+.amp{opacity:.45;padding:0 .25em;font-size:.9em}
+
+/* Two admissions of ignorance, drawn quietly rather than as warnings: neither is an
+   error, both are the catalogue declining to pretend. */
+.nothing{margin:14px 0;padding:10px 12px;border-left:3px solid var(--rule,#d8d2c8);
+  background:var(--soft,#faf8f4);color:var(--dim,#6b6459);font-size:12.5px;line-height:1.5}
+.shared{margin:6px 0 0;color:var(--dim,#6b6459);font-size:12px;line-height:1.5}
+.plusn{opacity:.55;font-size:.85em;margin-left:.25em}
+.multi{white-space:nowrap}
+.joined{margin:6px 0 0;color:var(--dim,#6b6459);font-size:12px;line-height:1.5}
+.frompage{margin-left:.5em;font-size:11px;opacity:.5;font-style:italic}
