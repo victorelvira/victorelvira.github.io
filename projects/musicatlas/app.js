@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.26.22";
-const BUILD_AT = "2026-09-12 23:29";
+const DATA_V = "0.26.23";
+const BUILD_AT = "2026-09-12 23:39";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -222,6 +222,11 @@ const FACETS=[
   {id:"form_group",label:"Kind",get:w=>w.form_group?[w.form_group]:[]},
   {id:"forces",label:"Forces",get:w=>w.forces?[w.forces]:[],order:()=>FORCES_ORDER},
   {id:"period",label:"Period",get:PERIOD_OF,order:()=>PERIOD_ORDER},
+  /* Where the composer's own catalogue puts it. Not our derivation and not Wikipedia's
+     invention: for Handel every one of these falls in a contiguous HWV range, so the
+     grouping is Baselt's. Only composers whose list article actually partitions them
+     have it, which is why the chip count is smaller than the corpus. */
+  {id:"section",label:"As catalogued",get:w=>w.ls?[w.ls]:[]},
   {id:"length",label:"Length",get:w=>{const s=seconds(w); if(s==null) return [];
     const b=DURATION_BANDS.find(([,lo,hi])=>s>=lo&&s<hi); return b?[b[0]]:[]},
     order:()=>DURATION_BANDS.map(b=>b[0])},

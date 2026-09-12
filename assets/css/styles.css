@@ -222,3 +222,18 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
 
 /* Iconos sociales: toman el color de acento al pasar el raton */
 .social-icons a:hover i { color: var(--accent) !important; }
+
+
+/* Logos de premios/financiadores: altura uniforme y centrados, para que la
+   fila quede alineada (antes cada logo tenía su propia altura). */
+#main-content .col-md-5 .row > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 74px;
+}
+#main-content .col-md-5 img {
+  height: 44px;             /* misma altura para todos */
+  width: 100%;
+  object-fit: contain;      /* encaja el logo sin deformar, centrado */
+}
