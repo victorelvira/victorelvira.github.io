@@ -105,7 +105,6 @@
     "city": "London",
     "country": "United Kingdom",
     "location": "Courtauld Gallery",
-    "kind": "museum",
     "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
@@ -131,7 +130,8 @@
     "qid": "Q107406042",
     "location_src": "London",
     "form": "painting",
-    "venue_src": "P195"
+    "venue_src": "P195",
+    "kind": "museum"
    }
   },
   {

@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.19.0";
+const DATA_V = "0.20.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -38,7 +38,7 @@ const LABEL = {
           museum: "🏛 Museum", church: "⛪ Church" },
   // A Stolperstein is a plaque; what differs is where it is mounted. Grouped, and still tellable
   // apart — the distinction appears only when there are plaques to tell apart.
-  mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "— not a plaque" },
+  mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "Not a plaque" },
   dom: { letters: "Letters", music: "Music", image: "Image", stage: "Stage", science: "Science",
          power: "Power", faith: "Faith", sport: "Sport", trade: "Trade",
          other: "Other trade", nobody: "No person named" },
@@ -65,19 +65,19 @@ const LABEL = {
 const HELP = {
   mount: {
     wall: "A plaque on a building, the ordinary kind: you read it standing on the pavement.",
-    ground: "A Stolperstein — a brass cobble set INTO the pavement, outside the last home a victim of Nazi persecution chose freely. Gunter Demnig has laid more than 100 000 of them since 1992, which makes this the largest memorial in the world and the only one you walk on. Every one begins HIER WOHNTE — here lived. 14 874 of the 16 479 here commemorate somebody with no Wikipedia article at all, which is exactly the point.",
+    ground: "A Stolperstein: a brass cobble set INTO the pavement, outside the last home a victim of Nazi persecution chose freely. Gunter Demnig has laid more than 100 000 of them since 1992, which makes this the largest memorial in the world and the only one you walk on. Every one begins HIER WOHNTE, “here lived”. 14 874 of the 16 479 here commemorate somebody with no Wikipedia article at all, which is exactly the point.",
     "n/a": "Not a plaque.",
   },
   what: {
-    grave: "Where they are buried — a cemetery, a church, or the stone itself when somebody has mapped it.",
-    plaque: "A commemorative plaque — on a wall, or set into the pavement. Read the inscription: it is on the record.",
-    house: "A building they were born in, or lived in — often still somebody's home.",
+    grave: "Where they are buried: a cemetery, a church, or the stone itself when somebody has mapped it.",
+    plaque: "A commemorative plaque, on a wall or set into the pavement. Read the inscription: it is on the record.",
+    house: "A building they were born in, lived in or died in. Often still somebody's home.",
     statue: "A statue, bust, obelisk or memorial standing outdoors because of them.",
     museum: "A museum: one about them, or one holding their work.",
     church: "A church or chapel that holds them.",
   },
   access: {
-    "open-air": "Out in the open. No door, no ticket, no hours — you can walk up to it right now.",
+    "open-air": "Out in the open. No door, no ticket, no hours: you can walk up to it right now.",
     hours: "There is a door, and it opens and closes. A museum, a church, a gated cemetery.",
     "outside-only": "Real and private. You can look at the building from the street; you do not go in.",
     gone: "The building was pulled down or the plaque removed. Kept on the map: the place is still where it happened.",
@@ -94,16 +94,16 @@ const HELP = {
   verb: {
     born: "They were born here.", lived: "They lived here.", worked: "They worked here.",
     died: "They died here.", buried: "They are buried here.",
-    commemorated: "They are remembered here — without the source telling us what happened here.",
+    commemorated: "They are remembered here, without the source telling us what happened here.",
     built: "They built or designed it.", exhibited: "Their work hangs here.",
   },
 };
 
 const WHY_DEAD = {
-  what: "No traces of this kind in the atlas yet — plaques, houses and statues are the next harvest.",
+  what: "No traces of this kind in the atlas yet.",
   access: "Nothing in the current corpus has this access.",
   marking: "Nothing in the current corpus has this marking.",
-  verb: "Nothing in the corpus records this — the plaque layer will bring more of them.",
+  verb: "Nothing in the corpus records this yet.",
 };
 
 /* ── the record card's side file: portraits and occupations, fetched ONCE, on the first click.
@@ -129,7 +129,13 @@ const thumb = (file, w) => file
 
 /* ── data ──
  * A site row is [name, lat, lon, kindIndex]; naming the columns beats counting commas. */
-const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3;
+const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3, S_WHERE = 4;
+// The town and country, interned per file. "4 Rue Croix des Petits Champs" is a real address and
+// a useless one: there is one in Paris and there could be one anywhere, and a reader standing in
+// front of the wrong wall has no way to tell. Kept out of the NAME so that Père-Lachaise is not
+// renamed "Père-Lachaise, Paris, France" — two fields, each true, shown together.
+const WHERES = [""];
+const whereOf = (s) => WHERES[s[S_WHERE]] || "";
 let VOCAB = {}, SITES = [], TRACES = [];
 let deepState = "none";   // none | loading | loaded — what the stats line has to admit
 const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
@@ -340,8 +346,10 @@ function sitePopup(siteIdx, rows) {
     : "";
   const items = sorted.slice(0, CARD_MAX).map(personRow).join("");
   const more = sorted.length > CARD_MAX
-    ? `<li class="pop-more">…and ${sorted.length - CARD_MAX} more — they are all in the list beside the map</li>` : "";
+    ? `<li class="pop-more">…and ${sorted.length - CARD_MAX} more. They are all in the list beside the map.</li>` : "";
+  const where = whereOf(s);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
+    (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
     `<div class="meta">${esc(meta)}</div>${hoursBlock}</div>` +
     `<ul class="people">${items}${more}</ul></div>`;
 }
@@ -400,8 +408,14 @@ function drawMap() {
     } else {
       m.bindPopup(() => cellPopup(c), { maxWidth: 360, autoPan: false });
       m.bindTooltip(`${c.places.length} places · ${c.n} people`, { direction: "top", offset: [0, -12] });
-      // A grouped pin is a door, not a destination: clicking it goes in.
-      m.on("click", () => map.setView([c.best.lat, c.best.lon], Math.min(map.getZoom() + 3, 18)));
+      // A grouped pin USED to zoom in on click — "a door, not a destination". It also opened its
+      // popup, because that is what bindPopup does, and the zoom fired `moveend`, and `moveend`
+      // rebuilds every marker: the list appeared and was destroyed in the same gesture. Two
+      // reasonable behaviours on one tap, one of them killing the other.
+      //
+      // So the list IS the door now. It names what is inside instead of making you guess, each
+      // row flies to its place, and a button in its header does the old blind zoom. Nothing moves
+      // the map on the tap that opens a list.
     }
     pinLayer.addLayer(m);
   }
@@ -415,29 +429,50 @@ function cellPopup(c) {
     return `<li class="pop-place" data-lat="${pl.lat}" data-lon="${pl.lon}">` +
       `<span class="dot" style="background:${colourFor(colourKey(best))}"></span>` +
       `<div class="wk"><div class="wt">${esc(SITES[pl.siteIdx][S_NAME])}</div>` +
+      (whereOf(SITES[pl.siteIdx]) ? `<div class="by dim">${esc(whereOf(SITES[pl.siteIdx]))}</div>` : "") +
       `<div class="by">${esc(best.name)}${pl.vis.length > 1 ? ` and ${pl.vis.length - 1} more` : ""}</div></div>` +
       `<span class="yr">${pl.vis.length}</span></li>`;
   }).join("");
   return `<div class="card"><div class="hd"><div class="nm">${c.n.toLocaleString()} people</div>` +
-    `<div class="meta">in ${c.places.length.toLocaleString()} places here · click the pin to zoom in</div></div>` +
+    `<div class="meta">in ${c.places.length.toLocaleString()} places here</div>` +
+    `<button type="button" class="pop-zoom" data-lat="${c.best.lat}" data-lon="${c.best.lon}">` +
+    `🔍 Zoom in here</button></div>` +
     `<ul class="people">${list}</ul>` +
     (top.length > 14 ? `<div class="pop-more">…and ${top.length - 14} more places</div>` : "") + `</div>`;
 }
 
-// A row inside a grouped pin's card flies to that place.
-map.on("popupopen", (e) => {
-  const el = e.popup.getElement();
+// A row inside a card opens that person; a row inside a grouped card flies to that place.
+// Written once and called for both hosts — the popup on a wide screen, the sheet on a narrow one.
+function wirePopupBody(el, dismiss) {
   if (!el) return;
   el.querySelectorAll(".pop-person[data-qid]").forEach((li) => li.addEventListener("click", (ev) => {
     if (ev.target.closest("a")) return;                 // the links keep their own action
-    map.closePopup();
+    dismiss();
     openPerson(li.dataset.qid);
   }));
   el.querySelectorAll(".pop-place").forEach((li) => li.addEventListener("click", () => {
-    map.closePopup();
+    dismiss();
     map.setView([+li.dataset.lat, +li.dataset.lon], Math.max(map.getZoom() + 3, 15));
   }));
+  const zoom = el.querySelector(".pop-zoom");
+  if (zoom) zoom.addEventListener("click", () => {
+    dismiss();
+    map.setView([+zoom.dataset.lat, +zoom.dataset.lon], Math.min(map.getZoom() + 3, 18));
+  });
+}
+map.on("popupopen", (e) => {
+  const el = e.popup.getElement();
+  if (!el) return;
+  // `getContent()` hands back what was BOUND, and these popups are bound to a function so that a
+  // place nobody opens never pays for its card. The rendered HTML is in the DOM, not in the
+  // binding — read it from there.
+  const body = el.querySelector(".leaflet-popup-content");
+  if (narrow() && body) { openSheetHTML(body.innerHTML, "place"); map.closePopup(e.popup); return; }
+  wirePopupBody(el, () => map.closePopup());
 });
+// Tapping the map background dismisses a place list, the way tapping outside any sheet should.
+// Only a place list: a person card was opened deliberately and closes deliberately.
+map.on("click", () => { if ($("sheet").dataset.kind === "place") closeSheet(); });
 
 function renderPersonChip() {
   const box = $("personchip");
@@ -454,7 +489,7 @@ document.addEventListener("click", (e) => {
 
 function statsLine(pins, inView, rowsInView) {
   const grouped = pins < inView
-    ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins — zoom in to split them`
+    ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins. Zoom in to split them`
     : `${inView.toLocaleString()} ${inView === 1 ? "place" : "places"} here, one pin each`;
   const tableN = TRACES.filter((r) => passes(r, "table")).length;
   const placeless = TRACES.filter((r) => passes(r, "table") && (r.flags & F_PLACELESS)).length;
@@ -478,6 +513,7 @@ function refresh() {
   markRailEnds();
   if (state.near) renderNearMe(); else renderPanel();
   if (tableOn) renderTable();
+  syncURL();
 }
 
 /* ── the legend ───────────────────────────────────────────────────────────────────────────────
@@ -687,6 +723,26 @@ $("preset-now").addEventListener("click", () => {
   $("preset-now").classList.toggle("active", !on);
   refresh();
 });
+/* ── the other one-click answer: was he HERE, or is this just a statue of him? ────────────────
+ * Garibaldi has thirty monuments in this corpus and one grave. Rome has a Via Garibaldi and so
+ * does nearly every town in Italy; the atlas already refuses to map the streets themselves
+ * (data/memorial_kinds.json, `_streets`: "the sign is, the street is not"), but a bronze
+ * Garibaldi in a town he never entered is still a real, mappable object — and it is a completely
+ * different claim from the house he died in.
+ *
+ * The axis that separates them already exists: `verb`. `commemorated` means somebody put this up
+ * about him; `born`/`lived`/`worked`/`died`/`buried` mean he was standing where you are standing.
+ * What was missing was a way to ask the question in one tap instead of un-ticking chips.
+ */
+const VERBS_PRESENT = ["born", "lived", "worked", "died", "buried"];
+$("preset-was").addEventListener("click", () => {
+  const want = (v) => VERBS_PRESENT.includes(v);
+  const on = VOCAB.verb.every((v, i) => want(v) === (state.verb[i] !== false));
+  VOCAB.verb.forEach((v, i) => { state.verb[i] = on ? true : want(v); });
+  $("preset-was").classList.toggle("active", !on);
+  refresh();
+});
+
 $("reset").addEventListener("click", () => {
   for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
     VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
@@ -694,7 +750,8 @@ $("reset").addEventListener("click", () => {
   state.person = null; state.personName = "";
   $("filter").value = ""; $("filter-clear").hidden = true;
   $("preset-now").classList.remove("active");
-  $("locate").classList.remove("active");
+  $("preset-was").classList.remove("active");
+  tlChosen = false;
   $("renown").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.top === "0"));
   buildTimeline(TL_MIN, TL_MAX);
   refresh();
@@ -743,9 +800,10 @@ function openPerson(qid) {
       return `<li class="sh-trace${pinnable ? "" : " unpinnable"}" data-i="${i}">` +
         `<span class="ic">${WHAT_ICON[VOCAB.what[r.what]] || "·"}</span><div class="wk">` +
         `<div class="wt">${esc(SITES[r.site][S_NAME])}</div>` +
+        (whereOf(SITES[r.site]) ? `<div class="fx wh">📍 ${esc(whereOf(SITES[r.site]))}</div>` : "") +
         `<div class="fx">${esc(LABEL.verb[VOCAB.verb[r.verb]] || VOCAB.verb[r.verb])} · ` +
         `${esc(LABEL.access[acc] || acc)}${mk !== "unknown" ? " · " + esc(LABEL.marking[mk] || mk) : ""}</div>` +
-        (pinnable ? "" : `<div class="fx warn">the source names a town, not a place — nothing to pin</div>`) +
+        (pinnable ? "" : `<div class="fx warn">the source names a town, not a place: nothing to pin</div>`) +
         `</div></li>`;
     }).join("");
 
@@ -774,7 +832,7 @@ function openPerson(qid) {
     $("sheet").hidden = false;
     $("sheet-body").querySelectorAll(".sh-trace").forEach((li) => li.addEventListener("click", () => {
       const r = sorted[+li.dataset.i];
-      if (r.flags & F_PLACELESS) return banner("The source names a town, not a place — there is nothing to fly to.");
+      if (r.flags & F_PLACELESS) return banner("The source names a town, not a place. There is nothing to fly to.");
       closeSheet();
       map.setView([SITES[r.site][S_LAT], SITES[r.site][S_LON]], 16);
     }));
@@ -789,7 +847,26 @@ function openPerson(qid) {
     });
   });
 }
-function closeSheet() { $("sheet").hidden = true; }
+function closeSheet() { $("sheet").hidden = true; $("sheet").dataset.kind = ""; }
+
+/* ── a map list that the map cannot take away (the sibling's lesson, ported) ──────────────────
+ * On a phone this sequence was reliably infuriating: tap a pin, a list of twenty-five names
+ * opens, the map moves, and the list is gone before you have read the second name. Nothing was
+ * random about it. A Leaflet popup is a child of the map pane and is anchored to a marker, and
+ * `drawMap()` rebuilds every marker on `moveend` — so the popup's own anchor is destroyed under
+ * it. The map was eating its own list.
+ *
+ * The sibling solved this by taking the list OUT of the map: on a narrow screen the popup's
+ * content is moved into the fixed bottom sheet and the Leaflet popup is closed immediately. The
+ * sheet is a sibling of the map, not a child, so a redraw cannot touch it. `autoPan: false` is
+ * the other half — an opening popup must never scroll the map out from under your thumb.
+ */
+function openSheetHTML(html, kind) {
+  $("sheet-body").innerHTML = html;
+  $("sheet").dataset.kind = kind || "place";
+  $("sheet").hidden = false;
+  wirePopupBody($("sheet-body"), closeSheet);
+}
 $("sheet-close").addEventListener("click", closeSheet);
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
 
@@ -812,7 +889,7 @@ function renderPanel() {
     `<span class="ph-tail"> ${vis.length === 1 ? "person" : "people"} in view</span>`;
   const ul = $("worklist");
   if (!vis.length) {
-    ul.innerHTML = `<li class="empty">${t("Pan or zoom the map — whoever is in view is listed here.")}</li>`;
+    ul.innerHTML = `<li class="empty">${t("Pan or zoom the map. Whoever is in view is listed here.")}</li>`;
     return;
   }
   panelPlan = [];
@@ -855,7 +932,8 @@ function appendChunk() {
       const s = SITES[it.grp.siteIdx];
       html += `<li class="grp" data-site="${it.grp.siteIdx}">` +
         `<span>${folded.has(it.grp.siteIdx) ? "▸" : "▾"}</span>` +
-        `<span class="gname">${esc(s[S_NAME])}</span>` +
+        `<span class="gname">${esc(s[S_NAME])}` +
+        (whereOf(s) ? `<span class="gwhere">${esc(whereOf(s))}</span>` : "") + `</span>` +
         `<span class="gsub">${it.grp.n} ${it.grp.n === 1 ? "person" : "people"}</span></li>`;
     } else html += rowHTML(it.r, it.flat);
   }
@@ -891,12 +969,13 @@ $("pv-sort").addEventListener("change", (e) => { panelSort = e.target.value; ren
 map.on("moveend", () => {
   const { pins, inView, rowsInView } = drawMap();
   const quota = pins < inView
-    ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins — zoom in to split them`
+    ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins. Zoom in to split them`
     : `${inView.toLocaleString()} ${inView === 1 ? "place" : "places"} here, one pin each`;
   const tableN = TRACES.filter((r) => passes(r, "table")).length;
   $("stats").textContent = `${quota} · ${rowsInView.toLocaleString()} people in view · ` +
     `${tableN.toLocaleString()} traces pass the filters`;
   if (!state.near) renderPanel();
+  syncURL();
 });
 
 /* ── table: the SAME predicate, a different view name. No second copy. ── */
@@ -933,6 +1012,7 @@ function setTable(on) {
   $("table").hidden = !on; $("main").style.display = on ? "none" : "flex";
   $("v-table").classList.toggle("active", on); $("v-map").classList.toggle("active", !on);
   if (on) renderTable(); else map.invalidateSize();
+  syncURL();
 }
 $("v-table").addEventListener("click", () => setTable(true));
 $("v-map").addEventListener("click", () => setTable(false));
@@ -1055,11 +1135,19 @@ document.addEventListener("keydown", (e) => {
 
 /* ── lifetime slider ── */
 let TL_MIN = -500, TL_MAX = 2026;
+// Set once somebody — the reader, or a link they opened — has actually chosen a range. The long
+// tail arrives 2.5 s after boot and calls buildTimeline again with wider bounds; without this flag
+// that second call silently threw away the range the URL had just restored.
+let tlChosen = false;
 function buildTimeline(min, max) {
   TL_MIN = min; TL_MAX = max;
   const lo = $("tl-min"), hi = $("tl-max"), label = $("tl-label"), fill = $("tl-fill");
-  lo.min = hi.min = min; lo.max = hi.max = max; lo.value = min; hi.value = max;
-  state.yearMin = min; state.yearMax = max;
+  lo.min = hi.min = min; lo.max = hi.max = max;
+  if (tlChosen) {                       // keep the chosen range, clamped into the new bounds
+    state.yearMin = Math.max(min, Math.min(max, state.yearMin));
+    state.yearMax = Math.max(min, Math.min(max, state.yearMax));
+  } else { state.yearMin = min; state.yearMax = max; }
+  lo.value = state.yearMin; hi.value = state.yearMax;
   const paint = () => {
     const span = max - min || 1;
     fill.style.left = ((state.yearMin - min) / span) * 100 + "%";
@@ -1069,7 +1157,7 @@ function buildTimeline(min, max) {
   const update = () => {
     let a = +lo.value, b = +hi.value;
     if (a > b) { if (document.activeElement === lo) { b = a; hi.value = b; } else { a = b; lo.value = a; } }
-    state.yearMin = a; state.yearMax = b; paint(); refresh();
+    state.yearMin = a; state.yearMax = b; tlChosen = true; paint(); refresh();
   };
   lo.addEventListener("input", update); hi.addEventListener("input", update); paint();
 }
@@ -1093,10 +1181,11 @@ function renderNearMe() {
   const chips = NEAR_RADII.map((r) =>
     `<button type="button" class="pvbtn rchip${r === radiusKm ? " on" : ""}" data-r="${r}">${r}</button>`).join("");
   let html = `<li class="grp"><span class="gname">Radius km</span><span class="gsub">${chips}</span></li>`;
-  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km — try a larger radius.</li>`;
+  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km. Try a larger radius.</li>`;
   for (const v of within) {
     const km = v.d < 1 ? `${Math.round(v.d * 1000)} m` : `${v.d < 10 ? v.d.toFixed(1) : Math.round(v.d)} km`;
-    html += `<li class="row" data-site="${v.siteIdx}"><span class="nm">${esc(v.s[S_NAME])}</span>` +
+    html += `<li class="row" data-site="${v.siteIdx}"><span class="nm">${esc(v.s[S_NAME])}` +
+      (whereOf(v.s) ? `<span class="gwhere">${esc(whereOf(v.s))}</span>` : "") + `</span>` +
       `<span class="yr">${v.n} ${v.n === 1 ? "person" : "people"}</span>` +
       `<span class="tags"><span class="badge">${km}</span></span></li>`;
   }
@@ -1104,25 +1193,100 @@ function renderNearMe() {
   $("worklist").querySelectorAll(".rchip").forEach((b) =>
     b.addEventListener("click", () => { state.near.radiusKm = +b.dataset.r; renderNearMe(); }));
 }
+/* ── the blue dot: where you are, while you walk ──────────────────────────────────────────────
+ * The old button took ONE fix, listed what was near it, and then knew nothing more — so the atlas
+ * was a thing you consulted before leaving the house, not a thing you used in the street. This
+ * watches instead: a dot that moves with you, a halo the size of the error the phone admits to,
+ * and the "near me" list re-sorting as you walk.
+ *
+ * The dot lives in its OWN layer. `pinLayer` is cleared and rebuilt on every `moveend` — putting
+ * the dot in there would delete it the first time you moved, which is the same bug as the popup
+ * the map used to eat, and it would be much harder to notice because you would blame the GPS.
+ *
+ * Nothing about the position is stored, sent, or written to the URL. It is asked for, drawn, and
+ * forgotten when you switch it off.
+ */
+const meLayer = L.layerGroup().addTo(map);
+let meWatch = null, meDot = null, meHalo = null, meFollow = false;
+
+function drawMe(lat, lon, acc) {
+  if (!meDot) {
+    meHalo = L.circle([lat, lon], { radius: acc || 0, color: "#2f6fd0", weight: 1,
+                                    fillColor: "#2f6fd0", fillOpacity: 0.12, interactive: false });
+    meDot = L.circleMarker([lat, lon], { radius: 7, color: "#fff", weight: 3,
+                                         fillColor: "#2f6fd0", fillOpacity: 1 });
+    meDot.bindTooltip("You are here", { direction: "top", offset: [0, -10] });
+    meLayer.addLayer(meHalo); meLayer.addLayer(meDot);
+  } else {
+    meDot.setLatLng([lat, lon]);
+    meHalo.setLatLng([lat, lon]).setRadius(acc || 0);
+  }
+  meDot.bringToFront();
+}
+
+function stopMe() {
+  if (meWatch != null) navigator.geolocation.clearWatch(meWatch);
+  meWatch = null; meLayer.clearLayers(); meDot = meHalo = null; meFollow = false;
+  state.near = null;
+  $("locate").disabled = false;
+  meButton();
+  renderPanel();
+}
+
+// Three states, because two was a lie: off, following, and watching-but-not-chasing (you panned
+// away to look at something). The button says which one it is in, and what the next tap will do.
+function meButton() {
+  const btn = $("locate");
+  btn.textContent = meWatch == null ? "📍 Where I am" : meFollow ? "📍 Following" : "📍 Re-centre";
+  btn.title = meWatch == null ? "Show a live dot where you are"
+            : meFollow ? "Following you. Tap to switch it off"
+            : "Bring the map back to you";
+  btn.classList.toggle("active", meWatch != null);
+}
+
 $("locate").addEventListener("click", () => {
   const btn = $("locate");
-  if (state.near) { state.near = null; btn.classList.remove("active"); renderPanel(); return; }
+  // Panned away and the dot is still live: the obvious next tap is "take me back", not "stop".
+  if (meWatch != null && !meFollow && meDot) {
+    meFollow = true; map.setView(meDot.getLatLng(), Math.max(map.getZoom(), 15));
+    meButton(); return;
+  }
+  if (meWatch != null) return stopMe();
   if (!navigator.geolocation) return banner("Geolocation is not available in this browser.");
   btn.textContent = "📍 Locating…"; btn.disabled = true;
-  navigator.geolocation.getCurrentPosition((pos) => {
-    btn.disabled = false; btn.textContent = "📍 Near me"; btn.classList.add("active");
-    const { latitude: lat, longitude: lon } = pos.coords;
-    if (tableOn) setTable(false);
-    const all = nearSites(lat, lon);
-    const d0 = all.length ? all[0].d : Infinity;
-    state.near = { lat, lon, radiusKm: NEAR_RADII.find((r) => r >= d0) || NEAR_RADII.at(-1) };
-    map.setView([lat, lon], 11);
+  let first = true;
+  meFollow = true;
+  meWatch = navigator.geolocation.watchPosition((pos) => {
+    const { latitude: lat, longitude: lon, accuracy: acc } = pos.coords;
+    btn.disabled = false; meButton();
+    drawMe(lat, lon, acc);
+    if (first) {
+      first = false;
+      if (tableOn) setTable(false);
+      // Open at a radius that actually contains something, rather than at an arbitrary 1 km that
+      // is empty in most of the world and makes the feature look broken.
+      const all = nearSites(lat, lon);
+      const d0 = all.length ? all[0].d : Infinity;
+      state.near = { lat, lon, radiusKm: NEAR_RADII.find((r) => r >= d0) || NEAR_RADII.at(-1) };
+      map.setView([lat, lon], 15);
+    } else {
+      // Keep the list honest as you move, but never yank the map while somebody is reading it:
+      // panning by hand turns following off, the way every map on a phone behaves.
+      state.near = { ...state.near, lat, lon };
+      if (meFollow) map.panTo([lat, lon], { animate: true });
+    }
     renderNearMe();
   }, (err) => {
-    btn.disabled = false; btn.textContent = "📍 Near me";
-    banner("Could not get your location: " + err.message);
-  }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
+    btn.disabled = false; btn.textContent = "📍 Where I am";
+    stopMe();
+    banner(err.code === 1
+      ? "This browser is not allowed to share your location. Check the site permissions."
+      : "Could not get your location: " + err.message);
+  }, { enableHighAccuracy: true, timeout: 20000, maximumAge: 5000 });
 });
+// Dragging the map is a statement that you want to look somewhere else. The dot keeps moving; the
+// map stops chasing it. Tapping the button again re-centres and resumes.
+map.on("dragstart", () => { if (meWatch != null && meFollow) { meFollow = false; meButton(); } });
 
 let bTimer = null;
 function banner(msg) {
@@ -1190,11 +1354,23 @@ function absorb(d) {
   // they share, because each renumbers only the sites it uses. Père-Lachaise arrived twice, and so
   // did 9 107 other coordinates. Merging on the coordinate also catches the honest case: a statue
   // and a grave standing at the same spot are one place to go to.
+  // Each file interns its OWN town lines, so a `where` index from the long tail means something
+  // different from the same number in the base file. Translate on the way in, before the row is
+  // stored — the alternative is shipping the whole vocabulary twice, which is half a megabyte of
+  // town names the long tail never points at.
+  const wmap = (d.vocab.where || [""]).map((w) => {
+    let i = WHERES.indexOf(w);
+    if (i < 0) { i = WHERES.length; WHERES.push(w); }
+    return i;
+  });
   const local = [];
   for (const s of d.sites) {
     const key = s[S_LAT] + "," + s[S_LON];
     let i = siteAt.get(key);
-    if (i === undefined) { i = SITES.length; SITES.push(s); siteAt.set(key, i); }
+    if (i === undefined) {
+      s[S_WHERE] = wmap[s[S_WHERE]] ?? 0;
+      i = SITES.length; SITES.push(s); siteAt.set(key, i);
+    }
     local.push(i);
   }
   for (const a of d.traces) {
@@ -1203,10 +1379,119 @@ function absorb(d) {
                 site, what: a[ix.what], access: a[ix.access], marking: a[ix.marking],
                 verb: a[ix.verb], rank: a[ix.rank], flags: a[ix.flags], dom: a[ix.dom],
                 mount: a[ix.mount] };
-    r._s = deacc(r.name + " " + SITES[site][S_NAME]);
+    r._s = deacc(r.name + " " + SITES[site][S_NAME] + " " + whereOf(SITES[site]));
     TRACES.push(r);
   }
 }
+
+/* ── the whole view lives in the URL ──────────────────────────────────────────────────────────
+ * A phone throws a background tab away and reloads it from the address bar when you come back —
+ * and without this, that reload landed on the home view: every filter gone, the map back over
+ * Europe, whatever you had found lost. The atlas looked like it had forgotten, and it had.
+ *
+ * `replaceState`, never `pushState`. The map fires `moveend` on every pan and a push per pan would
+ * fill the back button with three hundred indistinguishable steps, which is a worse phone than the
+ * one we started with. The URL is a SNAPSHOT of where you are standing, not a log of how you got
+ * here: reload it, share it, bookmark it, reopen the tab tomorrow, and you are back.
+ *
+ * Families are written as the values still TICKED, by name, and only when some are NOT — so a
+ * clean view keeps a clean URL, and a value added to the bundle next month cannot be silently
+ * excluded by a link written today: it is absent from the list, so it arrives ticked. An old link
+ * showing MORE than its author saw is the honest failure; showing less, invisibly, is not.
+ */
+const URL_FAMS = ["what", "mount", "access", "marking", "dom", "verb"];
+let urlTimer = null, urlBooted = false;
+
+function viewToURL() {
+  const p = new URLSearchParams();
+  for (const fam of URL_FAMS) {
+    const v = VOCAB[fam];
+    if (!v) continue;
+    if (v.some((_, i) => state[fam][i] === false))
+      p.set(fam, v.filter((_, i) => state[fam][i] !== false).join(",") || "none");
+  }
+  if (state.topN) p.set("top", String(state.topN));
+  if (state.q) p.set("q", state.q);
+  if (state.person) p.set("who", state.person);
+  if (state.colorBy !== "dom") p.set("by", state.colorBy);
+  if (tableOn) p.set("view", "table");
+  if (tlChosen && (state.yearMin > TL_MIN || state.yearMax < TL_MAX))
+    p.set("yr", `${state.yearMin},${state.yearMax}`);
+  // NOT `near`. Everything else about the view belongs in the URL; where the reader is standing
+  // does not. A shared link, a screenshot of the address bar, a browser history synced to another
+  // machine — each would be carrying somebody's location to somewhere they never sent it. The
+  // location is live, it is theirs, and it is re-asked for every time.
+  // The fold is remembered only when it disagrees with what this screen would have done, so the
+  // same link opens sensibly on a phone and on a laptop.
+  const folded = document.body.classList.contains("folded");
+  if (folded !== narrow()) p.set("fold", folded ? "1" : "0");
+  const c = map.getCenter();
+  p.set("m", `${c.lat.toFixed(5)},${c.lng.toFixed(5)},${map.getZoom()}`);
+  return p.toString();
+}
+
+function syncURL() {
+  if (!urlBooted) return;             // never write the home view over the link being restored
+  clearTimeout(urlTimer);
+  urlTimer = setTimeout(() => {
+    const qs = viewToURL();
+    history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+  }, 250);
+}
+
+/* Read a URL back into the view. Runs at boot and on `popstate` (the phone's back button, and the
+ * gesture that restores an evicted tab). Everything it touches is also touched by hand somewhere
+ * else in this file, so it sets the STATE and then the controls that display it — never the other
+ * way round. */
+function applyURL() {
+  const p = new URLSearchParams(location.search);
+  for (const fam of URL_FAMS) {
+    const v = VOCAB[fam];
+    if (!v) continue;
+    if (!p.has(fam)) { v.forEach((_, i) => { state[fam][i] = true; }); continue; }
+    const on = new Set(p.get(fam) === "none" ? [] : p.get(fam).split(","));
+    v.forEach((name, i) => { state[fam][i] = on.has(name); });
+  }
+  state.topN = +p.get("top") || 0;
+  state.q = deacc(p.get("q") || "");
+  state.person = p.get("who") || null;
+  state.colorBy = ["dom", "verb", "access"].includes(p.get("by")) ? p.get("by") : "dom";
+  if (state.person) {
+    const rows = byPerson.get(state.person);
+    state.personName = rows && rows.length ? rows[0].name : state.person;
+  } else state.personName = "";
+  const yr = (p.get("yr") || "").split(",").map(Number);
+  if (yr.length === 2 && yr.every(Number.isFinite)) {
+    state.yearMin = yr[0]; state.yearMax = yr[1]; tlChosen = true;
+    $("tl-min").value = yr[0]; $("tl-max").value = yr[1];
+  }
+
+  // and now the controls that show all that
+  $("filter").value = p.get("q") || "";
+  $("filter-clear").hidden = !$("filter").value;
+  $("renown").querySelectorAll("button[data-top]")
+    .forEach((b) => b.classList.toggle("on", +b.dataset.top === state.topN));
+  const openAir = VOCAB.access.indexOf("open-air");
+  $("preset-now").classList.toggle("active",
+    openAir >= 0 && VOCAB.access.every((_, i) => (state.access[i] !== false) === (i === openAir)));
+  $("preset-was").classList.toggle("active",
+    VOCAB.verb.every((v, i) => VERBS_PRESENT.includes(v) === (state.verb[i] !== false)));
+  if (p.has("fold")) document.body.classList.toggle("folded", p.get("fold") === "1");
+  setTable(p.get("view") === "table");
+
+  const m = (p.get("m") || "").split(",").map(Number);
+  return m.length === 3 && m.every(Number.isFinite) ? [[m[0], m[1]], m[2]] : null;
+}
+
+// The back button, and the moment a phone hands an evicted tab back. Rebuilding the pins is not
+// optional: `colorBy` decides what the icons are made of.
+window.addEventListener("popstate", () => {
+  if (!VOCAB.what) return;
+  const where = applyURL();
+  if (where) map.setView(where[0], where[1], { animate: false });
+  buildPlaces();
+  refresh();
+});
 
 /* ── boot ── */
 fetch("culture/data/atlas.json?v=" + DATA_V)
@@ -1223,6 +1508,11 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
     buildTimeline(years[Math.floor(years.length * 0.01)] || -500, years.at(-1) || 2026);
     indexPeople();
+    // Before the first draw, and before buildPlaces: `colorBy` decides what the pins are made of,
+    // and a link that asked for "colour by what they did" must not draw one frame in profession
+    // colours first. applyURL hands back where the map should be, or null for the home view.
+    const bootView = applyURL();
+    urlBooted = true;
     buildPlaces();
     // ORDER MATTERS. Leaflet is built before the flex layout exists and measures itself 0×0.
     // MarkerCluster indexes what it is given at the map's CURRENT size and zoom, so adding 47 000
@@ -1239,7 +1529,11 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     // Kuwait. Only at boot; a later resize must not yank the reader back to the home view.
     const settle = () => {
       map.invalidateSize({ pan: false });
-      map.setView(HOME, HOME_ZOOM, { animate: false });
+      // The view the link asked for, or home. Re-set on every settle for the same reason home was:
+      // `pan: false` keeps the top-LEFT pixel fixed, so growing from 0×0 slides the centre by half
+      // the new size and the atlas opens somewhere nobody asked for.
+      if (bootView) map.setView(bootView[0], bootView[1], { animate: false });
+      else map.setView(HOME, HOME_ZOOM, { animate: false });
       refresh();
     };
     settle();

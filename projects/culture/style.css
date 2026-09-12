@@ -237,7 +237,24 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 .sh-trace .wt{font-weight:600;font-size:13px;line-height:1.25}
 .sh-trace .fx{color:var(--stone);font-size:11.5px;margin-top:1px}
 .sh-trace .fx.warn{color:var(--rust)}
-@media (max-width:720px){ #sheet{width:100%;max-width:100%} }
+/* A place list hosted by the sheet is a card in its own right and brings its own padding. */
+#sheet[data-kind="place"] #sheet-body{padding:0}
+#sheet[data-kind="place"] #sheet-close{top:6px;right:8px;z-index:2}
+.card .where{font-size:11.5px;color:var(--ink-soft);margin-top:2px}
+.card .by.dim{color:var(--stone);font-size:11px}
+.sh-trace .fx.wh{color:var(--ink-soft)}
+.gwhere{display:block;font-weight:400;font-size:10.5px;color:var(--stone);line-height:1.2}
+.card .pop-zoom{margin-top:6px;border:1px solid var(--line);background:#fff;border-radius:6px;
+  padding:4px 8px;font:inherit;font-size:11.5px;cursor:pointer;color:var(--ink-soft)}
+.card .pop-zoom:hover{background:var(--paper-2)}
+/* On a phone the sheet comes up from the BOTTOM and stops short of the top, so the map stays
+   visible above it. A drawer that covers the whole screen is a page, and a page loses the one
+   thing the list is about: where on the map you tapped. */
+@media (max-width:720px){
+  #sheet{width:100%;max-width:100%;top:auto;left:0;right:0;bottom:0;max-height:68vh;
+    border-left:0;border-top:1px solid var(--line);border-radius:12px 12px 0 0;
+    box-shadow:0 -6px 26px rgba(0,0,0,.22)}
+}
 
 /* ── the axes get a row of their own, so a family reads as a family ── */
 #axes{display:flex;align-items:center;gap:8px;flex-wrap:wrap;width:100%;padding-top:2px}

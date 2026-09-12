@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Culture Atlas · what is left of them, and can you see it</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%235a6b57%22%2F%3E%20%3Cpath%20d%3D%22M16%204.2c-4.4%200-8%203.6-8%208%200%205.9%208%2015.6%208%2015.6s8-9.7%208-15.6c0-4.4-3.6-8-8-8z%22%20fill%3D%22%23f4f2ec%22%2F%3E%20%3Crect%20x%3D%2212.2%22%20y%3D%228.2%22%20width%3D%227.6%22%20height%3D%228.6%22%20rx%3D%223.8%22%20fill%3D%22%235a6b57%22%2F%3E%20%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.5%22%20r%3D%221.7%22%20fill%3D%22%23c8a24a%22%2F%3E%20%3C%2Fsvg%3E">
-  <link rel="icon" type="image/svg+xml" href="culture/favicon.svg?v=0.19.0">
-  <meta name="description" content="A map of the physical traces famous people left behind — graves, plaques, birth houses, statues — sorted by whether you can see them right now or they have opening hours.">
+  <link rel="icon" type="image/svg+xml" href="culture/favicon.svg?v=0.20.0">
+  <meta name="description" content="A map of the physical traces famous people left behind (graves, plaques, birth houses, statues), sorted by whether you can see them right now or they have opening hours.">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2f3a2e">
   <link rel="stylesheet" href="culture/vendor/leaflet.css">
   <link rel="stylesheet" href="culture/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="culture/style.css?v=0.19.0">
+  <link rel="stylesheet" href="culture/style.css?v=0.20.0">
 </head>
 <body>
   <nav id="navbar">
@@ -26,7 +26,7 @@
       <svg class="mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#5a6b57"/> <path d="M16 4.2c-4.4 0-8 3.6-8 8 0 5.9 8 15.6 8 15.6s8-9.7 8-15.6c0-4.4-3.6-8-8-8z" fill="#f4f2ec"/> <rect x="12.2" y="8.2" width="7.6" height="8.6" rx="3.8" fill="#5a6b57"/> <circle cx="16" cy="12.5" r="1.7" fill="#c8a24a"/></svg>
       <div>
         <strong>Culture Atlas</strong>
-        <small>what is left of them — and can you see it</small>
+        <small>what is left of them, and can you see it</small>
       </div>
     </a>
     <button type="button" id="fold" title="Fold the controls away and give the map the screen"
@@ -43,16 +43,16 @@
         <button type="button" id="v-map" class="view-btn active" title="Map with the list beside it">🗺 Map &amp; list</button>
         <button type="button" id="v-table" class="view-btn" title="Every trace as a sortable table">▦ Table</button>
       </span>
-      <span id="who" class="who"></span>
-      <span id="renown" class="fam" title="How much of it to look at — the best known of whatever you are already filtering to">
+      <span id="renown" class="fam" title="How much of it to look at: the best known of whatever you are already filtering to">
         <span class="fam-lbl">Renown</span>
         <button type="button" data-top="100">100</button>
         <button type="button" data-top="500">500</button>
         <button type="button" data-top="2000">2000</button>
         <button type="button" data-top="0" class="on">all</button>
       </span>
-      <button type="button" id="preset-now" class="chip btn" title="Only what is out in the open — no door, no ticket, no hours">☀ Visible now</button>
-      <button type="button" id="locate" class="chip btn" title="What is near you right now">📍 Near me</button>
+      <button type="button" id="preset-now" class="chip btn" title="Only what is out in the open: no door, no ticket, no hours">☀ Visible now</button>
+      <button type="button" id="preset-was" class="chip btn" title="Only places the person actually stood: born, lived, worked, died, buried. Hides monuments put up later, anywhere in the world.">👣 Where they were</button>
+      <button type="button" id="locate" class="chip btn" title="Show a live dot where you are">📍 Where I am</button>
       <span id="personchip" hidden></span>
       <button type="button" id="reset" class="chip btn" title="Clear every filter">↺</button>
       <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
@@ -62,9 +62,9 @@
          the atlas exists to answer. Marking lives in the drawer; it is mostly `unknown`. -->
     <div id="axes">
       <span class="fam primary" id="fam-what" title="What kind of trace"></span>
-      <span class="fam" id="fam-mount" title="A Stolperstein is a plaque too — what differs is where it sits"></span>
+      <span class="fam" id="fam-mount" title="A Stolperstein is a plaque too. What differs is where it sits"></span>
       <span class="fam" id="fam-access" title="Can you get in?"></span>
-      <span class="fam" id="fam-verb" title="What happened here — shown when there is a choice"></span>
+      <span class="fam" id="fam-verb" title="What happened here (shown when there is a choice)"></span>
     </div>
     <details id="more">
       <summary>Refine ▾</summary>
@@ -78,7 +78,7 @@
       </div>
     </details>
     <span id="filter-wrap">
-      <input id="filter" type="search" placeholder="Filter — person, place, city…" autocomplete="off"
+      <input id="filter" type="search" placeholder="Filter: person, place, city…" autocomplete="off"
              title="Filters every view: map, list and table">
       <button type="button" id="filter-clear" title="Clear the filter (Esc)" aria-label="Clear the filter" hidden>✕</button>
       <ul id="suggest" hidden></ul>
@@ -93,7 +93,7 @@
       <input type="range" id="tl-min" aria-label="From year">
       <input type="range" id="tl-max" aria-label="To year">
     </div>
-    <span id="tl-label" class="tl-val">—</span>
+    <span id="tl-label" class="tl-val">…</span>
   </div>
 
   <div id="main">
@@ -129,6 +129,6 @@
   <div id="banner" hidden></div>
   <script src="culture/vendor/leaflet.js"></script>
   <script src="culture/vendor/leaflet.markercluster.js"></script>
-  <script src="culture/app.js?v=0.19.0"></script>
+  <script src="culture/app.js?v=0.20.0"></script>
 </body>
 </html>

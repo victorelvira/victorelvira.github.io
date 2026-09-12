@@ -71,7 +71,6 @@
     "title": "Chair of Saint Peter",
     "qid": "Q733893",
     "form": "sculpture",
-    "kind": "church",
     "year": "1658",
     "location": "St. Peter's Basilica",
     "country": "Vatican City",
@@ -86,7 +85,8 @@
     "museum_id": "st-peter-s-basilica",
     "location_src": "Vatican City",
     "venue_src": "P276",
-    "city": "Vatican City"
+    "city": "Vatican City",
+    "kind": "church"
    },
    "geometry": {
     "type": "Point",
@@ -692,7 +692,6 @@
     "title": "Bust of Louis XIV",
     "qid": "Q2928781",
     "form": "sculpture",
-    "kind": "museum",
     "year": "1665",
     "location": "Palace of Versailles",
     "city": "Versailles",
@@ -706,7 +705,9 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "palace-of-versailles",
-    "location_src": "Tuileries Palace"
+    "location_src": "Tuileries Palace",
+    "venue_src": "hand",
+    "kind": "museum"
    },
    "geometry": {
     "type": "Point",
@@ -1093,7 +1094,6 @@
     "title": "Saint Sebastian",
     "qid": "Q7591669",
     "form": "sculpture",
-    "kind": "museum",
     "year": "1617",
     "location": "Thyssen-Bornemisza Museum",
     "city": "Madrid",
@@ -1108,7 +1108,8 @@
     },
     "museum_id": "thyssen-bornemisza-museum",
     "location_src": "Madrid",
-    "venue_src": "P195"
+    "venue_src": "P195",
+    "kind": "museum"
    },
    "geometry": {
     "type": "Point",
@@ -1125,7 +1126,6 @@
     "title": "St Bibiana",
     "qid": "Q7592666",
     "form": "sculpture",
-    "kind": "church",
     "year": "1624",
     "location": "Santa Bibiana Church",
     "city": "Metropolitan City of Rome",
@@ -1140,7 +1140,8 @@
     },
     "museum_id": "santa-bibiana-church",
     "location_src": "Rome",
-    "venue_src": "P276"
+    "venue_src": "P276",
+    "kind": "church"
    },
    "geometry": {
     "type": "Point",
@@ -1370,7 +1371,6 @@
     "title": "Statue of Pope Urban VIII",
     "qid": "Q15378957",
     "form": "sculpture",
-    "kind": "museum",
     "year": "1630",
     "location": "Palazzo dei Conservatori",
     "city": "Metropolitan City of Rome",
@@ -1385,7 +1385,8 @@
     },
     "museum_id": "palazzo-dei-conservatori",
     "location_src": "Rome",
-    "venue_src": "P276"
+    "venue_src": "P276",
+    "kind": "museum"
    },
    "geometry": {
     "type": "Point",
@@ -1585,7 +1586,6 @@
     "title": "Memorial to Alessandro Valtrini",
     "qid": "Q16060320",
     "form": "sculpture",
-    "kind": "church",
     "year": "1639",
     "location": "San Lorenzo in Damaso",
     "city": "Metropolitan City of Rome",
@@ -1600,13 +1600,14 @@
     },
     "museum_id": "san-lorenzo-in-damaso",
     "location_src": "Rome",
-    "venue_src": "P276"
+    "venue_src": "P276",
+    "kind": "church"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.47205,
-     41.89676
+     12.472049009,
+     41.896764325
     ]
    }
   },
@@ -2229,7 +2230,6 @@
     "title": "Fountain of the Four Rivers (Boiogna)",
     "qid": "Q51213623",
     "form": "sculpture",
-    "kind": "museum",
     "year": "1649",
     "location": "Academy of Fine Arts of Bologna",
     "city": "Metropolitan City of Bologna",
@@ -2242,7 +2242,8 @@
     },
     "museum_id": "academy-of-fine-arts-of-bologna",
     "location_src": "Bologna",
-    "venue_src": "P195"
+    "venue_src": "P195",
+    "kind": "museum"
    },
    "geometry": {
     "type": "Point",
@@ -2374,7 +2375,6 @@
     "title": "Bust of Urban VIII",
     "qid": "Q51218543",
     "form": "sculpture",
-    "kind": "museum",
     "year": "1630",
     "location": "Galleria Nazionale d'Arte Antica",
     "city": "Rome",
@@ -2387,7 +2387,8 @@
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "location_src": "Rome",
-    "venue_src": "P195"
+    "venue_src": "P195",
+    "kind": "museum"
    },
    "geometry": {
     "type": "Point",

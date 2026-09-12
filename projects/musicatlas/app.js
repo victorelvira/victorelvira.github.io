@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.26.14";
-const BUILD_AT = "2026-09-12 11:34";
+const DATA_V = "0.26.22";
+const BUILD_AT = "2026-09-12 23:29";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -302,7 +302,25 @@ function renderPicker(){
     btn.addEventListener("click",()=>{ const open=pop.hidden; pop.hidden=!open;
       btn.setAttribute("aria-expanded",String(open));
       if(open){ s.value=""; listComposers(); s.focus(); } });
-    document.addEventListener("click",e=>{ if(!pop.hidden&&!box.contains(e.target)){
+    /* One delegated listener: the table is re-rendered constantly, so binding per grip
+   would leak handlers on every draw. */
+document.addEventListener("mousedown", e=>{
+  const g=e.target.closest && e.target.closest("[data-grip]");
+  if(g) startResize(e, g.dataset.grip);
+}, true);
+/* A way back. Double-click a grip and that column returns to the width the stylesheet
+   gives it; with the alt key, every column does. Without this the only way out of a
+   width you regret is clearing site data. */
+document.addEventListener("dblclick", e=>{
+  const g=e.target.closest && e.target.closest("[data-grip]");
+  if(!g) return;
+  e.preventDefault(); e.stopPropagation();
+  if(e.altKey) Object.keys(COLW).forEach(k=>delete COLW[k]);
+  else delete COLW[g.dataset.grip];
+  saveColW(); renderStage();
+}, true);
+
+document.addEventListener("click",e=>{ if(!pop.hidden&&!box.contains(e.target)){
       pop.hidden=true; btn.setAttribute("aria-expanded","false"); }});
     document.addEventListener("keydown",e=>{ if(e.key==="Escape") pop.hidden=true; });
     s.addEventListener("input",listComposers);
@@ -360,7 +378,16 @@ const COLS=[
   {id:"scoring",label:"Scoring",cls:"c-scoring"},
   {id:"date",label:"Composed",cls:"c-num"},
   {id:"dur",label:"Duration",cls:"c-num"},
-  {id:"media",label:"Score · audio",cls:"c-media"},
+  /* Two columns, not one. They were a single "Score · audio" cell holding a play
+     button with no number on it, a count of score files and a count of off-site
+     recordings, so the one thing it did not say was HOW MUCH AUDIO a work has. */
+  {id:"score",label:"Scores",cls:"c-media"},
+  {id:"audio",label:"Audio",cls:"c-media"},
+  /* How many recordings of this work EXIST, which is not the same as how many we can
+     offer you. It is MusicBrainz's own total, and it is the nearest thing this project
+     has to a popularity measure, so it is shown rather than only sorted on: an order
+     you cannot see the reason for is a magic trick. */
+  {id:"rec",label:"Recorded",cls:"c-num c-rec"},
   {id:"src",label:"Sources",cls:"c-src"}
 ];
 /* "Sort by catalogue" across several composers has to mean composer THEN number
@@ -375,14 +402,65 @@ const COLS=[
 function liveCols(){
   const narrow = document.body.classList.contains("rec-open");
   return COLS.filter(c => !(narrow && (c.id==="key" || c.id==="scoring"
-                                       || c.id==="date" || c.id==="dur")));
+                                       || c.id==="date" || c.id==="dur"
+                                       || c.id==="rec")));
 }
-const SORTV={ comp:w=>[fold(w.composer)], work:w=>[fold(w.composer),...catSort(w)],
+/* BY SURNAME. Sorting people by their given name put "Anton Bruckner" at the head of
+   the whole catalogue, which is how Víctor found this: the first thing anybody saw was
+   a composer nobody had asked for, because A comes first. */
+const surname = w => fold((w.composer||"").split(/\s+/).slice(-1)[0]);
+
+/* ---------- column widths the reader sets ---------- */
+const COLW = (() => { try { return JSON.parse(localStorage.getItem("musicatlas.colw")||"{}"); }
+                      catch(e){ return {}; } })();
+function saveColW(){ try { localStorage.setItem("musicatlas.colw", JSON.stringify(COLW)); }
+                     catch(e){}
+}
+/* Dragging a grip resizes one column live. The grip sits inside the <th>, so its
+   mousedown has to stop there or the click would also sort the table, which is the one
+   thing a person resizing a column is certainly not asking for. */
+function startResize(ev, id){
+  ev.preventDefault(); ev.stopPropagation();
+  const table=document.querySelector("table.cat"); if(!table) return;
+  const i=liveCols().findIndex(c=>c.id===id); if(i<0) return;
+  const allCols=table.querySelectorAll("col");
+  const col=allCols[i]; if(!col) return;
+  /* FREEZE THE OTHERS FIRST. The table lays out fixed at 100 % width, so widening one
+     column was taken out of its neighbours: pulling "Work" wider squeezed Scores and
+     Audio from 77px to 17 and clipped them. Every column's current width is written
+     down before the drag starts, so the one being pulled is the only one that moves and
+     the table grows past the pane instead, where it can scroll. */
+  const live=liveCols();
+  live.forEach((c,j)=>{ const el=allCols[j]; if(!el) return;
+    const w=Math.round(el.getBoundingClientRect().width);
+    if(w) { COLW[c.id]=COLW[c.id]||w; el.style.width=COLW[c.id]+"px"; } });
+  const x0=ev.clientX, w0=col.getBoundingClientRect().width || col.offsetWidth ||
+           parseFloat(getComputedStyle(col).width) || 100;
+  document.body.classList.add("resizing");
+  document.body.classList.add("colw");    // renderStage confirms or drops it
+  const fit=()=>{ const total=live.reduce((a,c)=>a+(COLW[c.id]||0),0);
+                  if(total) table.style.width=total+"px"; };
+  fit();
+  const move=e=>{ const w=Math.max(40, Math.round(w0 + (e.clientX-x0)));
+                  col.style.width=w+"px"; COLW[id]=w; fit(); };
+  const up=()=>{ document.removeEventListener("mousemove",move);
+                 document.removeEventListener("mouseup",up);
+                 document.body.classList.remove("resizing"); saveColW(); };
+  document.addEventListener("mousemove",move);
+  document.addEventListener("mouseup",up);
+}
+const SORTV={ comp:w=>[surname(w), fold(w.composer)],
+  work:w=>[surname(w), fold(w.composer), ...catSort(w)],
   cat:w=>catSort(w), title:w=>[fold(w.title)],
   key:w=>{const p=keyParts(val(w,"key"));return p?[FIFTHS.indexOf(p.tonic)*2+(p.mode==="minor"?1:0)]:[99]},
   scoring:w=>[fold(ensemble(w)||"~")], date:w=>[year(w)??9999], dur:w=>[seconds(w)??-1],
   src:w=>[-(w.sources||[]).length],
-  media:w=>[-((w.media||{}).free_recordings||0), -((w.media||{}).scores||0)] };
+  /* how many recordings MusicBrainz holds, its own total and not our sample. Works we
+     have no count for sort last rather than as zero: not measured is not "never
+     recorded", and putting them at 0 would state something nobody said. */
+  rec:w=>[w.nr?-w.nr:1, fold(w.composer)],
+  score:w=>[-((w.media||{}).scores||0)],
+  audio:w=>[-((w.au||0)+(w.ar||0)), -((w.media||{}).free_recordings||0)] };
 function cmp(a,b){ const A=SORTV[state.sort](a), B=SORTV[state.sort](b);
   for(let i=0;i<Math.max(A.length,B.length);i++){ const x=A[i],y=B[i]; if(x===y) continue;
     if(typeof x==="string"||typeof y==="string") return String(x)>String(y)?state.dir:-state.dir;
@@ -416,7 +494,11 @@ const CELL = {
   scoring: w => { const e=ensemble(w); return e ? esc(e)+mark(w,"instrumentation") : ""; },
   date: w => esc(fmtDate(show(w,"date_composed"))) + (F(w,"date_composed")?mark(w,"date_composed"):""),
   dur: w => fmtDur(seconds(w)),
-  media: w => mediaCell(w),
+  score: w => scoreCell(w),
+  audio: w => audioCell(w),
+  rec: w => w.nr
+    ? `<span title="MusicBrainz holds ${w.nr} recording${w.nr>1?"s":""} of this work">${w.nr}</span>`
+    : `<span class="unknown" title="not counted yet, which is not the same as never recorded">·</span>`,
   src: w => srcDots(w),
 };
 function rowHTML(w,isPart){
@@ -432,16 +514,26 @@ function rowHTML(w,isPart){
    play, because embedding them would stream from a nonprofit's bandwidth. Marking
    both with a ▶ promised audio that was not there. A filled play button now means it
    plays here; the IMSLP count is a link with its own words. */
-function mediaCell(w){
-  const bits=[];
-  if(w.au) bits.push(`<button class="play" data-play="${esc(w.id)}" title="${w.au} recording${w.au>1?"s":""} you can play here">▶</button>`);
-  const m=w.media, u=SRC_URL.imslp(w);
-  if(m && u){
-    const out=[];
-    if(m.scores) out.push(`<span title="${m.scores} free score files on IMSLP">♪${m.scores}</span>`);
-    if(m.free_recordings) out.push(`<span class="offsite" title="${m.free_recordings} freely-licensed recordings ON IMSLP, opens there">↗${m.free_recordings}</span>`);
-    if(out.length) bits.push(`<a href="${u}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${out.join(" ")}</a>`);
-  }
+/* SCORES: free score files on IMSLP, which is where they live and stay. */
+function scoreCell(w){
+  const n=(w.media||{}).scores, u=SRC_URL.imslp(w);
+  if(!n || !u) return "";
+  return `<a href="${u}" target="_blank" rel="noopener" onclick="event.stopPropagation()"
+    title="${n} free score file${n>1?"s":""} on IMSLP, opens there">♪${n}</a>`;
+}
+/* AUDIO: how many recordings there are, which is what the column now says.
+   Three different things, counted separately because they are not interchangeable:
+     ▶N   playable on this page (Wikimedia Commons files, and Archive items we embed)
+     ↗N   on IMSLP, freely licensed, opened there; we link, we never copy
+   A work with nothing shows nothing, not a zero: silence is not "no recordings exist". */
+function audioCell(w){
+  const here=(w.au||0)+(w.ar||0), off=(w.media||{}).free_recordings||0, bits=[];
+  if(here) bits.push(`<button class="play" data-play="${esc(w.id)}"
+    title="${here} recording${here>1?"s":""} you can play here">▶${here}</button>`);
+  const u=SRC_URL.imslp(w);
+  if(off && u) bits.push(`<a class="offsite" href="${u}" target="_blank" rel="noopener"
+    onclick="event.stopPropagation()"
+    title="${off} freely-licensed recording${off>1?"s":""} on IMSLP, opens there">↗${off}</a>`);
   return bits.join(" ");
 }
 function renderWorks(){
@@ -458,10 +550,26 @@ function renderWorks(){
     return h;}).join("");
   const cols=liveCols();
   const head=cols.map(c=>`<th data-sort="${c.id}" class="${c.cls}">${c.label}`+
-    (state.sort===c.id?`<span class="dir"> ${state.dir>0?"▲":"▼"}</span>`:"")+`</th>`).join("");
-  const colTags = cols.map(c=>`<col class="k-${c.id==="work"?"cat":c.id}">`).join("");
+    (state.sort===c.id?`<span class="dir"> ${state.dir>0?"▲":"▼"}</span>`:"")
+    +`<span class="grip" data-grip="${c.id}" title="drag to resize · double-click to reset · alt+double-click resets all"></span>`
+    +`</th>`).join("");
+  /* A width the reader chose wins over the one the stylesheet suggests. Kept per column
+     id, so it survives the panel opening (which drops four columns) and the next visit. */
+  const colTags = cols.map(c=>{
+    const w=COLW[c.id];
+    return `<col class="k-${c.id==="work"?"cat":c.id}"${w?` style="width:${w}px"`:""}>`;
+  }).join("");
+  /* Only pin the table's width when EVERY visible column has one, otherwise the sum is
+     short and the table would be narrower than its own columns. A half-filled store
+     (an older visit, a column that has since appeared) falls back to the stylesheet. */
+  const colwTotal = cols.every(c=>COLW[c.id])
+    ? cols.reduce((a,c)=>a+COLW[c.id],0) : 0;
+  /* ONE CONDITION, NOT TWO. The class and the pinned width have to agree: resetting a
+     single column left the class on with no width pinned, so the table laid itself out
+     as `width:auto` over a half-filled set of columns and every one of them moved. */
+  document.body.classList.toggle("colw", colwTotal>0);
   document.getElementById("stage").innerHTML = tops.length
-    ? `<table class="cat">${colTags}<thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`+
+    ? `<table class="cat"${colwTotal?` style="width:${colwTotal}px"`:""}>${colTags}<thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`+
       (tops.length>slice.length?`<button id="more">Show more, ${tops.length-slice.length} left</button>`:"")
     : `<p style="padding:34px 18px;color:var(--muted)">Nothing matches. <button id="reset" style="border:0;background:none;color:var(--accent);cursor:pointer;text-decoration:underline;font:inherit">Clear everything</button></p>`;
 }
@@ -677,14 +785,37 @@ function renderGraph(host){
       <text class="glab" x="${RX+9}" y="16">linked to</text>
       ${edges}${left}${right}</svg></div>
     <p class="hint">${links.length} links · ${deg.size} composers on the other end ·
-      hover a name to light its links. In Bach “based on” usually names the chorale a cantata
+      hover a name to light its links, click one to see the works. In Bach “based on” usually names the chorale a cantata
       grows from, which is why hymn writers sit here beside Liszt.</p>`;
 }
 
+/* ALSO CALLED. 4 489 works, 29 % of the catalogue, carry a different name in each
+   source, and until now they were searchable and invisible: type "Schwanengesang" and
+   you found it, open it and you would never learn that MusicBrainz calls it something
+   else. This project's first decision was that a title is an identity and no source's
+   spelling is wrong (DECISIONS.md), and `title_variants` is where that decision is kept.
+   Showing it is the decision made visible; hiding it was us keeping the evidence in a
+   drawer. Each name says who calls it that, because that is the whole point. */
+function clearQuery(){
+  state.q=""; state.qw=[];
+  const box=document.getElementById("q"); if(box) box.value="";
+}
+
+function alsoCalled(w){
+  const v=w.title_variants||{}, shown=fold(titleOf(w));
+  const others=Object.entries(v).filter(([,n])=>n && fold(n)!==shown);
+  if(!others.length) return "";
+  return `<p class="alsoc"><span class="lab">Also called</span>`
+    + others.map(([src,n])=>`<span class="alt">${esc(n)}<span class="who">${esc(src)}</span></span>`).join("")
+    + `</p>`;
+}
+
 /* ---------- record panel ---------- */
-const ROWS=[["catalogue","Catalogue"],["form","Form"],["key","Key"],["instrumentation","Scoring"]
-  ["date_composed","Composed"],["duration_measured","Measured"],["duration_estimated","Estimated"]
-  ["dedication","Dedicated to"],["genre","Form"],["period_style","Style"]];
+/* ROWS used to live here, superseded by ROWS2 inside drawRec and never deleted. It was
+   also broken: two missing commas made three of its entries subscript the entry before
+   them, so the constant evaluated with two `undefined` holes in it. Nothing read it, so
+   nothing failed, which is why it sat there for weeks. Removed 2026-09-12 along with the
+   blind spot in scan_damage.py that could not see across a line ending. */
 async function openRec(id){
   const w=BYID.get(id); if(!w) return; state.sel=id;
   /* the claims live in the composer's detail file, fetched the first time one of
@@ -765,6 +896,7 @@ function drawRec(row){
      ${parent?`<p class="inpart">part of <button data-goto="${esc(parent.id)}">${titleOf(parent)}</button></p>`:""}
      ${vers?`<p class="vers">More than one version on record: ${vers}</p>`:""}
      ${w.joined_by?`<p class="joined">Two sources were joined here. ${esc(w.joined_by)}</p>`:""}
+     ${alsoCalled(w)}
      ${audioBlock(w)}
      ${dl?`<h4 class="sec">The facts, and who says them</h4><dl>${dl}</dl>`
         :`<p class="nothing">A name and nothing else. The sources have an entry for this
@@ -1008,6 +1140,7 @@ document.addEventListener("click",e=>{
     return draw(); }
   if(t.id==="t-parts"){ state.parts=!state.parts; t.setAttribute("aria-pressed",state.parts); return draw(); }
   if(t.id==="t-doubt"){ state.doubt=!state.doubt; t.setAttribute("aria-pressed",state.doubt); return draw(); }
+  if(t.dataset && t.dataset.grip) return;      // the grip resizes, it never sorts
   const th=t.closest("th[data-sort]");
   if(th){ state.dir=state.sort===th.dataset.sort?-state.dir:1; state.sort=th.dataset.sort; return renderStage(); }
   const car=t.closest("[data-toggle]");
@@ -1053,6 +1186,25 @@ document.addEventListener("click",e=>{
   if(t.closest("#rec .close")){ document.body.classList.remove("rec-open");
     if(PLAYING){ AUDIO.pause(); PLAYING.classList.remove("on"); PLAYING=null; }
     state.sel=null; return renderStage(); }
+  /* THE GRAPH LED NOWHERE. Hovering a name lit its links and clicking it did nothing,
+     so the one lens that shows composers borrowing from each other was a picture rather
+     than a way in. A name on the left is a composer in the atlas: clicking it filters
+     the catalogue to their works, the same thing a row in the Composers tab does. A name
+     on the right is somebody we do not hold, so it searches for them instead, which is
+     the honest equivalent: we cannot show you their catalogue because we do not have one. */
+  const node=t.closest("#graph .node");
+  if(node){
+    /* Clicking a name is "take me to this", so a search typed before coming here is
+       dropped. Carrying it across sent the first test straight to "0 of 15083 works":
+       Buxtehude, correctly, has nothing matching "bwv 1014". A click that lands on an
+       empty table is a dead end however honest the two filter chips above it are. */
+    if(node.dataset.slug){ clearQuery(); state.comp=new Set([node.dataset.slug]);
+      state.sub="works"; state.lens="table"; return draw(); }
+    if(node.dataset.o){ clearQuery(); const q=node.dataset.o;
+      state.q=q; state.qw=fold(q).split(/\s+/).filter(Boolean);
+      const box=document.getElementById("q"); if(box) box.value=q;
+      state.lens="table"; state.sub="works"; return draw(); }
+  }
   const goto=t.closest("[data-goto]"); if(goto) return openRec(goto.dataset.goto);
   const crow=t.closest("tr[data-comp]");
   if(crow){ state.comp=new Set([crow.dataset.comp]); state.sub="works";

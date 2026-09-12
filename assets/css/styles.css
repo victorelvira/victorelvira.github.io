@@ -189,3 +189,36 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
     margin-bottom: 20px;
 }
 .notice ul { margin: 0; padding-left: 1.3rem; }
+
+
+/* ============================================================
+   Acento de color propio. Cambia el tono en una sola linea
+   (--accent). Afecta a enlaces de contenido, titulos de seccion
+   e iconos sociales. No toca botones semanticos (arXiv/DOI/PDF).
+   ============================================================ */
+:root {
+  --accent: #0e7c86;         /* teal profundo, tono "mar" */
+  --accent-strong: #0a5f67;
+}
+
+/* Enlaces dentro del contenido (no navbar, botones ni tarjetas) */
+.container a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand):not(.stretched-link):not(.text-reset) {
+  color: var(--accent);
+  text-underline-offset: 2px;
+}
+.container a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand):not(.stretched-link):not(.text-reset):hover {
+  color: var(--accent-strong);
+}
+
+/* Titulo principal de cada seccion: pequeno acento inferior.
+   Cubre h2 y h3 (la home usa h3 para "Awards"). */
+.container > h2:first-of-type,
+.container .d-flex > h2:first-of-type,
+.container h3#awards {
+  border-bottom: 3px solid var(--accent);
+  width: fit-content;
+  padding-bottom: 2px;
+}
+
+/* Iconos sociales: toman el color de acento al pasar el raton */
+.social-icons a:hover i { color: var(--accent) !important; }

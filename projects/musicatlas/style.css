@@ -129,10 +129,21 @@ body{font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:va
    swells and pushes Duration and Sources off the right edge. The work's title is
    what people read, so it gets the slack. */
 table.cat{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+/* Once the reader has set a width by hand, the table stops being squeezed into the pane
+   and is allowed to be as wide as the widths they chose; #stage scrolls sideways for the
+   overflow. Without this, pulling one column wider was simply taken out of its
+   neighbours, and Scores and Audio were clipped to 17px. */
+/* NOT min-width:100%. With table-layout:fixed the surplus over the container is shared
+   out among every column, so freezing nine widths and pulling the tenth still moved all
+   ten. The exact sum is set in JS instead, and only that. */
+body.colw table.cat{width:auto}
+#stage{overflow-x:auto}
 table.cat col.k-comp{width:104px} table.cat col.k-cat{width:118px}
 table.cat col.k-key{width:104px} table.cat col.k-scoring{width:190px}
 table.cat col.k-date{width:132px} table.cat col.k-dur{width:74px}
-table.cat col.k-media{width:86px} table.cat col.k-src{width:70px}
+table.cat col.k-score{width:62px} table.cat col.k-audio{width:74px}
+table.cat col.k-rec{width:78px}
+table.cat col.k-src{width:70px}
 table.cat td{overflow:hidden;text-overflow:ellipsis}
 .c-title{overflow-wrap:anywhere}
 table.cat thead th{position:sticky;top:0;background:#faf7f1;z-index:2;text-align:left;
@@ -413,3 +424,26 @@ body.rec-open table.cat col.k-comp{width:92px}
 .multi{white-space:nowrap}
 .joined{margin:6px 0 0;color:var(--dim,#6b6459);font-size:12px;line-height:1.5}
 .frompage{margin-left:.5em;font-size:11px;opacity:.5;font-style:italic}
+
+/* A column edge you can pull. Invisible until the pointer is near it, because a table
+   of 15 000 rows does not need nine vertical lines competing with the data. */
+table.cat th{position:relative}
+.grip{position:absolute;top:0;right:-4px;width:9px;height:100%;cursor:col-resize;
+  z-index:3;user-select:none}
+
+.grip::after{content:"";position:absolute;top:22%;bottom:22%;left:4px;width:1px;
+  background:var(--rule,#d8d2c8);opacity:0;transition:opacity .12s}
+table.cat th:hover .grip::after{opacity:1}
+.grip:hover::after{opacity:1;background:var(--accent,#8a6d3b);width:2px;left:3.5px}
+body.resizing{cursor:col-resize;user-select:none}
+body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
+.c-rec{font-variant-numeric:tabular-nums;text-align:right;padding-right:14px}
+.c-rec .unknown{opacity:.3}
+
+/* The other names a work goes by, each with the source that uses it. Quiet: this is
+   context, not a correction, and none of these spellings is the wrong one. */
+.alsoc{margin:8px 0 0;font-size:12px;line-height:1.7;color:var(--dim,#6b6459)}
+.alsoc .lab{display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  opacity:.65;margin-bottom:2px}
+.alsoc .alt{display:inline-block;margin:0 10px 2px 0}
+.alsoc .who{margin-left:5px;font-size:10px;opacity:.55;font-variant:small-caps}
