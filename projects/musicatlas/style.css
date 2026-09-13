@@ -456,3 +456,8 @@ body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
 #map .leaflet-container{font:inherit}
 .leaflet-tooltip .tdim{opacity:.6;font-size:11px}
 @media (max-width:760px){ #map{height:320px} }
+.mapkey{display:inline-block;margin-left:10px;opacity:.75}
+.mapkey .k-solid,.mapkey .k-dash{display:inline-block;width:11px;height:11px;
+  border-radius:50%;vertical-align:-1px;margin:0 4px 0 8px;border:1.5px solid #6a4a2a}
+.mapkey .k-solid{background:rgba(106,74,42,.55)}
+.mapkey .k-dash{background:rgba(106,74,42,.12);border-style:dashed}

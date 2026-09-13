@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.26.26";
-const BUILD_AT = "2026-09-13 11:00";
+const DATA_V = "0.26.28";
+const BUILD_AT = "2026-09-13 11:25";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -659,10 +659,14 @@ function renderMap(host){
   const noxy=visible().filter(w=>!w.pp && w.premiere_place).length;
   host.innerHTML=`<div id="map"></div>
     <p class="hint">${shown} work${shown===1?"":"s"} in ${pins.size} place${pins.size===1?"":"s"},
-      first-performance locations from Wikidata (<code>P4647</code>), which gives an item
-      rather than a name, so two spellings of one theatre are one pin and nothing is
-      geocoded from prose. Click a place to filter the catalogue to it.
-      ${noxy?`${noxy} more works name a place we cannot yet put on a map.`:""}</p>`;
+      first heard there. Most come from Wikidata's <code>P4647</code>, which gives an item
+      and not a name, so two spellings of one theatre are one pin and the coordinate is
+      the source's own. The rest were looked up from a place name a list article wrote as
+      prose, and they are drawn hollow because that is a weaker fact. Click a place to
+      filter the catalogue to it.
+      ${noxy?`${noxy} more name a place we still cannot put on a map.`:""}
+      <span class="mapkey"><span class="k-solid"></span> as the source gave it
+      <span class="k-dash"></span> looked up from a name</span></p>`;
   const el=document.getElementById("map");
   if(!window.L){ el.innerHTML='<p class="hint">the map library did not load</p>'; return; }
   if(MAP){ MAP.remove(); MAP=null; }
@@ -677,12 +681,24 @@ function renderMap(host){
     /* area with the count, not radius: a circle twice as wide looks four times as big,
        and Vienna would swamp a village that saw one premiere. */
     const r=3+Math.sqrt(ws.length)*3.2;
-    const m=L.circleMarker([p.lat,p.lon],{radius:r,weight:1.5,color:"#6a4a2a",
-      fillColor:compColour(ws[0].composer_slug),fillOpacity:.62}).addTo(MAPLAYER);
+    /* A coordinate Wikidata handed us and one we looked up from a name are not the same
+       fact, so they are not the same pin: the looked-up ones are drawn hollow, with a
+       dashed edge, and say so when you hover. Drawing them identically would be the map
+       claiming a precision it has not got. */
+    const guessed = p.by==="name";
+    const m=L.circleMarker([p.lat,p.lon],{radius:r,weight:guessed?1.4:1.5,
+      color:"#6a4a2a", dashArray:guessed?"3 2":null,
+      fillColor:compColour(ws[0].composer_slug),
+      fillOpacity:guessed?0.16:0.62}).addTo(MAPLAYER);
     const where=[p.city,p.country].filter(Boolean).join(", ");
     const names=[...new Set(ws.map(w=>w.composer.split(" ").slice(-1)[0]))];
+    const note = guessed
+      ? `<br><span class="tdim">${p.precision==="city only"
+          ? "the town around a venue we could not place"
+          : "placed by looking the name up, not given as a coordinate"}</span>`
+      : "";
     m.bindTooltip(`<b>${esc(p.label)}</b>${where?`<br><span class="tdim">${esc(where)}</span>`:""}
-      <br>${ws.length} work${ws.length===1?"":"s"} · ${esc(names.slice(0,4).join(", "))}${names.length>4?"…":""}`,
+      <br>${ws.length} work${ws.length===1?"":"s"} · ${esc(names.slice(0,4).join(", "))}${names.length>4?"…":""}${note}`,
       {direction:"top"});
     m.on("click",()=>{ state.f.place=new Set([q]); state.lens="table"; state.sub="works";
                        draw(); });
