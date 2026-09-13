@@ -29,13 +29,20 @@
   <div class="container py-5">
     <h2>Publications</h2>
 
+    <!-- Buscador (Fase 1: titulo, autores, venue, anio). Roadmap por fases en memoria. -->
+    <input id="pub-search" type="search" class="form-control mb-3"
+           placeholder="Search by title, author, venue or year…"
+           autocomplete="off" aria-label="Search publications">
+
     <!-- Botonera de filtros. Ojo: cada botón tiene data-type que usamos para filtrar -->
-    <div id="filter-buttons" class="mb-3">
+    <div id="filter-buttons" class="mb-2">
       <button class="btn btn-primary filter-btn" data-type="all">All Papers</button>
       <button class="btn btn-outline-primary filter-btn" data-type="article">Journals</button>
       <button class="btn btn-outline-primary filter-btn" data-type="inproceedings">Conferences</button>
       <button class="btn btn-outline-primary filter-btn" data-type="other">Other</button>
     </div>
+
+    <div id="pub-count" class="text-muted small mb-2"></div>
 
     <!-- Lista numerada invertida (ol reversed) para mostrar los ítems -->
     <ol reversed id="bibtex_display"></ol>
@@ -163,6 +170,15 @@
       return d;
     }
 
+    // --- Normaliza texto para búsqueda: minúsculas, sin acentos, solo alfanumérico ---
+    function normSearch(s) {
+      return (s || '')
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')  // quita acentos (é->e)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+    }
+
     // --- Dar formato a la cadena de autores (maneja "Last, First" y acentos) ---
    function renderEntryLI(entry) {
      const title   = entry['TITLE']  || 'Untitled';
@@ -216,8 +232,12 @@
        buttons += ` <button type="button" class="btn btn-mini btn-secondary cite-btn" data-bibkey="${k}" data-biburl="${bibURL}">Cite</button>`;
      }
 
+     // Texto buscable (Fase 1: metadatos). Extensible: aquí se añadirán abstract y full-text.
+     const venueText  = venue.join(' ').replace(/<[^>]*>/g, ' ');
+     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''}`);
+
      return `
-       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}">
+       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}" data-search="${searchText}">
          <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong>
          ${venue.join(' ')}${year ? '. ' + year : ''}.
          <div class="mt-1 btns">${buttons}</div>
