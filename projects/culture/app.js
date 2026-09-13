@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.22.0";
+const DATA_V = "0.22.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -1390,12 +1390,13 @@ $("locate").addEventListener("click", () => {
   if (meWatch != null) return stopMe();
   if (!navigator.geolocation) return banner("Geolocation is not available in this browser.");
   btn.textContent = "📍 Locating…"; btn.disabled = true;
-  let first = true;
+  let first = true, lastList = null;
   meFollow = true;
   meWatch = navigator.geolocation.watchPosition((pos) => {
     const { latitude: lat, longitude: lon, accuracy: acc } = pos.coords;
     btn.disabled = false; meButton();
     drawMe(lat, lon, acc);
+    if (meHalo) meHalo.setStyle({ color: "#2f6fd0", fillColor: "#2f6fd0" });   // fresh again
     if (first) {
       first = false;
       if (tableOn) setTable(false);
@@ -1411,13 +1412,26 @@ $("locate").addEventListener("click", () => {
       state.near = { ...state.near, lat, lon };
       if (meFollow) map.panTo([lat, lon], { animate: true });
     }
-    renderNearMe();
+    // A phone can report a position every second. Rebuilding a list of hundreds of rows that often
+    // stutters the map in your hand, so the list follows you in steps: 30 m walked, or 15 s.
+    const now = Date.now();
+    const moved = lastList ? map.distance([lastList.lat, lastList.lon], [lat, lon]) : Infinity;
+    if (!lastList || moved > 30 || now - lastList.t > 15000) {
+      lastList = { lat, lon, t: now };
+      renderNearMe();
+    }
   }, (err) => {
-    btn.disabled = false; btn.textContent = "📍 Where I am";
-    stopMe();
-    banner(err.code === 1
-      ? "This browser is not allowed to share your location. Check the site permissions."
-      : "Could not get your location: " + err.message);
+    btn.disabled = false;
+    // Only a REFUSAL ends it. The first version stopped on any error, and in the street the GPS
+    // times out all the time: inside a church, between tall buildings, underground. The dot then
+    // vanished for good and you had to know to tap again. A timeout or a lost signal now keeps the
+    // watch alive; the last dot stays, its halo turns grey to say it is not current.
+    if (err.code === 1) {
+      stopMe();
+      return banner("This browser is not allowed to share your location. Check the site permissions.");
+    }
+    if (meHalo) meHalo.setStyle({ color: "#9a958a", fillColor: "#9a958a" });
+    else { btn.textContent = "📍 Still looking…"; banner("No position yet. Keep the page open, it keeps trying."); }
   }, { enableHighAccuracy: true, timeout: 20000, maximumAge: 5000 });
 });
 // Dragging the map is a statement that you want to look somewhere else. The dot keeps moving; the
