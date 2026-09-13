@@ -183,7 +183,9 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 
 /* ── the professions popover ── */
 .who{position:relative}
-#who-pop{position:absolute;top:100%;left:0;z-index:1200;background:#fff;border:1px solid var(--line);
+/* fixed, not absolute: the filter rail scrolls sideways on a phone and would clip a popup inside it;
+   app.js places it under its button when it opens */
+#who-pop{position:fixed;z-index:1200;max-height:60vh;overflow:auto;background:#fff;border:1px solid var(--line);
   border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.18);min-width:230px;margin-top:4px;
   max-height:60vh;overflow:auto}
 #who-pop[hidden]{display:none!important}
@@ -447,3 +449,21 @@ body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{dis
 .fam-note{flex:1 1 100%;width:100%;font-size:11px;line-height:1.45;color:var(--ink-soft);
   padding:4px 2px 2px;margin-top:2px;border-top:1px dotted var(--line)}
 @media (max-width:720px){ .fam-note{font-size:10.5px} }
+
+/* ── Where I am, beside the title ── */
+#bar #locate{white-space:nowrap}
+@media (max-width:720px){ #bar #locate{order:1;padding:3px 8px;font-size:12.5px} }
+
+/* ── the list's size is the reader's: drag the grip ──────────────────────────────────────────────
+   Beside the map on a wide screen (drag sideways), under it on a phone (drag up or down). */
+#panel{position:relative}
+#panel-grip{position:absolute;left:-5px;top:0;bottom:0;width:10px;cursor:col-resize;z-index:500;touch-action:none}
+#panel-grip:hover,#panel-grip.dragging{background:linear-gradient(90deg,transparent 3px,var(--brass) 3px,var(--brass) 5px,transparent 5px)}
+@media (max-width:720px){
+  #panel-grip{position:static;width:auto;height:18px;cursor:row-resize;flex:0 0 18px;
+    display:flex;align-items:center;justify-content:center;background:var(--paper-2);border-bottom:1px solid var(--line)}
+  #panel-grip::before{content:"";width:44px;height:5px;border-radius:3px;background:#c9c2b4}
+  #panel-grip:hover,#panel-grip.dragging{background:var(--paper-2)}
+  #panel-grip.dragging::before{background:var(--brass)}
+}
+body.dragging-panel{user-select:none;-webkit-user-select:none}

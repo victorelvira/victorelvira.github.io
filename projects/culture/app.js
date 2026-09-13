@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.22.1";
+const DATA_V = "0.23.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -568,7 +568,7 @@ function refresh() {
   renderPersonChip();
   foldSummary();
   markRailEnds();
-  if (state.near) renderNearMe(); else renderPanel();
+  renderPanel();
   if (tableOn) renderTable();
   syncURL();
 }
@@ -753,6 +753,11 @@ function renderWho() {
 document.addEventListener("click", (e) => {
   if (e.target.id === "who-btn") {
     const pop = $("who-pop"); pop.hidden = !pop.hidden;
+    if (!pop.hidden) {
+      const r = e.target.getBoundingClientRect();
+      pop.style.top = `${Math.round(r.bottom + 4)}px`;
+      pop.style.left = `${Math.round(Math.max(6, Math.min(r.left, innerWidth - pop.offsetWidth - 6)))}px`;
+    }
     $("who-btn").setAttribute("aria-expanded", String(!pop.hidden));
     return;
   }
@@ -803,7 +808,7 @@ $("preset-was").addEventListener("click", () => {
 $("reset").addEventListener("click", () => {
   for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
     VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
-  state.topN = 0; state.q = ""; state.near = null; state.site = null;
+  state.topN = 0; state.q = ""; state.site = null;
   state.person = null; state.personName = "";
   $("filter").value = ""; $("filter-clear").hidden = true;
   $("preset-now").classList.remove("active");
@@ -1110,7 +1115,7 @@ map.on("moveend", () => {
   const tableN = TRACES.filter((r) => passes(r, "table")).length;
   $("stats").textContent = `${quota} · ${rowsInView.toLocaleString()} people in view · ` +
     `${tableN.toLocaleString()} traces pass the filters`;
-  if (!state.near) renderPanel();
+  renderPanel();
   syncURL();
 });
 
@@ -1298,37 +1303,6 @@ function buildTimeline(min, max) {
   lo.addEventListener("input", update); hi.addEventListener("input", update); paint();
 }
 
-/* ── near me: the sibling's adaptive radius (CHASSIS §3f), here crossed with access ── */
-const NEAR_RADII = [1, 2, 5, 10, 25, 50, 100, 250];
-function nearSites(lat, lon) {
-  const R = 6371, rad = (d) => (d * Math.PI) / 180;
-  return places.map((pl) => {
-    const s = SITES[pl.siteIdx];
-    const dLat = rad(s[S_LAT] - lat), dLon = rad(s[S_LON] - lon);
-    const a = Math.sin(dLat / 2) ** 2 + Math.cos(rad(lat)) * Math.cos(rad(s[S_LAT])) * Math.sin(dLon / 2) ** 2;
-    const vis = pl.rows.filter((r) => passes(r, "map"));
-    return { s, d: 2 * R * Math.asin(Math.sqrt(a)), n: vis.length, rows: vis, siteIdx: pl.siteIdx };
-  }).filter((x) => x.n).sort((a, z) => a.d - z.d);
-}
-function renderNearMe() {
-  const { lat, lon, radiusKm } = state.near;
-  const within = nearSites(lat, lon).filter((v) => v.d <= radiusKm);
-  $("panel-head").innerHTML = `<b>${within.length}</b><span class="ph-tail"> places within ${radiusKm} km</span>`;
-  const chips = NEAR_RADII.map((r) =>
-    `<button type="button" class="pvbtn rchip${r === radiusKm ? " on" : ""}" data-r="${r}">${r}</button>`).join("");
-  let html = `<li class="grp"><span class="gname">Radius km</span><span class="gsub">${chips}</span></li>`;
-  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km. Try a larger radius.</li>`;
-  for (const v of within) {
-    const km = v.d < 1 ? `${Math.round(v.d * 1000)} m` : `${v.d < 10 ? v.d.toFixed(1) : Math.round(v.d)} km`;
-    html += `<li class="row" data-site="${v.siteIdx}"><span class="nm">${esc(v.s[S_NAME])}` +
-      (whereOf(v.s) ? `<span class="gwhere">${esc(whereOf(v.s))}</span>` : "") + `</span>` +
-      `<span class="yr">${v.n} ${v.n === 1 ? "person" : "people"}</span>` +
-      `<span class="tags"><span class="badge">${km}</span></span></li>`;
-  }
-  $("worklist").innerHTML = html;
-  $("worklist").querySelectorAll(".rchip").forEach((b) =>
-    b.addEventListener("click", () => { state.near.radiusKm = +b.dataset.r; renderNearMe(); }));
-}
 /* ── the blue dot: where you are, while you walk ──────────────────────────────────────────────
  * The old button took ONE fix, listed what was near it, and then knew nothing more, so the atlas
  * was a thing you consulted before leaving the house, not a thing you used in the street. This
@@ -1343,7 +1317,38 @@ function renderNearMe() {
  * forgotten when you switch it off.
  */
 const meLayer = L.layerGroup().addTo(map);
-let meWatch = null, meDot = null, meHalo = null, meFollow = false;
+/* ── the list's size, dragged ─────────────────────────────────────────────────────────────────
+ * The grip on the panel's edge sets its width beside the map, or its height under it on a phone.
+ * Remembered per layout in this browser only (a convenience, not state worth a URL). */
+(function panelGrip() {
+  const grip = $("panel-grip"), panel = $("panel"), main = $("main");
+  const key = () => (narrow() ? "panelH" : "panelW");
+  const apply = (px) => { panel.style.flex = px ? `0 0 ${px}px` : ""; };
+  const restore = () => { let v = null; try { v = +localStorage.getItem(key()) || null; } catch (e) {} apply(v); };
+  restore();
+  let lastNarrow = narrow();
+  window.addEventListener("resize", () => { if (narrow() !== lastNarrow) { lastNarrow = narrow(); restore(); } });
+  let dragging = false, px = 0;
+  grip.addEventListener("pointerdown", (e) => {
+    dragging = true; grip.setPointerCapture(e.pointerId);
+    grip.classList.add("dragging"); document.body.classList.add("dragging-panel"); e.preventDefault();
+  });
+  grip.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const r = main.getBoundingClientRect();
+    px = narrow() ? Math.round(Math.max(70, Math.min(r.height - 90, r.bottom - e.clientY)))
+                  : Math.round(Math.max(220, Math.min(r.width - 240, r.right - e.clientX)));
+    apply(px);
+  });
+  const end = () => {
+    if (!dragging) return;
+    dragging = false; grip.classList.remove("dragging"); document.body.classList.remove("dragging-panel");
+    try { if (px) localStorage.setItem(key(), String(px)); } catch (e) {}
+    map.invalidateSize({ pan: false }); renderPanel();
+  };
+  grip.addEventListener("pointerup", end); grip.addEventListener("pointercancel", end);
+})();
+let meWatch = null, meDot = null, meHalo = null, meFollow = false, urlViewBeforeMe = null;
 
 function drawMe(lat, lon, acc) {
   if (!meDot) {
@@ -1363,10 +1368,8 @@ function drawMe(lat, lon, acc) {
 function stopMe() {
   if (meWatch != null) navigator.geolocation.clearWatch(meWatch);
   meWatch = null; meLayer.clearLayers(); meDot = meHalo = null; meFollow = false;
-  state.near = null;
   $("locate").disabled = false;
   meButton();
-  renderPanel();
 }
 
 // Three states, because two was a lie: off, following, and watching-but-not-chasing (you panned
@@ -1390,7 +1393,8 @@ $("locate").addEventListener("click", () => {
   if (meWatch != null) return stopMe();
   if (!navigator.geolocation) return banner("Geolocation is not available in this browser.");
   btn.textContent = "📍 Locating…"; btn.disabled = true;
-  let first = true, lastList = null;
+  { const c = map.getCenter(); urlViewBeforeMe = `${c.lat.toFixed(5)},${c.lng.toFixed(5)},${map.getZoom()}`; }
+  let first = true, lastPan = null;
   meFollow = true;
   meWatch = navigator.geolocation.watchPosition((pos) => {
     const { latitude: lat, longitude: lon, accuracy: acc } = pos.coords;
@@ -1400,25 +1404,19 @@ $("locate").addEventListener("click", () => {
     if (first) {
       first = false;
       if (tableOn) setTable(false);
-      // Open at a radius that actually contains something, rather than at an arbitrary 1 km that
-      // is empty in most of the world and makes the feature look broken.
-      const all = nearSites(lat, lon);
-      const d0 = all.length ? all[0].d : Infinity;
-      state.near = { lat, lon, radiusKm: NEAR_RADII.find((r) => r >= d0) || NEAR_RADII.at(-1) };
-      map.setView([lat, lon], 15);
-    } else {
-      // Keep the list honest as you move, but never yank the map while somebody is reading it:
-      // panning by hand turns following off, the way every map on a phone behaves.
-      state.near = { ...state.near, lat, lon };
-      if (meFollow) map.panTo([lat, lon], { animate: true });
+      // The map comes to you, a few kilometres a side (4 km), and the list is simply what is on it.
+      // The first version switched the list to "14 places within 1 km" instead, a second list with
+      // its own rules; Víctor: "no quiero que la lista dependa de la localización, sino del mapa".
+      map.fitBounds(L.latLng(lat, lon).toBounds(4000), { animate: false });
+      lastPan = { lat, lon };
+      return;
     }
-    // A phone can report a position every second. Rebuilding a list of hundreds of rows that often
-    // stutters the map in your hand, so the list follows you in steps: 30 m walked, or 15 s.
-    const now = Date.now();
-    const moved = lastList ? map.distance([lastList.lat, lastList.lon], [lat, lon]) : Infinity;
-    if (!lastList || moved > 30 || now - lastList.t > 15000) {
-      lastList = { lat, lon, t: now };
-      renderNearMe();
+    // Walking: the map follows, and so the pins and the list filter themselves to where you are.
+    // Only after 20 m, because every pan redraws the pins and the list, and a phone reports a
+    // position every second.
+    if (meFollow && (!lastPan || map.distance([lastPan.lat, lastPan.lon], [lat, lon]) > 20)) {
+      lastPan = { lat, lon };
+      map.panTo([lat, lon], { animate: true });
     }
   }, (err) => {
     btn.disabled = false;
@@ -1575,8 +1573,14 @@ function viewToURL() {
   // same link opens sensibly on a phone and on a laptop.
   const folded = document.body.classList.contains("folded");
   if (folded !== narrow()) p.set("fold", folded ? "1" : "0");
-  const c = map.getCenter();
-  p.set("m", `${c.lat.toFixed(5)},${c.lng.toFixed(5)},${map.getZoom()}`);
+  // While the blue dot is on, the map is centred on the reader, so the map's centre IS their
+  // location. The URL keeps the view from before they pressed the button (D17: the view belongs in
+  // the URL, the reader's position never does).
+  if (meWatch != null && urlViewBeforeMe) p.set("m", urlViewBeforeMe);
+  else {
+    const c = map.getCenter();
+    p.set("m", `${c.lat.toFixed(5)},${c.lng.toFixed(5)},${map.getZoom()}`);
+  }
   return p.toString();
 }
 

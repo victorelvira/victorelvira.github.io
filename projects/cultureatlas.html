@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Culture Atlas · what is left of them, and can you see it</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%235a6b57%22%2F%3E%20%3Cpath%20d%3D%22M16%204.2c-4.4%200-8%203.6-8%208%200%205.9%208%2015.6%208%2015.6s8-9.7%208-15.6c0-4.4-3.6-8-8-8z%22%20fill%3D%22%23f4f2ec%22%2F%3E%20%3Crect%20x%3D%2212.2%22%20y%3D%228.2%22%20width%3D%227.6%22%20height%3D%228.6%22%20rx%3D%223.8%22%20fill%3D%22%235a6b57%22%2F%3E%20%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.5%22%20r%3D%221.7%22%20fill%3D%22%23c8a24a%22%2F%3E%20%3C%2Fsvg%3E">
-  <link rel="icon" type="image/svg+xml" href="culture/favicon.svg?v=0.22.1">
+  <link rel="icon" type="image/svg+xml" href="culture/favicon.svg?v=0.23.0">
   <meta name="description" content="A map of the physical traces famous people left behind (graves, plaques, birth houses, statues), sorted by whether you can see them right now or they have opening hours.">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2f3a2e">
   <link rel="stylesheet" href="culture/vendor/leaflet.css">
   <link rel="stylesheet" href="culture/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="culture/style.css?v=0.22.1">
+  <link rel="stylesheet" href="culture/style.css?v=0.23.0">
 </head>
 <body>
   <nav id="navbar">
@@ -29,10 +29,12 @@
         <small>what is left of them, and can you see it</small>
       </div>
     </a>
+    <!-- Where I am lives beside the title, not among the filters: it is not a filter, it moves the
+         map, and in the street it is the button you want without unfolding anything (Víctor). -->
+    <button type="button" id="locate" class="chip btn" title="Show a live dot where you are">📍 Where I am</button>
     <button type="button" id="fold" title="Fold the controls away and give the map the screen"
             aria-expanded="true">Filters ▴</button>
     <div id="bar-rail">
-      <span id="who" class="who"></span>
       <div id="stats" class="stats">…</div>
     </div>
   </header>
@@ -50,9 +52,9 @@
         <button type="button" data-top="2000">2000</button>
         <button type="button" data-top="0" class="on">all</button>
       </span>
+      <span id="who" class="who"></span>
       <button type="button" id="preset-now" class="chip btn" title="Only what is out in the open: no door, no ticket, no hours">☀ Visible now</button>
       <button type="button" id="preset-was" class="chip btn" title="Only places the person actually stood: born, lived, worked, died, buried. Hides monuments put up later, anywhere in the world.">👣 Where they were</button>
-      <button type="button" id="locate" class="chip btn" title="Show a live dot where you are">📍 Where I am</button>
       <span id="personchip" hidden></span>
       <button type="button" id="reset" class="chip btn" title="Clear every filter">↺</button>
       <button type="button" id="chrome-toggle" title="Collapse the top bars for more room">⌃</button>
@@ -99,6 +101,7 @@
   <div id="main">
     <div id="map"></div>
     <aside id="panel">
+      <div id="panel-grip" title="Drag to make the list bigger or smaller" aria-hidden="true"></div>
       <div id="panel-top">
         <span id="panel-head">In view</span>
         <span id="panel-view">
@@ -134,6 +137,6 @@
   <div id="banner" hidden></div>
   <script src="culture/vendor/leaflet.js"></script>
   <script src="culture/vendor/leaflet.markercluster.js"></script>
-  <script src="culture/app.js?v=0.22.1"></script>
+  <script src="culture/app.js?v=0.23.0"></script>
 </body>
 </html>

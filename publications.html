@@ -252,6 +252,23 @@
     // Cache global del parseo para no reparsear el .bib en cada clic
     let __BIB_ENTRIES__ = null;
 
+    // --- Búsqueda en cliente (Fase 1): oculta las entradas ya pintadas cuyo
+    //     data-search no contenga TODOS los tokens. Se combina con el filtro de tipo. ---
+    let __QUERY__ = '';
+    function applySearch() {
+      const tokens = __QUERY__ ? __QUERY__.split(/\s+/).filter(Boolean) : [];
+      let shown = 0, total = 0;
+      document.querySelectorAll('#bibtex_display li.pub-item').forEach(li => {
+        total++;
+        const hay = li.getAttribute('data-search') || '';
+        const ok = tokens.every(t => hay.includes(t));
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      const c = document.getElementById('pub-count');
+      if (c) c.textContent = !__QUERY__ ? '' : (shown ? `${shown} of ${total} shown` : 'No matches');
+    }
+
     // --- Renderiza TODAS las publicaciones, aplicando un filtro por tipo ---
     // filterType: "all" | "article" | "inproceedings" | "other"
     async function renderPublications(filterType = "all") {
