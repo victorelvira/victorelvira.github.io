@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.21.0";
+const DATA_V = "0.22.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -113,7 +113,6 @@ let PEOPLE = null, peopleWaiters = [];
 // The volatile half (DECISIONS D4, D7): published opening hours, keyed by the site's own
 // coordinate. 50 KB, so it comes down at boot, but it is a separate file on a separate cadence,
 // and nothing in the permanent corpus depends on it having arrived.
-let HOURS = null;
 function needPeople(then) {
   if (PEOPLE) return then();
   peopleWaiters.push(then);
@@ -351,9 +350,30 @@ function personRow(r, headAccess) {
     `${occ}<div class="fx">${esc(facts)}</div>${second}${links}</div></li>`;
 }
 
-function hoursFor(s) {
-  if (!HOURS) return null;
-  return HOURS[`${s[S_LAT].toFixed(5)},${s[S_LON].toFixed(5)}`] || null;
+/* OSM's opening_hours is a machine syntax: "Tu-Fr 09:30-14:00; Sa,Su 10:00-14:00; PH off". Read out
+ * for a person, display only: day and month abbreviations spelled out, "PH" as holidays, "off" as
+ * closed, one rule a line. The source string is kept whole in the tooltip, and anything this does
+ * not recognise is left exactly as OSM has it. Never rewrites what a Basque official source wrote. */
+const OSM_WORDS = { Mo: "Mon", Tu: "Tue", We: "Wed", Th: "Thu", Fr: "Fri", Sa: "Sat", Su: "Sun",
+  PH: "public holidays", SH: "school holidays", off: "closed", closed: "closed" };
+function readableHours(h, fromOsm) {
+  if (!fromOsm) return esc(h);
+  return h.split(/\s*;\s*/).filter(Boolean).map((rule) =>
+    esc(rule.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH|off|closed)\b/g, (w) => OSM_WORDS[w])
+            .replace(/-/g, "–").replace(/,(?=\S)/g, ", "))).join("<br>");
+}
+
+// Published hours, never an assertion (D7): the string, who published it, and the day it was last
+// checked. The atlas says what the source said; it never says "open".
+function hoursHTML(h) {
+  return `<div class="hrs"><div class="hrs-h" title="${esc(h.h)}">🕐 ${readableHours(h.h, !!h.osm)}</div>` +
+      `<div class="hrs-src">per ${h.osm
+          ? `<a href="https://www.openstreetmap.org/${esc(h.osm)}" target="_blank" rel="noopener">${esc(h.src)}</a>`
+          : esc(h.src || "")}` +
+      // Dated, always (D7): the day the source itself last checked it, or, when OSM has no check
+      // date, the day we read it, which is weaker and says so.
+      `${h.at ? `, checked ${esc(String(h.at).split(" ")[0])}` : h.read ? `, as read on ${esc(h.read)} (never re-checked there)` : ""}` +
+      `${h.web ? ` · <a href="${esc(h.web)}" target="_blank" rel="noopener">their site</a>` : ""}</div></div>`;
 }
 
 function sitePopup(siteIdx, rows) {
@@ -371,18 +391,14 @@ function sitePopup(siteIdx, rows) {
                .filter(Boolean).join(" · ");
   // Published hours, never an assertion: the string, who published it, and the day they last
   // touched it. The atlas says what the administration said; it does not say "open" (D7).
-  const h = hoursFor(s);
-  const hoursBlock = h
-    ? `<div class="hrs"><div class="hrs-h">🕐 ${esc(h.h)}</div>` +
-      `<div class="hrs-src">per ${esc((h.src || "").replace(/^Open Data /, "Open Data "))}` +
-      `${h.at ? `, last updated ${esc(String(h.at).split(" ")[0])}` : ""}` +
-      `${h.web ? ` · <a href="${esc(h.web)}" target="_blank" rel="noopener">their site</a>` : ""}</div></div>`
-    : "";
+  const hoursBlock = kind === "museum" ? `<div class="hrs-slot" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
   const items = persons.slice(0, CARD_MAX).map((r) => personRow(r, acc)).join("");
   const more = persons.length > CARD_MAX
     ? `<li class="pop-more">…and ${persons.length - CARD_MAX} more. They are all in the list beside the map.</li>` : "";
   // What the plaque says, fetched when the card opens (build_inscriptions.py, 0.5° tiles).
-  const ins = kind === "plaque" ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
+  const ins = kind === "plaque" ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>`
+    // a museum's photo, kind and website, fetched the same way (build.py, culture/data/mus/)
+    : kind === "museum" ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
   const where = whereOf(s);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
     (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
@@ -942,15 +958,42 @@ document.addEventListener("keydown", (e) => {
  * 47 064 inscriptions, 17 MB, cut into 0.5° tiles (build_inscriptions.py); a card fetches the one
  * tile it needs, once. Long texts fold to five lines and open with a tap. */
 const insTiles = new Map();
+function tileFor(dir, key) {
+  const [lat, lon] = key.split(",").map(Number);
+  const step = dir === "ins" ? 0.5 : 2;          // the sizes build_inscriptions.py, build.py and build_hours.py cut
+  const tile = `${dir}/${Math.floor(lat / step)}_${Math.floor(lon / step)}`;
+  if (!insTiles.has(tile))
+    insTiles.set(tile, fetch(`culture/data/${tile}.json?v=${DATA_V}`)
+      .then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+  return insTiles.get(tile);
+}
 function fillInscriptions(root) {
+  root.querySelectorAll(".hrs-slot[data-key]").forEach((box) => {
+    tileFor("hrs", box.dataset.key).then((t) => {
+      const h = t[box.dataset.key];
+      if (h) box.outerHTML = hoursHTML(h); else box.remove();
+    });
+  });
+  root.querySelectorAll(".mx[data-key]").forEach((box) => {
+    tileFor("mus", box.dataset.key).then((t) => {
+      const x = t[box.dataset.key];
+      if (!x) { box.remove(); return; }
+      box.innerHTML = (x.img ? pic(x.img, "mx-img", 480, "") : "") +
+        `<div class="mx-t">${x.k ? `<div class="mx-k">${esc(x.k)}</div>` : ""}<div class="lk">` +
+        [x.web ? `<a href="${esc(x.web)}" target="_blank" rel="noopener">Website</a>` : "",
+         x.wd ? `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(x.wd)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
+         x.wd ? `<a href="https://www.wikidata.org/wiki/${esc(x.wd)}" target="_blank" rel="noopener">Wikidata</a>` : ""]
+          .filter(Boolean).join(" · ") + `</div></div>`;
+      const img = box.querySelector("img[data-file]");
+      if (img) {
+        img.dataset.cap = box.closest(".card")?.querySelector(".nm")?.textContent || "";
+        img.addEventListener("click", (ev) => { ev.stopPropagation(); openLightbox(img.dataset.file, img.dataset.cap); });
+      }
+    });
+  });
   root.querySelectorAll(".ins[data-key]").forEach((box) => {
     const key = box.dataset.key;
-    const [lat, lon] = key.split(",").map(Number);
-    const tile = `${Math.floor(lat / 0.5)}_${Math.floor(lon / 0.5)}`;
-    if (!insTiles.has(tile))
-      insTiles.set(tile, fetch(`culture/data/ins/${tile}.json?v=${DATA_V}`)
-        .then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
-    insTiles.get(tile).then((t) => {
+    tileFor("ins", key).then((t) => {
       const list = t[key] || [];
       if (!list.length) { box.remove(); return; }
       box.innerHTML = list.slice(0, 4).map(([id, text, year]) =>
@@ -1634,10 +1677,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     // Warm the record card's side file once the map is up: 1.4 MB fetched while nobody is waiting
     // beats 1.4 MB fetched at the moment somebody clicks.
     setTimeout(() => needPeople(() => {}), 1200);
-    fetch("culture/data/hours.json?v=" + DATA_V)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((h) => { if (h) { HOURS = h.h || {}; } })
-      .catch(() => {});
+    // Hours are fetched per card, from culture/data/hrs/ (build_hours.py). Nothing at boot.
 
     // The long tail, once the map is up and the reader is already looking at something. Nobody
     // waits for it, and the stats line says it is coming rather than quietly under-reporting.

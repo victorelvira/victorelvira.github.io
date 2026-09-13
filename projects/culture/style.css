@@ -251,6 +251,10 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 .card .gp{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:10.5px;color:var(--stone)}
 .card .gth{width:40px;height:40px;object-fit:cover;border-radius:3px;border:1px solid var(--line)}
 img[data-file]{cursor:zoom-in}
+/* a museum's own card: its photo, its kind, its links */
+.card .mx{display:flex;gap:9px;align-items:flex-start;margin-top:7px}
+.card .mx-img{width:96px;height:72px;flex:0 0 96px;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
+.card .mx-k{font-size:12px;color:var(--ink-soft);text-transform:capitalize}
 /* what the plaque says */
 .card .ins-q{margin:7px 0 2px;padding:6px 8px;background:#fff;border-left:3px solid var(--brass);
   font-size:12.5px;line-height:1.4;font-style:italic;cursor:pointer;

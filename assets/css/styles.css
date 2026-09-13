@@ -237,3 +237,26 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
   width: 100%;
   object-fit: contain;      /* encaja el logo sin deformar, centrado */
 }
+
+
+/* Publications: mas aire entre entradas y hover sutil para leer mejor */
+#bibtex_display li.pub-item {
+  margin-bottom: .5rem;
+  padding: .4rem .6rem;
+  border-radius: 6px;
+  transition: background-color .15s ease;
+}
+#bibtex_display li.pub-item:hover { background-color: #f4f7f8; }
+
+/* Botones de filtro con el color de acento (cohesion con el resto) */
+#filter-buttons .filter-btn.btn-outline-primary {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+#filter-buttons .filter-btn.btn-outline-primary:hover,
+#filter-buttons .filter-btn.btn-primary,
+#filter-buttons .filter-btn.active {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
