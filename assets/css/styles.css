@@ -264,8 +264,9 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
 
 /* --- Ajustes finos: menos espacio arriba + botones mas modernos --- */
 
-/* Menos aire arriba del titulo de pagina (en todas las paginas) */
-.container.py-3, .container.py-5 { padding-top: 1.1rem; }
+/* Menos aire arriba del titulo de pagina (en todas las paginas).
+   !important porque las utilidades py-* de Bootstrap lo llevan. */
+.container.py-3, .container.py-5 { padding-top: 1.1rem !important; }
 .container > h2:first-of-type,
 .container > h3:first-of-type,
 .container .d-flex:first-of-type > h2 { margin-top: 0; }
