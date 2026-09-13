@@ -354,6 +354,9 @@
           $("#bibtex_display").append( renderEntryLI(e) );
         });
 
+        // Reaplica la búsqueda activa sobre lo recién pintado
+        applySearch();
+
       } catch (err) {
         console.error(err);
         $out.append('<li><em>Could not load all_publications.bib</em></li>');
