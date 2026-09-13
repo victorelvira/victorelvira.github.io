@@ -257,6 +257,8 @@ img[data-file]{cursor:zoom-in}
 .card .mx{display:flex;gap:9px;align-items:flex-start;margin-top:7px}
 .card .mx-img{width:96px;height:72px;flex:0 0 96px;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
 .card .mx-k{font-size:12px;color:var(--ink-soft);text-transform:capitalize}
+.card .mx-f{font-size:11px;color:var(--stone);margin-top:1px}
+.card .mx .ins-q{margin:5px 0 3px}
 /* what the plaque says */
 .card .ins-q{margin:7px 0 2px;padding:6px 8px;background:#fff;border-left:3px solid var(--brass);
   font-size:12.5px;line-height:1.4;font-style:italic;cursor:pointer;
@@ -467,3 +469,23 @@ body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{dis
   #panel-grip.dragging::before{background:var(--brass)}
 }
 body.dragging-panel{user-select:none;-webkit-user-select:none}
+
+/* ── the filters, open on a phone: everything at a glance, and an obvious way out ─────────────
+   The first row used to scroll sideways, which works well once you know it is there, and a reader
+   who does not know simply never finds the second half. Open, it wraps instead: the fold already
+   hides it all when closed, so the height costs the map nothing. */
+#fold-done{display:none}
+@media (max-width:720px){
+  body:not(.folded) #modes-rail{flex-wrap:wrap;overflow:visible;row-gap:6px;
+    mask-image:none;-webkit-mask-image:none}
+  body:not(.folded) #legend{flex-wrap:wrap;overflow:visible;mask-image:none;-webkit-mask-image:none}
+  body:not(.folded) #fold-done{display:block;width:calc(100% - 16px);margin:4px 8px 8px;padding:10px;
+    border:0;border-radius:8px;background:var(--moss);color:#fff;font:inherit;font-size:14px;
+    font-weight:600;cursor:pointer}
+  body:not(.folded) #fold{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* the grip: a real target for a thumb, and a tap that changes size */
+  #panel-grip{flex:0 0 26px;height:26px;position:relative}
+  #panel-grip::after{content:"";position:absolute;left:0;right:0;top:-12px;bottom:-6px}
+  #panel-grip::before{width:52px;height:6px}
+}

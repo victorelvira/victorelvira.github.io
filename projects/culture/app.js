@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.23.0";
+const DATA_V = "0.23.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -398,7 +398,7 @@ function sitePopup(siteIdx, rows) {
   // What the plaque says, fetched when the card opens (build_inscriptions.py, 0.5° tiles).
   const ins = kind === "plaque" ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>`
     // a museum's photo, kind and website, fetched the same way (build.py, culture/data/mus/)
-    : kind === "museum" ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
+    : kind === "museum" || kind === "statue" ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
   const where = whereOf(s);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
     (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
@@ -965,7 +965,7 @@ document.addEventListener("keydown", (e) => {
 const insTiles = new Map();
 function tileFor(dir, key) {
   const [lat, lon] = key.split(",").map(Number);
-  const step = dir === "ins" ? 0.5 : 2;          // the sizes build_inscriptions.py, build.py and build_hours.py cut
+  const step = dir === "ins" ? 0.5 : 2;          // ins/ 0.5° (build_inscriptions.py); cards/ and hrs/ 2° (build.py, build_hours.py)
   const tile = `${dir}/${Math.floor(lat / step)}_${Math.floor(lon / step)}`;
   if (!insTiles.has(tile))
     insTiles.set(tile, fetch(`culture/data/${tile}.json?v=${DATA_V}`)
@@ -980,12 +980,19 @@ function fillInscriptions(root) {
     });
   });
   root.querySelectorAll(".mx[data-key]").forEach((box) => {
-    tileFor("mus", box.dataset.key).then((t) => {
+    tileFor("cards", box.dataset.key).then((t) => {
       const x = t[box.dataset.key];
       if (!x) { box.remove(); return; }
+      // A statue from OpenStreetMap says when it was put up, what it is made of, who made it, and
+      // what it says; and it says where it came from, because ODbL asks for that and so do we.
+      const facts = [x.date ? `put up ${esc(x.date)}` : "", x.material ? esc(x.material) : "",
+                     x.by ? `by ${esc(x.by)}` : ""].filter(Boolean).join(" · ");
       box.innerHTML = (x.img ? pic(x.img, "mx-img", 480, "") : "") +
-        `<div class="mx-t">${x.k ? `<div class="mx-k">${esc(x.k)}</div>` : ""}<div class="lk">` +
-        [x.web ? `<a href="${esc(x.web)}" target="_blank" rel="noopener">Website</a>` : "",
+        `<div class="mx-t">${x.k ? `<div class="mx-k">${esc(x.k)}</div>` : ""}` +
+        (facts ? `<div class="mx-f">${facts}</div>` : "") +
+        (x.ins ? `<blockquote class="ins-q">${esc(x.ins)}</blockquote>` : "") + `<div class="lk">` +
+        [x.osm ? `<a href="https://www.openstreetmap.org/${esc(x.osm)}" target="_blank" rel="noopener">OpenStreetMap</a>` : "",
+         x.web ? `<a href="${esc(x.web)}" target="_blank" rel="noopener">Website</a>` : "",
          x.wd ? `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(x.wd)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
          x.wd ? `<a href="https://www.wikidata.org/wiki/${esc(x.wd)}" target="_blank" rel="noopener">Wikidata</a>` : ""]
           .filter(Boolean).join(" · ") + `</div></div>`;
@@ -1325,26 +1332,48 @@ const meLayer = L.layerGroup().addTo(map);
   const key = () => (narrow() ? "panelH" : "panelW");
   const apply = (px) => { panel.style.flex = px ? `0 0 ${px}px` : ""; };
   const restore = () => { let v = null; try { v = +localStorage.getItem(key()) || null; } catch (e) {} apply(v); };
+  const save = (px) => { try { localStorage.setItem(key(), String(px)); } catch (e) {} };
   restore();
   let lastNarrow = narrow();
   window.addEventListener("resize", () => { if (narrow() !== lastNarrow) { lastNarrow = narrow(); restore(); } });
-  let dragging = false, px = 0;
+  // The first version resized on every pointermove, and every resize made the map redraw its pins
+  // and the list: on a phone the grip stuttered and lagged behind the thumb. Now the size follows
+  // the finger on animation frames, and the map is redrawn once, on release.
+  let drag = null, frame = 0, px = 0;
+  const limits = () => {
+    const r = main.getBoundingClientRect();
+    return narrow() ? [70, r.height - 90, r] : [220, r.width - 240, r];
+  };
   grip.addEventListener("pointerdown", (e) => {
-    dragging = true; grip.setPointerCapture(e.pointerId);
+    drag = { x: e.clientX, y: e.clientY, moved: false };
+    window.panelDragging = true;
+    try { grip.setPointerCapture(e.pointerId); } catch (err) {}
     grip.classList.add("dragging"); document.body.classList.add("dragging-panel"); e.preventDefault();
   });
   grip.addEventListener("pointermove", (e) => {
-    if (!dragging) return;
-    const r = main.getBoundingClientRect();
-    px = narrow() ? Math.round(Math.max(70, Math.min(r.height - 90, r.bottom - e.clientY)))
-                  : Math.round(Math.max(220, Math.min(r.width - 240, r.right - e.clientX)));
-    apply(px);
+    if (!drag) return;
+    if (Math.abs(e.clientY - drag.y) + Math.abs(e.clientX - drag.x) > 6) drag.moved = true;
+    if (!drag.moved) return;
+    e.preventDefault();
+    const [lo, hi, r] = limits();
+    px = Math.round(Math.max(lo, Math.min(hi, narrow() ? r.bottom - e.clientY : r.right - e.clientX)));
+    if (!frame) frame = requestAnimationFrame(() => { frame = 0; apply(px); });
   });
   const end = () => {
-    if (!dragging) return;
-    dragging = false; grip.classList.remove("dragging"); document.body.classList.remove("dragging-panel");
-    try { if (px) localStorage.setItem(key(), String(px)); } catch (e) {}
-    map.invalidateSize({ pan: false }); renderPanel();
+    if (!drag) return;
+    const tapped = !drag.moved;
+    drag = null; window.panelDragging = false;
+    grip.classList.remove("dragging"); document.body.classList.remove("dragging-panel");
+    if (tapped && narrow()) {
+      // A tap steps through three sizes, the gesture a phone's bottom sheets have taught everyone.
+      const [lo, hi, r] = limits();
+      const now = panel.getBoundingClientRect().height;
+      const steps = [0.28, 0.5, 0.78].map((f) => Math.round(Math.max(lo, Math.min(hi, r.height * f))));
+      px = steps.find((v) => v > now + 8) || steps[0];
+      apply(px);
+    }
+    if (px) save(px);
+    requestAnimationFrame(() => { map.invalidateSize({ pan: false }); refresh(); });
   };
   grip.addEventListener("pointerup", end); grip.addEventListener("pointercancel", end);
 })();
@@ -1457,11 +1486,14 @@ function foldSummary() {
   if (state.topN) n++;
   if (state.person) n++;
   const folded = document.body.classList.contains("folded");
+  // Open, the button says what the next tap does. "Filters ▴" read as a label, not as the way back
+  // to the map (Víctor, 2026-09-13).
   $("fold").innerHTML = folded
     ? `Filters ▾${n ? ` <b>${n}</b>` : ""}`
-    : `Filters ▴${n ? ` <b>${n}</b>` : ""}`;
+    : `✕ Close filters${n ? ` <b>${n}</b>` : ""}`;
   $("fold").setAttribute("aria-expanded", String(!folded));
 }
+$("fold-done").addEventListener("click", () => { if (!document.body.classList.contains("folded")) $("fold").click(); });
 $("fold").addEventListener("click", () => {
   document.body.classList.toggle("folded");
   foldSummary();
@@ -1707,17 +1739,33 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
           .then((extra) => {
             if (!extra) { deepState = "none"; return; }
             absorb(extra);
-            deepState = "loaded";
             // the long tail's half of the record-card file rides in with it
-            fetch("culture/data/people-deep.json?v=" + DATA_V)
+            const cards = (name) => fetch(`culture/data/${name}?v=${DATA_V}`)
               .then((r) => (r.ok ? r.json() : null))
-              .then((more) => { if (more && PEOPLE) Object.assign(PEOPLE, more.p || {}); })
+              .then((more) => { if (more) needPeople(() => Object.assign(PEOPLE, more.p || {})); })
               .catch(() => {});
-            indexPeople();
-            const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
-            if (years.length) buildTimeline(years[Math.floor(years.length * 0.01)], years.at(-1));
-            buildPlaces();
-            refresh();
+            cards("people-deep.json");
+            const settleIn = () => {
+              indexPeople();
+              const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
+              if (years.length) buildTimeline(years[Math.floor(years.length * 0.01)], years.at(-1));
+              buildPlaces();
+              refresh();
+            };
+            // Then any further files the base names (0.24: atlas-osm.json, the statues from
+            // OpenStreetMap, ODbL and so in a file of their own, D8), one after another.
+            const more = (d.more || []).slice();
+            const next = () => {
+              const f = more.shift();
+              if (!f) { deepState = "loaded"; settleIn(); return; }
+              fetch("culture/data/" + f + "?v=" + DATA_V)
+                .then((r) => (r.ok ? r.json() : null))
+                .then((x) => { if (x) { absorb(x); cards(f.replace(/^atlas/, "people")); } })
+                .catch(() => {})
+                .finally(next);
+            };
+            settleIn();
+            next();
           })
           .catch(() => { deepState = "none"; });
       }, 2500);
@@ -1731,7 +1779,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     new ResizeObserver(() => {
       clearTimeout(rTimer);
       rTimer = setTimeout(() => {
-        if (!document.getElementById("map").clientHeight) return;
+        if (!document.getElementById("map").clientHeight || window.panelDragging) return;
         map.invalidateSize({ pan: false });
         refresh();
       }, 60);
