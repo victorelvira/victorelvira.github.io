@@ -384,6 +384,15 @@
         await renderPublications(type);
       });
 
+      // Buscador en vivo (Fase 1)
+      const searchInput = document.getElementById('pub-search');
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          __QUERY__ = normSearch(this.value);
+          applySearch();
+        });
+      }
+
       // --- Modal "Cite": carga el .bib y ofrece Copiar / Descargar ---
       const modalEl = document.getElementById('citeModal');
       if (modalEl) {
