@@ -258,6 +258,21 @@ tr.part .c-title{padding-left:24px;font-size:14px}
 #rec .mfrom{font-style:italic}
 #rec .mto{color:var(--ink)}
 #rec .mwhy{display:block;color:var(--faint);font-size:10.5px}
+/* ficha de compositor */
+#rec .chips{margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:5px}
+#rec .ch{background:var(--sand);border:1px solid var(--sand-line);border-radius:999px;
+  padding:3px 9px;font-size:11.5px;color:var(--hot)}
+#rec .goworks{font:inherit;font-size:12.5px;padding:5px 12px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line);background:#fff;color:var(--accent)}
+#rec .goworks:hover{background:var(--sand);border-color:var(--sand-line)}
+#rec .portrait{margin:6px 0;font-size:12px}
+#rec .portrait a{color:var(--accent)}
+#rec ul.rel{list-style:none;margin:4px 0 0;padding:0;font-size:12.5px}
+#rec ul.rel li{padding:3px 0;border-bottom:1px solid var(--line)}
+#rec ul.rel.bad li{color:var(--bad)}
+#rec ul.rel.steps b{display:inline-block;min-width:16px;color:var(--accent)}
+#rec .plink{border:0;background:none;padding:0;font:inherit;color:var(--accent);cursor:pointer}
+#rec .plink:hover{text-decoration:underline}
 #rec .kids{margin-top:14px}
 #rec .kids h4{font-size:9.5px;color:var(--faint);margin:0 0 4px;letter-spacing:.09em;text-transform:uppercase}
 #rec .kids button{display:block;width:100%;text-align:left;border:0;background:none;padding:2px 0;
@@ -480,6 +495,10 @@ table.cat th:hover .grip::after{opacity:1}
 body.resizing{cursor:col-resize;user-select:none}
 body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
 .c-rec{font-variant-numeric:tabular-nums;text-align:right;padding-right:14px}
+/* lo que no está colgado de esta obra sino de su cuaderno o de sus piezas: presente,
+   pero nunca con el peso de lo propio. */
+.reach{color:var(--faint);font-size:11.5px;font-variant-numeric:tabular-nums;cursor:help}
+.reach:hover{color:var(--accent)}
 .c-rec .unknown{opacity:.3}
 /* a count that came from the work's best movement rather than from the work: it is
    a floor, not a measurement, and it should not read like one. */
@@ -506,3 +525,52 @@ body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
   border-radius:50%;vertical-align:-1px;margin:0 4px 0 8px;border:1.5px solid #6a4a2a}
 .mapkey .k-solid{background:rgba(106,74,42,.55)}
 .mapkey .k-dash{background:rgba(106,74,42,.12);border-style:dashed}
+
+/* ---------- el juego ---------- */
+/* EN EL JUEGO SOLO ESTÁ EL JUEGO.
+   Los filtros no filtran nada aquí (la pregunta sale de su propio fondo, con cuota por
+   compositor) y la tabla debajo compite por la atención con la única cosa que hay que
+   hacer, que es escuchar. En el mapa la tabla sí sirve, porque pinchar un pin la filtra;
+   aquí no sirve para nada. */
+body.lens-game #subbar,body.lens-game #facets,
+body.lens-game #scroll,body.lens-game #divider{display:none}
+/* `#main` guarda la tabla Y la ficha. Esconderlo entero mataría el "ver su ficha" del
+   juego, así que se colapsa solo mientras no hay ficha abierta; con ella abierta vuelve,
+   y dentro solo queda el panel. Sin esto seguía ocupando 285 px vacíos y el juego se
+   quedaba en 294 px con 636 px de contenido: el veredicto y el botón de siguiente caían
+   fuera de la vista. */
+body.lens-game:not(.rec-open) #main{display:none}
+body.lens-game #instrument{flex:1;min-height:0;overflow-y:auto}
+#game{padding:18px 20px;max-width:760px;margin:0 auto}
+#game .g-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;
+  padding-bottom:12px;border-bottom:1px solid var(--line)}
+#game .g-seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+#game .gbtn{border:0;background:#fff;font:inherit;font-size:12.5px;padding:5px 12px;
+  cursor:pointer;color:var(--muted)}
+#game .g-seg .gbtn+.gbtn{border-left:1px solid var(--line)}
+#game .gbtn.on{background:var(--hot);color:#fff;font-weight:600}
+#game .gbtn:hover:not(.on){background:var(--sand)}
+#game #g-reset{border:1px solid var(--line);border-radius:999px}
+#game .g-score{margin-left:auto;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+#game .g-score b{color:var(--ink)}
+#game .g-prompt{font:600 21px/1.2 var(--serif);margin:0 0 10px}
+#game .g-play{font:inherit;font-size:15px;padding:10px 22px;border-radius:999px;cursor:pointer;
+  background:var(--sand);border:1px solid var(--sand-line);color:var(--hot);font-weight:600}
+#game .g-play:hover{background:#e7dcc6}
+#game .g-opts{display:grid;gap:8px;margin:16px 0}
+#game .gopt{font:inherit;font-size:14.5px;text-align:left;padding:11px 15px;cursor:pointer;
+  background:#fff;border:1px solid var(--line);border-radius:9px;color:var(--ink)}
+#game .gopt:hover:not(:disabled){border-color:var(--sand-line);background:#faf7f1}
+#game .gopt.ok{background:#eef5ea;border-color:var(--ok);color:#3f5c35;font-weight:600}
+#game .gopt.no{background:#f7ecea;border-color:var(--bad);color:#8a3d2c}
+#game .gopt:disabled{cursor:default}
+#game .g-after{border-top:1px solid var(--line);padding-top:12px}
+#game .g-verdict{font:600 16px/1.2 var(--serif);margin:0 0 4px}
+#game .g-verdict.ok{color:#4a7a3a} #game .g-verdict.no{color:var(--bad)}
+#game .g-what{margin:0 0 10px;font-size:13.5px;color:var(--muted)}
+#game .g-next{border:1px solid var(--sand-line);background:var(--sand);color:var(--hot);
+  border-radius:999px;font-weight:600}
+#game .g-note{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:11.5px;color:var(--faint);line-height:1.5}
+#game .g-load{color:var(--muted);font-size:13px}
+#game .why{display:block;color:var(--faint);font-size:11px;margin-top:3px}

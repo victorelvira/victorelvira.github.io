@@ -10,10 +10,33 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.31.0";
-const BUILD_AT = "2026-09-15 00:51";
+const DATA_V = "0.33.3";
+const BUILD_AT = "2026-09-15 01:19";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
+/* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
+   aparece en el camino entre dos de ellos); `PLINKS` las relaciones que constan.
+   `ADJ` es solo la parte de la que se sigue que se trataron, que es la única con la que
+   se pueden contar pasos entre dos personas. Ver harvest_people.py. */
+let PEOPLE = {}, PLINKS = [], ADJ = new Map();
+function buildAcquaintance(){
+  ADJ=new Map();
+  const add=(x,y)=>{ if(!ADJ.has(x)) ADJ.set(x,new Set()); ADJ.get(x).add(y); };
+  PLINKS.forEach(l=>{ if(!l.met||l.impossible) return; add(l.a,l.b); add(l.b,l.a); });
+}
+/* El camino más corto de trato documentado entre dos personas, con los nombres de por
+   medio. Es lo que hace útil el grafo: entre nuestros 31 compositores solo hay 8
+   aristas directas, pero 83 parejas se alcanzan pasando por terceros. */
+function acqPath(from,to){
+  if(from===to||!ADJ.has(from)) return null;
+  const prev=new Map([[from,null]]); let q=[from];
+  while(q.length){
+    const x=q.shift();
+    if(x===to){ const out=[]; let c=x; while(c){ out.unshift(c); c=prev.get(c); } return out; }
+    for(const y of (ADJ.get(x)||[])) if(!prev.has(y)){ prev.set(y,x); q.push(y); }
+  }
+  return null;
+}
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
                 /* OPENS ON THE MOST-RECORDED WORK, not on whoever sorts first by
                    surname. The catalogue used to open on Bruckner, which told a reader
@@ -598,11 +621,28 @@ function rowHTML(w,isPart){
    both with a ▶ promised audio that was not there. A filled play button now means it
    plays here; the IMSLP count is a link with its own words. */
 /* SCORES: free score files on IMSLP, which is where they live and stay. */
+/* LO QUE SE PUEDE ALCANZAR, Y DESDE DÓNDE.
+   Lo colgado de esta obra se imprime como siempre. Lo que está en su cuaderno o en sus
+   piezas se imprime en gris y con una flecha que dice hacia dónde mirar: ↑ en el conjunto
+   al que pertenece, ↓ en sus partes. Nunca se suma a lo propio, porque no es lo mismo
+   tener la partitura de esta pieza que tener el cuaderno que la contiene. 1 780 obras
+   decían "sin partitura" con un PDF que las contiene a un clic. 2026-09-15. */
+function reach(w, key, dir){
+  const n = w[key]; if(!n) return "";
+  const from = dir==="up" ? BYID.get(w[key.replace(/[ab]$/,"w")]) : null;
+  const where = dir==="up"
+    ? `en ${from?titleOf(from):"el conjunto"}, que la contiene`
+    : `repartidas entre sus partes`;
+  return `<span class="reach" title="${esc(n+" "+(key[0]==="s"?"partitura(s)":"grabacion(es)")+" "+where)}">`
+       + `${dir==="up"?"↑":"↓"}${n}</span>`;
+}
 function scoreCell(w){
   const n=(w.media||{}).scores, u=SRC_URL.imslp(w);
-  if(!n || !u) return "";
-  return `<a href="${u}" target="_blank" rel="noopener" onclick="event.stopPropagation()"
-    title="${n} free score file${n>1?"s":""} on IMSLP, opens there">♪${n}</a>`;
+  const own = (n && u)
+    ? `<a href="${u}" target="_blank" rel="noopener" onclick="event.stopPropagation()"
+        title="${n} free score file${n>1?"s":""} on IMSLP, opens there">♪${n}</a>` : "";
+  if(own) return own;
+  return reach(w,"sa","up") || reach(w,"sb","down");
 }
 /* AUDIO: how many recordings there are, which is what the column now says.
    Three different things, counted separately because they are not interchangeable:
@@ -617,6 +657,10 @@ function audioCell(w){
   if(off && u) bits.push(`<a class="offsite" href="${u}" target="_blank" rel="noopener"
     onclick="event.stopPropagation()"
     title="${off} freely-licensed recording${off>1?"s":""} on IMSLP, opens there">↗${off}</a>`);
+  if(!bits.length){
+    const r = reach(w,"ab","down") || reach(w,"aa","up");
+    if(r) return r;
+  }
   return bits.join(" ");
 }
 function renderWorks(){
@@ -700,7 +744,7 @@ function renderInstrument(){
   const host=document.getElementById("instrument");
   if(state.lens==="table"){ host.innerHTML=""; return; }
   ({fifths:renderFifths, graph:renderGraph, time:renderTimeline,
-    map:renderMap}[state.lens])(host);
+    map:renderMap, game:renderGame}[state.lens])(host);
 }
 
 /* ---------- lens: the map ----------
@@ -1024,6 +1068,70 @@ function moveRec(step){
   const next = seq[i + step];
   if(next) openRec(next);
 }
+/* FICHA DE COMPOSITOR. Hasta ahora una fila de compositor solo servía para filtrar el
+   catálogo, y todo lo que sabemos de la persona (dónde nació, qué tocaba, quién fue su
+   maestro) no se veía en ningún sitio. Usa el mismo panel que una obra, así que hereda
+   el paso de ficha en ficha, el atrás y el cerrar con Escape. 2026-09-15. */
+function personLine(q){
+  const p=PEOPLE[q]; if(!p) return esc(q);
+  const yrs=(p.born||p.died)?` <span class="yrs">${p.born||"?"}-${p.died||"?"}</span>`:"";
+  return (p.ours?`<button class="plink" data-comp-open="${esc(p.ours)}">${esc(p.label)}</button>`
+                :`<span>${esc(p.label)}</span>`)+yrs;
+}
+function openComposer(slug){
+  const c=COMPOSERS.find(x=>x.slug===slug); if(!c) return;
+  state.sel=null; state.comp=new Set();
+  const q=c.qid, me=PEOPLE[q]||{};
+  const ws=WORKS.filter(w=>isWork(w)&&w.composer_slugs.includes(slug));
+  const scores=ws.reduce((a,w)=>a+(w.ms||0),0), play=ws.filter(w=>w.au||w.ar).length;
+  /* las relaciones, separadas por lo que significan de verdad: de la primera lista se
+     sigue que se trataron, de la segunda no. Bach se sabía a Vivaldi por las partituras. */
+  const mine=PLINKS.filter(l=>l.a===q||l.b===q);
+  const other=l=>l.a===q?l.b:l.a;
+  const knew=mine.filter(l=>l.met&&!l.impossible);
+  const infl=mine.filter(l=>!l.met);
+  const bad=mine.filter(l=>l.impossible);
+  const list=(ls,rel)=>ls.map(l=>`<li>${esc(l.a===q?l.type:invRel(l.type))} ${personLine(other(l))}`
+      +(l.impossible?`<span class="why">⚠ ${esc(l.impossible)}</span>`:"")+`</li>`).join("");
+  /* a cuántos pasos queda cada uno de los otros del atlas, por trato documentado */
+  const reach=COMPOSERS.filter(x=>x.slug!==slug&&x.qid).map(x=>{
+      const path=acqPath(q,x.qid); return path?{c:x,path}:null; }).filter(Boolean)
+    .sort((a,b)=>a.path.length-b.path.length).slice(0,12);
+  document.getElementById("recbody").innerHTML=
+    `<p class="whose"><span class="dot" style="background:${compColour(slug)}"></span>
+       ${esc(c.name)}<span class="yrs"> ${c.born||"?"}-${c.died||"?"}</span></p>
+     <h2>${esc(c.name)}</h2>
+     <p class="sub">${esc(period(c))}${me.born_place?` · nació en ${esc(me.born_place)}`:""}`
+       +`${me.died_place?` · murió en ${esc(me.died_place)}`:""}</p>
+     ${me.image?`<p class="portrait"><a href="${esc(me.image)}" target="_blank" rel="noopener">
+        ver el retrato en Wikimedia Commons ↗</a><span class="why">se enlaza, no se copia</span></p>`:""}
+     <p class="chips">
+       <span class="ch">${ws.length} obras</span>
+       ${scores?`<span class="ch">${scores} partituras</span>`:""}
+       ${play?`<span class="ch">${play} con audio</span>`:""}
+       ${(c.catalogues||[]).length?`<span class="ch">${esc((c.catalogues||[]).join(" · "))}</span>`:""}
+       ${(me.instruments||[]).length?`<span class="ch">tocaba ${esc(me.instruments.slice(0,4).join(", "))}</span>`:""}
+     </p>
+     <p><button class="goworks" data-conly="${esc(slug)}">ver sus ${ws.length} obras en el catálogo</button></p>
+     ${knew.length?`<h4 class="sec">Personas que trató, según consta</h4><ul class="rel">${list(knew)}</ul>`:""}
+     ${bad.length?`<h4 class="sec">Relaciones que la fuente afirma y no pudieron ocurrir</h4>
+        <ul class="rel bad">${list(bad)}</ul>`:""}
+     ${infl.length?`<h4 class="sec">Influencias</h4>
+        <p class="why">Que conste una influencia no quiere decir que se vieran nunca:
+        Bach se sabía a Vivaldi por las partituras.</p><ul class="rel">${list(infl)}</ul>`:""}
+     ${reach.length?`<h4 class="sec">A cuántos pasos quedan los demás del atlas</h4>
+        <ul class="rel steps">${reach.map(r=>`<li><b>${r.path.length-1}</b>
+          <button class="plink" data-comp-open="${esc(r.c.slug)}">${esc(r.c.name)}</button>
+          <span class="why">${r.path.map(x=>esc((PEOPLE[x]||{}).label||x)).join(" → ")}</span></li>`).join("")}</ul>`:""}`;
+  document.body.classList.add("rec-open");
+  document.getElementById("recnav").hidden=true;
+  document.body.classList.remove("rec-paged");
+  remapSoon();
+}
+const REL_INV={"alumno de":"maestro de","maestro de":"alumno de","hijo de":"padre o madre de",
+  "hermano de":"hermano de","cónyuge de":"cónyuge de","trabajó para":"empleó a",
+  "colaboró con":"colaboró con","influido por":"influyó en"};
+const invRel=t=>REL_INV[t]||t;
 async function openRec(id){
   const w=BYID.get(id); if(!w) return; state.sel=id;
   /* the claims live in the composer's detail file, fetched the first time one of
@@ -1273,6 +1381,10 @@ function railFor(f, pool, limit){
     `</span>`;
 }
 function renderFacets(){
+  /* En el juego los filtros no filtran nada: la pregunta sale de su propio fondo, con
+     cuota por compositor. Dejarlos puestos invita a tocarlos y no pasa nada, que es la
+     peor respuesta que puede dar un control. */
+  if(state.lens==="game"){ document.getElementById("facets").innerHTML=""; return; }
   const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2))));
   let html=FACETS.filter(f=>!f.hidden).map(f=>railFor(f,pool))
                  .filter(Boolean).join(`<span class="chip-sep"></span>`);
@@ -1319,7 +1431,9 @@ function renderActive(){
    obra no dejaba entrada en el historial y el primer atrás se saltaba la ficha entera.
    Es idempotente: si el hash no cambia (ordenar, desplegar una fila, pedir más filas),
    no anota nada. */
-function renderStage(){ (state.sub==="composers"?renderComposers:renderWorks)(); writeHash(); }
+function renderStage(){
+  document.body.classList.toggle("lens-game", state.lens==="game");
+  (state.sub==="composers"?renderComposers:renderWorks)(); writeHash(); }
 function draw(){
   state.limit=300; renderPicker(); renderFacets(); renderInstrument(); renderStage();
   const v=visible(), all=WORKS.filter(isWork).length;
@@ -1378,7 +1492,7 @@ window.addEventListener("popstate",()=>{
 function readHash(){
   const h=decodeURIComponent(location.hash.slice(1)); if(!h) return;
   h.split("/").forEach((p,i)=>{
-    if(i===0&&["table","fifths","graph","time"].includes(p)) state.lens=p;
+    if(i===0&&["table","fifths","graph","time","map","game"].includes(p)) state.lens=p;
     const m=p.match(/^(\w+)=(.*)$/); if(!m) return;
     if(m[1]==="q"){ state.q=fold(m[2]); state.qw=state.q.split(/\s+/).filter(Boolean);
                     document.getElementById("q").value=m[2]; }
@@ -1486,10 +1600,15 @@ document.addEventListener("click",e=>{
       state.lens="table"; state.sub="works"; return draw(); }
   }
   const goto=t.closest("[data-goto]"); if(goto) return openRec(goto.dataset.goto);
-  const crow=t.closest("tr[data-comp]");
-  if(crow){ state.comp=new Set([crow.dataset.comp]); state.sub="works";
+  const copen=t.closest("[data-comp-open]");
+  if(copen) return openComposer(copen.dataset.compOpen);
+  const conly=t.closest("[data-conly]");
+  if(conly){ state.comp=new Set([conly.dataset.conly]); state.sub="works"; state.sel=null;
+    document.body.classList.remove("rec-open","rec-paged");
     document.querySelectorAll("#subtabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.sub==="works"));
     return draw(); }
+  const crow=t.closest("tr[data-comp]");
+  if(crow) return openComposer(crow.dataset.comp);
   const row=t.closest("tr[data-id]"); if(row) return openRec(row.dataset.id);
 });
 document.getElementById("q").addEventListener("input",e=>{
@@ -1542,9 +1661,12 @@ Promise.all([
   fetch(`core.json?v=${DATA_V}`).then(r=>r.json()),
   fetch(`arrangements.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>[]),
   fetch(`composers.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({})),
-  fetch(`places.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({}))
-]).then(([w,e,c,p])=>{
+  fetch(`places.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({})),
+  fetch(`people.json?v=${DATA_V}`).then(r=>r.json()).catch(()=>({people:{},links:[]}))
+]).then(([w,e,c,p,ppl])=>{
   PLACES=p||{};
+  PEOPLE=(ppl&&ppl.people)||{}; PLINKS=(ppl&&ppl.links)||[];
+  buildAcquaintance();
   COMPOSERS=Object.entries(c).map(([slug,v])=>({slug,...v})).sort((a,b)=>(a.born||0)-(b.born||0));
   const byslug=Object.fromEntries(COMPOSERS.map(x=>[x.slug,x]));
   WORKS=w.map(r=>hydrate(r,byslug)); EDGES=e;
@@ -1557,4 +1679,193 @@ Promise.all([
   /* una obra pedida en la URL se abre al cargar, para que un enlace compartido a una
      ficha lleve a la ficha y no solo al catálogo filtrado */
   if(state.sel && BYID.get(state.sel)) openRec(state.sel);
+});
+
+/* ---------- lens: el juego ----------
+   Víctor pidió un juego de escuchar diez segundos y acertar, en dos modos: quién lo
+   escribió y qué obra es. La máquina de preguntas es la misma y solo cambian el enunciado
+   y de dónde salen las respuestas falsas.
+
+   LO QUE HACE QUE SEA UN JUEGO Y NO UN TEST DE CULTURA GENERAL, heredado de artatlas, que
+   a su vez lo sacó de Batalla de Flores: **la dificultad no está en la pregunta, está en
+   las respuestas falsas**. En fácil los distractores son lejanos (Bach contra Ravel); en
+   difícil, vecinos (Bach contra Telemann, dos barrocos de teclado). Un distractor lejano
+   se descarta sin escuchar, y entonces el juego mide otra cosa.
+
+   Y dos cosas medidas antes de escribir una línea:
+     * el fondo está sesgado (Bach 211 ficheros, Scarlatti 151, y diez compositores con
+       menos de 10), así que cada compositor entra con CUOTA: sin eso, ante la duda se
+       responde Bach y se acierta.
+     * los ficheros van de 25 s a 20 min, así que el trozo se toma entre el 15 % y el 70 %
+       de la pieza: los primeros segundos suelen ser silencio o aplauso, y el final, una
+       caída. Se transmite desde Commons con salto por rango (probado: responde 206), no
+       se descarga ni se copia nada. */
+const G_OPTS = {facil:4, medio:4, dificil:5};
+const G_SEC = 10;
+let GAME = null, GPOOL = [], GAUDIO = null, GTIMER = null;
+const gstash = {facil:null, medio:null, dificil:null};
+
+function gLoadPool(){
+  if(GPOOL.length) return Promise.resolve();
+  return fetch(`game.json?v=${DATA_V}`).then(r=>r.json()).then(p=>{ GPOOL=p||[]; });
+}
+const gShuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const gPick = a => a[Math.floor(Math.random()*a.length)];
+
+/* CUOTA POR COMPOSITOR. Bach tiene 211 fragmentos y Purcell 1: sin topar, cuatro de cada
+   diez preguntas serían de Bach y el jugador aprendería el bombo en vez de la música. El
+   tope es la mediana de los que tienen algo, así que nadie desaparece y nadie manda. */
+function gBalanced(){
+  const by=new Map();
+  GPOOL.forEach(g=>{ if(!by.has(g.c)) by.set(g.c,[]); by.get(g.c).push(g); });
+  const sizes=[...by.values()].map(v=>v.length).sort((a,b)=>a-b);
+  const cap=Math.max(6, sizes[Math.floor(sizes.length/2)]);
+  const out=[];
+  by.forEach(v=>out.push(...gShuffle(v).slice(0,cap)));
+  return out;
+}
+/* Cerca o lejos, con los ejes que el atlas ya tiene: período (por las fechas del
+   compositor) y plantilla. Dos del mismo período y la misma plantilla son vecinos. */
+const gPeriod = slug => { const c=COMPOSERS.find(x=>x.slug===slug); return c?period(c):"?"; };
+function gTiers(target, all, keyOf){
+  const tp=gPeriod(target.c), tf=target.fc||"";
+  const near=[], mid=[], far=[];
+  all.forEach(g=>{ const k=keyOf(g); if(k===keyOf(target)) return;
+    const sp=gPeriod(g.c)===tp, sf=(g.fc||"")===tf;
+    (sp&&sf?near:sp||sf?mid:far).push(g); });
+  return GAME.diff==="dificil"?[near,mid,far]:GAME.diff==="medio"?[mid,near,far]:[far,mid,near];
+}
+function gTake(tiers,n,keyOf){
+  const out=[], seen=new Set();
+  for(const t of tiers){ for(const g of gShuffle(t)){
+      if(out.length>=n) break;
+      const k=keyOf(g); if(seen.has(k)) continue; seen.add(k); out.push(g); }
+    if(out.length>=n) break; }
+  return out;
+}
+function gNewQuestion(){
+  const pool=gBalanced();
+  if(!pool.length){ GAME.q=null; return; }
+  const target=gPick(pool);
+  const n=G_OPTS[GAME.diff]-1;
+  let opts, prompt, answer;
+  if(GAME.mode==="quien"){
+    const keyOf=g=>g.c;
+    opts=gTake(gTiers(target,pool,keyOf),n,keyOf).map(g=>({text:gName(g.c),correct:false}));
+    opts.push({text:gName(target.c),correct:true});
+    prompt="¿Quién escribió esto?";
+    answer=gName(target.c);
+  }else{
+    const keyOf=g=>g.i;
+    /* para "qué obra" los vecinos son del MISMO compositor: preguntar entre obras de
+       cuatro autores distintos es preguntar el autor otra vez, con más pasos. */
+    const same=pool.filter(g=>g.c===target.c&&g.i!==target.i);
+    const tiers=GAME.diff==="facil"?[pool.filter(g=>g.c!==target.c),same]
+               :GAME.diff==="medio"?[same,pool.filter(g=>g.c!==target.c)]
+               :[same.filter(g=>(g.fo||"")===(target.fo||"")),same,pool];
+    opts=gTake(tiers,n,keyOf).map(g=>({text:g.t||g.i,correct:false}));
+    opts.push({text:target.t||target.i,correct:true});
+    prompt="¿Qué obra es?";
+    answer=target.t||target.i;
+  }
+  const from=Math.floor(target.s*(0.15+Math.random()*0.55));
+  GAME.q={target, opts:gShuffle(opts), prompt, answer, from};
+  GAME.answered=false; GAME.picked=null;
+}
+const gName = slug => (COMPOSERS.find(x=>x.slug===slug)||{}).name||slug;
+
+function gStop(){ if(GTIMER){clearTimeout(GTIMER); GTIMER=null;}
+  if(GAUDIO){ GAUDIO.pause(); GAUDIO=null; } }
+function gPlay(){
+  const q=GAME&&GAME.q; if(!q) return;
+  gStop();
+  const a=new Audio(q.target.u); GAUDIO=a; a.preload="auto";
+  const start=()=>{ try{ a.currentTime=q.from; }catch(e){} a.play().catch(()=>{}); };
+  a.addEventListener("loadedmetadata",start,{once:true});
+  if(a.readyState>=1) start();
+  GTIMER=setTimeout(()=>{ if(GAUDIO===a){ a.pause(); } }, G_SEC*1000+400);
+  const b=document.getElementById("g-play"); if(b) b.textContent="▮▮ sonando";
+  setTimeout(()=>{ const x=document.getElementById("g-play"); if(x) x.textContent="▶ otra vez"; },
+             G_SEC*1000+400);
+}
+
+/* Cada nivel guarda SU partida, con su pregunta a medias. Si no, cambiar de nivel y
+   volver re-sorteaba la pregunta sin contestar, que es una forma de esquivarla: lo
+   encontró una jugadora en artatlas y aquí habría pasado igual. */
+function gSave(){ gstash[GAME.diff]={right:GAME.right,total:GAME.total,q:GAME.q,
+  answered:GAME.answered,picked:GAME.picked,streak:GAME.streak}; }
+function gRestore(d){ const s=gstash[d];
+  GAME.right=s?s.right:0; GAME.total=s?s.total:0; GAME.q=s?s.q:null;
+  GAME.answered=s?s.answered:false; GAME.picked=s?s.picked:null; GAME.streak=s?s.streak:0; }
+function gBest(){ try{ return JSON.parse(localStorage.getItem("ma-game")||"{}"); }catch(e){ return {}; } }
+function gSaveBest(){ try{ const b=gBest(); const k=GAME.mode+"-"+GAME.diff;
+  b[k]=Math.max(b[k]||0, GAME.streak); localStorage.setItem("ma-game",JSON.stringify(b)); }catch(e){} }
+
+function renderGame(host){
+  if(!GAME) GAME={mode:"quien", diff:"medio", right:0, total:0, streak:0, q:null, answered:false, picked:null};
+  gLoadPool().then(()=>{
+    if(!GAME.q) gNewQuestion();
+    gDraw(host);
+  });
+  host.innerHTML=`<div id="game"><p class="g-load">cargando el fondo de audio…</p></div>`;
+}
+function gDraw(host){
+  const q=GAME.q;
+  if(!q){ host.innerHTML=`<div id="game"><p class="g-load">No hay audio jugable.</p></div>`; return; }
+  const best=gBest()[GAME.mode+"-"+GAME.diff]||0;
+  const pct=GAME.total?Math.round(100*GAME.right/GAME.total):0;
+  const w=BYID.get(q.target.i);
+  host.innerHTML=`<div id="game">
+    <div class="g-bar">
+      <span class="g-seg" id="g-mode">${["quien","obra"].map(m=>
+        `<button class="gbtn${GAME.mode===m?" on":""}" data-gmode="${m}">${m==="quien"?"¿Quién?":"¿Qué obra?"}</button>`).join("")}</span>
+      <span class="g-seg" id="g-diff">${["facil","medio","dificil"].map(d=>
+        `<button class="gbtn${GAME.diff===d?" on":""}" data-gdiff="${d}">${d}</button>`).join("")}</span>
+      <span class="g-score">${GAME.right} de ${GAME.total}${GAME.total?` · ${pct} %`:""}
+        · racha <b>${GAME.streak}</b>${best?` · mejor ${best}`:""}</span>
+      <button class="gbtn" id="g-reset">empezar de nuevo</button>
+    </div>
+    <p class="g-prompt">${esc(q.prompt)}</p>
+    <p><button id="g-play" class="g-play">▶ escuchar ${G_SEC} s</button>
+       <span class="why">se transmite desde Wikimedia Commons, no se descarga nada</span></p>
+    <div class="g-opts">${q.opts.map((o,i)=>{
+        let cls=""; if(GAME.answered){ if(o.correct) cls=" ok"; else if(GAME.picked===i) cls=" no"; }
+        return `<button class="gopt${cls}" data-gopt="${i}"${GAME.answered?" disabled":""}>${esc(o.text)}</button>`;
+      }).join("")}</div>
+    ${GAME.answered?`<div class="g-after">
+      <p class="g-verdict ${GAME.picked!=null&&q.opts[GAME.picked].correct?"ok":"no"}">
+        ${GAME.picked!=null&&q.opts[GAME.picked].correct?"Correcto":"Era "+esc(q.answer)}</p>
+      <p class="g-what">${esc(gName(q.target.c))} · ${esc(q.target.t||"")}
+        ${q.target.fo?` · ${esc(q.target.fo)}`:""}
+        <span class="why">fragmento desde ${Math.floor(q.from/60)}:${String(q.from%60).padStart(2,"0")}
+        de ${Math.floor(q.target.s/60)}:${String(q.target.s%60).padStart(2,"0")}${q.target.l?` · ${esc(q.target.l)}`:""}</span></p>
+      <p>${w?`<button class="gbtn" data-goto="${esc(q.target.i)}">ver su ficha</button>`:""}
+         <button class="gbtn g-next" id="g-next">siguiente ▸</button></p>
+    </div>`:""}
+    <p class="g-note">La dificultad no está en la pregunta, está en las respuestas falsas:
+      en <b>fácil</b> son de otro período y otra plantilla, en <b>difícil</b> son vecinas.
+      Cada compositor entra con cuota, para que no se pueda acertar respondiendo siempre
+      al que más grabaciones tiene.</p>
+  </div>`;
+  if(!GAME.answered) gPlay();
+}
+document.addEventListener("click", e=>{
+  const host=document.getElementById("instrument");
+  const m=e.target.closest("[data-gmode]");
+  if(m){ gSave(); GAME.mode=m.dataset.gmode; GAME.q=null; gNewQuestion(); return gDraw(host); }
+  const d=e.target.closest("[data-gdiff]");
+  if(d){ gSave(); GAME.diff=d.dataset.gdiff; gRestore(GAME.diff);
+         if(!GAME.q) gNewQuestion(); return gDraw(host); }
+  if(e.target.closest("#g-play")) return gPlay();
+  if(e.target.closest("#g-next")){ gNewQuestion(); return gDraw(host); }
+  if(e.target.closest("#g-reset")){ GAME.right=0; GAME.total=0; GAME.streak=0;
+    gNewQuestion(); return gDraw(host); }
+  const o=e.target.closest("[data-gopt]");
+  if(o && GAME && !GAME.answered){
+    const i=+o.dataset.gopt, ok=GAME.q.opts[i].correct;
+    GAME.answered=true; GAME.picked=i; GAME.total++;
+    if(ok){ GAME.right++; GAME.streak++; gSaveBest(); } else GAME.streak=0;
+    gStop();
+    return gDraw(host);
+  }
 });
