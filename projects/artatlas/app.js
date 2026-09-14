@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.11.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-12 22:48";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.11.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-14 21:19";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -681,7 +681,7 @@ function placePopup(feats) {
     const facts = factBits.filter(Boolean).map(esc).join(" · ");
     const factsRow = facts ? `<div class="fx">${facts}</div>` : "";
     const desc = p.summary ? `<div class="ds">${esc(p.summary)}</div>` : "";
-    const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} — ${p0.location || ""}`;
+    const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} · ${p0.location || ""}`;
     const thumb = p.image
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
@@ -1134,7 +1134,7 @@ function renderWorksTable() {
     `${rows.length.toLocaleString()} ${tu(rows.length === 1 ? "work" : "works")}`;
   tbody.innerHTML = rows.map((p, i) => {
     const thumb = p.image
-      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc((p.title || "") + " — " + (p.location || ""))}" alt="" loading="lazy">`
+      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc((p.title || "") + " · " + (p.location || ""))}" alt="" loading="lazy">`
       : `<span class="tth ph"></span>`;
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
       ? `<span class="tag att">${esc(t(p.attribution))}</span>` : esc(t(p.attribution || ""));
@@ -1154,7 +1154,7 @@ function renderWorksTable() {
   }).join("");
   wireSort(thead, tableSort);
   tbody.querySelectorAll(".tth[data-full]").forEach(img => img.addEventListener("click", () =>
-    openLightbox(img.dataset.full, img.dataset.cap)));
+    openLightboxFrom(img)));
   tbody.querySelectorAll("tr[data-ri]").forEach(tr => tr.addEventListener("click", e => {
     if (e.target.closest("a, img")) return;                        // links + thumbnail keep their own action
     const p = tableRowCache[+tr.dataset.ri];
@@ -1487,7 +1487,7 @@ const MUS_EDGES   = ["#b39a63", "#8fae88", "#8f9cc4", "#c79c8b", "#a892b3", "#85
 function tileHTML(w, vis, grp) {
   const i = vis.length; vis.push(w);
   const p = w.p;
-  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} — ${locName(p)}`;
+  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} · ${locName(p)}`;
   const img = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
@@ -1642,7 +1642,7 @@ function panelRowHTML(w, grpKey) {
   const i = panelVis.length; panelVis.push(w);
   const fold = grpKey ? ` data-in="${esc(grpKey)}"${panelFolded.has(grpKey) ? " hidden" : ""}` : "";
   const p = w.p;
-  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} — ${locName(p)}`;
+  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} · ${locName(p)}`;
   const thumb = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
@@ -1990,22 +1990,88 @@ function commonsPage(url) {
   return name ? "https://commons.wikimedia.org/wiki/File:" + name : "";
 }
 const lb = document.getElementById("lightbox");
-function openLightbox(url, cap) {
+// Paging through the enlarged pictures, the way Batalla de Flores does it: the sequence is the
+// pictures of the place you clicked in (the side panel, the table, the table's picture grid), in the
+// order they are shown there, and only the ones actually on screen (a folded museum's works are not
+// in it). Arrows, keyboard, a swipe on a phone, a "3 / 12" counter, and the next picture preloaded,
+// because paging through 1600 px images without it flickers.
+let lbSeq = [], lbIdx = 0;
+const LB_SCOPES = "#worklist, #table-gallery, #table";
+function lbCollect(scope) {
+  return [...scope.querySelectorAll("img.th[data-full], img.tth[data-full]")]
+    .filter(im => im.offsetParent !== null);
+}
+function paintLightbox(url, cap) {
   document.getElementById("lb-img").src = url;
   const page = commonsPage(url);
   const credit = page
-    ? `<a class="lb-credit" href="${esc(page)}" target="_blank" rel="noopener">Wikimedia Commons — licence ↗</a>`
+    ? `<a class="lb-credit" href="${esc(page)}" target="_blank" rel="noopener">${esc(t("Wikimedia Commons · licence ↗"))}</a>`
     : "";
   document.getElementById("lb-cap").innerHTML = (cap ? esc(cap) : "") + credit;
   lb.hidden = false;
 }
-function closeLightbox() { lb.hidden = true; document.getElementById("lb-img").src = ""; }
+function lbNav() {
+  const many = lbSeq.length > 1;
+  document.querySelectorAll("#lightbox .lb-nav").forEach(b => { b.hidden = !many; });
+  const c = document.getElementById("lb-count");
+  c.hidden = !many;
+  if (many) c.textContent = `${lbIdx + 1} / ${lbSeq.length}`;
+  if (many) {                                     // preload the one you are most likely to ask for next
+    const nx = lbSeq[(lbIdx + 1) % lbSeq.length];
+    if (nx) new Image().src = nx.dataset.full;
+  }
+}
+// A lone picture (the game's zoom): no sequence, no arrows.
+function openLightbox(url, cap) { lbSeq = []; lbIdx = 0; paintLightbox(url, cap); lbNav(); }
+function openLightboxFrom(img) {
+  const scope = img.closest(LB_SCOPES);
+  lbSeq = scope ? lbCollect(scope) : [img];
+  lbIdx = lbSeq.indexOf(img);
+  if (lbIdx < 0) { lbSeq = [img]; lbIdx = 0; }
+  paintLightbox(img.dataset.full, img.dataset.cap);
+  lbNav();
+}
+function moveLightbox(step) {
+  if (lbSeq.length < 2) return;
+  // The side panel renders in chunks. Walking off the end of what is rendered should bring in the
+  // next chunk, not jump back to the first picture while thousands more are waiting below.
+  // The table's picture grid streams the same way, with its own cursor.
+  if (step > 0 && lbIdx === lbSeq.length - 1) {
+    const ul = document.getElementById("worklist"), tg = document.getElementById("table-gallery");
+    if (ul.contains(lbSeq[0]) && panelHasMore()) { appendPanelChunk(); lbSeq = lbCollect(ul); }
+    else if (tg.contains(lbSeq[0]) && tGalHasMore()) { tGalAppend(); lbSeq = lbCollect(tg); }
+  }
+  lbIdx = (lbIdx + step + lbSeq.length) % lbSeq.length;
+  const im = lbSeq[lbIdx];
+  paintLightbox(im.dataset.full, im.dataset.cap);
+  lbNav();
+}
+function closeLightbox() { lb.hidden = true; document.getElementById("lb-img").src = ""; lbSeq = []; }
 document.getElementById("lb-close").addEventListener("click", closeLightbox);
-lb.addEventListener("click", e => { if (e.target === lb) closeLightbox(); });
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+document.getElementById("lb-prev").addEventListener("click", e => { e.stopPropagation(); moveLightbox(-1); });
+document.getElementById("lb-next").addEventListener("click", e => { e.stopPropagation(); moveLightbox(1); });
+let lbSwiped = false;
+lb.addEventListener("click", e => {
+  if (lbSwiped) { lbSwiped = false; return; }     // the tap a swipe ends with is not a "close" tap
+  if (e.target === lb) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (lb.hidden) return;
+  if (e.key === "Escape") closeLightbox();
+  else if (e.key === "ArrowLeft") { e.preventDefault(); moveLightbox(-1); }
+  else if (e.key === "ArrowRight") { e.preventDefault(); moveLightbox(1); }
+});
+let lbX0 = null;
+lb.addEventListener("touchstart", e => { lbX0 = e.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", e => {
+  if (lbX0 === null) return;
+  const dx = e.changedTouches[0].clientX - lbX0;
+  lbX0 = null;
+  if (Math.abs(dx) > 50 && lbSeq.length > 1) { lbSwiped = true; moveLightbox(dx < 0 ? 1 : -1); }
+}, { passive: true });
 document.addEventListener("click", e => {
   const img = e.target.closest("img.th");
-  if (img && img.dataset.full) openLightbox(img.dataset.full, img.dataset.cap);
+  if (img && img.dataset.full) openLightboxFrom(img);
 });
 
 // ── work "ficha": the full record for one painting (image + facts + links) ──
@@ -2155,7 +2221,7 @@ function openWorkCard(w) {
   if (!w) return;
   wcWork = w;
   const p = w.p;
-  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} — ${locName(p)}`;
+  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} · ${locName(p)}`;
   const img = p.image
     ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
     : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;

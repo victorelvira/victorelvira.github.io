@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.11.1">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.11.2">
 </head>
 <body>
   <nav id="navbar">
@@ -253,6 +253,9 @@
 
   <div id="lightbox" hidden>
     <button id="lb-close" type="button" aria-label="Close">✕</button>
+    <button id="lb-prev" class="lb-nav" type="button" aria-label="Previous painting" title="Previous painting" hidden>‹</button>
+    <button id="lb-next" class="lb-nav" type="button" aria-label="Next painting" title="Next painting" hidden>›</button>
+    <span id="lb-count" hidden></span>
     <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
   </div>
 
@@ -298,7 +301,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.11.1"></script>
+  <script src="artatlas/app.js?v=1.11.2"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
