@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.11.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-14 21:19";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.11.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-14 23:00";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -229,6 +229,29 @@ function setLang(lang, opts) {
     if (b) setLang(b.dataset.lang);
   });
 })();
+// ── the back button undoes the last step instead of leaving the atlas ──
+// Batalla de Flores learned it in the street: plenty of people navigate ONLY with the back button,
+// and every URL change here used replaceState, so "back" threw them out of the site after one
+// painting. Now a STEP the reader would want to undo pushes an entry: opening a painting's ficha
+// (also ficha to ficha), enlarging a picture, switching view, picking or clearing a museum. A
+// TWEAK does not: panning, zooming, typing in the filter, the year slider, the galaxy's settings,
+// folding a group. Stacking those would bury the back button under a hundred invisible steps.
+const hist = { restoring: false };
+function urlWith(mutate) {
+  const sp = new URLSearchParams(location.search);
+  mutate(sp);
+  const qs = sp.toString();
+  return location.pathname + (qs ? "?" + qs : "") + location.hash;
+}
+function histStep(url) {                 // a step: back will undo it
+  if (hist.restoring) return;
+  if (url === location.pathname + location.search + location.hash) history.replaceState(history.state, "", url);
+  else history.pushState(null, "", url);
+}
+function histTweak(url) {                // not a step: the address changes, the back button does not
+  if (!hist.restoring) history.replaceState(history.state, "", url);
+}
+
 // clicking the project title reloads the atlas to its clean default view (drops any #preset / filters)
 document.querySelector(".brand")?.addEventListener("click", e => {
   e.preventDefault();
@@ -681,7 +704,7 @@ function placePopup(feats) {
     const facts = factBits.filter(Boolean).map(esc).join(" · ");
     const factsRow = facts ? `<div class="fx">${facts}</div>` : "";
     const desc = p.summary ? `<div class="ds">${esc(p.summary)}</div>` : "";
-    const cap = `${p.title || ""}${p.year ? ` (${p.year})` : ""} · ${p0.location || ""}`;
+    const cap = capOf(p, p0.location || "");
     const thumb = p.image
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
@@ -787,8 +810,12 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
     buildPainterSelect();
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     buildMarkers();
-    deepLink();                        // ?w=<qid> opens that painting's ficha; ?m=<id> its museum
-    if (typeof applyGalaxyURL === "function") applyGalaxyURL();   // ?view=…&gcb/gnm/gt/g3 → open that view + galaxy settings
+    hist.restoring = true;             // arriving on an address is not a step
+    try {
+      deepLink();                        // ?w=<qid> opens that painting's ficha; ?m=<id> its museum
+      if (typeof applyGalaxyURL === "function") applyGalaxyURL();   // ?view=…&gcb/gnm/gt/g3 → open that view + galaxy settings
+    } finally { hist.restoring = false; }
+    window.addEventListener("popstate", restoreFromHistory);
     map.on("moveend", renderPanel);
     // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
@@ -981,12 +1008,12 @@ function selectMuseum(key) {
   const pop = document.getElementById("painters-pop");
   pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
   if (mu) { if (view.table) setTableView(false); map.setView([mu.lat, mu.lon], 14); }
-  history.replaceState(null, "", location.pathname + "?m=" + encodeURIComponent(key) + location.hash);
+  histStep(urlWith(sp => { sp.set("m", key); }));
   renderMuseumChip(); refresh();
 }
 function clearMuseum() {
   state.museumFilter = null;
-  if (new URLSearchParams(location.search).has("m")) history.replaceState(null, "", location.pathname + location.hash);
+  if (new URLSearchParams(location.search).has("m")) histStep(urlWith(sp => { sp.delete("m"); }));
   renderMuseumChip(); refresh();
 }
 function renderMuseumChip() {
@@ -1134,7 +1161,7 @@ function renderWorksTable() {
     `${rows.length.toLocaleString()} ${tu(rows.length === 1 ? "work" : "works")}`;
   tbody.innerHTML = rows.map((p, i) => {
     const thumb = p.image
-      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc((p.title || "") + " · " + (p.location || ""))}" alt="" loading="lazy">`
+      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(capOf(p))}" alt="" loading="lazy">`
       : `<span class="tth ph"></span>`;
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
       ? `<span class="tag att">${esc(t(p.attribution))}</span>` : esc(t(p.attribution || ""));
@@ -1282,8 +1309,8 @@ function setTableView(on) {
   if (on) renderTable();
   else setView();
 }
-document.getElementById("v-table").addEventListener("click", () => { setTableView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
-document.getElementById("v-mapview").addEventListener("click", () => { setTableView(false); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
+document.getElementById("v-table").addEventListener("click", () => { setTableView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(true); });
+document.getElementById("v-mapview").addEventListener("click", () => { setTableView(false); if (typeof syncGalaxyURL === "function") syncGalaxyURL(true); });
 // one common free-text filter — applies to the map, the list/gallery AND the table at once
 {
   let qt = 0;
@@ -1487,7 +1514,7 @@ const MUS_EDGES   = ["#b39a63", "#8fae88", "#8f9cc4", "#c79c8b", "#a892b3", "#85
 function tileHTML(w, vis, grp) {
   const i = vis.length; vis.push(w);
   const p = w.p;
-  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} · ${locName(p)}`;
+  const cap = capOf(p);
   const img = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
@@ -1504,7 +1531,11 @@ function tileHTML(w, vis, grp) {
     // spends its two lines on what is not known yet: the title, and where the work hangs
     `<div class="gm1">${grp && grp.kind === "painter" ? esc(wTitle(p) || t("Untitled")) : esc(pName(p.painter))}` +
     `${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
-    (p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(ctyName(p.city))}` : ""}</div>` : "") +
+    // …and under a MUSEUM's colour field the museum is the thing already written above, so the second
+    // line gives the painting's title instead of repeating the museum on every tile (Víctor)
+    (grp && grp.kind === "museum"
+      ? `<div class="gm2">${esc(wTitle(p) || t("Untitled"))}</div>`
+      : p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(ctyName(p.city))}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
@@ -1642,7 +1673,7 @@ function panelRowHTML(w, grpKey) {
   const i = panelVis.length; panelVis.push(w);
   const fold = grpKey ? ` data-in="${esc(grpKey)}"${panelFolded.has(grpKey) ? " hidden" : ""}` : "";
   const p = w.p;
-  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} · ${locName(p)}`;
+  const cap = capOf(p);
   const thumb = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
@@ -1989,6 +2020,12 @@ function commonsPage(url) {
   }
   return name ? "https://commons.wikimedia.org/wiki/File:" + name : "";
 }
+// The caption under an enlarged picture. It used to be title and museum only, so paging through a
+// museum's run you could not tell who painted what: the painter is the first thing people ask.
+function capOf(p, where) {
+  const head = `${wTitle(p)}${p.year ? ` (${p.year})` : ""}`.trim();
+  return [head, pName(p.painter), where === undefined ? locName(p) : where].filter(Boolean).join(" · ");
+}
 const lb = document.getElementById("lightbox");
 // Paging through the enlarged pictures, the way Batalla de Flores does it: the sequence is the
 // pictures of the place you clicked in (the side panel, the table, the table's picture grid), in the
@@ -2022,12 +2059,19 @@ function lbNav() {
   }
 }
 // A lone picture (the game's zoom): no sequence, no arrows.
-function openLightbox(url, cap) { lbSeq = []; lbIdx = 0; paintLightbox(url, cap); lbNav(); }
+// Enlarging a picture is a step, but it has no address worth sharing, so the entry carries only
+// a marker in history.state. Back pops it and closes the picture; ✕ and Escape go back too, so the
+// stack never keeps an entry for a picture that is no longer open.
+function lbPushStep() {
+  if (lb.hidden && !hist.restoring) history.pushState({ lb: 1 }, "", location.href);
+}
+function openLightbox(url, cap) { lbPushStep(); lbSeq = []; lbIdx = 0; paintLightbox(url, cap); lbNav(); }
 function openLightboxFrom(img) {
   const scope = img.closest(LB_SCOPES);
   lbSeq = scope ? lbCollect(scope) : [img];
   lbIdx = lbSeq.indexOf(img);
   if (lbIdx < 0) { lbSeq = [img]; lbIdx = 0; }
+  lbPushStep();
   paintLightbox(img.dataset.full, img.dataset.cap);
   lbNav();
 }
@@ -2046,7 +2090,12 @@ function moveLightbox(step) {
   paintLightbox(im.dataset.full, im.dataset.cap);
   lbNav();
 }
-function closeLightbox() { lb.hidden = true; document.getElementById("lb-img").src = ""; lbSeq = []; }
+function lbCloseNow() { lb.hidden = true; document.getElementById("lb-img").src = ""; lbSeq = []; }
+function closeLightbox() {
+  if (lb.hidden) return;
+  if (history.state && history.state.lb && !hist.restoring) history.back();   // popstate closes it
+  else lbCloseNow();
+}
 document.getElementById("lb-close").addEventListener("click", closeLightbox);
 document.getElementById("lb-prev").addEventListener("click", e => { e.stopPropagation(); moveLightbox(-1); });
 document.getElementById("lb-next").addEventListener("click", e => { e.stopPropagation(); moveLightbox(1); });
@@ -2221,7 +2270,7 @@ function openWorkCard(w) {
   if (!w) return;
   wcWork = w;
   const p = w.p;
-  const cap = `${wTitle(p)}${p.year ? ` (${p.year})` : ""} · ${locName(p)}`;
+  const cap = capOf(p);
   const img = p.image
     ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
     : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;
@@ -2253,12 +2302,13 @@ function openWorkCard(w) {
   renderForYou(p.qid);    // "more you might like" — from your browsing history (localStorage)
   recordSeen(p.qid);      // remember this view for future "for you" suggestions
   // reflect the open painting in the address bar → copying the URL shares this exact work
-  if (p.qid) history.replaceState(null, "", location.pathname + "?w=" + p.qid + location.hash);
+  if (p.qid) histStep(urlWith(sp => { sp.set("w", p.qid); }));   // ficha to ficha is a step too
 }
 function closeWorkCard() {
   workCard.hidden = true; wcWork = null; document.getElementById("wc-body").innerHTML = "";
-  if (new URLSearchParams(location.search).has("w"))
-    history.replaceState(null, "", location.pathname + location.hash);   // drop ?w= when closed
+  // Closing with ✕ rewrites the current entry to "no ficha" instead of adding one, the way Batalla
+  // de Flores does: back from here goes to the painting you saw before, not to this one again.
+  if (new URLSearchParams(location.search).has("w")) histTweak(urlWith(sp => { sp.delete("w"); }));
 }
 document.getElementById("wc-close").addEventListener("click", closeWorkCard);
 // Escape closes the zoomed image first (it sits in front); only then the ficha
@@ -2305,6 +2355,32 @@ function shareWork(p) {
   if (navigator.share) navigator.share({ title, url }).catch(() => {});
   else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast("Link copied ✓")).catch(() => toast("Copy failed"));
   else toast(url);
+}
+// Back or forward: put the atlas in the state the address describes, without writing history.
+function restoreFromHistory(e) {
+  hist.restoring = true;
+  try {
+    if (!lb.hidden && !(e.state && e.state.lb)) lbCloseNow();
+    const sp = new URLSearchParams(location.search);
+    const want = sp.get("view");
+    const b = document.body.classList;
+    const now = b.contains("show-galaxy") ? "similar" : b.contains("show-chart") ? "timeline"
+      : b.contains("show-game") ? "game" : b.contains("show-table") ? "table" : null;
+    if (want !== now) {
+      if (!want) setTableView(false);                     // back to the map (turns every other view off)
+      else if (want === "table") setTableView(true);
+      else if (want === "game") setGameView(true);
+      else if (want === "timeline") setChartView(true);
+      else if (want === "similar") setGalaxyView(true);
+    }
+    const m = sp.get("m");
+    if (m && m !== state.museumFilter && museumIndex.some(x => x.key === m)) selectMuseum(m);
+    else if (!m && state.museumFilter) clearMuseum();
+    const w = sp.get("w");
+    if (w) {
+      if (!wcWork || wcWork.p.qid !== w) { const hit = works.find(x => x.p.qid === w); if (hit) openWorkCard(hit); }
+    } else if (!workCard.hidden) closeWorkCard();
+  } finally { hist.restoring = false; }
 }
 function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum key> → that museum
   const q = new URLSearchParams(location.search);
@@ -2631,7 +2707,7 @@ function setGameView(on) {
 
 (function wireGame() {
   const g = document.getElementById("game"); if (!g) return;
-  document.getElementById("v-game").addEventListener("click", () => { setGameView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
+  document.getElementById("v-game").addEventListener("click", () => { setGameView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(true); });
   document.getElementById("game-mode").addEventListener("click", e => {
     const b = e.target.closest("[data-gmode]"); if (!b) return;
     G.mode = b.dataset.gmode; g.querySelectorAll("#game-mode .gbtn").forEach(x => x.classList.toggle("active", x === b));
@@ -2782,7 +2858,7 @@ function setChartView(on) {
 }
 (function wireChart() {
   const sec = document.getElementById("chartview"); if (!sec) return;
-  document.getElementById("v-chart").addEventListener("click", () => { setChartView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(); });
+  document.getElementById("v-chart").addEventListener("click", () => { setChartView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(true); });
   document.getElementById("chart-group").addEventListener("click", e => {
     const b = e.target.closest("[data-cg]"); if (!b) return;
     chartGroup = b.dataset.cg;
@@ -2979,7 +3055,7 @@ function setGalaxyView(on) {
 function galaxyRedraw() { galaxyLegend(); if (galaxy3D) { if (window._draw3D) window._draw3D(); } else if (galaxyCoords) drawGalaxy(); }
 
 // ── shareable URL: reflect the active view + the galaxy's settings in the address bar ──
-function syncGalaxyURL() {
+function syncGalaxyURL(step) {
   const sp = new URLSearchParams(location.search);
   ["view", "gcb", "gnm", "gt", "g3"].forEach(k => sp.delete(k));
   const b = document.body.classList;
@@ -2993,7 +3069,8 @@ function syncGalaxyURL() {
     if (galaxy3D) sp.set("g3", "1");
   }
   const qs = sp.toString();
-  history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+  const url = location.pathname + (qs ? "?" + qs : "") + location.hash;
+  if (step) histStep(url); else histTweak(url);
 }
 function applyGalaxyURL() {
   const sp = new URLSearchParams(location.search);
@@ -3019,7 +3096,7 @@ function applyGalaxyURL() {
 
 (function wireGalaxy() {
   const el = document.getElementById("v-galaxy"); if (!el) return;
-  el.addEventListener("click", () => { setGalaxyView(true); syncGalaxyURL(); });
+  el.addEventListener("click", () => { setGalaxyView(true); syncGalaxyURL(true); });
   const plane = document.getElementById("galaxy-plane");
   document.getElementById("galaxy-colorby").addEventListener("click", e => {
     const b = e.target.closest("[data-cb]"); if (!b) return;

@@ -503,3 +503,27 @@ body.dragging-panel{user-select:none;-webkit-user-select:none}
   #panel-grip::after{content:"";position:absolute;left:0;right:0;top:-12px;bottom:-6px}
   #panel-grip::before{width:52px;height:6px}
 }
+
+/* ── wide screens: the person card fills the list panel (D26) ─────────────────────────────────── */
+#sheet-back{display:none}
+#sheet.in-panel{position:absolute;inset:0;width:auto;max-width:none;z-index:6;box-shadow:none;border-left:0}
+#sheet.in-panel #sheet-close{display:none}
+#sheet.in-panel #sheet-back{display:block;flex:0 0 auto;text-align:left;border:0;border-bottom:1px solid var(--line);
+  background:var(--paper-2);padding:7px 10px;font:inherit;font-size:12.5px;color:var(--sky);cursor:pointer}
+#sheet.in-panel #sheet-back:hover{background:#fff}
+#sheet.in-panel .sh-head{padding-right:0}
+.sh-trace.on{background:#fff;box-shadow:inset 3px 0 0 var(--brass)}
+#panel-back{border:0;border-bottom:1px solid var(--line);background:var(--paper-2);text-align:left;
+  padding:6px 10px;font:inherit;font-size:12.5px;color:var(--sky);cursor:pointer}
+#panel-back[hidden]{display:none!important}
+/* a pin tapped: its place in the list lights up, and its card opens the group */
+#worklist li.grp{transition:background-color .6s}
+#worklist li.grp.grp-flash{background:#f3e3b0}
+#worklist li.grp-card{position:relative;background:#fff;padding:8px 10px;border-bottom:1px solid var(--line)}
+#worklist li.grp-card .hd{padding-right:24px}
+#worklist li.grp-card .nm{font-weight:600}
+.grp-card-x{position:absolute;top:6px;right:6px;border:1px solid var(--line);background:#fff;border-radius:6px;
+  width:22px;height:22px;font-size:11px;line-height:1;cursor:pointer;color:var(--ink-soft)}
+
+/* the group header above already names the place and its town */
+#worklist li.grp-card .nm,#worklist li.grp-card .where:not(.approx){display:none}

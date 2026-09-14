@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.26.0";
+const DATA_V = "0.26.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -484,6 +484,14 @@ function drawMap() {
                        // are saints, so a crowded square with one chapel does not glow.
                        { icon: pinIcon(c.counts, c.n, only && pinMark(only),
                                        c.area === c.n, c.saint * 2 >= c.n) });
+    // On a wide screen a pin does not open a card over the map: the list beside it goes to that place
+    // and lights it (the Atlas of Painting's `revealMuseumInPanel`, D26). The popup stays bound for
+    // the phone, where it is routed into the bottom sheet.
+    m.on("click", (ev) => {
+      if (narrow()) return;
+      m.closePopup();
+      revealInPanel(c);
+    });
     if (c.places.length === 1) {
       m.bindPopup(() => sitePopup(c.best.siteIdx, c.best.vis), { maxWidth: 360, autoPan: false });
       m.bindTooltip(`${SITES[c.best.siteIdx][S_NAME]} · ${c.n}`, { direction: "top", offset: [0, -12] });
@@ -556,6 +564,7 @@ map.on("popupopen", (e) => {
   const bound = popup.getContent();
   const render = () => (typeof bound === "function" ? bound(popup._source) : bound);
   if (narrow()) { map.closePopup(popup); showPlaceSheet(render); return; }
+  if (!narrow()) { map.closePopup(popup); return; }   // wide screen: the list is the card (revealInPanel)
   const wire = () => wirePopupBody(popup.getElement(), () => map.closePopup());
   wire();
   if (!PEOPLE) needPeople(() => { if (popup.isOpen()) { popup.setContent(bound); wire(); } });
@@ -885,6 +894,7 @@ const WHAT_ICON = { battle: "⚔️", event: "🗓️", grave: "🪦", plaque: "
 function openPerson(qid) {
   const rows = byPerson.get(qid);
   if (!rows || !rows.length) return;
+  openCard = qid; cardBack = null; renderPanelBack(); syncURL();
   sheetToken++;                      // a place card still waiting for people.json must not land here
   needPeople(() => {
     const r0 = rows[0];
@@ -933,11 +943,17 @@ function openPerson(qid) {
       `<button type="button" id="sh-fit-all">🌍 Everything</button></div>` +
       `<ul class="sh-list">${items}</ul>`;
 
+    $("sheet").dataset.kind = "person";
     $("sheet").hidden = false;
+    $("sheet-body").scrollTop = 0;
     $("sheet-body").querySelectorAll(".sh-trace").forEach((li) => li.addEventListener("click", () => {
       const r = sorted[+li.dataset.i];
       if (r.flags & F_PLACELESS) return banner("The source names a town, not a place. There is nothing to fly to.");
-      closeSheet();
+      // Beside the map the card stays: the map flies, the row is marked, and the pin is there to tap.
+      if (!narrow()) {
+        $("sheet-body").querySelectorAll(".sh-trace.on").forEach((x) => x.classList.remove("on"));
+        li.classList.add("on");
+      } else closeSheet();
       map.setView([SITES[r.site][S_LAT], SITES[r.site][S_LON]], 16);
     }));
     // "Frame them all" framed every trace, and a person with statues on four continents (Chopin: 29
@@ -948,7 +964,7 @@ function openPerson(qid) {
       const pts = rows.filter((r) => !(r.flags & F_PLACELESS))
                       .map((r) => [SITES[r.site][S_LAT], SITES[r.site][S_LON]]);
       if (!pts.length) return banner(emptyMsg);
-      closeSheet();
+      if (narrow()) closeSheet();        // beside the map, the card stays while the map frames them
       if (pts.length === 1) map.setView(pts[0], 16);
       // The margin is at most a sixth of the map. A fixed 60 px was a third of a phone's width, and on a
       // map squeezed short by a large list it exceeded the map itself, and Leaflet answered zoom 19.
@@ -968,7 +984,66 @@ function openPerson(qid) {
     if (fitAll && was.length === sorted.length) fitAll.hidden = true;
   });
 }
-function closeSheet() { $("sheet").hidden = true; $("sheet").dataset.kind = ""; }
+function closeSheet() {
+  $("sheet").hidden = true; $("sheet").dataset.kind = "";
+  if (openCard) { openCard = null; syncURL(); }
+}
+
+/* ── on a wide screen the person card lives IN the list panel (D26) ─────────────────────────────
+ * Víctor, 2026-09-14: floating cards are right on a phone; on a computer a side panel works better.
+ * The same #sheet element is moved into #panel and fills it, so every handler keeps working, the map
+ * is never covered, and the list underneath keeps its scroll for "← Back to the list". Crossing the
+ * breakpoint (a window resized) moves it back out. */
+let openCard = null, pendingCard = null, cardBack = null;
+function placeSheet() {
+  const inPanel = !narrow();
+  const host = inPanel ? $("panel") : document.body;
+  if ($("sheet").parentElement !== host) host.appendChild($("sheet"));
+  $("sheet").classList.toggle("in-panel", inPanel);
+}
+placeSheet();
+window.matchMedia("(max-width: 720px)").addEventListener("change", placeSheet);
+$("sheet-back").addEventListener("click", closeSheet);
+function tryPendingCard() {
+  if (pendingCard && byPerson.has(pendingCard)) { const q = pendingCard; pendingCard = null; openPerson(q); }
+}
+
+/* A pin tapped on a wide screen: the list goes to its place (grouped by place, unfolded, scrolled to,
+ * lit for a few seconds), and a single place shows its card (hours, inscription, photo) at the top of
+ * its group. A grouped pin lights every place under it. If a person's card was open, the list says
+ * how to get back to them. */
+let selectedSite = null, flashTimer = 0;
+function revealInPanel(c) {
+  const sites = c.places.slice().sort((a, z) => (z.vis || z.rows).length - (a.vis || a.rows).length).map((pl) => pl.siteIdx);
+  if (!sites.length) return;
+  if (!$("sheet").hidden && $("sheet").dataset.kind === "person" && openCard) cardBack = openCard;
+  if (!$("sheet").hidden) closeSheet();
+  renderPanelBack();
+  selectedSite = sites.length === 1 ? sites[0] : null;
+  if (panelSort !== "place") { panelSort = "place"; $("pv-sort").value = "place"; }
+  sites.forEach((i) => folded.delete(i));
+  listArea = null;
+  renderPanel();
+  const ul = $("worklist"), sel = `li.grp[data-site="${sites[0]}"]`;
+  for (let guard = 0; !ul.querySelector(sel) && panelCursor < panelPlan.length && guard < 400; guard++) {
+    if (panelIO) panelIO.disconnect();
+    appendChunk();
+  }
+  const target = ul.querySelector(sel);
+  if (!target) return;
+  ul.scrollTop += target.getBoundingClientRect().top - ul.getBoundingClientRect().top;
+  clearTimeout(flashTimer);
+  ul.querySelectorAll(".grp-flash").forEach((x) => x.classList.remove("grp-flash"));
+  sites.forEach((i) => ul.querySelector(`li.grp[data-site="${i}"]`)?.classList.add("grp-flash"));
+  flashTimer = setTimeout(() => ul.querySelectorAll(".grp-flash").forEach((x) => x.classList.remove("grp-flash")), 3600);
+}
+function renderPanelBack() {
+  const b = $("panel-back");
+  const rows = cardBack && byPerson.get(cardBack);
+  b.hidden = !rows;
+  if (rows) b.textContent = `← Back to ${rows[0].name}`;
+}
+$("panel-back").addEventListener("click", () => { const q = cardBack; cardBack = null; renderPanelBack(); if (q) openPerson(q); });
 
 /* ── a map list that the map cannot take away (the sibling's lesson, ported) ──────────────────
  * On a phone this sequence was reliably infuriating: tap a pin, a list of twenty-five names
@@ -1008,29 +1083,83 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet
  * hit it constantly. Now the click asks Wikidata which articles exist and opens the best one: the
  * reader's language, then English, then whichever exists; Wikidata itself only when none does.
  * A blank tab is opened inside the click, so no popup blocker stops it, and pointed afterwards. */
+// Which Wikipedia article to open for an item, or null when no Wikipedia has one. After the reader's
+// language and English, the large Wikipedias written by people, in that order; then anything. The
+// first version took whichever came first alphabetically, and sent an English reader of the Museo
+// Marítimo del Cantábrico to the Esperanto article. Bot-built wikis (Cebuano, Waray, Egyptian Arabic)
+// are never preferred, and Abstract Wikipedia is not an article.
+const WP_ORDER = [LANG, "en", "es", "fr", "de", "it", "pt", "ca", "eu", "gl", "nl", "pl", "ru", "uk", "cs",
+                  "sv", "da", "no", "fi", "hu", "ro", "el", "tr", "ar", "fa", "he", "ja", "zh", "ko"];
+function pickWikipedia(links) {
+  const isWp = (k) => /^[a-z_]+wiki$/.test(k) &&
+    !/^(commons|species|meta|wikidata|mediawiki|sources|wikimania|abstract|wikifunctions)wiki$/.test(k);
+  const pick = WP_ORDER.map((l) => links[`${l}wiki`]).find(Boolean) ||
+    Object.entries(links).filter(([k]) => isWp(k) && !/^(ceb|war|arz)wiki$/.test(k)).map(([, v]) => v)[0] ||
+    Object.entries(links).filter(([k]) => isWp(k)).map(([, v]) => v)[0];
+  return pick ? pick.url : null;
+}
+
+// RESOLVED BEFORE THE TAP (0.26.1). 0.23.3 asked Wikidata on the tap and, when no Wikipedia had an
+// article (a plaque in Buenos Aires, most small museums and statues), opened Wikidata under a link
+// that said "Wikipedia". Víctor: "el link de Wikipedia lleva a Wikidata… gran decepción". Now every
+// "Wikipedia" link is looked up as soon as it appears on screen, 50 items per request: it becomes a
+// plain link to the article, or it disappears, and the Wikidata link beside it stays.
+const wpUrl = new Map();              // QID → article URL, or null for "no Wikipedia has one"
+let wpTimer = 0;
+function resolveWikipediaLinks() {
+  const links = [...document.querySelectorAll("a.wp-link[data-q]:not([data-wp])")];
+  const apply = () => links.forEach((a) => {
+    const q = a.dataset.q;
+    if (!wpUrl.has(q) || !a.isConnected) return;
+    const url = wpUrl.get(q);
+    a.dataset.wp = url ? "1" : "0";
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; return; }
+    // no article anywhere: take the link out, and the " · " that joined it to its neighbour
+    const next = a.nextSibling, prev = a.previousSibling;
+    if (next && next.nodeType === 3 && /^\s*·\s*$/.test(next.textContent)) next.remove();
+    else if (prev && prev.nodeType === 3 && /^\s*·\s*$/.test(prev.textContent)) prev.remove();
+    a.remove();
+  });
+  const need = [...new Set(links.map((a) => a.dataset.q))].filter((q) => /^Q\d+$/.test(q) && !wpUrl.has(q));
+  apply();
+  for (let i = 0; i < need.length; i += 50) {
+    const ids = need.slice(i, i + 50);
+    fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${ids.join("|")}` +
+          `&props=sitelinks/urls&format=json&origin=*`)
+      .then((r) => r.json())
+      .then((d) => {
+        for (const q of ids) {
+          const ent = (d.entities || {})[q];
+          // a merged item answers under its new id; follow it rather than calling it article-less
+          const target = ent && ent.redirects ? (d.entities || {})[ent.redirects.to] : ent;
+          if (ent) wpUrl.set(q, pickWikipedia((target || {}).sitelinks || {}));
+        }
+        apply();
+      })
+      .catch(() => {});        // offline: the links keep their fallback and the tap handler below
+  }
+}
+new MutationObserver(() => { clearTimeout(wpTimer); wpTimer = setTimeout(resolveWikipediaLinks, 120); })
+  .observe(document.body, { childList: true, subtree: true });
+
+// A tap on a link not resolved yet (just rendered, or offline): ask on the tap, as before, but never
+// dress Wikidata up as Wikipedia. With no article, say so and stay.
 document.addEventListener("click", (e) => {
   const a = e.target.closest("a.wp-link[data-q]");
-  if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
+  if (!a || a.dataset.wp === "1" || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
   e.preventDefault();
   const q = a.dataset.q;
+  if (wpUrl.has(q) && !wpUrl.get(q)) return banner("No Wikipedia has an article on this yet.");
   const tab = window.open("", "_blank");
   const go = (url) => { if (tab) { tab.opener = null; tab.location.href = url; } else location.href = url; };
   fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${encodeURIComponent(q)}` +
         `&props=sitelinks/urls&format=json&origin=*`)
     .then((r) => r.json())
     .then((d) => {
-      const links = ((d.entities || {})[q] || {}).sitelinks || {};
-      const isWp = (k) => /^[a-z_]+wiki$/.test(k) && !/^(commons|species|meta|wikidata|mediawiki|sources|wikimania)wiki$/.test(k);
-      // After the reader's language and English, the large Wikipedias written by people, in that
-      // order; then anything. The first version took whichever came first alphabetically, and sent
-      // an English reader of the Museo Marítimo del Cantábrico to the Esperanto article, ahead of
-      // the Spanish one. Bot-built wikis (Cebuano, Waray, Egyptian Arabic) are never preferred.
-      const ORDER = [LANG, "en", "es", "fr", "de", "it", "pt", "ca", "eu", "gl", "nl", "pl", "ru", "uk", "cs",
-                     "sv", "da", "no", "fi", "hu", "ro", "el", "tr", "ar", "fa", "he", "ja", "zh", "ko"];
-      const pick = ORDER.map((l) => links[`${l}wiki`]).find(Boolean) ||
-        Object.entries(links).filter(([k]) => isWp(k) && !/^(ceb|war|arz)wiki$/.test(k)).map(([, v]) => v)[0] ||
-        Object.entries(links).filter(([k]) => isWp(k)).map(([, v]) => v)[0];
-      go(pick ? pick.url : `https://www.wikidata.org/wiki/${q}`);
+      const url = pickWikipedia((((d.entities || {})[q]) || {}).sitelinks || {});
+      wpUrl.set(q, url);
+      if (url) go(url);
+      else { if (tab) tab.close(); banner("No Wikipedia has an article on this yet."); resolveWikipediaLinks(); }
     })
     .catch(() => go(a.href));
 });
@@ -1184,9 +1313,19 @@ function appendChunk() {
         `<span class="gname">${esc(s[S_NAME])}` +
         (whereOf(s) ? `<span class="gwhere">${esc(whereOf(s))}</span>` : "") + `</span>` +
         `<span class="gsub">${it.grp.n} ${it.grp.n === 1 ? "person" : "people"}</span></li>`;
+      // the place a pin was tapped for: its card (kind, access, hours, words, photo) opens its group
+      if (it.grp.siteIdx === selectedSite) {
+        const pl = places.find((x) => x.siteIdx === selectedSite);
+        const box = document.createElement("div");
+        box.innerHTML = sitePopup(selectedSite, (pl && (pl.vis || pl.rows)) || []);
+        const hd = box.querySelector(".hd");
+        if (hd) html += `<li class="grp-card card"><button type="button" class="grp-card-x" title="Close this card">✕</button>${hd.outerHTML}</li>`;
+      }
     } else html += rowHTML(it.r, it.flat);
   }
   ul.insertAdjacentHTML("beforeend", html);
+  const card = ul.querySelector("li.grp-card:not([data-filled])");
+  if (card) { card.dataset.filled = "1"; fillInscriptions(card); }
   panelCursor = end;
   if (panelCursor < panelPlan.length) {
     const sentinel = ul.lastElementChild;
@@ -1197,6 +1336,8 @@ function appendChunk() {
   }
 }
 $("worklist").addEventListener("click", (e) => {
+  if (e.target.closest(".grp-card-x")) { selectedSite = null; renderPanel(); return; }
+  if (e.target.closest("li.grp-card")) return;            // its links and pictures act on their own
   const g = e.target.closest("li.grp");
   if (g) { const i = +g.dataset.site; folded.has(i) ? folded.delete(i) : folded.add(i); renderPanel(); return; }
   const row = e.target.closest("li.row");
@@ -1707,6 +1848,7 @@ function viewToURL() {
   if (state.topN) p.set("top", String(state.topN));
   if (state.q) p.set("q", state.q);
   if (state.person) p.set("who", state.person);
+  if (openCard) p.set("card", openCard);        // the person card open, so a reload comes back to it
   if (state.colorBy !== "dom") p.set("by", state.colorBy);
   if (tableOn) p.set("view", "table");
   if (tlChosen && (state.yearMin > TL_MIN || state.yearMax < TL_MAX))
@@ -1755,6 +1897,8 @@ function applyURL() {
   state.topN = +p.get("top") || 0;
   state.q = deacc(p.get("q") || "");
   state.person = p.get("who") || null;
+  pendingCard = p.get("card") || null;          // opened once its person has arrived (tryPendingCard)
+  if (!pendingCard && openCard) closeSheet();
   state.colorBy = ["dom", "verb", "access"].includes(p.get("by")) ? p.get("by") : "dom";
   if (state.person) {
     const rows = byPerson.get(state.person);
@@ -1791,6 +1935,7 @@ window.addEventListener("popstate", () => {
   if (where) map.setView(where[0], where[1], { animate: false });
   buildPlaces();
   refresh();
+  tryPendingCard();
 });
 
 /* ── boot ── */
@@ -1838,6 +1983,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     };
     settle();
     requestAnimationFrame(settle);
+    tryPendingCard();
     // Warm the record card's side file once the map is up: 1.4 MB fetched while nobody is waiting
     // beats 1.4 MB fetched at the moment somebody clicks.
     setTimeout(() => needPeople(() => {}), 1200);
@@ -1865,6 +2011,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
               if (years.length) buildTimeline(years[Math.floor(years.length * 0.01)], years.at(-1));
               buildPlaces();
               refresh();
+              tryPendingCard();         // a ?card= person who lives in the long tail arrives here
             };
             // Then any further files the base names (0.24: atlas-osm.json, the statues from
             // OpenStreetMap, ODbL and so in a file of their own, D8), one after another.
