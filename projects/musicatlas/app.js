@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.30.0";
-const BUILD_AT = "2026-09-14 21:31";
+const DATA_V = "0.31.0";
+const BUILD_AT = "2026-09-15 00:51";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -319,6 +319,18 @@ const AGREE={unanimous:n=>`${n} sources agree`,
   derived:()=>"worked out by us, not stated by any source"};
 const mark=(w,n)=>{const f=F(w,n);
   return f?`<span class="cc ${f.suspect?"conflict":f.doubt?"conflict":f.a}" data-w="${esc(w.id)}" data-f="${n}"></span>`:"";};
+/* LO QUE SE HA AGRUPADO, DICHO EN LA FICHA Y DESPLEGABLE.
+   Dos fuentes pueden escribir la misma cosa con nombres distintos ("piano 4-hand" y
+   "piano four hand"), o nombrar un papel y quién lo toca ("continuo (harpsichord)").
+   Publicamos uno solo, y eso hay que contarlo: el desplegable dice qué se fusionó con
+   qué y por qué, con las palabras de la fuente a la izquierda. Víctor, 2026-09-15. */
+function mergedHTML(w,name){ const f=F(w,name); const m=f&&f.merged;
+  if(!m||!m.length) return "";
+  return `<details class="merged"><summary>${m.length} nombre${m.length>1?"s":""} `
+    + `agrupado${m.length>1?"s":""} en este campo</summary><ul>`
+    + m.map(x=>`<li><span class="mfrom">${esc(x.from)}</span> → <span class="mto">${esc(x.to)}</span>`
+        + `<span class="mwhy">${esc(x.why)}</span></li>`).join("")
+    + `</ul></details>`; }
 function tipHTML(w,name){ const f=F(w,name); if(!f) return "";
   const lines=Object.entries(f.s||{}).map(([s,raw])=>`<b>${s}</b>: ${esc(String(raw).slice(0,130))}`
     +(f.rejected&&f.rejected[s]?", rejected":""));
@@ -1060,7 +1072,8 @@ function drawRec(row){
     ["dedication","Dedicated to"],["genre","Genre (Wikidata)"],["period_style","Style"]];
   const dl=ROWS2.filter(([f])=>F(w,f)).map(([f,l])=>{
     let v=show(w,f); if(f==="date_composed") v=fmtDate(v);
-    return `<dt>${l}</dt><dd>${esc(Array.isArray(v)?v.join(", "):v)}${mark(w,f)}</dd>`;}).join("");
+    return `<dt>${l}</dt><dd>${esc(Array.isArray(v)?v.join(", "):v)}${mark(w,f)}`
+         + `${mergedHTML(w,f)}</dd>`;}).join("");
 
   const kids=(w.tree&&w.tree.children||[]).map(i=>{const k=BYID.get(i); if(!k) return "";
     const kc=primaryCat(k), ks=show(k,"key");
@@ -1301,7 +1314,12 @@ function renderActive(){
       + `<button class="chip" id="reset">Clear all</button>`
     : "";
 }
-function renderStage(){ (state.sub==="composers"?renderComposers:renderWorks)(); }
+/* La URL se escribe AQUÍ y no en draw(), porque abrir una ficha, cambiar de vista y
+   ordenar pasan por renderStage y no por draw: con la llamada solo en draw, abrir una
+   obra no dejaba entrada en el historial y el primer atrás se saltaba la ficha entera.
+   Es idempotente: si el hash no cambia (ordenar, desplegar una fila, pedir más filas),
+   no anota nada. */
+function renderStage(){ (state.sub==="composers"?renderComposers:renderWorks)(); writeHash(); }
 function draw(){
   state.limit=300; renderPicker(); renderFacets(); renderInstrument(); renderStage();
   const v=visible(), all=WORKS.filter(isWork).length;
@@ -1317,14 +1335,46 @@ function draw(){
   renderActive();
   writeHash();
 }
-function writeHash(){
+/* ATRÁS DESHACE, NO SE SALE.
+   La URL ya llevaba el estado, pero con `replaceState`, que NO crea entrada de
+   historial: el lector se filtraba por Chopin, abría una obra, daba a atrás y **se iba
+   de la web**. La gente da mucho a atrás, y en una página así atrás significa "quita lo
+   último que hice", no "sácame de aquí". Copiado de Batalla de Flores.
+
+   Cada cambio de navegación empuja una entrada: la vista, el compositor, un filtro, la
+   búsqueda y la obra abierta. Lo que no es navegación se queda fuera a propósito (las
+   filas desplegadas, cuántas se dibujan, los anchos de columna): llenarían el historial
+   de pasos que nadie querría deshacer. 2026-09-15. */
+let BACK = false;                  // mientras el navegador nos mueve, no escribimos
+function hashNow(){
   const p=[state.lens];
   if(state.sub!=="works") p.push("sub="+state.sub);
   if(state.comp.size) p.push("c="+[...state.comp].join(","));
   if(state.q) p.push("q="+encodeURIComponent(state.q));
   Object.entries(state.f).forEach(([k,s])=>{ if(s&&s.size) p.push(k+"="+[...s].join(",")); });
-  history.replaceState(null,"","#"+p.join("/"));
+  if(state.sel) p.push("w="+state.sel);
+  return "#"+p.join("/");
 }
+function writeHash(){
+  if(BACK) return;                 // el cambio viene del historial: no lo re-anotamos
+  const h=hashNow();
+  if(h===location.hash) return;    // mismo estado, ninguna entrada nueva
+  history.pushState(null,"",h);
+}
+/* El primer dibujo no debe dejar una entrada vacía delante del estado inicial. */
+function writeHashFirst(){ history.replaceState(null,"",hashNow()); }
+window.addEventListener("popstate",()=>{
+  BACK=true;
+  try{
+    state.comp=new Set(); state.f={}; state.q=""; state.qw=[]; state.sel=null;
+    state.sub="works"; state.lens="table"; state.limit=300; state.open=new Set();
+    document.getElementById("q").value="";
+    readHash();
+    if(state.sel && BYID.get(state.sel)) openRec(state.sel);
+    else { document.body.classList.remove("rec-open","rec-paged"); remapSoon(); }
+    renderPicker(); renderFacets(); renderInstrument(); renderStage();
+  } finally { BACK=false; }
+});
 function readHash(){
   const h=decodeURIComponent(location.hash.slice(1)); if(!h) return;
   h.split("/").forEach((p,i)=>{
@@ -1334,6 +1384,7 @@ function readHash(){
                     document.getElementById("q").value=m[2]; }
     else if(m[1]==="c") state.comp=new Set(m[2].split(","));
     else if(m[1]==="sub") state.sub=m[2];
+    else if(m[1]==="w") state.sel=m[2];
     else state.f[m[1]]=new Set(m[2].split(","));
   });
   document.querySelectorAll("#view-tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lens===state.lens));
@@ -1500,4 +1551,10 @@ Promise.all([
   BYID=new Map(WORKS.map(x=>[x.id,x]));
   document.getElementById("build").textContent=`v${DATA_V} · ${BUILD_AT}`;
   readHash(); draw();
+  /* el estado inicial SUSTITUYE la entrada en blanco con la que llega el navegador, en
+     vez de añadirse detrás: si no, el primer atrás no hacía nada visible. */
+  writeHashFirst();
+  /* una obra pedida en la URL se abre al cargar, para que un enlace compartido a una
+     ficha lleve a la ficha y no solo al catálogo filtrado */
+  if(state.sel && BYID.get(state.sel)) openRec(state.sel);
 });

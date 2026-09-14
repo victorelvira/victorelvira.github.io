@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Interactive Atlas of Painting · masterpieces in space and time</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237a5a3a' d='M12 3C6.5 3 2 6.6 2 11c0 3 2.4 4.6 4.5 4.6 1.6 0 2.2-1 3.2-1 .8 0 1.3.6 1.3 1.5 0 .7-.4 1.2-.4 1.9 0 1.1 1 2 2.4 2C18 21 22 16.7 22 11 22 6.6 17.5 3 12 3z'/%3E%3Ccircle cx='7' cy='9.5' r='1.5' fill='%23c0392b'/%3E%3Ccircle cx='10.5' cy='7' r='1.5' fill='%23c8a24a'/%3E%3Ccircle cx='14.5' cy='7.2' r='1.5' fill='%232e7d5b'/%3E%3Ccircle cx='17.5' cy='10' r='1.5' fill='%232a4d8f'/%3E%3C/svg%3E">
-  <meta name="description" content="An interactive atlas of the great painters — where their masterpieces are today and where they were painted, across space and time. Caravaggio, Leonardo, Raphael, Goya, Velázquez, Botticelli, Titian, Vermeer and more. Data from Wikidata, Wikipedia and Wikimedia Commons.">
+  <meta name="description" content="An interactive atlas of the great painters: where their masterpieces are today and where they were painted, across space and time. Caravaggio, Leonardo, Raphael, Goya, Velázquez, Botticelli, Titian, Vermeer and more. Data from Wikidata, Wikipedia and Wikimedia Commons.">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#3a2317">
   <!-- social share cards -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Interactive Atlas of Painting">
-  <meta property="og:description" content="Masterpieces in space and time — where the great painters' works are today and where they were made.">
+  <meta property="og:description" content="Masterpieces in space and time: where the great painters' works are today and where they were made.">
   <!-- The card is drawn by scripts/build_og.py from the Atlas's own data:
        figures and paintings come from the geojsons, never typed here. -->
   <meta property="og:image" content="https://victorelvira.github.io/projects/artatlas/og.jpg">
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.11.6">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.11.8">
 </head>
 <body>
   <nav id="navbar">
@@ -60,12 +60,12 @@
       <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
       <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
       <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
-      <label class="chip kind pub" title="Out in the open: a square, a bridge, a street — no ticket, no opening hours"><input type="checkbox" data-kind="public" checked> Outdoors</label>
+      <label class="chip kind pub" title="Out in the open: a square, a bridge, a street. No ticket, no opening hours"><input type="checkbox" data-kind="public" checked> Outdoors</label>
       <span class="chip-sep" aria-hidden="true"></span>
       <!-- kind of WORK, not kind of place: both on means "everything", which is the default -->
       <label class="chip form pnt" title="Show paintings"><input type="checkbox" data-form="painting" checked> 🖼 Paintings</label>
       <label class="chip form scu" title="Show sculpture"><input type="checkbox" data-form="sculpture" checked> 🗿 Sculpture</label>
-      <label class="chip toggle att" title="Show only works of accepted attribution — hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked><span>Accepted only</span></label>
+      <label class="chip toggle att" title="Show only works of accepted attribution: hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked><span>Accepted only</span></label>
       <button id="locate" class="chip btn" type="button" title="Find the painting nearest to your location">📍 Near me</button>
     </div>
     </div>
@@ -78,7 +78,7 @@
     <span id="view-tabs">
       <button type="button" id="v-mapview" class="view-btn active" title="Map with the list of works beside it">🗺 Map &amp; list</button>
       <button type="button" id="v-table" class="view-btn" title="Browse every work as a sortable table">▦ Table</button>
-      <button type="button" id="v-game" class="view-btn" title="Guess the painting — a multiple-choice quiz">🎮 Game</button>
+      <button type="button" id="v-game" class="view-btn" title="Guess the painting: a multiple-choice quiz">🎮 Game</button>
       <button type="button" id="v-chart" class="view-btn" title="Every painter's output across the years">📈 Timeline</button>
       <button type="button" id="v-galaxy" class="view-btn" title="Paintings arranged by visual similarity (AI)">🌌 Similar</button>
     </span>
@@ -90,7 +90,7 @@
     </div>
     <!-- outside the rail on purpose: on a phone the search box gets a full-width row of its own -->
     <span id="filter-wrap">
-      <input id="filter" type="search" placeholder="Filter — title, painter, museum, city…" autocomplete="off"
+      <input id="filter" type="search" placeholder="Filter: title, painter, museum, city…" autocomplete="off"
              title="Filters every view: map, list and table">
       <button type="button" id="filter-clear" title="Clear the filter (Esc)" aria-label="Clear the filter" hidden>✕</button>
     </span>
@@ -104,7 +104,7 @@
       <input type="range" id="tl-min" aria-label="From year">
       <input type="range" id="tl-max" aria-label="To year">
     </div>
-    <span id="tl-label" class="tl-val">—</span>
+    <span id="tl-label" class="tl-val">…</span>
   </div>
 
   <div id="main">
@@ -138,7 +138,7 @@
       </span>
       <span id="table-count" class="t-count"></span>
       <span id="table-view">
-        <label id="tv-group" class="subtick" title="Group the pictures by museum — each museum's works run together, introduced by a small label, with no wasted rows">
+        <label id="tv-group" class="subtick" title="Group the pictures by museum: each museum's works run together, introduced by a small label, with no wasted rows">
           <input type="checkbox" checked> ⛪ by museum</label>
         <input id="tv-thumb" type="range" min="72" max="260" value="150" title="Thumbnail size">
         <button type="button" id="tv-grid" class="pvbtn active" title="Picture grid">▦ Pictures</button>
@@ -168,7 +168,7 @@
         <button type="button" class="gbtn" data-diff="medium">Medium</button>
         <button type="button" class="gbtn" data-diff="hard">Hard</button>
       </span>
-      <input id="game-fig" type="range" min="22" max="62" value="46" title="Painting size — shrink it so everything fits on a phone">
+      <input id="game-fig" type="range" min="22" max="62" value="46" title="Painting size: shrink it so everything fits on a phone">
       <span id="game-score" class="g-score"></span>
       <span id="game-records" class="g-records" title="Your streak, best streak, and % correct today and all-time (saved on this device)"></span>
       <button type="button" id="game-restart" class="gbtn" title="Reset this session's score (records are kept)">↺ Session</button>
@@ -229,18 +229,18 @@
       </aside>
     </div>
     <details id="galaxy-method">
-      <summary>How this is built — methodology</summary>
+      <summary>How this is built: methodology</summary>
       <div class="gm-body">
         <p>Every painting is passed through a <b>CLIP</b> image model (ViT-B/32, open-source) that turns the
-        picture into a 512-number vector capturing what it <em>looks like</em> — composition, palette, subject,
-        handling — with no captions or labels involved. Two works are “similar” when their vectors point the same
+        picture into a 512-number vector capturing what it <em>looks like</em> (composition, palette, subject,
+        handling), with no captions or labels involved. Two works are “similar” when their vectors point the same
         way (<b>cosine similarity</b>); that drives <em>Visually closest</em> and <em>Painters nearest this work</em>
         in each painting’s card.</p>
         <p>This map lays all embedded works out in 2-D with <b>t-SNE</b>, so visually alike paintings land near each
-        other. The dots can be coloured by painter, period or school — or by each work’s own <b>dominant colour</b>
+        other. The dots can be coloured by painter, period or school, or by each work’s own <b>dominant colour</b>
         (the average of its pixels), captured while embedding. <em>Painters nearest this work</em> and the
         <em>“If you like … try”</em> chips average a painter’s vectors into one “fingerprint” and compare fingerprints.</p>
-        <p>Everything is computed <b>offline</b> and shipped as small precomputed files — the page itself runs no AI.
+        <p>Everything is computed <b>offline</b> and shipped as small precomputed files: the page itself runs no AI.
         Coverage grows as more works are embedded. Images © their sources via Wikimedia Commons.</p>
       </div>
     </details>
@@ -301,7 +301,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.11.6"></script>
+  <script src="artatlas/app.js?v=1.11.8"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

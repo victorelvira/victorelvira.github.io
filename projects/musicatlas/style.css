@@ -246,6 +246,18 @@ tr.part .c-title{padding-left:24px;font-size:14px}
 #rec .links{margin-top:16px;padding-top:11px;border-top:1px solid var(--line);font-size:12px;
   display:flex;gap:12px;flex-wrap:wrap}
 #rec .links a{color:var(--accent)}
+/* lo que se ha agrupado: presente, plegado, y nunca compitiendo con el valor */
+#rec details.merged{margin-top:3px;font-size:11.5px}
+#rec details.merged summary{color:var(--faint);cursor:pointer;list-style:none}
+#rec details.merged summary::-webkit-details-marker{display:none}
+#rec details.merged summary::before{content:"▸ ";font-size:9px}
+#rec details.merged[open] summary::before{content:"▾ "}
+#rec details.merged summary:hover{color:var(--accent);text-decoration:underline}
+#rec details.merged ul{margin:4px 0 0;padding-left:14px;color:var(--muted)}
+#rec details.merged li{margin-bottom:2px}
+#rec .mfrom{font-style:italic}
+#rec .mto{color:var(--ink)}
+#rec .mwhy{display:block;color:var(--faint);font-size:10.5px}
 #rec .kids{margin-top:14px}
 #rec .kids h4{font-size:9.5px;color:var(--faint);margin:0 0 4px;letter-spacing:.09em;text-transform:uppercase}
 #rec .kids button{display:block;width:100%;text-align:left;border:0;background:none;padding:2px 0;

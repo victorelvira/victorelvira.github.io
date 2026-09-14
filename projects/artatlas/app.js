@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.11.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 00:18";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.11.8";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-15 01:05";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -285,7 +285,7 @@ document.getElementById("report-form")?.addEventListener("submit", e => {
   send.disabled = true; msg.textContent = "Sending…";
   fetch(REPORT_ENDPOINT, { method: "POST", mode: "no-cors", body: data })
     .then(() => { msg.textContent = "Thanks! I'll review it. 🙌"; setTimeout(closeReport, 1500); })
-    .catch(() => { msg.textContent = "Couldn't send — please try again later."; })
+    .catch(() => { msg.textContent = "Couldn't send. Please try again later."; })
     .finally(() => { send.disabled = false; });
 });
 
@@ -833,7 +833,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
   })
   .catch(err => {
     console.error("Could not load painter data:", err);
-    document.getElementById("stats").textContent = "no data yet — generate the geojson files";
+    document.getElementById("stats").textContent = "no data yet: generate the geojson files";
   });
 
 // slider bounds. The low end is the true earliest year (early works are genuine, just
@@ -1763,7 +1763,7 @@ function renderPanel() {
   const ul = document.getElementById("worklist");
   panelVis = [];
   if (!vis.length) {
-    ul.innerHTML = `<li class="empty">${t("Pan or zoom the map — the works in view are listed here.")}</li>`;
+    ul.innerHTML = `<li class="empty">${t("Pan or zoom the map, and the works in view are listed here.")}</li>`;
     return;
   }
   // build the render plans (cheap); appendPanelChunk streams whichever the mode needs
@@ -2173,7 +2173,7 @@ function renderSubject(qid) {
   const items = subjectMatches(qid);
   if (!items.length) return;
   host.innerHTML = `<div class="wc-sim-h">${t("More on this subject")}</div><div class="wc-sim-row">` +
-    items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
+    items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " · " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
 }
 
 // ── "Painters like this one" — style affinity from mean CLIP vectors (painter_affinity.py) ──
@@ -2229,7 +2229,7 @@ async function renderForYou(curQid) {
   }
   if (out.length < 3) return;
   host.innerHTML = `<div class="wc-sim-h">${t("More you might like")} <span class="wc-sim-sub">· ${t("based on what you've viewed")}</span></div><div class="wc-sim-row">` +
-    out.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
+    out.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " · " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
 }
 
 // "Visually similar" — CLIP nearest-neighbour QIDs, precomputed in artatlas/data/sim_neighbors.json
@@ -2261,13 +2261,13 @@ async function renderSimilar(qid) {
   for (const x of neigh) { const pn = x.p.painter; if (!pn || seenP.has(pn)) continue; seenP.add(pn); nearPainters.push(pn); if (nearPainters.length >= 3) break; }
   const thumbRow = (label, arr) => arr.length
     ? `<div class="wc-sim-h">${label}</div><div class="wc-sim-row">` +
-      arr.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " — " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`
+      arr.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " · " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`
     : "";
   const painterLine = nearPainters.length
     ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h">${t("Painters nearest this work")}</span>` +
       nearPainters.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("") + `</div>`
     : "";
-  const out = thumbRow(t("Visually closest — same painter"), same) + thumbRow(t("Visually closest — other painters"), other) + painterLine;
+  const out = thumbRow(t("Visually closest · same painter"), same) + thumbRow(t("Visually closest · other painters"), other) + painterLine;
   if (out) host.innerHTML = out;
 }
 function openWorkCard(w) {
@@ -2281,7 +2281,7 @@ function openWorkCard(w) {
   const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
   const venue = [locName(p), ctyName(p.city), cName(p.country)].filter(Boolean).join(", ");
   const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
-    ? esc(p.attribution) + (p.attribution_note ? ` — <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
+    ? esc(p.attribution) + (p.attribution_note ? ` · <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
   const links = linksRow(p);
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
@@ -2289,7 +2289,7 @@ function openWorkCard(w) {
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), esc(venue)
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")
-      + (p.placeless ? ` <span class="wc-noplace">${t("not on the map — no public address")}</span>` : "")) +
+      + (p.placeless ? ` <span class="wc-noplace">${t("not on the map: no public address")}</span>` : "")) +
     row(t("Technique"), esc(p.medium || "")) + row(t("Size"), esc(p.dimensions || "")) + row(t("Attribution"), attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
     `<div class="wc-actions"><button type="button" class="wc-share">${t("🔗 Share")}</button>` +
@@ -2355,7 +2355,7 @@ function shareWork(p) {
   // share the per-work stub page (carries this painting's og:image so previews unfurl) — it
   // redirects into the app at ?w=<qid>. Falls back to the app URL if there's no qid.
   const url = p.qid ? new URL("artatlas/w/" + p.qid + ".html", location.href).href : location.href;
-  const title = `${p.title || "Painting"}${p.painter ? " — " + p.painter : ""}`;
+  const title = `${p.title || "Painting"}${p.painter ? " · " + p.painter : ""}`;
   if (navigator.share) navigator.share({ title, url }).catch(() => {});
   else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast("Link copied ✓")).catch(() => toast("Copy failed"));
   else toast(url);
@@ -2430,7 +2430,7 @@ function nearVenues(lat, lon) {                 // filtered venues, with distanc
     if (!passesAll(w.p)) continue;
     const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
     let v = g.get(k);
-    if (!v) { v = { lat: w.lat, lon: w.lon, location: w.p.location || "—",
+    if (!v) { v = { lat: w.lat, lon: w.lon, location: w.p.location || "…",
       city: w.p.city || "", country: w.p.country || "", count: 0 }; g.set(k, v); }
     v.count++;
   }
@@ -2472,7 +2472,7 @@ function renderNearMe() {                        // owns the side panel while ne
   const chips = NEAR_RADII.map(r =>
     `<button type="button" class="rchip${r === radiusKm ? " on" : ""}" data-r="${r}">${r}</button>`).join("");
   let html = `<li class="near-ctrl"><span class="near-lbl">Radius km</span>${chips}</li>`;
-  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km — try a larger radius.</li>`;
+  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km. Try a larger radius.</li>`;
   for (const v of within) {
     const km = v.d < 1 ? `${Math.round(v.d * 1000)} m` : `${v.d < 10 ? v.d.toFixed(1) : Math.round(v.d)} km`;
     html += `<li class="near-row" data-lat="${v.lat}" data-lon="${v.lon}"><span class="micon">🏛</span><div>` +
@@ -2592,7 +2592,7 @@ function gPaintingQ() {
   const chosen = []; const usedImg = new Set([p.image]);
   for (const t of tiers) { for (const w of gShuffle(t)) { if (chosen.length >= G_NOPTS[G.diff] - 1) break; if (usedImg.has(w.p.image)) continue; usedImg.add(w.p.image); chosen.push(w); } if (chosen.length >= G_NOPTS[G.diff] - 1) break; }
   const opts = [{ img: p.image, correct: true }, ...chosen.map(w => ({ img: w.p.image, correct: false }))];
-  const clue = `${esc(pName(p.painter))}${p.year ? `, ${esc(p.year)}` : ""}${p.location ? ` — ${esc(locName(p))}` : ""}`;
+  const clue = `${esc(pName(p.painter))}${p.year ? `, ${esc(p.year)}` : ""}${p.location ? ` · ${esc(locName(p))}` : ""}`;
   return { kind: "pick", prompt: t("Which one is X?").replace("X", `<b>${clue}</b>`), options: gShuffle(opts), work: p };
 }
 
@@ -2977,7 +2977,7 @@ function gxSideFill(w) {
     `<div class="gxs-painter"><span class="pdot" style="background:${colorFor(p.painter)}"></span>${esc(p.painter || "")}</div>` +
     row("Date", p.year) + row("Where", venue) + row("Technique", p.medium) + row("Size", p.dimensions) +
     (links ? `<div class="gxs-links">${links}</div>` : "") +
-    `<div class="gxs-hint">${gxAnchored ? "Pinned — ✕ or click empty space to reset" : "Click the dot to pin it here"}</div>`;
+    `<div class="gxs-hint">${gxAnchored ? "Pinned · ✕ or click empty space to reset" : "Click the dot to pin it here"}</div>`;
 }
 function gxSidePreview(w) { if (gxAnchored || !w) return; const el = document.getElementById("gx-side"); if (!el) return; el.hidden = false; el.classList.remove("anchored"); gxSideFill(w); }
 function gxSideAnchor(w) { if (!w) return; gxAnchored = w.p.qid; const el = document.getElementById("gx-side"); el.hidden = false; el.classList.add("anchored"); gxSideFill(w); }
