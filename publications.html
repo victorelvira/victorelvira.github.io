@@ -167,8 +167,6 @@
         } else {
           name = a;
         }
-        // Resalta mi nombre en la lista de autores (solo visual, no toca el .bib)
-        if (/\belvira\b/i.test(name)) name = `<strong>${name}</strong>`;
         return name;
       });
       return authors.join(', ');
