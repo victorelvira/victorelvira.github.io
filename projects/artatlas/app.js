@@ -87,8 +87,8 @@ const PAINTERS = [
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
-const DATA_V = "1.11.5";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-14 23:00";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.11.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-15 00:12";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1650,7 +1650,11 @@ function wireMuseumFocus(root) {
     if (mus && mus === root.dataset.mus) return;                // still inside the focused museum
     // only the colour field counts: .gcard covers the cell's content box, so the event landing on the
     // cell itself means the pointer is on the museum's own ground, not on a picture
-    if (e.target !== cell || !mus) { clear(); return; }
+    // The museum's name counts as its ground too. Since 1.8.2 the name takes clicks (it folds the
+    // museum in the side panel), so the pointer over the name lands on the label, not the cell, and
+    // hovering exactly where the name is stopped writing it out in full.
+    const onGround = e.target === cell || (e.target.classList && e.target.classList.contains("mlabel"));
+    if (!onGround || !mus) { clear(); return; }
     clear();
     root.querySelectorAll(`.gcell[data-mus="${mus}"]`).forEach(c => c.classList.add("mus-on"));
     root.dataset.mus = mus;

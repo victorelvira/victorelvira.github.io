@@ -1177,8 +1177,9 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
 
 /* Folding in the miniature view: the colour field collapses to the band that carries its name.
    The label is the handle there, so it needs to take clicks (it is pointer-events:none otherwise). */
-.gallery.grouped .mlabel { pointer-events: auto; cursor: pointer; }
-.gallery.grouped .mlabel:hover { text-decoration: underline; }
+/* only the side panel folds; in the table's grid the name is not a button and must not look like one */
+#worklist.gallery.grouped .mlabel { pointer-events: auto; cursor: pointer; }
+#worklist.gallery.grouped .mlabel:hover { text-decoration: underline; }
 .gallery.grouped .gcell.folded-away { display: none; }
 .gallery.grouped .gcell.fold-head { padding-bottom: 0; }
 .gallery.grouped .gcell.fold-head .gcard,
