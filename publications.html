@@ -19,6 +19,15 @@
   <script src="assets/js/scripts.js"></script>
   <!-- Parser BibTeX (bibtex_js.js define BibtexParser) -->
   <script type="text/javascript" src="assets/js/bibtex_js.js"></script>
+  <!-- OG:auto (social preview) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Víctor Elvira">
+  <meta property="og:title" content="Víctor Elvira">
+  <meta property="og:description" content="Professor in Statistics and Data Science, University of Edinburgh. Computational statistics, Monte Carlo methods and probabilistic machine learning.">
+  <meta property="og:image" content="https://victorelvira.github.io/assets/images/profile.jpg">
+  <meta property="og:url" content="https://victorelvira.github.io/publications.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://victorelvira.github.io/assets/images/profile.jpg">
 </head>
 
 <body>
@@ -151,11 +160,16 @@
       if (!authorString) return 'Unknown';
       const authors = authorString.split(/\s+and\s+/).map(a => {
         a = decodeAccents(a.trim());
+        let name;
         if (a.includes(',')) { // "Apellido, Nombre"
           const [last, first] = a.split(',').map(s => s.trim());
-          return `${first} ${last}`.trim();
+          name = `${first} ${last}`.trim();
+        } else {
+          name = a;
         }
-        return a;
+        // Resalta mi nombre en la lista de autores (solo visual, no toca el .bib)
+        if (/\belvira\b/i.test(name)) name = `<strong>${name}</strong>`;
+        return name;
       });
       return authors.join(', ');
     }
@@ -234,7 +248,7 @@
 
      // Texto buscable (Fase 1: metadatos). Extensible: aquí se añadirán abstract y full-text.
      const venueText  = venue.join(' ').replace(/<[^>]*>/g, ' ');
-     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''}`);
+     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''}`.replace(/<[^>]*>/g, ' '));
 
      return `
        <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}" data-search="${searchText}">

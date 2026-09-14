@@ -279,3 +279,23 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
   font-weight: 500;
 }
 .btn.btn-mini { border-radius: 999px; font-weight: 500; }
+
+
+/* Logos en gris que recuperan color al pasar el raton (patron "partners") */
+#main-content .col-md-5 img {
+  filter: grayscale(100%);
+  opacity: .72;
+  transition: filter .25s ease, opacity .25s ease;
+}
+#main-content .col-md-5 img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* Ritmo en subtitulos de seccion (h4): mas aire arriba + subrayado sutil */
+.container h4 {
+  margin-top: 1.75rem;
+  border-bottom: 2px solid rgba(14, 124, 134, .30);
+  width: fit-content;
+  padding-bottom: 2px;
+}

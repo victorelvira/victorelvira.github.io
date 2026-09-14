@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.25.0";
+const DATA_V = "0.26.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -133,7 +133,7 @@ const thumb = (file, w) => file
 
 /* ── data ──
  * A site row is [name, lat, lon, kindIndex]; naming the columns beats counting commas. */
-const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3, S_WHERE = 4;
+const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3, S_WHERE = 4, S_OSM = 5;
 // The town and country, interned per file. "4 Rue Croix des Petits Champs" is a real address and
 // a useless one: there is one in Paris and there could be one anywhere, and a reader standing in
 // front of the wrong wall has no way to tell. Kept out of the NAME so that Père-Lachaise is not
@@ -143,6 +143,10 @@ const whereOf = (s) => WHERES[s[S_WHERE]] || "";
 let VOCAB = {}, SITES = [], TRACES = [];
 let deepState = "none";   // none | loading | loaded: what the stats line has to admit
 const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
+// The pin's shape says what its colour and emoji cannot (Víctor, 2026-09-14: "necesitamos distintos
+// códigos"): F_APPROX, the point stands for an AREA (a battlefield, a town, a square), drawn larger and
+// dashed; F_SAINT, the person is canonised or beatified (Wikidata P411), drawn with a halo.
+const F_APPROX = 8, F_SAINT = 16;
 
 /* ── state: one object, every dimension ── */
 const state = {
@@ -276,9 +280,10 @@ function pinMark(r) {
   return WHAT_ICON[what] || "";
 }
 
-function pinIcon(counts, n, mark) {
+function pinIcon(counts, n, mark, area = false, halo = false) {
   const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
-  const size = n > 200 ? 40 : n > 40 ? 32 : n > 5 ? 26 : 20;
+  // An area is drawn larger than a spot of the same count: the circle is the size of the doubt.
+  const size = (n > 200 ? 40 : n > 40 ? 32 : n > 5 ? 26 : 20) + (area ? 10 : 0);
   let acc = 0;
   const stops = Object.entries(counts).sort((a, z) => z[1] - a[1]).map(([d, c]) => {
     const a = (acc / total) * 100; acc += c;
@@ -287,7 +292,8 @@ function pinIcon(counts, n, mark) {
   // One trace under the pin: say WHAT it is, with a mark. More than one: say how many.
   const label = n > 1 ? `<b>${n > 999 ? "999+" : n}</b>`
               : (mark ? `<b class="mk">${mark}</b>` : "");
-  return L.divIcon({ className: "pin", iconSize: [size, size], iconAnchor: [size / 2, size / 2], html:
+  return L.divIcon({ className: "pin" + (area ? " area" : "") + (halo ? " halo" : ""),
+    iconSize: [size, size], iconAnchor: [size / 2, size / 2], html:
     `<i style="background:conic-gradient(${stops})"></i>${label}` });
 }
 
@@ -347,10 +353,11 @@ function personRow(r, headAccess) {
                  // the plaque IS the marking, and a museum is its own: saying so again is noise
                  mk !== "unknown" && mk !== what ? (LABEL.marking[mk] || mk) : null]
                 .filter(Boolean).join(" · ");
+  const wq = r.qid.replace(/^ev:/, "");
   const links = `<div class="lk">` +
-    `<a class="wp-link" data-q="${esc(r.qid)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(r.qid)}"` +
+    `<a class="wp-link" data-q="${esc(wq)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(wq)}"` +
     ` target="_blank" rel="noopener">Wikipedia</a> · ` +
-    `<a href="https://www.wikidata.org/wiki/${esc(r.qid)}" target="_blank" rel="noopener">Wikidata</a></div>`;
+    `<a href="https://www.wikidata.org/wiki/${esc(wq)}" target="_blank" rel="noopener">Wikidata</a></div>`;
   return `<li class="pop-person" data-qid="${esc(r.qid)}">${th}<div class="wk">` +
     `<div class="wt">${esc(r.name)}${life ? ` <span class="yr">${esc(life)}</span>` : ""}</div>` +
     `${occ}<div class="fx">${esc(facts)}</div>${second}${links}</div></li>`;
@@ -388,8 +395,11 @@ function sitePopup(siteIdx, rows) {
   const acc = VOCAB.access[sorted[0].access];
   // People are listed; a museum, or a plaque about a bridge, is the place itself and lives in the
   // head. Listing "Museo del Prado" as a person under "Museo del Prado" said the same thing twice.
-  const persons = sorted.filter((r) => r.qid.startsWith("Q"));
   const kind = VOCAB.siteKind[s[S_KIND]] || "";
+  // An event is listed like a person at a memorial that remembers it (0.26), and not at the place it
+  // happened, where the card above already is the event.
+  const persons = sorted.filter((r) => r.qid.startsWith("Q") ||
+                                       (r.qid.startsWith("ev:") && !["battle", "event"].includes(kind)));
   // A site kind is a little wider than a trace kind: a cemetery holds graves.
   const kindIcon = WHAT_ICON[kind] || { cemetery: "🪦" }[kind] || "";
   const meta = [kind ? `${kindIcon} ${kind}`.trim() : null, LABEL.access[acc] || acc,
@@ -402,19 +412,27 @@ function sitePopup(siteIdx, rows) {
   const more = persons.length > CARD_MAX
     ? `<li class="pop-more">…and ${persons.length - CARD_MAX} more. They are all in the list beside the map.</li>` : "";
   // What the plaque says, fetched when the card opens (build_inscriptions.py, 0.5° tiles).
-  const ins = kind === "plaque" ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>`
-    // a museum's photo, kind and website, fetched the same way (build.py, culture/data/mus/)
-    : ["museum", "statue", "battle", "event"].includes(kind) ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
+  // A plaque from Open Plaques has its words in ins/; one from OpenStreetMap (0.26) has them in its
+  // card, like a statue. Both are asked for; the one that has nothing removes itself.
+  const ins = (kind === "plaque" && !s[S_OSM] ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "") +
+    // a museum's photo, kind and website, fetched the same way (build.py, culture/data/cards/)
+    (["museum", "statue", "battle", "event", "plaque", "grave"].includes(kind) ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "");
   const where = whereOf(s);
+  const area = rows.every((r) => r.flags & F_APPROX);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
     (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
+    (area && !["battle", "event"].includes(kind)
+      ? `<div class="where approx">◌ somewhere around here: the source gives ${kind === "settlement" ? "the town" : "the square or the area"}, not the exact spot</div>` : "") +
     `<div class="meta">${esc(meta)}</div>${hoursBlock}${ins}</div>` +
     (items ? `<ul class="people">${items}${more}</ul>` : "") + `</div>`;
 }
 
+// Years come from the Wikidata Query Service, which numbers them ASTRONOMICALLY: year 0 exists, so
+// -489 is 490 BC (Marathon) and -383 is 384 BC (Aristotle). Printed raw, Aristotle lived "-383–-321".
+const yearStr = (y) => y == null ? "?" : y <= 0 ? `${1 - y} BC` : `${y}`;
 const lifeStr = (r) => r.born == null && r.died == null ? ""
-  : r.qid.startsWith("ev:") ? (r.born < 0 ? `${-r.born} BC` : `${r.born}`)     // an event has a year, not a life
-  : `${r.born ?? "?"}–${r.died ?? "?"}`;
+  : r.qid.startsWith("ev:") ? yearStr(r.born)     // an event has a year, not a life
+  : `${yearStr(r.born)}–${yearStr(r.died)}`;
 
 /* ── refresh: filter → quota → draw (CHASSIS §2, DECISIONS D6) ── */
 function drawMap() {
@@ -438,10 +456,14 @@ function drawMap() {
     const pt = map.latLngToContainerPoint([pl.lat, pl.lon]);
     const key = ((pt.x / CELL) | 0) + ":" + ((pt.y / CELL) | 0);
     let c = cells.get(key);
-    if (!c) cells.set(key, (c = { places: [], n: 0, counts: {}, best: null, w: -1 }));
+    if (!c) cells.set(key, (c = { places: [], n: 0, counts: {}, best: null, w: -1, area: 0, saint: 0 }));
     c.places.push(pl);
     c.n += vis.length;
-    for (const r of vis) { const k = colourKey(r); c.counts[k] = (c.counts[k] || 0) + 1; }
+    for (const r of vis) {
+      const k = colourKey(r); c.counts[k] = (c.counts[k] || 0) + 1;
+      if (r.flags & F_APPROX) c.area++;
+      if (r.flags & F_SAINT) c.saint++;
+    }
     // The pin sits on the most renowned place in the cell, so it is always on something real
     // rather than on an averaged coordinate in the middle of a river.
     if (w > c.w) { c.w = w; c.best = pl; }
@@ -457,7 +479,11 @@ function drawMap() {
   for (const c of cells.values()) {
     const only = c.n === 1 ? (c.best.vis[0] || null) : null;
     const m = L.marker([c.best.lat, c.best.lon],
-                       { icon: pinIcon(c.counts, c.n, only && pinMark(only)) });
+                       // dashed only if EVERY trace under it is an area: one exact grave among
+                       // town-only ones is still a spot you can walk to. A halo if at least half
+                       // are saints, so a crowded square with one chapel does not glow.
+                       { icon: pinIcon(c.counts, c.n, only && pinMark(only),
+                                       c.area === c.n, c.saint * 2 >= c.n) });
     if (c.places.length === 1) {
       m.bindPopup(() => sitePopup(c.best.siteIdx, c.best.vis), { maxWidth: 360, autoPan: false });
       m.bindTooltip(`${SITES[c.best.siteIdx][S_NAME]} · ${c.n}`, { direction: "top", offset: [0, -12] });
@@ -605,7 +631,11 @@ function renderLegend() {
     ["dom", "verb", "access"].map((f) =>
       `<button type="button" class="lg-by${f === fam ? " on" : ""}" data-by="${f}">` +
       `${f === "dom" ? "profession" : f === "verb" ? "what they did" : "access"}</button>`).join("") +
-    `<span class="lg-keys">${swatches}</span>`;
+    `<span class="lg-keys">${swatches}</span>` +
+    // The shapes, next to the colours: what the pin's outline says, whatever it is coloured by.
+    `<span class="lg-keys lg-shapes"><span class="fam-lbl">Shapes</span>` +
+    `<span class="lg-i"><span class="lg-pin halo"></span>saint or blessed</span>` +
+    `<span class="lg-i"><span class="lg-pin area"></span>an area, not an exact spot</span></span>`;
 }
 document.addEventListener("click", (e) => {
   const b = e.target.closest("#legend button[data-by]");
@@ -862,7 +892,9 @@ function openPerson(qid) {
     const src = pf && thumb(pf[0], 160);
     const life = lifeStr(r0);
     const countries = new Set(rows.filter((r) => !(r.flags & F_PLACELESS)).map((r) => r.site));
-    const sorted = rows.slice().sort((a, z) => a.verb - z.verb);
+    // an event opens on where it HAPPENED, then what remembers it
+    const vk = (r) => VOCAB.verb[r.verb] === "happened" ? -1 : r.verb;
+    const sorted = rows.slice().sort((a, z) => vk(a) - vk(z));
 
     const items = sorted.map((r, i) => {
       const acc = VOCAB.access[r.access], mk = VOCAB.marking[r.marking];
@@ -874,21 +906,22 @@ function openPerson(qid) {
         `<div class="fx">${esc(LABEL.verb[VOCAB.verb[r.verb]] || VOCAB.verb[r.verb])} · ` +
         `${esc(LABEL.access[acc] || acc)}${mk !== "unknown" ? " · " + esc(LABEL.marking[mk] || mk) : ""}</div>` +
         (pinnable ? "" : `<div class="fx warn">the source names a town, not a place: nothing to pin</div>`) +
+        (r.flags & F_APPROX ? `<div class="fx approx">◌ an area, not an exact spot</div>` : "") +
         `</div></li>`;
     }).join("");
 
     $("sheet-body").innerHTML =
       `<div class="sh-head">` +
       (src ? `<img class="sh-por" src="${esc(src)}" alt="">` : `<div class="sh-por ph">·</div>`) +
-      `<div><div class="sh-name">${esc(r0.name)}</div>` +
+      `<div><div class="sh-name">${esc(r0.name)}${r0.flags & F_SAINT ? ` <span class="sh-halo" title="Canonised or beatified (Wikidata P411)">saint or blessed</span>` : ""}</div>` +
       `<div class="sh-life">${esc(life)}</div>` +
       (pf && pf[1] ? `<div class="sh-occ">${esc(pf[1])}</div>` : "") +
       `<div class="sh-count">${rows.length} ${rows.length === 1 ? "trace" : "traces"}` +
       `${countries.size > 1 ? ` in ${countries.size} places` : ""}</div>` +
       `<div class="sh-links">` +
-      (qid.startsWith("op") || qid.startsWith("mus:") ? "" :
-        `<a class="wp-link" data-q="${esc(qid)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(qid)}" target="_blank" rel="noopener">Wikipedia</a> · ` +
-        `<a href="https://www.wikidata.org/wiki/${esc(qid)}" target="_blank" rel="noopener">Wikidata</a>`) +
+      (!/^(ev:)?Q\d+$/.test(qid) ? "" :
+        `<a class="wp-link" data-q="${esc(qid.replace(/^ev:/, ""))}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(qid.replace(/^ev:/, ""))}" target="_blank" rel="noopener">Wikipedia</a> · ` +
+        `<a href="https://www.wikidata.org/wiki/${esc(qid.replace(/^ev:/, ""))}" target="_blank" rel="noopener">Wikidata</a>`) +
       // The other atlas. Same person, same QID, a different question about them, where their work
       // hangs rather than where they lie. The link only appears for the painters it knows.
       (pf && pf[2]
@@ -1044,7 +1077,7 @@ function fillInscriptions(root) {
       if (!x) { box.remove(); return; }
       // A statue from OpenStreetMap says when it was put up, what it is made of, who made it, and
       // what it says; and it says where it came from, because ODbL asks for that and so do we.
-      const when = typeof x.date === "number" ? (x.date < 0 ? `${-x.date} BC` : `${x.date}`) : (x.date ? `put up ${esc(x.date)}` : "");
+      const when = typeof x.date === "number" ? yearStr(x.date) : (x.date ? `put up ${esc(x.date)}` : "");
       const facts = [when, x.material ? esc(x.material) : "", x.by ? `by ${esc(x.by)}` : "",
                      x.marked ? `${x.marked === 1 ? "a memorial recalls it" : x.marked + " memorials recall it"}` : ""].filter(Boolean).join(" · ");
       box.innerHTML = (x.img ? pic(x.img, "mx-img", 480, "") : "") +
@@ -1368,7 +1401,7 @@ function buildTimeline(min, max) {
     const span = max - min || 1;
     fill.style.left = ((state.yearMin - min) / span) * 100 + "%";
     fill.style.right = 100 - ((state.yearMax - min) / span) * 100 + "%";
-    label.textContent = `${state.yearMin} – ${state.yearMax}`;
+    label.textContent = `${yearStr(state.yearMin)} – ${yearStr(state.yearMax)}`;
   };
   const update = () => {
     let a = +lo.value, b = +hi.value;
@@ -1621,13 +1654,17 @@ function absorb(d) {
     return i;
   });
   const local = [];
+  // S_OSM: the site came ONLY from OpenStreetMap (the file carries an ODbL `licence`). Such a plaque has
+  // its words in its card, not in the Open Plaques tiles, and must not ask for a tile that is not there.
+  const fromOSM = /ODbL/.test(d.licence || "") ? 1 : 0;
   for (const s of d.sites) {
     const key = s[S_LAT] + "," + s[S_LON];
     let i = siteAt.get(key);
     if (i === undefined) {
       s[S_WHERE] = wmap[s[S_WHERE]] ?? 0;
+      s[S_OSM] = fromOSM;
       i = SITES.length; SITES.push(s); siteAt.set(key, i);
-    }
+    } else if (!fromOSM) SITES[i][S_OSM] = 0;
     local.push(i);
   }
   for (const a of d.traces) {

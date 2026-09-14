@@ -10,12 +10,17 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.26.29";
-const BUILD_AT = "2026-09-13 13:04";
+const DATA_V = "0.28.1";
+const BUILD_AT = "2026-09-14 15:33";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
-                sort:"work", dir:1, open:new Set(), limit:300, parts:false, doubt:false,
+                /* OPENS ON THE MOST-RECORDED WORK, not on whoever sorts first by
+                   surname. The catalogue used to open on Bruckner, which told a reader
+                   arriving for the first time that Bruckner is where classical music
+                   starts. There is no popularity figure in any source here, so the
+                   nearest true one is used: how many recordings exist. See `pop`. */
+                sort:"rec", dir:1, open:new Set(), limit:300, parts:false, doubt:false,
                 grouping:"period", tlMode:"composer", tlZoom:1, year:null, qw:[] };
 
 /* ---------- reading a field ---------- */
@@ -414,10 +419,21 @@ function liveCols(){
                                        || c.id==="date" || c.id==="dur"
                                        || c.id==="rec")));
 }
+/* THE LAST WORD OF A NAME IS NOT ALWAYS THE SURNAME. "Johann Strauss II" ends in a
+   regnal numeral, so taking the last token filed the Blue Danube under "II" and printed
+   the composer column as "ll". The numeral is part of how the name is written and is
+   kept in the tooltip and the card; it is only skipped when asking WHICH WORD IS THE
+   NAME. One function, used by the sort and by the cell, so the two cannot disagree. */
+const SUFFIX = /^(?:[ivx]+|jr\.?|sr\.?|the|elder|younger|fils|p[eè]re)$/i;
+function lastName(name){
+  const parts = String(name||"").split(/\s+/).filter(Boolean);
+  while(parts.length > 1 && SUFFIX.test(parts[parts.length-1])) parts.pop();
+  return parts[parts.length-1] || "";
+}
 /* BY SURNAME. Sorting people by their given name put "Anton Bruckner" at the head of
    the whole catalogue, which is how Víctor found this: the first thing anybody saw was
    a composer nobody had asked for, because A comes first. */
-const surname = w => fold((w.composer||"").split(/\s+/).slice(-1)[0]);
+const surname = w => fold(lastName(w.composer));
 
 /* ---------- column widths the reader sets ---------- */
 const COLW = (() => { try { return JSON.parse(localStorage.getItem("musicatlas.colw")||"{}"); }
@@ -466,8 +482,13 @@ const SORTV={ comp:w=>[surname(w), fold(w.composer)],
   src:w=>[-(w.sources||[]).length],
   /* how many recordings MusicBrainz holds, its own total and not our sample. Works we
      have no count for sort last rather than as zero: not measured is not "never
-     recorded", and putting them at 0 would state something nobody said. */
-  rec:w=>[w.nr?-w.nr:1, fold(w.composer)],
+     recorded", and putting them at 0 would state something nobody said.
+     Sorts on `pop`, not on `nr`: a recording attaches to a movement as readily as to
+     the whole, so Beethoven's Seventh has no count of its own while its Allegretto has
+     444, and ranking on `nr` buried the symphony under works nobody hums. `pop` is the
+     work's own count where it has one and its best-counted movement where it does not,
+     derived in build_core.py and labelled in the cell. */
+  rec:w=>[w.pop?-w.pop:1, fold(w.composer)],
   score:w=>[-((w.media||{}).scores||0)],
   audio:w=>[-((w.au||0)+(w.ar||0)), -((w.media||{}).free_recordings||0)] };
 function cmp(a,b){ const A=SORTV[state.sort](a), B=SORTV[state.sort](b);
@@ -482,9 +503,12 @@ const CELL = {
   comp: w => {
     const n = w.composer_slugs.length;
     const dot = `<span class="dot" style="background:${compColour(w.composer_slug)}"></span>`;
-    const first = esc((w.composers[0]||w.composer_slugs[0]).split(" ").slice(-1)[0]);
+    const first = esc(lastName(w.composers[0]||w.composer_slugs[0]));
     /* one dot, not one per composer: the column is 92px and three dots ate the name */
-    return n < 2 ? dot + first
+    /* the full name in the tooltip even for a single composer: once the regnal numeral
+       is dropped, Johann Strauss I and Johann Strauss II both print "Strauss", and the
+       column alone can no longer tell the father from the son. */
+    return n < 2 ? `<span title="${esc(w.composers[0]||w.composer_slug)}">${dot}${first}</span>`
       : `<span class="multi" title="${esc(w.composers.join(" · "))}">${dot}${first}`
         + `<span class="plusn">+${n-1}</span></span>`;
   },
@@ -505,9 +529,14 @@ const CELL = {
   dur: w => fmtDur(seconds(w)),
   score: w => scoreCell(w),
   audio: w => audioCell(w),
-  rec: w => w.nr
-    ? `<span title="MusicBrainz holds ${w.nr} recording${w.nr>1?"s":""} of this work">${w.nr}</span>`
-    : `<span class="unknown" title="not counted yet, which is not the same as never recorded">·</span>`,
+  /* `pw` says which number this is, and the cell has to agree with the sort or the
+     column reads as a lie: the Op. 28 preludes hold 2 recordings as a set and 455 of
+     the fifteenth, and a cell printing 2 beside a row ranked on 455 explains nothing. */
+  rec: w => !w.pop
+    ? `<span class="unknown" title="not counted yet, which is not the same as never recorded">\u00b7</span>`
+    : w.pw === "own"
+    ? `<span title="MusicBrainz holds ${w.pop} recording${w.pop>1?"s":""} of this work">${w.pop}</span>`
+    : `<span class="derived" title="MusicBrainz counts only ${w.nr||0} recording${(w.nr||0)===1?"":"s"} of the whole work, and ${w.pop} of its best-counted part, so at least that many exist.">\u2265${w.pop}</span>`,
   src: w => srcDots(w),
 };
 function rowHTML(w,isPart){

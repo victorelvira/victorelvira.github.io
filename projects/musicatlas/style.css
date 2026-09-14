@@ -128,7 +128,8 @@ body{font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:va
 /* Fixed widths, or the Scoring column (free text, sometimes a whole orchestra)
    swells and pushes Duration and Sources off the right edge. The work's title is
    what people read, so it gets the slack. */
-table.cat{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+table.cat{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed;
+}
 /* Once the reader has set a width by hand, the table stops being squeezed into the pane
    and is allowed to be as wide as the widths they chose; #stage scrolls sideways for the
    overflow. Without this, pulling one column wider was simply taken out of its
@@ -136,6 +137,15 @@ table.cat{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixe
 /* NOT min-width:100%. With table-layout:fixed the surplus over the container is shared
    out among every column, so freezing nine widths and pulling the tenth still moved all
    ten. The exact sum is set in JS instead, and only that. */
+/* A FLOOR, and only while the widths are ours. The nine fixed columns come to 936px, so
+   between the stacked layout at 640px and about 1180px there was nothing left for the
+   title: the Work column collapsed to a few pixels and "Symphony No. 9" printed one
+   letter per line. #stage already scrolls sideways, so the table keeps its width and
+   scrolls rather than crush the one column carrying the name of the piece.
+   NOT once the reader has set widths by hand: `body.colw` gets an exact sum from JS, and
+   a floor underneath it would be surplus that table-layout:fixed shares out among all
+   ten columns, which is the bug the exact sum exists to prevent. 2026-09-14. */
+body:not(.colw) table.cat{min-width:1180px}
 body.colw table.cat{width:auto}
 #stage{overflow-x:auto}
 table.cat col.k-comp{width:104px} table.cat col.k-cat{width:118px}
@@ -291,7 +301,7 @@ footer a{color:var(--muted)}
   #subbar{padding:5px 12px}
   #subbar .right{max-width:100%;margin-left:0;width:100%}
 
-  table.cat{table-layout:auto;display:block}
+  table.cat{table-layout:auto;display:block;min-width:0}
   table.cat thead{display:none}
   table.cat tbody,table.cat tr,table.cat td{display:block;width:auto}
   table.cat tr{padding:9px 12px 10px;border-bottom:1px solid var(--line);position:relative}
@@ -439,6 +449,9 @@ body.resizing{cursor:col-resize;user-select:none}
 body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
 .c-rec{font-variant-numeric:tabular-nums;text-align:right;padding-right:14px}
 .c-rec .unknown{opacity:.3}
+/* a count that came from the work's best movement rather than from the work: it is
+   a floor, not a measurement, and it should not read like one. */
+.c-rec .derived{opacity:.62;border-bottom:1px dotted currentColor}
 
 /* The other names a work goes by, each with the source that uses it. Quiet: this is
    context, not a correction, and none of these spellings is the wrong one. */
