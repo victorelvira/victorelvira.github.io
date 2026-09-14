@@ -88,7 +88,7 @@ const PAINTERS = [
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
 ];
 const DATA_V = "1.11.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 00:12";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const BUILD_AT = "2026-09-15 00:18";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
