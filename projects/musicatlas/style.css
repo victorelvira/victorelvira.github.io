@@ -102,6 +102,12 @@ body{font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:va
 #facets .fg{display:flex;gap:5px;align-items:center;flex-wrap:nowrap}
 #facets .fg > span.lbl{font-size:10px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--faint);font-weight:700}
+/* the absence, drawn as an absence: present and clickable, but never competing for the
+   eye with a value somebody actually recorded. */
+#facets .chip[data-v^="\2205"]{color:var(--faint);font-style:italic}
+#facets .chip[data-v^="\2205"][aria-pressed=true]{color:var(--hot);font-style:normal}
+#facets .fg-over{color:var(--faint);font-size:10.5px;font-style:italic;white-space:nowrap;
+  padding-left:2px}
 .chip-sep{width:1px;align-self:stretch;margin:2px;background:var(--line);flex:0 0 1px}
 
 /* content area scrolls, the chrome does not */

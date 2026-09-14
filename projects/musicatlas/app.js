@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.29.0";
-const BUILD_AT = "2026-09-14 21:16";
+const DATA_V = "0.29.1";
+const BUILD_AT = "2026-09-14 21:22";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -223,24 +223,52 @@ const DURATION_BANDS=[["under 3 min",0,180],["3 to 10 min",180,600],
                       ["10 to 30 min",600,1800],["over 30 min",1800,1e9]];
 const PERIOD_OF = w => { const c=COMPOSERS.find(x=>x.slug===w.composer_slug);
   return c ? [period(c)] : []; };
+/* THE CHIPS PARTITIONED AND THE GAP WAS STILL INVISIBLE.
+   Every rail counted correctly: Kind's eleven values plus the works with no Kind come to
+   exactly 15 083. But a facet whose `get` returns [] produces no chip, so the 2 698 works
+   with no Kind at all (18 %), the 3 274 with no Forces (22 %) and the 6 158 with no key
+   (41 %) were unreachable and, worse, unmentioned. A reader counting the chips concluded
+   the catalogue was smaller than it is and could not ask why.
+
+   This is artatlas's lesson arriving by a gentler road (`artatlas/NEXT.md`: *"a default
+   that hides a gap is worse than a gap"*). There the gap was filled with a wrong default,
+   `kind || "museum"`, and three of four chips lied. Here nothing lies, the absence simply
+   had no name. So it gets one, and it is selectable like any other value, because "show me
+   what we do not know about" is a real question in a catalogue that publishes its gaps.
+   `gap:` is opt-in: "Also" is a list of flags, and a work with no flags is not a work
+   whose flags are unknown. 2026-09-14. */
+const NOT_STATED = "\u2205 not stated";
 const FACETS=[
-  {id:"form_group",label:"Kind",get:w=>w.form_group?[w.form_group]:[]},
-  {id:"forces",label:"Forces",get:w=>w.forces?[w.forces]:[],order:()=>FORCES_ORDER},
-  {id:"period",label:"Period",get:PERIOD_OF,order:()=>PERIOD_ORDER},
+  {id:"form_group",label:"Kind",get:w=>w.form_group?[w.form_group]:[],gap:true},
+  {id:"forces",label:"Forces",get:w=>w.forces?[w.forces]:[],order:()=>FORCES_ORDER,gap:true},
+  {id:"period",label:"Period",get:PERIOD_OF,order:()=>PERIOD_ORDER,gap:true},
   /* Where the composer's own catalogue puts it. Not our derivation and not Wikipedia's
      invention: for Handel every one of these falls in a contiguous HWV range, so the
      grouping is Baselt's. Only composers whose list article actually partitions them
      have it, which is why the chip count is smaller than the corpus. */
-  {id:"section",label:"As catalogued",get:w=>w.ls?[w.ls]:[]},
+  /* CAPPED, because this axis is one composer's catalogue and the rail was showing
+     everybody's at once: 107 chips, 16 031 px of a 23 100 px rail, so reaching Length or
+     Mode meant scrolling past every Handel subsection down to the ones holding a single
+     work. Worse than long, it was a category error, Handel's "Odes and masques" standing
+     beside Haydn's "Trios for baryton" as though they were one taxonomy. Picking a
+     composer narrows the pool and the rail becomes that composer's own ordering, which is
+     what the field means, so the cap says so rather than silently truncating. */
+  /* No cap once a single composer is chosen: the rail is then that composer's own
+     catalogue and showing all of it is the point of the axis. The widest is Brahms at 30.
+     The note has to know this too, or it goes on telling a reader who has already picked
+     Handel to pick a composer. */
+  {id:"section",label:"As catalogued",get:w=>w.ls?[w.ls]:[],gap:true,
+   limit:()=>state.comp.size===1?0:10,
+   over:n=>`${n} more, pick a composer to see theirs`},
   /* Not shown as a chip rail: 100 places against 15 083 works would be a wall of ones.
      It exists so the map can set it and the chip above the table can drop it. */
   {id:"place",label:"First heard at",get:w=>w.pp?[w.pp]:[],hidden:true,
    name:q=>(PLACES[q]||{}).label||q},
   {id:"length",label:"Length",get:w=>{const s=seconds(w); if(s==null) return [];
     const b=DURATION_BANDS.find(([,lo,hi])=>s>=lo&&s<hi); return b?[b[0]]:[]},
-    order:()=>DURATION_BANDS.map(b=>b[0])},
+    order:()=>DURATION_BANDS.map(b=>b[0]),gap:true},
   {id:"mode",label:"Mode",get:w=>{const k=val(w,"key"); if(!k) return [];
-    if(k==="various") return ["several keys"]; const p=keyParts(k); return p?[p.mode]:[]}},
+    if(k==="various") return ["several keys"]; const p=keyParts(k); return p?[p.mode]:[]},gap:true},
   {id:"flag",label:"Also",get:w=>{const o=[];
     if(w.audio) o.push("plays here");
     if(w.ar) o.push("on the Internet Archive");
@@ -270,7 +298,12 @@ function passes(w){
   if(state.f.key && state.f.key.size){ const p=keyParts(val(w,"key"));
     if(!p || !state.f.key.has(p.tonic+" "+p.mode)) return false; }
   return [...FACETS, SUBFACET].every(f=>{const want=state.f[f.id];
-    return !want||!want.size||f.get(w).some(v=>want.has(v));});
+    if(!want||!want.size) return true;
+    const vs=f.get(w);
+    /* the absence is a value you can select: a work with nothing on this axis matches
+       "not stated" and nothing else */
+    if(!vs.length) return want.has(NOT_STATED);
+    return vs.some(v=>want.has(v));});
 }
 const visible = () => WORKS.filter(w => isWork(w) && passes(w));
 
@@ -1206,15 +1239,24 @@ function mediaBlock(w){
 /* ---------- chrome ---------- */
 function railFor(f, pool, limit){
   const counts=new Map();
-  pool.forEach(w=>f.get(w).forEach(v=>counts.set(v,(counts.get(v)||0)+1)));
+  let gap=0;
+  pool.forEach(w=>{ const vs=f.get(w);
+    if(f.gap && !vs.length) gap++;
+    vs.forEach(v=>counts.set(v,(counts.get(v)||0)+1)); });
   if(!counts.size) return "";
   let items=[...counts.entries()];
   const order=f.order && f.order();
   items.sort(order ? (a,b)=>order.indexOf(a[0])-order.indexOf(b[0]) : (a,b)=>b[1]-a[1]);
+  limit = limit || (typeof f.limit === "function" ? f.limit() : f.limit);
+  const cut = limit ? Math.max(0, items.length - limit) : 0;
   if(limit) items=items.slice(0,limit);
+  /* last, and after the limit, so it is never one of the values a "top 10" cuts off and
+     never competes with them for a place in the rail */
+  if(gap) items.push([NOT_STATED, gap]);
   return `<span class="fg"><span class="lbl">${f.label}</span>`+
     items.map(([v,n])=>`<button class="chip" data-facet="${f.id}" data-v="${esc(v)}"
       aria-pressed="${!!(state.f[f.id]&&state.f[f.id].has(v))}">${esc(v)}<span class="n">${n}</span></button>`).join("")+
+    (cut && f.over ? `<span class="fg-over">${esc(f.over(cut))}</span>` : "")+
     `</span>`;
 }
 function renderFacets(){
