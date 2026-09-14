@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.23.2";
+const DATA_V = "0.25.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -34,8 +34,10 @@ const LABEL = {
   // German (Víctor checked) and renaming it to something blander would be inventing a worse
   // word for a thing that already has one. What was actually missing was not a translation: it
   // was the atlas explaining itself where somebody is looking. See the note under each row.
+  // ⚔️ for battles is Víctor's (2026-09-14); 🗓️ for the other events is provisional, a neutral mark
+  // for assassinations, attacks and massacres, where anything louder would be the wrong tone.
   what: { grave: "🪦 Grave", plaque: "🪧 Plaque", house: "🏠 House", statue: "🗿 Statue",
-          museum: "🏛 Museum", church: "⛪ Church" },
+          museum: "🏛 Museum", church: "⛪ Church", battle: "⚔️ Battle", event: "🗓️ Event" },
   // A Stolperstein is a plaque; what differs is where it is mounted. Grouped, and still tellable
   // apart: the distinction appears only when there are plaques to tell apart.
   mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "Not a plaque" },
@@ -43,7 +45,7 @@ const LABEL = {
          power: "Power", faith: "Faith", sport: "Sport", trade: "Trade",
          other: "Other trade", nobody: "No person named" },
   verb: { born: "was born", lived: "lived", worked: "worked", died: "died", buried: "is buried",
-          commemorated: "is remembered", built: "built it", exhibited: "is exhibited" },
+          commemorated: "is remembered", built: "built it", exhibited: "is exhibited", happened: "happened" },
   // The chip carries the SAME mark the map draws on a pin holding one thing (VERB_MARK below):
   // the filter row teaches you to read the map instead of being a second vocabulary.
   //
@@ -54,7 +56,7 @@ const LABEL = {
   // consistency.
   verbChip: { born: "🌱 born", lived: "🔑 lived", worked: "🛠️ worked", died: "🕯️ died",
               buried: "⚱️ buried", commemorated: "💐 remembered", built: "📐 built",
-              exhibited: "🖼️ exhibited" },
+              exhibited: "🖼️ exhibited", happened: "🗓️ happened" },
 };
 /* ── the interface explaining itself ─────────────────────────────────────────────────────────
  * Víctor, who built this atlas, asked what a Stolperstein was. If the author does not know the
@@ -75,6 +77,8 @@ const HELP = {
     statue: "A statue, bust, obelisk or memorial standing outdoors because of them.",
     museum: "A museum: one about them, or one holding their work.",
     church: "A church or chapel that holds them.",
+    battle: "Where a battle was fought. A battlefield is an area, not a spot: the pin marks where Wikidata places it.",
+    event: "Where something happened that history remembers: an assassination, a terrorist attack, a massacre.",
   },
   access: {
     "open-air": "Out in the open. No door, no ticket, no hours: you can walk up to it right now.",
@@ -96,6 +100,7 @@ const HELP = {
     died: "They died here.", buried: "They are buried here.",
     commemorated: "They are remembered here, without the source telling us what happened here.",
     built: "They built or designed it.", exhibited: "Their work hangs here.",
+    happened: "Not a person's trace: the place where a battle or an event took place.",
   },
 };
 
@@ -233,7 +238,8 @@ const CELL = 54;        // px: the grain of the aggregation
 const PALETTE = {
   dom: {}, // from the CSS variables, per domain
   verb: { born: "#5f8f4e", lived: "#3d6a86", worked: "#b08d3f", died: "#7c3f3f",
-          buried: "#6b6250", commemorated: "#9a958a", built: "#8a7250", exhibited: "#7a5a8a" },
+          buried: "#6b6250", commemorated: "#9a958a", built: "#8a7250", exhibited: "#7a5a8a",
+          happened: "#5a4a3a" },
   access: { "open-air": "#5a6b57", hours: "#b08d3f", "outside-only": "#3d6a86",
             gone: "#a3552f", unknown: "#c3bdb0" },
   marking: { museum: "#3d6a86", plaque: "#b08d3f", monument: "#7c4a4a", tomb: "#6b6250",
@@ -244,7 +250,7 @@ const PALETTE = {
 // thing twice. 💐 for `remembered` is Víctor's call over my objection that a bouquet is an act of
 // mourning rather than a record of one: he is right that it is the gesture the thing represents.
 const VERB_MARK = { born: "🌱", lived: "🔑", worked: "🛠️", died: "🕯️", buried: "⚱️",
-                    commemorated: "💐", built: "📐", exhibited: "🖼️" };
+                    commemorated: "💐", built: "📐", exhibited: "🖼️", happened: "🗓️" };
 
 const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const domColor = (d) => cssVar("--dom-" + (VOCAB.dom?.[d] ?? "other")) || "#9a958a";
@@ -342,7 +348,7 @@ function personRow(r, headAccess) {
                  mk !== "unknown" && mk !== what ? (LABEL.marking[mk] || mk) : null]
                 .filter(Boolean).join(" · ");
   const links = `<div class="lk">` +
-    `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(r.qid)}"` +
+    `<a class="wp-link" data-q="${esc(r.qid)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(r.qid)}"` +
     ` target="_blank" rel="noopener">Wikipedia</a> · ` +
     `<a href="https://www.wikidata.org/wiki/${esc(r.qid)}" target="_blank" rel="noopener">Wikidata</a></div>`;
   return `<li class="pop-person" data-qid="${esc(r.qid)}">${th}<div class="wk">` +
@@ -398,7 +404,7 @@ function sitePopup(siteIdx, rows) {
   // What the plaque says, fetched when the card opens (build_inscriptions.py, 0.5° tiles).
   const ins = kind === "plaque" ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>`
     // a museum's photo, kind and website, fetched the same way (build.py, culture/data/mus/)
-    : kind === "museum" || kind === "statue" ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
+    : ["museum", "statue", "battle", "event"].includes(kind) ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
   const where = whereOf(s);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
     (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
@@ -407,6 +413,7 @@ function sitePopup(siteIdx, rows) {
 }
 
 const lifeStr = (r) => r.born == null && r.died == null ? ""
+  : r.qid.startsWith("ev:") ? (r.born < 0 ? `${-r.born} BC` : `${r.born}`)     // an event has a year, not a life
   : `${r.born ?? "?"}–${r.died ?? "?"}`;
 
 /* ── refresh: filter → quota → draw (CHASSIS §2, DECISIONS D6) ── */
@@ -842,7 +849,7 @@ function indexPeople() {
   }
 }
 
-const WHAT_ICON = { grave: "🪦", plaque: "🪧", house: "🏠", statue: "🗿",
+const WHAT_ICON = { battle: "⚔️", event: "🗓️", grave: "🪦", plaque: "🪧", house: "🏠", statue: "🗿",
                     museum: "🏛", church: "⛪" };
 
 function openPerson(qid) {
@@ -880,7 +887,7 @@ function openPerson(qid) {
       `${countries.size > 1 ? ` in ${countries.size} places` : ""}</div>` +
       `<div class="sh-links">` +
       (qid.startsWith("op") || qid.startsWith("mus:") ? "" :
-        `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(qid)}" target="_blank" rel="noopener">Wikipedia</a> · ` +
+        `<a class="wp-link" data-q="${esc(qid)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(qid)}" target="_blank" rel="noopener">Wikipedia</a> · ` +
         `<a href="https://www.wikidata.org/wiki/${esc(qid)}" target="_blank" rel="noopener">Wikidata</a>`) +
       // The other atlas. Same person, same QID, a different question about them, where their work
       // hangs rather than where they lie. The link only appears for the painters it knows.
@@ -889,7 +896,8 @@ function openPerson(qid) {
           ` target="_blank" rel="noopener" title="Their paintings, on the Atlas of Painting">` +
           `🖼 Their paintings</a>` : "") +
       `</div></div></div>` +
-      `<div class="sh-actions"><button type="button" id="sh-fit">🗺 Frame them all</button></div>` +
+      `<div class="sh-actions"><button type="button" id="sh-fit">🗺 Where they were</button>` +
+      `<button type="button" id="sh-fit-all">🌍 Everything</button></div>` +
       `<ul class="sh-list">${items}</ul>`;
 
     $("sheet").hidden = false;
@@ -899,15 +907,32 @@ function openPerson(qid) {
       closeSheet();
       map.setView([SITES[r.site][S_LAT], SITES[r.site][S_LON]], 16);
     }));
-    const fit = $("sh-fit");
-    if (fit) fit.addEventListener("click", () => {
-      const pts = sorted.filter((r) => !(r.flags & F_PLACELESS))
-                        .map((r) => [SITES[r.site][S_LAT], SITES[r.site][S_LON]]);
-      if (!pts.length) return banner("Nothing of theirs can be pinned.");
+    // "Frame them all" framed every trace, and a person with statues on four continents (Chopin: 29
+    // homages, from Buenos Aires to Tallinn) came out as the whole planet at zoom 1, which looked
+    // like the button did nothing (Víctor, 2026-09-13). The first button frames where they actually
+    // WERE (born, lived, worked, died, buried); the second frames everything, homages included.
+    const frame = (rows, emptyMsg) => {
+      const pts = rows.filter((r) => !(r.flags & F_PLACELESS))
+                      .map((r) => [SITES[r.site][S_LAT], SITES[r.site][S_LON]]);
+      if (!pts.length) return banner(emptyMsg);
       closeSheet();
       if (pts.length === 1) map.setView(pts[0], 16);
-      else map.fitBounds(L.latLngBounds(pts), { padding: [60, 60] });
-    });
+      // The margin is at most a sixth of the map. A fixed 60 px was a third of a phone's width, and on a
+      // map squeezed short by a large list it exceeded the map itself, and Leaflet answered zoom 19.
+      else {
+        const sz = map.getSize();
+        const pad = Math.max(8, Math.min(narrow() ? 18 : 60, Math.floor(Math.min(sz.x, sz.y) / 6)));
+        map.fitBounds(L.latLngBounds(pts), { padding: [pad, pad], maxZoom: 17 });
+      }
+    };
+    const was = sorted.filter((r) => VERBS_PRESENT.includes(VOCAB.verb[r.verb]));
+    const fit = $("sh-fit"), fitAll = $("sh-fit-all");
+    if (fit) fit.addEventListener("click", () =>
+      was.length ? frame(was, "Nothing of theirs can be pinned.")
+                 : frame(sorted, "Nothing of theirs can be pinned."));
+    if (fitAll) fitAll.addEventListener("click", () => frame(sorted, "Nothing of theirs can be pinned."));
+    if (fitAll && !was.length) fit.textContent = "🗺 Frame them";
+    if (fitAll && was.length === sorted.length) fitAll.hidden = true;
   });
 }
 function closeSheet() { $("sheet").hidden = true; $("sheet").dataset.kind = ""; }
@@ -942,6 +967,40 @@ function showPlaceSheet(render) {
 }
 $("sheet-close").addEventListener("click", closeSheet);
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
+
+/* ── "Wikipedia" goes to a Wikipedia ────────────────────────────────────────────────────────────
+ * The link used Special:GoToLinkedPage for the reader's language, which works only when that article
+ * exists. For everybody without one (people whose only article is in Czech or Bashkir, most local
+ * museums and statues) it landed on a Wikidata error page, and Víctor, reading in Spanish,
+ * hit it constantly. Now the click asks Wikidata which articles exist and opens the best one: the
+ * reader's language, then English, then whichever exists; Wikidata itself only when none does.
+ * A blank tab is opened inside the click, so no popup blocker stops it, and pointed afterwards. */
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a.wp-link[data-q]");
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
+  e.preventDefault();
+  const q = a.dataset.q;
+  const tab = window.open("", "_blank");
+  const go = (url) => { if (tab) { tab.opener = null; tab.location.href = url; } else location.href = url; };
+  fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${encodeURIComponent(q)}` +
+        `&props=sitelinks/urls&format=json&origin=*`)
+    .then((r) => r.json())
+    .then((d) => {
+      const links = ((d.entities || {})[q] || {}).sitelinks || {};
+      const isWp = (k) => /^[a-z_]+wiki$/.test(k) && !/^(commons|species|meta|wikidata|mediawiki|sources|wikimania)wiki$/.test(k);
+      // After the reader's language and English, the large Wikipedias written by people, in that
+      // order; then anything. The first version took whichever came first alphabetically, and sent
+      // an English reader of the Museo Marítimo del Cantábrico to the Esperanto article, ahead of
+      // the Spanish one. Bot-built wikis (Cebuano, Waray, Egyptian Arabic) are never preferred.
+      const ORDER = [LANG, "en", "es", "fr", "de", "it", "pt", "ca", "eu", "gl", "nl", "pl", "ru", "uk", "cs",
+                     "sv", "da", "no", "fi", "hu", "ro", "el", "tr", "ar", "fa", "he", "ja", "zh", "ko"];
+      const pick = ORDER.map((l) => links[`${l}wiki`]).find(Boolean) ||
+        Object.entries(links).filter(([k]) => isWp(k) && !/^(ceb|war|arz)wiki$/.test(k)).map(([, v]) => v)[0] ||
+        Object.entries(links).filter(([k]) => isWp(k)).map(([, v]) => v)[0];
+      go(pick ? pick.url : `https://www.wikidata.org/wiki/${q}`);
+    })
+    .catch(() => go(a.href));
+});
 
 /* ── a picture, large ─────────────────────────────────────────────────────────────────────────
  * Every thumbnail is a Commons file. Tapped, it opens at 1 280 px with a link to its Commons page,
@@ -985,15 +1044,19 @@ function fillInscriptions(root) {
       if (!x) { box.remove(); return; }
       // A statue from OpenStreetMap says when it was put up, what it is made of, who made it, and
       // what it says; and it says where it came from, because ODbL asks for that and so do we.
-      const facts = [x.date ? `put up ${esc(x.date)}` : "", x.material ? esc(x.material) : "",
-                     x.by ? `by ${esc(x.by)}` : ""].filter(Boolean).join(" · ");
+      const when = typeof x.date === "number" ? (x.date < 0 ? `${-x.date} BC` : `${x.date}`) : (x.date ? `put up ${esc(x.date)}` : "");
+      const facts = [when, x.material ? esc(x.material) : "", x.by ? `by ${esc(x.by)}` : "",
+                     x.marked ? `${x.marked === 1 ? "a memorial recalls it" : x.marked + " memorials recall it"}` : ""].filter(Boolean).join(" · ");
       box.innerHTML = (x.img ? pic(x.img, "mx-img", 480, "") : "") +
         `<div class="mx-t">${x.k ? `<div class="mx-k">${esc(x.k)}</div>` : ""}` +
         (facts ? `<div class="mx-f">${facts}</div>` : "") +
+        // D23: a battlefield, or a point that is only its town's centre, is an area; saying so is
+        // the difference between a pin and a promise
+        (x.approx ? `<div class="mx-f approx">📍 an area, not an exact spot</div>` : "") +
         (x.ins ? `<blockquote class="ins-q">${esc(x.ins)}</blockquote>` : "") + `<div class="lk">` +
         [x.osm ? `<a href="https://www.openstreetmap.org/${esc(x.osm)}" target="_blank" rel="noopener">OpenStreetMap</a>` : "",
          x.web ? `<a href="${esc(x.web)}" target="_blank" rel="noopener">Website</a>` : "",
-         x.wd ? `<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(x.wd)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
+         x.wd ? `<a class="wp-link" data-q="${esc(x.wd)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(x.wd)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
          x.wd ? `<a href="https://www.wikidata.org/wiki/${esc(x.wd)}" target="_blank" rel="noopener">Wikidata</a>` : ""]
           .filter(Boolean).join(" · ") + `</div></div>`;
       const img = box.querySelector("img[data-file]");
@@ -1024,9 +1087,14 @@ let panelPlan = [], panelCursor = 0, panelIO = null;
 const folded = new Set();
 let panelSort = "place";
 
+// While the reader resizes the list, the map shrinks or grows, and a list that follows the map's
+// bounds loses rows exactly when the reader asked for MORE list (Víctor, 2026-09-13). So a resize
+// freezes the area the list covers; the first time the reader moves the map themselves, the list
+// follows the map again.
+let listArea = null;
 function renderPanel() {
   if (panelIO) panelIO.disconnect();
-  const b = map.getBounds();
+  const b = listArea || map.getBounds();
   const vis = [];
   for (const pl of places) {
     const s = SITES[pl.siteIdx];
@@ -1181,7 +1249,7 @@ const SUGGEST_MAX = 8;
 function findEntities(q) {
   const people = [];
   for (const [qid, rows] of byPerson) {
-    if (!rows[0]._s) continue;
+    if (!rows[0]._s || !qid.startsWith("Q")) continue;       // museums, plaques and events are places
     if (!deacc(rows[0].name).includes(q)) continue;
     let rank = 0;
     for (const r of rows) if (r.rank > rank) rank = r.rank;
@@ -1221,7 +1289,7 @@ function renderSuggest(q) {
   box.innerHTML =
     (people.length ? `<li class="sg-h">People</li>` + people.map(pRow).join("") : "") +
     (places.length ? `<li class="sg-h">Places</li>` + places.map((pl) =>
-      `<li class="sg-place" data-site="${pl.i}"><span class="sg-th ph">⌖</span>` +
+      `<li class="sg-place" data-site="${pl.i}"><span class="sg-th ph">${WHAT_ICON[VOCAB.siteKind[SITES[pl.i][S_KIND]]] || "⌖"}</span>` +
       `<div class="wk"><div class="wt">${esc(pl.name)}</div></div></li>`).join("") : "");
   box.hidden = false;
 }
@@ -1324,6 +1392,7 @@ function buildTimeline(min, max) {
  * forgotten when you switch it off.
  */
 const meLayer = L.layerGroup().addTo(map);
+let resizingMap = false;
 /* ── the list's size, dragged ─────────────────────────────────────────────────────────────────
  * The grip on the panel's edge sets its width beside the map, or its height under it on a phone.
  * Remembered per layout in this browser only (a convenience, not state worth a URL). */
@@ -1346,6 +1415,7 @@ const meLayer = L.layerGroup().addTo(map);
   };
   grip.addEventListener("pointerdown", (e) => {
     drag = { x: e.clientX, y: e.clientY, moved: false };
+    if (!listArea) listArea = map.getBounds();          // what the list shows until the map is moved
     window.panelDragging = true;
     try { grip.setPointerCapture(e.pointerId); } catch (err) {}
     grip.classList.add("dragging"); document.body.classList.add("dragging-panel"); e.preventDefault();
@@ -1373,7 +1443,10 @@ const meLayer = L.layerGroup().addTo(map);
       apply(px);
     }
     if (px) save(px);
-    requestAnimationFrame(() => { map.invalidateSize({ pan: false }); refresh(); });
+    requestAnimationFrame(() => {
+      resizingMap = true; map.invalidateSize({ pan: false }); resizingMap = false;
+      refresh();
+    });
   };
   grip.addEventListener("pointerup", end); grip.addEventListener("pointercancel", end);
 })();
@@ -1464,6 +1537,10 @@ $("locate").addEventListener("click", () => {
 // Dragging the map is a statement that you want to look somewhere else. The dot keeps moving; the
 // map stops chasing it. Tapping the button again re-centres and resumes.
 map.on("dragstart", () => { if (meWatch != null && meFollow) { meFollow = false; meButton(); } });
+// Any real movement of the map ends a frozen list: the reader dragging or zooming, a flight they
+// asked for, the map following their location. `movestart` is exactly that: Leaflet's invalidateSize,
+// which is what a resize calls, fires move and moveend but never movestart.
+map.on("movestart", () => { if (!window.panelDragging && !resizingMap) listArea = null; });
 
 let bTimer = null;
 function banner(msg) {
@@ -1760,7 +1837,9 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
               if (!f) { deepState = "loaded"; settleIn(); return; }
               fetch("culture/data/" + f + "?v=" + DATA_V)
                 .then((r) => (r.ok ? r.json() : null))
-                .then((x) => { if (x) { absorb(x); cards(f.replace(/^atlas/, "people")); } })
+                // a file names its own card file, if it has people; the events have none, and asking
+                // for "people-events.json" by pattern was a 404 on every load
+                .then((x) => { if (x) { absorb(x); if (x.people) cards(x.people); } })
                 .catch(() => {})
                 .finally(next);
             };

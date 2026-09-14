@@ -258,6 +258,7 @@ img[data-file]{cursor:zoom-in}
 .card .mx-img{width:96px;height:72px;flex:0 0 96px;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
 .card .mx-k{font-size:12px;color:var(--ink-soft);text-transform:capitalize}
 .card .mx-f{font-size:11px;color:var(--stone);margin-top:1px}
+.card .mx-f.approx{color:var(--rust)}
 .card .mx .ins-q{margin:5px 0 3px}
 /* what the plaque says */
 .card .ins-q{margin:7px 0 2px;padding:6px 8px;background:#fff;border-left:3px solid var(--brass);
