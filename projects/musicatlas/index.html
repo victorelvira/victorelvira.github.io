@@ -7,7 +7,7 @@
 <meta name="description" content="A catalogue of classical music where every fact says how many sources back it.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vendor/leaflet.css">
-<link rel="stylesheet" href="style.css?v=0.28.1">
+<link rel="stylesheet" href="style.css?v=0.29.0">
 </head>
 <body>
 
@@ -62,7 +62,11 @@
   <div id="main">
     <div id="scroll"><div id="stage"></div></div>
     <div id="divider" title="drag to resize"></div>
-    <aside id="rec"><button class="close" aria-label="Close">×</button><div id="recbody"></div></aside>
+    <aside id="rec"><nav id="recnav" hidden><button class="rec-step" data-step="-1"
+        aria-label="Previous work" title="Previous work (left arrow)">‹</button><span
+        id="reccount"></span><button class="rec-step" data-step="1"
+        aria-label="Next work" title="Next work (right arrow)">›</button></nav><button
+        class="close" aria-label="Close">×</button><div id="recbody"></div></aside>
   </div>
 </div>
 
@@ -76,6 +80,6 @@
 
 <div id="tip" role="tooltip"></div>
 <script src="vendor/leaflet.js"></script>
-<script src="app.js?v=0.28.1"></script>
+<script src="app.js?v=0.29.0"></script>
 </body>
 </html>

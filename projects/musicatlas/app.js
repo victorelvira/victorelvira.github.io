@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.28.1";
-const BUILD_AT = "2026-09-14 15:33";
+const DATA_V = "0.29.0";
+const BUILD_AT = "2026-09-14 21:16";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
@@ -932,6 +932,53 @@ function alsoCalled(w){
    them, so the constant evaluated with two `undefined` holes in it. Nothing read it, so
    nothing failed, which is why it sat there for weeks. Removed 2026-09-12 along with the
    blind spot in scan_damage.py that could not see across a line ending. */
+/* PAGING THROUGH THE OPEN CARD, the way artatlas pages through an enlarged painting and
+   Batalla de Flores before it. Clicking a row, reading it, closing it and hunting for the
+   next row is three actions for what is one thought: "and the next one?".
+
+   THE SEQUENCE IS WHAT THE TABLE IS ACTUALLY DRAWING, read from the DOM rather than
+   recomputed. That is the whole trick, and it is why the order is right for free: the
+   sort, the filters, the composer picker, whether movements are shown, and the 300-row
+   limit are all already expressed in those rows. A second computation of "which works,
+   in what order" would be a second answer, and the two would drift. */
+const recSeq = () => [...document.querySelectorAll("#stage tbody tr[data-id]")]
+                       .map(tr => tr.dataset.id);
+function recNav(){
+  const nav = document.getElementById("recnav");
+  const seq = recSeq(), i = seq.indexOf(state.sel);
+  const many = seq.length > 1 && i >= 0;
+  nav.hidden = !many;
+  /* the gutter at the top of the card is only widened while the pager is actually there */
+  document.body.classList.toggle("rec-paged", many);
+  if(!many) return;
+  document.getElementById("reccount").textContent = `${i+1} / ${seq.length}`;
+  /* Walking off the end brings in the next chunk rather than wrapping: there are 15 083
+     works and the table draws 300, so wrapping at row 300 would quietly tell the reader
+     the catalogue ends there. Only the last step is disabled, and only once nothing is
+     left to load. */
+  const atEnd = i === seq.length - 1 && !document.getElementById("more");
+  nav.querySelector('[data-step="1"]').disabled = atEnd;
+  nav.querySelector('[data-step="-1"]').disabled = i === 0;
+  /* the analogue of preloading the next image: the claims live in a per-composer file,
+     so stepping onto a work by a composer we have not fetched would stall on the network
+     with the card already open. Fetch it now, while the reader is still reading this one. */
+  const nx = BYID.get(seq[i+1]);
+  if(nx && !LOADED.has(nx.composer_slug)) loadDetail(nx.composer_slug);
+}
+function moveRec(step){
+  const seq = recSeq(), i = seq.indexOf(state.sel);
+  if(i < 0) return;
+  if(step > 0 && i === seq.length - 1){
+    const more = document.getElementById("more");
+    if(!more) return;                      // genuinely the end of the list
+    state.limit += 300; renderStage();
+    const grown = recSeq();
+    if(grown.length > seq.length) return openRec(grown[i+1]);
+    return;
+  }
+  const next = seq[i + step];
+  if(next) openRec(next);
+}
 async function openRec(id){
   const w=BYID.get(id); if(!w) return; state.sel=id;
   /* the claims live in the composer's detail file, fetched the first time one of
@@ -1022,6 +1069,7 @@ function drawRec(row){
      ${mediaBlock(w)}
      <div class="links">${links}</div>`;
   document.body.classList.add("rec-open");
+  recNav();
   /* Leaflet caches the size of its box and cannot see CSS resize it. Opening the record
      panel narrows #main by 440px, and without this the map keeps drawing at the old
      width: tiles stop short of the edge and every pin sits where it used to be rather
@@ -1249,6 +1297,19 @@ function readHash(){
   document.querySelectorAll("#view-tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lens===state.lens));
   document.querySelectorAll("#subtabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.sub===state.sub));
 }
+/* ARROW KEYS, because a reader paging through records reaches for them before the mouse.
+   Not while typing: the filter box and the search field own their own arrow keys, and
+   stealing them would move the card while somebody is correcting a word. Escape closes,
+   which is what every other panel here already does. */
+document.addEventListener("keydown", e => {
+  if(!document.body.classList.contains("rec-open")) return;
+  const el = document.activeElement, tag = (el && el.tagName || "").toLowerCase();
+  if(tag === "input" || tag === "textarea" || tag === "select" || (el && el.isContentEditable)) return;
+  if(e.metaKey || e.ctrlKey || e.altKey) return;
+  if(e.key === "ArrowLeft"){ e.preventDefault(); moveRec(-1); }
+  else if(e.key === "ArrowRight"){ e.preventDefault(); moveRec(1); }
+  else if(e.key === "Escape"){ document.querySelector("#rec .close").click(); }
+});
 document.addEventListener("click",e=>{
   const t=e.target;
   const chip=t.closest("#facets .chip");
@@ -1307,6 +1368,8 @@ document.addEventListener("click",e=>{
     state.doubt=false; state.year=null;
     document.getElementById("q").value=""; document.getElementById("t-doubt").setAttribute("aria-pressed",false);
     return draw(); }
+  const step=t.closest("#rec .rec-step");
+  if(step){ e.stopPropagation(); return moveRec(+step.dataset.step); }
   if(t.closest("#rec .close")){ document.body.classList.remove("rec-open"); remapSoon();
     if(PLAYING){ AUDIO.pause(); PLAYING.classList.remove("on"); PLAYING=null; }
     state.sel=null; return renderStage(); }
