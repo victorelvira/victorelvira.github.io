@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.26.1";
+const DATA_V = "0.26.2";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -487,6 +487,7 @@ function drawMap() {
     // On a wide screen a pin does not open a card over the map: the list beside it goes to that place
     // and lights it (the Atlas of Painting's `revealMuseumInPanel`, D26). The popup stays bound for
     // the phone, where it is routed into the bottom sheet.
+    m.cell = c;
     m.on("click", (ev) => {
       if (narrow()) return;
       m.closePopup();
@@ -563,7 +564,13 @@ map.on("popupopen", (e) => {
   // came out bare.
   const bound = popup.getContent();
   const render = () => (typeof bound === "function" ? bound(popup._source) : bound);
-  if (narrow()) { map.closePopup(popup); showPlaceSheet(render); return; }
+  if (narrow()) {
+    map.closePopup(popup);
+    openCard = null;
+    const cell = popup._source && popup._source.cell;
+    openPlace = cell && cell.places.length === 1 ? placeKey(cell.places[0].siteIdx) : null;
+    showPlaceSheet(render); syncURL(); return;
+  }
   if (!narrow()) { map.closePopup(popup); return; }   // wide screen: the list is the card (revealInPanel)
   const wire = () => wirePopupBody(popup.getElement(), () => map.closePopup());
   wire();
@@ -894,7 +901,9 @@ const WHAT_ICON = { battle: "⚔️", event: "🗓️", grave: "🪦", plaque: "
 function openPerson(qid) {
   const rows = byPerson.get(qid);
   if (!rows || !rows.length) return;
-  openCard = qid; cardBack = null; renderPanelBack(); syncURL();
+  openCard = qid; cardBack = null; renderPanelBack();
+  if (narrow()) openPlace = null;          // on a phone the person's sheet replaces the place's
+  syncURL();
   sheetToken++;                      // a place card still waiting for people.json must not land here
   needPeople(() => {
     const r0 = rows[0];
@@ -985,8 +994,10 @@ function openPerson(qid) {
   });
 }
 function closeSheet() {
+  const wasPlace = $("sheet").dataset.kind === "place";
   $("sheet").hidden = true; $("sheet").dataset.kind = "";
   if (openCard) { openCard = null; syncURL(); }
+  if (wasPlace && openPlace) { openPlace = null; syncURL(); }
 }
 
 /* ── on a wide screen the person card lives IN the list panel (D26) ─────────────────────────────
@@ -994,7 +1005,8 @@ function closeSheet() {
  * The same #sheet element is moved into #panel and fills it, so every handler keeps working, the map
  * is never covered, and the list underneath keeps its scroll for "← Back to the list". Crossing the
  * breakpoint (a window resized) moves it back out. */
-let openCard = null, pendingCard = null, cardBack = null;
+let openCard = null, pendingCard = null, cardBack = null, openPlace = null, pendingPlace = null;
+const placeKey = (siteIdx) => `${SITES[siteIdx][S_LAT]},${SITES[siteIdx][S_LON]}`;
 function placeSheet() {
   const inPanel = !narrow();
   const host = inPanel ? $("panel") : document.body;
@@ -1005,6 +1017,17 @@ placeSheet();
 window.matchMedia("(max-width: 720px)").addEventListener("change", placeSheet);
 $("sheet-back").addEventListener("click", closeSheet);
 function tryPendingCard() {
+  if (pendingPlace) {
+    const pl = places.find((x) => placeKey(x.siteIdx) === pendingPlace);
+    if (pl) {
+      pendingPlace = null;
+      if (pendingCard || openCard) {
+        // a card is (or will be) on top: remember the place under it without closing the card
+        selectedSite = pl.siteIdx; openPlace = placeKey(pl.siteIdx);
+      } else if (narrow()) { openPlace = placeKey(pl.siteIdx); showPlaceSheet(() => sitePopup(pl.siteIdx, pl.vis || pl.rows)); }
+      else revealInPanel({ places: [pl] });
+    }
+  }
   if (pendingCard && byPerson.has(pendingCard)) { const q = pendingCard; pendingCard = null; openPerson(q); }
 }
 
@@ -1020,6 +1043,8 @@ function revealInPanel(c) {
   if (!$("sheet").hidden) closeSheet();
   renderPanelBack();
   selectedSite = sites.length === 1 ? sites[0] : null;
+  openPlace = selectedSite == null ? null : placeKey(selectedSite);
+  syncURL();
   if (panelSort !== "place") { panelSort = "place"; $("pv-sort").value = "place"; }
   sites.forEach((i) => folded.delete(i));
   listArea = null;
@@ -1099,7 +1124,7 @@ function pickWikipedia(links) {
   return pick ? pick.url : null;
 }
 
-// RESOLVED BEFORE THE TAP (0.26.1). 0.23.3 asked Wikidata on the tap and, when no Wikipedia had an
+// RESOLVED BEFORE THE TAP (0.26.2). 0.23.3 asked Wikidata on the tap and, when no Wikipedia had an
 // article (a plaque in Buenos Aires, most small museums and statues), opened Wikidata under a link
 // that said "Wikipedia". Víctor: "el link de Wikipedia lleva a Wikidata… gran decepción". Now every
 // "Wikipedia" link is looked up as soon as it appears on screen, 50 items per request: it becomes a
@@ -1336,7 +1361,7 @@ function appendChunk() {
   }
 }
 $("worklist").addEventListener("click", (e) => {
-  if (e.target.closest(".grp-card-x")) { selectedSite = null; renderPanel(); return; }
+  if (e.target.closest(".grp-card-x")) { selectedSite = null; openPlace = null; renderPanel(); syncURL(); return; }
   if (e.target.closest("li.grp-card")) return;            // its links and pictures act on their own
   const g = e.target.closest("li.grp");
   if (g) { const i = +g.dataset.site; folded.has(i) ? folded.delete(i) : folded.add(i); renderPanel(); return; }
@@ -1848,7 +1873,10 @@ function viewToURL() {
   if (state.topN) p.set("top", String(state.topN));
   if (state.q) p.set("q", state.q);
   if (state.person) p.set("who", state.person);
-  if (openCard) p.set("card", openCard);        // the person card open, so a reload comes back to it
+  // the place tapped and the person card open, so a reload, a shared link and the back button come back
+  // to them; while one is still waiting for its file, the URL keeps asking for it
+  if (openPlace || pendingPlace) p.set("place", openPlace || pendingPlace);
+  if (openCard || pendingCard) p.set("card", openCard || pendingCard);
   if (state.colorBy !== "dom") p.set("by", state.colorBy);
   if (tableOn) p.set("view", "table");
   if (tlChosen && (state.yearMin > TL_MIN || state.yearMax < TL_MAX))
@@ -1872,12 +1900,35 @@ function viewToURL() {
   return p.toString();
 }
 
+/* THE BACK BUTTON UNDOES (0.26.2). Víctor, 2026-09-14, from Batalla de Flores: people press back a lot,
+ * so each ACTION must be a step in the history and back must undo it instead of leaving the site.
+ * An action is anything that changes the URL other than the map's position: a filter, a card opened
+ * or closed, a place tapped, the table, the fold. Those PUSH a step. Moving the map REPLACES the
+ * current step (a hundred pans are not a hundred backs), and so do the continuous gestures: typing in
+ * the filter (each letter extends the last) and dragging the timeline (one step per drag). */
+let lastYrChange = 0, replaceUntil = 0;
 function syncURL() {
   if (!urlBooted) return;             // never write the home view over the link being restored
   clearTimeout(urlTimer);
   urlTimer = setTimeout(() => {
     const qs = viewToURL();
-    history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+    const now = new URLSearchParams(qs), was = new URLSearchParams(location.search);
+    now.delete("m"); was.delete("m");
+    const changed = [...new Set([...now.keys(), ...was.keys()])].filter((k) => now.get(k) !== was.get(k));
+    let push = changed.length > 0;
+    if (push && changed.every((k) => k === "q")) {
+      const a = was.get("q") || "", b = now.get("q") || "";
+      // still typing: one letter more or fewer. Starting a search and clearing it are steps.
+      if (a && b && (a.startsWith(b) || b.startsWith(a))) push = false;
+    }
+    if (changed.includes("yr")) {
+      if (changed.length === 1 && Date.now() - lastYrChange < 1500) push = false;   // still dragging
+      lastYrChange = Date.now();
+    }
+    // Restoring a step (the back button itself) must never write a new one.
+    if (Date.now() < replaceUntil) push = false;
+    const url = location.pathname + (qs ? "?" + qs : "") + location.hash;
+    if (push) history.pushState(null, "", url); else history.replaceState(null, "", url);
   }, 250);
 }
 
@@ -1898,7 +1949,15 @@ function applyURL() {
   state.q = deacc(p.get("q") || "");
   state.person = p.get("who") || null;
   pendingCard = p.get("card") || null;          // opened once its person has arrived (tryPendingCard)
-  if (!pendingCard && openCard) closeSheet();
+  pendingPlace = p.get("place") || null;
+  if (pendingCard === openCard) pendingCard = null;
+  // (a place already chosen is revealed again all the same: the list was redrawn from the top)
+  // a step back to where no card was open closes it; to where no place was chosen unselects it
+  if (!p.get("card") && openCard) closeSheet();
+  if (!p.get("place") && openPlace) {
+    openPlace = null; selectedSite = null;
+    if ($("sheet").dataset.kind === "place") closeSheet();
+  }
   state.colorBy = ["dom", "verb", "access"].includes(p.get("by")) ? p.get("by") : "dom";
   if (state.person) {
     const rows = byPerson.get(state.person);
@@ -1931,6 +1990,7 @@ function applyURL() {
 // optional: `colorBy` decides what the icons are made of.
 window.addEventListener("popstate", () => {
   if (!VOCAB.what) return;
+  replaceUntil = Date.now() + 1200;
   const where = applyURL();
   if (where) map.setView(where[0], where[1], { animate: false });
   buildPlaces();
