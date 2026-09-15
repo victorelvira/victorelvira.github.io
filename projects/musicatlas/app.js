@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.37.0";
-const BUILD_AT = "2026-09-15 14:58";
+const DATA_V = "0.44.0";
+const BUILD_AT = "2026-09-15 19:59";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -19,6 +19,22 @@ let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
    `ADJ` es solo la parte de la que se sigue que se trataron, que es la única con la que
    se pueden contar pasos entre dos personas. Ver harvest_people.py. */
 let PEOPLE = {}, PLINKS = [], ADJ = new Map();
+
+/* ---------- idioma ----------
+   El atlas está escrito en INGLÉS y se traduce en tiempo de ejecución, con la propia
+   cadena inglesa como clave: lo que el diccionario no cubra se queda en inglés en vez de
+   salir en blanco. Copiado de artatlas/app.js, que lleva tres idiomas con esta forma.
+
+   Hoy el diccionario está VACÍO a propósito: `t()` devuelve su argumento y no cambia nada.
+   Está aquí porque el coste de ponerlo mientras se toca este código es cero y el de
+   ponerlo después es volver a pasar por las 176 cadenas. El día que haya un `es`, es
+   rellenar un fichero.
+
+   Y ojo con lo que NO es interfaz: las formas ("symphony and overture"), las plantillas
+   ("solo keyboard") y los 560 nombres de instrumento son DATOS, y traducirlos es otro
+   trabajo, del tamaño del `museum_i18n.json` de artatlas. `t()` no los toca. 2026-09-15. */
+let DICT = null;
+const t = s => (DICT && DICT[s]) || s;
 function buildAcquaintance(){
   ADJ=new Map();
   const add=(x,y)=>{ if(!ADJ.has(x)) ADJ.set(x,new Set()); ADJ.get(x).add(y); };
@@ -352,10 +368,10 @@ const mark=(w,n)=>{const f=F(w,n);
    qué y por qué, con las palabras de la fuente a la izquierda. Víctor, 2026-09-15. */
 function mergedHTML(w,name){ const f=F(w,name); const m=f&&f.merged;
   if(!m||!m.length) return "";
-  return `<details class="merged"><summary>${m.length} nombre${m.length>1?"s":""} `
-    + `agrupado${m.length>1?"s":""} en este campo</summary><ul>`
+  return `<details class="merged"><summary>${m.length} `
+    + `${t(m.length>1?"names grouped in this field":"name grouped in this field")}</summary><ul>`
     + m.map(x=>`<li><span class="mfrom">${esc(x.from)}</span> → <span class="mto">${esc(x.to)}</span>`
-        + `<span class="mwhy">${esc(x.why)}</span></li>`).join("")
+        + `<span class="mwhy">${esc(t(x.why))}</span></li>`).join("")
     + `</ul></details>`; }
 function tipHTML(w,name){ const f=F(w,name); if(!f) return "";
   const lines=Object.entries(f.s||{}).map(([s,raw])=>`<b>${s}</b>: ${esc(String(raw).slice(0,130))}`
@@ -634,9 +650,9 @@ function reach(w, key, dir){
   const n = w[key]; if(!n) return "";
   const from = dir==="up" ? BYID.get(w[key.replace(/[ab]$/,"w")]) : null;
   const where = dir==="up"
-    ? `en ${from?titleOf(from):"el conjunto"}, que la contiene`
-    : `repartidas entre sus partes`;
-  return `<span class="reach" title="${esc(n+" "+(key[0]==="s"?"partitura(s)":"grabacion(es)")+" "+where)}">`
+    ? `${t("in")} ${from?titleOf(from):t("the set")}, ${t("which contains it")}`
+    : t("spread across its parts");
+  return `<span class="reach" title="${esc(n+" "+(key[0]==="s"?t("score(s)"):t("recording(s)"))+" "+where)}">`
        + `${dir==="up"?"↑":"↓"}${n}</span>`;
 }
 function scoreCell(w){
@@ -1104,25 +1120,24 @@ function openComposer(slug){
     `<p class="whose"><span class="dot" style="background:${compColour(slug)}"></span>
        ${esc(c.name)}<span class="yrs"> ${c.born||"?"}-${c.died||"?"}</span></p>
      <h2>${esc(c.name)}</h2>
-     <p class="sub">${esc(period(c))}${me.born_place?` · nació en ${esc(me.born_place)}`:""}`
-       +`${me.died_place?` · murió en ${esc(me.died_place)}`:""}</p>
+     <p class="sub">${esc(period(c))}${me.born_place?` · ${t("born in")} ${esc(me.born_place)}`:""}`
+       +`${me.died_place?` · ${t("died in")} ${esc(me.died_place)}`:""}</p>
      ${me.image?`<p class="portrait"><a href="${esc(me.image)}" target="_blank" rel="noopener">
-        ver el retrato en Wikimedia Commons ↗</a><span class="why">se enlaza, no se copia</span></p>`:""}
+        ${t("see the portrait on Wikimedia Commons")} ↗</a><span class="why">${t("we link, we never copy")}</span></p>`:""}
      <p class="chips">
-       <span class="ch">${ws.length} obras</span>
-       ${scores?`<span class="ch">${scores} partituras</span>`:""}
-       ${play?`<span class="ch">${play} con audio</span>`:""}
+       <span class="ch">${ws.length} ${t("works")}</span>
+       ${scores?`<span class="ch">${scores} ${t("scores")}</span>`:""}
+       ${play?`<span class="ch">${play} ${t("with audio")}</span>`:""}
        ${(c.catalogues||[]).length?`<span class="ch">${esc((c.catalogues||[]).join(" · "))}</span>`:""}
-       ${(me.instruments||[]).length?`<span class="ch">tocaba ${esc(me.instruments.slice(0,4).join(", "))}</span>`:""}
+       ${(me.instruments||[]).length?`<span class="ch">${t("played")} ${esc(me.instruments.slice(0,4).join(", "))}</span>`:""}
      </p>
-     <p><button class="goworks" data-conly="${esc(slug)}">ver sus ${ws.length} obras en el catálogo</button></p>
-     ${knew.length?`<h4 class="sec">Personas que trató, según consta</h4><ul class="rel">${list(knew)}</ul>`:""}
-     ${bad.length?`<h4 class="sec">Relaciones que la fuente afirma y no pudieron ocurrir</h4>
+     <p><button class="goworks" data-conly="${esc(slug)}">${t("see their")} ${ws.length} ${t("works in the catalogue")}</button></p>
+     ${knew.length?`<h4 class="sec">${t("People they knew, as recorded")}</h4><ul class="rel">${list(knew)}</ul>`:""}
+     ${bad.length?`<h4 class="sec">${t("Relations the source asserts that cannot have happened")}</h4>
         <ul class="rel bad">${list(bad)}</ul>`:""}
-     ${infl.length?`<h4 class="sec">Influencias</h4>
-        <p class="why">Que conste una influencia no quiere decir que se vieran nunca:
-        Bach se sabía a Vivaldi por las partituras.</p><ul class="rel">${list(infl)}</ul>`:""}
-     ${reach.length?`<h4 class="sec">A cuántos pasos quedan los demás del atlas</h4>
+     ${infl.length?`<h4 class="sec">${t("Influences")}</h4>
+        <p class="why">${t("A recorded influence does not mean they ever met: Bach knew Vivaldi from the scores.")}</p><ul class="rel">${list(infl)}</ul>`:""}
+     ${reach.length?`<h4 class="sec">${t("How many steps away the others in the atlas are")}</h4>
         <ul class="rel steps">${reach.map(r=>`<li><b>${r.path.length-1}</b>
           <button class="plink" data-comp-open="${esc(r.c.slug)}">${esc(r.c.name)}</button>
           <span class="why">${r.path.map(x=>esc((PEOPLE[x]||{}).label||x)).join(" → ")}</span></li>`).join("")}</ul>`:""}`;
@@ -1132,11 +1147,35 @@ function openComposer(slug){
   remapSoon();
   writeHash();          // una ficha de persona es navegación, igual que una de obra
 }
-const REL_INV={"alumno de":"maestro de","maestro de":"alumno de","hijo de":"padre o madre de",
-  "hermano de":"hermano de","cónyuge de":"cónyuge de","trabajó para":"empleó a",
-  "colaboró con":"colaboró con","influido por":"influyó en"};
+/* La misma relación, dicha desde el otro lado: si el registro dice que A es alumno de B,
+   en la ficha de B hay que leer "teacher of A" y no "student of A". */
+const REL_INV={"student of":"teacher of","teacher of":"student of","child of":"parent of",
+  "sibling of":"sibling of","married to":"married to","worked for":"employed",
+  "collaborated with":"collaborated with","influenced by":"influenced"};
 const invRel=t=>REL_INV[t]||t;
+/* UN ENLACE VIEJO SIGUE LLEVANDO A SU OBRA.
+   Los ids de las obras sin QID pasaron de ser el título de su página de IMSLP a ser el
+   `pageid` numérico, que es lo único que sobrevive a que IMSLP renombre la página. Eso
+   cambió 7 323 ids de golpe, y cualquiera que hubiera compartido un enlace se habría
+   quedado con un 404 silencioso. `redirects.json` guarda viejo -> nuevo para siempre, y se
+   carga SOLO cuando un id no aparece, que es lo raro: son 400 KB que nadie tiene que
+   descargar para ver el catálogo. 2026-09-15. */
+let REDIR = null;
+async function resolveId(id){
+  if(BYID.has(id)) return id;
+  if(REDIR === null){
+    try{ REDIR = await fetch(`redirects.json?v=${DATA_V}`).then(r=>r.json()); }
+    catch(e){ REDIR = {}; }
+  }
+  const to = REDIR[id];
+  return (to && BYID.has(to)) ? to : null;
+}
 async function openRec(id){
+  if(!BYID.has(id)){
+    const to = await resolveId(id);
+    if(!to) return;
+    id = to;
+  }
   const w=BYID.get(id); if(!w) return; state.sel=id; state.person=null;
   /* the claims live in the composer's detail file, fetched the first time one of
      their records is opened; the card is drawn twice, thin then full, so it never
@@ -1437,6 +1476,8 @@ function renderActive(){
    Es idempotente: si el hash no cambia (ordenar, desplegar una fila, pedir más filas),
    no anota nada. */
 function renderStage(){
+  /* salir de "Play" retira el permiso: al volver, se vuelve a avisar y a esperar. */
+  if(state.lens!=="game"){ GREADY=false; gStop(); }
   document.body.classList.toggle("lens-game", state.lens==="game");
   document.body.classList.toggle("lens-acq", state.lens==="acq");
   (state.sub==="composers"?renderComposers:renderWorks)(); writeHash(); }
@@ -1492,7 +1533,7 @@ window.addEventListener("popstate",()=>{
     state.sub="works"; state.lens="table"; state.limit=300; state.open=new Set();
     document.getElementById("q").value="";
     readHash();
-    if(state.sel && BYID.get(state.sel)) openRec(state.sel);
+    if(state.sel) openRec(state.sel);
     else if(state.person) openComposer(state.person);
     else { document.body.classList.remove("rec-open","rec-paged"); remapSoon(); }
     renderPicker(); renderFacets(); renderInstrument(); renderStage();
@@ -1688,7 +1729,7 @@ Promise.all([
   writeHashFirst();
   /* una obra pedida en la URL se abre al cargar, para que un enlace compartido a una
      ficha lleve a la ficha y no solo al catálogo filtrado */
-  if(state.sel && BYID.get(state.sel)) openRec(state.sel);
+  if(state.sel) openRec(state.sel);
 });
 
 /* ---------- lens: el juego ----------
@@ -1713,6 +1754,9 @@ Promise.all([
 const G_OPTS = {facil:4, medio:4, dificil:5};
 const G_SEC = 10;
 let GAME = null, GPOOL = [], GAUDIO = null, GTIMER = null;
+/* false hasta que el lector pulsa "escuchar" por primera vez: hasta entonces el juego
+   está mudo. Ver gDraw(). */
+let GSOUND = false;
 const gstash = {facil:null, medio:null, dificil:null};
 
 function gLoadPool(){
@@ -1774,7 +1818,7 @@ function gNewQuestion(){
     const keyOf=g=>g.c;
     opts=gTake(gTiers(target,pool,keyOf),n,keyOf).map(g=>({text:gName(g.c),correct:false}));
     opts.push({text:gName(target.c),correct:true});
-    prompt="¿Quién escribió esto?";
+    prompt=t("Who wrote this?");
     answer=gName(target.c);
   }else{
     const keyOf=g=>g.i;
@@ -1786,7 +1830,7 @@ function gNewQuestion(){
                :[same.filter(g=>(g.fo||"")===(target.fo||"")),same,pool];
     opts=gTake(tiers,n,keyOf).map(g=>({text:g.t||g.i,correct:false}));
     opts.push({text:target.t||target.i,correct:true});
-    prompt="¿Qué obra es?";
+    prompt=t("Which work is this?");
     answer=target.t||target.i;
   }
   const from=Math.floor(target.s*(0.15+Math.random()*0.55));
@@ -1805,8 +1849,8 @@ function gPlay(){
   a.addEventListener("loadedmetadata",start,{once:true});
   if(a.readyState>=1) start();
   GTIMER=setTimeout(()=>{ if(GAUDIO===a){ a.pause(); } }, G_SEC*1000+400);
-  const b=document.getElementById("g-play"); if(b) b.textContent="▮▮ sonando";
-  setTimeout(()=>{ const x=document.getElementById("g-play"); if(x) x.textContent="▶ otra vez"; },
+  const b=document.getElementById("g-play"); if(b) b.textContent="▮▮ "+t("playing");
+  setTimeout(()=>{ const x=document.getElementById("g-play"); if(x) x.textContent="▶ "+t("again"); },
              G_SEC*1000+400);
 }
 
@@ -1822,33 +1866,55 @@ function gBest(){ try{ return JSON.parse(localStorage.getItem("ma-game")||"{}");
 function gSaveBest(){ try{ const b=gBest(); const k=GAME.mode+"-"+GAME.diff;
   b[k]=Math.max(b[k]||0, GAME.streak); localStorage.setItem("ma-game",JSON.stringify(b)); }catch(e){} }
 
+/* SE AVISA DE QUE VA A SONAR, Y HAY QUE ACEPTARLO. CADA VEZ.
+   Que el juego arrancara mudo no bastaba: el lector seguía sin saber que esto hace ruido
+   hasta que lo hacía. Ahora entrar en "Play" enseña primero lo que va a pasar y espera a
+   que pulse. Víctor, 2026-09-15.
+
+   CADA VEZ QUE SE ENTRA, no una vez y ya: no se guarda en el navegador a propósito. Quien
+   vuelve mañana, o abre el enlace en otro sitio, puede estar en otra habitación y con otra
+   gente al lado; una aceptación de hace un mes no dice nada sobre eso. Cuesta una pulsación
+   y evita el susto. */
+let GREADY = false;
 function renderGame(host){
   if(!GAME) GAME={mode:"quien", diff:"medio", right:0, total:0, streak:0, q:null, answered:false, picked:null};
+  if(!GREADY){ gGate(host); return; }
   gLoadPool().then(()=>{
     if(!GAME.q) gNewQuestion();
     gDraw(host);
   });
-  host.innerHTML=`<div id="game"><p class="g-load">cargando el fondo de audio…</p></div>`;
+  host.innerHTML=`<div id="game"><p class="g-load">${t("loading the audio pool…")}</p></div>`;
+}
+function gGate(host){
+  host.innerHTML=`<div id="game"><div class="g-gate">
+    <h2>${t("Name that music")}</h2>
+    <p class="g-gate-warn">🔊 ${t("This game plays sound.")}</p>
+    <p>${t("You will hear a ten-second clip and guess who wrote it, or which work it is. Nothing plays until you press the button below, and nothing is downloaded: the audio is streamed from Wikimedia Commons.")}</p>
+    <p class="why">${t("Headphones are a kind thought if you are not alone.")}</p>
+    <p><button id="g-accept" class="g-play">${t("I'm ready, play sound")}</button></p>
+  </div></div>`;
 }
 function gDraw(host){
   const q=GAME.q;
-  if(!q){ host.innerHTML=`<div id="game"><p class="g-load">No hay audio jugable.</p></div>`; return; }
+  if(!q){ host.innerHTML=`<div id="game"><p class="g-load">${t("No playable audio.")}</p></div>`; return; }
   const best=gBest()[GAME.mode+"-"+GAME.diff]||0;
   const pct=GAME.total?Math.round(100*GAME.right/GAME.total):0;
   const w=BYID.get(q.target.i);
   host.innerHTML=`<div id="game">
     <div class="g-bar">
       <span class="g-seg" id="g-mode">${["quien","obra"].map(m=>
-        `<button class="gbtn${GAME.mode===m?" on":""}" data-gmode="${m}">${m==="quien"?"¿Quién?":"¿Qué obra?"}</button>`).join("")}</span>
+        `<button class="gbtn${GAME.mode===m?" on":""}" data-gmode="${m}">${m==="quien"?t("Who?"):t("Which work?")}</button>`).join("")}</span>
       <span class="g-seg" id="g-diff">${["facil","medio","dificil"].map(d=>
-        `<button class="gbtn${GAME.diff===d?" on":""}" data-gdiff="${d}">${d}</button>`).join("")}</span>
-      <span class="g-score">${GAME.right} de ${GAME.total}${GAME.total?` · ${pct} %`:""}
-        · racha <b>${GAME.streak}</b>${best?` · mejor ${best}`:""}</span>
-      <button class="gbtn" id="g-reset">empezar de nuevo</button>
+        `<button class="gbtn${GAME.diff===d?" on":""}" data-gdiff="${d}">${t({facil:"easy",medio:"medium",dificil:"hard"}[d])}</button>`).join("")}</span>
+      <span class="g-score">${GAME.right} ${t("of")} ${GAME.total}${GAME.total?` · ${pct} %`:""}
+        · ${t("streak")} <b>${GAME.streak}</b>${best?` · ${t("best")} ${best}`:""}</span>
+      <button class="gbtn" id="g-reset">${t("start again")}</button>
     </div>
     <p class="g-prompt">${esc(q.prompt)}</p>
-    <p><button id="g-play" class="g-play">▶ escuchar ${G_SEC} s</button>
-       <span class="why">se transmite desde Wikimedia Commons, no se descarga nada</span></p>
+    <p><button id="g-play" class="g-play">▶ ${t("listen")} ${G_SEC} s</button>
+       <span class="why">${GSOUND
+         ? t("streamed from Wikimedia Commons, nothing is downloaded")
+         : t("the game starts silent: press to hear the clip")}</span></p>
     <div class="g-opts">${q.opts.map((o,i)=>{
         let cls=""; if(GAME.answered){ if(o.correct) cls=" ok"; else if(GAME.picked===i) cls=" no"; }
         return `<button class="gopt${cls}" data-gopt="${i}"${GAME.answered?" disabled":""}>`
@@ -1856,30 +1922,29 @@ function gDraw(host){
       }).join("")}</div>
     ${GAME.answered?`<div class="g-after">
       <p class="g-verdict ${GAME.picked!=null&&q.opts[GAME.picked].correct?"ok":"no"}">
-        ${GAME.picked!=null&&q.opts[GAME.picked].correct?"Correcto":"Era "+esc(q.answer)}</p>
+        ${GAME.picked!=null&&q.opts[GAME.picked].correct?t("Correct"):t("It was")+" "+esc(q.answer)}</p>
       <p class="g-what">${esc(gName(q.target.c))} · ${esc(q.target.t||"")}
         ${q.target.fo?` · ${esc(q.target.fo)}`:""}
-        <span class="why">fragmento desde ${Math.floor(q.from/60)}:${String(q.from%60).padStart(2,"0")}
-        de ${Math.floor(q.target.s/60)}:${String(q.target.s%60).padStart(2,"0")}${q.target.l?` · ${esc(q.target.l)}`:" · la fuente no declara licencia"}</span>
-        ${q.target.m?`<span class="why">Cómo sabemos de qué obra es: ${esc(q.target.m)}.
-          El compositor sí es seguro, la cosecha va por compositor.</span>`:""}</p>
-      <p>${w?`<button class="gbtn" data-goto="${esc(q.target.i)}">ver su ficha</button>`:""}
-         <button class="gbtn g-next" id="g-next">siguiente ▸</button></p>
+        <span class="why">${t("clip from")} ${Math.floor(q.from/60)}:${String(q.from%60).padStart(2,"0")}
+        ${t("of")} ${Math.floor(q.target.s/60)}:${String(q.target.s%60).padStart(2,"0")}${q.target.l?` · ${esc(q.target.l)}`:" · "+t("the source declares no licence")}</span>
+        ${q.target.m?`<span class="why">${t("How we know which work this is")}: ${esc(q.target.m)}. ${t("The composer is certain either way: the harvest runs composer by composer.")}</span>`:""}</p>
+      <p>${w?`<button class="gbtn" data-goto="${esc(q.target.i)}">${t("open its card")}</button>`:""}
+         <button class="gbtn g-next" id="g-next">${t("next")} ▸</button></p>
     </div>`:""}
-    <p class="g-note"><b>Teclado:</b> 1-${q.opts.length} contestan, espacio repite el
-      fragmento, Enter pasa a la siguiente.<br>
-      La dificultad no está en la pregunta, está en las respuestas falsas:
-      en <b>fácil</b> son de otro período y otra plantilla, en <b>difícil</b> son vecinas.
-      Cada compositor entra con cuota, para que no se pueda acertar respondiendo siempre
-      al que más grabaciones tiene.<br>
+    <p class="g-note"><b>${t("Keyboard")}:</b> ${t("1-N answer, space replays the clip, Enter moves on.").replace("N", q.opts.length)}<br>
+      ${t("The difficulty is not in the question, it is in the wrong answers: on <b>easy</b> they come from another period and another scoring, on <b>hard</b> they are neighbours. Every composer enters with a quota, so you cannot win by always naming whoever has the most recordings.")}<br>
       ${GAME.mode==="obra"
-        ? `Este modo juega solo con las grabaciones que <b>la fuente liga a su obra</b>
-           (229 obras): en las otras la obra la dedujimos del nombre del fichero, y con eso
-           el juego podría decirte que has fallado cuando has acertado.`
-        : `Este modo juega con las 880 grabaciones: el compositor es seguro en todas,
-           porque la cosecha va por compositor.`}</p>
+        ? t("This mode plays only the recordings the <b>source ties to their work</b>: in the others we worked the work out from the file name, and with that the game could tell you that you got it wrong when you got it right.")
+        : t("This mode plays every recording: the composer is certain in all of them, because the harvest runs composer by composer.")}</p>
   </div>`;
-  if(!GAME.answered) gPlay();
+  /* EL JUEGO NO SUENA SOLO AL ENTRAR.
+     Arrancaba el audio en cuanto se dibujaba la pregunta, y eso es empezar por lo peor:
+     al lector le suena música sin haberla pedido, el navegador puede bloquearla de todas
+     formas (autoplay), y si está en una oficina o con alguien al lado, le acabas de
+     fastidiar. La primera pregunta espera a que pulse.
+     A partir de ahí SÍ suena sola, porque ya lo pidió una vez y el juego va de escuchar:
+     hacer clic dos veces por pregunta sería el gesto que sobra. Víctor, 2026-09-15. */
+  if(!GAME.answered && GSOUND) gPlay();
 }
 document.addEventListener("click", e=>{
   const host=document.getElementById("instrument");
@@ -1888,7 +1953,11 @@ document.addEventListener("click", e=>{
   const d=e.target.closest("[data-gdiff]");
   if(d){ gSave(); GAME.diff=d.dataset.gdiff; gRestore(GAME.diff);
          if(!GAME.q) gNewQuestion(); return gDraw(host); }
-  if(e.target.closest("#g-play")) return gPlay();
+  if(e.target.closest("#g-accept")){
+    GREADY=true; GSOUND=true;          // aceptado: ya puede sonar sin pedirlo otra vez
+    return renderGame(document.getElementById("instrument"));
+  }
+  if(e.target.closest("#g-play")){ GSOUND=true; return gPlay(); }
   if(e.target.closest("#g-next")){ gNewQuestion(); return gDraw(host); }
   if(e.target.closest("#g-reset")){ GAME.right=0; GAME.total=0; GAME.streak=0;
     gNewQuestion(); return gDraw(host); }
@@ -1914,15 +1983,13 @@ document.addEventListener("click", e=>{
    que se pueda comprobar. Ver harvest_people.py. */
 function renderAcq(host){
   const live=COMPOSERS.filter(c=>c.qid&&chosen(c.slug)&&ADJ.has(c.qid));
-  if(live.length<2){ host.innerHTML=`<p class="hint">Hacen falta al menos dos compositores
-    con alguna relación documentada. Prueba a quitar el filtro de compositor.</p>`; return; }
+  if(live.length<2){ host.innerHTML=`<p class="hint">${t("At least two composers with a recorded relation are needed. Try clearing the composer filter.")}</p>`; return; }
   const pairs=[];
   for(let i=0;i<live.length;i++) for(let j=i+1;j<live.length;j++){
     const p=acqPath(live[i].qid,live[j].qid);
     if(p) pairs.push({a:live[i],b:live[j],path:p,steps:p.length-1});
   }
-  if(!pairs.length){ host.innerHTML=`<p class="hint">Ninguna pareja de los elegidos se
-    alcanza por relaciones documentadas.</p>`; return; }
+  if(!pairs.length){ host.innerHTML=`<p class="hint">${t("No pair among the chosen composers is reachable by recorded relations.")}</p>`; return; }
   const ys=live.map(c=>c.born||0).filter(Boolean);
   const y0=Math.min(...ys), y1=Math.max(...ys);
   const W=980, PAD=70, BASE=330, span=Math.max(1,y1-y0);
@@ -1957,10 +2024,9 @@ ${esc(names)}</title></path>`;}).join("");
   }
   const direct=pairs.filter(p=>p.steps===1).length;
   host.innerHTML=`<div class="acqwrap">
-    <p class="hint">${pairs.length} de las ${live.length*(live.length-1)/2} parejas posibles
-      se alcanzan por relaciones que constan: maestro, alumno, hermano, cónyuge, empleador.
-      <b>${direct}</b> son directas. El alto del arco son los pasos; pasa el ratón para ver
-      el camino entero. Esto <b>no dice que se conocieran</b>: dice qué consta.</p>
+    <p class="hint">${pairs.length} ${t("of the")} ${live.length*(live.length-1)/2}
+      ${t("possible pairs are reachable by relations on record: teacher, student, sibling, spouse, employer.")}
+      <b>${direct}</b> ${t("are direct. The height of the arc is the number of steps; hover to see the whole path. This does <b>not</b> say they knew each other: it says what is on record.")}</p>
     <svg viewBox="0 0 ${W} ${BASE+120}" class="acqsvg">
       <line x1="${PAD-10}" y1="${BASE}" x2="${W-PAD+10}" y2="${BASE}" stroke="#e5e0d6"/>
       ${ticks.join("")}${arcs}${nodes}
