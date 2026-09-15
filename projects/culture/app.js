@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.29.4";
+const DATA_V = "0.29.9";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -146,6 +146,29 @@ const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3, S_WHERE = 4, S_OSM = 5;
 // renamed "Père-Lachaise, Paris, France": two fields, each true, shown together.
 const WHERES = [""];
 const whereOf = (s) => WHERES[s[S_WHERE]] || "";
+// A place's title ON A PERSON'S OWN ROW. "Pablo Ruíz Picasso" under Pablo Picasso, "Statue of Ronald Reagan" under
+// Reagan and "No location recorded" say nothing the row does not; the kind of thing does ("Statue", "Plaque").
+const MARKER_WORDS = new Set(("statue of to the a an monument memorial bust plaque commemorative sculpture estatua busto " +
+  "monumento placa lapida conmemorativa commemorativa a al de del la el targa statua lapide monumento " +
+  "denkmal fur gedenktafel buste plaque commemorative monument pomnik tablica pamiatkowa").split(" "));
+const bareName = (x) => deacc(x).replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+function siteTitle(r) {
+  const name = SITES[r.site][S_NAME] || "";
+  const who = bareName(r.name), n = bareName(name);
+  const surname = who.split(" ").pop();
+  const kind = capital(plain("what", VOCAB.what[r.what])) || "Place";
+  if (!n || n === "no location recorded") return kind;
+  if (n === who) return kind;
+  // a house or a museum named after them keeps its name: "Birthplace of Cervantes (Alcalá de Henares)" is information
+  if (!["statue", "plaque"].includes(VOCAB.what[r.what])) return name;
+  // only when nothing is left once their name, the town and the words for a statue or a plaque are taken out:
+  // "Monumento a Pablo Picasso" is a statue; "Homage to Picasso" is the title of a work and stays
+  const words = n.split(" ");
+  if (!(surname.length > 3 && words.includes(surname))) return name;
+  const drop = new Set([...who.split(" "), ...bareName(whereOf(SITES[r.site])).split(" ")]);
+  const left = words.filter((w) => !drop.has(w) && !MARKER_WORDS.has(w));
+  return left.length === 0 ? kind : name;
+}
 let VOCAB = {}, SITES = [], TRACES = [];
 let deepState = "none";
 let startLongTail = () => {};             // set at boot when the base names a long tail
@@ -251,7 +274,8 @@ const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: 'map & exact graves © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (ODbL) · ' +
     'people & places <a href="https://www.wikidata.org">Wikidata</a> (CC0) · ' +
     'plaques <a href="https://openplaques.org">Open Plaques</a> (PD) · ' +
-    'hours <a href="https://opendata.euskadi.eus">Open Data Euskadi</a>',
+    'hours <a href="https://opendata.euskadi.eus">Open Data Euskadi</a> · ' +
+    'towns <a href="https://www.geonames.org">GeoNames</a> (CC BY)',
 }).addTo(map);
 // Aggregation, done by us instead of by MarkerCluster, and over EVERYTHING, which is the whole
 // point. The screen is cut into cells and each cell becomes ONE pin carrying the total of every
@@ -1029,7 +1053,7 @@ function openPerson(qid, keepScroll) {
       const pinnable = !(r.flags & F_PLACELESS);
       return `<li class="sh-trace${pinnable ? "" : " unpinnable"}" data-i="${i}">` +
         `<span class="ic">${WHAT_ICON[VOCAB.what[r.what]] || "·"}</span><div class="wk">` +
-        `<div class="wt">${esc(SITES[r.site][S_NAME])}</div>` +
+        `<div class="wt">${esc(siteTitle(r))}</div>` +
         (whereOf(SITES[r.site]) ? `<div class="fx wh">${esc(whereOf(SITES[r.site]))}</div>` : "") +
         `<div class="fx">${esc([capital(plain("verb", VOCAB.verb[r.verb])), plain("access", acc),
                                 mk !== VOCAB.what[r.what] ? plain("marking", mk) : ""].filter(Boolean).join(" · "))}</div>` +
@@ -1378,9 +1402,12 @@ function fillStreets(box) {
     if (!list || !list.length || !box.isConnected) return;
     const squares = list.filter((r) => r[1] === "square").length;
     box.innerHTML = `<div class="sh-sec-h"><span class="sh-sec-t">Streets and squares</span><span class="sh-sec-n">${list.length}</span>` +
-      `<button type="button" class="sh-sec-fit st-map">🗺 On the map</button></div>` +
-      `<div class="sh-sec-note">named after them${squares ? `, ${squares} of them squares` : ""} · at least these: only those OpenStreetMap says are named after them</div>` +
-      `<ul class="st-list">${list.slice(0, 60).map((r, i) => `<li data-i="${i}">${r[1] === "square" ? "⬚" : "┃"} ${esc(r[0])}</li>`).join("")}` +
+      `<button type="button" class="sh-sec-fit st-map">On the map</button></div>` +
+      `<div class="sh-sec-note">named after them${squares ? `, ${squares} of them squares` : ""} · the ones OpenStreetMap and Wikidata know</div>` +
+      // one column, each with its town, province and country (Víctor: fifty "Place du Général de Gaulle" in a row
+      // are not a list until each says where)
+      `<ul class="st-list">${list.slice(0, 60).map((r, i) => `<li data-i="${i}"><span class="st-n">${esc(r[0])}</span>` +
+        `${S.w && S.w[r[5]] ? `<span class="st-w">${esc(S.w[r[5]])}</span>` : ""}</li>`).join("")}` +
       (list.length > 60 ? `<li class="st-more">…and ${list.length - 60} more</li>` : "") + `</ul>`;
     box.hidden = false;
     box.querySelectorAll("li[data-i]").forEach((li) => li.addEventListener("click", () => {
@@ -1641,8 +1668,14 @@ function renderPanel() {
     // view used to head the list whoever lay in it
     const top = (rows) => rows.reduce((m, r) => (r.rank > m ? r.rank : m), 0);
     const ordered = [...groups.entries()].sort((a, z) => top(z[1]) - top(a[1]) || z[1].length - a[1].length);
-    for (const [siteIdx, rows] of ordered) {
+    for (const [siteIdx, all] of ordered) {
+      // the museum itself is the place, not one of its people: with people in it, it is not a row
+      const people = all.filter((r) => /^(ev:)?Q\d+$/.test(r.qid));
+      const rows = people.length ? people : all;
       rows.sort((a, z) => z.rank - a.rank);
+      // one thing in a place is ONE entry: the person, and under it what and where (Víctor, 2026-09-15: "Cristóbal
+      // Colón" as a heading with "Christopher Columbus" inside it read as two things). A heading only groups several.
+      if (rows.length === 1 && siteIdx !== selectedSite) { panelPlan.push({ single: rows[0] }); continue; }
       panelPlan.push({ grp: { siteIdx, n: rows.length } });
       if (!folded.has(siteIdx)) for (const r of rows) panelPlan.push({ r });
     }
@@ -1655,9 +1688,19 @@ function renderPanel() {
   panelCursor = 0; ul.innerHTML = ""; appendChunk();
 }
 
+function singleRowHTML(r) {
+  const s = SITES[r.site], title = siteTitle(r), isPerson = /^(ev:)?Q\d+$/.test(r.qid);
+  const kind = capital(plain("what", VOCAB.what[r.what]));
+  const sub = [isPerson ? (title === kind ? kind : title) : kind, whereOf(s)].filter(Boolean).join(" · ");
+  return `<li class="row single" data-qid="${esc(r.qid)}" data-site="${r.site}" title="${isPerson ? "Open this person" : "Open this place"}">` +
+    `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
+    `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
+    `<span class="sub">${esc(sub)}</span></li>`;
+}
 function personRowHTML(w) {
   const r = w.r, k = w.sites.size;
-  const where = k > 1 ? `${k} places` : SITES[r.site][S_NAME];
+  const title = siteTitle(r);
+  const where = k > 1 ? `${k} places` : title !== SITES[r.site][S_NAME] ? (whereOf(SITES[r.site]).split(",")[0] || title) : title;
   return `<li class="row person" data-qid="${esc(r.qid)}" data-site="${r.site}" title="Open this person">` +
     `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
     `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
@@ -1695,7 +1738,8 @@ function appendChunk() {
         const hd = box.querySelector(".hd");
         if (hd) html += `<li class="grp-card card"><button type="button" class="grp-card-x" title="Close this card">✕</button>${hd.outerHTML}</li>`;
       }
-    } else if (it.person) html += personRowHTML(it.person);
+    } else if (it.single) html += singleRowHTML(it.single);
+    else if (it.person) html += personRowHTML(it.person);
     else html += rowHTML(it.r, it.flat);
   }
   ul.insertAdjacentHTML("beforeend", html);
@@ -1723,6 +1767,13 @@ $("worklist").addEventListener("click", (e) => {
   const row = e.target.closest("li.row");
   if (!row) return;
   // A name opens the person; a row without one (near-me lists places) flies to the place.
+  // a museum or a thing with nobody named is a place: open the place, not a person card
+  if (row.dataset.qid && !/^(ev:)?Q\d+$/.test(row.dataset.qid) && row.classList.contains("single")) {
+    const i = +row.dataset.site, st = SITES[i];
+    const pl = places.find((x) => x.siteIdx === i);
+    if (!narrow() && pl) { revealInPanel({ places: [pl] }); } else map.setView([st[S_LAT], st[S_LON]], Math.max(map.getZoom(), 16));
+    return;
+  }
   if (row.dataset.qid) { openPerson(row.dataset.qid); return; }
   const s = SITES[+row.dataset.site];
   map.setView([s[S_LAT], s[S_LON]], Math.max(map.getZoom(), 14));
