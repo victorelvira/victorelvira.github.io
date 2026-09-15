@@ -649,3 +649,9 @@ body.dragging-panel{user-select:none;-webkit-user-select:none}
   #tp-side{display:contents}
   #tp-how{order:0} #tp-list{order:1} #tp-countries{order:2}
 }
+/* on a computer, folded still shows the views and the best-known dial: one row above the map */
+@media (min-width:721px){ body.folded #modes{display:flex} }
+@media (min-width:721px){
+  #fold{display:inline-block;padding:3px 10px;font:inherit;font-size:12.5px;cursor:pointer}
+  body:not(.folded) #fold{background:var(--ink);color:#fff;border-color:var(--ink)}
+}

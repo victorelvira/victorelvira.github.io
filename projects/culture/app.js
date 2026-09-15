@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.28.6";
+const DATA_V = "0.28.8";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -666,18 +666,22 @@ function frameRows(rows) {
   return true;
 }
 
+// Half a sentence on screen; the counts behind it in the tooltip (Víctor, 2026-09-15: the line was jargon).
 function statsLine(pins, inView, rowsInView) {
+  const short = `${rowsInView.toLocaleString()} ${rowsInView === 1 ? "person" : "people"} in ${inView.toLocaleString()} ${inView === 1 ? "place" : "places"}` +
+    (deepState === "loading" ? " · loading more…" : "");
   const grouped = pins < inView
     ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins. Zoom in to split them`
     : `${inView.toLocaleString()} ${inView === 1 ? "place" : "places"} here, one pin each`;
   const tableN = TRACES.filter((r) => passes(r, "table")).length;
   const placeless = TRACES.filter((r) => passes(r, "table") && (r.flags & F_PLACELESS)).length;
-  return `${grouped} · ${rowsInView.toLocaleString()} people in view · ` +
+  $("stats").title = `${grouped} · ${rowsInView.toLocaleString()} people in view · ` +
     `${tableN.toLocaleString()} traces pass the filters` +
     (placeless ? ` · ${placeless.toLocaleString()} of them unpinnable` : "") +
     // Under-reporting without saying so is the whole family of bug this project keeps refusing.
     (deepState === "loading" ? " · still loading the less known here…" :
      (deepState === "none" || deepState === "partial") && longTailWaiting ? " · the less known arrive as you zoom in" : "");
+  return short;
 }
 
 function refresh() {
@@ -2179,8 +2183,10 @@ $("fold").addEventListener("click", () => {
   foldSummary();
   requestAnimationFrame(() => { map.invalidateSize({ pan: false }); renderPanel(); });
 });
-// a phone opens with the map, not with the controls
-if (window.matchMedia("(max-width: 720px)").matches) document.body.classList.add("folded");
+// Everyone opens with the map, not with the controls. On a computer the views and the best-known dial stay
+// in sight; the families, the filter box and the timeline wait behind "Filters" (Víctor, 2026-09-15: half the
+// screen was filters before the map).
+document.body.classList.add("folded");
 // The fade at the right edge of a scrolling rail is a promise that there is more; it has to stop
 // promising when there is not. Cheap to compute, and the alternative is a control nobody finds.
 function markRailEnds() {
@@ -2295,7 +2301,7 @@ function viewToURL() {
   // The fold is remembered only when it disagrees with what this screen would have done, so the
   // same link opens sensibly on a phone and on a laptop.
   const folded = document.body.classList.contains("folded");
-  if (folded !== narrow()) p.set("fold", folded ? "1" : "0");
+  if (!folded) p.set("fold", "0");
   // While the blue dot is on, the map is centred on the reader, so the map's centre IS their
   // location. The URL keeps the view from before they pressed the button (D17: the view belongs in
   // the URL, the reader's position never does).
