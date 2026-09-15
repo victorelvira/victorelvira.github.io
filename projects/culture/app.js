@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.29.2";
+const DATA_V = "0.29.3";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
