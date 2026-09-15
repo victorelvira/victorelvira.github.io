@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.29.3";
+const DATA_V = "0.29.4";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -166,7 +166,7 @@ const TOP_DEFAULT = 500;
 const state = {
   what: {}, mount: {}, access: {}, marking: {}, dom: {}, verb: {},
   q: "", yearMin: -Infinity, yearMax: Infinity, near: null, site: null, topN: TOP_DEFAULT, topWhere: "here",
-  colorBy: "dom", person: null, personName: "", personSec: null, group: null,
+  colorBy: "dom", person: null, personName: "", personSec: null, group: null, living: false,
 };
 // The renown dial (DECISIONS D6). Fame never decided who is IN the corpus; it is the reader's
 // control over how much of it to look at. `rankCut` is recomputed from the current selection, so
@@ -226,6 +226,10 @@ const DIMENSIONS = [
   // one section of that person's card: their life, their work, or where they are remembered (D29)
   { id: "personSec", appliesTo: ALL, test: (r) => !state.person || !state.personSec ||
       (SEC_VERBS[state.personSec] || []).includes(VOCAB.verb[r.verb]) },
+  // Living people only (Víctor, 2026-09-15: "¿podemos poner un filtro de personas vivas solo?"). A person, a birth
+  // year and no death year; born within 120 years, because an old record with no death date is a gap, not a life.
+  { id: "living", appliesTo: ALL, test: (r) => !state.living ||
+      (r.qid.startsWith("Q") && r.died == null && r.born != null && r.born >= new Date().getFullYear() - 120) },
   // A settlement is not an address (DECISIONS D9): listed and searchable, never pinned.
   { id: "pinnable", appliesTo: ["map", "panel"], test: (r) => !(r.flags & F_PLACELESS) },
 ];
@@ -944,6 +948,12 @@ $("preset-was").addEventListener("click", () => {
   refresh();
 });
 
+$("preset-living").addEventListener("click", () => {
+  state.living = !state.living;
+  $("preset-living").classList.toggle("active", state.living);
+  refresh();
+});
+
 $("reset").addEventListener("click", () => {
   for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
     VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
@@ -952,6 +962,7 @@ $("reset").addEventListener("click", () => {
   $("filter").value = ""; $("filter-clear").hidden = true;
   $("preset-now").classList.remove("active");
   $("preset-was").classList.remove("active");
+  state.living = false; $("preset-living").classList.remove("active");
   tlChosen = false;
   paintRenown();
   buildTimeline(TL_MIN, TL_MAX);
@@ -2209,6 +2220,7 @@ function foldSummary() {
     if (VOCAB[fam] && VOCAB[fam].some((_, i) => state[fam][i] === false)) n++;
   if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") n++;     // the default is not a filter the reader set
   if (state.person) n++;
+  if (state.living) n++;
   const folded = document.body.classList.contains("folded");
   // Open, the button says what the next tap does. "Filters ▴" read as a label, not as the way back
   // to the map (Víctor, 2026-09-13).
@@ -2324,6 +2336,7 @@ function viewToURL() {
   if (state.personSec && state.person) p.set("whosec", state.personSec);
   if (state.group && state.person) p.set("knew", "1");
   if (state.q) p.set("q", state.q);
+  if (state.living) p.set("living", "1");
   if (state.person) p.set("who", state.person);
   // the place tapped and the person card open, so a reload, a shared link and the back button come back
   // to them; while one is still waiting for its file, the URL keeps asking for it
@@ -2406,6 +2419,8 @@ function applyURL() {
   state.personSec = p.get("whosec") || null;
   state.group = null; pendingKnew = p.get("knew") === "1" && !!p.get("who");
   state.q = deacc(p.get("q") || "");
+  state.living = p.get("living") === "1";
+  $("preset-living").classList.toggle("active", state.living);
   state.person = p.get("who") || null;
   pendingCard = p.get("card") || null;          // opened once its person has arrived (tryPendingCard)
   pendingPlace = p.get("place") || null;
