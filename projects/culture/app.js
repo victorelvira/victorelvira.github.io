@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.28.8";
+const DATA_V = "0.29.2";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -41,9 +41,9 @@ const LABEL = {
   // A Stolperstein is a plaque; what differs is where it is mounted. Grouped, and still tellable
   // apart: the distinction appears only when there are plaques to tell apart.
   mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "Not a plaque" },
-  dom: { letters: "Letters", music: "Music", image: "Image", stage: "Stage", science: "Science",
-         power: "Power", faith: "Faith", sport: "Sport", trade: "Trade",
-         other: "Other trade", nobody: "No person named" },
+  dom: { letters: "Letters", music: "Music", image: "Art and architecture", stage: "Stage and screen", science: "Science",
+         power: "Politics and power", faith: "Religion", sport: "Sport", trade: "Business",
+         other: "Other", nobody: "No person named" },
   verb: { born: "was born", lived: "lived", worked: "worked", died: "died", buried: "is buried",
           commemorated: "is remembered", built: "built it", exhibited: "is exhibited", happened: "happened" },
   // The chip carries the SAME mark the map draws on a pin holding one thing (VERB_MARK below):
@@ -54,10 +54,16 @@ const LABEL = {
   // rendered every candidate inside a real 22 px pin, and the claim was simply wrong: 🌱, 🕯️ and
   // 🔑 are perfectly legible there. An assertion I had never tested was costing the interface its
   // consistency.
-  verbChip: { born: "🌱 born", lived: "🔑 lived", worked: "🛠️ worked", died: "🕯️ died",
-              buried: "⚱️ buried", commemorated: "💐 remembered", built: "📐 built",
-              exhibited: "🖼️ exhibited", happened: "🗓️ happened" },
+  verbChip: { born: "🌱 Born", lived: "🔑 Lived", worked: "🛠️ Worked", died: "🕯️ Died",
+              buried: "⚱️ Buried", commemorated: "💐 Remembered", built: "📐 Built",
+              exhibited: "🖼️ Exhibited", happened: "🗓️ Happened" },
 };
+// The same words without their mark, for running text (a card's line, a list badge, the table). A value the
+// sources do not know says nothing: "? Unknown" on a card read as a broken field.
+const PLAIN = { "open-air": "Always visible", hours: "Opening hours", "outside-only": "Seen from outside", gone: "Gone" };
+const plain = (fam, v) => (v === "unknown" || v == null ? "" : fam === "access" && PLAIN[v] ? PLAIN[v] :
+  ((fam === "verb" ? LABEL.verbChip[v] : LABEL[fam] && LABEL[fam][v]) || v).replace(/^[^\p{L}]+/u, ""));
+const capital = (x) => (x ? x[0].toUpperCase() + x.slice(1) : x);
 /* ── the interface explaining itself ─────────────────────────────────────────────────────────
  * Víctor, who built this atlas, asked what a Stolperstein was. If the author does not know the
  * word, nobody arriving does, and half these labels are terms of art somebody (me) invented:
@@ -374,9 +380,9 @@ function personRow(r, headAccess) {
   const life = lifeStr(r);
   const acc = VOCAB.access[r.access], mk = VOCAB.marking[r.marking];
   const facts = [`${WHAT_ICON[what] || ""} ${HERE[verb] || ""}`.trim(),
-                 acc !== headAccess ? (LABEL.access[acc] || acc) : null,
+                 acc !== headAccess ? plain("access", acc) : null,
                  // the plaque IS the marking, and a museum is its own: saying so again is noise
-                 mk !== "unknown" && mk !== what ? (LABEL.marking[mk] || mk) : null]
+                 mk !== what ? plain("marking", mk) : null]
                 .filter(Boolean).join(" · ");
   const wq = r.qid.replace(/^ev:/, "");
   const links = `<div class="lk">` +
@@ -427,7 +433,7 @@ function sitePopup(siteIdx, rows) {
                                        (r.qid.startsWith("ev:") && !["battle", "event"].includes(kind)));
   // A site kind is a little wider than a trace kind: a cemetery holds graves.
   const kindIcon = WHAT_ICON[kind] || { cemetery: "🪦", building: "🏛" }[kind] || "";
-  const meta = [kind ? `${kindIcon} ${kind}`.trim() : null, LABEL.access[acc] || acc,
+  const meta = [kind ? capital(kind) : null, plain("access", acc),
                 persons.length ? `${persons.length} ${persons.length === 1 ? "person" : "people"}` : null]
                .filter(Boolean).join(" · ");
   // Published hours, never an assertion: the string, who published it, and the day they last
@@ -457,6 +463,8 @@ function sitePopup(siteIdx, rows) {
 const yearStr = (y) => y == null ? "?" : y <= 0 ? `${1 - y} BC` : `${y}`;
 const lifeStr = (r) => r.born == null && r.died == null ? ""
   : r.qid.startsWith("ev:") ? yearStr(r.born)     // an event has a year, not a life
+  // "1946–?" read as a missing date; a living person (or an unknown death) is "born 1946"
+  : r.died == null ? `born ${yearStr(r.born)}` : r.born == null ? `died ${yearStr(r.died)}`
   : `${yearStr(r.born)}–${yearStr(r.died)}`;
 
 /* ── refresh: filter → quota → draw (CHASSIS §2, DECISIONS D6) ── */
@@ -1011,9 +1019,9 @@ function openPerson(qid, keepScroll) {
       return `<li class="sh-trace${pinnable ? "" : " unpinnable"}" data-i="${i}">` +
         `<span class="ic">${WHAT_ICON[VOCAB.what[r.what]] || "·"}</span><div class="wk">` +
         `<div class="wt">${esc(SITES[r.site][S_NAME])}</div>` +
-        (whereOf(SITES[r.site]) ? `<div class="fx wh">📍 ${esc(whereOf(SITES[r.site]))}</div>` : "") +
-        `<div class="fx">${esc(LABEL.verb[VOCAB.verb[r.verb]] || VOCAB.verb[r.verb])} · ` +
-        `${esc(LABEL.access[acc] || acc)}${mk !== "unknown" ? " · " + esc(LABEL.marking[mk] || mk) : ""}</div>` +
+        (whereOf(SITES[r.site]) ? `<div class="fx wh">${esc(whereOf(SITES[r.site]))}</div>` : "") +
+        `<div class="fx">${esc([capital(plain("verb", VOCAB.verb[r.verb])), plain("access", acc),
+                                mk !== VOCAB.what[r.what] ? plain("marking", mk) : ""].filter(Boolean).join(" · "))}</div>` +
         (pinnable ? "" : `<div class="fx warn">the source names a town, not a place: nothing to pin</div>`) +
         (r.flags & F_APPROX ? `<div class="fx approx">◌ an area, not an exact spot</div>` : "") +
         `</div></li>`;
@@ -1043,7 +1051,7 @@ function openPerson(qid, keepScroll) {
     const items = shown.map((x) =>
       `<div class="sh-sec" data-sec="${x.key}"><div class="sh-sec-h"><span class="sh-sec-t">${x.title}</span>` +
       `<span class="sh-sec-n">${bySec[x.key].length}</span>` +
-      `<button type="button" class="sh-sec-fit" data-sec="${x.key}" title="Show only these on the map">🗺 On the map</button></div>` +
+      `<button type="button" class="sh-sec-fit" data-sec="${x.key}" title="Show only these on the map">On the map</button></div>` +
       (x.note ? `<div class="sh-sec-note">${x.note}</div>` : "") +
       `<ul class="sh-list">${bySec[x.key].map(([r, i]) => itemHTML(r, i)).join("")}</ul></div>` +
       (x.key !== "remembered" && !shown.slice(shown.indexOf(x) + 1).some((y) => y.key !== "remembered") ? knewSlot : "")).join("") +
@@ -1058,8 +1066,7 @@ function openPerson(qid, keepScroll) {
       `<div class="sh-life">${esc(life)}</div>` +
       (pf && pf[1] ? `<div class="sh-occ">${esc(pf[1])}</div>` : "") +
       `<div class="sh-sum" data-q="${esc(qid.replace(/^ev:/, ""))}"></div>` +
-      `<div class="sh-count">${rows.length} ${rows.length === 1 ? "trace" : "traces"}` +
-      `${countries.size > 1 ? ` in ${countries.size} places` : ""}</div>` +
+      `<div class="sh-count">${countries.size || rows.length} ${(countries.size || rows.length) === 1 ? "place" : "places"}</div>` +
       `<div class="sh-links">` +
       (!/^(ev:)?Q\d+$/.test(qid) ? "" :
         `<a class="wp-link" data-q="${esc(qid.replace(/^ev:/, ""))}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(qid.replace(/^ev:/, ""))}" target="_blank" rel="noopener">Wikipedia</a> · ` +
@@ -1069,12 +1076,12 @@ function openPerson(qid, keepScroll) {
       (pf && pf[2]
         ? ` · <a class="sh-sib" href="https://victorelvira.github.io/projects/artatlas.html#${esc(pf[2])}"` +
           ` target="_blank" rel="noopener" title="Their paintings, on the Atlas of Painting">` +
-          `🖼 Their paintings</a>` : "") +
+          `Their paintings</a>` : "") +
       `</div></div></div>` +
       `<div class="sh-actions">` +
-      (shown.length > 1 ? `<button type="button" id="sh-fit-all">🌍 All their places on the map</button>` : "") +
+      (shown.length > 1 ? `<button type="button" id="sh-fit-all">All their places on the map</button>` : "") +
       (!isEvent && r0.born != null && r0.died != null && r0.died - r0.born < 130
-        ? `<button type="button" id="sh-contemp" title="The timeline set to their lifetime: everyone alive while they were">👥 Their contemporaries</button>` : "") +
+        ? `<button type="button" id="sh-contemp" title="The timeline set to their lifetime: everyone alive while they were">Their contemporaries</button>` : "") +
       `</div>` +
       items;
 
@@ -1194,7 +1201,7 @@ function revealInPanel(c) {
   selectedSite = sites.length === 1 ? sites[0] : null;
   openPlace = selectedSite == null ? null : placeKey(selectedSite);
   syncURL();
-  if (panelSort !== "place") { panelSort = "place"; $("pv-sort").value = "place"; }
+  if (panelSort !== "place") { sortBeforePin = panelSort; panelSort = "place"; $("pv-sort").value = "place"; }
   sites.forEach((i) => folded.delete(i));
   listArea = null;
   renderPanel();
@@ -1286,6 +1293,9 @@ function needRelations() {
 const REL_GROUP = { spouse: "love", partner: "love", father: "family", mother: "family", child: "family",
   sibling: "family", parent: "family", relative: "family", teacher: "learning", student: "learning",
   "doctoral advisor": "learning", "doctoral student": "learning", "worked with": "work", "significant person": "other" };
+// Wikidata's property names, in the words a card uses
+const REL_WORD = { "significant person": "knew", "worked with": "worked with", "doctoral advisor": "doctoral advisor",
+  "doctoral student": "doctoral student", relative: "relative" };
 function fillKnew(box) {
   if (!box) return;
   const qid = box.dataset.q;
@@ -1308,12 +1318,12 @@ function fillKnew(box) {
       nodes.map((n) => `<g class="kn-n g-${REL_GROUP[n.rel] || "other"}" data-q="${esc(n.q)}" tabindex="0">` +
         `<circle cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="5"/>` +
         `<text x="${(n.x + (n.right ? 8 : -8)).toFixed(1)}" y="${(n.y + 3.5).toFixed(1)}" text-anchor="${n.right ? "start" : "end"}">${esc(short(n.row.name))}</text>` +
-        `<title>${esc(n.row.name)} · ${esc(n.rel)}${lifeStr(n.row) ? " · " + esc(lifeStr(n.row)) : ""}</title></g>`).join("") +
+        `<title>${esc(n.row.name)} · ${esc(REL_WORD[n.rel] || n.rel)}${lifeStr(n.row) ? " · " + esc(lifeStr(n.row)) : ""}</title></g>`).join("") +
       `</svg>`;
     const chips = list.map((x) => `<button type="button" class="kn-c g-${REL_GROUP[x.rel] || "other"}" data-q="${esc(x.q)}">` +
-      `<span class="kn-r">${esc(x.rel)}</span> ${esc(x.row.name)}</button>`).join("");
+      `<span class="kn-r">${esc(REL_WORD[x.rel] || x.rel)}</span> ${esc(x.row.name)}</button>`).join("");
     box.innerHTML = `<div class="sh-sec-h"><span class="sh-sec-t">People they knew</span><span class="sh-sec-n">${list.length}</span>` +
-      `<button type="button" class="sh-sec-fit kn-map" title="Them and the people they knew, together on the map">🗺 Together on the map</button></div>` +
+      `<button type="button" class="sh-sec-fit kn-map" title="Them and the people they knew, together on the map">Together on the map</button></div>` +
       `<div class="sh-sec-note">family, love, teachers and students, work: relations that mean they met (Wikidata)</div>` +
       svg + `<div class="kn-chips">${chips}</div>`;
     box.hidden = false;
@@ -1402,6 +1412,11 @@ function fillSummary(box) {
     const text = x.extract.length > max + 10 ? x.extract.slice(0, x.extract.lastIndexOf(" ", max)) + "…" : x.extract;
     // credited in words; the "Wikipedia" link right below it is the link
     box.innerHTML = `${esc(text)} <span class="sh-sum-src">(Wikipedia)</span>`;
+    if (x.description && x.description.length < 90) {
+      let occ = box.parentElement.querySelector(".sh-occ");
+      if (!occ) { occ = document.createElement("div"); occ.className = "sh-occ"; box.before(occ); }
+      occ.textContent = capital(x.description.replace(/\s*\([^)]*\d{3,4}[^)]*\)\s*$/, ""));   // the years are on the line above
+    }
   };
   if (summaries.has(q)) return summaries.get(q).then(show);
   const job = fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${q}&props=sitelinks/urls&format=json&origin=*`)
@@ -1414,7 +1429,7 @@ function fillSummary(box) {
       if (!m) return null;
       return fetch(`https://${m[1]}.wikipedia.org/api/rest_v1/page/summary/${m[2]}`)
         .then((r) => (r.ok ? r.json() : null))
-        .then((s) => (s && s.extract && s.type !== "disambiguation" ? { extract: s.extract, url } : null));
+        .then((s) => (s && s.extract && s.type !== "disambiguation" ? { extract: s.extract, url, description: s.description } : null));
     })
     .catch(() => null);
   summaries.set(q, job);
@@ -1569,7 +1584,9 @@ function fillInscriptions(root) {
 const PANEL_CHUNK = 80;
 let panelPlan = [], panelCursor = 0, panelIO = null;
 const folded = new Set();
-let panelSort = "place";
+// People first (0.29): grouped by place, a country-scale view listed Picasso once per plaque, nine times in a row.
+// A tapped pin still opens its place group (revealInPanel switches to "place").
+let panelSort = "person", sortBeforePin = null;
 
 // While the reader resizes the list, the map shrinks or grows, and a list that follows the map's
 // bounds loses rows exactly when the reader asked for MORE list (Víctor, 2026-09-13). So a resize
@@ -1597,7 +1614,16 @@ function renderPanel() {
     return;
   }
   panelPlan = [];
-  if (panelSort === "place") {
+  $("pv-fold").hidden = panelSort !== "place";
+  if (panelSort === "person") {
+    const who = new Map();
+    for (const r of vis) {
+      const w = who.get(r.qid);
+      if (!w) who.set(r.qid, { r, n: 1, sites: new Set([r.site]) });
+      else { w.n++; w.sites.add(r.site); if (r.rank > w.r.rank) w.r = r; }
+    }
+    for (const w of [...who.values()].sort((a, z) => z.r.rank - a.r.rank || z.n - a.n)) panelPlan.push({ person: w });
+  } else if (panelSort === "place") {
     const groups = new Map();
     for (const r of vis) { if (!groups.has(r.site)) groups.set(r.site, []); groups.get(r.site).push(r); }
     // places in order of the best known person in each (0.27), then by how many: the biggest cemetery in
@@ -1618,6 +1644,14 @@ function renderPanel() {
   panelCursor = 0; ul.innerHTML = ""; appendChunk();
 }
 
+function personRowHTML(w) {
+  const r = w.r, k = w.sites.size;
+  const where = k > 1 ? `${k} places` : SITES[r.site][S_NAME];
+  return `<li class="row person" data-qid="${esc(r.qid)}" data-site="${r.site}" title="Open this person">` +
+    `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
+    `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
+    `<span class="tags"><span class="badge where">${esc(where.length > 28 ? where.slice(0, 27) + "…" : where)}</span></span></li>`;
+}
 function rowHTML(r, flat) {
   const acc = VOCAB.access[r.access], mk = VOCAB.marking[r.marking];
   return `<li class="row" data-qid="${esc(r.qid)}" data-site="${r.site}" title="Open this person">` +
@@ -1625,8 +1659,8 @@ function rowHTML(r, flat) {
     `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
     `<span class="tags">` +
     (flat ? `<span class="badge">${esc(SITES[r.site][S_NAME].slice(0, 22))}</span>` : "") +
-    `<span class="badge acc-${esc(acc)}">${esc((LABEL.access[acc] || acc).replace(/^\S+\s/, ""))}</span>` +
-    (mk !== "unknown" ? `<span class="badge">${esc((LABEL.marking[mk] || mk).replace(/^\S+\s/, ""))}</span>` : "") +
+    (acc !== "unknown" ? `<span class="badge acc-${esc(acc)}">${esc((LABEL.access[acc] || acc).replace(/^[^\p{L}]+/u, ""))}</span>` : "") +
+    (mk !== "unknown" ? `<span class="badge">${esc(plain("marking", mk))}</span>` : "") +
     `</span></li>`;
 }
 function appendChunk() {
@@ -1650,7 +1684,8 @@ function appendChunk() {
         const hd = box.querySelector(".hd");
         if (hd) html += `<li class="grp-card card"><button type="button" class="grp-card-x" title="Close this card">✕</button>${hd.outerHTML}</li>`;
       }
-    } else html += rowHTML(it.r, it.flat);
+    } else if (it.person) html += personRowHTML(it.person);
+    else html += rowHTML(it.r, it.flat);
   }
   ul.insertAdjacentHTML("beforeend", html);
   const card = ul.querySelector("li.grp-card:not([data-filled])");
@@ -1665,7 +1700,12 @@ function appendChunk() {
   }
 }
 $("worklist").addEventListener("click", (e) => {
-  if (e.target.closest(".grp-card-x")) { selectedSite = null; openPlace = null; renderPanel(); syncURL(); return; }
+  if (e.target.closest(".grp-card-x")) {
+    selectedSite = null; openPlace = null;
+    // back to the list the reader had before the pin opened its place
+    if (sortBeforePin) { panelSort = sortBeforePin; $("pv-sort").value = panelSort; sortBeforePin = null; }
+    renderPanel(); syncURL(); return;
+  }
   if (e.target.closest("li.grp-card")) return;            // its links and pictures act on their own
   const g = e.target.closest("li.grp");
   if (g) { const i = +g.dataset.site; folded.has(i) ? folded.delete(i) : folded.add(i); renderPanel(); return; }
@@ -1682,7 +1722,7 @@ $("pv-fold").addEventListener("click", () => {
   places.forEach((pl) => anyOpen ? folded.add(pl.siteIdx) : folded.delete(pl.siteIdx));
   renderPanel();
 });
-$("pv-sort").addEventListener("change", (e) => { panelSort = e.target.value; renderPanel(); });
+$("pv-sort").addEventListener("change", (e) => { panelSort = e.target.value; sortBeforePin = null; renderPanel(); });
 // Panning and zooming change which cells exist, so the quota has to be re-run: that IS the
 // mechanism by which zooming in reveals the ones that were held back.
 map.on("moveend", () => {
@@ -1698,11 +1738,11 @@ let tableOn = false, tableSort = { key: "rank", dir: -1 };
 const COLS = [
   { key: "name", label: "Person" }, { key: "born", label: "Born", num: true },
   { key: "died", label: "Died", num: true }, { key: "_site", label: "Place" },
-  { key: "_access", label: "Access" }, { key: "_marking", label: "Marking" },
-  { key: "_dom", label: "Domain" }, { key: "rank", label: "Renown", num: true },
+  { key: "_access", label: "Can I see it?" }, { key: "_marking", label: "What is there" },
+  { key: "_dom", label: "Field" }, { key: "rank", label: "Renown", num: true },
 ];
-const cell = (r, k) => k === "_site" ? SITES[r.site][S_NAME] : k === "_access" ? VOCAB.access[r.access]
-  : k === "_marking" ? VOCAB.marking[r.marking] : k === "_dom" ? VOCAB.dom[r.dom] : r[k];
+const cell = (r, k) => k === "_site" ? SITES[r.site][S_NAME] : k === "_access" ? plain("access", VOCAB.access[r.access])
+  : k === "_marking" ? plain("marking", VOCAB.marking[r.marking]) : k === "_dom" ? plain("dom", VOCAB.dom[r.dom]) : r[k];
 function renderTable() {
   const rows = TRACES.filter((r) => passes(r, "table"));
   const k = tableSort.key, num = COLS.find((c) => c.key === k)?.num;
@@ -1710,7 +1750,7 @@ function renderTable() {
     const va = num ? (cell(a, k) ?? -1e9) : deacc(cell(a, k)), vb = num ? (cell(z, k) ?? -1e9) : deacc(cell(z, k));
     return (va < vb ? -1 : va > vb ? 1 : 0) * tableSort.dir;
   });
-  $("table-count").textContent = `${rows.length.toLocaleString()} traces`;
+  $("table-count").textContent = `${rows.length.toLocaleString()} rows` + (rows.length > 3000 ? " · the first 3,000 shown" : "");
   $("traces-table").querySelector("thead").innerHTML = "<tr>" + COLS.map((c) =>
     `<th data-k="${c.key}">${esc(c.label)}${tableSort.key === c.key ? (tableSort.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("") + "</tr>";
   $("traces-table").querySelector("tbody").innerHTML = rows.slice(0, 3000).map((r) =>

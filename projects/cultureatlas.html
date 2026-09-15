@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Culture Atlas · what is left of them, and can you see it</title>
+  <title>Culture Atlas · graves, houses and monuments of famous people</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%235a6b57%22%2F%3E%20%3Cpath%20d%3D%22M16%204.2c-4.4%200-8%203.6-8%208%200%205.9%208%2015.6%208%2015.6s8-9.7%208-15.6c0-4.4-3.6-8-8-8z%22%20fill%3D%22%23f4f2ec%22%2F%3E%20%3Crect%20x%3D%2212.2%22%20y%3D%228.2%22%20width%3D%227.6%22%20height%3D%228.6%22%20rx%3D%223.8%22%20fill%3D%22%235a6b57%22%2F%3E%20%3Ccircle%20cx%3D%2216%22%20cy%3D%2212.5%22%20r%3D%221.7%22%20fill%3D%22%23c8a24a%22%2F%3E%20%3C%2Fsvg%3E">
-  <link rel="icon" type="image/svg+xml" href="culture/favicon.svg?v=0.28.8">
-  <meta name="description" content="A map of the physical traces famous people left behind (graves, plaques, birth houses, statues), sorted by whether you can see them right now or they have opening hours.">
+  <link rel="icon" type="image/svg+xml" href="culture/favicon.svg?v=0.29.2">
+  <meta name="description" content="A world map of the places famous people left behind: where they were born, lived and lie, and the plaques and statues that remember them.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Culture Atlas">
+  <meta property="og:description" content="A world map of the places famous people left behind: where they were born, lived and lie, and the plaques and statues that remember them.">
+  <meta property="og:image" content="https://victorelvira.github.io/projects/culture/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://victorelvira.github.io/projects/cultureatlas.html">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2f3a2e">
   <link rel="stylesheet" href="culture/vendor/leaflet.css">
   <link rel="stylesheet" href="culture/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="culture/style.css?v=0.28.8">
+  <link rel="stylesheet" href="culture/style.css?v=0.29.2">
 </head>
 <body>
   <nav id="navbar">
@@ -26,7 +34,7 @@
       <svg class="mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#5a6b57"/> <path d="M16 4.2c-4.4 0-8 3.6-8 8 0 5.9 8 15.6 8 15.6s8-9.7 8-15.6c0-4.4-3.6-8-8-8z" fill="#f4f2ec"/> <rect x="12.2" y="8.2" width="7.6" height="8.6" rx="3.8" fill="#5a6b57"/> <circle cx="16" cy="12.5" r="1.7" fill="#c8a24a"/></svg>
       <div>
         <strong>Culture Atlas</strong>
-        <small>what is left of them, and can you see it</small>
+        <small>where famous people were born, lived, lie and are remembered</small>
       </div>
     </a>
     <!-- Where I am lives beside the title, not among the filters: it is not a filter, it moves the
@@ -114,8 +122,9 @@
         <span id="panel-head">In view</span>
         <span id="panel-view">
           <label id="pv-sortwrap" class="subtick" title="How to order the panel"><select id="pv-sort">
+            <option value="person">People, best known first</option>
             <option value="place">Grouped by place</option>
-            <option value="rank">Best known first</option>
+            <option value="rank">Every place, best known first</option>
             <option value="year">Oldest first (by birth)</option>
             <option value="name">A to Z</option>
           </select></label>
@@ -168,6 +177,6 @@
   <div id="banner" hidden></div>
   <script src="culture/vendor/leaflet.js"></script>
   <script src="culture/vendor/leaflet.markercluster.js"></script>
-  <script src="culture/app.js?v=0.28.8"></script>
+  <script src="culture/app.js?v=0.29.2"></script>
 </body>
 </html>
