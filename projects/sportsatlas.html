@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sports Atlas · where the great competitions were played</title>
+<meta name="description" content="World Cups, Euros, European club cups, La Liga and the Premier League; Grand Slams, Masters, WTA 1000, Finals and Olympics in men's and women's singles, read from Wikipedia.">
+<link rel="icon" type="image/svg+xml" href="sportsatlas/favicon.svg">
+<link rel="stylesheet" href="sportsatlas/vendor/leaflet.css?v=0.5.6">
+<link rel="stylesheet" href="sportsatlas/style.css?v=0.5.6">
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+  <span id="build" class="build"></span>
+</nav>
+
+<header id="bar">
+  <a class="brand" href="sportsatlas.html">
+    <img class="mark" src="sportsatlas/favicon.svg" alt="" width="30" height="30">
+    <span><strong>Sports Atlas</strong></span>
+  </a>
+  <div id="sport-tabs" role="tablist" aria-label="Sport">
+    <button role="tab" data-sport="football" aria-selected="true">Football</button>
+    <button role="tab" data-sport="tennis" aria-selected="false">Tennis</button>
+  </div>
+  <div id="totals"></div>
+</header>
+
+<div id="modes">
+  <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Filter by player, team, tournament" aria-label="Filter">
+  <div id="gender" role="tablist" aria-label="Tour" hidden></div>
+  <div id="view-tabs" role="tablist" aria-label="View"></div>
+  <div id="years" aria-label="Years">
+    <label>from <input id="y0" type="number" inputmode="numeric"></label>
+    <label>to <input id="y1" type="number" inputmode="numeric"></label>
+  </div>
+</div>
+
+<div id="facets"></div>
+
+<main id="content">
+  <div id="subbar"><span id="count"></span><span class="right" id="active"></span></div>
+  <div id="stage">
+    <div id="tl-wrap" hidden><svg id="tl"></svg></div>
+    <div id="scroll"><table class="cat" id="table"></table><button id="more" hidden>Show more</button></div>
+    <div id="mapview" hidden><div id="map"></div></div>
+  </div>
+  <section id="page" hidden><div class="page-top"><button id="page-back">← Back</button><button id="page-table">Back to the table</button></div><div id="page-body"></div></section>
+  <aside id="rec" hidden><button class="close" aria-label="Close">×</button><button id="rec-back" class="back" hidden>← Back</button><div id="rec-body"></div></aside>
+</main>
+
+<footer><b>Open data:</b> <a href="sportsatlas/open/sports-atlas-data.zip">all tables as CSV</a> · <a href="sportsatlas/open/datapackage.json">datapackage.json</a> · <a href="sportsatlas/open/README.md">how they join</a>. Matches, draws, squads and tables read from the <a href="https://en.wikipedia.org">English Wikipedia</a> (CC BY-SA 4.0); places from <a href="https://www.wikidata.org">Wikidata</a> (CC0); World Cup scorers checked against the <a href="https://github.com/jfjelstul/worldcup">Fjelstul World Cup Database</a> (© 2023 Joshua C. Fjelstul, Ph.D., <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0</a>); league dates also from James Curley's <a href="https://github.com/jalapic/engsoccerdata">engsoccerdata</a> (GPL); tennis draws checked against, and ATP and WTA ranks from, Jeff Sackmann / <a href="http://www.tennisabstract.com/">Tennis Abstract</a>'s tennis_atp and tennis_wta (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>). Flags from Wikimedia Commons (almost all public domain; each file's licence is recorded). Club crests belong to their clubs and are shown, as Wikipedia shows them, to identify the club the atlas informs about; any will be removed on request. Where a source does not add up, the atlas says so instead of guessing.</footer>
+
+<div id="tip"></div>
+<div id="drawer" hidden></div>
+
+<script src="sportsatlas/vendor/leaflet.js?v=0.5.6"></script>
+<script src="sportsatlas/app.js?v=0.5.6"></script>
+</body>
+</html>

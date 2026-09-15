@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.15";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 20:51";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.17";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-15 21:50";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -141,17 +141,34 @@ function ctyName(c) {
 // Keyed by QID, which is why the two QID audits had to come first: nine paintings sharing the QID of
 // the *Sunflowers* SERIES would otherwise have been handed the same title in seven languages.
 let workI18n = null, workI18nLang = null;
+// Machine-translated titles (Víctor, 2026-09-15: Spanish only, marked with a robot). Only for works whose
+// Wikidata item has no label in the language: a human title always wins. Keyed by QID, or by the English
+// title for works without one. See scripts/build_title_mt.py.
+let workMT = null;
+function mtTitle(p) {
+  if (!p || LANG === "en" || !workMT || workI18nLang !== LANG) return "";
+  if (p.qid && workI18n && workI18n[p.qid]) return "";
+  return (p.qid ? workMT.q[p.qid] : workMT.t[p.title]) || "";
+}
 function wTitle(p) {
   if (!p) return "";
   if (LANG !== "en" && workI18n && workI18nLang === LANG && p.qid) {
     const t2 = workI18n[p.qid];
     if (t2) return t2;
   }
-  return p.title || "";
+  return mtTitle(p) || p.title || "";
+}
+// the robot beside a title that a machine translated (plain-text contexts get it as a character)
+function mtMark(p) {
+  return mtTitle(p) ? ` <span class="mt-mark" title="${esc(t("Machine translation (AI)"))}" aria-label="${esc(t("Machine translation (AI)"))}">🤖</span>` : "";
 }
 function loadWorkTitles(lang) {
   if (lang === "en" || workI18nLang === lang) return;
-  workI18nLang = lang; workI18n = null;
+  workI18nLang = lang; workI18n = null; workMT = null;
+  if (lang === "es") fetch(`artatlas/data/work_mt.${lang}.json?v=` + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { if (d && workI18nLang === lang) { workMT = { q: d.q || {}, t: d.t || {} }; if (places.length) refresh(); } })
+    .catch(() => {});
   fetch(`artatlas/data/work_i18n.${lang}.json?v=` + DATA_V)
     .then(r => r.ok ? r.json() : null)
     .then(d => {
@@ -752,7 +769,7 @@ function placePopup(feats) {
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" ${capAttrs(p, p0.location || "")} alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
     return `<li class="pop-work" data-i="${i}">${thumb}<div class="wk">` +
-      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${yr}${att}${st}</div>` +
+      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${yr}${att}${st}</div>` +
       `<div class="by">${painterTag(p)}</div>` +
       `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
       `${provLine(p, WORK_SKIP)}</div></li>`;
@@ -1368,7 +1385,7 @@ function renderWorksTable() {
     return `<tr data-ri="${i}">` +
       `<td class="c-img">${thumb}</td>` +
       `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${painterLink(p.painter)}</td>` +
-      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}</td>` +
+      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}</td>` +
       `<td class="c-year">${esc(p.year || "")}</td>` +
       `<td class="c-medium">${esc(p.medium || "")}</td>` +
       `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
@@ -1747,12 +1764,12 @@ function tileHTML(w, vis, grp) {
     `<div class="gcard">${img}<div class="gmeta">` +
     // under a painter's colour field their name is already written above the whole run, so the card
     // spends its two lines on what is not known yet: the title, and where the work hangs
-    `<div class="gm1">${grp && grp.kind === "painter" ? esc(wTitle(p) || t("Untitled")) : painterLink(p.painter)}` +
+    `<div class="gm1">${grp && grp.kind === "painter" ? esc(wTitle(p) || t("Untitled")) + mtMark(p) : painterLink(p.painter)}` +
     `${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     // …and under a MUSEUM's colour field the museum is the thing already written above, so the second
     // line gives the painting's title instead of repeating the museum on every tile (Víctor)
     (grp && grp.kind === "museum"
-      ? `<div class="gm2">${esc(wTitle(p) || t("Untitled"))}</div>`
+      ? `<div class="gm2">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}</div>`
       : p.location ? `<div class="gm2">${museumLink(p)}${p.city ? `, ${cityLink(p.city, p.country)}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
@@ -1902,7 +1919,7 @@ function panelRowHTML(w, grpKey) {
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}"${fold}>${thumb}<div>` +
-    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
+    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
     (venue ? `<div class="sub wvenue">${museumLink(p, esc(venue))}${p.city ? ", " + cityLink(p.city, p.country) : ""}</div>` : "") +
     `</div></li>`;
@@ -2245,7 +2262,7 @@ function commonsPage(url) {
 // The caption under an enlarged picture. It used to be title and museum only, so paging through a
 // museum's run you could not tell who painted what: the painter is the first thing people ask.
 function capOf(p, where) {
-  const head = `${wTitle(p)}${p.year ? ` (${p.year})` : ""}`.trim();
+  const head = `${wTitle(p)}${mtTitle(p) ? " 🤖" : ""}${p.year ? ` (${p.year})` : ""}`.trim();
   return [head, pName(p.painter), where === undefined ? locName(p) : where].filter(Boolean).join(" · ");
 }
 // data-cap plus what the enlarged picture needs to turn the painter and the museum into links
@@ -2519,7 +2536,7 @@ function openWorkCard(w) {
   const links = linksRow(p);
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
-    `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}</h3>` +
+    `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}</h3>` +
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), venue
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")

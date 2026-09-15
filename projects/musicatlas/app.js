@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.49.0";
-const BUILD_AT = "2026-09-15 21:16";
+const DATA_V = "0.50.0";
+const BUILD_AT = "2026-09-15 21:38";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -249,7 +249,13 @@ function year(w){ const f=F(w,"date_composed"); if(!f||f.suspect) return null;
 function ensemble(w){ const i=arr(val(w,"instrumentation")); if(!i.length) return null;
   const a=[...i].sort();
   return a.length>4 ? a.slice(0,3).join(" + ")+" +"+(a.length-3) : a.join(" + "); }
+/* `al` son las palabras que las OTRAS fuentes usan para la misma obra y el título principal
+   no tiene: "moonlight", "jupiter", "appassionata". Vienen ya en el índice, porque
+   `title_variants` vive en el fichero de detalle del compositor y ese solo se carga al
+   abrir una ficha: el buscador estaba mirando un campo que casi siempre estaba vacío, y
+   "moonlight" devolvía cero teniendo la sonata. 2026-09-15. */
 function haystack(w){ return w._h || (w._h = fold([w.title,w.composers.join(" "),
+  w.al || "",
   ...Object.values(w.title_variants||{}), cats(w).map(c=>c.label).join(" "),
   show(w,"key"), show(w,"dedication"), arr(val(w,"instrumentation")).join(" "),
   show(w,"genre")].filter(Boolean).join(" ⋅ "))); }

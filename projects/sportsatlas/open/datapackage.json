@@ -1,0 +1,936 @@
+{
+ "profile": "data-package",
+ "name": "sports-atlas",
+ "title": "Sports Atlas",
+ "description": "Football (World Cups, Euros, European club cups, La Liga, Premier League) and tennis singles (Grand Slams, ATP Masters 1000, WTA 1000, ATP and WTA Finals, Olympics), read from the English Wikipedia and checked against other open sources. Identifiers: Wikipedia page titles and Wikidata items.",
+ "homepage": "https://victorelvira.github.io",
+ "licenses": [
+  {
+   "name": "CC-BY-SA-4.0",
+   "path": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "title": "Creative Commons Attribution Share-Alike 4.0"
+  }
+ ],
+ "sources": [
+  {
+   "title": "English Wikipedia",
+   "path": "https://en.wikipedia.org"
+  },
+  {
+   "title": "Wikidata",
+   "path": "https://www.wikidata.org"
+  },
+  {
+   "title": "engsoccerdata (James Curley)",
+   "path": "https://github.com/jalapic/engsoccerdata"
+  },
+  {
+   "title": "Fjelstul World Cup Database",
+   "path": "https://github.com/jfjelstul/worldcup"
+  },
+  {
+   "title": "tennis_atp and tennis_wta (Jeff Sackmann / Tennis Abstract), CC BY-NC-SA 4.0: the ranking columns and tennis_abstract_ids",
+   "path": "https://github.com/JeffSackmann"
+  }
+ ],
+ "resources": [
+  {
+   "name": "football_competitions",
+   "path": "football_competitions.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 379,
+   "hash": "88bfbdfa60d29b01546e75924ee02abe",
+   "rows": 8,
+   "schema": {
+    "fields": [
+     {
+      "name": "competition_id",
+      "type": "string"
+     },
+     {
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_editions",
+   "path": "football_editions.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 55468,
+   "hash": "7ed95cc1c6df15b21dbccc4fc0a1071e",
+   "rows": 347,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "competition_id",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "season",
+      "type": "string"
+     },
+     {
+      "name": "title",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     },
+     {
+      "name": "wikidata",
+      "type": "string"
+     },
+     {
+      "name": "champion",
+      "type": "string"
+     },
+     {
+      "name": "champion_team_id",
+      "type": "string"
+     },
+     {
+      "name": "runner_up",
+      "type": "string"
+     },
+     {
+      "name": "runner_up_team_id",
+      "type": "string"
+     },
+     {
+      "name": "matches",
+      "type": "string"
+     },
+     {
+      "name": "goals",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_matches",
+   "path": "football_matches.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 9398894,
+   "hash": "513c599a720b0271ac03e1f6005d2490",
+   "rows": 60805,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "competition_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "stage",
+      "type": "string"
+     },
+     {
+      "name": "home_team_id",
+      "type": "string"
+     },
+     {
+      "name": "home_team",
+      "type": "string"
+     },
+     {
+      "name": "away_team_id",
+      "type": "string"
+     },
+     {
+      "name": "away_team",
+      "type": "string"
+     },
+     {
+      "name": "home_goals",
+      "type": "string"
+     },
+     {
+      "name": "away_goals",
+      "type": "string"
+     },
+     {
+      "name": "note",
+      "type": "string"
+     },
+     {
+      "name": "venue_wikidata",
+      "type": "string"
+     },
+     {
+      "name": "venue_written",
+      "type": "string"
+     },
+     {
+      "name": "attendance",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_teams",
+   "path": "football_teams.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 102067,
+   "hash": "317401f7a896ad4c7a0fb3aeabcc5595",
+   "rows": 972,
+   "schema": {
+    "fields": [
+     {
+      "name": "team_id",
+      "type": "string"
+     },
+     {
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "name": "kind",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     },
+     {
+      "name": "wikidata",
+      "type": "string"
+     },
+     {
+      "name": "engsoccerdata_names",
+      "type": "string"
+     },
+     {
+      "name": "Association of Tennis Professionals player ID (P536)",
+      "type": "string"
+     },
+     {
+      "name": "Women's Tennis Association player ID (P597)",
+      "type": "string"
+     },
+     {
+      "name": "WorldFootball.net person ID (old) (P2020)",
+      "type": "string"
+     },
+     {
+      "name": "UEFA player ID (P2276)",
+      "type": "string"
+     },
+     {
+      "name": "Scorebar / Soccerway person ID (P2369)",
+      "type": "string"
+     },
+     {
+      "name": "Transfermarkt player ID (P2446)",
+      "type": "string"
+     },
+     {
+      "name": "National-Football-Teams.com player ID (P2574)",
+      "type": "string"
+     },
+     {
+      "name": "Tennis Hall of Fame player ID (P3363)",
+      "type": "string"
+     },
+     {
+      "name": "BDFutbol player ID (P3655)",
+      "type": "string"
+     },
+     {
+      "name": "Women's Collegiate Tennis Hall of Fame ID (P4402)",
+      "type": "string"
+     },
+     {
+      "name": "FBref player ID (P5750)",
+      "type": "string"
+     },
+     {
+      "name": "Scorebar / Soccerway team ID (P6131)",
+      "type": "string"
+     },
+     {
+      "name": "Transfermarkt team ID (P7223)",
+      "type": "string"
+     },
+     {
+      "name": "WorldFootball.net team ID (old) (P7287)",
+      "type": "string"
+     },
+     {
+      "name": "UEFA team ID (P7361)",
+      "type": "string"
+     },
+     {
+      "name": "BDFutbol team ID (P7488)",
+      "type": "string"
+     },
+     {
+      "name": "National-Football-Teams.com club ID (P8147)",
+      "type": "string"
+     },
+     {
+      "name": "Olympedia people ID (P8286)",
+      "type": "string"
+     },
+     {
+      "name": "FBref squad ID (P8642)",
+      "type": "string"
+     },
+     {
+      "name": "Tennis Abstract player ID (P10028)",
+      "type": "string"
+     },
+     {
+      "name": "11v11 player ID (P12551)",
+      "type": "string"
+     },
+     {
+      "name": "Billie Jean King Cup player ID since 2024 (P13539)",
+      "type": "string"
+     },
+     {
+      "name": "‎Davis Cup player ID since 2025 (P13958)",
+      "type": "string"
+     },
+     {
+      "name": "‎WorldFootball.net ID (new) (P14795)",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_team_lineage",
+   "path": "football_team_lineage.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 5416,
+   "hash": "2262733148b4fa8f8d6f1e35c096e368",
+   "rows": 22,
+   "schema": {
+    "fields": [
+     {
+      "name": "from_team_id",
+      "type": "string"
+     },
+     {
+      "name": "to_team_id",
+      "type": "string"
+     },
+     {
+      "name": "relation",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "evidence",
+      "type": "string"
+     },
+     {
+      "name": "source",
+      "type": "string"
+     },
+     {
+      "name": "status",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_players",
+   "path": "football_players.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 3482736,
+   "hash": "e72ab8ab925a19240b36b800dec75919",
+   "rows": 28867,
+   "schema": {
+    "fields": [
+     {
+      "name": "player_id",
+      "type": "string"
+     },
+     {
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "name": "born",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     },
+     {
+      "name": "wikidata",
+      "type": "string"
+     },
+     {
+      "name": "fjelstul_player_id",
+      "type": "string"
+     },
+     {
+      "name": "goals_in_atlas",
+      "type": "string"
+     },
+     {
+      "name": "Association of Tennis Professionals player ID (P536)",
+      "type": "string"
+     },
+     {
+      "name": "Women's Tennis Association player ID (P597)",
+      "type": "string"
+     },
+     {
+      "name": "WorldFootball.net person ID (old) (P2020)",
+      "type": "string"
+     },
+     {
+      "name": "UEFA player ID (P2276)",
+      "type": "string"
+     },
+     {
+      "name": "Scorebar / Soccerway person ID (P2369)",
+      "type": "string"
+     },
+     {
+      "name": "Transfermarkt player ID (P2446)",
+      "type": "string"
+     },
+     {
+      "name": "National-Football-Teams.com player ID (P2574)",
+      "type": "string"
+     },
+     {
+      "name": "Tennis Hall of Fame player ID (P3363)",
+      "type": "string"
+     },
+     {
+      "name": "BDFutbol player ID (P3655)",
+      "type": "string"
+     },
+     {
+      "name": "Women's Collegiate Tennis Hall of Fame ID (P4402)",
+      "type": "string"
+     },
+     {
+      "name": "FBref player ID (P5750)",
+      "type": "string"
+     },
+     {
+      "name": "Scorebar / Soccerway team ID (P6131)",
+      "type": "string"
+     },
+     {
+      "name": "Transfermarkt team ID (P7223)",
+      "type": "string"
+     },
+     {
+      "name": "WorldFootball.net team ID (old) (P7287)",
+      "type": "string"
+     },
+     {
+      "name": "UEFA team ID (P7361)",
+      "type": "string"
+     },
+     {
+      "name": "BDFutbol team ID (P7488)",
+      "type": "string"
+     },
+     {
+      "name": "National-Football-Teams.com club ID (P8147)",
+      "type": "string"
+     },
+     {
+      "name": "Olympedia people ID (P8286)",
+      "type": "string"
+     },
+     {
+      "name": "FBref squad ID (P8642)",
+      "type": "string"
+     },
+     {
+      "name": "Tennis Abstract player ID (P10028)",
+      "type": "string"
+     },
+     {
+      "name": "11v11 player ID (P12551)",
+      "type": "string"
+     },
+     {
+      "name": "Billie Jean King Cup player ID since 2024 (P13539)",
+      "type": "string"
+     },
+     {
+      "name": "‎Davis Cup player ID since 2025 (P13958)",
+      "type": "string"
+     },
+     {
+      "name": "‎WorldFootball.net ID (new) (P14795)",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_squads",
+   "path": "football_squads.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 4015664,
+   "hash": "8bf245cead097ba38bfc8d709f1b5794",
+   "rows": 49593,
+   "schema": {
+    "fields": [
+     {
+      "name": "player_id",
+      "type": "string"
+     },
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "competition_id",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "team",
+      "type": "string"
+     },
+     {
+      "name": "team_id",
+      "type": "string"
+     },
+     {
+      "name": "position",
+      "type": "string"
+     },
+     {
+      "name": "number",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "football_goals",
+   "path": "football_goals.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 13165218,
+   "hash": "c56527fafd786e31f8130cc430a7d147",
+   "rows": 107203,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "date",
+      "type": "string"
+     },
+     {
+      "name": "home_team_id",
+      "type": "string"
+     },
+     {
+      "name": "away_team_id",
+      "type": "string"
+     },
+     {
+      "name": "credited_team_id",
+      "type": "string"
+     },
+     {
+      "name": "player_id",
+      "type": "string"
+     },
+     {
+      "name": "player",
+      "type": "string"
+     },
+     {
+      "name": "minute",
+      "type": "string"
+     },
+     {
+      "name": "type",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tennis_competitions",
+   "path": "tennis_competitions.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 1933,
+   "hash": "7d3f766721619d6ae2b07811a7b0398f",
+   "rows": 45,
+   "schema": {
+    "fields": [
+     {
+      "name": "competition_id",
+      "type": "string"
+     },
+     {
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "name": "tour",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tennis_editions",
+   "path": "tennis_editions.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 345493,
+   "hash": "9a9e950696c129e9174de77ed86a8e5c",
+   "rows": 1725,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "competition_id",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "title",
+      "type": "string"
+     },
+     {
+      "name": "played_as",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     },
+     {
+      "name": "wikidata",
+      "type": "string"
+     },
+     {
+      "name": "champion_id",
+      "type": "string"
+     },
+     {
+      "name": "runner_up_id",
+      "type": "string"
+     },
+     {
+      "name": "final_score",
+      "type": "string"
+     },
+     {
+      "name": "players",
+      "type": "string"
+     },
+     {
+      "name": "matches",
+      "type": "string"
+     },
+     {
+      "name": "venue_wikidata",
+      "type": "string"
+     },
+     {
+      "name": "surface",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tennis_matches",
+   "path": "tennis_matches.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 12399349,
+   "hash": "675c6b98593018f389006a385a5baaf7",
+   "rows": 124130,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "round",
+      "type": "string"
+     },
+     {
+      "name": "rounds_before_final",
+      "type": "string"
+     },
+     {
+      "name": "player1_id",
+      "type": "string"
+     },
+     {
+      "name": "player2_id",
+      "type": "string"
+     },
+     {
+      "name": "winner_id",
+      "type": "string"
+     },
+     {
+      "name": "score",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tennis_players",
+   "path": "tennis_players.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 1594489,
+   "hash": "2104da01760a9b0f54ba72e9eb55eb67",
+   "rows": 15112,
+   "schema": {
+    "fields": [
+     {
+      "name": "player_id",
+      "type": "string"
+     },
+     {
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "name": "country",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     },
+     {
+      "name": "wikidata",
+      "type": "string"
+     },
+     {
+      "name": "tennis_abstract_ids",
+      "type": "string"
+     },
+     {
+      "name": "best_ranking",
+      "type": "string"
+     },
+     {
+      "name": "weeks_at_no1_on_file",
+      "type": "string"
+     },
+     {
+      "name": "Association of Tennis Professionals player ID (P536)",
+      "type": "string"
+     },
+     {
+      "name": "Women's Tennis Association player ID (P597)",
+      "type": "string"
+     },
+     {
+      "name": "WorldFootball.net person ID (old) (P2020)",
+      "type": "string"
+     },
+     {
+      "name": "UEFA player ID (P2276)",
+      "type": "string"
+     },
+     {
+      "name": "Scorebar / Soccerway person ID (P2369)",
+      "type": "string"
+     },
+     {
+      "name": "Transfermarkt player ID (P2446)",
+      "type": "string"
+     },
+     {
+      "name": "National-Football-Teams.com player ID (P2574)",
+      "type": "string"
+     },
+     {
+      "name": "Tennis Hall of Fame player ID (P3363)",
+      "type": "string"
+     },
+     {
+      "name": "BDFutbol player ID (P3655)",
+      "type": "string"
+     },
+     {
+      "name": "Women's Collegiate Tennis Hall of Fame ID (P4402)",
+      "type": "string"
+     },
+     {
+      "name": "FBref player ID (P5750)",
+      "type": "string"
+     },
+     {
+      "name": "Scorebar / Soccerway team ID (P6131)",
+      "type": "string"
+     },
+     {
+      "name": "Transfermarkt team ID (P7223)",
+      "type": "string"
+     },
+     {
+      "name": "WorldFootball.net team ID (old) (P7287)",
+      "type": "string"
+     },
+     {
+      "name": "UEFA team ID (P7361)",
+      "type": "string"
+     },
+     {
+      "name": "BDFutbol team ID (P7488)",
+      "type": "string"
+     },
+     {
+      "name": "National-Football-Teams.com club ID (P8147)",
+      "type": "string"
+     },
+     {
+      "name": "Olympedia people ID (P8286)",
+      "type": "string"
+     },
+     {
+      "name": "FBref squad ID (P8642)",
+      "type": "string"
+     },
+     {
+      "name": "Tennis Abstract player ID (P10028)",
+      "type": "string"
+     },
+     {
+      "name": "11v11 player ID (P12551)",
+      "type": "string"
+     },
+     {
+      "name": "Billie Jean King Cup player ID since 2024 (P13539)",
+      "type": "string"
+     },
+     {
+      "name": "‎Davis Cup player ID since 2025 (P13958)",
+      "type": "string"
+     },
+     {
+      "name": "‎WorldFootball.net ID (new) (P14795)",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "venues",
+   "path": "venues.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 100556,
+   "hash": "92c18d1ea69f6c2713156874be28b668",
+   "rows": 1244,
+   "schema": {
+    "fields": [
+     {
+      "name": "wikidata",
+      "type": "string"
+     },
+     {
+      "name": "sport",
+      "type": "string"
+     },
+     {
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "name": "latitude",
+      "type": "string"
+     },
+     {
+      "name": "longitude",
+      "type": "string"
+     },
+     {
+      "name": "country",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     }
+    ]
+   }
+  }
+ ]
+}

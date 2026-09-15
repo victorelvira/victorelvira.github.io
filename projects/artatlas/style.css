@@ -1287,3 +1287,7 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 .tl-undated:hover { text-decoration-color: currentColor; color: var(--ink); }
 .tl-undated.on { color: var(--ink); font-weight: 600; text-decoration-color: currentColor; }
 #timeline.undated-only .tl-range, #timeline.undated-only .tl-val { opacity: .35; }
+
+/* a title a machine translated: a small robot, full colour only on hover */
+.mt-mark { font-size: .78em; opacity: .55; cursor: help; margin-left: 2px; filter: grayscale(.4); }
+.mt-mark:hover { opacity: 1; filter: none; }
