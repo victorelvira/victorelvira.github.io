@@ -559,7 +559,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Lise with a Parasol",
     "year": "1867",
-    "city": "Stadtbezirk II (Essen)",
+    "city": "Essen",
     "location": "Museum Folkwang",
     "attribution": "generally accepted",
     "dimensions": "184 cm × 115 cm (72 in × 45 in)",
@@ -579,7 +579,8 @@
     "country": "Germany",
     "location_src": "Museum Folkwang",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stadtbezirk II (Essen)"
    }
   },
   {
@@ -595,7 +596,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "En été (La Bohémienne) ( In Summer (The Bohemian) )",
     "year": "1868",
-    "city": "Bezirk Mitte",
+    "city": "Berlin",
     "country": "Germany",
     "location": "Alte Nationalgalerie",
     "attribution": "generally accepted",
@@ -615,7 +616,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q1659469",
     "location_src": "Alte Nationalgalerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Bezirk Mitte"
    }
   },
   {
@@ -1740,7 +1742,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "In the Garden – Under the Arbour at the Moulin de la Galette ( French : Au jardin – Sous la tonnelle au moulin de la Galette",
     "year": "1876",
-    "city": "Khamovniki District",
+    "city": "Moscow",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -1768,7 +1770,8 @@
     ],
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Khamovniki District"
    }
   },
   {
@@ -1909,7 +1912,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Nude woman sitting on a couch (Anna)",
     "year": "1876",
-    "city": "Khamovniki District",
+    "city": "Moscow",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -1929,7 +1932,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q3713947",
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Khamovniki District"
    }
   },
   {
@@ -2277,7 +2281,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "The Daydream ( fr:La Rêverie (Renoir) )",
     "year": "1877",
-    "city": "Khamovniki District",
+    "city": "Moscow",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -2305,7 +2309,8 @@
     ],
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Khamovniki District"
    }
   },
   {
@@ -2830,7 +2835,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Young Girls in Black ( French : Jeunes filles en noir )",
     "year": "1881",
-    "city": "Khamovniki District",
+    "city": "Moscow",
     "country": "Russia",
     "location": "Pushkin Museum",
     "attribution": "generally accepted",
@@ -2850,7 +2855,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q613390",
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Khamovniki District"
    }
   },
   {
@@ -3399,7 +3405,7 @@
     "painter": "Pierre-Auguste Renoir",
     "title": "Children's Afternoon at Wargemont ( French : L'après-midi des enfants à Wargemont )",
     "year": "1884",
-    "city": "Bezirk Mitte",
+    "city": "Berlin",
     "country": "Germany",
     "location": "Alte Nationalgalerie",
     "attribution": "generally accepted",
@@ -3428,7 +3434,8 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "city_src": "Bezirk Mitte"
    }
   },
   {
@@ -18380,7 +18387,7 @@
     "title": "Chestnut in Blossom",
     "year": "1881",
     "location": "Alte Nationalgalerie",
-    "city": "Bezirk Mitte",
+    "city": "Berlin",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1881%20Renoir%20Bluehender%20Kastanienbaum%20anagoria.JPG?width=500",
@@ -18404,7 +18411,8 @@
     "museum_id": "alte-nationalgalerie",
     "location_src": "Alte Nationalgalerie",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Bezirk Mitte"
    }
   },
   {
@@ -28200,7 +28208,7 @@
     "title": "Bouquet of Chrysanthemums and a Japanese Fan",
     "year": "1880",
     "location": "Pushkin Museum",
-    "city": "Khamovniki District",
+    "city": "Moscow",
     "country": "Russia",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27Bouquet%20of%20Chrysanthemums%20and%20a%20Japanese%20Fan%27%20by%20Pierre-Auguste%20Renoir.JPG?width=500",
@@ -28224,7 +28232,8 @@
     "museum_id": "pushkin-museum",
     "location_src": "Pushkin Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Khamovniki District"
    }
   },
   {
@@ -35506,7 +35515,7 @@
     "title": "Portrait de Gertrude Osthaus",
     "year": "1913",
     "location": "Museum Folkwang",
-    "city": "Stadtbezirk II (Essen)",
+    "city": "Essen",
     "country": "Germany",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Portrait%20de%20Gertrude%20Osthaus.jpg?width=500",
@@ -35520,7 +35529,8 @@
     "museum_id": "museum-folkwang",
     "location_src": "Museum Folkwang",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stadtbezirk II (Essen)"
    }
   },
   {

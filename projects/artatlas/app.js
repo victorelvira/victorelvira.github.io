@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 12:05";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.8";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-15 14:03";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -288,10 +288,10 @@ document.getElementById("report-form")?.addEventListener("submit", e => {
   e.preventDefault();
   const data = new URLSearchParams(new FormData(e.target));
   const send = document.getElementById("report-send"), msg = document.getElementById("report-msg");
-  send.disabled = true; msg.textContent = "Sending…";
+  send.disabled = true; msg.textContent = t("Sending…");
   fetch(REPORT_ENDPOINT, { method: "POST", mode: "no-cors", body: data })
-    .then(() => { msg.textContent = "Thanks! I'll review it. 🙌"; setTimeout(closeReport, 1500); })
-    .catch(() => { msg.textContent = "Couldn't send. Please try again later."; })
+    .then(() => { msg.textContent = t("Thanks! I'll review it. 🙌"); setTimeout(closeReport, 1500); })
+    .catch(() => { msg.textContent = t("Couldn't send. Please try again later."); })
     .finally(() => { send.disabled = false; });
 });
 
@@ -526,7 +526,7 @@ function updateLegend() {
   legendDiv.style.display = "";
   const rows = shown.map(p => `<span class="le"><span class="k" style="background:${colorFor(p.name)}"></span>${shown.length > 1 ? painterLink(p.name) : esc(pName(p.name))}</span>`).join("");
   legendDiv.innerHTML = `<div class="row">${rows}` +
-    (shown.length > 1 ? `<span class="le"><span class="k" style="background:${MULTI_COLOR}"></span>Several</span>` : "") + `</div>`;
+    (shown.length > 1 ? `<span class="le"><span class="k" style="background:${MULTI_COLOR}"></span>${esc(t("Several"))}</span>` : "") + `</div>`;
 }
 
 let allFeatures = [];   // raw point features from the geojson
@@ -688,7 +688,7 @@ function linksRow(p) {
   const parts = [];
   if (wp.length) parts.push(`<span class="lbl">Wikipedia</span>${wp.join("")}`);
   if (p.wikidata) parts.push(`<a class="tag wd" href="${esc(p.wikidata)}" target="_blank" rel="noopener">Wikidata</a>`);
-  if (p.wga_url) parts.push(`<a class="tag wga" href="${esc(p.wga_url)}" target="_blank" rel="noopener" title="Web Gallery of Art record">WGA</a>`);
+  if (p.wga_url) parts.push(`<a class="tag wga" href="${esc(p.wga_url)}" target="_blank" rel="noopener" title="${esc(t("Web Gallery of Art record"))}">WGA</a>`);
   return parts.join(" ");
 }
 
@@ -729,7 +729,7 @@ function placePopup(feats) {
     const where = [cityLink(p0.city, p0.country), countryLink(p0.country)].filter(Boolean).join(", ");
     // the venue name is a button → opens this museum in the side list (filters to it)
     head = `<div class="hd"><button type="button" class="nm pop-museum" data-museum="${esc(museumKey(p0))}"` +
-      ` title="Show all works of this venue in the list">${esc(locName(p0) || t("Location"))}<span class="pm-arrow"> ↗</span></button>` +
+      ` title="${esc(t("Show this museum"))}">${esc(locName(p0) || t("Location"))}<span class="pm-arrow"> ↗</span></button>` +
       `<div class="meta">${where}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
@@ -910,7 +910,7 @@ function buildPainterSelect() {
   box.innerHTML =
     `<button id="painters-btn" class="chip" type="button" aria-expanded="false">${t("All painters ▾")}</button>` +
     `<div id="painters-pop" class="pop" hidden>` +
-    `<input id="painters-search" class="pop-search" placeholder="Search painters or museums…" autocomplete="off">` +
+    `<input id="painters-search" class="pop-search" placeholder="${esc(t("Search painters or museums…"))}" autocomplete="off">` +
     `<div class="pop-actions">` +
     `<span id="grp-toggle"><button type="button" data-grp="period" class="active">${t("Period")}</button>` +
     `<button type="button" data-grp="school">${t("School")}</button></span>` +
@@ -955,26 +955,26 @@ function renderPainterList() {
   const museumRow = m =>
     `<li class="mrow" data-museum="${esc(m.key)}"><span class="micon">🏛</span><div>` +
     `<div class="mname">${esc(locName({ location: m.location, museum_id: m.key }))}</div>` +
-    `<div class="msub">${esc([m.city, m.country].filter(Boolean).join(", "))} · ${m.count} works · ` +
-    `${m.painters.size} painter${m.painters.size > 1 ? "s" : ""}</div></div></li>`;
+    `<div class="msub">${esc([ctyName(m.city), cName(m.country)].filter(Boolean).join(", "))} · ${m.count} ${tu(m.count === 1 ? "work" : "works")} · ` +
+    `${m.painters.size} ${tu(m.painters.size > 1 ? "painters" : "painter")}</div></div></li>`;
 
   if (q) {   // when searching: matching museums first (there are hundreds otherwise)
     const mus = museumIndex.filter(m =>
       deacc(m.location).includes(q) || deacc(m.city).includes(q)).slice(0, 8);
-    if (mus.length) html += `<li class="pop-h">Museums</li>` + mus.map(museumRow).join("");
+    if (mus.length) html += `<li class="pop-h">${esc(t("Museums"))}</li>` + mus.map(museumRow).join("");
   }
 
   const painterRow = p => {
     const on = state.painters[p.name] !== false;
-    const yr = BORN[p.slug] ? ` <span class="pyr">b. ${BORN[p.slug]}</span>` : "";
+    const yr = BORN[p.slug] ? ` <span class="pyr">${esc(t("b."))} ${BORN[p.slug]}</span>` : "";
     return `<li class="prow"><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
-      `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(p.name)}${yr}</label>` +
-      `<button type="button" class="only" data-only="${esc(p.name)}">only</button></li>`;
+      `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(pName(p.name))}${yr}</label>` +
+      `<button type="button" class="only" data-only="${esc(p.name)}">${esc(t("only"))}</button></li>`;
   };
   const pnt = PAINTERS.filter(p => deacc(p.name).includes(q) || deacc(nickOf(p)).includes(q));
   if (pnt.length) {
     if (q) {                                   // searching → flat list under one header (if mixed with museums)
-      if (html) html += `<li class="pop-h">Painters</li>`;
+      if (html) html += `<li class="pop-h">${esc(t("Painters"))}</li>`;
       html += pnt.map(painterRow).join("");
     } else {                                   // idle → grouped by the active axis (period or school)
       const groups = painterGroupBy === "school" ? SCHOOLS : ERAS;
@@ -1004,10 +1004,10 @@ function renderPainterList() {
   }
 
   if (!q && museumIndex.length) {   // idle state: surface the museum search
-    html += `<li class="pop-h">Popular museums · type to search all ${museumIndex.length}</li>` +
+    html += `<li class="pop-h">${esc(t("Popular museums · type to search all N").replace("N", museumIndex.length))}</li>` +
       museumIndex.slice(0, 6).map(museumRow).join("");
   }
-  ul.innerHTML = html || `<li class="pop-empty">no match</li>`;
+  ul.innerHTML = html || `<li class="pop-empty">${esc(t("no match"))}</li>`;
 
   ul.querySelectorAll("input[data-painter]").forEach(cb => cb.addEventListener("change", () => {
     state.painters[cb.dataset.painter] = cb.checked;
@@ -1395,7 +1395,7 @@ function renderMuseumsTable() {
   thead.innerHTML = headHTML(MUSEUM_COLS, museumSort);
   const rows = museumRows();
   document.getElementById("table-count").textContent =
-    `${rows.length.toLocaleString()} museum${rows.length === 1 ? "" : "s"}`;
+    `${rows.length.toLocaleString()} ${tu(rows.length === 1 ? "museum" : "museums")}`;
   tbody.innerHTML = rows.map(r =>
     `<tr data-rk="${esc(r.key)}">` +
     `<td class="c-title">🏛 ${esc(locName({ location: r.location, museum_id: r.key }))}</td>` +
@@ -1717,7 +1717,7 @@ function tileHTML(w, vis, grp) {
   const img = p.image
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
-  const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
+  const share = p.qid ? `<button class="gshare" data-i="${i}" title="${esc(t("Share this painting"))}" aria-label="${esc(t("Share"))}">🔗</button>` : "";
   const style = grp && grp.color ? ` style="background:${grp.color}${grp.edge ? `;--edge:${grp.edge}` : ""}"` : "";
   const nameTag = grp && grp.label ? `<div class="mlabel">${esc(grp.label)}</div>` : "";
   const placeAttr = grp && grp.key ? ` data-place="${esc(grp.key)}"` : "";
@@ -2492,7 +2492,7 @@ function openWorkCard(w) {
   const cap = capOf(p);
   const img = p.image
     ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="">`
-    : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;
+    : `<div class="wc-noimg">${esc(t("no image on Wikimedia Commons"))}</div>`;
   const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
   const venue = [museumLink(p), cityLink(p.city, p.country), countryLink(p.country)].filter(Boolean).join(", ");
   const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
@@ -2567,7 +2567,7 @@ function shareWork(p) {
   const url = p.qid ? new URL("artatlas/w/" + p.qid + ".html", location.href).href : location.href;
   const title = `${p.title || "Painting"}${p.painter ? " · " + p.painter : ""}`;
   if (navigator.share) navigator.share({ title, url }).catch(() => {});
-  else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast("Link copied ✓")).catch(() => toast("Copy failed"));
+  else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast(t("Link copied ✓"))).catch(() => toast(t("Copy failed")));
   else toast(url);
 }
 // Back or forward: put the atlas in the state the address describes, without writing history.
@@ -2910,7 +2910,7 @@ function gScore() {
     const lvl = `<span class="grec-lvl">${G.diff}</span>`;
     rec.innerHTML = s.all.total
       ? `${lvl} 🔥 ${gStreak}<i>streak</i> <b>·</b> ${s.best}<i>best</i> <b>·</b> ${gPct(s.day.right, s.day.total)}%<i>today</i> <b>·</b> ${gPct(s.all.right, s.all.total)}%<i>all-time</i>`
-      : `${lvl} <span class="grec-none">no games yet</span>`;
+      : `${lvl} <span class="grec-none">${esc(t("no games yet"))}</span>`;
   }
 }
 
@@ -3007,7 +3007,7 @@ function chartCellCount(r, cell) { return r.kind === "painter" ? cell.length : [
 function renderChart() {
   const host = document.getElementById("chart-scroll"); if (!host) return;
   const data = chartData();
-  if (!data.length) { host.innerHTML = `<div class="g-empty">No dated works.</div>`; return; }
+  if (!data.length) { host.innerHTML = `<div class="g-empty">${esc(t("No dated works."))}</div>`; return; }
   // rows: one per painter (individual), or one per period/school SUMMING all its painters (aggregate)
   let rows;
   if (chartGroup === "individual") {
@@ -3105,13 +3105,13 @@ function setChartView(on) {
     const total = chartCellCount(r, cell);
     let h = `<div class="ct-h"><b>${esc(r.label)}</b> · ${yr}</div><div class="ct-n">${total} ${tu(total === 1 ? "work" : "works")}</div><ul>`;
     if (r.kind === "painter") {
-      const t = cell.slice().sort();
-      h += t.slice(0, 7).map(x => `<li>${esc(x || "Untitled")}</li>`).join("");
-      if (t.length > 7) h += `<li class="ct-more">…and ${t.length - 7} more</li>`;
+      const titles = cell.slice().sort();
+      h += titles.slice(0, 7).map(x => `<li>${esc(x || t("Untitled"))}</li>`).join("");
+      if (titles.length > 7) h += `<li class="ct-more">${esc(t("…and N more").replace("N", titles.length - 7))}</li>`;
     } else {
       const e = [...cell.entries()].sort((a, b) => b[1] - a[1]);
       h += e.slice(0, 8).map(([n, c]) => `<li>${esc(n)} <span class="ct-c">${c}</span></li>`).join("");
-      if (e.length > 8) h += `<li class="ct-more">…and ${e.length - 8} more painters</li>`;
+      if (e.length > 8) h += `<li class="ct-more">${esc(t("…and N more painters").replace("N", e.length - 8))}</li>`;
     }
     return h + "</ul>";
   }
@@ -3152,8 +3152,8 @@ function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals wh
 }
 function galaxyLegend() {
   const host = document.getElementById("galaxy-legend"); if (!host) return;
-  if (galaxyColorBy === "author") { host.innerHTML = `<span class="gl-note">coloured by painter</span>`; return; }
-  if (galaxyColorBy === "color") { host.innerHTML = `<span class="gl-note">each dot = the painting's own dominant colour</span>`; return; }
+  if (galaxyColorBy === "author") { host.innerHTML = `<span class="gl-note">${esc(t("coloured by painter"))}</span>`; return; }
+  if (galaxyColorBy === "color") { host.innerHTML = `<span class="gl-note">${esc(t("each dot = the painting's own dominant colour"))}</span>`; return; }
   const defs = galaxyColorBy === "period" ? ERAS : SCHOOLS;
   host.innerHTML = defs.map((g, i) => `<span class="gl-chip"><i style="background:${CLUSTER_PALETTE[i % CLUSTER_PALETTE.length]}"></i>${esc(t(g.label))}</span>`).join("");
 }
@@ -3214,7 +3214,7 @@ function renderGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane) return;
   if (!galaxyCoords) {
     fetch("artatlas/data/sim_coords.json?v=" + DATA_V).then(r => r.json()).then(c => { galaxyCoords = c; drawGalaxy(); })
-      .catch(() => { plane.innerHTML = `<div class="g-empty" style="padding:40px">Similarity map not built yet.</div>`; });
+      .catch(() => { plane.innerHTML = `<div class="g-empty" style="padding:40px">${esc(t("Similarity map not built yet."))}</div>`; });
     return;
   }
   drawGalaxy();

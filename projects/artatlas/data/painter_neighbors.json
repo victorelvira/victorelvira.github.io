@@ -1,6 +1,6 @@
 {
 "Albrecht Dürer": {
-"n": 127,
+"n": 121,
 "near": [
 "Lucas Cranach the Elder",
 "Hans Memling",
@@ -13,7 +13,7 @@
 ]
 },
 "Andrea del Sarto": {
-"n": 97,
+"n": 98,
 "near": [
 "Raphael",
 "Correggio",
@@ -21,21 +21,21 @@
 "Annibale Carracci",
 "Guido Reni",
 "Murillo",
-"Veronese",
+"Guercino",
 "Titian"
 ]
 },
 "Annibale Carracci": {
-"n": 194,
+"n": 199,
 "near": [
+"Guercino",
 "Veronese",
+"Luca Giordano",
 "Guido Reni",
 "Rubens",
 "Correggio",
 "Tintoretto",
-"Titian",
-"Andrea del Sarto",
-"Parmigianino"
+"Titian"
 ]
 },
 "Anthony van Dyck": {
@@ -46,31 +46,44 @@
 "Frans Hals",
 "Titian",
 "Goya",
+"Pompeo Batoni",
 "Rubens",
-"Murillo",
-"Jacques-Louis David"
+"Murillo"
 ]
 },
 "Artemisia Gentileschi": {
-"n": 65,
+"n": 64,
 "near": [
 "Caravaggio",
 "Guido Reni",
+"Guercino",
 "Parmigianino",
-"Titian",
 "Annibale Carracci",
-"Murillo",
+"Titian",
 "Veronese",
+"Murillo"
+]
+},
+"Bernini": {
+"n": 85,
+"near": [
+"Michelangelo",
+"Zurbarán",
+"Guido Reni",
+"Mantegna",
+"El Greco",
+"Annibale Carracci",
+"Salvador Dalí",
 "Correggio"
 ]
 },
 "Botticelli": {
-"n": 143,
+"n": 142,
 "near": [
 "Domenico Ghirlandaio",
 "Pietro Perugino",
-"Fra Filippo Lippi",
 "Giovanni Bellini",
+"Fra Filippo Lippi",
 "Raphael",
 "Mantegna",
 "Rogier van der Weyden",
@@ -78,13 +91,13 @@
 ]
 },
 "Bronzino": {
-"n": 101,
+"n": 100,
 "near": [
 "Parmigianino",
 "Lucas Cranach the Elder",
-"Albrecht Dürer",
 "Titian",
 "Raphael",
+"Albrecht Dürer",
 "Giorgione",
 "Andrea del Sarto",
 "Hans Memling"
@@ -111,26 +124,26 @@
 "J.M.W. Turner",
 "Giovanni Battista Tiepolo",
 "Nicolas Poussin",
+"Caspar David Friedrich",
 "Goya",
-"Veronese",
-"Caspar David Friedrich"
+"Veronese"
 ]
 },
 "Caravaggio": {
 "n": 94,
 "near": [
+"Guercino",
 "Artemisia Gentileschi",
 "Annibale Carracci",
 "Guido Reni",
 "Ribera",
 "Georges de La Tour",
-"Murillo",
-"Zurbarán",
-"Titian"
+"Luca Giordano",
+"Murillo"
 ]
 },
 "Caspar David Friedrich": {
-"n": 164,
+"n": 162,
 "near": [
 "J.M.W. Turner",
 "Claude Monet",
@@ -152,11 +165,11 @@
 "Caspar David Friedrich",
 "Canaletto",
 "Goya",
-"Veronese"
+"Giovanni Battista Tiepolo"
 ]
 },
 "Claude Monet": {
-"n": 870,
+"n": 860,
 "near": [
 "Georges Seurat",
 "Vincent van Gogh",
@@ -164,34 +177,34 @@
 "Paul Cézanne",
 "Paul Gauguin",
 "Pierre-Auguste Renoir",
-"Joaquín Sorolla",
-"Gustav Klimt"
+"Edvard Munch",
+"Joaquín Sorolla"
 ]
 },
 "Correggio": {
-"n": 108,
+"n": 109,
 "near": [
 "Andrea del Sarto",
 "Raphael",
 "Guido Reni",
 "Annibale Carracci",
 "Parmigianino",
+"Guercino",
 "Leonardo da Vinci",
-"Murillo",
-"Veronese"
+"Murillo"
 ]
 },
 "Diego Rivera": {
 "n": 25,
 "near": [
+"Salvador Dalí",
+"Pablo Picasso",
 "Gustav Klimt",
+"Edvard Munch",
 "Paul Gauguin",
 "Paul Cézanne",
 "Vincent van Gogh",
-"Edgar Degas",
-"Joaquín Sorolla",
-"Georges Seurat",
-"Paolo Uccello"
+"Joan Miró"
 ]
 },
 "Domenico Ghirlandaio": {
@@ -202,13 +215,13 @@
 "Fra Filippo Lippi",
 "Piero della Francesca",
 "Mantegna",
-"Rogier van der Weyden",
 "Giovanni Bellini",
+"Rogier van der Weyden",
 "Fra Angelico"
 ]
 },
 "Duccio": {
-"n": 54,
+"n": 58,
 "near": [
 "Giotto",
 "Fra Angelico",
@@ -216,8 +229,8 @@
 "Fra Filippo Lippi",
 "Domenico Ghirlandaio",
 "Mantegna",
-"Botticelli",
-"Paolo Uccello"
+"Pietro Perugino",
+"Botticelli"
 ]
 },
 "Edgar Degas": {
@@ -226,24 +239,37 @@
 "Édouard Manet",
 "Joaquín Sorolla",
 "Pierre-Auguste Renoir",
+"Edvard Munch",
 "Ignacio Zuloaga",
 "Paul Gauguin",
 "Paul Cézanne",
-"Vincent van Gogh",
 "Gustav Klimt"
 ]
 },
+"Edvard Munch": {
+"n": 1393,
+"near": [
+"Paul Cézanne",
+"Paul Gauguin",
+"Vincent van Gogh",
+"Edgar Degas",
+"Joaquín Sorolla",
+"Pierre-Auguste Renoir",
+"Édouard Manet",
+"Georges Seurat"
+]
+},
 "El Greco": {
-"n": 332,
+"n": 329,
 "near": [
 "Zurbarán",
 "Ribera",
 "Tintoretto",
 "Annibale Carracci",
 "Guido Reni",
+"Guercino",
 "Albrecht Dürer",
-"Titian",
-"Murillo"
+"Titian"
 ]
 },
 "Eugène Delacroix": {
@@ -252,20 +278,20 @@
 "Rubens",
 "Giovanni Battista Tiepolo",
 "Goya",
+"Luca Giordano",
 "Tintoretto",
 "Annibale Carracci",
 "Titian",
-"Veronese",
-"Nicolas Poussin"
+"Veronese"
 ]
 },
 "Fra Angelico": {
-"n": 161,
+"n": 166,
 "near": [
 "Giotto",
 "Fra Filippo Lippi",
-"Masaccio",
 "Duccio",
+"Masaccio",
 "Domenico Ghirlandaio",
 "Pietro Perugino",
 "Botticelli",
@@ -273,16 +299,16 @@
 ]
 },
 "Fra Filippo Lippi": {
-"n": 77,
+"n": 83,
 "near": [
 "Botticelli",
 "Domenico Ghirlandaio",
 "Fra Angelico",
 "Pietro Perugino",
 "Masaccio",
-"Giovanni Bellini",
 "Mantegna",
-"Rogier van der Weyden"
+"Giovanni Bellini",
+"Giotto"
 ]
 },
 "Francesco Guardi": {
@@ -294,34 +320,34 @@
 "Eugène Delacroix",
 "Giovanni Battista Tiepolo",
 "Goya",
-"Veronese",
-"Nicolas Poussin"
+"Nicolas Poussin",
+"Veronese"
 ]
 },
 "Frans Hals": {
-"n": 209,
+"n": 171,
 "near": [
 "Velázquez",
-"Anthony van Dyck",
 "Rembrandt",
+"Anthony van Dyck",
 "Hans Holbein the Younger",
 "Goya",
 "Jacques-Louis David",
-"Titian",
-"Ribera"
+"Pompeo Batoni",
+"Titian"
 ]
 },
 "Frida Kahlo": {
-"n": 1,
+"n": 4,
 "near": [
+"Julio Romero de Torres",
+"Pablo Picasso",
 "Ignacio Zuloaga",
 "Gustav Klimt",
-"Édouard Manet",
-"Pierre-Auguste Renoir",
-"Edgar Degas",
+"Salvador Dalí",
 "Paul Gauguin",
-"Joaquín Sorolla",
-"Bronzino"
+"Edvard Munch",
+"Édouard Manet"
 ]
 },
 "Georges Seurat": {
@@ -332,9 +358,9 @@
 "Paul Gauguin",
 "Camille Pissarro",
 "Paul Cézanne",
+"Edvard Munch",
 "Gustav Klimt",
-"Pierre-Auguste Renoir",
-"Joaquín Sorolla"
+"Pierre-Auguste Renoir"
 ]
 },
 "Georges de La Tour": {
@@ -343,15 +369,15 @@
 "Caravaggio",
 "Zurbarán",
 "Ribera",
+"Guercino",
 "Vermeer",
 "Giorgione",
 "Artemisia Gentileschi",
-"El Greco",
-"Guido Reni"
+"El Greco"
 ]
 },
 "Giorgione": {
-"n": 43,
+"n": 42,
 "near": [
 "Titian",
 "Albrecht Dürer",
@@ -379,66 +405,79 @@
 "Giovanni Battista Tiepolo": {
 "n": 251,
 "near": [
+"Luca Giordano",
 "Rubens",
 "Veronese",
 "Annibale Carracci",
 "Nicolas Poussin",
 "Eugène Delacroix",
-"Tintoretto",
-"Murillo",
-"Guido Reni"
+"Guercino",
+"Tintoretto"
 ]
 },
 "Giovanni Bellini": {
-"n": 157,
+"n": 160,
 "near": [
-"Pietro Perugino",
 "Botticelli",
+"Pietro Perugino",
 "Raphael",
-"Mantegna",
 "Domenico Ghirlandaio",
+"Mantegna",
 "Leonardo da Vinci",
 "Hans Memling",
 "Rogier van der Weyden"
 ]
 },
 "Goya": {
-"n": 427,
+"n": 422,
 "near": [
 "Jacques-Louis David",
 "Velázquez",
 "Rembrandt",
 "Anthony van Dyck",
 "Eugène Delacroix",
+"Pompeo Batoni",
 "Murillo",
-"Titian",
-"Rubens"
+"Titian"
+]
+},
+"Guercino": {
+"n": 223,
+"near": [
+"Annibale Carracci",
+"Guido Reni",
+"Luca Giordano",
+"Caravaggio",
+"Veronese",
+"Murillo",
+"Correggio",
+"Andrea del Sarto"
 ]
 },
 "Guido Reni": {
-"n": 264,
+"n": 261,
 "near": [
+"Guercino",
 "Annibale Carracci",
 "Correggio",
 "Andrea del Sarto",
-"Parmigianino",
 "Murillo",
-"Artemisia Gentileschi",
-"Raphael",
-"Titian"
+"Parmigianino",
+"Titian",
+"Artemisia Gentileschi"
 ]
 },
 "Gustav Klimt": {
 "n": 112,
 "near": [
 "Vincent van Gogh",
+"Edvard Munch",
 "Edgar Degas",
 "Georges Seurat",
 "Paul Gauguin",
 "Diego Rivera",
 "Pierre-Auguste Renoir",
-"Édouard Manet",
-"Joaquín Sorolla"
+"Édouard Manet"
 ]
 },
 "Hans Holbein the Younger": {
@@ -446,8 +485,8 @@
 "near": [
 "Lucas Cranach the Elder",
 "Frans Hals",
-"Albrecht Dürer",
 "Velázquez",
+"Albrecht Dürer",
 "Anthony van Dyck",
 "Hans Memling",
 "Bronzino",
@@ -459,8 +498,8 @@
 "near": [
 "Rogier van der Weyden",
 "Jan van Eyck",
-"Albrecht Dürer",
 "Lucas Cranach the Elder",
+"Albrecht Dürer",
 "Giovanni Bellini",
 "Domenico Ghirlandaio",
 "Pietro Perugino",
@@ -468,16 +507,16 @@
 ]
 },
 "Hieronymus Bosch": {
-"n": 85,
+"n": 81,
 "near": [
-"Paolo Uccello",
 "Mantegna",
+"Paolo Uccello",
 "Pieter Bruegel the Elder",
+"Albrecht Dürer",
 "Rogier van der Weyden",
 "Domenico Ghirlandaio",
-"Albrecht Dürer",
-"Botticelli",
-"Lucas Cranach the Elder"
+"Lucas Cranach the Elder",
+"Botticelli"
 ]
 },
 "Ignacio Zuloaga": {
@@ -486,15 +525,15 @@
 "Édouard Manet",
 "Joaquín Sorolla",
 "Edgar Degas",
+"Julio Romero de Torres",
 "Goya",
 "Eugène Delacroix",
 "Velázquez",
-"El Greco",
-"Zurbarán"
+"El Greco"
 ]
 },
 "J.M.W. Turner": {
-"n": 492,
+"n": 491,
 "near": [
 "Caspar David Friedrich",
 "Francesco Guardi",
@@ -507,20 +546,20 @@
 ]
 },
 "Jacques-Louis David": {
-"n": 119,
+"n": 117,
 "near": [
 "Goya",
+"Pompeo Batoni",
 "Velázquez",
 "Rembrandt",
 "Anthony van Dyck",
 "Titian",
 "Guido Reni",
-"Artemisia Gentileschi",
-"Rubens"
+"Artemisia Gentileschi"
 ]
 },
 "Jan van Eyck": {
-"n": 54,
+"n": 53,
 "near": [
 "Rogier van der Weyden",
 "Hans Memling",
@@ -533,16 +572,16 @@
 ]
 },
 "Joan Miró": {
-"n": 2,
+"n": 6,
 "near": [
 "Salvador Dalí",
-"Pablo Picasso",
 "Diego Rivera",
+"Pablo Picasso",
 "Gustav Klimt",
 "Paolo Uccello",
-"Giotto",
-"Masaccio",
-"Jan van Eyck"
+"Hieronymus Bosch",
+"Vincent van Gogh",
+"Edvard Munch"
 ]
 },
 "Joaquín Sorolla": {
@@ -551,11 +590,24 @@
 "Édouard Manet",
 "Edgar Degas",
 "Ignacio Zuloaga",
+"Edvard Munch",
 "Paul Cézanne",
 "Paul Gauguin",
 "Pierre-Auguste Renoir",
-"Vincent van Gogh",
-"Claude Monet"
+"Vincent van Gogh"
+]
+},
+"Julio Romero de Torres": {
+"n": 127,
+"near": [
+"Ignacio Zuloaga",
+"Jacques-Louis David",
+"Édouard Manet",
+"Edgar Degas",
+"Goya",
+"Giorgione",
+"Joaquín Sorolla",
+"Guido Reni"
 ]
 },
 "Leonardo da Vinci": {
@@ -566,9 +618,22 @@
 "Correggio",
 "Botticelli",
 "Andrea del Sarto",
-"Pietro Perugino",
 "Mantegna",
+"Pietro Perugino",
 "Albrecht Dürer"
+]
+},
+"Luca Giordano": {
+"n": 334,
+"near": [
+"Annibale Carracci",
+"Guercino",
+"Rubens",
+"Veronese",
+"Nicolas Poussin",
+"Giovanni Battista Tiepolo",
+"Tintoretto",
+"Guido Reni"
 ]
 },
 "Lucas Cranach the Elder": {
@@ -585,13 +650,13 @@
 ]
 },
 "Mantegna": {
-"n": 96,
+"n": 98,
 "near": [
 "Botticelli",
 "Domenico Ghirlandaio",
+"Pietro Perugino",
 "Giovanni Bellini",
 "Raphael",
-"Pietro Perugino",
 "Fra Filippo Lippi",
 "Albrecht Dürer",
 "Masaccio"
@@ -611,66 +676,66 @@
 ]
 },
 "Michelangelo": {
-"n": 35,
+"n": 96,
 "near": [
+"Bernini",
 "Mantegna",
-"Botticelli",
-"Raphael",
 "Annibale Carracci",
-"Domenico Ghirlandaio",
-"Pietro Perugino",
-"Veronese",
-"Fra Filippo Lippi"
+"Guido Reni",
+"Masaccio",
+"Raphael",
+"Correggio",
+"Botticelli"
 ]
 },
 "Murillo": {
-"n": 270,
+"n": 271,
 "near": [
 "Guido Reni",
+"Guercino",
 "Andrea del Sarto",
 "Annibale Carracci",
 "Correggio",
 "Titian",
 "Rubens",
-"Parmigianino",
-"Veronese"
+"Luca Giordano"
 ]
 },
 "Nicolas Poussin": {
-"n": 212,
+"n": 206,
 "near": [
+"Luca Giordano",
 "Veronese",
 "Annibale Carracci",
 "Giovanni Battista Tiepolo",
 "Rubens",
+"Guercino",
 "Tintoretto",
-"Titian",
-"Correggio",
-"Caravaggio"
+"Titian"
 ]
 },
 "Pablo Picasso": {
-"n": 3,
+"n": 33,
 "near": [
 "Salvador Dalí",
 "Diego Rivera",
+"Edvard Munch",
+"Edgar Degas",
 "Gustav Klimt",
-"Caspar David Friedrich",
-"Paolo Uccello",
-"Vincent van Gogh",
-"Ignacio Zuloaga",
-"Joaquín Sorolla"
+"Paul Cézanne",
+"Paul Gauguin",
+"Ignacio Zuloaga"
 ]
 },
 "Paolo Uccello": {
-"n": 28,
+"n": 29,
 "near": [
 "Fra Angelico",
 "Mantegna",
 "Piero della Francesca",
 "Domenico Ghirlandaio",
-"Hieronymus Bosch",
 "Masaccio",
+"Hieronymus Bosch",
 "Giotto",
 "Botticelli"
 ]
@@ -682,23 +747,23 @@
 "Correggio",
 "Andrea del Sarto",
 "Annibale Carracci",
-"Guido Reni",
 "Raphael",
+"Guido Reni",
 "Veronese",
 "Bronzino"
 ]
 },
 "Paul Cézanne": {
-"n": 558,
+"n": 555,
 "near": [
 "Paul Gauguin",
 "Vincent van Gogh",
+"Edvard Munch",
 "Pierre-Auguste Renoir",
 "Claude Monet",
 "Camille Pissarro",
 "Édouard Manet",
-"Edgar Degas",
-"Joaquín Sorolla"
+"Edgar Degas"
 ]
 },
 "Paul Gauguin": {
@@ -706,12 +771,12 @@
 "near": [
 "Paul Cézanne",
 "Vincent van Gogh",
+"Edvard Munch",
 "Georges Seurat",
 "Pierre-Auguste Renoir",
 "Edgar Degas",
 "Claude Monet",
-"Camille Pissarro",
-"Joaquín Sorolla"
+"Camille Pissarro"
 ]
 },
 "Piero della Francesca": {
@@ -720,41 +785,41 @@
 "Domenico Ghirlandaio",
 "Masaccio",
 "Fra Angelico",
-"Pietro Perugino",
 "Mantegna",
+"Pietro Perugino",
 "Jan van Eyck",
 "Botticelli",
-"Paolo Uccello"
+"Hans Memling"
 ]
 },
 "Pierre-Auguste Renoir": {
-"n": 981,
+"n": 978,
 "near": [
 "Edgar Degas",
 "Édouard Manet",
 "Paul Cézanne",
 "Paul Gauguin",
+"Edvard Munch",
 "Vincent van Gogh",
 "Joaquín Sorolla",
-"Claude Monet",
-"Gustav Klimt"
+"Claude Monet"
 ]
 },
 "Pieter Bruegel the Elder": {
-"n": 47,
+"n": 45,
 "near": [
 "Hieronymus Bosch",
 "Eugène Delacroix",
-"Paolo Uccello",
-"Mantegna",
 "Tintoretto",
+"Mantegna",
+"Paolo Uccello",
 "Nicolas Poussin",
 "Giorgione",
-"Rubens"
+"Albrecht Dürer"
 ]
 },
 "Pietro Perugino": {
-"n": 139,
+"n": 141,
 "near": [
 "Botticelli",
 "Domenico Ghirlandaio",
@@ -762,12 +827,25 @@
 "Raphael",
 "Fra Filippo Lippi",
 "Mantegna",
-"Rogier van der Weyden",
-"Fra Angelico"
+"Fra Angelico",
+"Rogier van der Weyden"
+]
+},
+"Pompeo Batoni": {
+"n": 189,
+"near": [
+"Jacques-Louis David",
+"Anthony van Dyck",
+"Goya",
+"Velázquez",
+"Titian",
+"Rembrandt",
+"Murillo",
+"Parmigianino"
 ]
 },
 "Raphael": {
-"n": 215,
+"n": 207,
 "near": [
 "Andrea del Sarto",
 "Correggio",
@@ -775,12 +853,12 @@
 "Giovanni Bellini",
 "Pietro Perugino",
 "Leonardo da Vinci",
-"Mantegna",
-"Parmigianino"
+"Parmigianino",
+"Mantegna"
 ]
 },
 "Rembrandt": {
-"n": 540,
+"n": 537,
 "near": [
 "Velázquez",
 "Anthony van Dyck",
@@ -793,16 +871,16 @@
 ]
 },
 "Ribera": {
-"n": 244,
+"n": 245,
 "near": [
 "El Greco",
 "Caravaggio",
+"Guercino",
 "Zurbarán",
 "Guido Reni",
-"Tintoretto",
 "Annibale Carracci",
-"Murillo",
-"Titian"
+"Tintoretto",
+"Murillo"
 ]
 },
 "Rogier van der Weyden": {
@@ -822,47 +900,47 @@
 "n": 1259,
 "near": [
 "Veronese",
+"Luca Giordano",
 "Annibale Carracci",
 "Tintoretto",
 "Titian",
 "Giovanni Battista Tiepolo",
-"Guido Reni",
-"Murillo",
-"Parmigianino"
+"Guercino",
+"Guido Reni"
 ]
 },
 "Salvador Dalí": {
-"n": 4,
+"n": 22,
 "near": [
 "Diego Rivera",
 "Pablo Picasso",
+"Joan Miró",
+"Gustav Klimt",
 "Ignacio Zuloaga",
-"Joaquín Sorolla",
-"El Greco",
-"Édouard Manet",
-"Edgar Degas",
-"Paolo Uccello"
+"Paolo Uccello",
+"Edvard Munch",
+"Julio Romero de Torres"
 ]
 },
 "Tintoretto": {
-"n": 335,
+"n": 345,
 "near": [
 "Veronese",
 "Titian",
 "Rubens",
 "Annibale Carracci",
+"Luca Giordano",
+"Guercino",
 "Parmigianino",
-"El Greco",
-"Albrecht Dürer",
-"Mantegna"
+"El Greco"
 ]
 },
 "Titian": {
-"n": 130,
+"n": 123,
 "near": [
 "Tintoretto",
-"Veronese",
 "Parmigianino",
+"Veronese",
 "Rubens",
 "Annibale Carracci",
 "Giorgione",
@@ -871,7 +949,7 @@
 ]
 },
 "Velázquez": {
-"n": 153,
+"n": 152,
 "near": [
 "Anthony van Dyck",
 "Rembrandt",
@@ -891,35 +969,35 @@
 "Caravaggio",
 "Velázquez",
 "Zurbarán",
-"Giorgione",
 "Rembrandt",
+"Giorgione",
 "Goya"
 ]
 },
 "Veronese": {
-"n": 289,
+"n": 305,
 "near": [
 "Annibale Carracci",
 "Tintoretto",
 "Rubens",
 "Titian",
-"Nicolas Poussin",
+"Luca Giordano",
+"Guercino",
 "Parmigianino",
-"Andrea del Sarto",
-"Giovanni Battista Tiepolo"
+"Nicolas Poussin"
 ]
 },
 "Vincent van Gogh": {
-"n": 323,
+"n": 280,
 "near": [
 "Paul Gauguin",
 "Paul Cézanne",
 "Claude Monet",
 "Georges Seurat",
 "Camille Pissarro",
+"Edvard Munch",
 "Pierre-Auguste Renoir",
-"Gustav Klimt",
-"Edgar Degas"
+"Gustav Klimt"
 ]
 },
 "Zurbarán": {
@@ -931,21 +1009,21 @@
 "Guido Reni",
 "Murillo",
 "Caravaggio",
-"Annibale Carracci",
-"Albrecht Dürer"
+"Guercino",
+"Annibale Carracci"
 ]
 },
 "Édouard Manet": {
-"n": 299,
+"n": 296,
 "near": [
 "Edgar Degas",
 "Joaquín Sorolla",
 "Ignacio Zuloaga",
 "Pierre-Auguste Renoir",
 "Paul Cézanne",
+"Edvard Munch",
 "Paul Gauguin",
-"Goya",
-"Vincent van Gogh"
+"Goya"
 ]
 }
 }
