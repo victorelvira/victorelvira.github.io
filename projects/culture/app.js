@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.28.5";
+const DATA_V = "0.28.6";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -1750,6 +1750,7 @@ function setTop(on) {
   } else if (!tableOn) {
     $("main").style.display = "flex"; $("v-map").classList.add("active"); map.invalidateSize();
   }
+  syncURL();
 }
 const pct = (x) => (x == null ? "?" : `${Math.round(x * 100)} %`);
 function initTop() {
@@ -2284,6 +2285,7 @@ function viewToURL() {
   if (openCard || pendingCard) p.set("card", openCard || pendingCard);
   if (state.colorBy !== "dom") p.set("by", state.colorBy);
   if (tableOn) p.set("view", "table");
+  if (topOn) p.set("view", "top");
   if (tlChosen && (state.yearMin > TL_MIN || state.yearMax < TL_MAX))
     p.set("yr", `${state.yearMin},${state.yearMax}`);
   // NOT `near`. Everything else about the view belongs in the URL; where the reader is standing
@@ -2396,6 +2398,8 @@ function applyURL() {
     VOCAB.verb.every((v, i) => VERBS_PRESENT.includes(v) === (state.verb[i] !== false)));
   if (p.has("fold")) document.body.classList.toggle("folded", p.get("fold") === "1");
   setTable(p.get("view") === "table");
+  // Top people is a step too: back from it returns to the map, forward reopens it
+  if ((p.get("view") === "top") !== topOn) setTop(p.get("view") === "top");
 
   const m = (p.get("m") || "").split(",").map(Number);
   return m.length === 3 && m.every(Number.isFinite) ? [[m[0], m[1]], m[2]] : null;
